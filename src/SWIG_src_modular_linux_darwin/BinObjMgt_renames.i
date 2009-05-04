@@ -1,0 +1,8 @@
+%rename(RRelocationTable) BinObjMgt_RRelocationTable;
+%rename(SequenceOfAddress) BinObjMgt_SequenceOfAddress;
+%rename(Handle_SequenceNodeOfSequenceOfAddress) Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
+%rename(DataMapIteratorOfRRelocationTable) BinObjMgt_DataMapIteratorOfRRelocationTable;
+%rename(Persistent) BinObjMgt_Persistent;
+%rename(Handle_DataMapNodeOfRRelocationTable) Handle_BinObjMgt_DataMapNodeOfRRelocationTable;
+%rename(SequenceNodeOfSequenceOfAddress) BinObjMgt_SequenceNodeOfSequenceOfAddress;
+%rename(DataMapNodeOfRRelocationTable) BinObjMgt_DataMapNodeOfRRelocationTable;

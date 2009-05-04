@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module CDM
 
+%include CDM_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -123,32 +125,6 @@ enum CDM_CanCloseStatus {
 
 
 
-%nodefaultctor Handle_CDM_MetaData;
-class Handle_CDM_MetaData : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_MetaData();
-		%feature("autodoc", "1");
-		Handle_CDM_MetaData(const Handle_CDM_MetaData &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_MetaData(const CDM_MetaData *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_MetaData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_MetaData {
-	CDM_MetaData* GetObject() {
-	return (CDM_MetaData*)$self->Access();
-	}
-};
-%extend Handle_CDM_MetaData {
-	~Handle_CDM_MetaData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MetaData\n");}
-	}
-};
-
-
 %nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
 class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	public:
@@ -201,6 +177,58 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 };
 
 
+%nodefaultctor Handle_CDM_MessageDriver;
+class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDM_MessageDriver();
+		%feature("autodoc", "1");
+		Handle_CDM_MessageDriver(const Handle_CDM_MessageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_MessageDriver(const CDM_MessageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_CDM_MessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDM_MessageDriver {
+	CDM_MessageDriver* GetObject() {
+	return (CDM_MessageDriver*)$self->Access();
+	}
+};
+%extend Handle_CDM_MessageDriver {
+	~Handle_CDM_MessageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MessageDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_CDM_DataMapNodeOfPresentationDirectory;
+class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDM_DataMapNodeOfPresentationDirectory();
+		%feature("autodoc", "1");
+		Handle_CDM_DataMapNodeOfPresentationDirectory(const Handle_CDM_DataMapNodeOfPresentationDirectory &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_DataMapNodeOfPresentationDirectory(const CDM_DataMapNodeOfPresentationDirectory *anItem);
+		%feature("autodoc", "1");
+		Handle_CDM_DataMapNodeOfPresentationDirectory const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
+	CDM_DataMapNodeOfPresentationDirectory* GetObject() {
+	return (CDM_DataMapNodeOfPresentationDirectory*)$self->Access();
+	}
+};
+%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
+	~Handle_CDM_DataMapNodeOfPresentationDirectory() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");}
+	}
+};
+
+
 %nodefaultctor Handle_CDM_Reference;
 class Handle_CDM_Reference : public Handle_Standard_Transient {
 	public:
@@ -249,32 +277,6 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 	~Handle_CDM_Document() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_Document\n");}
-	}
-};
-
-
-%nodefaultctor Handle_CDM_MessageDriver;
-class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_MessageDriver();
-		%feature("autodoc", "1");
-		Handle_CDM_MessageDriver(const Handle_CDM_MessageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_MessageDriver(const CDM_MessageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_MessageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_MessageDriver {
-	CDM_MessageDriver* GetObject() {
-	return (CDM_MessageDriver*)$self->Access();
-	}
-};
-%extend Handle_CDM_MessageDriver {
-	~Handle_CDM_MessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MessageDriver\n");}
 	}
 };
 
@@ -357,32 +359,6 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 };
 
 
-%nodefaultctor Handle_CDM_DataMapNodeOfPresentationDirectory;
-class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfPresentationDirectory();
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfPresentationDirectory(const Handle_CDM_DataMapNodeOfPresentationDirectory &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfPresentationDirectory(const CDM_DataMapNodeOfPresentationDirectory *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_DataMapNodeOfPresentationDirectory const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
-	CDM_DataMapNodeOfPresentationDirectory* GetObject() {
-	return (CDM_DataMapNodeOfPresentationDirectory*)$self->Access();
-	}
-};
-%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
-	~Handle_CDM_DataMapNodeOfPresentationDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");}
-	}
-};
-
-
 %nodefaultctor Handle_CDM_ListNodeOfListOfDocument;
 class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 	public:
@@ -431,6 +407,32 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 	~Handle_CDM_StackNodeOfStackOfDocument() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");}
+	}
+};
+
+
+%nodefaultctor Handle_CDM_MetaData;
+class Handle_CDM_MetaData : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDM_MetaData();
+		%feature("autodoc", "1");
+		Handle_CDM_MetaData(const Handle_CDM_MetaData &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_MetaData(const CDM_MetaData *anItem);
+		%feature("autodoc", "1");
+		Handle_CDM_MetaData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDM_MetaData {
+	CDM_MetaData* GetObject() {
+	return (CDM_MetaData*)$self->Access();
+	}
+};
+%extend Handle_CDM_MetaData {
+	~Handle_CDM_MetaData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MetaData\n");}
 	}
 };
 
@@ -487,60 +489,6 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 };
 
 
-%nodefaultctor CDM_DataMapNodeOfNamesDirectory;
-class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		CDM_DataMapNodeOfNamesDirectory(const TCollection_ExtendedString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDM_DataMapNodeOfNamesDirectory {
-	Handle_CDM_DataMapNodeOfNamesDirectory GetHandle() {
-	return *(Handle_CDM_DataMapNodeOfNamesDirectory*) &$self;
-	}
-};
-%extend CDM_DataMapNodeOfNamesDirectory {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend CDM_DataMapNodeOfNamesDirectory {
-	~CDM_DataMapNodeOfNamesDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");}
-	}
-};
-
-
-%nodefaultctor CDM_DataMapIteratorOfMetaDataLookUpTable;
-class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		CDM_DataMapIteratorOfMetaDataLookUpTable();
-		%feature("autodoc", "1");
-		CDM_DataMapIteratorOfMetaDataLookUpTable(const CDM_MetaDataLookUpTable &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const CDM_MetaDataLookUpTable &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Handle_CDM_MetaData & Value() const;
-
-};
-%extend CDM_DataMapIteratorOfMetaDataLookUpTable {
-	~CDM_DataMapIteratorOfMetaDataLookUpTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");}
-	}
-};
-
-
 %nodefaultctor CDM_DataMapNodeOfPresentationDirectory;
 class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 	public:
@@ -568,6 +516,31 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 	~CDM_DataMapNodeOfPresentationDirectory() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfPresentationDirectory\n");}
+	}
+};
+
+
+%nodefaultctor CDM_ListIteratorOfListOfReferences;
+class CDM_ListIteratorOfListOfReferences {
+	public:
+		%feature("autodoc", "1");
+		CDM_ListIteratorOfListOfReferences();
+		%feature("autodoc", "1");
+		CDM_ListIteratorOfListOfReferences(const CDM_ListOfReferences &L);
+		%feature("autodoc", "1");
+		void Initialize(const CDM_ListOfReferences &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_CDM_Reference & Value() const;
+
+};
+%extend CDM_ListIteratorOfListOfReferences {
+	~CDM_ListIteratorOfListOfReferences() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
 	}
 };
 
@@ -766,6 +739,29 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 };
 
 
+%nodefaultctor CDM_DataMapIteratorOfMetaDataLookUpTable;
+class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		CDM_DataMapIteratorOfMetaDataLookUpTable();
+		%feature("autodoc", "1");
+		CDM_DataMapIteratorOfMetaDataLookUpTable(const CDM_MetaDataLookUpTable &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const CDM_MetaDataLookUpTable &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_CDM_MetaData & Value() const;
+
+};
+%extend CDM_DataMapIteratorOfMetaDataLookUpTable {
+	~CDM_DataMapIteratorOfMetaDataLookUpTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");}
+	}
+};
+
+
 %nodefaultctor CDM_MetaData;
 class CDM_MetaData : public Standard_Transient {
 	public:
@@ -826,6 +822,57 @@ class CDM_MetaData : public Standard_Transient {
 };
 
 
+%nodefaultctor CDM_ListOfDocument;
+class CDM_ListOfDocument {
+	public:
+		%feature("autodoc", "1");
+		CDM_ListOfDocument();
+		%feature("autodoc", "1");
+		void Assign(const CDM_ListOfDocument &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_CDM_Document &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & theIt);
+		%feature("autodoc", "1");
+		void Prepend(CDM_ListOfDocument & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_CDM_Document &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & theIt);
+		%feature("autodoc", "1");
+		void Append(CDM_ListOfDocument & Other);
+		%feature("autodoc", "1");
+		Handle_CDM_Document & First() const;
+		%feature("autodoc", "1");
+		Handle_CDM_Document & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(CDM_ListIteratorOfListOfDocument & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & It);
+		%feature("autodoc", "1");
+		void InsertBefore(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & It);
+		%feature("autodoc", "1");
+		void InsertAfter(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
+
+};
+%extend CDM_ListOfDocument {
+	~CDM_ListOfDocument() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDM_ListOfDocument\n");}
+	}
+};
+
+
 %nodefaultctor CDM_StdMapNodeOfMapOfDocument;
 class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 	public:
@@ -851,6 +898,37 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 	~CDM_StdMapNodeOfMapOfDocument() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDM_StdMapNodeOfMapOfDocument\n");}
+	}
+};
+
+
+%nodefaultctor CDM_DataMapNodeOfNamesDirectory;
+class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		CDM_DataMapNodeOfNamesDirectory(const TCollection_ExtendedString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDM_DataMapNodeOfNamesDirectory {
+	Handle_CDM_DataMapNodeOfNamesDirectory GetHandle() {
+	return *(Handle_CDM_DataMapNodeOfNamesDirectory*) &$self;
+	}
+};
+%extend CDM_DataMapNodeOfNamesDirectory {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend CDM_DataMapNodeOfNamesDirectory {
+	~CDM_DataMapNodeOfNamesDirectory() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");}
 	}
 };
 
@@ -885,8 +963,6 @@ class CDM_MessageDriver : public Standard_Transient {
 %nodefaultctor CDM_COutMessageDriver;
 class CDM_COutMessageDriver : public CDM_MessageDriver {
 	public:
-		%feature("autodoc", "1");
-		CDM_COutMessageDriver();
 
 };
 %extend CDM_COutMessageDriver {
@@ -996,31 +1072,6 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 	~CDM_NullMessageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDM_NullMessageDriver\n");}
-	}
-};
-
-
-%nodefaultctor CDM_ListIteratorOfListOfReferences;
-class CDM_ListIteratorOfListOfReferences {
-	public:
-		%feature("autodoc", "1");
-		CDM_ListIteratorOfListOfReferences();
-		%feature("autodoc", "1");
-		CDM_ListIteratorOfListOfReferences(const CDM_ListOfReferences &L);
-		%feature("autodoc", "1");
-		void Initialize(const CDM_ListOfReferences &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_CDM_Reference & Value() const;
-
-};
-%extend CDM_ListIteratorOfListOfReferences {
-	~CDM_ListIteratorOfListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
 	}
 };
 
@@ -1193,8 +1244,6 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 class CDM_DocumentHasher {
 	public:
 		%feature("autodoc", "1");
-		CDM_DocumentHasher();
-		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
@@ -1204,57 +1253,6 @@ class CDM_DocumentHasher {
 	~CDM_DocumentHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDM_DocumentHasher\n");}
-	}
-};
-
-
-%nodefaultctor CDM_ListOfDocument;
-class CDM_ListOfDocument {
-	public:
-		%feature("autodoc", "1");
-		CDM_ListOfDocument();
-		%feature("autodoc", "1");
-		void Assign(const CDM_ListOfDocument &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_CDM_Document &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & theIt);
-		%feature("autodoc", "1");
-		void Prepend(CDM_ListOfDocument & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_CDM_Document &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & theIt);
-		%feature("autodoc", "1");
-		void Append(CDM_ListOfDocument & Other);
-		%feature("autodoc", "1");
-		Handle_CDM_Document & First() const;
-		%feature("autodoc", "1");
-		Handle_CDM_Document & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(CDM_ListIteratorOfListOfDocument & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & It);
-		%feature("autodoc", "1");
-		void InsertBefore(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_CDM_Document &I, CDM_ListIteratorOfListOfDocument & It);
-		%feature("autodoc", "1");
-		void InsertAfter(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
-
-};
-%extend CDM_ListOfDocument {
-	~CDM_ListOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListOfDocument\n");}
 	}
 };
 

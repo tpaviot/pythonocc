@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dInt
 
+%include Geom2dInt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,27 +142,6 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 };
 
 
-%nodefaultctor Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
-class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
-	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
 	public:
@@ -251,8 +232,6 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 %nodefaultctor Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter;
 class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
 
 };
 %extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
@@ -263,30 +242,9 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 };
 
 
-%nodefaultctor Geom2dInt_TheProjPCurOfGInter;
-class Geom2dInt_TheProjPCurOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheProjPCurOfGInter();
-		%feature("autodoc", "1");
-		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
-
-};
-%extend Geom2dInt_TheProjPCurOfGInter {
-	~Geom2dInt_TheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	public:
-		%feature("autodoc", "1");
-		Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		const Bnd_Box2d & Bounding(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
 		%feature("autodoc", "1");
@@ -305,6 +263,27 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
+class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
+	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
 	}
 };
 
@@ -410,6 +389,86 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 };
 
 
+%nodefaultctor Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
+class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
+		%feature("autodoc", "1");
+		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin() const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point() const;
+
+};
+%extend Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
+	~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dInt_Geom2dCurveTool;
+class Geom2dInt_Geom2dCurveTool {
+	public:
+		%feature("autodoc", "1");
+		GeomAbs_CurveType TheType(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Lin2d Line(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Circ2d Circle(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Elips2d Ellipse(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Parab2d Parabola(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Hypr2d Hyperbola(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		Standard_Real EpsX(const Adaptor2d_Curve2d &C, const Standard_Real Eps_XYZ);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const Adaptor2d_Curve2d &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P);
+		%feature("autodoc", "1");
+		void D1(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		%feature("autodoc", "1");
+		void D2(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & Tab);
+		%feature("autodoc", "1");
+		void GetInterval(const Adaptor2d_Curve2d &arg0, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend Geom2dInt_Geom2dCurveTool {
+	~Geom2dInt_Geom2dCurveTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_Geom2dCurveTool\n");}
+	}
+};
+
+
 %nodefaultctor Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCollection_BaseSequence {
 	public:
@@ -461,88 +520,6 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 	~Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
-class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
-		%feature("autodoc", "1");
-		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin() const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point() const;
-
-};
-%extend Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
-	~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dInt_Geom2dCurveTool;
-class Geom2dInt_Geom2dCurveTool {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_Geom2dCurveTool();
-		%feature("autodoc", "1");
-		GeomAbs_CurveType TheType(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Lin2d Line(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Circ2d Circle(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Elips2d Ellipse(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Parab2d Parabola(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		Standard_Real EpsX(const Adaptor2d_Curve2d &C, const Standard_Real Eps_XYZ);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Adaptor2d_Curve2d &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P);
-		%feature("autodoc", "1");
-		void D1(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-		%feature("autodoc", "1");
-		void D2(const Adaptor2d_Curve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & Tab);
-		%feature("autodoc", "1");
-		void GetInterval(const Adaptor2d_Curve2d &arg0, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend Geom2dInt_Geom2dCurveTool {
-	~Geom2dInt_Geom2dCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_Geom2dCurveTool\n");}
 	}
 };
 
@@ -619,6 +596,23 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dInt_TheProjPCurOfGInter;
+class Geom2dInt_TheProjPCurOfGInter {
+	public:
+		%feature("autodoc", "1");
+		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+
+};
+%extend Geom2dInt_TheProjPCurOfGInter {
+	~Geom2dInt_TheProjPCurOfGInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");}
 	}
 };
 

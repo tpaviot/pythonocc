@@ -75,11 +75,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shape.hxx>
 #include<Handle_Vrml_Material.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
+#include<Vrml_ShapeHints.hxx>
 #include<TopoDS_Face.hxx>
 #include<Poly_Connect.hxx>
 #include<TColgp_Array1OfDir.hxx>
 #include<TopTools_Array1OfShape.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<Adaptor3d_Curve.hxx>
-#include<Vrml_ShapeHints.hxx>
 %}

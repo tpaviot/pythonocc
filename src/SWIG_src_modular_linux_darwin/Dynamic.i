@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Dynamic
 
+%include Dynamic_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -122,32 +124,6 @@ enum Dynamic_ModeEnum {
 
 
 
-%nodefaultctor Handle_Dynamic_DynamicInstance;
-class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance();
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance(const Handle_Dynamic_DynamicInstance &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance(const Dynamic_DynamicInstance *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicInstance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_DynamicInstance {
-	Dynamic_DynamicInstance* GetObject() {
-	return (Dynamic_DynamicInstance*)$self->Access();
-	}
-};
-%extend Handle_Dynamic_DynamicInstance {
-	~Handle_Dynamic_DynamicInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Dynamic_Variable;
 class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	public:
@@ -170,6 +146,32 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	~Handle_Dynamic_Variable() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Variable\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Dynamic_SequenceOfMethodDefinitions;
+class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions(const Handle_Dynamic_SequenceOfMethodDefinitions &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions(const Dynamic_SequenceOfMethodDefinitions *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_SequenceOfMethodDefinitions {
+	Dynamic_SequenceOfMethodDefinitions* GetObject() {
+	return (Dynamic_SequenceOfMethodDefinitions*)$self->Access();
+	}
+};
+%extend Handle_Dynamic_SequenceOfMethodDefinitions {
+	~Handle_Dynamic_SequenceOfMethodDefinitions() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -248,6 +250,32 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 	~Handle_Dynamic_SequenceNodeOfSeqOfClasses() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
+class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary();
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
+	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
+	}
+};
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	~Handle_Dynamic_FuzzyDefinitionsDictionary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -616,6 +644,32 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 };
 
 
+%nodefaultctor Handle_Dynamic_ObjectParameter;
+class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter();
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter(const Handle_Dynamic_ObjectParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_ObjectParameter {
+	Dynamic_ObjectParameter* GetObject() {
+	return (Dynamic_ObjectParameter*)$self->Access();
+	}
+};
+%extend Handle_Dynamic_ObjectParameter {
+	~Handle_Dynamic_ObjectParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Dynamic_VariableGroup;
 class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	public:
@@ -746,28 +800,28 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 };
 
 
-%nodefaultctor Handle_Dynamic_SequenceOfMethodDefinitions;
-class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Dynamic_DynamicInstance;
+class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions();
+		Handle_Dynamic_DynamicInstance();
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions(const Handle_Dynamic_SequenceOfMethodDefinitions &aHandle);
+		Handle_Dynamic_DynamicInstance(const Handle_Dynamic_DynamicInstance &aHandle);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions(const Dynamic_SequenceOfMethodDefinitions *anItem);
+		Handle_Dynamic_DynamicInstance(const Dynamic_DynamicInstance *anItem);
 		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Dynamic_DynamicInstance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Dynamic_SequenceOfMethodDefinitions {
-	Dynamic_SequenceOfMethodDefinitions* GetObject() {
-	return (Dynamic_SequenceOfMethodDefinitions*)$self->Access();
+%extend Handle_Dynamic_DynamicInstance {
+	Dynamic_DynamicInstance* GetObject() {
+	return (Dynamic_DynamicInstance*)$self->Access();
 	}
 };
-%extend Handle_Dynamic_SequenceOfMethodDefinitions {
-	~Handle_Dynamic_SequenceOfMethodDefinitions() {
+%extend Handle_Dynamic_DynamicInstance {
+	~Handle_Dynamic_DynamicInstance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");}
 	}
 };
 
@@ -950,58 +1004,6 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 	~Handle_Dynamic_CompositMethod() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Dynamic_ObjectParameter;
-class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter();
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter(const Handle_Dynamic_ObjectParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_ObjectParameter {
-	Dynamic_ObjectParameter* GetObject() {
-	return (Dynamic_ObjectParameter*)$self->Access();
-	}
-};
-%extend Handle_Dynamic_ObjectParameter {
-	~Handle_Dynamic_ObjectParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
-class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary();
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
-	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
-	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
-	}
-};
-%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
-	~Handle_Dynamic_FuzzyDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -1399,52 +1401,6 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor Dynamic_MethodDefinitionsDictionary;
-class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		void Creates(const char * afilename);
-		%feature("autodoc", "1");
-		Standard_Boolean Definition(const Handle_Dynamic_Method &adefinition);
-		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Definition(const char * atype, Handle_Dynamic_Method & adefinition) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UpToDate() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfDefinitions() const;
-		%feature("autodoc", "1");
-		Handle_Dynamic_Method Definition(const Standard_Integer anindex) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_MethodDefinitionsDictionary {
-	Handle_Dynamic_MethodDefinitionsDictionary GetHandle() {
-	return *(Handle_Dynamic_MethodDefinitionsDictionary*) &$self;
-	}
-};
-%extend Dynamic_MethodDefinitionsDictionary {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_MethodDefinitionsDictionary {
-	~Dynamic_MethodDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
-	}
-};
-
-
 %nodefaultctor Dynamic_VariableNode;
 class Dynamic_VariableNode : public MMgt_TShared {
 	public:
@@ -1478,73 +1434,6 @@ class Dynamic_VariableNode : public MMgt_TShared {
 	~Dynamic_VariableNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableNode\n");}
-	}
-};
-
-
-%nodefaultctor Dynamic_Variable;
-class Dynamic_Variable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_Variable();
-		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
-		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter Parameter() const;
-		%feature("autodoc", "1");
-		void Mode(const Dynamic_ModeEnum amode);
-		%feature("autodoc", "1");
-		Dynamic_ModeEnum Mode() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_Variable {
-	Handle_Dynamic_Variable GetHandle() {
-	return *(Handle_Dynamic_Variable*) &$self;
-	}
-};
-%extend Dynamic_Variable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_Variable {
-	~Dynamic_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
-	}
-};
-
-
-%nodefaultctor Dynamic_VariableGroup;
-class Dynamic_VariableGroup : public Dynamic_Variable {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_VariableGroup();
-
-};
-%extend Dynamic_VariableGroup {
-	Handle_Dynamic_VariableGroup GetHandle() {
-	return *(Handle_Dynamic_VariableGroup*) &$self;
-	}
-};
-%extend Dynamic_VariableGroup {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_VariableGroup {
-	~Dynamic_VariableGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
 	}
 };
 
@@ -1731,6 +1620,77 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 };
 
 
+%nodefaultctor Dynamic_SequenceOfFuzzyDefinitions;
+class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_SequenceOfFuzzyDefinitions();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_FuzzyDefinition &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_FuzzyDefinition &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfFuzzyDefinitions Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
+		%feature("autodoc", "1");
+		const Handle_Dynamic_FuzzyDefinition & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinition & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Dynamic_SeqOfFuzzyDefinitions & Sequence() const;
+		%feature("autodoc", "1");
+		Dynamic_SeqOfFuzzyDefinitions & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfFuzzyDefinitions ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_SequenceOfFuzzyDefinitions {
+	Handle_Dynamic_SequenceOfFuzzyDefinitions GetHandle() {
+	return *(Handle_Dynamic_SequenceOfFuzzyDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfFuzzyDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_SequenceOfFuzzyDefinitions {
+	~Dynamic_SequenceOfFuzzyDefinitions() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");}
+	}
+};
+
+
 %nodefaultctor Dynamic_StringParameter;
 class Dynamic_StringParameter : public Dynamic_Parameter {
 	public:
@@ -1871,6 +1831,77 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Dynamic_SequenceOfClasses;
+class Dynamic_SequenceOfClasses : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_SequenceOfClasses();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_DynamicClass &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_SequenceOfClasses &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_DynamicClass &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_SequenceOfClasses &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfClasses Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
+		%feature("autodoc", "1");
+		const Handle_Dynamic_DynamicClass & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Dynamic_DynamicClass & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Dynamic_SeqOfClasses & Sequence() const;
+		%feature("autodoc", "1");
+		Dynamic_SeqOfClasses & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfClasses ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_SequenceOfClasses {
+	Handle_Dynamic_SequenceOfClasses GetHandle() {
+	return *(Handle_Dynamic_SequenceOfClasses*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfClasses {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_SequenceOfClasses {
+	~Dynamic_SequenceOfClasses() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfClasses\n");}
+	}
+};
+
+
 %nodefaultctor Dynamic_ParameterNode;
 class Dynamic_ParameterNode : public MMgt_TShared {
 	public:
@@ -2000,6 +2031,144 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 };
 
 
+%nodefaultctor Dynamic_Variable;
+class Dynamic_Variable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_Variable();
+		%feature("autodoc", "1");
+		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		%feature("autodoc", "1");
+		Handle_Dynamic_Parameter Parameter() const;
+		%feature("autodoc", "1");
+		void Mode(const Dynamic_ModeEnum amode);
+		%feature("autodoc", "1");
+		Dynamic_ModeEnum Mode() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_Variable {
+	Handle_Dynamic_Variable GetHandle() {
+	return *(Handle_Dynamic_Variable*) &$self;
+	}
+};
+%extend Dynamic_Variable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_Variable {
+	~Dynamic_Variable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
+	}
+};
+
+
+%nodefaultctor Dynamic_VariableGroup;
+class Dynamic_VariableGroup : public Dynamic_Variable {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_VariableGroup();
+
+};
+%extend Dynamic_VariableGroup {
+	Handle_Dynamic_VariableGroup GetHandle() {
+	return *(Handle_Dynamic_VariableGroup*) &$self;
+	}
+};
+%extend Dynamic_VariableGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_VariableGroup {
+	~Dynamic_VariableGroup() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
+	}
+};
+
+
+%nodefaultctor Dynamic_SequenceOfMethodDefinitions;
+class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_SequenceOfMethodDefinitions();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_MethodDefinition &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_MethodDefinition &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
+		%feature("autodoc", "1");
+		const Handle_Dynamic_MethodDefinition & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Dynamic_MethodDefinition & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Dynamic_SeqOfMethodDefinitions & Sequence() const;
+		%feature("autodoc", "1");
+		Dynamic_SeqOfMethodDefinitions & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceOfMethodDefinitions ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_SequenceOfMethodDefinitions {
+	Handle_Dynamic_SequenceOfMethodDefinitions GetHandle() {
+	return *(Handle_Dynamic_SequenceOfMethodDefinitions*) &$self;
+	}
+};
+%extend Dynamic_SequenceOfMethodDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_SequenceOfMethodDefinitions {
+	~Dynamic_SequenceOfMethodDefinitions() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");}
+	}
+};
+
+
 %nodefaultctor Dynamic_IntegerParameter;
 class Dynamic_IntegerParameter : public Dynamic_Parameter {
 	public:
@@ -2084,77 +2253,6 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 };
 
 
-%nodefaultctor Dynamic_SequenceOfFuzzyDefinitions;
-class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_SequenceOfFuzzyDefinitions();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfFuzzyDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfFuzzyDefinitions Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_FuzzyDefinition &anItem);
-		%feature("autodoc", "1");
-		const Handle_Dynamic_FuzzyDefinition & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinition & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Dynamic_SeqOfFuzzyDefinitions & Sequence() const;
-		%feature("autodoc", "1");
-		Dynamic_SeqOfFuzzyDefinitions & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfFuzzyDefinitions ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_SequenceOfFuzzyDefinitions {
-	Handle_Dynamic_SequenceOfFuzzyDefinitions GetHandle() {
-	return *(Handle_Dynamic_SequenceOfFuzzyDefinitions*) &$self;
-	}
-};
-%extend Dynamic_SequenceOfFuzzyDefinitions {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_SequenceOfFuzzyDefinitions {
-	~Dynamic_SequenceOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");}
-	}
-};
-
-
 %nodefaultctor Dynamic_ObjectParameter;
 class Dynamic_ObjectParameter : public Dynamic_Parameter {
 	public:
@@ -2218,77 +2316,6 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 	~Dynamic_AbstractVariableInstance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");}
-	}
-};
-
-
-%nodefaultctor Dynamic_SequenceOfMethodDefinitions;
-class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_SequenceOfMethodDefinitions();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfMethodDefinitions &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_MethodDefinition &anItem);
-		%feature("autodoc", "1");
-		const Handle_Dynamic_MethodDefinition & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Dynamic_MethodDefinition & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Dynamic_SeqOfMethodDefinitions & Sequence() const;
-		%feature("autodoc", "1");
-		Dynamic_SeqOfMethodDefinitions & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfMethodDefinitions ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_SequenceOfMethodDefinitions {
-	Handle_Dynamic_SequenceOfMethodDefinitions GetHandle() {
-	return *(Handle_Dynamic_SequenceOfMethodDefinitions*) &$self;
-	}
-};
-%extend Dynamic_SequenceOfMethodDefinitions {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_SequenceOfMethodDefinitions {
-	~Dynamic_SequenceOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -2422,82 +2449,9 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 };
 
 
-%nodefaultctor Dynamic_SequenceOfClasses;
-class Dynamic_SequenceOfClasses : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_SequenceOfClasses();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Dynamic_SequenceOfClasses &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfClasses Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Dynamic_DynamicClass &anItem);
-		%feature("autodoc", "1");
-		const Handle_Dynamic_DynamicClass & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Dynamic_DynamicClass & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Dynamic_SeqOfClasses & Sequence() const;
-		%feature("autodoc", "1");
-		Dynamic_SeqOfClasses & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceOfClasses ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_SequenceOfClasses {
-	Handle_Dynamic_SequenceOfClasses GetHandle() {
-	return *(Handle_Dynamic_SequenceOfClasses*) &$self;
-	}
-};
-%extend Dynamic_SequenceOfClasses {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dynamic_SequenceOfClasses {
-	~Dynamic_SequenceOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfClasses\n");}
-	}
-};
-
-
 %nodefaultctor Dynamic;
 class Dynamic {
 	public:
-		%feature("autodoc", "1");
-		Dynamic();
 		%feature("autodoc", "1");
 		Dynamic_ModeEnum Mode(const char * amode);
 
@@ -2539,6 +2493,52 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 	~Dynamic_DynamicDerivedClass() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");}
+	}
+};
+
+
+%nodefaultctor Dynamic_MethodDefinitionsDictionary;
+class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		void Creates(const char * afilename);
+		%feature("autodoc", "1");
+		Standard_Boolean Definition(const Handle_Dynamic_Method &adefinition);
+		%feature("autodoc", "1");
+		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Definition(const char * atype, Handle_Dynamic_Method & adefinition) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UpToDate() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfDefinitions() const;
+		%feature("autodoc", "1");
+		Handle_Dynamic_Method Definition(const Standard_Integer anindex) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_MethodDefinitionsDictionary {
+	Handle_Dynamic_MethodDefinitionsDictionary GetHandle() {
+	return *(Handle_Dynamic_MethodDefinitionsDictionary*) &$self;
+	}
+};
+%extend Dynamic_MethodDefinitionsDictionary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dynamic_MethodDefinitionsDictionary {
+	~Dynamic_MethodDefinitionsDictionary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
 

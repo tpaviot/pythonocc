@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepExtrema
 
+%include BRepExtrema_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -259,8 +261,6 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 %nodefaultctor BRepExtrema_Poly;
 class BRepExtrema_Poly {
 	public:
-		%feature("autodoc", "1");
-		BRepExtrema_Poly();
 		%feature("autodoc", "1");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 

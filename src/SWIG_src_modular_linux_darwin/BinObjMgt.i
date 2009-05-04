@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinObjMgt
 
+%include BinObjMgt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -111,12 +113,12 @@ Standard_Integer & function transformation
 
 %include BinObjMgt_headers.i
 
-typedef Standard_Integer * BinObjMgt_PInteger;
+typedef Standard_Byte * BinObjMgt_PByte;
 typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
-typedef Standard_Character * BinObjMgt_PChar;
 typedef Standard_ShortReal * BinObjMgt_PShortReal;
 typedef Standard_Real * BinObjMgt_PReal;
-typedef Standard_Byte * BinObjMgt_PByte;
+typedef Standard_Integer * BinObjMgt_PInteger;
+typedef Standard_Character * BinObjMgt_PChar;
 typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 
 
@@ -352,6 +354,41 @@ class BinObjMgt_Persistent {
 };
 
 
+%nodefaultctor BinObjMgt_RRelocationTable;
+class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BinObjMgt_RRelocationTable(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BinObjMgt_RRelocationTable & Assign(const BinObjMgt_RRelocationTable &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const Standard_Integer &K);
+
+};
+%extend BinObjMgt_RRelocationTable {
+	~BinObjMgt_RRelocationTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
+	}
+};
+
+
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
 class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	public:
@@ -402,41 +439,6 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 	~BinObjMgt_DataMapIteratorOfRRelocationTable() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");}
-	}
-};
-
-
-%nodefaultctor BinObjMgt_RRelocationTable;
-class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BinObjMgt_RRelocationTable(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BinObjMgt_RRelocationTable & Assign(const BinObjMgt_RRelocationTable &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Standard_Integer &K);
-
-};
-%extend BinObjMgt_RRelocationTable {
-	~BinObjMgt_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
 	}
 };
 

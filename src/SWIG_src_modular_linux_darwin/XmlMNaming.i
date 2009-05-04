@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMNaming
 
+%include XmlMNaming_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -321,8 +323,6 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 %nodefaultctor XmlMNaming;
 class XmlMNaming {
 	public:
-		%feature("autodoc", "1");
-		XmlMNaming();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
 

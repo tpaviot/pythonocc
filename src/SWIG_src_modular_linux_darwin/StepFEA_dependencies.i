@@ -842,8 +842,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import StepRepr.i
 %import StepBasic.i
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import StepGeom.i
 %import StepData.i
 %import Standard.i

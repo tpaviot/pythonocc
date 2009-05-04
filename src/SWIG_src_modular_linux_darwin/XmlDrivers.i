@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlDrivers
 
+%include XmlDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_XmlDrivers_DocumentRetrievalDriver;
-class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentRetrievalDriver(const Handle_XmlDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentRetrievalDriver(const XmlDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlDrivers_DocumentRetrievalDriver {
-	XmlDrivers_DocumentRetrievalDriver* GetObject() {
-	return (XmlDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlDrivers_DocumentRetrievalDriver {
-	~Handle_XmlDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlDrivers_DocumentStorageDriver;
 class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
 	public:
@@ -166,21 +142,28 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 };
 
 
-%nodefaultctor XmlDrivers;
-class XmlDrivers {
+%nodefaultctor Handle_XmlDrivers_DocumentRetrievalDriver;
+class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		XmlDrivers();
+		Handle_XmlDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		Handle_XmlDrivers_DocumentRetrievalDriver(const Handle_XmlDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		Handle_XmlDrivers_DocumentRetrievalDriver(const XmlDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend XmlDrivers {
-	~XmlDrivers() {
+%extend Handle_XmlDrivers_DocumentRetrievalDriver {
+	XmlDrivers_DocumentRetrievalDriver* GetObject() {
+	return (XmlDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlDrivers_DocumentRetrievalDriver {
+	~Handle_XmlDrivers_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -239,5 +222,22 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 	~XmlDrivers_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");}
+	}
+};
+
+
+%nodefaultctor XmlDrivers;
+class XmlDrivers {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+
+};
+%extend XmlDrivers {
+	~XmlDrivers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
 	}
 };

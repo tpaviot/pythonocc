@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module V2d
 
+%include V2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -146,6 +148,58 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 };
 
 
+%nodefaultctor Handle_V2d_RectangularGraphicGrid;
+class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
+	public:
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid();
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid(const Handle_V2d_RectangularGraphicGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid(const V2d_RectangularGraphicGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V2d_RectangularGraphicGrid {
+	V2d_RectangularGraphicGrid* GetObject() {
+	return (V2d_RectangularGraphicGrid*)$self->Access();
+	}
+};
+%extend Handle_V2d_RectangularGraphicGrid {
+	~Handle_V2d_RectangularGraphicGrid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
+	}
+};
+
+
+%nodefaultctor Handle_V2d_Viewer;
+class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
+	public:
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer();
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer(const Handle_V2d_Viewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer(const V2d_Viewer *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V2d_Viewer {
+	V2d_Viewer* GetObject() {
+	return (V2d_Viewer*)$self->Access();
+	}
+};
+%extend Handle_V2d_Viewer {
+	~Handle_V2d_Viewer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
+	}
+};
+
+
 %nodefaultctor Handle_V2d_View;
 class Handle_V2d_View : public Handle_Viewer_View {
 	public:
@@ -250,63 +304,9 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 };
 
 
-%nodefaultctor Handle_V2d_Viewer;
-class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
-	public:
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer();
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer(const Handle_V2d_Viewer &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer(const V2d_Viewer *anItem);
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V2d_Viewer {
-	V2d_Viewer* GetObject() {
-	return (V2d_Viewer*)$self->Access();
-	}
-};
-%extend Handle_V2d_Viewer {
-	~Handle_V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
-	}
-};
-
-
-%nodefaultctor Handle_V2d_RectangularGraphicGrid;
-class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
-	public:
-		%feature("autodoc", "1");
-		Handle_V2d_RectangularGraphicGrid();
-		%feature("autodoc", "1");
-		Handle_V2d_RectangularGraphicGrid(const Handle_V2d_RectangularGraphicGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_RectangularGraphicGrid(const V2d_RectangularGraphicGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_V2d_RectangularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V2d_RectangularGraphicGrid {
-	V2d_RectangularGraphicGrid* GetObject() {
-	return (V2d_RectangularGraphicGrid*)$self->Access();
-	}
-};
-%extend Handle_V2d_RectangularGraphicGrid {
-	~Handle_V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
-	}
-};
-
-
 %nodefaultctor V2d;
 class V2d {
 	public:
-		%feature("autodoc", "1");
-		V2d();
 		%feature("autodoc", "1");
 		void Draw(const Handle_V2d_Viewer &aViewer);
 
@@ -350,151 +350,6 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	~V2d_CircularGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of V2d_CircularGrid\n");}
-	}
-};
-
-
-%nodefaultctor V2d_View;
-class V2d_View : public Viewer_View {
-	public:
-		%feature("autodoc", "1");
-		V2d_View(const Handle_Aspect_WindowDriver &aWindowDriver, const Handle_V2d_Viewer &aViewer, const Quantity_Length aXCenter=0, const Quantity_Length aYCenter=0, const Quantity_Length aSize=1000);
-		%feature("autodoc", "1");
-		void SetDefaultPosition(const Quantity_Length aXCenter=0, const Quantity_Length aYCenter=0, const Quantity_Length aSize=1000);
-		%feature("autodoc", "1");
-		void Fitall();
-		%feature("autodoc", "1");
-		virtual		void WindowFit(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2);
-		%feature("autodoc", "1");
-		void Fit(const Quantity_Length aX1, const Quantity_Length aY1, const Quantity_Length aX2, const Quantity_Length aY2, const Standard_Boolean UseMinimum=1);
-		%feature("autodoc", "1");
-		void SetFitallRatio(const Quantity_Ratio aRatio);
-		%feature("autodoc", "1");
-		void Zoom(const Quantity_Factor Zoom);
-		%feature("autodoc", "1");
-		void Zoom(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
-		%feature("autodoc", "1");
-		void Zoom(const Standard_Integer aX, const Standard_Integer aY, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
-		%feature("autodoc", "1");
-		void Magnify(const Handle_V2d_View &anOriginView, const Standard_Integer X1, const Standard_Integer Y1, const Standard_Integer X2, const Standard_Integer Y2);
-		%feature("autodoc", "1");
-		void Translate(const Quantity_Length dx, const Quantity_Length dy);
-		%feature("autodoc", "1");
-		virtual		void Place(const Standard_Integer x, const Standard_Integer y, const Quantity_Factor aZoomFactor=1);
-		%feature("autodoc", "1");
-		void ScreenPlace(const Quantity_Length x, const Quantity_Length y, const Quantity_Factor aZoomFactor=1);
-		%feature("autodoc", "1");
-		void Pan(const Standard_Integer dx, const Standard_Integer dy);
-		%feature("autodoc", "1");
-		Quantity_Length Convert(const Standard_Integer V) const;
-		%feature("autodoc", "1");
-		void Convert(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Convert(const Quantity_Length aDriverSize) const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Previous();
-		%feature("autodoc", "1");
-		void DisableStorePrevious();
-		%feature("autodoc", "1");
-		void EnableStorePrevious();
-		%feature("autodoc", "1");
-		virtual		void Update() const;
-		%feature("autodoc", "1");
-		void UpdateNew() const;
-		%feature("autodoc", "1");
-		void RestoreArea(const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height) const;
-		%feature("autodoc", "1");
-		void Restore() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void Dump(const char * aFileName) const;
-		%feature("autodoc", "1");
-		Handle_Graphic2d_DisplayList Pick(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer aPrecision);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_DisplayList PickByCircle(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer Radius);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_DisplayList Pick(const Standard_Integer Xmin, const Standard_Integer Ymin, const Standard_Integer Xmax, const Standard_Integer Ymax, const Graphic2d_PickMode aPickMode=Graphic2d_PM_INCLUDE);
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc", "1");
-		void MustBeResized(const V2d_TypeOfWindowResizingEffect anEffect);
-		%feature("autodoc", "1");
-		void HasBeenMoved();
-		%feature("autodoc", "1");
-		void Plot(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Quantity_Length aXCenter, const Quantity_Length aYCenter, const Quantity_Factor aScale=1.0e+0) const;
-		%feature("autodoc", "1");
-		void Plot(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Quantity_Factor aScale=1.0e+0) const;
-		%feature("autodoc", "1");
-		void PlotScreen(const Handle_PlotMgt_PlotterDriver &aPlotterDriver) const;
-		%feature("autodoc", "1");
-		void ScreenCopy(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Standard_Boolean fWhiteBackground=1, const Quantity_Factor aScale=1.0e+0);
-		%feature("autodoc", "1");
-		void PostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_Length aXCenter, const Quantity_Length aYCenter, const Quantity_Factor aScale, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
-		%feature("autodoc", "1");
-		void ScreenPostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
-		%feature("autodoc", "1");
-		void Hit(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void ShowHit(const Standard_Integer X, const Standard_Integer Y);
-		%feature("autodoc", "1");
-		void EraseHit();
-		%feature("autodoc", "1");
-		void SetDefaultHighlightColor(const Standard_Integer aColorIndex);
-		%feature("autodoc", "1");
-		void SetDeflection(const Quantity_Length aDeflection);
-		%feature("autodoc", "1");
-		Quantity_Length Deflection() const;
-		%feature("autodoc", "1");
-		Handle_Graphic2d_View View() const;
-		%feature("autodoc", "1");
-		Handle_V2d_Viewer Viewer() const;
-		%feature("autodoc", "1");
-		Handle_Aspect_WindowDriver Driver() const;
-		%feature("autodoc", "1");
-		Quantity_Factor Zoom() const;
-		%feature("autodoc", "1");
-		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Size() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Color() const;
-		%feature("autodoc", "1");
-		void Color(Quantity_Color & color) const;
-		%feature("autodoc", "1");
-		void Scroll(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer DefaultHighlightColor() const;
-		%feature("autodoc", "1");
-		void Fit(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2);
-		%feature("autodoc", "1");
-		void SetBackground(const Quantity_NameOfColor aNameColor);
-		%feature("autodoc", "1");
-		void SetBackground(const Quantity_Color &color);
-		%feature("autodoc", "1");
-		Standard_Boolean SetBackground(const char * aNameFile, const Aspect_FillMethod aMethod=Aspect_FM_CENTERED);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V2d_View {
-	Handle_V2d_View GetHandle() {
-	return *(Handle_V2d_View*) &$self;
-	}
-};
-%extend V2d_View {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V2d_View {
-	~V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
 	}
 };
 
@@ -562,8 +417,6 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 %nodefaultctor V2d_DefaultMap;
 class V2d_DefaultMap {
 	public:
-		%feature("autodoc", "1");
-		V2d_DefaultMap();
 		%feature("autodoc", "1");
 		Handle_Aspect_GenericColorMap ColorMap();
 		%feature("autodoc", "1");
@@ -739,5 +592,150 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	~V2d_RectangularGraphicGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
+	}
+};
+
+
+%nodefaultctor V2d_View;
+class V2d_View : public Viewer_View {
+	public:
+		%feature("autodoc", "1");
+		V2d_View(const Handle_Aspect_WindowDriver &aWindowDriver, const Handle_V2d_Viewer &aViewer, const Quantity_Length aXCenter=0, const Quantity_Length aYCenter=0, const Quantity_Length aSize=1000);
+		%feature("autodoc", "1");
+		void SetDefaultPosition(const Quantity_Length aXCenter=0, const Quantity_Length aYCenter=0, const Quantity_Length aSize=1000);
+		%feature("autodoc", "1");
+		void Fitall();
+		%feature("autodoc", "1");
+		virtual		void WindowFit(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2);
+		%feature("autodoc", "1");
+		void Fit(const Quantity_Length aX1, const Quantity_Length aY1, const Quantity_Length aX2, const Quantity_Length aY2, const Standard_Boolean UseMinimum=1);
+		%feature("autodoc", "1");
+		void SetFitallRatio(const Quantity_Ratio aRatio);
+		%feature("autodoc", "1");
+		void Zoom(const Quantity_Factor Zoom);
+		%feature("autodoc", "1");
+		void Zoom(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
+		%feature("autodoc", "1");
+		void Zoom(const Standard_Integer aX, const Standard_Integer aY, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
+		%feature("autodoc", "1");
+		void Magnify(const Handle_V2d_View &anOriginView, const Standard_Integer X1, const Standard_Integer Y1, const Standard_Integer X2, const Standard_Integer Y2);
+		%feature("autodoc", "1");
+		void Translate(const Quantity_Length dx, const Quantity_Length dy);
+		%feature("autodoc", "1");
+		virtual		void Place(const Standard_Integer x, const Standard_Integer y, const Quantity_Factor aZoomFactor=1);
+		%feature("autodoc", "1");
+		void ScreenPlace(const Quantity_Length x, const Quantity_Length y, const Quantity_Factor aZoomFactor=1);
+		%feature("autodoc", "1");
+		void Pan(const Standard_Integer dx, const Standard_Integer dy);
+		%feature("autodoc", "1");
+		Quantity_Length Convert(const Standard_Integer V) const;
+		%feature("autodoc", "1");
+		void Convert(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Convert(const Quantity_Length aDriverSize) const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Previous();
+		%feature("autodoc", "1");
+		void DisableStorePrevious();
+		%feature("autodoc", "1");
+		void EnableStorePrevious();
+		%feature("autodoc", "1");
+		virtual		void Update() const;
+		%feature("autodoc", "1");
+		void UpdateNew() const;
+		%feature("autodoc", "1");
+		void RestoreArea(const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height) const;
+		%feature("autodoc", "1");
+		void Restore() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void Dump(const char * aFileName) const;
+		%feature("autodoc", "1");
+		Handle_Graphic2d_DisplayList Pick(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer aPrecision);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_DisplayList PickByCircle(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer Radius);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_DisplayList Pick(const Standard_Integer Xmin, const Standard_Integer Ymin, const Standard_Integer Xmax, const Standard_Integer Ymax, const Graphic2d_PickMode aPickMode=Graphic2d_PM_INCLUDE);
+		%feature("autodoc", "1");
+		void Erase();
+		%feature("autodoc", "1");
+		void MustBeResized(const V2d_TypeOfWindowResizingEffect anEffect);
+		%feature("autodoc", "1");
+		void HasBeenMoved();
+		%feature("autodoc", "1");
+		void Plot(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Quantity_Length aXCenter, const Quantity_Length aYCenter, const Quantity_Factor aScale=1.0e+0) const;
+		%feature("autodoc", "1");
+		void Plot(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Quantity_Factor aScale=1.0e+0) const;
+		%feature("autodoc", "1");
+		void PlotScreen(const Handle_PlotMgt_PlotterDriver &aPlotterDriver) const;
+		%feature("autodoc", "1");
+		void ScreenCopy(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Standard_Boolean fWhiteBackground=1, const Quantity_Factor aScale=1.0e+0);
+		%feature("autodoc", "1");
+		void PostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_Length aXCenter, const Quantity_Length aYCenter, const Quantity_Factor aScale, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
+		%feature("autodoc", "1");
+		void ScreenPostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
+		%feature("autodoc", "1");
+		void Hit(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void ShowHit(const Standard_Integer X, const Standard_Integer Y);
+		%feature("autodoc", "1");
+		void EraseHit();
+		%feature("autodoc", "1");
+		void SetDefaultHighlightColor(const Standard_Integer aColorIndex);
+		%feature("autodoc", "1");
+		void SetDeflection(const Quantity_Length aDeflection);
+		%feature("autodoc", "1");
+		Quantity_Length Deflection() const;
+		%feature("autodoc", "1");
+		Handle_Graphic2d_View View() const;
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer Viewer() const;
+		%feature("autodoc", "1");
+		Handle_Aspect_WindowDriver Driver() const;
+		%feature("autodoc", "1");
+		Quantity_Factor Zoom() const;
+		%feature("autodoc", "1");
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Size() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Color() const;
+		%feature("autodoc", "1");
+		void Color(Quantity_Color & color) const;
+		%feature("autodoc", "1");
+		void Scroll(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Integer DefaultHighlightColor() const;
+		%feature("autodoc", "1");
+		void Fit(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2);
+		%feature("autodoc", "1");
+		void SetBackground(const Quantity_NameOfColor aNameColor);
+		%feature("autodoc", "1");
+		void SetBackground(const Quantity_Color &color);
+		%feature("autodoc", "1");
+		Standard_Boolean SetBackground(const char * aNameFile, const Aspect_FillMethod aMethod=Aspect_FM_CENTERED);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V2d_View {
+	Handle_V2d_View GetHandle() {
+	return *(Handle_V2d_View*) &$self;
+	}
+};
+%extend V2d_View {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend V2d_View {
+	~V2d_View() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module VrmlAPI
 
+%include VrmlAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -123,8 +125,6 @@ enum VrmlAPI_RepresentationOfShape {
 %nodefaultctor VrmlAPI;
 class VrmlAPI {
 	public:
-		%feature("autodoc", "1");
-		VrmlAPI();
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 

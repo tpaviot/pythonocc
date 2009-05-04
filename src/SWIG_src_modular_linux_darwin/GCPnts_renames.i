@@ -1,0 +1,13 @@
+%rename(Linear) GCPnts_Linear;
+%rename(UniformAbscissa) GCPnts_UniformAbscissa;
+%rename(LengthParametrized) GCPnts_LengthParametrized;
+%rename(QuasiUniformAbscissa) GCPnts_QuasiUniformAbscissa;
+%rename(TangentialDeflection) GCPnts_TangentialDeflection;
+%rename(Parametrized) GCPnts_Parametrized;
+%rename(DefComposite) GCPnts_DefComposite;
+%rename(Curved) GCPnts_Curved;
+%rename(QuasiUniformDeflection) GCPnts_QuasiUniformDeflection;
+%rename(UniformDeflection) GCPnts_UniformDeflection;
+%rename(AbsComposite) GCPnts_AbsComposite;
+%rename(AbscissaPoint) GCPnts_AbscissaPoint;
+%rename(Circular) GCPnts_Circular;

@@ -57,5 +57,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Lin.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Vec.hxx>
-#include<GProp.hxx>
 %}

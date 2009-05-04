@@ -94,5 +94,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<TopLoc_Location.hxx>
 #include<Standard_SStream.hxx>
-#include<TopoDS.hxx>
 %}

@@ -1,0 +1,5 @@
+%rename(DocumentRetrievalDriver) XmlXCAFDrivers_DocumentRetrievalDriver;
+%rename(DocumentStorageDriver) XmlXCAFDrivers_DocumentStorageDriver;
+%rename(Handle_DocumentRetrievalDriver) Handle_XmlXCAFDrivers_DocumentRetrievalDriver;
+%rename(XmlXCAFDrivers) XmlXCAFDrivers;
+%rename(Handle_DocumentStorageDriver) Handle_XmlXCAFDrivers_DocumentStorageDriver;

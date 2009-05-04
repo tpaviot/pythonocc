@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomAPI
 
+%include GeomAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -169,6 +171,51 @@ class GeomAPI_ProjectPointOnSurf {
 };
 
 
+%nodefaultctor GeomAPI_ProjectPointOnCurve;
+class GeomAPI_ProjectPointOnCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve();
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Parameter(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt NearestPoint() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter LowerDistanceParameter() const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtPC & Extrema() const;
+
+};
+%extend GeomAPI_ProjectPointOnCurve {
+	~GeomAPI_ProjectPointOnCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");}
+	}
+};
+
+
 %nodefaultctor GeomAPI_Interpolate;
 class GeomAPI_Interpolate {
 	public:
@@ -260,39 +307,6 @@ class GeomAPI_ExtremaSurfaceSurface {
 };
 
 
-%nodefaultctor GeomAPI_IntCS;
-class GeomAPI_IntCS {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_IntCS();
-		%feature("autodoc", "1");
-		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend GeomAPI_IntCS {
-	~GeomAPI_IntCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
-	}
-};
-
-
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
 class GeomAPI_PointsToBSplineSurface {
 	public:
@@ -325,8 +339,6 @@ class GeomAPI_PointsToBSplineSurface {
 %nodefaultctor GeomAPI;
 class GeomAPI {
 	public:
-		%feature("autodoc", "1");
-		GeomAPI();
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve To2d(const Handle_Geom_Curve &C, const gp_Pln &P);
 		%feature("autodoc", "1");
@@ -382,6 +394,39 @@ class GeomAPI_ExtremaCurveCurve {
 	~GeomAPI_ExtremaCurveCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_IntCS;
+class GeomAPI_IntCS {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_IntCS();
+		%feature("autodoc", "1");
+		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend GeomAPI_IntCS {
+	~GeomAPI_IntCS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
 	}
 };
 
@@ -446,50 +491,5 @@ class GeomAPI_ExtremaCurveSurface {
 	~GeomAPI_ExtremaCurveSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_ProjectPointOnCurve;
-class GeomAPI_ProjectPointOnCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve();
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Parameter(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt NearestPoint() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter LowerDistanceParameter() const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtPC & Extrema() const;
-
-};
-%extend GeomAPI_ProjectPointOnCurve {
-	~GeomAPI_ProjectPointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");}
 	}
 };

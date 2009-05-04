@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StdLDrivers
 
+%include StdLDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -169,8 +171,6 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 %nodefaultctor StdLDrivers;
 class StdLDrivers {
 	public:
-		%feature("autodoc", "1");
-		StdLDrivers();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 

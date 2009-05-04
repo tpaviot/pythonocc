@@ -1,0 +1,16 @@
+%rename(IndexedMapNodeOfIndexedMapOfPnt) IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
+%rename(PlaneSection) IntPoly_PlaneSection;
+%rename(IndexedMapOfPnt) IntPoly_IndexedMapOfPnt;
+%rename(ShapeSection) IntPoly_ShapeSection;
+%rename(Handle_SequenceNodeOfSequenceOfSequenceOfPnt) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
+%rename(Pnt2dHasher) IntPoly_Pnt2dHasher;
+%rename(Handle_IndexedMapNodeOfIndexedMapOfPnt) Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
+%rename(IndexedMapNodeOfIndexedMapOfPnt2d) IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
+%rename(IndexedMapOfPnt2d) IntPoly_IndexedMapOfPnt2d;
+%rename(Handle_IndexedMapNodeOfIndexedMapOfPnt2d) Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
+%rename(SequenceOfSequenceOfPnt2d) IntPoly_SequenceOfSequenceOfPnt2d;
+%rename(SequenceNodeOfSequenceOfSequenceOfPnt2d) IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
+%rename(SequenceNodeOfSequenceOfSequenceOfPnt) IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
+%rename(SequenceOfSequenceOfPnt) IntPoly_SequenceOfSequenceOfPnt;
+%rename(PntHasher) IntPoly_PntHasher;
+%rename(Handle_SequenceNodeOfSequenceOfSequenceOfPnt2d) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;

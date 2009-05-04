@@ -494,9 +494,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_TColStd_HSequenceOfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 #include<TopoDS_Edge.hxx>
-#include<ShapeUpgrade.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_TColGeom_HSequenceOfBoundedCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
@@ -504,6 +503,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Wire.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_ShapeAnalysis_TransferParameters.hxx>
-#include<TopTools_SequenceOfShape.hxx>
 #include<Handle_ShapeExtend_CompositeSurface.hxx>
+#include<TopTools_SequenceOfShape.hxx>
 %}

@@ -492,11 +492,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_StepRepr_DefinitionalRepresentation.hxx>
-#include<Handle_StepData_SelectMember.hxx>
 #include<Handle_StepRepr_GlobalUnitAssignedContext.hxx>
 #include<Handle_StepRepr_GlobalUncertaintyAssignedContext.hxx>
 #include<Handle_StepBasic_HArray1OfNamedUnit.hxx>
 #include<Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit.hxx>
 #include<Handle_StepBasic_NamedUnit.hxx>
 #include<Handle_StepBasic_UncertaintyMeasureWithUnit.hxx>
+#include<Handle_StepData_SelectMember.hxx>
 %}

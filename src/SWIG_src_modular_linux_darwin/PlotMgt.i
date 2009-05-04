@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PlotMgt
 
+%include PlotMgt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -569,6 +571,41 @@ class PlotMgt_ListOfMFTSizes {
 	~PlotMgt_ListOfMFTSizes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");}
+	}
+};
+
+
+%nodefaultctor PlotMgt_PlotterAccessError;
+class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		PlotMgt_PlotterAccessError();
+		%feature("autodoc", "1");
+		PlotMgt_PlotterAccessError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_PlotterAccessError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PlotMgt_PlotterAccessError {
+	Handle_PlotMgt_PlotterAccessError GetHandle() {
+	return *(Handle_PlotMgt_PlotterAccessError*) &$self;
+	}
+};
+%extend PlotMgt_PlotterAccessError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PlotMgt_PlotterAccessError {
+	~PlotMgt_PlotterAccessError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterAccessError\n");}
 	}
 };
 
@@ -1218,8 +1255,6 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 class PlotMgt {
 	public:
 		%feature("autodoc", "1");
-		PlotMgt();
-		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString DeviceList();
 		%feature("autodoc", "1");
 		PlotMgt_TypeOfPlotterParameter TypeFromString(TCollection_AsciiString & aTypeString);
@@ -1288,41 +1323,6 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 	~PlotMgt_PlotterDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor PlotMgt_PlotterAccessError;
-class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		PlotMgt_PlotterAccessError();
-		%feature("autodoc", "1");
-		PlotMgt_PlotterAccessError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_PlotterAccessError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PlotMgt_PlotterAccessError {
-	Handle_PlotMgt_PlotterAccessError GetHandle() {
-	return *(Handle_PlotMgt_PlotterAccessError*) &$self;
-	}
-};
-%extend PlotMgt_PlotterAccessError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PlotMgt_PlotterAccessError {
-	~PlotMgt_PlotterAccessError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterAccessError\n");}
 	}
 };
 

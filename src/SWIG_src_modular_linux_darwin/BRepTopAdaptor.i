@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepTopAdaptor
 
+%include BRepTopAdaptor_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -214,35 +216,6 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
-class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
-	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
-	}
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };
 
@@ -567,5 +540,34 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 	~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
+	}
+};
+
+
+%nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
+class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Standard_Address & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
+	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
+	}
+};
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };

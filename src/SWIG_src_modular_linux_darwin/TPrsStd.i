@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TPrsStd
 
+%include TPrsStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -404,8 +406,6 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 class TPrsStd_ConstraintTools {
 	public:
 		%feature("autodoc", "1");
-		TPrsStd_ConstraintTools();
-		%feature("autodoc", "1");
 		void UpdateOnlyValue(const Handle_TDataStd_Constraint &aConst, const Handle_AIS_InteractiveObject &anAIS);
 		%feature("autodoc", "1");
 		void ComputeDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
@@ -719,35 +719,6 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 };
 
 
-%nodefaultctor TPrsStd_AxisDriver;
-class TPrsStd_AxisDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_AxisDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_AxisDriver {
-	Handle_TPrsStd_AxisDriver GetHandle() {
-	return *(Handle_TPrsStd_AxisDriver*) &$self;
-	}
-};
-%extend TPrsStd_AxisDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_AxisDriver {
-	~TPrsStd_AxisDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AxisDriver\n");}
-	}
-};
-
-
 %nodefaultctor TPrsStd_PlaneDriver;
 class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 	public:
@@ -830,6 +801,35 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 	~TPrsStd_AISViewer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_AISViewer\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_AxisDriver;
+class TPrsStd_AxisDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_AxisDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_AxisDriver {
+	Handle_TPrsStd_AxisDriver GetHandle() {
+	return *(Handle_TPrsStd_AxisDriver*) &$self;
+	}
+};
+%extend TPrsStd_AxisDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_AxisDriver {
+	~TPrsStd_AxisDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_AxisDriver\n");}
 	}
 };
 

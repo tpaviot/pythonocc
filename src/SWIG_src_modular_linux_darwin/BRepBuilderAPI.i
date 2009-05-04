@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepBuilderAPI
 
+%include BRepBuilderAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,6 +114,14 @@ Standard_Integer & function transformation
 %include BRepBuilderAPI_headers.i
 
 
+enum BRepBuilderAPI_ShapeModification {
+	BRepBuilderAPI_Preserved,
+	BRepBuilderAPI_Deleted,
+	BRepBuilderAPI_Trimmed,
+	BRepBuilderAPI_Merged,
+	BRepBuilderAPI_BoundaryModified,
+	};
+
 enum BRepBuilderAPI_FaceError {
 	BRepBuilderAPI_FaceDone,
 	BRepBuilderAPI_NoFace,
@@ -132,14 +142,6 @@ enum BRepBuilderAPI_TransitionMode {
 	BRepBuilderAPI_Transformed,
 	BRepBuilderAPI_RightCorner,
 	BRepBuilderAPI_RoundCorner,
-	};
-
-enum BRepBuilderAPI_ShapeModification {
-	BRepBuilderAPI_Preserved,
-	BRepBuilderAPI_Deleted,
-	BRepBuilderAPI_Trimmed,
-	BRepBuilderAPI_Merged,
-	BRepBuilderAPI_BoundaryModified,
 	};
 
 enum BRepBuilderAPI_WireError {
@@ -539,6 +541,77 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 };
 
 
+%nodefaultctor BRepBuilderAPI_MakeFace;
+class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace();
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Pln &P);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cylinder &C);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cone &C);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Sphere &S);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Torus &C);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Pln &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cylinder &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cone &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Sphere &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Torus &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const TopoDS_Wire &W, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Pln &P, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cylinder &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Cone &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Sphere &S, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const gp_Torus &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakeFace(const TopoDS_Face &F, const TopoDS_Wire &W);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound=1);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Wire &W);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		BRepBuilderAPI_FaceError Error() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+
+};
+%extend BRepBuilderAPI_MakeFace {
+	~BRepBuilderAPI_MakeFace() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeFace\n");}
+	}
+};
+
+
 %nodefaultctor BRepBuilderAPI_MakeShell;
 class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 	public:
@@ -748,8 +821,6 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 class BRepBuilderAPI {
 	public:
 		%feature("autodoc", "1");
-		BRepBuilderAPI();
-		%feature("autodoc", "1");
 		void Plane(const Handle_Geom_Plane &P);
 		%feature("autodoc", "1");
 		const Handle_Geom_Plane & Plane();
@@ -786,33 +857,6 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 	~BRepBuilderAPI_Transform() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Transform\n");}
-	}
-};
-
-
-%nodefaultctor BRepBuilderAPI_Collect;
-class BRepBuilderAPI_Collect {
-	public:
-		%feature("autodoc", "1");
-		BRepBuilderAPI_Collect();
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape &SI, BRepBuilderAPI_MakeShape & MKS);
-		%feature("autodoc", "1");
-		void AddGenerated(const TopoDS_Shape &S, const TopoDS_Shape &Gen);
-		%feature("autodoc", "1");
-		void AddModif(const TopoDS_Shape &S, const TopoDS_Shape &Mod);
-		%feature("autodoc", "1");
-		void Filter(const TopoDS_Shape &SF);
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeListOfShape & Modification() const;
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeListOfShape & Generated() const;
-
-};
-%extend BRepBuilderAPI_Collect {
-	~BRepBuilderAPI_Collect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Collect\n");}
 	}
 };
 
@@ -875,73 +919,29 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 };
 
 
-%nodefaultctor BRepBuilderAPI_MakeFace;
-class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
+%nodefaultctor BRepBuilderAPI_Collect;
+class BRepBuilderAPI_Collect {
 	public:
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace();
+		BRepBuilderAPI_Collect();
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const TopoDS_Face &F);
+		void Add(const TopoDS_Shape &SI, BRepBuilderAPI_MakeShape & MKS);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Pln &P);
+		void AddGenerated(const TopoDS_Shape &S, const TopoDS_Shape &Gen);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cylinder &C);
+		void AddModif(const TopoDS_Shape &S, const TopoDS_Shape &Mod);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cone &C);
+		void Filter(const TopoDS_Shape &SF);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Sphere &S);
+		const TopTools_DataMapOfShapeListOfShape & Modification() const;
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Torus &C);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Pln &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cylinder &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cone &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Sphere &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Torus &C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const TopoDS_Wire &W, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Pln &P, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cylinder &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Cone &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Sphere &S, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const gp_Torus &C, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const TopoDS_Wire &W, const Standard_Boolean Inside=1);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const TopoDS_Face &F, const TopoDS_Wire &W);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound=1);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Wire &W);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		BRepBuilderAPI_FaceError Error() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
+		const TopTools_DataMapOfShapeListOfShape & Generated() const;
 
 };
-%extend BRepBuilderAPI_MakeFace {
-	~BRepBuilderAPI_MakeFace() {
+%extend BRepBuilderAPI_Collect {
+	~BRepBuilderAPI_Collect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeFace\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Collect\n");}
 	}
 };
 

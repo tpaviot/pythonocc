@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PTColStd
 
+%include PTColStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -196,8 +198,6 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 class PTColStd_MapPersistentHasher {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_MapPersistentHasher();
-		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
@@ -207,6 +207,29 @@ class PTColStd_MapPersistentHasher {
 	~PTColStd_MapPersistentHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PTColStd_MapPersistentHasher\n");}
+	}
+};
+
+
+%nodefaultctor PTColStd_DataMapIteratorOfPersistentTransientMap;
+class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		PTColStd_DataMapIteratorOfPersistentTransientMap();
+		%feature("autodoc", "1");
+		PTColStd_DataMapIteratorOfPersistentTransientMap(const PTColStd_PersistentTransientMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const PTColStd_PersistentTransientMap &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+
+};
+%extend PTColStd_DataMapIteratorOfPersistentTransientMap {
+	~PTColStd_DataMapIteratorOfPersistentTransientMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");}
 	}
 };
 
@@ -341,25 +364,25 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor PTColStd_DataMapIteratorOfPersistentTransientMap;
-class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_BasicMapIterator {
+%nodefaultctor PTColStd_DataMapIteratorOfTransientPersistentMap;
+class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_DataMapIteratorOfPersistentTransientMap();
+		PTColStd_DataMapIteratorOfTransientPersistentMap();
 		%feature("autodoc", "1");
-		PTColStd_DataMapIteratorOfPersistentTransientMap(const PTColStd_PersistentTransientMap &aMap);
+		PTColStd_DataMapIteratorOfTransientPersistentMap(const PTColStd_TransientPersistentMap &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const PTColStd_PersistentTransientMap &aMap);
+		void Initialize(const PTColStd_TransientPersistentMap &aMap);
 		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Key() const;
+		const Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
+		const Handle_Standard_Persistent & Value() const;
 
 };
-%extend PTColStd_DataMapIteratorOfPersistentTransientMap {
-	~PTColStd_DataMapIteratorOfPersistentTransientMap() {
+%extend PTColStd_DataMapIteratorOfTransientPersistentMap {
+	~PTColStd_DataMapIteratorOfTransientPersistentMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");}
+	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");}
 	}
 };
 
@@ -424,29 +447,6 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 	~PTColStd_DataMapNodeOfPersistentTransientMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapNodeOfPersistentTransientMap\n");}
-	}
-};
-
-
-%nodefaultctor PTColStd_DataMapIteratorOfTransientPersistentMap;
-class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		PTColStd_DataMapIteratorOfTransientPersistentMap();
-		%feature("autodoc", "1");
-		PTColStd_DataMapIteratorOfTransientPersistentMap(const PTColStd_TransientPersistentMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const PTColStd_TransientPersistentMap &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value() const;
-
-};
-%extend PTColStd_DataMapIteratorOfTransientPersistentMap {
-	~PTColStd_DataMapIteratorOfTransientPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");}
 	}
 };
 

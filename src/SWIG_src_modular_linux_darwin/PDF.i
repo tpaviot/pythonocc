@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PDF
 
+%include PDF_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,32 +168,6 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 };
 
 
-%nodefaultctor Handle_PDF_TagSource;
-class Handle_PDF_TagSource : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PDF_TagSource();
-		%feature("autodoc", "1");
-		Handle_PDF_TagSource(const Handle_PDF_TagSource &aHandle);
-		%feature("autodoc", "1");
-		Handle_PDF_TagSource(const PDF_TagSource *anItem);
-		%feature("autodoc", "1");
-		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PDF_TagSource {
-	PDF_TagSource* GetObject() {
-	return (PDF_TagSource*)$self->Access();
-	}
-};
-%extend Handle_PDF_TagSource {
-	~Handle_PDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_TagSource\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PDF_Data;
 class Handle_PDF_Data : public Handle_Standard_Persistent {
 	public:
@@ -214,6 +190,32 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 	~Handle_PDF_Data() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Data\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PDF_TagSource;
+class Handle_PDF_TagSource : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PDF_TagSource();
+		%feature("autodoc", "1");
+		Handle_PDF_TagSource(const Handle_PDF_TagSource &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_TagSource(const PDF_TagSource *anItem);
+		%feature("autodoc", "1");
+		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PDF_TagSource {
+	PDF_TagSource* GetObject() {
+	return (PDF_TagSource*)$self->Access();
+	}
+};
+%extend Handle_PDF_TagSource {
+	~Handle_PDF_TagSource() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_TagSource\n");}
 	}
 };
 
@@ -375,6 +377,37 @@ class PDF_TagSource : public PDF_Attribute {
 };
 
 
+%nodefaultctor PDF_FieldOfHAttributeArray1;
+class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1();
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1(const PDF_FieldOfHAttributeArray1 &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PDF_FieldOfHAttributeArray1 &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PDF_FieldOfHAttributeArray1 {
+	~PDF_FieldOfHAttributeArray1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
+	}
+};
+
+
 %nodefaultctor PDF_VArrayNodeOfFieldOfHAttributeArray1;
 class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 	public:
@@ -525,37 +558,6 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 	~PDF_HAttributeArray1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PDF_HAttributeArray1\n");}
-	}
-};
-
-
-%nodefaultctor PDF_FieldOfHAttributeArray1;
-class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1();
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1(const PDF_FieldOfHAttributeArray1 &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PDF_FieldOfHAttributeArray1 &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
-		%feature("autodoc", "1");
-		Handle_PDF_Attribute & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_PDF_Attribute & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PDF_FieldOfHAttributeArray1 {
-	~PDF_FieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
 	}
 };
 

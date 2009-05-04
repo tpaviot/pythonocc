@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IFGraph
 
+%include IFGraph_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -149,6 +151,29 @@ class IFGraph_Compare : public Interface_GraphContent {
 };
 
 
+%nodefaultctor IFGraph_AllConnected;
+class IFGraph_AllConnected : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%extend IFGraph_AllConnected {
+	~IFGraph_AllConnected() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
+	}
+};
+
+
 %nodefaultctor IFGraph_SubPartsIterator;
 class IFGraph_SubPartsIterator {
 	public:
@@ -212,57 +237,11 @@ class IFGraph_SubPartsIterator {
 };
 
 
-%nodefaultctor IFGraph_Cycles;
-class IFGraph_Cycles : public IFGraph_SubPartsIterator {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_Cycles(IFGraph_Cycles & arg0);
-		%feature("autodoc", "1");
-		IFGraph_Cycles(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		IFGraph_Cycles(IFGraph_StrongComponants & subparts);
-
-};
-%extend IFGraph_Cycles {
-	~IFGraph_Cycles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Cycles\n");}
-	}
-};
-
-
-%nodefaultctor IFGraph_AllConnected;
-class IFGraph_AllConnected : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%extend IFGraph_AllConnected {
-	~IFGraph_AllConnected() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
-	}
-};
-
-
 %nodefaultctor IFGraph_StrongComponants;
 class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 	public:
 		%feature("autodoc", "1");
-		IFGraph_StrongComponants(IFGraph_StrongComponants & arg0);
-		%feature("autodoc", "1");
 		IFGraph_StrongComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
 
 };
 %extend IFGraph_StrongComponants {
@@ -276,8 +255,6 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 %nodefaultctor IFGraph_ConnectedComponants;
 class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	public:
-		%feature("autodoc", "1");
-		IFGraph_ConnectedComponants(IFGraph_ConnectedComponants & arg0);
 		%feature("autodoc", "1");
 		IFGraph_ConnectedComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
@@ -402,8 +379,6 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 class IFGraph_SCRoots : public IFGraph_StrongComponants {
 	public:
 		%feature("autodoc", "1");
-		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
-		%feature("autodoc", "1");
 		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
@@ -415,5 +390,24 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 	~IFGraph_SCRoots() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
+	}
+};
+
+
+%nodefaultctor IFGraph_Cycles;
+class IFGraph_Cycles : public IFGraph_SubPartsIterator {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_Cycles(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		IFGraph_Cycles(IFGraph_StrongComponants & subparts);
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%extend IFGraph_Cycles {
+	~IFGraph_Cycles() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFGraph_Cycles\n");}
 	}
 };

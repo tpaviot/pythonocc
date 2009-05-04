@@ -213,7 +213,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_IGESDimen_GeneralNote.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
-#include<IGESAppli.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfReal.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>

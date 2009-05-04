@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRep
 
+%include BRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -322,6 +324,58 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 };
 
 
+%nodefaultctor Handle_BRep_PolygonOnSurface;
+class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface();
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface(const Handle_BRep_PolygonOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface(const BRep_PolygonOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_PolygonOnSurface {
+	BRep_PolygonOnSurface* GetObject() {
+	return (BRep_PolygonOnSurface*)$self->Access();
+	}
+};
+%extend Handle_BRep_PolygonOnSurface {
+	~Handle_BRep_PolygonOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRep_PolygonOnClosedSurface;
+class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface();
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface(const Handle_BRep_PolygonOnClosedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface(const BRep_PolygonOnClosedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_PolygonOnClosedSurface {
+	BRep_PolygonOnClosedSurface* GetObject() {
+	return (BRep_PolygonOnClosedSurface*)$self->Access();
+	}
+};
+%extend Handle_BRep_PolygonOnClosedSurface {
+	~Handle_BRep_PolygonOnClosedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRep_TVertex;
 class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 	public:
@@ -396,58 +450,6 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 	~Handle_BRep_ListNodeOfListOfPointRepresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfPointRepresentation\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRep_PolygonOnSurface;
-class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnSurface();
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnSurface(const Handle_BRep_PolygonOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnSurface(const BRep_PolygonOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_PolygonOnSurface {
-	BRep_PolygonOnSurface* GetObject() {
-	return (BRep_PolygonOnSurface*)$self->Access();
-	}
-};
-%extend Handle_BRep_PolygonOnSurface {
-	~Handle_BRep_PolygonOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRep_PolygonOnClosedSurface;
-class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedSurface();
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedSurface(const Handle_BRep_PolygonOnClosedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedSurface(const BRep_PolygonOnClosedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_PolygonOnClosedSurface {
-	BRep_PolygonOnClosedSurface* GetObject() {
-	return (BRep_PolygonOnClosedSurface*)$self->Access();
-	}
-};
-%extend Handle_BRep_PolygonOnClosedSurface {
-	~Handle_BRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -660,67 +662,6 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 };
 
 
-%nodefaultctor BRep_PointRepresentation;
-class BRep_PointRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & Location() const;
-		%feature("autodoc", "1");
-		void Location(const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter2() const;
-		%feature("autodoc", "1");
-		virtual		void Parameter2(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		void Curve(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom2d_Curve & PCurve() const;
-		%feature("autodoc", "1");
-		virtual		void PCurve(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		virtual		void Surface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PointRepresentation {
-	Handle_BRep_PointRepresentation GetHandle() {
-	return *(Handle_BRep_PointRepresentation*) &$self;
-	}
-};
-%extend BRep_PointRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRep_PointRepresentation {
-	~BRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
-	}
-};
-
-
 %nodefaultctor BRep_CurveRepresentation;
 class BRep_CurveRepresentation : public MMgt_TShared {
 	public:
@@ -894,15 +835,70 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 };
 
 
-%nodefaultctor BRep_PointsOnSurface;
-class BRep_PointsOnSurface : public BRep_PointRepresentation {
+%nodefaultctor BRep_PointRepresentation;
+class BRep_PointRepresentation : public MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		void Location(const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter2() const;
+		%feature("autodoc", "1");
+		virtual		void Parameter2(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		void Curve(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom2d_Curve & PCurve() const;
+		%feature("autodoc", "1");
+		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Surface & Surface() const;
 		%feature("autodoc", "1");
 		virtual		void Surface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PointRepresentation {
+	Handle_BRep_PointRepresentation GetHandle() {
+	return *(Handle_BRep_PointRepresentation*) &$self;
+	}
+};
+%extend BRep_PointRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRep_PointRepresentation {
+	~BRep_PointRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor BRep_PointsOnSurface;
+class BRep_PointsOnSurface : public BRep_PointRepresentation {
+	public:
 
 };
 %extend BRep_PointsOnSurface {
@@ -928,14 +924,6 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 	public:
 		%feature("autodoc", "1");
 		BRep_PointOnCurveOnSurface(const Standard_Real P, const Handle_Geom2d_Curve &C, const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom2d_Curve & PCurve() const;
-		%feature("autodoc", "1");
-		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 
 };
 %extend BRep_PointOnCurveOnSurface {
@@ -984,8 +972,6 @@ class BRep_ListIteratorOfListOfCurveRepresentation {
 %nodefaultctor BRep_Tool;
 class BRep_Tool {
 	public:
-		%feature("autodoc", "1");
-		BRep_Tool();
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
@@ -1145,41 +1131,6 @@ class BRep_ListOfPointRepresentation {
 };
 
 
-%nodefaultctor BRep_PointOnSurface;
-class BRep_PointOnSurface : public BRep_PointsOnSurface {
-	public:
-		%feature("autodoc", "1");
-		BRep_PointOnSurface(const Standard_Real P1, const Standard_Real P2, const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter2() const;
-		%feature("autodoc", "1");
-		virtual		void Parameter2(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PointOnSurface {
-	Handle_BRep_PointOnSurface GetHandle() {
-	return *(Handle_BRep_PointOnSurface*) &$self;
-	}
-};
-%extend BRep_PointOnSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRep_PointOnSurface {
-	~BRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_PointOnSurface\n");}
-	}
-};
-
-
 %nodefaultctor BRep_PolygonOnTriangulation;
 class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 	public:
@@ -1285,6 +1236,43 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 };
 
 
+%nodefaultctor BRep_Curve3D;
+class BRep_Curve3D : public BRep_GCurve {
+	public:
+		%feature("autodoc", "1");
+		BRep_Curve3D(const Handle_Geom_Curve &C, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCurve3D() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve3D() const;
+		%feature("autodoc", "1");
+		virtual		void Curve3D(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		Handle_BRep_CurveRepresentation Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_Curve3D {
+	Handle_BRep_Curve3D GetHandle() {
+	return *(Handle_BRep_Curve3D*) &$self;
+	}
+};
+%extend BRep_Curve3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRep_Curve3D {
+	~BRep_Curve3D() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_Curve3D\n");}
+	}
+};
+
+
 %nodefaultctor BRep_TEdge;
 class BRep_TEdge : public TopoDS_TEdge {
 	public:
@@ -1377,43 +1365,6 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 	~BRep_CurveOn2Surfaces() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRep_CurveOn2Surfaces\n");}
-	}
-};
-
-
-%nodefaultctor BRep_Curve3D;
-class BRep_Curve3D : public BRep_GCurve {
-	public:
-		%feature("autodoc", "1");
-		BRep_Curve3D(const Handle_Geom_Curve &C, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCurve3D() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve3D() const;
-		%feature("autodoc", "1");
-		virtual		void Curve3D(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		Handle_BRep_CurveRepresentation Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_Curve3D {
-	Handle_BRep_Curve3D GetHandle() {
-	return *(Handle_BRep_Curve3D*) &$self;
-	}
-};
-%extend BRep_Curve3D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRep_Curve3D {
-	~BRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_Curve3D\n");}
 	}
 };
 
@@ -1535,6 +1486,35 @@ class BRep_Builder : public TopoDS_Builder3D {
 };
 
 
+%nodefaultctor BRep_ListNodeOfListOfCurveRepresentation;
+class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_CurveRepresentation &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveRepresentation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	Handle_BRep_ListNodeOfListOfCurveRepresentation GetHandle() {
+	return *(Handle_BRep_ListNodeOfListOfCurveRepresentation*) &$self;
+	}
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	~BRep_ListNodeOfListOfCurveRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor BRep_PolygonOnSurface;
 class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 	public:
@@ -1570,31 +1550,6 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 	~BRep_PolygonOnSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnSurface\n");}
-	}
-};
-
-
-%nodefaultctor BRep_ListIteratorOfListOfPointRepresentation;
-class BRep_ListIteratorOfListOfPointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		BRep_ListIteratorOfListOfPointRepresentation();
-		%feature("autodoc", "1");
-		BRep_ListIteratorOfListOfPointRepresentation(const BRep_ListOfPointRepresentation &L);
-		%feature("autodoc", "1");
-		void Initialize(const BRep_ListOfPointRepresentation &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & Value() const;
-
-};
-%extend BRep_ListIteratorOfListOfPointRepresentation {
-	~BRep_ListIteratorOfListOfPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");}
 	}
 };
 
@@ -1756,6 +1711,31 @@ class BRep_ListOfCurveRepresentation {
 };
 
 
+%nodefaultctor BRep_ListIteratorOfListOfPointRepresentation;
+class BRep_ListIteratorOfListOfPointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListIteratorOfListOfPointRepresentation();
+		%feature("autodoc", "1");
+		BRep_ListIteratorOfListOfPointRepresentation(const BRep_ListOfPointRepresentation &L);
+		%feature("autodoc", "1");
+		void Initialize(const BRep_ListOfPointRepresentation &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & Value() const;
+
+};
+%extend BRep_ListIteratorOfListOfPointRepresentation {
+	~BRep_ListIteratorOfListOfPointRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor BRep_ListNodeOfListOfPointRepresentation;
 class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 	public:
@@ -1781,6 +1761,41 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 	~BRep_ListNodeOfListOfPointRepresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfPointRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor BRep_PointOnSurface;
+class BRep_PointOnSurface : public BRep_PointsOnSurface {
+	public:
+		%feature("autodoc", "1");
+		BRep_PointOnSurface(const Standard_Real P1, const Standard_Real P2, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter2() const;
+		%feature("autodoc", "1");
+		virtual		void Parameter2(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PointOnSurface {
+	Handle_BRep_PointOnSurface GetHandle() {
+	return *(Handle_BRep_PointOnSurface*) &$self;
+	}
+};
+%extend BRep_PointOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRep_PointOnSurface {
+	~BRep_PointOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointOnSurface\n");}
 	}
 };
 
@@ -1851,35 +1866,6 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 	~BRep_Polygon3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRep_Polygon3D\n");}
-	}
-};
-
-
-%nodefaultctor BRep_ListNodeOfListOfCurveRepresentation;
-class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_CurveRepresentation &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveRepresentation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_ListNodeOfListOfCurveRepresentation {
-	Handle_BRep_ListNodeOfListOfCurveRepresentation GetHandle() {
-	return *(Handle_BRep_ListNodeOfListOfCurveRepresentation*) &$self;
-	}
-};
-%extend BRep_ListNodeOfListOfCurveRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRep_ListNodeOfListOfCurveRepresentation {
-	~BRep_ListNodeOfListOfCurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");}
 	}
 };
 

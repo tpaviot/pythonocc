@@ -152,9 +152,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_MFT_FontManager.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
+#include<Aspect_WidthMapEntry.hxx>
+#include<Handle_Aspect_WidthMap.hxx>
 #include<Aspect_ColorMapEntry.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Quantity_Color.hxx>
@@ -162,12 +165,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Aspect_FontMap.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Aspect_Background.hxx>
-#include<Aspect_WidthMapEntry.hxx>
-#include<Handle_Aspect_WidthMap.hxx>
 #include<Aspect_TypeMapEntry.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
-#include<Handle_Aspect_GraphicDriver.hxx>
 #include<Aspect_MarkMapEntry.hxx>
 #include<Handle_Aspect_MarkMap.hxx>
-#include<Xw.hxx>
 %}

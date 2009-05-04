@@ -56,6 +56,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Bnd_Box.hxx>
 #include<gp_Hypr.hxx>
 #include<gp_Parab.hxx>
-#include<Intf.hxx>
 #include<gp_XYZ.hxx>
 %}

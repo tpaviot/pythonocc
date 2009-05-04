@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopLoc
 
+%include TopLoc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -141,32 +143,6 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 };
 
 
-%nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
-class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation();
-		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
-		%feature("autodoc", "1");
-		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
-	TopLoc_StdMapNodeOfMapOfLocation* GetObject() {
-	return (TopLoc_StdMapNodeOfMapOfLocation*)$self->Access();
-	}
-};
-%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
-	~Handle_TopLoc_StdMapNodeOfMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopLoc_Datum3D;
 class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	public:
@@ -189,6 +165,32 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	~Handle_TopLoc_Datum3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_Datum3D\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
+class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation();
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
+	TopLoc_StdMapNodeOfMapOfLocation* GetObject() {
+	return (TopLoc_StdMapNodeOfMapOfLocation*)$self->Access();
+	}
+};
+%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
+	~Handle_TopLoc_StdMapNodeOfMapOfLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");}
 	}
 };
 
@@ -306,6 +308,76 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	~TopLoc_StdMapNodeOfMapOfLocation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");}
+	}
+};
+
+
+%nodefaultctor TopLoc_ItemLocation;
+class TopLoc_ItemLocation {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation(const Handle_TopLoc_Datum3D &D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend TopLoc_ItemLocation {
+	~TopLoc_ItemLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
+	}
+};
+
+
+%nodefaultctor TopLoc_SListOfItemLocation;
+class TopLoc_SListOfItemLocation {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation();
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation(const TopLoc_ItemLocation &anItem, const TopLoc_SListOfItemLocation &aTail);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TopLoc_ItemLocation & Value() const;
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation & ChangeValue();
+		%feature("autodoc", "1");
+		void SetValue(const TopLoc_ItemLocation &anItem);
+		%feature("autodoc", "1");
+		const TopLoc_SListOfItemLocation & Tail() const;
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & ChangeTail();
+		%feature("autodoc", "1");
+		void SetTail(const TopLoc_SListOfItemLocation &aList);
+		%feature("autodoc", "1");
+		void Construct(const TopLoc_ItemLocation &anItem);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation Constructed(const TopLoc_ItemLocation &anItem) const;
+		%feature("autodoc", "1");
+		void ToTail();
+		%feature("autodoc", "1");
+		void Initialize(const TopLoc_SListOfItemLocation &aList);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+
+};
+%extend TopLoc_SListOfItemLocation {
+	~TopLoc_SListOfItemLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
 	}
 };
 
@@ -435,8 +507,6 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 class TopLoc_MapLocationHasher {
 	public:
 		%feature("autodoc", "1");
-		TopLoc_MapLocationHasher();
-		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
@@ -446,27 +516,6 @@ class TopLoc_MapLocationHasher {
 	~TopLoc_MapLocationHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
-	}
-};
-
-
-%nodefaultctor TopLoc_ItemLocation;
-class TopLoc_ItemLocation {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation(const Handle_TopLoc_Datum3D &D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation(const TopLoc_ItemLocation &anOther);
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend TopLoc_ItemLocation {
-	~TopLoc_ItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
 	}
 };
 
@@ -505,54 +554,5 @@ class TopLoc_Datum3D : public MMgt_TShared {
 	~TopLoc_Datum3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopLoc_Datum3D\n");}
-	}
-};
-
-
-%nodefaultctor TopLoc_SListOfItemLocation;
-class TopLoc_SListOfItemLocation {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation();
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation(const TopLoc_ItemLocation &anItem, const TopLoc_SListOfItemLocation &aTail);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation &Other);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TopLoc_ItemLocation & Value() const;
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation & ChangeValue();
-		%feature("autodoc", "1");
-		void SetValue(const TopLoc_ItemLocation &anItem);
-		%feature("autodoc", "1");
-		const TopLoc_SListOfItemLocation & Tail() const;
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation & ChangeTail();
-		%feature("autodoc", "1");
-		void SetTail(const TopLoc_SListOfItemLocation &aList);
-		%feature("autodoc", "1");
-		void Construct(const TopLoc_ItemLocation &anItem);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation Constructed(const TopLoc_ItemLocation &anItem) const;
-		%feature("autodoc", "1");
-		void ToTail();
-		%feature("autodoc", "1");
-		void Initialize(const TopLoc_SListOfItemLocation &aList);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-
-};
-%extend TopLoc_SListOfItemLocation {
-	~TopLoc_SListOfItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
 	}
 };

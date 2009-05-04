@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BSplSLib
 
+%include BSplSLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor BSplSLib;
 class BSplSLib {
 	public:
-		%feature("autodoc", "1");
-		BSplSLib();
 		%feature("autodoc", "1");
 		void RationalDerivative(const Standard_Integer UDeg, const Standard_Integer VDeg, const Standard_Integer N, const Standard_Integer M, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean All=1);
 		%feature("autodoc", "1");

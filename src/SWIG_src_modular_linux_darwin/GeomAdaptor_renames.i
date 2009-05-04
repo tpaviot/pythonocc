@@ -1,0 +1,11 @@
+%rename(GHCurve) GeomAdaptor_GHCurve;
+%rename(HCurve) GeomAdaptor_HCurve;
+%rename(HSurface) GeomAdaptor_HSurface;
+%rename(Handle_GHCurve) Handle_GeomAdaptor_GHCurve;
+%rename(Curve) GeomAdaptor_Curve;
+%rename(Surface) GeomAdaptor_Surface;
+%rename(GHSurface) GeomAdaptor_GHSurface;
+%rename(Handle_GHSurface) Handle_GeomAdaptor_GHSurface;
+%rename(GeomAdaptor) GeomAdaptor;
+%rename(Handle_HSurface) Handle_GeomAdaptor_HSurface;
+%rename(Handle_HCurve) Handle_GeomAdaptor_HCurve;

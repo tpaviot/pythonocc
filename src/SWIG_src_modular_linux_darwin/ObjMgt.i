@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ObjMgt
 
+%include ObjMgt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -241,102 +243,6 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 };
 
 
-%nodefaultctor ObjMgt_ExternRef;
-class ObjMgt_ExternRef : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		ObjMgt_ExternRef();
-		%feature("autodoc", "1");
-		ObjMgt_ExternRef(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString _CSFDB_GetObjMgt_ExternRefmyEntryId() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_ExternRefmyEntryId(const Handle_PCollection_HAsciiString &p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetObjMgt_ExternRefmyBindingIndex() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_ExternRefmyBindingIndex(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ObjMgt_ExternRef {
-	Handle_ObjMgt_ExternRef GetHandle() {
-	return *(Handle_ObjMgt_ExternRef*) &$self;
-	}
-};
-%extend ObjMgt_ExternRef {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ObjMgt_ExternRef {
-	~ObjMgt_ExternRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternRef\n");}
-	}
-};
-
-
-%nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
-class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheLast, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_ExternRef &TheItem, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheFirst);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ThePrevious, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheNext, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef Value() const;
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Next() const;
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_ObjMgt_ExternRef &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef();
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const Handle_ObjMgt_ExternRef &p);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	Handle_ObjMgt_SeqNodeOfPSeqOfExtRef GetHandle() {
-	return *(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef*) &$self;
-	}
-};
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	~ObjMgt_SeqNodeOfPSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
-	}
-};
-
-
 %nodefaultctor ObjMgt_PSeqOfExtRef;
 class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	public:
@@ -433,6 +339,102 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	~ObjMgt_PSeqOfExtRef() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");}
+	}
+};
+
+
+%nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
+class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheLast, const Handle_ObjMgt_ExternRef &TheItem);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_ExternRef &TheItem, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheFirst);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ThePrevious, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheNext, const Handle_ObjMgt_ExternRef &TheItem);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_ExternRef Value() const;
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Next() const;
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_ObjMgt_ExternRef &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef();
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_ExternRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const Handle_ObjMgt_ExternRef &p);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	Handle_ObjMgt_SeqNodeOfPSeqOfExtRef GetHandle() {
+	return *(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef*) &$self;
+	}
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	~ObjMgt_SeqNodeOfPSeqOfExtRef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
+	}
+};
+
+
+%nodefaultctor ObjMgt_ExternRef;
+class ObjMgt_ExternRef : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		ObjMgt_ExternRef();
+		%feature("autodoc", "1");
+		ObjMgt_ExternRef(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetObjMgt_ExternRefmyEntryId() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_ExternRefmyEntryId(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetObjMgt_ExternRefmyBindingIndex() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_ExternRefmyBindingIndex(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ObjMgt_ExternRef {
+	Handle_ObjMgt_ExternRef GetHandle() {
+	return *(Handle_ObjMgt_ExternRef*) &$self;
+	}
+};
+%extend ObjMgt_ExternRef {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ObjMgt_ExternRef {
+	~ObjMgt_ExternRef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternRef\n");}
 	}
 };
 

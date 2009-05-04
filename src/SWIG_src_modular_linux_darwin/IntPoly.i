@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntPoly
 
+%include IntPoly_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -388,8 +390,6 @@ class IntPoly_ShapeSection {
 class IntPoly_PntHasher {
 	public:
 		%feature("autodoc", "1");
-		IntPoly_PntHasher();
-		%feature("autodoc", "1");
 		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
@@ -454,6 +454,23 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 	~IntPoly_SequenceOfSequenceOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");}
+	}
+};
+
+
+%nodefaultctor IntPoly_Pnt2dHasher;
+class IntPoly_Pnt2dHasher {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
+
+};
+%extend IntPoly_Pnt2dHasher {
+	~IntPoly_Pnt2dHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntPoly_Pnt2dHasher\n");}
 	}
 };
 
@@ -615,24 +632,5 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 	~IntPoly_IndexedMapOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor IntPoly_Pnt2dHasher;
-class IntPoly_Pnt2dHasher {
-	public:
-		%feature("autodoc", "1");
-		IntPoly_Pnt2dHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
-
-};
-%extend IntPoly_Pnt2dHasher {
-	~IntPoly_Pnt2dHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_Pnt2dHasher\n");}
 	}
 };

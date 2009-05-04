@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MeshShape
 
+%include MeshShape_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -120,32 +122,6 @@ enum MeshShape_CurvatureType {
 
 
 
-%nodefaultctor Handle_MeshShape_StdMapNodeOfMapOfCouple;
-class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MeshShape_StdMapNodeOfMapOfCouple();
-		%feature("autodoc", "1");
-		Handle_MeshShape_StdMapNodeOfMapOfCouple(const Handle_MeshShape_StdMapNodeOfMapOfCouple &aHandle);
-		%feature("autodoc", "1");
-		Handle_MeshShape_StdMapNodeOfMapOfCouple(const MeshShape_StdMapNodeOfMapOfCouple *anItem);
-		%feature("autodoc", "1");
-		Handle_MeshShape_StdMapNodeOfMapOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
-	MeshShape_StdMapNodeOfMapOfCouple* GetObject() {
-	return (MeshShape_StdMapNodeOfMapOfCouple*)$self->Access();
-	}
-};
-%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
-	~Handle_MeshShape_StdMapNodeOfMapOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_StdMapNodeOfMapOfCouple\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MeshShape_ListNodeOfListOfSurfacePoint;
 class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_MapNode {
 	public:
@@ -168,6 +144,32 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 	~Handle_MeshShape_ListNodeOfListOfSurfacePoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_ListNodeOfListOfSurfacePoint\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MeshShape_StdMapNodeOfMapOfCouple;
+class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple();
+		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple(const Handle_MeshShape_StdMapNodeOfMapOfCouple &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple(const MeshShape_StdMapNodeOfMapOfCouple *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
+	MeshShape_StdMapNodeOfMapOfCouple* GetObject() {
+	return (MeshShape_StdMapNodeOfMapOfCouple*)$self->Access();
+	}
+};
+%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
+	~Handle_MeshShape_StdMapNodeOfMapOfCouple() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_StdMapNodeOfMapOfCouple\n");}
 	}
 };
 
@@ -307,6 +309,62 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 };
 
 
+%nodefaultctor MeshShape_ListIteratorOfPolygon;
+class MeshShape_ListIteratorOfPolygon {
+	public:
+		%feature("autodoc", "1");
+		MeshShape_ListIteratorOfPolygon();
+		%feature("autodoc", "1");
+		MeshShape_ListIteratorOfPolygon(const MeshShape_Polygon &L);
+		%feature("autodoc", "1");
+		void Initialize(const MeshShape_Polygon &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		MeshShape_PolygonPoint & Value() const;
+
+};
+%extend MeshShape_ListIteratorOfPolygon {
+	~MeshShape_ListIteratorOfPolygon() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfPolygon\n");}
+	}
+};
+
+
+%nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
+class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient(const TopoDS_Shape &K, const TColStd_ListOfTransient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		TColStd_ListOfTransient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient GetHandle() {
+	return *(Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient*) &$self;
+	}
+};
+%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");}
+	}
+};
+
+
 %nodefaultctor MeshShape_Couple;
 class MeshShape_Couple {
 	public:
@@ -370,30 +428,9 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor MeshShape_CoupleHasher;
-class MeshShape_CoupleHasher {
-	public:
-		%feature("autodoc", "1");
-		MeshShape_CoupleHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
-
-};
-%extend MeshShape_CoupleHasher {
-	~MeshShape_CoupleHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
-	}
-};
-
-
 %nodefaultctor MeshShape;
 class MeshShape {
 	public:
-		%feature("autodoc", "1");
-		MeshShape();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
@@ -425,6 +462,23 @@ class MeshShape_PolygonPoint {
 	~MeshShape_PolygonPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MeshShape_PolygonPoint\n");}
+	}
+};
+
+
+%nodefaultctor MeshShape_CoupleHasher;
+class MeshShape_CoupleHasher {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
+
+};
+%extend MeshShape_CoupleHasher {
+	~MeshShape_CoupleHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
 	}
 };
 
@@ -540,31 +594,6 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 	~MeshShape_ListNodeOfPolygon() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MeshShape_ListNodeOfPolygon\n");}
-	}
-};
-
-
-%nodefaultctor MeshShape_ListIteratorOfPolygon;
-class MeshShape_ListIteratorOfPolygon {
-	public:
-		%feature("autodoc", "1");
-		MeshShape_ListIteratorOfPolygon();
-		%feature("autodoc", "1");
-		MeshShape_ListIteratorOfPolygon(const MeshShape_Polygon &L);
-		%feature("autodoc", "1");
-		void Initialize(const MeshShape_Polygon &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		MeshShape_PolygonPoint & Value() const;
-
-};
-%extend MeshShape_ListIteratorOfPolygon {
-	~MeshShape_ListIteratorOfPolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfPolygon\n");}
 	}
 };
 
@@ -721,37 +750,6 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 	~MeshShape_ListIteratorOfListOfSurfacePoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfListOfSurfacePoint\n");}
-	}
-};
-
-
-%nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
-class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient(const TopoDS_Shape &K, const TColStd_ListOfTransient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		TColStd_ListOfTransient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
-	Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient GetHandle() {
-	return *(Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient*) &$self;
-	}
-};
-%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
-	~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");}
 	}
 };
 

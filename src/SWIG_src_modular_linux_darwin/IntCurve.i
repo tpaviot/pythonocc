@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntCurve
 
+%include IntCurve_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,33 +114,6 @@ Standard_Integer & function transformation
 %include IntCurve_headers.i
 
 
-
-
-%nodefaultctor IntCurve_PConicTool;
-class IntCurve_PConicTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_PConicTool();
-		%feature("autodoc", "1");
-		Standard_Real EpsX(const IntCurve_PConic &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
-		%feature("autodoc", "1");
-		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-		%feature("autodoc", "1");
-		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
-
-};
-%extend IntCurve_PConicTool {
-	~IntCurve_PConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
-	}
-};
 
 
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
@@ -262,6 +237,31 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 };
 
 
+%nodefaultctor IntCurve_PConicTool;
+class IntCurve_PConicTool {
+	public:
+		%feature("autodoc", "1");
+		Standard_Real EpsX(const IntCurve_PConic &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const IntCurve_PConic &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
+		%feature("autodoc", "1");
+		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		%feature("autodoc", "1");
+		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+
+};
+%extend IntCurve_PConicTool {
+	~IntCurve_PConicTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
+	}
+};
+
+
 %nodefaultctor IntCurve_IConicTool;
 class IntCurve_IConicTool {
 	public:
@@ -304,8 +304,6 @@ class IntCurve_IConicTool {
 %nodefaultctor IntCurve_ProjectOnPConicTool;
 class IntCurve_ProjectOnPConicTool {
 	public:
-		%feature("autodoc", "1");
-		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
 		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PNaming
 
+%include PNaming_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -283,106 +285,6 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 };
 
 
-%nodefaultctor PNaming_Naming;
-class PNaming_Naming : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PNaming_Naming();
-		%feature("autodoc", "1");
-		void SetName(const Handle_PNaming_Name &aName);
-		%feature("autodoc", "1");
-		Handle_PNaming_Name GetName() const;
-		%feature("autodoc", "1");
-		PNaming_Naming(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PNaming_Name _CSFDB_GetPNaming_NamingmyName() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_NamingmyName(const Handle_PNaming_Name &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PNaming_Naming {
-	Handle_PNaming_Naming GetHandle() {
-	return *(Handle_PNaming_Naming*) &$self;
-	}
-};
-%extend PNaming_Naming {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PNaming_Naming {
-	~PNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
-	}
-};
-
-
-%nodefaultctor PNaming_NamedShape;
-class PNaming_NamedShape : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PNaming_NamedShape();
-		%feature("autodoc", "1");
-		Standard_Integer NbShapes() const;
-		%feature("autodoc", "1");
-		void OldShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfShape1 OldShapes() const;
-		%feature("autodoc", "1");
-		void NewShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfShape1 NewShapes() const;
-		%feature("autodoc", "1");
-		void ShapeStatus(const Standard_Integer theShapeStatus);
-		%feature("autodoc", "1");
-		Standard_Integer ShapeStatus() const;
-		%feature("autodoc", "1");
-		void Version(const Standard_Integer theVersion);
-		%feature("autodoc", "1");
-		Standard_Integer Version() const;
-		%feature("autodoc", "1");
-		PNaming_NamedShape(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyOldShapes() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_NamedShapemyOldShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyNewShapes() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_NamedShapemyNewShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPNaming_NamedShapemyShapeStatus() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_NamedShapemyShapeStatus(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPNaming_NamedShapemyVersion() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_NamedShapemyVersion(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PNaming_NamedShape {
-	Handle_PNaming_NamedShape GetHandle() {
-	return *(Handle_PNaming_NamedShape*) &$self;
-	}
-};
-%extend PNaming_NamedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PNaming_NamedShape {
-	~PNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
-	}
-};
-
-
 %nodefaultctor PNaming_HArray1OfNamedShape;
 class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 	public:
@@ -562,5 +464,105 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 	~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");}
+	}
+};
+
+
+%nodefaultctor PNaming_Naming;
+class PNaming_Naming : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PNaming_Naming();
+		%feature("autodoc", "1");
+		void SetName(const Handle_PNaming_Name &aName);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name GetName() const;
+		%feature("autodoc", "1");
+		PNaming_Naming(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name _CSFDB_GetPNaming_NamingmyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamingmyName(const Handle_PNaming_Name &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PNaming_Naming {
+	Handle_PNaming_Naming GetHandle() {
+	return *(Handle_PNaming_Naming*) &$self;
+	}
+};
+%extend PNaming_Naming {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PNaming_Naming {
+	~PNaming_Naming() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
+	}
+};
+
+
+%nodefaultctor PNaming_NamedShape;
+class PNaming_NamedShape : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PNaming_NamedShape();
+		%feature("autodoc", "1");
+		Standard_Integer NbShapes() const;
+		%feature("autodoc", "1");
+		void OldShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 OldShapes() const;
+		%feature("autodoc", "1");
+		void NewShapes(const Handle_PTopoDS_HArray1OfShape1 &theShapes);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 NewShapes() const;
+		%feature("autodoc", "1");
+		void ShapeStatus(const Standard_Integer theShapeStatus);
+		%feature("autodoc", "1");
+		Standard_Integer ShapeStatus() const;
+		%feature("autodoc", "1");
+		void Version(const Standard_Integer theVersion);
+		%feature("autodoc", "1");
+		Standard_Integer Version() const;
+		%feature("autodoc", "1");
+		PNaming_NamedShape(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyOldShapes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyOldShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HArray1OfShape1 _CSFDB_GetPNaming_NamedShapemyNewShapes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyNewShapes(const Handle_PTopoDS_HArray1OfShape1 &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamedShapemyShapeStatus() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyShapeStatus(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPNaming_NamedShapemyVersion() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_NamedShapemyVersion(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PNaming_NamedShape {
+	Handle_PNaming_NamedShape GetHandle() {
+	return *(Handle_PNaming_NamedShape*) &$self;
+	}
+};
+%extend PNaming_NamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PNaming_NamedShape {
+	~PNaming_NamedShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinMPrsStd
 
+%include BinMPrsStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -169,8 +171,6 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 %nodefaultctor BinMPrsStd;
 class BinMPrsStd {
 	public:
-		%feature("autodoc", "1");
-		BinMPrsStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 

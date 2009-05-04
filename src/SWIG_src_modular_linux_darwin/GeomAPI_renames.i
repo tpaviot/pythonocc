@@ -1,0 +1,11 @@
+%rename(IntSS) GeomAPI_IntSS;
+%rename(GeomAPI) GeomAPI;
+%rename(ExtremaSurfaceSurface) GeomAPI_ExtremaSurfaceSurface;
+%rename(ExtremaCurveSurface) GeomAPI_ExtremaCurveSurface;
+%rename(Interpolate) GeomAPI_Interpolate;
+%rename(IntCS) GeomAPI_IntCS;
+%rename(ProjectPointOnCurve) GeomAPI_ProjectPointOnCurve;
+%rename(PointsToBSplineSurface) GeomAPI_PointsToBSplineSurface;
+%rename(ProjectPointOnSurf) GeomAPI_ProjectPointOnSurf;
+%rename(ExtremaCurveCurve) GeomAPI_ExtremaCurveCurve;
+%rename(PointsToBSpline) GeomAPI_PointsToBSpline;

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStl
 
+%include RWStl_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor RWStl;
 class RWStl {
 	public:
-		%feature("autodoc", "1");
-		RWStl();
 		%feature("autodoc", "1");
 		Standard_Boolean WriteBinary(const Handle_StlMesh_Mesh &aMesh, const OSD_Path &aPath);
 		%feature("autodoc", "1");

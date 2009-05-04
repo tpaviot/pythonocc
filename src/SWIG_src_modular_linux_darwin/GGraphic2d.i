@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GGraphic2d
 
+%include GGraphic2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -335,37 +337,6 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor GGraphic2d_Curve;
-class GGraphic2d_Curve : public Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		GGraphic2d_Curve(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Handle_Geom2d_Curve &aCurve);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve GeomCurve() const;
-		%feature("autodoc", "1");
-		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GGraphic2d_Curve {
-	Handle_GGraphic2d_Curve GetHandle() {
-	return *(Handle_GGraphic2d_Curve*) &$self;
-	}
-};
-%extend GGraphic2d_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GGraphic2d_Curve {
-	~GGraphic2d_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GGraphic2d_Curve\n");}
-	}
-};
-
-
 %nodefaultctor GGraphic2d_CurveDefinitionError;
 class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 	public:
@@ -397,5 +368,36 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 	~GGraphic2d_CurveDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GGraphic2d_CurveDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor GGraphic2d_Curve;
+class GGraphic2d_Curve : public Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		GGraphic2d_Curve(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Handle_Geom2d_Curve &aCurve);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve GeomCurve() const;
+		%feature("autodoc", "1");
+		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GGraphic2d_Curve {
+	Handle_GGraphic2d_Curve GetHandle() {
+	return *(Handle_GGraphic2d_Curve*) &$self;
+	}
+};
+%extend GGraphic2d_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GGraphic2d_Curve {
+	~GGraphic2d_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_Curve\n");}
 	}
 };

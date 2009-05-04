@@ -1,0 +1,17 @@
+%rename(Pnt2dBisec) GccAna_Pnt2dBisec;
+%rename(CircPnt2dBisec) GccAna_CircPnt2dBisec;
+%rename(Circ2dBisec) GccAna_Circ2dBisec;
+%rename(LinPnt2dBisec) GccAna_LinPnt2dBisec;
+%rename(Lin2dTanPer) GccAna_Lin2dTanPer;
+%rename(Circ2d3Tan) GccAna_Circ2d3Tan;
+%rename(Lin2dTanObl) GccAna_Lin2dTanObl;
+%rename(Circ2d2TanOn) GccAna_Circ2d2TanOn;
+%rename(NoSolution) GccAna_NoSolution;
+%rename(Lin2dBisec) GccAna_Lin2dBisec;
+%rename(Circ2dTanCen) GccAna_Circ2dTanCen;
+%rename(CircLin2dBisec) GccAna_CircLin2dBisec;
+%rename(Lin2d2Tan) GccAna_Lin2d2Tan;
+%rename(Circ2d2TanRad) GccAna_Circ2d2TanRad;
+%rename(Handle_NoSolution) Handle_GccAna_NoSolution;
+%rename(Lin2dTanPar) GccAna_Lin2dTanPar;
+%rename(Circ2dTanOnRad) GccAna_Circ2dTanOnRad;

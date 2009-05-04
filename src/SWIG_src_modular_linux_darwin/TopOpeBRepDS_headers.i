@@ -158,7 +158,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopOpeBRepDS_reDEB.hxx>
 #include<TopOpeBRepDS_repvg.hxx>
 #include<TopOpeBRepDS_samdom.hxx>
-#include<TopOpeBRepDS_tools.hxx>
 #include<TopOpeBRepDS_traceDSX.hxx>
 
 // Additional headers necessary for compilation.
@@ -174,7 +173,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<TopOpeBRepDS.hxx>
 #include<gp_Pnt.hxx>
 #include<TopOpeBRepTool_GeomTool.hxx>
 #include<TopoDS_Vertex.hxx>

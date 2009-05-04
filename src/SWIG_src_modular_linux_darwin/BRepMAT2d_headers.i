@@ -91,14 +91,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Face.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<TopoDS_Shape.hxx>
-#include<Handle_MAT_BasicElt.hxx>
 #include<Handle_MAT_Graph.hxx>
+#include<Handle_MAT_BasicElt.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_MAT_Node.hxx>
 #include<Bisector_Bisec.hxx>
 #include<Handle_MAT_Arc.hxx>
+#include<TopoDS_Face.hxx>
+#include<Handle_Geom2d_Curve.hxx>
+#include<TopoDS_Shape.hxx>
 %}

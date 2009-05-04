@@ -118,10 +118,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Bnd_Box2d.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
-#include<TopOpeBRepTool.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
 #include<TopoDS_Edge.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Bnd_HArray1OfBox.hxx>
 #include<TColStd_ListIteratorOfListOfInteger.hxx>
 #include<TopoDS_Vertex.hxx>
@@ -130,7 +130,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_DataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>

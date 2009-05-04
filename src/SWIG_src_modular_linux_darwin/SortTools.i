@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module SortTools
 
+%include SortTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -118,8 +120,6 @@ Standard_Integer & function transformation
 class SortTools_QuickSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		SortTools_QuickSortOfReal();
-		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
@@ -134,8 +134,6 @@ class SortTools_QuickSortOfReal {
 %nodefaultctor SortTools_HeapSortOfInteger;
 class SortTools_HeapSortOfInteger {
 	public:
-		%feature("autodoc", "1");
-		SortTools_HeapSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
@@ -152,8 +150,6 @@ class SortTools_HeapSortOfInteger {
 class SortTools_StraightInsertionSortOfInteger {
 	public:
 		%feature("autodoc", "1");
-		SortTools_StraightInsertionSortOfInteger();
-		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
@@ -168,8 +164,6 @@ class SortTools_StraightInsertionSortOfInteger {
 %nodefaultctor SortTools_HeapSortOfReal;
 class SortTools_HeapSortOfReal {
 	public:
-		%feature("autodoc", "1");
-		SortTools_HeapSortOfReal();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
@@ -186,8 +180,6 @@ class SortTools_HeapSortOfReal {
 class SortTools_StraightInsertionSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		SortTools_StraightInsertionSortOfReal();
-		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
@@ -202,8 +194,6 @@ class SortTools_StraightInsertionSortOfReal {
 %nodefaultctor SortTools_QuickSortOfInteger;
 class SortTools_QuickSortOfInteger {
 	public:
-		%feature("autodoc", "1");
-		SortTools_QuickSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
@@ -220,8 +210,6 @@ class SortTools_QuickSortOfInteger {
 class SortTools_ShellSortOfReal {
 	public:
 		%feature("autodoc", "1");
-		SortTools_ShellSortOfReal();
-		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
@@ -236,8 +224,6 @@ class SortTools_ShellSortOfReal {
 %nodefaultctor SortTools_ShellSortOfInteger;
 class SortTools_ShellSortOfInteger {
 	public:
-		%feature("autodoc", "1");
-		SortTools_ShellSortOfInteger();
 		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 

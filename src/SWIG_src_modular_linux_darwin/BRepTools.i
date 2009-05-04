@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepTools
 
+%include BRepTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -270,6 +272,43 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 };
 
 
+%nodefaultctor BRepTools_Modification;
+class BRepTools_Modification : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepTools_Modification {
+	Handle_BRepTools_Modification GetHandle() {
+	return *(Handle_BRepTools_Modification*) &$self;
+	}
+};
+%extend BRepTools_Modification {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepTools_Modification {
+	~BRepTools_Modification() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepTools_Modification\n");}
+	}
+};
+
+
 %nodefaultctor BRepTools_Quilt;
 class BRepTools_Quilt {
 	public:
@@ -297,49 +336,43 @@ class BRepTools_Quilt {
 };
 
 
-%nodefaultctor BRepTools_ReShape;
-class BRepTools_ReShape : public MMgt_TShared {
+%nodefaultctor BRepTools_TrsfModification;
+class BRepTools_TrsfModification : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
-		BRepTools_ReShape();
+		BRepTools_TrsfModification(const gp_Trsf &T);
 		%feature("autodoc", "1");
-		void Clear();
+		gp_Trsf & Trsf();
 		%feature("autodoc", "1");
-		void Remove(const TopoDS_Shape &shape, const Standard_Boolean oriented=0);
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape &shape, const TopoDS_Shape &newshape, const Standard_Boolean oriented=0);
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean IsRecorded(const TopoDS_Shape &shape) const;
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		TopoDS_Shape Value(const TopoDS_Shape &shape) const;
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Status(const TopoDS_Shape &shape, TopoDS_Shape & newsh, const Standard_Boolean last=0);
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until, const Standard_Integer buildmode);
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until=TopAbs_SHAPE);
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeConsiderLocation();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeConsiderOrientation();
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BRepTools_ReShape {
-	Handle_BRepTools_ReShape GetHandle() {
-	return *(Handle_BRepTools_ReShape*) &$self;
+%extend BRepTools_TrsfModification {
+	Handle_BRepTools_TrsfModification GetHandle() {
+	return *(Handle_BRepTools_TrsfModification*) &$self;
 	}
 };
-%extend BRepTools_ReShape {
+%extend BRepTools_TrsfModification {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepTools_ReShape {
-	~BRepTools_ReShape() {
+%extend BRepTools_TrsfModification {
+	~BRepTools_TrsfModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_ReShape\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepTools_TrsfModification\n");}
 	}
 };
 
@@ -440,46 +473,9 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 };
 
 
-%nodefaultctor BRepTools_MapOfVertexPnt2d;
-class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepTools_MapOfVertexPnt2d(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepTools_MapOfVertexPnt2d & Assign(const BRepTools_MapOfVertexPnt2d &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TColgp_SequenceOfPnt2d &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt2d & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt2d & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K);
-
-};
-%extend BRepTools_MapOfVertexPnt2d {
-	~BRepTools_MapOfVertexPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
-	}
-};
-
-
 %nodefaultctor BRepTools;
 class BRepTools {
 	public:
-		%feature("autodoc", "1");
-		BRepTools();
 		%feature("autodoc", "1");
 		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -548,9 +544,13 @@ class BRepTools {
 };
 
 
-%nodefaultctor BRepTools_Modification;
-class BRepTools_Modification : public MMgt_TShared {
+%nodefaultctor BRepTools_GTrsfModification;
+class BRepTools_GTrsfModification : public BRepTools_Modification {
 	public:
+		%feature("autodoc", "1");
+		BRepTools_GTrsfModification(const gp_GTrsf &T);
+		%feature("autodoc", "1");
+		gp_GTrsf & GTrsf();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc", "1");
@@ -565,33 +565,6 @@ class BRepTools_Modification : public MMgt_TShared {
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepTools_Modification {
-	Handle_BRepTools_Modification GetHandle() {
-	return *(Handle_BRepTools_Modification*) &$self;
-	}
-};
-%extend BRepTools_Modification {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepTools_Modification {
-	~BRepTools_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_Modification\n");}
-	}
-};
-
-
-%nodefaultctor BRepTools_GTrsfModification;
-class BRepTools_GTrsfModification : public BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		BRepTools_GTrsfModification(const gp_GTrsf &T);
-		%feature("autodoc", "1");
-		gp_GTrsf & GTrsf();
 
 };
 %extend BRepTools_GTrsfModification {
@@ -639,43 +612,37 @@ class BRepTools_Modifier {
 };
 
 
-%nodefaultctor BRepTools_TrsfModification;
-class BRepTools_TrsfModification : public BRepTools_Modification {
+%nodefaultctor BRepTools_MapOfVertexPnt2d;
+class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BRepTools_TrsfModification(const gp_Trsf &T);
+		BRepTools_MapOfVertexPnt2d(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		gp_Trsf & Trsf();
+		BRepTools_MapOfVertexPnt2d & Assign(const BRepTools_MapOfVertexPnt2d &Other);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
+		Standard_Boolean Bind(const TopoDS_Shape &K, const TColgp_SequenceOfPnt2d &I);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
+		const TColgp_SequenceOfPnt2d & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt2d & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K);
 
 };
-%extend BRepTools_TrsfModification {
-	Handle_BRepTools_TrsfModification GetHandle() {
-	return *(Handle_BRepTools_TrsfModification*) &$self;
-	}
-};
-%extend BRepTools_TrsfModification {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepTools_TrsfModification {
-	~BRepTools_TrsfModification() {
+%extend BRepTools_MapOfVertexPnt2d {
+	~BRepTools_MapOfVertexPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_TrsfModification\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
 	}
 };
 
@@ -711,6 +678,53 @@ class BRepTools_WireExplorer {
 	~BRepTools_WireExplorer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_WireExplorer\n");}
+	}
+};
+
+
+%nodefaultctor BRepTools_ReShape;
+class BRepTools_ReShape : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepTools_ReShape();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Remove(const TopoDS_Shape &shape, const Standard_Boolean oriented=0);
+		%feature("autodoc", "1");
+		void Replace(const TopoDS_Shape &shape, const TopoDS_Shape &newshape, const Standard_Boolean oriented=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsRecorded(const TopoDS_Shape &shape) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Value(const TopoDS_Shape &shape) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Status(const TopoDS_Shape &shape, TopoDS_Shape & newsh, const Standard_Boolean last=0);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until, const Standard_Integer buildmode);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until=TopAbs_SHAPE);
+		%feature("autodoc", "1");
+		Standard_Boolean & ModeConsiderLocation();
+		%feature("autodoc", "1");
+		Standard_Boolean & ModeConsiderOrientation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepTools_ReShape {
+	Handle_BRepTools_ReShape GetHandle() {
+	return *(Handle_BRepTools_ReShape*) &$self;
+	}
+};
+%extend BRepTools_ReShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepTools_ReShape {
+	~BRepTools_ReShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepTools_ReShape\n");}
 	}
 };
 

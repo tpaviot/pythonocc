@@ -166,13 +166,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepGeom_Parabola.hxx>
 #include<Handle_StepGeom_Polyline.hxx>
 #include<Handle_StepGeom_Axis1Placement.hxx>
+#include<Handle_StepGeom_Conic.hxx>
+#include<Handle_StepGeom_ToroidalSurface.hxx>
 #include<Handle_StepGeom_BoundedCurve.hxx>
+#include<Handle_StepGeom_Vector.hxx>
 #include<Handle_StepGeom_SweptSurface.hxx>
 #include<Handle_StepGeom_ElementarySurface.hxx>
 #include<Handle_StepGeom_Hyperbola.hxx>
 #include<Handle_StepGeom_Surface.hxx>
 #include<Handle_StepGeom_ConicalSurface.hxx>
-#include<Handle_StepGeom_Conic.hxx>
 #include<Handle_StepGeom_BoundedSurface.hxx>
 #include<Handle_StepGeom_CartesianPoint.hxx>
 #include<Handle_StepGeom_BSplineSurface.hxx>
@@ -181,7 +183,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepGeom_Line.hxx>
 #include<Handle_StepGeom_Curve.hxx>
 #include<Handle_StepGeom_Axis2Placement2d.hxx>
-#include<Handle_StepGeom_Vector.hxx>
 #include<Handle_StepGeom_Ellipse.hxx>
 #include<Handle_StepGeom_SurfaceOfRevolution.hxx>
 #include<Handle_StepGeom_BSplineCurve.hxx>
@@ -190,8 +191,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepGeom_CartesianTransformationOperator3d.hxx>
 #include<Handle_StepGeom_RectangularTrimmedSurface.hxx>
 #include<Handle_StepGeom_Direction.hxx>
-#include<Handle_StepGeom_Axis2Placement3d.hxx>
-#include<Handle_StepGeom_ToroidalSurface.hxx>
 #include<Handle_StepGeom_CylindricalSurface.hxx>
+#include<Handle_StepGeom_Axis2Placement3d.hxx>
 #include<Handle_StepGeom_SurfaceOfLinearExtrusion.hxx>
 %}

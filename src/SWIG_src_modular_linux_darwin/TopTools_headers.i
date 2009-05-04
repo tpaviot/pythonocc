@@ -103,7 +103,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shape.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
-#include<TopTools.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<TCollection_AsciiString.hxx>
 %}

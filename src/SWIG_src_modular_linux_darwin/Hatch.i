@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Hatch
 
+%include Hatch_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -201,6 +203,61 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 };
 
 
+%nodefaultctor Hatch_SequenceOfLine;
+class Hatch_SequenceOfLine : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Hatch_SequenceOfLine();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Hatch_SequenceOfLine & Assign(const Hatch_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		void Append(const Hatch_Line &T);
+		%feature("autodoc", "1");
+		void Append(Hatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void Prepend(const Hatch_Line &T);
+		%feature("autodoc", "1");
+		void Prepend(Hatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Hatch_Line &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Hatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Hatch_Line &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Hatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Hatch_Line & First() const;
+		%feature("autodoc", "1");
+		const Hatch_Line & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Hatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Hatch_Line & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Hatch_Line & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Hatch_Line &I);
+		%feature("autodoc", "1");
+		Hatch_Line & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Hatch_Line & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Hatch_SequenceOfLine {
+	~Hatch_SequenceOfLine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
+	}
+};
+
+
 %nodefaultctor Hatch_Line;
 class Hatch_Line {
 	public:
@@ -328,61 +385,6 @@ class Hatch_Hatcher {
 	~Hatch_Hatcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Hatch_Hatcher\n");}
-	}
-};
-
-
-%nodefaultctor Hatch_SequenceOfLine;
-class Hatch_SequenceOfLine : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Hatch_SequenceOfLine();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Hatch_SequenceOfLine & Assign(const Hatch_SequenceOfLine &Other);
-		%feature("autodoc", "1");
-		void Append(const Hatch_Line &T);
-		%feature("autodoc", "1");
-		void Append(Hatch_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void Prepend(const Hatch_Line &T);
-		%feature("autodoc", "1");
-		void Prepend(Hatch_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Hatch_Line &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Hatch_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Hatch_Line &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Hatch_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		const Hatch_Line & First() const;
-		%feature("autodoc", "1");
-		const Hatch_Line & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Hatch_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		const Hatch_Line & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Hatch_Line & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Hatch_Line &I);
-		%feature("autodoc", "1");
-		Hatch_Line & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Hatch_Line & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Hatch_SequenceOfLine {
-	~Hatch_SequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
 	}
 };
 

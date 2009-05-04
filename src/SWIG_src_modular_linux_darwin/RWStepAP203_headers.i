@@ -302,7 +302,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
 #include<Handle_StepAP203_StartWork.hxx>
 #include<Handle_StepAP203_CcDesignSpecificationReference.hxx>
+#include<Handle_StepAP203_Change.hxx>
 #include<Handle_StepAP203_CcDesignContract.hxx>
 #include<Handle_StepAP203_CcDesignApproval.hxx>
-#include<Handle_StepAP203_Change.hxx>
 %}

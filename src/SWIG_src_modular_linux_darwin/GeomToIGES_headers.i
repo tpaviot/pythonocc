@@ -50,10 +50,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_SurfaceOfLinearExtrusion.hxx>
 #include<Handle_Geom_SurfaceOfRevolution.hxx>
 #include<Handle_Geom_OffsetSurface.hxx>
-#include<Handle_IGESGeom_Direction.hxx>
-#include<Handle_Geom_Vector.hxx>
-#include<Handle_Geom_VectorWithMagnitude.hxx>
-#include<Handle_Geom_Direction.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom_BoundedCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
@@ -69,4 +65,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_IGESGeom_Point.hxx>
 #include<Handle_Geom_Point.hxx>
 #include<Handle_Geom_CartesianPoint.hxx>
+#include<Handle_IGESGeom_Direction.hxx>
+#include<Handle_Geom_Vector.hxx>
+#include<Handle_Geom_VectorWithMagnitude.hxx>
+#include<Handle_Geom_Direction.hxx>
 %}

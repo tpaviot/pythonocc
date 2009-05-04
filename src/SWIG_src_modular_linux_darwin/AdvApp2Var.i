@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AdvApp2Var
 
+%include AdvApp2Var_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -124,6 +126,32 @@ enum AdvApp2Var_CriterionType {
 
 
 
+%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch;
+class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch();
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	AdvApp2Var_SequenceNodeOfSequenceOfPatch* GetObject() {
+	return (AdvApp2Var_SequenceNodeOfSequenceOfPatch*)$self->Access();
+	}
+};
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollection_SeqNode {
 	public:
@@ -146,32 +174,6 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfStrip;
-class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip();
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip(const Handle_AdvApp2Var_SequenceNodeOfStrip &aHandle);
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_SequenceNodeOfStrip *anItem);
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AdvApp2Var_SequenceNodeOfStrip {
-	AdvApp2Var_SequenceNodeOfStrip* GetObject() {
-	return (AdvApp2Var_SequenceNodeOfStrip*)$self->Access();
-	}
-};
-%extend Handle_AdvApp2Var_SequenceNodeOfStrip {
-	~Handle_AdvApp2Var_SequenceNodeOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfStrip\n");}
 	}
 };
 
@@ -202,28 +204,28 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 };
 
 
-%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch;
-class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfStrip;
+class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch();
+		Handle_AdvApp2Var_SequenceNodeOfStrip();
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
+		Handle_AdvApp2Var_SequenceNodeOfStrip(const Handle_AdvApp2Var_SequenceNodeOfStrip &aHandle);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
+		Handle_AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	AdvApp2Var_SequenceNodeOfSequenceOfPatch* GetObject() {
-	return (AdvApp2Var_SequenceNodeOfSequenceOfPatch*)$self->Access();
+%extend Handle_AdvApp2Var_SequenceNodeOfStrip {
+	AdvApp2Var_SequenceNodeOfStrip* GetObject() {
+	return (AdvApp2Var_SequenceNodeOfStrip*)$self->Access();
 	}
 };
-%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
+%extend Handle_AdvApp2Var_SequenceNodeOfStrip {
+	~Handle_AdvApp2Var_SequenceNodeOfStrip() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfStrip\n");}
 	}
 };
 
@@ -398,35 +400,6 @@ class AdvApp2Var_Framework {
 };
 
 
-%nodefaultctor AdvApp2Var_SequenceNodeOfStrip;
-class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_Iso &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		AdvApp2Var_Iso & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AdvApp2Var_SequenceNodeOfStrip {
-	Handle_AdvApp2Var_SequenceNodeOfStrip GetHandle() {
-	return *(Handle_AdvApp2Var_SequenceNodeOfStrip*) &$self;
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfStrip {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfStrip {
-	~AdvApp2Var_SequenceNodeOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfStrip\n");}
-	}
-};
-
-
 %nodefaultctor AdvApp2Var_Patch;
 class AdvApp2Var_Patch {
 	public:
@@ -557,8 +530,6 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 class AdvApp2Var_Data {
 	public:
 		%feature("autodoc", "1");
-		AdvApp2Var_Data();
-		%feature("autodoc", "1");
 		mdnombr_1_ & Getmdnombr();
 		%feature("autodoc", "1");
 		minombr_1_ & Getminombr();
@@ -643,6 +614,35 @@ class AdvApp2Var_Context {
 };
 
 
+%nodefaultctor AdvApp2Var_SequenceNodeOfStrip;
+class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_Iso &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		AdvApp2Var_Iso & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AdvApp2Var_SequenceNodeOfStrip {
+	Handle_AdvApp2Var_SequenceNodeOfStrip GetHandle() {
+	return *(Handle_AdvApp2Var_SequenceNodeOfStrip*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfStrip {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfStrip {
+	~AdvApp2Var_SequenceNodeOfStrip() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfStrip\n");}
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_SequenceOfPatch;
 class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 	public:
@@ -698,6 +698,35 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
+class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_Patch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		AdvApp2Var_Patch & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch GetHandle() {
+	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	~AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_SequenceOfStrip;
 class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 	public:
@@ -749,35 +778,6 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 	~AdvApp2Var_SequenceOfStrip() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceOfStrip\n");}
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
-class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_Patch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		AdvApp2Var_Patch & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch GetHandle() {
-	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch*) &$self;
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	~AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
 	}
 };
 

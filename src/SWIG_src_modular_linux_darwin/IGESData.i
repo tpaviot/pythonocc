@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESData
 
+%include IGESData_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,14 +114,6 @@ Standard_Integer & function transformation
 %include IGESData_headers.i
 
 
-enum IGESData_ReadStage {
-	IGESData_ReadDir,
-	IGESData_ReadOwn,
-	IGESData_ReadAssocs,
-	IGESData_ReadProps,
-	IGESData_ReadEnd,
-	};
-
 enum IGESData_DefList {
 	IGESData_DefNone,
 	IGESData_DefOne,
@@ -142,6 +136,14 @@ enum IGESData_DefType {
 	IGESData_DefAny,
 	IGESData_ErrorVal,
 	IGESData_ErrorRef,
+	};
+
+enum IGESData_ReadStage {
+	IGESData_ReadDir,
+	IGESData_ReadOwn,
+	IGESData_ReadAssocs,
+	IGESData_ReadProps,
+	IGESData_ReadEnd,
 	};
 
 
@@ -220,6 +222,32 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 	~Handle_IGESData_IGESEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESEntity\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESData_ColorEntity;
+class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESData_ColorEntity();
+		%feature("autodoc", "1");
+		Handle_IGESData_ColorEntity(const Handle_IGESData_ColorEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESData_ColorEntity(const IGESData_ColorEntity *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESData_ColorEntity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESData_ColorEntity {
+	IGESData_ColorEntity* GetObject() {
+	return (IGESData_ColorEntity*)$self->Access();
+	}
+};
+%extend Handle_IGESData_ColorEntity {
+	~Handle_IGESData_ColorEntity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ColorEntity\n");}
 	}
 };
 
@@ -328,6 +356,58 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 };
 
 
+%nodefaultctor Handle_IGESData_SpecificModule;
+class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESData_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESData_SpecificModule(const Handle_IGESData_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESData_SpecificModule(const IGESData_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESData_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESData_SpecificModule {
+	IGESData_SpecificModule* GetObject() {
+	return (IGESData_SpecificModule*)$self->Access();
+	}
+};
+%extend Handle_IGESData_SpecificModule {
+	~Handle_IGESData_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_SpecificModule\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESData_DefaultSpecific;
+class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESData_DefaultSpecific();
+		%feature("autodoc", "1");
+		Handle_IGESData_DefaultSpecific(const Handle_IGESData_DefaultSpecific &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESData_DefaultSpecific(const IGESData_DefaultSpecific *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESData_DefaultSpecific const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESData_DefaultSpecific {
+	IGESData_DefaultSpecific* GetObject() {
+	return (IGESData_DefaultSpecific*)$self->Access();
+	}
+};
+%extend Handle_IGESData_DefaultSpecific {
+	~Handle_IGESData_DefaultSpecific() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultSpecific\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESData_GlobalNodeOfSpecificLib;
 class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient {
 	public:
@@ -402,32 +482,6 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 	~Handle_IGESData_NameEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NameEntity\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESData_ColorEntity;
-class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity();
-		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity(const Handle_IGESData_ColorEntity &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity(const IGESData_ColorEntity *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESData_ColorEntity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESData_ColorEntity {
-	IGESData_ColorEntity* GetObject() {
-	return (IGESData_ColorEntity*)$self->Access();
-	}
-};
-%extend Handle_IGESData_ColorEntity {
-	~Handle_IGESData_ColorEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ColorEntity\n");}
 	}
 };
 
@@ -562,32 +616,6 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESData_SpecificModule;
-class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule(const Handle_IGESData_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule(const IGESData_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESData_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESData_SpecificModule {
-	IGESData_SpecificModule* GetObject() {
-	return (IGESData_SpecificModule*)$self->Access();
-	}
-};
-%extend Handle_IGESData_SpecificModule {
-	~Handle_IGESData_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_SpecificModule\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESData_FileProtocol;
 class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 	public:
@@ -692,28 +720,28 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_IGESData_DefaultSpecific;
-class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
+%nodefaultctor Handle_IGESData_LabelDisplayEntity;
+class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific();
+		Handle_IGESData_LabelDisplayEntity();
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific(const Handle_IGESData_DefaultSpecific &aHandle);
+		Handle_IGESData_LabelDisplayEntity(const Handle_IGESData_LabelDisplayEntity &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific(const IGESData_DefaultSpecific *anItem);
+		Handle_IGESData_LabelDisplayEntity(const IGESData_LabelDisplayEntity *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESData_DefaultSpecific const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESData_LabelDisplayEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESData_DefaultSpecific {
-	IGESData_DefaultSpecific* GetObject() {
-	return (IGESData_DefaultSpecific*)$self->Access();
+%extend Handle_IGESData_LabelDisplayEntity {
+	IGESData_LabelDisplayEntity* GetObject() {
+	return (IGESData_LabelDisplayEntity*)$self->Access();
 	}
 };
-%extend Handle_IGESData_DefaultSpecific {
-	~Handle_IGESData_DefaultSpecific() {
+%extend Handle_IGESData_LabelDisplayEntity {
+	~Handle_IGESData_LabelDisplayEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultSpecific\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LabelDisplayEntity\n");}
 	}
 };
 
@@ -822,32 +850,6 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 };
 
 
-%nodefaultctor Handle_IGESData_LabelDisplayEntity;
-class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity();
-		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity(const Handle_IGESData_LabelDisplayEntity &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity(const IGESData_LabelDisplayEntity *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESData_LabelDisplayEntity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESData_LabelDisplayEntity {
-	IGESData_LabelDisplayEntity* GetObject() {
-	return (IGESData_LabelDisplayEntity*)$self->Access();
-	}
-};
-%extend Handle_IGESData_LabelDisplayEntity {
-	~Handle_IGESData_LabelDisplayEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LabelDisplayEntity\n");}
-	}
-};
-
-
 %nodefaultctor IGESData_SpecificModule;
 class IGESData_SpecificModule : public Standard_Transient {
 	public:
@@ -898,6 +900,137 @@ class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 	~IGESData_DefaultSpecific() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESData_DefaultSpecific\n");}
+	}
+};
+
+
+%nodefaultctor IGESData_ParamReader;
+class IGESData_ParamReader {
+	public:
+		%feature("autodoc", "1");
+		IGESData_ParamReader(const Handle_Interface_ParamList &list, const Handle_Interface_Check &ach, const Standard_Integer base=1, const Standard_Integer nbpar=0, const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		Standard_Integer EntityNumber() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer CurrentNumber() const;
+		%feature("autodoc", "1");
+		void SetCurrentNumber(const Standard_Integer num);
+		%feature("autodoc", "1");
+		IGESData_ReadStage Stage() const;
+		%feature("autodoc", "1");
+		void NextStage();
+		%feature("autodoc", "1");
+		void EndAll();
+		%feature("autodoc", "1");
+		Standard_Integer NbParams() const;
+		%feature("autodoc", "1");
+		Interface_ParamType ParamType(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		char * const ParamValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParamDefined(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParamEntity(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer ParamNumber(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity ParamEntity(const Handle_IGESData_IGESReaderData &IR, const Standard_Integer num);
+		%feature("autodoc", "1");
+		IGESData_ParamCursor Current() const;
+		%feature("autodoc", "1");
+		IGESData_ParamCursor CurrentList(const Standard_Integer nb, const Standard_Integer size=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean DefinedElseSkip();
+		%feature("autodoc", "1");
+		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, const char * mess, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Standard_Boolean & val, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const char * mess, Standard_Boolean & val, const Standard_Boolean exact=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, const char * mess, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXY(const IGESData_ParamCursor &PC, Message_Msg & amsg, gp_XY & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXY(const IGESData_ParamCursor &PC, const char * mess, gp_XY & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXYZ(const IGESData_ParamCursor &PC, Message_Msg & amsg, gp_XYZ & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXYZ(const IGESData_ParamCursor &PC, const char * mess, gp_XYZ & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadText(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_TCollection_HAsciiString & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadText(const IGESData_ParamCursor &PC, const char * mess, Handle_TCollection_HAsciiString & val);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadInts(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_TColStd_HArray1OfInteger & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadInts(const IGESData_ParamCursor &PC, const char * mess, Handle_TColStd_HArray1OfInteger & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadReals(const IGESData_ParamCursor &PC, Message_Msg & amsg, Handle_TColStd_HArray1OfReal & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadReals(const IGESData_ParamCursor &PC, const char * mess, Handle_TColStd_HArray1OfReal & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadTexts(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_Interface_HArray1OfHAsciiString & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadTexts(const IGESData_ParamCursor &PC, const char * mess, Handle_Interface_HArray1OfHAsciiString & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, Message_Msg & amsg, Interface_EntityList & val, const Standard_Boolean ord=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Interface_EntityList & val, const Standard_Boolean ord=1);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadingReal(const Standard_Integer num, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadingReal(const Standard_Integer num, const char * mess, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, const char * mess, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		void SendFail(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		void SendWarning(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		void AddFail(const char * afail, const char * bfail="");
+		%feature("autodoc", "1");
+		void AddFail(const Handle_TCollection_HAsciiString &af, const Handle_TCollection_HAsciiString &bf);
+		%feature("autodoc", "1");
+		void AddWarning(const char * awarn, const char * bwarn="");
+		%feature("autodoc", "1");
+		void AddWarning(const Handle_TCollection_HAsciiString &aw, const Handle_TCollection_HAsciiString &bw);
+		%feature("autodoc", "1");
+		void Mend(const char * pref="");
+		%feature("autodoc", "1");
+		Standard_Boolean HasFailed() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck();
+		%feature("autodoc", "1");
+		Standard_Boolean IsCheckEmpty() const;
+
+};
+%extend IGESData_ParamReader {
+	~IGESData_ParamReader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESData_ParamReader\n");}
 	}
 };
 
@@ -1185,8 +1318,6 @@ class IGESData_IGESEntity : public MMgt_TShared {
 %nodefaultctor IGESData_ColorEntity;
 class IGESData_ColorEntity : public IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		IGESData_ColorEntity();
 
 };
 %extend IGESData_ColorEntity {
@@ -1233,8 +1364,6 @@ class IGESData_IGESDumper {
 %nodefaultctor IGESData;
 class IGESData {
 	public:
-		%feature("autodoc", "1");
-		IGESData();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1366,133 +1495,31 @@ class IGESData_ToolLocation : public MMgt_TShared {
 };
 
 
-%nodefaultctor IGESData_ParamReader;
-class IGESData_ParamReader {
+%nodefaultctor IGESData_DefSwitch;
+class IGESData_DefSwitch {
 	public:
 		%feature("autodoc", "1");
-		IGESData_ParamReader(const Handle_Interface_ParamList &list, const Handle_Interface_Check &ach, const Standard_Integer base=1, const Standard_Integer nbpar=0, const Standard_Integer num=0);
+		IGESData_DefSwitch();
 		%feature("autodoc", "1");
-		Standard_Integer EntityNumber() const;
+		void SetVoid();
 		%feature("autodoc", "1");
-		void Clear();
+		void SetReference();
 		%feature("autodoc", "1");
-		Standard_Integer CurrentNumber() const;
+		void SetRank(const Standard_Integer val);
 		%feature("autodoc", "1");
-		void SetCurrentNumber(const Standard_Integer num);
+		IGESData_DefType DefType() const;
 		%feature("autodoc", "1");
-		IGESData_ReadStage Stage() const;
+		Standard_Integer Value() const;
 		%feature("autodoc", "1");
-		void NextStage();
+		Standard_Integer _CSFDB_GetIGESData_DefSwitchtheval() const;
 		%feature("autodoc", "1");
-		void EndAll();
-		%feature("autodoc", "1");
-		Standard_Integer NbParams() const;
-		%feature("autodoc", "1");
-		Interface_ParamType ParamType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		char * const ParamValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParamDefined(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParamEntity(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer ParamNumber(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity ParamEntity(const Handle_IGESData_IGESReaderData &IR, const Standard_Integer num);
-		%feature("autodoc", "1");
-		IGESData_ParamCursor Current() const;
-		%feature("autodoc", "1");
-		IGESData_ParamCursor CurrentList(const Standard_Integer nb, const Standard_Integer size=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean DefinedElseSkip();
-		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, const char * mess, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Standard_Boolean & val, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const char * mess, Standard_Boolean & val, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, const char * mess, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXY(const IGESData_ParamCursor &PC, Message_Msg & amsg, gp_XY & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXY(const IGESData_ParamCursor &PC, const char * mess, gp_XY & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXYZ(const IGESData_ParamCursor &PC, Message_Msg & amsg, gp_XYZ & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXYZ(const IGESData_ParamCursor &PC, const char * mess, gp_XYZ & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadText(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_TCollection_HAsciiString & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadText(const IGESData_ParamCursor &PC, const char * mess, Handle_TCollection_HAsciiString & val);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, IGESData_Status & aStatus, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, const Handle_Standard_Type &type, Handle_IGESData_IGESEntity & val, const Standard_Boolean canbenul=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadInts(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_TColStd_HArray1OfInteger & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadInts(const IGESData_ParamCursor &PC, const char * mess, Handle_TColStd_HArray1OfInteger & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadReals(const IGESData_ParamCursor &PC, Message_Msg & amsg, Handle_TColStd_HArray1OfReal & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadReals(const IGESData_ParamCursor &PC, const char * mess, Handle_TColStd_HArray1OfReal & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadTexts(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_Interface_HArray1OfHAsciiString & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadTexts(const IGESData_ParamCursor &PC, const char * mess, Handle_Interface_HArray1OfHAsciiString & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const Message_Msg &amsg, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEnts(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Handle_IGESData_HArray1OfIGESEntity & val, const Standard_Integer index=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, Message_Msg & amsg, Interface_EntityList & val, const Standard_Boolean ord=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Interface_EntityList & val, const Standard_Boolean ord=1);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadingReal(const Standard_Integer num, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadingReal(const Standard_Integer num, const char * mess, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, const char * mess, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		void SendFail(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		void SendWarning(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		void AddFail(const char * afail, const char * bfail="");
-		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &af, const Handle_TCollection_HAsciiString &bf);
-		%feature("autodoc", "1");
-		void AddWarning(const char * awarn, const char * bwarn="");
-		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &aw, const Handle_TCollection_HAsciiString &bw);
-		%feature("autodoc", "1");
-		void Mend(const char * pref="");
-		%feature("autodoc", "1");
-		Standard_Boolean HasFailed() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck();
-		%feature("autodoc", "1");
-		Standard_Boolean IsCheckEmpty() const;
+		void _CSFDB_SetIGESData_DefSwitchtheval(const Standard_Integer p);
 
 };
-%extend IGESData_ParamReader {
-	~IGESData_ParamReader() {
+%extend IGESData_DefSwitch {
+	~IGESData_DefSwitch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESData_ParamReader\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESData_DefSwitch\n");}
 	}
 };
 
@@ -2125,6 +2152,67 @@ class IGESData_DirPart {
 };
 
 
+%nodefaultctor IGESData_FreeFormatEntity;
+class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESData_FreeFormatEntity();
+		%feature("autodoc", "1");
+		void SetTypeNumber(const Standard_Integer typenum);
+		%feature("autodoc", "1");
+		void SetFormNumber(const Standard_Integer formnum);
+		%feature("autodoc", "1");
+		Standard_Integer NbParams() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ParamData(const Standard_Integer num, Interface_ParamType & ptype, Handle_IGESData_IGESEntity & ent, Handle_TCollection_HAsciiString & val) const;
+		%feature("autodoc", "1");
+		Interface_ParamType ParamType(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParamEntity(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity ParamEntity(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNegativePointer(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString ParamValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfInteger NegativePointers() const;
+		%feature("autodoc", "1");
+		void AddLiteral(const Interface_ParamType ptype, const Handle_TCollection_HAsciiString &val);
+		%feature("autodoc", "1");
+		void AddLiteral(const Interface_ParamType ptype, const char * val);
+		%feature("autodoc", "1");
+		void AddEntity(const Interface_ParamType ptype, const Handle_IGESData_IGESEntity &ent, const Standard_Boolean negative=0);
+		%feature("autodoc", "1");
+		void AddEntities(const Handle_IGESData_HArray1OfIGESEntity &ents);
+		%feature("autodoc", "1");
+		void AddNegativePointers(const Handle_TColStd_HSequenceOfInteger &list);
+		%feature("autodoc", "1");
+		void ClearNegativePointers();
+		%feature("autodoc", "1");
+		virtual		void WriteOwnParams(IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESData_FreeFormatEntity {
+	Handle_IGESData_FreeFormatEntity GetHandle() {
+	return *(Handle_IGESData_FreeFormatEntity*) &$self;
+	}
+};
+%extend IGESData_FreeFormatEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESData_FreeFormatEntity {
+	~IGESData_FreeFormatEntity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESData_FreeFormatEntity\n");}
+	}
+};
+
+
 %nodefaultctor IGESData_GeneralModule;
 class IGESData_GeneralModule : public Interface_GeneralModule {
 	public:
@@ -2178,33 +2266,6 @@ class IGESData_GeneralModule : public Interface_GeneralModule {
 	~IGESData_GeneralModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESData_GeneralModule\n");}
-	}
-};
-
-
-%nodefaultctor IGESData_LabelDisplayEntity;
-class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESData_LabelDisplayEntity();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESData_LabelDisplayEntity {
-	Handle_IGESData_LabelDisplayEntity GetHandle() {
-	return *(Handle_IGESData_LabelDisplayEntity*) &$self;
-	}
-};
-%extend IGESData_LabelDisplayEntity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESData_LabelDisplayEntity {
-	~IGESData_LabelDisplayEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESData_LabelDisplayEntity\n");}
 	}
 };
 
@@ -2271,35 +2332,6 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 	~IGESData_NodeOfWriterLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESData_NodeOfWriterLib\n");}
-	}
-};
-
-
-%nodefaultctor IGESData_DefSwitch;
-class IGESData_DefSwitch {
-	public:
-		%feature("autodoc", "1");
-		IGESData_DefSwitch();
-		%feature("autodoc", "1");
-		void SetVoid();
-		%feature("autodoc", "1");
-		void SetReference();
-		%feature("autodoc", "1");
-		void SetRank(const Standard_Integer val);
-		%feature("autodoc", "1");
-		IGESData_DefType DefType() const;
-		%feature("autodoc", "1");
-		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetIGESData_DefSwitchtheval() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetIGESData_DefSwitchtheval(const Standard_Integer p);
-
-};
-%extend IGESData_DefSwitch {
-	~IGESData_DefSwitch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESData_DefSwitch\n");}
 	}
 };
 
@@ -2371,47 +2403,6 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 	~IGESData_IGESModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESData_IGESModel\n");}
-	}
-};
-
-
-%nodefaultctor IGESData_ParamCursor;
-class IGESData_ParamCursor {
-	public:
-		%feature("autodoc", "1");
-		IGESData_ParamCursor(const Standard_Integer num);
-		%feature("autodoc", "1");
-		IGESData_ParamCursor(const Standard_Integer num, const Standard_Integer nb, const Standard_Integer size=1);
-		%feature("autodoc", "1");
-		void SetTerm(const Standard_Integer size, const Standard_Boolean autoadv=1);
-		%feature("autodoc", "1");
-		void SetOne(const Standard_Boolean autoadv=1);
-		%feature("autodoc", "1");
-		void SetXY(const Standard_Boolean autoadv=1);
-		%feature("autodoc", "1");
-		void SetXYZ(const Standard_Boolean autoadv=1);
-		%feature("autodoc", "1");
-		void SetAdvance(const Standard_Boolean advance);
-		%feature("autodoc", "1");
-		Standard_Integer Start() const;
-		%feature("autodoc", "1");
-		Standard_Integer Limit() const;
-		%feature("autodoc", "1");
-		Standard_Integer Count() const;
-		%feature("autodoc", "1");
-		Standard_Integer ItemSize() const;
-		%feature("autodoc", "1");
-		Standard_Integer TermSize() const;
-		%feature("autodoc", "1");
-		Standard_Integer Offset() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Advance() const;
-
-};
-%extend IGESData_ParamCursor {
-	~IGESData_ParamCursor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESData_ParamCursor\n");}
 	}
 };
 
@@ -2545,8 +2536,6 @@ class IGESData_DirChecker {
 class IGESData_LineFontEntity : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESData_LineFontEntity();
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -2646,63 +2635,27 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESData_FreeFormatEntity;
-class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
+%nodefaultctor IGESData_LabelDisplayEntity;
+class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
 	public:
-		%feature("autodoc", "1");
-		IGESData_FreeFormatEntity();
-		%feature("autodoc", "1");
-		void SetTypeNumber(const Standard_Integer typenum);
-		%feature("autodoc", "1");
-		void SetFormNumber(const Standard_Integer formnum);
-		%feature("autodoc", "1");
-		Standard_Integer NbParams() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ParamData(const Standard_Integer num, Interface_ParamType & ptype, Handle_IGESData_IGESEntity & ent, Handle_TCollection_HAsciiString & val) const;
-		%feature("autodoc", "1");
-		Interface_ParamType ParamType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParamEntity(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity ParamEntity(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNegativePointer(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString ParamValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfInteger NegativePointers() const;
-		%feature("autodoc", "1");
-		void AddLiteral(const Interface_ParamType ptype, const Handle_TCollection_HAsciiString &val);
-		%feature("autodoc", "1");
-		void AddLiteral(const Interface_ParamType ptype, const char * val);
-		%feature("autodoc", "1");
-		void AddEntity(const Interface_ParamType ptype, const Handle_IGESData_IGESEntity &ent, const Standard_Boolean negative=0);
-		%feature("autodoc", "1");
-		void AddEntities(const Handle_IGESData_HArray1OfIGESEntity &ents);
-		%feature("autodoc", "1");
-		void AddNegativePointers(const Handle_TColStd_HSequenceOfInteger &list);
-		%feature("autodoc", "1");
-		void ClearNegativePointers();
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESData_FreeFormatEntity {
-	Handle_IGESData_FreeFormatEntity GetHandle() {
-	return *(Handle_IGESData_FreeFormatEntity*) &$self;
+%extend IGESData_LabelDisplayEntity {
+	Handle_IGESData_LabelDisplayEntity GetHandle() {
+	return *(Handle_IGESData_LabelDisplayEntity*) &$self;
 	}
 };
-%extend IGESData_FreeFormatEntity {
+%extend IGESData_LabelDisplayEntity {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESData_FreeFormatEntity {
-	~IGESData_FreeFormatEntity() {
+%extend IGESData_LabelDisplayEntity {
+	~IGESData_LabelDisplayEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESData_FreeFormatEntity\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESData_LabelDisplayEntity\n");}
 	}
 };
 
@@ -2775,5 +2728,46 @@ class IGESData_IGESWriter {
 	~IGESData_IGESWriter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESData_IGESWriter\n");}
+	}
+};
+
+
+%nodefaultctor IGESData_ParamCursor;
+class IGESData_ParamCursor {
+	public:
+		%feature("autodoc", "1");
+		IGESData_ParamCursor(const Standard_Integer num);
+		%feature("autodoc", "1");
+		IGESData_ParamCursor(const Standard_Integer num, const Standard_Integer nb, const Standard_Integer size=1);
+		%feature("autodoc", "1");
+		void SetTerm(const Standard_Integer size, const Standard_Boolean autoadv=1);
+		%feature("autodoc", "1");
+		void SetOne(const Standard_Boolean autoadv=1);
+		%feature("autodoc", "1");
+		void SetXY(const Standard_Boolean autoadv=1);
+		%feature("autodoc", "1");
+		void SetXYZ(const Standard_Boolean autoadv=1);
+		%feature("autodoc", "1");
+		void SetAdvance(const Standard_Boolean advance);
+		%feature("autodoc", "1");
+		Standard_Integer Start() const;
+		%feature("autodoc", "1");
+		Standard_Integer Limit() const;
+		%feature("autodoc", "1");
+		Standard_Integer Count() const;
+		%feature("autodoc", "1");
+		Standard_Integer ItemSize() const;
+		%feature("autodoc", "1");
+		Standard_Integer TermSize() const;
+		%feature("autodoc", "1");
+		Standard_Integer Offset() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Advance() const;
+
+};
+%extend IGESData_ParamCursor {
+	~IGESData_ParamCursor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESData_ParamCursor\n");}
 	}
 };

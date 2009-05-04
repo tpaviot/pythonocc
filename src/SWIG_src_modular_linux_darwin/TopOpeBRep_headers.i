@@ -246,14 +246,18 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
+#include<TopTools_ListOfShape.hxx>
+#include<TopOpeBRepDS_Transition.hxx>
+#include<Handle_TopOpeBRepDS_Interference.hxx>
+#include<TopOpeBRepDS_ListIteratorOfListOfInterference.hxx>
+#include<TopOpeBRepDS_Point.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
-#include<TopOpeBRepDS_Transition.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopOpeBRepDS_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<TopoDS_Face.hxx>
 #include<IntSurf_PntOn2S.hxx>
 #include<Bnd_Box.hxx>
@@ -263,12 +267,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<Handle_BRepTopAdaptor_TopolTool.hxx>
 #include<BRepAdaptor_Surface.hxx>
-#include<TopTools_ListOfShape.hxx>
-#include<Handle_TopOpeBRepDS_Interference.hxx>
-#include<TopOpeBRepDS_ListIteratorOfListOfInterference.hxx>
-#include<TopOpeBRepDS_Point.hxx>
 #include<TopOpeBRepTool_ShapeExplorer.hxx>
-#include<TopOpeBRep.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<IntRes2d_IntersectionPoint.hxx>
 %}

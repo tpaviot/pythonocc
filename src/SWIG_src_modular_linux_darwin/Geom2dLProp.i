@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dLProp
 
+%include Geom2dLProp_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -139,32 +141,9 @@ class Geom2dLProp_NumericCurInf2d {
 };
 
 
-%nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
-class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
-	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dLProp_Curve2dTool;
 class Geom2dLProp_Curve2dTool {
 	public:
-		%feature("autodoc", "1");
-		Geom2dLProp_Curve2dTool();
 		%feature("autodoc", "1");
 		void Value(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
@@ -212,6 +191,29 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 };
 
 
+%nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
+class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean IsMinKC(const Standard_Real Param) const;
+
+};
+%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
+	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");}
+	}
+};
+
+
 %nodefaultctor Geom2dLProp_CLProps2d;
 class Geom2dLProp_CLProps2d {
 	public:
@@ -253,24 +255,22 @@ class Geom2dLProp_CLProps2d {
 };
 
 
-%nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
-class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
+%nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
+class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
+		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean IsMinKC(const Standard_Real Param) const;
 
 };
-%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
-	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
+%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
+	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");}
 	}
 };

@@ -574,8 +574,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import Standard.i
+%import MMgt.i
 %import Graphic3d.i
-%import Aspect.i
 %import Quantity.i
+%import Aspect.i

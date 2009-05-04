@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopAbs
 
+%include TopAbs_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -143,8 +145,6 @@ enum TopAbs_ShapeEnum {
 %nodefaultctor TopAbs;
 class TopAbs {
 	public:
-		%feature("autodoc", "1");
-		TopAbs();
 		%feature("autodoc", "1");
 		TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
 		%feature("autodoc", "1");

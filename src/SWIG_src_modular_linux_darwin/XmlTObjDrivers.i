@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlTObjDrivers
 
+%include XmlTObjDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -522,8 +524,6 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 %nodefaultctor XmlTObjDrivers;
 class XmlTObjDrivers {
 	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");

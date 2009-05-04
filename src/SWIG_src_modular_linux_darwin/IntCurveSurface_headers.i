@@ -52,10 +52,18 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Pnt.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+#include<gp_Elips.hxx>
+#include<gp_Hypr.hxx>
+#include<gp_Parab.hxx>
+#include<Handle_Geom_BezierCurve.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
@@ -70,13 +78,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IntSurf_Quadric.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
-#include<gp_Lin.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Elips.hxx>
-#include<gp_Hypr.hxx>
-#include<gp_Parab.hxx>
-#include<Handle_Geom_BezierCurve.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Intf_Array1OfLin.hxx>
 %}

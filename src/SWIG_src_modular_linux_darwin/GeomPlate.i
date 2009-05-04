@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomPlate
 
+%include GeomPlate_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -374,81 +376,6 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor GeomPlate_CurveConstraint;
-class GeomPlate_CurveConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint();
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void SetOrder(const Standard_Integer Order);
-		%feature("autodoc", "1");
-		Standard_Integer Order() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		void SetNbPoints(const Standard_Integer NewNb);
-		%feature("autodoc", "1");
-		void SetG0Criterion(const Handle_Law_Function &G0Crit);
-		%feature("autodoc", "1");
-		void SetG1Criterion(const Handle_Law_Function &G1Crit);
-		%feature("autodoc", "1");
-		void SetG2Criterion(const Handle_Law_Function &G2Crit);
-		%feature("autodoc", "1");
-		Standard_Real G0Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real G1Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real G2Criterion(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real Length() const;
-		%feature("autodoc", "1");
-		GeomLProp_SLProps & LPropSurf(const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve Curve3d() const;
-		%feature("autodoc", "1");
-		void SetCurve2dOnSurf(const Handle_Geom2d_Curve &Curve2d);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2dOnSurf() const;
-		%feature("autodoc", "1");
-		void SetProjectedCurve(const Handle_Adaptor2d_HCurve2d &Curve2d, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d ProjectedCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_CurveConstraint {
-	Handle_GeomPlate_CurveConstraint GetHandle() {
-	return *(Handle_GeomPlate_CurveConstraint*) &$self;
-	}
-};
-%extend GeomPlate_CurveConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomPlate_CurveConstraint {
-	~GeomPlate_CurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_CurveConstraint\n");}
-	}
-};
-
-
 %nodefaultctor GeomPlate_HArray1OfHCurveOnSurface;
 class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 	public:
@@ -680,6 +607,100 @@ class GeomPlate_Aij {
 	~GeomPlate_Aij() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_Aij\n");}
+	}
+};
+
+
+%nodefaultctor GeomPlate_CurveConstraint;
+class GeomPlate_CurveConstraint : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_CurveConstraint();
+		%feature("autodoc", "1");
+		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		%feature("autodoc", "1");
+		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void SetOrder(const Standard_Integer Order);
+		%feature("autodoc", "1");
+		Standard_Integer Order() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		void SetNbPoints(const Standard_Integer NewNb);
+		%feature("autodoc", "1");
+		void SetG0Criterion(const Handle_Law_Function &G0Crit);
+		%feature("autodoc", "1");
+		void SetG1Criterion(const Handle_Law_Function &G1Crit);
+		%feature("autodoc", "1");
+		void SetG2Criterion(const Handle_Law_Function &G2Crit);
+		%feature("autodoc", "1");
+		Standard_Real G0Criterion(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Real G1Criterion(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Real G2Criterion(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real Length() const;
+		%feature("autodoc", "1");
+		GeomLProp_SLProps & LPropSurf(const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve Curve3d() const;
+		%feature("autodoc", "1");
+		void SetCurve2dOnSurf(const Handle_Geom2d_Curve &Curve2d);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Curve2dOnSurf() const;
+		%feature("autodoc", "1");
+		void SetProjectedCurve(const Handle_Adaptor2d_HCurve2d &Curve2d, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d ProjectedCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomPlate_CurveConstraint {
+	Handle_GeomPlate_CurveConstraint GetHandle() {
+	return *(Handle_GeomPlate_CurveConstraint*) &$self;
+	}
+};
+%extend GeomPlate_CurveConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomPlate_CurveConstraint {
+	~GeomPlate_CurveConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_CurveConstraint\n");}
+	}
+};
+
+
+%nodefaultctor GeomPlate_PlateG0Criterion;
+class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_PlateG0Criterion(const TColgp_SequenceOfXY &Data, const TColgp_SequenceOfXYZ &G0Data, const Standard_Real Maximum, const AdvApp2Var_CriterionType Type=AdvApp2Var_Absolute, const AdvApp2Var_CriterionRepartition Repart=AdvApp2Var_Regular);
+		%feature("autodoc", "1");
+		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
+
+};
+%extend GeomPlate_PlateG0Criterion {
+	~GeomPlate_PlateG0Criterion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
 	}
 };
 
@@ -929,62 +950,54 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 
 
-%nodefaultctor GeomPlate_PlateG0Criterion;
-class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
+%nodefaultctor GeomPlate_MakeApprox;
+class GeomPlate_MakeApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_PlateG0Criterion(const TColgp_SequenceOfXY &Data, const TColgp_SequenceOfXYZ &G0Data, const Standard_Real Maximum, const AdvApp2Var_CriterionType Type=AdvApp2Var_Absolute, const AdvApp2Var_CriterionRepartition Repart=AdvApp2Var_Regular);
+		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
-		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
+		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
+		Handle_Geom_BSplineSurface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Real ApproxError() const;
+		%feature("autodoc", "1");
+		Standard_Real CriterionError() const;
 
 };
-%extend GeomPlate_PlateG0Criterion {
-	~GeomPlate_PlateG0Criterion() {
+%extend GeomPlate_MakeApprox {
+	~GeomPlate_MakeApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_MakeApprox\n");}
 	}
 };
 
 
-%nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
-class GeomPlate_Array1OfHCurveOnSurface {
+%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
+class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_Array1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up);
+		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		GeomPlate_Array1OfHCurveOnSurface(const Handle_Adaptor3d_HCurveOnSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		GeomPlate_Aij & Value() const;
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HCurveOnSurface &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const GeomPlate_Array1OfHCurveOnSurface & Assign(const GeomPlate_Array1OfHCurveOnSurface &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HCurveOnSurface &Value);
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HCurveOnSurface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurveOnSurface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomPlate_Array1OfHCurveOnSurface {
-	~GeomPlate_Array1OfHCurveOnSurface() {
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
+	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	~GeomPlate_SequenceNodeOfSequenceOfAij() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
 	}
 };
 
@@ -1044,31 +1057,61 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
-class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
+%nodefaultctor GeomPlate_PointConstraint;
+class GeomPlate_PointConstraint : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		GeomPlate_PointConstraint(const gp_Pnt &Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		GeomPlate_Aij & Value() const;
+		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		%feature("autodoc", "1");
+		void SetOrder(const Standard_Integer Order);
+		%feature("autodoc", "1");
+		Standard_Integer Order() const;
+		%feature("autodoc", "1");
+		void SetG0Criterion(const Standard_Real TolDist);
+		%feature("autodoc", "1");
+		void SetG1Criterion(const Standard_Real TolAng);
+		%feature("autodoc", "1");
+		void SetG2Criterion(const Standard_Real TolCurv);
+		%feature("autodoc", "1");
+		Standard_Real G0Criterion() const;
+		%feature("autodoc", "1");
+		Standard_Real G1Criterion() const;
+		%feature("autodoc", "1");
+		Standard_Real G2Criterion() const;
+		%feature("autodoc", "1");
+		void D0(gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void D1(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		void D2(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPnt2dOnSurf() const;
+		%feature("autodoc", "1");
+		void SetPnt2dOnSurf(const gp_Pnt2d &Pnt);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt2dOnSurf() const;
+		%feature("autodoc", "1");
+		GeomLProp_SLProps & LPropSurf();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
-	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
+%extend GeomPlate_PointConstraint {
+	Handle_GeomPlate_PointConstraint GetHandle() {
+	return *(Handle_GeomPlate_PointConstraint*) &$self;
 	}
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+%extend GeomPlate_PointConstraint {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	~GeomPlate_SequenceNodeOfSequenceOfAij() {
+%extend GeomPlate_PointConstraint {
+	~GeomPlate_PointConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_PointConstraint\n");}
 	}
 };
 
@@ -1151,88 +1194,6 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 	~GeomPlate_PlateG1Criterion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG1Criterion\n");}
-	}
-};
-
-
-%nodefaultctor GeomPlate_PointConstraint;
-class GeomPlate_PointConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const gp_Pnt &Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		void SetOrder(const Standard_Integer Order);
-		%feature("autodoc", "1");
-		Standard_Integer Order() const;
-		%feature("autodoc", "1");
-		void SetG0Criterion(const Standard_Real TolDist);
-		%feature("autodoc", "1");
-		void SetG1Criterion(const Standard_Real TolAng);
-		%feature("autodoc", "1");
-		void SetG2Criterion(const Standard_Real TolCurv);
-		%feature("autodoc", "1");
-		Standard_Real G0Criterion() const;
-		%feature("autodoc", "1");
-		Standard_Real G1Criterion() const;
-		%feature("autodoc", "1");
-		Standard_Real G2Criterion() const;
-		%feature("autodoc", "1");
-		void D0(gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasPnt2dOnSurf() const;
-		%feature("autodoc", "1");
-		void SetPnt2dOnSurf(const gp_Pnt2d &Pnt);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dOnSurf() const;
-		%feature("autodoc", "1");
-		GeomLProp_SLProps & LPropSurf();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_PointConstraint {
-	Handle_GeomPlate_PointConstraint GetHandle() {
-	return *(Handle_GeomPlate_PointConstraint*) &$self;
-	}
-};
-%extend GeomPlate_PointConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomPlate_PointConstraint {
-	~GeomPlate_PointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PointConstraint\n");}
-	}
-};
-
-
-%nodefaultctor GeomPlate_MakeApprox;
-class GeomPlate_MakeApprox {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
-		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Real ApproxError() const;
-		%feature("autodoc", "1");
-		Standard_Real CriterionError() const;
-
-};
-%extend GeomPlate_MakeApprox {
-	~GeomPlate_MakeApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_MakeApprox\n");}
 	}
 };
 
@@ -1329,5 +1290,46 @@ class GeomPlate_Array1OfSequenceOfReal {
 	~GeomPlate_Array1OfSequenceOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfSequenceOfReal\n");}
+	}
+};
+
+
+%nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
+class GeomPlate_Array1OfHCurveOnSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_Array1OfHCurveOnSurface(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		GeomPlate_Array1OfHCurveOnSurface(const Handle_Adaptor3d_HCurveOnSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Adaptor3d_HCurveOnSurface &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const GeomPlate_Array1OfHCurveOnSurface & Assign(const GeomPlate_Array1OfHCurveOnSurface &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HCurveOnSurface &Value);
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HCurveOnSurface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurveOnSurface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index);
+
+};
+%extend GeomPlate_Array1OfHCurveOnSurface {
+	~GeomPlate_Array1OfHCurveOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");}
 	}
 };

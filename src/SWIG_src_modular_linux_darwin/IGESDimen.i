@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESDimen
 
+%include IGESDimen_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,32 +114,6 @@ Standard_Integer & function transformation
 %include IGESDimen_headers.i
 
 
-
-
-%nodefaultctor Handle_IGESDimen_CenterLine;
-class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine(const Handle_IGESDimen_CenterLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine(const IGESDimen_CenterLine *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_CenterLine {
-	IGESDimen_CenterLine* GetObject() {
-	return (IGESDimen_CenterLine*)$self->Access();
-	}
-};
-%extend Handle_IGESDimen_CenterLine {
-	~Handle_IGESDimen_CenterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_CenterLine\n");}
-	}
-};
 
 
 %nodefaultctor Handle_IGESDimen_DimensionDisplayData;
@@ -240,6 +216,32 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	~Handle_IGESDimen_DimensionTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionTolerance\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
+class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote(const IGESDimen_HArray1OfGeneralNote *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
+	IGESDimen_HArray1OfGeneralNote* GetObject() {
+	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
+	}
+};
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
+	~Handle_IGESDimen_HArray1OfGeneralNote() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_HArray1OfGeneralNote\n");}
 	}
 };
 
@@ -422,32 +424,6 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	~Handle_IGESDimen_RadiusDimension() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_RadiusDimension\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESDimen_GeneralNote;
-class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote(const Handle_IGESDimen_GeneralNote &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote(const IGESDimen_GeneralNote *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_GeneralNote {
-	IGESDimen_GeneralNote* GetObject() {
-	return (IGESDimen_GeneralNote*)$self->Access();
-	}
-};
-%extend Handle_IGESDimen_GeneralNote {
-	~Handle_IGESDimen_GeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralNote\n");}
 	}
 };
 
@@ -686,32 +662,6 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 
 
-%nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
-class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote(const IGESDimen_HArray1OfGeneralNote *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_HArray1OfGeneralNote {
-	IGESDimen_HArray1OfGeneralNote* GetObject() {
-	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
-	}
-};
-%extend Handle_IGESDimen_HArray1OfGeneralNote {
-	~Handle_IGESDimen_HArray1OfGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_HArray1OfGeneralNote\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESDimen_DiameterDimension;
 class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -842,6 +792,32 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESDimen_GeneralNote;
+class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote(const Handle_IGESDimen_GeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote(const IGESDimen_GeneralNote *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_GeneralNote {
+	IGESDimen_GeneralNote* GetObject() {
+	return (IGESDimen_GeneralNote*)$self->Access();
+	}
+};
+%extend Handle_IGESDimen_GeneralNote {
+	~Handle_IGESDimen_GeneralNote() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralNote\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESDimen_LinearDimension;
 class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -864,6 +840,32 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	~Handle_IGESDimen_LinearDimension() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_LinearDimension\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_CenterLine;
+class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine(const Handle_IGESDimen_CenterLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine(const IGESDimen_CenterLine *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_CenterLine {
+	IGESDimen_CenterLine* GetObject() {
+	return (IGESDimen_CenterLine*)$self->Access();
+	}
+};
+%extend Handle_IGESDimen_CenterLine {
+	~Handle_IGESDimen_CenterLine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_CenterLine\n");}
 	}
 };
 
@@ -1659,37 +1661,6 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 };
 
 
-%nodefaultctor IGESDimen_ToolDimensionedGeometry;
-class IGESDimen_ToolDimensionedGeometry {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolDimensionedGeometry();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_DimensionedGeometry &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionedGeometry &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionedGeometry &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_DimensionedGeometry &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_DimensionedGeometry &entfrom, const Handle_IGESDimen_DimensionedGeometry &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDimen_ToolDimensionedGeometry {
-	~IGESDimen_ToolDimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionedGeometry\n");}
-	}
-};
-
-
 %nodefaultctor IGESDimen_ToolRadiusDimension;
 class IGESDimen_ToolRadiusDimension {
 	public:
@@ -2402,6 +2373,37 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 };
 
 
+%nodefaultctor IGESDimen_ToolDimensionedGeometry;
+class IGESDimen_ToolDimensionedGeometry {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolDimensionedGeometry();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_DimensionedGeometry &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionedGeometry &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionedGeometry &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_DimensionedGeometry &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_DimensionedGeometry &entfrom, const Handle_IGESDimen_DimensionedGeometry &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDimen_ToolDimensionedGeometry {
+	~IGESDimen_ToolDimensionedGeometry() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionedGeometry\n");}
+	}
+};
+
+
 %nodefaultctor IGESDimen_ToolLinearDimension;
 class IGESDimen_ToolLinearDimension {
 	public:
@@ -2431,11 +2433,38 @@ class IGESDimen_ToolLinearDimension {
 };
 
 
+%nodefaultctor IGESDimen_ToolAngularDimension;
+class IGESDimen_ToolAngularDimension {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolAngularDimension();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_AngularDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_AngularDimension &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_AngularDimension &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_AngularDimension &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_AngularDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_AngularDimension &entfrom, const Handle_IGESDimen_AngularDimension &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDimen_ToolAngularDimension {
+	~IGESDimen_ToolAngularDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolAngularDimension\n");}
+	}
+};
+
+
 %nodefaultctor IGESDimen;
 class IGESDimen {
 	public:
-		%feature("autodoc", "1");
-		IGESDimen();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -2732,35 +2761,6 @@ class IGESDimen_ToolGeneralSymbol {
 	~IGESDimen_ToolGeneralSymbol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralSymbol\n");}
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolAngularDimension;
-class IGESDimen_ToolAngularDimension {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolAngularDimension();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_AngularDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_AngularDimension &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_AngularDimension &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_AngularDimension &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_AngularDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_AngularDimension &entfrom, const Handle_IGESDimen_AngularDimension &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDimen_ToolAngularDimension {
-	~IGESDimen_ToolAngularDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolAngularDimension\n");}
 	}
 };
 

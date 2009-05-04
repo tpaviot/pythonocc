@@ -296,7 +296,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
 #include<Handle_HeaderSection_FileName.hxx>
-#include<RWHeaderSection.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_CopyTool.hxx>

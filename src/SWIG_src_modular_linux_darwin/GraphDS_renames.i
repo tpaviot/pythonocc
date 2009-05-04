@@ -1,0 +1,10 @@
+%rename(OnlyInput) GraphDS_OnlyInput;
+%rename(FrontAndBack) GraphDS_FrontAndBack;
+%rename(Handle_DataMapNodeOfEntityRoleMap) Handle_GraphDS_DataMapNodeOfEntityRoleMap;
+%rename(DataMapIteratorOfEntityRoleMap) GraphDS_DataMapIteratorOfEntityRoleMap;
+%rename(OnlyFront) GraphDS_OnlyFront;
+%rename(InputAndOutput) GraphDS_InputAndOutput;
+%rename(OnlyBack) GraphDS_OnlyBack;
+%rename(EntityRoleMap) GraphDS_EntityRoleMap;
+%rename(OnlyOutput) GraphDS_OnlyOutput;
+%rename(DataMapNodeOfEntityRoleMap) GraphDS_DataMapNodeOfEntityRoleMap;

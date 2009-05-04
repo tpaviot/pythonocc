@@ -540,7 +540,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<ShapeBuild.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Edge.hxx>

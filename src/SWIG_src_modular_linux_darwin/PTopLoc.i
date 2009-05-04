@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PTopLoc
 
+%include PTopLoc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -201,35 +203,6 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 };
 
 
-%nodefaultctor PTopLoc_Location;
-class PTopLoc_Location {
-	public:
-		%feature("autodoc", "1");
-		PTopLoc_Location();
-		%feature("autodoc", "1");
-		PTopLoc_Location(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
-		%feature("autodoc", "1");
-		Standard_Boolean IsIdentity() const;
-		%feature("autodoc", "1");
-		Handle_PTopLoc_Datum3D Datum3D() const;
-		%feature("autodoc", "1");
-		Standard_Integer Power() const;
-		%feature("autodoc", "1");
-		PTopLoc_Location Next() const;
-		%feature("autodoc", "1");
-		Handle_PTopLoc_ItemLocation _CSFDB_GetPTopLoc_LocationmyData() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
-
-};
-%extend PTopLoc_Location {
-	~PTopLoc_Location() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopLoc_Location\n");}
-	}
-};
-
-
 %nodefaultctor PTopLoc_ItemLocation;
 class PTopLoc_ItemLocation : public Standard_Persistent {
 	public:
@@ -273,5 +246,34 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 	~PTopLoc_ItemLocation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PTopLoc_ItemLocation\n");}
+	}
+};
+
+
+%nodefaultctor PTopLoc_Location;
+class PTopLoc_Location {
+	public:
+		%feature("autodoc", "1");
+		PTopLoc_Location();
+		%feature("autodoc", "1");
+		PTopLoc_Location(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
+		%feature("autodoc", "1");
+		Standard_Boolean IsIdentity() const;
+		%feature("autodoc", "1");
+		Handle_PTopLoc_Datum3D Datum3D() const;
+		%feature("autodoc", "1");
+		Standard_Integer Power() const;
+		%feature("autodoc", "1");
+		PTopLoc_Location Next() const;
+		%feature("autodoc", "1");
+		Handle_PTopLoc_ItemLocation _CSFDB_GetPTopLoc_LocationmyData() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
+
+};
+%extend PTopLoc_Location {
+	~PTopLoc_Location() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PTopLoc_Location\n");}
 	}
 };

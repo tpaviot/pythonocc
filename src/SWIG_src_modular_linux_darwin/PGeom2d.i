@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PGeom2d
 
+%include PGeom2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,6 +168,32 @@ class Handle_PGeom2d_Curve : public Handle_PGeom2d_Geometry {
 };
 
 
+%nodefaultctor Handle_PGeom2d_Line;
+class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Line();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Line(const Handle_PGeom2d_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Line(const PGeom2d_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Line const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_Line {
+	PGeom2d_Line* GetObject() {
+	return (PGeom2d_Line*)$self->Access();
+	}
+};
+%extend Handle_PGeom2d_Line {
+	~Handle_PGeom2d_Line() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Line\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PGeom2d_Conic;
 class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
 	public:
@@ -188,58 +216,6 @@ class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
 	~Handle_PGeom2d_Conic() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Conic\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_Parabola;
-class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola(const Handle_PGeom2d_Parabola &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola(const PGeom2d_Parabola *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Parabola const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_Parabola {
-	PGeom2d_Parabola* GetObject() {
-	return (PGeom2d_Parabola*)$self->Access();
-	}
-};
-%extend Handle_PGeom2d_Parabola {
-	~Handle_PGeom2d_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Parabola\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_Point;
-class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Point();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Point(const Handle_PGeom2d_Point &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Point(const PGeom2d_Point *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Point const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_Point {
-	PGeom2d_Point* GetObject() {
-	return (PGeom2d_Point*)$self->Access();
-	}
-};
-%extend Handle_PGeom2d_Point {
-	~Handle_PGeom2d_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Point\n");}
 	}
 };
 
@@ -374,32 +350,6 @@ class Handle_PGeom2d_BSplineCurve : public Handle_PGeom2d_BoundedCurve {
 };
 
 
-%nodefaultctor Handle_PGeom2d_TrimmedCurve;
-class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve(const Handle_PGeom2d_TrimmedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve(const PGeom2d_TrimmedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_TrimmedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_TrimmedCurve {
-	PGeom2d_TrimmedCurve* GetObject() {
-	return (PGeom2d_TrimmedCurve*)$self->Access();
-	}
-};
-%extend Handle_PGeom2d_TrimmedCurve {
-	~Handle_PGeom2d_TrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_TrimmedCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom2d_AxisPlacement;
 class Handle_PGeom2d_AxisPlacement : public Handle_PGeom2d_Geometry {
 	public:
@@ -452,32 +402,6 @@ class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
 };
 
 
-%nodefaultctor Handle_PGeom2d_OffsetCurve;
-class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve(const Handle_PGeom2d_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve(const PGeom2d_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_OffsetCurve {
-	PGeom2d_OffsetCurve* GetObject() {
-	return (PGeom2d_OffsetCurve*)$self->Access();
-	}
-};
-%extend Handle_PGeom2d_OffsetCurve {
-	~Handle_PGeom2d_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_OffsetCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom2d_Hyperbola;
 class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
 	public:
@@ -500,32 +424,6 @@ class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
 	~Handle_PGeom2d_Hyperbola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Hyperbola\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PGeom2d_Line;
-class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Line();
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Line(const Handle_PGeom2d_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Line(const PGeom2d_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Line const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom2d_Line {
-	PGeom2d_Line* GetObject() {
-	return (PGeom2d_Line*)$self->Access();
-	}
-};
-%extend Handle_PGeom2d_Line {
-	~Handle_PGeom2d_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Line\n");}
 	}
 };
 
@@ -556,6 +454,32 @@ class Handle_PGeom2d_Transformation : public Handle_Standard_Persistent {
 };
 
 
+%nodefaultctor Handle_PGeom2d_Parabola;
+class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Parabola();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Parabola(const Handle_PGeom2d_Parabola &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Parabola(const PGeom2d_Parabola *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Parabola const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_Parabola {
+	PGeom2d_Parabola* GetObject() {
+	return (PGeom2d_Parabola*)$self->Access();
+	}
+};
+%extend Handle_PGeom2d_Parabola {
+	~Handle_PGeom2d_Parabola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Parabola\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PGeom2d_Direction;
 class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 	public:
@@ -582,6 +506,58 @@ class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 };
 
 
+%nodefaultctor Handle_PGeom2d_OffsetCurve;
+class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_OffsetCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_OffsetCurve(const Handle_PGeom2d_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_OffsetCurve(const PGeom2d_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_OffsetCurve {
+	PGeom2d_OffsetCurve* GetObject() {
+	return (PGeom2d_OffsetCurve*)$self->Access();
+	}
+};
+%extend Handle_PGeom2d_OffsetCurve {
+	~Handle_PGeom2d_OffsetCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_OffsetCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom2d_TrimmedCurve;
+class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_TrimmedCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_TrimmedCurve(const Handle_PGeom2d_TrimmedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_TrimmedCurve(const PGeom2d_TrimmedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_TrimmedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_TrimmedCurve {
+	PGeom2d_TrimmedCurve* GetObject() {
+	return (PGeom2d_TrimmedCurve*)$self->Access();
+	}
+};
+%extend Handle_PGeom2d_TrimmedCurve {
+	~Handle_PGeom2d_TrimmedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_TrimmedCurve\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PGeom2d_BezierCurve;
 class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 	public:
@@ -604,6 +580,32 @@ class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 	~Handle_PGeom2d_BezierCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_BezierCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom2d_Point;
+class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Point();
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Point(const Handle_PGeom2d_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Point(const PGeom2d_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Point const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom2d_Point {
+	PGeom2d_Point* GetObject() {
+	return (PGeom2d_Point*)$self->Access();
+	}
+};
+%extend Handle_PGeom2d_Point {
+	~Handle_PGeom2d_Point() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Point\n");}
 	}
 };
 
@@ -1046,43 +1048,6 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 };
 
 
-%nodefaultctor PGeom2d_AxisPlacement;
-class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		PGeom2d_AxisPlacement();
-		%feature("autodoc", "1");
-		PGeom2d_AxisPlacement(const gp_Ax2d &aAxis);
-		%feature("autodoc", "1");
-		void Axis(const gp_Ax2d &aAxis);
-		%feature("autodoc", "1");
-		gp_Ax2d Axis() const;
-		%feature("autodoc", "1");
-		PGeom2d_AxisPlacement(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax2d & _CSFDB_GetPGeom2d_AxisPlacementaxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom2d_AxisPlacement {
-	Handle_PGeom2d_AxisPlacement GetHandle() {
-	return *(Handle_PGeom2d_AxisPlacement*) &$self;
-	}
-};
-%extend PGeom2d_AxisPlacement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom2d_AxisPlacement {
-	~PGeom2d_AxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom2d_AxisPlacement\n");}
-	}
-};
-
-
 %nodefaultctor PGeom2d_OffsetCurve;
 class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 	public:
@@ -1308,43 +1273,6 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 };
 
 
-%nodefaultctor PGeom2d_Transformation;
-class PGeom2d_Transformation : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PGeom2d_Transformation();
-		%feature("autodoc", "1");
-		PGeom2d_Transformation(const gp_Trsf2d &aTrsf);
-		%feature("autodoc", "1");
-		void Trsf(const gp_Trsf2d &aTrsf);
-		%feature("autodoc", "1");
-		gp_Trsf2d Trsf() const;
-		%feature("autodoc", "1");
-		PGeom2d_Transformation(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Trsf2d & _CSFDB_GetPGeom2d_Transformationtrsf() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom2d_Transformation {
-	Handle_PGeom2d_Transformation GetHandle() {
-	return *(Handle_PGeom2d_Transformation*) &$self;
-	}
-};
-%extend PGeom2d_Transformation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom2d_Transformation {
-	~PGeom2d_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom2d_Transformation\n");}
-	}
-};
-
-
 %nodefaultctor PGeom2d_BSplineCurve;
 class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 	public:
@@ -1428,5 +1356,79 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 	~PGeom2d_BSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor PGeom2d_AxisPlacement;
+class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_AxisPlacement();
+		%feature("autodoc", "1");
+		PGeom2d_AxisPlacement(const gp_Ax2d &aAxis);
+		%feature("autodoc", "1");
+		void Axis(const gp_Ax2d &aAxis);
+		%feature("autodoc", "1");
+		gp_Ax2d Axis() const;
+		%feature("autodoc", "1");
+		PGeom2d_AxisPlacement(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Ax2d & _CSFDB_GetPGeom2d_AxisPlacementaxis() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_AxisPlacement {
+	Handle_PGeom2d_AxisPlacement GetHandle() {
+	return *(Handle_PGeom2d_AxisPlacement*) &$self;
+	}
+};
+%extend PGeom2d_AxisPlacement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom2d_AxisPlacement {
+	~PGeom2d_AxisPlacement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom2d_AxisPlacement\n");}
+	}
+};
+
+
+%nodefaultctor PGeom2d_Transformation;
+class PGeom2d_Transformation : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PGeom2d_Transformation();
+		%feature("autodoc", "1");
+		PGeom2d_Transformation(const gp_Trsf2d &aTrsf);
+		%feature("autodoc", "1");
+		void Trsf(const gp_Trsf2d &aTrsf);
+		%feature("autodoc", "1");
+		gp_Trsf2d Trsf() const;
+		%feature("autodoc", "1");
+		PGeom2d_Transformation(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Trsf2d & _CSFDB_GetPGeom2d_Transformationtrsf() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_Transformation {
+	Handle_PGeom2d_Transformation GetHandle() {
+	return *(Handle_PGeom2d_Transformation*) &$self;
+	}
+};
+%extend PGeom2d_Transformation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom2d_Transformation {
+	~PGeom2d_Transformation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom2d_Transformation\n");}
 	}
 };

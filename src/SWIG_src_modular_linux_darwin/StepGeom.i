@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepGeom
 
+%include StepGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -163,6 +165,32 @@ enum StepGeom_TransitionCode {
 
 
 
+%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
+class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch();
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	StepGeom_HArray2OfSurfacePatch* GetObject() {
+	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	~Handle_StepGeom_HArray2OfSurfacePatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_GeometricRepresentationItem;
 class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -185,58 +213,6 @@ class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_Repre
 	~Handle_StepGeom_GeometricRepresentationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_Surface;
-class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface(const Handle_StepGeom_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface(const StepGeom_Surface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_Surface {
-	StepGeom_Surface* GetObject() {
-	return (StepGeom_Surface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_Surface {
-	~Handle_StepGeom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Surface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_SurfaceReplica;
-class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceReplica();
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceReplica(const Handle_StepGeom_SurfaceReplica &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceReplica(const StepGeom_SurfaceReplica *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfaceReplica const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_SurfaceReplica {
-	StepGeom_SurfaceReplica* GetObject() {
-	return (StepGeom_SurfaceReplica*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_SurfaceReplica {
-	~Handle_StepGeom_SurfaceReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceReplica\n");}
 	}
 };
 
@@ -501,6 +477,84 @@ class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_Degener
 };
 
 
+%nodefaultctor Handle_StepGeom_BSplineCurve;
+class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineCurve();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineCurve(const Handle_StepGeom_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineCurve(const StepGeom_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BSplineCurve {
+	StepGeom_BSplineCurve* GetObject() {
+	return (StepGeom_BSplineCurve*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_BSplineCurve {
+	~Handle_StepGeom_BSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_QuasiUniformCurve;
+class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_QuasiUniformCurve();
+		%feature("autodoc", "1");
+		Handle_StepGeom_QuasiUniformCurve(const Handle_StepGeom_QuasiUniformCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_QuasiUniformCurve(const StepGeom_QuasiUniformCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_QuasiUniformCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_QuasiUniformCurve {
+	StepGeom_QuasiUniformCurve* GetObject() {
+	return (StepGeom_QuasiUniformCurve*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_QuasiUniformCurve {
+	~Handle_StepGeom_QuasiUniformCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_Surface;
+class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface(const Handle_StepGeom_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface(const StepGeom_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_Surface {
+	StepGeom_Surface* GetObject() {
+	return (StepGeom_Surface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_Surface {
+	~Handle_StepGeom_Surface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Surface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_BoundedSurface;
 class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 	public:
@@ -605,6 +659,32 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepGeom_BezierSurface;
+class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_BezierSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BezierSurface(const Handle_StepGeom_BezierSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BezierSurface(const StepGeom_BezierSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BezierSurface {
+	StepGeom_BezierSurface* GetObject() {
+	return (StepGeom_BezierSurface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_BezierSurface {
+	~Handle_StepGeom_BezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_PointOnSurface;
 class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 	public:
@@ -631,32 +711,6 @@ class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 };
 
 
-%nodefaultctor Handle_StepGeom_BSplineCurve;
-class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineCurve();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineCurve(const Handle_StepGeom_BSplineCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineCurve(const StepGeom_BSplineCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_BSplineCurve {
-	StepGeom_BSplineCurve* GetObject() {
-	return (StepGeom_BSplineCurve*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_BSplineCurve {
-	~Handle_StepGeom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_BezierCurveAndRationalBSplineCurve;
 class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -679,32 +733,6 @@ class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeo
 	~Handle_StepGeom_BezierCurveAndRationalBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurveAndRationalBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_QuasiUniformCurve;
-class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_QuasiUniformCurve();
-		%feature("autodoc", "1");
-		Handle_StepGeom_QuasiUniformCurve(const Handle_StepGeom_QuasiUniformCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_QuasiUniformCurve(const StepGeom_QuasiUniformCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_QuasiUniformCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_QuasiUniformCurve {
-	StepGeom_QuasiUniformCurve* GetObject() {
-	return (StepGeom_QuasiUniformCurve*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_QuasiUniformCurve {
-	~Handle_StepGeom_QuasiUniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurve\n");}
 	}
 };
 
@@ -783,32 +811,6 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 	~Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_OffsetSurface;
-class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface(const Handle_StepGeom_OffsetSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface(const StepGeom_OffsetSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_OffsetSurface {
-	StepGeom_OffsetSurface* GetObject() {
-	return (StepGeom_OffsetSurface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_OffsetSurface {
-	~Handle_StepGeom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetSurface\n");}
 	}
 };
 
@@ -1255,32 +1257,6 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 };
 
 
-%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
-class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch();
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
-	StepGeom_HArray2OfSurfacePatch* GetObject() {
-	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
-	~Handle_StepGeom_HArray2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator3d;
 class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom_CartesianTransformationOperator {
 	public:
@@ -1333,32 +1309,6 @@ class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepGeom_HArray1OfPcurveOrSurface;
-class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfPcurveOrSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfPcurveOrSurface(const Handle_StepGeom_HArray1OfPcurveOrSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfPcurveOrSurface(const StepGeom_HArray1OfPcurveOrSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfPcurveOrSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_HArray1OfPcurveOrSurface {
-	StepGeom_HArray1OfPcurveOrSurface* GetObject() {
-	return (StepGeom_HArray1OfPcurveOrSurface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_HArray1OfPcurveOrSurface {
-	~Handle_StepGeom_HArray1OfPcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_Hyperbola;
 class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 	public:
@@ -1407,32 +1357,6 @@ class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 	~Handle_StepGeom_TrimmedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmedCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_UniformSurface;
-class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurface(const Handle_StepGeom_UniformSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurface(const StepGeom_UniformSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_UniformSurface {
-	StepGeom_UniformSurface* GetObject() {
-	return (StepGeom_UniformSurface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_UniformSurface {
-	~Handle_StepGeom_UniformSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurface\n");}
 	}
 };
 
@@ -1515,6 +1439,32 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 };
 
 
+%nodefaultctor Handle_StepGeom_CurveReplica;
+class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica();
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_CurveReplica const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_CurveReplica {
+	StepGeom_CurveReplica* GetObject() {
+	return (StepGeom_CurveReplica*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_CurveReplica {
+	~Handle_StepGeom_CurveReplica() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_SurfacePatch;
 class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 	public:
@@ -1593,6 +1543,32 @@ class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Hand
 };
 
 
+%nodefaultctor Handle_StepGeom_HArray1OfPcurveOrSurface;
+class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfPcurveOrSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfPcurveOrSurface(const Handle_StepGeom_HArray1OfPcurveOrSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfPcurveOrSurface(const StepGeom_HArray1OfPcurveOrSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfPcurveOrSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_HArray1OfPcurveOrSurface {
+	StepGeom_HArray1OfPcurveOrSurface* GetObject() {
+	return (StepGeom_HArray1OfPcurveOrSurface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_HArray1OfPcurveOrSurface {
+	~Handle_StepGeom_HArray1OfPcurveOrSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_UniformCurve;
 class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -1645,28 +1621,28 @@ class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface
 };
 
 
-%nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
-class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
+%nodefaultctor Handle_StepGeom_Ellipse;
+class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots();
+		Handle_StepGeom_Ellipse();
 		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots(const Handle_StepGeom_BSplineSurfaceWithKnots &aHandle);
+		Handle_StepGeom_Ellipse(const Handle_StepGeom_Ellipse &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots(const StepGeom_BSplineSurfaceWithKnots *anItem);
+		Handle_StepGeom_Ellipse(const StepGeom_Ellipse *anItem);
 		%feature("autodoc", "1");
-		Handle_StepGeom_BSplineSurfaceWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepGeom_Ellipse const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepGeom_BSplineSurfaceWithKnots {
-	StepGeom_BSplineSurfaceWithKnots* GetObject() {
-	return (StepGeom_BSplineSurfaceWithKnots*)$self->Access();
+%extend Handle_StepGeom_Ellipse {
+	StepGeom_Ellipse* GetObject() {
+	return (StepGeom_Ellipse*)$self->Access();
 	}
 };
-%extend Handle_StepGeom_BSplineSurfaceWithKnots {
-	~Handle_StepGeom_BSplineSurfaceWithKnots() {
+%extend Handle_StepGeom_Ellipse {
+	~Handle_StepGeom_Ellipse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Ellipse\n");}
 	}
 };
 
@@ -1719,32 +1695,6 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 	~Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_OffsetCurve3d;
-class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetCurve3d();
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetCurve3d(const Handle_StepGeom_OffsetCurve3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetCurve3d(const StepGeom_OffsetCurve3d *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_OffsetCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_OffsetCurve3d {
-	StepGeom_OffsetCurve3d* GetObject() {
-	return (StepGeom_OffsetCurve3d*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_OffsetCurve3d {
-	~Handle_StepGeom_OffsetCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetCurve3d\n");}
 	}
 };
 
@@ -1827,6 +1777,32 @@ class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public 
 };
 
 
+%nodefaultctor Handle_StepGeom_UniformSurface;
+class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurface(const Handle_StepGeom_UniformSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurface(const StepGeom_UniformSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_UniformSurface {
+	StepGeom_UniformSurface* GetObject() {
+	return (StepGeom_UniformSurface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_UniformSurface {
+	~Handle_StepGeom_UniformSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_Vector;
 class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1849,6 +1825,32 @@ class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationIte
 	~Handle_StepGeom_Vector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Vector\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface;
+class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface(const Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface(const StepGeom_UniformSurfaceAndRationalBSplineSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
+	StepGeom_UniformSurfaceAndRationalBSplineSurface* GetObject() {
+	return (StepGeom_UniformSurfaceAndRationalBSplineSurface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
+	~Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -1901,6 +1903,32 @@ class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGe
 	~Handle_StepGeom_ReparametrisedCompositeCurveSegment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ReparametrisedCompositeCurveSegment\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_OffsetSurface;
+class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface();
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface(const Handle_StepGeom_OffsetSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface(const StepGeom_OffsetSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_OffsetSurface {
+	StepGeom_OffsetSurface* GetObject() {
+	return (StepGeom_OffsetSurface*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_OffsetSurface {
+	~Handle_StepGeom_OffsetSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetSurface\n");}
 	}
 };
 
@@ -2061,32 +2089,6 @@ class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 };
 
 
-%nodefaultctor Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface;
-class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface(const Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface(const StepGeom_UniformSurfaceAndRationalBSplineSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
-	StepGeom_UniformSurfaceAndRationalBSplineSurface* GetObject() {
-	return (StepGeom_UniformSurfaceAndRationalBSplineSurface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
-	~Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_RectangularTrimmedSurface;
 class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_BoundedSurface {
 	public:
@@ -2217,6 +2219,32 @@ class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSur
 };
 
 
+%nodefaultctor Handle_StepGeom_SurfaceReplica;
+class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfaceReplica();
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfaceReplica(const Handle_StepGeom_SurfaceReplica &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfaceReplica(const StepGeom_SurfaceReplica *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfaceReplica const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_SurfaceReplica {
+	StepGeom_SurfaceReplica* GetObject() {
+	return (StepGeom_SurfaceReplica*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_SurfaceReplica {
+	~Handle_StepGeom_SurfaceReplica() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceReplica\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_Plane;
 class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 	public:
@@ -2265,6 +2293,32 @@ class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 	~Handle_StepGeom_PointReplica() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointReplica\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
+class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots();
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots(const Handle_StepGeom_BSplineSurfaceWithKnots &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots(const StepGeom_BSplineSurfaceWithKnots *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_BSplineSurfaceWithKnots const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_BSplineSurfaceWithKnots {
+	StepGeom_BSplineSurfaceWithKnots* GetObject() {
+	return (StepGeom_BSplineSurfaceWithKnots*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_BSplineSurfaceWithKnots {
+	~Handle_StepGeom_BSplineSurfaceWithKnots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");}
 	}
 };
 
@@ -2321,6 +2375,32 @@ class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface 
 };
 
 
+%nodefaultctor Handle_StepGeom_OffsetCurve3d;
+class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetCurve3d();
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetCurve3d(const Handle_StepGeom_OffsetCurve3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetCurve3d(const StepGeom_OffsetCurve3d *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_OffsetCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_OffsetCurve3d {
+	StepGeom_OffsetCurve3d* GetObject() {
+	return (StepGeom_OffsetCurve3d*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_OffsetCurve3d {
+	~Handle_StepGeom_OffsetCurve3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetCurve3d\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_TrimmingMember;
 class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	public:
@@ -2373,32 +2453,6 @@ class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepGeom_BezierSurface;
-class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_BezierSurface();
-		%feature("autodoc", "1");
-		Handle_StepGeom_BezierSurface(const Handle_StepGeom_BezierSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BezierSurface(const StepGeom_BezierSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_BezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_BezierSurface {
-	StepGeom_BezierSurface* GetObject() {
-	return (StepGeom_BezierSurface*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_BezierSurface {
-	~Handle_StepGeom_BezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_CurveBoundedSurface;
 class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurface {
 	public:
@@ -2425,32 +2479,6 @@ class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurfac
 };
 
 
-%nodefaultctor Handle_StepGeom_CurveReplica;
-class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica();
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const Handle_StepGeom_CurveReplica &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica(const StepGeom_CurveReplica *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_CurveReplica const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_CurveReplica {
-	StepGeom_CurveReplica* GetObject() {
-	return (StepGeom_CurveReplica*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_CurveReplica {
-	~Handle_StepGeom_CurveReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_UniformCurveAndRationalBSplineCurve;
 class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -2473,32 +2501,6 @@ class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGe
 	~Handle_StepGeom_UniformCurveAndRationalBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurveAndRationalBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_Ellipse;
-class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_Ellipse();
-		%feature("autodoc", "1");
-		Handle_StepGeom_Ellipse(const Handle_StepGeom_Ellipse &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Ellipse(const StepGeom_Ellipse *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Ellipse const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_Ellipse {
-	StepGeom_Ellipse* GetObject() {
-	return (StepGeom_Ellipse*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_Ellipse {
-	~Handle_StepGeom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Ellipse\n");}
 	}
 };
 
@@ -2608,11 +2610,141 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 };
 
 
+%nodefaultctor StepGeom_Curve;
+class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Curve();
+
+};
+%extend StepGeom_Curve {
+	Handle_StepGeom_Curve GetHandle() {
+	return *(Handle_StepGeom_Curve*) &$self;
+	}
+};
+%extend StepGeom_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_Curve {
+	~StepGeom_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Curve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_BoundedCurve;
+class StepGeom_BoundedCurve : public StepGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BoundedCurve();
+
+};
+%extend StepGeom_BoundedCurve {
+	Handle_StepGeom_BoundedCurve GetHandle() {
+	return *(Handle_StepGeom_BoundedCurve*) &$self;
+	}
+};
+%extend StepGeom_BoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_BoundedCurve {
+	~StepGeom_BoundedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedCurve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_BSplineCurve;
+class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		void SetDegree(const Standard_Integer aDegree);
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		void SetControlPointsList(const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray1OfCartesianPoint ControlPointsList() const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_CartesianPoint ControlPointsListValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbControlPointsList() const;
+		%feature("autodoc", "1");
+		void SetCurveForm(const StepGeom_BSplineCurveForm aCurveForm);
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurveForm CurveForm() const;
+		%feature("autodoc", "1");
+		void SetClosedCurve(const StepData_Logical aClosedCurve);
+		%feature("autodoc", "1");
+		StepData_Logical ClosedCurve() const;
+		%feature("autodoc", "1");
+		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		StepData_Logical SelfIntersect() const;
+
+};
+%extend StepGeom_BSplineCurve {
+	Handle_StepGeom_BSplineCurve GetHandle() {
+	return *(Handle_StepGeom_BSplineCurve*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_BSplineCurve {
+	~StepGeom_BSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_QuasiUniformCurve;
+class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_QuasiUniformCurve();
+
+};
+%extend StepGeom_QuasiUniformCurve {
+	Handle_StepGeom_QuasiUniformCurve GetHandle() {
+	return *(Handle_StepGeom_QuasiUniformCurve*) &$self;
+	}
+};
+%extend StepGeom_QuasiUniformCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_QuasiUniformCurve {
+	~StepGeom_QuasiUniformCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_Surface;
 class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_Surface();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_Surface {
@@ -2740,6 +2872,47 @@ class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 };
 
 
+%nodefaultctor StepGeom_PointOnSurface;
+class StepGeom_PointOnSurface : public StepGeom_Point {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_PointOnSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Standard_Real aPointParameterU, const Standard_Real aPointParameterV);
+		%feature("autodoc", "1");
+		void SetBasisSurface(const Handle_StepGeom_Surface &aBasisSurface);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface BasisSurface() const;
+		%feature("autodoc", "1");
+		void SetPointParameterU(const Standard_Real aPointParameterU);
+		%feature("autodoc", "1");
+		Standard_Real PointParameterU() const;
+		%feature("autodoc", "1");
+		void SetPointParameterV(const Standard_Real aPointParameterV);
+		%feature("autodoc", "1");
+		Standard_Real PointParameterV() const;
+
+};
+%extend StepGeom_PointOnSurface {
+	Handle_StepGeom_PointOnSurface GetHandle() {
+	return *(Handle_StepGeom_PointOnSurface*) &$self;
+	}
+};
+%extend StepGeom_PointOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_PointOnSurface {
+	~StepGeom_PointOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnSurface\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_PointOnCurve;
 class StepGeom_PointOnCurve : public StepGeom_Point {
 	public:
@@ -2757,6 +2930,8 @@ class StepGeom_PointOnCurve : public StepGeom_Point {
 		void SetPointParameter(const Standard_Real aPointParameter);
 		%feature("autodoc", "1");
 		Standard_Real PointParameter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_PointOnCurve {
@@ -2974,47 +3149,6 @@ class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepGeom_CompositeCurveSegment;
-class StepGeom_CompositeCurveSegment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_CompositeCurveSegment();
-		%feature("autodoc", "1");
-		virtual		void Init(const StepGeom_TransitionCode aTransition, const Standard_Boolean aSameSense, const Handle_StepGeom_Curve &aParentCurve);
-		%feature("autodoc", "1");
-		void SetTransition(const StepGeom_TransitionCode aTransition);
-		%feature("autodoc", "1");
-		StepGeom_TransitionCode Transition() const;
-		%feature("autodoc", "1");
-		void SetSameSense(const Standard_Boolean aSameSense);
-		%feature("autodoc", "1");
-		Standard_Boolean SameSense() const;
-		%feature("autodoc", "1");
-		void SetParentCurve(const Handle_StepGeom_Curve &aParentCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Curve ParentCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_CompositeCurveSegment {
-	Handle_StepGeom_CompositeCurveSegment GetHandle() {
-	return *(Handle_StepGeom_CompositeCurveSegment*) &$self;
-	}
-};
-%extend StepGeom_CompositeCurveSegment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_CompositeCurveSegment {
-	~StepGeom_CompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
 class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext : public StepRepr_RepresentationContext {
 	public:
@@ -3087,58 +3221,6 @@ class StepGeom_Plane : public StepGeom_ElementarySurface {
 };
 
 
-%nodefaultctor StepGeom_Curve;
-class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Curve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_Curve {
-	Handle_StepGeom_Curve GetHandle() {
-	return *(Handle_StepGeom_Curve*) &$self;
-	}
-};
-%extend StepGeom_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_Curve {
-	~StepGeom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_Curve\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_BoundedCurve;
-class StepGeom_BoundedCurve : public StepGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BoundedCurve();
-
-};
-%extend StepGeom_BoundedCurve {
-	Handle_StepGeom_BoundedCurve GetHandle() {
-	return *(Handle_StepGeom_BoundedCurve*) &$self;
-	}
-};
-%extend StepGeom_BoundedCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_BoundedCurve {
-	~StepGeom_BoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedCurve\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_CompositeCurve;
 class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 	public:
@@ -3160,6 +3242,8 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 		%feature("autodoc", "1");
 		StepData_Logical SelfIntersect() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_CompositeCurve {
@@ -3226,6 +3310,53 @@ class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 	~StepGeom_BoundaryCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundaryCurve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_HArray1OfCartesianPoint;
+class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_HArray1OfCartesianPoint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepGeom_HArray1OfCartesianPoint(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepGeom_CartesianPoint &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepGeom_CartesianPoint &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepGeom_CartesianPoint &Value);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_CartesianPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_CartesianPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepGeom_Array1OfCartesianPoint & Array1() const;
+		%feature("autodoc", "1");
+		StepGeom_Array1OfCartesianPoint & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_HArray1OfCartesianPoint {
+	Handle_StepGeom_HArray1OfCartesianPoint GetHandle() {
+	return *(Handle_StepGeom_HArray1OfCartesianPoint*) &$self;
+	}
+};
+%extend StepGeom_HArray1OfCartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_HArray1OfCartesianPoint {
+	~StepGeom_HArray1OfCartesianPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCartesianPoint\n");}
 	}
 };
 
@@ -3317,62 +3448,43 @@ class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeo
 };
 
 
-%nodefaultctor StepGeom_PointReplica;
-class StepGeom_PointReplica : public StepGeom_Point {
+%nodefaultctor StepGeom_CompositeCurveSegment;
+class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepGeom_PointReplica();
+		StepGeom_CompositeCurveSegment();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		virtual		void Init(const StepGeom_TransitionCode aTransition, const Standard_Boolean aSameSense, const Handle_StepGeom_Curve &aParentCurve);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Point &aParentPt, const Handle_StepGeom_CartesianTransformationOperator &aTransformation);
+		void SetTransition(const StepGeom_TransitionCode aTransition);
 		%feature("autodoc", "1");
-		void SetParentPt(const Handle_StepGeom_Point &aParentPt);
+		StepGeom_TransitionCode Transition() const;
 		%feature("autodoc", "1");
-		Handle_StepGeom_Point ParentPt() const;
+		void SetSameSense(const Standard_Boolean aSameSense);
 		%feature("autodoc", "1");
-		void SetTransformation(const Handle_StepGeom_CartesianTransformationOperator &aTransformation);
+		Standard_Boolean SameSense() const;
 		%feature("autodoc", "1");
-		Handle_StepGeom_CartesianTransformationOperator Transformation() const;
+		void SetParentCurve(const Handle_StepGeom_Curve &aParentCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Curve ParentCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepGeom_PointReplica {
-	Handle_StepGeom_PointReplica GetHandle() {
-	return *(Handle_StepGeom_PointReplica*) &$self;
+%extend StepGeom_CompositeCurveSegment {
+	Handle_StepGeom_CompositeCurveSegment GetHandle() {
+	return *(Handle_StepGeom_CompositeCurveSegment*) &$self;
 	}
 };
-%extend StepGeom_PointReplica {
+%extend StepGeom_CompositeCurveSegment {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepGeom_PointReplica {
-	~StepGeom_PointReplica() {
+%extend StepGeom_CompositeCurveSegment {
+	~StepGeom_CompositeCurveSegment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_PointReplica\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_PcurveOrSurface;
-class StepGeom_PcurveOrSurface : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_PcurveOrSurface();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Pcurve Pcurve() const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface Surface() const;
-
-};
-%extend StepGeom_PcurveOrSurface {
-	~StepGeom_PcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_PcurveOrSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");}
 	}
 };
 
@@ -3408,108 +3520,6 @@ class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 	~StepGeom_SphericalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SphericalSurface\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_BSplineCurve;
-class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
-		%feature("autodoc", "1");
-		void SetDegree(const Standard_Integer aDegree);
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		void SetControlPointsList(const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray1OfCartesianPoint ControlPointsList() const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_CartesianPoint ControlPointsListValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbControlPointsList() const;
-		%feature("autodoc", "1");
-		void SetCurveForm(const StepGeom_BSplineCurveForm aCurveForm);
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurveForm CurveForm() const;
-		%feature("autodoc", "1");
-		void SetClosedCurve(const StepData_Logical aClosedCurve);
-		%feature("autodoc", "1");
-		StepData_Logical ClosedCurve() const;
-		%feature("autodoc", "1");
-		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
-		%feature("autodoc", "1");
-		StepData_Logical SelfIntersect() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_BSplineCurve {
-	Handle_StepGeom_BSplineCurve GetHandle() {
-	return *(Handle_StepGeom_BSplineCurve*) &$self;
-	}
-};
-%extend StepGeom_BSplineCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_BSplineCurve {
-	~StepGeom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_BSplineCurveWithKnots;
-class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_BSplineCurveWithKnots();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities, const Handle_TColStd_HArray1OfReal &aKnots, const StepGeom_KnotType aKnotSpec);
-		%feature("autodoc", "1");
-		void SetKnotMultiplicities(const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger KnotMultiplicities() const;
-		%feature("autodoc", "1");
-		Standard_Integer KnotMultiplicitiesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnotMultiplicities() const;
-		%feature("autodoc", "1");
-		void SetKnots(const Handle_TColStd_HArray1OfReal &aKnots);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Knots() const;
-		%feature("autodoc", "1");
-		Standard_Real KnotsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void SetKnotSpec(const StepGeom_KnotType aKnotSpec);
-		%feature("autodoc", "1");
-		StepGeom_KnotType KnotSpec() const;
-
-};
-%extend StepGeom_BSplineCurveWithKnots {
-	Handle_StepGeom_BSplineCurveWithKnots GetHandle() {
-	return *(Handle_StepGeom_BSplineCurveWithKnots*) &$self;
-	}
-};
-%extend StepGeom_BSplineCurveWithKnots {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_BSplineCurveWithKnots {
-	~StepGeom_BSplineCurveWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
 
@@ -3681,27 +3691,6 @@ class StepGeom_Pcurve : public StepGeom_Curve {
 };
 
 
-%nodefaultctor StepGeom_VectorOrDirection;
-class StepGeom_VectorOrDirection : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_VectorOrDirection();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Vector Vector() const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Direction Direction() const;
-
-};
-%extend StepGeom_VectorOrDirection {
-	~StepGeom_VectorOrDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_VectorOrDirection\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_Array1OfTrimmingSelect;
 class StepGeom_Array1OfTrimmingSelect {
 	public:
@@ -3739,6 +3728,99 @@ class StepGeom_Array1OfTrimmingSelect {
 	~StepGeom_Array1OfTrimmingSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfTrimmingSelect\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_OuterBoundaryCurve;
+class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_OuterBoundaryCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_OuterBoundaryCurve {
+	Handle_StepGeom_OuterBoundaryCurve GetHandle() {
+	return *(Handle_StepGeom_OuterBoundaryCurve*) &$self;
+	}
+};
+%extend StepGeom_OuterBoundaryCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_OuterBoundaryCurve {
+	~StepGeom_OuterBoundaryCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_SweptSurface;
+class StepGeom_SweptSurface : public StepGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_SweptSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aSweptCurve);
+		%feature("autodoc", "1");
+		void SetSweptCurve(const Handle_StepGeom_Curve &aSweptCurve);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Curve SweptCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_SweptSurface {
+	Handle_StepGeom_SweptSurface GetHandle() {
+	return *(Handle_StepGeom_SweptSurface*) &$self;
+	}
+};
+%extend StepGeom_SweptSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_SweptSurface {
+	~StepGeom_SweptSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SweptSurface\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_SurfaceOfLinearExtrusion;
+class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_SurfaceOfLinearExtrusion();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aSweptCurve, const Handle_StepGeom_Vector &aExtrusionAxis);
+		%feature("autodoc", "1");
+		void SetExtrusionAxis(const Handle_StepGeom_Vector &aExtrusionAxis);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Vector ExtrusionAxis() const;
+
+};
+%extend StepGeom_SurfaceOfLinearExtrusion {
+	Handle_StepGeom_SurfaceOfLinearExtrusion GetHandle() {
+	return *(Handle_StepGeom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend StepGeom_SurfaceOfLinearExtrusion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_SurfaceOfLinearExtrusion {
+	~StepGeom_SurfaceOfLinearExtrusion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");}
 	}
 };
 
@@ -4038,45 +4120,92 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 };
 
 
-%nodefaultctor StepGeom_PointOnSurface;
-class StepGeom_PointOnSurface : public StepGeom_Point {
+%nodefaultctor StepGeom_PointReplica;
+class StepGeom_PointReplica : public StepGeom_Point {
 	public:
 		%feature("autodoc", "1");
-		StepGeom_PointOnSurface();
+		StepGeom_PointReplica();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Standard_Real aPointParameterU, const Standard_Real aPointParameterV);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Point &aParentPt, const Handle_StepGeom_CartesianTransformationOperator &aTransformation);
 		%feature("autodoc", "1");
-		void SetBasisSurface(const Handle_StepGeom_Surface &aBasisSurface);
+		void SetParentPt(const Handle_StepGeom_Point &aParentPt);
 		%feature("autodoc", "1");
-		Handle_StepGeom_Surface BasisSurface() const;
+		Handle_StepGeom_Point ParentPt() const;
 		%feature("autodoc", "1");
-		void SetPointParameterU(const Standard_Real aPointParameterU);
+		void SetTransformation(const Handle_StepGeom_CartesianTransformationOperator &aTransformation);
 		%feature("autodoc", "1");
-		Standard_Real PointParameterU() const;
-		%feature("autodoc", "1");
-		void SetPointParameterV(const Standard_Real aPointParameterV);
-		%feature("autodoc", "1");
-		Standard_Real PointParameterV() const;
+		Handle_StepGeom_CartesianTransformationOperator Transformation() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepGeom_PointOnSurface {
-	Handle_StepGeom_PointOnSurface GetHandle() {
-	return *(Handle_StepGeom_PointOnSurface*) &$self;
+%extend StepGeom_PointReplica {
+	Handle_StepGeom_PointReplica GetHandle() {
+	return *(Handle_StepGeom_PointReplica*) &$self;
 	}
 };
-%extend StepGeom_PointOnSurface {
+%extend StepGeom_PointReplica {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepGeom_PointOnSurface {
-	~StepGeom_PointOnSurface() {
+%extend StepGeom_PointReplica {
+	~StepGeom_PointReplica() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PointReplica\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_BSplineCurveWithKnots;
+class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_BSplineCurveWithKnots();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aDegree, const Handle_StepGeom_HArray1OfCartesianPoint &aControlPointsList, const StepGeom_BSplineCurveForm aCurveForm, const StepData_Logical aClosedCurve, const StepData_Logical aSelfIntersect, const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities, const Handle_TColStd_HArray1OfReal &aKnots, const StepGeom_KnotType aKnotSpec);
+		%feature("autodoc", "1");
+		void SetKnotMultiplicities(const Handle_TColStd_HArray1OfInteger &aKnotMultiplicities);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger KnotMultiplicities() const;
+		%feature("autodoc", "1");
+		Standard_Integer KnotMultiplicitiesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnotMultiplicities() const;
+		%feature("autodoc", "1");
+		void SetKnots(const Handle_TColStd_HArray1OfReal &aKnots);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Knots() const;
+		%feature("autodoc", "1");
+		Standard_Real KnotsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void SetKnotSpec(const StepGeom_KnotType aKnotSpec);
+		%feature("autodoc", "1");
+		StepGeom_KnotType KnotSpec() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_BSplineCurveWithKnots {
+	Handle_StepGeom_BSplineCurveWithKnots GetHandle() {
+	return *(Handle_StepGeom_BSplineCurveWithKnots*) &$self;
+	}
+};
+%extend StepGeom_BSplineCurveWithKnots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_BSplineCurveWithKnots {
+	~StepGeom_BSplineCurveWithKnots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
 
@@ -4223,45 +4352,6 @@ class StepGeom_Circle : public StepGeom_Conic {
 	~StepGeom_Circle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Circle\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_DegeneratePcurve;
-class StepGeom_DegeneratePcurve : public StepGeom_Point {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_DegeneratePcurve();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve);
-		%feature("autodoc", "1");
-		void SetBasisSurface(const Handle_StepGeom_Surface &aBasisSurface);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface BasisSurface() const;
-		%feature("autodoc", "1");
-		void SetReferenceToCurve(const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve);
-		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation ReferenceToCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_DegeneratePcurve {
-	Handle_StepGeom_DegeneratePcurve GetHandle() {
-	return *(Handle_StepGeom_DegeneratePcurve*) &$self;
-	}
-};
-%extend StepGeom_DegeneratePcurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_DegeneratePcurve {
-	~StepGeom_DegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_DegeneratePcurve\n");}
 	}
 };
 
@@ -4426,33 +4516,6 @@ class StepGeom_HArray1OfCurve : public MMgt_TShared {
 	~StepGeom_HArray1OfCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCurve\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_OuterBoundaryCurve;
-class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_OuterBoundaryCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_OuterBoundaryCurve {
-	Handle_StepGeom_OuterBoundaryCurve GetHandle() {
-	return *(Handle_StepGeom_OuterBoundaryCurve*) &$self;
-	}
-};
-%extend StepGeom_OuterBoundaryCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_OuterBoundaryCurve {
-	~StepGeom_OuterBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");}
 	}
 };
 
@@ -4682,41 +4745,6 @@ class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineS
 };
 
 
-%nodefaultctor StepGeom_SweptSurface;
-class StepGeom_SweptSurface : public StepGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_SweptSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aSweptCurve);
-		%feature("autodoc", "1");
-		void SetSweptCurve(const Handle_StepGeom_Curve &aSweptCurve);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Curve SweptCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_SweptSurface {
-	Handle_StepGeom_SweptSurface GetHandle() {
-	return *(Handle_StepGeom_SweptSurface*) &$self;
-	}
-};
-%extend StepGeom_SweptSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_SweptSurface {
-	~StepGeom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_SweptSurface\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_CurveOnSurface;
 class StepGeom_CurveOnSurface : public StepData_SelectType {
 	public:
@@ -4779,6 +4807,116 @@ class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 };
 
 
+%nodefaultctor StepGeom_Array2OfSurfacePatch;
+class StepGeom_Array2OfSurfacePatch {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepGeom_SurfacePatch &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend StepGeom_Array2OfSurfacePatch {
+	~StepGeom_Array2OfSurfacePatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
+class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public StepRepr_RepresentationContext {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Handle_StepGeom_GeometricRepresentationContext &aGeometricRepresentationCtx, const Handle_StepRepr_GlobalUnitAssignedContext &aGlobalUnitAssignedCtx, const Handle_StepRepr_GlobalUncertaintyAssignedContext &aGlobalUncertaintyAssignedCtx);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Standard_Integer aCoordinateSpaceDimension, const Handle_StepBasic_HArray1OfNamedUnit &aUnits, const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &anUncertainty);
+		%feature("autodoc", "1");
+		void SetGeometricRepresentationContext(const Handle_StepGeom_GeometricRepresentationContext &aGeometricRepresentationContext);
+		%feature("autodoc", "1");
+		Handle_StepGeom_GeometricRepresentationContext GeometricRepresentationContext() const;
+		%feature("autodoc", "1");
+		void SetGlobalUnitAssignedContext(const Handle_StepRepr_GlobalUnitAssignedContext &aGlobalUnitAssignedContext);
+		%feature("autodoc", "1");
+		Handle_StepRepr_GlobalUnitAssignedContext GlobalUnitAssignedContext() const;
+		%feature("autodoc", "1");
+		void SetGlobalUncertaintyAssignedContext(const Handle_StepRepr_GlobalUncertaintyAssignedContext &aGlobalUncertaintyAssignedCtx);
+		%feature("autodoc", "1");
+		Handle_StepRepr_GlobalUncertaintyAssignedContext GlobalUncertaintyAssignedContext() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSpaceDimension(const Standard_Integer aCoordinateSpaceDimension);
+		%feature("autodoc", "1");
+		Standard_Integer CoordinateSpaceDimension() const;
+		%feature("autodoc", "1");
+		void SetUnits(const Handle_StepBasic_HArray1OfNamedUnit &aUnits);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfNamedUnit Units() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_NamedUnit UnitsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbUnits() const;
+		%feature("autodoc", "1");
+		void SetUncertainty(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit Uncertainty() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit UncertaintyValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbUncertainty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx GetHandle() {
+	return *(Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx*) &$self;
+	}
+};
+%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_SeamCurve;
 class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -4802,6 +4940,47 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 	~StepGeom_SeamCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SeamCurve\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_Array1OfSurfaceBoundary;
+class StepGeom_Array1OfSurfaceBoundary {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Array1OfSurfaceBoundary(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepGeom_Array1OfSurfaceBoundary(const StepGeom_SurfaceBoundary &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepGeom_SurfaceBoundary &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepGeom_Array1OfSurfaceBoundary & Assign(const StepGeom_Array1OfSurfaceBoundary &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepGeom_SurfaceBoundary &Value);
+		%feature("autodoc", "1");
+		const StepGeom_SurfaceBoundary & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepGeom_SurfaceBoundary & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index);
+
+};
+%extend StepGeom_Array1OfSurfaceBoundary {
+	~StepGeom_Array1OfSurfaceBoundary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");}
 	}
 };
 
@@ -5138,41 +5317,6 @@ class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 };
 
 
-%nodefaultctor StepGeom_SurfaceOfLinearExtrusion;
-class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_SurfaceOfLinearExtrusion();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aSweptCurve);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Curve &aSweptCurve, const Handle_StepGeom_Vector &aExtrusionAxis);
-		%feature("autodoc", "1");
-		void SetExtrusionAxis(const Handle_StepGeom_Vector &aExtrusionAxis);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Vector ExtrusionAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_SurfaceOfLinearExtrusion {
-	Handle_StepGeom_SurfaceOfLinearExtrusion GetHandle() {
-	return *(Handle_StepGeom_SurfaceOfLinearExtrusion*) &$self;
-	}
-};
-%extend StepGeom_SurfaceOfLinearExtrusion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_SurfaceOfLinearExtrusion {
-	~StepGeom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_Parabola;
 class StepGeom_Parabola : public StepGeom_Conic {
 	public:
@@ -5243,39 +5387,6 @@ class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 };
 
 
-%nodefaultctor StepGeom_TrimmingMember;
-class StepGeom_TrimmingMember : public StepData_SelectReal {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_TrimmingMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_TrimmingMember {
-	Handle_StepGeom_TrimmingMember GetHandle() {
-	return *(Handle_StepGeom_TrimmingMember*) &$self;
-	}
-};
-%extend StepGeom_TrimmingMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_TrimmingMember {
-	~StepGeom_TrimmingMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingMember\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_CurveReplica;
 class StepGeom_CurveReplica : public StepGeom_Curve {
 	public:
@@ -5315,6 +5426,27 @@ class StepGeom_CurveReplica : public StepGeom_Curve {
 };
 
 
+%nodefaultctor StepGeom_VectorOrDirection;
+class StepGeom_VectorOrDirection : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_VectorOrDirection();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Vector Vector() const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Direction Direction() const;
+
+};
+%extend StepGeom_VectorOrDirection {
+	~StepGeom_VectorOrDirection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_VectorOrDirection\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_CylindricalSurface;
 class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 	public:
@@ -5350,6 +5482,39 @@ class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 };
 
 
+%nodefaultctor StepGeom_TrimmingMember;
+class StepGeom_TrimmingMember : public StepData_SelectReal {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_TrimmingMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_TrimmingMember {
+	Handle_StepGeom_TrimmingMember GetHandle() {
+	return *(Handle_StepGeom_TrimmingMember*) &$self;
+	}
+};
+%extend StepGeom_TrimmingMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_TrimmingMember {
+	~StepGeom_TrimmingMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingMember\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_CartesianTransformationOperator2d;
 class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTransformationOperator {
 	public:
@@ -5377,67 +5542,41 @@ class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTran
 };
 
 
-%nodefaultctor StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
-class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public StepRepr_RepresentationContext {
+%nodefaultctor StepGeom_CartesianTransformationOperator3d;
+class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTransformationOperator {
 	public:
 		%feature("autodoc", "1");
-		StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
+		StepGeom_CartesianTransformationOperator3d();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasAaxis1, const Handle_StepGeom_Direction &aAxis1, const Standard_Boolean hasAaxis2, const Handle_StepGeom_Direction &aAxis2, const Handle_StepGeom_CartesianPoint &aLocalOrigin, const Standard_Boolean hasAscale, const Standard_Real aScale);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Handle_StepGeom_GeometricRepresentationContext &aGeometricRepresentationCtx, const Handle_StepRepr_GlobalUnitAssignedContext &aGlobalUnitAssignedCtx, const Handle_StepRepr_GlobalUncertaintyAssignedContext &aGlobalUncertaintyAssignedCtx);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasAaxis1, const Handle_StepGeom_Direction &aAxis1, const Standard_Boolean hasAaxis2, const Handle_StepGeom_Direction &aAxis2, const Handle_StepGeom_CartesianPoint &aLocalOrigin, const Standard_Boolean hasAscale, const Standard_Real aScale, const Standard_Boolean hasAaxis3, const Handle_StepGeom_Direction &aAxis3);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Standard_Integer aCoordinateSpaceDimension, const Handle_StepBasic_HArray1OfNamedUnit &aUnits, const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &anUncertainty);
+		void SetAxis3(const Handle_StepGeom_Direction &aAxis3);
 		%feature("autodoc", "1");
-		void SetGeometricRepresentationContext(const Handle_StepGeom_GeometricRepresentationContext &aGeometricRepresentationContext);
+		void UnSetAxis3();
 		%feature("autodoc", "1");
-		Handle_StepGeom_GeometricRepresentationContext GeometricRepresentationContext() const;
+		Handle_StepGeom_Direction Axis3() const;
 		%feature("autodoc", "1");
-		void SetGlobalUnitAssignedContext(const Handle_StepRepr_GlobalUnitAssignedContext &aGlobalUnitAssignedContext);
-		%feature("autodoc", "1");
-		Handle_StepRepr_GlobalUnitAssignedContext GlobalUnitAssignedContext() const;
-		%feature("autodoc", "1");
-		void SetGlobalUncertaintyAssignedContext(const Handle_StepRepr_GlobalUncertaintyAssignedContext &aGlobalUncertaintyAssignedCtx);
-		%feature("autodoc", "1");
-		Handle_StepRepr_GlobalUncertaintyAssignedContext GlobalUncertaintyAssignedContext() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSpaceDimension(const Standard_Integer aCoordinateSpaceDimension);
-		%feature("autodoc", "1");
-		Standard_Integer CoordinateSpaceDimension() const;
-		%feature("autodoc", "1");
-		void SetUnits(const Handle_StepBasic_HArray1OfNamedUnit &aUnits);
-		%feature("autodoc", "1");
-		Handle_StepBasic_HArray1OfNamedUnit Units() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_NamedUnit UnitsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbUnits() const;
-		%feature("autodoc", "1");
-		void SetUncertainty(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
-		%feature("autodoc", "1");
-		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit Uncertainty() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit UncertaintyValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbUncertainty() const;
+		Standard_Boolean HasAxis3() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
-	Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx GetHandle() {
-	return *(Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx*) &$self;
+%extend StepGeom_CartesianTransformationOperator3d {
+	Handle_StepGeom_CartesianTransformationOperator3d GetHandle() {
+	return *(Handle_StepGeom_CartesianTransformationOperator3d*) &$self;
 	}
 };
-%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+%extend StepGeom_CartesianTransformationOperator3d {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
-	~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
+%extend StepGeom_CartesianTransformationOperator3d {
+	~StepGeom_CartesianTransformationOperator3d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
 
@@ -5530,6 +5669,27 @@ class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 	~StepGeom_HArray2OfSurfacePatch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray2OfSurfacePatch\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_PcurveOrSurface;
+class StepGeom_PcurveOrSurface : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_PcurveOrSurface();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Pcurve Pcurve() const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface Surface() const;
+
+};
+%extend StepGeom_PcurveOrSurface {
+	~StepGeom_PcurveOrSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PcurveOrSurface\n");}
 	}
 };
 
@@ -5651,51 +5811,6 @@ class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurv
 };
 
 
-%nodefaultctor StepGeom_Array2OfSurfacePatch;
-class StepGeom_Array2OfSurfacePatch {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepGeom_SurfacePatch &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend StepGeom_Array2OfSurfacePatch {
-	~StepGeom_Array2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_HArray2OfCartesianPoint;
 class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 	public:
@@ -5749,80 +5864,6 @@ class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepGeom_HArray1OfCartesianPoint;
-class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_HArray1OfCartesianPoint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepGeom_HArray1OfCartesianPoint(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepGeom_CartesianPoint &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepGeom_CartesianPoint &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepGeom_CartesianPoint &Value);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_CartesianPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_CartesianPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepGeom_Array1OfCartesianPoint & Array1() const;
-		%feature("autodoc", "1");
-		StepGeom_Array1OfCartesianPoint & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_HArray1OfCartesianPoint {
-	Handle_StepGeom_HArray1OfCartesianPoint GetHandle() {
-	return *(Handle_StepGeom_HArray1OfCartesianPoint*) &$self;
-	}
-};
-%extend StepGeom_HArray1OfCartesianPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_HArray1OfCartesianPoint {
-	~StepGeom_HArray1OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCartesianPoint\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_QuasiUniformCurve;
-class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_QuasiUniformCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_QuasiUniformCurve {
-	Handle_StepGeom_QuasiUniformCurve GetHandle() {
-	return *(Handle_StepGeom_QuasiUniformCurve*) &$self;
-	}
-};
-%extend StepGeom_QuasiUniformCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_QuasiUniformCurve {
-	~StepGeom_QuasiUniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_SurfacePatch;
 class StepGeom_SurfacePatch : public MMgt_TShared {
 	public:
@@ -5872,21 +5913,56 @@ class StepGeom_SurfacePatch : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepGeom_DegeneratePcurve;
+class StepGeom_DegeneratePcurve : public StepGeom_Point {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_DegeneratePcurve();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve);
+		%feature("autodoc", "1");
+		void SetBasisSurface(const Handle_StepGeom_Surface &aBasisSurface);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface BasisSurface() const;
+		%feature("autodoc", "1");
+		void SetReferenceToCurve(const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation ReferenceToCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_DegeneratePcurve {
+	Handle_StepGeom_DegeneratePcurve GetHandle() {
+	return *(Handle_StepGeom_DegeneratePcurve*) &$self;
+	}
+};
+%extend StepGeom_DegeneratePcurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_DegeneratePcurve {
+	~StepGeom_DegeneratePcurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_DegeneratePcurve\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_EvaluatedDegeneratePcurve;
 class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 	public:
 		%feature("autodoc", "1");
 		StepGeom_EvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve);
-		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Surface &aBasisSurface, const Handle_StepRepr_DefinitionalRepresentation &aReferenceToCurve, const Handle_StepGeom_CartesianPoint &aEquivalentPoint);
 		%feature("autodoc", "1");
 		void SetEquivalentPoint(const Handle_StepGeom_CartesianPoint &aEquivalentPoint);
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianPoint EquivalentPoint() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepGeom_EvaluatedDegeneratePcurve {
@@ -6327,6 +6403,33 @@ class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepGeom_UniformCurve;
+class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_UniformCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_UniformCurve {
+	Handle_StepGeom_UniformCurve GetHandle() {
+	return *(Handle_StepGeom_UniformCurve*) &$self;
+	}
+};
+%extend StepGeom_UniformCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_UniformCurve {
+	~StepGeom_UniformCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurve\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_IntersectionCurve;
 class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -6401,74 +6504,6 @@ class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSpline
 	~StepGeom_UniformSurfaceAndRationalBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_Array1OfSurfaceBoundary;
-class StepGeom_Array1OfSurfaceBoundary {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Array1OfSurfaceBoundary(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepGeom_Array1OfSurfaceBoundary(const StepGeom_SurfaceBoundary &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepGeom_SurfaceBoundary &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepGeom_Array1OfSurfaceBoundary & Assign(const StepGeom_Array1OfSurfaceBoundary &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepGeom_SurfaceBoundary &Value);
-		%feature("autodoc", "1");
-		const StepGeom_SurfaceBoundary & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepGeom_SurfaceBoundary & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepGeom_SurfaceBoundary & operator()(const Standard_Integer Index);
-
-};
-%extend StepGeom_Array1OfSurfaceBoundary {
-	~StepGeom_Array1OfSurfaceBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_UniformCurve;
-class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_UniformCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_UniformCurve {
-	Handle_StepGeom_UniformCurve GetHandle() {
-	return *(Handle_StepGeom_UniformCurve*) &$self;
-	}
-};
-%extend StepGeom_UniformCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_UniformCurve {
-	~StepGeom_UniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurve\n");}
 	}
 };
 
@@ -6773,45 +6808,6 @@ class StepGeom_Array1OfPcurveOrSurface {
 	~StepGeom_Array1OfPcurveOrSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfPcurveOrSurface\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_CartesianTransformationOperator3d;
-class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTransformationOperator {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_CartesianTransformationOperator3d();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasAaxis1, const Handle_StepGeom_Direction &aAxis1, const Standard_Boolean hasAaxis2, const Handle_StepGeom_Direction &aAxis2, const Handle_StepGeom_CartesianPoint &aLocalOrigin, const Standard_Boolean hasAscale, const Standard_Real aScale);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasAaxis1, const Handle_StepGeom_Direction &aAxis1, const Standard_Boolean hasAaxis2, const Handle_StepGeom_Direction &aAxis2, const Handle_StepGeom_CartesianPoint &aLocalOrigin, const Standard_Boolean hasAscale, const Standard_Real aScale, const Standard_Boolean hasAaxis3, const Handle_StepGeom_Direction &aAxis3);
-		%feature("autodoc", "1");
-		void SetAxis3(const Handle_StepGeom_Direction &aAxis3);
-		%feature("autodoc", "1");
-		void UnSetAxis3();
-		%feature("autodoc", "1");
-		Handle_StepGeom_Direction Axis3() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasAxis3() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_CartesianTransformationOperator3d {
-	Handle_StepGeom_CartesianTransformationOperator3d GetHandle() {
-	return *(Handle_StepGeom_CartesianTransformationOperator3d*) &$self;
-	}
-};
-%extend StepGeom_CartesianTransformationOperator3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_CartesianTransformationOperator3d {
-	~StepGeom_CartesianTransformationOperator3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
 

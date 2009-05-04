@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Image
 
+%include Image_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -134,6 +136,32 @@ enum Image_DitheringMethod {
 	Image_DM_ErrorDiffusion,
 	};
 
+
+
+%nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
+class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable();
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_DataMapNodeOfLookupTable {
+	Image_DataMapNodeOfLookupTable* GetObject() {
+	return (Image_DataMapNodeOfLookupTable*)$self->Access();
+	}
+};
+%extend Handle_Image_DataMapNodeOfLookupTable {
+	~Handle_Image_DataMapNodeOfLookupTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");}
+	}
+};
 
 
 %nodefaultctor Handle_Image_Image;
@@ -292,32 +320,6 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 };
 
 
-%nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
-class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable();
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_DataMapNodeOfLookupTable {
-	Image_DataMapNodeOfLookupTable* GetObject() {
-	return (Image_DataMapNodeOfLookupTable*)$self->Access();
-	}
-};
-%extend Handle_Image_DataMapNodeOfLookupTable {
-	~Handle_Image_DataMapNodeOfLookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");}
-	}
-};
-
-
 %nodefaultctor Image_Image;
 class Image_Image : public MMgt_TShared {
 	public:
@@ -401,25 +403,6 @@ class Image_Image : public MMgt_TShared {
 };
 
 
-%nodefaultctor Image_IndexPixelMapHasher;
-class Image_IndexPixelMapHasher {
-	public:
-		%feature("autodoc", "1");
-		Image_IndexPixelMapHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
-
-};
-%extend Image_IndexPixelMapHasher {
-	~Image_IndexPixelMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_IndexPixelMapHasher\n");}
-	}
-};
-
-
 %nodefaultctor Image_PixelInterpolation;
 class Image_PixelInterpolation {
 	public:
@@ -497,6 +480,47 @@ class Image_PixelRowOfDIndexedImage {
 	~Image_PixelRowOfDIndexedImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDIndexedImage\n");}
+	}
+};
+
+
+%nodefaultctor Image_PixelRowOfDColorImage;
+class Image_PixelRowOfDColorImage {
+	public:
+		%feature("autodoc", "1");
+		Image_PixelRowOfDColorImage(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Image_PixelRowOfDColorImage(const Aspect_ColorPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Aspect_ColorPixel &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDColorImage & Assign(const Image_PixelRowOfDColorImage &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Aspect_ColorPixel &Value);
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Aspect_ColorPixel & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Aspect_ColorPixel & operator()(const Standard_Integer Index);
+
+};
+%extend Image_PixelRowOfDColorImage {
+	~Image_PixelRowOfDColorImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDColorImage\n");}
 	}
 };
 
@@ -736,8 +760,6 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 class Image {
 	public:
 		%feature("autodoc", "1");
-		Image();
-		%feature("autodoc", "1");
 		void Zoom(const Handle_Image_Image &aImage, const Image_PixelInterpolation &aInterpolation, const Standard_Real aCoefX, const Standard_Real aCoefY);
 		%feature("autodoc", "1");
 		void Zoom(const Handle_Image_Image &aImage, const Standard_Real aCoefX, const Standard_Real aCoefY);
@@ -763,58 +785,6 @@ class Image {
 	~Image() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Image\n");}
-	}
-};
-
-
-%nodefaultctor Image_AveragePixelInterpolation;
-class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_AveragePixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%extend Image_AveragePixelInterpolation {
-	~Image_AveragePixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_AveragePixelInterpolation\n");}
-	}
-};
-
-
-%nodefaultctor Image_DataMapNodeOfLookupTable;
-class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapNodeOfLookupTable(const Aspect_IndexPixel &K, const Aspect_IndexPixel &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & Key() const;
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Image_DataMapNodeOfLookupTable {
-	Handle_Image_DataMapNodeOfLookupTable GetHandle() {
-	return *(Handle_Image_DataMapNodeOfLookupTable*) &$self;
-	}
-};
-%extend Image_DataMapNodeOfLookupTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Image_DataMapNodeOfLookupTable {
-	~Image_DataMapNodeOfLookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");}
 	}
 };
 
@@ -928,189 +898,6 @@ class Image_DIndexedImage : public Image_Image {
 };
 
 
-%nodefaultctor Image_BilinearPixelInterpolation;
-class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_BilinearPixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%extend Image_BilinearPixelInterpolation {
-	~Image_BilinearPixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_BilinearPixelInterpolation\n");}
-	}
-};
-
-
-%nodefaultctor Image_Convertor;
-class Image_Convertor {
-	public:
-		%feature("autodoc", "1");
-		Image_Convertor();
-		%feature("autodoc", "1");
-		void SetDitheringMethod(const Image_DitheringMethod aMethod);
-		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_ColorImage &aColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
-		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
-		%feature("autodoc", "1");
-		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
-
-};
-%extend Image_Convertor {
-	~Image_Convertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_Convertor\n");}
-	}
-};
-
-
-%nodefaultctor Image_ColorPixelMapHasher;
-class Image_ColorPixelMapHasher {
-	public:
-		%feature("autodoc", "1");
-		Image_ColorPixelMapHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
-
-};
-%extend Image_ColorPixelMapHasher {
-	~Image_ColorPixelMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelMapHasher\n");}
-	}
-};
-
-
-%nodefaultctor Image_ColorPixelDataMap;
-class Image_ColorPixelDataMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Image_ColorPixelDataMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Image_ColorPixelDataMap & Assign(const Image_ColorPixelDataMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Aspect_ColorPixel &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Aspect_ColorPixel &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Aspect_ColorPixel &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Aspect_ColorPixel &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Aspect_ColorPixel &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const Aspect_ColorPixel &K);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Aspect_ColorPixel &K);
-
-};
-%extend Image_ColorPixelDataMap {
-	~Image_ColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelDataMap\n");}
-	}
-};
-
-
-%nodefaultctor Image_PixelRowOfDColorImage;
-class Image_PixelRowOfDColorImage {
-	public:
-		%feature("autodoc", "1");
-		Image_PixelRowOfDColorImage(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Image_PixelRowOfDColorImage(const Aspect_ColorPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Aspect_ColorPixel &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Image_PixelRowOfDColorImage & Assign(const Image_PixelRowOfDColorImage &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Aspect_ColorPixel &Value);
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Aspect_ColorPixel & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Aspect_ColorPixel & operator()(const Standard_Integer Index);
-
-};
-%extend Image_PixelRowOfDColorImage {
-	~Image_PixelRowOfDColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDColorImage\n");}
-	}
-};
-
-
-%nodefaultctor Image_BalancedPixelInterpolation;
-class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_BalancedPixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%extend Image_BalancedPixelInterpolation {
-	~Image_BalancedPixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_BalancedPixelInterpolation\n");}
-	}
-};
-
-
-%nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
-class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfColorPixelDataMap();
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfColorPixelDataMap(const Image_ColorPixelDataMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Image_ColorPixelDataMap &aMap);
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%extend Image_DataMapIteratorOfColorPixelDataMap {
-	~Image_DataMapIteratorOfColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");}
-	}
-};
-
-
 %nodefaultctor Image_PseudoColorImage;
 class Image_PseudoColorImage : public Image_DIndexedImage {
 	public:
@@ -1160,6 +947,215 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 	~Image_PseudoColorImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Image_PseudoColorImage\n");}
+	}
+};
+
+
+%nodefaultctor Image_DataMapNodeOfLookupTable;
+class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapNodeOfLookupTable(const Aspect_IndexPixel &K, const Aspect_IndexPixel &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & Key() const;
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_DataMapNodeOfLookupTable {
+	Handle_Image_DataMapNodeOfLookupTable GetHandle() {
+	return *(Handle_Image_DataMapNodeOfLookupTable*) &$self;
+	}
+};
+%extend Image_DataMapNodeOfLookupTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Image_DataMapNodeOfLookupTable {
+	~Image_DataMapNodeOfLookupTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");}
+	}
+};
+
+
+%nodefaultctor Image_IndexPixelMapHasher;
+class Image_IndexPixelMapHasher {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
+
+};
+%extend Image_IndexPixelMapHasher {
+	~Image_IndexPixelMapHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_IndexPixelMapHasher\n");}
+	}
+};
+
+
+%nodefaultctor Image_BilinearPixelInterpolation;
+class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_BilinearPixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%extend Image_BilinearPixelInterpolation {
+	~Image_BilinearPixelInterpolation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_BilinearPixelInterpolation\n");}
+	}
+};
+
+
+%nodefaultctor Image_Convertor;
+class Image_Convertor {
+	public:
+		%feature("autodoc", "1");
+		Image_Convertor();
+		%feature("autodoc", "1");
+		void SetDitheringMethod(const Image_DitheringMethod aMethod);
+		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage Convert(const Handle_Image_ColorImage &aColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		%feature("autodoc", "1");
+		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
+
+};
+%extend Image_Convertor {
+	~Image_Convertor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_Convertor\n");}
+	}
+};
+
+
+%nodefaultctor Image_ColorPixelMapHasher;
+class Image_ColorPixelMapHasher {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
+
+};
+%extend Image_ColorPixelMapHasher {
+	~Image_ColorPixelMapHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelMapHasher\n");}
+	}
+};
+
+
+%nodefaultctor Image_ColorPixelDataMap;
+class Image_ColorPixelDataMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap & Assign(const Image_ColorPixelDataMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Aspect_ColorPixel &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Integer & ChangeFind(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Aspect_ColorPixel &K);
+
+};
+%extend Image_ColorPixelDataMap {
+	~Image_ColorPixelDataMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelDataMap\n");}
+	}
+};
+
+
+%nodefaultctor Image_BalancedPixelInterpolation;
+class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_BalancedPixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%extend Image_BalancedPixelInterpolation {
+	~Image_BalancedPixelInterpolation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_BalancedPixelInterpolation\n");}
+	}
+};
+
+
+%nodefaultctor Image_AveragePixelInterpolation;
+class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_AveragePixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%extend Image_AveragePixelInterpolation {
+	~Image_AveragePixelInterpolation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_AveragePixelInterpolation\n");}
+	}
+};
+
+
+%nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
+class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfColorPixelDataMap();
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfColorPixelDataMap(const Image_ColorPixelDataMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Image_ColorPixelDataMap &aMap);
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%extend Image_DataMapIteratorOfColorPixelDataMap {
+	~Image_DataMapIteratorOfColorPixelDataMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");}
 	}
 };
 

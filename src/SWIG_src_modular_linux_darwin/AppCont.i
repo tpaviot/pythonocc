@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AppCont
 
+%include AppCont_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -139,8 +141,6 @@ class AppCont_FitFunction {
 class AppCont_FunctionTool2d {
 	public:
 		%feature("autodoc", "1");
-		AppCont_FunctionTool2d();
-		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const AppCont_Function2d &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const AppCont_Function2d &C);
@@ -196,8 +196,6 @@ class AppCont_Function {
 %nodefaultctor AppCont_FunctionTool;
 class AppCont_FunctionTool {
 	public:
-		%feature("autodoc", "1");
-		AppCont_FunctionTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const AppCont_Function &C);
 		%feature("autodoc", "1");

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Select2D
 
+%include Select2D_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -171,28 +173,28 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 };
 
 
-%nodefaultctor Handle_Select2D_SensitiveBox;
-class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
+%nodefaultctor Handle_Select2D_SensitivePoint;
+class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox();
+		Handle_Select2D_SensitivePoint();
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
+		Handle_Select2D_SensitivePoint(const Handle_Select2D_SensitivePoint &aHandle);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
+		Handle_Select2D_SensitivePoint(const Select2D_SensitivePoint *anItem);
 		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Select2D_SensitivePoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Select2D_SensitiveBox {
-	Select2D_SensitiveBox* GetObject() {
-	return (Select2D_SensitiveBox*)$self->Access();
+%extend Handle_Select2D_SensitivePoint {
+	Select2D_SensitivePoint* GetObject() {
+	return (Select2D_SensitivePoint*)$self->Access();
 	}
 };
-%extend Handle_Select2D_SensitiveBox {
-	~Handle_Select2D_SensitiveBox() {
+%extend Handle_Select2D_SensitivePoint {
+	~Handle_Select2D_SensitivePoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitivePoint\n");}
 	}
 };
 
@@ -219,32 +221,6 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 	~Handle_Select2D_SensitiveArc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveArc\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Select2D_SensitivePoint;
-class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint();
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint(const Handle_Select2D_SensitivePoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint(const Select2D_SensitivePoint *anItem);
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitivePoint const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select2D_SensitivePoint {
-	Select2D_SensitivePoint* GetObject() {
-	return (Select2D_SensitivePoint*)$self->Access();
-	}
-};
-%extend Handle_Select2D_SensitivePoint {
-	~Handle_Select2D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitivePoint\n");}
 	}
 };
 
@@ -297,6 +273,32 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 	~Handle_Select2D_SensitiveCircle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveCircle\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Select2D_SensitiveBox;
+class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox();
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select2D_SensitiveBox {
+	Select2D_SensitiveBox* GetObject() {
+	return (Select2D_SensitiveBox*)$self->Access();
+	}
+};
+%extend Handle_Select2D_SensitiveBox {
+	~Handle_Select2D_SensitiveBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");}
 	}
 };
 
@@ -381,39 +383,6 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 };
 
 
-%nodefaultctor Select2D_SensitiveArc;
-class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Select2D_SensitiveArc(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Select2D_SensitiveArc {
-	Handle_Select2D_SensitiveArc GetHandle() {
-	return *(Handle_Select2D_SensitiveArc*) &$self;
-	}
-};
-%extend Select2D_SensitiveArc {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Select2D_SensitiveArc {
-	~Select2D_SensitiveArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveArc\n");}
-	}
-};
-
-
 %nodefaultctor Select2D_SensitiveSegment;
 class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 	public:
@@ -455,6 +424,39 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 	~Select2D_SensitiveSegment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveSegment\n");}
+	}
+};
+
+
+%nodefaultctor Select2D_SensitiveArc;
+class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Select2D_SensitiveArc(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
+		%feature("autodoc", "1");
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Select2D_SensitiveArc {
+	Handle_Select2D_SensitiveArc GetHandle() {
+	return *(Handle_Select2D_SensitiveArc*) &$self;
+	}
+};
+%extend Select2D_SensitiveArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Select2D_SensitiveArc {
+	~Select2D_SensitiveArc() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveArc\n");}
 	}
 };
 

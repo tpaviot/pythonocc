@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopExp
 
+%include TopExp_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -145,8 +147,6 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 class TopExp {
 	public:
 		%feature("autodoc", "1");
-		TopExp();
-		%feature("autodoc", "1");
 		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
 		void MapShapes(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
@@ -197,6 +197,31 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	~TopExp_StackNodeOfStackOfIterator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopExp_StackNodeOfStackOfIterator\n");}
+	}
+};
+
+
+%nodefaultctor TopExp_StackIteratorOfStackOfIterator;
+class TopExp_StackIteratorOfStackOfIterator {
+	public:
+		%feature("autodoc", "1");
+		TopExp_StackIteratorOfStackOfIterator();
+		%feature("autodoc", "1");
+		TopExp_StackIteratorOfStackOfIterator(const TopExp_StackOfIterator &S);
+		%feature("autodoc", "1");
+		void Initialize(const TopExp_StackOfIterator &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const TopoDS_Iterator & Value() const;
+
+};
+%extend TopExp_StackIteratorOfStackOfIterator {
+	~TopExp_StackIteratorOfStackOfIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");}
 	}
 };
 
@@ -261,30 +286,5 @@ class TopExp_Explorer {
 	~TopExp_Explorer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopExp_Explorer\n");}
-	}
-};
-
-
-%nodefaultctor TopExp_StackIteratorOfStackOfIterator;
-class TopExp_StackIteratorOfStackOfIterator {
-	public:
-		%feature("autodoc", "1");
-		TopExp_StackIteratorOfStackOfIterator();
-		%feature("autodoc", "1");
-		TopExp_StackIteratorOfStackOfIterator(const TopExp_StackOfIterator &S);
-		%feature("autodoc", "1");
-		void Initialize(const TopExp_StackOfIterator &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const TopoDS_Iterator & Value() const;
-
-};
-%extend TopExp_StackIteratorOfStackOfIterator {
-	~TopExp_StackIteratorOfStackOfIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");}
 	}
 };

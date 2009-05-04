@@ -337,8 +337,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import XSControl.i
 %import IFSelect.i
+%import TCollection.i
 %import StepSelect.i
 %import Standard.i

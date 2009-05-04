@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Precision
 
+%include Precision_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor Precision;
 class Precision {
 	public:
-		%feature("autodoc", "1");
-		Precision();
 		%feature("autodoc", "1");
 		Standard_Real Angular();
 		%feature("autodoc", "1");

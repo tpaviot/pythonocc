@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MFunction
 
+%include MFunction_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -239,8 +241,6 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 %nodefaultctor MFunction;
 class MFunction {
 	public:
-		%feature("autodoc", "1");
-		MFunction();
 		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");

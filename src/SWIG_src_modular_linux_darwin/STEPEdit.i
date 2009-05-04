@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module STEPEdit
 
+%include STEPEdit_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -206,8 +208,6 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 %nodefaultctor STEPEdit;
 class STEPEdit {
 	public:
-		%feature("autodoc", "1");
-		STEPEdit();
 		%feature("autodoc", "1");
 		Handle_Interface_Protocol Protocol();
 		%feature("autodoc", "1");

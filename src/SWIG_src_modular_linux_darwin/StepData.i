@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepData
 
+%include StepData_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -194,32 +196,6 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 	~Handle_StepData_DescrReadWrite() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrReadWrite\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepData_Protocol;
-class Handle_StepData_Protocol : public Handle_Interface_Protocol {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol();
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol(const Handle_StepData_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol(const StepData_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_Protocol {
-	StepData_Protocol* GetObject() {
-	return (StepData_Protocol*)$self->Access();
-	}
-};
-%extend Handle_StepData_Protocol {
-	~Handle_StepData_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Protocol\n");}
 	}
 };
 
@@ -406,6 +382,32 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 };
 
 
+%nodefaultctor Handle_StepData_Protocol;
+class Handle_StepData_Protocol : public Handle_Interface_Protocol {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol();
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol(const Handle_StepData_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol(const StepData_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_Protocol {
+	StepData_Protocol* GetObject() {
+	return (StepData_Protocol*)$self->Access();
+	}
+};
+%extend Handle_StepData_Protocol {
+	~Handle_StepData_Protocol() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Protocol\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepData_PDescr;
 class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 	public:
@@ -458,6 +460,32 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepData_SelectNamed;
+class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed();
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed(const Handle_StepData_SelectNamed &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed(const StepData_SelectNamed *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_SelectNamed {
+	StepData_SelectNamed* GetObject() {
+	return (StepData_SelectNamed*)$self->Access();
+	}
+};
+%extend Handle_StepData_SelectNamed {
+	~Handle_StepData_SelectNamed() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectNamed\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepData_StepModel;
 class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 	public:
@@ -506,32 +534,6 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 	~Handle_StepData_StepReaderData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepReaderData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepData_SelectNamed;
-class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed();
-		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed(const Handle_StepData_SelectNamed &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed(const StepData_SelectNamed *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_SelectNamed const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_SelectNamed {
-	StepData_SelectNamed* GetObject() {
-	return (StepData_SelectNamed*)$self->Access();
-	}
-};
-%extend Handle_StepData_SelectNamed {
-	~Handle_StepData_SelectNamed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectNamed\n");}
 	}
 };
 
@@ -883,6 +885,76 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepData_ReadWriteModule;
+class StepData_ReadWriteModule : public Interface_ReaderModule {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseStep(const TCollection_AsciiString &atype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseStep(const TColStd_SequenceOfAsciiString &types) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsComplex(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		const TCollection_AsciiString & StepType(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ShortType(const Standard_Integer CN) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
+		%feature("autodoc", "1");
+		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_ReadWriteModule {
+	Handle_StepData_ReadWriteModule GetHandle() {
+	return *(Handle_StepData_ReadWriteModule*) &$self;
+	}
+};
+%extend StepData_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_ReadWriteModule {
+	~StepData_ReadWriteModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_ReadWriteModule\n");}
+	}
+};
+
+
+%nodefaultctor StepData_DescrReadWrite;
+class StepData_DescrReadWrite : public StepData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
+
+};
+%extend StepData_DescrReadWrite {
+	Handle_StepData_DescrReadWrite GetHandle() {
+	return *(Handle_StepData_DescrReadWrite*) &$self;
+	}
+};
+%extend StepData_DescrReadWrite {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_DescrReadWrite {
+	~StepData_DescrReadWrite() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_DescrReadWrite\n");}
+	}
+};
+
+
 %nodefaultctor StepData_GlobalNodeOfWriterLib;
 class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
@@ -958,51 +1030,100 @@ class StepData_HeaderTool {
 };
 
 
-%nodefaultctor StepData_FreeFormEntity;
-class StepData_FreeFormEntity : public MMgt_TShared {
+%nodefaultctor StepData_SelectMember;
+class StepData_SelectMember : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void SetStepType(const char * typenam);
+		StepData_SelectMember();
 		%feature("autodoc", "1");
-		Standard_CString StepType() const;
+		virtual		Standard_Boolean HasName() const;
 		%feature("autodoc", "1");
-		void SetNext(const Handle_StepData_FreeFormEntity &next, const Standard_Boolean last=1);
+		virtual		Standard_CString Name() const;
 		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity Next() const;
+		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
-		Standard_Boolean IsComplex() const;
+		virtual		Standard_Boolean Matches(const char * name) const;
 		%feature("autodoc", "1");
-		Handle_StepData_FreeFormEntity Typed(const char * typenam) const;
+		virtual		Standard_Integer Kind() const;
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
+		virtual		void SetKind(const Standard_Integer kind);
 		%feature("autodoc", "1");
-		Standard_Boolean Reorder(Handle_StepData_FreeFormEntity & ent);
+		Interface_ParamType ParamType() const;
 		%feature("autodoc", "1");
-		void SetNbFields(const Standard_Integer nb);
+		virtual		Standard_Integer Int() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbFields() const;
+		virtual		void SetInt(const Standard_Integer val);
 		%feature("autodoc", "1");
-		const StepData_Field & Field(const Standard_Integer num) const;
+		Standard_Integer Integer() const;
 		%feature("autodoc", "1");
-		StepData_Field & CField(const Standard_Integer num);
+		void SetInteger(const Standard_Integer val);
+		%feature("autodoc", "1");
+		Standard_Boolean Boolean() const;
+		%feature("autodoc", "1");
+		void SetBoolean(const Standard_Boolean val);
+		%feature("autodoc", "1");
+		StepData_Logical Logical() const;
+		%feature("autodoc", "1");
+		void SetLogical(const StepData_Logical val);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Real() const;
+		%feature("autodoc", "1");
+		virtual		void SetReal(const Standard_Real val);
+		%feature("autodoc", "1");
+		virtual		Standard_CString String() const;
+		%feature("autodoc", "1");
+		virtual		void SetString(const char * val);
+		%feature("autodoc", "1");
+		Standard_Integer Enum() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString EnumText() const;
+		%feature("autodoc", "1");
+		void SetEnum(const Standard_Integer val, const char * text="");
+		%feature("autodoc", "1");
+		virtual		void SetEnumText(const Standard_Integer val, const char * text);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepData_FreeFormEntity {
-	Handle_StepData_FreeFormEntity GetHandle() {
-	return *(Handle_StepData_FreeFormEntity*) &$self;
+%extend StepData_SelectMember {
+	Handle_StepData_SelectMember GetHandle() {
+	return *(Handle_StepData_SelectMember*) &$self;
 	}
 };
-%extend StepData_FreeFormEntity {
+%extend StepData_SelectMember {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepData_FreeFormEntity {
-	~StepData_FreeFormEntity() {
+%extend StepData_SelectMember {
+	~StepData_SelectMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_FreeFormEntity\n");}
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectMember\n");}
+	}
+};
+
+
+%nodefaultctor StepData_SelectInt;
+class StepData_SelectInt : public StepData_SelectMember {
+	public:
+		%feature("autodoc", "1");
+		StepData_SelectInt();
+
+};
+%extend StepData_SelectInt {
+	Handle_StepData_SelectInt GetHandle() {
+	return *(Handle_StepData_SelectInt*) &$self;
+	}
+};
+%extend StepData_SelectInt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_SelectInt {
+	~StepData_SelectInt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectInt\n");}
 	}
 };
 
@@ -1102,110 +1223,6 @@ class StepData_GeneralModule : public Interface_GeneralModule {
 	~StepData_GeneralModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepData_GeneralModule\n");}
-	}
-};
-
-
-%nodefaultctor StepData_EDescr;
-class StepData_EDescr : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * steptype) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsComplex() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_Described NewEntity() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_EDescr {
-	Handle_StepData_EDescr GetHandle() {
-	return *(Handle_StepData_EDescr*) &$self;
-	}
-};
-%extend StepData_EDescr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_EDescr {
-	~StepData_EDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_EDescr\n");}
-	}
-};
-
-
-%nodefaultctor StepData_SelectMember;
-class StepData_SelectMember : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepData_SelectMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Kind() const;
-		%feature("autodoc", "1");
-		virtual		void SetKind(const Standard_Integer kind);
-		%feature("autodoc", "1");
-		Interface_ParamType ParamType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Int() const;
-		%feature("autodoc", "1");
-		virtual		void SetInt(const Standard_Integer val);
-		%feature("autodoc", "1");
-		Standard_Integer Integer() const;
-		%feature("autodoc", "1");
-		void SetInteger(const Standard_Integer val);
-		%feature("autodoc", "1");
-		Standard_Boolean Boolean() const;
-		%feature("autodoc", "1");
-		void SetBoolean(const Standard_Boolean val);
-		%feature("autodoc", "1");
-		StepData_Logical Logical() const;
-		%feature("autodoc", "1");
-		void SetLogical(const StepData_Logical val);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Real() const;
-		%feature("autodoc", "1");
-		virtual		void SetReal(const Standard_Real val);
-		%feature("autodoc", "1");
-		virtual		Standard_CString String() const;
-		%feature("autodoc", "1");
-		virtual		void SetString(const char * val);
-		%feature("autodoc", "1");
-		Standard_Integer Enum() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString EnumText() const;
-		%feature("autodoc", "1");
-		void SetEnum(const Standard_Integer val, const char * text="");
-		%feature("autodoc", "1");
-		virtual		void SetEnumText(const Standard_Integer val, const char * text);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_SelectMember {
-	Handle_StepData_SelectMember GetHandle() {
-	return *(Handle_StepData_SelectMember*) &$self;
-	}
-};
-%extend StepData_SelectMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_SelectMember {
-	~StepData_SelectMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_SelectMember\n");}
 	}
 };
 
@@ -1596,231 +1613,6 @@ class StepData_PDescr : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepData_ReadWriteModule;
-class StepData_ReadWriteModule : public Interface_ReaderModule {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Interface_FileReaderData &data, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseStep(const TCollection_AsciiString &atype) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseStep(const TColStd_SequenceOfAsciiString &types) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsComplex(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		const TCollection_AsciiString & StepType(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ShortType(const Standard_Integer CN) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ComplexType(const Standard_Integer CN, TColStd_SequenceOfAsciiString & types) const;
-		%feature("autodoc", "1");
-		virtual		void Read(const Standard_Integer CN, const Handle_Interface_FileReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		void ReadStep(const Standard_Integer CN, const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		void WriteStep(const Standard_Integer CN, StepData_StepWriter & SW, const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_ReadWriteModule {
-	Handle_StepData_ReadWriteModule GetHandle() {
-	return *(Handle_StepData_ReadWriteModule*) &$self;
-	}
-};
-%extend StepData_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_ReadWriteModule {
-	~StepData_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_ReadWriteModule\n");}
-	}
-};
-
-
-%nodefaultctor StepData_DescrReadWrite;
-class StepData_DescrReadWrite : public StepData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		StepData_DescrReadWrite(const Handle_StepData_Protocol &proto);
-
-};
-%extend StepData_DescrReadWrite {
-	Handle_StepData_DescrReadWrite GetHandle() {
-	return *(Handle_StepData_DescrReadWrite*) &$self;
-	}
-};
-%extend StepData_DescrReadWrite {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_DescrReadWrite {
-	~StepData_DescrReadWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_DescrReadWrite\n");}
-	}
-};
-
-
-%nodefaultctor StepData_SelectInt;
-class StepData_SelectInt : public StepData_SelectMember {
-	public:
-		%feature("autodoc", "1");
-		StepData_SelectInt();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Kind() const;
-		%feature("autodoc", "1");
-		virtual		void SetKind(const Standard_Integer kind);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Int() const;
-		%feature("autodoc", "1");
-		virtual		void SetInt(const Standard_Integer val);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_SelectInt {
-	Handle_StepData_SelectInt GetHandle() {
-	return *(Handle_StepData_SelectInt*) &$self;
-	}
-};
-%extend StepData_SelectInt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_SelectInt {
-	~StepData_SelectInt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_SelectInt\n");}
-	}
-};
-
-
-%nodefaultctor StepData_StepDumper;
-class StepData_StepDumper {
-	public:
-		%feature("autodoc", "1");
-		StepData_StepDumper(const Handle_StepData_StepModel &amodel, const Handle_StepData_Protocol &protocol, const Standard_Integer mode=0);
-		%feature("autodoc", "1");
-		StepData_StepWriter & StepWriter();
-		%feature("autodoc", "1");
-		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Handle_Standard_Transient &ent, const Standard_Integer level);
-		%feature("autodoc", "1");
-		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Standard_Integer num, const Standard_Integer level);
-
-};
-%extend StepData_StepDumper {
-	~StepData_StepDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_StepDumper\n");}
-	}
-};
-
-
-%nodefaultctor StepData_StepReaderData;
-class StepData_StepReaderData : public Interface_FileReaderData {
-	public:
-		%feature("autodoc", "1");
-		StepData_StepReaderData(const Standard_Integer nbheader, const Standard_Integer nbtotal, const Standard_Integer nbpar);
-		%feature("autodoc", "1");
-		void SetRecord(const Standard_Integer num, const char * ident, const char * type, const Standard_Integer nbpar);
-		%feature("autodoc", "1");
-		void AddStepParam(const Standard_Integer num, const char * aval, const Interface_ParamType atype, const Standard_Integer nument=0);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & RecordType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		char * CType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer RecordIdent(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer SubListNumber(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean aslast) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsComplex(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void ComplexType(const Standard_Integer num, TColStd_SequenceOfAsciiString & types) const;
-		%feature("autodoc", "1");
-		Standard_Integer NextForComplex(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean NamedForComplex(const char * name, const Standard_Integer num0, Standard_Integer &OutValue, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CheckNbParams(const Standard_Integer num, const Standard_Integer nbreq, Handle_Interface_Check & ach, const char * mess="") const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
-		%feature("autodoc", "1");
-		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadMember(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_StepData_SelectMember & val) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadField(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, StepData_Field & fild) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadList(const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepData_ESDescr &descr, StepData_FieldList & list) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadAny(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXY(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadXYZ(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadReal(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_Standard_Type &atype, Handle_Standard_Transient & ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_SelectType & sel) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadBoolean(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Boolean & flag) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadLogical(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_Logical & flag) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadString(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_TCollection_HAsciiString & val) const;
-		%feature("autodoc", "1");
-		void FailEnumValue(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadEnum(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_EnumTool &enumtool, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadTypedParam(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean mustbetyped, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & typ) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CheckDerived(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Standard_Boolean errstat=0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEntities() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer FindNextRecord(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void SetEntityNumbers(const Standard_Boolean withmap=1);
-		%feature("autodoc", "1");
-		Standard_Integer FindNextHeaderRecord(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void PrepareHeader();
-		%feature("autodoc", "1");
-		Handle_Interface_Check const GlobalCheck() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_StepReaderData {
-	Handle_StepData_StepReaderData GetHandle() {
-	return *(Handle_StepData_StepReaderData*) &$self;
-	}
-};
-%extend StepData_StepReaderData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_StepReaderData {
-	~StepData_StepReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderData\n");}
-	}
-};
-
-
 %nodefaultctor StepData_FieldList;
 class StepData_FieldList {
 	public:
@@ -2033,6 +1825,53 @@ class StepData_StepWriter {
 };
 
 
+%nodefaultctor StepData_UndefinedEntity;
+class StepData_UndefinedEntity : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepData_UndefinedEntity();
+		%feature("autodoc", "1");
+		StepData_UndefinedEntity(const Standard_Boolean issub);
+		%feature("autodoc", "1");
+		Handle_Interface_UndefinedContent UndefinedContent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSub() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsComplex() const;
+		%feature("autodoc", "1");
+		Handle_StepData_UndefinedEntity Next() const;
+		%feature("autodoc", "1");
+		Standard_CString StepType() const;
+		%feature("autodoc", "1");
+		void ReadRecord(const Handle_StepData_StepReaderData &SR, const Standard_Integer num, Handle_Interface_Check & ach);
+		%feature("autodoc", "1");
+		void WriteParams(StepData_StepWriter & SW) const;
+		%feature("autodoc", "1");
+		void GetFromAnother(const Handle_StepData_UndefinedEntity &other, Interface_CopyTool & TC);
+		%feature("autodoc", "1");
+		void FillShared(Interface_EntityIterator & list) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_UndefinedEntity {
+	Handle_StepData_UndefinedEntity GetHandle() {
+	return *(Handle_StepData_UndefinedEntity*) &$self;
+	}
+};
+%extend StepData_UndefinedEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_UndefinedEntity {
+	~StepData_UndefinedEntity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_UndefinedEntity\n");}
+	}
+};
+
+
 %nodefaultctor StepData_FieldList1;
 class StepData_FieldList1 : public StepData_FieldList {
 	public:
@@ -2056,80 +1895,101 @@ class StepData_FieldList1 : public StepData_FieldList {
 };
 
 
-%nodefaultctor StepData_Described;
-class StepData_Described : public MMgt_TShared {
+%nodefaultctor StepData_StepReaderData;
+class StepData_StepReaderData : public Interface_FileReaderData {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepData_EDescr Description() const;
+		StepData_StepReaderData(const Standard_Integer nbheader, const Standard_Integer nbtotal, const Standard_Integer nbpar);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsComplex() const;
+		void SetRecord(const Standard_Integer num, const char * ident, const char * type, const Standard_Integer nbpar);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * steptype) const;
+		void AddStepParam(const Standard_Integer num, const char * aval, const Interface_ParamType atype, const Standard_Integer nument=0);
 		%feature("autodoc", "1");
-		virtual		Handle_StepData_Simple As(const char * steptype) const;
+		const TCollection_AsciiString & RecordType(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasField(const char * name) const;
+		char * CType(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		const StepData_Field & Field(const char * name) const;
+		Standard_Integer RecordIdent(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		StepData_Field & CField(const char * name);
+		Standard_Integer SubListNumber(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean aslast) const;
 		%feature("autodoc", "1");
-		virtual		void Check(Handle_Interface_Check & ach) const;
+		Standard_Boolean IsComplex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		virtual		void Shared(Interface_EntityIterator & list) const;
+		void ComplexType(const Standard_Integer num, TColStd_SequenceOfAsciiString & types) const;
+		%feature("autodoc", "1");
+		Standard_Integer NextForComplex(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean NamedForComplex(const char * name, const Standard_Integer num0, Standard_Integer &OutValue, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CheckNbParams(const Standard_Integer num, const Standard_Integer nbreq, Handle_Interface_Check & ach, const char * mess="") const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
+		%feature("autodoc", "1");
+		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadMember(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_StepData_SelectMember & val) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadField(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, StepData_Field & fild) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadList(const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepData_ESDescr &descr, StepData_FieldList & list) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadAny(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXY(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadXYZ(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadReal(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_Standard_Type &atype, Handle_Standard_Transient & ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_SelectType & sel) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadInteger(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadBoolean(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Boolean & flag) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadLogical(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_Logical & flag) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadString(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Handle_TCollection_HAsciiString & val) const;
+		%feature("autodoc", "1");
+		void FailEnumValue(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadEnum(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_EnumTool &enumtool, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadTypedParam(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean mustbetyped, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & typ) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CheckDerived(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Standard_Boolean errstat=0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEntities() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer FindNextRecord(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void SetEntityNumbers(const Standard_Boolean withmap=1);
+		%feature("autodoc", "1");
+		Standard_Integer FindNextHeaderRecord(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void PrepareHeader();
+		%feature("autodoc", "1");
+		Handle_Interface_Check const GlobalCheck() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepData_Described {
-	Handle_StepData_Described GetHandle() {
-	return *(Handle_StepData_Described*) &$self;
+%extend StepData_StepReaderData {
+	Handle_StepData_StepReaderData GetHandle() {
+	return *(Handle_StepData_StepReaderData*) &$self;
 	}
 };
-%extend StepData_Described {
+%extend StepData_StepReaderData {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepData_Described {
-	~StepData_Described() {
+%extend StepData_StepReaderData {
+	~StepData_StepReaderData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_Described\n");}
-	}
-};
-
-
-%nodefaultctor StepData_Plex;
-class StepData_Plex : public StepData_Described {
-	public:
-		%feature("autodoc", "1");
-		StepData_Plex(const Handle_StepData_ECDescr &descr);
-		%feature("autodoc", "1");
-		void Add(const Handle_StepData_Simple &member);
-		%feature("autodoc", "1");
-		Handle_StepData_ECDescr ECDescr() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMembers() const;
-		%feature("autodoc", "1");
-		Handle_StepData_Simple Member(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
-
-};
-%extend StepData_Plex {
-	Handle_StepData_Plex GetHandle() {
-	return *(Handle_StepData_Plex*) &$self;
-	}
-};
-%extend StepData_Plex {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_Plex {
-	~StepData_Plex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_Plex\n");}
+	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderData\n");}
 	}
 };
 
@@ -2185,8 +2045,6 @@ class StepData_HArray1OfField : public MMgt_TShared {
 class StepData {
 	public:
 		%feature("autodoc", "1");
-		StepData();
-		%feature("autodoc", "1");
 		Handle_StepData_Protocol HeaderProtocol();
 		%feature("autodoc", "1");
 		void AddHeaderProtocol(const Handle_StepData_Protocol &headerproto);
@@ -2200,6 +2058,37 @@ class StepData {
 	~StepData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepData\n");}
+	}
+};
+
+
+%nodefaultctor StepData_EDescr;
+class StepData_EDescr : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * steptype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsComplex() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_Described NewEntity() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_EDescr {
+	Handle_StepData_EDescr GetHandle() {
+	return *(Handle_StepData_EDescr*) &$self;
+	}
+};
+%extend StepData_EDescr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_EDescr {
+	~StepData_EDescr() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_EDescr\n");}
 	}
 };
 
@@ -2237,14 +2126,6 @@ class StepData_ESDescr : public StepData_EDescr {
 		Handle_StepData_PDescr Field(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr NamedField(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * steptype) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsComplex() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_Described NewEntity() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepData_ESDescr {
@@ -2306,6 +2187,70 @@ class StepData_Array1OfField {
 };
 
 
+%nodefaultctor StepData_Described;
+class StepData_Described : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepData_EDescr Description() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsComplex() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * steptype) const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_Simple As(const char * steptype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasField(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const StepData_Field & Field(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		StepData_Field & CField(const char * name);
+		%feature("autodoc", "1");
+		virtual		void Check(Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		void Shared(Interface_EntityIterator & list) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_Described {
+	Handle_StepData_Described GetHandle() {
+	return *(Handle_StepData_Described*) &$self;
+	}
+};
+%extend StepData_Described {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_Described {
+	~StepData_Described() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Described\n");}
+	}
+};
+
+
+%nodefaultctor StepData_StepDumper;
+class StepData_StepDumper {
+	public:
+		%feature("autodoc", "1");
+		StepData_StepDumper(const Handle_StepData_StepModel &amodel, const Handle_StepData_Protocol &protocol, const Standard_Integer mode=0);
+		%feature("autodoc", "1");
+		StepData_StepWriter & StepWriter();
+		%feature("autodoc", "1");
+		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Handle_Standard_Transient &ent, const Standard_Integer level);
+		%feature("autodoc", "1");
+		Standard_Boolean Dump(const Handle_Message_Messenger &S, const Standard_Integer num, const Standard_Integer level);
+
+};
+%extend StepData_StepDumper {
+	~StepData_StepDumper() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepDumper\n");}
+	}
+};
+
+
 %nodefaultctor StepData_WriterLib;
 class StepData_WriterLib {
 	public:
@@ -2343,31 +2288,51 @@ class StepData_WriterLib {
 };
 
 
-%nodefaultctor StepData_StepReaderTool;
-class StepData_StepReaderTool : public Interface_FileReaderTool {
+%nodefaultctor StepData_FreeFormEntity;
+class StepData_FreeFormEntity : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepData_StepReaderTool(const Handle_StepData_StepReaderData &reader, const Handle_StepData_Protocol &protocol);
+		void SetStepType(const char * typenam);
 		%feature("autodoc", "1");
-		void Prepare(const Standard_Boolean optimize=1);
+		Standard_CString StepType() const;
 		%feature("autodoc", "1");
-		void Prepare(const Handle_StepData_FileRecognizer &reco, const Standard_Boolean optimize=1);
+		void SetNext(const Handle_StepData_FreeFormEntity &next, const Standard_Boolean last=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
+		Handle_StepData_FreeFormEntity Next() const;
 		%feature("autodoc", "1");
-		void PrepareHeader(const Handle_StepData_FileRecognizer &reco);
+		Standard_Boolean IsComplex() const;
 		%feature("autodoc", "1");
-		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
+		Handle_StepData_FreeFormEntity Typed(const char * typenam) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
+		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
 		%feature("autodoc", "1");
-		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+		Standard_Boolean Reorder(Handle_StepData_FreeFormEntity & ent);
+		%feature("autodoc", "1");
+		void SetNbFields(const Standard_Integer nb);
+		%feature("autodoc", "1");
+		Standard_Integer NbFields() const;
+		%feature("autodoc", "1");
+		const StepData_Field & Field(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		StepData_Field & CField(const Standard_Integer num);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepData_StepReaderTool {
-	~StepData_StepReaderTool() {
+%extend StepData_FreeFormEntity {
+	Handle_StepData_FreeFormEntity GetHandle() {
+	return *(Handle_StepData_FreeFormEntity*) &$self;
+	}
+};
+%extend StepData_FreeFormEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_FreeFormEntity {
+	~StepData_FreeFormEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderTool\n");}
+	if (__env){printf("## Call custom destructor for instance of StepData_FreeFormEntity\n");}
 	}
 };
 
@@ -2403,6 +2368,59 @@ class StepData_DescrGeneral : public StepData_GeneralModule {
 	~StepData_DescrGeneral() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepData_DescrGeneral\n");}
+	}
+};
+
+
+%nodefaultctor StepData_Plex;
+class StepData_Plex : public StepData_Described {
+	public:
+		%feature("autodoc", "1");
+		StepData_Plex(const Handle_StepData_ECDescr &descr);
+		%feature("autodoc", "1");
+		void Add(const Handle_StepData_Simple &member);
+		%feature("autodoc", "1");
+		Handle_StepData_ECDescr ECDescr() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsComplex() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * steptype) const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_Simple As(const char * steptype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasField(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const StepData_Field & Field(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		StepData_Field & CField(const char * name);
+		%feature("autodoc", "1");
+		Standard_Integer NbMembers() const;
+		%feature("autodoc", "1");
+		Handle_StepData_Simple Member(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString TypeList() const;
+		%feature("autodoc", "1");
+		virtual		void Check(Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		void Shared(Interface_EntityIterator & list) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_Plex {
+	Handle_StepData_Plex GetHandle() {
+	return *(Handle_StepData_Plex*) &$self;
+	}
+};
+%extend StepData_Plex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepData_Plex {
+	~StepData_Plex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Plex\n");}
 	}
 };
 
@@ -2579,49 +2597,31 @@ class StepData_SelectType {
 };
 
 
-%nodefaultctor StepData_UndefinedEntity;
-class StepData_UndefinedEntity : public MMgt_TShared {
+%nodefaultctor StepData_StepReaderTool;
+class StepData_StepReaderTool : public Interface_FileReaderTool {
 	public:
 		%feature("autodoc", "1");
-		StepData_UndefinedEntity();
+		StepData_StepReaderTool(const Handle_StepData_StepReaderData &reader, const Handle_StepData_Protocol &protocol);
 		%feature("autodoc", "1");
-		StepData_UndefinedEntity(const Standard_Boolean issub);
+		void Prepare(const Standard_Boolean optimize=1);
 		%feature("autodoc", "1");
-		Handle_Interface_UndefinedContent UndefinedContent() const;
+		void Prepare(const Handle_StepData_FileRecognizer &reco, const Standard_Boolean optimize=1);
 		%feature("autodoc", "1");
-		Standard_Boolean IsSub() const;
+		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
 		%feature("autodoc", "1");
-		Standard_Boolean IsComplex() const;
+		void PrepareHeader(const Handle_StepData_FileRecognizer &reco);
 		%feature("autodoc", "1");
-		Handle_StepData_UndefinedEntity Next() const;
+		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
 		%feature("autodoc", "1");
-		Standard_CString StepType() const;
+		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
 		%feature("autodoc", "1");
-		void ReadRecord(const Handle_StepData_StepReaderData &SR, const Standard_Integer num, Handle_Interface_Check & ach);
-		%feature("autodoc", "1");
-		void WriteParams(StepData_StepWriter & SW) const;
-		%feature("autodoc", "1");
-		void GetFromAnother(const Handle_StepData_UndefinedEntity &other, Interface_CopyTool & TC);
-		%feature("autodoc", "1");
-		void FillShared(Interface_EntityIterator & list) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
 
 };
-%extend StepData_UndefinedEntity {
-	Handle_StepData_UndefinedEntity GetHandle() {
-	return *(Handle_StepData_UndefinedEntity*) &$self;
-	}
-};
-%extend StepData_UndefinedEntity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepData_UndefinedEntity {
-	~StepData_UndefinedEntity() {
+%extend StepData_StepReaderTool {
+	~StepData_StepReaderTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepData_UndefinedEntity\n");}
+	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderTool\n");}
 	}
 };
 

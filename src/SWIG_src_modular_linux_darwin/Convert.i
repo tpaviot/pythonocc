@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Convert
 
+%include Convert_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -177,94 +179,6 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 };
 
 
-%nodefaultctor Convert_CompPolynomialToPoles;
-class Convert_CompPolynomialToPoles {
-	public:
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Standard_Integer Degree, const TColStd_Array1OfReal &Coefficients, const TColStd_Array1OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(Handle_TColStd_HArray2OfReal & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void Knots(Handle_TColStd_HArray1OfReal & K) const;
-		%feature("autodoc", "1");
-		void Multiplicities(Handle_TColStd_HArray1OfInteger & M) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend Convert_CompPolynomialToPoles {
-	~Convert_CompPolynomialToPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
-	}
-};
-
-
-%nodefaultctor Convert_SequenceOfArray1OfPoles2d;
-class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Convert_SequenceOfArray1OfPoles2d();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Convert_SequenceOfArray1OfPoles2d & Assign(const Convert_SequenceOfArray1OfPoles2d &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Append(Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void Prepend(Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Convert_SequenceOfArray1OfPoles2d {
-	~Convert_SequenceOfArray1OfPoles2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles2d\n");}
-	}
-};
-
-
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode {
 	public:
@@ -340,6 +254,68 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 	~Convert_CircleToBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Convert_CircleToBSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor Convert_CompPolynomialToPoles;
+class Convert_CompPolynomialToPoles {
+	public:
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Standard_Integer Degree, const TColStd_Array1OfReal &Coefficients, const TColStd_Array1OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(Handle_TColStd_HArray2OfReal & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void Knots(Handle_TColStd_HArray1OfReal & K) const;
+		%feature("autodoc", "1");
+		void Multiplicities(Handle_TColStd_HArray1OfInteger & M) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend Convert_CompPolynomialToPoles {
+	~Convert_CompPolynomialToPoles() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
+	}
+};
+
+
+%nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
+class Convert_CompBezierCurvesToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void AddCurve(const TColgp_Array1OfPnt &Poles);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+
+};
+%extend Convert_CompBezierCurvesToBSplineCurve {
+	~Convert_CompBezierCurvesToBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
 
@@ -464,6 +440,61 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 };
 
 
+%nodefaultctor Convert_SequenceOfArray1OfPoles2d;
+class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Convert_SequenceOfArray1OfPoles2d();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Convert_SequenceOfArray1OfPoles2d & Assign(const Convert_SequenceOfArray1OfPoles2d &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
+		%feature("autodoc", "1");
+		void Append(Convert_SequenceOfArray1OfPoles2d & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColgp_HArray1OfPnt2d &T);
+		%feature("autodoc", "1");
+		void Prepend(Convert_SequenceOfArray1OfPoles2d & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt2d & First() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt2d & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Convert_SequenceOfArray1OfPoles2d & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TColgp_HArray1OfPnt2d &I);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfPnt2d & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Convert_SequenceOfArray1OfPoles2d {
+	~Convert_SequenceOfArray1OfPoles2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles2d\n");}
+	}
+};
+
+
 %nodefaultctor Convert_HyperbolaToBSplineCurve;
 class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
@@ -475,35 +506,6 @@ class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	~Convert_HyperbolaToBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
-class Convert_CompBezierCurvesToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void AddCurve(const TColgp_Array1OfPnt &Poles);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-
-};
-%extend Convert_CompBezierCurvesToBSplineCurve {
-	~Convert_CompBezierCurvesToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
 
@@ -580,6 +582,23 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Convert_CylinderToBSplineSurface;
+class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
+		%feature("autodoc", "1");
+		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
+
+};
+%extend Convert_CylinderToBSplineSurface {
+	~Convert_CylinderToBSplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");}
+	}
+};
+
+
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNode {
 	public:
@@ -605,23 +624,6 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNo
 	~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
-	}
-};
-
-
-%nodefaultctor Convert_CylinderToBSplineSurface;
-class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
-		%feature("autodoc", "1");
-		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
-
-};
-%extend Convert_CylinderToBSplineSurface {
-	~Convert_CylinderToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");}
 	}
 };
 

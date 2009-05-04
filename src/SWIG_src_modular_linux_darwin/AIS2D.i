@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AIS2D
 
+%include AIS2D_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -121,12 +123,6 @@ enum AIS2D_TypeOfDetection {
 	AIS2D_TOD_NONE,
 	};
 
-enum AIS2D_TypeOfAxis {
-	AIS2D_TOAX_Unknown,
-	AIS2D_TOAX_XAxis,
-	AIS2D_TOAX_YAxis,
-	};
-
 enum AIS2D_DisplayStatus {
 	AIS2D_DS_Displayed,
 	AIS2D_DS_Erased,
@@ -168,6 +164,12 @@ enum AIS2D_StatusOfPick {
 	AIS2D_SOP_Removed,
 	AIS2D_SOP_OneSelected,
 	AIS2D_SOP_SeveralSelected,
+	};
+
+enum AIS2D_TypeOfAxis {
+	AIS2D_TOAX_Unknown,
+	AIS2D_TOAX_XAxis,
+	AIS2D_TOAX_YAxis,
 	};
 
 enum AIS2D_SelectStatus {
@@ -674,61 +676,6 @@ class AIS2D_ListIteratorOfListOfIO {
 };
 
 
-%nodefaultctor AIS2D_SequenceOfPrimArchit;
-class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_SequenceOfPrimArchit();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AIS2D_SequenceOfPrimArchit & Assign(const AIS2D_SequenceOfPrimArchit &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void Append(AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void Prepend(AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & First() const;
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
-		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend AIS2D_SequenceOfPrimArchit {
-	~AIS2D_SequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfPrimArchit\n");}
-	}
-};
-
-
 %nodefaultctor AIS2D_DataMapOfLC;
 class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 	public:
@@ -760,79 +707,6 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 	~AIS2D_DataMapOfLC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLC\n");}
-	}
-};
-
-
-%nodefaultctor AIS2D_LocalStatus;
-class AIS2D_LocalStatus : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_LocalStatus(const Standard_Boolean isTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DMode=-0x000000001, const Standard_Integer SMode=-0x000000001, const AIS2D_TypeOfDetection HMode=AIS2D_TOD_PRIMITIVE, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor HighlCol=Quantity_NOC_WHITE);
-		%feature("autodoc", "1");
-		Standard_Boolean Decomposed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTemporary() const;
-		%feature("autodoc", "1");
-		Standard_Integer DisplayMode() const;
-		%feature("autodoc", "1");
-		AIS2D_PToListOfInt SelectionModes();
-		%feature("autodoc", "1");
-		Standard_Boolean IsActivated(const Standard_Integer aSelMode) const;
-		%feature("autodoc", "1");
-		AIS2D_TypeOfDetection HighlightMode() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSubIntensityOn() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor HighlightColor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFirstDisplay() const;
-		%feature("autodoc", "1");
-		void SetDecomposition(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		void SetTemporary(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		void SetDisplayMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void SetFirstDisplay(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		void AddSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void RemoveSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void ClearSelectionModes();
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelModeIn(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		void SetHighlightMode(const AIS2D_TypeOfDetection aMode);
-		%feature("autodoc", "1");
-		void SetHighlightColor(const Quantity_NameOfColor aHiCol);
-		%feature("autodoc", "1");
-		void SubIntensityOn();
-		%feature("autodoc", "1");
-		void SubIntensityOff();
-		%feature("autodoc", "1");
-		void SetPreviousState(const Handle_Standard_Transient &aStatus);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient PreviousState() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS2D_LocalStatus {
-	Handle_AIS2D_LocalStatus GetHandle() {
-	return *(Handle_AIS2D_LocalStatus*) &$self;
-	}
-};
-%extend AIS2D_LocalStatus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS2D_LocalStatus {
-	~AIS2D_LocalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS2D_LocalStatus\n");}
 	}
 };
 
@@ -1000,37 +874,6 @@ class AIS2D_ListOfIO {
 };
 
 
-%nodefaultctor AIS2D_DataMapNodeOfDataMapOfLocStat;
-class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfLocStat(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject & Key() const;
-		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
-	Handle_AIS2D_DataMapNodeOfDataMapOfLocStat GetHandle() {
-	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLocStat*) &$self;
-	}
-};
-%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
-	~AIS2D_DataMapNodeOfDataMapOfLocStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
-	}
-};
-
-
 %nodefaultctor AIS2D_ListNodeOfListOfIO;
 class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 	public:
@@ -1165,73 +1008,57 @@ class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapI
 };
 
 
-%nodefaultctor AIS2D_HSequenceOfIO;
-class AIS2D_HSequenceOfIO : public MMgt_TShared {
+%nodefaultctor AIS2D_SequenceOfPrimArchit;
+class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_HSequenceOfIO();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		AIS2D_SequenceOfPrimArchit();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_InteractiveObject &anItem);
+		const AIS2D_SequenceOfPrimArchit & Assign(const AIS2D_SequenceOfPrimArchit &Other);
 		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void Append(const Handle_AIS2D_PrimitiveArchit &T);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_InteractiveObject &anItem);
+		void Append(AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void Prepend(const Handle_AIS2D_PrimitiveArchit &T);
 		%feature("autodoc", "1");
-		void Reverse();
+		void Prepend(AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &T);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
+		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		const Handle_AIS2D_PrimitiveArchit & First() const;
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO Split(const Standard_Integer anIndex);
+		const Handle_AIS2D_PrimitiveArchit & Last() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		void Split(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
 		%feature("autodoc", "1");
-		const Handle_AIS2D_InteractiveObject & Value(const Standard_Integer anIndex) const;
+		const Handle_AIS2D_PrimitiveArchit & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveObject & ChangeValue(const Standard_Integer anIndex);
+		const Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
+		void SetValue(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		Handle_AIS2D_PrimitiveArchit & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const AIS2D_SequenceOfIO & Sequence() const;
+		Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		AIS2D_SequenceOfIO & ChangeSequence();
+		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_AIS2D_HSequenceOfIO ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend AIS2D_HSequenceOfIO {
-	Handle_AIS2D_HSequenceOfIO GetHandle() {
-	return *(Handle_AIS2D_HSequenceOfIO*) &$self;
-	}
-};
-%extend AIS2D_HSequenceOfIO {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS2D_HSequenceOfIO {
-	~AIS2D_HSequenceOfIO() {
+%extend AIS2D_SequenceOfPrimArchit {
+	~AIS2D_SequenceOfPrimArchit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfIO\n");}
+	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfPrimArchit\n");}
 	}
 };
 
@@ -1728,8 +1555,6 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 class AIS2D {
 	public:
 		%feature("autodoc", "1");
-		AIS2D();
-		%feature("autodoc", "1");
 		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
@@ -1739,6 +1564,79 @@ class AIS2D {
 	~AIS2D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS2D\n");}
+	}
+};
+
+
+%nodefaultctor AIS2D_LocalStatus;
+class AIS2D_LocalStatus : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_LocalStatus(const Standard_Boolean isTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DMode=-0x000000001, const Standard_Integer SMode=-0x000000001, const AIS2D_TypeOfDetection HMode=AIS2D_TOD_PRIMITIVE, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor HighlCol=Quantity_NOC_WHITE);
+		%feature("autodoc", "1");
+		Standard_Boolean Decomposed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTemporary() const;
+		%feature("autodoc", "1");
+		Standard_Integer DisplayMode() const;
+		%feature("autodoc", "1");
+		AIS2D_PToListOfInt SelectionModes();
+		%feature("autodoc", "1");
+		Standard_Boolean IsActivated(const Standard_Integer aSelMode) const;
+		%feature("autodoc", "1");
+		AIS2D_TypeOfDetection HighlightMode() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSubIntensityOn() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor HighlightColor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFirstDisplay() const;
+		%feature("autodoc", "1");
+		void SetDecomposition(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		void SetTemporary(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		void SetDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void SetFirstDisplay(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		void AddSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void RemoveSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void ClearSelectionModes();
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		void SetHighlightMode(const AIS2D_TypeOfDetection aMode);
+		%feature("autodoc", "1");
+		void SetHighlightColor(const Quantity_NameOfColor aHiCol);
+		%feature("autodoc", "1");
+		void SubIntensityOn();
+		%feature("autodoc", "1");
+		void SubIntensityOff();
+		%feature("autodoc", "1");
+		void SetPreviousState(const Handle_Standard_Transient &aStatus);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient PreviousState() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_LocalStatus {
+	Handle_AIS2D_LocalStatus GetHandle() {
+	return *(Handle_AIS2D_LocalStatus*) &$self;
+	}
+};
+%extend AIS2D_LocalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS2D_LocalStatus {
+	~AIS2D_LocalStatus() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_LocalStatus\n");}
 	}
 };
 
@@ -2017,6 +1915,108 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 	~AIS2D_DataMapOfLocStat() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLocStat\n");}
+	}
+};
+
+
+%nodefaultctor AIS2D_HSequenceOfIO;
+class AIS2D_HSequenceOfIO : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_HSequenceOfIO();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_AIS2D_InteractiveObject &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_AIS2D_HSequenceOfIO &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_AIS2D_InteractiveObject &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_AIS2D_HSequenceOfIO &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_AIS2D_HSequenceOfIO &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_AIS2D_HSequenceOfIO Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_AIS2D_InteractiveObject &anItem);
+		%feature("autodoc", "1");
+		const Handle_AIS2D_InteractiveObject & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveObject & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const AIS2D_SequenceOfIO & Sequence() const;
+		%feature("autodoc", "1");
+		AIS2D_SequenceOfIO & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_AIS2D_HSequenceOfIO ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_HSequenceOfIO {
+	Handle_AIS2D_HSequenceOfIO GetHandle() {
+	return *(Handle_AIS2D_HSequenceOfIO*) &$self;
+	}
+};
+%extend AIS2D_HSequenceOfIO {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS2D_HSequenceOfIO {
+	~AIS2D_HSequenceOfIO() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfIO\n");}
+	}
+};
+
+
+%nodefaultctor AIS2D_DataMapNodeOfDataMapOfLocStat;
+class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_DataMapNodeOfDataMapOfLocStat(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveObject & Key() const;
+		%feature("autodoc", "1");
+		Handle_AIS2D_LocalStatus & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	Handle_AIS2D_DataMapNodeOfDataMapOfLocStat GetHandle() {
+	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLocStat*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	~AIS2D_DataMapNodeOfDataMapOfLocStat() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
 	}
 };
 

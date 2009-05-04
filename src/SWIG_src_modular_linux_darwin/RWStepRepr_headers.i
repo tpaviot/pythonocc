@@ -336,16 +336,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_ConfigurationItem.hxx>
 #include<Handle_StepRepr_MaterialPropertyRepresentation.hxx>
 #include<Handle_StepRepr_FunctionallyDefinedTransformation.hxx>
+#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepRepr_RepresentationContext.hxx>
 #include<Handle_StepRepr_SpecifiedHigherUsageOccurrence.hxx>
 #include<Handle_StepRepr_ConfigurationEffectivity.hxx>
 #include<Handle_StepRepr_MakeFromUsageOption.hxx>
-#include<Handle_StepRepr_ParametricRepresentationContext.hxx>
 #include<Handle_StepRepr_ShapeAspectDerivingRelationship.hxx>
 #include<Handle_StepRepr_ReprItemAndLengthMeasureWithUnit.hxx>
 #include<Handle_StepRepr_ShapeAspectTransition.hxx>
 #include<Handle_StepRepr_StructuralResponseProperty.hxx>
 #include<Handle_StepRepr_MappedItem.hxx>
+#include<Handle_StepRepr_ParametricRepresentationContext.hxx>
 #include<Handle_StepRepr_MaterialDesignation.hxx>
 #include<Handle_StepRepr_ProductDefinitionShape.hxx>
 #include<Handle_StepRepr_DataEnvironment.hxx>
@@ -360,7 +361,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_RepresentationItem.hxx>
 #include<Handle_StepRepr_ConfigurationDesign.hxx>
 #include<Handle_StepRepr_GlobalUncertaintyAssignedContext.hxx>
-#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepRepr_GlobalUnitAssignedContext.hxx>
 #include<Handle_StepRepr_AssemblyComponentUsage.hxx>
 #include<Handle_StepRepr_PropertyDefinitionRelationship.hxx>

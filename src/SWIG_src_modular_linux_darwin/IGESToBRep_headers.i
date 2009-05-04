@@ -152,7 +152,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Transfer_Binder.hxx>
-#include<IGESToBRep.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>
@@ -171,14 +170,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_IGESGeom_SplineCurve.hxx>
 #include<Handle_Geom_Transformation.hxx>
 #include<Handle_IGESGeom_TransformationMatrix.hxx>
-#include<Handle_IGESGeom_RuledSurface.hxx>
-#include<Handle_IGESGeom_SurfaceOfRevolution.hxx>
-#include<Handle_IGESGeom_TabulatedCylinder.hxx>
-#include<Handle_IGESGeom_OffsetSurface.hxx>
-#include<Handle_IGESGeom_TrimmedSurface.hxx>
-#include<Handle_IGESGeom_BoundedSurface.hxx>
-#include<Handle_IGESGeom_Plane.hxx>
-#include<Handle_IGESBasic_SingleParent.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<Handle_IGESSolid_PlaneSurface.hxx>
 #include<Handle_Geom_CylindricalSurface.hxx>
@@ -192,4 +183,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_IGESGeom_SplineSurface.hxx>
 #include<Handle_IGESGeom_BSplineSurface.hxx>
+#include<Handle_IGESGeom_RuledSurface.hxx>
+#include<Handle_IGESGeom_SurfaceOfRevolution.hxx>
+#include<Handle_IGESGeom_TabulatedCylinder.hxx>
+#include<Handle_IGESGeom_OffsetSurface.hxx>
+#include<Handle_IGESGeom_TrimmedSurface.hxx>
+#include<Handle_IGESGeom_BoundedSurface.hxx>
+#include<Handle_IGESGeom_Plane.hxx>
+#include<Handle_IGESBasic_SingleParent.hxx>
 %}

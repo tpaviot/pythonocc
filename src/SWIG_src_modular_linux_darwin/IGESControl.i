@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESControl
 
+%include IGESControl_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,32 +168,6 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 };
 
 
-%nodefaultctor Handle_IGESControl_IGESBoundary;
-class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary();
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary(const Handle_IGESControl_IGESBoundary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESControl_IGESBoundary {
-	IGESControl_IGESBoundary* GetObject() {
-	return (IGESControl_IGESBoundary*)$self->Access();
-	}
-};
-%extend Handle_IGESControl_IGESBoundary {
-	~Handle_IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESControl_Controller;
 class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	public:
@@ -214,6 +190,32 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	~Handle_IGESControl_Controller() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_Controller\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESControl_IGESBoundary;
+class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESControl_IGESBoundary();
+		%feature("autodoc", "1");
+		Handle_IGESControl_IGESBoundary(const Handle_IGESControl_IGESBoundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESControl_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESControl_IGESBoundary {
+	IGESControl_IGESBoundary* GetObject() {
+	return (IGESControl_IGESBoundary*)$self->Access();
+	}
+};
+%extend Handle_IGESControl_IGESBoundary {
+	~Handle_IGESControl_IGESBoundary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
 	}
 };
 

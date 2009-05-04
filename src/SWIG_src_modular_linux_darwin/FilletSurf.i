@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module FilletSurf
 
+%include FilletSurf_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -135,63 +137,6 @@ enum FilletSurf_StatusDone {
 
 
 
-%nodefaultctor FilletSurf_InternalBuilder;
-class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
-	public:
-		%feature("autodoc", "1");
-		FilletSurf_InternalBuilder(const TopoDS_Shape &S, const ChFi3d_FilletShape FShape=ChFi3d_Polynomial, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382564e-5);
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopTools_ListOfShape &E, const Standard_Real R);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean Done() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSurface() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & SurfaceFillet(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real TolApp3d(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & SupportFace1(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & SupportFace2(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & CurveOnFace1(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & CurveOnFace2(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurveOnFace1(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurve1OnFillet(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurveOnFace2(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurve2OnFillet(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		FilletSurf_StatusType StartSectionStatus() const;
-		%feature("autodoc", "1");
-		FilletSurf_StatusType EndSectionStatus() const;
-		%feature("autodoc", "1");
-		void Simulate();
-		%feature("autodoc", "1");
-		Standard_Integer NbSection(const Standard_Integer IndexSurf) const;
-		%feature("autodoc", "1");
-		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, Handle_Geom_TrimmedCurve & Circ) const;
-
-};
-%extend FilletSurf_InternalBuilder {
-	~FilletSurf_InternalBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
-	}
-};
-
-
 %nodefaultctor FilletSurf_Builder;
 class FilletSurf_Builder {
 	public:
@@ -245,5 +190,62 @@ class FilletSurf_Builder {
 	~FilletSurf_Builder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FilletSurf_Builder\n");}
+	}
+};
+
+
+%nodefaultctor FilletSurf_InternalBuilder;
+class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
+	public:
+		%feature("autodoc", "1");
+		FilletSurf_InternalBuilder(const TopoDS_Shape &S, const ChFi3d_FilletShape FShape=ChFi3d_Polynomial, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382564e-5);
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopTools_ListOfShape &E, const Standard_Real R);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean Done() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSurface() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & SurfaceFillet(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real TolApp3d(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & SupportFace1(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & SupportFace2(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & CurveOnFace1(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & CurveOnFace2(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurveOnFace1(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurve1OnFillet(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurveOnFace2(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurve2OnFillet(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		FilletSurf_StatusType StartSectionStatus() const;
+		%feature("autodoc", "1");
+		FilletSurf_StatusType EndSectionStatus() const;
+		%feature("autodoc", "1");
+		void Simulate();
+		%feature("autodoc", "1");
+		Standard_Integer NbSection(const Standard_Integer IndexSurf) const;
+		%feature("autodoc", "1");
+		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, Handle_Geom_TrimmedCurve & Circ) const;
+
+};
+%extend FilletSurf_InternalBuilder {
+	~FilletSurf_InternalBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
 	}
 };

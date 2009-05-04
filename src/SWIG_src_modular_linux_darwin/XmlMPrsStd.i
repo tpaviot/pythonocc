@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMPrsStd
 
+%include XmlMPrsStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -169,8 +171,6 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 %nodefaultctor XmlMPrsStd;
 class XmlMPrsStd {
 	public:
-		%feature("autodoc", "1");
-		XmlMPrsStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 

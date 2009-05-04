@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TDataStd
 
+%include TDataStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -159,6 +161,58 @@ enum TDataStd_ConstraintEnum {
 	TDataStd_OFFSET,
 	};
 
+
+
+%nodefaultctor Handle_TDataStd_Pattern;
+class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern(const Handle_TDataStd_Pattern &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern(const TDataStd_Pattern *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_Pattern {
+	TDataStd_Pattern* GetObject() {
+	return (TDataStd_Pattern*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_Pattern {
+	~Handle_TDataStd_Pattern() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Pattern\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_PatternStd;
+class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd();
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd(const Handle_TDataStd_PatternStd &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd(const TDataStd_PatternStd *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_PatternStd {
+	TDataStd_PatternStd* GetObject() {
+	return (TDataStd_PatternStd*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_PatternStd {
+	~Handle_TDataStd_PatternStd() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_PatternStd\n");}
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Relation;
@@ -343,32 +397,6 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_TDataStd_Pattern;
-class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern(const Handle_TDataStd_Pattern &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern(const TDataStd_Pattern *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Pattern const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_Pattern {
-	TDataStd_Pattern* GetObject() {
-	return (TDataStd_Pattern*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_Pattern {
-	~Handle_TDataStd_Pattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Pattern\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_Geometry;
 class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 	public:
@@ -421,84 +449,6 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_TDataStd_BooleanArray;
-class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray();
-		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray(const Handle_TDataStd_BooleanArray &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray(const TDataStd_BooleanArray *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_BooleanArray const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_BooleanArray {
-	TDataStd_BooleanArray* GetObject() {
-	return (TDataStd_BooleanArray*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_BooleanArray {
-	~Handle_TDataStd_BooleanArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_PatternStd;
-class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd();
-		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd(const Handle_TDataStd_PatternStd &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd(const TDataStd_PatternStd *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_PatternStd {
-	TDataStd_PatternStd* GetObject() {
-	return (TDataStd_PatternStd*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_PatternStd {
-	~Handle_TDataStd_PatternStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_PatternStd\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
-class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte();
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_HDataMapOfStringByte {
-	TDataStd_HDataMapOfStringByte* GetObject() {
-	return (TDataStd_HDataMapOfStringByte*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_HDataMapOfStringByte {
-	~Handle_TDataStd_HDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollection_MapNode {
 	public:
@@ -525,28 +475,28 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 };
 
 
-%nodefaultctor Handle_TDataStd_RealList;
-class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDataStd_AsciiString;
+class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList();
+		Handle_TDataStd_AsciiString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList(const Handle_TDataStd_RealList &aHandle);
+		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList(const TDataStd_RealList *anItem);
+		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_RealList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_AsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_RealList {
-	TDataStd_RealList* GetObject() {
-	return (TDataStd_RealList*)$self->Access();
+%extend Handle_TDataStd_AsciiString {
+	TDataStd_AsciiString* GetObject() {
+	return (TDataStd_AsciiString*)$self->Access();
 	}
 };
-%extend Handle_TDataStd_RealList {
-	~Handle_TDataStd_RealList() {
+%extend Handle_TDataStd_AsciiString {
+	~Handle_TDataStd_AsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealList\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_AsciiString\n");}
 	}
 };
 
@@ -603,28 +553,28 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 };
 
 
-%nodefaultctor Handle_TDataStd_Expression;
-class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDataStd_HDataMapOfStringString;
+class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression();
+		Handle_TDataStd_HDataMapOfStringString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression(const Handle_TDataStd_Expression &aHandle);
+		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
+		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_HDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_Expression {
-	TDataStd_Expression* GetObject() {
-	return (TDataStd_Expression*)$self->Access();
+%extend Handle_TDataStd_HDataMapOfStringString {
+	TDataStd_HDataMapOfStringString* GetObject() {
+	return (TDataStd_HDataMapOfStringString*)$self->Access();
 	}
 };
-%extend Handle_TDataStd_Expression {
-	~Handle_TDataStd_Expression() {
+%extend Handle_TDataStd_HDataMapOfStringString {
+	~Handle_TDataStd_HDataMapOfStringString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Expression\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");}
 	}
 };
 
@@ -655,32 +605,6 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TDataStd_HDataMapOfStringString;
-class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString();
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_HDataMapOfStringString {
-	TDataStd_HDataMapOfStringString* GetObject() {
-	return (TDataStd_HDataMapOfStringString*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_HDataMapOfStringString {
-	~Handle_TDataStd_HDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntArray;
 class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnModification {
 	public:
@@ -707,28 +631,28 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 };
 
 
-%nodefaultctor Handle_TDataStd_AsciiString;
-class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDataStd_Placement;
+class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString();
+		Handle_TDataStd_Placement();
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
+		Handle_TDataStd_Placement(const Handle_TDataStd_Placement &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
+		Handle_TDataStd_Placement(const TDataStd_Placement *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDataStd_Placement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_AsciiString {
-	TDataStd_AsciiString* GetObject() {
-	return (TDataStd_AsciiString*)$self->Access();
+%extend Handle_TDataStd_Placement {
+	TDataStd_Placement* GetObject() {
+	return (TDataStd_Placement*)$self->Access();
 	}
 };
-%extend Handle_TDataStd_AsciiString {
-	~Handle_TDataStd_AsciiString() {
+%extend Handle_TDataStd_Placement {
+	~Handle_TDataStd_Placement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_AsciiString\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Placement\n");}
 	}
 };
 
@@ -755,6 +679,32 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 	~Handle_TDataStd_Constraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Constraint\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_IntPackedMap;
+class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap();
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_IntPackedMap {
+	TDataStd_IntPackedMap* GetObject() {
+	return (TDataStd_IntPackedMap*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_IntPackedMap {
+	~Handle_TDataStd_IntPackedMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");}
 	}
 };
 
@@ -889,6 +839,32 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 };
 
 
+%nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
+class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte();
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	TDataStd_HDataMapOfStringByte* GetObject() {
+	return (TDataStd_HDataMapOfStringByte*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	~Handle_TDataStd_HDataMapOfStringByte() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_IntegerArray;
 class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	public:
@@ -937,6 +913,32 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 	~Handle_TDataStd_HDataMapOfStringReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_Expression;
+class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression(const Handle_TDataStd_Expression &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_Expression {
+	TDataStd_Expression* GetObject() {
+	return (TDataStd_Expression*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_Expression {
+	~Handle_TDataStd_Expression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Expression\n");}
 	}
 };
 
@@ -1097,6 +1099,32 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 };
 
 
+%nodefaultctor Handle_TDataStd_BooleanArray;
+class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray();
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray(const Handle_TDataStd_BooleanArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray(const TDataStd_BooleanArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_BooleanArray {
+	TDataStd_BooleanArray* GetObject() {
+	return (TDataStd_BooleanArray*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_BooleanArray {
+	~Handle_TDataStd_BooleanArray() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_Axis;
 class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	public:
@@ -1145,32 +1173,6 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 	~Handle_TDataStd_Point() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Point\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_IntPackedMap;
-class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap();
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_IntPackedMap {
-	TDataStd_IntPackedMap* GetObject() {
-	return (TDataStd_IntPackedMap*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_IntPackedMap {
-	~Handle_TDataStd_IntPackedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");}
 	}
 };
 
@@ -1353,32 +1355,6 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	~Handle_TDataStd_Shape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Shape\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_Placement;
-class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_Placement();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Placement(const Handle_TDataStd_Placement &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Placement(const TDataStd_Placement *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Placement const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_Placement {
-	TDataStd_Placement* GetObject() {
-	return (TDataStd_Placement*)$self->Access();
-	}
-};
-%extend Handle_TDataStd_Placement {
-	~Handle_TDataStd_Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Placement\n");}
 	}
 };
 
@@ -1591,6 +1567,32 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 };
 
 
+%nodefaultctor Handle_TDataStd_RealList;
+class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealList();
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealList(const Handle_TDataStd_RealList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealList(const TDataStd_RealList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_RealList {
+	TDataStd_RealList* GetObject() {
+	return (TDataStd_RealList*)$self->Access();
+	}
+};
+%extend Handle_TDataStd_RealList {
+	~Handle_TDataStd_RealList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealList\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_ByteArray;
 class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 	public:
@@ -1695,58 +1697,6 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor TDataStd_ListNodeOfListOfByte;
-class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ListNodeOfListOfByte(const Standard_Byte &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Byte & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_ListNodeOfListOfByte {
-	Handle_TDataStd_ListNodeOfListOfByte GetHandle() {
-	return *(Handle_TDataStd_ListNodeOfListOfByte*) &$self;
-	}
-};
-%extend TDataStd_ListNodeOfListOfByte {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_ListNodeOfListOfByte {
-	~TDataStd_ListNodeOfListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
-class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte();
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Byte & Value() const;
-
-};
-%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
-	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");}
-	}
-};
-
-
 %nodefaultctor TDataStd_NoteBook;
 class TDataStd_NoteBook : public TDF_Attribute {
 	public:
@@ -1830,31 +1780,72 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
-class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
+%nodefaultctor TDataStd_ReferenceList;
+class TDataStd_ReferenceList : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_IntPackedMap &Arr);
+		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		virtual		void Apply();
+		Handle_TDataStd_ReferenceList Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_ReferenceList();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Prepend(const TDF_Label &value);
+		%feature("autodoc", "1");
+		void Append(const TDF_Label &value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertBefore(const TDF_Label &value, const TDF_Label &before_value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertAfter(const TDF_Label &value, const TDF_Label &after_value);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const TDF_Label &value);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TDF_Label & First() const;
+		%feature("autodoc", "1");
+		const TDF_Label & Last() const;
+		%feature("autodoc", "1");
+		const TDF_LabelList & List() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
-	Handle_TDataStd_DeltaOnModificationOfIntPackedMap GetHandle() {
-	return *(Handle_TDataStd_DeltaOnModificationOfIntPackedMap*) &$self;
+%extend TDataStd_ReferenceList {
+	Handle_TDataStd_ReferenceList GetHandle() {
+	return *(Handle_TDataStd_ReferenceList*) &$self;
 	}
 };
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+%extend TDataStd_ReferenceList {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
-	~TDataStd_DeltaOnModificationOfIntPackedMap() {
+%extend TDataStd_ReferenceList {
+	~TDataStd_ReferenceList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceList\n");}
 	}
 };
 
@@ -1900,6 +1891,27 @@ class TDataStd_Array1OfTrsf {
 };
 
 
+%nodefaultctor TDataStd;
+class TDataStd {
+	public:
+		%feature("autodoc", "1");
+		void IDList(TDF_IDList & anIDList);
+		%feature("autodoc", "1");
+		Standard_OStream & Print(const TDataStd_GeometryEnum GEO, Standard_OStream & S);
+		%feature("autodoc", "1");
+		Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
+		%feature("autodoc", "1");
+		Standard_OStream & Print(const TDataStd_ConstraintEnum CTR, Standard_OStream & S);
+
+};
+%extend TDataStd {
+	~TDataStd() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd\n");}
+	}
+};
+
+
 %nodefaultctor TDataStd_ListIteratorOfListOfExtendedString;
 class TDataStd_ListIteratorOfListOfExtendedString {
 	public:
@@ -1921,37 +1933,6 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 	~TDataStd_ListIteratorOfListOfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
-class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringReal(const TCollection_ExtendedString &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	Handle_TDataStd_DataMapNodeOfDataMapOfStringReal GetHandle() {
-	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringReal*) &$self;
-	}
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	~TDataStd_DataMapNodeOfDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
 
@@ -2091,125 +2072,6 @@ class TDataStd_Array1OfByte {
 };
 
 
-%nodefaultctor TDataStd_Pattern;
-class TDataStd_Pattern : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & PatternID() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbTrsfs() const;
-		%feature("autodoc", "1");
-		virtual		void ComputeTrsfs(TDataStd_Array1OfTrsf & Trsfs) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Pattern {
-	Handle_TDataStd_Pattern GetHandle() {
-	return *(Handle_TDataStd_Pattern*) &$self;
-	}
-};
-%extend TDataStd_Pattern {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_Pattern {
-	~TDataStd_Pattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Pattern\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_PatternStd;
-class TDataStd_PatternStd : public TDataStd_Pattern {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetPatternID();
-		%feature("autodoc", "1");
-		Handle_TDataStd_PatternStd Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		TDataStd_PatternStd();
-		%feature("autodoc", "1");
-		void Signature(const Standard_Integer signature);
-		%feature("autodoc", "1");
-		void Axis1(const Handle_TNaming_NamedShape &Axis1);
-		%feature("autodoc", "1");
-		void Axis2(const Handle_TNaming_NamedShape &Axis2);
-		%feature("autodoc", "1");
-		void Axis1Reversed(const Standard_Boolean Axis1Reversed);
-		%feature("autodoc", "1");
-		void Axis2Reversed(const Standard_Boolean Axis2Reversed);
-		%feature("autodoc", "1");
-		void Value1(const Handle_TDataStd_Real &value);
-		%feature("autodoc", "1");
-		void Value2(const Handle_TDataStd_Real &value);
-		%feature("autodoc", "1");
-		void NbInstances1(const Handle_TDataStd_Integer &NbInstances1);
-		%feature("autodoc", "1");
-		void NbInstances2(const Handle_TDataStd_Integer &NbInstances2);
-		%feature("autodoc", "1");
-		void Mirror(const Handle_TNaming_NamedShape &plane);
-		%feature("autodoc", "1");
-		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape Axis1() const;
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape Axis2() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Axis1Reversed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Axis2Reversed() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real Value1() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real Value2() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Integer NbInstances1() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Integer NbInstances2() const;
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape Mirror() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend TDataStd_PatternStd {
-	Handle_TDataStd_PatternStd GetHandle() {
-	return *(Handle_TDataStd_PatternStd*) &$self;
-	}
-};
-%extend TDataStd_PatternStd {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_PatternStd {
-	~TDataStd_PatternStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_PatternStd\n");}
-	}
-};
-
-
 %nodefaultctor TDataStd_Placement;
 class TDataStd_Placement : public TDF_Attribute {
 	public:
@@ -2252,41 +2114,6 @@ class TDataStd_Placement : public TDF_Attribute {
 	~TDataStd_Placement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Placement\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapOfStringReal;
-class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const TCollection_ExtendedString &K);
-
-};
-%extend TDataStd_DataMapOfStringReal {
-	~TDataStd_DataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");}
 	}
 };
 
@@ -2442,54 +2269,53 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 
 
-%nodefaultctor TDataStd_Integer;
-class TDataStd_Integer : public TDF_Attribute {
+%nodefaultctor TDataStd_ListOfExtendedString;
+class TDataStd_ListOfExtendedString {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		TDataStd_ListOfExtendedString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Integer Set(const TDF_Label &label, const Standard_Integer value);
+		void Assign(const TDataStd_ListOfExtendedString &Other);
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer V);
+		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		Standard_Integer Get() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
+		void Prepend(const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
+		void Prepend(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & theIt);
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
+		void Prepend(TDataStd_ListOfExtendedString & Other);
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		void Append(const TCollection_ExtendedString &I);
 		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
+		void Append(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & theIt);
 		%feature("autodoc", "1");
-		TDataStd_Integer();
+		void Append(TDataStd_ListOfExtendedString & Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		TCollection_ExtendedString & First() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TDataStd_ListIteratorOfListOfExtendedString & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
 
 };
-%extend TDataStd_Integer {
-	Handle_TDataStd_Integer GetHandle() {
-	return *(Handle_TDataStd_Integer*) &$self;
-	}
-};
-%extend TDataStd_Integer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_Integer {
-	~TDataStd_Integer() {
+%extend TDataStd_ListOfExtendedString {
+	~TDataStd_ListOfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Integer\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfExtendedString\n");}
 	}
 };
 
@@ -2579,57 +2405,6 @@ class TDataStd_BooleanList : public TDF_Attribute {
 };
 
 
-%nodefaultctor TDataStd_ListOfExtendedString;
-class TDataStd_ListOfExtendedString {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ListOfExtendedString();
-		%feature("autodoc", "1");
-		void Assign(const TDataStd_ListOfExtendedString &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_ExtendedString &I);
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TDataStd_ListOfExtendedString & Other);
-		%feature("autodoc", "1");
-		void Append(const TCollection_ExtendedString &I);
-		%feature("autodoc", "1");
-		void Append(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & theIt);
-		%feature("autodoc", "1");
-		void Append(TDataStd_ListOfExtendedString & Other);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & First() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TDataStd_ListIteratorOfListOfExtendedString & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TCollection_ExtendedString &I, TDataStd_ListIteratorOfListOfExtendedString & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
-
-};
-%extend TDataStd_ListOfExtendedString {
-	~TDataStd_ListOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfExtendedString\n");}
-	}
-};
-
-
 %nodefaultctor TDataStd_Relation;
 class TDataStd_Relation : public TDF_Attribute {
 	public:
@@ -2680,6 +2455,39 @@ class TDataStd_Relation : public TDF_Attribute {
 	~TDataStd_Relation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Relation\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringByte;
+class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringByte(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte &theOther);
+		%feature("autodoc", "1");
+		const TDataStd_DataMapOfStringByte & Map() const;
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringByte & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringByte {
+	Handle_TDataStd_HDataMapOfStringByte GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringByte*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringByte {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_HDataMapOfStringByte {
+	~TDataStd_HDataMapOfStringByte() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");}
 	}
 };
 
@@ -2949,6 +2757,35 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 };
 
 
+%nodefaultctor TDataStd_ListNodeOfListOfByte;
+class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_ListNodeOfListOfByte(const Standard_Byte &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_Byte & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_ListNodeOfListOfByte {
+	Handle_TDataStd_ListNodeOfListOfByte GetHandle() {
+	return *(Handle_TDataStd_ListNodeOfListOfByte*) &$self;
+	}
+};
+%extend TDataStd_ListNodeOfListOfByte {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_ListNodeOfListOfByte {
+	~TDataStd_ListNodeOfListOfByte() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");}
+	}
+};
+
+
 %nodefaultctor TDataStd_Position;
 class TDataStd_Position : public TDF_Attribute {
 	public:
@@ -3021,57 +2858,6 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	~TDataStd_DeltaOnModificationOfRealArray() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_ListOfByte;
-class TDataStd_ListOfByte {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ListOfByte();
-		%feature("autodoc", "1");
-		void Assign(const TDataStd_ListOfByte &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Byte &I);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TDataStd_ListOfByte & Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Byte &I);
-		%feature("autodoc", "1");
-		void Append(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & theIt);
-		%feature("autodoc", "1");
-		void Append(TDataStd_ListOfByte & Other);
-		%feature("autodoc", "1");
-		Standard_Byte & First() const;
-		%feature("autodoc", "1");
-		Standard_Byte & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TDataStd_ListIteratorOfListOfByte & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
-
-};
-%extend TDataStd_ListOfByte {
-	~TDataStd_ListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfByte\n");}
 	}
 };
 
@@ -3303,6 +3089,57 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 };
 
 
+%nodefaultctor TDataStd_ListOfByte;
+class TDataStd_ListOfByte {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_ListOfByte();
+		%feature("autodoc", "1");
+		void Assign(const TDataStd_ListOfByte &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Byte &I);
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TDataStd_ListOfByte & Other);
+		%feature("autodoc", "1");
+		void Append(const Standard_Byte &I);
+		%feature("autodoc", "1");
+		void Append(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & theIt);
+		%feature("autodoc", "1");
+		void Append(TDataStd_ListOfByte & Other);
+		%feature("autodoc", "1");
+		Standard_Byte & First() const;
+		%feature("autodoc", "1");
+		Standard_Byte & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TDataStd_ListIteratorOfListOfByte & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Byte &I, TDataStd_ListIteratorOfListOfByte & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
+
+};
+%extend TDataStd_ListOfByte {
+	~TDataStd_ListOfByte() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfByte\n");}
+	}
+};
+
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
 class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollection_BasicMapIterator {
 	public:
@@ -3390,74 +3227,6 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TDataStd_ExtStringList;
-class TDataStd_ExtStringList : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringList Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		TDataStd_ExtStringList();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		void Append(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertBefore(const TCollection_ExtendedString &value, const TCollection_ExtendedString &before_value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertAfter(const TCollection_ExtendedString &value, const TCollection_ExtendedString &after_value);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & First() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Last() const;
-		%feature("autodoc", "1");
-		const TDataStd_ListOfExtendedString & List() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_ExtStringList {
-	Handle_TDataStd_ExtStringList GetHandle() {
-	return *(Handle_TDataStd_ExtStringList*) &$self;
-	}
-};
-%extend TDataStd_ExtStringList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_ExtStringList {
-	~TDataStd_ExtStringList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringList\n");}
-	}
-};
-
-
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfInteger;
 class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 	public:
@@ -3489,6 +3258,81 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 	~TDataStd_DataMapOfStringHArray1OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfInteger\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_Integer;
+class TDataStd_Integer : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Integer Set(const TDF_Label &label, const Standard_Integer value);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer V);
+		%feature("autodoc", "1");
+		Standard_Integer Get() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		TDataStd_Integer();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Integer {
+	Handle_TDataStd_Integer GetHandle() {
+	return *(Handle_TDataStd_Integer*) &$self;
+	}
+};
+%extend TDataStd_Integer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_Integer {
+	~TDataStd_Integer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_Integer\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
+class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte();
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Byte & Value() const;
+
+};
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
+	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");}
 	}
 };
 
@@ -3838,37 +3682,37 @@ class TDataStd_ListIteratorOfListOfByte {
 };
 
 
-%nodefaultctor TDataStd_ReferenceList;
-class TDataStd_ReferenceList : public TDF_Attribute {
+%nodefaultctor TDataStd_ExtStringList;
+class TDataStd_ExtStringList : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList Set(const TDF_Label &label);
+		Handle_TDataStd_ExtStringList Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		TDataStd_ReferenceList();
+		TDataStd_ExtStringList();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		void Prepend(const TDF_Label &value);
+		void Prepend(const TCollection_ExtendedString &value);
 		%feature("autodoc", "1");
-		void Append(const TDF_Label &value);
+		void Append(const TCollection_ExtendedString &value);
 		%feature("autodoc", "1");
-		Standard_Boolean InsertBefore(const TDF_Label &value, const TDF_Label &before_value);
+		Standard_Boolean InsertBefore(const TCollection_ExtendedString &value, const TCollection_ExtendedString &before_value);
 		%feature("autodoc", "1");
-		Standard_Boolean InsertAfter(const TDF_Label &value, const TDF_Label &after_value);
+		Standard_Boolean InsertAfter(const TCollection_ExtendedString &value, const TCollection_ExtendedString &after_value);
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TDF_Label &value);
+		Standard_Boolean Remove(const TCollection_ExtendedString &value);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const TDF_Label & First() const;
+		const TCollection_ExtendedString & First() const;
 		%feature("autodoc", "1");
-		const TDF_Label & Last() const;
+		const TCollection_ExtendedString & Last() const;
 		%feature("autodoc", "1");
-		const TDF_LabelList & List() const;
+		const TDataStd_ListOfExtendedString & List() const;
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -3877,8 +3721,6 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -3890,20 +3732,20 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_ReferenceList {
-	Handle_TDataStd_ReferenceList GetHandle() {
-	return *(Handle_TDataStd_ReferenceList*) &$self;
+%extend TDataStd_ExtStringList {
+	Handle_TDataStd_ExtStringList GetHandle() {
+	return *(Handle_TDataStd_ExtStringList*) &$self;
 	}
 };
-%extend TDataStd_ReferenceList {
+%extend TDataStd_ExtStringList {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDataStd_ReferenceList {
-	~TDataStd_ReferenceList() {
+%extend TDataStd_ExtStringList {
+	~TDataStd_ExtStringList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceList\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringList\n");}
 	}
 };
 
@@ -4076,35 +3918,68 @@ class TDataStd_Current : public TDF_Attribute {
 };
 
 
-%nodefaultctor TDataStd_HDataMapOfStringByte;
-class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
+%nodefaultctor TDataStd_Pattern;
+class TDataStd_Pattern : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringByte(const Standard_Integer NbBuckets=1);
+		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte &theOther);
+		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		const TDataStd_DataMapOfStringByte & Map() const;
+		virtual		const Standard_GUID & PatternID() const;
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringByte & ChangeMap();
+		virtual		Standard_Integer NbTrsfs() const;
+		%feature("autodoc", "1");
+		virtual		void ComputeTrsfs(TDataStd_Array1OfTrsf & Trsfs) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_HDataMapOfStringByte {
-	Handle_TDataStd_HDataMapOfStringByte GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringByte*) &$self;
+%extend TDataStd_Pattern {
+	Handle_TDataStd_Pattern GetHandle() {
+	return *(Handle_TDataStd_Pattern*) &$self;
 	}
 };
-%extend TDataStd_HDataMapOfStringByte {
+%extend TDataStd_Pattern {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDataStd_HDataMapOfStringByte {
-	~TDataStd_HDataMapOfStringByte() {
+%extend TDataStd_Pattern {
+	~TDataStd_Pattern() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_Pattern\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
+class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapNodeOfDataMapOfStringReal(const TCollection_ExtendedString &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		Standard_Real & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	Handle_TDataStd_DataMapNodeOfDataMapOfStringReal GetHandle() {
+	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringReal*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	~TDataStd_DataMapNodeOfDataMapOfStringReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
 
@@ -4233,29 +4108,6 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 	~TDataStd_HLabelArray1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HLabelArray1\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd;
-class TDataStd {
-	public:
-		%feature("autodoc", "1");
-		TDataStd();
-		%feature("autodoc", "1");
-		void IDList(TDF_IDList & anIDList);
-		%feature("autodoc", "1");
-		Standard_OStream & Print(const TDataStd_GeometryEnum GEO, Standard_OStream & S);
-		%feature("autodoc", "1");
-		Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
-		%feature("autodoc", "1");
-		Standard_OStream & Print(const TDataStd_ConstraintEnum CTR, Standard_OStream & S);
-
-};
-%extend TDataStd {
-	~TDataStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd\n");}
 	}
 };
 
@@ -4676,33 +4528,6 @@ class TDataStd_RealArray : public TDF_Attribute {
 };
 
 
-%nodefaultctor TDataStd_ChildNodeIterator;
-class TDataStd_ChildNodeIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ChildNodeIterator();
-		%feature("autodoc", "1");
-		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		void NextBrother();
-		%feature("autodoc", "1");
-		Handle_TDataStd_TreeNode Value() const;
-
-};
-%extend TDataStd_ChildNodeIterator {
-	~TDataStd_ChildNodeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ChildNodeIterator\n");}
-	}
-};
-
-
 %nodefaultctor TDataStd_Directory;
 class TDataStd_Directory : public TDF_Attribute {
 	public:
@@ -4753,6 +4578,33 @@ class TDataStd_Directory : public TDF_Attribute {
 	~TDataStd_Directory() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Directory\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_ChildNodeIterator;
+class TDataStd_ChildNodeIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_ChildNodeIterator();
+		%feature("autodoc", "1");
+		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		void NextBrother();
+		%feature("autodoc", "1");
+		Handle_TDataStd_TreeNode Value() const;
+
+};
+%extend TDataStd_ChildNodeIterator {
+	~TDataStd_ChildNodeIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ChildNodeIterator\n");}
 	}
 };
 
@@ -4893,99 +4745,66 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TDataStd_Comment;
-class TDataStd_Comment : public TDF_Attribute {
+%nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
+class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_IntPackedMap &Arr);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Comment Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
-		%feature("autodoc", "1");
-		TDataStd_Comment();
-		%feature("autodoc", "1");
-		void Set(const TCollection_ExtendedString &S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
+		virtual		void Apply();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_Comment {
-	Handle_TDataStd_Comment GetHandle() {
-	return *(Handle_TDataStd_Comment*) &$self;
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	Handle_TDataStd_DeltaOnModificationOfIntPackedMap GetHandle() {
+	return *(Handle_TDataStd_DeltaOnModificationOfIntPackedMap*) &$self;
 	}
 };
-%extend TDataStd_Comment {
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDataStd_Comment {
-	~TDataStd_Comment() {
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	~TDataStd_DeltaOnModificationOfIntPackedMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Comment\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");}
 	}
 };
 
 
-%nodefaultctor TDataStd_Variable;
-class TDataStd_Variable : public TDF_Attribute {
+%nodefaultctor TDataStd_ExtStringArray;
+class TDataStd_ExtStringArray : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Variable Set(const TDF_Label &label);
+		Handle_TDataStd_ExtStringArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
 		%feature("autodoc", "1");
-		TDataStd_Variable();
+		void Init(const Standard_Integer lower, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		void Name(const TCollection_ExtendedString &string);
+		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString &Value);
 		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Name() const;
+		TCollection_ExtendedString Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
+		TCollection_ExtendedString operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsValued() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Standard_Real Get() const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Handle_TDataStd_Real Real() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAssigned() const;
+		void ChangeArray(const Handle_TColStd_HArray1OfExtendedString &newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Assign() const;
+		Handle_TColStd_HArray1OfExtendedString const Array() const;
 		%feature("autodoc", "1");
-		void Desassign() const;
+		Standard_Boolean GetDelta() const;
 		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Expression() const;
+		void SetDelta(const Standard_Boolean isDelta);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		void Unit(const TCollection_AsciiString &unit);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Unit() const;
-		%feature("autodoc", "1");
-		void Constant(const Standard_Boolean status);
+		TDataStd_ExtStringArray();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -4995,8 +4814,6 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -5004,23 +4821,60 @@ class TDataStd_Variable : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_Variable {
-	Handle_TDataStd_Variable GetHandle() {
-	return *(Handle_TDataStd_Variable*) &$self;
+%extend TDataStd_ExtStringArray {
+	Handle_TDataStd_ExtStringArray GetHandle() {
+	return *(Handle_TDataStd_ExtStringArray*) &$self;
 	}
 };
-%extend TDataStd_Variable {
+%extend TDataStd_ExtStringArray {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDataStd_Variable {
-	~TDataStd_Variable() {
+%extend TDataStd_ExtStringArray {
+	~TDataStd_ExtStringArray() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Variable\n");}
+	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringArray\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapOfStringReal;
+class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Real & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const TCollection_ExtendedString &K);
+
+};
+%extend TDataStd_DataMapOfStringReal {
+	~TDataStd_DataMapOfStringReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");}
 	}
 };
 
@@ -5205,6 +5059,230 @@ class TDataStd_Shape : public TDF_Attribute {
 };
 
 
+%nodefaultctor TDataStd_Variable;
+class TDataStd_Variable : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_Variable();
+		%feature("autodoc", "1");
+		void Name(const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Name() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsValued() const;
+		%feature("autodoc", "1");
+		Standard_Real Get() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real Real() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAssigned() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression Assign() const;
+		%feature("autodoc", "1");
+		void Desassign() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression Expression() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		void Unit(const TCollection_AsciiString &unit);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Unit() const;
+		%feature("autodoc", "1");
+		void Constant(const Standard_Boolean status);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Variable {
+	Handle_TDataStd_Variable GetHandle() {
+	return *(Handle_TDataStd_Variable*) &$self;
+	}
+};
+%extend TDataStd_Variable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_Variable {
+	~TDataStd_Variable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_Variable\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_Comment;
+class TDataStd_Comment : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Comment Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		TDataStd_Comment();
+		%feature("autodoc", "1");
+		void Set(const TCollection_ExtendedString &S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Comment {
+	Handle_TDataStd_Comment GetHandle() {
+	return *(Handle_TDataStd_Comment*) &$self;
+	}
+};
+%extend TDataStd_Comment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_Comment {
+	~TDataStd_Comment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_Comment\n");}
+	}
+};
+
+
+%nodefaultctor TDataStd_PatternStd;
+class TDataStd_PatternStd : public TDataStd_Pattern {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetPatternID();
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_PatternStd();
+		%feature("autodoc", "1");
+		void Signature(const Standard_Integer signature);
+		%feature("autodoc", "1");
+		void Axis1(const Handle_TNaming_NamedShape &Axis1);
+		%feature("autodoc", "1");
+		void Axis2(const Handle_TNaming_NamedShape &Axis2);
+		%feature("autodoc", "1");
+		void Axis1Reversed(const Standard_Boolean Axis1Reversed);
+		%feature("autodoc", "1");
+		void Axis2Reversed(const Standard_Boolean Axis2Reversed);
+		%feature("autodoc", "1");
+		void Value1(const Handle_TDataStd_Real &value);
+		%feature("autodoc", "1");
+		void Value2(const Handle_TDataStd_Real &value);
+		%feature("autodoc", "1");
+		void NbInstances1(const Handle_TDataStd_Integer &NbInstances1);
+		%feature("autodoc", "1");
+		void NbInstances2(const Handle_TDataStd_Integer &NbInstances2);
+		%feature("autodoc", "1");
+		void Mirror(const Handle_TNaming_NamedShape &plane);
+		%feature("autodoc", "1");
+		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape Axis1() const;
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape Axis2() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Axis1Reversed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Axis2Reversed() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real Value1() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real Value2() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Integer NbInstances1() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Integer NbInstances2() const;
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape Mirror() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbTrsfs() const;
+		%feature("autodoc", "1");
+		virtual		void ComputeTrsfs(TDataStd_Array1OfTrsf & Trsfs) const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & PatternID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_PatternStd {
+	Handle_TDataStd_PatternStd GetHandle() {
+	return *(Handle_TDataStd_PatternStd*) &$self;
+	}
+};
+%extend TDataStd_PatternStd {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDataStd_PatternStd {
+	~TDataStd_PatternStd() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDataStd_PatternStd\n");}
+	}
+};
+
+
 %nodefaultctor TDataStd_Geometry;
 class TDataStd_Geometry : public TDF_Attribute {
 	public:
@@ -5331,76 +5409,6 @@ class TDataStd_Axis : public TDF_Attribute {
 	~TDataStd_Axis() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Axis\n");}
-	}
-};
-
-
-%nodefaultctor TDataStd_ExtStringArray;
-class TDataStd_ExtStringArray : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		Handle_TDataStd_ExtStringArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString &Value);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfExtendedString &newArray, const Standard_Boolean isCheckItems=1);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString const Array() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDelta() const;
-		%feature("autodoc", "1");
-		void SetDelta(const Standard_Boolean isDelta);
-		%feature("autodoc", "1");
-		TDataStd_ExtStringArray();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_ExtStringArray {
-	Handle_TDataStd_ExtStringArray GetHandle() {
-	return *(Handle_TDataStd_ExtStringArray*) &$self;
-	}
-};
-%extend TDataStd_ExtStringArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDataStd_ExtStringArray {
-	~TDataStd_ExtStringArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringArray\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Materials
 
+%include Materials_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,32 +142,6 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 };
 
 
-%nodefaultctor Handle_Materials_FuzzyInstance;
-class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
-	public:
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance();
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance(const Handle_Materials_FuzzyInstance &aHandle);
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance(const Materials_FuzzyInstance *anItem);
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Materials_FuzzyInstance {
-	Materials_FuzzyInstance* GetObject() {
-	return (Materials_FuzzyInstance*)$self->Access();
-	}
-};
-%extend Handle_Materials_FuzzyInstance {
-	~Handle_Materials_FuzzyInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Materials_MaterialDefinition;
 class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
 	public:
@@ -188,6 +164,32 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 	~Handle_Materials_MaterialDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Materials_FuzzyInstance;
+class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
+	public:
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance();
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance(const Handle_Materials_FuzzyInstance &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance(const Materials_FuzzyInstance *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Materials_FuzzyInstance {
+	Materials_FuzzyInstance* GetObject() {
+	return (Materials_FuzzyInstance*)$self->Access();
+	}
+};
+%extend Handle_Materials_FuzzyInstance {
+	~Handle_Materials_FuzzyInstance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
 	}
 };
 
@@ -340,6 +342,64 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 
 
+%nodefaultctor Materials_MaterialDefinition;
+class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
+	public:
+		%feature("autodoc", "1");
+		Materials_MaterialDefinition();
+		%feature("autodoc", "1");
+		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Materials_MaterialDefinition {
+	Handle_Materials_MaterialDefinition GetHandle() {
+	return *(Handle_Materials_MaterialDefinition*) &$self;
+	}
+};
+%extend Materials_MaterialDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Materials_MaterialDefinition {
+	~Materials_MaterialDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
+	}
+};
+
+
+%nodefaultctor Materials;
+class Materials {
+	public:
+		%feature("autodoc", "1");
+		void MaterialFile(const char * afile);
+		%feature("autodoc", "1");
+		void MaterialsFile(const char * afile);
+		%feature("autodoc", "1");
+		Standard_CString MaterialsFile();
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
+		%feature("autodoc", "1");
+		Standard_Boolean ExistMaterial(const char * aName);
+		%feature("autodoc", "1");
+		Handle_Materials_Material Material(const char * amaterial);
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfMaterials();
+		%feature("autodoc", "1");
+		Handle_Materials_Material Material(const Standard_Integer anindex);
+
+};
+%extend Materials {
+	~Materials() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Materials\n");}
+	}
+};
+
+
 %nodefaultctor Materials_FuzzyInstance;
 class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 	public:
@@ -459,66 +519,6 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 	~Materials_SequenceNodeOfMtsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");}
-	}
-};
-
-
-%nodefaultctor Materials_MaterialDefinition;
-class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
-	public:
-		%feature("autodoc", "1");
-		Materials_MaterialDefinition();
-		%feature("autodoc", "1");
-		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Materials_MaterialDefinition {
-	Handle_Materials_MaterialDefinition GetHandle() {
-	return *(Handle_Materials_MaterialDefinition*) &$self;
-	}
-};
-%extend Materials_MaterialDefinition {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Materials_MaterialDefinition {
-	~Materials_MaterialDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
-	}
-};
-
-
-%nodefaultctor Materials;
-class Materials {
-	public:
-		%feature("autodoc", "1");
-		Materials();
-		%feature("autodoc", "1");
-		void MaterialFile(const char * afile);
-		%feature("autodoc", "1");
-		void MaterialsFile(const char * afile);
-		%feature("autodoc", "1");
-		Standard_CString MaterialsFile();
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
-		%feature("autodoc", "1");
-		Standard_Boolean ExistMaterial(const char * aName);
-		%feature("autodoc", "1");
-		Handle_Materials_Material Material(const char * amaterial);
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfMaterials();
-		%feature("autodoc", "1");
-		Handle_Materials_Material Material(const Standard_Integer anindex);
-
-};
-%extend Materials {
-	~Materials() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials\n");}
 	}
 };
 

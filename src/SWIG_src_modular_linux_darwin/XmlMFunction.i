@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMFunction
 
+%include XmlMFunction_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -228,8 +230,6 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 %nodefaultctor XmlMFunction;
 class XmlMFunction {
 	public:
-		%feature("autodoc", "1");
-		XmlMFunction();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 

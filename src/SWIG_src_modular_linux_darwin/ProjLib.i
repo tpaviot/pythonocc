@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ProjLib
 
+%include ProjLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -273,92 +275,6 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor ProjLib_Projector;
-class ProjLib_Projector {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_Projector();
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Done();
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		void SetBSpline(const Handle_Geom2d_BSplineCurve &C);
-		%feature("autodoc", "1");
-		void SetBezier(const Handle_Geom2d_BezierCurve &C);
-		%feature("autodoc", "1");
-		void SetType(const GeomAbs_CurveType Type);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		void SetPeriodic();
-		%feature("autodoc", "1");
-		const gp_Lin2d & Line() const;
-		%feature("autodoc", "1");
-		const gp_Circ2d & Circle() const;
-		%feature("autodoc", "1");
-		const gp_Elips2d & Ellipse() const;
-		%feature("autodoc", "1");
-		const gp_Hypr2d & Hyperbola() const;
-		%feature("autodoc", "1");
-		const gp_Parab2d & Parabola() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Lin &L);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Circ &C);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Elips &E);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Parab &P);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		void UFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real UFirst, const Standard_Real Period);
-		%feature("autodoc", "1");
-		void VFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real VFirst, const Standard_Real Period);
-
-};
-%extend ProjLib_Projector {
-	~ProjLib_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Projector\n");}
-	}
-};
-
-
-%nodefaultctor ProjLib_Cylinder;
-class ProjLib_Cylinder : public ProjLib_Projector {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_Cylinder();
-		%feature("autodoc", "1");
-		ProjLib_Cylinder(const gp_Cylinder &Cyl);
-		%feature("autodoc", "1");
-		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Lin &L);
-		%feature("autodoc", "1");
-		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Circ &C);
-		%feature("autodoc", "1");
-		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Elips &E);
-		%feature("autodoc", "1");
-		void Init(const gp_Cylinder &Cyl);
-
-};
-%extend ProjLib_Cylinder {
-	~ProjLib_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
-	}
-};
-
-
 %nodefaultctor ProjLib_CompProjectedCurve;
 class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 	public:
@@ -509,6 +425,92 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 };
 
 
+%nodefaultctor ProjLib_Projector;
+class ProjLib_Projector {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_Projector();
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Done();
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType() const;
+		%feature("autodoc", "1");
+		void SetBSpline(const Handle_Geom2d_BSplineCurve &C);
+		%feature("autodoc", "1");
+		void SetBezier(const Handle_Geom2d_BezierCurve &C);
+		%feature("autodoc", "1");
+		void SetType(const GeomAbs_CurveType Type);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		void SetPeriodic();
+		%feature("autodoc", "1");
+		const gp_Lin2d & Line() const;
+		%feature("autodoc", "1");
+		const gp_Circ2d & Circle() const;
+		%feature("autodoc", "1");
+		const gp_Elips2d & Ellipse() const;
+		%feature("autodoc", "1");
+		const gp_Hypr2d & Hyperbola() const;
+		%feature("autodoc", "1");
+		const gp_Parab2d & Parabola() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSpline() const;
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Lin &L);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Circ &C);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Elips &E);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Parab &P);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Hypr &H);
+		%feature("autodoc", "1");
+		void UFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real UFirst, const Standard_Real Period);
+		%feature("autodoc", "1");
+		void VFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real VFirst, const Standard_Real Period);
+
+};
+%extend ProjLib_Projector {
+	~ProjLib_Projector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Projector\n");}
+	}
+};
+
+
+%nodefaultctor ProjLib_Cylinder;
+class ProjLib_Cylinder : public ProjLib_Projector {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_Cylinder();
+		%feature("autodoc", "1");
+		ProjLib_Cylinder(const gp_Cylinder &Cyl);
+		%feature("autodoc", "1");
+		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Lin &L);
+		%feature("autodoc", "1");
+		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Circ &C);
+		%feature("autodoc", "1");
+		ProjLib_Cylinder(const gp_Cylinder &Cyl, const gp_Elips &E);
+		%feature("autodoc", "1");
+		void Init(const gp_Cylinder &Cyl);
+
+};
+%extend ProjLib_Cylinder {
+	~ProjLib_Cylinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
+	}
+};
+
+
 %nodefaultctor ProjLib_Sphere;
 class ProjLib_Sphere : public ProjLib_Projector {
 	public:
@@ -545,8 +547,6 @@ class ProjLib_Sphere : public ProjLib_Projector {
 %nodefaultctor ProjLib;
 class ProjLib {
 	public:
-		%feature("autodoc", "1");
-		ProjLib();
 		%feature("autodoc", "1");
 		gp_Pnt2d Project(const gp_Pln &Pl, const gp_Pnt &P);
 		%feature("autodoc", "1");
@@ -815,6 +815,39 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 };
 
 
+%nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
+class ProjLib_ComputeApproxOnPolarSurface {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface();
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor2d_HCurve2d &InitCurve2dBis, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Perform(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &InitCurve2d);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSpline() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Curve2d() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend ProjLib_ComputeApproxOnPolarSurface {
+	~ProjLib_ComputeApproxOnPolarSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
+	}
+};
+
+
 %nodefaultctor ProjLib_PrjResolve;
 class ProjLib_PrjResolve {
 	public:
@@ -867,39 +900,6 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	~ProjLib_HCompProjectedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ProjLib_HCompProjectedCurve\n");}
-	}
-};
-
-
-%nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
-class ProjLib_ComputeApproxOnPolarSurface {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface();
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor2d_HCurve2d &InitCurve2dBis, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Perform(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &InitCurve2d);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2d() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend ProjLib_ComputeApproxOnPolarSurface {
-	~ProjLib_ComputeApproxOnPolarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PColPGeom
 
+%include PColPGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,28 +142,28 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColPGeom_HArray2OfBezierSurface;
-class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
+class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBezierSurface();
+		Handle_PColPGeom_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBezierSurface(const Handle_PColPGeom_HArray2OfBezierSurface &aHandle);
+		Handle_PColPGeom_HArray1OfBezierCurve(const Handle_PColPGeom_HArray1OfBezierCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBezierSurface(const PColPGeom_HArray2OfBezierSurface *anItem);
+		Handle_PColPGeom_HArray1OfBezierCurve(const PColPGeom_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColPGeom_HArray2OfBezierSurface {
-	PColPGeom_HArray2OfBezierSurface* GetObject() {
-	return (PColPGeom_HArray2OfBezierSurface*)$self->Access();
+%extend Handle_PColPGeom_HArray1OfBezierCurve {
+	PColPGeom_HArray1OfBezierCurve* GetObject() {
+	return (PColPGeom_HArray1OfBezierCurve*)$self->Access();
 	}
 };
-%extend Handle_PColPGeom_HArray2OfBezierSurface {
-	~Handle_PColPGeom_HArray2OfBezierSurface() {
+%extend Handle_PColPGeom_HArray1OfBezierCurve {
+	~Handle_PColPGeom_HArray1OfBezierCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -188,6 +190,32 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
+class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface* GetObject() {
+	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*)$self->Access();
+	}
+};
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -244,28 +272,28 @@ class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persiste
 };
 
 
-%nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
-class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PColPGeom_HArray2OfBezierSurface;
+class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
+		Handle_PColPGeom_HArray2OfBezierSurface();
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface &aHandle);
+		Handle_PColPGeom_HArray2OfBezierSurface(const Handle_PColPGeom_HArray2OfBezierSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface *anItem);
+		Handle_PColPGeom_HArray2OfBezierSurface(const PColPGeom_HArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColPGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
-	PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface* GetObject() {
-	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*)$self->Access();
+%extend Handle_PColPGeom_HArray2OfBezierSurface {
+	PColPGeom_HArray2OfBezierSurface* GetObject() {
+	return (PColPGeom_HArray2OfBezierSurface*)$self->Access();
 	}
 };
-%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
-	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
+%extend Handle_PColPGeom_HArray2OfBezierSurface {
+	~Handle_PColPGeom_HArray2OfBezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");}
 	}
 };
 
@@ -318,32 +346,6 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 	~Handle_PColPGeom_HArray1OfBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
-class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve();
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve(const Handle_PColPGeom_HArray1OfBezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve(const PColPGeom_HArray1OfBezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColPGeom_HArray1OfBezierCurve {
-	PColPGeom_HArray1OfBezierCurve* GetObject() {
-	return (PColPGeom_HArray1OfBezierCurve*)$self->Access();
-	}
-};
-%extend Handle_PColPGeom_HArray1OfBezierCurve {
-	~Handle_PColPGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -634,6 +636,27 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handl
 };
 
 
+%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface;
+class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface(const Handle_PGeom_Surface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_Surface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");}
+	}
+};
+
+
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_ArrayNode {
 	public:
@@ -669,6 +692,27 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_Ar
 	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
+	}
+};
+
+
+%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface;
+class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface(const Handle_PGeom_BezierSurface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_BezierSurface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -950,45 +994,6 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 };
 
 
-%nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
-class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface(const Handle_PGeom_BezierSurface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_BezierSurface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierSurface _CSFDB_GetPColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurfacemyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurfacemyValue(const Handle_PGeom_BezierSurface &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
-	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface GetHandle() {
-	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface*) &$self;
-	}
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
-	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
-	}
-};
-
-
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
 	public:
@@ -1045,37 +1050,6 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface\n");}
-	}
-};
-
-
-%nodefaultctor PColPGeom_FieldOfHArray2OfBezierSurface;
-class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_FieldOfHArray2OfBezierSurface();
-		%feature("autodoc", "1");
-		PColPGeom_FieldOfHArray2OfBezierSurface(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColPGeom_FieldOfHArray2OfBezierSurface(const PColPGeom_FieldOfHArray2OfBezierSurface &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColPGeom_FieldOfHArray2OfBezierSurface &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom_BezierSurface &Value);
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierSurface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierSurface & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColPGeom_FieldOfHArray2OfBezierSurface {
-	~PColPGeom_FieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -1185,6 +1159,45 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
+	}
+};
+
+
+%nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
+class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface _CSFDB_GetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurfacemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurfacemyValue(const Handle_PGeom_BoundedSurface &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface GetHandle() {
+	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -1321,87 +1334,6 @@ class PColPGeom_FieldOfHArray2OfBSplineSurface : public DBC_BaseArray {
 };
 
 
-%nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
-class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface _CSFDB_GetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurfacemyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurfacemyValue(const Handle_PGeom_BoundedSurface &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
-	Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface GetHandle() {
-	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface*) &$self;
-	}
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
-	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface;
-class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface(const Handle_PGeom_BezierSurface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_BezierSurface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
-	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface\n");}
-	}
-};
-
-
-%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface;
-class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
-	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");}
-	}
-};
-
-
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_ArrayNode {
 	public:
@@ -1489,27 +1421,6 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface;
-class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface(const Handle_PGeom_Surface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_Surface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
-	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
 
@@ -1873,6 +1784,97 @@ class PColPGeom_FieldOfHArray1OfSurface : public DBC_BaseArray {
 };
 
 
+%nodefaultctor PColPGeom_FieldOfHArray2OfBezierSurface;
+class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_FieldOfHArray2OfBezierSurface();
+		%feature("autodoc", "1");
+		PColPGeom_FieldOfHArray2OfBezierSurface(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColPGeom_FieldOfHArray2OfBezierSurface(const PColPGeom_FieldOfHArray2OfBezierSurface &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColPGeom_FieldOfHArray2OfBezierSurface &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PGeom_BezierSurface &Value);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierSurface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierSurface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColPGeom_FieldOfHArray2OfBezierSurface {
+	~PColPGeom_FieldOfHArray2OfBezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBezierSurface\n");}
+	}
+};
+
+
+%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface;
+class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");}
+	}
+};
+
+
+%nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
+class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface(const Handle_PGeom_BezierSurface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_BezierSurface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierSurface _CSFDB_GetPColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurfacemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurfacemyValue(const Handle_PGeom_BezierSurface &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface GetHandle() {
+	return *(Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface*) &$self;
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
+	}
+};
+
+
 %nodefaultctor PColPGeom_HArray2OfBSplineSurface;
 class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 	public:
@@ -1945,6 +1947,27 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 	~PColPGeom_HArray2OfBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBSplineSurface\n");}
+	}
+};
+
+
+%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface;
+class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface();
+		%feature("autodoc", "1");
+		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
+	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -2122,27 +2145,6 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Arra
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface;
-class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface();
-		%feature("autodoc", "1");
-		PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom_BoundedSurface &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
-	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 

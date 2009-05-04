@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeCustom
 
+%include ShapeCustom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -136,6 +138,32 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 	~Handle_ShapeCustom_DirectModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeCustom_TrsfModification;
+class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModification {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification();
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification(const Handle_ShapeCustom_TrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification(const ShapeCustom_TrsfModification *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeCustom_TrsfModification {
+	ShapeCustom_TrsfModification* GetObject() {
+	return (ShapeCustom_TrsfModification*)$self->Access();
+	}
+};
+%extend Handle_ShapeCustom_TrsfModification {
+	~Handle_ShapeCustom_TrsfModification() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");}
 	}
 };
 
@@ -270,32 +298,6 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 };
 
 
-%nodefaultctor Handle_ShapeCustom_TrsfModification;
-class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModification {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification();
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification(const Handle_ShapeCustom_TrsfModification &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification(const ShapeCustom_TrsfModification *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeCustom_TrsfModification {
-	ShapeCustom_TrsfModification* GetObject() {
-	return (ShapeCustom_TrsfModification*)$self->Access();
-	}
-};
-%extend Handle_ShapeCustom_TrsfModification {
-	~Handle_ShapeCustom_TrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");}
-	}
-};
-
-
 %nodefaultctor ShapeCustom_ConvertToBSpline;
 class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 	public:
@@ -395,8 +397,6 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 %nodefaultctor ShapeCustom_Curve2d;
 class ShapeCustom_Curve2d {
 	public:
-		%feature("autodoc", "1");
-		ShapeCustom_Curve2d();
 		%feature("autodoc", "1");
 		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -549,6 +549,31 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 
 
+%nodefaultctor ShapeCustom_Surface;
+class ShapeCustom_Surface {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_Surface();
+		%feature("autodoc", "1");
+		ShapeCustom_Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
+
+};
+%extend ShapeCustom_Surface {
+	~ShapeCustom_Surface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
+	}
+};
+
+
 %nodefaultctor ShapeCustom_BSplineRestriction;
 class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 	public:
@@ -634,36 +659,9 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 
 
-%nodefaultctor ShapeCustom_Surface;
-class ShapeCustom_Surface {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_Surface();
-		%feature("autodoc", "1");
-		ShapeCustom_Surface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
-
-};
-%extend ShapeCustom_Surface {
-	~ShapeCustom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
-	}
-};
-
-
 %nodefaultctor ShapeCustom;
 class ShapeCustom {
 	public:
-		%feature("autodoc", "1");
-		ShapeCustom();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
 		%feature("autodoc", "1");

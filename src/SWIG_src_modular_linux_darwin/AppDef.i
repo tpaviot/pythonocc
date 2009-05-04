@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AppDef
 
+%include AppDef_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -169,8 +171,6 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 %nodefaultctor AppDef_MyLineTool;
 class AppDef_MyLineTool {
 	public:
-		%feature("autodoc", "1");
-		AppDef_MyLineTool();
 		%feature("autodoc", "1");
 		Standard_Integer FirstPoint(const AppDef_MultiLine &ML);
 		%feature("autodoc", "1");
@@ -369,6 +369,99 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 };
 
 
+%nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
+class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
+	public:
+		%feature("autodoc", "1");
+		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve BezierValue();
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & BSplineValue();
+		%feature("autodoc", "1");
+		const math_Matrix & FunctionMatrix() const;
+		%feature("autodoc", "1");
+		const math_Matrix & DerivativeFunctionMatrix() const;
+		%feature("autodoc", "1");
+		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		const math_Matrix & Distance();
+		%feature("autodoc", "1");
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Real FirstLambda() const;
+		%feature("autodoc", "1");
+		Standard_Real LastLambda() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Points() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Poles() const;
+		%feature("autodoc", "1");
+		const math_IntegerVector & KIndex() const;
+
+};
+%extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
+	~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");}
+	}
+};
+
+
+%nodefaultctor AppDef_MultiLine;
+class AppDef_MultiLine {
+	public:
+		%feature("autodoc", "1");
+		AppDef_MultiLine();
+		%feature("autodoc", "1");
+		AppDef_MultiLine(const Standard_Integer NbMult);
+		%feature("autodoc", "1");
+		AppDef_MultiLine(const AppDef_Array1OfMultiPointConstraint &tabMultiP);
+		%feature("autodoc", "1");
+		AppDef_MultiLine(const TColgp_Array1OfPnt &tabP3d);
+		%feature("autodoc", "1");
+		AppDef_MultiLine(const TColgp_Array1OfPnt2d &tabP2d);
+		%feature("autodoc", "1");
+		Standard_Integer NbMultiPoints() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppDef_MultiPointConstraint &MPoint);
+		%feature("autodoc", "1");
+		AppDef_MultiPointConstraint Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend AppDef_MultiLine {
+	~AppDef_MultiLine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppDef_MultiLine\n");}
+	}
+};
+
+
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
 class AppDef_MyBSplGradientOfBSplineCompute {
 	public:
@@ -482,6 +575,31 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 };
 
 
+%nodefaultctor AppDef_TheResol;
+class AppDef_TheResol {
+	public:
+		%feature("autodoc", "1");
+		AppDef_TheResol(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintMatrix() const;
+		%feature("autodoc", "1");
+		const math_Vector & Duale() const;
+		%feature("autodoc", "1");
+		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
+		%feature("autodoc", "1");
+		const math_Matrix & InverseMatrix() const;
+
+};
+%extend AppDef_TheResol {
+	~AppDef_TheResol() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppDef_TheResol\n");}
+	}
+};
+
+
 %nodefaultctor AppDef_TheLeastSquares;
 class AppDef_TheLeastSquares {
 	public:
@@ -537,33 +655,6 @@ class AppDef_TheLeastSquares {
 };
 
 
-%nodefaultctor AppDef_MyGradientbisOfBSplineCompute;
-class AppDef_MyGradientbisOfBSplineCompute {
-	public:
-		%feature("autodoc", "1");
-		AppDef_MyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
-
-};
-%extend AppDef_MyGradientbisOfBSplineCompute {
-	~AppDef_MyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");}
-	}
-};
-
-
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute;
 class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 	public:
@@ -594,6 +685,61 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 	~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute\n");}
+	}
+};
+
+
+%nodefaultctor AppDef_ParLeastSquareOfMyGradientOfCompute;
+class AppDef_ParLeastSquareOfMyGradientOfCompute {
+	public:
+		%feature("autodoc", "1");
+		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve BezierValue();
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & BSplineValue();
+		%feature("autodoc", "1");
+		const math_Matrix & FunctionMatrix() const;
+		%feature("autodoc", "1");
+		const math_Matrix & DerivativeFunctionMatrix() const;
+		%feature("autodoc", "1");
+		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		const math_Matrix & Distance();
+		%feature("autodoc", "1");
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Real FirstLambda() const;
+		%feature("autodoc", "1");
+		Standard_Real LastLambda() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Points() const;
+		%feature("autodoc", "1");
+		const math_Matrix & Poles() const;
+		%feature("autodoc", "1");
+		const math_IntegerVector & KIndex() const;
+
+};
+%extend AppDef_ParLeastSquareOfMyGradientOfCompute {
+	~AppDef_ParLeastSquareOfMyGradientOfCompute() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");}
 	}
 };
 
@@ -643,31 +789,6 @@ class AppDef_Compute {
 	~AppDef_Compute() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppDef_Compute\n");}
-	}
-};
-
-
-%nodefaultctor AppDef_TheResol;
-class AppDef_TheResol {
-	public:
-		%feature("autodoc", "1");
-		AppDef_TheResol(const AppDef_MultiLine &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintMatrix() const;
-		%feature("autodoc", "1");
-		const math_Vector & Duale() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintDerivative(const AppDef_MultiLine &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
-		%feature("autodoc", "1");
-		const math_Matrix & InverseMatrix() const;
-
-};
-%extend AppDef_TheResol {
-	~AppDef_TheResol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheResol\n");}
 	}
 };
 
@@ -829,61 +950,6 @@ class AppDef_TheGradient {
 };
 
 
-%nodefaultctor AppDef_ParLeastSquareOfMyGradientOfCompute;
-class AppDef_ParLeastSquareOfMyGradientOfCompute {
-	public:
-		%feature("autodoc", "1");
-		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_ParLeastSquareOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve BezierValue();
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & BSplineValue();
-		%feature("autodoc", "1");
-		const math_Matrix & FunctionMatrix() const;
-		%feature("autodoc", "1");
-		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc", "1");
-		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		const math_Matrix & Distance();
-		%feature("autodoc", "1");
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Real FirstLambda() const;
-		%feature("autodoc", "1");
-		Standard_Real LastLambda() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Points() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Poles() const;
-		%feature("autodoc", "1");
-		const math_IntegerVector & KIndex() const;
-
-};
-%extend AppDef_ParLeastSquareOfMyGradientOfCompute {
-	~AppDef_ParLeastSquareOfMyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");}
-	}
-};
-
-
 %nodefaultctor AppDef_ResConstraintOfTheGradient;
 class AppDef_ResConstraintOfTheGradient {
 	public:
@@ -946,44 +1012,6 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 };
 
 
-%nodefaultctor AppDef_MultiLine;
-class AppDef_MultiLine {
-	public:
-		%feature("autodoc", "1");
-		AppDef_MultiLine();
-		%feature("autodoc", "1");
-		AppDef_MultiLine(const Standard_Integer NbMult);
-		%feature("autodoc", "1");
-		AppDef_MultiLine(const AppDef_Array1OfMultiPointConstraint &tabMultiP);
-		%feature("autodoc", "1");
-		AppDef_MultiLine(const TColgp_Array1OfPnt &tabP3d);
-		%feature("autodoc", "1");
-		AppDef_MultiLine(const TColgp_Array1OfPnt2d &tabP2d);
-		%feature("autodoc", "1");
-		Standard_Integer NbMultiPoints() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppDef_MultiPointConstraint &MPoint);
-		%feature("autodoc", "1");
-		AppDef_MultiPointConstraint Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend AppDef_MultiLine {
-	~AppDef_MultiLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MultiLine\n");}
-	}
-};
-
-
 %nodefaultctor AppDef_Gradient_BFGSOfTheGradient;
 class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 	public:
@@ -1024,61 +1052,6 @@ class AppDef_MyGradientOfCompute {
 	~AppDef_MyGradientOfCompute() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientOfCompute\n");}
-	}
-};
-
-
-%nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
-class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
-	public:
-		%feature("autodoc", "1");
-		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector &Parameters, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		void Perform(const math_Vector &Parameters, const math_Vector &V1t, const math_Vector &V2t, const math_Vector &V1c, const math_Vector &V2c, const Standard_Real l1, const Standard_Real l2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve BezierValue();
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & BSplineValue();
-		%feature("autodoc", "1");
-		const math_Matrix & FunctionMatrix() const;
-		%feature("autodoc", "1");
-		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc", "1");
-		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		const math_Matrix & Distance();
-		%feature("autodoc", "1");
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Real FirstLambda() const;
-		%feature("autodoc", "1");
-		Standard_Real LastLambda() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Points() const;
-		%feature("autodoc", "1");
-		const math_Matrix & Poles() const;
-		%feature("autodoc", "1");
-		const math_IntegerVector & KIndex() const;
-
-};
-%extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
-	~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");}
 	}
 };
 
@@ -1392,5 +1365,32 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 	~AppDef_ParFunctionOfMyGradientOfCompute() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfMyGradientOfCompute\n");}
+	}
+};
+
+
+%nodefaultctor AppDef_MyGradientbisOfBSplineCompute;
+class AppDef_MyGradientbisOfBSplineCompute {
+	public:
+		%feature("autodoc", "1");
+		AppDef_MyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		Standard_Real AverageError() const;
+
+};
+%extend AppDef_MyGradientbisOfBSplineCompute {
+	~AppDef_MyGradientbisOfBSplineCompute() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");}
 	}
 };

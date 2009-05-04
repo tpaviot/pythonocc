@@ -248,10 +248,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import TCollection.i
-%import math.i
 %import Standard.i
-%import IntImp.i
+%import math.i
 %import AppParCurves.i
 %import Approx.i
+%import IntImp.i
 %import ApproxInt.i
 %import TopAbs.i

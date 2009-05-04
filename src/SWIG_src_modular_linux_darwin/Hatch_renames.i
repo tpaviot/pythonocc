@@ -1,0 +1,12 @@
+%rename(Parameter) Hatch_Parameter;
+%rename(XLINE) Hatch_XLINE;
+%rename(SequenceOfParameter) Hatch_SequenceOfParameter;
+%rename(Hatcher) Hatch_Hatcher;
+%rename(SequenceNodeOfSequenceOfLine) Hatch_SequenceNodeOfSequenceOfLine;
+%rename(Handle_SequenceNodeOfSequenceOfLine) Handle_Hatch_SequenceNodeOfSequenceOfLine;
+%rename(YLINE) Hatch_YLINE;
+%rename(ANYLINE) Hatch_ANYLINE;
+%rename(SequenceOfLine) Hatch_SequenceOfLine;
+%rename(Handle_SequenceNodeOfSequenceOfParameter) Handle_Hatch_SequenceNodeOfSequenceOfParameter;
+%rename(Line) Hatch_Line;
+%rename(SequenceNodeOfSequenceOfParameter) Hatch_SequenceNodeOfSequenceOfParameter;

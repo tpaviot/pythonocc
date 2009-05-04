@@ -131,6 +131,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Standard_SStream.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<OSD_File.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
@@ -142,6 +143,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_MFT_FontManager.hxx>
-#include<PlotMgt.hxx>
-#include<Standard_SStream.hxx>
 %}

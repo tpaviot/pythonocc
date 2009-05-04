@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepAdaptor
 
+%include BRepAdaptor_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -281,107 +283,6 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 };
 
 
-%nodefaultctor BRepAdaptor_Curve2d;
-class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve2d();
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve2d(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-
-};
-%extend BRepAdaptor_Curve2d {
-	~BRepAdaptor_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
-	}
-};
-
-
-%nodefaultctor BRepAdaptor_Array1OfCurve;
-class BRepAdaptor_Array1OfCurve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		BRepAdaptor_Array1OfCurve(const BRepAdaptor_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const BRepAdaptor_Curve &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const BRepAdaptor_Array1OfCurve & Assign(const BRepAdaptor_Array1OfCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BRepAdaptor_Curve &Value);
-		%feature("autodoc", "1");
-		const BRepAdaptor_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BRepAdaptor_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
-
-};
-%extend BRepAdaptor_Array1OfCurve {
-	~BRepAdaptor_Array1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");}
-	}
-};
-
-
-%nodefaultctor BRepAdaptor_HCurve;
-class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_HCurve();
-		%feature("autodoc", "1");
-		BRepAdaptor_HCurve(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		void Set(const BRepAdaptor_Curve &C);
-		%feature("autodoc", "1");
-		virtual		const Adaptor3d_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		Adaptor3d_Curve & GetCurve();
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve & ChangeCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepAdaptor_HCurve {
-	Handle_BRepAdaptor_HCurve GetHandle() {
-	return *(Handle_BRepAdaptor_HCurve*) &$self;
-	}
-};
-%extend BRepAdaptor_HCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepAdaptor_HCurve {
-	~BRepAdaptor_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve\n");}
-	}
-};
-
-
 %nodefaultctor BRepAdaptor_HArray1OfCurve;
 class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 	public:
@@ -429,6 +330,47 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 };
 
 
+%nodefaultctor BRepAdaptor_Array1OfCurve;
+class BRepAdaptor_Array1OfCurve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		BRepAdaptor_Array1OfCurve(const BRepAdaptor_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const BRepAdaptor_Curve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const BRepAdaptor_Array1OfCurve & Assign(const BRepAdaptor_Array1OfCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BRepAdaptor_Curve &Value);
+		%feature("autodoc", "1");
+		const BRepAdaptor_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BRepAdaptor_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
+
+};
+%extend BRepAdaptor_Array1OfCurve {
+	~BRepAdaptor_Array1OfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");}
+	}
+};
+
+
 %nodefaultctor BRepAdaptor_HCurve2d;
 class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 	public:
@@ -460,91 +402,6 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 	~BRepAdaptor_HCurve2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve2d\n");}
-	}
-};
-
-
-%nodefaultctor BRepAdaptor_CompCurve;
-class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_CompCurve();
-		%feature("autodoc", "1");
-		BRepAdaptor_CompCurve(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa=0);
-		%feature("autodoc", "1");
-		BRepAdaptor_CompCurve(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void SetPeriodic(const Standard_Boolean Periodic);
-		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire() const;
-		%feature("autodoc", "1");
-		void Edge(const Standard_Real U, TopoDS_Edge & E, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		virtual		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		virtual		gp_Circ Circle() const;
-		%feature("autodoc", "1");
-		virtual		gp_Elips Ellipse() const;
-		%feature("autodoc", "1");
-		virtual		gp_Hypr Hyperbola() const;
-		%feature("autodoc", "1");
-		virtual		gp_Parab Parabola() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineCurve BSpline() const;
-
-};
-%extend BRepAdaptor_CompCurve {
-	~BRepAdaptor_CompCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_CompCurve\n");}
 	}
 };
 
@@ -668,6 +525,66 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 	~BRepAdaptor_Surface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Surface\n");}
+	}
+};
+
+
+%nodefaultctor BRepAdaptor_Curve2d;
+class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve2d();
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve2d(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+
+};
+%extend BRepAdaptor_Curve2d {
+	~BRepAdaptor_Curve2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
+	}
+};
+
+
+%nodefaultctor BRepAdaptor_HCurve;
+class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_HCurve();
+		%feature("autodoc", "1");
+		BRepAdaptor_HCurve(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		void Set(const BRepAdaptor_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		Adaptor3d_Curve & GetCurve();
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve & ChangeCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepAdaptor_HCurve {
+	Handle_BRepAdaptor_HCurve GetHandle() {
+	return *(Handle_BRepAdaptor_HCurve*) &$self;
+	}
+};
+%extend BRepAdaptor_HCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepAdaptor_HCurve {
+	~BRepAdaptor_HCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve\n");}
 	}
 };
 
@@ -796,5 +713,90 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 	~BRepAdaptor_HSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HSurface\n");}
+	}
+};
+
+
+%nodefaultctor BRepAdaptor_CompCurve;
+class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_CompCurve();
+		%feature("autodoc", "1");
+		BRepAdaptor_CompCurve(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa=0);
+		%feature("autodoc", "1");
+		BRepAdaptor_CompCurve(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Wire &W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void SetPeriodic(const Standard_Boolean Periodic);
+		%feature("autodoc", "1");
+		const TopoDS_Wire & Wire() const;
+		%feature("autodoc", "1");
+		void Edge(const Standard_Real U, TopoDS_Edge & E, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_CurveType GetType() const;
+		%feature("autodoc", "1");
+		virtual		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		virtual		gp_Circ Circle() const;
+		%feature("autodoc", "1");
+		virtual		gp_Elips Ellipse() const;
+		%feature("autodoc", "1");
+		virtual		gp_Hypr Hyperbola() const;
+		%feature("autodoc", "1");
+		virtual		gp_Parab Parabola() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BSplineCurve BSpline() const;
+
+};
+%extend BRepAdaptor_CompCurve {
+	~BRepAdaptor_CompCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_CompCurve\n");}
 	}
 };

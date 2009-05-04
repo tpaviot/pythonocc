@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepRepr
 
+%include StepRepr_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -374,32 +376,6 @@ class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_R
 };
 
 
-%nodefaultctor Handle_StepRepr_ProductConcept;
-class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept();
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept(const Handle_StepRepr_ProductConcept &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept(const StepRepr_ProductConcept *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_ProductConcept {
-	StepRepr_ProductConcept* GetObject() {
-	return (StepRepr_ProductConcept*)$self->Access();
-	}
-};
-%extend Handle_StepRepr_ProductConcept {
-	~Handle_StepRepr_ProductConcept() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductConcept\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRelationship;
 class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShared {
 	public:
@@ -452,54 +428,28 @@ class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDef
 };
 
 
-%nodefaultctor Handle_StepRepr_DataEnvironment;
-class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_Representation;
+class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment();
+		Handle_StepRepr_Representation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment(const Handle_StepRepr_DataEnvironment &aHandle);
+		Handle_StepRepr_Representation(const Handle_StepRepr_Representation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment(const StepRepr_DataEnvironment *anItem);
+		Handle_StepRepr_Representation(const StepRepr_Representation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepRepr_Representation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_DataEnvironment {
-	StepRepr_DataEnvironment* GetObject() {
-	return (StepRepr_DataEnvironment*)$self->Access();
+%extend Handle_StepRepr_Representation {
+	StepRepr_Representation* GetObject() {
+	return (StepRepr_Representation*)$self->Access();
 	}
 };
-%extend Handle_StepRepr_DataEnvironment {
-	~Handle_StepRepr_DataEnvironment() {
+%extend Handle_StepRepr_Representation {
+	~Handle_StepRepr_Representation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
-class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	StepRepr_HSequenceOfMaterialPropertyRepresentation* GetObject() {
-	return (StepRepr_HSequenceOfMaterialPropertyRepresentation*)$self->Access();
-	}
-};
-%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_Representation\n");}
 	}
 };
 
@@ -764,6 +714,32 @@ class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TSha
 };
 
 
+%nodefaultctor Handle_StepRepr_DataEnvironment;
+class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_DataEnvironment();
+		%feature("autodoc", "1");
+		Handle_StepRepr_DataEnvironment(const Handle_StepRepr_DataEnvironment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DataEnvironment(const StepRepr_DataEnvironment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DataEnvironment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_DataEnvironment {
+	StepRepr_DataEnvironment* GetObject() {
+	return (StepRepr_DataEnvironment*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_DataEnvironment {
+	~Handle_StepRepr_DataEnvironment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation;
 class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -946,54 +922,28 @@ class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_Assem
 };
 
 
-%nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
-class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_ShapeAspectTransition;
+class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation();
+		Handle_StepRepr_ShapeAspectTransition();
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
+		Handle_StepRepr_ShapeAspectTransition(const Handle_StepRepr_ShapeAspectTransition &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation(const StepRepr_PropertyDefinitionRepresentation *anItem);
+		Handle_StepRepr_ShapeAspectTransition(const StepRepr_ShapeAspectTransition *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepRepr_ShapeAspectTransition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_PropertyDefinitionRepresentation {
-	StepRepr_PropertyDefinitionRepresentation* GetObject() {
-	return (StepRepr_PropertyDefinitionRepresentation*)$self->Access();
+%extend Handle_StepRepr_ShapeAspectTransition {
+	StepRepr_ShapeAspectTransition* GetObject() {
+	return (StepRepr_ShapeAspectTransition*)$self->Access();
 	}
 };
-%extend Handle_StepRepr_PropertyDefinitionRepresentation {
-	~Handle_StepRepr_PropertyDefinitionRepresentation() {
+%extend Handle_StepRepr_ShapeAspectTransition {
+	~Handle_StepRepr_ShapeAspectTransition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRepresentation\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
-class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
-	StepRepr_StructuralResponsePropertyDefinitionRepresentation* GetObject() {
-	return (StepRepr_StructuralResponsePropertyDefinitionRepresentation*)$self->Access();
-	}
-};
-%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
-	~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");}
 	}
 };
 
@@ -1076,32 +1026,6 @@ class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_
 };
 
 
-%nodefaultctor Handle_StepRepr_ShapeAspectTransition;
-class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition();
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition(const Handle_StepRepr_ShapeAspectTransition &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition(const StepRepr_ShapeAspectTransition *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_ShapeAspectTransition {
-	StepRepr_ShapeAspectTransition* GetObject() {
-	return (StepRepr_ShapeAspectTransition*)$self->Access();
-	}
-};
-%extend Handle_StepRepr_ShapeAspectTransition {
-	~Handle_StepRepr_ShapeAspectTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepRepr_HArray1OfRepresentationItem;
 class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	public:
@@ -1124,6 +1048,84 @@ class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	~Handle_StepRepr_HArray1OfRepresentationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HArray1OfRepresentationItem\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
+class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	StepRepr_HSequenceOfMaterialPropertyRepresentation* GetObject() {
+	return (StepRepr_HSequenceOfMaterialPropertyRepresentation*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
+class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinitionRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinitionRepresentation(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinitionRepresentation(const StepRepr_PropertyDefinitionRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_PropertyDefinitionRepresentation {
+	StepRepr_PropertyDefinitionRepresentation* GetObject() {
+	return (StepRepr_PropertyDefinitionRepresentation*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_PropertyDefinitionRepresentation {
+	~Handle_StepRepr_PropertyDefinitionRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
+class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	StepRepr_StructuralResponsePropertyDefinitionRepresentation* GetObject() {
+	return (StepRepr_StructuralResponsePropertyDefinitionRepresentation*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -1202,32 +1204,6 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 	~Handle_StepRepr_StructuralResponseProperty() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponseProperty\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_Representation;
-class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation(const Handle_StepRepr_Representation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation(const StepRepr_Representation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_Representation {
-	StepRepr_Representation* GetObject() {
-	return (StepRepr_Representation*)$self->Access();
-	}
-};
-%extend Handle_StepRepr_Representation {
-	~Handle_StepRepr_Representation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_Representation\n");}
 	}
 };
 
@@ -1332,6 +1308,32 @@ class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentation
 	~Handle_StepRepr_ValueRange() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ValueRange\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_ProductConcept;
+class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductConcept();
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductConcept(const Handle_StepRepr_ProductConcept &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductConcept(const StepRepr_ProductConcept *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductConcept const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_ProductConcept {
+	StepRepr_ProductConcept* GetObject() {
+	return (StepRepr_ProductConcept*)$self->Access();
+	}
+};
+%extend Handle_StepRepr_ProductConcept {
+	~Handle_StepRepr_ProductConcept() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductConcept\n");}
 	}
 };
 
@@ -1972,6 +1974,53 @@ class StepRepr_Representation : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepRepr_HArray1OfMaterialPropertyRepresentation;
+class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfMaterialPropertyRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfMaterialPropertyRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_MaterialPropertyRepresentation &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_MaterialPropertyRepresentation &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepRepr_MaterialPropertyRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepRepr_MaterialPropertyRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialPropertyRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepRepr_Array1OfMaterialPropertyRepresentation & Array1() const;
+		%feature("autodoc", "1");
+		StepRepr_Array1OfMaterialPropertyRepresentation & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
+	Handle_StepRepr_HArray1OfMaterialPropertyRepresentation GetHandle() {
+	return *(Handle_StepRepr_HArray1OfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
+	~StepRepr_HArray1OfMaterialPropertyRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor StepRepr_ProductConcept;
 class StepRepr_ProductConcept : public MMgt_TShared {
 	public:
@@ -2046,97 +2095,6 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 };
 
 
-%nodefaultctor StepRepr_ProductDefinitionUsage;
-class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelationship {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ProductDefinitionUsage();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ProductDefinitionUsage {
-	Handle_StepRepr_ProductDefinitionUsage GetHandle() {
-	return *(Handle_StepRepr_ProductDefinitionUsage*) &$self;
-	}
-};
-%extend StepRepr_ProductDefinitionUsage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_ProductDefinitionUsage {
-	~StepRepr_ProductDefinitionUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_AssemblyComponentUsage;
-class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_AssemblyComponentUsage();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasReferenceDesignator, const Handle_TCollection_HAsciiString &aReferenceDesignator);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString ReferenceDesignator() const;
-		%feature("autodoc", "1");
-		void SetReferenceDesignator(const Handle_TCollection_HAsciiString &ReferenceDesignator);
-		%feature("autodoc", "1");
-		Standard_Boolean HasReferenceDesignator() const;
-
-};
-%extend StepRepr_AssemblyComponentUsage {
-	Handle_StepRepr_AssemblyComponentUsage GetHandle() {
-	return *(Handle_StepRepr_AssemblyComponentUsage*) &$self;
-	}
-};
-%extend StepRepr_AssemblyComponentUsage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_AssemblyComponentUsage {
-	~StepRepr_AssemblyComponentUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_AssemblyComponentUsage\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_QuantifiedAssemblyComponentUsage;
-class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_QuantifiedAssemblyComponentUsage();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepBasic_MeasureWithUnit &aQuantity);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Quantity() const;
-		%feature("autodoc", "1");
-		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
-
-};
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	Handle_StepRepr_QuantifiedAssemblyComponentUsage GetHandle() {
-	return *(Handle_StepRepr_QuantifiedAssemblyComponentUsage*) &$self;
-	}
-};
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	~StepRepr_QuantifiedAssemblyComponentUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");}
-	}
-};
-
-
 %nodefaultctor StepRepr_ShapeAspect;
 class StepRepr_ShapeAspect : public MMgt_TShared {
 	public:
@@ -2187,6 +2145,8 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_DerivedShapeAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepRepr_DerivedShapeAspect {
@@ -2261,6 +2221,33 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 };
 
 
+%nodefaultctor StepRepr_ProductDefinitionUsage;
+class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelationship {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ProductDefinitionUsage();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ProductDefinitionUsage {
+	Handle_StepRepr_ProductDefinitionUsage GetHandle() {
+	return *(Handle_StepRepr_ProductDefinitionUsage*) &$self;
+	}
+};
+%extend StepRepr_ProductDefinitionUsage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_ProductDefinitionUsage {
+	~StepRepr_ProductDefinitionUsage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");}
+	}
+};
+
+
 %nodefaultctor StepRepr_RepresentationContext;
 class StepRepr_RepresentationContext : public MMgt_TShared {
 	public:
@@ -2319,33 +2306,6 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 	~StepRepr_ParametricRepresentationContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ParametricRepresentationContext\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_CompositeShapeAspect;
-class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_CompositeShapeAspect();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_CompositeShapeAspect {
-	Handle_StepRepr_CompositeShapeAspect GetHandle() {
-	return *(Handle_StepRepr_CompositeShapeAspect*) &$self;
-	}
-};
-%extend StepRepr_CompositeShapeAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_CompositeShapeAspect {
-	~StepRepr_CompositeShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");}
 	}
 };
 
@@ -2473,53 +2433,6 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 };
 
 
-%nodefaultctor StepRepr_HArray1OfMaterialPropertyRepresentation;
-class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfMaterialPropertyRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfMaterialPropertyRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_MaterialPropertyRepresentation &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_MaterialPropertyRepresentation &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepRepr_MaterialPropertyRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepRepr_MaterialPropertyRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialPropertyRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepRepr_Array1OfMaterialPropertyRepresentation & Array1() const;
-		%feature("autodoc", "1");
-		StepRepr_Array1OfMaterialPropertyRepresentation & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
-	Handle_StepRepr_HArray1OfMaterialPropertyRepresentation GetHandle() {
-	return *(Handle_StepRepr_HArray1OfMaterialPropertyRepresentation*) &$self;
-	}
-};
-%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_HArray1OfMaterialPropertyRepresentation {
-	~StepRepr_HArray1OfMaterialPropertyRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");}
-	}
-};
-
-
 %nodefaultctor StepRepr_HSequenceOfRepresentationItem;
 class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 	public:
@@ -2587,6 +2500,78 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 	~StepRepr_HSequenceOfRepresentationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepRepr_HSequenceOfRepresentationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_AssemblyComponentUsage;
+class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_AssemblyComponentUsage();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasReferenceDesignator, const Handle_TCollection_HAsciiString &aReferenceDesignator);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString ReferenceDesignator() const;
+		%feature("autodoc", "1");
+		void SetReferenceDesignator(const Handle_TCollection_HAsciiString &ReferenceDesignator);
+		%feature("autodoc", "1");
+		Standard_Boolean HasReferenceDesignator() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_AssemblyComponentUsage {
+	Handle_StepRepr_AssemblyComponentUsage GetHandle() {
+	return *(Handle_StepRepr_AssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_AssemblyComponentUsage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_AssemblyComponentUsage {
+	~StepRepr_AssemblyComponentUsage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_AssemblyComponentUsage\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_FunctionallyDefinedTransformation;
+class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_FunctionallyDefinedTransformation();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_FunctionallyDefinedTransformation {
+	Handle_StepRepr_FunctionallyDefinedTransformation GetHandle() {
+	return *(Handle_StepRepr_FunctionallyDefinedTransformation*) &$self;
+	}
+};
+%extend StepRepr_FunctionallyDefinedTransformation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_FunctionallyDefinedTransformation {
+	~StepRepr_FunctionallyDefinedTransformation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");}
 	}
 };
 
@@ -3044,47 +3029,6 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 };
 
 
-%nodefaultctor StepRepr_MakeFromUsageOption;
-class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MakeFromUsageOption();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Integer aRanking, const Handle_TCollection_HAsciiString &aRankingRationale, const Handle_StepBasic_MeasureWithUnit &aQuantity);
-		%feature("autodoc", "1");
-		Standard_Integer Ranking() const;
-		%feature("autodoc", "1");
-		void SetRanking(const Standard_Integer Ranking);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString RankingRationale() const;
-		%feature("autodoc", "1");
-		void SetRankingRationale(const Handle_TCollection_HAsciiString &RankingRationale);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Quantity() const;
-		%feature("autodoc", "1");
-		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_MakeFromUsageOption {
-	Handle_StepRepr_MakeFromUsageOption GetHandle() {
-	return *(Handle_StepRepr_MakeFromUsageOption*) &$self;
-	}
-};
-%extend StepRepr_MakeFromUsageOption {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_MakeFromUsageOption {
-	~StepRepr_MakeFromUsageOption() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");}
-	}
-};
-
-
 %nodefaultctor StepRepr_PropertyDefinition;
 class StepRepr_PropertyDefinition : public MMgt_TShared {
 	public:
@@ -3242,6 +3186,51 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 	~StepRepr_GlobalUnitAssignedContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepRepr_GlobalUnitAssignedContext\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_ItemDefinedTransformation;
+class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ItemDefinedTransformation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_RepresentationItem &aTransformItem1, const Handle_StepRepr_RepresentationItem &aTransformItem2);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetTransformItem1(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem TransformItem1() const;
+		%feature("autodoc", "1");
+		void SetTransformItem2(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem TransformItem2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ItemDefinedTransformation {
+	Handle_StepRepr_ItemDefinedTransformation GetHandle() {
+	return *(Handle_StepRepr_ItemDefinedTransformation*) &$self;
+	}
+};
+%extend StepRepr_ItemDefinedTransformation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_ItemDefinedTransformation {
+	~StepRepr_ItemDefinedTransformation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_ItemDefinedTransformation\n");}
 	}
 };
 
@@ -3444,6 +3433,39 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 };
 
 
+%nodefaultctor StepRepr_QuantifiedAssemblyComponentUsage;
+class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_QuantifiedAssemblyComponentUsage();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepBasic_MeasureWithUnit &aQuantity);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Quantity() const;
+		%feature("autodoc", "1");
+		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	Handle_StepRepr_QuantifiedAssemblyComponentUsage GetHandle() {
+	return *(Handle_StepRepr_QuantifiedAssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	~StepRepr_QuantifiedAssemblyComponentUsage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");}
+	}
+};
+
+
 %nodefaultctor StepRepr_AssemblyComponentUsageSubstitute;
 class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 	public:
@@ -3489,101 +3511,70 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepRepr_DescriptiveRepresentationItem;
-class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationItem {
+%nodefaultctor StepRepr_DataEnvironment;
+class StepRepr_DataEnvironment : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_DescriptiveRepresentationItem();
+		StepRepr_DataEnvironment();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_DescriptiveRepresentationItem {
-	Handle_StepRepr_DescriptiveRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_DescriptiveRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_DescriptiveRepresentationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_DescriptiveRepresentationItem {
-	~StepRepr_DescriptiveRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_DescriptiveRepresentationItem\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_PromissoryUsageOccurrence;
-class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_PromissoryUsageOccurrence();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_PromissoryUsageOccurrence {
-	Handle_StepRepr_PromissoryUsageOccurrence GetHandle() {
-	return *(Handle_StepRepr_PromissoryUsageOccurrence*) &$self;
-	}
-};
-%extend StepRepr_PromissoryUsageOccurrence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_PromissoryUsageOccurrence {
-	~StepRepr_PromissoryUsageOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_FunctionallyDefinedTransformation;
-class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_FunctionallyDefinedTransformation();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &aElements);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		void SetName(const Handle_TCollection_HAsciiString &Name);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation Elements() const;
+		%feature("autodoc", "1");
+		void SetElements(const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &Elements);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_FunctionallyDefinedTransformation {
-	Handle_StepRepr_FunctionallyDefinedTransformation GetHandle() {
-	return *(Handle_StepRepr_FunctionallyDefinedTransformation*) &$self;
+%extend StepRepr_DataEnvironment {
+	Handle_StepRepr_DataEnvironment GetHandle() {
+	return *(Handle_StepRepr_DataEnvironment*) &$self;
 	}
 };
-%extend StepRepr_FunctionallyDefinedTransformation {
+%extend StepRepr_DataEnvironment {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepRepr_FunctionallyDefinedTransformation {
-	~StepRepr_FunctionallyDefinedTransformation() {
+%extend StepRepr_DataEnvironment {
+	~StepRepr_DataEnvironment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");}
+	if (__env){printf("## Call custom destructor for instance of StepRepr_DataEnvironment\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_CompositeShapeAspect;
+class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_CompositeShapeAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_CompositeShapeAspect {
+	Handle_StepRepr_CompositeShapeAspect GetHandle() {
+	return *(Handle_StepRepr_CompositeShapeAspect*) &$self;
+	}
+};
+%extend StepRepr_CompositeShapeAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_CompositeShapeAspect {
+	~StepRepr_CompositeShapeAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");}
 	}
 };
 
@@ -3629,43 +3620,64 @@ class StepRepr_Array1OfRepresentationItem {
 };
 
 
-%nodefaultctor StepRepr_DataEnvironment;
-class StepRepr_DataEnvironment : public MMgt_TShared {
+%nodefaultctor StepRepr_DescriptiveRepresentationItem;
+class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_DataEnvironment();
+		StepRepr_DescriptiveRepresentationItem();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &aElements);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
 		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation Elements() const;
-		%feature("autodoc", "1");
-		void SetElements(const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &Elements);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_DataEnvironment {
-	Handle_StepRepr_DataEnvironment GetHandle() {
-	return *(Handle_StepRepr_DataEnvironment*) &$self;
+%extend StepRepr_DescriptiveRepresentationItem {
+	Handle_StepRepr_DescriptiveRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_DescriptiveRepresentationItem*) &$self;
 	}
 };
-%extend StepRepr_DataEnvironment {
+%extend StepRepr_DescriptiveRepresentationItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepRepr_DataEnvironment {
-	~StepRepr_DataEnvironment() {
+%extend StepRepr_DescriptiveRepresentationItem {
+	~StepRepr_DescriptiveRepresentationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_DataEnvironment\n");}
+	if (__env){printf("## Call custom destructor for instance of StepRepr_DescriptiveRepresentationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_StructuralResponseProperty;
+class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_StructuralResponseProperty();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_StructuralResponseProperty {
+	Handle_StepRepr_StructuralResponseProperty GetHandle() {
+	return *(Handle_StepRepr_StructuralResponseProperty*) &$self;
+	}
+};
+%extend StepRepr_StructuralResponseProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_StructuralResponseProperty {
+	~StepRepr_StructuralResponseProperty() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");}
 	}
 };
 
@@ -3771,74 +3783,29 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 };
 
 
-%nodefaultctor StepRepr_ItemDefinedTransformation;
-class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
+%nodefaultctor StepRepr_PromissoryUsageOccurrence;
+class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsage {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_ItemDefinedTransformation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_RepresentationItem &aTransformItem1, const Handle_StepRepr_RepresentationItem &aTransformItem2);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetTransformItem1(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem TransformItem1() const;
-		%feature("autodoc", "1");
-		void SetTransformItem2(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem TransformItem2() const;
+		StepRepr_PromissoryUsageOccurrence();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_ItemDefinedTransformation {
-	Handle_StepRepr_ItemDefinedTransformation GetHandle() {
-	return *(Handle_StepRepr_ItemDefinedTransformation*) &$self;
+%extend StepRepr_PromissoryUsageOccurrence {
+	Handle_StepRepr_PromissoryUsageOccurrence GetHandle() {
+	return *(Handle_StepRepr_PromissoryUsageOccurrence*) &$self;
 	}
 };
-%extend StepRepr_ItemDefinedTransformation {
+%extend StepRepr_PromissoryUsageOccurrence {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepRepr_ItemDefinedTransformation {
-	~StepRepr_ItemDefinedTransformation() {
+%extend StepRepr_PromissoryUsageOccurrence {
+	~StepRepr_PromissoryUsageOccurrence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_ItemDefinedTransformation\n");}
-	}
-};
-
-
-%nodefaultctor StepRepr_StructuralResponseProperty;
-class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_StructuralResponseProperty();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_StructuralResponseProperty {
-	Handle_StepRepr_StructuralResponseProperty GetHandle() {
-	return *(Handle_StepRepr_StructuralResponseProperty*) &$self;
-	}
-};
-%extend StepRepr_StructuralResponseProperty {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepRepr_StructuralResponseProperty {
-	~StepRepr_StructuralResponseProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");}
+	if (__env){printf("## Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");}
 	}
 };
 
@@ -4013,6 +3980,47 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 	~StepRepr_ConfigurationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepRepr_MakeFromUsageOption;
+class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MakeFromUsageOption();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Integer aRanking, const Handle_TCollection_HAsciiString &aRankingRationale, const Handle_StepBasic_MeasureWithUnit &aQuantity);
+		%feature("autodoc", "1");
+		Standard_Integer Ranking() const;
+		%feature("autodoc", "1");
+		void SetRanking(const Standard_Integer Ranking);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString RankingRationale() const;
+		%feature("autodoc", "1");
+		void SetRankingRationale(const Handle_TCollection_HAsciiString &RankingRationale);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Quantity() const;
+		%feature("autodoc", "1");
+		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_MakeFromUsageOption {
+	Handle_StepRepr_MakeFromUsageOption GetHandle() {
+	return *(Handle_StepRepr_MakeFromUsageOption*) &$self;
+	}
+};
+%extend StepRepr_MakeFromUsageOption {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepRepr_MakeFromUsageOption {
+	~StepRepr_MakeFromUsageOption() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");}
 	}
 };
 

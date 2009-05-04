@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module CSLib
 
+%include CSLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -136,6 +138,33 @@ enum CSLib_DerivativeStatus {
 
 
 
+%nodefaultctor CSLib;
+class CSLib {
+	public:
+		%feature("autodoc", "1");
+		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real SinTol, CSLib_DerivativeStatus & Status, gp_Dir & Normal);
+		%feature("autodoc", "1");
+		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const gp_Vec &D2U, const gp_Vec &D2V, const gp_Vec &D2UV, const Standard_Real SinTol, Standard_Boolean & Done, CSLib_NormalStatus & Status, gp_Dir & Normal);
+		%feature("autodoc", "1");
+		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real MagTol, CSLib_NormalStatus & Status, gp_Dir & Normal);
+		%feature("autodoc", "1");
+		void Normal(const Standard_Integer MaxOrder, const TColgp_Array2OfVec &DerNUV, const Standard_Real MagTol, const Standard_Real U, const Standard_Real V, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax, CSLib_NormalStatus & Status, gp_Dir & Normal, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		gp_Vec DNNUV(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerSurf);
+		%feature("autodoc", "1");
+		gp_Vec DNNUV(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerSurf1, const TColgp_Array2OfVec &DerSurf2);
+		%feature("autodoc", "1");
+		gp_Vec DNNormal(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerNUV, const Standard_Integer Iduref=0, const Standard_Integer Idvref=0);
+
+};
+%extend CSLib {
+	~CSLib() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CSLib\n");}
+	}
+};
+
+
 %nodefaultctor CSLib_NormalPolyDef;
 class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 	public:
@@ -180,34 +209,5 @@ class CSLib_Class2d {
 	~CSLib_Class2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CSLib_Class2d\n");}
-	}
-};
-
-
-%nodefaultctor CSLib;
-class CSLib {
-	public:
-		%feature("autodoc", "1");
-		CSLib();
-		%feature("autodoc", "1");
-		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real SinTol, CSLib_DerivativeStatus & Status, gp_Dir & Normal);
-		%feature("autodoc", "1");
-		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const gp_Vec &D2U, const gp_Vec &D2V, const gp_Vec &D2UV, const Standard_Real SinTol, Standard_Boolean & Done, CSLib_NormalStatus & Status, gp_Dir & Normal);
-		%feature("autodoc", "1");
-		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real MagTol, CSLib_NormalStatus & Status, gp_Dir & Normal);
-		%feature("autodoc", "1");
-		void Normal(const Standard_Integer MaxOrder, const TColgp_Array2OfVec &DerNUV, const Standard_Real MagTol, const Standard_Real U, const Standard_Real V, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax, CSLib_NormalStatus & Status, gp_Dir & Normal, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		gp_Vec DNNUV(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerSurf);
-		%feature("autodoc", "1");
-		gp_Vec DNNUV(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerSurf1, const TColgp_Array2OfVec &DerSurf2);
-		%feature("autodoc", "1");
-		gp_Vec DNNormal(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerNUV, const Standard_Integer Iduref=0, const Standard_Integer Idvref=0);
-
-};
-%extend CSLib {
-	~CSLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CSLib\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepSelect
 
+%include StepSelect_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -218,32 +220,6 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 };
 
 
-%nodefaultctor Handle_StepSelect_WorkLibrary;
-class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary();
-		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
-		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepSelect_WorkLibrary {
-	StepSelect_WorkLibrary* GetObject() {
-	return (StepSelect_WorkLibrary*)$self->Access();
-	}
-};
-%extend Handle_StepSelect_WorkLibrary {
-	~Handle_StepSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepSelect_Activator;
 class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	public:
@@ -266,6 +242,32 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	~Handle_StepSelect_Activator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_Activator\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepSelect_WorkLibrary;
+class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary();
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepSelect_WorkLibrary {
+	StepSelect_WorkLibrary* GetObject() {
+	return (StepSelect_WorkLibrary*)$self->Access();
+	}
+};
+%extend Handle_StepSelect_WorkLibrary {
+	~Handle_StepSelect_WorkLibrary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeFix
 
+%include ShapeFix_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -192,6 +194,32 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 };
 
 
+%nodefaultctor Handle_ShapeFix_Edge;
+class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge(const Handle_ShapeFix_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge(const ShapeFix_Edge *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_Edge {
+	ShapeFix_Edge* GetObject() {
+	return (ShapeFix_Edge*)$self->Access();
+	}
+};
+%extend Handle_ShapeFix_Edge {
+	~Handle_ShapeFix_Edge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Edge\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ShapeFix_ComposeShell;
 class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	public:
@@ -266,32 +294,6 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	~Handle_ShapeFix_Wire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Wire\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeFix_Edge;
-class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge(const Handle_ShapeFix_Edge &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge(const ShapeFix_Edge *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_Edge {
-	ShapeFix_Edge* GetObject() {
-	return (ShapeFix_Edge*)$self->Access();
-	}
-};
-%extend Handle_ShapeFix_Edge {
-	~Handle_ShapeFix_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Edge\n");}
 	}
 };
 
@@ -685,6 +687,25 @@ class ShapeFix_WireVertex {
 };
 
 
+%nodefaultctor ShapeFix_ShapeTolerance;
+class ShapeFix_ShapeTolerance {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_ShapeTolerance();
+		%feature("autodoc", "1");
+		Standard_Boolean LimitTolerance(const TopoDS_Shape &shape, const Standard_Real tmin, const Standard_Real tmax=0.0, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
+		%feature("autodoc", "1");
+		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
+
+};
+%extend ShapeFix_ShapeTolerance {
+	~ShapeFix_ShapeTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeFix_ShapeTolerance\n");}
+	}
+};
+
+
 %nodefaultctor ShapeFix_SequenceOfWireSegment;
 class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 	public:
@@ -876,6 +897,73 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor ShapeFix_Shape;
+class ShapeFix_Shape : public ShapeFix_Root {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_Shape();
+		%feature("autodoc", "1");
+		ShapeFix_Shape(const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape() const;
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Solid FixSolidTool() const;
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Shell FixShellTool() const;
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Face FixFaceTool() const;
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wire FixWireTool() const;
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge FixEdgeTool() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
+		%feature("autodoc", "1");
+		virtual		void SetPrecision(const Standard_Real preci);
+		%feature("autodoc", "1");
+		virtual		void SetMinTolerance(const Standard_Real mintol);
+		%feature("autodoc", "1");
+		virtual		void SetMaxTolerance(const Standard_Real maxtol);
+		%feature("autodoc", "1");
+		Standard_Integer & FixSolidMode();
+		%feature("autodoc", "1");
+		Standard_Integer & FixFreeShellMode();
+		%feature("autodoc", "1");
+		Standard_Integer & FixFreeFaceMode();
+		%feature("autodoc", "1");
+		Standard_Integer & FixFreeWireMode();
+		%feature("autodoc", "1");
+		Standard_Integer & FixSameParameterMode();
+		%feature("autodoc", "1");
+		Standard_Integer & FixVertexPositionMode();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeFix_Shape {
+	Handle_ShapeFix_Shape GetHandle() {
+	return *(Handle_ShapeFix_Shape*) &$self;
+	}
+};
+%extend ShapeFix_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeFix_Shape {
+	~ShapeFix_Shape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shape\n");}
+	}
+};
+
+
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
 class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	public:
@@ -993,8 +1081,6 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 class ShapeFix {
 	public:
 		%feature("autodoc", "1");
-		ShapeFix();
-		%feature("autodoc", "1");
 		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
 		%feature("autodoc", "1");
 		void EncodeRegularity(const TopoDS_Shape &shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);
@@ -1008,73 +1094,6 @@ class ShapeFix {
 	~ShapeFix() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeFix\n");}
-	}
-};
-
-
-%nodefaultctor ShapeFix_Shape;
-class ShapeFix_Shape : public ShapeFix_Root {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_Shape();
-		%feature("autodoc", "1");
-		ShapeFix_Shape(const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Solid FixSolidTool() const;
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Shell FixShellTool() const;
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Face FixFaceTool() const;
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wire FixWireTool() const;
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Edge FixEdgeTool() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		virtual		void SetMsgRegistrator(const Handle_ShapeExtend_BasicMsgRegistrator &msgreg);
-		%feature("autodoc", "1");
-		virtual		void SetPrecision(const Standard_Real preci);
-		%feature("autodoc", "1");
-		virtual		void SetMinTolerance(const Standard_Real mintol);
-		%feature("autodoc", "1");
-		virtual		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Integer & FixSolidMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeShellMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeFaceMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeWireMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSameParameterMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixVertexPositionMode();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeFix_Shape {
-	Handle_ShapeFix_Shape GetHandle() {
-	return *(Handle_ShapeFix_Shape*) &$self;
-	}
-};
-%extend ShapeFix_Shape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeFix_Shape {
-	~ShapeFix_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shape\n");}
 	}
 };
 
@@ -1253,25 +1272,6 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 	~ShapeFix_FixSmallFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_FixSmallFace\n");}
-	}
-};
-
-
-%nodefaultctor ShapeFix_ShapeTolerance;
-class ShapeFix_ShapeTolerance {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_ShapeTolerance();
-		%feature("autodoc", "1");
-		Standard_Boolean LimitTolerance(const TopoDS_Shape &shape, const Standard_Real tmin, const Standard_Real tmax=0.0, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
-		%feature("autodoc", "1");
-		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
-
-};
-%extend ShapeFix_ShapeTolerance {
-	~ShapeFix_ShapeTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_ShapeTolerance\n");}
 	}
 };
 

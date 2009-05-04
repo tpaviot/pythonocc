@@ -200,11 +200,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Interface_CopyTool.hxx>
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_IGESData_HArray1OfIGESEntity.hxx>
-#include<IGESBasic.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<gp_XYZ.hxx>
 #include<Handle_IGESData_LineFontEntity.hxx>

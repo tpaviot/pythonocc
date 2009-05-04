@@ -121,6 +121,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>
+#include<gp_Pln.hxx>
+#include<gp_Cylinder.hxx>
+#include<gp_Cone.hxx>
+#include<gp_Sphere.hxx>
+#include<gp_Torus.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
@@ -128,15 +133,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
-#include<BRepBuilderAPI.hxx>
 #include<gp_Trsf.hxx>
 #include<gp_GTrsf.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
-#include<gp_Pln.hxx>
-#include<gp_Cylinder.hxx>
-#include<gp_Cone.hxx>
-#include<gp_Sphere.hxx>
-#include<gp_Torus.hxx>
 %}

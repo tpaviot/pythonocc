@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ChFiDS
 
+%include ChFiDS_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,18 +114,18 @@ Standard_Integer & function transformation
 %include ChFiDS_headers.i
 
 
-enum ChFiDS_ChamfMethod {
-	ChFiDS_Sym,
-	ChFiDS_TwoDist,
-	ChFiDS_DistAngle,
-	};
-
 enum ChFiDS_ErrorStatus {
 	ChFiDS_Ok,
 	ChFiDS_Error,
 	ChFiDS_WalkingFailure,
 	ChFiDS_StartsolFailure,
 	ChFiDS_TwistedSurface,
+	};
+
+enum ChFiDS_ChamfMethod {
+	ChFiDS_Sym,
+	ChFiDS_TwoDist,
+	ChFiDS_DistAngle,
 	};
 
 enum ChFiDS_State {
@@ -320,6 +322,32 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 };
 
 
+%nodefaultctor Handle_ChFiDS_HElSpine;
+class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HElSpine();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HElSpine(const Handle_ChFiDS_HElSpine &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HElSpine(const ChFiDS_HElSpine *anItem);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HElSpine const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ChFiDS_HElSpine {
+	ChFiDS_HElSpine* GetObject() {
+	return (ChFiDS_HElSpine*)$self->Access();
+	}
+};
+%extend Handle_ChFiDS_HElSpine {
+	~Handle_ChFiDS_HElSpine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HElSpine\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public Handle_TCollection_MapNode {
 	public:
@@ -424,32 +452,6 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_ChFiDS_HElSpine;
-class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine(const Handle_ChFiDS_HElSpine &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine(const ChFiDS_HElSpine *anItem);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ChFiDS_HElSpine {
-	ChFiDS_HElSpine* GetObject() {
-	return (ChFiDS_HElSpine*)$self->Access();
-	}
-};
-%extend Handle_ChFiDS_HElSpine {
-	~Handle_ChFiDS_HElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HElSpine\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ChFiDS_ListNodeOfRegularities;
 class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	public:
@@ -498,174 +500,6 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 	~Handle_ChFiDS_ListNodeOfListOfHElSpine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfHElSpine\n");}
-	}
-};
-
-
-%nodefaultctor ChFiDS_SecArray1;
-class ChFiDS_SecArray1 {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_SecArray1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		ChFiDS_SecArray1(const ChFiDS_CircSection &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const ChFiDS_CircSection &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const ChFiDS_SecArray1 & Assign(const ChFiDS_SecArray1 &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const ChFiDS_CircSection &Value);
-		%feature("autodoc", "1");
-		const ChFiDS_CircSection & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const ChFiDS_CircSection & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		ChFiDS_CircSection & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		ChFiDS_CircSection & operator()(const Standard_Integer Index);
-
-};
-%extend ChFiDS_SecArray1 {
-	~ChFiDS_SecArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SecArray1\n");}
-	}
-};
-
-
-%nodefaultctor ChFiDS_ListOfStripe;
-class ChFiDS_ListOfStripe {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe();
-		%feature("autodoc", "1");
-		void Assign(const ChFiDS_ListOfStripe &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_Stripe &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
-		%feature("autodoc", "1");
-		void Prepend(ChFiDS_ListOfStripe & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_Stripe &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
-		%feature("autodoc", "1");
-		void Append(ChFiDS_ListOfStripe & Other);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & First() const;
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(ChFiDS_ListIteratorOfListOfStripe & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
-		%feature("autodoc", "1");
-		void InsertBefore(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
-		%feature("autodoc", "1");
-		void InsertAfter(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
-
-};
-%extend ChFiDS_ListOfStripe {
-	~ChFiDS_ListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListOfStripe\n");}
-	}
-};
-
-
-%nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
-class ChFiDS_ListIteratorOfListOfHElSpine {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_ListIteratorOfListOfHElSpine();
-		%feature("autodoc", "1");
-		ChFiDS_ListIteratorOfListOfHElSpine(const ChFiDS_ListOfHElSpine &L);
-		%feature("autodoc", "1");
-		void Initialize(const ChFiDS_ListOfHElSpine &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HElSpine & Value() const;
-
-};
-%extend ChFiDS_ListIteratorOfListOfHElSpine {
-	~ChFiDS_ListIteratorOfListOfHElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfHElSpine\n");}
-	}
-};
-
-
-%nodefaultctor ChFiDS_CommonPoint;
-class ChFiDS_CommonPoint {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_CommonPoint();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void SetVertex(const TopoDS_Vertex &V);
-		%feature("autodoc", "1");
-		void SetArc(const Standard_Real Tol, const TopoDS_Edge &A, const Standard_Real Param, const TopAbs_Orientation TArc);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real Param);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		void SetVector(const gp_Vec &Vector);
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVertex() const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOnArc() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Arc() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation TransitionOnArc() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnArc() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasVector() const;
-		%feature("autodoc", "1");
-		const gp_Vec & Vector() const;
-
-};
-%extend ChFiDS_CommonPoint {
-	~ChFiDS_CommonPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_CommonPoint\n");}
 	}
 };
 
@@ -819,6 +653,303 @@ class ChFiDS_Spine : public MMgt_TShared {
 };
 
 
+%nodefaultctor ChFiDS_SecArray1;
+class ChFiDS_SecArray1 {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_SecArray1(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		ChFiDS_SecArray1(const ChFiDS_CircSection &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const ChFiDS_CircSection &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const ChFiDS_SecArray1 & Assign(const ChFiDS_SecArray1 &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const ChFiDS_CircSection &Value);
+		%feature("autodoc", "1");
+		const ChFiDS_CircSection & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const ChFiDS_CircSection & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		ChFiDS_CircSection & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		ChFiDS_CircSection & operator()(const Standard_Integer Index);
+
+};
+%extend ChFiDS_SecArray1 {
+	~ChFiDS_SecArray1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_SecArray1\n");}
+	}
+};
+
+
+%nodefaultctor ChFiDS_ListOfStripe;
+class ChFiDS_ListOfStripe {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_ListOfStripe();
+		%feature("autodoc", "1");
+		void Assign(const ChFiDS_ListOfStripe &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ChFiDS_Stripe &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
+		%feature("autodoc", "1");
+		void Prepend(ChFiDS_ListOfStripe & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_ChFiDS_Stripe &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & theIt);
+		%feature("autodoc", "1");
+		void Append(ChFiDS_ListOfStripe & Other);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & First() const;
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(ChFiDS_ListIteratorOfListOfStripe & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
+		%feature("autodoc", "1");
+		void InsertBefore(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_ChFiDS_Stripe &I, ChFiDS_ListIteratorOfListOfStripe & It);
+		%feature("autodoc", "1");
+		void InsertAfter(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
+
+};
+%extend ChFiDS_ListOfStripe {
+	~ChFiDS_ListOfStripe() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListOfStripe\n");}
+	}
+};
+
+
+%nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
+class ChFiDS_ListIteratorOfListOfHElSpine {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_ListIteratorOfListOfHElSpine();
+		%feature("autodoc", "1");
+		ChFiDS_ListIteratorOfListOfHElSpine(const ChFiDS_ListOfHElSpine &L);
+		%feature("autodoc", "1");
+		void Initialize(const ChFiDS_ListOfHElSpine &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HElSpine & Value() const;
+
+};
+%extend ChFiDS_ListIteratorOfListOfHElSpine {
+	~ChFiDS_ListIteratorOfListOfHElSpine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfHElSpine\n");}
+	}
+};
+
+
+%nodefaultctor ChFiDS_Stripe;
+class ChFiDS_Stripe : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_Stripe();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		const Handle_ChFiDS_HData & SetOfSurfData() const;
+		%feature("autodoc", "1");
+		const Handle_ChFiDS_Spine & Spine() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation OrientationOnFace1() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation OrientationOnFace2() const;
+		%feature("autodoc", "1");
+		Standard_Integer Choix() const;
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData & ChangeSetOfSurfData();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Spine & ChangeSpine();
+		%feature("autodoc", "1");
+		void OrientationOnFace1(const TopAbs_Orientation Or1);
+		%feature("autodoc", "1");
+		void OrientationOnFace2(const TopAbs_Orientation Or2);
+		%feature("autodoc", "1");
+		void Choix(const Standard_Integer C);
+		%feature("autodoc", "1");
+		void FirstParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void LastParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void ChangeFirstParameters(const Standard_Real Pdeb, const Standard_Real Pfin);
+		%feature("autodoc", "1");
+		void ChangeLastParameters(const Standard_Real Pdeb, const Standard_Real Pfin);
+		%feature("autodoc", "1");
+		Standard_Integer FirstCurve() const;
+		%feature("autodoc", "1");
+		Standard_Integer LastCurve() const;
+		%feature("autodoc", "1");
+		void ChangeFirstCurve(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ChangeLastCurve(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & FirstPCurve() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & LastPCurve() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangeFirstPCurve();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangeLastPCurve();
+		%feature("autodoc", "1");
+		TopAbs_Orientation FirstPCurveOrientation() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation LastPCurveOrientation() const;
+		%feature("autodoc", "1");
+		void FirstPCurveOrientation(const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		void LastPCurveOrientation(const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		Standard_Integer IndexFirstPointOnS1() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexFirstPointOnS2() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexLastPointOnS1() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexLastPointOnS2() const;
+		%feature("autodoc", "1");
+		void ChangeIndexFirstPointOnS1(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ChangeIndexFirstPointOnS2(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ChangeIndexLastPointOnS1(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ChangeIndexLastPointOnS2(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Parameters(const Standard_Boolean First, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetParameters(const Standard_Boolean First, const Standard_Real Pdeb, const Standard_Real Pfin);
+		%feature("autodoc", "1");
+		Standard_Integer Curve(const Standard_Boolean First) const;
+		%feature("autodoc", "1");
+		void SetCurve(const Standard_Integer Index, const Standard_Boolean First);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurve(const Standard_Boolean First) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangePCurve(const Standard_Boolean First);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation(const Standard_Integer OnS) const;
+		%feature("autodoc", "1");
+		void SetOrientation(const TopAbs_Orientation Or, const Standard_Integer OnS);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation(const Standard_Boolean First) const;
+		%feature("autodoc", "1");
+		void SetOrientation(const TopAbs_Orientation Or, const Standard_Boolean First);
+		%feature("autodoc", "1");
+		Standard_Integer IndexPoint(const Standard_Boolean First, const Standard_Integer OnS) const;
+		%feature("autodoc", "1");
+		void SetIndexPoint(const Standard_Integer Index, const Standard_Boolean First, const Standard_Integer OnS);
+		%feature("autodoc", "1");
+		Standard_Integer SolidIndex() const;
+		%feature("autodoc", "1");
+		void SetSolidIndex(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void InDS(const Standard_Boolean First, const Standard_Integer Nb=1);
+		%feature("autodoc", "1");
+		Standard_Integer IsInDS(const Standard_Boolean First) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ChFiDS_Stripe {
+	Handle_ChFiDS_Stripe GetHandle() {
+	return *(Handle_ChFiDS_Stripe*) &$self;
+	}
+};
+%extend ChFiDS_Stripe {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ChFiDS_Stripe {
+	~ChFiDS_Stripe() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_Stripe\n");}
+	}
+};
+
+
+%nodefaultctor ChFiDS_CommonPoint;
+class ChFiDS_CommonPoint {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_CommonPoint();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void SetVertex(const TopoDS_Vertex &V);
+		%feature("autodoc", "1");
+		void SetArc(const Standard_Real Tol, const TopoDS_Edge &A, const Standard_Real Param, const TopAbs_Orientation TArc);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		void SetVector(const gp_Vec &Vector);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVertex() const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Vertex() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOnArc() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Arc() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation TransitionOnArc() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnArc() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasVector() const;
+		%feature("autodoc", "1");
+		const gp_Vec & Vector() const;
+
+};
+%extend ChFiDS_CommonPoint {
+	~ChFiDS_CommonPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_CommonPoint\n");}
+	}
+};
+
+
 %nodefaultctor ChFiDS_FilSpine;
 class ChFiDS_FilSpine : public ChFiDS_Spine {
 	public:
@@ -826,6 +957,8 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		ChFiDS_FilSpine();
 		%feature("autodoc", "1");
 		ChFiDS_FilSpine(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		void Reset(const Standard_Boolean AllData=0);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real Radius, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
@@ -851,11 +984,15 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 		%feature("autodoc", "1");
 		Standard_Real Radius(const TopoDS_Edge &E) const;
 		%feature("autodoc", "1");
+		virtual		void AppendElSpine(const Handle_ChFiDS_HElSpine &Els);
+		%feature("autodoc", "1");
 		Handle_Law_Composite Law(const Handle_ChFiDS_HElSpine &Els) const;
 		%feature("autodoc", "1");
 		Handle_Law_Function & ChangeLaw(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		Standard_Real MaxRadFromSeqAndLaws() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend ChFiDS_FilSpine {
@@ -1101,51 +1238,6 @@ class ChFiDS_SurfData : public MMgt_TShared {
 	~ChFiDS_SurfData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_SurfData\n");}
-	}
-};
-
-
-%nodefaultctor ChFiDS_IndexedDataMapOfVertexListOfStripe;
-class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_IndexedDataMapOfVertexListOfStripe(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		ChFiDS_IndexedDataMapOfVertexListOfStripe & Assign(const ChFiDS_IndexedDataMapOfVertexListOfStripe &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Vertex &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Vertex &K) const;
-		%feature("autodoc", "1");
-		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex &K) const;
-		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
-
-};
-%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
-	~ChFiDS_IndexedDataMapOfVertexListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");}
 	}
 };
 
@@ -1816,135 +1908,6 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 };
 
 
-%nodefaultctor ChFiDS_Stripe;
-class ChFiDS_Stripe : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_Stripe();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		const Handle_ChFiDS_HData & SetOfSurfData() const;
-		%feature("autodoc", "1");
-		const Handle_ChFiDS_Spine & Spine() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation OrientationOnFace1() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation OrientationOnFace2() const;
-		%feature("autodoc", "1");
-		Standard_Integer Choix() const;
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData & ChangeSetOfSurfData();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Spine & ChangeSpine();
-		%feature("autodoc", "1");
-		void OrientationOnFace1(const TopAbs_Orientation Or1);
-		%feature("autodoc", "1");
-		void OrientationOnFace2(const TopAbs_Orientation Or2);
-		%feature("autodoc", "1");
-		void Choix(const Standard_Integer C);
-		%feature("autodoc", "1");
-		void FirstParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void LastParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void ChangeFirstParameters(const Standard_Real Pdeb, const Standard_Real Pfin);
-		%feature("autodoc", "1");
-		void ChangeLastParameters(const Standard_Real Pdeb, const Standard_Real Pfin);
-		%feature("autodoc", "1");
-		Standard_Integer FirstCurve() const;
-		%feature("autodoc", "1");
-		Standard_Integer LastCurve() const;
-		%feature("autodoc", "1");
-		void ChangeFirstCurve(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ChangeLastCurve(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & FirstPCurve() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & LastPCurve() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeFirstPCurve();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeLastPCurve();
-		%feature("autodoc", "1");
-		TopAbs_Orientation FirstPCurveOrientation() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation LastPCurveOrientation() const;
-		%feature("autodoc", "1");
-		void FirstPCurveOrientation(const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		void LastPCurveOrientation(const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		Standard_Integer IndexFirstPointOnS1() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexFirstPointOnS2() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexLastPointOnS1() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexLastPointOnS2() const;
-		%feature("autodoc", "1");
-		void ChangeIndexFirstPointOnS1(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ChangeIndexFirstPointOnS2(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ChangeIndexLastPointOnS1(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ChangeIndexLastPointOnS2(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Parameters(const Standard_Boolean First, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetParameters(const Standard_Boolean First, const Standard_Real Pdeb, const Standard_Real Pfin);
-		%feature("autodoc", "1");
-		Standard_Integer Curve(const Standard_Boolean First) const;
-		%feature("autodoc", "1");
-		void SetCurve(const Standard_Integer Index, const Standard_Boolean First);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurve(const Standard_Boolean First) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangePCurve(const Standard_Boolean First);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const Standard_Integer OnS) const;
-		%feature("autodoc", "1");
-		void SetOrientation(const TopAbs_Orientation Or, const Standard_Integer OnS);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const Standard_Boolean First) const;
-		%feature("autodoc", "1");
-		void SetOrientation(const TopAbs_Orientation Or, const Standard_Boolean First);
-		%feature("autodoc", "1");
-		Standard_Integer IndexPoint(const Standard_Boolean First, const Standard_Integer OnS) const;
-		%feature("autodoc", "1");
-		void SetIndexPoint(const Standard_Integer Index, const Standard_Boolean First, const Standard_Integer OnS);
-		%feature("autodoc", "1");
-		Standard_Integer SolidIndex() const;
-		%feature("autodoc", "1");
-		void SetSolidIndex(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void InDS(const Standard_Boolean First, const Standard_Integer Nb=1);
-		%feature("autodoc", "1");
-		Standard_Integer IsInDS(const Standard_Boolean First) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ChFiDS_Stripe {
-	Handle_ChFiDS_Stripe GetHandle() {
-	return *(Handle_ChFiDS_Stripe*) &$self;
-	}
-};
-%extend ChFiDS_Stripe {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ChFiDS_Stripe {
-	~ChFiDS_Stripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Stripe\n");}
-	}
-};
-
-
 %nodefaultctor ChFiDS_ListNodeOfListOfHElSpine;
 class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 	public:
@@ -1997,6 +1960,51 @@ class ChFiDS_Map {
 	~ChFiDS_Map() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_Map\n");}
+	}
+};
+
+
+%nodefaultctor ChFiDS_IndexedDataMapOfVertexListOfStripe;
+class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_IndexedDataMapOfVertexListOfStripe(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		ChFiDS_IndexedDataMapOfVertexListOfStripe & Assign(const ChFiDS_IndexedDataMapOfVertexListOfStripe &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Vertex &K, const ChFiDS_ListOfStripe &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Vertex &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const ChFiDS_ListOfStripe & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const ChFiDS_ListOfStripe & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		ChFiDS_ListOfStripe & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		ChFiDS_ListOfStripe & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Vertex &K) const;
+		%feature("autodoc", "1");
+		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex &K) const;
+		%feature("autodoc", "1");
+		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
+
+};
+%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
+	~ChFiDS_IndexedDataMapOfVertexListOfStripe() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");}
 	}
 };
 

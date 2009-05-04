@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Voxel
 
+%include Voxel_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -215,33 +217,6 @@ class Voxel_BoolDS : public Voxel_DS {
 	~Voxel_BoolDS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Voxel_BoolDS\n");}
-	}
-};
-
-
-%nodefaultctor Voxel_ColorDS;
-class Voxel_ColorDS : public Voxel_DS {
-	public:
-		%feature("autodoc", "1");
-		Voxel_ColorDS();
-		%feature("autodoc", "1");
-		Voxel_ColorDS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
-		%feature("autodoc", "1");
-		virtual		void Init(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void SetZero();
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Byte data);
-		%feature("autodoc", "1");
-		Standard_Byte Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
-
-};
-%extend Voxel_ColorDS {
-	~Voxel_ColorDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
 	}
 };
 
@@ -444,5 +419,32 @@ class Voxel_FastConverter {
 	~Voxel_FastConverter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Voxel_FastConverter\n");}
+	}
+};
+
+
+%nodefaultctor Voxel_ColorDS;
+class Voxel_ColorDS : public Voxel_DS {
+	public:
+		%feature("autodoc", "1");
+		Voxel_ColorDS();
+		%feature("autodoc", "1");
+		Voxel_ColorDS(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real x_len, const Standard_Real y_len, const Standard_Real z_len, const Standard_Integer nb_x, const Standard_Integer nb_y, const Standard_Integer nb_z);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void SetZero();
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, const Standard_Byte data);
+		%feature("autodoc", "1");
+		Standard_Byte Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
+
+};
+%extend Voxel_ColorDS {
+	~Voxel_ColorDS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
 	}
 };

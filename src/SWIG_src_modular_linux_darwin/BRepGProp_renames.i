@@ -1,0 +1,9 @@
+%rename(Domain) BRepGProp_Domain;
+%rename(UFunctionOfVinertGK) BRepGProp_UFunctionOfVinertGK;
+%rename(Vinert) BRepGProp_Vinert;
+%rename(Cinert) BRepGProp_Cinert;
+%rename(BRepGProp) BRepGProp;
+%rename(EdgeTool) BRepGProp_EdgeTool;
+%rename(Face) BRepGProp_Face;
+%rename(TFunctionOfVinertGK) BRepGProp_TFunctionOfVinertGK;
+%rename(Sinert) BRepGProp_Sinert;

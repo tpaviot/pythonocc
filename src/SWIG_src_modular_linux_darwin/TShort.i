@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TShort
 
+%include TShort_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -414,6 +416,51 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 
 
+%nodefaultctor TShort_Array2OfShortReal;
+class TShort_Array2OfShortReal {
+	public:
+		%feature("autodoc", "1");
+		TShort_Array2OfShortReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TShort_Array2OfShortReal(const Standard_ShortReal &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Standard_ShortReal &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TShort_Array2OfShortReal & Assign(const TShort_Array2OfShortReal &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_ShortReal &Value);
+		%feature("autodoc", "1");
+		const Standard_ShortReal & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TShort_Array2OfShortReal {
+	~TShort_Array2OfShortReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TShort_Array2OfShortReal\n");}
+	}
+};
+
+
 %nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
 class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 	public:
@@ -510,50 +557,5 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 	~TShort_HSequenceOfShortReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TShort_HSequenceOfShortReal\n");}
-	}
-};
-
-
-%nodefaultctor TShort_Array2OfShortReal;
-class TShort_Array2OfShortReal {
-	public:
-		%feature("autodoc", "1");
-		TShort_Array2OfShortReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TShort_Array2OfShortReal(const Standard_ShortReal &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TShort_Array2OfShortReal & Assign(const TShort_Array2OfShortReal &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_ShortReal &Value);
-		%feature("autodoc", "1");
-		const Standard_ShortReal & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_ShortReal & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TShort_Array2OfShortReal {
-	~TShort_Array2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_Array2OfShortReal\n");}
 	}
 };

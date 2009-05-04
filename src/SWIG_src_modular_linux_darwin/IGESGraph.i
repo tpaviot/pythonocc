@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESGraph
 
+%include IGESGraph_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,28 +116,28 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_IGESGraph_DrawingUnits;
-class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESGraph_DrawingSize;
+class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits();
+		Handle_IGESGraph_DrawingSize();
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits(const Handle_IGESGraph_DrawingUnits &aHandle);
+		Handle_IGESGraph_DrawingSize(const Handle_IGESGraph_DrawingSize &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits(const IGESGraph_DrawingUnits *anItem);
+		Handle_IGESGraph_DrawingSize(const IGESGraph_DrawingSize *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingUnits const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESGraph_DrawingSize const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGraph_DrawingUnits {
-	IGESGraph_DrawingUnits* GetObject() {
-	return (IGESGraph_DrawingUnits*)$self->Access();
+%extend Handle_IGESGraph_DrawingSize {
+	IGESGraph_DrawingSize* GetObject() {
+	return (IGESGraph_DrawingSize*)$self->Access();
 	}
 };
-%extend Handle_IGESGraph_DrawingUnits {
-	~Handle_IGESGraph_DrawingUnits() {
+%extend Handle_IGESGraph_DrawingSize {
+	~Handle_IGESGraph_DrawingSize() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");}
 	}
 };
 
@@ -188,32 +190,6 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	~Handle_IGESGraph_Pick() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Pick\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESGraph_DrawingSize;
-class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize();
-		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize(const Handle_IGESGraph_DrawingSize &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize(const IGESGraph_DrawingSize *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_DrawingSize const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGraph_DrawingSize {
-	IGESGraph_DrawingSize* GetObject() {
-	return (IGESGraph_DrawingSize*)$self->Access();
-	}
-};
-%extend Handle_IGESGraph_DrawingSize {
-	~Handle_IGESGraph_DrawingSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");}
 	}
 };
 
@@ -318,6 +294,32 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 	~Handle_IGESGraph_Protocol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Protocol\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESGraph_DrawingUnits;
+class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits();
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits(const Handle_IGESGraph_DrawingUnits &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits(const IGESGraph_DrawingUnits *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGraph_DrawingUnits {
+	IGESGraph_DrawingUnits* GetObject() {
+	return (IGESGraph_DrawingUnits*)$self->Access();
+	}
+};
+%extend Handle_IGESGraph_DrawingUnits {
+	~Handle_IGESGraph_DrawingUnits() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");}
 	}
 };
 
@@ -660,6 +662,37 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 };
 
 
+%nodefaultctor IGESGraph_ToolDrawingUnits;
+class IGESGraph_ToolDrawingUnits {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_ToolDrawingUnits();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGraph_DrawingUnits &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGraph_DrawingUnits &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGraph_DrawingUnits &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingUnits &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingUnits &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGraph_DrawingUnits &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGraph_DrawingUnits &entfrom, const Handle_IGESGraph_DrawingUnits &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGraph_DrawingUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESGraph_ToolDrawingUnits {
+	~IGESGraph_ToolDrawingUnits() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");}
+	}
+};
+
+
 %nodefaultctor IGESGraph_ToolIntercharacterSpacing;
 class IGESGraph_ToolIntercharacterSpacing {
 	public:
@@ -790,6 +823,41 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 	~IGESGraph_DrawingUnits() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingUnits\n");}
+	}
+};
+
+
+%nodefaultctor IGESGraph_HighLight;
+class IGESGraph_HighLight : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_HighLight();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbProps, const Standard_Integer aHighLightStatus);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer HighLightStatus() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHighLighted() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_HighLight {
+	Handle_IGESGraph_HighLight GetHandle() {
+	return *(Handle_IGESGraph_HighLight*) &$self;
+	}
+};
+%extend IGESGraph_HighLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGraph_HighLight {
+	~IGESGraph_HighLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGraph_HighLight\n");}
 	}
 };
 
@@ -1002,41 +1070,6 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 
 
-%nodefaultctor IGESGraph_HighLight;
-class IGESGraph_HighLight : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_HighLight();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Integer aHighLightStatus);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer HighLightStatus() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHighLighted() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_HighLight {
-	Handle_IGESGraph_HighLight GetHandle() {
-	return *(Handle_IGESGraph_HighLight*) &$self;
-	}
-};
-%extend IGESGraph_HighLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGraph_HighLight {
-	~IGESGraph_HighLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_HighLight\n");}
-	}
-};
-
-
 %nodefaultctor IGESGraph_IntercharacterSpacing;
 class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 	public:
@@ -1139,8 +1172,6 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 %nodefaultctor IGESGraph;
 class IGESGraph {
 	public:
-		%feature("autodoc", "1");
-		IGESGraph();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1252,41 +1283,6 @@ class IGESGraph_ToolLineFontDefTemplate {
 };
 
 
-%nodefaultctor IGESGraph_DefinitionLevel;
-class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_DefinitionLevel();
-		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfInteger &allLevelNumbers);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbLevelNumbers() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LevelNumber(const Standard_Integer LevelIndex) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_DefinitionLevel {
-	Handle_IGESGraph_DefinitionLevel GetHandle() {
-	return *(Handle_IGESGraph_DefinitionLevel*) &$self;
-	}
-};
-%extend IGESGraph_DefinitionLevel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGraph_DefinitionLevel {
-	~IGESGraph_DefinitionLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_DefinitionLevel\n");}
-	}
-};
-
-
 %nodefaultctor IGESGraph_DrawingSize;
 class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 	public:
@@ -1318,37 +1314,6 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 	~IGESGraph_DrawingSize() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingSize\n");}
-	}
-};
-
-
-%nodefaultctor IGESGraph_ToolDrawingUnits;
-class IGESGraph_ToolDrawingUnits {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_ToolDrawingUnits();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_DrawingUnits &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_DrawingUnits &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_DrawingUnits &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingUnits &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingUnits &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_DrawingUnits &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_DrawingUnits &entfrom, const Handle_IGESGraph_DrawingUnits &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_DrawingUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESGraph_ToolDrawingUnits {
-	~IGESGraph_ToolDrawingUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");}
 	}
 };
 
@@ -1554,6 +1519,41 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 };
 
 
+%nodefaultctor IGESGraph_DefinitionLevel;
+class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_DefinitionLevel();
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfInteger &allLevelNumbers);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbLevelNumbers() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LevelNumber(const Standard_Integer LevelIndex) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_DefinitionLevel {
+	Handle_IGESGraph_DefinitionLevel GetHandle() {
+	return *(Handle_IGESGraph_DefinitionLevel*) &$self;
+	}
+};
+%extend IGESGraph_DefinitionLevel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGraph_DefinitionLevel {
+	~IGESGraph_DefinitionLevel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGraph_DefinitionLevel\n");}
+	}
+};
+
+
 %nodefaultctor IGESGraph_TextFontDef;
 class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 	public:
@@ -1673,6 +1673,70 @@ class IGESGraph_ToolDrawingSize {
 	~IGESGraph_ToolDrawingSize() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");}
+	}
+};
+
+
+%nodefaultctor IGESGraph_ToolLineFontPredefined;
+class IGESGraph_ToolLineFontPredefined {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_ToolLineFontPredefined();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGraph_LineFontPredefined &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGraph_LineFontPredefined &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_LineFontPredefined &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGraph_LineFontPredefined &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGraph_LineFontPredefined &entfrom, const Handle_IGESGraph_LineFontPredefined &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGraph_LineFontPredefined &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESGraph_ToolLineFontPredefined {
+	~IGESGraph_ToolLineFontPredefined() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");}
+	}
+};
+
+
+%nodefaultctor IGESGraph_LineFontPredefined;
+class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_LineFontPredefined();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbProps, const Standard_Integer aLineFontPatternCode);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer LineFontPatternCode() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_LineFontPredefined {
+	Handle_IGESGraph_LineFontPredefined GetHandle() {
+	return *(Handle_IGESGraph_LineFontPredefined*) &$self;
+	}
+};
+%extend IGESGraph_LineFontPredefined {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGraph_LineFontPredefined {
+	~IGESGraph_LineFontPredefined() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontPredefined\n");}
 	}
 };
 
@@ -1821,37 +1885,6 @@ class IGESGraph_Array1OfColor {
 };
 
 
-%nodefaultctor IGESGraph_ToolLineFontPredefined;
-class IGESGraph_ToolLineFontPredefined {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_ToolLineFontPredefined();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_LineFontPredefined &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_LineFontPredefined &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_LineFontPredefined &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_LineFontPredefined &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_LineFontPredefined &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_LineFontPredefined &entfrom, const Handle_IGESGraph_LineFontPredefined &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_LineFontPredefined &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESGraph_ToolLineFontPredefined {
-	~IGESGraph_ToolLineFontPredefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");}
-	}
-};
-
-
 %nodefaultctor IGESGraph_HArray1OfColor;
 class IGESGraph_HArray1OfColor : public MMgt_TShared {
 	public:
@@ -1932,39 +1965,6 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 	~IGESGraph_LineFontDefPattern() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");}
-	}
-};
-
-
-%nodefaultctor IGESGraph_LineFontPredefined;
-class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_LineFontPredefined();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Integer aLineFontPatternCode);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer LineFontPatternCode() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_LineFontPredefined {
-	Handle_IGESGraph_LineFontPredefined GetHandle() {
-	return *(Handle_IGESGraph_LineFontPredefined*) &$self;
-	}
-};
-%extend IGESGraph_LineFontPredefined {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGraph_LineFontPredefined {
-	~IGESGraph_LineFontPredefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontPredefined\n");}
 	}
 };
 

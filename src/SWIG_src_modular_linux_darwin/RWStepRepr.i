@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepRepr
 
+%include RWStepRepr_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -301,6 +303,27 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 };
 
 
+%nodefaultctor RWStepRepr_RWShapeAspect;
+class RWStepRepr_RWShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		RWStepRepr_RWShapeAspect();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspect &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspect &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepRepr_RWShapeAspect {
+	~RWStepRepr_RWShapeAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");}
+	}
+};
+
+
 %nodefaultctor RWStepRepr_RWRepresentationContext;
 class RWStepRepr_RWRepresentationContext {
 	public:
@@ -379,25 +402,6 @@ class RWStepRepr_RWMakeFromUsageOption {
 	~RWStepRepr_RWMakeFromUsageOption() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMakeFromUsageOption\n");}
-	}
-};
-
-
-%nodefaultctor RWStepRepr_RWParametricRepresentationContext;
-class RWStepRepr_RWParametricRepresentationContext {
-	public:
-		%feature("autodoc", "1");
-		RWStepRepr_RWParametricRepresentationContext();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
-
-};
-%extend RWStepRepr_RWParametricRepresentationContext {
-	~RWStepRepr_RWParametricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWParametricRepresentationContext\n");}
 	}
 };
 
@@ -501,6 +505,25 @@ class RWStepRepr_RWMappedItem {
 	~RWStepRepr_RWMappedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMappedItem\n");}
+	}
+};
+
+
+%nodefaultctor RWStepRepr_RWParametricRepresentationContext;
+class RWStepRepr_RWParametricRepresentationContext {
+	public:
+		%feature("autodoc", "1");
+		RWStepRepr_RWParametricRepresentationContext();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
+
+};
+%extend RWStepRepr_RWParametricRepresentationContext {
+	~RWStepRepr_RWParametricRepresentationContext() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWParametricRepresentationContext\n");}
 	}
 };
 
@@ -791,27 +814,6 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 	~RWStepRepr_RWGlobalUncertaintyAssignedContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUncertaintyAssignedContext\n");}
-	}
-};
-
-
-%nodefaultctor RWStepRepr_RWShapeAspect;
-class RWStepRepr_RWShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		RWStepRepr_RWShapeAspect();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspect &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspect &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepRepr_RWShapeAspect {
-	~RWStepRepr_RWShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");}
 	}
 };
 

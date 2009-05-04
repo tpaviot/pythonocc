@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepClass3d
 
+%include BRepClass3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,29 +142,6 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 };
 
 
-%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
-class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter();
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Value() const;
-
-};
-%extend BRepClass3d_DataMapIteratorOfMapOfInter {
-	~BRepClass3d_DataMapIteratorOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
-	}
-};
-
-
 %nodefaultctor BRepClass3d_SClassifier;
 class BRepClass3d_SClassifier {
 	public:
@@ -265,6 +244,64 @@ class BRepClass3d_SolidExplorer {
 };
 
 
+%nodefaultctor BRepClass3d_Intersector3d;
+class BRepClass3d_Intersector3d {
+	public:
+		%feature("autodoc", "1");
+		BRepClass3d_Intersector3d();
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin &L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasAPoint() const;
+		%feature("autodoc", "1");
+		Standard_Real UParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real VParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real WParameter() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Pnt() const;
+		%feature("autodoc", "1");
+		IntCurveSurface_TransitionOnCurve Transition() const;
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+
+};
+%extend BRepClass3d_Intersector3d {
+	~BRepClass3d_Intersector3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
+	}
+};
+
+
+%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
+class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter();
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Address & Value() const;
+
+};
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	~BRepClass3d_DataMapIteratorOfMapOfInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
+	}
+};
+
+
 %nodefaultctor BRepClass3d_SolidClassifier;
 class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 	public:
@@ -323,33 +360,6 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 };
 
 
-%nodefaultctor BRepClass3d_SolidPassiveClassifier;
-class BRepClass3d_SolidPassiveClassifier {
-	public:
-		%feature("autodoc", "1");
-		BRepClass3d_SolidPassiveClassifier();
-		%feature("autodoc", "1");
-		void Reset(const gp_Lin &L, const Standard_Real P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Compare(const TopoDS_Face &F, const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasIntersection() const;
-		%feature("autodoc", "1");
-		BRepClass3d_Intersector3d & Intersector();
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-
-};
-%extend BRepClass3d_SolidPassiveClassifier {
-	~BRepClass3d_SolidPassiveClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
-	}
-};
-
-
 %nodefaultctor BRepClass3d_MapOfInter;
 class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 	public:
@@ -385,36 +395,28 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BRepClass3d_Intersector3d;
-class BRepClass3d_Intersector3d {
+%nodefaultctor BRepClass3d_SolidPassiveClassifier;
+class BRepClass3d_SolidPassiveClassifier {
 	public:
 		%feature("autodoc", "1");
-		BRepClass3d_Intersector3d();
+		BRepClass3d_SolidPassiveClassifier();
 		%feature("autodoc", "1");
-		void Perform(const gp_Lin &L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face &F);
+		void Reset(const gp_Lin &L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		void Compare(const TopoDS_Face &F, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
-		Standard_Boolean HasAPoint() const;
+		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
-		Standard_Real UParameter() const;
+		Standard_Boolean HasIntersection() const;
 		%feature("autodoc", "1");
-		Standard_Real VParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real WParameter() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
-		%feature("autodoc", "1");
-		IntCurveSurface_TransitionOnCurve Transition() const;
+		BRepClass3d_Intersector3d & Intersector();
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
 
 };
-%extend BRepClass3d_Intersector3d {
-	~BRepClass3d_Intersector3d() {
+%extend BRepClass3d_SolidPassiveClassifier {
+	~BRepClass3d_SolidPassiveClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
 	}
 };

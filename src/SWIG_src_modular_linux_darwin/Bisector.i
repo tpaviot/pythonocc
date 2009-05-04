@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Bisector
 
+%include Bisector_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -537,6 +539,49 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 
 
+%nodefaultctor Bisector_PointOnBis;
+class Bisector_PointOnBis {
+	public:
+		%feature("autodoc", "1");
+		Bisector_PointOnBis();
+		%feature("autodoc", "1");
+		Bisector_PointOnBis(const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamBis, const Standard_Real Distance, const gp_Pnt2d &Point);
+		%feature("autodoc", "1");
+		void ParamOnC1(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void ParamOnC2(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void ParamOnBis(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void Distance(const Standard_Real Distance);
+		%feature("autodoc", "1");
+		void IsInfinite(const Standard_Boolean Infinite);
+		%feature("autodoc", "1");
+		void Point(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		Standard_Real ParamOnC1() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnC2() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnBis() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfinite() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%extend Bisector_PointOnBis {
+	~Bisector_PointOnBis() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bisector_PointOnBis\n");}
+	}
+};
+
+
 %nodefaultctor Bisector_Bisec;
 class Bisector_Bisec {
 	public:
@@ -567,8 +612,6 @@ class Bisector_Bisec {
 %nodefaultctor Bisector;
 class Bisector {
 	public:
-		%feature("autodoc", "1");
-		Bisector();
 		%feature("autodoc", "1");
 		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
 
@@ -617,49 +660,6 @@ class Bisector_Inter : public IntRes2d_Intersection {
 	~Bisector_Inter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Bisector_Inter\n");}
-	}
-};
-
-
-%nodefaultctor Bisector_PointOnBis;
-class Bisector_PointOnBis {
-	public:
-		%feature("autodoc", "1");
-		Bisector_PointOnBis();
-		%feature("autodoc", "1");
-		Bisector_PointOnBis(const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamBis, const Standard_Real Distance, const gp_Pnt2d &Point);
-		%feature("autodoc", "1");
-		void ParamOnC1(const Standard_Real Param);
-		%feature("autodoc", "1");
-		void ParamOnC2(const Standard_Real Param);
-		%feature("autodoc", "1");
-		void ParamOnBis(const Standard_Real Param);
-		%feature("autodoc", "1");
-		void Distance(const Standard_Real Distance);
-		%feature("autodoc", "1");
-		void IsInfinite(const Standard_Boolean Infinite);
-		%feature("autodoc", "1");
-		void Point(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		Standard_Real ParamOnC1() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnC2() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnBis() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInfinite() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend Bisector_PointOnBis {
-	~Bisector_PointOnBis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bisector_PointOnBis\n");}
 	}
 };
 

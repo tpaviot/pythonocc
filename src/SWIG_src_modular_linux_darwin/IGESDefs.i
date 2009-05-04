@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESDefs
 
+%include IGESDefs_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -847,72 +849,9 @@ class IGESDefs_ToolAttributeTable {
 };
 
 
-%nodefaultctor IGESDefs_AttributeDef;
-class IGESDefs_AttributeDef : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_AttributeDef();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aListType, const Handle_TColStd_HArray1OfInteger &attrTypes, const Handle_TColStd_HArray1OfInteger &attrValueDataTypes, const Handle_TColStd_HArray1OfInteger &attrValueCounts, const Handle_TColStd_HArray1OfTransient &attrValues, const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &attrValuePointers);
-		%feature("autodoc", "1");
-		Standard_Boolean HasTableName() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString TableName() const;
-		%feature("autodoc", "1");
-		Standard_Integer ListType() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes() const;
-		%feature("autodoc", "1");
-		Standard_Integer AttributeType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer AttributeValueDataType(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer AttributeValueCount(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasValues() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasTextDisplay() const;
-		%feature("autodoc", "1");
-		Handle_IGESGraph_TextDisplayTemplate AttributeTextDisplay(const Standard_Integer AttrNum, const Standard_Integer PointerNum) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient AttributeList(const Standard_Integer AttrNum) const;
-		%feature("autodoc", "1");
-		Standard_Integer AttributeAsInteger(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
-		%feature("autodoc", "1");
-		Standard_Real AttributeAsReal(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString AttributeAsString(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity AttributeAsEntity(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AttributeAsLogical(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDefs_AttributeDef {
-	Handle_IGESDefs_AttributeDef GetHandle() {
-	return *(Handle_IGESDefs_AttributeDef*) &$self;
-	}
-};
-%extend IGESDefs_AttributeDef {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESDefs_AttributeDef {
-	~IGESDefs_AttributeDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeDef\n");}
-	}
-};
-
-
 %nodefaultctor IGESDefs;
 class IGESDefs {
 	public:
-		%feature("autodoc", "1");
-		IGESDefs();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1057,6 +996,67 @@ class IGESDefs_ToolMacroDef {
 	~IGESDefs_ToolMacroDef() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_AttributeDef;
+class IGESDefs_AttributeDef : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_AttributeDef();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Integer aListType, const Handle_TColStd_HArray1OfInteger &attrTypes, const Handle_TColStd_HArray1OfInteger &attrValueDataTypes, const Handle_TColStd_HArray1OfInteger &attrValueCounts, const Handle_TColStd_HArray1OfTransient &attrValues, const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &attrValuePointers);
+		%feature("autodoc", "1");
+		Standard_Boolean HasTableName() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString TableName() const;
+		%feature("autodoc", "1");
+		Standard_Integer ListType() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbAttributes() const;
+		%feature("autodoc", "1");
+		Standard_Integer AttributeType(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer AttributeValueDataType(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer AttributeValueCount(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasValues() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasTextDisplay() const;
+		%feature("autodoc", "1");
+		Handle_IGESGraph_TextDisplayTemplate AttributeTextDisplay(const Standard_Integer AttrNum, const Standard_Integer PointerNum) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient AttributeList(const Standard_Integer AttrNum) const;
+		%feature("autodoc", "1");
+		Standard_Integer AttributeAsInteger(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
+		%feature("autodoc", "1");
+		Standard_Real AttributeAsReal(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString AttributeAsString(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity AttributeAsEntity(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AttributeAsLogical(const Standard_Integer AttrNum, const Standard_Integer ValueNum) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDefs_AttributeDef {
+	Handle_IGESDefs_AttributeDef GetHandle() {
+	return *(Handle_IGESDefs_AttributeDef*) &$self;
+	}
+};
+%extend IGESDefs_AttributeDef {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESDefs_AttributeDef {
+	~IGESDefs_AttributeDef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeDef\n");}
 	}
 };
 

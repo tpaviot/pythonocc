@@ -70,6 +70,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_SelectBasics_EntityOwner.hxx>
 #include<gp_Circ2d.hxx>
 #include<SelectBasics_ListOfBox2d.hxx>
-#include<gp_Ax2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Ax2d.hxx>
 %}

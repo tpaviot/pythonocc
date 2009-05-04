@@ -204,9 +204,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<XmlDrivers.hxx>
-#include<Standard_GUID.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
-#include<TCollection_ExtendedString.hxx>
+#include<Standard_GUID.hxx>
 %}

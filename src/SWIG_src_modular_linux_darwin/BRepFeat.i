@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepFeat
 
+%include BRepFeat_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -120,6 +122,12 @@ enum BRepFeat_PerfSelection {
 	BRepFeat_SelectionShU,
 	};
 
+enum BRepFeat_Status {
+	BRepFeat_NoError,
+	BRepFeat_InvalidPlacement,
+	BRepFeat_HoleTooLong,
+	};
+
 enum BRepFeat_StatusError {
 	BRepFeat_OK,
 	BRepFeat_BadDirect,
@@ -151,12 +159,35 @@ enum BRepFeat_StatusError {
 	BRepFeat_NullToolU,
 	};
 
-enum BRepFeat_Status {
-	BRepFeat_NoError,
-	BRepFeat_InvalidPlacement,
-	BRepFeat_HoleTooLong,
-	};
 
+
+%nodefaultctor BRepFeat;
+class BRepFeat {
+	public:
+		%feature("autodoc", "1");
+		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
+		%feature("autodoc", "1");
+		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
+		%feature("autodoc", "1");
+		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
+		%feature("autodoc", "1");
+		void FaceUntil(const TopoDS_Shape &S, TopoDS_Face & F);
+		%feature("autodoc", "1");
+		TopoDS_Solid Tool(const TopoDS_Shape &SRef, const TopoDS_Face &Fac, const TopAbs_Orientation Orf);
+		%feature("autodoc", "1");
+		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
+
+};
+%extend BRepFeat {
+	~BRepFeat() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
+	}
+};
 
 
 %nodefaultctor BRepFeat_Builder;
@@ -592,36 +623,5 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 	~BRepFeat_MakeRevol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevol\n");}
-	}
-};
-
-
-%nodefaultctor BRepFeat;
-class BRepFeat {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat();
-		%feature("autodoc", "1");
-		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
-		%feature("autodoc", "1");
-		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
-		%feature("autodoc", "1");
-		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
-		%feature("autodoc", "1");
-		void FaceUntil(const TopoDS_Shape &S, TopoDS_Face & F);
-		%feature("autodoc", "1");
-		TopoDS_Solid Tool(const TopoDS_Shape &SRef, const TopoDS_Face &Fac, const TopAbs_Orientation Orf);
-		%feature("autodoc", "1");
-		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
-
-};
-%extend BRepFeat {
-	~BRepFeat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
 	}
 };

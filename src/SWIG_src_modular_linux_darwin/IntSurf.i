@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntSurf
 
+%include IntSurf_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -153,32 +155,6 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
-class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S();
-		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S(const Handle_IntSurf_ListNodeOfListOfPntOn2S &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
-		%feature("autodoc", "1");
-		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
-	IntSurf_ListNodeOfListOfPntOn2S* GetObject() {
-	return (IntSurf_ListNodeOfListOfPntOn2S*)$self->Access();
-	}
-};
-%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
-	~Handle_IntSurf_ListNodeOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_ListNodeOfListOfPntOn2S\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
 class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TCollection_SeqNode {
 	public:
@@ -201,6 +177,32 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 	~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
+class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S();
+		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S(const Handle_IntSurf_ListNodeOfListOfPntOn2S &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
+		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
+	IntSurf_ListNodeOfListOfPntOn2S* GetObject() {
+	return (IntSurf_ListNodeOfListOfPntOn2S*)$self->Access();
+	}
+};
+%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
+	~Handle_IntSurf_ListNodeOfListOfPntOn2S() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_ListNodeOfListOfPntOn2S\n");}
 	}
 };
 
@@ -283,40 +285,9 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 };
 
 
-%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
-class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	~IntSurf_ListNodeOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");}
-	}
-};
-
-
 %nodefaultctor IntSurf;
 class IntSurf {
 	public:
-		%feature("autodoc", "1");
-		IntSurf();
 		%feature("autodoc", "1");
 		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
@@ -358,35 +329,6 @@ class IntSurf_Transition {
 	~IntSurf_Transition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntSurf_Transition\n");}
-	}
-};
-
-
-%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
-class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	~IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");}
 	}
 };
 
@@ -434,6 +376,56 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 	~IntSurf_LineOn2S() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntSurf_LineOn2S\n");}
+	}
+};
+
+
+%nodefaultctor IntSurf_Couple;
+class IntSurf_Couple {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_Couple();
+		%feature("autodoc", "1");
+		IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
+		%feature("autodoc", "1");
+		Standard_Integer First() const;
+		%feature("autodoc", "1");
+		Standard_Integer Second() const;
+
+};
+%extend IntSurf_Couple {
+	~IntSurf_Couple() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntSurf_Couple\n");}
+	}
+};
+
+
+%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
+class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntSurf_PntOn2S & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	~IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");}
 	}
 };
 
@@ -544,27 +536,6 @@ class IntSurf_ListOfPntOn2S {
 	~IntSurf_ListOfPntOn2S() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntSurf_ListOfPntOn2S\n");}
-	}
-};
-
-
-%nodefaultctor IntSurf_Couple;
-class IntSurf_Couple {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_Couple();
-		%feature("autodoc", "1");
-		IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
-		%feature("autodoc", "1");
-		Standard_Integer First() const;
-		%feature("autodoc", "1");
-		Standard_Integer Second() const;
-
-};
-%extend IntSurf_Couple {
-	~IntSurf_Couple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_Couple\n");}
 	}
 };
 
@@ -903,8 +874,6 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 class IntSurf_InteriorPointTool {
 	public:
 		%feature("autodoc", "1");
-		IntSurf_InteriorPointTool();
-		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
 		%feature("autodoc", "1");
 		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -918,6 +887,35 @@ class IntSurf_InteriorPointTool {
 	~IntSurf_InteriorPointTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntSurf_InteriorPointTool\n");}
+	}
+};
+
+
+%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
+class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntSurf_PntOn2S & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	~IntSurf_ListNodeOfListOfPntOn2S() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");}
 	}
 };
 
@@ -980,8 +978,6 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 class IntSurf_PathPointTool {
 	public:
 		%feature("autodoc", "1");
-		IntSurf_PathPointTool();
-		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
 		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -1010,8 +1006,6 @@ class IntSurf_PathPointTool {
 %nodefaultctor IntSurf_QuadricTool;
 class IntSurf_QuadricTool {
 	public:
-		%feature("autodoc", "1");
-		IntSurf_QuadricTool();
 		%feature("autodoc", "1");
 		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 		%feature("autodoc", "1");

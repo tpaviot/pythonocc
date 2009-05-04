@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dAPI
 
+%include Geom2dAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,6 +116,31 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor Geom2dAPI_PointsToBSpline;
+class Geom2dAPI_PointsToBSpline {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline();
+		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		Geom2dAPI_PointsToBSpline(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		void Init(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BSplineCurve & Curve() const;
+
+};
+%extend Geom2dAPI_PointsToBSpline {
+	~Geom2dAPI_PointsToBSpline() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
+	}
+};
+
+
 %nodefaultctor Geom2dAPI_InterCurveCurve;
 class Geom2dAPI_InterCurveCurve {
 	public:
@@ -149,33 +176,6 @@ class Geom2dAPI_InterCurveCurve {
 };
 
 
-%nodefaultctor Geom2dAPI_Interpolate;
-class Geom2dAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend Geom2dAPI_Interpolate {
-	~Geom2dAPI_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dAPI_ExtremaCurveCurve;
 class Geom2dAPI_ExtremaCurveCurve {
 	public:
@@ -203,6 +203,33 @@ class Geom2dAPI_ExtremaCurveCurve {
 	~Geom2dAPI_ExtremaCurveCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dAPI_Interpolate;
+class Geom2dAPI_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
+		%feature("autodoc", "1");
+		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend Geom2dAPI_Interpolate {
+	~Geom2dAPI_Interpolate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
 	}
 };
 
@@ -244,30 +271,5 @@ class Geom2dAPI_ProjectPointOnCurve {
 	~Geom2dAPI_ProjectPointOnCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dAPI_PointsToBSpline;
-class Geom2dAPI_PointsToBSpline {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline();
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void Init(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BSplineCurve & Curve() const;
-
-};
-%extend Geom2dAPI_PointsToBSpline {
-	~Geom2dAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
 	}
 };

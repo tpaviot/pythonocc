@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GC
 
+%include GC_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -118,8 +120,6 @@ Standard_Integer & function transformation
 class GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_Root();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
@@ -185,37 +185,6 @@ class GC_MakeConicalSurface : public GC_Root {
 	~GC_MakeConicalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GC_MakeConicalSurface\n");}
-	}
-};
-
-
-%nodefaultctor GC_MakeCylindricalSurface;
-class GC_MakeCylindricalSurface : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &C);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax1 &Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Circ &Circ);
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Operator() const;
-
-};
-%extend GC_MakeCylindricalSurface {
-	~GC_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
 	}
 };
 
@@ -593,5 +562,36 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 	~GC_MakeTrimmedCylinder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCylinder\n");}
+	}
+};
+
+
+%nodefaultctor GC_MakeCylindricalSurface;
+class GC_MakeCylindricalSurface : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &C);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Ax1 &Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Circ &Circ);
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Operator() const;
+
+};
+%extend GC_MakeCylindricalSurface {
+	~GC_MakeCylindricalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
 	}
 };

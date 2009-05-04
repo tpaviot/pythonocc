@@ -154,13 +154,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColStd_SequenceOfAsciiString.hxx>
+#include<Handle_Interface_FileReaderData.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_TColStd_HSequenceOfAsciiString.hxx>
+#include<TColStd_SequenceOfAsciiString.hxx>
+#include<Handle_Interface_Check.hxx>
 #include<Handle_Interface_Protocol.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Interface_Graph.hxx>
-#include<Handle_Interface_Check.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_CopyTool.hxx>
@@ -168,8 +168,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_Interface_FileReaderData.hxx>
 #include<Interface_CheckIterator.hxx>
-#include<StepData.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
+#include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 %}

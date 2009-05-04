@@ -53,7 +53,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<XmlMDocStd.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>

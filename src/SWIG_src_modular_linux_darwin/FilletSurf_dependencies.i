@@ -130,5 +130,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
-%import ChFi3d.i
 %import Standard.i
+%import ChFi3d.i

@@ -53,7 +53,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<gp_Pnt.hxx>
 #include<gp_Ax2d.hxx>
 #include<gp_Ax22d.hxx>
 #include<gp_Pnt2d.hxx>
@@ -61,6 +60,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Lin2d.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Ax1.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Ax2.hxx>

@@ -231,6 +231,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import Standard.i
+%import TCollection.i
 %import Quantity.i

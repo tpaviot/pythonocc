@@ -1,0 +1,15 @@
+%rename(LastEdgeDegenerated) ChFi2d_LastEdgeDegenerated;
+%rename(FirstEdgeDegenerated) ChFi2d_FirstEdgeDegenerated;
+%rename(NoFace) ChFi2d_NoFace;
+%rename(ChFi2d) ChFi2d;
+%rename(NotPlanar) ChFi2d_NotPlanar;
+%rename(BothEdgesDegenerated) ChFi2d_BothEdgesDegenerated;
+%rename(TangencyError) ChFi2d_TangencyError;
+%rename(Builder) ChFi2d_Builder;
+%rename(ConnexionError) ChFi2d_ConnexionError;
+%rename(NotAuthorized) ChFi2d_NotAuthorized;
+%rename(Ready) ChFi2d_Ready;
+%rename(ParametersError) ChFi2d_ParametersError;
+%rename(InitialisationError) ChFi2d_InitialisationError;
+%rename(ComputationError) ChFi2d_ComputationError;
+%rename(IsDone) ChFi2d_IsDone;

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GProp
 
+%include GProp_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -425,8 +427,6 @@ class GProp_VelGProps : public GProp_GProps {
 %nodefaultctor GProp;
 class GProp {
 	public:
-		%feature("autodoc", "1");
-		GProp();
 		%feature("autodoc", "1");
 		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
 

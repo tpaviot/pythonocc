@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TDF
 
+%include TDF_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -168,6 +170,32 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_TDF_DeltaOnForget;
+class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget();
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget(const Handle_TDF_DeltaOnForget &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget(const TDF_DeltaOnForget *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_DeltaOnForget {
+	TDF_DeltaOnForget* GetObject() {
+	return (TDF_DeltaOnForget*)$self->Access();
+	}
+};
+%extend Handle_TDF_DeltaOnForget {
+	~Handle_TDF_DeltaOnForget() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnForget\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDF_StdMapNodeOfLabelMap;
 class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	public:
@@ -298,6 +326,32 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 };
 
 
+%nodefaultctor Handle_TDF_DataSet;
+class Handle_TDF_DataSet : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet();
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet(const Handle_TDF_DataSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet(const TDF_DataSet *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_DataSet {
+	TDF_DataSet* GetObject() {
+	return (TDF_DataSet*)$self->Access();
+	}
+};
+%extend Handle_TDF_DataSet {
+	~Handle_TDF_DataSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataSet\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDF_ListNodeOfDeltaList;
 class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	public:
@@ -320,32 +374,6 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	~Handle_TDF_ListNodeOfDeltaList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfDeltaList\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
-class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDF_SequenceNodeOfAttributeSequence();
-		%feature("autodoc", "1");
-		Handle_TDF_SequenceNodeOfAttributeSequence(const Handle_TDF_SequenceNodeOfAttributeSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_SequenceNodeOfAttributeSequence(const TDF_SequenceNodeOfAttributeSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_SequenceNodeOfAttributeSequence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_SequenceNodeOfAttributeSequence {
-	TDF_SequenceNodeOfAttributeSequence* GetObject() {
-	return (TDF_SequenceNodeOfAttributeSequence*)$self->Access();
-	}
-};
-%extend Handle_TDF_SequenceNodeOfAttributeSequence {
-	~Handle_TDF_SequenceNodeOfAttributeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfAttributeSequence\n");}
 	}
 };
 
@@ -402,32 +430,6 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TDF_DataSet;
-class Handle_TDF_DataSet : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet();
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet(const Handle_TDF_DataSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet(const TDF_DataSet *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_DataSet {
-	TDF_DataSet* GetObject() {
-	return (TDF_DataSet*)$self->Access();
-	}
-};
-%extend Handle_TDF_DataSet {
-	~Handle_TDF_DataSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataSet\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDF_DeltaOnModification;
 class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	public:
@@ -476,32 +478,6 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	~Handle_TDF_Delta() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Delta\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TDF_ListNodeOfLabelList;
-class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfLabelList();
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfLabelList(const Handle_TDF_ListNodeOfLabelList &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfLabelList(const TDF_ListNodeOfLabelList *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_ListNodeOfLabelList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_ListNodeOfLabelList {
-	TDF_ListNodeOfLabelList* GetObject() {
-	return (TDF_ListNodeOfLabelList*)$self->Access();
-	}
-};
-%extend Handle_TDF_ListNodeOfLabelList {
-	~Handle_TDF_ListNodeOfLabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfLabelList\n");}
 	}
 };
 
@@ -580,6 +556,32 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	~Handle_TDF_DefaultDeltaOnRemoval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DefaultDeltaOnRemoval\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
+class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence();
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence(const Handle_TDF_SequenceNodeOfAttributeSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence(const TDF_SequenceNodeOfAttributeSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_SequenceNodeOfAttributeSequence {
+	TDF_SequenceNodeOfAttributeSequence* GetObject() {
+	return (TDF_SequenceNodeOfAttributeSequence*)$self->Access();
+	}
+};
+%extend Handle_TDF_SequenceNodeOfAttributeSequence {
+	~Handle_TDF_SequenceNodeOfAttributeSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfAttributeSequence\n");}
 	}
 };
 
@@ -714,6 +716,32 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 };
 
 
+%nodefaultctor Handle_TDF_ListNodeOfLabelList;
+class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList();
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList(const Handle_TDF_ListNodeOfLabelList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList(const TDF_ListNodeOfLabelList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_ListNodeOfLabelList {
+	TDF_ListNodeOfLabelList* GetObject() {
+	return (TDF_ListNodeOfLabelList*)$self->Access();
+	}
+};
+%extend Handle_TDF_ListNodeOfLabelList {
+	~Handle_TDF_ListNodeOfLabelList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfLabelList\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDF_DoubleMapNodeOfAttributeDoubleMap;
 class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_MapNode {
 	public:
@@ -766,32 +794,6 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 };
 
 
-%nodefaultctor Handle_TDF_DeltaOnResume;
-class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnResume();
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnResume(const Handle_TDF_DeltaOnResume &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnResume(const TDF_DeltaOnResume *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnResume const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_DeltaOnResume {
-	TDF_DeltaOnResume* GetObject() {
-	return (TDF_DeltaOnResume*)$self->Access();
-	}
-};
-%extend Handle_TDF_DeltaOnResume {
-	~Handle_TDF_DeltaOnResume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnResume\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDF_Data;
 class Handle_TDF_Data : public Handle_MMgt_TShared {
 	public:
@@ -818,28 +820,28 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TDF_StdMapNodeOfAttributeMap;
-class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TDF_DeltaOnResume;
+class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfAttributeMap();
+		Handle_TDF_DeltaOnResume();
 		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfAttributeMap(const Handle_TDF_StdMapNodeOfAttributeMap &aHandle);
+		Handle_TDF_DeltaOnResume(const Handle_TDF_DeltaOnResume &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfAttributeMap(const TDF_StdMapNodeOfAttributeMap *anItem);
+		Handle_TDF_DeltaOnResume(const TDF_DeltaOnResume *anItem);
 		%feature("autodoc", "1");
-		Handle_TDF_StdMapNodeOfAttributeMap const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDF_DeltaOnResume const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDF_StdMapNodeOfAttributeMap {
-	TDF_StdMapNodeOfAttributeMap* GetObject() {
-	return (TDF_StdMapNodeOfAttributeMap*)$self->Access();
+%extend Handle_TDF_DeltaOnResume {
+	TDF_DeltaOnResume* GetObject() {
+	return (TDF_DeltaOnResume*)$self->Access();
 	}
 };
-%extend Handle_TDF_StdMapNodeOfAttributeMap {
-	~Handle_TDF_StdMapNodeOfAttributeMap() {
+%extend Handle_TDF_DeltaOnResume {
+	~Handle_TDF_DeltaOnResume() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfAttributeMap\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnResume\n");}
 	}
 };
 
@@ -892,6 +894,32 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 	~Handle_TDF_DefaultDeltaOnModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DefaultDeltaOnModification\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TDF_StdMapNodeOfAttributeMap;
+class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap();
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap(const Handle_TDF_StdMapNodeOfAttributeMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap(const TDF_StdMapNodeOfAttributeMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDF_StdMapNodeOfAttributeMap {
+	TDF_StdMapNodeOfAttributeMap* GetObject() {
+	return (TDF_StdMapNodeOfAttributeMap*)$self->Access();
+	}
+};
+%extend Handle_TDF_StdMapNodeOfAttributeMap {
+	~Handle_TDF_StdMapNodeOfAttributeMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfAttributeMap\n");}
 	}
 };
 
@@ -974,32 +1002,6 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 };
 
 
-%nodefaultctor Handle_TDF_DeltaOnForget;
-class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnForget();
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnForget(const Handle_TDF_DeltaOnForget &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnForget(const TDF_DeltaOnForget *anItem);
-		%feature("autodoc", "1");
-		Handle_TDF_DeltaOnForget const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDF_DeltaOnForget {
-	TDF_DeltaOnForget* GetObject() {
-	return (TDF_DeltaOnForget*)$self->Access();
-	}
-};
-%extend Handle_TDF_DeltaOnForget {
-	~Handle_TDF_DeltaOnForget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnForget\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDF_DoubleMapNodeOfLabelDoubleMap;
 class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNode {
 	public:
@@ -1022,104 +1024,6 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 	~Handle_TDF_DoubleMapNodeOfLabelDoubleMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfLabelDoubleMap\n");}
-	}
-};
-
-
-%nodefaultctor TDF_DoubleMapNodeOfGUIDProgIDMap;
-class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_DoubleMapNodeOfGUIDProgIDMap(const Standard_GUID &K1, const TCollection_ExtendedString &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_GUID & Key1() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
-	Handle_TDF_DoubleMapNodeOfGUIDProgIDMap GetHandle() {
-	return *(Handle_TDF_DoubleMapNodeOfGUIDProgIDMap*) &$self;
-	}
-};
-%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
-	~TDF_DoubleMapNodeOfGUIDProgIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfGUIDProgIDMap\n");}
-	}
-};
-
-
-%nodefaultctor TDF_AttributeDelta;
-class TDF_AttributeDelta : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Apply();
-		%feature("autodoc", "1");
-		TDF_Label Label() const;
-		%feature("autodoc", "1");
-		Handle_TDF_Attribute Attribute() const;
-		%feature("autodoc", "1");
-		Standard_GUID ID() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDF_AttributeDelta {
-	Handle_TDF_AttributeDelta GetHandle() {
-	return *(Handle_TDF_AttributeDelta*) &$self;
-	}
-};
-%extend TDF_AttributeDelta {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_AttributeDelta {
-	~TDF_AttributeDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDelta\n");}
-	}
-};
-
-
-%nodefaultctor TDF_DeltaOnForget;
-class TDF_DeltaOnForget : public TDF_AttributeDelta {
-	public:
-		%feature("autodoc", "1");
-		TDF_DeltaOnForget(const Handle_TDF_Attribute &anAtt);
-
-};
-%extend TDF_DeltaOnForget {
-	Handle_TDF_DeltaOnForget GetHandle() {
-	return *(Handle_TDF_DeltaOnForget*) &$self;
-	}
-};
-%extend TDF_DeltaOnForget {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_DeltaOnForget {
-	~TDF_DeltaOnForget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnForget\n");}
 	}
 };
 
@@ -1180,6 +1084,63 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 	~TDF_AttributeDoubleMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDoubleMap\n");}
+	}
+};
+
+
+%nodefaultctor TDF_Tool;
+class TDF_Tool {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbLabels(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Integer NbAttributes(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Integer NbAttributes(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelfContained(const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		void OutReferers(const TDF_Label &theLabel, TDF_AttributeMap & theAtts);
+		%feature("autodoc", "1");
+		void OutReferers(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void OutReferences(const TDF_Label &aLabel, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void OutReferences(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
+		%feature("autodoc", "1");
+		void RelocateLabel(const TDF_Label &aSourceLabel, const TDF_Label &fromRoot, const TDF_Label &toRoot, TDF_Label & aTargetLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Entry(const TDF_Label &aLabel, TCollection_AsciiString & anEntry);
+		%feature("autodoc", "1");
+		void TagList(const TDF_Label &aLabel, TColStd_ListOfInteger & aTagList);
+		%feature("autodoc", "1");
+		void TagList(const TCollection_AsciiString &anEntry, TColStd_ListOfInteger & aTagList);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const TCollection_AsciiString &anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const char * anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void Label(const Handle_TDF_Data &aDF, const TColStd_ListOfInteger &aTagList, TDF_Label & aLabel, const Standard_Boolean create=0);
+		%feature("autodoc", "1");
+		void CountLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
+		%feature("autodoc", "1");
+		void DeductLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
+		%feature("autodoc", "1");
+		void DeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF);
+		%feature("autodoc", "1");
+		void ExtendedDeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF, const TDF_IDFilter &aFilter);
+		%feature("autodoc", "1");
+		void DeepDump(Standard_OStream & anOS, const TDF_Label &aLabel);
+		%feature("autodoc", "1");
+		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
+
+};
+%extend TDF_Tool {
+	~TDF_Tool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_Tool\n");}
 	}
 };
 
@@ -1332,6 +1293,46 @@ class TDF_Attribute : public MMgt_TShared {
 };
 
 
+%nodefaultctor TDF_AttributeDelta;
+class TDF_AttributeDelta : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Apply();
+		%feature("autodoc", "1");
+		TDF_Label Label() const;
+		%feature("autodoc", "1");
+		Handle_TDF_Attribute Attribute() const;
+		%feature("autodoc", "1");
+		Standard_GUID ID() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_AttributeDelta {
+	Handle_TDF_AttributeDelta GetHandle() {
+	return *(Handle_TDF_AttributeDelta*) &$self;
+	}
+};
+%extend TDF_AttributeDelta {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_AttributeDelta {
+	~TDF_AttributeDelta() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDelta\n");}
+	}
+};
+
+
 %nodefaultctor TDF_DeltaOnAddition;
 class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 	public:
@@ -1413,27 +1414,33 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 };
 
 
-%nodefaultctor TDF_ListIteratorOfAttributeList;
-class TDF_ListIteratorOfAttributeList {
+%nodefaultctor TDF_CopyLabel;
+class TDF_CopyLabel {
 	public:
 		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeList();
+		TDF_CopyLabel();
 		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeList(const TDF_AttributeList &L);
+		TDF_CopyLabel(const TDF_Label &aSource, const TDF_Label &aTarget);
 		%feature("autodoc", "1");
-		void Initialize(const TDF_AttributeList &L);
+		void Load(const TDF_Label &aSource, const TDF_Label &aTarget);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		void UseFilter(const TDF_IDFilter &aFilter);
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Boolean ExternalReferences(const TDF_Label &Lab, TDF_AttributeMap & aExternals, const TDF_IDFilter &aFilter);
 		%feature("autodoc", "1");
-		Handle_TDF_Attribute & Value() const;
+		void ExternalReferences(const TDF_Label &aRefLab, const TDF_Label &Lab, TDF_AttributeMap & aExternals, const TDF_IDFilter &aFilter, Handle_TDF_DataSet & aDataSet);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const Handle_TDF_RelocationTable & RelocationTable() const;
 
 };
-%extend TDF_ListIteratorOfAttributeList {
-	~TDF_ListIteratorOfAttributeList() {
+%extend TDF_CopyLabel {
+	~TDF_CopyLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeList\n");}
+	if (__env){printf("## Call custom destructor for instance of TDF_CopyLabel\n");}
 	}
 };
 
@@ -1467,25 +1474,54 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TDF_ClosureMode;
-class TDF_ClosureMode {
+%nodefaultctor TDF_DeltaOnRemoval;
+class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 	public:
 		%feature("autodoc", "1");
-		TDF_ClosureMode(const Standard_Boolean aMode=1);
-		%feature("autodoc", "1");
-		void Descendants(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		Standard_Boolean Descendants() const;
-		%feature("autodoc", "1");
-		void References(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		Standard_Boolean References() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDF_ClosureMode {
-	~TDF_ClosureMode() {
+%extend TDF_DeltaOnRemoval {
+	Handle_TDF_DeltaOnRemoval GetHandle() {
+	return *(Handle_TDF_DeltaOnRemoval*) &$self;
+	}
+};
+%extend TDF_DeltaOnRemoval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_DeltaOnRemoval {
+	~TDF_DeltaOnRemoval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ClosureMode\n");}
+	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnRemoval\n");}
+	}
+};
+
+
+%nodefaultctor TDF_DefaultDeltaOnRemoval;
+class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
+	public:
+		%feature("autodoc", "1");
+		TDF_DefaultDeltaOnRemoval(const Handle_TDF_Attribute &anAttribute);
+		%feature("autodoc", "1");
+		virtual		void Apply();
+
+};
+%extend TDF_DefaultDeltaOnRemoval {
+	Handle_TDF_DefaultDeltaOnRemoval GetHandle() {
+	return *(Handle_TDF_DefaultDeltaOnRemoval*) &$self;
+	}
+};
+%extend TDF_DefaultDeltaOnRemoval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_DefaultDeltaOnRemoval {
+	~TDF_DefaultDeltaOnRemoval() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnRemoval\n");}
 	}
 };
 
@@ -1493,8 +1529,6 @@ class TDF_ClosureMode {
 %nodefaultctor TDF_LabelMapHasher;
 class TDF_LabelMapHasher {
 	public:
-		%feature("autodoc", "1");
-		TDF_LabelMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TDF_Label &aLab, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1629,37 +1663,6 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 };
 
 
-%nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
-class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_DataMapNodeOfLabelLabelMap(const TDF_Label &K, const TDF_Label &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		TDF_Label & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDF_DataMapNodeOfLabelLabelMap {
-	Handle_TDF_DataMapNodeOfLabelLabelMap GetHandle() {
-	return *(Handle_TDF_DataMapNodeOfLabelLabelMap*) &$self;
-	}
-};
-%extend TDF_DataMapNodeOfLabelLabelMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_DataMapNodeOfLabelLabelMap {
-	~TDF_DataMapNodeOfLabelLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelLabelMap\n");}
-	}
-};
-
-
 %nodefaultctor TDF_ListNodeOfDeltaList;
 class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 	public:
@@ -1718,31 +1721,6 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 	~TDF_DoubleMapNodeOfAttributeDoubleMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfAttributeDoubleMap\n");}
-	}
-};
-
-
-%nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
-class TDF_ListIteratorOfAttributeDeltaList {
-	public:
-		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeDeltaList();
-		%feature("autodoc", "1");
-		TDF_ListIteratorOfAttributeDeltaList(const TDF_AttributeDeltaList &L);
-		%feature("autodoc", "1");
-		void Initialize(const TDF_AttributeDeltaList &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_TDF_AttributeDelta & Value() const;
-
-};
-%extend TDF_ListIteratorOfAttributeDeltaList {
-	~TDF_ListIteratorOfAttributeDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeDeltaList\n");}
 	}
 };
 
@@ -1809,61 +1787,6 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TDF_LabelSequence;
-class TDF_LabelSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TDF_LabelSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TDF_LabelSequence & Assign(const TDF_LabelSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const TDF_Label &T);
-		%feature("autodoc", "1");
-		void Append(TDF_LabelSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const TDF_Label &T);
-		%feature("autodoc", "1");
-		void Prepend(TDF_LabelSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const TDF_Label &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TDF_LabelSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const TDF_Label &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TDF_LabelSequence & S);
-		%feature("autodoc", "1");
-		const TDF_Label & First() const;
-		%feature("autodoc", "1");
-		const TDF_Label & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TDF_LabelSequence & S);
-		%feature("autodoc", "1");
-		const TDF_Label & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TDF_Label & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TDF_Label &I);
-		%feature("autodoc", "1");
-		TDF_Label & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TDF_Label & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TDF_LabelSequence {
-	~TDF_LabelSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelSequence\n");}
-	}
-};
-
-
 %nodefaultctor TDF_LabelMap;
 class TDF_LabelMap : public TCollection_BasicMap {
 	public:
@@ -1887,6 +1810,39 @@ class TDF_LabelMap : public TCollection_BasicMap {
 	~TDF_LabelMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_LabelMap\n");}
+	}
+};
+
+
+%nodefaultctor TDF_DoubleMapNodeOfGUIDProgIDMap;
+class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_DoubleMapNodeOfGUIDProgIDMap(const Standard_GUID &K1, const TCollection_ExtendedString &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Standard_GUID & Key1() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
+	Handle_TDF_DoubleMapNodeOfGUIDProgIDMap GetHandle() {
+	return *(Handle_TDF_DoubleMapNodeOfGUIDProgIDMap*) &$self;
+	}
+};
+%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
+	~TDF_DoubleMapNodeOfGUIDProgIDMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfGUIDProgIDMap\n");}
 	}
 };
 
@@ -1943,57 +1899,6 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 	~TDF_MapIteratorOfIDMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfIDMap\n");}
-	}
-};
-
-
-%nodefaultctor TDF_LabelList;
-class TDF_LabelList {
-	public:
-		%feature("autodoc", "1");
-		TDF_LabelList();
-		%feature("autodoc", "1");
-		void Assign(const TDF_LabelList &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const TDF_Label &I);
-		%feature("autodoc", "1");
-		void Prepend(const TDF_Label &I, TDF_ListIteratorOfLabelList & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TDF_LabelList & Other);
-		%feature("autodoc", "1");
-		void Append(const TDF_Label &I);
-		%feature("autodoc", "1");
-		void Append(const TDF_Label &I, TDF_ListIteratorOfLabelList & theIt);
-		%feature("autodoc", "1");
-		void Append(TDF_LabelList & Other);
-		%feature("autodoc", "1");
-		TDF_Label & First() const;
-		%feature("autodoc", "1");
-		TDF_Label & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TDF_ListIteratorOfLabelList & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TDF_Label &I, TDF_ListIteratorOfLabelList & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TDF_Label &I, TDF_ListIteratorOfLabelList & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
-
-};
-%extend TDF_LabelList {
-	~TDF_LabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelList\n");}
 	}
 };
 
@@ -2186,6 +2091,85 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 };
 
 
+%nodefaultctor TDF_ListNodeOfAttributeList;
+class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_ListNodeOfAttributeList(const Handle_TDF_Attribute &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_TDF_Attribute & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_ListNodeOfAttributeList {
+	Handle_TDF_ListNodeOfAttributeList GetHandle() {
+	return *(Handle_TDF_ListNodeOfAttributeList*) &$self;
+	}
+};
+%extend TDF_ListNodeOfAttributeList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_ListNodeOfAttributeList {
+	~TDF_ListNodeOfAttributeList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfAttributeList\n");}
+	}
+};
+
+
+%nodefaultctor TDF_Delta;
+class TDF_Delta : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDF_Delta();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsApplicable(const Standard_Integer aCurrentTime) const;
+		%feature("autodoc", "1");
+		Standard_Integer BeginTime() const;
+		%feature("autodoc", "1");
+		Standard_Integer EndTime() const;
+		%feature("autodoc", "1");
+		void Labels(TDF_LabelList & aLabelList) const;
+		%feature("autodoc", "1");
+		const TDF_AttributeDeltaList & AttributeDeltas() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const TCollection_ExtendedString &theName);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_Delta {
+	Handle_TDF_Delta GetHandle() {
+	return *(Handle_TDF_Delta*) &$self;
+	}
+};
+%extend TDF_Delta {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_Delta {
+	~TDF_Delta() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_Delta\n");}
+	}
+};
+
+
 %nodefaultctor TDF_IndexedMapNodeOfLabelIndexedMap;
 class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 	public:
@@ -2219,51 +2203,27 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TDF_TagSource;
-class TDF_TagSource : public TDF_Attribute {
+%nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
+class TDF_ListIteratorOfAttributeDeltaList {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		TDF_ListIteratorOfAttributeDeltaList();
 		%feature("autodoc", "1");
-		Handle_TDF_TagSource Set(const TDF_Label &label);
+		TDF_ListIteratorOfAttributeDeltaList(const TDF_AttributeDeltaList &L);
 		%feature("autodoc", "1");
-		TDF_Label NewChild(const TDF_Label &L);
+		void Initialize(const TDF_AttributeDeltaList &L);
 		%feature("autodoc", "1");
-		TDF_TagSource();
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		Standard_Integer NewTag();
+		void Next();
 		%feature("autodoc", "1");
-		TDF_Label NewChild();
-		%feature("autodoc", "1");
-		Standard_Integer Get() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer T);
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_TDF_AttributeDelta & Value() const;
 
 };
-%extend TDF_TagSource {
-	Handle_TDF_TagSource GetHandle() {
-	return *(Handle_TDF_TagSource*) &$self;
-	}
-};
-%extend TDF_TagSource {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_TagSource {
-	~TDF_TagSource() {
+%extend TDF_ListIteratorOfAttributeDeltaList {
+	~TDF_ListIteratorOfAttributeDeltaList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_TagSource\n");}
+	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeDeltaList\n");}
 	}
 };
 
@@ -2412,8 +2372,6 @@ class TDF_ChildIDIterator {
 class TDF_CopyTool {
 	public:
 		%feature("autodoc", "1");
-		TDF_CopyTool();
-		%feature("autodoc", "1");
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable);
 		%feature("autodoc", "1");
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aPrivilegeFilter);
@@ -2456,6 +2414,37 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 	~TDF_DataMapNodeOfAttributeDataMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfAttributeDataMap\n");}
+	}
+};
+
+
+%nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
+class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDF_DataMapNodeOfLabelLabelMap(const TDF_Label &K, const TDF_Label &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		TDF_Label & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_DataMapNodeOfLabelLabelMap {
+	Handle_TDF_DataMapNodeOfLabelLabelMap GetHandle() {
+	return *(Handle_TDF_DataMapNodeOfLabelLabelMap*) &$self;
+	}
+};
+%extend TDF_DataMapNodeOfLabelLabelMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_DataMapNodeOfLabelLabelMap {
+	~TDF_DataMapNodeOfLabelLabelMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelLabelMap\n");}
 	}
 };
 
@@ -2537,6 +2526,35 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 	~TDF_AttributeDataMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDataMap\n");}
+	}
+};
+
+
+%nodefaultctor TDF_DeltaOnForget;
+class TDF_DeltaOnForget : public TDF_AttributeDelta {
+	public:
+		%feature("autodoc", "1");
+		TDF_DeltaOnForget(const Handle_TDF_Attribute &anAtt);
+		%feature("autodoc", "1");
+		virtual		void Apply();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDF_DeltaOnForget {
+	Handle_TDF_DeltaOnForget GetHandle() {
+	return *(Handle_TDF_DeltaOnForget*) &$self;
+	}
+};
+%extend TDF_DeltaOnForget {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDF_DeltaOnForget {
+	~TDF_DeltaOnForget() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnForget\n");}
 	}
 };
 
@@ -2706,65 +2724,6 @@ class TDF_Data : public MMgt_TShared {
 };
 
 
-%nodefaultctor TDF_Tool;
-class TDF_Tool {
-	public:
-		%feature("autodoc", "1");
-		TDF_Tool();
-		%feature("autodoc", "1");
-		Standard_Integer NbLabels(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelfContained(const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		void OutReferers(const TDF_Label &theLabel, TDF_AttributeMap & theAtts);
-		%feature("autodoc", "1");
-		void OutReferers(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void OutReferences(const TDF_Label &aLabel, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void OutReferences(const TDF_Label &aLabel, const TDF_IDFilter &aFilterForReferers, const TDF_IDFilter &aFilterForReferences, TDF_AttributeMap & atts);
-		%feature("autodoc", "1");
-		void RelocateLabel(const TDF_Label &aSourceLabel, const TDF_Label &fromRoot, const TDF_Label &toRoot, TDF_Label & aTargetLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Entry(const TDF_Label &aLabel, TCollection_AsciiString & anEntry);
-		%feature("autodoc", "1");
-		void TagList(const TDF_Label &aLabel, TColStd_ListOfInteger & aTagList);
-		%feature("autodoc", "1");
-		void TagList(const TCollection_AsciiString &anEntry, TColStd_ListOfInteger & aTagList);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const TCollection_AsciiString &anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const char * anEntry, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void Label(const Handle_TDF_Data &aDF, const TColStd_ListOfInteger &aTagList, TDF_Label & aLabel, const Standard_Boolean create=0);
-		%feature("autodoc", "1");
-		void CountLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
-		%feature("autodoc", "1");
-		void DeductLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
-		%feature("autodoc", "1");
-		void DeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF);
-		%feature("autodoc", "1");
-		void ExtendedDeepDump(Standard_OStream & anOS, const Handle_TDF_Data &aDF, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		void DeepDump(Standard_OStream & anOS, const TDF_Label &aLabel);
-		%feature("autodoc", "1");
-		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
-
-};
-%extend TDF_Tool {
-	~TDF_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Tool\n");}
-	}
-};
-
-
 %nodefaultctor TDF_DeltaOnResume;
 class TDF_DeltaOnResume : public TDF_AttributeDelta {
 	public:
@@ -2829,6 +2788,57 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor TDF_LabelList;
+class TDF_LabelList {
+	public:
+		%feature("autodoc", "1");
+		TDF_LabelList();
+		%feature("autodoc", "1");
+		void Assign(const TDF_LabelList &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const TDF_Label &I);
+		%feature("autodoc", "1");
+		void Prepend(const TDF_Label &I, TDF_ListIteratorOfLabelList & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TDF_LabelList & Other);
+		%feature("autodoc", "1");
+		void Append(const TDF_Label &I);
+		%feature("autodoc", "1");
+		void Append(const TDF_Label &I, TDF_ListIteratorOfLabelList & theIt);
+		%feature("autodoc", "1");
+		void Append(TDF_LabelList & Other);
+		%feature("autodoc", "1");
+		TDF_Label & First() const;
+		%feature("autodoc", "1");
+		TDF_Label & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TDF_ListIteratorOfLabelList & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TDF_Label &I, TDF_ListIteratorOfLabelList & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TDF_Label &I, TDF_ListIteratorOfLabelList & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
+
+};
+%extend TDF_LabelList {
+	~TDF_LabelList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_LabelList\n");}
+	}
+};
+
+
 %nodefaultctor TDF_DataSet;
 class TDF_DataSet : public MMgt_TShared {
 	public:
@@ -2883,6 +2893,54 @@ class TDF_DataSet : public MMgt_TShared {
 };
 
 
+%nodefaultctor TDF_ClosureMode;
+class TDF_ClosureMode {
+	public:
+		%feature("autodoc", "1");
+		TDF_ClosureMode(const Standard_Boolean aMode=1);
+		%feature("autodoc", "1");
+		void Descendants(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		Standard_Boolean Descendants() const;
+		%feature("autodoc", "1");
+		void References(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		Standard_Boolean References() const;
+
+};
+%extend TDF_ClosureMode {
+	~TDF_ClosureMode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_ClosureMode\n");}
+	}
+};
+
+
+%nodefaultctor TDF_ListIteratorOfAttributeList;
+class TDF_ListIteratorOfAttributeList {
+	public:
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfAttributeList();
+		%feature("autodoc", "1");
+		TDF_ListIteratorOfAttributeList(const TDF_AttributeList &L);
+		%feature("autodoc", "1");
+		void Initialize(const TDF_AttributeList &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_TDF_Attribute & Value() const;
+
+};
+%extend TDF_ListIteratorOfAttributeList {
+	~TDF_ListIteratorOfAttributeList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeList\n");}
+	}
+};
+
+
 %nodefaultctor TDF_StdMapNodeOfLabelMap;
 class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 	public:
@@ -2933,6 +2991,61 @@ class TDF_ListIteratorOfDeltaList {
 	~TDF_ListIteratorOfDeltaList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfDeltaList\n");}
+	}
+};
+
+
+%nodefaultctor TDF_LabelSequence;
+class TDF_LabelSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TDF_LabelSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TDF_LabelSequence & Assign(const TDF_LabelSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const TDF_Label &T);
+		%feature("autodoc", "1");
+		void Append(TDF_LabelSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const TDF_Label &T);
+		%feature("autodoc", "1");
+		void Prepend(TDF_LabelSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const TDF_Label &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TDF_LabelSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const TDF_Label &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TDF_LabelSequence & S);
+		%feature("autodoc", "1");
+		const TDF_Label & First() const;
+		%feature("autodoc", "1");
+		const TDF_Label & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TDF_LabelSequence & S);
+		%feature("autodoc", "1");
+		const TDF_Label & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TDF_Label & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TDF_Label &I);
+		%feature("autodoc", "1");
+		TDF_Label & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TDF_Label & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TDF_LabelSequence {
+	~TDF_LabelSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDF_LabelSequence\n");}
 	}
 };
 
@@ -3292,37 +3405,6 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TDF_CopyLabel;
-class TDF_CopyLabel {
-	public:
-		%feature("autodoc", "1");
-		TDF_CopyLabel();
-		%feature("autodoc", "1");
-		TDF_CopyLabel(const TDF_Label &aSource, const TDF_Label &aTarget);
-		%feature("autodoc", "1");
-		void Load(const TDF_Label &aSource, const TDF_Label &aTarget);
-		%feature("autodoc", "1");
-		void UseFilter(const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		Standard_Boolean ExternalReferences(const TDF_Label &Lab, TDF_AttributeMap & aExternals, const TDF_IDFilter &aFilter);
-		%feature("autodoc", "1");
-		void ExternalReferences(const TDF_Label &aRefLab, const TDF_Label &Lab, TDF_AttributeMap & aExternals, const TDF_IDFilter &aFilter, Handle_TDF_DataSet & aDataSet);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const Handle_TDF_RelocationTable & RelocationTable() const;
-
-};
-%extend TDF_CopyLabel {
-	~TDF_CopyLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_CopyLabel\n");}
-	}
-};
-
-
 %nodefaultctor TDF_IndexedMapNodeOfAttributeIndexedMap;
 class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 	public:
@@ -3614,8 +3696,6 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 class TDF {
 	public:
 		%feature("autodoc", "1");
-		TDF();
-		%feature("autodoc", "1");
 		const Standard_GUID & LowestID();
 		%feature("autodoc", "1");
 		const Standard_GUID & UppestID();
@@ -3631,35 +3711,6 @@ class TDF {
 	~TDF() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDF\n");}
-	}
-};
-
-
-%nodefaultctor TDF_ListNodeOfAttributeList;
-class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDF_ListNodeOfAttributeList(const Handle_TDF_Attribute &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_TDF_Attribute & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDF_ListNodeOfAttributeList {
-	Handle_TDF_ListNodeOfAttributeList GetHandle() {
-	return *(Handle_TDF_ListNodeOfAttributeList*) &$self;
-	}
-};
-%extend TDF_ListNodeOfAttributeList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_ListNodeOfAttributeList {
-	~TDF_ListNodeOfAttributeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfAttributeList\n");}
 	}
 };
 
@@ -3751,61 +3802,9 @@ class TDF_Reference : public TDF_Attribute {
 };
 
 
-%nodefaultctor TDF_Delta;
-class TDF_Delta : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDF_Delta();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsApplicable(const Standard_Integer aCurrentTime) const;
-		%feature("autodoc", "1");
-		Standard_Integer BeginTime() const;
-		%feature("autodoc", "1");
-		Standard_Integer EndTime() const;
-		%feature("autodoc", "1");
-		void Labels(TDF_LabelList & aLabelList) const;
-		%feature("autodoc", "1");
-		const TDF_AttributeDeltaList & AttributeDeltas() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const TCollection_ExtendedString &theName);
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDF_Delta {
-	Handle_TDF_Delta GetHandle() {
-	return *(Handle_TDF_Delta*) &$self;
-	}
-};
-%extend TDF_Delta {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_Delta {
-	~TDF_Delta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Delta\n");}
-	}
-};
-
-
 %nodefaultctor TDF_ComparisonTool;
 class TDF_ComparisonTool {
 	public:
-		%feature("autodoc", "1");
-		TDF_ComparisonTool();
 		%feature("autodoc", "1");
 		void Compare(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_DataSet &aTargetDataSet, const TDF_IDFilter &aFilter, const Handle_TDF_RelocationTable &aRelocationTable);
 		%feature("autodoc", "1");
@@ -3826,54 +3825,51 @@ class TDF_ComparisonTool {
 };
 
 
-%nodefaultctor TDF_DeltaOnRemoval;
-class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
+%nodefaultctor TDF_TagSource;
+class TDF_TagSource : public TDF_Attribute {
 	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Handle_TDF_TagSource Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDF_Label NewChild(const TDF_Label &L);
+		%feature("autodoc", "1");
+		TDF_TagSource();
+		%feature("autodoc", "1");
+		Standard_Integer NewTag();
+		%feature("autodoc", "1");
+		TDF_Label NewChild();
+		%feature("autodoc", "1");
+		Standard_Integer Get() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer T);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDF_DeltaOnRemoval {
-	Handle_TDF_DeltaOnRemoval GetHandle() {
-	return *(Handle_TDF_DeltaOnRemoval*) &$self;
+%extend TDF_TagSource {
+	Handle_TDF_TagSource GetHandle() {
+	return *(Handle_TDF_TagSource*) &$self;
 	}
 };
-%extend TDF_DeltaOnRemoval {
+%extend TDF_TagSource {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDF_DeltaOnRemoval {
-	~TDF_DeltaOnRemoval() {
+%extend TDF_TagSource {
+	~TDF_TagSource() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnRemoval\n");}
-	}
-};
-
-
-%nodefaultctor TDF_DefaultDeltaOnRemoval;
-class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
-	public:
-		%feature("autodoc", "1");
-		TDF_DefaultDeltaOnRemoval(const Handle_TDF_Attribute &anAttribute);
-		%feature("autodoc", "1");
-		virtual		void Apply();
-
-};
-%extend TDF_DefaultDeltaOnRemoval {
-	Handle_TDF_DefaultDeltaOnRemoval GetHandle() {
-	return *(Handle_TDF_DefaultDeltaOnRemoval*) &$self;
-	}
-};
-%extend TDF_DefaultDeltaOnRemoval {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDF_DefaultDeltaOnRemoval {
-	~TDF_DefaultDeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnRemoval\n");}
+	if (__env){printf("## Call custom destructor for instance of TDF_TagSource\n");}
 	}
 };
 
@@ -3881,8 +3877,6 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 %nodefaultctor TDF_ClosureTool;
 class TDF_ClosureTool {
 	public:
-		%feature("autodoc", "1");
-		TDF_ClosureTool();
 		%feature("autodoc", "1");
 		void Closure(const Handle_TDF_DataSet &aDataSet);
 		%feature("autodoc", "1");

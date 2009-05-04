@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomToIGES
 
+%include GeomToIGES_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -206,29 +208,6 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 };
 
 
-%nodefaultctor GeomToIGES_GeomVector;
-class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {
-	public:
-		%feature("autodoc", "1");
-		GeomToIGES_GeomVector();
-		%feature("autodoc", "1");
-		GeomToIGES_GeomVector(const GeomToIGES_GeomEntity &GE);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_Vector &start);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_VectorWithMagnitude &start);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_Direction &start);
-
-};
-%extend GeomToIGES_GeomVector {
-	~GeomToIGES_GeomVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomVector\n");}
-	}
-};
-
-
 %nodefaultctor GeomToIGES_GeomCurve;
 class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 	public:
@@ -287,5 +266,28 @@ class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 	~GeomToIGES_GeomPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
+	}
+};
+
+
+%nodefaultctor GeomToIGES_GeomVector;
+class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {
+	public:
+		%feature("autodoc", "1");
+		GeomToIGES_GeomVector();
+		%feature("autodoc", "1");
+		GeomToIGES_GeomVector(const GeomToIGES_GeomEntity &GE);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_Vector &start);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_VectorWithMagnitude &start);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_Direction &start);
+
+};
+%extend GeomToIGES_GeomVector {
+	~GeomToIGES_GeomVector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomVector\n");}
 	}
 };

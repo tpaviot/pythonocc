@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeProcess
 
+%include ShapeProcess_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_ShapeProcess_StackItemOfDictionaryOfOperator;
-class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const ShapeProcess_StackItemOfDictionaryOfOperator *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
-	ShapeProcess_StackItemOfDictionaryOfOperator* GetObject() {
-	return (ShapeProcess_StackItemOfDictionaryOfOperator*)$self->Access();
-	}
-};
-%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
-	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeProcess_Context;
 class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +138,32 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	~Handle_ShapeProcess_Context() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeProcess_StackItemOfDictionaryOfOperator;
+class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator();
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const Handle_ShapeProcess_StackItemOfDictionaryOfOperator &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator(const ShapeProcess_StackItemOfDictionaryOfOperator *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_StackItemOfDictionaryOfOperator const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
+	ShapeProcess_StackItemOfDictionaryOfOperator* GetObject() {
+	return (ShapeProcess_StackItemOfDictionaryOfOperator*)$self->Access();
+	}
+};
+%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
+	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");}
 	}
 };
 
@@ -326,8 +328,6 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 class ShapeProcess {
 	public:
 		%feature("autodoc", "1");
-		ShapeProcess();
-		%feature("autodoc", "1");
 		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
 		%feature("autodoc", "1");
 		Standard_Boolean FindOperator(const char * name, Handle_ShapeProcess_Operator & op);
@@ -381,8 +381,6 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 %nodefaultctor ShapeProcess_OperLibrary;
 class ShapeProcess_OperLibrary {
 	public:
-		%feature("autodoc", "1");
-		ShapeProcess_OperLibrary();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");

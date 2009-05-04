@@ -131,5 +131,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Standard_SStream.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Quantity_Date.hxx>
-#include<OSD.hxx>
 %}

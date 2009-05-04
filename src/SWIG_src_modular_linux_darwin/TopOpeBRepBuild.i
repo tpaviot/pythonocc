@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopOpeBRepBuild
 
+%include TopOpeBRepBuild_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -1699,6 +1701,41 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_B
 };
 
 
+%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
+class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape &K);
+
+};
+%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
+	~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfLoop;
 class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 	public:
@@ -2274,46 +2311,9 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
-class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape &K);
-
-};
-%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
-	~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_GTool;
 class TopOpeBRepBuild_GTool {
 	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_GTool();
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo GFusUnsh(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
@@ -2424,8 +2424,6 @@ class TopOpeBRepBuild_GTopo {
 %nodefaultctor TopOpeBRepBuild_Tools2d;
 class TopOpeBRepBuild_Tools2d {
 	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_Tools2d();
 		%feature("autodoc", "1");
 		void MakeMapOfShapeVertexInfo(const TopoDS_Wire &aWire, TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & aMap);
 		%feature("autodoc", "1");
@@ -2869,8 +2867,6 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 %nodefaultctor TopOpeBRepBuild_Tools;
 class TopOpeBRepBuild_Tools {
 	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_Tools();
 		%feature("autodoc", "1");
 		void DumpMapOfShapeWithState(const Standard_Integer iP, const TopOpeBRepDS_IndexedDataMapOfShapeWithState &aMapOfShapeWithState);
 		%feature("autodoc", "1");

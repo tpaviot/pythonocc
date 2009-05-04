@@ -54,14 +54,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TColgp_HSequenceOfPnt.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Handle_Geom2d_BezierCurve.hxx>
-#include<gp_Lin.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Elips.hxx>
-#include<gp_Parab.hxx>
-#include<gp_Hypr.hxx>
-#include<gp_Cylinder.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Pnt2d.hxx>
@@ -73,8 +65,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
+#include<Handle_Geom2d_BezierCurve.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+#include<gp_Elips.hxx>
+#include<gp_Parab.hxx>
+#include<gp_Hypr.hxx>
+#include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
-#include<ProjLib.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Cone.hxx>
@@ -84,9 +83,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Dir.hxx>
 #include<gp_Vec.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<Adaptor3d_Surface.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 %}

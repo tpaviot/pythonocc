@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Intf
 
+%include Intf_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -416,6 +418,35 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
+class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Intf_SequenceNodeOfSeqOfTangentZone(const Intf_TangentZone &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Intf_TangentZone & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	Handle_Intf_SequenceNodeOfSeqOfTangentZone GetHandle() {
+	return *(Handle_Intf_SequenceNodeOfSeqOfTangentZone*) &$self;
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	~Intf_SequenceNodeOfSeqOfTangentZone() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
+	}
+};
+
+
 %nodefaultctor Intf_Array1OfLin;
 class Intf_Array1OfLin {
 	public:
@@ -645,35 +676,6 @@ class Intf_SectionLine {
 };
 
 
-%nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
-class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Intf_SequenceNodeOfSeqOfTangentZone(const Intf_TangentZone &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Intf_TangentZone & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
-	Handle_Intf_SequenceNodeOfSeqOfTangentZone GetHandle() {
-	return *(Handle_Intf_SequenceNodeOfSeqOfTangentZone*) &$self;
-	}
-};
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
-	~Intf_SequenceNodeOfSeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
-	}
-};
-
-
 %nodefaultctor Intf_Tool;
 class Intf_Tool {
 	public:
@@ -710,8 +712,6 @@ class Intf_Tool {
 %nodefaultctor Intf;
 class Intf {
 	public:
-		%feature("autodoc", "1");
-		Intf();
 		%feature("autodoc", "1");
 		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");

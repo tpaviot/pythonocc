@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinTools
 
+%include BinTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -195,8 +197,6 @@ class BinTools_LocationSet {
 %nodefaultctor BinTools;
 class BinTools {
 	public:
-		%feature("autodoc", "1");
-		BinTools();
 		%feature("autodoc", "1");
 		Standard_OStream & PutReal(Standard_OStream & OS, const Standard_Real theValue);
 		%feature("autodoc", "1");

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Xw
 
+%include Xw_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,15 +114,6 @@ Standard_Integer & function transformation
 %include Xw_headers.i
 
 
-enum Xw_WindowQuality {
-	Xw_WQ_3DQUALITY,
-	Xw_WQ_PICTUREQUALITY,
-	Xw_WQ_DRAWINGQUALITY,
-	Xw_WQ_SAMEQUALITY,
-	Xw_WQ_TRANSPARENT,
-	Xw_WQ_OVERLAY,
-	};
-
 enum Xw_TypeOfVisual {
 	Xw_TOV_STATICGRAY,
 	Xw_TOV_GRAYSCALE,
@@ -135,6 +128,15 @@ enum Xw_TypeOfVisual {
 	Xw_TOV_OVERLAY,
 	};
 
+enum Xw_WindowQuality {
+	Xw_WQ_3DQUALITY,
+	Xw_WQ_PICTUREQUALITY,
+	Xw_WQ_DRAWINGQUALITY,
+	Xw_WQ_SAMEQUALITY,
+	Xw_WQ_TRANSPARENT,
+	Xw_WQ_OVERLAY,
+	};
+
 enum Xw_TypeOfMapping {
 	Xw_TOM_HARDRAMP,
 	Xw_TOM_SIMPLERAMP,
@@ -143,32 +145,6 @@ enum Xw_TypeOfMapping {
 	Xw_TOM_READONLY,
 	};
 
-
-
-%nodefaultctor Handle_Xw_HListOfMFTFonts;
-class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts();
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_HListOfMFTFonts {
-	Xw_HListOfMFTFonts* GetObject() {
-	return (Xw_HListOfMFTFonts*)$self->Access();
-	}
-};
-%extend Handle_Xw_HListOfMFTFonts {
-	~Handle_Xw_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
-	}
-};
 
 
 %nodefaultctor Handle_Xw_TextManager;
@@ -219,6 +195,32 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 	~Handle_Xw_Driver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Driver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Xw_WidthMap;
+class Handle_Xw_WidthMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap();
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap(const Handle_Xw_WidthMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap(const Xw_WidthMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_WidthMap {
+	Xw_WidthMap* GetObject() {
+	return (Xw_WidthMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_WidthMap {
+	~Handle_Xw_WidthMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_WidthMap\n");}
 	}
 };
 
@@ -275,28 +277,28 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Xw_HListOfMFTSizes;
-class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Xw_HListOfMFTFonts;
+class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes();
+		Handle_Xw_HListOfMFTFonts();
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes(const Handle_Xw_HListOfMFTSizes &aHandle);
+		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes(const Xw_HListOfMFTSizes *anItem);
+		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Xw_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Xw_HListOfMFTSizes {
-	Xw_HListOfMFTSizes* GetObject() {
-	return (Xw_HListOfMFTSizes*)$self->Access();
+%extend Handle_Xw_HListOfMFTFonts {
+	Xw_HListOfMFTFonts* GetObject() {
+	return (Xw_HListOfMFTFonts*)$self->Access();
 	}
 };
-%extend Handle_Xw_HListOfMFTSizes {
-	~Handle_Xw_HListOfMFTSizes() {
+%extend Handle_Xw_HListOfMFTFonts {
+	~Handle_Xw_HListOfMFTFonts() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
 	}
 };
 
@@ -327,6 +329,32 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 };
 
 
+%nodefaultctor Handle_Xw_HListOfMFTSizes;
+class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes();
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes(const Handle_Xw_HListOfMFTSizes &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes(const Xw_HListOfMFTSizes *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_HListOfMFTSizes {
+	Xw_HListOfMFTSizes* GetObject() {
+	return (Xw_HListOfMFTSizes*)$self->Access();
+	}
+};
+%extend Handle_Xw_HListOfMFTSizes {
+	~Handle_Xw_HListOfMFTSizes() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Xw_FontMap;
 class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	public:
@@ -349,32 +377,6 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	~Handle_Xw_FontMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_FontMap\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Xw_MarkMap;
-class Handle_Xw_MarkMap : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap();
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_MarkMap {
-	Xw_MarkMap* GetObject() {
-	return (Xw_MarkMap*)$self->Access();
-	}
-};
-%extend Handle_Xw_MarkMap {
-	~Handle_Xw_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
 	}
 };
 
@@ -431,32 +433,6 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 };
 
 
-%nodefaultctor Handle_Xw_WidthMap;
-class Handle_Xw_WidthMap : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_WidthMap();
-		%feature("autodoc", "1");
-		Handle_Xw_WidthMap(const Handle_Xw_WidthMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_WidthMap(const Xw_WidthMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_WidthMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_WidthMap {
-	Xw_WidthMap* GetObject() {
-	return (Xw_WidthMap*)$self->Access();
-	}
-};
-%extend Handle_Xw_WidthMap {
-	~Handle_Xw_WidthMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_WidthMap\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Xw_TypeMap;
 class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 	public:
@@ -509,6 +485,134 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 };
 
 
+%nodefaultctor Handle_Xw_MarkMap;
+class Handle_Xw_MarkMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap();
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_MarkMap {
+	Xw_MarkMap* GetObject() {
+	return (Xw_MarkMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_MarkMap {
+	~Handle_Xw_MarkMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
+	}
+};
+
+
+%nodefaultctor Xw_GraphicDevice;
+class Xw_GraphicDevice : public Aspect_GraphicDevice {
+	public:
+		%feature("autodoc", "1");
+		Xw_GraphicDevice(const char * Connection, const Xw_TypeOfMapping Mapping=Xw_TOM_COLORCUBE, const Standard_Integer Ncolors=0, const Standard_Boolean UseDefault=1);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap ColorMap2D() const;
+		%feature("autodoc", "1");
+		Xw_TypeOfVisual VisualClass2D() const;
+		%feature("autodoc", "1");
+		Xw_TypeOfVisual OverlayVisualClass2D() const;
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap ColorMap3D() const;
+		%feature("autodoc", "1");
+		Xw_TypeOfVisual VisualClass3D() const;
+		%feature("autodoc", "1");
+		Xw_TypeOfVisual OverlayVisualClass3D() const;
+		%feature("autodoc", "1");
+		Handle_Xw_TypeMap TypeMap() const;
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap WidthMap() const;
+		%feature("autodoc", "1");
+		Handle_Xw_FontMap FontMap() const;
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap MarkMap() const;
+		%feature("autodoc", "1");
+		Standard_CString Display() const;
+		%feature("autodoc", "1");
+		Standard_Address XDisplay() const;
+		%feature("autodoc", "1");
+		void DisplaySize(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void DisplaySize(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer PlaneLayer(const Standard_Integer aVisualID) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_GraphicDevice {
+	Handle_Xw_GraphicDevice GetHandle() {
+	return *(Handle_Xw_GraphicDevice*) &$self;
+	}
+};
+%extend Xw_GraphicDevice {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Xw_GraphicDevice {
+	~Xw_GraphicDevice() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
+	}
+};
+
+
+%nodefaultctor Xw_ListOfMFTFonts;
+class Xw_ListOfMFTFonts {
+	public:
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_MFT_FontManager &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
+
+};
+%extend Xw_ListOfMFTFonts {
+	~Xw_ListOfMFTFonts() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
+	}
+};
+
+
 %nodefaultctor Xw_HListOfMFTFonts;
 class Xw_HListOfMFTFonts : public MMgt_TShared {
 	public:
@@ -552,47 +656,6 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 	~Xw_HListOfMFTFonts() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTFonts\n");}
-	}
-};
-
-
-%nodefaultctor Xw_ListOfMFTFonts;
-class Xw_ListOfMFTFonts {
-	public:
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
-
-};
-%extend Xw_ListOfMFTFonts {
-	~Xw_ListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
 	}
 };
 
@@ -758,6 +821,41 @@ class Xw_Driver : public Aspect_WindowDriver {
 	~Xw_Driver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Xw_Driver\n");}
+	}
+};
+
+
+%nodefaultctor Xw_WidthMap;
+class Xw_WidthMap : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Xw_WidthMap(const char * Connexion);
+		%feature("autodoc", "1");
+		virtual		void SetEntry(const Aspect_WidthMapEntry &Entry);
+		%feature("autodoc", "1");
+		virtual		void SetEntries(const Handle_Aspect_WidthMap &Widthmap);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer FreeWidths() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_WidthMap {
+	Handle_Xw_WidthMap GetHandle() {
+	return *(Handle_Xw_WidthMap*) &$self;
+	}
+};
+%extend Xw_WidthMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Xw_WidthMap {
+	~Xw_WidthMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_WidthMap\n");}
 	}
 };
 
@@ -1185,37 +1283,49 @@ class Xw_TextManager : public MFT_TextManager {
 };
 
 
-%nodefaultctor Xw_WidthMap;
-class Xw_WidthMap : public Standard_Transient {
+%nodefaultctor Xw_HListOfMFTSizes;
+class Xw_HListOfMFTSizes : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Xw_WidthMap(const char * Connexion);
+		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void SetEntry(const Aspect_WidthMapEntry &Entry);
+		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
 		%feature("autodoc", "1");
-		virtual		void SetEntries(const Handle_Aspect_WidthMap &Widthmap);
+		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
-		virtual		void Destroy();
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer FreeWidths() const;
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
+		%feature("autodoc", "1");
+		const Standard_ShortReal & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTSizes & Array1() const;
+		%feature("autodoc", "1");
+		Xw_ListOfMFTSizes & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_WidthMap {
-	Handle_Xw_WidthMap GetHandle() {
-	return *(Handle_Xw_WidthMap*) &$self;
+%extend Xw_HListOfMFTSizes {
+	Handle_Xw_HListOfMFTSizes GetHandle() {
+	return *(Handle_Xw_HListOfMFTSizes*) &$self;
 	}
 };
-%extend Xw_WidthMap {
+%extend Xw_HListOfMFTSizes {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_WidthMap {
-	~Xw_WidthMap() {
+%extend Xw_HListOfMFTSizes {
+	~Xw_HListOfMFTSizes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_WidthMap\n");}
+	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
 	}
 };
 
@@ -1296,114 +1406,6 @@ class Xw_ListOfIndexs {
 };
 
 
-%nodefaultctor Xw_GraphicDevice;
-class Xw_GraphicDevice : public Aspect_GraphicDevice {
-	public:
-		%feature("autodoc", "1");
-		Xw_GraphicDevice(const char * Connection, const Xw_TypeOfMapping Mapping=Xw_TOM_COLORCUBE, const Standard_Integer Ncolors=0, const Standard_Boolean UseDefault=1);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap ColorMap2D() const;
-		%feature("autodoc", "1");
-		Xw_TypeOfVisual VisualClass2D() const;
-		%feature("autodoc", "1");
-		Xw_TypeOfVisual OverlayVisualClass2D() const;
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap ColorMap3D() const;
-		%feature("autodoc", "1");
-		Xw_TypeOfVisual VisualClass3D() const;
-		%feature("autodoc", "1");
-		Xw_TypeOfVisual OverlayVisualClass3D() const;
-		%feature("autodoc", "1");
-		Handle_Xw_TypeMap TypeMap() const;
-		%feature("autodoc", "1");
-		Handle_Xw_WidthMap WidthMap() const;
-		%feature("autodoc", "1");
-		Handle_Xw_FontMap FontMap() const;
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap MarkMap() const;
-		%feature("autodoc", "1");
-		Standard_CString Display() const;
-		%feature("autodoc", "1");
-		Standard_Address XDisplay() const;
-		%feature("autodoc", "1");
-		void DisplaySize(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void DisplaySize(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer PlaneLayer(const Standard_Integer aVisualID) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_GraphicDevice {
-	Handle_Xw_GraphicDevice GetHandle() {
-	return *(Handle_Xw_GraphicDevice*) &$self;
-	}
-};
-%extend Xw_GraphicDevice {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Xw_GraphicDevice {
-	~Xw_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
-	}
-};
-
-
-%nodefaultctor Xw_HListOfMFTSizes;
-class Xw_HListOfMFTSizes : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
-		%feature("autodoc", "1");
-		const Standard_ShortReal & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTSizes & Array1() const;
-		%feature("autodoc", "1");
-		Xw_ListOfMFTSizes & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_HListOfMFTSizes {
-	Handle_Xw_HListOfMFTSizes GetHandle() {
-	return *(Handle_Xw_HListOfMFTSizes*) &$self;
-	}
-};
-%extend Xw_HListOfMFTSizes {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Xw_HListOfMFTSizes {
-	~Xw_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
-	}
-};
-
-
 %nodefaultctor Xw_MarkMap;
 class Xw_MarkMap : public Standard_Transient {
 	public:
@@ -1442,8 +1444,6 @@ class Xw_MarkMap : public Standard_Transient {
 %nodefaultctor Xw;
 class Xw {
 	public:
-		%feature("autodoc", "1");
-		Xw();
 		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
 

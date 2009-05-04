@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module FEmTool
 
+%include FEmTool_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -374,61 +376,6 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor FEmTool_Curve;
-class FEmTool_Curve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const Handle_PLib_Base &TheBase, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		TColStd_Array1OfReal & Knots() const;
-		%feature("autodoc", "1");
-		void SetElement(const Standard_Integer IndexOfElement, const TColStd_Array2OfReal &Coeffs);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, TColStd_Array1OfReal & Pnt);
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, TColStd_Array1OfReal & Vec);
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
-		%feature("autodoc", "1");
-		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
-		%feature("autodoc", "1");
-		void GetPolynom(TColStd_Array1OfReal & Coeffs);
-		%feature("autodoc", "1");
-		Standard_Integer NbElements() const;
-		%feature("autodoc", "1");
-		Standard_Integer Dimension() const;
-		%feature("autodoc", "1");
-		Handle_PLib_Base Base() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
-		%feature("autodoc", "1");
-		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
-		%feature("autodoc", "1");
-		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend FEmTool_Curve {
-	Handle_FEmTool_Curve GetHandle() {
-	return *(Handle_FEmTool_Curve*) &$self;
-	}
-};
-%extend FEmTool_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend FEmTool_Curve {
-	~FEmTool_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
-	}
-};
-
-
 %nodefaultctor FEmTool_ListNodeOfListOfVectors;
 class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	public:
@@ -553,6 +500,61 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 };
 
 
+%nodefaultctor FEmTool_Curve;
+class FEmTool_Curve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const Handle_PLib_Base &TheBase, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		TColStd_Array1OfReal & Knots() const;
+		%feature("autodoc", "1");
+		void SetElement(const Standard_Integer IndexOfElement, const TColStd_Array2OfReal &Coeffs);
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, TColStd_Array1OfReal & Pnt);
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, TColStd_Array1OfReal & Vec);
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
+		%feature("autodoc", "1");
+		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
+		%feature("autodoc", "1");
+		void GetPolynom(TColStd_Array1OfReal & Coeffs);
+		%feature("autodoc", "1");
+		Standard_Integer NbElements() const;
+		%feature("autodoc", "1");
+		Standard_Integer Dimension() const;
+		%feature("autodoc", "1");
+		Handle_PLib_Base Base() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
+		%feature("autodoc", "1");
+		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
+		%feature("autodoc", "1");
+		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend FEmTool_Curve {
+	Handle_FEmTool_Curve GetHandle() {
+	return *(Handle_FEmTool_Curve*) &$self;
+	}
+};
+%extend FEmTool_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend FEmTool_Curve {
+	~FEmTool_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
+	}
+};
+
+
 %nodefaultctor FEmTool_Assembly;
 class FEmTool_Assembly {
 	public:
@@ -621,6 +623,31 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	~FEmTool_LinearTension() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearTension\n");}
+	}
+};
+
+
+%nodefaultctor FEmTool_ListIteratorOfListOfVectors;
+class FEmTool_ListIteratorOfListOfVectors {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_ListIteratorOfListOfVectors();
+		%feature("autodoc", "1");
+		FEmTool_ListIteratorOfListOfVectors(const FEmTool_ListOfVectors &L);
+		%feature("autodoc", "1");
+		void Initialize(const FEmTool_ListOfVectors &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & Value() const;
+
+};
+%extend FEmTool_ListIteratorOfListOfVectors {
+	~FEmTool_ListIteratorOfListOfVectors() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");}
 	}
 };
 
@@ -955,30 +982,5 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 	~FEmTool_SeqOfLinConstr() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");}
-	}
-};
-
-
-%nodefaultctor FEmTool_ListIteratorOfListOfVectors;
-class FEmTool_ListIteratorOfListOfVectors {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_ListIteratorOfListOfVectors();
-		%feature("autodoc", "1");
-		FEmTool_ListIteratorOfListOfVectors(const FEmTool_ListOfVectors &L);
-		%feature("autodoc", "1");
-		void Initialize(const FEmTool_ListOfVectors &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & Value() const;
-
-};
-%extend FEmTool_ListIteratorOfListOfVectors {
-	~FEmTool_ListIteratorOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");}
 	}
 };

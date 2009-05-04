@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TColGeom2d
 
+%include TColGeom2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,6 +116,32 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor Handle_TColGeom2d_HArray1OfGeometry;
+class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry();
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry(const TColGeom2d_HArray1OfGeometry *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom2d_HArray1OfGeometry {
+	TColGeom2d_HArray1OfGeometry* GetObject() {
+	return (TColGeom2d_HArray1OfGeometry*)$self->Access();
+	}
+};
+%extend Handle_TColGeom2d_HArray1OfGeometry {
+	~Handle_TColGeom2d_HArray1OfGeometry() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfGeometry\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColGeom2d_HSequenceOfGeometry;
 class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 	public:
@@ -140,6 +168,32 @@ class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve;
+class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	TColGeom2d_SequenceNodeOfSequenceOfCurve* GetObject() {
+	return (TColGeom2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
+	}
+};
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColGeom2d_HSequenceOfBoundedCurve;
 class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	public:
@@ -162,32 +216,6 @@ class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	~Handle_TColGeom2d_HSequenceOfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve;
-class Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve(const TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
-	TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve* GetObject() {
-	return (TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
-	}
-};
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
-	~Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -322,58 +350,6 @@ class Handle_TColGeom2d_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve;
-class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
-	TColGeom2d_SequenceNodeOfSequenceOfCurve* GetObject() {
-	return (TColGeom2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
-	}
-};
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
-	~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom2d_HArray1OfGeometry;
-class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry(const TColGeom2d_HArray1OfGeometry *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_HArray1OfGeometry {
-	TColGeom2d_HArray1OfGeometry* GetObject() {
-	return (TColGeom2d_HArray1OfGeometry*)$self->Access();
-	}
-};
-%extend Handle_TColGeom2d_HArray1OfGeometry {
-	~Handle_TColGeom2d_HArray1OfGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfGeometry\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColGeom2d_HArray1OfBezierCurve;
 class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	public:
@@ -396,6 +372,32 @@ class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	~Handle_TColGeom2d_HArray1OfBezierCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBezierCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve;
+class Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve();
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve(const TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
+	TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve* GetObject() {
+	return (TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
+	}
+};
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
+	~Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
 

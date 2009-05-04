@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GraphTools
 
+%include GraphTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_GraphTools_SC;
-class Handle_GraphTools_SC : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC();
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC(const Handle_GraphTools_SC &aHandle);
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC(const GraphTools_SC *anItem);
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GraphTools_SC {
-	GraphTools_SC* GetObject() {
-	return (GraphTools_SC*)$self->Access();
-	}
-};
-%extend Handle_GraphTools_SC {
-	~Handle_GraphTools_SC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_SC\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
 class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +138,32 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GraphTools_SC;
+class Handle_GraphTools_SC : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC();
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC(const Handle_GraphTools_SC &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC(const GraphTools_SC *anItem);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GraphTools_SC {
+	GraphTools_SC* GetObject() {
+	return (GraphTools_SC*)$self->Access();
+	}
+};
+%extend Handle_GraphTools_SC {
+	~Handle_GraphTools_SC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_SC\n");}
 	}
 };
 

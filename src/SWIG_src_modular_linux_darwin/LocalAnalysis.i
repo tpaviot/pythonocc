@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module LocalAnalysis
 
+%include LocalAnalysis_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -184,8 +186,6 @@ class LocalAnalysis_SurfaceContinuity {
 %nodefaultctor LocalAnalysis;
 class LocalAnalysis {
 	public:
-		%feature("autodoc", "1");
-		LocalAnalysis();
 		%feature("autodoc", "1");
 		void Dump(const LocalAnalysis_SurfaceContinuity &surfconti, Standard_OStream & o);
 		%feature("autodoc", "1");

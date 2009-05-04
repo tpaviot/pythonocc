@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Blend
 
+%include Blend_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -551,6 +553,91 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 
 
+%nodefaultctor Blend_SurfRstFunction;
+class Blend_SurfRstFunction : public Blend_AppFunction {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMinimalDistance() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & Pnt1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & Pnt2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnRst() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d & Pnt2dOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d & Pnt2dOnRst() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnRst() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnRst() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnRst() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec & NS, gp_Vec & TgS) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetSectionSize() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+
+};
+%extend Blend_SurfRstFunction {
+	~Blend_SurfRstFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Blend_SurfRstFunction\n");}
+	}
+};
+
+
 %nodefaultctor Blend_Point;
 class Blend_Point {
 	public:
@@ -642,91 +729,6 @@ class Blend_Point {
 	~Blend_Point() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Blend_Point\n");}
-	}
-};
-
-
-%nodefaultctor Blend_SurfRstFunction;
-class Blend_SurfRstFunction : public Blend_AppFunction {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMinimalDistance() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & Pnt1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & Pnt2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnRst() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d & Pnt2dOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d & Pnt2dOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnRst() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec & NS, gp_Vec & TgS) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-
-};
-%extend Blend_SurfRstFunction {
-	~Blend_SurfRstFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SurfRstFunction\n");}
 	}
 };
 

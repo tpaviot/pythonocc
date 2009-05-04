@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinMNaming
 
+%include BinMNaming_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,6 +168,21 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 };
 
 
+%nodefaultctor BinMNaming;
+class BinMNaming {
+	public:
+		%feature("autodoc", "1");
+		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+
+};
+%extend BinMNaming {
+	~BinMNaming() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
+	}
+};
+
+
 %nodefaultctor BinMNaming_NamedShapeDriver;
 class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	public:
@@ -247,22 +264,5 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	~BinMNaming_NamingDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
-	}
-};
-
-
-%nodefaultctor BinMNaming;
-class BinMNaming {
-	public:
-		%feature("autodoc", "1");
-		BinMNaming();
-		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
-
-};
-%extend BinMNaming {
-	~BinMNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module DBC
 
+%include DBC_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -141,28 +143,28 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
-class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
+class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter();
+		Handle_DBC_VArrayNodeOfVArrayOfInteger();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const Handle_DBC_VArrayNodeOfVArrayOfCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
-	DBC_VArrayNodeOfVArrayOfCharacter* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfCharacter*)$self->Access();
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
-	~Handle_DBC_VArrayNodeOfVArrayOfCharacter() {
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfCharacter\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
 	}
 };
 
@@ -193,28 +195,28 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
-class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
+class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger();
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const Handle_DBC_VArrayNodeOfVArrayOfCharacter &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
+%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
+	DBC_VArrayNodeOfVArrayOfCharacter* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfCharacter*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
+%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
+	~Handle_DBC_VArrayNodeOfVArrayOfCharacter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfCharacter\n");}
 	}
 };
 
@@ -340,37 +342,6 @@ class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	~DBC_VArrayTNodeOfVArrayOfExtCharacter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfExtCharacter\n");}
-	}
-};
-
-
-%nodefaultctor DBC_VArrayOfExtCharacter;
-class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayOfExtCharacter();
-		%feature("autodoc", "1");
-		DBC_VArrayOfExtCharacter(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		DBC_VArrayOfExtCharacter(const DBC_VArrayOfExtCharacter &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const DBC_VArrayOfExtCharacter &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter &Value);
-		%feature("autodoc", "1");
-		Standard_ExtCharacter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_ExtCharacter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend DBC_VArrayOfExtCharacter {
-	~DBC_VArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfExtCharacter\n");}
 	}
 };
 
@@ -584,6 +555,37 @@ class DBC_VArrayTNodeOfVArrayOfInteger {
 	~DBC_VArrayTNodeOfVArrayOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor DBC_VArrayOfExtCharacter;
+class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		DBC_VArrayOfExtCharacter();
+		%feature("autodoc", "1");
+		DBC_VArrayOfExtCharacter(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		DBC_VArrayOfExtCharacter(const DBC_VArrayOfExtCharacter &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const DBC_VArrayOfExtCharacter &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter &Value);
+		%feature("autodoc", "1");
+		Standard_ExtCharacter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_ExtCharacter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend DBC_VArrayOfExtCharacter {
+	~DBC_VArrayOfExtCharacter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfExtCharacter\n");}
 	}
 };
 

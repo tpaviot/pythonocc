@@ -55,14 +55,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_PLib_Base.hxx>
-#include<TColStd_Array2OfReal.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_TColStd_HArray2OfInteger.hxx>
 #include<math_Matrix.hxx>
 #include<math_Vector.hxx>
+#include<Handle_PLib_Base.hxx>
+#include<TColStd_Array2OfReal.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfInteger.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>

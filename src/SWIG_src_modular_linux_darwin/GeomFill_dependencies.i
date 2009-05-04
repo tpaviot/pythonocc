@@ -285,11 +285,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import Approx.i
+%import TCollection.i
 %import Adaptor3d.i
 %import Standard.i
 %import GeomAbs.i
-%import Convert.i
 %import math.i
+%import Convert.i
 %import AppBlend.i

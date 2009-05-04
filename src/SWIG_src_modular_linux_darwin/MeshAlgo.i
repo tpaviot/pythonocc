@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MeshAlgo
 
+%include MeshAlgo_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -144,8 +146,6 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 %nodefaultctor MeshAlgo;
 class MeshAlgo {
 	public:
-		%feature("autodoc", "1");
-		MeshAlgo();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");

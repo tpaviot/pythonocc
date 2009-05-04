@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepBndLib
 
+%include BRepBndLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor BRepBndLib;
 class BRepBndLib {
 	public:
-		%feature("autodoc", "1");
-		BRepBndLib();
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape &S, Bnd_Box & B);
 		%feature("autodoc", "1");

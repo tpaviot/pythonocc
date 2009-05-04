@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepDimTol
 
+%include RWStepDimTol_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -177,27 +179,6 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 };
 
 
-%nodefaultctor RWStepDimTol_RWDatumReference;
-class RWStepDimTol_RWDatumReference {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWDatumReference();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumReference &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepDimTol_RWDatumReference {
-	~RWStepDimTol_RWDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
-	}
-};
-
-
 %nodefaultctor RWStepDimTol_RWRoundnessTolerance;
 class RWStepDimTol_RWRoundnessTolerance {
 	public:
@@ -324,27 +305,6 @@ class RWStepDimTol_RWParallelismTolerance {
 };
 
 
-%nodefaultctor RWStepDimTol_RWPositionTolerance;
-class RWStepDimTol_RWPositionTolerance {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWPositionTolerance();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepDimTol_RWPositionTolerance {
-	~RWStepDimTol_RWPositionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
-	}
-};
-
-
 %nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
 class RWStepDimTol_RWSurfaceProfileTolerance {
 	public:
@@ -429,6 +389,27 @@ class RWStepDimTol_RWFlatnessTolerance {
 };
 
 
+%nodefaultctor RWStepDimTol_RWPositionTolerance;
+class RWStepDimTol_RWPositionTolerance {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWPositionTolerance();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepDimTol_RWPositionTolerance {
+	~RWStepDimTol_RWPositionTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
+	}
+};
+
+
 %nodefaultctor RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	public:
@@ -509,6 +490,27 @@ class RWStepDimTol_RWCylindricityTolerance {
 	~RWStepDimTol_RWCylindricityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCylindricityTolerance\n");}
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWDatumReference;
+class RWStepDimTol_RWDatumReference {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWDatumReference();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumReference &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepDimTol_RWDatumReference {
+	~RWStepDimTol_RWDatumReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
 	}
 };
 

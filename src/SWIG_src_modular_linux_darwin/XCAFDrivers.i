@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XCAFDrivers
 
+%include XCAFDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -195,23 +197,6 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 
 
-%nodefaultctor XCAFDrivers;
-class XCAFDrivers {
-	public:
-		%feature("autodoc", "1");
-		XCAFDrivers();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
-
-};
-%extend XCAFDrivers {
-	~XCAFDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDrivers\n");}
-	}
-};
-
-
 %nodefaultctor XCAFDrivers_DocumentStorageDriver;
 class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	public:
@@ -237,5 +222,20 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	~XCAFDrivers_DocumentStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFDrivers_DocumentStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor XCAFDrivers;
+class XCAFDrivers {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+
+};
+%extend XCAFDrivers {
+	~XCAFDrivers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFDrivers\n");}
 	}
 };

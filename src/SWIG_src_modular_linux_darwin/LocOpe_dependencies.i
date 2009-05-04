@@ -213,8 +213,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopOpeBRepBuild_kpresu.hxx>
 %};
 
-%import TopOpeBRepBuild.i
 %import MMgt.i
 %import TCollection.i
+%import TopOpeBRepBuild.i
 %import Standard.i
 %import TopAbs.i

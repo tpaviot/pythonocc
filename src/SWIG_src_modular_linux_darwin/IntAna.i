@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntAna
 
+%include IntAna_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -149,6 +151,31 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 	~Handle_IntAna_ListNodeOfListOfCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor IntAna_ListIteratorOfListOfCurve;
+class IntAna_ListIteratorOfListOfCurve {
+	public:
+		%feature("autodoc", "1");
+		IntAna_ListIteratorOfListOfCurve();
+		%feature("autodoc", "1");
+		IntAna_ListIteratorOfListOfCurve(const IntAna_ListOfCurve &L);
+		%feature("autodoc", "1");
+		void Initialize(const IntAna_ListOfCurve &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		IntAna_Curve & Value() const;
+
+};
+%extend IntAna_ListIteratorOfListOfCurve {
+	~IntAna_ListIteratorOfListOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
 	}
 };
 
@@ -492,31 +519,6 @@ class IntAna_ListOfCurve {
 	~IntAna_ListOfCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor IntAna_ListIteratorOfListOfCurve;
-class IntAna_ListIteratorOfListOfCurve {
-	public:
-		%feature("autodoc", "1");
-		IntAna_ListIteratorOfListOfCurve();
-		%feature("autodoc", "1");
-		IntAna_ListIteratorOfListOfCurve(const IntAna_ListOfCurve &L);
-		%feature("autodoc", "1");
-		void Initialize(const IntAna_ListOfCurve &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		IntAna_Curve & Value() const;
-
-};
-%extend IntAna_ListIteratorOfListOfCurve {
-	~IntAna_ListIteratorOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module V3d
 
+%include V3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -167,6 +169,15 @@ enum V3d_TypeOfView {
 	V3d_PERSPECTIVE,
 	};
 
+enum V3d_TypeOfPickLight {
+	V3d_POSITIONLIGHT,
+	V3d_SPACELIGHT,
+	V3d_RADIUSTEXTLIGHT,
+	V3d_ExtRADIUSLIGHT,
+	V3d_IntRADIUSLIGHT,
+	V3d_NOTHING,
+	};
+
 enum V3d_TypeOfUpdate {
 	V3d_ASAP,
 	V3d_WAIT,
@@ -180,19 +191,17 @@ enum V3d_TypeOfShadingModel {
 	V3d_HIDDEN,
 	};
 
+enum V3d_TypeOfLight {
+	V3d_AMBIENT,
+	V3d_DIRECTIONAL,
+	V3d_POSITIONAL,
+	V3d_SPOT,
+	};
+
 enum V3d_TypeOfBackfacingModel {
 	V3d_TOBM_AUTOMATIC,
 	V3d_TOBM_ALWAYS_DISPLAYED,
 	V3d_TOBM_NEVER_DISPLAYED,
-	};
-
-enum V3d_TypeOfPickLight {
-	V3d_POSITIONLIGHT,
-	V3d_SPACELIGHT,
-	V3d_RADIUSTEXTLIGHT,
-	V3d_ExtRADIUSLIGHT,
-	V3d_IntRADIUSLIGHT,
-	V3d_NOTHING,
 	};
 
 enum V3d_TypeOfRepresentation {
@@ -222,13 +231,6 @@ enum V3d_TypeOfPickCamera {
 	V3d_ExtRADIUSCAMERA,
 	V3d_IntRADIUSCAMERA,
 	V3d_NOTHINGCAMERA,
-	};
-
-enum V3d_TypeOfLight {
-	V3d_AMBIENT,
-	V3d_DIRECTIONAL,
-	V3d_POSITIONAL,
-	V3d_SPOT,
 	};
 
 
@@ -863,11 +865,54 @@ class V3d_PositionLight : public V3d_Light {
 };
 
 
+%nodefaultctor V3d_ColorScale;
+class V3d_ColorScale : public Aspect_ColorScale {
+	public:
+		%feature("autodoc", "1");
+		V3d_ColorScale(const Handle_V3d_LayerMgr &aMgr);
+		%feature("autodoc", "1");
+		void Display();
+		%feature("autodoc", "1");
+		void Erase();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc", "1");
+		virtual		void PaintRect(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer W, const Standard_Integer H, const Quantity_Color &aColor, const Standard_Boolean aFilled=0);
+		%feature("autodoc", "1");
+		virtual		void PaintText(const TCollection_ExtendedString &aText, const Standard_Integer X, const Standard_Integer Y, const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer TextWidth(const TCollection_ExtendedString &aText) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer TextHeight(const TCollection_ExtendedString &aText) const;
+		%feature("autodoc", "1");
+		void TextSize(const TCollection_ExtendedString &AText, const Standard_Integer AHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void DrawScale();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_ColorScale {
+	Handle_V3d_ColorScale GetHandle() {
+	return *(Handle_V3d_ColorScale*) &$self;
+	}
+};
+%extend V3d_ColorScale {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend V3d_ColorScale {
+	~V3d_ColorScale() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V3d_ColorScale\n");}
+	}
+};
+
+
 %nodefaultctor V3d;
 class V3d {
 	public:
-		%feature("autodoc", "1");
-		V3d();
 		%feature("autodoc", "1");
 		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
 		%feature("autodoc", "1");
@@ -962,51 +1007,6 @@ class V3d_UnMapped : public Standard_DomainError {
 	~V3d_UnMapped() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
-	}
-};
-
-
-%nodefaultctor V3d_ColorScale;
-class V3d_ColorScale : public Aspect_ColorScale {
-	public:
-		%feature("autodoc", "1");
-		V3d_ColorScale(const Handle_V3d_LayerMgr &aMgr);
-		%feature("autodoc", "1");
-		void Display();
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc", "1");
-		virtual		void PaintRect(const Standard_Integer X, const Standard_Integer Y, const Standard_Integer W, const Standard_Integer H, const Quantity_Color &aColor, const Standard_Boolean aFilled=0);
-		%feature("autodoc", "1");
-		virtual		void PaintText(const TCollection_ExtendedString &aText, const Standard_Integer X, const Standard_Integer Y, const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer TextWidth(const TCollection_ExtendedString &aText) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer TextHeight(const TCollection_ExtendedString &aText) const;
-		%feature("autodoc", "1");
-		void TextSize(const TCollection_ExtendedString &AText, const Standard_Integer AHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void DrawScale();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_ColorScale {
-	Handle_V3d_ColorScale GetHandle() {
-	return *(Handle_V3d_ColorScale*) &$self;
-	}
-};
-%extend V3d_ColorScale {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_ColorScale {
-	~V3d_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_ColorScale\n");}
 	}
 };
 
@@ -1122,6 +1122,59 @@ class V3d_Plane : public MMgt_TShared {
 	~V3d_Plane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
+	}
+};
+
+
+%nodefaultctor V3d_SpotLight;
+class V3d_SpotLight : public V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		%feature("autodoc", "1");
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		%feature("autodoc", "1");
+		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		void SetDirection(const Quantity_Parameter Vx, const Quantity_Parameter Vy, const Quantity_Parameter Vz);
+		%feature("autodoc", "1");
+		void SetDirection(const V3d_TypeOfOrientation Orientation);
+		%feature("autodoc", "1");
+		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
+		%feature("autodoc", "1");
+		void SetConcentration(const Quantity_Coefficient C);
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle Angle);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
+		%feature("autodoc", "1");
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
+		%feature("autodoc", "1");
+		Quantity_Coefficient Concentration() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Angle() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_SpotLight {
+	Handle_V3d_SpotLight GetHandle() {
+	return *(Handle_V3d_SpotLight*) &$self;
+	}
+};
+%extend V3d_SpotLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend V3d_SpotLight {
+	~V3d_SpotLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
 	}
 };
 
@@ -1521,104 +1574,6 @@ class V3d_View : public Viewer_View {
 };
 
 
-%nodefaultctor V3d_DirectionalLight;
-class V3d_DirectionalLight : public V3d_PositionLight {
-	public:
-		%feature("autodoc", "1");
-		V3d_DirectionalLight(const Handle_V3d_Viewer &VM, const V3d_TypeOfOrientation Direction=V3d_XposYposZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Standard_Boolean Headlight=0);
-		%feature("autodoc", "1");
-		V3d_DirectionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Standard_Boolean Headlight=0);
-		%feature("autodoc", "1");
-		void SetDirection(const V3d_TypeOfOrientation Direction);
-		%feature("autodoc", "1");
-		void SetDirection(const Quantity_Parameter Xm, const Quantity_Parameter Ym, const Quantity_Parameter Zm);
-		%feature("autodoc", "1");
-		void SetDisplayPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc", "1");
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void DisplayPosition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_DirectionalLight {
-	Handle_V3d_DirectionalLight GetHandle() {
-	return *(Handle_V3d_DirectionalLight*) &$self;
-	}
-};
-%extend V3d_DirectionalLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_DirectionalLight {
-	~V3d_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
-	}
-};
-
-
-%nodefaultctor V3d_SpotLight;
-class V3d_SpotLight : public V3d_PositionLight {
-	public:
-		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
-		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
-		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetDirection(const Quantity_Parameter Vx, const Quantity_Parameter Vy, const Quantity_Parameter Vz);
-		%feature("autodoc", "1");
-		void SetDirection(const V3d_TypeOfOrientation Orientation);
-		%feature("autodoc", "1");
-		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
-		%feature("autodoc", "1");
-		void SetConcentration(const Quantity_Coefficient C);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle Angle);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc", "1");
-		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
-		%feature("autodoc", "1");
-		Quantity_Coefficient Concentration() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_SpotLight {
-	Handle_V3d_SpotLight GetHandle() {
-	return *(Handle_V3d_SpotLight*) &$self;
-	}
-};
-%extend V3d_SpotLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_SpotLight {
-	~V3d_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
-	}
-};
-
-
 %nodefaultctor V3d_PerspectiveView;
 class V3d_PerspectiveView : public V3d_View {
 	public:
@@ -1636,8 +1591,6 @@ class V3d_PerspectiveView : public V3d_View {
 		Quantity_PlaneAngle Angle() const;
 		%feature("autodoc", "1");
 		void SetPerspective(const Quantity_PlaneAngle Angle, const Standard_Real UVRatio, const Standard_Real ZNear, const Standard_Real ZFar);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend V3d_PerspectiveView {
@@ -1687,6 +1640,51 @@ class V3d_OrthographicView : public V3d_View {
 	~V3d_OrthographicView() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of V3d_OrthographicView\n");}
+	}
+};
+
+
+%nodefaultctor V3d_DirectionalLight;
+class V3d_DirectionalLight : public V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		V3d_DirectionalLight(const Handle_V3d_Viewer &VM, const V3d_TypeOfOrientation Direction=V3d_XposYposZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Standard_Boolean Headlight=0);
+		%feature("autodoc", "1");
+		V3d_DirectionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Standard_Boolean Headlight=0);
+		%feature("autodoc", "1");
+		void SetDirection(const V3d_TypeOfOrientation Direction);
+		%feature("autodoc", "1");
+		void SetDirection(const Quantity_Parameter Xm, const Quantity_Parameter Ym, const Quantity_Parameter Zm);
+		%feature("autodoc", "1");
+		void SetDisplayPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		virtual		void SetPosition(const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
+		%feature("autodoc", "1");
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void DisplayPosition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_DirectionalLight {
+	Handle_V3d_DirectionalLight GetHandle() {
+	return *(Handle_V3d_DirectionalLight*) &$self;
+	}
+};
+%extend V3d_DirectionalLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend V3d_DirectionalLight {
+	~V3d_DirectionalLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
 	}
 };
 

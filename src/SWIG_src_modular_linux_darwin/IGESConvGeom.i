@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESConvGeom
 
+%include IGESConvGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor IGESConvGeom;
 class IGESConvGeom {
 	public:
-		%feature("autodoc", "1");
-		IGESConvGeom();
 		%feature("autodoc", "1");
 		Standard_Integer SplineCurveFromIGES(const Handle_IGESGeom_SplineCurve &igesent, const Standard_Real epscoef, const Standard_Real epsgeom, Handle_Geom_BSplineCurve & result);
 		%feature("autodoc", "1");

@@ -87,5 +87,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Standard_SStream.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
-#include<Units.hxx>
 %}

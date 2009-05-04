@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomLib
 
+%include GeomLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -122,29 +124,6 @@ enum GeomLib_InterpolationErrors {
 
 
 
-%nodefaultctor GeomLib_CheckBSplineCurve;
-class GeomLib_CheckBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-};
-%extend GeomLib_CheckBSplineCurve {
-	~GeomLib_CheckBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
-	}
-};
-
-
 %nodefaultctor GeomLib_DenominatorMultiplier;
 class GeomLib_DenominatorMultiplier {
 	public:
@@ -165,8 +144,6 @@ class GeomLib_DenominatorMultiplier {
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
 	public:
-		%feature("autodoc", "1");
-		GeomLib_Tool();
 		%feature("autodoc", "1");
 		Standard_Boolean Parameter(const Handle_Geom_Curve &Curve, const gp_Pnt &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -265,8 +242,6 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 class GeomLib {
 	public:
 		%feature("autodoc", "1");
-		GeomLib();
-		%feature("autodoc", "1");
 		Handle_Geom_Curve To3d(const gp_Ax2 &Position, const Handle_Geom2d_Curve &Curve2d);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve GTransform(const Handle_Geom2d_Curve &Curve, const gp_GTrsf2d &GTrsf);
@@ -304,6 +279,29 @@ class GeomLib {
 	~GeomLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomLib\n");}
+	}
+};
+
+
+%nodefaultctor GeomLib_CheckBSplineCurve;
+class GeomLib_CheckBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+
+};
+%extend GeomLib_CheckBSplineCurve {
+	~GeomLib_CheckBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
 	}
 };
 

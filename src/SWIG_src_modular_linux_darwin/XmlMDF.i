@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMDF
 
+%include XmlMDF_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -273,8 +275,6 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 %nodefaultctor XmlMDF;
 class XmlMDF {
 	public:
-		%feature("autodoc", "1");
-		XmlMDF();
 		%feature("autodoc", "1");
 		void FromTo(const Handle_TDF_Data &aSource, XmlObjMgt_Element & aTarget, XmlObjMgt_SRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
 		%feature("autodoc", "1");

@@ -503,17 +503,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_StepGeom_CurveBoundedSurface.hxx>
+#include<Handle_StepGeom_Direction.hxx>
 #include<Handle_StepGeom_HArray1OfCartesianPoint.hxx>
 #include<Handle_StepGeom_CartesianPoint.hxx>
 #include<Handle_StepGeom_CartesianTransformationOperator3d.hxx>
-#include<Handle_StepGeom_Direction.hxx>
+#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepGeom_Point.hxx>
 #include<Handle_StepGeom_Curve.hxx>
 #include<Handle_StepGeom_Surface.hxx>
 #include<Handle_StepBasic_MeasureWithUnit.hxx>
-#include<Handle_StepGeom_CurveBoundedSurface.hxx>
 #include<Handle_StepGeom_Axis2Placement3d.hxx>
 #include<Handle_StepRepr_ShapeRepresentationRelationship.hxx>
 #include<Handle_StepRepr_ProductDefinitionShape.hxx>

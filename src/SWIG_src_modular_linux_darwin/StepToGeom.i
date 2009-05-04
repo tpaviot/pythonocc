@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepToGeom
 
+%include StepToGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -118,8 +120,6 @@ Standard_Integer & function transformation
 class StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
-		StepToGeom_Root();
-		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
 };
@@ -216,6 +216,40 @@ class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
 };
 
 
+%nodefaultctor StepToGeom_MakeConic;
+class StepToGeom_MakeConic : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeConic(const Handle_StepGeom_Conic &C);
+		%feature("autodoc", "1");
+		const Handle_Geom_Conic & Value() const;
+
+};
+%extend StepToGeom_MakeConic {
+	~StepToGeom_MakeConic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic\n");}
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeToroidalSurface;
+class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeToroidalSurface(const Handle_StepGeom_ToroidalSurface &TorSurf);
+		%feature("autodoc", "1");
+		const Handle_Geom_ToroidalSurface & Value() const;
+
+};
+%extend StepToGeom_MakeToroidalSurface {
+	~StepToGeom_MakeToroidalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");}
+	}
+};
+
+
 %nodefaultctor StepToGeom_MakeBoundedCurve2d;
 class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 	public:
@@ -229,6 +263,23 @@ class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 	~StepToGeom_MakeBoundedCurve2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve2d\n");}
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
+class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeVectorWithMagnitude2d(const Handle_StepGeom_Vector &V);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_VectorWithMagnitude & Value() const;
+
+};
+%extend StepToGeom_MakeVectorWithMagnitude2d {
+	~StepToGeom_MakeVectorWithMagnitude2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");}
 	}
 };
 
@@ -318,23 +369,6 @@ class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 };
 
 
-%nodefaultctor StepToGeom_MakeConic;
-class StepToGeom_MakeConic : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeConic(const Handle_StepGeom_Conic &C);
-		%feature("autodoc", "1");
-		const Handle_Geom_Conic & Value() const;
-
-};
-%extend StepToGeom_MakeConic {
-	~StepToGeom_MakeConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic\n");}
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeBoundedSurface;
 class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
 	public:
@@ -369,23 +403,6 @@ class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 };
 
 
-%nodefaultctor StepToGeom_MakeBSplineSurface;
-class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeBSplineSurface(const Handle_StepGeom_BSplineSurface &Bsplin);
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineSurface & Value() const;
-
-};
-%extend StepToGeom_MakeBSplineSurface {
-	~StepToGeom_MakeBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");}
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeConic2d;
 class StepToGeom_MakeConic2d : public StepToGeom_Root {
 	public:
@@ -399,6 +416,23 @@ class StepToGeom_MakeConic2d : public StepToGeom_Root {
 	~StepToGeom_MakeConic2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic2d\n");}
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeBSplineSurface;
+class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeBSplineSurface(const Handle_StepGeom_BSplineSurface &Bsplin);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineSurface & Value() const;
+
+};
+%extend StepToGeom_MakeBSplineSurface {
+	~StepToGeom_MakeBSplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");}
 	}
 };
 
@@ -518,23 +552,6 @@ class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 	~StepToGeom_MakeAxisPlacement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxisPlacement\n");}
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
-class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeVectorWithMagnitude2d(const Handle_StepGeom_Vector &V);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_VectorWithMagnitude & Value() const;
-
-};
-%extend StepToGeom_MakeVectorWithMagnitude2d {
-	~StepToGeom_MakeVectorWithMagnitude2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");}
 	}
 };
 
@@ -726,6 +743,40 @@ class StepToGeom_MakeDirection : public StepToGeom_Root {
 };
 
 
+%nodefaultctor StepToGeom_MakeCylindricalSurface;
+class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCylindricalSurface(const Handle_StepGeom_CylindricalSurface &Surf);
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Value() const;
+
+};
+%extend StepToGeom_MakeCylindricalSurface {
+	~StepToGeom_MakeCylindricalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeHyperbola2d;
+class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeHyperbola2d(const Handle_StepGeom_Hyperbola &C);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Hyperbola & Value() const;
+
+};
+%extend StepToGeom_MakeHyperbola2d {
+	~StepToGeom_MakeHyperbola2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola2d\n");}
+	}
+};
+
+
 %nodefaultctor StepToGeom_MakeCircle;
 class StepToGeom_MakeCircle : public StepToGeom_Root {
 	public:
@@ -794,23 +845,6 @@ class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 };
 
 
-%nodefaultctor StepToGeom_MakeHyperbola2d;
-class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeHyperbola2d(const Handle_StepGeom_Hyperbola &C);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Hyperbola & Value() const;
-
-};
-%extend StepToGeom_MakeHyperbola2d {
-	~StepToGeom_MakeHyperbola2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola2d\n");}
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeAxis2Placement;
 class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
 	public:
@@ -841,40 +875,6 @@ class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 	~StepToGeom_MakeCurve2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve2d\n");}
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeToroidalSurface;
-class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeToroidalSurface(const Handle_StepGeom_ToroidalSurface &TorSurf);
-		%feature("autodoc", "1");
-		const Handle_Geom_ToroidalSurface & Value() const;
-
-};
-%extend StepToGeom_MakeToroidalSurface {
-	~StepToGeom_MakeToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");}
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeCylindricalSurface;
-class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeCylindricalSurface(const Handle_StepGeom_CylindricalSurface &Surf);
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Value() const;
-
-};
-%extend StepToGeom_MakeCylindricalSurface {
-	~StepToGeom_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
 	}
 };
 

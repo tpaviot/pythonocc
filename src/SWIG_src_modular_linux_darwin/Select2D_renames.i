@@ -1,0 +1,15 @@
+%rename(Handle_SensitiveCircle) Handle_Select2D_SensitiveCircle;
+%rename(Handle_SensitivePoint) Handle_Select2D_SensitivePoint;
+%rename(Projector) Select2D_Projector;
+%rename(Handle_SensitiveBox) Handle_Select2D_SensitiveBox;
+%rename(TOS) Select2D_TOS_INTERIOR;
+%rename(SensitiveBox) Select2D_SensitiveBox;
+%rename(Handle_SensitiveArc) Handle_Select2D_SensitiveArc;
+%rename(Handle_SensitiveSegment) Handle_Select2D_SensitiveSegment;
+%rename(SensitiveSegment) Select2D_SensitiveSegment;
+%rename(SensitiveArc) Select2D_SensitiveArc;
+%rename(Handle_Projector) Handle_Select2D_Projector;
+%rename(SensitivePoint) Select2D_SensitivePoint;
+%rename(SensitiveCircle) Select2D_SensitiveCircle;
+%rename(Handle_SensitiveEntity) Handle_Select2D_SensitiveEntity;
+%rename(SensitiveEntity) Select2D_SensitiveEntity;

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Adaptor3d
 
+%include Adaptor3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -807,8 +809,6 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 class Adaptor3d_Curve {
 	public:
 		%feature("autodoc", "1");
-		Adaptor3d_Curve();
-		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstParameter() const;
@@ -879,8 +879,6 @@ class Adaptor3d_Curve {
 %nodefaultctor Adaptor3d_Surface;
 class Adaptor3d_Surface {
 	public:
-		%feature("autodoc", "1");
-		Adaptor3d_Surface();
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");

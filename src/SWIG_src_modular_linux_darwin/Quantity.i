@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Quantity
 
+%include Quantity_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -111,21 +113,20 @@ Standard_Integer & function transformation
 
 %include Quantity_headers.i
 
-typedef Standard_Real Quantity_Length;
 typedef Standard_Real Quantity_PlaneAngle;
 typedef Standard_Real Quantity_Factor;
 typedef Standard_Real Quantity_Illuminance;
 typedef Standard_Real Quantity_AngularVelocity;
 typedef Standard_Real Quantity_AmountOfSubstance;
+typedef Standard_Real Quantity_Mass;
 typedef Standard_Real Quantity_ElectricCharge;
 typedef Standard_Real Quantity_Work;
 typedef Standard_Real Quantity_Energy;
 typedef Standard_Real Quantity_Acceleration;
 typedef Standard_Real Quantity_Normality;
-typedef Standard_Real Quantity_MomentOfAForce;
 typedef Standard_Real Quantity_SpecificHeatCapacity;
+typedef Standard_Real Quantity_Scalaire;
 typedef Standard_Real Quantity_SurfaceTension;
-typedef Standard_Real Quantity_Constant;
 typedef Standard_Real Quantity_KinematicViscosity;
 typedef Standard_Real Quantity_Entropy;
 typedef Standard_Real Quantity_Content;
@@ -137,55 +138,56 @@ typedef Standard_Real Quantity_MagneticFieldStrength;
 typedef Standard_Real Quantity_Capacitance;
 typedef Standard_Real Quantity_Parameter;
 typedef Standard_Real Quantity_ThermalConductivity;
-typedef Standard_Real Quantity_Frequency;
 typedef Standard_Real Quantity_MagneticFlux;
 typedef Standard_Real Quantity_VolumeFlow;
 typedef Standard_Real Quantity_KineticMoment;
 typedef Standard_Real Quantity_Index;
 typedef Standard_Real Quantity_Molarity;
 typedef Standard_Real Quantity_MomentOfInertia;
-typedef Standard_Real Quantity_Mass;
-typedef Standard_Real Quantity_Ratio;
+typedef Standard_Real Quantity_Momentum;
 typedef Standard_Real Quantity_ElectricFieldStrength;
 typedef Standard_Real Quantity_Pressure;
 typedef Standard_Real Quantity_Power;
 typedef Standard_Real Quantity_ElectricCurrent;
 typedef Standard_Real Quantity_DoseEquivalent;
 typedef Standard_Real Quantity_Density;
+typedef Standard_Real Quantity_Ratio;
 typedef Standard_Real Quantity_MolarMass;
 typedef Standard_Real Quantity_Conductivity;
+typedef Standard_Real Quantity_MomentOfAForce;
 typedef Standard_Real Quantity_Temperature;
+typedef Standard_Real Quantity_Speed;
 typedef Standard_Real Quantity_Consumption;
-typedef Standard_Real Quantity_Momentum;
-typedef Standard_Real Quantity_Scalaire;
-typedef Standard_Real Quantity_MolarVolume;
-typedef Standard_Real Quantity_ElectricCapacitance;
-typedef Standard_Real Quantity_Reluctance;
 typedef Standard_Real Quantity_Concentration;
+typedef Standard_Real Quantity_Length;
+typedef Standard_Real Quantity_MolarVolume;
+typedef Standard_Real Quantity_Constant;
+typedef Standard_Real Quantity_Reluctance;
 typedef Standard_Real Quantity_MagneticFluxDensity;
 typedef Standard_Real Quantity_Quotient;
+typedef Standard_Real Quantity_Frequency;
 typedef Standard_Real Quantity_Volume;
 typedef Standard_Real Quantity_AbsorbedDose;
+typedef Standard_Real Quantity_MassFlow;
 typedef Standard_Real Quantity_CoefficientOfExpansion;
 typedef Standard_Real Quantity_Area;
 typedef Standard_Real Quantity_Resistivity;
 typedef Standard_Real Quantity_Admittance;
 typedef Standard_Real Quantity_Torque;
-typedef Standard_Real Quantity_Viscosity;
 typedef Standard_Real Quantity_AcousticIntensity;
 typedef Standard_Real Quantity_Activity;
+typedef Standard_Real Quantity_ElectricCapacitance;
 typedef Standard_Real Quantity_LuminousExposition;
 typedef Standard_Real Quantity_Force;
 typedef Standard_Real Quantity_LuminousFlux;
 typedef Standard_Real Quantity_Enthalpy;
+typedef Standard_Real Quantity_Viscosity;
 typedef Standard_Real Quantity_Luminance;
 typedef Standard_Real Quantity_Coefficient;
 typedef Standard_Real Quantity_Impedance;
 typedef Standard_Real Quantity_SolidAngle;
-typedef Standard_Real Quantity_Speed;
 typedef Standard_Real Quantity_Inductance;
 typedef Standard_Real Quantity_Weight;
-typedef Standard_Real Quantity_MassFlow;
 typedef Standard_Real Quantity_LuminousIntensity;
 typedef Standard_Real Quantity_Resistance;
 typedef Standard_Real Quantity_ElectricPotential;
@@ -893,6 +895,91 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 };
 
 
+%nodefaultctor Quantity_Color;
+class Quantity_Color {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Color();
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc", "1");
+		Quantity_Color & Assign(const Quantity_Color &Other);
+		%feature("autodoc", "1");
+		void ChangeContrast(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void ChangeIntensity(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc", "1");
+		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Blue() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Green() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Hue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator!=(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Light() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Name() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Red() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Saturation() const;
+		%feature("autodoc", "1");
+		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
+		%feature("autodoc", "1");
+		void SetEpsilon(const Quantity_Parameter AnEpsilon);
+		%feature("autodoc", "1");
+		Quantity_Parameter Epsilon();
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
+		%feature("autodoc", "1");
+		char * StringName(const Quantity_NameOfColor AColor);
+		%feature("autodoc", "1");
+		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void Test();
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
+
+};
+%extend Quantity_Color {
+	~Quantity_Color() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
+	}
+};
+
+
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
 	public:
@@ -938,41 +1025,6 @@ class Quantity_Array2OfColor {
 };
 
 
-%nodefaultctor Quantity_ColorDefinitionError;
-class Quantity_ColorDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Quantity_ColorDefinitionError {
-	Handle_Quantity_ColorDefinitionError GetHandle() {
-	return *(Handle_Quantity_ColorDefinitionError*) &$self;
-	}
-};
-%extend Quantity_ColorDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Quantity_ColorDefinitionError {
-	~Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
-	}
-};
-
-
 %nodefaultctor Quantity_Array1OfCoefficient;
 class Quantity_Array1OfCoefficient {
 	public:
@@ -1010,6 +1062,41 @@ class Quantity_Array1OfCoefficient {
 	~Quantity_Array1OfCoefficient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfCoefficient\n");}
+	}
+};
+
+
+%nodefaultctor Quantity_ColorDefinitionError;
+class Quantity_ColorDefinitionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Quantity_ColorDefinitionError();
+		%feature("autodoc", "1");
+		Quantity_ColorDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Quantity_ColorDefinitionError {
+	Handle_Quantity_ColorDefinitionError GetHandle() {
+	return *(Handle_Quantity_ColorDefinitionError*) &$self;
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	~Quantity_ColorDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
 	}
 };
 
@@ -1179,91 +1266,6 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 };
 
 
-%nodefaultctor Quantity_Color;
-class Quantity_Color {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Color();
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc", "1");
-		Quantity_Color & Assign(const Quantity_Color &Other);
-		%feature("autodoc", "1");
-		void ChangeContrast(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void ChangeIntensity(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc", "1");
-		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Blue() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Green() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Hue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Light() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Name() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Red() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Saturation() const;
-		%feature("autodoc", "1");
-		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
-		%feature("autodoc", "1");
-		void SetEpsilon(const Quantity_Parameter AnEpsilon);
-		%feature("autodoc", "1");
-		Quantity_Parameter Epsilon();
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
-		%feature("autodoc", "1");
-		char * StringName(const Quantity_NameOfColor AColor);
-		%feature("autodoc", "1");
-		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void Test();
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
-
-};
-%extend Quantity_Color {
-	~Quantity_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
-	}
-};
-
-
 %nodefaultctor Quantity_Array1OfColor;
 class Quantity_Array1OfColor {
 	public:
@@ -1301,41 +1303,6 @@ class Quantity_Array1OfColor {
 	~Quantity_Array1OfColor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
-	}
-};
-
-
-%nodefaultctor Quantity_DateDefinitionError;
-class Quantity_DateDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_DateDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_DateDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Quantity_DateDefinitionError {
-	Handle_Quantity_DateDefinitionError GetHandle() {
-	return *(Handle_Quantity_DateDefinitionError*) &$self;
-	}
-};
-%extend Quantity_DateDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Quantity_DateDefinitionError {
-	~Quantity_DateDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
 	}
 };
 
@@ -1383,6 +1350,41 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	~Quantity_HArray1OfColor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
+	}
+};
+
+
+%nodefaultctor Quantity_DateDefinitionError;
+class Quantity_DateDefinitionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Quantity_DateDefinitionError();
+		%feature("autodoc", "1");
+		Quantity_DateDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Quantity_DateDefinitionError {
+	Handle_Quantity_DateDefinitionError GetHandle() {
+	return *(Handle_Quantity_DateDefinitionError*) &$self;
+	}
+};
+%extend Quantity_DateDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Quantity_DateDefinitionError {
+	~Quantity_DateDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
 	}
 };
 

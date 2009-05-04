@@ -142,10 +142,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
-#include<TopoDS_Shell.hxx>
-#include<TopoDS_Face.hxx>
-#include<TopTools_SequenceOfShape.hxx>
 #include<BOPTools_DSFiller.hxx>
+#include<TopoDS_Face.hxx>
+#include<gp_Pnt.hxx>
+#include<gp_Pnt2d.hxx>
+#include<gp_Dir.hxx>
+#include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
@@ -153,9 +155,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BOPTools_CArray1OfSSInterference.hxx>
 #include<BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
 #include<TopoDS_Solid.hxx>
-#include<gp_Pnt.hxx>
-#include<TopTools_DataMapOfShapeInteger.hxx>
+#include<TopoDS_Shell.hxx>
+#include<TopTools_SequenceOfShape.hxx>
 #include<BOPTools_IndexedDataMapOfIntegerState.hxx>
-#include<gp_Pnt2d.hxx>
-#include<gp_Dir.hxx>
 %}

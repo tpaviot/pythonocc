@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module math
 
+%include math_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -174,55 +176,32 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 };
 
 
-%nodefaultctor math_MultipleVarFunction;
-class math_MultipleVarFunction {
+%nodefaultctor math_BracketedRoot;
+class math_BracketedRoot {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
-%extend math_MultipleVarFunction {
-	~math_MultipleVarFunction() {
+%extend math_BracketedRoot {
+	~math_BracketedRoot() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
-	}
-};
-
-
-%nodefaultctor math_MultipleVarFunctionWithGradient;
-class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
-
-};
-%extend math_MultipleVarFunctionWithGradient {
-	~math_MultipleVarFunctionWithGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");}
-	}
-};
-
-
-%nodefaultctor math_MultipleVarFunctionWithHessian;
-class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
-
-};
-%extend math_MultipleVarFunctionWithHessian {
-	~math_MultipleVarFunctionWithHessian() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
+	if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
 	}
 };
 
@@ -289,6 +268,59 @@ class math_BissecNewton {
 	~math_BissecNewton() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_BissecNewton\n");}
+	}
+};
+
+
+%nodefaultctor math_MultipleVarFunction;
+class math_MultipleVarFunction {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%extend math_MultipleVarFunction {
+	~math_MultipleVarFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
+	}
+};
+
+
+%nodefaultctor math_MultipleVarFunctionWithGradient;
+class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
+
+};
+%extend math_MultipleVarFunctionWithGradient {
+	~math_MultipleVarFunctionWithGradient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");}
+	}
+};
+
+
+%nodefaultctor math_MultipleVarFunctionWithHessian;
+class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
+
+};
+%extend math_MultipleVarFunctionWithHessian {
+	~math_MultipleVarFunctionWithHessian() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
 	}
 };
 
@@ -392,6 +424,23 @@ class math_IntegerRandom {
 };
 
 
+%nodefaultctor math_Function;
+class math_Function {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%extend math_Function {
+	~math_Function() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
+	}
+};
+
+
 %nodefaultctor math_Jacobi;
 class math_Jacobi {
 	public:
@@ -424,32 +473,27 @@ class math_Jacobi {
 };
 
 
-%nodefaultctor math_BracketedRoot;
-class math_BracketedRoot {
+%nodefaultctor math;
+class math {
 	public:
 		%feature("autodoc", "1");
-		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		Standard_Integer GaussPointsMax();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		void GaussPoints(const Standard_Integer Index, math_Vector & Points);
 		%feature("autodoc", "1");
-		Standard_Real Root() const;
+		void GaussWeights(const Standard_Integer Index, math_Vector & Weights);
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		Standard_Integer KronrodPointsMax();
 		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
+		Standard_Boolean OrderedGaussPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
+		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 
 };
-%extend math_BracketedRoot {
-	~math_BracketedRoot() {
+%extend math {
+	~math() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
+	if (__env){printf("## Call custom destructor for instance of math\n");}
 	}
 };
 
@@ -600,6 +644,38 @@ class math_SingleTabOfInteger {
 };
 
 
+%nodefaultctor math_Householder;
+class math_Householder {
+	public:
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Value(math_Vector & sol, const Standard_Integer Index=1) const;
+		%feature("autodoc", "1");
+		const math_Matrix & AllValues() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend math_Householder {
+	~math_Householder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
+	}
+};
+
+
 %nodefaultctor math_SingularMatrix;
 class math_SingularMatrix : public Standard_Failure {
 	public:
@@ -631,142 +707,6 @@ class math_SingularMatrix : public Standard_Failure {
 	~math_SingularMatrix() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_SingularMatrix\n");}
-	}
-};
-
-
-%nodefaultctor math_Matrix;
-class math_Matrix {
-	public:
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-		%feature("autodoc", "1");
-		math_Matrix(const math_Matrix &Other);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real InitialValue);
-		%feature("autodoc", "1");
-		Standard_Integer RowNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer ColNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Real Determinant() const;
-		%feature("autodoc", "1");
-		void Transpose();
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Real Right);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Real Right);
-		%feature("autodoc", "1");
-		math_Matrix Multiplied(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator*(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix TMultiplied(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		void Divide(const Standard_Real Right);
-		%feature("autodoc", "1");
-		void operator/=(const Standard_Real Right);
-		%feature("autodoc", "1");
-		math_Matrix Divided(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator/(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator+=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Added(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator+(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator-=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Subtracted(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator-(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer J1, const Standard_Integer J2, const math_Matrix &M);
-		%feature("autodoc", "1");
-		void SetRow(const Standard_Integer Row, const math_Vector &V);
-		%feature("autodoc", "1");
-		void SetCol(const Standard_Integer Col, const math_Vector &V);
-		%feature("autodoc", "1");
-		void SetDiag(const Standard_Real Value);
-		%feature("autodoc", "1");
-		math_Vector Row(const Standard_Integer Row) const;
-		%feature("autodoc", "1");
-		math_Vector Col(const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		void SwapRow(const Standard_Integer Row1, const Standard_Integer Row2);
-		%feature("autodoc", "1");
-		void SwapCol(const Standard_Integer Col1, const Standard_Integer Col2);
-		%feature("autodoc", "1");
-		math_Matrix Transposed() const;
-		%feature("autodoc", "1");
-		math_Matrix Inverse() const;
-		%feature("autodoc", "1");
-		math_Matrix TMultiply(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Multiply(const math_Vector &Left, const math_Vector &Right);
-		%feature("autodoc", "1");
-		void Multiply(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void TMultiply(const math_Matrix &TLeft, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		math_Matrix & Initialized(const math_Matrix &Other);
-		%feature("autodoc", "1");
-		void Multiply(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator*=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Multiplied(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator*(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Vector Multiplied(const math_Vector &Right) const;
-		%feature("autodoc", "1");
-		math_Vector operator*(const math_Vector &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix Opposite();
-		%feature("autodoc", "1");
-		math_Matrix operator-();
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend math_Matrix {
-	~math_Matrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
 	}
 };
 
@@ -970,6 +910,142 @@ class math_GaussSingleIntegration {
 	~math_GaussSingleIntegration() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
+	}
+};
+
+
+%nodefaultctor math_Matrix;
+class math_Matrix {
+	public:
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_Matrix(const math_Matrix &Other);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real InitialValue);
+		%feature("autodoc", "1");
+		Standard_Integer RowNumber() const;
+		%feature("autodoc", "1");
+		Standard_Integer ColNumber() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Real Determinant() const;
+		%feature("autodoc", "1");
+		void Transpose();
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Real Right);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Real Right);
+		%feature("autodoc", "1");
+		math_Matrix Multiplied(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator*(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix TMultiplied(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		void Divide(const Standard_Real Right);
+		%feature("autodoc", "1");
+		void operator/=(const Standard_Real Right);
+		%feature("autodoc", "1");
+		math_Matrix Divided(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator/(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator+=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Added(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator+(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator-=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Subtracted(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator-(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer J1, const Standard_Integer J2, const math_Matrix &M);
+		%feature("autodoc", "1");
+		void SetRow(const Standard_Integer Row, const math_Vector &V);
+		%feature("autodoc", "1");
+		void SetCol(const Standard_Integer Col, const math_Vector &V);
+		%feature("autodoc", "1");
+		void SetDiag(const Standard_Real Value);
+		%feature("autodoc", "1");
+		math_Vector Row(const Standard_Integer Row) const;
+		%feature("autodoc", "1");
+		math_Vector Col(const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		void SwapRow(const Standard_Integer Row1, const Standard_Integer Row2);
+		%feature("autodoc", "1");
+		void SwapCol(const Standard_Integer Col1, const Standard_Integer Col2);
+		%feature("autodoc", "1");
+		math_Matrix Transposed() const;
+		%feature("autodoc", "1");
+		math_Matrix Inverse() const;
+		%feature("autodoc", "1");
+		math_Matrix TMultiply(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Multiply(const math_Vector &Left, const math_Vector &Right);
+		%feature("autodoc", "1");
+		void Multiply(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void TMultiply(const math_Matrix &TLeft, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		math_Matrix & Initialized(const math_Matrix &Other);
+		%feature("autodoc", "1");
+		void Multiply(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator*=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Multiplied(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator*(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Vector Multiplied(const math_Vector &Right) const;
+		%feature("autodoc", "1");
+		math_Vector operator*(const math_Vector &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix Opposite();
+		%feature("autodoc", "1");
+		math_Matrix operator-();
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend math_Matrix {
+	~math_Matrix() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
 	}
 };
 
@@ -1226,8 +1302,6 @@ class math_Crout {
 class math_QuickSortOfValueAndWeight {
 	public:
 		%feature("autodoc", "1");
-		math_QuickSortOfValueAndWeight();
-		%feature("autodoc", "1");
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 
 };
@@ -1294,6 +1368,72 @@ class math_NewtonFunctionRoot {
 	~math_NewtonFunctionRoot() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_NewtonFunctionRoot\n");}
+	}
+};
+
+
+%nodefaultctor math_SVD;
+class math_SVD {
+	public:
+		%feature("autodoc", "1");
+		math_SVD(const math_Matrix &A);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		%feature("autodoc", "1");
+		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend math_SVD {
+	~math_SVD() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
+	}
+};
+
+
+%nodefaultctor math_BrentMinimum;
+class math_BrentMinimum {
+	public:
+		%feature("autodoc", "1");
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		%feature("autodoc", "1");
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		%feature("autodoc", "1");
+		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		%feature("autodoc", "1");
+		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_Function & F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Location() const;
+		%feature("autodoc", "1");
+		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend math_BrentMinimum {
+	~math_BrentMinimum() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
 	}
 };
 
@@ -1396,104 +1536,6 @@ class math_IntegerVector {
 };
 
 
-%nodefaultctor math_SVD;
-class math_SVD {
-	public:
-		%feature("autodoc", "1");
-		math_SVD(const math_Matrix &A);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
-		%feature("autodoc", "1");
-		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend math_SVD {
-	~math_SVD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
-	}
-};
-
-
-%nodefaultctor math_BrentMinimum;
-class math_BrentMinimum {
-	public:
-		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_Function & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Location() const;
-		%feature("autodoc", "1");
-		Standard_Real Minimum() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend math_BrentMinimum {
-	~math_BrentMinimum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
-	}
-};
-
-
-%nodefaultctor math_FunctionRoots;
-class math_FunctionRoots {
-	public:
-		%feature("autodoc", "1");
-		math_FunctionRoots(math_FunctionWithDerivative & F, const Standard_Real A, const Standard_Real B, const Standard_Integer NbSample, const Standard_Real EpsX=0.0, const Standard_Real EpsF=0.0, const Standard_Real EpsNull=0.0, const Standard_Real K=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllNull() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSolutions() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer Nieme) const;
-		%feature("autodoc", "1");
-		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend math_FunctionRoots {
-	~math_FunctionRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
-	}
-};
-
-
 %nodefaultctor math_FunctionSetRoot;
 class math_FunctionSetRoot {
 	public:
@@ -1580,28 +1622,13 @@ class math_BracketMinimum {
 };
 
 
-%nodefaultctor math_Function;
-class math_Function {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%extend math_Function {
-	~math_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
-	}
-};
-
-
 %nodefaultctor math_FunctionWithDerivative;
 class math_FunctionWithDerivative : public math_Function {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -1706,38 +1733,6 @@ class math_Uzawa {
 };
 
 
-%nodefaultctor math_Householder;
-class math_Householder {
-	public:
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Value(math_Vector & sol, const Standard_Integer Index=1) const;
-		%feature("autodoc", "1");
-		const math_Matrix & AllValues() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend math_Householder {
-	~math_Householder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
-	}
-};
-
-
 %nodefaultctor math_CompareOfValueAndWeight;
 class math_CompareOfValueAndWeight {
 	public:
@@ -1755,6 +1750,38 @@ class math_CompareOfValueAndWeight {
 	~math_CompareOfValueAndWeight() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_CompareOfValueAndWeight\n");}
+	}
+};
+
+
+%nodefaultctor math_FunctionRoots;
+class math_FunctionRoots {
+	public:
+		%feature("autodoc", "1");
+		math_FunctionRoots(math_FunctionWithDerivative & F, const Standard_Real A, const Standard_Real B, const Standard_Integer NbSample, const Standard_Real EpsX=0.0, const Standard_Real EpsF=0.0, const Standard_Real EpsNull=0.0, const Standard_Real K=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllNull() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSolutions() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer Nieme) const;
+		%feature("autodoc", "1");
+		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend math_FunctionRoots {
+	~math_FunctionRoots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
 	}
 };
 
@@ -1781,25 +1808,6 @@ class math_GaussLeastSquare {
 	~math_GaussLeastSquare() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
-	}
-};
-
-
-%nodefaultctor math_RealRandom;
-class math_RealRandom {
-	public:
-		%feature("autodoc", "1");
-		math_RealRandom(const Standard_Real Lower, const Standard_Real Upper);
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		Standard_Real Next();
-
-};
-%extend math_RealRandom {
-	~math_RealRandom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
 	}
 };
 
@@ -1885,6 +1893,25 @@ class math_FRPR {
 };
 
 
+%nodefaultctor math_RealRandom;
+class math_RealRandom {
+	public:
+		%feature("autodoc", "1");
+		math_RealRandom(const Standard_Real Lower, const Standard_Real Upper);
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		Standard_Real Next();
+
+};
+%extend math_RealRandom {
+	~math_RealRandom() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
+	}
+};
+
+
 %nodefaultctor math_GaussMultipleIntegration;
 class math_GaussMultipleIntegration {
 	public:
@@ -1907,32 +1934,5 @@ class math_GaussMultipleIntegration {
 	~math_GaussMultipleIntegration() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
-	}
-};
-
-
-%nodefaultctor math;
-class math {
-	public:
-		%feature("autodoc", "1");
-		math();
-		%feature("autodoc", "1");
-		Standard_Integer GaussPointsMax();
-		%feature("autodoc", "1");
-		void GaussPoints(const Standard_Integer Index, math_Vector & Points);
-		%feature("autodoc", "1");
-		void GaussWeights(const Standard_Integer Index, math_Vector & Weights);
-		%feature("autodoc", "1");
-		Standard_Integer KronrodPointsMax();
-		%feature("autodoc", "1");
-		Standard_Boolean OrderedGaussPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
-		%feature("autodoc", "1");
-		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
-
-};
-%extend math {
-	~math() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math\n");}
 	}
 };

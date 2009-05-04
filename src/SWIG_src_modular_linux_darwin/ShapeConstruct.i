@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeConstruct
 
+%include ShapeConstruct_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -144,8 +146,6 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 class ShapeConstruct {
 	public:
 		%feature("autodoc", "1");
-		ShapeConstruct();
-		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve ConvertCurveToBSpline(const Handle_Geom2d_Curve &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol2d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
@@ -163,114 +163,6 @@ class ShapeConstruct {
 	~ShapeConstruct() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
-	}
-};
-
-
-%nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
-class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array1OfPnt2d & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-
-};
-%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
-	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");}
-	}
-};
-
-
-%nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
-class ShapeConstruct_CompBezierCurvesToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void AddCurve(const TColgp_Array1OfPnt &Poles);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-
-};
-%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
-	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor ShapeConstruct_Curve;
-class ShapeConstruct_Curve {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct_Curve();
-		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurve(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurveSegment(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real U1, const Standard_Real U2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AdjustCurve2d(const Handle_Geom2d_Curve &C2D, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve ConvertToBSpline(const Handle_Geom_Curve &C, const Standard_Real first, const Standard_Real last, const Standard_Real prec) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve ConvertToBSpline(const Handle_Geom2d_Curve &C, const Standard_Real first, const Standard_Real last, const Standard_Real prec) const;
-		%feature("autodoc", "1");
-		Standard_Boolean FixKnots(Handle_TColStd_HArray1OfReal & knots);
-		%feature("autodoc", "1");
-		Standard_Boolean FixKnots(TColStd_Array1OfReal & knots);
-
-};
-%extend ShapeConstruct_Curve {
-	~ShapeConstruct_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_Curve\n");}
-	}
-};
-
-
-%nodefaultctor ShapeConstruct_MakeTriangulation;
-class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct_MakeTriangulation(const TColgp_Array1OfPnt &pnts, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		ShapeConstruct_MakeTriangulation(const TopoDS_Wire &wire, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-
-};
-%extend ShapeConstruct_MakeTriangulation {
-	~ShapeConstruct_MakeTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
 	}
 };
 
@@ -320,5 +212,111 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	~ShapeConstruct_ProjectCurveOnSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_ProjectCurveOnSurface\n");}
+	}
+};
+
+
+%nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
+class ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void AddCurve(const TColgp_Array1OfPnt &Poles);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+
+};
+%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor ShapeConstruct_Curve;
+class ShapeConstruct_Curve {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean AdjustCurve(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AdjustCurveSegment(const Handle_Geom_Curve &C3D, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real U1, const Standard_Real U2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AdjustCurve2d(const Handle_Geom2d_Curve &C2D, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean take1=1, const Standard_Boolean take2=1) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve ConvertToBSpline(const Handle_Geom_Curve &C, const Standard_Real first, const Standard_Real last, const Standard_Real prec) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve ConvertToBSpline(const Handle_Geom2d_Curve &C, const Standard_Real first, const Standard_Real last, const Standard_Real prec) const;
+		%feature("autodoc", "1");
+		Standard_Boolean FixKnots(Handle_TColStd_HArray1OfReal & knots);
+		%feature("autodoc", "1");
+		Standard_Boolean FixKnots(TColStd_Array1OfReal & knots);
+
+};
+%extend ShapeConstruct_Curve {
+	~ShapeConstruct_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_Curve\n");}
+	}
+};
+
+
+%nodefaultctor ShapeConstruct_MakeTriangulation;
+class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct_MakeTriangulation(const TColgp_Array1OfPnt &pnts, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		ShapeConstruct_MakeTriangulation(const TopoDS_Wire &wire, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+
+};
+%extend ShapeConstruct_MakeTriangulation {
+	~ShapeConstruct_MakeTriangulation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
+	}
+};
+
+
+%nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
+class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array1OfPnt2d & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+
+};
+%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");}
 	}
 };

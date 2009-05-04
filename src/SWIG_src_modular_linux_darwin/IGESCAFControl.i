@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESCAFControl
 
+%include IGESCAFControl_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -117,8 +119,6 @@ Standard_Integer & function transformation
 %nodefaultctor IGESCAFControl;
 class IGESCAFControl {
 	public:
-		%feature("autodoc", "1");
-		IGESCAFControl();
 		%feature("autodoc", "1");
 		Quantity_Color DecodeColor(const Standard_Integer col);
 		%feature("autodoc", "1");

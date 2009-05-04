@@ -82,10 +82,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Ax1.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
-#include<IntSurf_PntOn2S.hxx>
-#include<IntSurf_PathPoint.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Lin.hxx>
+#include<IntSurf_PntOn2S.hxx>
+#include<IntSurf_PathPoint.hxx>
 #include<Handle_IntSurf_LineOn2S.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<gp_Pnt2d.hxx>

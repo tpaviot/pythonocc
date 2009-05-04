@@ -105,7 +105,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<XSControl.hxx>
 #include<Handle_IFSelect_SessionPilot.hxx>
 #include<Handle_Transfer_TransientProcess.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
@@ -114,14 +113,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Shape.hxx>
-#include<Handle_Standard_Type.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TCollection_HExtendedString.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
-#include<Handle_TColStd_HSequenceOfHExtendedString.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
-#include<Handle_TColStd_HSequenceOfInteger.hxx>
+#include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
 #include<Handle_Interface_Protocol.hxx>
 #include<Handle_IFSelect_Signature.hxx>
 #include<Handle_IFSelect_WorkLibrary.hxx>
@@ -130,6 +123,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Transfer_FinderProcess.hxx>
 #include<Interface_CheckIterator.hxx>
 #include<Handle_Dico_DictionaryOfTransient.hxx>
+#include<Handle_Standard_Type.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_TCollection_HExtendedString.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<Handle_TColStd_HSequenceOfHExtendedString.hxx>
+#include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_Interface_HGraph.hxx>
 #include<Handle_Transfer_ResultFromModel.hxx>

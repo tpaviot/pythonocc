@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dHatch
 
+%include Geom2dHatch_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -309,67 +311,6 @@ class Geom2dHatch_Hatcher {
 };
 
 
-%nodefaultctor Geom2dHatch_HatchingOfHatcher;
-class Geom2dHatch_HatchingOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher();
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher(const Geom2dAdaptor_Curve &Curve);
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & Curve() const;
-		%feature("autodoc", "1");
-		Geom2dAdaptor_Curve & ChangeCurve();
-		%feature("autodoc", "1");
-		void TrimDone(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean TrimDone() const;
-		%feature("autodoc", "1");
-		void TrimFailed(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean TrimFailed() const;
-		%feature("autodoc", "1");
-		void IsDone(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Status(const HatchGen_ErrorStatus Status);
-		%feature("autodoc", "1");
-		HatchGen_ErrorStatus Status() const;
-		%feature("autodoc", "1");
-		void AddPoint(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnHatching & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HatchGen_PointOnHatching & ChangePoint(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void RemPoint(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ClrPoints();
-		%feature("autodoc", "1");
-		void AddDomain(const HatchGen_Domain &Domain);
-		%feature("autodoc", "1");
-		Standard_Integer NbDomains() const;
-		%feature("autodoc", "1");
-		const HatchGen_Domain & Domain(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void RemDomain(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ClrDomains();
-		%feature("autodoc", "1");
-		gp_Pnt2d ClassificationPoint() const;
-
-};
-%extend Geom2dHatch_HatchingOfHatcher {
-	~Geom2dHatch_HatchingOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dHatch_ClassifierOfHatcher;
 class Geom2dHatch_ClassifierOfHatcher {
 	public:
@@ -428,37 +369,6 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 	~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
-class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
-	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
-	}
-};
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };
 
@@ -554,6 +464,98 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_HatchingOfHatcher;
+class Geom2dHatch_HatchingOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher();
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher(const Geom2dAdaptor_Curve &Curve);
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & Curve() const;
+		%feature("autodoc", "1");
+		Geom2dAdaptor_Curve & ChangeCurve();
+		%feature("autodoc", "1");
+		void TrimDone(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean TrimDone() const;
+		%feature("autodoc", "1");
+		void TrimFailed(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean TrimFailed() const;
+		%feature("autodoc", "1");
+		void IsDone(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Status(const HatchGen_ErrorStatus Status);
+		%feature("autodoc", "1");
+		HatchGen_ErrorStatus Status() const;
+		%feature("autodoc", "1");
+		void AddPoint(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnHatching & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HatchGen_PointOnHatching & ChangePoint(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void RemPoint(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ClrPoints();
+		%feature("autodoc", "1");
+		void AddDomain(const HatchGen_Domain &Domain);
+		%feature("autodoc", "1");
+		Standard_Integer NbDomains() const;
+		%feature("autodoc", "1");
+		const HatchGen_Domain & Domain(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void RemDomain(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ClrDomains();
+		%feature("autodoc", "1");
+		gp_Pnt2d ClassificationPoint() const;
+
+};
+%extend Geom2dHatch_HatchingOfHatcher {
+	~Geom2dHatch_HatchingOfHatcher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
+class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
+	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };
 

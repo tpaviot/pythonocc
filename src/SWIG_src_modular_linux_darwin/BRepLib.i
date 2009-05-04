@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepLib
 
+%include BRepLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -122,13 +124,11 @@ enum BRepLib_EdgeError {
 	BRepLib_LineThroughIdenticPoints,
 	};
 
-enum BRepLib_FaceError {
-	BRepLib_FaceDone,
-	BRepLib_NoFace,
-	BRepLib_NotPlanar,
-	BRepLib_CurveProjectionFailed,
-	BRepLib_ParametersOutOfRange,
-	BRepLib_SurfaceNotC2,
+enum BRepLib_ShellError {
+	BRepLib_ShellDone,
+	BRepLib_EmptyShell,
+	BRepLib_DisconnectedShell,
+	BRepLib_ShellParametersOutOfRange,
 	};
 
 enum BRepLib_WireError {
@@ -138,19 +138,21 @@ enum BRepLib_WireError {
 	BRepLib_NonManifoldWire,
 	};
 
+enum BRepLib_FaceError {
+	BRepLib_FaceDone,
+	BRepLib_NoFace,
+	BRepLib_NotPlanar,
+	BRepLib_CurveProjectionFailed,
+	BRepLib_ParametersOutOfRange,
+	BRepLib_SurfaceNotC2,
+	};
+
 enum BRepLib_ShapeModification {
 	BRepLib_Preserved,
 	BRepLib_Deleted,
 	BRepLib_Trimmed,
 	BRepLib_Merged,
 	BRepLib_BoundaryModified,
-	};
-
-enum BRepLib_ShellError {
-	BRepLib_ShellDone,
-	BRepLib_EmptyShell,
-	BRepLib_DisconnectedShell,
-	BRepLib_ShellParametersOutOfRange,
 	};
 
 
@@ -484,8 +486,6 @@ class BRepLib_FuseEdges {
 class BRepLib {
 	public:
 		%feature("autodoc", "1");
-		BRepLib();
-		%feature("autodoc", "1");
 		void Precision(const Standard_Real P);
 		%feature("autodoc", "1");
 		Standard_Real Precision();
@@ -576,39 +576,6 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 };
 
 
-%nodefaultctor BRepLib_MakeSolid;
-class BRepLib_MakeSolid : public BRepLib_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid();
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_CompSolid &S);
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_Shell &S);
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_Shell &S1, const TopoDS_Shell &S2);
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_Shell &S1, const TopoDS_Shell &S2, const TopoDS_Shell &S3);
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_Solid &So);
-		%feature("autodoc", "1");
-		BRepLib_MakeSolid(const TopoDS_Solid &So, const TopoDS_Shell &S);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shell &S);
-		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid() const;
-		%feature("autodoc", "1");
-		virtual		BRepLib_ShapeModification FaceStatus(const TopoDS_Face &F) const;
-
-};
-%extend BRepLib_MakeSolid {
-	~BRepLib_MakeSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
-	}
-};
-
-
 %nodefaultctor BRepLib_MakeFace;
 class BRepLib_MakeFace : public BRepLib_MakeShape {
 	public:
@@ -674,6 +641,39 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 	~BRepLib_MakeFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeFace\n");}
+	}
+};
+
+
+%nodefaultctor BRepLib_MakeSolid;
+class BRepLib_MakeSolid : public BRepLib_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid();
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_CompSolid &S);
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_Shell &S);
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_Shell &S1, const TopoDS_Shell &S2);
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_Shell &S1, const TopoDS_Shell &S2, const TopoDS_Shell &S3);
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_Solid &So);
+		%feature("autodoc", "1");
+		BRepLib_MakeSolid(const TopoDS_Solid &So, const TopoDS_Shell &S);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shell &S);
+		%feature("autodoc", "1");
+		const TopoDS_Solid & Solid() const;
+		%feature("autodoc", "1");
+		virtual		BRepLib_ShapeModification FaceStatus(const TopoDS_Face &F) const;
+
+};
+%extend BRepLib_MakeSolid {
+	~BRepLib_MakeSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
 	}
 };
 

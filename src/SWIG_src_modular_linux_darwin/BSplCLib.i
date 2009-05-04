@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BSplCLib
 
+%include BSplCLib_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -128,8 +130,6 @@ enum BSplCLib_MultDistribution {
 %nodefaultctor BSplCLib;
 class BSplCLib {
 	public:
-		%feature("autodoc", "1");
-		BSplCLib();
 		%feature("autodoc", "1");
 		void Hunt(const TColStd_Array1OfReal &XX, const Standard_Real X, Standard_Integer &OutValue);
 		%feature("autodoc", "1");

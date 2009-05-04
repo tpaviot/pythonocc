@@ -85,5 +85,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Lin.hxx>
 #include<Handle_TColStd_HArray1OfTransient.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
-#include<HLRAlgo.hxx>
 %}

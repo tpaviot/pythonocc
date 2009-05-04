@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XSControl
 
+%include XSControl_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -326,8 +328,6 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 class XSControl {
 	public:
 		%feature("autodoc", "1");
-		XSControl();
-		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
@@ -417,110 +417,9 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 
 
-%nodefaultctor XSControl_Utils;
-class XSControl_Utils {
-	public:
-		%feature("autodoc", "1");
-		XSControl_Utils();
-		%feature("autodoc", "1");
-		void TraceLine(const char * line) const;
-		%feature("autodoc", "1");
-		void TraceLines(const Handle_Standard_Transient &lines) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Transient &item, const Handle_Standard_Type &what) const;
-		%feature("autodoc", "1");
-		char * TypeName(const Handle_Standard_Transient &item, const Standard_Boolean nopk=0) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient TraValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient NewSeqTra() const;
-		%feature("autodoc", "1");
-		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
-		%feature("autodoc", "1");
-		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
-		%feature("autodoc", "1");
-		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
-		%feature("autodoc", "1");
-		char * ToCString(const TCollection_AsciiString &strval) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString ToHString(const char * strcon) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString ToAString(const char * strcon) const;
-		%feature("autodoc", "1");
-		Standard_ExtString ToEString(const Handle_TCollection_HExtendedString &strval) const;
-		%feature("autodoc", "1");
-		Standard_ExtString ToEString(const TCollection_ExtendedString &strval) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString ToHString(const Standard_ExtString strcon) const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString ToXString(const Standard_ExtString strcon) const;
-		%feature("autodoc", "1");
-		Standard_ExtString AsciiToExtended(const char * str) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAscii(const Standard_ExtString str) const;
-		%feature("autodoc", "1");
-		char * ExtendedToAscii(const Standard_ExtString str) const;
-		%feature("autodoc", "1");
-		char * CStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_ExtString EStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString NewSeqCStr() const;
-		%feature("autodoc", "1");
-		void AppendCStr(const Handle_TColStd_HSequenceOfHAsciiString &seqval, const char * strval) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHExtendedString NewSeqEStr() const;
-		%feature("autodoc", "1");
-		void AppendEStr(const Handle_TColStd_HSequenceOfHExtendedString &seqval, const Standard_ExtString strval) const;
-		%feature("autodoc", "1");
-		Standard_Boolean WriteShape(const TopoDS_Shape &shape, const char * filename) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape NewShape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadShape(TopoDS_Shape & shape, const char * filename) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNullShape(const TopoDS_Shape &shape) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape &shape, const Standard_Boolean compound) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape SortedCompound(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ShapeValue(const Handle_TopTools_HSequenceOfShape &seqv, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape NewSeqShape() const;
-		%feature("autodoc", "1");
-		void AppendShape(const Handle_TopTools_HSequenceOfShape &seqv, const TopoDS_Shape &shape) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ShapeBinder(const TopoDS_Shape &shape, const Standard_Boolean hs=1) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape BinderShape(const Handle_Standard_Transient &tr) const;
-		%feature("autodoc", "1");
-		Standard_Integer SeqLength(const Handle_Standard_Transient &list) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient SeqToArr(const Handle_Standard_Transient &seq, const Standard_Integer first=1) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ArrToSeq(const Handle_Standard_Transient &arr) const;
-		%feature("autodoc", "1");
-		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
-
-};
-%extend XSControl_Utils {
-	~XSControl_Utils() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Utils\n");}
-	}
-};
-
-
 %nodefaultctor XSControl_FuncShape;
 class XSControl_FuncShape {
 	public:
-		%feature("autodoc", "1");
-		XSControl_FuncShape();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -699,6 +598,146 @@ class XSControl_Reader {
 	~XSControl_Reader() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XSControl_Reader\n");}
+	}
+};
+
+
+%nodefaultctor XSControl_SelectForTransfer;
+class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetReader(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess Actor() const;
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader Reader() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSControl_SelectForTransfer {
+	Handle_XSControl_SelectForTransfer GetHandle() {
+	return *(Handle_XSControl_SelectForTransfer*) &$self;
+	}
+};
+%extend XSControl_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XSControl_SelectForTransfer {
+	~XSControl_SelectForTransfer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XSControl_SelectForTransfer\n");}
+	}
+};
+
+
+%nodefaultctor XSControl_Utils;
+class XSControl_Utils {
+	public:
+		%feature("autodoc", "1");
+		XSControl_Utils();
+		%feature("autodoc", "1");
+		void TraceLine(const char * line) const;
+		%feature("autodoc", "1");
+		void TraceLines(const Handle_Standard_Transient &lines) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Transient &item, const Handle_Standard_Type &what) const;
+		%feature("autodoc", "1");
+		char * TypeName(const Handle_Standard_Transient &item, const Standard_Boolean nopk=0) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient TraValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient NewSeqTra() const;
+		%feature("autodoc", "1");
+		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
+		%feature("autodoc", "1");
+		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
+		%feature("autodoc", "1");
+		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
+		%feature("autodoc", "1");
+		char * ToCString(const TCollection_AsciiString &strval) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString ToHString(const char * strcon) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString ToAString(const char * strcon) const;
+		%feature("autodoc", "1");
+		Standard_ExtString ToEString(const Handle_TCollection_HExtendedString &strval) const;
+		%feature("autodoc", "1");
+		Standard_ExtString ToEString(const TCollection_ExtendedString &strval) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString ToHString(const Standard_ExtString strcon) const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString ToXString(const Standard_ExtString strcon) const;
+		%feature("autodoc", "1");
+		Standard_ExtString AsciiToExtended(const char * str) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAscii(const Standard_ExtString str) const;
+		%feature("autodoc", "1");
+		char * ExtendedToAscii(const Standard_ExtString str) const;
+		%feature("autodoc", "1");
+		char * CStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_ExtString EStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString NewSeqCStr() const;
+		%feature("autodoc", "1");
+		void AppendCStr(const Handle_TColStd_HSequenceOfHAsciiString &seqval, const char * strval) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHExtendedString NewSeqEStr() const;
+		%feature("autodoc", "1");
+		void AppendEStr(const Handle_TColStd_HSequenceOfHExtendedString &seqval, const Standard_ExtString strval) const;
+		%feature("autodoc", "1");
+		Standard_Boolean WriteShape(const TopoDS_Shape &shape, const char * filename) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape NewShape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadShape(TopoDS_Shape & shape, const char * filename) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNullShape(const TopoDS_Shape &shape) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape &shape, const Standard_Boolean compound) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape SortedCompound(const TopoDS_Shape &shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape ShapeValue(const Handle_TopTools_HSequenceOfShape &seqv, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape NewSeqShape() const;
+		%feature("autodoc", "1");
+		void AppendShape(const Handle_TopTools_HSequenceOfShape &seqv, const TopoDS_Shape &shape) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ShapeBinder(const TopoDS_Shape &shape, const Standard_Boolean hs=1) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape BinderShape(const Handle_Standard_Transient &tr) const;
+		%feature("autodoc", "1");
+		Standard_Integer SeqLength(const Handle_Standard_Transient &list) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient SeqToArr(const Handle_Standard_Transient &seq, const Standard_Integer first=1) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ArrToSeq(const Handle_Standard_Transient &arr) const;
+		%feature("autodoc", "1");
+		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
+
+};
+%extend XSControl_Utils {
+	~XSControl_Utils() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XSControl_Utils\n");}
 	}
 };
 
@@ -882,8 +921,6 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 class XSControl_Functions {
 	public:
 		%feature("autodoc", "1");
-		XSControl_Functions();
-		%feature("autodoc", "1");
 		void Init();
 
 };
@@ -1010,46 +1047,5 @@ class XSControl_TransferReader : public MMgt_TShared {
 	~XSControl_TransferReader() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XSControl_TransferReader\n");}
-	}
-};
-
-
-%nodefaultctor XSControl_SelectForTransfer;
-class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetReader(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess Actor() const;
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader Reader() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSControl_SelectForTransfer {
-	Handle_XSControl_SelectForTransfer GetHandle() {
-	return *(Handle_XSControl_SelectForTransfer*) &$self;
-	}
-};
-%extend XSControl_SelectForTransfer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XSControl_SelectForTransfer {
-	~XSControl_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_SelectForTransfer\n");}
 	}
 };

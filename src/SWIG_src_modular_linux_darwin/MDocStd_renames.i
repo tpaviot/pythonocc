@@ -1,0 +1,17 @@
+%rename(DocumentRetrievalDriver) MDocStd_DocumentRetrievalDriver;
+%rename(Handle_ListNodeOfDocEntryList) Handle_MDocStd_ListNodeOfDocEntryList;
+%rename(XLinkStorageDriver) MDocStd_XLinkStorageDriver;
+%rename(PersistentMap) MDocStd_PersistentMap;
+%rename(Handle_StdMapNodeOfPersistentMap) Handle_MDocStd_StdMapNodeOfPersistentMap;
+%rename(Handle_DocumentRetrievalDriver) Handle_MDocStd_DocumentRetrievalDriver;
+%rename(Handle_XLinkRetrievalDriver) Handle_MDocStd_XLinkRetrievalDriver;
+%rename(DocumentStorageDriver) MDocStd_DocumentStorageDriver;
+%rename(StdMapNodeOfPersistentMap) MDocStd_StdMapNodeOfPersistentMap;
+%rename(ListIteratorOfDocEntryList) MDocStd_ListIteratorOfDocEntryList;
+%rename(ListNodeOfDocEntryList) MDocStd_ListNodeOfDocEntryList;
+%rename(Handle_XLinkStorageDriver) Handle_MDocStd_XLinkStorageDriver;
+%rename(DocEntryList) MDocStd_DocEntryList;
+%rename(MDocStd) MDocStd;
+%rename(XLinkRetrievalDriver) MDocStd_XLinkRetrievalDriver;
+%rename(MapIteratorOfPersistentMap) MDocStd_MapIteratorOfPersistentMap;
+%rename(Handle_DocumentStorageDriver) Handle_MDocStd_DocumentStorageDriver;

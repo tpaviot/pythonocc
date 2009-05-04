@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ChFi3d
 
+%include ChFi3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -123,8 +125,6 @@ enum ChFi3d_FilletShape {
 %nodefaultctor ChFi3d;
 class ChFi3d {
 	public:
-		%feature("autodoc", "1");
-		ChFi3d();
 		%feature("autodoc", "1");
 		Standard_Integer ConcaveSide(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const TopoDS_Edge &E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
 		%feature("autodoc", "1");

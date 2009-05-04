@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopoDS
 
+%include TopoDS_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -244,6 +246,32 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 };
 
 
+%nodefaultctor Handle_TopoDS_TCompSolid;
+class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopoDS_TCompSolid();
+		%feature("autodoc", "1");
+		Handle_TopoDS_TCompSolid(const Handle_TopoDS_TCompSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopoDS_TCompSolid(const TopoDS_TCompSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_TopoDS_TCompSolid const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopoDS_TCompSolid {
+	TopoDS_TCompSolid* GetObject() {
+	return (TopoDS_TCompSolid*)$self->Access();
+	}
+};
+%extend Handle_TopoDS_TCompSolid {
+	~Handle_TopoDS_TCompSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TopoDS_TCompound;
 class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	public:
@@ -322,32 +350,6 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TopoDS_TEdge;
-class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge();
-		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge(const Handle_TopoDS_TEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge(const TopoDS_TEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_TopoDS_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopoDS_TEdge {
-	TopoDS_TEdge* GetObject() {
-	return (TopoDS_TEdge*)$self->Access();
-	}
-};
-%extend Handle_TopoDS_TEdge {
-	~Handle_TopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TEdge\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopoDS_TShell;
 class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	public:
@@ -374,28 +376,28 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 };
 
 
-%nodefaultctor Handle_TopoDS_TCompSolid;
-class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
+%nodefaultctor Handle_TopoDS_TEdge;
+class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid();
+		Handle_TopoDS_TEdge();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid(const Handle_TopoDS_TCompSolid &aHandle);
+		Handle_TopoDS_TEdge(const Handle_TopoDS_TEdge &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid(const TopoDS_TCompSolid *anItem);
+		Handle_TopoDS_TEdge(const TopoDS_TEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TCompSolid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopoDS_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopoDS_TCompSolid {
-	TopoDS_TCompSolid* GetObject() {
-	return (TopoDS_TCompSolid*)$self->Access();
+%extend Handle_TopoDS_TEdge {
+	TopoDS_TEdge* GetObject() {
+	return (TopoDS_TEdge*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TCompSolid {
-	~Handle_TopoDS_TCompSolid() {
+%extend Handle_TopoDS_TEdge {
+	~Handle_TopoDS_TEdge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TEdge\n");}
 	}
 };
 
@@ -571,6 +573,7 @@ class TopoDS_Shape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Compound;
 class TopoDS_Compound : public TopoDS_Shape {
 	public:
@@ -582,41 +585,6 @@ class TopoDS_Compound : public TopoDS_Shape {
 	~TopoDS_Compound() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Compound\n");}
-	}
-};
-
-
-%nodefaultctor TopoDS_HShape;
-class TopoDS_HShape : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_HShape();
-		%feature("autodoc", "1");
-		TopoDS_HShape(const TopoDS_Shape &aShape);
-		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape &aShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeShape();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_HShape {
-	Handle_TopoDS_HShape GetHandle() {
-	return *(Handle_TopoDS_HShape*) &$self;
-	}
-};
-%extend TopoDS_HShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopoDS_HShape {
-	~TopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_HShape\n");}
 	}
 };
 
@@ -869,6 +837,51 @@ class TopoDS_ListOfShape {
 };
 
 
+%nodefaultctor TopoDS;
+class TopoDS {
+	public:
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Vertex(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Vertex & Vertex(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Edge & Edge(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Wire & Wire(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Wire & Wire(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Face & Face(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Shell & Shell(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Shell & Shell(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Solid & Solid(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Solid & Solid(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_CompSolid & CompSolid(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_CompSolid & CompSolid(TopoDS_Shape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Compound & Compound(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		TopoDS_Compound & Compound(TopoDS_Shape & S);
+
+};
+%extend TopoDS {
+	~TopoDS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS\n");}
+	}
+};
+
+
 %nodefaultctor TopoDS_TWire;
 class TopoDS_TWire : public TopoDS_TShape {
 	public:
@@ -990,6 +1003,41 @@ class TopoDS_ListIteratorOfListOfShape {
 };
 
 
+%nodefaultctor TopoDS_HShape;
+class TopoDS_HShape : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_HShape();
+		%feature("autodoc", "1");
+		TopoDS_HShape(const TopoDS_Shape &aShape);
+		%feature("autodoc", "1");
+		void Shape(const TopoDS_Shape &aShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeShape();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopoDS_HShape {
+	Handle_TopoDS_HShape GetHandle() {
+	return *(Handle_TopoDS_HShape*) &$self;
+	}
+};
+%extend TopoDS_HShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopoDS_HShape {
+	~TopoDS_HShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_HShape\n");}
+	}
+};
+
+
 %nodefaultctor TopoDS_Solid;
 class TopoDS_Solid : public TopoDS_Shape {
 	public:
@@ -1059,53 +1107,6 @@ class TopoDS_TEdge : public TopoDS_TShape {
 	~TopoDS_TEdge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopoDS_TEdge\n");}
-	}
-};
-
-
-%nodefaultctor TopoDS;
-class TopoDS {
-	public:
-		%feature("autodoc", "1");
-		TopoDS();
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Vertex & Vertex(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Edge & Edge(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Wire & Wire(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Face & Face(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Shell & Shell(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Solid & Solid(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_CompSolid & CompSolid(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_CompSolid & CompSolid(TopoDS_Shape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Compound & Compound(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		TopoDS_Compound & Compound(TopoDS_Shape & S);
-
-};
-%extend TopoDS {
-	~TopoDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS\n");}
 	}
 };
 

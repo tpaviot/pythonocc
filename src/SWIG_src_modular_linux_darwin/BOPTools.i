@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BOPTools
 
+%include BOPTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -244,32 +246,6 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 };
 
 
-%nodefaultctor Handle_BOPTools_ListNodeOfListOfCommonBlock;
-class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock();
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock(const Handle_BOPTools_ListNodeOfListOfCommonBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock(const BOPTools_ListNodeOfListOfCommonBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
-	BOPTools_ListNodeOfListOfCommonBlock* GetObject() {
-	return (BOPTools_ListNodeOfListOfCommonBlock*)$self->Access();
-	}
-};
-%extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
-	~Handle_BOPTools_ListNodeOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCommonBlock\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public Handle_TCollection_MapNode {
 	public:
@@ -370,6 +346,32 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 	~Handle_BOPTools_ListNodeOfListOfInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfInterference\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOPTools_ListNodeOfListOfCommonBlock;
+class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCommonBlock();
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCommonBlock(const Handle_BOPTools_ListNodeOfListOfCommonBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCommonBlock(const BOPTools_ListNodeOfListOfCommonBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
+	BOPTools_ListNodeOfListOfCommonBlock* GetObject() {
+	return (BOPTools_ListNodeOfListOfCommonBlock*)$self->Access();
+	}
+};
+%extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
+	~Handle_BOPTools_ListNodeOfListOfCommonBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCommonBlock\n");}
 	}
 };
 
@@ -637,6 +639,41 @@ class BOPTools_Interference {
 };
 
 
+%nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
+class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const TopoDS_Shape &K1, const Standard_Integer K2, const BooleanOperations_StateOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState GetHandle() {
+	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
+	}
+};
+
+
 %nodefaultctor BOPTools_ListNodeOfListOfShapeEnum;
 class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 	public:
@@ -704,8 +741,6 @@ class BOPTools_CommonBlock {
 %nodefaultctor BOPTools_Tools;
 class BOPTools_Tools {
 	public:
-		%feature("autodoc", "1");
-		BOPTools_Tools();
 		%feature("autodoc", "1");
 		void MakeNewVertex(const gp_Pnt &aP1, const Standard_Real aTol, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
@@ -775,31 +810,6 @@ class BOPTools_PointBetween {
 };
 
 
-%nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
-class BOPTools_ListIteratorOfListOfCommonBlock {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfCommonBlock();
-		%feature("autodoc", "1");
-		BOPTools_ListIteratorOfListOfCommonBlock(const BOPTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOPTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOPTools_CommonBlock & Value() const;
-
-};
-%extend BOPTools_ListIteratorOfListOfCommonBlock {
-	~BOPTools_ListIteratorOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCommonBlock\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_PCurveMaker;
 class BOPTools_PCurveMaker {
 	public:
@@ -815,6 +825,35 @@ class BOPTools_PCurveMaker {
 	~BOPTools_PCurveMaker() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_PCurveMaker\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_SequenceNodeOfSequenceOfCurves;
+class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_SequenceNodeOfSequenceOfCurves(const BOPTools_Curve &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		BOPTools_Curve & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_SequenceNodeOfSequenceOfCurves {
+	Handle_BOPTools_SequenceNodeOfSequenceOfCurves GetHandle() {
+	return *(Handle_BOPTools_SequenceNodeOfSequenceOfCurves*) &$self;
+	}
+};
+%extend BOPTools_SequenceNodeOfSequenceOfCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTools_SequenceNodeOfSequenceOfCurves {
+	~BOPTools_SequenceNodeOfSequenceOfCurves() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
 
@@ -960,6 +999,41 @@ class BOPTools_VVInterference : public BOPTools_ShapeShapeInterference {
 };
 
 
+%nodefaultctor BOPTools_IMapOfPaveBlock;
+class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IMapOfPaveBlock(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTools_IMapOfPaveBlock & Assign(const BOPTools_IMapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const BOPTools_PaveBlock &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const BOPTools_PaveBlock &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_PaveBlock &K) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const BOPTools_PaveBlock &K) const;
+
+};
+%extend BOPTools_IMapOfPaveBlock {
+	~BOPTools_IMapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IMapOfPaveBlock\n");}
+	}
+};
+
+
 %nodefaultctor BOPTools_Array1OfPave;
 class BOPTools_Array1OfPave {
 	public:
@@ -997,27 +1071,6 @@ class BOPTools_Array1OfPave {
 	~BOPTools_Array1OfPave() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_Array1OfPave\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_RoughShapeIntersector;
-class BOPTools_RoughShapeIntersector {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_RoughShapeIntersector(const BooleanOperations_PShapesDataStructure &PDS);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_BOPTools_HArray2OfIntersectionStatus & TableOfStatus() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend BOPTools_RoughShapeIntersector {
-	~BOPTools_RoughShapeIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_RoughShapeIntersector\n");}
 	}
 };
 
@@ -1258,8 +1311,6 @@ class BOPTools_Curve {
 class BOPTools_QuickSortPave {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_QuickSortPave();
-		%feature("autodoc", "1");
 		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
 
 };
@@ -1325,43 +1376,6 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 	~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
-class BOPTools_IteratorOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape();
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		virtual		void Next();
-		%feature("autodoc", "1");
-		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
-		%feature("autodoc", "1");
-		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
-		%feature("autodoc", "1");
-		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
-		%feature("autodoc", "1");
-		void DumpTableOfIntersectionStatus() const;
-
-};
-%extend BOPTools_IteratorOfCoupleOfShape {
-	~BOPTools_IteratorOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
 	}
 };
 
@@ -1516,11 +1530,75 @@ class BOPTools_CommonBlockPool {
 };
 
 
+%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
+class BOPTools_IteratorOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape();
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		virtual		void Next();
+		%feature("autodoc", "1");
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
+		%feature("autodoc", "1");
+		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
+		%feature("autodoc", "1");
+		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
+		%feature("autodoc", "1");
+		void DumpTableOfIntersectionStatus() const;
+
+};
+%extend BOPTools_IteratorOfCoupleOfShape {
+	~BOPTools_IteratorOfCoupleOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_StateFiller;
+class BOPTools_StateFiller {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_StateFiller(const BOPTools_PaveFiller &aFiller);
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape ConvertState(const TopAbs_State aSt);
+		%feature("autodoc", "1");
+		TopAbs_State ConvertState(const BooleanOperations_StateOfShape aSt);
+		%feature("autodoc", "1");
+		TopAbs_State ClassifyEdgeToSolidByOnePoint(const TopoDS_Edge &anEdge, const TopoDS_Shape &aRef);
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape ClassifyShapeByRef(const TopoDS_Shape &aShape, const TopoDS_Shape &aRef);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum SubType(const TopoDS_Shape &aShape);
+
+};
+%extend BOPTools_StateFiller {
+	~BOPTools_StateFiller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_StateFiller\n");}
+	}
+};
+
+
 %nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
 class BOPTools_CoupleOfIntegerMapHasher {
 	public:
-		%feature("autodoc", "1");
-		BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1531,6 +1609,35 @@ class BOPTools_CoupleOfIntegerMapHasher {
 	~BOPTools_CoupleOfIntegerMapHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CoupleOfIntegerMapHasher\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_ListNodeOfListOfInterference;
+class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListNodeOfListOfInterference(const BOPTools_Interference &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOPTools_Interference & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	Handle_BOPTools_ListNodeOfListOfInterference GetHandle() {
+	return *(Handle_BOPTools_ListNodeOfListOfInterference*) &$self;
+	}
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTools_ListNodeOfListOfInterference {
+	~BOPTools_ListNodeOfListOfInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");}
 	}
 };
 
@@ -1680,6 +1787,27 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 };
 
 
+%nodefaultctor BOPTools_VEInterference;
+class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_VEInterference();
+		%feature("autodoc", "1");
+		BOPTools_VEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real aT);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real aT);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+
+};
+%extend BOPTools_VEInterference {
+	~BOPTools_VEInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_VEInterference\n");}
+	}
+};
+
+
 %nodefaultctor BOPTools_VSInterference;
 class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -1697,6 +1825,74 @@ class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 	~BOPTools_VSInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_VSInterference\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_CheckResult;
+class BOPTools_CheckResult {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_CheckResult();
+		%feature("autodoc", "1");
+		void AddShape(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & GetShapes() const;
+		%feature("autodoc", "1");
+		void SetCheckStatus(const BOPTools_CheckStatus TheStatus);
+		%feature("autodoc", "1");
+		BOPTools_CheckStatus GetCheckStatus() const;
+		%feature("autodoc", "1");
+		void SetInterferenceGeometry(const Handle_Geom_Geometry &TheGeometry);
+		%feature("autodoc", "1");
+		const Handle_Geom_Geometry & GetInterferenceGeometry() const;
+
+};
+%extend BOPTools_CheckResult {
+	~BOPTools_CheckResult() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_CheckResult\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_CArray1OfVVInterference;
+class BOPTools_CArray1OfVVInterference {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_CArray1OfVVInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const BOPTools_VVInterference &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_VVInterference & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_VVInterference & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_VVInterference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_VVInterference & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
+
+};
+%extend BOPTools_CArray1OfVVInterference {
+	~BOPTools_CArray1OfVVInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVVInterference\n");}
 	}
 };
 
@@ -1720,31 +1916,23 @@ class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 };
 
 
-%nodefaultctor BOPTools_StateFiller;
-class BOPTools_StateFiller {
+%nodefaultctor BOPTools_RoughShapeIntersector;
+class BOPTools_RoughShapeIntersector {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_StateFiller(const BOPTools_PaveFiller &aFiller);
+		BOPTools_RoughShapeIntersector(const BooleanOperations_PShapesDataStructure &PDS);
 		%feature("autodoc", "1");
-		virtual		void Do();
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_BOPTools_HArray2OfIntersectionStatus & TableOfStatus() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape ConvertState(const TopAbs_State aSt);
-		%feature("autodoc", "1");
-		TopAbs_State ConvertState(const BooleanOperations_StateOfShape aSt);
-		%feature("autodoc", "1");
-		TopAbs_State ClassifyEdgeToSolidByOnePoint(const TopoDS_Edge &anEdge, const TopoDS_Shape &aRef);
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape ClassifyShapeByRef(const TopoDS_Shape &aShape, const TopoDS_Shape &aRef);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum SubType(const TopoDS_Shape &aShape);
 
 };
-%extend BOPTools_StateFiller {
-	~BOPTools_StateFiller() {
+%extend BOPTools_RoughShapeIntersector {
+	~BOPTools_RoughShapeIntersector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_StateFiller\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_RoughShapeIntersector\n");}
 	}
 };
 
@@ -1754,6 +1942,8 @@ class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 	public:
 		%feature("autodoc", "1");
 		BOPTools_WireStateFiller(const BOPTools_PaveFiller &aFiller);
+		%feature("autodoc", "1");
+		virtual		void Do();
 
 };
 %extend BOPTools_WireStateFiller {
@@ -1884,41 +2074,6 @@ class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
 	~BOPTools_IDMapOfPaveBlockIMapOfPaveBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IDMapOfPaveBlockIMapOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
-class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const TopoDS_Shape &K1, const Standard_Integer K2, const BooleanOperations_StateOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState GetHandle() {
-	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*) &$self;
-	}
-};
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -2116,27 +2271,6 @@ class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor BOPTools_VEInterference;
-class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_VEInterference();
-		%feature("autodoc", "1");
-		BOPTools_VEInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real aT);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real aT);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-
-};
-%extend BOPTools_VEInterference {
-	~BOPTools_VEInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_VEInterference\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_ESInterference;
 class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -2197,35 +2331,43 @@ class BOPTools_CArray1OfEEInterference {
 };
 
 
-%nodefaultctor BOPTools_IndexedMapNodeOfIMapOfPaveBlock;
-class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
+%nodefaultctor BOPTools_CArray1OfInterferenceLine;
+class BOPTools_CArray1OfInterferenceLine {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapNodeOfIMapOfPaveBlock(const BOPTools_PaveBlock &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BOPTools_CArray1OfInterferenceLine(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Key1() const;
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const BOPTools_InterferenceLine &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_InterferenceLine & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_InterferenceLine & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_InterferenceLine & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_InterferenceLine & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
-	Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock GetHandle() {
-	return *(Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock*) &$self;
-	}
-};
-%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
-	~BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
+%extend BOPTools_CArray1OfInterferenceLine {
+	~BOPTools_CArray1OfInterferenceLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfInterferenceLine\n");}
 	}
 };
 
@@ -2302,6 +2444,66 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_IndexedMapOfCoupleOfInteger;
+class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapOfCoupleOfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapOfCoupleOfInteger & Assign(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const BOPTools_CoupleOfInteger &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const BOPTools_CoupleOfInteger &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_CoupleOfInteger &K) const;
+		%feature("autodoc", "1");
+		const BOPTools_CoupleOfInteger & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOPTools_CoupleOfInteger & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const BOPTools_CoupleOfInteger &K) const;
+
+};
+%extend BOPTools_IndexedMapOfCoupleOfInteger {
+	~BOPTools_IndexedMapOfCoupleOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapOfCoupleOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
+class BOPTools_ListIteratorOfListOfCommonBlock {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfCommonBlock();
+		%feature("autodoc", "1");
+		BOPTools_ListIteratorOfListOfCommonBlock(const BOPTools_ListOfCommonBlock &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOPTools_ListOfCommonBlock &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOPTools_CommonBlock & Value() const;
+
+};
+%extend BOPTools_ListIteratorOfListOfCommonBlock {
+	~BOPTools_ListIteratorOfListOfCommonBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCommonBlock\n");}
 	}
 };
 
@@ -2384,47 +2586,6 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 	~BOPTools_SequenceNodeOfSequenceOfPaveBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_CArray1OfESInterference;
-class BOPTools_CArray1OfESInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfESInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_ESInterference &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_ESInterference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_ESInterference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_ESInterference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_ESInterference & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%extend BOPTools_CArray1OfESInterference {
-	~BOPTools_CArray1OfESInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfESInterference\n");}
 	}
 };
 
@@ -2912,61 +3073,6 @@ class BOPTools_ListOfInterference {
 };
 
 
-%nodefaultctor BOPTools_SequenceOfCurves;
-class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_SequenceOfCurves();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BOPTools_SequenceOfCurves & Assign(const BOPTools_SequenceOfCurves &Other);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void Append(BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void Prepend(const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void Prepend(BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const BOPTools_Curve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const BOPTools_Curve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		const BOPTools_Curve & First() const;
-		%feature("autodoc", "1");
-		const BOPTools_Curve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
-		%feature("autodoc", "1");
-		const BOPTools_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const BOPTools_Curve &I);
-		%feature("autodoc", "1");
-		BOPTools_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_Curve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend BOPTools_SequenceOfCurves {
-	~BOPTools_SequenceOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceOfCurves\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_ComparePave;
 class BOPTools_ComparePave {
 	public:
@@ -2986,47 +3092,6 @@ class BOPTools_ComparePave {
 	~BOPTools_ComparePave() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ComparePave\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_CArray1OfInterferenceLine;
-class BOPTools_CArray1OfInterferenceLine {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfInterferenceLine(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_InterferenceLine &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_InterferenceLine & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_InterferenceLine & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_InterferenceLine & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_InterferenceLine & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%extend BOPTools_CArray1OfInterferenceLine {
-	~BOPTools_CArray1OfInterferenceLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfInterferenceLine\n");}
 	}
 };
 
@@ -3118,8 +3183,6 @@ class BOPTools_Array2OfIntersectionStatus {
 class BOPTools_Tools2D {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_Tools2D();
-		%feature("autodoc", "1");
 		void RemovePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
 		void BuildPCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
@@ -3176,8 +3239,6 @@ class BOPTools_Tools2D {
 %nodefaultctor BOPTools_Tools3D;
 class BOPTools_Tools3D {
 	public:
-		%feature("autodoc", "1");
-		BOPTools_Tools3D();
 		%feature("autodoc", "1");
 		Standard_Integer SubShapesAmount(const TopoDS_Shape &aS, const TopAbs_ShapeEnum aT);
 		%feature("autodoc", "1");
@@ -3276,70 +3337,6 @@ class BOPTools_Tools3D {
 };
 
 
-%nodefaultctor BOPTools_IMapOfPaveBlock;
-class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IMapOfPaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOPTools_IMapOfPaveBlock & Assign(const BOPTools_IMapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const BOPTools_PaveBlock &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BOPTools_PaveBlock &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &K) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const BOPTools_PaveBlock &K) const;
-
-};
-%extend BOPTools_IMapOfPaveBlock {
-	~BOPTools_IMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IMapOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_ListNodeOfListOfInterference;
-class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListNodeOfListOfInterference(const BOPTools_Interference &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOPTools_Interference & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOPTools_ListNodeOfListOfInterference {
-	Handle_BOPTools_ListNodeOfListOfInterference GetHandle() {
-	return *(Handle_BOPTools_ListNodeOfListOfInterference*) &$self;
-	}
-};
-%extend BOPTools_ListNodeOfListOfInterference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTools_ListNodeOfListOfInterference {
-	~BOPTools_ListNodeOfListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_CArray1OfPave;
 class BOPTools_CArray1OfPave {
 	public:
@@ -3381,29 +3378,43 @@ class BOPTools_CArray1OfPave {
 };
 
 
-%nodefaultctor BOPTools_CheckResult;
-class BOPTools_CheckResult {
+%nodefaultctor BOPTools_CArray1OfESInterference;
+class BOPTools_CArray1OfESInterference {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_CheckResult();
+		BOPTools_CArray1OfESInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
 		%feature("autodoc", "1");
-		void AddShape(const TopoDS_Shape &TheShape);
+		void Resize(const Standard_Integer theNewLength);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetShapes() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		void SetCheckStatus(const BOPTools_CheckStatus TheStatus);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		BOPTools_CheckStatus GetCheckStatus() const;
+		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
-		void SetInterferenceGeometry(const Handle_Geom_Geometry &TheGeometry);
+		Standard_Integer FactLength() const;
 		%feature("autodoc", "1");
-		const Handle_Geom_Geometry & GetInterferenceGeometry() const;
+		Standard_Integer Append(const BOPTools_ESInterference &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const BOPTools_ESInterference & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_ESInterference & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		BOPTools_ESInterference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_ESInterference & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTools_CheckResult {
-	~BOPTools_CheckResult() {
+%extend BOPTools_CArray1OfESInterference {
+	~BOPTools_CArray1OfESInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_CheckResult\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfESInterference\n");}
 	}
 };
 
@@ -3453,37 +3464,31 @@ class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BOPTools_IndexedMapOfCoupleOfInteger;
-class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
+%nodefaultctor BOPTools_InterferenceLine;
+class BOPTools_InterferenceLine {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapOfCoupleOfInteger(const Standard_Integer NbBuckets=1);
+		BOPTools_InterferenceLine();
 		%feature("autodoc", "1");
-		BOPTools_IndexedMapOfCoupleOfInteger & Assign(const BOPTools_IndexedMapOfCoupleOfInteger &Other);
+		const BOPTools_ListOfInterference & GetOnType(const BooleanOperations_KindOfInterference aType) const;
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Boolean IsComputed(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType) const;
 		%feature("autodoc", "1");
-		void Clear();
+		void AddInterference(const BOPTools_Interference &anInterference);
 		%feature("autodoc", "1");
-		Standard_Integer Add(const BOPTools_CoupleOfInteger &K);
+		void AddInterference(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType, const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const BOPTools_CoupleOfInteger &K);
+		const BOPTools_ListOfInterference & List() const;
 		%feature("autodoc", "1");
-		void RemoveLast();
+		const BOPTools_ListOfInterference & RealList() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_CoupleOfInteger &K) const;
-		%feature("autodoc", "1");
-		const BOPTools_CoupleOfInteger & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_CoupleOfInteger & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const BOPTools_CoupleOfInteger &K) const;
+		Standard_Boolean HasInterference() const;
 
 };
-%extend BOPTools_IndexedMapOfCoupleOfInteger {
-	~BOPTools_IndexedMapOfCoupleOfInteger() {
+%extend BOPTools_InterferenceLine {
+	~BOPTools_InterferenceLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapOfCoupleOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_InterferenceLine\n");}
 	}
 };
 
@@ -3513,35 +3518,6 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 	~BOPTools_ListNodeOfListOfCoupleOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCoupleOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_ListNodeOfListOfPave;
-class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListNodeOfListOfPave(const BOPTools_Pave &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOPTools_Pave & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOPTools_ListNodeOfListOfPave {
-	Handle_BOPTools_ListNodeOfListOfPave GetHandle() {
-	return *(Handle_BOPTools_ListNodeOfListOfPave*) &$self;
-	}
-};
-%extend BOPTools_ListNodeOfListOfPave {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTools_ListNodeOfListOfPave {
-	~BOPTools_ListNodeOfListOfPave() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfPave\n");}
 	}
 };
 
@@ -3608,6 +3584,57 @@ class BOPTools_CArray1OfVSInterference {
 	~BOPTools_CArray1OfVSInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVSInterference\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_ListOfCheckResults;
+class BOPTools_ListOfCheckResults {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_ListOfCheckResults();
+		%feature("autodoc", "1");
+		void Assign(const BOPTools_ListOfCheckResults &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_CheckResult &I);
+		%feature("autodoc", "1");
+		void Prepend(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BOPTools_ListOfCheckResults & Other);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_CheckResult &I);
+		%feature("autodoc", "1");
+		void Append(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
+		%feature("autodoc", "1");
+		void Append(BOPTools_ListOfCheckResults & Other);
+		%feature("autodoc", "1");
+		BOPTools_CheckResult & First() const;
+		%feature("autodoc", "1");
+		BOPTools_CheckResult & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BOPTools_ListIteratorOfListOfCheckResults & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
+
+};
+%extend BOPTools_ListOfCheckResults {
+	~BOPTools_ListOfCheckResults() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfCheckResults\n");}
 	}
 };
 
@@ -3690,8 +3717,6 @@ class BOPTools_PaveSet {
 class BOPTools_PaveBlockMapHasher {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_PaveBlockMapHasher();
-		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTools_PaveBlock &aPB, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
@@ -3701,57 +3726,6 @@ class BOPTools_PaveBlockMapHasher {
 	~BOPTools_PaveBlockMapHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_PaveBlockMapHasher\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_ListOfCheckResults;
-class BOPTools_ListOfCheckResults {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_ListOfCheckResults();
-		%feature("autodoc", "1");
-		void Assign(const BOPTools_ListOfCheckResults &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CheckResult &I);
-		%feature("autodoc", "1");
-		void Prepend(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BOPTools_ListOfCheckResults & Other);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_CheckResult &I);
-		%feature("autodoc", "1");
-		void Append(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & theIt);
-		%feature("autodoc", "1");
-		void Append(BOPTools_ListOfCheckResults & Other);
-		%feature("autodoc", "1");
-		BOPTools_CheckResult & First() const;
-		%feature("autodoc", "1");
-		BOPTools_CheckResult & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const BOPTools_CheckResult &I, BOPTools_ListIteratorOfListOfCheckResults & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BOPTools_ListOfCheckResults & Other, BOPTools_ListIteratorOfListOfCheckResults & It);
-
-};
-%extend BOPTools_ListOfCheckResults {
-	~BOPTools_ListOfCheckResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfCheckResults\n");}
 	}
 };
 
@@ -3797,31 +3771,57 @@ class BOPTools_CArray1OfSSInterference {
 };
 
 
-%nodefaultctor BOPTools_InterferenceLine;
-class BOPTools_InterferenceLine {
+%nodefaultctor BOPTools_SequenceOfCurves;
+class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_InterferenceLine();
+		BOPTools_SequenceOfCurves();
 		%feature("autodoc", "1");
-		const BOPTools_ListOfInterference & GetOnType(const BooleanOperations_KindOfInterference aType) const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsComputed(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType) const;
+		const BOPTools_SequenceOfCurves & Assign(const BOPTools_SequenceOfCurves &Other);
 		%feature("autodoc", "1");
-		void AddInterference(const BOPTools_Interference &anInterference);
+		void Append(const BOPTools_Curve &T);
 		%feature("autodoc", "1");
-		void AddInterference(const Standard_Integer aWith, const BooleanOperations_KindOfInterference aType, const Standard_Integer anIndex);
+		void Append(BOPTools_SequenceOfCurves & S);
 		%feature("autodoc", "1");
-		const BOPTools_ListOfInterference & List() const;
+		void Prepend(const BOPTools_Curve &T);
 		%feature("autodoc", "1");
-		const BOPTools_ListOfInterference & RealList() const;
+		void Prepend(BOPTools_SequenceOfCurves & S);
 		%feature("autodoc", "1");
-		Standard_Boolean HasInterference() const;
+		void InsertBefore(const Standard_Integer Index, const BOPTools_Curve &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const BOPTools_Curve &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		const BOPTools_Curve & First() const;
+		%feature("autodoc", "1");
+		const BOPTools_Curve & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BOPTools_SequenceOfCurves & S);
+		%feature("autodoc", "1");
+		const BOPTools_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const BOPTools_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const BOPTools_Curve &I);
+		%feature("autodoc", "1");
+		BOPTools_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		BOPTools_Curve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BOPTools_InterferenceLine {
-	~BOPTools_InterferenceLine() {
+%extend BOPTools_SequenceOfCurves {
+	~BOPTools_SequenceOfCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_InterferenceLine\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceOfCurves\n");}
 	}
 };
 
@@ -3871,31 +3871,31 @@ class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BOPTools_SequenceNodeOfSequenceOfCurves;
-class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
+%nodefaultctor BOPTools_ListNodeOfListOfPave;
+class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOPTools_SequenceNodeOfSequenceOfCurves(const BOPTools_Curve &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		BOPTools_ListNodeOfListOfPave(const BOPTools_Pave &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		BOPTools_Curve & Value() const;
+		BOPTools_Pave & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BOPTools_SequenceNodeOfSequenceOfCurves {
-	Handle_BOPTools_SequenceNodeOfSequenceOfCurves GetHandle() {
-	return *(Handle_BOPTools_SequenceNodeOfSequenceOfCurves*) &$self;
+%extend BOPTools_ListNodeOfListOfPave {
+	Handle_BOPTools_ListNodeOfListOfPave GetHandle() {
+	return *(Handle_BOPTools_ListNodeOfListOfPave*) &$self;
 	}
 };
-%extend BOPTools_SequenceNodeOfSequenceOfCurves {
+%extend BOPTools_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTools_SequenceNodeOfSequenceOfCurves {
-	~BOPTools_SequenceNodeOfSequenceOfCurves() {
+%extend BOPTools_ListNodeOfListOfPave {
+	~BOPTools_ListNodeOfListOfPave() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfCurves\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfPave\n");}
 	}
 };
 
@@ -3921,47 +3921,6 @@ class BOPTools_ListIteratorOfListOfPaveBlock {
 	~BOPTools_ListIteratorOfListOfPaveBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOPTools_CArray1OfVVInterference;
-class BOPTools_CArray1OfVVInterference {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_CArray1OfVVInterference(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const BOPTools_VVInterference &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const BOPTools_VVInterference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const BOPTools_VVInterference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		BOPTools_VVInterference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		BOPTools_VVInterference & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%extend BOPTools_CArray1OfVVInterference {
-	~BOPTools_CArray1OfVVInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVVInterference\n");}
 	}
 };
 
@@ -3997,5 +3956,38 @@ class BOPTools_Pave {
 	~BOPTools_Pave() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_Pave\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_IndexedMapNodeOfIMapOfPaveBlock;
+class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedMapNodeOfIMapOfPaveBlock(const BOPTools_PaveBlock &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock GetHandle() {
+	return *(Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock*) &$self;
+	}
+};
+%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
+	~BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");}
 	}
 };

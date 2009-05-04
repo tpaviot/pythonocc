@@ -98,7 +98,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Vec.hxx>
 #include<gp_Vec2d.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<AppParCurves_MultiBSpCurve.hxx>
 #include<AppParCurves_MultiCurve.hxx>
+#include<AppParCurves_MultiBSpCurve.hxx>
 #include<math_MultipleVarFunctionWithGradient.hxx>
 %}

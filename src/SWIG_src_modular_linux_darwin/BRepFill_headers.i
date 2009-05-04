@@ -594,7 +594,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_SequenceOfReal.hxx>
 #include<BRepMAT2d_BisectingLocus.hxx>
 #include<BRepMAT2d_LinkTopoBilo.hxx>
-#include<Handle_Law_Function.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<Handle_TopTools_HArray2OfShape.hxx>
 #include<gp_Ax2.hxx>
@@ -603,9 +602,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Shell.hxx>
 #include<Handle_GeomFill_LocationGuide.hxx>
+#include<gp_Ax3.hxx>
+#include<TColStd_Array1OfReal.hxx>
+#include<Handle_Law_Function.hxx>
 #include<Handle_Adaptor3d_HCurveOnSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
-#include<gp_Ax3.hxx>
-#include<BRepFill.hxx>
-#include<TColStd_Array1OfReal.hxx>
 %}

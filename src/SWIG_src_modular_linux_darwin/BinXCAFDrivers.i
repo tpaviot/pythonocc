@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinXCAFDrivers
 
+%include BinXCAFDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -198,8 +200,6 @@ class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetriev
 %nodefaultctor BinXCAFDrivers;
 class BinXCAFDrivers {
 	public:
-		%feature("autodoc", "1");
-		BinXCAFDrivers();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");

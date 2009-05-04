@@ -1,0 +1,17 @@
+%rename(Handle_DataMapNodeOfDataMapOfShapeBox) Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
+%rename(FaceEdge) BiTgte_FaceEdge;
+%rename(Handle_HCurveOnVertex) Handle_BiTgte_HCurveOnVertex;
+%rename(DataMapIteratorOfDataMapOfShapeBox) BiTgte_DataMapIteratorOfDataMapOfShapeBox;
+%rename(HCurveOnEdge) BiTgte_HCurveOnEdge;
+%rename(VertexVertex) BiTgte_VertexVertex;
+%rename(HCurveOnVertex) BiTgte_HCurveOnVertex;
+%rename(Handle_HCurveOnEdge) Handle_BiTgte_HCurveOnEdge;
+%rename(EdgeEdge) BiTgte_EdgeEdge;
+%rename(FaceFace) BiTgte_FaceFace;
+%rename(CurveOnVertex) BiTgte_CurveOnVertex;
+%rename(DataMapNodeOfDataMapOfShapeBox) BiTgte_DataMapNodeOfDataMapOfShapeBox;
+%rename(EdgeVertex) BiTgte_EdgeVertex;
+%rename(FaceVertex) BiTgte_FaceVertex;
+%rename(Blend) BiTgte_Blend;
+%rename(DataMapOfShapeBox) BiTgte_DataMapOfShapeBox;
+%rename(CurveOnEdge) BiTgte_CurveOnEdge;

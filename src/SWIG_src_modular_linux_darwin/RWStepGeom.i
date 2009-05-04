@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepGeom
 
+%include RWStepGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,6 +114,27 @@ Standard_Integer & function transformation
 %include RWStepGeom_headers.i
 
 
+
+
+%nodefaultctor RWStepGeom_RWBezierSurface;
+class RWStepGeom_RWBezierSurface {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWBezierSurface();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierSurface &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierSurface &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_BezierSurface &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWBezierSurface {
+	~RWStepGeom_RWBezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBezierSurface\n");}
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface;
@@ -343,6 +366,27 @@ class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 };
 
 
+%nodefaultctor RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve;
+class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
+	~RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve\n");}
+	}
+};
+
+
 %nodefaultctor RWStepGeom_RWCompositeCurveSegment;
 class RWStepGeom_RWCompositeCurveSegment {
 	public:
@@ -383,21 +427,44 @@ class RWStepGeom_RWGeometricRepresentationItem {
 };
 
 
-%nodefaultctor RWStepGeom_RWBoundedSurface;
-class RWStepGeom_RWBoundedSurface {
+%nodefaultctor RWStepGeom_RWOffsetSurface;
+class RWStepGeom_RWOffsetSurface {
 	public:
 		%feature("autodoc", "1");
-		RWStepGeom_RWBoundedSurface();
+		RWStepGeom_RWOffsetSurface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedSurface &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetSurface &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BoundedSurface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OffsetSurface &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepGeom_RWBoundedSurface {
-	~RWStepGeom_RWBoundedSurface() {
+%extend RWStepGeom_RWOffsetSurface {
+	~RWStepGeom_RWOffsetSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBoundedSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOffsetSurface\n");}
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext;
+class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
+	~RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
 
@@ -526,27 +593,6 @@ class RWStepGeom_RWConicalSurface {
 };
 
 
-%nodefaultctor RWStepGeom_RWAxis2Placement2d;
-class RWStepGeom_RWAxis2Placement2d {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWAxis2Placement2d();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement2d &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Axis2Placement2d &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_Axis2Placement2d &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWAxis2Placement2d {
-	~RWStepGeom_RWAxis2Placement2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWAxis2Placement2d\n");}
-	}
-};
-
-
 %nodefaultctor RWStepGeom_RWCurveReplica;
 class RWStepGeom_RWCurveReplica {
 	public:
@@ -587,27 +633,6 @@ class RWStepGeom_RWToroidalSurface {
 	~RWStepGeom_RWToroidalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWToroidalSurface\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWOffsetSurface;
-class RWStepGeom_RWOffsetSurface {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWOffsetSurface();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_OffsetSurface &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_OffsetSurface &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWOffsetSurface {
-	~RWStepGeom_RWOffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOffsetSurface\n");}
 	}
 };
 
@@ -826,23 +851,23 @@ class RWStepGeom_RWOffsetCurve3d {
 };
 
 
-%nodefaultctor RWStepGeom_RWUniformCurveAndRationalBSplineCurve;
-class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
+%nodefaultctor RWStepGeom_RWEvaluatedDegeneratePcurve;
+class RWStepGeom_RWEvaluatedDegeneratePcurve {
 	public:
 		%feature("autodoc", "1");
-		RWStepGeom_RWUniformCurveAndRationalBSplineCurve();
+		RWStepGeom_RWEvaluatedDegeneratePcurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepGeom_EvaluatedDegeneratePcurve &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
-	~RWStepGeom_RWUniformCurveAndRationalBSplineCurve() {
+%extend RWStepGeom_RWEvaluatedDegeneratePcurve {
+	~RWStepGeom_RWEvaluatedDegeneratePcurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWUniformCurveAndRationalBSplineCurve\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWEvaluatedDegeneratePcurve\n");}
 	}
 };
 
@@ -952,6 +977,27 @@ class RWStepGeom_RWElementarySurface {
 };
 
 
+%nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext;
+class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
+	~RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
+	}
+};
+
+
 %nodefaultctor RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 	public:
@@ -969,48 +1015,6 @@ class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 	~RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWSweptSurface;
-class RWStepGeom_RWSweptSurface {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWSweptSurface();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SweptSurface &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SweptSurface &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SweptSurface &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWSweptSurface {
-	~RWStepGeom_RWSweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSweptSurface\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWBezierSurface;
-class RWStepGeom_RWBezierSurface {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWBezierSurface();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BezierSurface &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BezierSurface &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BezierSurface &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWBezierSurface {
-	~RWStepGeom_RWBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBezierSurface\n");}
 	}
 };
 
@@ -1053,27 +1057,6 @@ class RWStepGeom_RWPointOnCurve {
 	~RWStepGeom_RWPointOnCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWPointOnCurve\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext;
-class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
-	~RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
 
@@ -1137,6 +1120,27 @@ class RWStepGeom_RWOrientedSurface {
 	~RWStepGeom_RWOrientedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOrientedSurface\n");}
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWAxis2Placement2d;
+class RWStepGeom_RWAxis2Placement2d {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWAxis2Placement2d();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_Axis2Placement2d &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_Axis2Placement2d &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_Axis2Placement2d &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWAxis2Placement2d {
+	~RWStepGeom_RWAxis2Placement2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWAxis2Placement2d\n");}
 	}
 };
 
@@ -1271,23 +1275,23 @@ class RWStepGeom_RWSurfaceOfLinearExtrusion {
 };
 
 
-%nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext;
-class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
+%nodefaultctor RWStepGeom_RWUniformCurveAndRationalBSplineCurve;
+class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext();
+		RWStepGeom_RWUniformCurveAndRationalBSplineCurve();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepGeom_UniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
-	~RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext() {
+%extend RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
+	~RWStepGeom_RWUniformCurveAndRationalBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWUniformCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -1309,27 +1313,6 @@ class RWStepGeom_RWPlacement {
 	~RWStepGeom_RWPlacement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWPlacement\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWSphericalSurface;
-class RWStepGeom_RWSphericalSurface {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWSphericalSurface();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SphericalSurface &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SphericalSurface &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_SphericalSurface &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWSphericalSurface {
-	~RWStepGeom_RWSphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSphericalSurface\n");}
 	}
 };
 
@@ -1391,27 +1374,6 @@ class RWStepGeom_RWPoint {
 	~RWStepGeom_RWPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWPoint\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWEvaluatedDegeneratePcurve;
-class RWStepGeom_RWEvaluatedDegeneratePcurve {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWEvaluatedDegeneratePcurve();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_EvaluatedDegeneratePcurve &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_EvaluatedDegeneratePcurve &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWEvaluatedDegeneratePcurve {
-	~RWStepGeom_RWEvaluatedDegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWEvaluatedDegeneratePcurve\n");}
 	}
 };
 
@@ -1544,6 +1506,25 @@ class RWStepGeom_RWIntersectionCurve {
 };
 
 
+%nodefaultctor RWStepGeom_RWBoundedSurface;
+class RWStepGeom_RWBoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWBoundedSurface();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BoundedSurface &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BoundedSurface &ent) const;
+
+};
+%extend RWStepGeom_RWBoundedSurface {
+	~RWStepGeom_RWBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBoundedSurface\n");}
+	}
+};
+
+
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	public:
@@ -1563,6 +1544,27 @@ class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	~RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWSphericalSurface;
+class RWStepGeom_RWSphericalSurface {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWSphericalSurface();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SphericalSurface &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SphericalSurface &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_SphericalSurface &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWSphericalSurface {
+	~RWStepGeom_RWSphericalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSphericalSurface\n");}
 	}
 };
 
@@ -1603,6 +1605,27 @@ class RWStepGeom_RWCartesianPoint {
 	~RWStepGeom_RWCartesianPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCartesianPoint\n");}
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWSweptSurface;
+class RWStepGeom_RWSweptSurface {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWSweptSurface();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_SweptSurface &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_SweptSurface &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_SweptSurface &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepGeom_RWSweptSurface {
+	~RWStepGeom_RWSweptSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSweptSurface\n");}
 	}
 };
 
@@ -1670,27 +1693,6 @@ class RWStepGeom_RWSurfacePatch {
 };
 
 
-%nodefaultctor RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve;
-class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
-	~RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve\n");}
-	}
-};
-
-
 %nodefaultctor RWStepGeom_RWCurveBoundedSurface;
 class RWStepGeom_RWCurveBoundedSurface {
 	public:
@@ -1708,29 +1710,6 @@ class RWStepGeom_RWCurveBoundedSurface {
 	~RWStepGeom_RWCurveBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCurveBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnots;
-class RWStepGeom_RWBSplineSurfaceWithKnots {
-	public:
-		%feature("autodoc", "1");
-		RWStepGeom_RWBSplineSurfaceWithKnots();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		void Check(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-
-};
-%extend RWStepGeom_RWBSplineSurfaceWithKnots {
-	~RWStepGeom_RWBSplineSurfaceWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBSplineSurfaceWithKnots\n");}
 	}
 };
 
@@ -1771,6 +1750,29 @@ class RWStepGeom_RWSurface {
 	~RWStepGeom_RWSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSurface\n");}
+	}
+};
+
+
+%nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnots;
+class RWStepGeom_RWBSplineSurfaceWithKnots {
+	public:
+		%feature("autodoc", "1");
+		RWStepGeom_RWBSplineSurfaceWithKnots();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepGeom_BSplineSurfaceWithKnots &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		void Check(const Handle_StepGeom_BSplineSurfaceWithKnots &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+
+};
+%extend RWStepGeom_RWBSplineSurfaceWithKnots {
+	~RWStepGeom_RWBSplineSurfaceWithKnots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBSplineSurfaceWithKnots\n");}
 	}
 };
 

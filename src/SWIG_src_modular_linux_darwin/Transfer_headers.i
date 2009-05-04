@@ -241,11 +241,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_IndexedMapOfTransient.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_Interface_Check.hxx>
+#include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Message_Msg.hxx>
 #include<Interface_CheckIterator.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
-#include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Interface_GeneralLib.hxx>
 #include<Standard_SStream.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>

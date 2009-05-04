@@ -127,10 +127,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_ListOfInteger.hxx>
-#include<gp_XY.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<TopoDS_Edge.hxx>
+#include<gp_XY.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<TopoDS_Face.hxx>
 #include<Bnd_Box.hxx>
 #include<TopoDS_Vertex.hxx>
@@ -140,13 +141,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Poly_Triangulation.hxx>
 #include<MeshShape_DataMapOfShapeListOfTransient.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
-#include<Handle_BRepAdaptor_HSurface.hxx>
-#include<gp_Dir.hxx>
-#include<Bnd_Box2d.hxx>
-#include<BRepMesh.hxx>
-#include<TCollection_AsciiString.hxx>
-#include<MeshShape_Couple.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<MeshShape_SurfacePoint.hxx>
 #include<MeshShape_ListOfSurfacePoint.hxx>
+#include<gp_Dir.hxx>
+#include<MeshShape_Couple.hxx>
+#include<Bnd_Box2d.hxx>
 %}

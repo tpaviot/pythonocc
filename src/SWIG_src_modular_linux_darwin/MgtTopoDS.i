@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MgtTopoDS
 
+%include MgtTopoDS_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -359,8 +361,6 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 %nodefaultctor MgtTopoDS;
 class MgtTopoDS {
 	public:
-		%feature("autodoc", "1");
-		MgtTopoDS();
 		%feature("autodoc", "1");
 		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_TransientPersistentMap & M);
 		%feature("autodoc", "1");

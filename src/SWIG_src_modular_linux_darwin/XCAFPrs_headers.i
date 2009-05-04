@@ -679,7 +679,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TDF_Label.hxx>
-#include<XCAFPrs.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_AIS_InteractiveObject.hxx>
 #include<Quantity_Color.hxx>

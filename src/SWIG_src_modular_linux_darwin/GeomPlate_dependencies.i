@@ -262,5 +262,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import TCollection.i
 %import Geom.i
 %import Standard.i
-%import GeomAbs.i
 %import AdvApp2Var.i
+%import GeomAbs.i

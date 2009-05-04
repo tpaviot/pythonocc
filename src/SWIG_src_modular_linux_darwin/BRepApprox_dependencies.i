@@ -256,6 +256,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import Standard.i
 %import AppParCurves.i
 %import Approx.i
-%import ApproxInt.i
-%import GeomAbs.i
 %import IntImp.i
+%import GeomAbs.i
+%import ApproxInt.i

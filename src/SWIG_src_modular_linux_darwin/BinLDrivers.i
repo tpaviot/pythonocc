@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinLDrivers
 
+%include BinLDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -289,8 +291,6 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 %nodefaultctor BinLDrivers;
 class BinLDrivers {
 	public:
-		%feature("autodoc", "1");
-		BinLDrivers();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");

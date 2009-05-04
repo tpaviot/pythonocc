@@ -41,7 +41,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
@@ -50,8 +49,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TColgp_Array1OfPnt.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
 #include<math_Vector.hxx>
-#include<GeomLib.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<Adaptor3d_CurveOnSurface.hxx>

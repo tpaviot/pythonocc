@@ -94,14 +94,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Persistent.hxx>
-#include<Storage_stCONSTclCOM.hxx>
 #include<PTopLoc_Location.hxx>
+#include<Storage_stCONSTclCOM.hxx>
 #include<Handle_PPoly_PolygonOnTriangulation.hxx>
 #include<Handle_PPoly_Triangulation.hxx>
-#include<Handle_PGeom_Curve.hxx>
 #include<Handle_PGeom2d_Curve.hxx>
 #include<Handle_PGeom_Surface.hxx>
 #include<gp_Pnt2d.hxx>
+#include<Handle_PGeom_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_PPoly_Polygon2D.hxx>
 #include<Handle_PPoly_Polygon3D.hxx>

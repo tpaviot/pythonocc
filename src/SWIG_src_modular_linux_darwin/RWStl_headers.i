@@ -29,7 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<RWStl.hxx>
 #include<Handle_StlMesh_Mesh.hxx>
 #include<OSD_Path.hxx>
 %}

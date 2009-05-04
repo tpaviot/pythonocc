@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BlendFunc
 
+%include BlendFunc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -124,8 +126,6 @@ enum BlendFunc_SectionShape {
 %nodefaultctor BlendFunc;
 class BlendFunc {
 	public:
-		%feature("autodoc", "1");
-		BlendFunc();
 		%feature("autodoc", "1");
 		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");

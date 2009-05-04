@@ -53,9 +53,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Persistent.hxx>
-#include<Handle_PGeom2d_Curve.hxx>
-#include<Storage_stCONSTclCOM.hxx>
-#include<Handle_PGeom2d_BSplineCurve.hxx>
-#include<Handle_PGeom2d_BezierCurve.hxx>
 #include<Handle_PGeom2d_BoundedCurve.hxx>
+#include<Storage_stCONSTclCOM.hxx>
+#include<Handle_PGeom2d_Curve.hxx>
+#include<Handle_PGeom2d_BezierCurve.hxx>
+#include<Handle_PGeom2d_BSplineCurve.hxx>
 %}

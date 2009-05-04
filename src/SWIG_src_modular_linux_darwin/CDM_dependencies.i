@@ -129,5 +129,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
 %import TCollection.i
+%import Standard.i

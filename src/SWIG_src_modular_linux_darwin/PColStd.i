@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PColStd
 
+%include PColStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -218,32 +220,6 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 };
 
 
-%nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
-class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent();
-		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const PColStd_VArrayNodeOfFieldOfHArray1OfPersistent *anItem);
-		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	PColStd_VArrayNodeOfFieldOfHArray1OfPersistent* GetObject() {
-	return (PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*)$self->Access();
-	}
-};
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfInteger;
 class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged {
 	public:
@@ -370,6 +346,32 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_
 	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
+class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent();
+		%feature("autodoc", "1");
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const PColStd_VArrayNodeOfFieldOfHArray1OfPersistent *anItem);
+		%feature("autodoc", "1");
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	PColStd_VArrayNodeOfFieldOfHArray1OfPersistent* GetObject() {
+	return (PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*)$self->Access();
+	}
+};
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
 	}
 };
 
@@ -686,28 +688,28 @@ class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
 };
 
 
-%nodefaultctor Handle_PColStd_HArray2OfReal;
-class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
+class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColStd_HArray2OfReal();
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
 		%feature("autodoc", "1");
-		Handle_PColStd_HArray2OfReal(const Handle_PColStd_HArray2OfReal &aHandle);
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColStd_HArray2OfReal(const PColStd_HArray2OfReal *anItem);
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString *anItem);
 		%feature("autodoc", "1");
-		Handle_PColStd_HArray2OfReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColStd_HArray2OfReal {
-	PColStd_HArray2OfReal* GetObject() {
-	return (PColStd_HArray2OfReal*)$self->Access();
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
+	PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString* GetObject() {
+	return (PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray2OfReal {
-	~Handle_PColStd_HArray2OfReal() {
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
+	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
 	}
 };
 
@@ -738,28 +740,28 @@ class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
-class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PColStd_HArray2OfReal;
+class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString();
+		Handle_PColStd_HArray2OfReal();
 		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString &aHandle);
+		Handle_PColStd_HArray2OfReal(const Handle_PColStd_HArray2OfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString(const PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString *anItem);
+		Handle_PColStd_HArray2OfReal(const PColStd_HArray2OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColStd_HArray2OfReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString* GetObject() {
-	return (PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*)$self->Access();
+%extend Handle_PColStd_HArray2OfReal {
+	PColStd_HArray2OfReal* GetObject() {
+	return (PColStd_HArray2OfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
+%extend Handle_PColStd_HArray2OfReal {
+	~Handle_PColStd_HArray2OfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfReal\n");}
 	}
 };
 
@@ -933,27 +935,6 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 };
 
 
-%nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent;
-class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent();
-		%feature("autodoc", "1");
-		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent(const Handle_Standard_Persistent &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Standard_Persistent &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_FieldOfHArray1OfExtendedString;
 class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 	public:
@@ -981,6 +962,89 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 	~PColStd_FieldOfHArray1OfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfExtendedString\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
+class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfInteger();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfInteger(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfInteger(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfIntegermyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfIntegermyValue(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger*) &$self;
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
+	~PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_SeqExplorerOfHSequenceOfInteger;
+class PColStd_SeqExplorerOfHSequenceOfInteger {
+	public:
+		%feature("autodoc", "1");
+		PColStd_SeqExplorerOfHSequenceOfInteger(const Handle_PColStd_HSequenceOfInteger &S);
+		%feature("autodoc", "1");
+		Standard_Integer Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T);
+
+};
+%extend PColStd_SeqExplorerOfHSequenceOfInteger {
+	~PColStd_SeqExplorerOfHSequenceOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent;
+class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent();
+		%feature("autodoc", "1");
+		PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent(const Handle_Standard_Persistent &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Standard_Persistent &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");}
 	}
 };
 
@@ -1307,82 +1371,6 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColStd_HArray2OfReal;
-class PColStd_HArray2OfReal : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		PColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Real &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColStd_HArray2OfReal();
-		%feature("autodoc", "1");
-		PColStd_HArray2OfReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyLowerRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HArray2OfRealmyLowerRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyLowerCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HArray2OfRealmyLowerCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyUpperRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HArray2OfRealmyUpperRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyUpperCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HArray2OfRealmyUpperCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColStd_FieldOfHArray2OfReal & _CSFDB_GetPColStd_HArray2OfRealData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_HArray2OfReal {
-	Handle_PColStd_HArray2OfReal GetHandle() {
-	return *(Handle_PColStd_HArray2OfReal*) &$self;
-	}
-};
-%extend PColStd_HArray2OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_HArray2OfReal {
-	~PColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfReal\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfInteger;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 	public:
@@ -1400,6 +1388,37 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 	~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfInteger\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_FieldOfHArray1OfInteger;
+class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColStd_FieldOfHArray1OfInteger();
+		%feature("autodoc", "1");
+		PColStd_FieldOfHArray1OfInteger(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColStd_FieldOfHArray1OfInteger(const PColStd_FieldOfHArray1OfInteger &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColStd_FieldOfHArray1OfInteger &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
+		%feature("autodoc", "1");
+		Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColStd_FieldOfHArray1OfInteger {
+	~PColStd_FieldOfHArray1OfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfInteger\n");}
 	}
 };
 
@@ -1497,68 +1516,6 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColStd_SeqExplorerOfHSequenceOfInteger;
-class PColStd_SeqExplorerOfHSequenceOfInteger {
-	public:
-		%feature("autodoc", "1");
-		PColStd_SeqExplorerOfHSequenceOfInteger(const Handle_PColStd_HSequenceOfInteger &S);
-		%feature("autodoc", "1");
-		Standard_Integer Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T);
-
-};
-%extend PColStd_SeqExplorerOfHSequenceOfInteger {
-	~PColStd_SeqExplorerOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
-class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal();
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Standard_Real &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Real &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal*) &$self;
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_HSingleListOfPersistent;
 class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 	public:
@@ -1615,6 +1572,45 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 	~PColStd_HSingleListOfPersistent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfPersistent\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
+class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Handle_Standard_Persistent &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Standard_Persistent &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfPersistentmyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfPersistentmyValue(const Handle_Standard_Persistent &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*) &$self;
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
 	}
 };
 
@@ -1715,29 +1711,6 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 	~PColStd_HSequenceOfHExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfHExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
-class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
-	public:
-		%feature("autodoc", "1");
-		PColStd_SeqExplorerOfHSequenceOfHExtendedString(const Handle_PColStd_HSequenceOfHExtendedString &S);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_PCollection_HExtendedString &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T);
-
-};
-%extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
-	~PColStd_SeqExplorerOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");}
 	}
 };
 
@@ -1880,6 +1853,76 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 };
 
 
+%nodefaultctor PColStd_HDoubleListOfInteger;
+class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PColStd_HDoubleListOfInteger();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger Construct(const Standard_Integer &T);
+		%feature("autodoc", "1");
+		Standard_Integer Value() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger Tail() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger Previous() const;
+		%feature("autodoc", "1");
+		void SwapTail(Handle_PColStd_HDoubleListOfInteger & WithList);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &T);
+		%feature("autodoc", "1");
+		void ChangeBackPointer(const Handle_PColStd_HDoubleListOfInteger &BackPointer);
+		%feature("autodoc", "1");
+		void ChangeForwardPointer(const Handle_PColStd_HDoubleListOfInteger &ForwardPointer);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		PColStd_HDoubleListOfInteger(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_HDoubleListOfIntegerData() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfIntegerData(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger _CSFDB_GetPColStd_HDoubleListOfIntegerNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfIntegerNext(const Handle_PColStd_HDoubleListOfInteger &p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfInteger _CSFDB_GetPColStd_HDoubleListOfIntegerBefore() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfIntegerBefore(const Handle_PColStd_HDoubleListOfInteger &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_HDoubleListOfInteger {
+	Handle_PColStd_HDoubleListOfInteger GetHandle() {
+	return *(Handle_PColStd_HDoubleListOfInteger*) &$self;
+	}
+};
+%extend PColStd_HDoubleListOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_HDoubleListOfInteger {
+	~PColStd_HDoubleListOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfReal;
 class PColStd_SeqExplorerOfHSequenceOfReal {
 	public:
@@ -1924,41 +1967,25 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 };
 
 
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
-class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
+%nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
+class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 	public:
 		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfInteger();
+		PColStd_SeqExplorerOfHSequenceOfHExtendedString(const Handle_PColStd_HSequenceOfHExtendedString &S);
 		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfInteger(const Standard_Integer &aValue);
+		Handle_PCollection_HExtendedString Value(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &aValue);
+		Standard_Boolean Contains(const Handle_PCollection_HExtendedString &T);
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
+		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfInteger(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfIntegermyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfIntegermyValue(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T);
 
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger*) &$self;
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
+%extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
+	~PColStd_SeqExplorerOfHSequenceOfHExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");}
 	}
 };
 
@@ -2111,6 +2138,45 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 };
 
 
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
+class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Standard_Real &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Real &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal*) &$self;
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	~PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
+	}
+};
+
+
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfReal;
 class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 	public:
@@ -2252,6 +2318,76 @@ class PColStd_HOfAsciiString {
 };
 
 
+%nodefaultctor PColStd_HDoubleListOfReal;
+class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PColStd_HDoubleListOfReal();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfReal Construct(const Standard_Real &T);
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfReal Tail() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfReal Previous() const;
+		%feature("autodoc", "1");
+		void SwapTail(Handle_PColStd_HDoubleListOfReal & WithList);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Real &T);
+		%feature("autodoc", "1");
+		void ChangeBackPointer(const Handle_PColStd_HDoubleListOfReal &BackPointer);
+		%feature("autodoc", "1");
+		void ChangeForwardPointer(const Handle_PColStd_HDoubleListOfReal &ForwardPointer);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		PColStd_HDoubleListOfReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPColStd_HDoubleListOfRealData() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfRealData(const Standard_Real p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfReal _CSFDB_GetPColStd_HDoubleListOfRealNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfRealNext(const Handle_PColStd_HDoubleListOfReal &p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HDoubleListOfReal _CSFDB_GetPColStd_HDoubleListOfRealBefore() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HDoubleListOfRealBefore(const Handle_PColStd_HDoubleListOfReal &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_HDoubleListOfReal {
+	Handle_PColStd_HDoubleListOfReal GetHandle() {
+	return *(Handle_PColStd_HDoubleListOfReal*) &$self;
+	}
+};
+%extend PColStd_HDoubleListOfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_HDoubleListOfReal {
+	~PColStd_HDoubleListOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfReal\n");}
+	}
+};
+
+
 %nodefaultctor PColStd_HSequenceOfInteger;
 class PColStd_HSequenceOfInteger : public Standard_Persistent {
 	public:
@@ -2352,37 +2488,6 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColStd_FieldOfHArray1OfInteger;
-class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColStd_FieldOfHArray1OfInteger();
-		%feature("autodoc", "1");
-		PColStd_FieldOfHArray1OfInteger(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColStd_FieldOfHArray1OfInteger(const PColStd_FieldOfHArray1OfInteger &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColStd_FieldOfHArray1OfInteger &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColStd_FieldOfHArray1OfInteger {
-	~PColStd_FieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfInteger\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_HOfReal;
 class PColStd_HOfReal {
 	public:
@@ -2417,66 +2522,6 @@ class PColStd_HOfExtendedString {
 	~PColStd_HOfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_HOfExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
-class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent();
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Handle_Standard_Persistent &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Standard_Persistent &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfPersistent(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfPersistentmyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfPersistentmyValue(const Handle_Standard_Persistent &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*) &$self;
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
-
-
-%nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString;
-class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString();
-		%feature("autodoc", "1");
-		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString(const Handle_PCollection_HExtendedString &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PCollection_HExtendedString &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");}
 	}
 };
 
@@ -2635,115 +2680,6 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
-class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfInteger();
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfInteger(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray1OfInteger(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfIntegermyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfIntegermyValue(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger*) &$self;
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
-	}
-};
-
-
-%nodefaultctor PColStd_HDoubleListOfInteger;
-class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		PColStd_HDoubleListOfInteger();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger Construct(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger Tail() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger Previous() const;
-		%feature("autodoc", "1");
-		void SwapTail(Handle_PColStd_HDoubleListOfInteger & WithList);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void ChangeBackPointer(const Handle_PColStd_HDoubleListOfInteger &BackPointer);
-		%feature("autodoc", "1");
-		void ChangeForwardPointer(const Handle_PColStd_HDoubleListOfInteger &ForwardPointer);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		PColStd_HDoubleListOfInteger(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColStd_HDoubleListOfIntegerData() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfIntegerData(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger _CSFDB_GetPColStd_HDoubleListOfIntegerNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfIntegerNext(const Handle_PColStd_HDoubleListOfInteger &p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfInteger _CSFDB_GetPColStd_HDoubleListOfIntegerBefore() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfIntegerBefore(const Handle_PColStd_HDoubleListOfInteger &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_HDoubleListOfInteger {
-	Handle_PColStd_HDoubleListOfInteger GetHandle() {
-	return *(Handle_PColStd_HDoubleListOfInteger*) &$self;
-	}
-};
-%extend PColStd_HDoubleListOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_HDoubleListOfInteger {
-	~PColStd_HDoubleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 	public:
@@ -2765,72 +2701,23 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 };
 
 
-%nodefaultctor PColStd_HDoubleListOfReal;
-class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
+%nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString;
+class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 	public:
 		%feature("autodoc", "1");
-		PColStd_HDoubleListOfReal();
+		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString(const Handle_PCollection_HExtendedString &aValue);
 		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfReal Construct(const Standard_Real &T);
+		void SetValue(const Handle_PCollection_HExtendedString &aValue);
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfReal Tail() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfReal Previous() const;
-		%feature("autodoc", "1");
-		void SwapTail(Handle_PColStd_HDoubleListOfReal & WithList);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Real &T);
-		%feature("autodoc", "1");
-		void ChangeBackPointer(const Handle_PColStd_HDoubleListOfReal &BackPointer);
-		%feature("autodoc", "1");
-		void ChangeForwardPointer(const Handle_PColStd_HDoubleListOfReal &ForwardPointer);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		PColStd_HDoubleListOfReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPColStd_HDoubleListOfRealData() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfRealData(const Standard_Real p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfReal _CSFDB_GetPColStd_HDoubleListOfRealNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfRealNext(const Handle_PColStd_HDoubleListOfReal &p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HDoubleListOfReal _CSFDB_GetPColStd_HDoubleListOfRealBefore() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_HDoubleListOfRealBefore(const Handle_PColStd_HDoubleListOfReal &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Value() const;
 
 };
-%extend PColStd_HDoubleListOfReal {
-	Handle_PColStd_HDoubleListOfReal GetHandle() {
-	return *(Handle_PColStd_HDoubleListOfReal*) &$self;
-	}
-};
-%extend PColStd_HDoubleListOfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColStd_HDoubleListOfReal {
-	~PColStd_HDoubleListOfReal() {
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
+	~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");}
 	}
 };
 
@@ -2897,25 +2784,6 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColStd_HashAsciiString;
-class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
-	public:
-		%feature("autodoc", "1");
-		PColStd_HashAsciiString();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer HashCode(const Handle_PCollection_HAsciiString &MyKey, const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
-
-};
-%extend PColStd_HashAsciiString {
-	~PColStd_HashAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HashAsciiString\n");}
-	}
-};
-
-
 %nodefaultctor PColStd_HSingleListOfInteger;
 class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 	public:
@@ -2972,6 +2840,45 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 	~PColStd_HSingleListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
+class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfInteger();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfInteger(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray1OfInteger(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray1OfIntegermyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray1OfIntegermyValue(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger*) &$self;
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
+	~PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
 	}
 };
 
@@ -3181,6 +3088,82 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 };
 
 
+%nodefaultctor PColStd_HArray2OfReal;
+class PColStd_HArray2OfReal : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		PColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Real &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real &Value);
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColStd_HArray2OfReal();
+		%feature("autodoc", "1");
+		PColStd_HArray2OfReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyLowerRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HArray2OfRealmyLowerRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyLowerCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HArray2OfRealmyLowerCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyUpperRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HArray2OfRealmyUpperRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColStd_HArray2OfRealmyUpperCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_HArray2OfRealmyUpperCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColStd_FieldOfHArray2OfReal & _CSFDB_GetPColStd_HArray2OfRealData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_HArray2OfReal {
+	Handle_PColStd_HArray2OfReal GetHandle() {
+	return *(Handle_PColStd_HArray2OfReal*) &$self;
+	}
+};
+%extend PColStd_HArray2OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColStd_HArray2OfReal {
+	~PColStd_HArray2OfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfReal\n");}
+	}
+};
+
+
 %nodefaultctor PColStd_HSequenceOfReal;
 class PColStd_HSequenceOfReal : public Standard_Persistent {
 	public:
@@ -3355,6 +3338,25 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 	~PColStd_SeqNodeOfHSequenceOfPersistent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfPersistent\n");}
+	}
+};
+
+
+%nodefaultctor PColStd_HashAsciiString;
+class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
+	public:
+		%feature("autodoc", "1");
+		PColStd_HashAsciiString();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer HashCode(const Handle_PCollection_HAsciiString &MyKey, const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
+
+};
+%extend PColStd_HashAsciiString {
+	~PColStd_HashAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColStd_HashAsciiString\n");}
 	}
 };
 

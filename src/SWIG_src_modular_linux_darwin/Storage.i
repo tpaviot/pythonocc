@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Storage
 
+%include Storage_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -146,32 +148,6 @@ enum Storage_SolveMode {
 
 
 
-%nodefaultctor Handle_Storage_Schema;
-class Handle_Storage_Schema : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_Schema();
-		%feature("autodoc", "1");
-		Handle_Storage_Schema(const Handle_Storage_Schema &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_Schema(const Storage_Schema *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_Schema const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_Schema {
-	Storage_Schema* GetObject() {
-	return (Storage_Schema*)$self->Access();
-	}
-};
-%extend Handle_Storage_Schema {
-	~Handle_Storage_Schema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Schema\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Storage_InternalData;
 class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 	public:
@@ -198,28 +174,54 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
-class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_Storage_IndexedDataMapNodeOfPType;
+class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack();
+		Handle_Storage_IndexedDataMapNodeOfPType();
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		Handle_Storage_IndexedDataMapNodeOfPType(const Handle_Storage_IndexedDataMapNodeOfPType &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		Handle_Storage_IndexedDataMapNodeOfPType(const Storage_IndexedDataMapNodeOfPType *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Storage_IndexedDataMapNodeOfPType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
-	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
-	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
+%extend Handle_Storage_IndexedDataMapNodeOfPType {
+	Storage_IndexedDataMapNodeOfPType* GetObject() {
+	return (Storage_IndexedDataMapNodeOfPType*)$self->Access();
 	}
 };
-%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
-	~Handle_Storage_SequenceNodeOfSeqOfCallBack() {
+%extend Handle_Storage_IndexedDataMapNodeOfPType {
+	~Handle_Storage_IndexedDataMapNodeOfPType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Storage_HArrayOfCallBack;
+class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack(const Handle_Storage_HArrayOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack(const Storage_HArrayOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_HArrayOfCallBack {
+	Storage_HArrayOfCallBack* GetObject() {
+	return (Storage_HArrayOfCallBack*)$self->Access();
+	}
+};
+%extend Handle_Storage_HArrayOfCallBack {
+	~Handle_Storage_HArrayOfCallBack() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
 	}
 };
 
@@ -276,54 +278,28 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 };
 
 
-%nodefaultctor Handle_Storage_StreamReadError;
-class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
+%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
+class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError();
+		Handle_Storage_SequenceNodeOfSeqOfCallBack();
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Storage_SequenceNodeOfSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_StreamReadError {
-	Storage_StreamReadError* GetObject() {
-	return (Storage_StreamReadError*)$self->Access();
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
+	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
 	}
 };
-%extend Handle_Storage_StreamReadError {
-	~Handle_Storage_StreamReadError() {
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	~Handle_Storage_SequenceNodeOfSeqOfCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Storage_StreamTypeMismatchError;
-class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamTypeMismatchError {
-	Storage_StreamTypeMismatchError* GetObject() {
-	return (Storage_StreamTypeMismatchError*)$self->Access();
-	}
-};
-%extend Handle_Storage_StreamTypeMismatchError {
-	~Handle_Storage_StreamTypeMismatchError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
 
@@ -402,6 +378,58 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 	~Handle_Storage_StreamFormatError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamFormatError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Storage_StreamReadError;
+class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamReadError {
+	Storage_StreamReadError* GetObject() {
+	return (Storage_StreamReadError*)$self->Access();
+	}
+};
+%extend Handle_Storage_StreamReadError {
+	~Handle_Storage_StreamReadError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Storage_StreamTypeMismatchError;
+class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamTypeMismatchError {
+	Storage_StreamTypeMismatchError* GetObject() {
+	return (Storage_StreamTypeMismatchError*)$self->Access();
+	}
+};
+%extend Handle_Storage_StreamTypeMismatchError {
+	~Handle_Storage_StreamTypeMismatchError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");}
 	}
 };
 
@@ -510,6 +538,32 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_Storage_Schema;
+class Handle_Storage_Schema : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_Schema();
+		%feature("autodoc", "1");
+		Handle_Storage_Schema(const Handle_Storage_Schema &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Schema(const Storage_Schema *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_Schema const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_Schema {
+	Storage_Schema* GetObject() {
+	return (Storage_Schema*)$self->Access();
+	}
+};
+%extend Handle_Storage_Schema {
+	~Handle_Storage_Schema() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Schema\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Storage_StreamWriteError;
 class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	public:
@@ -558,32 +612,6 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 	~Handle_Storage_DataMapNodeOfMapOfCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Storage_IndexedDataMapNodeOfPType;
-class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_IndexedDataMapNodeOfPType();
-		%feature("autodoc", "1");
-		Handle_Storage_IndexedDataMapNodeOfPType(const Handle_Storage_IndexedDataMapNodeOfPType &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_IndexedDataMapNodeOfPType(const Storage_IndexedDataMapNodeOfPType *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_IndexedDataMapNodeOfPType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_IndexedDataMapNodeOfPType {
-	Storage_IndexedDataMapNodeOfPType* GetObject() {
-	return (Storage_IndexedDataMapNodeOfPType*)$self->Access();
-	}
-};
-%extend Handle_Storage_IndexedDataMapNodeOfPType {
-	~Handle_Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");}
 	}
 };
 
@@ -848,32 +876,6 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 };
 
 
-%nodefaultctor Handle_Storage_HArrayOfCallBack;
-class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack(const Handle_Storage_HArrayOfCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack(const Storage_HArrayOfCallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_HArrayOfCallBack {
-	Storage_HArrayOfCallBack* GetObject() {
-	return (Storage_HArrayOfCallBack*)$self->Access();
-	}
-};
-%extend Handle_Storage_HArrayOfCallBack {
-	~Handle_Storage_HArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Storage_HSeqOfRoot;
 class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	public:
@@ -1039,6 +1041,61 @@ class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 };
 
 
+%nodefaultctor Storage_SeqOfCallBack;
+class Storage_SeqOfCallBack : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Storage_SeqOfCallBack();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Storage_SeqOfCallBack & Assign(const Storage_SeqOfCallBack &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_CallBack &T);
+		%feature("autodoc", "1");
+		void Append(Storage_SeqOfCallBack & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_CallBack &T);
+		%feature("autodoc", "1");
+		void Prepend(Storage_SeqOfCallBack & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Storage_CallBack &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Storage_SeqOfCallBack & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Storage_CallBack &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Storage_SeqOfCallBack & S);
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & First() const;
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Storage_SeqOfCallBack & S);
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &I);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Storage_SeqOfCallBack {
+	~Storage_SeqOfCallBack() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfCallBack\n");}
+	}
+};
+
+
 %nodefaultctor Storage_ArrayOfCallBack;
 class Storage_ArrayOfCallBack {
 	public:
@@ -1076,6 +1133,106 @@ class Storage_ArrayOfCallBack {
 	~Storage_ArrayOfCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfCallBack\n");}
+	}
+};
+
+
+%nodefaultctor Storage_HSeqOfCallBack;
+class Storage_HSeqOfCallBack : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HSeqOfCallBack();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Storage_SeqOfCallBack & Sequence() const;
+		%feature("autodoc", "1");
+		Storage_SeqOfCallBack & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HSeqOfCallBack {
+	Handle_Storage_HSeqOfCallBack GetHandle() {
+	return *(Handle_Storage_HSeqOfCallBack*) &$self;
+	}
+};
+%extend Storage_HSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_HSeqOfCallBack {
+	~Storage_HSeqOfCallBack() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfCallBack\n");}
+	}
+};
+
+
+%nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
+class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_CallBack &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	Handle_Storage_SequenceNodeOfSeqOfCallBack GetHandle() {
+	return *(Handle_Storage_SequenceNodeOfSeqOfCallBack*) &$self;
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	~Storage_SequenceNodeOfSeqOfCallBack() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
 
@@ -1234,11 +1391,44 @@ class Storage_TypedCallBack : public MMgt_TShared {
 };
 
 
+%nodefaultctor Storage_IndexedDataMapNodeOfPType;
+class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_IndexedDataMapNodeOfPType(const TCollection_AsciiString &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_IndexedDataMapNodeOfPType {
+	Handle_Storage_IndexedDataMapNodeOfPType GetHandle() {
+	return *(Handle_Storage_IndexedDataMapNodeOfPType*) &$self;
+	}
+};
+%extend Storage_IndexedDataMapNodeOfPType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_IndexedDataMapNodeOfPType {
+	~Storage_IndexedDataMapNodeOfPType() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");}
+	}
+};
+
+
 %nodefaultctor Storage_MapPSDHasher;
 class Storage_MapPSDHasher {
 	public:
-		%feature("autodoc", "1");
-		Storage_MapPSDHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1276,6 +1466,53 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 	~Storage_MapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_MapOfAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Storage_HPArray;
+class Storage_HPArray : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Storage_PArray & Array1() const;
+		%feature("autodoc", "1");
+		Storage_PArray & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HPArray {
+	Handle_Storage_HPArray GetHandle() {
+	return *(Handle_Storage_HPArray*) &$self;
+	}
+};
+%extend Storage_HPArray {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_HPArray {
+	~Storage_HPArray() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HPArray\n");}
 	}
 };
 
@@ -1328,6 +1565,41 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 	~Storage_DataMapIteratorOfMapOfCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");}
+	}
+};
+
+
+%nodefaultctor Storage_MapOfPers;
+class Storage_MapOfPers : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Storage_MapOfPers(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Storage_MapOfPers & Assign(const Storage_MapOfPers &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & Find(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & operator()(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
+
+};
+%extend Storage_MapOfPers {
+	~Storage_MapOfPers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
 	}
 };
 
@@ -1491,41 +1763,6 @@ class Storage_Schema : public MMgt_TShared {
 };
 
 
-%nodefaultctor Storage_StreamUnknownTypeError;
-class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError();
-		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_StreamUnknownTypeError {
-	Handle_Storage_StreamUnknownTypeError GetHandle() {
-	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
-	}
-};
-%extend Storage_StreamUnknownTypeError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_StreamUnknownTypeError {
-	~Storage_StreamUnknownTypeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
-	}
-};
-
-
 %nodefaultctor Storage_RootData;
 class Storage_RootData : public MMgt_TShared {
 	public:
@@ -1651,8 +1888,6 @@ class Storage_StreamWriteError : public Standard_Failure {
 class Storage {
 	public:
 		%feature("autodoc", "1");
-		Storage();
-		%feature("autodoc", "1");
 		TCollection_AsciiString Version();
 
 };
@@ -1721,49 +1956,12 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 %nodefaultctor Storage_stCONSTclCOM;
 class Storage_stCONSTclCOM {
 	public:
-		%feature("autodoc", "1");
-		Storage_stCONSTclCOM();
 
 };
 %extend Storage_stCONSTclCOM {
 	~Storage_stCONSTclCOM() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_stCONSTclCOM\n");}
-	}
-};
-
-
-%nodefaultctor Storage_IndexedDataMapNodeOfPType;
-class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_IndexedDataMapNodeOfPType(const TCollection_AsciiString &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_IndexedDataMapNodeOfPType {
-	Handle_Storage_IndexedDataMapNodeOfPType GetHandle() {
-	return *(Handle_Storage_IndexedDataMapNodeOfPType*) &$self;
-	}
-};
-%extend Storage_IndexedDataMapNodeOfPType {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_IndexedDataMapNodeOfPType {
-	~Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");}
 	}
 };
 
@@ -1799,6 +1997,41 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	~Storage_StreamTypeMismatchError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamTypeMismatchError\n");}
+	}
+};
+
+
+%nodefaultctor Storage_StreamUnknownTypeError;
+class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamUnknownTypeError();
+		%feature("autodoc", "1");
+		Storage_StreamUnknownTypeError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StreamUnknownTypeError {
+	Handle_Storage_StreamUnknownTypeError GetHandle() {
+	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
+	}
+};
+%extend Storage_StreamUnknownTypeError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_StreamUnknownTypeError {
+	~Storage_StreamUnknownTypeError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
 	}
 };
 
@@ -1960,53 +2193,6 @@ class Storage_BaseDriver {
 };
 
 
-%nodefaultctor Storage_HPArray;
-class Storage_HPArray : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_PArray & Array1() const;
-		%feature("autodoc", "1");
-		Storage_PArray & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HPArray {
-	Handle_Storage_HPArray GetHandle() {
-	return *(Handle_Storage_HPArray*) &$self;
-	}
-};
-%extend Storage_HPArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_HPArray {
-	~Storage_HPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HPArray\n");}
-	}
-};
-
-
 %nodefaultctor Storage_CallBack;
 class Storage_CallBack : public MMgt_TShared {
 	public:
@@ -2036,35 +2222,6 @@ class Storage_CallBack : public MMgt_TShared {
 	~Storage_CallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_CallBack\n");}
-	}
-};
-
-
-%nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
-class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_CallBack &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_SequenceNodeOfSeqOfCallBack {
-	Handle_Storage_SequenceNodeOfSeqOfCallBack GetHandle() {
-	return *(Handle_Storage_SequenceNodeOfSeqOfCallBack*) &$self;
-	}
-};
-%extend Storage_SequenceNodeOfSeqOfCallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_SequenceNodeOfSeqOfCallBack {
-	~Storage_SequenceNodeOfSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
 
@@ -2224,6 +2381,77 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Storage_HSeqOfPersistent;
+class Storage_HSeqOfPersistent : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HSeqOfPersistent();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Standard_Persistent &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_HSeqOfPersistent &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Standard_Persistent &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_HSeqOfPersistent &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfPersistent &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfPersistent &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Storage_SeqOfPersistent & Sequence() const;
+		%feature("autodoc", "1");
+		Storage_SeqOfPersistent & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HSeqOfPersistent {
+	Handle_Storage_HSeqOfPersistent GetHandle() {
+	return *(Handle_Storage_HSeqOfPersistent*) &$self;
+	}
+};
+%extend Storage_HSeqOfPersistent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_HSeqOfPersistent {
+	~Storage_HSeqOfPersistent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
+	}
+};
+
+
 %nodefaultctor Storage_PArray;
 class Storage_PArray {
 	public:
@@ -2261,77 +2489,6 @@ class Storage_PArray {
 	~Storage_PArray() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_PArray\n");}
-	}
-};
-
-
-%nodefaultctor Storage_HSeqOfCallBack;
-class Storage_HSeqOfCallBack : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HSeqOfCallBack();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Storage_SeqOfCallBack & Sequence() const;
-		%feature("autodoc", "1");
-		Storage_SeqOfCallBack & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HSeqOfCallBack {
-	Handle_Storage_HSeqOfCallBack GetHandle() {
-	return *(Handle_Storage_HSeqOfCallBack*) &$self;
-	}
-};
-%extend Storage_HSeqOfCallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_HSeqOfCallBack {
-	~Storage_HSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfCallBack\n");}
 	}
 };
 
@@ -2402,41 +2559,6 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 	~Storage_DefaultCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_DefaultCallBack\n");}
-	}
-};
-
-
-%nodefaultctor Storage_StreamFormatError;
-class Storage_StreamFormatError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamFormatError();
-		%feature("autodoc", "1");
-		Storage_StreamFormatError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamFormatError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_StreamFormatError {
-	Handle_Storage_StreamFormatError GetHandle() {
-	return *(Handle_Storage_StreamFormatError*) &$self;
-	}
-};
-%extend Storage_StreamFormatError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_StreamFormatError {
-	~Storage_StreamFormatError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
 	}
 };
 
@@ -2712,6 +2834,41 @@ class Storage_HeaderData : public MMgt_TShared {
 };
 
 
+%nodefaultctor Storage_StreamFormatError;
+class Storage_StreamFormatError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamFormatError();
+		%feature("autodoc", "1");
+		Storage_StreamFormatError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StreamFormatError {
+	Handle_Storage_StreamFormatError GetHandle() {
+	return *(Handle_Storage_StreamFormatError*) &$self;
+	}
+};
+%extend Storage_StreamFormatError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Storage_StreamFormatError {
+	~Storage_StreamFormatError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
+	}
+};
+
+
 %nodefaultctor Storage_MapIteratorOfMapOfAsciiString;
 class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
 	public:
@@ -2729,41 +2886,6 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 	~Storage_MapIteratorOfMapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor Storage_MapOfPers;
-class Storage_MapOfPers : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Storage_MapOfPers(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Storage_MapOfPers & Assign(const Storage_MapOfPers &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		const Handle_Storage_Root & Find(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const Handle_Storage_Root & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Handle_Storage_Root & ChangeFind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
-
-};
-%extend Storage_MapOfPers {
-	~Storage_MapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
 	}
 };
 
@@ -2811,131 +2933,5 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 	~Storage_HArrayOfCallBack() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfCallBack\n");}
-	}
-};
-
-
-%nodefaultctor Storage_HSeqOfPersistent;
-class Storage_HSeqOfPersistent : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HSeqOfPersistent();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Persistent &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_HSeqOfPersistent &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Standard_Persistent &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_HSeqOfPersistent &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfPersistent &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfPersistent &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Standard_Persistent &anItem);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Storage_SeqOfPersistent & Sequence() const;
-		%feature("autodoc", "1");
-		Storage_SeqOfPersistent & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfPersistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HSeqOfPersistent {
-	Handle_Storage_HSeqOfPersistent GetHandle() {
-	return *(Handle_Storage_HSeqOfPersistent*) &$self;
-	}
-};
-%extend Storage_HSeqOfPersistent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Storage_HSeqOfPersistent {
-	~Storage_HSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
-	}
-};
-
-
-%nodefaultctor Storage_SeqOfCallBack;
-class Storage_SeqOfCallBack : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Storage_SeqOfCallBack();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Storage_SeqOfCallBack & Assign(const Storage_SeqOfCallBack &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_CallBack &T);
-		%feature("autodoc", "1");
-		void Append(Storage_SeqOfCallBack & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_CallBack &T);
-		%feature("autodoc", "1");
-		void Prepend(Storage_SeqOfCallBack & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Storage_CallBack &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Storage_SeqOfCallBack & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Storage_CallBack &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Storage_SeqOfCallBack & S);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & First() const;
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Storage_SeqOfCallBack & S);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &I);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Storage_SeqOfCallBack {
-	~Storage_SeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfCallBack\n");}
 	}
 };

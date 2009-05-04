@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeExtend
 
+%include ShapeExtend_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -220,32 +222,6 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 };
 
 
-%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
-class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
-	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
-	}
-};
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeExtend_ComplexCurve;
 class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	public:
@@ -320,6 +296,32 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 	~Handle_ShapeExtend_CompositeSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_CompositeSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
+class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
+	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
+	}
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");}
 	}
 };
 
@@ -410,8 +412,6 @@ class ShapeExtend_WireData : public MMgt_TShared {
 %nodefaultctor ShapeExtend;
 class ShapeExtend {
 	public:
-		%feature("autodoc", "1");
-		ShapeExtend();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");

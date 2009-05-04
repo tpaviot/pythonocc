@@ -1,0 +1,10 @@
+%rename(UndefinedValue) StdFail_UndefinedValue;
+%rename(Undefined) StdFail_Undefined;
+%rename(Handle_Undefined) Handle_StdFail_Undefined;
+%rename(UndefinedDerivative) StdFail_UndefinedDerivative;
+%rename(Handle_InfiniteSolutions) Handle_StdFail_InfiniteSolutions;
+%rename(NotDone) StdFail_NotDone;
+%rename(Handle_NotDone) Handle_StdFail_NotDone;
+%rename(InfiniteSolutions) StdFail_InfiniteSolutions;
+%rename(Handle_UndefinedDerivative) Handle_StdFail_UndefinedDerivative;
+%rename(Handle_UndefinedValue) Handle_StdFail_UndefinedValue;

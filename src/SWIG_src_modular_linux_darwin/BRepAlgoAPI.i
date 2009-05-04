@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepAlgoAPI
 
+%include BRepAlgoAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -160,6 +162,7 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");}
 	$self->Destroy();
+
 	}
 };
 

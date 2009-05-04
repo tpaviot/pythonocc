@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PPoly
 
+%include PPoly_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -270,6 +272,68 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 };
 
 
+%nodefaultctor PPoly_HArray1OfTriangle;
+class PPoly_HArray1OfTriangle : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		PPoly_Triangle Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle();
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PPoly_HArray1OfTriangle {
+	Handle_PPoly_HArray1OfTriangle GetHandle() {
+	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	~PPoly_HArray1OfTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
+	}
+};
+
+
 %nodefaultctor PPoly_Triangulation;
 class PPoly_Triangulation : public Standard_Persistent {
 	public:
@@ -335,23 +399,63 @@ class PPoly_Triangulation : public Standard_Persistent {
 };
 
 
-%nodefaultctor PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
-class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+%nodefaultctor PPoly_PolygonOnTriangulation;
+class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
+		PPoly_PolygonOnTriangulation();
 		%feature("autodoc", "1");
-		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
+		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl);
 		%feature("autodoc", "1");
-		void SetValue(const PPoly_Triangle &aValue);
+		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl, const Handle_PColStd_HArray1OfReal &Parameters);
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real D);
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfInteger Nodes() const;
+		%feature("autodoc", "1");
+		void Nodes(const Handle_PColStd_HArray1OfInteger &Nodes);
+		%feature("autodoc", "1");
+		Standard_Boolean HasParameters() const;
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfReal Parameters() const;
+		%feature("autodoc", "1");
+		void Parameters(const Handle_PColStd_HArray1OfReal &Param);
+		%feature("autodoc", "1");
+		PPoly_PolygonOnTriangulation(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPPoly_PolygonOnTriangulationmyDeflection() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_PolygonOnTriangulationmyDeflection(const Standard_Real p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfInteger _CSFDB_GetPPoly_PolygonOnTriangulationmyNodes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_PolygonOnTriangulationmyNodes(const Handle_PColStd_HArray1OfInteger &p);
+		%feature("autodoc", "1");
+		Handle_PColStd_HArray1OfReal _CSFDB_GetPPoly_PolygonOnTriangulationmyParameters() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const Handle_PColStd_HArray1OfReal &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
-	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
+%extend PPoly_PolygonOnTriangulation {
+	Handle_PPoly_PolygonOnTriangulation GetHandle() {
+	return *(Handle_PPoly_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend PPoly_PolygonOnTriangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PPoly_PolygonOnTriangulation {
+	~PPoly_PolygonOnTriangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
+	if (__env){printf("## Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -413,6 +517,27 @@ class PPoly_Polygon3D : public Standard_Persistent {
 	~PPoly_Polygon3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon3D\n");}
+	}
+};
+
+
+%nodefaultctor PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
+class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	public:
+		%feature("autodoc", "1");
+		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
+		%feature("autodoc", "1");
+		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const PPoly_Triangle &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
 	}
 };
 
@@ -553,128 +678,5 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
-	}
-};
-
-
-%nodefaultctor PPoly_HArray1OfTriangle;
-class PPoly_HArray1OfTriangle : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		PPoly_Triangle Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle();
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PPoly_HArray1OfTriangle {
-	Handle_PPoly_HArray1OfTriangle GetHandle() {
-	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
-	}
-};
-%extend PPoly_HArray1OfTriangle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PPoly_HArray1OfTriangle {
-	~PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
-	}
-};
-
-
-%nodefaultctor PPoly_PolygonOnTriangulation;
-class PPoly_PolygonOnTriangulation : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation();
-		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl);
-		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation(const Handle_PColStd_HArray1OfInteger &Nodes, const Standard_Real Defl, const Handle_PColStd_HArray1OfReal &Parameters);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void Deflection(const Standard_Real D);
-		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HArray1OfInteger Nodes() const;
-		%feature("autodoc", "1");
-		void Nodes(const Handle_PColStd_HArray1OfInteger &Nodes);
-		%feature("autodoc", "1");
-		Standard_Boolean HasParameters() const;
-		%feature("autodoc", "1");
-		Handle_PColStd_HArray1OfReal Parameters() const;
-		%feature("autodoc", "1");
-		void Parameters(const Handle_PColStd_HArray1OfReal &Param);
-		%feature("autodoc", "1");
-		PPoly_PolygonOnTriangulation(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPPoly_PolygonOnTriangulationmyDeflection() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_PolygonOnTriangulationmyDeflection(const Standard_Real p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HArray1OfInteger _CSFDB_GetPPoly_PolygonOnTriangulationmyNodes() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_PolygonOnTriangulationmyNodes(const Handle_PColStd_HArray1OfInteger &p);
-		%feature("autodoc", "1");
-		Handle_PColStd_HArray1OfReal _CSFDB_GetPPoly_PolygonOnTriangulationmyParameters() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_PolygonOnTriangulationmyParameters(const Handle_PColStd_HArray1OfReal &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PPoly_PolygonOnTriangulation {
-	Handle_PPoly_PolygonOnTriangulation GetHandle() {
-	return *(Handle_PPoly_PolygonOnTriangulation*) &$self;
-	}
-};
-%extend PPoly_PolygonOnTriangulation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PPoly_PolygonOnTriangulation {
-	~PPoly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");}
 	}
 };

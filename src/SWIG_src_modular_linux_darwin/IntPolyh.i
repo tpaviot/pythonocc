@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntPolyh
 
+%include IntPolyh_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -141,6 +143,83 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 };
 
 
+%nodefaultctor IntPolyh_StartPoint;
+class IntPolyh_StartPoint {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint();
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
+		%feature("autodoc", "1");
+		Standard_Real X() const;
+		%feature("autodoc", "1");
+		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		Standard_Real Z() const;
+		%feature("autodoc", "1");
+		Standard_Real U1() const;
+		%feature("autodoc", "1");
+		Standard_Real V1() const;
+		%feature("autodoc", "1");
+		Standard_Real U2() const;
+		%feature("autodoc", "1");
+		Standard_Real V2() const;
+		%feature("autodoc", "1");
+		Standard_Integer T1() const;
+		%feature("autodoc", "1");
+		Standard_Integer E1() const;
+		%feature("autodoc", "1");
+		Standard_Real Lambda1() const;
+		%feature("autodoc", "1");
+		Standard_Integer T2() const;
+		%feature("autodoc", "1");
+		Standard_Integer E2() const;
+		%feature("autodoc", "1");
+		Standard_Real Lambda2() const;
+		%feature("autodoc", "1");
+		Standard_Real GetAngle() const;
+		%feature("autodoc", "1");
+		Standard_Integer ChainList() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Equal(const IntPolyh_StartPoint &StPt);
+		%feature("autodoc", "1");
+		void SetXYZ(const Standard_Real XX, const Standard_Real YY, const Standard_Real ZZ);
+		%feature("autodoc", "1");
+		void SetUV1(const Standard_Real UU1, const Standard_Real VV1);
+		%feature("autodoc", "1");
+		void SetUV2(const Standard_Real UU2, const Standard_Real VV2);
+		%feature("autodoc", "1");
+		void SetEdge1(const Standard_Integer IE1);
+		%feature("autodoc", "1");
+		void SetLambda1(const Standard_Real LAM1);
+		%feature("autodoc", "1");
+		void SetEdge2(const Standard_Integer IE2);
+		%feature("autodoc", "1");
+		void SetLambda2(const Standard_Real LAM2);
+		%feature("autodoc", "1");
+		void SetCoupleValue(const Standard_Integer IT1, const Standard_Integer IT2);
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real ang);
+		%feature("autodoc", "1");
+		void SetChainList(const Standard_Integer ChList);
+		%feature("autodoc", "1");
+		Standard_Integer CheckSameSP(const IntPolyh_StartPoint &SP) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer i) const;
+
+};
+%extend IntPolyh_StartPoint {
+	~IntPolyh_StartPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntPolyh_StartPoint\n");}
+	}
+};
+
+
 %nodefaultctor IntPolyh_SeqOfStartPoints;
 class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 	public:
@@ -192,45 +271,6 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 	~IntPolyh_SeqOfStartPoints() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_SeqOfStartPoints\n");}
-	}
-};
-
-
-%nodefaultctor IntPolyh_Edge;
-class IntPolyh_Edge {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_Edge();
-		%feature("autodoc", "1");
-		IntPolyh_Edge(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4);
-		%feature("autodoc", "1");
-		Standard_Integer FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstTriangle() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondTriangle() const;
-		%feature("autodoc", "1");
-		Standard_Integer AnalysisFlag() const;
-		%feature("autodoc", "1");
-		void SetFirstPoint(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetSecondPoint(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetFirstTriangle(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetSecondTriangle(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetAnalysisFlag(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer v) const;
-
-};
-%extend IntPolyh_Edge {
-	~IntPolyh_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Edge\n");}
 	}
 };
 
@@ -468,83 +508,6 @@ class IntPolyh_Point {
 };
 
 
-%nodefaultctor IntPolyh_StartPoint;
-class IntPolyh_StartPoint {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint();
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
-		%feature("autodoc", "1");
-		Standard_Real X() const;
-		%feature("autodoc", "1");
-		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		Standard_Real Z() const;
-		%feature("autodoc", "1");
-		Standard_Real U1() const;
-		%feature("autodoc", "1");
-		Standard_Real V1() const;
-		%feature("autodoc", "1");
-		Standard_Real U2() const;
-		%feature("autodoc", "1");
-		Standard_Real V2() const;
-		%feature("autodoc", "1");
-		Standard_Integer T1() const;
-		%feature("autodoc", "1");
-		Standard_Integer E1() const;
-		%feature("autodoc", "1");
-		Standard_Real Lambda1() const;
-		%feature("autodoc", "1");
-		Standard_Integer T2() const;
-		%feature("autodoc", "1");
-		Standard_Integer E2() const;
-		%feature("autodoc", "1");
-		Standard_Real Lambda2() const;
-		%feature("autodoc", "1");
-		Standard_Real GetAngle() const;
-		%feature("autodoc", "1");
-		Standard_Integer ChainList() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Equal(const IntPolyh_StartPoint &StPt);
-		%feature("autodoc", "1");
-		void SetXYZ(const Standard_Real XX, const Standard_Real YY, const Standard_Real ZZ);
-		%feature("autodoc", "1");
-		void SetUV1(const Standard_Real UU1, const Standard_Real VV1);
-		%feature("autodoc", "1");
-		void SetUV2(const Standard_Real UU2, const Standard_Real VV2);
-		%feature("autodoc", "1");
-		void SetEdge1(const Standard_Integer IE1);
-		%feature("autodoc", "1");
-		void SetLambda1(const Standard_Real LAM1);
-		%feature("autodoc", "1");
-		void SetEdge2(const Standard_Integer IE2);
-		%feature("autodoc", "1");
-		void SetLambda2(const Standard_Real LAM2);
-		%feature("autodoc", "1");
-		void SetCoupleValue(const Standard_Integer IT1, const Standard_Integer IT2);
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real ang);
-		%feature("autodoc", "1");
-		void SetChainList(const Standard_Integer ChList);
-		%feature("autodoc", "1");
-		Standard_Integer CheckSameSP(const IntPolyh_StartPoint &SP) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer i) const;
-
-};
-%extend IntPolyh_StartPoint {
-	~IntPolyh_StartPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_StartPoint\n");}
-	}
-};
-
-
 %nodefaultctor IntPolyh_ArrayOfSectionLines;
 class IntPolyh_ArrayOfSectionLines {
 	public:
@@ -584,6 +547,45 @@ class IntPolyh_ArrayOfSectionLines {
 };
 
 
+%nodefaultctor IntPolyh_Edge;
+class IntPolyh_Edge {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Edge();
+		%feature("autodoc", "1");
+		IntPolyh_Edge(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4);
+		%feature("autodoc", "1");
+		Standard_Integer FirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstTriangle() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondTriangle() const;
+		%feature("autodoc", "1");
+		Standard_Integer AnalysisFlag() const;
+		%feature("autodoc", "1");
+		void SetFirstPoint(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetSecondPoint(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetFirstTriangle(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetSecondTriangle(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetAnalysisFlag(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer v) const;
+
+};
+%extend IntPolyh_Edge {
+	~IntPolyh_Edge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntPolyh_Edge\n");}
+	}
+};
+
+
 %nodefaultctor IntPolyh_ArrayOfStartPoints;
 class IntPolyh_ArrayOfStartPoints {
 	public:
@@ -615,6 +617,43 @@ class IntPolyh_ArrayOfStartPoints {
 	~IntPolyh_ArrayOfStartPoints() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");}
+	}
+};
+
+
+%nodefaultctor IntPolyh_Intersection;
+class IntPolyh_Intersection {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
+		%feature("autodoc", "1");
+		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Standard_Integer NbSU1, const Standard_Integer NbSV1, const Handle_Adaptor3d_HSurface &S2, const Standard_Integer NbSU2, const Standard_Integer NbSV2);
+		%feature("autodoc", "1");
+		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const TColStd_Array1OfReal &anUpars1, const TColStd_Array1OfReal &aVpars1, const Handle_Adaptor3d_HSurface &S2, const TColStd_Array1OfReal &anUpars2, const TColStd_Array1OfReal &aVpars2);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		void Perform(const TColStd_Array1OfReal &Upars1, const TColStd_Array1OfReal &Vpars1, const TColStd_Array1OfReal &Upars2, const TColStd_Array1OfReal &Vpars2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSectionLines() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPointsInLine(const Standard_Integer IndexLine) const;
+		%feature("autodoc", "1");
+		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTangentZones() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPointsInTangentZone(const Standard_Integer IndexLine) const;
+		%feature("autodoc", "1");
+		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend IntPolyh_Intersection {
+	~IntPolyh_Intersection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntPolyh_Intersection\n");}
 	}
 };
 
@@ -677,43 +716,6 @@ class IntPolyh_Couple {
 	~IntPolyh_Couple() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_Couple\n");}
-	}
-};
-
-
-%nodefaultctor IntPolyh_Intersection;
-class IntPolyh_Intersection {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
-		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const Standard_Integer NbSU1, const Standard_Integer NbSV1, const Handle_Adaptor3d_HSurface &S2, const Standard_Integer NbSU2, const Standard_Integer NbSV2);
-		%feature("autodoc", "1");
-		IntPolyh_Intersection(const Handle_Adaptor3d_HSurface &S1, const TColStd_Array1OfReal &anUpars1, const TColStd_Array1OfReal &aVpars1, const Handle_Adaptor3d_HSurface &S2, const TColStd_Array1OfReal &anUpars2, const TColStd_Array1OfReal &aVpars2);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		void Perform(const TColStd_Array1OfReal &Upars1, const TColStd_Array1OfReal &Vpars1, const TColStd_Array1OfReal &Upars2, const TColStd_Array1OfReal &Vpars2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSectionLines() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPointsInLine(const Standard_Integer IndexLine) const;
-		%feature("autodoc", "1");
-		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTangentZones() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPointsInTangentZone(const Standard_Integer IndexLine) const;
-		%feature("autodoc", "1");
-		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend IntPolyh_Intersection {
-	~IntPolyh_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Intersection\n");}
 	}
 };
 

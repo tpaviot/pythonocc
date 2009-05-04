@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeAlgo
 
+%include ShapeAlgo_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_ShapeAlgo_ToolContainer;
-class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer();
-		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAlgo_ToolContainer {
-	ShapeAlgo_ToolContainer* GetObject() {
-	return (ShapeAlgo_ToolContainer*)$self->Access();
-	}
-};
-%extend Handle_ShapeAlgo_ToolContainer {
-	~Handle_ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
 class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +138,32 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	~Handle_ShapeAlgo_AlgoContainer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeAlgo_ToolContainer;
+class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer();
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAlgo_ToolContainer {
+	ShapeAlgo_ToolContainer* GetObject() {
+	return (ShapeAlgo_ToolContainer*)$self->Access();
+	}
+};
+%extend Handle_ShapeAlgo_ToolContainer {
+	~Handle_ShapeAlgo_ToolContainer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
 	}
 };
 

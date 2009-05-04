@@ -46,18 +46,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<TopoDS_Shape.hxx>
-#include<TColGeom_SequenceOfCurve.hxx>
+#include<TColgp_SequenceOfPnt.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>
+#include<TopoDS_Solid.hxx>
+#include<TColGeom_SequenceOfCurve.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Dir.hxx>
 #include<TopTools_ListOfShape.hxx>
-#include<gp_Pnt.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Ax1.hxx>
-#include<BRepFeat.hxx>
-#include<TColgp_SequenceOfPnt.hxx>
-#include<TopoDS_Solid.hxx>
 %}

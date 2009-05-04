@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PTopoDS
 
+%include PTopoDS_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -530,32 +532,6 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 };
 
 
-%nodefaultctor Handle_PTopoDS_TVertex1;
-class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
-	public:
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex1();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex1(const Handle_PTopoDS_TVertex1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex1(const PTopoDS_TVertex1 *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TVertex1 {
-	PTopoDS_TVertex1* GetObject() {
-	return (PTopoDS_TVertex1*)$self->Access();
-	}
-};
-%extend Handle_PTopoDS_TVertex1 {
-	~Handle_PTopoDS_TVertex1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex1\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PTopoDS_TCompound;
 class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 	public:
@@ -578,6 +554,32 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 	~Handle_PTopoDS_TCompound() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PTopoDS_TCompound1;
+class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1(const Handle_PTopoDS_TCompound1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1(const PTopoDS_TCompound1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1 const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TCompound1 {
+	PTopoDS_TCompound1* GetObject() {
+	return (PTopoDS_TCompound1*)$self->Access();
+	}
+};
+%extend Handle_PTopoDS_TCompound1 {
+	~Handle_PTopoDS_TCompound1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound1\n");}
 	}
 };
 
@@ -686,28 +688,28 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 };
 
 
-%nodefaultctor Handle_PTopoDS_TCompound1;
-class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
+%nodefaultctor Handle_PTopoDS_TVertex1;
+class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 	public:
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1();
+		Handle_PTopoDS_TVertex1();
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1(const Handle_PTopoDS_TCompound1 &aHandle);
+		Handle_PTopoDS_TVertex1(const Handle_PTopoDS_TVertex1 &aHandle);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1(const PTopoDS_TCompound1 *anItem);
+		Handle_PTopoDS_TVertex1(const PTopoDS_TVertex1 *anItem);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PTopoDS_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PTopoDS_TCompound1 {
-	PTopoDS_TCompound1* GetObject() {
-	return (PTopoDS_TCompound1*)$self->Access();
+%extend Handle_PTopoDS_TVertex1 {
+	PTopoDS_TVertex1* GetObject() {
+	return (PTopoDS_TVertex1*)$self->Access();
 	}
 };
-%extend Handle_PTopoDS_TCompound1 {
-	~Handle_PTopoDS_TCompound1() {
+%extend Handle_PTopoDS_TVertex1 {
+	~Handle_PTopoDS_TVertex1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound1\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex1\n");}
 	}
 };
 
@@ -1052,43 +1054,6 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 
 
-%nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
-class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1();
-		%feature("autodoc", "1");
-		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1(const PTopoDS_Shape1 &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const PTopoDS_Shape1 &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const PTopoDS_Shape1 & _CSFDB_GetPTopoDS_VArrayNodeOfFieldOfHArray1OfShape1myValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
-	Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 GetHandle() {
-	return *(Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1*) &$self;
-	}
-};
-%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
-	~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
-	}
-};
-
-
 %nodefaultctor PTopoDS_HShape;
 class PTopoDS_HShape : public ObjMgt_ExternShareable {
 	public:
@@ -1140,33 +1105,6 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 
 
-%nodefaultctor PTopoDS_Shell;
-class PTopoDS_Shell : public PTopoDS_HShape {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_Shell();
-		%feature("autodoc", "1");
-		PTopoDS_Shell(const Storage_stCONSTclCOM &a);
-
-};
-%extend PTopoDS_Shell {
-	Handle_PTopoDS_Shell GetHandle() {
-	return *(Handle_PTopoDS_Shell*) &$self;
-	}
-};
-%extend PTopoDS_Shell {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PTopoDS_Shell {
-	~PTopoDS_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Shell\n");}
-	}
-};
-
-
 %nodefaultctor PTopoDS_Wire;
 class PTopoDS_Wire : public PTopoDS_HShape {
 	public:
@@ -1174,8 +1112,6 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 		PTopoDS_Wire();
 		%feature("autodoc", "1");
 		PTopoDS_Wire(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PTopoDS_Wire {
@@ -1227,64 +1163,39 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 
 
-%nodefaultctor PTopoDS_HArray1OfShape1;
-class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
+%nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
+class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up);
+		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1();
 		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up, const PTopoDS_Shape1 &V);
+		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1(const PTopoDS_Shape1 &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetValue(const PTopoDS_Shape1 &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Standard_Address Value() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const PTopoDS_Shape1 &Value);
+		PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		PTopoDS_Shape1 Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1();
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1LowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopoDS_HArray1OfShape1LowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1UpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopoDS_HArray1OfShape1UpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PTopoDS_FieldOfHArray1OfShape1 & _CSFDB_GetPTopoDS_HArray1OfShape1Data() const;
+		const PTopoDS_Shape1 & _CSFDB_GetPTopoDS_VArrayNodeOfFieldOfHArray1OfShape1myValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PTopoDS_HArray1OfShape1 {
-	Handle_PTopoDS_HArray1OfShape1 GetHandle() {
-	return *(Handle_PTopoDS_HArray1OfShape1*) &$self;
+%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
+	Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 GetHandle() {
+	return *(Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1*) &$self;
 	}
 };
-%extend PTopoDS_HArray1OfShape1 {
+%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PTopoDS_HArray1OfShape1 {
-	~PTopoDS_HArray1OfShape1() {
+%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
+	~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfShape1\n");}
+	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
 
@@ -1846,6 +1757,37 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 
 
+%nodefaultctor PTopoDS_TCompSolid;
+class PTopoDS_TCompSolid : public PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		PTopoDS_TCompSolid();
+		%feature("autodoc", "1");
+		virtual		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		PTopoDS_TCompSolid(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_TCompSolid {
+	Handle_PTopoDS_TCompSolid GetHandle() {
+	return *(Handle_PTopoDS_TCompSolid*) &$self;
+	}
+};
+%extend PTopoDS_TCompSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PTopoDS_TCompSolid {
+	~PTopoDS_TCompSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid\n");}
+	}
+};
+
+
 %nodefaultctor PTopoDS_TVertex;
 class PTopoDS_TVertex : public PTopoDS_TShape {
 	public:
@@ -1939,6 +1881,35 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 
 
+%nodefaultctor PTopoDS_Shell;
+class PTopoDS_Shell : public PTopoDS_HShape {
+	public:
+		%feature("autodoc", "1");
+		PTopoDS_Shell();
+		%feature("autodoc", "1");
+		PTopoDS_Shell(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_Shell {
+	Handle_PTopoDS_Shell GetHandle() {
+	return *(Handle_PTopoDS_Shell*) &$self;
+	}
+};
+%extend PTopoDS_Shell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PTopoDS_Shell {
+	~PTopoDS_Shell() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PTopoDS_Shell\n");}
+	}
+};
+
+
 %nodefaultctor PTopoDS_Shape1;
 class PTopoDS_Shape1 {
 	public:
@@ -1978,6 +1949,68 @@ class PTopoDS_Shape1 {
 };
 
 
+%nodefaultctor PTopoDS_HArray1OfShape1;
+class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up, const PTopoDS_Shape1 &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const PTopoDS_Shape1 &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		PTopoDS_Shape1 Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1();
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1LowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopoDS_HArray1OfShape1LowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1UpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopoDS_HArray1OfShape1UpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PTopoDS_FieldOfHArray1OfShape1 & _CSFDB_GetPTopoDS_HArray1OfShape1Data() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_HArray1OfShape1 {
+	Handle_PTopoDS_HArray1OfShape1 GetHandle() {
+	return *(Handle_PTopoDS_HArray1OfShape1*) &$self;
+	}
+};
+%extend PTopoDS_HArray1OfShape1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PTopoDS_HArray1OfShape1 {
+	~PTopoDS_HArray1OfShape1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfShape1\n");}
+	}
+};
+
+
 %nodefaultctor PTopoDS_TFace1;
 class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	public:
@@ -2005,36 +2038,5 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	~PTopoDS_TFace1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace1\n");}
-	}
-};
-
-
-%nodefaultctor PTopoDS_TCompSolid;
-class PTopoDS_TCompSolid : public PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_TCompSolid();
-		%feature("autodoc", "1");
-		virtual		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		PTopoDS_TCompSolid(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_TCompSolid {
-	Handle_PTopoDS_TCompSolid GetHandle() {
-	return *(Handle_PTopoDS_TCompSolid*) &$self;
-	}
-};
-%extend PTopoDS_TCompSolid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PTopoDS_TCompSolid {
-	~PTopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid\n");}
 	}
 };

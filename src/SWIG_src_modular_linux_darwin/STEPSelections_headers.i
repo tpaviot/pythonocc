@@ -149,6 +149,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_XSControl_TransferReader.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
+#include<Handle_XSControl_TransferReader.hxx>
 %}

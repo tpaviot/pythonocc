@@ -158,6 +158,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
-%import TCollection.i
 %import PCDM.i
+%import TCollection.i
 %import Standard.i

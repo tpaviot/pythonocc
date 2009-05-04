@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepToTopoDS
 
+%include StepToTopoDS_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -241,21 +243,6 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 };
 
 
-%nodefaultctor StepToTopoDS_PointPair;
-class StepToTopoDS_PointPair {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
-
-};
-%extend StepToTopoDS_PointPair {
-	~StepToTopoDS_PointPair() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPair\n");}
-	}
-};
-
-
 %nodefaultctor StepToTopoDS_Root;
 class StepToTopoDS_Root {
 	public:
@@ -425,6 +412,29 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 };
 
 
+%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
+class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoopError Error() const;
+
+};
+%extend StepToTopoDS_TranslateEdgeLoop {
+	~StepToTopoDS_TranslateEdgeLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
+	}
+};
+
+
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
 class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMapIterator {
 	public:
@@ -451,8 +461,6 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 %nodefaultctor StepToTopoDS_CartesianPointHasher;
 class StepToTopoDS_CartesianPointHasher {
 	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_CartesianPointHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -555,8 +563,6 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 %nodefaultctor StepToTopoDS_PointPairHasher;
 class StepToTopoDS_PointPairHasher {
 	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -743,25 +749,17 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
-class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
+%nodefaultctor StepToTopoDS_PointPair;
+class StepToTopoDS_PointPair {
 	public:
 		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoopError Error() const;
+		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
 
 };
-%extend StepToTopoDS_TranslateEdgeLoop {
-	~StepToTopoDS_TranslateEdgeLoop() {
+%extend StepToTopoDS_PointPair {
+	~StepToTopoDS_PointPair() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPair\n");}
 	}
 };
 
@@ -792,8 +790,6 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 %nodefaultctor StepToTopoDS_GeometricTool;
 class StepToTopoDS_GeometricTool {
 	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_GeometricTool();
 		%feature("autodoc", "1");
 		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
 		%feature("autodoc", "1");
@@ -894,8 +890,6 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 %nodefaultctor StepToTopoDS;
 class StepToTopoDS {
 	public:
-		%feature("autodoc", "1");
-		StepToTopoDS();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString DecodeBuilderError(const StepToTopoDS_BuilderError Error);
 		%feature("autodoc", "1");

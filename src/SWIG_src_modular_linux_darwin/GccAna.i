@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GccAna
 
+%include GccAna_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -236,6 +238,45 @@ class GccAna_Pnt2dBisec {
 };
 
 
+%nodefaultctor GccAna_Circ2dTanOnRad;
+class GccAna_Circ2dTanOnRad {
+	public:
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSolutions() const;
+		%feature("autodoc", "1");
+		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
+		%feature("autodoc", "1");
+		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
+
+};
+%extend GccAna_Circ2dTanOnRad {
+	~GccAna_Circ2dTanOnRad() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
+	}
+};
+
+
 %nodefaultctor GccAna_Circ2dTanCen;
 class GccAna_Circ2dTanCen {
 	public:
@@ -296,45 +337,6 @@ class GccAna_Lin2dTanPer {
 	~GccAna_Lin2dTanPer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
-	}
-};
-
-
-%nodefaultctor GccAna_Circ2dTanOnRad;
-class GccAna_Circ2dTanOnRad {
-	public:
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Lin2d &OnLine, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedCirc &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const GccEnt_QualifiedLin &Qualified1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GccAna_Circ2dTanOnRad(const gp_Pnt2d &Point1, const gp_Circ2d &OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSolutions() const;
-		%feature("autodoc", "1");
-		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc", "1");
-		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
-
-};
-%extend GccAna_Circ2dTanOnRad {
-	~GccAna_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
 	}
 };
 
@@ -566,6 +568,27 @@ class GccAna_CircPnt2dBisec {
 };
 
 
+%nodefaultctor GccAna_Circ2dBisec;
+class GccAna_Circ2dBisec {
+	public:
+		%feature("autodoc", "1");
+		GccAna_Circ2dBisec(const gp_Circ2d &Circ1, const gp_Circ2d &Circ2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSolutions() const;
+		%feature("autodoc", "1");
+		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
+
+};
+%extend GccAna_Circ2dBisec {
+	~GccAna_Circ2dBisec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
+	}
+};
+
+
 %nodefaultctor GccAna_Circ2d2TanOn;
 class GccAna_Circ2d2TanOn {
 	public:
@@ -617,26 +640,5 @@ class GccAna_Circ2d2TanOn {
 	~GccAna_Circ2d2TanOn() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
-	}
-};
-
-
-%nodefaultctor GccAna_Circ2dBisec;
-class GccAna_Circ2dBisec {
-	public:
-		%feature("autodoc", "1");
-		GccAna_Circ2dBisec(const gp_Circ2d &Circ1, const gp_Circ2d &Circ2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSolutions() const;
-		%feature("autodoc", "1");
-		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
-
-};
-%extend GccAna_Circ2dBisec {
-	~GccAna_Circ2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
 	}
 };

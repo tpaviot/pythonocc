@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepAlgo
 
+%include BRepAlgo_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -609,8 +611,6 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 class BRepAlgo {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo();
-		%feature("autodoc", "1");
 		TopoDS_Wire ConcatenateWire(const TopoDS_Wire &Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid(const TopoDS_Shape &S);
@@ -684,8 +684,6 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 class BRepAlgo_Tool {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Tool();
-		%feature("autodoc", "1");
 		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
 
 };
@@ -755,6 +753,50 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 	~BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor BRepAlgo_BooleanOperation;
+class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void PerformDS();
+		%feature("autodoc", "1");
+		void Perform(const TopAbs_State St1, const TopAbs_State St2);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_HBuilder Builder() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape2() const;
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+
+};
+%extend BRepAlgo_BooleanOperation {
+	~BRepAlgo_BooleanOperation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgo_BooleanOperation\n");}
+	}
+};
+
+
+%nodefaultctor BRepAlgo_Common;
+class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
+
+};
+%extend BRepAlgo_Common {
+	~BRepAlgo_Common() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Common\n");}
 	}
 };
 
@@ -968,35 +1010,6 @@ class BRepAlgo_DSAccess {
 };
 
 
-%nodefaultctor BRepAlgo_BooleanOperation;
-class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void PerformDS();
-		%feature("autodoc", "1");
-		void Perform(const TopAbs_State St1, const TopAbs_State St2);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_HBuilder Builder() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
-
-};
-%extend BRepAlgo_BooleanOperation {
-	~BRepAlgo_BooleanOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgo_BooleanOperation\n");}
-	}
-};
-
-
 %nodefaultctor BRepAlgo_Section;
 class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	public:
@@ -1164,21 +1177,6 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	~BRepAlgo_Cut() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Cut\n");}
-	}
-};
-
-
-%nodefaultctor BRepAlgo_Common;
-class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
-
-};
-%extend BRepAlgo_Common {
-	~BRepAlgo_Common() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Common\n");}
 	}
 };
 

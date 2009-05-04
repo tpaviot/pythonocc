@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinMDF
 
+%include BinMDF_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,32 +168,6 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_BinMDF_DoubleMapNodeOfTypeIdMap;
-class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap();
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
-	BinMDF_DoubleMapNodeOfTypeIdMap* GetObject() {
-	return (BinMDF_DoubleMapNodeOfTypeIdMap*)$self->Access();
-	}
-};
-%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
-	~Handle_BinMDF_DoubleMapNodeOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BinMDF_ReferenceDriver;
 class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -270,6 +246,32 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_BinMDF_DoubleMapNodeOfTypeIdMap;
+class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap();
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
+	BinMDF_DoubleMapNodeOfTypeIdMap* GetObject() {
+	return (BinMDF_DoubleMapNodeOfTypeIdMap*)$self->Access();
+	}
+};
+%extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
+	~Handle_BinMDF_DoubleMapNodeOfTypeIdMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BinMDF_DataMapNodeOfTypeADriverMap;
 class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
 	public:
@@ -333,72 +335,6 @@ class BinMDF_ADriver : public MMgt_TShared {
 };
 
 
-%nodefaultctor BinMDF_TagSourceDriver;
-class BinMDF_TagSourceDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-
-};
-%extend BinMDF_TagSourceDriver {
-	Handle_BinMDF_TagSourceDriver GetHandle() {
-	return *(Handle_BinMDF_TagSourceDriver*) &$self;
-	}
-};
-%extend BinMDF_TagSourceDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinMDF_TagSourceDriver {
-	~BinMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
-	}
-};
-
-
-%nodefaultctor BinMDF_ADriverTable;
-class BinMDF_ADriverTable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_ADriverTable();
-		%feature("autodoc", "1");
-		void AddDriver(const Handle_BinMDF_ADriver &theDriver);
-		%feature("autodoc", "1");
-		void AssignIds(const TColStd_IndexedMapOfTransient &theTypes);
-		%feature("autodoc", "1");
-		void AssignIds(const TColStd_SequenceOfAsciiString &theTypeNames);
-		%feature("autodoc", "1");
-		Standard_Integer GetDriver(const Handle_Standard_Type &theType, Handle_BinMDF_ADriver & theDriver) const;
-		%feature("autodoc", "1");
-		Handle_BinMDF_ADriver GetDriver(const Standard_Integer theTypeId) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDF_ADriverTable {
-	Handle_BinMDF_ADriverTable GetHandle() {
-	return *(Handle_BinMDF_ADriverTable*) &$self;
-	}
-};
-%extend BinMDF_ADriverTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinMDF_ADriverTable {
-	~BinMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriverTable\n");}
-	}
-};
-
-
 %nodefaultctor BinMDF_DataMapIteratorOfStringIdMap;
 class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator {
 	public:
@@ -451,6 +387,70 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 	~BinMDF_DoubleMapNodeOfTypeIdMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	}
+};
+
+
+%nodefaultctor BinMDF_TagSourceDriver;
+class BinMDF_TagSourceDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMDF_TagSourceDriver {
+	Handle_BinMDF_TagSourceDriver GetHandle() {
+	return *(Handle_BinMDF_TagSourceDriver*) &$self;
+	}
+};
+%extend BinMDF_TagSourceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinMDF_TagSourceDriver {
+	~BinMDF_TagSourceDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
+	}
+};
+
+
+%nodefaultctor BinMDF_DataMapNodeOfStringIdMap;
+class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_DataMapNodeOfStringIdMap(const TCollection_AsciiString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMDF_DataMapNodeOfStringIdMap {
+	Handle_BinMDF_DataMapNodeOfStringIdMap GetHandle() {
+	return *(Handle_BinMDF_DataMapNodeOfStringIdMap*) &$self;
+	}
+};
+%extend BinMDF_DataMapNodeOfStringIdMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinMDF_DataMapNodeOfStringIdMap {
+	~BinMDF_DataMapNodeOfStringIdMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
 	}
 };
 
@@ -546,6 +546,43 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 };
 
 
+%nodefaultctor BinMDF_ADriverTable;
+class BinMDF_ADriverTable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_ADriverTable();
+		%feature("autodoc", "1");
+		void AddDriver(const Handle_BinMDF_ADriver &theDriver);
+		%feature("autodoc", "1");
+		void AssignIds(const TColStd_IndexedMapOfTransient &theTypes);
+		%feature("autodoc", "1");
+		void AssignIds(const TColStd_SequenceOfAsciiString &theTypeNames);
+		%feature("autodoc", "1");
+		Standard_Integer GetDriver(const Handle_Standard_Type &theType, Handle_BinMDF_ADriver & theDriver) const;
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriver GetDriver(const Standard_Integer theTypeId) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMDF_ADriverTable {
+	Handle_BinMDF_ADriverTable GetHandle() {
+	return *(Handle_BinMDF_ADriverTable*) &$self;
+	}
+};
+%extend BinMDF_ADriverTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinMDF_ADriverTable {
+	~BinMDF_ADriverTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriverTable\n");}
+	}
+};
+
+
 %nodefaultctor BinMDF_TypeADriverMap;
 class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 	public:
@@ -577,6 +614,29 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 	~BinMDF_TypeADriverMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeADriverMap\n");}
+	}
+};
+
+
+%nodefaultctor BinMDF_DataMapIteratorOfTypeADriverMap;
+class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_DataMapIteratorOfTypeADriverMap();
+		%feature("autodoc", "1");
+		BinMDF_DataMapIteratorOfTypeADriverMap(const BinMDF_TypeADriverMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BinMDF_TypeADriverMap &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Type & Key() const;
+		%feature("autodoc", "1");
+		const Handle_BinMDF_ADriver & Value() const;
+
+};
+%extend BinMDF_DataMapIteratorOfTypeADriverMap {
+	~BinMDF_DataMapIteratorOfTypeADriverMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
 	}
 };
 
@@ -618,34 +678,9 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BinMDF_DataMapIteratorOfTypeADriverMap;
-class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_DataMapIteratorOfTypeADriverMap();
-		%feature("autodoc", "1");
-		BinMDF_DataMapIteratorOfTypeADriverMap(const BinMDF_TypeADriverMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BinMDF_TypeADriverMap &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Type & Key() const;
-		%feature("autodoc", "1");
-		const Handle_BinMDF_ADriver & Value() const;
-
-};
-%extend BinMDF_DataMapIteratorOfTypeADriverMap {
-	~BinMDF_DataMapIteratorOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
-	}
-};
-
-
 %nodefaultctor BinMDF;
 class BinMDF {
 	public:
-		%feature("autodoc", "1");
-		BinMDF();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
@@ -685,36 +720,5 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	~BinMDF_DataMapNodeOfTypeADriverMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");}
-	}
-};
-
-
-%nodefaultctor BinMDF_DataMapNodeOfStringIdMap;
-class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_DataMapNodeOfStringIdMap(const TCollection_AsciiString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	Handle_BinMDF_DataMapNodeOfStringIdMap GetHandle() {
-	return *(Handle_BinMDF_DataMapNodeOfStringIdMap*) &$self;
-	}
-};
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinMDF_DataMapNodeOfStringIdMap {
-	~BinMDF_DataMapNodeOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepAP203
 
+%include RWStepAP203_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -282,6 +284,27 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 };
 
 
+%nodefaultctor RWStepAP203_RWChange;
+class RWStepAP203_RWChange {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWChange();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_Change &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_Change &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP203_RWChange {
+	~RWStepAP203_RWChange() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
+	}
+};
+
+
 %nodefaultctor RWStepAP203_RWCcDesignContract;
 class RWStepAP203_RWCcDesignContract {
 	public:
@@ -320,26 +343,5 @@ class RWStepAP203_RWCcDesignApproval {
 	~RWStepAP203_RWCcDesignApproval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP203_RWChange;
-class RWStepAP203_RWChange {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWChange();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_Change &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_Change &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP203_RWChange {
-	~RWStepAP203_RWChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
 	}
 };

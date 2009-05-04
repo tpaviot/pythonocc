@@ -100,7 +100,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<MDocStd.hxx>
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>
@@ -109,15 +108,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Standard_GUID.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Standard_Persistent.hxx>
-#include<Handle_PDocStd_Document.hxx>
-#include<Handle_TDocStd_Document.hxx>
-#include<Handle_MDF_RRelocationTable.hxx>
 #include<Handle_PCDM_Document.hxx>
+#include<Handle_TDocStd_Document.hxx>
+#include<Handle_PDocStd_Document.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>
+#include<Handle_MDF_ASDriverTable.hxx>
+#include<Handle_MDF_RRelocationTable.hxx>
 #include<Handle_MDF_ARDriverTable.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_PDF_Attribute.hxx>
-#include<Handle_MDF_ASDriverTable.hxx>
 %}

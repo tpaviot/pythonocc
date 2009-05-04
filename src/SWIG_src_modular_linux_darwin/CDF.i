@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module CDF
 
+%include CDF_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,6 +114,27 @@ Standard_Integer & function transformation
 %include CDF_headers.i
 
 
+enum CDF_SubComponentStatus {
+	CDF_SCS_Consistent,
+	CDF_SCS_Unconsistent,
+	CDF_SCS_Stored,
+	CDF_SCS_Modified,
+	};
+
+enum CDF_TryStoreStatus {
+	CDF_TS_OK,
+	CDF_TS_NoCurrentDocument,
+	CDF_TS_NoDriver,
+	CDF_TS_NoSubComponentDriver,
+	};
+
+enum CDF_StoreStatus {
+	CDF_SS_OK,
+	CDF_SS_DriverFailure,
+	CDF_SS_WriteFailure,
+	CDF_SS_Failure,
+	};
+
 enum CDF_RetrievableStatus {
 	CDF_RS_OK,
 	CDF_RS_AlreadyRetrievedAndModified,
@@ -134,27 +157,6 @@ enum CDF_RetrievableStatus {
 	CDF_RS_MakeFailure,
 	CDF_RS_PermissionDenied,
 	CDF_RS_DriverFailure,
-	};
-
-enum CDF_SubComponentStatus {
-	CDF_SCS_Consistent,
-	CDF_SCS_Unconsistent,
-	CDF_SCS_Stored,
-	CDF_SCS_Modified,
-	};
-
-enum CDF_TryStoreStatus {
-	CDF_TS_OK,
-	CDF_TS_NoCurrentDocument,
-	CDF_TS_NoDriver,
-	CDF_TS_NoSubComponentDriver,
-	};
-
-enum CDF_StoreStatus {
-	CDF_SS_OK,
-	CDF_SS_DriverFailure,
-	CDF_SS_WriteFailure,
-	CDF_SS_Failure,
 	};
 
 enum CDF_StoreSetNameStatus {
@@ -356,8 +358,6 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 %nodefaultctor CDF;
 class CDF {
 	public:
-		%feature("autodoc", "1");
-		CDF();
 		%feature("autodoc", "1");
 		void GetLicense(const Standard_Integer anApplicationIdentifier);
 		%feature("autodoc", "1");

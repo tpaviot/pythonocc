@@ -31,7 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<VrmlAPI.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_VrmlConverter_Drawer.hxx>
 #include<Handle_Vrml_Material.hxx>

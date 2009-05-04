@@ -101,9 +101,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_BoundedCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom_BezierSurface.hxx>
 #include<Handle_Geom_BoundedSurface.hxx>
-#include<Handle_Geom_BezierCurve.hxx>
+#include<Handle_Geom_BezierSurface.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
+#include<Handle_Geom_BezierCurve.hxx>
 %}

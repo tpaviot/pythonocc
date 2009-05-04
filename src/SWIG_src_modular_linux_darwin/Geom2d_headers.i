@@ -121,8 +121,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<Standard_SStream.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Elips2d.hxx>
+#include<Standard_SStream.hxx>
 #include<gp_Circ2d.hxx>
 %}

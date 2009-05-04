@@ -593,6 +593,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_SelectMgr_SelectableObject.hxx>
 #include<Handle_SelectMgr_EntityOwner.hxx>
 #include<TColStd_ListOfInteger.hxx>
+#include<Handle_Geom_Circle.hxx>
 #include<Handle_Geom_Line.hxx>
 #include<Handle_Geom_Point.hxx>
 #include<TopLoc_Location.hxx>
@@ -607,7 +608,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<AIS.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>
 #include<gp_Pln.hxx>
@@ -622,7 +622,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_V3d_View.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColStd_MapOfTransient.hxx>
-#include<Handle_Geom_Circle.hxx>
 #include<Handle_V3d_Viewer.hxx>
 #include<SelectMgr_IndexedMapOfOwner.hxx>
 #include<Handle_StdSelect_ViewerSelector3d.hxx>

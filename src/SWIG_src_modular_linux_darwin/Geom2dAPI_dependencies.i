@@ -232,5 +232,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import Standard.i
-%import Quantity.i
 %import GeomAbs.i
+%import Quantity.i

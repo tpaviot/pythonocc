@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module gce
 
+%include gce_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -131,30 +133,9 @@ enum gce_ErrorType {
 
 
 
-%nodefaultctor gce_MakeScale;
-class gce_MakeScale {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
-		%feature("autodoc", "1");
-		const gp_Trsf & Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf & Operator() const;
-
-};
-%extend gce_MakeScale {
-	~gce_MakeScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
-	}
-};
-
-
 %nodefaultctor gce_Root;
 class gce_Root {
 	public:
-		%feature("autodoc", "1");
-		gce_Root();
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -225,6 +206,29 @@ class gce_MakeLin2d : public gce_Root {
 };
 
 
+%nodefaultctor gce_MakeRotation;
+class gce_MakeRotation {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Pnt &Point, const gp_Dir &Direc, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		const gp_Trsf & Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf & Operator() const;
+
+};
+%extend gce_MakeRotation {
+	~gce_MakeRotation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
+	}
+};
+
+
 %nodefaultctor gce_MakeMirror2d;
 class gce_MakeMirror2d {
 	public:
@@ -246,29 +250,6 @@ class gce_MakeMirror2d {
 	~gce_MakeMirror2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror2d\n");}
-	}
-};
-
-
-%nodefaultctor gce_MakeRotation;
-class gce_MakeRotation {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Pnt &Point, const gp_Dir &Direc, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		const gp_Trsf & Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf & Operator() const;
-
-};
-%extend gce_MakeRotation {
-	~gce_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
 	}
 };
 
@@ -383,27 +364,6 @@ class gce_MakeCirc : public gce_Root {
 };
 
 
-%nodefaultctor gce_MakeHypr;
-class gce_MakeHypr : public gce_Root {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeHypr(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		gce_MakeHypr(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
-		%feature("autodoc", "1");
-		const gp_Hypr & Value() const;
-		%feature("autodoc", "1");
-		const gp_Hypr & Operator() const;
-
-};
-%extend gce_MakeHypr {
-	~gce_MakeHypr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr\n");}
-	}
-};
-
-
 %nodefaultctor gce_MakeTranslation;
 class gce_MakeTranslation {
 	public:
@@ -442,6 +402,27 @@ class gce_MakeParab : public gce_Root {
 	~gce_MakeParab() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of gce_MakeParab\n");}
+	}
+};
+
+
+%nodefaultctor gce_MakeHypr;
+class gce_MakeHypr : public gce_Root {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeHypr(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		gce_MakeHypr(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
+		%feature("autodoc", "1");
+		const gp_Hypr & Value() const;
+		%feature("autodoc", "1");
+		const gp_Hypr & Operator() const;
+
+};
+%extend gce_MakeHypr {
+	~gce_MakeHypr() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr\n");}
 	}
 };
 
@@ -688,6 +669,25 @@ class gce_MakeLin : public gce_Root {
 	~gce_MakeLin() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of gce_MakeLin\n");}
+	}
+};
+
+
+%nodefaultctor gce_MakeScale;
+class gce_MakeScale {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
+		%feature("autodoc", "1");
+		const gp_Trsf & Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf & Operator() const;
+
+};
+%extend gce_MakeScale {
+	~gce_MakeScale() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepElement
 
+%include StepElement_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,24 +114,8 @@ Standard_Integer & function transformation
 %include StepElement_headers.i
 
 
-enum StepElement_ElementOrder {
-	StepElement_Linear,
-	StepElement_Quadratic,
-	StepElement_Cubic,
-	};
-
 enum StepElement_UnspecifiedValue {
 	StepElement_Unspecified,
-	};
-
-enum StepElement_EnumeratedCurveElementPurpose {
-	StepElement_Axial,
-	StepElement_YYBending,
-	StepElement_ZZBending,
-	StepElement_Torsion,
-	StepElement_XYShear,
-	StepElement_XZShear,
-	StepElement_Warping,
 	};
 
 enum StepElement_EnumeratedCurveElementFreedom {
@@ -141,6 +127,30 @@ enum StepElement_EnumeratedCurveElementFreedom {
 	StepElement_ZRotation,
 	StepElement_Warp,
 	StepElement_None,
+	};
+
+enum StepElement_ElementOrder {
+	StepElement_Linear,
+	StepElement_Quadratic,
+	StepElement_Cubic,
+	};
+
+enum StepElement_EnumeratedSurfaceElementPurpose {
+	StepElement_MembraneDirect,
+	StepElement_MembraneShear,
+	StepElement_BendingDirect,
+	StepElement_BendingTorsion,
+	StepElement_NormalToPlaneShear,
+	};
+
+enum StepElement_EnumeratedCurveElementPurpose {
+	StepElement_Axial,
+	StepElement_YYBending,
+	StepElement_ZZBending,
+	StepElement_Torsion,
+	StepElement_XYShear,
+	StepElement_XZShear,
+	StepElement_Warping,
 	};
 
 enum StepElement_Volume3dElementShape {
@@ -156,14 +166,6 @@ enum StepElement_ElementVolume {
 
 enum StepElement_EnumeratedVolumeElementPurpose {
 	StepElement_StressDisplacement,
-	};
-
-enum StepElement_EnumeratedSurfaceElementPurpose {
-	StepElement_MembraneDirect,
-	StepElement_MembraneShear,
-	StepElement_BendingDirect,
-	StepElement_BendingTorsion,
-	StepElement_NormalToPlaneShear,
 	};
 
 enum StepElement_CurveEdge {
@@ -307,32 +309,6 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
-class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfSurfaceElementPurposeMember();
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfSurfaceElementPurposeMember(const Handle_StepElement_HArray2OfSurfaceElementPurposeMember &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfSurfaceElementPurposeMember(const StepElement_HArray2OfSurfaceElementPurposeMember *anItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
-	StepElement_HArray2OfSurfaceElementPurposeMember* GetObject() {
-	return (StepElement_HArray2OfSurfaceElementPurposeMember*)$self->Access();
-	}
-};
-%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
-	~Handle_StepElement_HArray2OfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurposeMember\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepElement_HArray1OfSurfaceSection;
 class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	public:
@@ -381,6 +357,32 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 	~Handle_StepElement_CurveElementSectionDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementSectionDefinition\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
+class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember();
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember(const Handle_StepElement_HArray2OfCurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember(const StepElement_HArray2OfCurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
+	StepElement_HArray2OfCurveElementPurposeMember* GetObject() {
+	return (StepElement_HArray2OfCurveElementPurposeMember*)$self->Access();
+	}
+};
+%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
+	~Handle_StepElement_HArray2OfCurveElementPurposeMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfCurveElementPurposeMember\n");}
 	}
 };
 
@@ -515,6 +517,32 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 };
 
 
+%nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
+class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember();
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember(const Handle_StepElement_HArray2OfSurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember(const StepElement_HArray2OfSurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
+	StepElement_HArray2OfSurfaceElementPurposeMember* GetObject() {
+	return (StepElement_HArray2OfSurfaceElementPurposeMember*)$self->Access();
+	}
+};
+%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
+	~Handle_StepElement_HArray2OfSurfaceElementPurposeMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurposeMember\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue;
 class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt_TShared {
 	public:
@@ -615,32 +643,6 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 	~Handle_StepElement_HSequenceOfElementMaterial() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfElementMaterial\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
-class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfCurveElementPurposeMember();
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfCurveElementPurposeMember(const Handle_StepElement_HArray2OfCurveElementPurposeMember &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfCurveElementPurposeMember(const StepElement_HArray2OfCurveElementPurposeMember *anItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray2OfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
-	StepElement_HArray2OfCurveElementPurposeMember* GetObject() {
-	return (StepElement_HArray2OfCurveElementPurposeMember*)$self->Access();
-	}
-};
-%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
-	~Handle_StepElement_HArray2OfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfCurveElementPurposeMember\n");}
 	}
 };
 
@@ -797,6 +799,32 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 	~Handle_StepElement_VolumeElementPurposeMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_VolumeElementPurposeMember\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
+class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket();
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket(const Handle_StepElement_CurveElementEndReleasePacket &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket(const StepElement_CurveElementEndReleasePacket *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepElement_CurveElementEndReleasePacket {
+	StepElement_CurveElementEndReleasePacket* GetObject() {
+	return (StepElement_CurveElementEndReleasePacket*)$self->Access();
+	}
+};
+%extend Handle_StepElement_CurveElementEndReleasePacket {
+	~Handle_StepElement_CurveElementEndReleasePacket() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementEndReleasePacket\n");}
 	}
 };
 
@@ -1005,32 +1033,6 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 	~Handle_StepElement_HArray1OfCurveElementSectionDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementSectionDefinition\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
-class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket();
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket(const Handle_StepElement_CurveElementEndReleasePacket &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket(const StepElement_CurveElementEndReleasePacket *anItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepElement_CurveElementEndReleasePacket {
-	StepElement_CurveElementEndReleasePacket* GetObject() {
-	return (StepElement_CurveElementEndReleasePacket*)$self->Access();
-	}
-};
-%extend Handle_StepElement_CurveElementEndReleasePacket {
-	~Handle_StepElement_CurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementEndReleasePacket\n");}
 	}
 };
 
@@ -1595,6 +1597,51 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 };
 
 
+%nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
+class StepElement_Array2OfSurfaceElementPurpose {
+	public:
+		%feature("autodoc", "1");
+		StepElement_Array2OfSurfaceElementPurpose(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		StepElement_Array2OfSurfaceElementPurpose(const StepElement_SurfaceElementPurpose &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const StepElement_SurfaceElementPurpose &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const StepElement_Array2OfSurfaceElementPurpose & Assign(const StepElement_Array2OfSurfaceElementPurpose &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const StepElement_SurfaceElementPurpose &Value);
+		%feature("autodoc", "1");
+		const StepElement_SurfaceElementPurpose & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		StepElement_SurfaceElementPurpose & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend StepElement_Array2OfSurfaceElementPurpose {
+	~StepElement_Array2OfSurfaceElementPurpose() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurpose\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_HArray1OfVolumeElementPurposeMember;
 class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 	public:
@@ -1824,74 +1871,43 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 };
 
 
-%nodefaultctor StepElement_ElementDescriptor;
-class StepElement_ElementDescriptor : public MMgt_TShared {
+%nodefaultctor StepElement_Array1OfHSequenceOfCurveElementPurposeMember;
+class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 	public:
 		%feature("autodoc", "1");
-		StepElement_ElementDescriptor();
+		StepElement_Array1OfHSequenceOfCurveElementPurposeMember(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const StepElement_ElementOrder aTopologyOrder, const Handle_TCollection_HAsciiString &aDescription);
+		StepElement_Array1OfHSequenceOfCurveElementPurposeMember(const Handle_StepElement_HSequenceOfCurveElementPurposeMember &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepElement_ElementOrder TopologyOrder() const;
+		void Init(const Handle_StepElement_HSequenceOfCurveElementPurposeMember &V);
 		%feature("autodoc", "1");
-		void SetTopologyOrder(const StepElement_ElementOrder TopologyOrder);
+		void Destroy();
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		const StepElement_Array1OfHSequenceOfCurveElementPurposeMember & Assign(const StepElement_Array1OfHSequenceOfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepElement_HSequenceOfCurveElementPurposeMember &Value);
+		%feature("autodoc", "1");
+		const Handle_StepElement_HSequenceOfCurveElementPurposeMember & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementPurposeMember & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_ElementDescriptor {
-	Handle_StepElement_ElementDescriptor GetHandle() {
-	return *(Handle_StepElement_ElementDescriptor*) &$self;
-	}
-};
-%extend StepElement_ElementDescriptor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_ElementDescriptor {
-	~StepElement_ElementDescriptor() {
+%extend StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
+	~StepElement_Array1OfHSequenceOfCurveElementPurposeMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementDescriptor\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_Volume3dElementDescriptor;
-class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescriptor {
-	public:
-		%feature("autodoc", "1");
-		StepElement_Volume3dElementDescriptor();
-		%feature("autodoc", "1");
-		void Init(const StepElement_ElementOrder aElementDescriptor_TopologyOrder, const Handle_TCollection_HAsciiString &aElementDescriptor_Description, const Handle_StepElement_HArray1OfVolumeElementPurposeMember &aPurpose, const StepElement_Volume3dElementShape aShape);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray1OfVolumeElementPurposeMember Purpose() const;
-		%feature("autodoc", "1");
-		void SetPurpose(const Handle_StepElement_HArray1OfVolumeElementPurposeMember &Purpose);
-		%feature("autodoc", "1");
-		StepElement_Volume3dElementShape Shape() const;
-		%feature("autodoc", "1");
-		void SetShape(const StepElement_Volume3dElementShape Shape);
-
-};
-%extend StepElement_Volume3dElementDescriptor {
-	Handle_StepElement_Volume3dElementDescriptor GetHandle() {
-	return *(Handle_StepElement_Volume3dElementDescriptor*) &$self;
-	}
-};
-%extend StepElement_Volume3dElementDescriptor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_Volume3dElementDescriptor {
-	~StepElement_Volume3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");}
+	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfHSequenceOfCurveElementPurposeMember\n");}
 	}
 };
 
@@ -1931,82 +1947,49 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 };
 
 
-%nodefaultctor StepElement_Array2OfCurveElementPurposeMember;
-class StepElement_Array2OfCurveElementPurposeMember {
+%nodefaultctor StepElement_HArray1OfVolumeElementPurpose;
+class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepElement_Array2OfCurveElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		StepElement_HArray1OfVolumeElementPurpose(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepElement_Array2OfCurveElementPurposeMember(const Handle_StepElement_CurveElementPurposeMember &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		StepElement_HArray1OfVolumeElementPurpose(const Standard_Integer Low, const Standard_Integer Up, const StepElement_VolumeElementPurpose &V);
 		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_CurveElementPurposeMember &V);
+		void Init(const StepElement_VolumeElementPurpose &V);
 		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		const StepElement_Array2OfCurveElementPurposeMember & Assign(const StepElement_Array2OfCurveElementPurposeMember &Other);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
+		void SetValue(const Standard_Integer Index, const StepElement_VolumeElementPurpose &Value);
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		const StepElement_VolumeElementPurpose & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		StepElement_VolumeElementPurpose & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
+		const StepElement_Array1OfVolumeElementPurpose & Array1() const;
 		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepElement_CurveElementPurposeMember &Value);
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementPurposeMember & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementPurposeMember & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend StepElement_Array2OfCurveElementPurposeMember {
-	~StepElement_Array2OfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfCurveElementPurposeMember\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_VolumeElementPurposeMember;
-class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
-	public:
-		%feature("autodoc", "1");
-		StepElement_VolumeElementPurposeMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
+		StepElement_Array1OfVolumeElementPurpose & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepElement_VolumeElementPurposeMember {
-	Handle_StepElement_VolumeElementPurposeMember GetHandle() {
-	return *(Handle_StepElement_VolumeElementPurposeMember*) &$self;
+%extend StepElement_HArray1OfVolumeElementPurpose {
+	Handle_StepElement_HArray1OfVolumeElementPurpose GetHandle() {
+	return *(Handle_StepElement_HArray1OfVolumeElementPurpose*) &$self;
 	}
 };
-%extend StepElement_VolumeElementPurposeMember {
+%extend StepElement_HArray1OfVolumeElementPurpose {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_VolumeElementPurposeMember {
-	~StepElement_VolumeElementPurposeMember() {
+%extend StepElement_HArray1OfVolumeElementPurpose {
+	~StepElement_HArray1OfVolumeElementPurpose() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_VolumeElementPurposeMember\n");}
+	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurpose\n");}
 	}
 };
 
@@ -2048,47 +2031,6 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 	~StepElement_SurfaceElementProperty() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementProperty\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_Array1OfHSequenceOfCurveElementPurposeMember;
-class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
-	public:
-		%feature("autodoc", "1");
-		StepElement_Array1OfHSequenceOfCurveElementPurposeMember(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepElement_Array1OfHSequenceOfCurveElementPurposeMember(const Handle_StepElement_HSequenceOfCurveElementPurposeMember &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_HSequenceOfCurveElementPurposeMember &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepElement_Array1OfHSequenceOfCurveElementPurposeMember & Assign(const StepElement_Array1OfHSequenceOfCurveElementPurposeMember &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepElement_HSequenceOfCurveElementPurposeMember &Value);
-		%feature("autodoc", "1");
-		const Handle_StepElement_HSequenceOfCurveElementPurposeMember & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepElement_HSequenceOfCurveElementPurposeMember & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index);
-
-};
-%extend StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
-	~StepElement_Array1OfHSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfHSequenceOfCurveElementPurposeMember\n");}
 	}
 };
 
@@ -2207,53 +2149,6 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 	~StepElement_HArray1OfCurveElementEndReleasePacket() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfCurveElementEndReleasePacket\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_HArray1OfVolumeElementPurpose;
-class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepElement_HArray1OfVolumeElementPurpose(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepElement_HArray1OfVolumeElementPurpose(const Standard_Integer Low, const Standard_Integer Up, const StepElement_VolumeElementPurpose &V);
-		%feature("autodoc", "1");
-		void Init(const StepElement_VolumeElementPurpose &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepElement_VolumeElementPurpose &Value);
-		%feature("autodoc", "1");
-		const StepElement_VolumeElementPurpose & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepElement_VolumeElementPurpose & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepElement_Array1OfVolumeElementPurpose & Array1() const;
-		%feature("autodoc", "1");
-		StepElement_Array1OfVolumeElementPurpose & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepElement_HArray1OfVolumeElementPurpose {
-	Handle_StepElement_HArray1OfVolumeElementPurpose GetHandle() {
-	return *(Handle_StepElement_HArray1OfVolumeElementPurpose*) &$self;
-	}
-};
-%extend StepElement_HArray1OfVolumeElementPurpose {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_HArray1OfVolumeElementPurpose {
-	~StepElement_HArray1OfVolumeElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurpose\n");}
 	}
 };
 
@@ -2410,102 +2305,6 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 };
 
 
-%nodefaultctor StepElement_SequenceOfCurveElementSectionDefinition;
-class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		StepElement_SequenceOfCurveElementSectionDefinition();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const StepElement_SequenceOfCurveElementSectionDefinition & Assign(const StepElement_SequenceOfCurveElementSectionDefinition &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepElement_CurveElementSectionDefinition &T);
-		%feature("autodoc", "1");
-		void Append(StepElement_SequenceOfCurveElementSectionDefinition & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepElement_CurveElementSectionDefinition &T);
-		%feature("autodoc", "1");
-		void Prepend(StepElement_SequenceOfCurveElementSectionDefinition & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementSectionDefinition & First() const;
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementSectionDefinition & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementSectionDefinition & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &I);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementSectionDefinition & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend StepElement_SequenceOfCurveElementSectionDefinition {
-	~StepElement_SequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfCurveElementSectionDefinition\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_Array1OfCurveElementEndReleasePacket;
-class StepElement_Array1OfCurveElementEndReleasePacket {
-	public:
-		%feature("autodoc", "1");
-		StepElement_Array1OfCurveElementEndReleasePacket(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepElement_Array1OfCurveElementEndReleasePacket(const Handle_StepElement_CurveElementEndReleasePacket &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_CurveElementEndReleasePacket &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepElement_Array1OfCurveElementEndReleasePacket & Assign(const StepElement_Array1OfCurveElementEndReleasePacket &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepElement_CurveElementEndReleasePacket &Value);
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementEndReleasePacket & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index);
-
-};
-%extend StepElement_Array1OfCurveElementEndReleasePacket {
-	~StepElement_Array1OfCurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfCurveElementEndReleasePacket\n");}
-	}
-};
-
-
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
 class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public TCollection_SeqNode {
 	public:
@@ -2531,77 +2330,6 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 	~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
-class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepElement_HSequenceOfCurveElementSectionDefinition();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_StepElement_CurveElementSectionDefinition &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepElement_CurveElementSectionDefinition &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_StepElement_HSequenceOfCurveElementSectionDefinition Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
-		%feature("autodoc", "1");
-		const Handle_StepElement_CurveElementSectionDefinition & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementSectionDefinition & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const StepElement_SequenceOfCurveElementSectionDefinition & Sequence() const;
-		%feature("autodoc", "1");
-		StepElement_SequenceOfCurveElementSectionDefinition & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_StepElement_HSequenceOfCurveElementSectionDefinition ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepElement_HSequenceOfCurveElementSectionDefinition {
-	Handle_StepElement_HSequenceOfCurveElementSectionDefinition GetHandle() {
-	return *(Handle_StepElement_HSequenceOfCurveElementSectionDefinition*) &$self;
-	}
-};
-%extend StepElement_HSequenceOfCurveElementSectionDefinition {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_HSequenceOfCurveElementSectionDefinition {
-	~StepElement_HSequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfCurveElementSectionDefinition\n");}
 	}
 };
 
@@ -2674,51 +2402,6 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 	~StepElement_CurveElementSectionDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementSectionDefinition\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
-class StepElement_Array2OfSurfaceElementPurpose {
-	public:
-		%feature("autodoc", "1");
-		StepElement_Array2OfSurfaceElementPurpose(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		StepElement_Array2OfSurfaceElementPurpose(const StepElement_SurfaceElementPurpose &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const StepElement_SurfaceElementPurpose &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const StepElement_Array2OfSurfaceElementPurpose & Assign(const StepElement_Array2OfSurfaceElementPurpose &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const StepElement_SurfaceElementPurpose &Value);
-		%feature("autodoc", "1");
-		const StepElement_SurfaceElementPurpose & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		StepElement_SurfaceElementPurpose & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend StepElement_Array2OfSurfaceElementPurpose {
-	~StepElement_Array2OfSurfaceElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurpose\n");}
 	}
 };
 
@@ -2895,6 +2578,43 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepElement_ElementDescriptor;
+class StepElement_ElementDescriptor : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepElement_ElementDescriptor();
+		%feature("autodoc", "1");
+		void Init(const StepElement_ElementOrder aTopologyOrder, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		StepElement_ElementOrder TopologyOrder() const;
+		%feature("autodoc", "1");
+		void SetTopologyOrder(const StepElement_ElementOrder TopologyOrder);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_ElementDescriptor {
+	Handle_StepElement_ElementDescriptor GetHandle() {
+	return *(Handle_StepElement_ElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_ElementDescriptor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_ElementDescriptor {
+	~StepElement_ElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_ElementDescriptor\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_Curve3dElementDescriptor;
 class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -2906,8 +2626,6 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember Purpose() const;
 		%feature("autodoc", "1");
 		void SetPurpose(const Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember &Purpose);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepElement_Curve3dElementDescriptor {
@@ -3092,6 +2810,41 @@ class StepElement_Array1OfVolumeElementPurpose {
 };
 
 
+%nodefaultctor StepElement_VolumeElementPurposeMember;
+class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
+	public:
+		%feature("autodoc", "1");
+		StepElement_VolumeElementPurposeMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_VolumeElementPurposeMember {
+	Handle_StepElement_VolumeElementPurposeMember GetHandle() {
+	return *(Handle_StepElement_VolumeElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_VolumeElementPurposeMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_VolumeElementPurposeMember {
+	~StepElement_VolumeElementPurposeMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_VolumeElementPurposeMember\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_CurveElementPurpose;
 class StepElement_CurveElementPurpose : public StepData_SelectType {
 	public:
@@ -3207,6 +2960,77 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 	~StepElement_SurfaceElementPurposeMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementPurposeMember\n");}
+	}
+};
+
+
+%nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
+class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepElement_HSequenceOfCurveElementSectionDefinition();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_StepElement_CurveElementSectionDefinition &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepElement_CurveElementSectionDefinition &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementSectionDefinition Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_StepElement_CurveElementSectionDefinition &anItem);
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementSectionDefinition & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfCurveElementSectionDefinition & Sequence() const;
+		%feature("autodoc", "1");
+		StepElement_SequenceOfCurveElementSectionDefinition & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementSectionDefinition ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_HSequenceOfCurveElementSectionDefinition {
+	Handle_StepElement_HSequenceOfCurveElementSectionDefinition GetHandle() {
+	return *(Handle_StepElement_HSequenceOfCurveElementSectionDefinition*) &$self;
+	}
+};
+%extend StepElement_HSequenceOfCurveElementSectionDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_HSequenceOfCurveElementSectionDefinition {
+	~StepElement_HSequenceOfCurveElementSectionDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfCurveElementSectionDefinition\n");}
 	}
 };
 
@@ -3403,6 +3227,96 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
+class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepElement_HArray2OfSurfaceElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		StepElement_HArray2OfSurfaceElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_StepElement_SurfaceElementPurposeMember &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepElement_SurfaceElementPurposeMember &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepElement_SurfaceElementPurposeMember &Value);
+		%feature("autodoc", "1");
+		const Handle_StepElement_SurfaceElementPurposeMember & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const StepElement_Array2OfSurfaceElementPurposeMember & Array2() const;
+		%feature("autodoc", "1");
+		StepElement_Array2OfSurfaceElementPurposeMember & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_HArray2OfSurfaceElementPurposeMember {
+	Handle_StepElement_HArray2OfSurfaceElementPurposeMember GetHandle() {
+	return *(Handle_StepElement_HArray2OfSurfaceElementPurposeMember*) &$self;
+	}
+};
+%extend StepElement_HArray2OfSurfaceElementPurposeMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_HArray2OfSurfaceElementPurposeMember {
+	~StepElement_HArray2OfSurfaceElementPurposeMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");}
+	}
+};
+
+
+%nodefaultctor StepElement_Volume3dElementDescriptor;
+class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescriptor {
+	public:
+		%feature("autodoc", "1");
+		StepElement_Volume3dElementDescriptor();
+		%feature("autodoc", "1");
+		void Init(const StepElement_ElementOrder aElementDescriptor_TopologyOrder, const Handle_TCollection_HAsciiString &aElementDescriptor_Description, const Handle_StepElement_HArray1OfVolumeElementPurposeMember &aPurpose, const StepElement_Volume3dElementShape aShape);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurposeMember Purpose() const;
+		%feature("autodoc", "1");
+		void SetPurpose(const Handle_StepElement_HArray1OfVolumeElementPurposeMember &Purpose);
+		%feature("autodoc", "1");
+		StepElement_Volume3dElementShape Shape() const;
+		%feature("autodoc", "1");
+		void SetShape(const StepElement_Volume3dElementShape Shape);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_Volume3dElementDescriptor {
+	Handle_StepElement_Volume3dElementDescriptor GetHandle() {
+	return *(Handle_StepElement_Volume3dElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_Volume3dElementDescriptor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_Volume3dElementDescriptor {
+	~StepElement_Volume3dElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
 class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCollection_SeqNode {
 	public:
@@ -3475,6 +3389,51 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 	~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfHSequenceOfCurveElementPurposeMember\n");}
+	}
+};
+
+
+%nodefaultctor StepElement_Array2OfCurveElementPurposeMember;
+class StepElement_Array2OfCurveElementPurposeMember {
+	public:
+		%feature("autodoc", "1");
+		StepElement_Array2OfCurveElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		StepElement_Array2OfCurveElementPurposeMember(const Handle_StepElement_CurveElementPurposeMember &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepElement_CurveElementPurposeMember &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const StepElement_Array2OfCurveElementPurposeMember & Assign(const StepElement_Array2OfCurveElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepElement_CurveElementPurposeMember &Value);
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementPurposeMember & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementPurposeMember & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend StepElement_Array2OfCurveElementPurposeMember {
+	~StepElement_Array2OfCurveElementPurposeMember() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfCurveElementPurposeMember\n");}
 	}
 };
 
@@ -3604,59 +3563,6 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
-class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepElement_HArray2OfSurfaceElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		StepElement_HArray2OfSurfaceElementPurposeMember(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_StepElement_SurfaceElementPurposeMember &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_SurfaceElementPurposeMember &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepElement_SurfaceElementPurposeMember &Value);
-		%feature("autodoc", "1");
-		const Handle_StepElement_SurfaceElementPurposeMember & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const StepElement_Array2OfSurfaceElementPurposeMember & Array2() const;
-		%feature("autodoc", "1");
-		StepElement_Array2OfSurfaceElementPurposeMember & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepElement_HArray2OfSurfaceElementPurposeMember {
-	Handle_StepElement_HArray2OfSurfaceElementPurposeMember GetHandle() {
-	return *(Handle_StepElement_HArray2OfSurfaceElementPurposeMember*) &$self;
-	}
-};
-%extend StepElement_HArray2OfSurfaceElementPurposeMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_HArray2OfSurfaceElementPurposeMember {
-	~StepElement_HArray2OfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");}
-	}
-};
-
-
 %nodefaultctor StepElement_SurfaceSectionFieldConstant;
 class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectionField {
 	public:
@@ -3766,6 +3672,47 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepElement_Array1OfCurveElementEndReleasePacket;
+class StepElement_Array1OfCurveElementEndReleasePacket {
+	public:
+		%feature("autodoc", "1");
+		StepElement_Array1OfCurveElementEndReleasePacket(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepElement_Array1OfCurveElementEndReleasePacket(const Handle_StepElement_CurveElementEndReleasePacket &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepElement_CurveElementEndReleasePacket &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepElement_Array1OfCurveElementEndReleasePacket & Assign(const StepElement_Array1OfCurveElementEndReleasePacket &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepElement_CurveElementEndReleasePacket &Value);
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementEndReleasePacket & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index);
+
+};
+%extend StepElement_Array1OfCurveElementEndReleasePacket {
+	~StepElement_Array1OfCurveElementEndReleasePacket() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfCurveElementEndReleasePacket\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_Surface3dElementDescriptor;
 class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -3836,5 +3783,60 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 	~StepElement_CurveElementEndReleasePacket() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementEndReleasePacket\n");}
+	}
+};
+
+
+%nodefaultctor StepElement_SequenceOfCurveElementSectionDefinition;
+class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		StepElement_SequenceOfCurveElementSectionDefinition();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfCurveElementSectionDefinition & Assign(const StepElement_SequenceOfCurveElementSectionDefinition &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepElement_CurveElementSectionDefinition &T);
+		%feature("autodoc", "1");
+		void Append(StepElement_SequenceOfCurveElementSectionDefinition & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepElement_CurveElementSectionDefinition &T);
+		%feature("autodoc", "1");
+		void Prepend(StepElement_SequenceOfCurveElementSectionDefinition & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementSectionDefinition & First() const;
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementSectionDefinition & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, StepElement_SequenceOfCurveElementSectionDefinition & S);
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementSectionDefinition & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepElement_CurveElementSectionDefinition &I);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend StepElement_SequenceOfCurveElementSectionDefinition {
+	~StepElement_SequenceOfCurveElementSectionDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfCurveElementSectionDefinition\n");}
 	}
 };

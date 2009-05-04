@@ -33,10 +33,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
+#include<BRepAdaptor_Surface.hxx>
+#include<gp_Dir.hxx>
 #include<BRepAdaptor_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Dir.hxx>
-#include<BRepAdaptor_Surface.hxx>
-#include<BRepLProp.hxx>
 %}

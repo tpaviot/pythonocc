@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module PGeom
 
+%include PGeom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -946,32 +948,6 @@ class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 };
 
 
-%nodefaultctor Handle_PGeom_ConicalSurface;
-class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_ConicalSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_ConicalSurface(const Handle_PGeom_ConicalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_ConicalSurface(const PGeom_ConicalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_ConicalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_ConicalSurface {
-	PGeom_ConicalSurface* GetObject() {
-	return (PGeom_ConicalSurface*)$self->Access();
-	}
-};
-%extend Handle_PGeom_ConicalSurface {
-	~Handle_PGeom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_ConicalSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_RectangularTrimmedSurface;
 class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurface {
 	public:
@@ -994,6 +970,32 @@ class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurfac
 	~Handle_PGeom_RectangularTrimmedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_RectangularTrimmedSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_ConicalSurface;
+class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface(const Handle_PGeom_ConicalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface(const PGeom_ConicalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_ConicalSurface {
+	PGeom_ConicalSurface* GetObject() {
+	return (PGeom_ConicalSurface*)$self->Access();
+	}
+};
+%extend Handle_PGeom_ConicalSurface {
+	~Handle_PGeom_ConicalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_ConicalSurface\n");}
 	}
 };
 
@@ -1132,90 +1134,6 @@ class PGeom_Curve : public PGeom_Geometry {
 };
 
 
-%nodefaultctor PGeom_OffsetCurve;
-class PGeom_OffsetCurve : public PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		PGeom_OffsetCurve();
-		%feature("autodoc", "1");
-		PGeom_OffsetCurve(const Handle_PGeom_Curve &aBasisCurve, const Standard_Real aOffsetValue, const gp_Dir &aOffsetDirection);
-		%feature("autodoc", "1");
-		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve BasisCurve() const;
-		%feature("autodoc", "1");
-		void OffsetDirection(const gp_Dir &aOffsetDirection);
-		%feature("autodoc", "1");
-		gp_Dir OffsetDirection() const;
-		%feature("autodoc", "1");
-		void OffsetValue(const Standard_Real aOffsetValue);
-		%feature("autodoc", "1");
-		Standard_Real OffsetValue() const;
-		%feature("autodoc", "1");
-		PGeom_OffsetCurve(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve _CSFDB_GetPGeom_OffsetCurvebasisCurve() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetCurvebasisCurve(const Handle_PGeom_Curve &p);
-		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPGeom_OffsetCurveoffsetDirection() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_OffsetCurveoffsetValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetCurveoffsetValue(const Standard_Real p);
-
-};
-%extend PGeom_OffsetCurve {
-	Handle_PGeom_OffsetCurve GetHandle() {
-	return *(Handle_PGeom_OffsetCurve*) &$self;
-	}
-};
-%extend PGeom_OffsetCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_OffsetCurve {
-	~PGeom_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetCurve\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_Conic;
-class PGeom_Conic : public PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		void Position(const gp_Ax2 &aPosition);
-		%feature("autodoc", "1");
-		gp_Ax2 Position() const;
-		%feature("autodoc", "1");
-		PGeom_Conic(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax2 & _CSFDB_GetPGeom_Conicposition() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Conic {
-	Handle_PGeom_Conic GetHandle() {
-	return *(Handle_PGeom_Conic*) &$self;
-	}
-};
-%extend PGeom_Conic {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Conic {
-	~PGeom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Conic\n");}
-	}
-};
-
-
 %nodefaultctor PGeom_Surface;
 class PGeom_Surface : public PGeom_Geometry {
 	public:
@@ -1313,49 +1231,66 @@ class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
 };
 
 
-%nodefaultctor PGeom_Ellipse;
-class PGeom_Ellipse : public PGeom_Conic {
+%nodefaultctor PGeom_Point;
+class PGeom_Point : public PGeom_Geometry {
 	public:
 		%feature("autodoc", "1");
-		PGeom_Ellipse();
+		PGeom_Point(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		PGeom_Point();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_Ellipse {
-	Handle_PGeom_Ellipse GetHandle() {
-	return *(Handle_PGeom_Ellipse*) &$self;
+%extend PGeom_Point {
+	Handle_PGeom_Point GetHandle() {
+	return *(Handle_PGeom_Point*) &$self;
 	}
 };
-%extend PGeom_Ellipse {
+%extend PGeom_Point {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_Ellipse {
-	~PGeom_Ellipse() {
+%extend PGeom_Point {
+	~PGeom_Point() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Ellipse\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_Point\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_CartesianPoint;
+class PGeom_CartesianPoint : public PGeom_Point {
+	public:
+		%feature("autodoc", "1");
+		PGeom_CartesianPoint();
+		%feature("autodoc", "1");
+		PGeom_CartesianPoint(const gp_Pnt &aPnt);
+		%feature("autodoc", "1");
+		void Pnt(const gp_Pnt &aPnt);
+		%feature("autodoc", "1");
+		gp_Pnt Pnt() const;
+		%feature("autodoc", "1");
+		PGeom_CartesianPoint(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Pnt & _CSFDB_GetPGeom_CartesianPointpnt() const;
+
+};
+%extend PGeom_CartesianPoint {
+	Handle_PGeom_CartesianPoint GetHandle() {
+	return *(Handle_PGeom_CartesianPoint*) &$self;
+	}
+};
+%extend PGeom_CartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_CartesianPoint {
+	~PGeom_CartesianPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_CartesianPoint\n");}
 	}
 };
 
@@ -1661,6 +1596,39 @@ class PGeom_Vector : public PGeom_Geometry {
 };
 
 
+%nodefaultctor PGeom_Conic;
+class PGeom_Conic : public PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		void Position(const gp_Ax2 &aPosition);
+		%feature("autodoc", "1");
+		gp_Ax2 Position() const;
+		%feature("autodoc", "1");
+		PGeom_Conic(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Ax2 & _CSFDB_GetPGeom_Conicposition() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Conic {
+	Handle_PGeom_Conic GetHandle() {
+	return *(Handle_PGeom_Conic*) &$self;
+	}
+};
+%extend PGeom_Conic {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Conic {
+	~PGeom_Conic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Conic\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_Parabola;
 class PGeom_Parabola : public PGeom_Conic {
 	public:
@@ -1678,8 +1646,6 @@ class PGeom_Parabola : public PGeom_Conic {
 		Standard_Real _CSFDB_GetPGeom_ParabolafocalLength() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_ParabolafocalLength(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_Parabola {
@@ -1696,70 +1662,6 @@ class PGeom_Parabola : public PGeom_Conic {
 	~PGeom_Parabola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom_Parabola\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_Point;
-class PGeom_Point : public PGeom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Point(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		PGeom_Point();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Point {
-	Handle_PGeom_Point GetHandle() {
-	return *(Handle_PGeom_Point*) &$self;
-	}
-};
-%extend PGeom_Point {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Point {
-	~PGeom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Point\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_CartesianPoint;
-class PGeom_CartesianPoint : public PGeom_Point {
-	public:
-		%feature("autodoc", "1");
-		PGeom_CartesianPoint();
-		%feature("autodoc", "1");
-		PGeom_CartesianPoint(const gp_Pnt &aPnt);
-		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt &aPnt);
-		%feature("autodoc", "1");
-		gp_Pnt Pnt() const;
-		%feature("autodoc", "1");
-		PGeom_CartesianPoint(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPGeom_CartesianPointpnt() const;
-
-};
-%extend PGeom_CartesianPoint {
-	Handle_PGeom_CartesianPoint GetHandle() {
-	return *(Handle_PGeom_CartesianPoint*) &$self;
-	}
-};
-%extend PGeom_CartesianPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_CartesianPoint {
-	~PGeom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_CartesianPoint\n");}
 	}
 };
 
@@ -1948,8 +1850,6 @@ class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
 		Standard_Real _CSFDB_GetPGeom_ToroidalSurfaceminorRadius() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_ToroidalSurfaceminorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_ToroidalSurface {
@@ -2142,6 +2042,106 @@ class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 };
 
 
+%nodefaultctor PGeom_OffsetCurve;
+class PGeom_OffsetCurve : public PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		PGeom_OffsetCurve();
+		%feature("autodoc", "1");
+		PGeom_OffsetCurve(const Handle_PGeom_Curve &aBasisCurve, const Standard_Real aOffsetValue, const gp_Dir &aOffsetDirection);
+		%feature("autodoc", "1");
+		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve BasisCurve() const;
+		%feature("autodoc", "1");
+		void OffsetDirection(const gp_Dir &aOffsetDirection);
+		%feature("autodoc", "1");
+		gp_Dir OffsetDirection() const;
+		%feature("autodoc", "1");
+		void OffsetValue(const Standard_Real aOffsetValue);
+		%feature("autodoc", "1");
+		Standard_Real OffsetValue() const;
+		%feature("autodoc", "1");
+		PGeom_OffsetCurve(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve _CSFDB_GetPGeom_OffsetCurvebasisCurve() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetCurvebasisCurve(const Handle_PGeom_Curve &p);
+		%feature("autodoc", "1");
+		const gp_Dir & _CSFDB_GetPGeom_OffsetCurveoffsetDirection() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_OffsetCurveoffsetValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetCurveoffsetValue(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_OffsetCurve {
+	Handle_PGeom_OffsetCurve GetHandle() {
+	return *(Handle_PGeom_OffsetCurve*) &$self;
+	}
+};
+%extend PGeom_OffsetCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_OffsetCurve {
+	~PGeom_OffsetCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetCurve\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_Hyperbola;
+class PGeom_Hyperbola : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Hyperbola();
+		%feature("autodoc", "1");
+		PGeom_Hyperbola(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_Hyperbola(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_HyperbolamajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_HyperbolamajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_HyperbolaminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_HyperbolaminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Hyperbola {
+	Handle_PGeom_Hyperbola GetHandle() {
+	return *(Handle_PGeom_Hyperbola*) &$self;
+	}
+};
+%extend PGeom_Hyperbola {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Hyperbola {
+	~PGeom_Hyperbola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Hyperbola\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_Axis2Placement;
 class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 	public:
@@ -2288,6 +2288,53 @@ class PGeom_Circle : public PGeom_Conic {
 };
 
 
+%nodefaultctor PGeom_OffsetSurface;
+class PGeom_OffsetSurface : public PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		PGeom_OffsetSurface();
+		%feature("autodoc", "1");
+		PGeom_OffsetSurface(const Handle_PGeom_Surface &aBasisSurface, const Standard_Real aOffsetValue);
+		%feature("autodoc", "1");
+		void BasisSurface(const Handle_PGeom_Surface &aBasisSurface);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface BasisSurface() const;
+		%feature("autodoc", "1");
+		void OffsetValue(const Standard_Real aOffsetValue);
+		%feature("autodoc", "1");
+		Standard_Real OffsetValue() const;
+		%feature("autodoc", "1");
+		PGeom_OffsetSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface _CSFDB_GetPGeom_OffsetSurfacebasisSurface() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetSurfacebasisSurface(const Handle_PGeom_Surface &p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_OffsetSurfaceoffsetValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetSurfaceoffsetValue(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_OffsetSurface {
+	Handle_PGeom_OffsetSurface GetHandle() {
+	return *(Handle_PGeom_OffsetSurface*) &$self;
+	}
+};
+%extend PGeom_OffsetSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_OffsetSurface {
+	~PGeom_OffsetSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetSurface\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_Direction;
 class PGeom_Direction : public PGeom_Vector {
 	public:
@@ -2374,6 +2421,53 @@ class PGeom_BezierCurve : public PGeom_BoundedCurve {
 };
 
 
+%nodefaultctor PGeom_Ellipse;
+class PGeom_Ellipse : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Ellipse();
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Ellipse {
+	Handle_PGeom_Ellipse GetHandle() {
+	return *(Handle_PGeom_Ellipse*) &$self;
+	}
+};
+%extend PGeom_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Ellipse {
+	~PGeom_Ellipse() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Ellipse\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_ConicalSurface;
 class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 	public:
@@ -2417,100 +2511,6 @@ class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 	~PGeom_ConicalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom_ConicalSurface\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_Hyperbola;
-class PGeom_Hyperbola : public PGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Hyperbola();
-		%feature("autodoc", "1");
-		PGeom_Hyperbola(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom_Hyperbola(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_HyperbolamajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_HyperbolamajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_HyperbolaminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_HyperbolaminorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Hyperbola {
-	Handle_PGeom_Hyperbola GetHandle() {
-	return *(Handle_PGeom_Hyperbola*) &$self;
-	}
-};
-%extend PGeom_Hyperbola {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Hyperbola {
-	~PGeom_Hyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Hyperbola\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_OffsetSurface;
-class PGeom_OffsetSurface : public PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface();
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface(const Handle_PGeom_Surface &aBasisSurface, const Standard_Real aOffsetValue);
-		%feature("autodoc", "1");
-		void BasisSurface(const Handle_PGeom_Surface &aBasisSurface);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface BasisSurface() const;
-		%feature("autodoc", "1");
-		void OffsetValue(const Standard_Real aOffsetValue);
-		%feature("autodoc", "1");
-		Standard_Real OffsetValue() const;
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface _CSFDB_GetPGeom_OffsetSurfacebasisSurface() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetSurfacebasisSurface(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_OffsetSurfaceoffsetValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetSurfaceoffsetValue(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_OffsetSurface {
-	Handle_PGeom_OffsetSurface GetHandle() {
-	return *(Handle_PGeom_OffsetSurface*) &$self;
-	}
-};
-%extend PGeom_OffsetSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_OffsetSurface {
-	~PGeom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetSurface\n");}
 	}
 };
 

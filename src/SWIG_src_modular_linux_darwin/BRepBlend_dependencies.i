@@ -223,9 +223,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopAbs_State.hxx>
 %};
 
-%import MMgt.i
 %import Approx.i
 %import TCollection.i
+%import MMgt.i
 %import Blend.i
 %import Standard.i
 %import BlendFunc.i

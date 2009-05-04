@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MNaming
 
+%include MNaming_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -256,8 +258,6 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 %nodefaultctor MNaming;
 class MNaming {
 	public:
-		%feature("autodoc", "1");
-		MNaming();
 		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");

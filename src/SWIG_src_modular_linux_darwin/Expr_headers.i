@@ -182,5 +182,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_Array1OfReal.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Standard_SStream.hxx>
-#include<Expr.hxx>
 %}

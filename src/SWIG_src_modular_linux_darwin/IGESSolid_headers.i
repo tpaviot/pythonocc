@@ -230,7 +230,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_IGESGeom_Point.hxx>
 #include<Handle_IGESGeom_Direction.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
-#include<IGESSolid.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
 #include<Handle_IGESGeom_HArray1OfTransformationMatrix.hxx>

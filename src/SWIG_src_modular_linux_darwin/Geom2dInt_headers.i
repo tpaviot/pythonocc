@@ -53,10 +53,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<IntCurve_IConicTool.hxx>
-#include<Adaptor2d_Curve2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<Adaptor2d_Curve2d.hxx>
 #include<Extrema_POnCurv2d.hxx>
+#include<IntCurve_IConicTool.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 #include<IntRes2d_Domain.hxx>

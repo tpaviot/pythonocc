@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Visual3d
 
+%include Visual3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -120,16 +122,16 @@ enum Visual3d_TypeOfSurfaceDetail {
 	Visual3d_TOD_ALL,
 	};
 
-enum Visual3d_TypeOfOrder {
-	Visual3d_TOO_TOPFIRST,
-	Visual3d_TOO_BOTTOMFIRST,
-	};
-
 enum Visual3d_TypeOfModel {
 	Visual3d_TOM_NONE,
 	Visual3d_TOM_INTERP_COLOR,
 	Visual3d_TOM_FACET,
 	Visual3d_TOM_VERTEX,
+	};
+
+enum Visual3d_TypeOfOrder {
+	Visual3d_TOO_TOPFIRST,
+	Visual3d_TOO_BOTTOMFIRST,
 	};
 
 enum Visual3d_TypeOfBackfacingModel {
@@ -241,32 +243,6 @@ class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfR
 };
 
 
-%nodefaultctor Handle_Visual3d_View;
-class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_View();
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Visual3d_View *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_View {
-	Visual3d_View* GetObject() {
-	return (Visual3d_View*)$self->Access();
-	}
-};
-%extend Handle_Visual3d_View {
-	~Handle_Visual3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_View\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollection_MapNode {
 	public:
@@ -341,6 +317,58 @@ class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 	~Handle_Visual3d_TransformError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_TransformError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_View;
+class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_View();
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Visual3d_View *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_View {
+	Visual3d_View* GetObject() {
+	return (Visual3d_View*)$self->Access();
+	}
+};
+%extend Handle_Visual3d_View {
+	~Handle_Visual3d_View() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_View\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_LightDefinitionError;
+class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_LightDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_LightDefinitionError(const Handle_Visual3d_LightDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_LightDefinitionError(const Visual3d_LightDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_LightDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_LightDefinitionError {
+	Visual3d_LightDefinitionError* GetObject() {
+	return (Visual3d_LightDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Visual3d_LightDefinitionError {
+	~Handle_Visual3d_LightDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LightDefinitionError\n");}
 	}
 };
 
@@ -471,6 +499,32 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_
 	~Handle_Visual3d_ListNodeOfSetListOfSetOfLight() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfLight\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_ContextPickDefinitionError;
+class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_ContextPickDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ContextPickDefinitionError(const Handle_Visual3d_ContextPickDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ContextPickDefinitionError(const Visual3d_ContextPickDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ContextPickDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_ContextPickDefinitionError {
+	Visual3d_ContextPickDefinitionError* GetObject() {
+	return (Visual3d_ContextPickDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Visual3d_ContextPickDefinitionError {
+	~Handle_Visual3d_ContextPickDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ContextPickDefinitionError\n");}
 	}
 };
 
@@ -731,58 +785,6 @@ class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRan
 	~Handle_Visual3d_TransientDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_TransientDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_LightDefinitionError;
-class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError(const Handle_Visual3d_LightDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError(const Visual3d_LightDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_LightDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_LightDefinitionError {
-	Visual3d_LightDefinitionError* GetObject() {
-	return (Visual3d_LightDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_Visual3d_LightDefinitionError {
-	~Handle_Visual3d_LightDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LightDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_ContextPickDefinitionError;
-class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError(const Handle_Visual3d_ContextPickDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError(const Visual3d_ContextPickDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ContextPickDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_ContextPickDefinitionError {
-	Visual3d_ContextPickDefinitionError* GetObject() {
-	return (Visual3d_ContextPickDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_Visual3d_ContextPickDefinitionError {
-	~Handle_Visual3d_ContextPickDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ContextPickDefinitionError\n");}
 	}
 };
 
@@ -1244,6 +1246,35 @@ class Visual3d_ContextView {
 };
 
 
+%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
+class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ListNodeOfSetListOfSetOfClipPlane(const Handle_Visual3d_ClipPlane &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ClipPlane & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane GetHandle() {
+	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane*) &$self;
+	}
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
+	~Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");}
+	}
+};
+
+
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfLight;
 class Visual3d_ListIteratorOfSetListOfSetOfLight {
 	public:
@@ -1294,6 +1325,51 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 	~Visual3d_ListNodeOfSetListOfSetOfLight() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfLight\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ViewMapping;
+class Visual3d_ViewMapping {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ViewMapping();
+		%feature("autodoc", "1");
+		Visual3d_ViewMapping(const Visual3d_TypeOfProjection AType, const Graphic3d_Vertex &PRP, const Standard_Real BPD, const Standard_Real FPD, const Standard_Real VPD, const Standard_Real WUmin, const Standard_Real WVmin, const Standard_Real WUmax, const Standard_Real WVmax);
+		%feature("autodoc", "1");
+		void SetBackPlaneDistance(const Standard_Real BPD);
+		%feature("autodoc", "1");
+		void SetFrontPlaneDistance(const Standard_Real FPD);
+		%feature("autodoc", "1");
+		void SetProjection(const Visual3d_TypeOfProjection AType);
+		%feature("autodoc", "1");
+		void SetProjectionReferencePoint(const Graphic3d_Vertex &PRP);
+		%feature("autodoc", "1");
+		void SetViewPlaneDistance(const Standard_Real VPD);
+		%feature("autodoc", "1");
+		void SetWindowLimit(const Standard_Real Umin, const Standard_Real Vmin, const Standard_Real Umax, const Standard_Real Vmax);
+		%feature("autodoc", "1");
+		void SetCustomProjectionMatrix(const Handle_TColStd_HArray2OfReal &Mat);
+		%feature("autodoc", "1");
+		Standard_Real BackPlaneDistance() const;
+		%feature("autodoc", "1");
+		Standard_Real FrontPlaneDistance() const;
+		%feature("autodoc", "1");
+		Visual3d_TypeOfProjection Projection() const;
+		%feature("autodoc", "1");
+		Graphic3d_Vertex ProjectionReferencePoint() const;
+		%feature("autodoc", "1");
+		Standard_Real ViewPlaneDistance() const;
+		%feature("autodoc", "1");
+		void WindowLimit(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCustomMatrix() const;
+
+};
+%extend Visual3d_ViewMapping {
+	~Visual3d_ViewMapping() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewMapping\n");}
 	}
 };
 
@@ -1523,47 +1599,704 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 };
 
 
-%nodefaultctor Visual3d_ViewMapping;
-class Visual3d_ViewMapping {
+%nodefaultctor Visual3d_ViewManager;
+class Visual3d_ViewManager : public Graphic3d_StructureManager {
 	public:
 		%feature("autodoc", "1");
-		Visual3d_ViewMapping();
+		Visual3d_ViewManager(const Handle_Aspect_GraphicDevice &aDevice);
 		%feature("autodoc", "1");
-		Visual3d_ViewMapping(const Visual3d_TypeOfProjection AType, const Graphic3d_Vertex &PRP, const Standard_Real BPD, const Standard_Real FPD, const Standard_Real VPD, const Standard_Real WUmin, const Standard_Real WVmin, const Standard_Real WUmax, const Standard_Real WVmax);
+		void Activate();
 		%feature("autodoc", "1");
-		void SetBackPlaneDistance(const Standard_Real BPD);
+		void Deactivate();
 		%feature("autodoc", "1");
-		void SetFrontPlaneDistance(const Standard_Real FPD);
+		virtual		void Destroy();
 		%feature("autodoc", "1");
-		void SetProjection(const Visual3d_TypeOfProjection AType);
+		void Erase();
 		%feature("autodoc", "1");
-		void SetProjectionReferencePoint(const Graphic3d_Vertex &PRP);
+		void Redraw() const;
 		%feature("autodoc", "1");
-		void SetViewPlaneDistance(const Standard_Real VPD);
+		void Remove();
 		%feature("autodoc", "1");
-		void SetWindowLimit(const Standard_Real Umin, const Standard_Real Vmin, const Standard_Real Umax, const Standard_Real Vmax);
+		virtual		void Update() const;
 		%feature("autodoc", "1");
-		void SetCustomProjectionMatrix(const Handle_TColStd_HArray2OfReal &Mat);
+		Handle_Visual3d_HSetOfView ActivatedView() const;
 		%feature("autodoc", "1");
-		Standard_Real BackPlaneDistance() const;
+		void ConvertCoord(const Handle_Aspect_Window &AWindow, const Graphic3d_Vertex &AVertex, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Real FrontPlaneDistance() const;
+		Graphic3d_Vertex ConvertCoord(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV) const;
 		%feature("autodoc", "1");
-		Visual3d_TypeOfProjection Projection() const;
+		void ConvertCoordWithProj(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV, Graphic3d_Vertex & Point, Graphic3d_Vector & Proj) const;
 		%feature("autodoc", "1");
-		Graphic3d_Vertex ProjectionReferencePoint() const;
+		Handle_Visual3d_HSetOfView DefinedView() const;
 		%feature("autodoc", "1");
-		Standard_Real ViewPlaneDistance() const;
+		Standard_Integer MaxNumOfViews() const;
 		%feature("autodoc", "1");
-		void WindowLimit(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Standard_Integer Identification(const Handle_Visual3d_View &AView);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCustomMatrix() const;
+		Visual3d_PickDescriptor Pick(const Visual3d_ContextPick &CTX, const Handle_Aspect_Window &AWindow, const Standard_Integer AX, const Standard_Integer AY);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Identification(const Standard_Integer AId) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Identification() const;
+		%feature("autodoc", "1");
+		virtual		void ChangeDisplayPriority(const Handle_Graphic3d_Structure &AStructure, const Standard_Integer OldPriority, const Standard_Integer NewPriority);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_Graphic3d_Structure &AStructure, const Standard_Boolean WithDestruction);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_Graphic3d_Structure &AMother, const Handle_Graphic3d_Structure &ADaughter);
+		%feature("autodoc", "1");
+		virtual		void Disconnect(const Handle_Graphic3d_Structure &AMother, const Handle_Graphic3d_Structure &ADaughter);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		virtual		void Erase(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		virtual		void Highlight(const Handle_Graphic3d_Structure &AStructure, const Aspect_TypeOfHighlightMethod AMethod);
+		%feature("autodoc", "1");
+		virtual		void SetTransform(const Handle_Graphic3d_Structure &AStructure, const TColStd_Array2OfReal &ATrsf);
+		%feature("autodoc", "1");
+		virtual		void UnHighlight();
+		%feature("autodoc", "1");
+		virtual		void UnHighlight(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		Standard_Boolean ViewExists(const Handle_Aspect_Window &AWindow, Graphic3d_CView & TheCView) const;
+		%feature("autodoc", "1");
+		const Handle_Visual3d_Layer & UnderLayer() const;
+		%feature("autodoc", "1");
+		const Handle_Visual3d_Layer & OverLayer() const;
+		%feature("autodoc", "1");
+		virtual		void ReCompute(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		virtual		void ReCompute(const Handle_Graphic3d_Structure &AStructure, const Handle_Graphic3d_DataStructureManager &AProjector);
+		%feature("autodoc", "1");
+		Standard_Boolean Transparency() const;
+		%feature("autodoc", "1");
+		void SetTransparency(const Standard_Boolean AFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean ZBufferAuto() const;
+		%feature("autodoc", "1");
+		void SetZBufferAuto(const Standard_Boolean AFlag);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Visual3d_ViewMapping {
-	~Visual3d_ViewMapping() {
+%extend Visual3d_ViewManager {
+	Handle_Visual3d_ViewManager GetHandle() {
+	return *(Handle_Visual3d_ViewManager*) &$self;
+	}
+};
+%extend Visual3d_ViewManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_ViewManager {
+	~Visual3d_ViewManager() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewMapping\n");}
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewManager\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_SequenceNodeOfSequenceOfPickPath;
+class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SequenceNodeOfSequenceOfPickPath(const Visual3d_PickPath &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Visual3d_PickPath & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
+	Handle_Visual3d_SequenceNodeOfSequenceOfPickPath GetHandle() {
+	return *(Handle_Visual3d_SequenceNodeOfSequenceOfPickPath*) &$self;
+	}
+};
+%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
+	~Visual3d_SequenceNodeOfSequenceOfPickPath() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceNodeOfSequenceOfPickPath\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ClipDefinitionError;
+class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ClipDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_ClipDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ClipDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_ClipDefinitionError {
+	Handle_Visual3d_ClipDefinitionError GetHandle() {
+	return *(Handle_Visual3d_ClipDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ClipDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_ClipDefinitionError {
+	~Visual3d_ClipDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ClipDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ViewOrientationDefinitionError;
+class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ViewOrientationDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_ViewOrientationDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ViewOrientationDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_ViewOrientationDefinitionError {
+	Handle_Visual3d_ViewOrientationDefinitionError GetHandle() {
+	return *(Handle_Visual3d_ViewOrientationDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ViewOrientationDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_ViewOrientationDefinitionError {
+	~Visual3d_ViewOrientationDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewOrientationDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_PickPath;
+class Visual3d_PickPath {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_PickPath();
+		%feature("autodoc", "1");
+		Visual3d_PickPath(const Standard_Integer AElemNumber, const Standard_Integer APickId, const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		void SetElementNumber(const Standard_Integer AElemNumber);
+		%feature("autodoc", "1");
+		void SetPickIdentifier(const Standard_Integer APickId);
+		%feature("autodoc", "1");
+		void SetStructIdentifier(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		Standard_Integer ElementNumber() const;
+		%feature("autodoc", "1");
+		Standard_Integer PickIdentifier() const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure StructIdentifier() const;
+
+};
+%extend Visual3d_PickPath {
+	~Visual3d_PickPath() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_PickPath\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_Layer;
+class Visual3d_Layer : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_Layer(const Handle_Visual3d_ViewManager &AViewer, const Aspect_TypeOfLayer AType=Aspect_TOL_OVERLAY, const Standard_Boolean AFlag=0);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void Begin();
+		%feature("autodoc", "1");
+		void End();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void BeginPolyline();
+		%feature("autodoc", "1");
+		void BeginPolygon();
+		%feature("autodoc", "1");
+		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		void ClosePrimitive();
+		%feature("autodoc", "1");
+		void DrawRectangle(const Standard_Real X, const Standard_Real Y, const Standard_Real Width, const Standard_Real Height);
+		%feature("autodoc", "1");
+		void DrawText(const char * AText, const Standard_Real X, const Standard_Real Y, const Standard_Real AHeight);
+		%feature("autodoc", "1");
+		void TextSize(const char * AText, const Standard_Real AHeight, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &AColor);
+		%feature("autodoc", "1");
+		void SetTransparency(const Standard_ShortReal ATransparency);
+		%feature("autodoc", "1");
+		void UnsetTransparency();
+		%feature("autodoc", "1");
+		void SetLineAttributes(const Aspect_TypeOfLine AType, const Standard_Real AWidth);
+		%feature("autodoc", "1");
+		void SetTextAttributes(const Graphic3d_NameOfFont AFont, const Aspect_TypeOfDisplayText AType, const Quantity_Color &AColor);
+		%feature("autodoc", "1");
+		void SetOrtho(const Standard_Real Left, const Standard_Real Right, const Standard_Real Bottom, const Standard_Real Top, const Aspect_TypeOfConstraint Attach=Aspect_TOC_BOTTOM_LEFT);
+		%feature("autodoc", "1");
+		void SetViewport(const Standard_Integer Width, const Standard_Integer Height);
+		%feature("autodoc", "1");
+		Aspect_CLayer2d CLayer() const;
+		%feature("autodoc", "1");
+		Aspect_TypeOfLayer Type() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_Layer {
+	Handle_Visual3d_Layer GetHandle() {
+	return *(Handle_Visual3d_Layer*) &$self;
+	}
+};
+%extend Visual3d_Layer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_Layer {
+	~Visual3d_Layer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_Layer\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_SetOfView;
+class Visual3d_SetOfView {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SetOfView();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Visual3d_View &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Visual3d_View &T);
+		%feature("autodoc", "1");
+		void Union(const Visual3d_SetOfView &B);
+		%feature("autodoc", "1");
+		void Intersection(const Visual3d_SetOfView &B);
+		%feature("autodoc", "1");
+		void Difference(const Visual3d_SetOfView &B);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Visual3d_View &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const Visual3d_SetOfView &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const Visual3d_SetOfView &S) const;
+
+};
+%extend Visual3d_SetOfView {
+	~Visual3d_SetOfView() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfView\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_TransientDefinitionError;
+class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_TransientDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_TransientDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_TransientDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_TransientDefinitionError {
+	Handle_Visual3d_TransientDefinitionError GetHandle() {
+	return *(Handle_Visual3d_TransientDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_TransientDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_TransientDefinitionError {
+	~Visual3d_TransientDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ZClippingDefinitionError;
+class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ZClippingDefinitionError();
+		%feature("autodoc", "1");
+		Visual3d_ZClippingDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ZClippingDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_ZClippingDefinitionError {
+	Handle_Visual3d_ZClippingDefinitionError GetHandle() {
+	return *(Handle_Visual3d_ZClippingDefinitionError*) &$self;
+	}
+};
+%extend Visual3d_ZClippingDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_ZClippingDefinitionError {
+	~Visual3d_ZClippingDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ZClippingDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_Light;
+class Visual3d_Light : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_Light();
+		%feature("autodoc", "1");
+		Visual3d_Light(const Quantity_Color &Color);
+		%feature("autodoc", "1");
+		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vector &Direction, const Standard_Boolean Headlight=0);
+		%feature("autodoc", "1");
+		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vertex &Position, const Standard_Real Fact1, const Standard_Real Fact2);
+		%feature("autodoc", "1");
+		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vertex &Position, const Graphic3d_Vector &Direction, const Standard_Real Concentration, const Standard_Real Fact1, const Standard_Real Fact2, const Standard_Real AngleCone);
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real AngleCone);
+		%feature("autodoc", "1");
+		void SetAttenuation1(const Standard_Real Fact1);
+		%feature("autodoc", "1");
+		void SetAttenuation2(const Standard_Real Fact2);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &Color);
+		%feature("autodoc", "1");
+		void SetConcentration(const Standard_Real Concentration);
+		%feature("autodoc", "1");
+		void SetDirection(const Graphic3d_Vector &Direction);
+		%feature("autodoc", "1");
+		void SetPosition(const Graphic3d_Vertex &Position);
+		%feature("autodoc", "1");
+		Standard_Boolean Headlight() const;
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc", "1");
+		Visual3d_TypeOfLightSource LightType() const;
+		%feature("autodoc", "1");
+		void Values(Quantity_Color & Color) const;
+		%feature("autodoc", "1");
+		void Values(Quantity_Color & Color, Graphic3d_Vector & Direction) const;
+		%feature("autodoc", "1");
+		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer Limit();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_Light {
+	Handle_Visual3d_Light GetHandle() {
+	return *(Handle_Visual3d_Light*) &$self;
+	}
+};
+%extend Visual3d_Light {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_Light {
+	~Visual3d_Light() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_Light\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfView;
+class Visual3d_ListIteratorOfSetListOfSetOfView {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ListIteratorOfSetListOfSetOfView();
+		%feature("autodoc", "1");
+		Visual3d_ListIteratorOfSetListOfSetOfView(const Visual3d_SetListOfSetOfView &L);
+		%feature("autodoc", "1");
+		void Initialize(const Visual3d_SetListOfSetOfView &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Visual3d_View & Value() const;
+
+};
+%extend Visual3d_ListIteratorOfSetListOfSetOfView {
+	~Visual3d_ListIteratorOfSetListOfSetOfView() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfView\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_SequenceOfPickPath;
+class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SequenceOfPickPath();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Visual3d_SequenceOfPickPath & Assign(const Visual3d_SequenceOfPickPath &Other);
+		%feature("autodoc", "1");
+		void Append(const Visual3d_PickPath &T);
+		%feature("autodoc", "1");
+		void Append(Visual3d_SequenceOfPickPath & S);
+		%feature("autodoc", "1");
+		void Prepend(const Visual3d_PickPath &T);
+		%feature("autodoc", "1");
+		void Prepend(Visual3d_SequenceOfPickPath & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Visual3d_PickPath &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Visual3d_PickPath &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
+		%feature("autodoc", "1");
+		const Visual3d_PickPath & First() const;
+		%feature("autodoc", "1");
+		const Visual3d_PickPath & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
+		%feature("autodoc", "1");
+		const Visual3d_PickPath & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Visual3d_PickPath & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Visual3d_PickPath &I);
+		%feature("autodoc", "1");
+		Visual3d_PickPath & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Visual3d_PickPath & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Visual3d_SequenceOfPickPath {
+	~Visual3d_SequenceOfPickPath() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceOfPickPath\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_SetListOfSetOfClipPlane;
+class Visual3d_SetListOfSetOfClipPlane {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SetListOfSetOfClipPlane();
+		%feature("autodoc", "1");
+		void Assign(const Visual3d_SetListOfSetOfClipPlane &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Visual3d_ClipPlane &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & theIt);
+		%feature("autodoc", "1");
+		void Prepend(Visual3d_SetListOfSetOfClipPlane & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Visual3d_ClipPlane &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & theIt);
+		%feature("autodoc", "1");
+		void Append(Visual3d_SetListOfSetOfClipPlane & Other);
+		%feature("autodoc", "1");
+		Handle_Visual3d_ClipPlane & First() const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_ClipPlane & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
+		%feature("autodoc", "1");
+		void InsertBefore(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
+		%feature("autodoc", "1");
+		void InsertAfter(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
+
+};
+%extend Visual3d_SetListOfSetOfClipPlane {
+	~Visual3d_SetListOfSetOfClipPlane() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfClipPlane\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfClipPlane;
+class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_ListIteratorOfSetListOfSetOfClipPlane();
+		%feature("autodoc", "1");
+		Visual3d_ListIteratorOfSetListOfSetOfClipPlane(const Visual3d_SetListOfSetOfClipPlane &L);
+		%feature("autodoc", "1");
+		void Initialize(const Visual3d_SetListOfSetOfClipPlane &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Visual3d_ClipPlane & Value() const;
+
+};
+%extend Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
+	~Visual3d_ListIteratorOfSetListOfSetOfClipPlane() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfClipPlane\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_HSetOfLight;
+class Visual3d_HSetOfLight : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_HSetOfLight();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Visual3d_Light &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Visual3d_Light &T);
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfLight Union(const Handle_Visual3d_HSetOfLight &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfLight Intersection(const Handle_Visual3d_HSetOfLight &B) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfLight Difference(const Handle_Visual3d_HSetOfLight &B) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Visual3d_Light &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfLight &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfLight &S) const;
+		%feature("autodoc", "1");
+		Handle_Visual3d_HSetOfLight ShallowCopy() const;
+		%feature("autodoc", "1");
+		const Visual3d_SetOfLight & Set() const;
+		%feature("autodoc", "1");
+		Visual3d_SetOfLight & ChangeSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_HSetOfLight {
+	Handle_Visual3d_HSetOfLight GetHandle() {
+	return *(Handle_Visual3d_HSetOfLight*) &$self;
+	}
+};
+%extend Visual3d_HSetOfLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_HSetOfLight {
+	~Visual3d_HSetOfLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_HSetOfLight\n");}
+	}
+};
+
+
+%nodefaultctor Visual3d_SetIteratorOfSetOfView;
+class Visual3d_SetIteratorOfSetOfView {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_SetIteratorOfSetOfView();
+		%feature("autodoc", "1");
+		Visual3d_SetIteratorOfSetOfView(const Visual3d_SetOfView &S);
+		%feature("autodoc", "1");
+		void Initialize(const Visual3d_SetOfView &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Visual3d_View & Value() const;
+
+};
+%extend Visual3d_SetIteratorOfSetOfView {
+	~Visual3d_SetIteratorOfSetOfView() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfView\n");}
 	}
 };
 
@@ -1790,684 +2523,6 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 };
 
 
-%nodefaultctor Visual3d_SequenceNodeOfSequenceOfPickPath;
-class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SequenceNodeOfSequenceOfPickPath(const Visual3d_PickPath &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Visual3d_PickPath & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
-	Handle_Visual3d_SequenceNodeOfSequenceOfPickPath GetHandle() {
-	return *(Handle_Visual3d_SequenceNodeOfSequenceOfPickPath*) &$self;
-	}
-};
-%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_SequenceNodeOfSequenceOfPickPath {
-	~Visual3d_SequenceNodeOfSequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceNodeOfSequenceOfPickPath\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ClipDefinitionError;
-class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ClipDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_ClipDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ClipDefinitionError {
-	Handle_Visual3d_ClipDefinitionError GetHandle() {
-	return *(Handle_Visual3d_ClipDefinitionError*) &$self;
-	}
-};
-%extend Visual3d_ClipDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_ClipDefinitionError {
-	~Visual3d_ClipDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ClipDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ViewOrientationDefinitionError;
-class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ViewOrientationDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_ViewOrientationDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ViewOrientationDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ViewOrientationDefinitionError {
-	Handle_Visual3d_ViewOrientationDefinitionError GetHandle() {
-	return *(Handle_Visual3d_ViewOrientationDefinitionError*) &$self;
-	}
-};
-%extend Visual3d_ViewOrientationDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_ViewOrientationDefinitionError {
-	~Visual3d_ViewOrientationDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewOrientationDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_Layer;
-class Visual3d_Layer : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_Layer(const Handle_Visual3d_ViewManager &AViewer, const Aspect_TypeOfLayer AType=Aspect_TOL_OVERLAY, const Standard_Boolean AFlag=0);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void Begin();
-		%feature("autodoc", "1");
-		void End();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void BeginPolyline();
-		%feature("autodoc", "1");
-		void BeginPolygon();
-		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		void ClosePrimitive();
-		%feature("autodoc", "1");
-		void DrawRectangle(const Standard_Real X, const Standard_Real Y, const Standard_Real Width, const Standard_Real Height);
-		%feature("autodoc", "1");
-		void DrawText(const char * AText, const Standard_Real X, const Standard_Real Y, const Standard_Real AHeight);
-		%feature("autodoc", "1");
-		void TextSize(const char * AText, const Standard_Real AHeight, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &AColor);
-		%feature("autodoc", "1");
-		void SetTransparency(const Standard_ShortReal ATransparency);
-		%feature("autodoc", "1");
-		void UnsetTransparency();
-		%feature("autodoc", "1");
-		void SetLineAttributes(const Aspect_TypeOfLine AType, const Standard_Real AWidth);
-		%feature("autodoc", "1");
-		void SetTextAttributes(const Graphic3d_NameOfFont AFont, const Aspect_TypeOfDisplayText AType, const Quantity_Color &AColor);
-		%feature("autodoc", "1");
-		void SetOrtho(const Standard_Real Left, const Standard_Real Right, const Standard_Real Bottom, const Standard_Real Top, const Aspect_TypeOfConstraint Attach=Aspect_TOC_BOTTOM_LEFT);
-		%feature("autodoc", "1");
-		void SetViewport(const Standard_Integer Width, const Standard_Integer Height);
-		%feature("autodoc", "1");
-		Aspect_CLayer2d CLayer() const;
-		%feature("autodoc", "1");
-		Aspect_TypeOfLayer Type() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_Layer {
-	Handle_Visual3d_Layer GetHandle() {
-	return *(Handle_Visual3d_Layer*) &$self;
-	}
-};
-%extend Visual3d_Layer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_Layer {
-	~Visual3d_Layer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_Layer\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_TransientDefinitionError;
-class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_TransientDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_TransientDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_TransientDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_TransientDefinitionError {
-	Handle_Visual3d_TransientDefinitionError GetHandle() {
-	return *(Handle_Visual3d_TransientDefinitionError*) &$self;
-	}
-};
-%extend Visual3d_TransientDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_TransientDefinitionError {
-	~Visual3d_TransientDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_SetOfView;
-class Visual3d_SetOfView {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SetOfView();
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Visual3d_View &T);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Visual3d_View &T);
-		%feature("autodoc", "1");
-		void Union(const Visual3d_SetOfView &B);
-		%feature("autodoc", "1");
-		void Intersection(const Visual3d_SetOfView &B);
-		%feature("autodoc", "1");
-		void Difference(const Visual3d_SetOfView &B);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Visual3d_View &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const Visual3d_SetOfView &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const Visual3d_SetOfView &S) const;
-
-};
-%extend Visual3d_SetOfView {
-	~Visual3d_SetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfView\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ZClippingDefinitionError;
-class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ZClippingDefinitionError();
-		%feature("autodoc", "1");
-		Visual3d_ZClippingDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ZClippingDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ZClippingDefinitionError {
-	Handle_Visual3d_ZClippingDefinitionError GetHandle() {
-	return *(Handle_Visual3d_ZClippingDefinitionError*) &$self;
-	}
-};
-%extend Visual3d_ZClippingDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_ZClippingDefinitionError {
-	~Visual3d_ZClippingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ZClippingDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_Light;
-class Visual3d_Light : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_Light();
-		%feature("autodoc", "1");
-		Visual3d_Light(const Quantity_Color &Color);
-		%feature("autodoc", "1");
-		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vector &Direction, const Standard_Boolean Headlight=0);
-		%feature("autodoc", "1");
-		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vertex &Position, const Standard_Real Fact1, const Standard_Real Fact2);
-		%feature("autodoc", "1");
-		Visual3d_Light(const Quantity_Color &Color, const Graphic3d_Vertex &Position, const Graphic3d_Vector &Direction, const Standard_Real Concentration, const Standard_Real Fact1, const Standard_Real Fact2, const Standard_Real AngleCone);
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real AngleCone);
-		%feature("autodoc", "1");
-		void SetAttenuation1(const Standard_Real Fact1);
-		%feature("autodoc", "1");
-		void SetAttenuation2(const Standard_Real Fact2);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &Color);
-		%feature("autodoc", "1");
-		void SetConcentration(const Standard_Real Concentration);
-		%feature("autodoc", "1");
-		void SetDirection(const Graphic3d_Vector &Direction);
-		%feature("autodoc", "1");
-		void SetPosition(const Graphic3d_Vertex &Position);
-		%feature("autodoc", "1");
-		Standard_Boolean Headlight() const;
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc", "1");
-		Visual3d_TypeOfLightSource LightType() const;
-		%feature("autodoc", "1");
-		void Values(Quantity_Color & Color) const;
-		%feature("autodoc", "1");
-		void Values(Quantity_Color & Color, Graphic3d_Vector & Direction) const;
-		%feature("autodoc", "1");
-		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer Limit();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_Light {
-	Handle_Visual3d_Light GetHandle() {
-	return *(Handle_Visual3d_Light*) &$self;
-	}
-};
-%extend Visual3d_Light {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_Light {
-	~Visual3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_Light\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
-class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ListNodeOfSetListOfSetOfClipPlane(const Handle_Visual3d_ClipPlane &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane GetHandle() {
-	return *(Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane*) &$self;
-	}
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	~Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfView;
-class Visual3d_ListIteratorOfSetListOfSetOfView {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ListIteratorOfSetListOfSetOfView();
-		%feature("autodoc", "1");
-		Visual3d_ListIteratorOfSetListOfSetOfView(const Visual3d_SetListOfSetOfView &L);
-		%feature("autodoc", "1");
-		void Initialize(const Visual3d_SetListOfSetOfView &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & Value() const;
-
-};
-%extend Visual3d_ListIteratorOfSetListOfSetOfView {
-	~Visual3d_ListIteratorOfSetListOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfView\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_SequenceOfPickPath;
-class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SequenceOfPickPath();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Visual3d_SequenceOfPickPath & Assign(const Visual3d_SequenceOfPickPath &Other);
-		%feature("autodoc", "1");
-		void Append(const Visual3d_PickPath &T);
-		%feature("autodoc", "1");
-		void Append(Visual3d_SequenceOfPickPath & S);
-		%feature("autodoc", "1");
-		void Prepend(const Visual3d_PickPath &T);
-		%feature("autodoc", "1");
-		void Prepend(Visual3d_SequenceOfPickPath & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Visual3d_PickPath &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Visual3d_PickPath &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
-		%feature("autodoc", "1");
-		const Visual3d_PickPath & First() const;
-		%feature("autodoc", "1");
-		const Visual3d_PickPath & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Visual3d_SequenceOfPickPath & S);
-		%feature("autodoc", "1");
-		const Visual3d_PickPath & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Visual3d_PickPath & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Visual3d_PickPath &I);
-		%feature("autodoc", "1");
-		Visual3d_PickPath & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Visual3d_PickPath & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Visual3d_SequenceOfPickPath {
-	~Visual3d_SequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceOfPickPath\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_SetListOfSetOfClipPlane;
-class Visual3d_SetListOfSetOfClipPlane {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SetListOfSetOfClipPlane();
-		%feature("autodoc", "1");
-		void Assign(const Visual3d_SetListOfSetOfClipPlane &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Visual3d_ClipPlane &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & theIt);
-		%feature("autodoc", "1");
-		void Prepend(Visual3d_SetListOfSetOfClipPlane & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Visual3d_ClipPlane &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & theIt);
-		%feature("autodoc", "1");
-		void Append(Visual3d_SetListOfSetOfClipPlane & Other);
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & First() const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
-		%feature("autodoc", "1");
-		void InsertBefore(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_Visual3d_ClipPlane &I, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
-		%feature("autodoc", "1");
-		void InsertAfter(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
-
-};
-%extend Visual3d_SetListOfSetOfClipPlane {
-	~Visual3d_SetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfClipPlane\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfClipPlane;
-class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ListIteratorOfSetListOfSetOfClipPlane();
-		%feature("autodoc", "1");
-		Visual3d_ListIteratorOfSetListOfSetOfClipPlane(const Visual3d_SetListOfSetOfClipPlane &L);
-		%feature("autodoc", "1");
-		void Initialize(const Visual3d_SetListOfSetOfClipPlane &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Visual3d_ClipPlane & Value() const;
-
-};
-%extend Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
-	~Visual3d_ListIteratorOfSetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfClipPlane\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_HSetOfLight;
-class Visual3d_HSetOfLight : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_HSetOfLight();
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Visual3d_Light &T);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Visual3d_Light &T);
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfLight Union(const Handle_Visual3d_HSetOfLight &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfLight Intersection(const Handle_Visual3d_HSetOfLight &B) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfLight Difference(const Handle_Visual3d_HSetOfLight &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Visual3d_Light &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const Handle_Visual3d_HSetOfLight &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const Handle_Visual3d_HSetOfLight &S) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfLight ShallowCopy() const;
-		%feature("autodoc", "1");
-		const Visual3d_SetOfLight & Set() const;
-		%feature("autodoc", "1");
-		Visual3d_SetOfLight & ChangeSet();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_HSetOfLight {
-	Handle_Visual3d_HSetOfLight GetHandle() {
-	return *(Handle_Visual3d_HSetOfLight*) &$self;
-	}
-};
-%extend Visual3d_HSetOfLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_HSetOfLight {
-	~Visual3d_HSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_HSetOfLight\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_TransientManager;
-class Visual3d_TransientManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_TransientManager();
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
-		%feature("autodoc", "1");
-		void EndDraw(const Standard_Boolean Synchronize=0);
-		%feature("autodoc", "1");
-		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
-		%feature("autodoc", "1");
-		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
-		%feature("autodoc", "1");
-		void EndAddDraw();
-		%feature("autodoc", "1");
-		void BeginPolyline();
-		%feature("autodoc", "1");
-		void BeginPolygon();
-		%feature("autodoc", "1");
-		void BeginTriangleMesh();
-		%feature("autodoc", "1");
-		void BeginMarker();
-		%feature("autodoc", "1");
-		void BeginBezier();
-		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		void ClosePrimitive();
-		%feature("autodoc", "1");
-		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_NORMAL, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_NORMAL);
-		%feature("autodoc", "1");
-		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
-		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
-		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
-		%feature("autodoc", "1");
-		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
-		%feature("autodoc", "1");
-		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_TransientManager {
-	Handle_Visual3d_TransientManager GetHandle() {
-	return *(Handle_Visual3d_TransientManager*) &$self;
-	}
-};
-%extend Visual3d_TransientManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_TransientManager {
-	~Visual3d_TransientManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientManager\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_SetIteratorOfSetOfView;
-class Visual3d_SetIteratorOfSetOfView {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_SetIteratorOfSetOfView();
-		%feature("autodoc", "1");
-		Visual3d_SetIteratorOfSetOfView(const Visual3d_SetOfView &S);
-		%feature("autodoc", "1");
-		void Initialize(const Visual3d_SetOfView &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Visual3d_View & Value() const;
-
-};
-%extend Visual3d_SetIteratorOfSetOfView {
-	~Visual3d_SetIteratorOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfView\n");}
-	}
-};
-
-
 %nodefaultctor Visual3d_SetIteratorOfSetOfClipPlane;
 class Visual3d_SetIteratorOfSetOfClipPlane {
 	public:
@@ -2557,6 +2612,81 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 };
 
 
+%nodefaultctor Visual3d_TransientManager;
+class Visual3d_TransientManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Visual3d_TransientManager();
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean BeginDraw(const Handle_Visual3d_View &aView, const Standard_Boolean DoubleBuffer=0, const Standard_Boolean RetainMode=0);
+		%feature("autodoc", "1");
+		void EndDraw(const Standard_Boolean Synchronize=0);
+		%feature("autodoc", "1");
+		void ClearDraw(const Handle_Visual3d_View &aView, const Standard_Boolean aFlush=1);
+		%feature("autodoc", "1");
+		Standard_Boolean BeginAddDraw(const Handle_Visual3d_View &aView);
+		%feature("autodoc", "1");
+		void EndAddDraw();
+		%feature("autodoc", "1");
+		void BeginPolyline();
+		%feature("autodoc", "1");
+		void BeginPolygon();
+		%feature("autodoc", "1");
+		void BeginTriangleMesh();
+		%feature("autodoc", "1");
+		void BeginMarker();
+		%feature("autodoc", "1");
+		void BeginBezier();
+		%feature("autodoc", "1");
+		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
+		%feature("autodoc", "1");
+		void ClosePrimitive();
+		%feature("autodoc", "1");
+		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_NORMAL, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_NORMAL);
+		%feature("autodoc", "1");
+		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
+		%feature("autodoc", "1");
+		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
+		%feature("autodoc", "1");
+		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
+		%feature("autodoc", "1");
+		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
+		%feature("autodoc", "1");
+		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
+		%feature("autodoc", "1");
+		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Visual3d_TransientManager {
+	Handle_Visual3d_TransientManager GetHandle() {
+	return *(Handle_Visual3d_TransientManager*) &$self;
+	}
+};
+%extend Visual3d_TransientManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Visual3d_TransientManager {
+	~Visual3d_TransientManager() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientManager\n");}
+	}
+};
+
+
 %nodefaultctor Visual3d_PickError;
 class Visual3d_PickError : public Standard_OutOfRange {
 	public:
@@ -2627,105 +2757,6 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 };
 
 
-%nodefaultctor Visual3d_ViewManager;
-class Visual3d_ViewManager : public Graphic3d_StructureManager {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_ViewManager(const Handle_Aspect_GraphicDevice &aDevice);
-		%feature("autodoc", "1");
-		void Activate();
-		%feature("autodoc", "1");
-		void Deactivate();
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc", "1");
-		void Redraw() const;
-		%feature("autodoc", "1");
-		void Remove();
-		%feature("autodoc", "1");
-		virtual		void Update() const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView ActivatedView() const;
-		%feature("autodoc", "1");
-		void ConvertCoord(const Handle_Aspect_Window &AWindow, const Graphic3d_Vertex &AVertex, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Graphic3d_Vertex ConvertCoord(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV) const;
-		%feature("autodoc", "1");
-		void ConvertCoordWithProj(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV, Graphic3d_Vertex & Point, Graphic3d_Vector & Proj) const;
-		%feature("autodoc", "1");
-		Handle_Visual3d_HSetOfView DefinedView() const;
-		%feature("autodoc", "1");
-		Standard_Integer MaxNumOfViews() const;
-		%feature("autodoc", "1");
-		Standard_Integer Identification(const Handle_Visual3d_View &AView);
-		%feature("autodoc", "1");
-		Visual3d_PickDescriptor Pick(const Visual3d_ContextPick &CTX, const Handle_Aspect_Window &AWindow, const Standard_Integer AX, const Standard_Integer AY);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Identification(const Standard_Integer AId) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Identification() const;
-		%feature("autodoc", "1");
-		virtual		void ChangeDisplayPriority(const Handle_Graphic3d_Structure &AStructure, const Standard_Integer OldPriority, const Standard_Integer NewPriority);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_Graphic3d_Structure &AStructure, const Standard_Boolean WithDestruction);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_Graphic3d_Structure &AMother, const Handle_Graphic3d_Structure &ADaughter);
-		%feature("autodoc", "1");
-		virtual		void Disconnect(const Handle_Graphic3d_Structure &AMother, const Handle_Graphic3d_Structure &ADaughter);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		virtual		void Erase(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		virtual		void Highlight(const Handle_Graphic3d_Structure &AStructure, const Aspect_TypeOfHighlightMethod AMethod);
-		%feature("autodoc", "1");
-		virtual		void SetTransform(const Handle_Graphic3d_Structure &AStructure, const TColStd_Array2OfReal &ATrsf);
-		%feature("autodoc", "1");
-		virtual		void UnHighlight();
-		%feature("autodoc", "1");
-		virtual		void UnHighlight(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		Standard_Boolean ViewExists(const Handle_Aspect_Window &AWindow, Graphic3d_CView & TheCView) const;
-		%feature("autodoc", "1");
-		const Handle_Visual3d_Layer & UnderLayer() const;
-		%feature("autodoc", "1");
-		const Handle_Visual3d_Layer & OverLayer() const;
-		%feature("autodoc", "1");
-		virtual		void ReCompute(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		virtual		void ReCompute(const Handle_Graphic3d_Structure &AStructure, const Handle_Graphic3d_DataStructureManager &AProjector);
-		%feature("autodoc", "1");
-		Standard_Boolean Transparency() const;
-		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Boolean AFlag);
-		%feature("autodoc", "1");
-		Standard_Boolean ZBufferAuto() const;
-		%feature("autodoc", "1");
-		void SetZBufferAuto(const Standard_Boolean AFlag);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Visual3d_ViewManager {
-	Handle_Visual3d_ViewManager GetHandle() {
-	return *(Handle_Visual3d_ViewManager*) &$self;
-	}
-};
-%extend Visual3d_ViewManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Visual3d_ViewManager {
-	~Visual3d_ViewManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewManager\n");}
-	}
-};
-
-
 %nodefaultctor Visual3d_ContextPickDefinitionError;
 class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2790,35 +2821,6 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 	~Visual3d_ClipPlane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ClipPlane\n");}
-	}
-};
-
-
-%nodefaultctor Visual3d_PickPath;
-class Visual3d_PickPath {
-	public:
-		%feature("autodoc", "1");
-		Visual3d_PickPath();
-		%feature("autodoc", "1");
-		Visual3d_PickPath(const Standard_Integer AElemNumber, const Standard_Integer APickId, const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		void SetElementNumber(const Standard_Integer AElemNumber);
-		%feature("autodoc", "1");
-		void SetPickIdentifier(const Standard_Integer APickId);
-		%feature("autodoc", "1");
-		void SetStructIdentifier(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		Standard_Integer ElementNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer PickIdentifier() const;
-		%feature("autodoc", "1");
-		Handle_Graphic3d_Structure StructIdentifier() const;
-
-};
-%extend Visual3d_PickPath {
-	~Visual3d_PickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_PickPath\n");}
 	}
 };
 

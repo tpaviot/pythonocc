@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MAT2d
 
+%include MAT2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -530,6 +532,37 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 };
 
 
+%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
+class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
+	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
+	}
+};
+
+
 %nodefaultctor MAT2d_DataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 	public:
@@ -797,41 +830,6 @@ class MAT2d_BiInt {
 };
 
 
-%nodefaultctor MAT2d_DataMapOfIntegerBisec;
-class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerBisec(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerBisec & Assign(const MAT2d_DataMapOfIntegerBisec &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Bisector_Bisec &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Bisector_Bisec & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Bisector_Bisec & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Bisector_Bisec & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Bisector_Bisec & operator()(const Standard_Integer &K);
-
-};
-%extend MAT2d_DataMapOfIntegerBisec {
-	~MAT2d_DataMapOfIntegerBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerBisec\n");}
-	}
-};
-
-
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfConnexion;
 class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 	public:
@@ -857,61 +855,6 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 	~MAT2d_SequenceNodeOfSequenceOfConnexion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfConnexion\n");}
-	}
-};
-
-
-%nodefaultctor MAT2d_SequenceOfConnexion;
-class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_SequenceOfConnexion();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void Append(MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void Prepend(MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & First() const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend MAT2d_SequenceOfConnexion {
-	~MAT2d_SequenceOfConnexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");}
 	}
 };
 
@@ -970,41 +913,6 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 	~MAT2d_DataMapOfIntegerVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerVec2d\n");}
-	}
-};
-
-
-%nodefaultctor MAT2d_DataMapOfIntegerConnexion;
-class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerConnexion(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerConnexion & Assign(const MAT2d_DataMapOfIntegerConnexion &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
-
-};
-%extend MAT2d_DataMapOfIntegerConnexion {
-	~MAT2d_DataMapOfIntegerConnexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -1434,6 +1342,23 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 };
 
 
+%nodefaultctor MAT2d_MapBiIntHasher;
+class MAT2d_MapBiIntHasher {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const MAT2d_BiInt &Key1, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const MAT2d_BiInt &Key1, const MAT2d_BiInt &Key2);
+
+};
+%extend MAT2d_MapBiIntHasher {
+	~MAT2d_MapBiIntHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_MapBiIntHasher\n");}
+	}
+};
+
+
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
 	public:
@@ -1494,6 +1419,41 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 	~MAT2d_DataMapOfIntegerSequenceOfConnexion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerSequenceOfConnexion\n");}
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapOfIntegerConnexion;
+class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerConnexion(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerConnexion & Assign(const MAT2d_DataMapOfIntegerConnexion &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & operator()(const Standard_Integer &K);
+
+};
+%extend MAT2d_DataMapOfIntegerConnexion {
+	~MAT2d_DataMapOfIntegerConnexion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -1562,6 +1522,61 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollectio
 	~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor MAT2d_SequenceOfConnexion;
+class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_SequenceOfConnexion();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void Append(MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void Prepend(MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & First() const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend MAT2d_SequenceOfConnexion {
+	~MAT2d_SequenceOfConnexion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");}
 	}
 };
 
@@ -1650,56 +1665,6 @@ class MAT2d_MiniPath {
 };
 
 
-%nodefaultctor MAT2d_MapBiIntHasher;
-class MAT2d_MapBiIntHasher {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_MapBiIntHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MAT2d_BiInt &Key1, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MAT2d_BiInt &Key1, const MAT2d_BiInt &Key2);
-
-};
-%extend MAT2d_MapBiIntHasher {
-	~MAT2d_MapBiIntHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_MapBiIntHasher\n");}
-	}
-};
-
-
-%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
-class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
-	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
-	}
-};
-
-
 %nodefaultctor MAT2d_Mat2d;
 class MAT2d_Mat2d {
 	public:
@@ -1727,5 +1692,40 @@ class MAT2d_Mat2d {
 	~MAT2d_Mat2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_Mat2d\n");}
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapOfIntegerBisec;
+class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerBisec(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerBisec & Assign(const MAT2d_DataMapOfIntegerBisec &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Bisector_Bisec &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Bisector_Bisec & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Bisector_Bisec & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Bisector_Bisec & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Bisector_Bisec & operator()(const Standard_Integer &K);
+
+};
+%extend MAT2d_DataMapOfIntegerBisec {
+	~MAT2d_DataMapOfIntegerBisec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerBisec\n");}
 	}
 };

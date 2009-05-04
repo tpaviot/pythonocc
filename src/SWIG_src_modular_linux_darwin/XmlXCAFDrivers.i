@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlXCAFDrivers
 
+%include XmlXCAFDrivers_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -227,8 +229,6 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 %nodefaultctor XmlXCAFDrivers;
 class XmlXCAFDrivers {
 	public:
-		%feature("autodoc", "1");
-		XmlXCAFDrivers();
 		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 

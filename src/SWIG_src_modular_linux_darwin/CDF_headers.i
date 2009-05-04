@@ -74,7 +74,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<CDF.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>

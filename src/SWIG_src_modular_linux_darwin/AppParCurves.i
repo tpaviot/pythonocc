@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AppParCurves
 
+%include AppParCurves_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -199,32 +201,6 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
-class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve();
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
-	AppParCurves_HArray1OfMultiBSpCurve* GetObject() {
-	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
-	}
-};
-%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
-	~Handle_AppParCurves_HArray1OfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiPoint;
 class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	public:
@@ -299,6 +275,32 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 	~Handle_AppParCurves_HArray1OfConstraintCouple() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
+class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve();
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
+	AppParCurves_HArray1OfMultiBSpCurve* GetObject() {
+	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
+	}
+};
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
+	~Handle_AppParCurves_HArray1OfMultiBSpCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");}
 	}
 };
 
@@ -972,8 +974,6 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 %nodefaultctor AppParCurves;
 class AppParCurves {
 	public:
-		%feature("autodoc", "1");
-		AppParCurves();
 		%feature("autodoc", "1");
 		void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A);
 		%feature("autodoc", "1");

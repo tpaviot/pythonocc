@@ -30,7 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<IGESConvGeom.hxx>
 #include<Handle_IGESGeom_SplineCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>

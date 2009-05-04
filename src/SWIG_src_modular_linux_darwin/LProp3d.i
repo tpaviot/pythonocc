@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module LProp3d
 
+%include LProp3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -118,8 +120,6 @@ Standard_Integer & function transformation
 class LProp3d_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		LProp3d_CurveTool();
-		%feature("autodoc", "1");
 		void Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
 		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
@@ -139,33 +139,6 @@ class LProp3d_CurveTool {
 	~LProp3d_CurveTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LProp3d_CurveTool\n");}
-	}
-};
-
-
-%nodefaultctor LProp3d_SurfaceTool;
-class LProp3d_SurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		LProp3d_SurfaceTool();
-		%feature("autodoc", "1");
-		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
-		%feature("autodoc", "1");
-		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
-		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend LProp3d_SurfaceTool {
-	~LProp3d_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp3d_SurfaceTool\n");}
 	}
 };
 
@@ -207,6 +180,31 @@ class LProp3d_CLProps {
 	~LProp3d_CLProps() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LProp3d_CLProps\n");}
+	}
+};
+
+
+%nodefaultctor LProp3d_SurfaceTool;
+class LProp3d_SurfaceTool {
+	public:
+		%feature("autodoc", "1");
+		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		%feature("autodoc", "1");
+		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
+		%feature("autodoc", "1");
+		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
+		%feature("autodoc", "1");
+		Standard_Integer Continuity(const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc", "1");
+		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend LProp3d_SurfaceTool {
+	~LProp3d_SurfaceTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LProp3d_SurfaceTool\n");}
 	}
 };
 

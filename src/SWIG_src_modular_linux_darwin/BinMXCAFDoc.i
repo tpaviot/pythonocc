@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinMXCAFDoc
 
+%include BinMXCAFDoc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -166,28 +168,28 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
-class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
+%nodefaultctor Handle_BinMXCAFDoc_GraphNodeDriver;
+class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver();
+		Handle_BinMXCAFDoc_GraphNodeDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		Handle_BinMXCAFDoc_GraphNodeDriver(const Handle_BinMXCAFDoc_GraphNodeDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
+		Handle_BinMXCAFDoc_GraphNodeDriver(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BinMXCAFDoc_LocationDriver {
-	BinMXCAFDoc_LocationDriver* GetObject() {
-	return (BinMXCAFDoc_LocationDriver*)$self->Access();
+%extend Handle_BinMXCAFDoc_GraphNodeDriver {
+	BinMXCAFDoc_GraphNodeDriver* GetObject() {
+	return (BinMXCAFDoc_GraphNodeDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMXCAFDoc_LocationDriver {
-	~Handle_BinMXCAFDoc_LocationDriver() {
+%extend Handle_BinMXCAFDoc_GraphNodeDriver {
+	~Handle_BinMXCAFDoc_GraphNodeDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_LocationDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
 
@@ -218,6 +220,32 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 };
 
 
+%nodefaultctor Handle_BinMXCAFDoc_CentroidDriver;
+class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver(const Handle_BinMXCAFDoc_CentroidDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver(const BinMXCAFDoc_CentroidDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_CentroidDriver {
+	BinMXCAFDoc_CentroidDriver* GetObject() {
+	return (BinMXCAFDoc_CentroidDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMXCAFDoc_CentroidDriver {
+	~Handle_BinMXCAFDoc_CentroidDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_CentroidDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BinMXCAFDoc_ColorDriver;
 class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -240,32 +268,6 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 	~Handle_BinMXCAFDoc_ColorDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_ColorDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BinMXCAFDoc_DocumentToolDriver;
-class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver();
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver(const BinMXCAFDoc_DocumentToolDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMXCAFDoc_DocumentToolDriver {
-	BinMXCAFDoc_DocumentToolDriver* GetObject() {
-	return (BinMXCAFDoc_DocumentToolDriver*)$self->Access();
-	}
-};
-%extend Handle_BinMXCAFDoc_DocumentToolDriver {
-	~Handle_BinMXCAFDoc_DocumentToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
 
@@ -296,28 +298,28 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_BinMXCAFDoc_CentroidDriver;
-class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
+%nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
+class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver();
+		Handle_BinMXCAFDoc_LocationDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver(const Handle_BinMXCAFDoc_CentroidDriver &aHandle);
+		Handle_BinMXCAFDoc_LocationDriver(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver(const BinMXCAFDoc_CentroidDriver *anItem);
+		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BinMXCAFDoc_CentroidDriver {
-	BinMXCAFDoc_CentroidDriver* GetObject() {
-	return (BinMXCAFDoc_CentroidDriver*)$self->Access();
+%extend Handle_BinMXCAFDoc_LocationDriver {
+	BinMXCAFDoc_LocationDriver* GetObject() {
+	return (BinMXCAFDoc_LocationDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMXCAFDoc_CentroidDriver {
-	~Handle_BinMXCAFDoc_CentroidDriver() {
+%extend Handle_BinMXCAFDoc_LocationDriver {
+	~Handle_BinMXCAFDoc_LocationDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_CentroidDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_LocationDriver\n");}
 	}
 };
 
@@ -348,28 +350,28 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_BinMXCAFDoc_GraphNodeDriver;
-class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
+%nodefaultctor Handle_BinMXCAFDoc_DocumentToolDriver;
+class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver();
+		Handle_BinMXCAFDoc_DocumentToolDriver();
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver(const Handle_BinMXCAFDoc_GraphNodeDriver &aHandle);
+		Handle_BinMXCAFDoc_DocumentToolDriver(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver(const BinMXCAFDoc_GraphNodeDriver *anItem);
+		Handle_BinMXCAFDoc_DocumentToolDriver(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BinMXCAFDoc_GraphNodeDriver {
-	BinMXCAFDoc_GraphNodeDriver* GetObject() {
-	return (BinMXCAFDoc_GraphNodeDriver*)$self->Access();
+%extend Handle_BinMXCAFDoc_DocumentToolDriver {
+	BinMXCAFDoc_DocumentToolDriver* GetObject() {
+	return (BinMXCAFDoc_DocumentToolDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMXCAFDoc_GraphNodeDriver {
-	~Handle_BinMXCAFDoc_GraphNodeDriver() {
+%extend Handle_BinMXCAFDoc_DocumentToolDriver {
+	~Handle_BinMXCAFDoc_DocumentToolDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_GraphNodeDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
 
@@ -641,8 +643,6 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 %nodefaultctor BinMXCAFDoc;
 class BinMXCAFDoc {
 	public:
-		%feature("autodoc", "1");
-		BinMXCAFDoc();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
 

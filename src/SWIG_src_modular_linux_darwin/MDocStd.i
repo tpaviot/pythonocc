@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MDocStd
 
+%include MDocStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -218,32 +220,6 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 };
 
 
-%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
-class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDocStd_DocumentStorageDriver {
-	MDocStd_DocumentStorageDriver* GetObject() {
-	return (MDocStd_DocumentStorageDriver*)$self->Access();
-	}
-};
-%extend Handle_MDocStd_DocumentStorageDriver {
-	~Handle_MDocStd_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
 class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -270,11 +246,35 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 };
 
 
+%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
+class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDocStd_DocumentStorageDriver {
+	MDocStd_DocumentStorageDriver* GetObject() {
+	return (MDocStd_DocumentStorageDriver*)$self->Access();
+	}
+};
+%extend Handle_MDocStd_DocumentStorageDriver {
+	~Handle_MDocStd_DocumentStorageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");}
+	}
+};
+
+
 %nodefaultctor MDocStd;
 class MDocStd {
 	public:
-		%feature("autodoc", "1");
-		MDocStd();
 		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
@@ -347,6 +347,43 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 	~MDocStd_StdMapNodeOfPersistentMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");}
+	}
+};
+
+
+%nodefaultctor MDocStd_DocumentStorageDriver;
+class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		MDocStd_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_PCDM_Document CreateDocument();
+		%feature("autodoc", "1");
+		void Paste(const Handle_TDocStd_Document &TDOC, const Handle_PDocStd_Document &PDOC, const Handle_MDF_SRelocationTable &aReloc);
+		%feature("autodoc", "1");
+		virtual		Handle_PCDM_Document Make(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MDocStd_DocumentStorageDriver {
+	Handle_MDocStd_DocumentStorageDriver GetHandle() {
+	return *(Handle_MDocStd_DocumentStorageDriver*) &$self;
+	}
+};
+%extend MDocStd_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MDocStd_DocumentStorageDriver {
+	~MDocStd_DocumentStorageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDocStd_DocumentStorageDriver\n");}
 	}
 };
 
@@ -469,43 +506,6 @@ class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 };
 
 
-%nodefaultctor MDocStd_DocumentStorageDriver;
-class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
-	public:
-		%feature("autodoc", "1");
-		MDocStd_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_PCDM_Document CreateDocument();
-		%feature("autodoc", "1");
-		void Paste(const Handle_TDocStd_Document &TDOC, const Handle_PDocStd_Document &PDOC, const Handle_MDF_SRelocationTable &aReloc);
-		%feature("autodoc", "1");
-		virtual		Handle_PCDM_Document Make(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SchemaName() const;
-		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MDocStd_DocumentStorageDriver {
-	Handle_MDocStd_DocumentStorageDriver GetHandle() {
-	return *(Handle_MDocStd_DocumentStorageDriver*) &$self;
-	}
-};
-%extend MDocStd_DocumentStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MDocStd_DocumentStorageDriver {
-	~MDocStd_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_DocumentStorageDriver\n");}
-	}
-};
-
-
 %nodefaultctor MDocStd_XLinkStorageDriver;
 class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	public:
@@ -537,6 +537,33 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	~MDocStd_XLinkStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDocStd_XLinkStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor MDocStd_PersistentMap;
+class MDocStd_PersistentMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap & Assign(const MDocStd_PersistentMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
+
+};
+%extend MDocStd_PersistentMap {
+	~MDocStd_PersistentMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDocStd_PersistentMap\n");}
 	}
 };
 
@@ -588,32 +615,5 @@ class MDocStd_DocEntryList {
 	~MDocStd_DocEntryList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDocStd_DocEntryList\n");}
-	}
-};
-
-
-%nodefaultctor MDocStd_PersistentMap;
-class MDocStd_PersistentMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MDocStd_PersistentMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MDocStd_PersistentMap & Assign(const MDocStd_PersistentMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
-
-};
-%extend MDocStd_PersistentMap {
-	~MDocStd_PersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_PersistentMap\n");}
 	}
 };

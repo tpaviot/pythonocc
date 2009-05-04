@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMDataStd
 
+%include XmlMDataStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,6 +116,32 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor Handle_XmlMDataStd_PointDriver;
+class Handle_XmlMDataStd_PointDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver(const Handle_XmlMDataStd_PointDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver(const XmlMDataStd_PointDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_PointDriver {
+	XmlMDataStd_PointDriver* GetObject() {
+	return (XmlMDataStd_PointDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDataStd_PointDriver {
+	~Handle_XmlMDataStd_PointDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PointDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_IntPackedMapDriver;
 class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -162,32 +190,6 @@ class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMDataStd_BooleanListDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_BooleanListDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_PlacementDriver;
-class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PlacementDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PlacementDriver(const Handle_XmlMDataStd_PlacementDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PlacementDriver(const XmlMDataStd_PlacementDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_PlacementDriver {
-	XmlMDataStd_PlacementDriver* GetObject() {
-	return (XmlMDataStd_PlacementDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMDataStd_PlacementDriver {
-	~Handle_XmlMDataStd_PlacementDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PlacementDriver\n");}
 	}
 };
 
@@ -296,6 +298,32 @@ class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 };
 
 
+%nodefaultctor Handle_XmlMDataStd_ConstraintDriver;
+class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver(const Handle_XmlMDataStd_ConstraintDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver(const XmlMDataStd_ConstraintDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_ConstraintDriver {
+	XmlMDataStd_ConstraintDriver* GetObject() {
+	return (XmlMDataStd_ConstraintDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDataStd_ConstraintDriver {
+	~Handle_XmlMDataStd_ConstraintDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ConstraintDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_CommentDriver;
 class Handle_XmlMDataStd_CommentDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -344,32 +372,6 @@ class Handle_XmlMDataStd_ReferenceArrayDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMDataStd_ReferenceArrayDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ReferenceArrayDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_ShapeDriver;
-class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver(const Handle_XmlMDataStd_ShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver(const XmlMDataStd_ShapeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_ShapeDriver {
-	XmlMDataStd_ShapeDriver* GetObject() {
-	return (XmlMDataStd_ShapeDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMDataStd_ShapeDriver {
-	~Handle_XmlMDataStd_ShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ShapeDriver\n");}
 	}
 };
 
@@ -426,6 +428,32 @@ class Handle_XmlMDataStd_ExtStringListDriver : public Handle_XmlMDF_ADriver {
 };
 
 
+%nodefaultctor Handle_XmlMDataStd_PlacementDriver;
+class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver(const Handle_XmlMDataStd_PlacementDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver(const XmlMDataStd_PlacementDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_PlacementDriver {
+	XmlMDataStd_PlacementDriver* GetObject() {
+	return (XmlMDataStd_PlacementDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDataStd_PlacementDriver {
+	~Handle_XmlMDataStd_PlacementDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PlacementDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_NoteBookDriver;
 class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -448,32 +476,6 @@ class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMDataStd_NoteBookDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_NoteBookDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_ConstraintDriver;
-class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ConstraintDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ConstraintDriver(const Handle_XmlMDataStd_ConstraintDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ConstraintDriver(const XmlMDataStd_ConstraintDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_ConstraintDriver {
-	XmlMDataStd_ConstraintDriver* GetObject() {
-	return (XmlMDataStd_ConstraintDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMDataStd_ConstraintDriver {
-	~Handle_XmlMDataStd_ConstraintDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ConstraintDriver\n");}
 	}
 };
 
@@ -556,6 +558,32 @@ class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 };
 
 
+%nodefaultctor Handle_XmlMDataStd_ShapeDriver;
+class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver(const Handle_XmlMDataStd_ShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver(const XmlMDataStd_ShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_ShapeDriver {
+	XmlMDataStd_ShapeDriver* GetObject() {
+	return (XmlMDataStd_ShapeDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDataStd_ShapeDriver {
+	~Handle_XmlMDataStd_ShapeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ShapeDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_RealDriver;
 class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -634,6 +662,32 @@ class Handle_XmlMDataStd_DirectoryDriver : public Handle_XmlMDF_ADriver {
 };
 
 
+%nodefaultctor Handle_XmlMDataStd_UAttributeDriver;
+class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver(const Handle_XmlMDataStd_UAttributeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver(const XmlMDataStd_UAttributeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_UAttributeDriver {
+	XmlMDataStd_UAttributeDriver* GetObject() {
+	return (XmlMDataStd_UAttributeDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMDataStd_UAttributeDriver {
+	~Handle_XmlMDataStd_UAttributeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_UAttributeDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_IntegerArrayDriver;
 class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -660,28 +714,28 @@ class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_UAttributeDriver;
-class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_TreeNodeDriver;
+class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_UAttributeDriver();
+		Handle_XmlMDataStd_TreeNodeDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_UAttributeDriver(const Handle_XmlMDataStd_UAttributeDriver &aHandle);
+		Handle_XmlMDataStd_TreeNodeDriver(const Handle_XmlMDataStd_TreeNodeDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_UAttributeDriver(const XmlMDataStd_UAttributeDriver *anItem);
+		Handle_XmlMDataStd_TreeNodeDriver(const XmlMDataStd_TreeNodeDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_UAttributeDriver {
-	XmlMDataStd_UAttributeDriver* GetObject() {
-	return (XmlMDataStd_UAttributeDriver*)$self->Access();
+%extend Handle_XmlMDataStd_TreeNodeDriver {
+	XmlMDataStd_TreeNodeDriver* GetObject() {
+	return (XmlMDataStd_TreeNodeDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMDataStd_UAttributeDriver {
-	~Handle_XmlMDataStd_UAttributeDriver() {
+%extend Handle_XmlMDataStd_TreeNodeDriver {
+	~Handle_XmlMDataStd_TreeNodeDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_UAttributeDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_TreeNodeDriver\n");}
 	}
 };
 
@@ -842,32 +896,6 @@ class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_PointDriver;
-class Handle_XmlMDataStd_PointDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PointDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PointDriver(const Handle_XmlMDataStd_PointDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PointDriver(const XmlMDataStd_PointDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_PointDriver {
-	XmlMDataStd_PointDriver* GetObject() {
-	return (XmlMDataStd_PointDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMDataStd_PointDriver {
-	~Handle_XmlMDataStd_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PointDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlMDataStd_AxisDriver;
 class Handle_XmlMDataStd_AxisDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -942,32 +970,6 @@ class Handle_XmlMDataStd_RealArrayDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMDataStd_RealArrayDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_RealArrayDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_TreeNodeDriver;
-class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TreeNodeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TreeNodeDriver(const Handle_XmlMDataStd_TreeNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TreeNodeDriver(const XmlMDataStd_TreeNodeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_TreeNodeDriver {
-	XmlMDataStd_TreeNodeDriver* GetObject() {
-	return (XmlMDataStd_TreeNodeDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMDataStd_TreeNodeDriver {
-	~Handle_XmlMDataStd_TreeNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_TreeNodeDriver\n");}
 	}
 };
 
@@ -1328,6 +1330,39 @@ class XmlMDataStd_PointDriver : public XmlMDF_ADriver {
 };
 
 
+%nodefaultctor XmlMDataStd_ExtStringArrayDriver;
+class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_ExtStringArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_ExtStringArrayDriver {
+	Handle_XmlMDataStd_ExtStringArrayDriver GetHandle() {
+	return *(Handle_XmlMDataStd_ExtStringArrayDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_ExtStringArrayDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XmlMDataStd_ExtStringArrayDriver {
+	~XmlMDataStd_ExtStringArrayDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_ExtStringArrayDriver\n");}
+	}
+};
+
+
 %nodefaultctor XmlMDataStd_RealArrayDriver;
 class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -1423,6 +1458,39 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 	~XmlMDataStd_RelationDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_RelationDriver\n");}
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_PlacementDriver;
+class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_PlacementDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_PlacementDriver {
+	Handle_XmlMDataStd_PlacementDriver GetHandle() {
+	return *(Handle_XmlMDataStd_PlacementDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_PlacementDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XmlMDataStd_PlacementDriver {
+	~XmlMDataStd_PlacementDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PlacementDriver\n");}
 	}
 };
 
@@ -1658,44 +1726,9 @@ class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
 };
 
 
-%nodefaultctor XmlMDataStd_NameDriver;
-class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_NameDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_NameDriver {
-	Handle_XmlMDataStd_NameDriver GetHandle() {
-	return *(Handle_XmlMDataStd_NameDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_NameDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XmlMDataStd_NameDriver {
-	~XmlMDataStd_NameDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_NameDriver\n");}
-	}
-};
-
-
 %nodefaultctor XmlMDataStd;
 class XmlMDataStd {
 	public:
-		%feature("autodoc", "1");
-		XmlMDataStd();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 		%feature("autodoc", "1");
@@ -1708,39 +1741,6 @@ class XmlMDataStd {
 	~XmlMDataStd() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd\n");}
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_PlacementDriver;
-class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_PlacementDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_PlacementDriver {
-	Handle_XmlMDataStd_PlacementDriver GetHandle() {
-	return *(Handle_XmlMDataStd_PlacementDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_PlacementDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XmlMDataStd_PlacementDriver {
-	~XmlMDataStd_PlacementDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PlacementDriver\n");}
 	}
 };
 
@@ -1778,39 +1778,6 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 };
 
 
-%nodefaultctor XmlMDataStd_PatternStdDriver;
-class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_PatternStdDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_PatternStdDriver {
-	Handle_XmlMDataStd_PatternStdDriver GetHandle() {
-	return *(Handle_XmlMDataStd_PatternStdDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_PatternStdDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XmlMDataStd_PatternStdDriver {
-	~XmlMDataStd_PatternStdDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PatternStdDriver\n");}
-	}
-};
-
-
 %nodefaultctor XmlMDataStd_IntPackedMapDriver;
 class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 	public:
@@ -1844,11 +1811,11 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 };
 
 
-%nodefaultctor XmlMDataStd_ExtStringArrayDriver;
-class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlMDataStd_PatternStdDriver;
+class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMDataStd_ExtStringArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMDataStd_PatternStdDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
@@ -1859,20 +1826,20 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XmlMDataStd_ExtStringArrayDriver {
-	Handle_XmlMDataStd_ExtStringArrayDriver GetHandle() {
-	return *(Handle_XmlMDataStd_ExtStringArrayDriver*) &$self;
+%extend XmlMDataStd_PatternStdDriver {
+	Handle_XmlMDataStd_PatternStdDriver GetHandle() {
+	return *(Handle_XmlMDataStd_PatternStdDriver*) &$self;
 	}
 };
-%extend XmlMDataStd_ExtStringArrayDriver {
+%extend XmlMDataStd_PatternStdDriver {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDataStd_ExtStringArrayDriver {
-	~XmlMDataStd_ExtStringArrayDriver() {
+%extend XmlMDataStd_PatternStdDriver {
+	~XmlMDataStd_PatternStdDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_ExtStringArrayDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PatternStdDriver\n");}
 	}
 };
 
@@ -2075,6 +2042,39 @@ class XmlMDataStd_GeometryDriver : public XmlMDF_ADriver {
 };
 
 
+%nodefaultctor XmlMDataStd_TreeNodeDriver;
+class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_TreeNodeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_TreeNodeDriver {
+	Handle_XmlMDataStd_TreeNodeDriver GetHandle() {
+	return *(Handle_XmlMDataStd_TreeNodeDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_TreeNodeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XmlMDataStd_TreeNodeDriver {
+	~XmlMDataStd_TreeNodeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_TreeNodeDriver\n");}
+	}
+};
+
+
 %nodefaultctor XmlMDataStd_AxisDriver;
 class XmlMDataStd_AxisDriver : public XmlMDF_ADriver {
 	public:
@@ -2108,11 +2108,11 @@ class XmlMDataStd_AxisDriver : public XmlMDF_ADriver {
 };
 
 
-%nodefaultctor XmlMDataStd_TreeNodeDriver;
-class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlMDataStd_NameDriver;
+class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMDataStd_TreeNodeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMDataStd_NameDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
@@ -2123,19 +2123,19 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XmlMDataStd_TreeNodeDriver {
-	Handle_XmlMDataStd_TreeNodeDriver GetHandle() {
-	return *(Handle_XmlMDataStd_TreeNodeDriver*) &$self;
+%extend XmlMDataStd_NameDriver {
+	Handle_XmlMDataStd_NameDriver GetHandle() {
+	return *(Handle_XmlMDataStd_NameDriver*) &$self;
 	}
 };
-%extend XmlMDataStd_TreeNodeDriver {
+%extend XmlMDataStd_NameDriver {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDataStd_TreeNodeDriver {
-	~XmlMDataStd_TreeNodeDriver() {
+%extend XmlMDataStd_NameDriver {
+	~XmlMDataStd_NameDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_TreeNodeDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_NameDriver\n");}
 	}
 };

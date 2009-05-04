@@ -71,7 +71,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<PTopLoc_Location.hxx>
-#include<Quantity_Color.hxx>
 #include<Standard_GUID.hxx>
 #include<gp_Pnt.hxx>
+#include<Quantity_Color.hxx>
 %}

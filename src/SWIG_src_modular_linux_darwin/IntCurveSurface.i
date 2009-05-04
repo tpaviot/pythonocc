@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntCurveSurface
 
+%include IntCurveSurface_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -176,8 +178,6 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 class IntCurveSurface_ThePolyhedronToolOfHInter {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_ThePolyhedronToolOfHInter();
-		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
@@ -295,6 +295,69 @@ class IntCurveSurface_IntersectionPoint {
 };
 
 
+%nodefaultctor IntCurveSurface_TheHCurveTool;
+class IntCurveSurface_TheHCurveTool {
+	public:
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
+		%feature("autodoc", "1");
+		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
+		%feature("autodoc", "1");
+		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+
+};
+%extend IntCurveSurface_TheHCurveTool {
+	~IntCurveSurface_TheHCurveTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");}
+	}
+};
+
+
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
@@ -323,8 +386,6 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
 class IntCurveSurface_TheHSurfaceTool {
 	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_TheHSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
@@ -552,8 +613,6 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 class IntCurveSurface_ThePolygonToolOfHInter {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_ThePolygonToolOfHInter();
-		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 		%feature("autodoc", "1");
 		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
@@ -764,71 +823,6 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 	~IntCurveSurface_SequenceOfSeg() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceOfSeg\n");}
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_TheHCurveTool;
-class IntCurveSurface_TheHCurveTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_TheHCurveTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
-		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
-		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-		%feature("autodoc", "1");
-		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
-
-};
-%extend IntCurveSurface_TheHCurveTool {
-	~IntCurveSurface_TheHCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");}
 	}
 };
 

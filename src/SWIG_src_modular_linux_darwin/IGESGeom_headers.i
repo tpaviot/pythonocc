@@ -215,11 +215,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
+#include<gp_XYZ.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_XY.hxx>
 #include<gp_Pnt2d.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Dir.hxx>
-#include<gp_XYZ.hxx>
 #include<Handle_IGESData_HArray1OfIGESEntity.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
@@ -227,9 +226,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_TColgp_HArray2OfXYZ.hxx>
 #include<gp_Vec.hxx>
-#include<IGESGeom.hxx>
 #include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<gp_Dir.hxx>
 #include<gp_GTrsf.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>
 %}

@@ -76,13 +76,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Face.hxx>
-#include<TopoDS_Solid.hxx>
-#include<TopoDS_CompSolid.hxx>
-#include<TopoDS_Compound.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopLoc_Location.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopoDS_Solid.hxx>
+#include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Compound.hxx>
 %}

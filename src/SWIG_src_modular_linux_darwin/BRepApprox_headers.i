@@ -75,10 +75,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepAdaptor_Surface.hxx>
 #include<IntSurf_Quadric.hxx>
 #include<AppParCurves_MultiBSpCurve.hxx>
+#include<math_FunctionSetRoot.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Vec2d.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
@@ -89,7 +89,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
-#include<math_FunctionSetRoot.hxx>
+#include<gp_Vec2d.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec.hxx>

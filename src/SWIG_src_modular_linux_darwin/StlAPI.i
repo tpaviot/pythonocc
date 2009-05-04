@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StlAPI
 
+%include StlAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -159,8 +161,6 @@ class StlAPI_Reader {
 %nodefaultctor StlAPI;
 class StlAPI {
 	public:
-		%feature("autodoc", "1");
-		StlAPI();
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
 		%feature("autodoc", "1");

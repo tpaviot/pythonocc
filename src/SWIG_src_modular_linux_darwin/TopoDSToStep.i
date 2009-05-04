@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopoDSToStep
 
+%include TopoDSToStep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,12 +114,6 @@ Standard_Integer & function transformation
 %include TopoDSToStep_headers.i
 
 
-enum TopoDSToStep_MakeWireError {
-	TopoDSToStep_WireDone,
-	TopoDSToStep_NonManifoldWire,
-	TopoDSToStep_WireOther,
-	};
-
 enum TopoDSToStep_MakeVertexError {
 	TopoDSToStep_VertexDone,
 	TopoDSToStep_VertexOther,
@@ -147,6 +143,12 @@ enum TopoDSToStep_FacetedError {
 	TopoDSToStep_FacetedDone,
 	TopoDSToStep_SurfaceNotPlane,
 	TopoDSToStep_PCurveNotLinear,
+	};
+
+enum TopoDSToStep_MakeWireError {
+	TopoDSToStep_WireDone,
+	TopoDSToStep_NonManifoldWire,
+	TopoDSToStep_WireOther,
 	};
 
 
@@ -200,8 +202,6 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 %nodefaultctor TopoDSToStep_FacetedTool;
 class TopoDSToStep_FacetedTool {
 	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
@@ -313,29 +313,6 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 };
 
 
-%nodefaultctor TopoDSToStep_MakeStepWire;
-class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepWire();
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepWire(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeWireError Error() const;
-
-};
-%extend TopoDSToStep_MakeStepWire {
-	~TopoDSToStep_MakeStepWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
-	}
-};
-
-
 %nodefaultctor TopoDSToStep_Tool;
 class TopoDSToStep_Tool {
 	public:
@@ -393,11 +370,32 @@ class TopoDSToStep_Tool {
 };
 
 
+%nodefaultctor TopoDSToStep_MakeStepWire;
+class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepWire();
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepWire(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeWireError Error() const;
+
+};
+%extend TopoDSToStep_MakeStepWire {
+	~TopoDSToStep_MakeStepWire() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
+	}
+};
+
+
 %nodefaultctor TopoDSToStep;
 class TopoDSToStep {
 	public:
-		%feature("autodoc", "1");
-		TopoDSToStep();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString DecodeBuilderError(const TopoDSToStep_BuilderError E);
 		%feature("autodoc", "1");

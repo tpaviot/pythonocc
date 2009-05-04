@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GccEnt
 
+%include GccEnt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -260,8 +262,6 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 %nodefaultctor GccEnt;
 class GccEnt {
 	public:
-		%feature("autodoc", "1");
-		GccEnt();
 		%feature("autodoc", "1");
 		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");

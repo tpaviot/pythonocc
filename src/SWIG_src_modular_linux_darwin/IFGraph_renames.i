@@ -1,0 +1,11 @@
+%rename(Compare) IFGraph_Compare;
+%rename(SCRoots) IFGraph_SCRoots;
+%rename(AllConnected) IFGraph_AllConnected;
+%rename(ExternalSources) IFGraph_ExternalSources;
+%rename(SubPartsIterator) IFGraph_SubPartsIterator;
+%rename(AllShared) IFGraph_AllShared;
+%rename(Cumulate) IFGraph_Cumulate;
+%rename(Cycles) IFGraph_Cycles;
+%rename(StrongComponants) IFGraph_StrongComponants;
+%rename(ConnectedComponants) IFGraph_ConnectedComponants;
+%rename(Articulations) IFGraph_Articulations;

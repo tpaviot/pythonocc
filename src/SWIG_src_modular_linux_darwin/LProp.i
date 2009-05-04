@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module LProp
 
+%include LProp_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -324,6 +326,23 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor LProp_AnalyticCurInf;
+class LProp_AnalyticCurInf {
+	public:
+		%feature("autodoc", "1");
+		LProp_AnalyticCurInf();
+		%feature("autodoc", "1");
+		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
+
+};
+%extend LProp_AnalyticCurInf {
+	~LProp_AnalyticCurInf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LProp_AnalyticCurInf\n");}
+	}
+};
+
+
 %nodefaultctor LProp_CurAndInf;
 class LProp_CurAndInf {
 	public:
@@ -349,23 +368,6 @@ class LProp_CurAndInf {
 	~LProp_CurAndInf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LProp_CurAndInf\n");}
-	}
-};
-
-
-%nodefaultctor LProp_AnalyticCurInf;
-class LProp_AnalyticCurInf {
-	public:
-		%feature("autodoc", "1");
-		LProp_AnalyticCurInf();
-		%feature("autodoc", "1");
-		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
-
-};
-%extend LProp_AnalyticCurInf {
-	~LProp_AnalyticCurInf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp_AnalyticCurInf\n");}
 	}
 };
 

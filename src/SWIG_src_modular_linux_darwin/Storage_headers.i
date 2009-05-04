@@ -118,7 +118,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Standard_SStream.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
-#include<Storage.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>
 %}

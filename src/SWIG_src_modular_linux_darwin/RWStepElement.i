@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepElement
 
+%include RWStepElement_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,6 +116,27 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
+class RWStepElement_RWSurface3dElementDescriptor {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWSurface3dElementDescriptor();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepElement_RWSurface3dElementDescriptor {
+	~RWStepElement_RWSurface3dElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
+	}
+};
+
+
 %nodefaultctor RWStepElement_RWAnalysisItemWithinRepresentation;
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
@@ -173,27 +196,6 @@ class RWStepElement_RWCurveElementSectionDefinition {
 	~RWStepElement_RWCurveElementSectionDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");}
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
-class RWStepElement_RWSurface3dElementDescriptor {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurface3dElementDescriptor();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepElement_RWSurface3dElementDescriptor {
-	~RWStepElement_RWSurface3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
 	}
 };
 

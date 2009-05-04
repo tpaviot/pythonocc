@@ -32,5 +32,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<TopoDS_Shape.hxx>
-#include<StlAPI.hxx>
 %}

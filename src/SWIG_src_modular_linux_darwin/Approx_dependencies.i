@@ -166,8 +166,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import GeomAbs.i
 %import AppParCurves.i

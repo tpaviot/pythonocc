@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom
 
+%include Geom_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -162,6 +164,136 @@ class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	~Handle_Geom_Geometry() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Geometry\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_Surface;
+class Handle_Geom_Surface : public Handle_Geom_Geometry {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_Surface();
+		%feature("autodoc", "1");
+		Handle_Geom_Surface(const Handle_Geom_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface(const Geom_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_Surface {
+	Geom_Surface* GetObject() {
+	return (Geom_Surface*)$self->Access();
+	}
+};
+%extend Handle_Geom_Surface {
+	~Handle_Geom_Surface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Surface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_SweptSurface;
+class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface(const Handle_Geom_SweptSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface(const Geom_SweptSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_SweptSurface {
+	Geom_SweptSurface* GetObject() {
+	return (Geom_SweptSurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_SweptSurface {
+	~Handle_Geom_SweptSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SweptSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_SurfaceOfRevolution;
+class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution();
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_SurfaceOfRevolution {
+	Geom_SurfaceOfRevolution* GetObject() {
+	return (Geom_SurfaceOfRevolution*)$self->Access();
+	}
+};
+%extend Handle_Geom_SurfaceOfRevolution {
+	~Handle_Geom_SurfaceOfRevolution() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SurfaceOfRevolution\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_ElementarySurface;
+class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_ElementarySurface();
+		%feature("autodoc", "1");
+		Handle_Geom_ElementarySurface(const Handle_Geom_ElementarySurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_ElementarySurface(const Geom_ElementarySurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_ElementarySurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_ElementarySurface {
+	Geom_ElementarySurface* GetObject() {
+	return (Geom_ElementarySurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_ElementarySurface {
+	~Handle_Geom_ElementarySurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ElementarySurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_ToroidalSurface;
+class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface(const Handle_Geom_ToroidalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface(const Geom_ToroidalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_ToroidalSurface {
+	Geom_ToroidalSurface* GetObject() {
+	return (Geom_ToroidalSurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_ToroidalSurface {
+	~Handle_Geom_ToroidalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ToroidalSurface\n");}
 	}
 };
 
@@ -322,6 +454,58 @@ class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_Geom_Conic;
+class Handle_Geom_Conic : public Handle_Geom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_Conic();
+		%feature("autodoc", "1");
+		Handle_Geom_Conic(const Handle_Geom_Conic &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_Conic(const Geom_Conic *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_Conic const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_Conic {
+	Geom_Conic* GetObject() {
+	return (Geom_Conic*)$self->Access();
+	}
+};
+%extend Handle_Geom_Conic {
+	~Handle_Geom_Conic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Conic\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_Circle;
+class Handle_Geom_Circle : public Handle_Geom_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_Circle();
+		%feature("autodoc", "1");
+		Handle_Geom_Circle(const Handle_Geom_Circle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_Circle(const Geom_Circle *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_Circle {
+	Geom_Circle* GetObject() {
+	return (Geom_Circle*)$self->Access();
+	}
+};
+%extend Handle_Geom_Circle {
+	~Handle_Geom_Circle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Circle\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Geom_Line;
 class Handle_Geom_Line : public Handle_Geom_Curve {
 	public:
@@ -348,32 +532,6 @@ class Handle_Geom_Line : public Handle_Geom_Curve {
 };
 
 
-%nodefaultctor Handle_Geom_Transformation;
-class Handle_Geom_Transformation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation();
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation(const Handle_Geom_Transformation &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation(const Geom_Transformation *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_Transformation {
-	Geom_Transformation* GetObject() {
-	return (Geom_Transformation*)$self->Access();
-	}
-};
-%extend Handle_Geom_Transformation {
-	~Handle_Geom_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Transformation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Geom_Vector;
 class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	public:
@@ -396,110 +554,6 @@ class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	~Handle_Geom_Vector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Vector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_Surface;
-class Handle_Geom_Surface : public Handle_Geom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_Surface();
-		%feature("autodoc", "1");
-		Handle_Geom_Surface(const Handle_Geom_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface(const Geom_Surface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_Surface {
-	Geom_Surface* GetObject() {
-	return (Geom_Surface*)$self->Access();
-	}
-};
-%extend Handle_Geom_Surface {
-	~Handle_Geom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Surface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_ElementarySurface;
-class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface();
-		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface(const Handle_Geom_ElementarySurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface(const Geom_ElementarySurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_ElementarySurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_ElementarySurface {
-	Geom_ElementarySurface* GetObject() {
-	return (Geom_ElementarySurface*)$self->Access();
-	}
-};
-%extend Handle_Geom_ElementarySurface {
-	~Handle_Geom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ElementarySurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_ConicalSurface;
-class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface(const Handle_Geom_ConicalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_ConicalSurface {
-	Geom_ConicalSurface* GetObject() {
-	return (Geom_ConicalSurface*)$self->Access();
-	}
-};
-%extend Handle_Geom_ConicalSurface {
-	~Handle_Geom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ConicalSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_Conic;
-class Handle_Geom_Conic : public Handle_Geom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_Conic();
-		%feature("autodoc", "1");
-		Handle_Geom_Conic(const Handle_Geom_Conic &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_Conic(const Geom_Conic *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_Conic const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_Conic {
-	Geom_Conic* GetObject() {
-	return (Geom_Conic*)$self->Access();
-	}
-};
-%extend Handle_Geom_Conic {
-	~Handle_Geom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Conic\n");}
 	}
 };
 
@@ -552,32 +606,6 @@ class Handle_Geom_Point : public Handle_Geom_Geometry {
 	~Handle_Geom_Point() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Point\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface;
-class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Geom_SequenceNodeOfSequenceOfBSplineSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
-	Geom_SequenceNodeOfSequenceOfBSplineSurface* GetObject() {
-	return (Geom_SequenceNodeOfSequenceOfBSplineSurface*)$self->Access();
-	}
-};
-%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
-	~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface\n");}
 	}
 };
 
@@ -686,58 +714,6 @@ class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 };
 
 
-%nodefaultctor Handle_Geom_SphericalSurface;
-class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface(const Handle_Geom_SphericalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface(const Geom_SphericalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SphericalSurface {
-	Geom_SphericalSurface* GetObject() {
-	return (Geom_SphericalSurface*)$self->Access();
-	}
-};
-%extend Handle_Geom_SphericalSurface {
-	~Handle_Geom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SphericalSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom_SweptSurface;
-class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface(const Handle_Geom_SweptSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface(const Geom_SweptSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SweptSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SweptSurface {
-	Geom_SweptSurface* GetObject() {
-	return (Geom_SweptSurface*)$self->Access();
-	}
-};
-%extend Handle_Geom_SweptSurface {
-	~Handle_Geom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SweptSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Geom_SurfaceOfLinearExtrusion;
 class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	public:
@@ -760,6 +736,32 @@ class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	~Handle_Geom_SurfaceOfLinearExtrusion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SurfaceOfLinearExtrusion\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_SphericalSurface;
+class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface(const Handle_Geom_SphericalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface(const Geom_SphericalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_SphericalSurface {
+	Geom_SphericalSurface* GetObject() {
+	return (Geom_SphericalSurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_SphericalSurface {
+	~Handle_Geom_SphericalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SphericalSurface\n");}
 	}
 };
 
@@ -790,6 +792,32 @@ class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 };
 
 
+%nodefaultctor Handle_Geom_CartesianPoint;
+class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_CartesianPoint();
+		%feature("autodoc", "1");
+		Handle_Geom_CartesianPoint(const Handle_Geom_CartesianPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_CartesianPoint(const Geom_CartesianPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_CartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_CartesianPoint {
+	Geom_CartesianPoint* GetObject() {
+	return (Geom_CartesianPoint*)$self->Access();
+	}
+};
+%extend Handle_Geom_CartesianPoint {
+	~Handle_Geom_CartesianPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_CartesianPoint\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Geom_BSplineSurface;
 class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 	public:
@@ -816,28 +844,28 @@ class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 };
 
 
-%nodefaultctor Handle_Geom_CartesianPoint;
-class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
+%nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface;
+class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint();
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint(const Handle_Geom_CartesianPoint &aHandle);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint(const Geom_CartesianPoint *anItem);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface(const Geom_SequenceNodeOfSequenceOfBSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_CartesianPoint const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom_CartesianPoint {
-	Geom_CartesianPoint* GetObject() {
-	return (Geom_CartesianPoint*)$self->Access();
+%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
+	Geom_SequenceNodeOfSequenceOfBSplineSurface* GetObject() {
+	return (Geom_SequenceNodeOfSequenceOfBSplineSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_CartesianPoint {
-	~Handle_Geom_CartesianPoint() {
+%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
+	~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_CartesianPoint\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface\n");}
 	}
 };
 
@@ -1024,28 +1052,28 @@ class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 };
 
 
-%nodefaultctor Handle_Geom_ToroidalSurface;
-class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
+%nodefaultctor Handle_Geom_Transformation;
+class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface();
+		Handle_Geom_Transformation();
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface(const Handle_Geom_ToroidalSurface &aHandle);
+		Handle_Geom_Transformation(const Handle_Geom_Transformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface(const Geom_ToroidalSurface *anItem);
+		Handle_Geom_Transformation(const Geom_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom_ToroidalSurface {
-	Geom_ToroidalSurface* GetObject() {
-	return (Geom_ToroidalSurface*)$self->Access();
+%extend Handle_Geom_Transformation {
+	Geom_Transformation* GetObject() {
+	return (Geom_Transformation*)$self->Access();
 	}
 };
-%extend Handle_Geom_ToroidalSurface {
-	~Handle_Geom_ToroidalSurface() {
+%extend Handle_Geom_Transformation {
+	~Handle_Geom_Transformation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ToroidalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Transformation\n");}
 	}
 };
 
@@ -1072,6 +1100,32 @@ class Handle_Geom_Direction : public Handle_Geom_Vector {
 	~Handle_Geom_Direction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Direction\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom_ConicalSurface;
+class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface(const Handle_Geom_ConicalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_ConicalSurface {
+	Geom_ConicalSurface* GetObject() {
+	return (Geom_ConicalSurface*)$self->Access();
+	}
+};
+%extend Handle_Geom_ConicalSurface {
+	~Handle_Geom_ConicalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ConicalSurface\n");}
 	}
 };
 
@@ -1128,32 +1182,6 @@ class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 };
 
 
-%nodefaultctor Handle_Geom_Circle;
-class Handle_Geom_Circle : public Handle_Geom_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_Circle();
-		%feature("autodoc", "1");
-		Handle_Geom_Circle(const Handle_Geom_Circle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_Circle(const Geom_Circle *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_Circle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_Circle {
-	Geom_Circle* GetObject() {
-	return (Geom_Circle*)$self->Access();
-	}
-};
-%extend Handle_Geom_Circle {
-	~Handle_Geom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Circle\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Geom_Ellipse;
 class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 	public:
@@ -1180,32 +1208,6 @@ class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 };
 
 
-%nodefaultctor Handle_Geom_SurfaceOfRevolution;
-class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution();
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution(const Geom_SurfaceOfRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_SurfaceOfRevolution {
-	Geom_SurfaceOfRevolution* GetObject() {
-	return (Geom_SurfaceOfRevolution*)$self->Access();
-	}
-};
-%extend Handle_Geom_SurfaceOfRevolution {
-	~Handle_Geom_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SurfaceOfRevolution\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Geom_Plane;
 class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	public:
@@ -1228,61 +1230,6 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	~Handle_Geom_Plane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Plane\n");}
-	}
-};
-
-
-%nodefaultctor Geom_SequenceOfSurface;
-class Geom_SequenceOfSurface : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Geom_SequenceOfSurface();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Geom_SequenceOfSurface & Assign(const Geom_SequenceOfSurface &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void Append(Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void Prepend(Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Surface &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &I);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Geom_SequenceOfSurface {
-	~Geom_SequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
 	}
 };
 
@@ -1509,70 +1456,9 @@ class Geom_Surface : public Geom_Geometry {
 };
 
 
-%nodefaultctor Geom_OffsetSurface;
-class Geom_OffsetSurface : public Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Geom_OffsetSurface(const Handle_Geom_Surface &S, const Standard_Real Offset);
-		%feature("autodoc", "1");
-		void SetBasisSurface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void SetOffsetValue(const Standard_Real D);
-		%feature("autodoc", "1");
-		Standard_Real Offset() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface BasisSurface() const;
-		%feature("autodoc", "1");
-		void Value(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis, gp_Vec & D2Ubasis, gp_Vec & D2Vbasis, gp_Vec & D2UVbasis) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis, gp_Vec & D2Ubasis, gp_Vec & D2Vbasis, gp_Vec & D2UVbasis, gp_Vec & D3Ubasis, gp_Vec & D3Vbasis, gp_Vec & D3UUVbasis, gp_Vec & D3UVVbasis) const;
-		%feature("autodoc", "1");
-		void LocalD0(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void LocalD1(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
-		%feature("autodoc", "1");
-		void LocalD2(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
-		%feature("autodoc", "1");
-		void LocalD3(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
-		%feature("autodoc", "1");
-		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, const Standard_Integer Nu, const Standard_Integer Nv) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & UOsculSurf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean VOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & VOsculSurf) const;
-
-};
-%extend Geom_OffsetSurface {
-	Handle_Geom_OffsetSurface GetHandle() {
-	return *(Handle_Geom_OffsetSurface*) &$self;
-	}
-};
-%extend Geom_OffsetSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_OffsetSurface {
-	~Geom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_OffsetSurface\n");}
-	}
-};
-
-
 %nodefaultctor Geom_BoundedSurface;
 class Geom_BoundedSurface : public Geom_Surface {
 	public:
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Geom_BoundedSurface {
@@ -1593,97 +1479,19 @@ class Geom_BoundedSurface : public Geom_Surface {
 };
 
 
-%nodefaultctor Geom_AxisPlacement;
-class Geom_AxisPlacement : public Geom_Geometry {
+%nodefaultctor Geom_OffsetSurface;
+class Geom_OffsetSurface : public Geom_Surface {
 	public:
 		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 &A1);
+		Geom_OffsetSurface(const Handle_Geom_Surface &S, const Standard_Real Offset);
 		%feature("autodoc", "1");
-		virtual		void SetDirection(const gp_Dir &V);
+		void SetBasisSurface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &P);
+		void SetOffsetValue(const Standard_Real D);
 		%feature("autodoc", "1");
-		Standard_Real Angle(const Handle_Geom_AxisPlacement &Other) const;
+		Standard_Real Offset() const;
 		%feature("autodoc", "1");
-		const gp_Ax1 & Axis() const;
-		%feature("autodoc", "1");
-		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		gp_Pnt Location() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_AxisPlacement {
-	Handle_Geom_AxisPlacement GetHandle() {
-	return *(Handle_Geom_AxisPlacement*) &$self;
-	}
-};
-%extend Geom_AxisPlacement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_AxisPlacement {
-	~Geom_AxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_AxisPlacement\n");}
-	}
-};
-
-
-%nodefaultctor Geom_Axis1Placement;
-class Geom_Axis1Placement : public Geom_AxisPlacement {
-	public:
-		%feature("autodoc", "1");
-		Geom_Axis1Placement(const gp_Ax1 &A1);
-		%feature("autodoc", "1");
-		Geom_Axis1Placement(const gp_Pnt &P, const gp_Dir &V);
-		%feature("autodoc", "1");
-		const gp_Ax1 & Ax1() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		Handle_Geom_Axis1Placement Reversed() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-
-};
-%extend Geom_Axis1Placement {
-	Handle_Geom_Axis1Placement GetHandle() {
-	return *(Handle_Geom_Axis1Placement*) &$self;
-	}
-};
-%extend Geom_Axis1Placement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_Axis1Placement {
-	~Geom_Axis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Axis1Placement\n");}
-	}
-};
-
-
-%nodefaultctor Geom_ElementarySurface;
-class Geom_ElementarySurface : public Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 &A1);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &Loc);
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax3 &A3);
-		%feature("autodoc", "1");
-		gp_Ax1 Axis() const;
-		%feature("autodoc", "1");
-		gp_Pnt Location() const;
-		%feature("autodoc", "1");
-		const gp_Ax3 & Position() const;
+		Handle_Geom_Surface BasisSurface() const;
 		%feature("autodoc", "1");
 		virtual		void UReverse();
 		%feature("autodoc", "1");
@@ -1693,56 +1501,13 @@ class Geom_ElementarySurface : public Geom_Surface {
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
 		%feature("autodoc", "1");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCNu(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCNv(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_ElementarySurface {
-	Handle_Geom_ElementarySurface GetHandle() {
-	return *(Handle_Geom_ElementarySurface*) &$self;
-	}
-};
-%extend Geom_ElementarySurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_ElementarySurface {
-	~Geom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_ElementarySurface\n");}
-	}
-};
-
-
-%nodefaultctor Geom_Plane;
-class Geom_Plane : public Geom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Geom_Plane(const gp_Ax3 &A3);
-		%feature("autodoc", "1");
-		Geom_Plane(const gp_Pln &Pl);
-		%feature("autodoc", "1");
-		Geom_Plane(const gp_Pnt &P, const gp_Dir &V);
-		%feature("autodoc", "1");
-		Geom_Plane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
-		%feature("autodoc", "1");
-		void SetPln(const gp_Pln &Pl);
-		%feature("autodoc", "1");
-		gp_Pln Pln() const;
-		%feature("autodoc", "1");
-		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
 		%feature("autodoc", "1");
@@ -1750,7 +1515,11 @@ class Geom_Plane : public Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUPeriodic() const;
 		%feature("autodoc", "1");
+		virtual		Standard_Real UPeriod() const;
+		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsVPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real VPeriod() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve UIso(const Standard_Real U) const;
 		%feature("autodoc", "1");
@@ -1766,25 +1535,53 @@ class Geom_Plane : public Geom_ElementarySurface {
 		%feature("autodoc", "1");
 		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
+		void Value(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis, gp_Vec & D2Ubasis, gp_Vec & D2Vbasis, gp_Vec & D2UVbasis) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Pnt & Pbasis, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D1Ubasis, gp_Vec & D1Vbasis, gp_Vec & D2Ubasis, gp_Vec & D2Vbasis, gp_Vec & D2UVbasis, gp_Vec & D3Ubasis, gp_Vec & D3Vbasis, gp_Vec & D3UUVbasis, gp_Vec & D3UVVbasis) const;
+		%feature("autodoc", "1");
+		void LocalD0(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void LocalD1(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
+		%feature("autodoc", "1");
+		void LocalD2(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
+		%feature("autodoc", "1");
+		void LocalD3(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
+		%feature("autodoc", "1");
+		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, const Standard_Integer Nu, const Standard_Integer Nv) const;
+		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
+		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Boolean UOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & UOsculSurf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean VOsculatingSurface(const Standard_Real U, const Standard_Real V, Standard_Boolean & IsOpposite, Handle_Geom_BSplineSurface & VOsculSurf) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Geom_Plane {
-	Handle_Geom_Plane GetHandle() {
-	return *(Handle_Geom_Plane*) &$self;
+%extend Geom_OffsetSurface {
+	Handle_Geom_OffsetSurface GetHandle() {
+	return *(Handle_Geom_OffsetSurface*) &$self;
 	}
 };
-%extend Geom_Plane {
+%extend Geom_OffsetSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Plane {
-	~Geom_Plane() {
+%extend Geom_OffsetSurface {
+	~Geom_OffsetSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Plane\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom_OffsetSurface\n");}
 	}
 };
 
@@ -1924,6 +1721,57 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 	~Geom_BezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_BezierSurface\n");}
+	}
+};
+
+
+%nodefaultctor Geom_ElementarySurface;
+class Geom_ElementarySurface : public Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 &A1);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt &Loc);
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax3 &A3);
+		%feature("autodoc", "1");
+		gp_Ax1 Axis() const;
+		%feature("autodoc", "1");
+		gp_Pnt Location() const;
+		%feature("autodoc", "1");
+		const gp_Ax3 & Position() const;
+		%feature("autodoc", "1");
+		virtual		void UReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real UReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void VReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCNu(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCNv(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_ElementarySurface {
+	Handle_Geom_ElementarySurface GetHandle() {
+	return *(Handle_Geom_ElementarySurface*) &$self;
+	}
+};
+%extend Geom_ElementarySurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_ElementarySurface {
+	~Geom_ElementarySurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_ElementarySurface\n");}
 	}
 };
 
@@ -2256,6 +2104,45 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 };
 
 
+%nodefaultctor Geom_Point;
+class Geom_Point : public Geom_Geometry {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Pnt() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real X() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Z() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Handle_Geom_Point &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Handle_Geom_Point &Other) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_Point {
+	Handle_Geom_Point GetHandle() {
+	return *(Handle_Geom_Point*) &$self;
+	}
+};
+%extend Geom_Point {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_Point {
+	~Geom_Point() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_Point\n");}
+	}
+};
+
+
 %nodefaultctor Geom_SequenceNodeOfSequenceOfSurface;
 class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	public:
@@ -2281,53 +2168,6 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	~Geom_SequenceNodeOfSequenceOfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
-
-
-%nodefaultctor Geom_Axis2Placement;
-class Geom_Axis2Placement : public Geom_AxisPlacement {
-	public:
-		%feature("autodoc", "1");
-		Geom_Axis2Placement(const gp_Ax2 &A2);
-		%feature("autodoc", "1");
-		Geom_Axis2Placement(const gp_Pnt &P, const gp_Dir &N, const gp_Dir &Vx);
-		%feature("autodoc", "1");
-		void SetAx2(const gp_Ax2 &A2);
-		%feature("autodoc", "1");
-		virtual		void SetDirection(const gp_Dir &V);
-		%feature("autodoc", "1");
-		void SetXDirection(const gp_Dir &Vx);
-		%feature("autodoc", "1");
-		void SetYDirection(const gp_Dir &Vy);
-		%feature("autodoc", "1");
-		gp_Ax2 Ax2() const;
-		%feature("autodoc", "1");
-		const gp_Dir & XDirection() const;
-		%feature("autodoc", "1");
-		const gp_Dir & YDirection() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_Axis2Placement {
-	Handle_Geom_Axis2Placement GetHandle() {
-	return *(Handle_Geom_Axis2Placement*) &$self;
-	}
-};
-%extend Geom_Axis2Placement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_Axis2Placement {
-	~Geom_Axis2Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Axis2Placement\n");}
 	}
 };
 
@@ -2415,33 +2255,6 @@ class Geom_OffsetCurve : public Geom_Curve {
 };
 
 
-%nodefaultctor Geom_OsculatingSurface;
-class Geom_OsculatingSurface {
-	public:
-		%feature("autodoc", "1");
-		Geom_OsculatingSurface();
-		%feature("autodoc", "1");
-		Geom_OsculatingSurface(const Handle_Geom_Surface &BS, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &BS, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface BasisSurface() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
-		%feature("autodoc", "1");
-		Standard_Boolean VOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
-
-};
-%extend Geom_OsculatingSurface {
-	~Geom_OsculatingSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_OsculatingSurface\n");}
-	}
-};
-
-
 %nodefaultctor Geom_SweptSurface;
 class Geom_SweptSurface : public Geom_Surface {
 	public:
@@ -2469,6 +2282,223 @@ class Geom_SweptSurface : public Geom_Surface {
 	~Geom_SweptSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_SweptSurface\n");}
+	}
+};
+
+
+%nodefaultctor Geom_SurfaceOfLinearExtrusion;
+class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		Geom_SurfaceOfLinearExtrusion(const Handle_Geom_Curve &C, const gp_Dir &V);
+		%feature("autodoc", "1");
+		void SetDirection(const gp_Dir &V);
+		%feature("autodoc", "1");
+		void SetBasisCurve(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		void UReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real UReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void VReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
+		%feature("autodoc", "1");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCNu(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCNv(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve UIso(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve VIso(const Standard_Real V) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
+		%feature("autodoc", "1");
+		void LocalD0(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void LocalD1(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
+		%feature("autodoc", "1");
+		void LocalD2(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
+		%feature("autodoc", "1");
+		void LocalD3(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
+		%feature("autodoc", "1");
+		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer Nu, const Standard_Integer Nv) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+
+};
+%extend Geom_SurfaceOfLinearExtrusion {
+	Handle_Geom_SurfaceOfLinearExtrusion GetHandle() {
+	return *(Handle_Geom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend Geom_SurfaceOfLinearExtrusion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_SurfaceOfLinearExtrusion {
+	~Geom_SurfaceOfLinearExtrusion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_SurfaceOfLinearExtrusion\n");}
+	}
+};
+
+
+%nodefaultctor Geom_SequenceOfSurface;
+class Geom_SequenceOfSurface : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Geom_SequenceOfSurface();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Geom_SequenceOfSurface & Assign(const Geom_SequenceOfSurface &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void Append(Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void Prepend(Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & First() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Geom_SequenceOfSurface {
+	~Geom_SequenceOfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
+	}
+};
+
+
+%nodefaultctor Geom_Ellipse;
+class Geom_Ellipse : public Geom_Conic {
+	public:
+		%feature("autodoc", "1");
+		Geom_Ellipse(const gp_Elips &E);
+		%feature("autodoc", "1");
+		Geom_Ellipse(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetElips(const gp_Elips &E);
+		%feature("autodoc", "1");
+		void SetMajorRadius(const Standard_Real MajorRadius);
+		%feature("autodoc", "1");
+		void SetMinorRadius(const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		gp_Elips Elips() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix1() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus1() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus2() const;
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_Ellipse {
+	Handle_Geom_Ellipse GetHandle() {
+	return *(Handle_Geom_Ellipse*) &$self;
+	}
+};
+%extend Geom_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_Ellipse {
+	~Geom_Ellipse() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_Ellipse\n");}
 	}
 };
 
@@ -2601,45 +2631,6 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 	~Geom_SequenceOfBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfBSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor Geom_Point;
-class Geom_Point : public Geom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Pnt() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real X() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Z() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Handle_Geom_Point &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Handle_Geom_Point &Other) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_Point {
-	Handle_Geom_Point GetHandle() {
-	return *(Handle_Geom_Point*) &$self;
-	}
-};
-%extend Geom_Point {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_Point {
-	~Geom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Point\n");}
 	}
 };
 
@@ -2936,6 +2927,82 @@ class Geom_Line : public Geom_Curve {
 };
 
 
+%nodefaultctor Geom_AxisPlacement;
+class Geom_AxisPlacement : public Geom_Geometry {
+	public:
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 &A1);
+		%feature("autodoc", "1");
+		virtual		void SetDirection(const gp_Dir &V);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Real Angle(const Handle_Geom_AxisPlacement &Other) const;
+		%feature("autodoc", "1");
+		const gp_Ax1 & Axis() const;
+		%feature("autodoc", "1");
+		gp_Dir Direction() const;
+		%feature("autodoc", "1");
+		gp_Pnt Location() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_AxisPlacement {
+	Handle_Geom_AxisPlacement GetHandle() {
+	return *(Handle_Geom_AxisPlacement*) &$self;
+	}
+};
+%extend Geom_AxisPlacement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_AxisPlacement {
+	~Geom_AxisPlacement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_AxisPlacement\n");}
+	}
+};
+
+
+%nodefaultctor Geom_Axis1Placement;
+class Geom_Axis1Placement : public Geom_AxisPlacement {
+	public:
+		%feature("autodoc", "1");
+		Geom_Axis1Placement(const gp_Ax1 &A1);
+		%feature("autodoc", "1");
+		Geom_Axis1Placement(const gp_Pnt &P, const gp_Dir &V);
+		%feature("autodoc", "1");
+		const gp_Ax1 & Ax1() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		Handle_Geom_Axis1Placement Reversed() const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+
+};
+%extend Geom_Axis1Placement {
+	Handle_Geom_Axis1Placement GetHandle() {
+	return *(Handle_Geom_Axis1Placement*) &$self;
+	}
+};
+%extend Geom_Axis1Placement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_Axis1Placement {
+	~Geom_Axis1Placement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_Axis1Placement\n");}
+	}
+};
+
+
 %nodefaultctor Geom_CylindricalSurface;
 class Geom_CylindricalSurface : public Geom_ElementarySurface {
 	public:
@@ -3011,85 +3078,6 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 };
 
 
-%nodefaultctor Geom_Ellipse;
-class Geom_Ellipse : public Geom_Conic {
-	public:
-		%feature("autodoc", "1");
-		Geom_Ellipse(const gp_Elips &E);
-		%feature("autodoc", "1");
-		Geom_Ellipse(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetElips(const gp_Elips &E);
-		%feature("autodoc", "1");
-		void SetMajorRadius(const Standard_Real MajorRadius);
-		%feature("autodoc", "1");
-		void SetMinorRadius(const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		gp_Elips Elips() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		gp_Ax1 Directrix1() const;
-		%feature("autodoc", "1");
-		gp_Ax1 Directrix2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Eccentricity() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		gp_Pnt Focus1() const;
-		%feature("autodoc", "1");
-		gp_Pnt Focus2() const;
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_Ellipse {
-	Handle_Geom_Ellipse GetHandle() {
-	return *(Handle_Geom_Ellipse*) &$self;
-	}
-};
-%extend Geom_Ellipse {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_Ellipse {
-	~Geom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Ellipse\n");}
-	}
-};
-
-
 %nodefaultctor Geom_HSequenceOfBSplineSurface;
 class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 	public:
@@ -3161,77 +3149,100 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 };
 
 
-%nodefaultctor Geom_Parabola;
-class Geom_Parabola : public Geom_Conic {
+%nodefaultctor Geom_OsculatingSurface;
+class Geom_OsculatingSurface {
 	public:
 		%feature("autodoc", "1");
-		Geom_Parabola(const gp_Parab &Prb);
+		Geom_OsculatingSurface();
 		%feature("autodoc", "1");
-		Geom_Parabola(const gp_Ax2 &A2, const Standard_Real Focal);
+		Geom_OsculatingSurface(const Handle_Geom_Surface &BS, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Geom_Parabola(const gp_Ax1 &D, const gp_Pnt &F);
+		void Init(const Handle_Geom_Surface &BS, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void SetFocal(const Standard_Real Focal);
+		Handle_Geom_Surface BasisSurface() const;
 		%feature("autodoc", "1");
-		void SetParab(const gp_Parab &Prb);
+		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
-		gp_Parab Parab() const;
+		Standard_Boolean UOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		Standard_Boolean VOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
+
+};
+%extend Geom_OsculatingSurface {
+	~Geom_OsculatingSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_OsculatingSurface\n");}
+	}
+};
+
+
+%nodefaultctor Geom_HSequenceOfSurface;
+class Geom_HSequenceOfSurface : public MMgt_TShared {
+	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
+		Geom_HSequenceOfSurface();
 		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
+		void Clear();
 		%feature("autodoc", "1");
-		gp_Ax1 Directrix() const;
+		void Append(const Handle_Geom_Surface &anItem);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Eccentricity() const;
+		void Append(const Handle_Geom_HSequenceOfSurface &aSequence);
 		%feature("autodoc", "1");
-		gp_Pnt Focus() const;
+		void Prepend(const Handle_Geom_Surface &anItem);
 		%feature("autodoc", "1");
-		Standard_Real Focal() const;
+		void Prepend(const Handle_Geom_HSequenceOfSurface &aSequence);
 		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
+		void Reverse();
 		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
 		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
 		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
 		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
 		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
+		Handle_Geom_HSequenceOfSurface Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf &T) const;
+		void SetValue(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf &T) const;
+		const Handle_Geom_Surface & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Geom_SequenceOfSurface & Sequence() const;
+		%feature("autodoc", "1");
+		Geom_SequenceOfSurface & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Geom_HSequenceOfSurface ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Geom_Parabola {
-	Handle_Geom_Parabola GetHandle() {
-	return *(Handle_Geom_Parabola*) &$self;
+%extend Geom_HSequenceOfSurface {
+	Handle_Geom_HSequenceOfSurface GetHandle() {
+	return *(Handle_Geom_HSequenceOfSurface*) &$self;
 	}
 };
-%extend Geom_Parabola {
+%extend Geom_HSequenceOfSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Parabola {
-	~Geom_Parabola() {
+%extend Geom_HSequenceOfSurface {
+	~Geom_HSequenceOfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Parabola\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfSurface\n");}
 	}
 };
 
@@ -3315,91 +3326,6 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 	~Geom_ConicalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_ConicalSurface\n");}
-	}
-};
-
-
-%nodefaultctor Geom_SurfaceOfLinearExtrusion;
-class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		Geom_SurfaceOfLinearExtrusion(const Handle_Geom_Curve &C, const gp_Dir &V);
-		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir &V);
-		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		void UReverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real UReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void VReverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCNu(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCNv(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Curve UIso(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Curve VIso(const Standard_Real V) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
-		%feature("autodoc", "1");
-		void LocalD0(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void LocalD1(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
-		%feature("autodoc", "1");
-		void LocalD2(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
-		%feature("autodoc", "1");
-		void LocalD3(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
-		%feature("autodoc", "1");
-		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer Nu, const Standard_Integer Nv) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom_SurfaceOfLinearExtrusion {
-	Handle_Geom_SurfaceOfLinearExtrusion GetHandle() {
-	return *(Handle_Geom_SurfaceOfLinearExtrusion*) &$self;
-	}
-};
-%extend Geom_SurfaceOfLinearExtrusion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom_SurfaceOfLinearExtrusion {
-	~Geom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SurfaceOfLinearExtrusion\n");}
 	}
 };
 
@@ -3550,6 +3476,85 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 	~Geom_ToroidalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_ToroidalSurface\n");}
+	}
+};
+
+
+%nodefaultctor Geom_Plane;
+class Geom_Plane : public Geom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Geom_Plane(const gp_Ax3 &A3);
+		%feature("autodoc", "1");
+		Geom_Plane(const gp_Pln &Pl);
+		%feature("autodoc", "1");
+		Geom_Plane(const gp_Pnt &P, const gp_Dir &V);
+		%feature("autodoc", "1");
+		Geom_Plane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
+		%feature("autodoc", "1");
+		void SetPln(const gp_Pln &Pl);
+		%feature("autodoc", "1");
+		gp_Pln Pln() const;
+		%feature("autodoc", "1");
+		virtual		void UReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real UReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void VReverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
+		%feature("autodoc", "1");
+		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsVPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve UIso(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve VIso(const Standard_Real V) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_Plane {
+	Handle_Geom_Plane GetHandle() {
+	return *(Handle_Geom_Plane*) &$self;
+	}
+};
+%extend Geom_Plane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_Plane {
+	~Geom_Plane() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_Plane\n");}
 	}
 };
 
@@ -3744,73 +3749,124 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 };
 
 
-%nodefaultctor Geom_HSequenceOfSurface;
-class Geom_HSequenceOfSurface : public MMgt_TShared {
+%nodefaultctor Geom_Axis2Placement;
+class Geom_Axis2Placement : public Geom_AxisPlacement {
 	public:
 		%feature("autodoc", "1");
-		Geom_HSequenceOfSurface();
+		Geom_Axis2Placement(const gp_Ax2 &A2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Geom_Axis2Placement(const gp_Pnt &P, const gp_Dir &N, const gp_Dir &Vx);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetAx2(const gp_Ax2 &A2);
 		%feature("autodoc", "1");
-		void Clear();
+		virtual		void SetDirection(const gp_Dir &V);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Surface &anItem);
+		void SetXDirection(const gp_Dir &Vx);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom_HSequenceOfSurface &aSequence);
+		void SetYDirection(const gp_Dir &Vy);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Surface &anItem);
+		gp_Ax2 Ax2() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_HSequenceOfSurface &aSequence);
+		const gp_Dir & XDirection() const;
 		%feature("autodoc", "1");
-		void Reverse();
+		const gp_Dir & YDirection() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
+		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_HSequenceOfSurface &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfSurface Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Geom_Surface &anItem);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Geom_SequenceOfSurface & Sequence() const;
-		%feature("autodoc", "1");
-		Geom_SequenceOfSurface & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Geom_HSequenceOfSurface ShallowCopy() const;
+		virtual		Handle_Geom_Geometry Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Geom_HSequenceOfSurface {
-	Handle_Geom_HSequenceOfSurface GetHandle() {
-	return *(Handle_Geom_HSequenceOfSurface*) &$self;
+%extend Geom_Axis2Placement {
+	Handle_Geom_Axis2Placement GetHandle() {
+	return *(Handle_Geom_Axis2Placement*) &$self;
 	}
 };
-%extend Geom_HSequenceOfSurface {
+%extend Geom_Axis2Placement {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_HSequenceOfSurface {
-	~Geom_HSequenceOfSurface() {
+%extend Geom_Axis2Placement {
+	~Geom_Axis2Placement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom_Axis2Placement\n");}
+	}
+};
+
+
+%nodefaultctor Geom_Parabola;
+class Geom_Parabola : public Geom_Conic {
+	public:
+		%feature("autodoc", "1");
+		Geom_Parabola(const gp_Parab &Prb);
+		%feature("autodoc", "1");
+		Geom_Parabola(const gp_Ax2 &A2, const Standard_Real Focal);
+		%feature("autodoc", "1");
+		Geom_Parabola(const gp_Ax1 &D, const gp_Pnt &F);
+		%feature("autodoc", "1");
+		void SetFocal(const Standard_Real Focal);
+		%feature("autodoc", "1");
+		void SetParab(const gp_Parab &Prb);
+		%feature("autodoc", "1");
+		gp_Parab Parab() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom_Parabola {
+	Handle_Geom_Parabola GetHandle() {
+	return *(Handle_Geom_Parabola*) &$self;
+	}
+};
+%extend Geom_Parabola {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom_Parabola {
+	~Geom_Parabola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_Parabola\n");}
 	}
 };
 

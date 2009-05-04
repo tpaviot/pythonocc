@@ -155,7 +155,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_StepGeom_CartesianPoint.hxx>
 #include<Handle_StepShape_ConnectedFaceSet.hxx>
 #include<Handle_StepGeom_Axis2Placement3d.hxx>
 #include<Handle_StepGeom_CartesianTransformationOperator3d.hxx>
@@ -164,6 +163,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Transfer_TransientProcess.hxx>
 #include<Handle_StepShape_TopologicalRepresentationItem.hxx>
 #include<TopoDS_Edge.hxx>
+#include<Handle_StepGeom_CartesianPoint.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_Curve.hxx>
@@ -173,16 +173,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepShape_EdgeCurve.hxx>
 #include<Handle_StepShape_Vertex.hxx>
 #include<Handle_StepGeom_Pcurve.hxx>
+#include<Handle_StepShape_FaceBound.hxx>
+#include<TopoDS_Face.hxx>
+#include<Handle_StepGeom_Surface.hxx>
 #include<Handle_StepShape_FaceSurface.hxx>
 #include<Handle_StepShape_PolyLoop.hxx>
-#include<TopoDS_Face.hxx>
 #include<Handle_StepGeom_CompositeCurve.hxx>
-#include<Handle_StepGeom_Surface.hxx>
-#include<Handle_StepShape_FaceBound.hxx>
 #include<Handle_StepGeom_SurfaceCurve.hxx>
 #include<Handle_StepShape_EdgeLoop.hxx>
 #include<Handle_StepGeom_CurveBoundedSurface.hxx>
-#include<StepToTopoDS.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_StepShape_VertexLoop.hxx>
 %}

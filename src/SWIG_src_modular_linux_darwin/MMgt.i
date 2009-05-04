@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MMgt
 
+%include MMgt_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -143,8 +145,6 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 %nodefaultctor MMgt_TShared;
 class MMgt_TShared : public Standard_Transient {
 	public:
-		%feature("autodoc", "1");
-		MMgt_TShared();
 		%feature("autodoc", "1");
 		virtual		void Delete() const;
 		%feature("autodoc", "1");

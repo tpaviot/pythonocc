@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TCollection
 
+%include TCollection_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -111,8 +113,8 @@ Standard_Integer & function transformation
 
 %include TCollection_headers.i
 
-typedef TCollection_MapNode * TCollection_MapNodePtr;
 typedef TCollection_SeqNode * TCollection_SeqNodePtr;
+typedef TCollection_MapNode * TCollection_MapNodePtr;
 typedef TCollection_AVLBaseNode * TCollection_AVLBaseNodePtr;
 
 enum TCollection_Side {
@@ -200,32 +202,6 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TCollection_MapNode;
-class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TCollection_MapNode();
-		%feature("autodoc", "1");
-		Handle_TCollection_MapNode(const Handle_TCollection_MapNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_TCollection_MapNode(const TCollection_MapNode *anItem);
-		%feature("autodoc", "1");
-		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TCollection_MapNode {
-	TCollection_MapNode* GetObject() {
-	return (TCollection_MapNode*)$self->Access();
-	}
-};
-%extend Handle_TCollection_MapNode {
-	~Handle_TCollection_MapNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_MapNode\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TCollection_AVLBaseNode;
 class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	public:
@@ -248,6 +224,32 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	~Handle_TCollection_AVLBaseNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TCollection_MapNode;
+class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode();
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode(const Handle_TCollection_MapNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode(const TCollection_MapNode *anItem);
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TCollection_MapNode {
+	TCollection_MapNode* GetObject() {
+	return (TCollection_MapNode*)$self->Access();
+	}
+};
+%extend Handle_TCollection_MapNode {
+	~Handle_TCollection_MapNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_MapNode\n");}
 	}
 };
 
@@ -501,8 +503,6 @@ class TCollection_BasicMapIterator {
 class TCollection {
 	public:
 		%feature("autodoc", "1");
-		TCollection();
-		%feature("autodoc", "1");
 		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
 };
@@ -510,6 +510,29 @@ class TCollection {
 	~TCollection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TCollection\n");}
+	}
+};
+
+
+%nodefaultctor TCollection_Array2Descriptor;
+class TCollection_Array2Descriptor {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Address Address() const;
+
+};
+%extend TCollection_Array2Descriptor {
+	~TCollection_Array2Descriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TCollection_Array2Descriptor\n");}
 	}
 };
 
@@ -548,8 +571,6 @@ class TCollection_SeqNode : public MMgt_TShared {
 %nodefaultctor TCollection_PrivCompareOfInteger;
 class TCollection_PrivCompareOfInteger {
 	public:
-		%feature("autodoc", "1");
-		TCollection_PrivCompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
 		%feature("autodoc", "1");
@@ -766,8 +787,6 @@ class TCollection_MapNode : public MMgt_TShared {
 class TCollection_PrivCompareOfReal {
 	public:
 		%feature("autodoc", "1");
-		TCollection_PrivCompareOfReal();
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsGreater(const Standard_Real &Left, const Standard_Real &Right) const;
@@ -888,6 +907,27 @@ class TCollection_HExtendedString : public MMgt_TShared {
 };
 
 
+%nodefaultctor TCollection_BaseSequence;
+class TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer I, const Standard_Integer J);
+
+};
+%extend TCollection_BaseSequence {
+	~TCollection_BaseSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TCollection_BaseSequence\n");}
+	}
+};
+
+
 %nodefaultctor TCollection_Array1Descriptor;
 class TCollection_Array1Descriptor {
 	public:
@@ -922,27 +962,6 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 	~TCollection_CompareOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TCollection_BaseSequence;
-class TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer I, const Standard_Integer J);
-
-};
-%extend TCollection_BaseSequence {
-	~TCollection_BaseSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_BaseSequence\n");}
 	}
 };
 
@@ -1157,28 +1176,5 @@ class TCollection_HAsciiString : public MMgt_TShared {
 	~TCollection_HAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TCollection_HAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor TCollection_Array2Descriptor;
-class TCollection_Array2Descriptor {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Address Address() const;
-
-};
-%extend TCollection_Array2Descriptor {
-	~TCollection_Array2Descriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_Array2Descriptor\n");}
 	}
 };

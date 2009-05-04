@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepOffsetAPI
 
+%include BRepOffsetAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -115,6 +117,32 @@ typedef BRepBuilderAPI_Sewing BRepOffsetAPI_Sewing;
 
 
 
+%nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
+class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape* GetObject() {
+	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*)$self->Access();
+	}
+};
+%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
+	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -167,28 +195,29 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 };
 
 
-%nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
-class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Handle_TCollection_SeqNode {
+%nodefaultctor BRepOffsetAPI_MakeOffsetShape;
+class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape();
+		BRepOffsetAPI_MakeOffsetShape();
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
+		BRepOffsetAPI_MakeOffsetShape(const TopoDS_Shape &S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
+		virtual		const BRepOffset_MakeOffset & MakeOffset() const;
 		%feature("autodoc", "1");
-		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		virtual		void Build();
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & GeneratedEdge(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		GeomAbs_JoinType GetJoinType() const;
 
 };
-%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
-	BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape* GetObject() {
-	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*)$self->Access();
-	}
-};
-%extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
-	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
+%extend BRepOffsetAPI_MakeOffsetShape {
+	~BRepOffsetAPI_MakeOffsetShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");}
 	}
 };
 
@@ -539,33 +568,6 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 };
 
 
-%nodefaultctor BRepOffsetAPI_MakeOffsetShape;
-class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeOffsetShape();
-		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeOffsetShape(const TopoDS_Shape &S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
-		%feature("autodoc", "1");
-		virtual		const BRepOffset_MakeOffset & MakeOffset() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GeneratedEdge(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		GeomAbs_JoinType GetJoinType() const;
-
-};
-%extend BRepOffsetAPI_MakeOffsetShape {
-	~BRepOffsetAPI_MakeOffsetShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");}
-	}
-};
-
-
 %nodefaultctor BRepOffsetAPI_MakeThickSolid;
 class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 	public:
@@ -573,6 +575,8 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 		BRepOffsetAPI_MakeThickSolid();
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeThickSolid(const TopoDS_Shape &S, const TopTools_ListOfShape &ClosingFaces, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode=BRepOffset_Skin, const Standard_Boolean Intersection=0, const Standard_Boolean SelfInter=0, const GeomAbs_JoinType Join=GeomAbs_Arc);
+		%feature("autodoc", "1");
+		virtual		void Build();
 		%feature("autodoc", "1");
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 

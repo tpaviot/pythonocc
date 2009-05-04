@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module OSD
 
+%include OSD_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -133,6 +135,11 @@ enum OSD_WhoAmI {
 	OSD_WEnvironmentIterator,
 	};
 
+enum OSD_LoadMode {
+	OSD_RTLD_LAZY,
+	OSD_RTLD_NOW,
+	};
+
 enum OSD_SysType {
 	OSD_Unknown,
 	OSD_Default,
@@ -205,11 +212,6 @@ enum OSD_KindFile {
 	OSD_UNKNOWN,
 	};
 
-enum OSD_LoadMode {
-	OSD_RTLD_LAZY,
-	OSD_RTLD_NOW,
-	};
-
 enum OSD_LockType {
 	OSD_NoLock,
 	OSD_ReadLock,
@@ -232,58 +234,6 @@ enum OSD_OEMType {
 	OSD_AIX,
 	};
 
-
-
-%nodefaultctor Handle_OSD_Exception;
-class Handle_OSD_Exception : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception(const Handle_OSD_Exception &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception(const OSD_Exception *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception {
-	OSD_Exception* GetObject() {
-	return (OSD_Exception*)$self->Access();
-	}
-};
-%extend Handle_OSD_Exception {
-	~Handle_OSD_Exception() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception\n");}
-	}
-};
-
-
-%nodefaultctor Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
-class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO(const Handle_OSD_Exception_INT_DIVIDE_BY_ZERO &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO(const OSD_Exception_INT_DIVIDE_BY_ZERO *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
-	OSD_Exception_INT_DIVIDE_BY_ZERO* GetObject() {
-	return (OSD_Exception_INT_DIVIDE_BY_ZERO*)$self->Access();
-	}
-};
-%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
-	~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
-	}
-};
 
 
 %nodefaultctor Handle_OSD_Signal;
@@ -334,6 +284,84 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 	~Handle_OSD_SIGBUS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGBUS\n");}
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception;
+class Handle_OSD_Exception : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception(const Handle_OSD_Exception &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception(const OSD_Exception *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception {
+	OSD_Exception* GetObject() {
+	return (OSD_Exception*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception {
+	~Handle_OSD_Exception() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception\n");}
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
+class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW(const OSD_Exception_INT_OVERFLOW *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	OSD_Exception_INT_OVERFLOW* GetObject() {
+	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	~Handle_OSD_Exception_INT_OVERFLOW() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");}
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
+class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	OSD_Exception_FLT_STACK_CHECK* GetObject() {
+	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	~Handle_OSD_Exception_FLT_STACK_CHECK() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");}
 	}
 };
 
@@ -390,32 +418,6 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 };
 
 
-%nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
-class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW(const Handle_OSD_Exception_INT_OVERFLOW &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW(const OSD_Exception_INT_OVERFLOW *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_INT_OVERFLOW {
-	OSD_Exception_INT_OVERFLOW* GetObject() {
-	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
-	}
-};
-%extend Handle_OSD_Exception_INT_OVERFLOW {
-	~Handle_OSD_Exception_INT_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");}
-	}
-};
-
-
 %nodefaultctor Handle_OSD_Exception_STACK_OVERFLOW;
 class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	public:
@@ -442,6 +444,32 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 };
 
 
+%nodefaultctor Handle_OSD_Exception_PRIV_INSTRUCTION;
+class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_PRIV_INSTRUCTION();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_PRIV_INSTRUCTION(const Handle_OSD_Exception_PRIV_INSTRUCTION &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_PRIV_INSTRUCTION(const OSD_Exception_PRIV_INSTRUCTION *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_PRIV_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
+	OSD_Exception_PRIV_INSTRUCTION* GetObject() {
+	return (OSD_Exception_PRIV_INSTRUCTION*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
+	~Handle_OSD_Exception_PRIV_INSTRUCTION() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");}
+	}
+};
+
+
 %nodefaultctor Handle_OSD_Exception_IN_PAGE_ERROR;
 class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	public:
@@ -464,32 +492,6 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	~Handle_OSD_Exception_IN_PAGE_ERROR() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");}
-	}
-};
-
-
-%nodefaultctor Handle_OSD_SIGSEGV;
-class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV(const Handle_OSD_SIGSEGV &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV(const OSD_SIGSEGV *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SIGSEGV {
-	OSD_SIGSEGV* GetObject() {
-	return (OSD_SIGSEGV*)$self->Access();
-	}
-};
-%extend Handle_OSD_SIGSEGV {
-	~Handle_OSD_SIGSEGV() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSEGV\n");}
 	}
 };
 
@@ -542,32 +544,6 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
-	}
-};
-
-
-%nodefaultctor Handle_OSD_Exception_PRIV_INSTRUCTION;
-class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION(const Handle_OSD_Exception_PRIV_INSTRUCTION &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION(const OSD_Exception_PRIV_INSTRUCTION *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_PRIV_INSTRUCTION const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
-	OSD_Exception_PRIV_INSTRUCTION* GetObject() {
-	return (OSD_Exception_PRIV_INSTRUCTION*)$self->Access();
-	}
-};
-%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
-	~Handle_OSD_Exception_PRIV_INSTRUCTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");}
 	}
 };
 
@@ -646,6 +622,32 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 	~Handle_OSD_OSDError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_OSDError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_OSD_SIGSEGV;
+class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSEGV();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSEGV(const Handle_OSD_SIGSEGV &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSEGV(const OSD_SIGSEGV *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSEGV const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SIGSEGV {
+	OSD_SIGSEGV* GetObject() {
+	return (OSD_SIGSEGV*)$self->Access();
+	}
+};
+%extend Handle_OSD_SIGSEGV {
+	~Handle_OSD_SIGSEGV() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSEGV\n");}
 	}
 };
 
@@ -750,32 +752,6 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
-	}
-};
-
-
-%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
-class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	OSD_Exception_FLT_STACK_CHECK* GetObject() {
-	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
-	}
-};
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	~Handle_OSD_Exception_FLT_STACK_CHECK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");}
 	}
 };
 
@@ -932,6 +908,32 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 	~Handle_OSD_Exception_FLT_OVERFLOW() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_OVERFLOW\n");}
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
+class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO(const Handle_OSD_Exception_INT_DIVIDE_BY_ZERO &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO(const OSD_Exception_INT_DIVIDE_BY_ZERO *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
+	OSD_Exception_INT_DIVIDE_BY_ZERO* GetObject() {
+	return (OSD_Exception_INT_DIVIDE_BY_ZERO*)$self->Access();
+	}
+};
+%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
+	~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
 	}
 };
 
@@ -1149,49 +1151,6 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 
 
-%nodefaultctor OSD_Disk;
-class OSD_Disk {
-	public:
-		%feature("autodoc", "1");
-		OSD_Disk();
-		%feature("autodoc", "1");
-		OSD_Disk(const OSD_Path &Name);
-		%feature("autodoc", "1");
-		OSD_Disk(const char * PathName);
-		%feature("autodoc", "1");
-		OSD_Path Name() const;
-		%feature("autodoc", "1");
-		void SetName(const OSD_Path &Name);
-		%feature("autodoc", "1");
-		Standard_Integer DiskSize();
-		%feature("autodoc", "1");
-		Standard_Integer DiskFree();
-		%feature("autodoc", "1");
-		Standard_Integer DiskQuota();
-		%feature("autodoc", "1");
-		void SetDiskQuota(const Standard_Integer QuotaSize);
-		%feature("autodoc", "1");
-		void SetQuotaOn();
-		%feature("autodoc", "1");
-		void SetQuotaOff();
-		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Perror();
-		%feature("autodoc", "1");
-		Standard_Integer Error() const;
-
-};
-%extend OSD_Disk {
-	~OSD_Disk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Disk\n");}
-	}
-};
-
-
 %nodefaultctor OSD_DirectoryIterator;
 class OSD_DirectoryIterator {
 	public:
@@ -1297,41 +1256,6 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 
 
-%nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
-class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_STATUS_NO_MEMORY();
-		%feature("autodoc", "1");
-		OSD_Exception_STATUS_NO_MEMORY(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_STATUS_NO_MEMORY {
-	Handle_OSD_Exception_STATUS_NO_MEMORY GetHandle() {
-	return *(Handle_OSD_Exception_STATUS_NO_MEMORY*) &$self;
-	}
-};
-%extend OSD_Exception_STATUS_NO_MEMORY {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_STATUS_NO_MEMORY {
-	~OSD_Exception_STATUS_NO_MEMORY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");}
-	}
-};
-
-
 %nodefaultctor OSD_Exception_INT_DIVIDE_BY_ZERO;
 class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 	public:
@@ -1363,6 +1287,70 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 	~OSD_Exception_INT_DIVIDE_BY_ZERO() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
+	}
+};
+
+
+%nodefaultctor OSD_Signal;
+class OSD_Signal : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		OSD_Signal();
+		%feature("autodoc", "1");
+		OSD_Signal(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_Signal NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Signal {
+	Handle_OSD_Signal GetHandle() {
+	return *(Handle_OSD_Signal*) &$self;
+	}
+};
+%extend OSD_Signal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_Signal {
+	~OSD_Signal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_Signal\n");}
+	}
+};
+
+
+%nodefaultctor OSD_SIGQUIT;
+class OSD_SIGQUIT : public OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		OSD_SIGQUIT();
+		%feature("autodoc", "1");
+		OSD_SIGQUIT(const char * AString);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
+
+};
+%extend OSD_SIGQUIT {
+	Handle_OSD_SIGQUIT GetHandle() {
+	return *(Handle_OSD_SIGQUIT*) &$self;
+	}
+};
+%extend OSD_SIGQUIT {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_SIGQUIT {
+	~OSD_SIGQUIT() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_SIGQUIT\n");}
 	}
 };
 
@@ -1412,6 +1400,35 @@ class OSD_FileNode {
 };
 
 
+%nodefaultctor OSD_SharedLibrary;
+class OSD_SharedLibrary {
+	public:
+		%feature("autodoc", "1");
+		OSD_SharedLibrary();
+		%feature("autodoc", "1");
+		OSD_SharedLibrary(const char * aFilename);
+		%feature("autodoc", "1");
+		void SetName(const char * aName);
+		%feature("autodoc", "1");
+		Standard_CString Name() const;
+		%feature("autodoc", "1");
+		Standard_Boolean DlOpen(const OSD_LoadMode Mode);
+		%feature("autodoc", "1");
+		void DlClose() const;
+		%feature("autodoc", "1");
+		Standard_CString DlError() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend OSD_SharedLibrary {
+	~OSD_SharedLibrary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_SharedLibrary\n");}
+	}
+};
+
+
 %nodefaultctor OSD_Error;
 class OSD_Error {
 	public:
@@ -1433,6 +1450,41 @@ class OSD_Error {
 	~OSD_Error() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of OSD_Error\n");}
+	}
+};
+
+
+%nodefaultctor OSD_Exception_INT_OVERFLOW;
+class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_INT_OVERFLOW();
+		%feature("autodoc", "1");
+		OSD_Exception_INT_OVERFLOW(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_INT_OVERFLOW {
+	Handle_OSD_Exception_INT_OVERFLOW GetHandle() {
+	return *(Handle_OSD_Exception_INT_OVERFLOW*) &$self;
+	}
+};
+%extend OSD_Exception_INT_OVERFLOW {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_Exception_INT_OVERFLOW {
+	~OSD_Exception_INT_OVERFLOW() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");}
 	}
 };
 
@@ -1478,70 +1530,93 @@ class OSD_Protection {
 };
 
 
-%nodefaultctor OSD_SharedMemory;
-class OSD_SharedMemory {
+%nodefaultctor OSD_Directory;
+class OSD_Directory : public OSD_FileNode {
 	public:
 		%feature("autodoc", "1");
-		OSD_SharedMemory();
+		OSD_Directory();
 		%feature("autodoc", "1");
-		OSD_SharedMemory(const TCollection_AsciiString &Name, const Standard_Integer size);
+		OSD_Directory(const OSD_Path &Name);
 		%feature("autodoc", "1");
-		void Build();
+		void Build(const OSD_Protection &Protect);
 		%feature("autodoc", "1");
-		void Open(const TCollection_AsciiString &Name, const Standard_Integer size);
-		%feature("autodoc", "1");
-		void Delete();
-		%feature("autodoc", "1");
-		Standard_Address GiveAddress() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Perror();
-		%feature("autodoc", "1");
-		Standard_Integer Error() const;
+		OSD_Directory BuildTemporary();
 
 };
-%extend OSD_SharedMemory {
-	~OSD_SharedMemory() {
+%extend OSD_Directory {
+	~OSD_Directory() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SharedMemory\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_Directory\n");}
 	}
 };
 
 
-%nodefaultctor OSD_FileIterator;
-class OSD_FileIterator {
+%nodefaultctor OSD_Exception_ACCESS_VIOLATION;
+class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 	public:
 		%feature("autodoc", "1");
-		OSD_FileIterator();
+		OSD_Exception_ACCESS_VIOLATION();
 		%feature("autodoc", "1");
-		OSD_FileIterator(const OSD_Path &where, const TCollection_AsciiString &Mask);
+		OSD_Exception_ACCESS_VIOLATION(const char * AString);
 		%feature("autodoc", "1");
-		void Destroy();
+		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
+		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Standard_Boolean More();
+		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		OSD_File Values();
-		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Perror();
-		%feature("autodoc", "1");
-		Standard_Integer Error() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend OSD_FileIterator {
-	~OSD_FileIterator() {
+%extend OSD_Exception_ACCESS_VIOLATION {
+	Handle_OSD_Exception_ACCESS_VIOLATION GetHandle() {
+	return *(Handle_OSD_Exception_ACCESS_VIOLATION*) &$self;
+	}
+};
+%extend OSD_Exception_ACCESS_VIOLATION {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_Exception_ACCESS_VIOLATION {
+	~OSD_Exception_ACCESS_VIOLATION() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_FileIterator\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");}
+	}
+};
+
+
+%nodefaultctor OSD_Exception_FLT_INEXACT_RESULT;
+class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_FLT_INEXACT_RESULT();
+		%feature("autodoc", "1");
+		OSD_Exception_FLT_INEXACT_RESULT(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_FLT_INEXACT_RESULT {
+	Handle_OSD_Exception_FLT_INEXACT_RESULT GetHandle() {
+	return *(Handle_OSD_Exception_FLT_INEXACT_RESULT*) &$self;
+	}
+};
+%extend OSD_Exception_FLT_INEXACT_RESULT {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_Exception_FLT_INEXACT_RESULT {
+	~OSD_Exception_FLT_INEXACT_RESULT() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");}
 	}
 };
 
@@ -1621,41 +1696,6 @@ class OSD_Path {
 };
 
 
-%nodefaultctor OSD_Signal;
-class OSD_Signal : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		OSD_Signal();
-		%feature("autodoc", "1");
-		OSD_Signal(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_OSD_Signal NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Signal {
-	Handle_OSD_Signal GetHandle() {
-	return *(Handle_OSD_Signal*) &$self;
-	}
-};
-%extend OSD_Signal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Signal {
-	~OSD_Signal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Signal\n");}
-	}
-};
-
-
 %nodefaultctor OSD_Real2String;
 class OSD_Real2String {
 	public:
@@ -1675,87 +1715,76 @@ class OSD_Real2String {
 };
 
 
-%nodefaultctor OSD_Directory;
-class OSD_Directory : public OSD_FileNode {
+%nodefaultctor OSD_FileIterator;
+class OSD_FileIterator {
 	public:
 		%feature("autodoc", "1");
-		OSD_Directory();
+		OSD_FileIterator();
 		%feature("autodoc", "1");
-		OSD_Directory(const OSD_Path &Name);
-		%feature("autodoc", "1");
-		void Build(const OSD_Protection &Protect);
-		%feature("autodoc", "1");
-		OSD_Directory BuildTemporary();
-
-};
-%extend OSD_Directory {
-	~OSD_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Directory\n");}
-	}
-};
-
-
-%nodefaultctor OSD_SharedLibrary;
-class OSD_SharedLibrary {
-	public:
-		%feature("autodoc", "1");
-		OSD_SharedLibrary();
-		%feature("autodoc", "1");
-		OSD_SharedLibrary(const char * aFilename);
-		%feature("autodoc", "1");
-		void SetName(const char * aName);
-		%feature("autodoc", "1");
-		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		Standard_Boolean DlOpen(const OSD_LoadMode Mode);
-		%feature("autodoc", "1");
-		void DlClose() const;
-		%feature("autodoc", "1");
-		Standard_CString DlError() const;
+		OSD_FileIterator(const OSD_Path &where, const TCollection_AsciiString &Mask);
 		%feature("autodoc", "1");
 		void Destroy();
+		%feature("autodoc", "1");
+		void Initialize(const OSD_Path &where, const TCollection_AsciiString &Mask);
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		OSD_File Values();
+		%feature("autodoc", "1");
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
 
 };
-%extend OSD_SharedLibrary {
-	~OSD_SharedLibrary() {
+%extend OSD_FileIterator {
+	~OSD_FileIterator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SharedLibrary\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_FileIterator\n");}
 	}
 };
 
 
-%nodefaultctor OSD_Exception_INT_OVERFLOW;
-class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
+%nodefaultctor OSD_Environment;
+class OSD_Environment {
 	public:
 		%feature("autodoc", "1");
-		OSD_Exception_INT_OVERFLOW();
+		OSD_Environment();
 		%feature("autodoc", "1");
-		OSD_Exception_INT_OVERFLOW(const char * AString);
+		OSD_Environment(const TCollection_AsciiString &Name);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		OSD_Environment(const TCollection_AsciiString &Name, const TCollection_AsciiString &Value);
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		void SetValue(const TCollection_AsciiString &Value);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_INT_OVERFLOW NewInstance(const char * aMessage);
+		TCollection_AsciiString Value();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void SetName(const TCollection_AsciiString &name);
+		%feature("autodoc", "1");
+		TCollection_AsciiString Name() const;
+		%feature("autodoc", "1");
+		void Build();
+		%feature("autodoc", "1");
+		void Remove();
+		%feature("autodoc", "1");
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
 
 };
-%extend OSD_Exception_INT_OVERFLOW {
-	Handle_OSD_Exception_INT_OVERFLOW GetHandle() {
-	return *(Handle_OSD_Exception_INT_OVERFLOW*) &$self;
-	}
-};
-%extend OSD_Exception_INT_OVERFLOW {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_INT_OVERFLOW {
-	~OSD_Exception_INT_OVERFLOW() {
+%extend OSD_Environment {
+	~OSD_Environment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_Environment\n");}
 	}
 };
 
@@ -1791,6 +1820,49 @@ class OSD_SIGHUP : public OSD_Signal {
 	~OSD_SIGHUP() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of OSD_SIGHUP\n");}
+	}
+};
+
+
+%nodefaultctor OSD_Disk;
+class OSD_Disk {
+	public:
+		%feature("autodoc", "1");
+		OSD_Disk();
+		%feature("autodoc", "1");
+		OSD_Disk(const OSD_Path &Name);
+		%feature("autodoc", "1");
+		OSD_Disk(const char * PathName);
+		%feature("autodoc", "1");
+		OSD_Path Name() const;
+		%feature("autodoc", "1");
+		void SetName(const OSD_Path &Name);
+		%feature("autodoc", "1");
+		Standard_Integer DiskSize();
+		%feature("autodoc", "1");
+		Standard_Integer DiskFree();
+		%feature("autodoc", "1");
+		Standard_Integer DiskQuota();
+		%feature("autodoc", "1");
+		void SetDiskQuota(const Standard_Integer QuotaSize);
+		%feature("autodoc", "1");
+		void SetQuotaOn();
+		%feature("autodoc", "1");
+		void SetQuotaOff();
+		%feature("autodoc", "1");
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
+
+};
+%extend OSD_Disk {
+	~OSD_Disk() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_Disk\n");}
 	}
 };
 
@@ -1864,46 +1936,9 @@ class OSD_SIGSYS : public OSD_Signal {
 };
 
 
-%nodefaultctor OSD_Exception_FLT_INEXACT_RESULT;
-class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_FLT_INEXACT_RESULT();
-		%feature("autodoc", "1");
-		OSD_Exception_FLT_INEXACT_RESULT(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_INEXACT_RESULT NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_FLT_INEXACT_RESULT {
-	Handle_OSD_Exception_FLT_INEXACT_RESULT GetHandle() {
-	return *(Handle_OSD_Exception_FLT_INEXACT_RESULT*) &$self;
-	}
-};
-%extend OSD_Exception_FLT_INEXACT_RESULT {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_FLT_INEXACT_RESULT {
-	~OSD_Exception_FLT_INEXACT_RESULT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");}
-	}
-};
-
-
 %nodefaultctor OSD;
 class OSD {
 	public:
-		%feature("autodoc", "1");
-		OSD();
 		%feature("autodoc", "1");
 		void SetSignal(const Standard_Boolean aFloatingSignal=1);
 		%feature("autodoc", "1");
@@ -1934,112 +1969,6 @@ class OSD {
 	~OSD() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of OSD\n");}
-	}
-};
-
-
-%nodefaultctor OSD_Environment;
-class OSD_Environment {
-	public:
-		%feature("autodoc", "1");
-		OSD_Environment();
-		%feature("autodoc", "1");
-		OSD_Environment(const TCollection_AsciiString &Name);
-		%feature("autodoc", "1");
-		OSD_Environment(const TCollection_AsciiString &Name, const TCollection_AsciiString &Value);
-		%feature("autodoc", "1");
-		void SetValue(const TCollection_AsciiString &Value);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Value();
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &name);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Name() const;
-		%feature("autodoc", "1");
-		void Build();
-		%feature("autodoc", "1");
-		void Remove();
-		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Perror();
-		%feature("autodoc", "1");
-		Standard_Integer Error() const;
-
-};
-%extend OSD_Environment {
-	~OSD_Environment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Environment\n");}
-	}
-};
-
-
-%nodefaultctor OSD_File;
-class OSD_File : public OSD_FileNode {
-	public:
-		%feature("autodoc", "1");
-		OSD_File();
-		%feature("autodoc", "1");
-		OSD_File(const OSD_Path &Name);
-		%feature("autodoc", "1");
-		void Build(const OSD_OpenMode Mode, const OSD_Protection &Protect);
-		%feature("autodoc", "1");
-		void Open(const OSD_OpenMode Mode, const OSD_Protection &Protect);
-		%feature("autodoc", "1");
-		void Append(const OSD_OpenMode Mode, const OSD_Protection &Protect);
-		%feature("autodoc", "1");
-		void Read(TCollection_AsciiString & Buffer, const Standard_Integer Nbyte);
-		%feature("autodoc", "1");
-		void ReadLine(TCollection_AsciiString & Buffer, const Standard_Integer NByte, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		void Read(Standard_Address & Buffer, const Standard_Integer Nbyte, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		void Write(const TCollection_AsciiString &Buffer, const Standard_Integer Nbyte);
-		%feature("autodoc", "1");
-		void Write(const Standard_Address Buffer, const Standard_Integer Nbyte);
-		%feature("autodoc", "1");
-		void Seek(const Standard_Integer Offset, const OSD_FromWhere Whence);
-		%feature("autodoc", "1");
-		void Close();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAtEnd();
-		%feature("autodoc", "1");
-		OSD_KindFile KindOfFile() const;
-		%feature("autodoc", "1");
-		OSD_File BuildTemporary();
-		%feature("autodoc", "1");
-		void SetLock(const OSD_LockType Lock);
-		%feature("autodoc", "1");
-		void UnLock();
-		%feature("autodoc", "1");
-		OSD_LockType GetLock();
-		%feature("autodoc", "1");
-		Standard_Boolean IsLocked();
-		%feature("autodoc", "1");
-		Standard_Integer Size();
-		%feature("autodoc", "1");
-		void Print(const OSD_Printer &WhichPrinter);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpen() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsReadable();
-		%feature("autodoc", "1");
-		Standard_Boolean IsWriteable();
-		%feature("autodoc", "1");
-		Standard_Boolean IsExecutable();
-		%feature("autodoc", "1");
-		Standard_Boolean ReadLastLine(TCollection_AsciiString & aLine, const Standard_Integer aDelay, const Standard_Integer aNbTries);
-		%feature("autodoc", "1");
-		Standard_Boolean Edit();
-
-};
-%extend OSD_File {
-	~OSD_File() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_File\n");}
 	}
 };
 
@@ -2213,37 +2142,37 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 
 
-%nodefaultctor OSD_SIGQUIT;
-class OSD_SIGQUIT : public OSD_Signal {
+%nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
+class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 	public:
 		%feature("autodoc", "1");
-		OSD_SIGQUIT();
+		OSD_Exception_STATUS_NO_MEMORY();
 		%feature("autodoc", "1");
-		OSD_SIGQUIT(const char * AString);
+		OSD_Exception_STATUS_NO_MEMORY(const char * AString);
 		%feature("autodoc", "1");
 		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT NewInstance(const char * aMessage);
+		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend OSD_SIGQUIT {
-	Handle_OSD_SIGQUIT GetHandle() {
-	return *(Handle_OSD_SIGQUIT*) &$self;
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	Handle_OSD_Exception_STATUS_NO_MEMORY GetHandle() {
+	return *(Handle_OSD_Exception_STATUS_NO_MEMORY*) &$self;
 	}
 };
-%extend OSD_SIGQUIT {
+%extend OSD_Exception_STATUS_NO_MEMORY {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend OSD_SIGQUIT {
-	~OSD_SIGQUIT() {
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	~OSD_Exception_STATUS_NO_MEMORY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGQUIT\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");}
 	}
 };
 
@@ -2318,6 +2247,41 @@ class OSD_SIGINT : public OSD_Signal {
 };
 
 
+%nodefaultctor OSD_Exception_INVALID_DISPOSITION;
+class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_INVALID_DISPOSITION();
+		%feature("autodoc", "1");
+		OSD_Exception_INVALID_DISPOSITION(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_INVALID_DISPOSITION {
+	Handle_OSD_Exception_INVALID_DISPOSITION GetHandle() {
+	return *(Handle_OSD_Exception_INVALID_DISPOSITION*) &$self;
+	}
+};
+%extend OSD_Exception_INVALID_DISPOSITION {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_Exception_INVALID_DISPOSITION {
+	~OSD_Exception_INVALID_DISPOSITION() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");}
+	}
+};
+
+
 %nodefaultctor OSD_SIGKILL;
 class OSD_SIGKILL : public OSD_Signal {
 	public:
@@ -2353,37 +2317,35 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 
 
-%nodefaultctor OSD_Exception_IN_PAGE_ERROR;
-class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
+%nodefaultctor OSD_SharedMemory;
+class OSD_SharedMemory {
 	public:
 		%feature("autodoc", "1");
-		OSD_Exception_IN_PAGE_ERROR();
+		OSD_SharedMemory();
 		%feature("autodoc", "1");
-		OSD_Exception_IN_PAGE_ERROR(const char * AString);
+		OSD_SharedMemory(const TCollection_AsciiString &Name, const Standard_Integer size);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		void Build();
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		void Open(const TCollection_AsciiString &Name, const Standard_Integer size);
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
+		void Delete();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address GiveAddress() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
 
 };
-%extend OSD_Exception_IN_PAGE_ERROR {
-	Handle_OSD_Exception_IN_PAGE_ERROR GetHandle() {
-	return *(Handle_OSD_Exception_IN_PAGE_ERROR*) &$self;
-	}
-};
-%extend OSD_Exception_IN_PAGE_ERROR {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_IN_PAGE_ERROR {
-	~OSD_Exception_IN_PAGE_ERROR() {
+%extend OSD_SharedMemory {
+	~OSD_SharedMemory() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_SharedMemory\n");}
 	}
 };
 
@@ -2598,37 +2560,33 @@ class OSD_OSDError : public Standard_Failure {
 };
 
 
-%nodefaultctor OSD_Exception_ACCESS_VIOLATION;
-class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
+%nodefaultctor OSD_EnvironmentIterator;
+class OSD_EnvironmentIterator {
 	public:
 		%feature("autodoc", "1");
-		OSD_Exception_ACCESS_VIOLATION();
+		OSD_EnvironmentIterator();
 		%feature("autodoc", "1");
-		OSD_Exception_ACCESS_VIOLATION(const char * AString);
+		void Destroy();
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		Standard_Boolean More();
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		void Next();
 		%feature("autodoc", "1");
-		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage);
+		OSD_Environment Values();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Boolean Failed() const;
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Perror();
+		%feature("autodoc", "1");
+		Standard_Integer Error() const;
 
 };
-%extend OSD_Exception_ACCESS_VIOLATION {
-	Handle_OSD_Exception_ACCESS_VIOLATION GetHandle() {
-	return *(Handle_OSD_Exception_ACCESS_VIOLATION*) &$self;
-	}
-};
-%extend OSD_Exception_ACCESS_VIOLATION {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_ACCESS_VIOLATION {
-	~OSD_Exception_ACCESS_VIOLATION() {
+%extend OSD_EnvironmentIterator {
+	~OSD_EnvironmentIterator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_EnvironmentIterator\n");}
 	}
 };
 
@@ -2670,103 +2628,104 @@ class OSD_Host {
 };
 
 
-%nodefaultctor OSD_EnvironmentIterator;
-class OSD_EnvironmentIterator {
+%nodefaultctor OSD_File;
+class OSD_File : public OSD_FileNode {
 	public:
 		%feature("autodoc", "1");
-		OSD_EnvironmentIterator();
+		OSD_File();
 		%feature("autodoc", "1");
-		void Destroy();
+		OSD_File(const OSD_Path &Name);
 		%feature("autodoc", "1");
-		Standard_Boolean More();
+		void Build(const OSD_OpenMode Mode, const OSD_Protection &Protect);
 		%feature("autodoc", "1");
-		void Next();
+		void Open(const OSD_OpenMode Mode, const OSD_Protection &Protect);
 		%feature("autodoc", "1");
-		OSD_Environment Values();
+		void Append(const OSD_OpenMode Mode, const OSD_Protection &Protect);
 		%feature("autodoc", "1");
-		Standard_Boolean Failed() const;
+		void Read(TCollection_AsciiString & Buffer, const Standard_Integer Nbyte);
 		%feature("autodoc", "1");
-		void Reset();
+		void ReadLine(TCollection_AsciiString & Buffer, const Standard_Integer NByte, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Perror();
+		void Read(Standard_Address & Buffer, const Standard_Integer Nbyte, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Integer Error() const;
+		void Write(const TCollection_AsciiString &Buffer, const Standard_Integer Nbyte);
+		%feature("autodoc", "1");
+		void Write(const Standard_Address Buffer, const Standard_Integer Nbyte);
+		%feature("autodoc", "1");
+		void Seek(const Standard_Integer Offset, const OSD_FromWhere Whence);
+		%feature("autodoc", "1");
+		void Close();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAtEnd();
+		%feature("autodoc", "1");
+		OSD_KindFile KindOfFile() const;
+		%feature("autodoc", "1");
+		OSD_File BuildTemporary();
+		%feature("autodoc", "1");
+		void SetLock(const OSD_LockType Lock);
+		%feature("autodoc", "1");
+		void UnLock();
+		%feature("autodoc", "1");
+		OSD_LockType GetLock();
+		%feature("autodoc", "1");
+		Standard_Boolean IsLocked();
+		%feature("autodoc", "1");
+		Standard_Integer Size();
+		%feature("autodoc", "1");
+		void Print(const OSD_Printer &WhichPrinter);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpen() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsReadable();
+		%feature("autodoc", "1");
+		Standard_Boolean IsWriteable();
+		%feature("autodoc", "1");
+		Standard_Boolean IsExecutable();
+		%feature("autodoc", "1");
+		Standard_Boolean ReadLastLine(TCollection_AsciiString & aLine, const Standard_Integer aDelay, const Standard_Integer aNbTries);
+		%feature("autodoc", "1");
+		Standard_Boolean Edit();
 
 };
-%extend OSD_EnvironmentIterator {
-	~OSD_EnvironmentIterator() {
+%extend OSD_File {
+	~OSD_File() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_EnvironmentIterator\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_File\n");}
 	}
 };
 
 
-%nodefaultctor OSD_SIGSEGV;
-class OSD_SIGSEGV : public OSD_Signal {
+%nodefaultctor OSD_Exception_IN_PAGE_ERROR;
+class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 	public:
 		%feature("autodoc", "1");
-		OSD_SIGSEGV();
+		OSD_Exception_IN_PAGE_ERROR();
 		%feature("autodoc", "1");
-		OSD_SIGSEGV(const char * AString);
+		OSD_Exception_IN_PAGE_ERROR(const char * AString);
 		%feature("autodoc", "1");
 		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
+		Handle_OSD_Exception_IN_PAGE_ERROR NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend OSD_SIGSEGV {
-	Handle_OSD_SIGSEGV GetHandle() {
-	return *(Handle_OSD_SIGSEGV*) &$self;
+%extend OSD_Exception_IN_PAGE_ERROR {
+	Handle_OSD_Exception_IN_PAGE_ERROR GetHandle() {
+	return *(Handle_OSD_Exception_IN_PAGE_ERROR*) &$self;
 	}
 };
-%extend OSD_SIGSEGV {
+%extend OSD_Exception_IN_PAGE_ERROR {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend OSD_SIGSEGV {
-	~OSD_SIGSEGV() {
+%extend OSD_Exception_IN_PAGE_ERROR {
+	~OSD_Exception_IN_PAGE_ERROR() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGSEGV\n");}
-	}
-};
-
-
-%nodefaultctor OSD_Exception_INVALID_DISPOSITION;
-class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_INVALID_DISPOSITION();
-		%feature("autodoc", "1");
-		OSD_Exception_INVALID_DISPOSITION(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_INVALID_DISPOSITION NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_INVALID_DISPOSITION {
-	Handle_OSD_Exception_INVALID_DISPOSITION GetHandle() {
-	return *(Handle_OSD_Exception_INVALID_DISPOSITION*) &$self;
-	}
-};
-%extend OSD_Exception_INVALID_DISPOSITION {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend OSD_Exception_INVALID_DISPOSITION {
-	~OSD_Exception_INVALID_DISPOSITION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");}
+	if (__env){printf("## Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");}
 	}
 };
 
@@ -2802,5 +2761,40 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 	~OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
+	}
+};
+
+
+%nodefaultctor OSD_SIGSEGV;
+class OSD_SIGSEGV : public OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		OSD_SIGSEGV();
+		%feature("autodoc", "1");
+		OSD_SIGSEGV(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGSEGV NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_SIGSEGV {
+	Handle_OSD_SIGSEGV GetHandle() {
+	return *(Handle_OSD_SIGSEGV*) &$self;
+	}
+};
+%extend OSD_SIGSEGV {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend OSD_SIGSEGV {
+	~OSD_SIGSEGV() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of OSD_SIGSEGV\n");}
 	}
 };

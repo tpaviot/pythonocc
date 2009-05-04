@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ChFi2d
 
+%include ChFi2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -133,8 +135,6 @@ enum ChFi2d_ConstructionError {
 %nodefaultctor ChFi2d;
 class ChFi2d {
 	public:
-		%feature("autodoc", "1");
-		ChFi2d();
 
 };
 %extend ChFi2d {

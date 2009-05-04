@@ -76,11 +76,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Quantity_Array1OfColor.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Aspect_Pixel.hxx>
-#include<Aspect_IndexPixel.hxx>
 #include<Aspect_ColorPixel.hxx>
+#include<Aspect_IndexPixel.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Aspect_GenericColorMap.hxx>
-#include<Image.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 %}

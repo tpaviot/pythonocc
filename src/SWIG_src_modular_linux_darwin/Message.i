@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Message
 
+%include Message_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -544,57 +546,6 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 
 
-%nodefaultctor Message_ProgressScale;
-class Message_ProgressScale {
-	public:
-		%feature("autodoc", "1");
-		Message_ProgressScale();
-		%feature("autodoc", "1");
-		void SetName(const char * theName);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &theName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString GetName() const;
-		%feature("autodoc", "1");
-		void SetMin(const Standard_Real theMin);
-		%feature("autodoc", "1");
-		Standard_Real GetMin() const;
-		%feature("autodoc", "1");
-		void SetMax(const Standard_Real theMax);
-		%feature("autodoc", "1");
-		Standard_Real GetMax() const;
-		%feature("autodoc", "1");
-		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
-		%feature("autodoc", "1");
-		void SetStep(const Standard_Real theStep);
-		%feature("autodoc", "1");
-		Standard_Real GetStep() const;
-		%feature("autodoc", "1");
-		void SetInfinite(const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		Standard_Boolean GetInfinite() const;
-		%feature("autodoc", "1");
-		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
-		%feature("autodoc", "1");
-		Standard_Real GetFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real GetLast() const;
-		%feature("autodoc", "1");
-		Standard_Real LocalToBase(const Standard_Real val) const;
-		%feature("autodoc", "1");
-		Standard_Real BaseToLocal(const Standard_Real val) const;
-
-};
-%extend Message_ProgressScale {
-	~Message_ProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
-	}
-};
-
-
 %nodefaultctor Message_Messenger;
 class Message_Messenger : public MMgt_TShared {
 	public:
@@ -782,6 +733,57 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 
 
+%nodefaultctor Message_ProgressScale;
+class Message_ProgressScale {
+	public:
+		%feature("autodoc", "1");
+		Message_ProgressScale();
+		%feature("autodoc", "1");
+		void SetName(const char * theName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &theName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		void SetMin(const Standard_Real theMin);
+		%feature("autodoc", "1");
+		Standard_Real GetMin() const;
+		%feature("autodoc", "1");
+		void SetMax(const Standard_Real theMax);
+		%feature("autodoc", "1");
+		Standard_Real GetMax() const;
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
+		%feature("autodoc", "1");
+		void SetStep(const Standard_Real theStep);
+		%feature("autodoc", "1");
+		Standard_Real GetStep() const;
+		%feature("autodoc", "1");
+		void SetInfinite(const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		Standard_Boolean GetInfinite() const;
+		%feature("autodoc", "1");
+		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
+		%feature("autodoc", "1");
+		Standard_Real GetFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real GetLast() const;
+		%feature("autodoc", "1");
+		Standard_Real LocalToBase(const Standard_Real val) const;
+		%feature("autodoc", "1");
+		Standard_Real BaseToLocal(const Standard_Real val) const;
+
+};
+%extend Message_ProgressScale {
+	~Message_ProgressScale() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
+	}
+};
+
+
 %nodefaultctor Message_ListOfMsg;
 class Message_ListOfMsg {
 	public:
@@ -836,8 +838,6 @@ class Message_ListOfMsg {
 %nodefaultctor Message;
 class Message {
 	public:
-		%feature("autodoc", "1");
-		Message();
 		%feature("autodoc", "1");
 		const Handle_Message_Messenger & DefaultMessenger();
 		%feature("autodoc", "1");
@@ -988,8 +988,6 @@ class Message_PrinterOStream : public Message_Printer {
 %nodefaultctor Message_MsgFile;
 class Message_MsgFile {
 	public:
-		%feature("autodoc", "1");
-		Message_MsgFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Load(const char * theDirName, const char * theFileName);
 		%feature("autodoc", "1");

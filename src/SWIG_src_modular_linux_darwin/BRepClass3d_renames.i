@@ -1,0 +1,9 @@
+%rename(SolidClassifier) BRepClass3d_SolidClassifier;
+%rename(SolidPassiveClassifier) BRepClass3d_SolidPassiveClassifier;
+%rename(SClassifier) BRepClass3d_SClassifier;
+%rename(MapOfInter) BRepClass3d_MapOfInter;
+%rename(DataMapIteratorOfMapOfInter) BRepClass3d_DataMapIteratorOfMapOfInter;
+%rename(Intersector3d) BRepClass3d_Intersector3d;
+%rename(SolidExplorer) BRepClass3d_SolidExplorer;
+%rename(Handle_DataMapNodeOfMapOfInter) Handle_BRepClass3d_DataMapNodeOfMapOfInter;
+%rename(DataMapNodeOfMapOfInter) BRepClass3d_DataMapNodeOfMapOfInter;

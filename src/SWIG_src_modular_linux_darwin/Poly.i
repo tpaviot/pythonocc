@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Poly
 
+%include Poly_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_Poly_HArray1OfTriangle;
-class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle();
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
-		%feature("autodoc", "1");
-		Handle_Poly_HArray1OfTriangle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Poly_HArray1OfTriangle {
-	Poly_HArray1OfTriangle* GetObject() {
-	return (Poly_HArray1OfTriangle*)$self->Access();
-	}
-};
-%extend Handle_Poly_HArray1OfTriangle {
-	~Handle_Poly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Poly_PolygonOnTriangulation;
 class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +138,32 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	~Handle_Poly_PolygonOnTriangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Poly_HArray1OfTriangle;
+class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle();
+		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle(const Handle_Poly_HArray1OfTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Poly_HArray1OfTriangle {
+	Poly_HArray1OfTriangle* GetObject() {
+	return (Poly_HArray1OfTriangle*)$self->Access();
+	}
+};
+%extend Handle_Poly_HArray1OfTriangle {
+	~Handle_Poly_HArray1OfTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -431,65 +433,37 @@ class Poly_Array1OfTriangle {
 };
 
 
-%nodefaultctor Poly_Triangulation;
-class Poly_Triangulation : public MMgt_TShared {
+%nodefaultctor Poly_Polygon2D;
+class Poly_Polygon2D : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
-		%feature("autodoc", "1");
-		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const Poly_Array1OfTriangle &Triangles);
-		%feature("autodoc", "1");
-		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const TColgp_Array1OfPnt2d &UVNodes, const Poly_Array1OfTriangle &Triangles);
+		Poly_Polygon2D(const TColgp_Array1OfPnt2d &Nodes);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
 		void Deflection(const Standard_Real D);
 		%feature("autodoc", "1");
-		void RemoveUVNodes();
-		%feature("autodoc", "1");
 		Standard_Integer NbNodes() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasUVNodes() const;
-		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt & Nodes() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfPnt & ChangeNodes();
-		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt2d & UVNodes() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfPnt2d & ChangeUVNodes();
-		%feature("autodoc", "1");
-		const Poly_Array1OfTriangle & Triangles() const;
-		%feature("autodoc", "1");
-		Poly_Array1OfTriangle & ChangeTriangles();
-		%feature("autodoc", "1");
-		void SetNormals(const Handle_TShort_HArray1OfShortReal &theNormals);
-		%feature("autodoc", "1");
-		const TShort_Array1OfShortReal & Normals() const;
-		%feature("autodoc", "1");
-		TShort_Array1OfShortReal & ChangeNormals();
-		%feature("autodoc", "1");
-		Standard_Boolean HasNormals() const;
+		const TColgp_Array1OfPnt2d & Nodes() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Poly_Triangulation {
-	Handle_Poly_Triangulation GetHandle() {
-	return *(Handle_Poly_Triangulation*) &$self;
+%extend Poly_Polygon2D {
+	Handle_Poly_Polygon2D GetHandle() {
+	return *(Handle_Poly_Polygon2D*) &$self;
 	}
 };
-%extend Poly_Triangulation {
+%extend Poly_Polygon2D {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Poly_Triangulation {
-	~Poly_Triangulation() {
+%extend Poly_Polygon2D {
+	~Poly_Polygon2D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Poly_Triangulation\n");}
+	if (__env){printf("## Call custom destructor for instance of Poly_Polygon2D\n");}
 	}
 };
 
@@ -564,84 +538,65 @@ class Poly_Triangle {
 };
 
 
-%nodefaultctor Poly_Polygon2D;
-class Poly_Polygon2D : public MMgt_TShared {
+%nodefaultctor Poly_Triangulation;
+class Poly_Triangulation : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Poly_Polygon2D(const TColgp_Array1OfPnt2d &Nodes);
+		Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
+		%feature("autodoc", "1");
+		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const Poly_Array1OfTriangle &Triangles);
+		%feature("autodoc", "1");
+		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const TColgp_Array1OfPnt2d &UVNodes, const Poly_Array1OfTriangle &Triangles);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
 		void Deflection(const Standard_Real D);
 		%feature("autodoc", "1");
+		void RemoveUVNodes();
+		%feature("autodoc", "1");
 		Standard_Integer NbNodes() const;
 		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt2d & Nodes() const;
+		Standard_Integer NbTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasUVNodes() const;
+		%feature("autodoc", "1");
+		const TColgp_Array1OfPnt & Nodes() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfPnt & ChangeNodes();
+		%feature("autodoc", "1");
+		const TColgp_Array1OfPnt2d & UVNodes() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfPnt2d & ChangeUVNodes();
+		%feature("autodoc", "1");
+		const Poly_Array1OfTriangle & Triangles() const;
+		%feature("autodoc", "1");
+		Poly_Array1OfTriangle & ChangeTriangles();
+		%feature("autodoc", "1");
+		void SetNormals(const Handle_TShort_HArray1OfShortReal &theNormals);
+		%feature("autodoc", "1");
+		const TShort_Array1OfShortReal & Normals() const;
+		%feature("autodoc", "1");
+		TShort_Array1OfShortReal & ChangeNormals();
+		%feature("autodoc", "1");
+		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Poly_Polygon2D {
-	Handle_Poly_Polygon2D GetHandle() {
-	return *(Handle_Poly_Polygon2D*) &$self;
+%extend Poly_Triangulation {
+	Handle_Poly_Triangulation GetHandle() {
+	return *(Handle_Poly_Triangulation*) &$self;
 	}
 };
-%extend Poly_Polygon2D {
+%extend Poly_Triangulation {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Poly_Polygon2D {
-	~Poly_Polygon2D() {
+%extend Poly_Triangulation {
+	~Poly_Triangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Poly_Polygon2D\n");}
-	}
-};
-
-
-%nodefaultctor Poly;
-class Poly {
-	public:
-		%feature("autodoc", "1");
-		Poly();
-		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Triangulation &T, Standard_OStream & OS, const Standard_Boolean Compact=1);
-		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Polygon3D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
-		%feature("autodoc", "1");
-		void Write(const Handle_Poly_Polygon2D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
-		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Triangulation &T, Standard_OStream & OS);
-		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Polygon3D &P, Standard_OStream & OS);
-		%feature("autodoc", "1");
-		void Dump(const Handle_Poly_Polygon2D &P, Standard_OStream & OS);
-		%feature("autodoc", "1");
-		%extend{
-			void ReadTriangulationFromString(std::string src) {
-			std::stringstream s(src);
-			self->ReadTriangulation(s);}
-		};
-		%feature("autodoc", "1");
-		%extend{
-			void ReadPolygon3DFromString(std::string src) {
-			std::stringstream s(src);
-			self->ReadPolygon3D(s);}
-		};
-		%feature("autodoc", "1");
-		%extend{
-			void ReadPolygon2DFromString(std::string src) {
-			std::stringstream s(src);
-			self->ReadPolygon2D(s);}
-		};
-		%feature("autodoc", "1");
-		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
-
-};
-%extend Poly {
-	~Poly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Poly\n");}
+	if (__env){printf("## Call custom destructor for instance of Poly_Triangulation\n");}
 	}
 };
 
@@ -689,6 +644,51 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 	~Poly_HArray1OfTriangle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Poly_HArray1OfTriangle\n");}
+	}
+};
+
+
+%nodefaultctor Poly;
+class Poly {
+	public:
+		%feature("autodoc", "1");
+		void Write(const Handle_Poly_Triangulation &T, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		%feature("autodoc", "1");
+		void Write(const Handle_Poly_Polygon3D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		%feature("autodoc", "1");
+		void Write(const Handle_Poly_Polygon2D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);
+		%feature("autodoc", "1");
+		void Dump(const Handle_Poly_Triangulation &T, Standard_OStream & OS);
+		%feature("autodoc", "1");
+		void Dump(const Handle_Poly_Polygon3D &P, Standard_OStream & OS);
+		%feature("autodoc", "1");
+		void Dump(const Handle_Poly_Polygon2D &P, Standard_OStream & OS);
+		%feature("autodoc", "1");
+		%extend{
+			void ReadTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadTriangulation(s);}
+		};
+		%feature("autodoc", "1");
+		%extend{
+			void ReadPolygon3DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon3D(s);}
+		};
+		%feature("autodoc", "1");
+		%extend{
+			void ReadPolygon2DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon2D(s);}
+		};
+		%feature("autodoc", "1");
+		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
+
+};
+%extend Poly {
+	~Poly() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly\n");}
 	}
 };
 

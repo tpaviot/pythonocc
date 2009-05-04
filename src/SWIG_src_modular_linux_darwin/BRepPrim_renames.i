@@ -1,0 +1,10 @@
+%rename(Wedge) BRepPrim_Wedge;
+%rename(Cylinder) BRepPrim_Cylinder;
+%rename(GWedge) BRepPrim_GWedge;
+%rename(Torus) BRepPrim_Torus;
+%rename(OneAxis) BRepPrim_OneAxis;
+%rename(Sphere) BRepPrim_Sphere;
+%rename(Revolution) BRepPrim_Revolution;
+%rename(Cone) BRepPrim_Cone;
+%rename(FaceBuilder) BRepPrim_FaceBuilder;
+%rename(Builder) BRepPrim_Builder;

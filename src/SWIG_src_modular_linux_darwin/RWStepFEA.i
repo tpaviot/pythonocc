@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module RWStepFEA
 
+%include RWStepFEA_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -173,27 +175,6 @@ class RWStepFEA_RWFeaGroup {
 	~RWStepFEA_RWFeaGroup() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaGroup\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
-class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaCurveSectionGeometricRelationship();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
-	~RWStepFEA_RWFeaCurveSectionGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaCurveSectionGeometricRelationship\n");}
 	}
 };
 
@@ -471,27 +452,6 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 };
 
 
-%nodefaultctor RWStepFEA_RWCurveElementEndOffset;
-class RWStepFEA_RWCurveElementEndOffset {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWCurveElementEndOffset();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementEndOffset &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementEndOffset &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_CurveElementEndOffset &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWCurveElementEndOffset {
-	~RWStepFEA_RWCurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementEndOffset\n");}
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
 class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	public:
@@ -572,27 +532,6 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	~RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
-class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
-	~RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -681,23 +620,23 @@ class RWStepFEA_RWNodeSet {
 };
 
 
-%nodefaultctor RWStepFEA_RWFeaLinearElasticity;
-class RWStepFEA_RWFeaLinearElasticity {
+%nodefaultctor RWStepFEA_RWCurveElementEndOffset;
+class RWStepFEA_RWCurveElementEndOffset {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWFeaLinearElasticity();
+		RWStepFEA_RWCurveElementEndOffset();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaLinearElasticity &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementEndOffset &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaLinearElasticity &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementEndOffset &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaLinearElasticity &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_CurveElementEndOffset &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepFEA_RWFeaLinearElasticity {
-	~RWStepFEA_RWFeaLinearElasticity() {
+%extend RWStepFEA_RWCurveElementEndOffset {
+	~RWStepFEA_RWCurveElementEndOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaLinearElasticity\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementEndOffset\n");}
 	}
 };
 
@@ -765,6 +704,27 @@ class RWStepFEA_RWNodeRepresentation {
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
+class RWStepFEA_RWFeaAxis2Placement3d {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaAxis2Placement3d();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaAxis2Placement3d &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaAxis2Placement3d {
+	~RWStepFEA_RWFeaAxis2Placement3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaAxis2Placement3d\n");}
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWElementGroup;
 class RWStepFEA_RWElementGroup {
 	public:
@@ -782,27 +742,6 @@ class RWStepFEA_RWElementGroup {
 	~RWStepFEA_RWElementGroup() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementGroup\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaModel;
-class RWStepFEA_RWFeaModel {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaModel();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWFeaModel {
-	~RWStepFEA_RWFeaModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
 	}
 };
 
@@ -828,27 +767,6 @@ class RWStepFEA_RWFeaModelDefinition {
 };
 
 
-%nodefaultctor RWStepFEA_RWNodeWithVector;
-class RWStepFEA_RWNodeWithVector {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWNodeWithVector();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeWithVector &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeWithVector &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_NodeWithVector &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWNodeWithVector {
-	~RWStepFEA_RWNodeWithVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithVector\n");}
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWFreedomAndCoefficient;
 class RWStepFEA_RWFreedomAndCoefficient {
 	public:
@@ -866,27 +784,6 @@ class RWStepFEA_RWFreedomAndCoefficient {
 	~RWStepFEA_RWFreedomAndCoefficient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFreedomAndCoefficient\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWDummyNode;
-class RWStepFEA_RWDummyNode {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWDummyNode();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_DummyNode &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_DummyNode &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_DummyNode &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWDummyNode {
-	~RWStepFEA_RWDummyNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWDummyNode\n");}
 	}
 };
 
@@ -950,27 +847,6 @@ class RWStepFEA_RWFeaModel3d {
 	~RWStepFEA_RWFeaModel3d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel3d\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
-class RWStepFEA_RWFeaAxis2Placement3d {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaAxis2Placement3d();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaAxis2Placement3d &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWFeaAxis2Placement3d {
-	~RWStepFEA_RWFeaAxis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaAxis2Placement3d\n");}
 	}
 };
 
@@ -1059,6 +935,27 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaModel;
+class RWStepFEA_RWFeaModel {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaModel();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaModel {
+	~RWStepFEA_RWFeaModel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWNodeGroup;
 class RWStepFEA_RWNodeGroup {
 	public:
@@ -1101,6 +998,48 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
+class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaCurveSectionGeometricRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+	~RWStepFEA_RWFeaCurveSectionGeometricRelationship() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaCurveSectionGeometricRelationship\n");}
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
+class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
+	~RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion\n");}
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWFeaSurfaceSectionGeometricRelationship;
 class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 	public:
@@ -1122,6 +1061,27 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 };
 
 
+%nodefaultctor RWStepFEA_RWDummyNode;
+class RWStepFEA_RWDummyNode {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWDummyNode();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_DummyNode &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_DummyNode &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_DummyNode &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWDummyNode {
+	~RWStepFEA_RWDummyNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWDummyNode\n");}
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWNode;
 class RWStepFEA_RWNode {
 	public:
@@ -1139,6 +1099,27 @@ class RWStepFEA_RWNode {
 	~RWStepFEA_RWNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNode\n");}
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaLinearElasticity;
+class RWStepFEA_RWFeaLinearElasticity {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaLinearElasticity();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaLinearElasticity &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaLinearElasticity &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaLinearElasticity &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaLinearElasticity {
+	~RWStepFEA_RWFeaLinearElasticity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaLinearElasticity\n");}
 	}
 };
 
@@ -1181,6 +1162,27 @@ class RWStepFEA_RWElementGeometricRelationship {
 	~RWStepFEA_RWElementGeometricRelationship() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementGeometricRelationship\n");}
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWNodeWithVector;
+class RWStepFEA_RWNodeWithVector {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWNodeWithVector();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeWithVector &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeWithVector &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_NodeWithVector &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWNodeWithVector {
+	~RWStepFEA_RWNodeWithVector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithVector\n");}
 	}
 };
 

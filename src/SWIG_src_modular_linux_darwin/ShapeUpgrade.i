@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeUpgrade
 
+%include ShapeUpgrade_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -188,32 +190,6 @@ class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixS
 	~Handle_ShapeUpgrade_FixSmallBezierCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallBezierCurves\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_WireDivide;
-class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide(const Handle_ShapeUpgrade_WireDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide(const ShapeUpgrade_WireDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_WireDivide const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_WireDivide {
-	ShapeUpgrade_WireDivide* GetObject() {
-	return (ShapeUpgrade_WireDivide*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_WireDivide {
-	~Handle_ShapeUpgrade_WireDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_WireDivide\n");}
 	}
 };
 
@@ -660,6 +636,32 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_WireDivide;
+class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_WireDivide();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_WireDivide(const Handle_ShapeUpgrade_WireDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_WireDivide(const ShapeUpgrade_WireDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_WireDivide const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_WireDivide {
+	ShapeUpgrade_WireDivide* GetObject() {
+	return (ShapeUpgrade_WireDivide*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_WireDivide {
+	~Handle_ShapeUpgrade_WireDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_WireDivide\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
 class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
 	public:
@@ -843,66 +845,6 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 };
 
 
-%nodefaultctor ShapeUpgrade_ShapeDivide;
-class ShapeUpgrade_ShapeDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivide();
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivide(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real Prec);
-		%feature("autodoc", "1");
-		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		void SetMinTolerance(const Standard_Real mintol);
-		%feature("autodoc", "1");
-		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(const Standard_Boolean newContext=1);
-		%feature("autodoc", "1");
-		TopoDS_Shape Result() const;
-		%feature("autodoc", "1");
-		Handle_ShapeBuild_ReShape GetContext() const;
-		%feature("autodoc", "1");
-		void SetContext(const Handle_ShapeBuild_ReShape &context);
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void SetSplitFaceTool(const Handle_ShapeUpgrade_FaceDivide &splitFaceTool);
-		%feature("autodoc", "1");
-		void SetEdgeMode(const Standard_Integer aEdgeMode);
-
-};
-%extend ShapeUpgrade_ShapeDivide {
-	~ShapeUpgrade_ShapeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivide\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
-class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void SetNbSplitPoints(const Standard_Integer num);
-
-};
-%extend ShapeUpgrade_ShapeDivideClosedEdges {
-	~ShapeUpgrade_ShapeDivideClosedEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");}
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_SplitSurface;
 class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 	public:
@@ -1063,68 +1005,35 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 
 
-%nodefaultctor ShapeUpgrade_SplitCurve2d;
-class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
+%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
+class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_SplitCurve2d();
+		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C);
+		void SetMaxAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &C, const Standard_Real First, const Standard_Real Last);
+		Standard_Real MaxAngle() const;
 		%feature("autodoc", "1");
-		virtual		void Build(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		const Handle_TColGeom2d_HArray1OfCurve & GetCurves() const;
+		virtual		void Compute(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_SplitCurve2d {
-	Handle_ShapeUpgrade_SplitCurve2d GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitCurve2d*) &$self;
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
 	}
 };
-%extend ShapeUpgrade_SplitCurve2d {
+%extend ShapeUpgrade_SplitSurfaceAngle {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeUpgrade_SplitCurve2d {
-	~ShapeUpgrade_SplitCurve2d() {
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	~ShapeUpgrade_SplitSurfaceAngle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2d\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_SplitCurve2dContinuity;
-class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitCurve2dContinuity();
-		%feature("autodoc", "1");
-		void SetCriterion(const GeomAbs_Shape Criterion);
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		void Compute();
-
-};
-%extend ShapeUpgrade_SplitCurve2dContinuity {
-	Handle_ShapeUpgrade_SplitCurve2dContinuity GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitCurve2dContinuity*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitCurve2dContinuity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_SplitCurve2dContinuity {
-	~ShapeUpgrade_SplitCurve2dContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2dContinuity\n");}
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
 	}
 };
 
@@ -1162,6 +1071,66 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 	~ShapeUpgrade_FixSmallCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ShapeDivide;
+class ShapeUpgrade_ShapeDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivide();
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivide(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real Prec);
+		%feature("autodoc", "1");
+		void SetMaxTolerance(const Standard_Real maxtol);
+		%feature("autodoc", "1");
+		void SetMinTolerance(const Standard_Real mintol);
+		%feature("autodoc", "1");
+		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform(const Standard_Boolean newContext=1);
+		%feature("autodoc", "1");
+		TopoDS_Shape Result() const;
+		%feature("autodoc", "1");
+		Handle_ShapeBuild_ReShape GetContext() const;
+		%feature("autodoc", "1");
+		void SetContext(const Handle_ShapeBuild_ReShape &context);
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void SetSplitFaceTool(const Handle_ShapeUpgrade_FaceDivide &splitFaceTool);
+		%feature("autodoc", "1");
+		void SetEdgeMode(const Standard_Integer aEdgeMode);
+
+};
+%extend ShapeUpgrade_ShapeDivide {
+	~ShapeUpgrade_ShapeDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivide\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
+class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void SetNbSplitPoints(const Standard_Integer num);
+
+};
+%extend ShapeUpgrade_ShapeDivideClosedEdges {
+	~ShapeUpgrade_ShapeDivideClosedEdges() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");}
 	}
 };
 
@@ -1245,8 +1214,6 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 %nodefaultctor ShapeUpgrade;
 class ShapeUpgrade {
 	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade();
 		%feature("autodoc", "1");
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
 		%feature("autodoc", "1");
@@ -1463,6 +1430,41 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 };
 
 
+%nodefaultctor ShapeUpgrade_SplitCurve2d;
+class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitCurve2d();
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_Curve &C, const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void Build(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		const Handle_TColGeom2d_HArray1OfCurve & GetCurves() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_SplitCurve2d {
+	Handle_ShapeUpgrade_SplitCurve2d GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitCurve2d*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitCurve2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_SplitCurve2d {
+	~ShapeUpgrade_SplitCurve2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2d\n");}
+	}
+};
+
+
 %nodefaultctor ShapeUpgrade_ShapeDivideArea;
 class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1478,39 +1480,6 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 	~ShapeUpgrade_ShapeDivideArea() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
-class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		void SetMaxAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		Standard_Real MaxAngle() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	~ShapeUpgrade_SplitSurfaceAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
 	}
 };
 
@@ -1700,6 +1669,88 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 };
 
 
+%nodefaultctor ShapeUpgrade_SplitCurve2dContinuity;
+class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitCurve2dContinuity();
+		%feature("autodoc", "1");
+		void SetCriterion(const GeomAbs_Shape Criterion);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		void Compute();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_SplitCurve2dContinuity {
+	Handle_ShapeUpgrade_SplitCurve2dContinuity GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitCurve2dContinuity*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitCurve2dContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_SplitCurve2dContinuity {
+	~ShapeUpgrade_SplitCurve2dContinuity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2dContinuity\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
+class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ConvertSurfaceToBezierBasis();
+		%feature("autodoc", "1");
+		virtual		void Build(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_CompositeSurface Segments() const;
+		%feature("autodoc", "1");
+		void SetPlaneMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetPlaneMode() const;
+		%feature("autodoc", "1");
+		void SetRevolutionMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetRevolutionMode() const;
+		%feature("autodoc", "1");
+		void SetExtrusionMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetExtrusionMode() const;
+		%feature("autodoc", "1");
+		void SetBSplineMode(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean GetBSplineMode() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis GetHandle() {
+	return *(Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis*) &$self;
+	}
+};
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	~ShapeUpgrade_ConvertSurfaceToBezierBasis() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
+	}
+};
+
+
 %nodefaultctor ShapeUpgrade_ShapeDivideClosed;
 class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1760,55 +1811,6 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	~ShapeUpgrade_RemoveInternalWires() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveInternalWires\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
-class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ConvertSurfaceToBezierBasis();
-		%feature("autodoc", "1");
-		virtual		void Build(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface Segments() const;
-		%feature("autodoc", "1");
-		void SetPlaneMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetPlaneMode() const;
-		%feature("autodoc", "1");
-		void SetRevolutionMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetRevolutionMode() const;
-		%feature("autodoc", "1");
-		void SetExtrusionMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetExtrusionMode() const;
-		%feature("autodoc", "1");
-		void SetBSplineMode(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean GetBSplineMode() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
-	Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis GetHandle() {
-	return *(Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis*) &$self;
-	}
-};
-%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
-	~ShapeUpgrade_ConvertSurfaceToBezierBasis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
 	}
 };
 

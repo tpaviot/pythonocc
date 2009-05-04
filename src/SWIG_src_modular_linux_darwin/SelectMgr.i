@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module SelectMgr
 
+%include SelectMgr_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -129,6 +131,32 @@ enum SelectMgr_TypeOfUpdate {
 	SelectMgr_TOU_None,
 	};
 
+
+
+%nodefaultctor Handle_SelectMgr_SelectionManager;
+class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectionManager();
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectionManager(const Handle_SelectMgr_SelectionManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectionManager(const SelectMgr_SelectionManager *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectionManager const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectMgr_SelectionManager {
+	SelectMgr_SelectionManager* GetObject() {
+	return (SelectMgr_SelectionManager*)$self->Access();
+	}
+};
+%extend Handle_SelectMgr_SelectionManager {
+	~Handle_SelectMgr_SelectionManager() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");}
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_EntityOwner;
@@ -313,32 +341,6 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 };
 
 
-%nodefaultctor Handle_SelectMgr_SelectionManager;
-class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectionManager();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectionManager(const Handle_SelectMgr_SelectionManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectionManager(const SelectMgr_SelectionManager *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectionManager const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectMgr_SelectionManager {
-	SelectMgr_SelectionManager* GetObject() {
-	return (SelectMgr_SelectionManager*)$self->Access();
-	}
-};
-%extend Handle_SelectMgr_SelectionManager {
-	~Handle_SelectMgr_SelectionManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");}
-	}
-};
-
-
 %nodefaultctor Handle_SelectMgr_ViewerSelector;
 class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 	public:
@@ -387,6 +389,32 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 	~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
+	}
+};
+
+
+%nodefaultctor Handle_SelectMgr_SelectableObject;
+class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject();
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject(const Handle_SelectMgr_SelectableObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject(const SelectMgr_SelectableObject *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectMgr_SelectableObject {
+	SelectMgr_SelectableObject* GetObject() {
+	return (SelectMgr_SelectableObject*)$self->Access();
+	}
+};
+%extend Handle_SelectMgr_SelectableObject {
+	~Handle_SelectMgr_SelectableObject() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectableObject\n");}
 	}
 };
 
@@ -543,32 +571,6 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 	~Handle_SelectMgr_OrFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_OrFilter\n");}
-	}
-};
-
-
-%nodefaultctor Handle_SelectMgr_SelectableObject;
-class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject(const Handle_SelectMgr_SelectableObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject(const SelectMgr_SelectableObject *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectMgr_SelectableObject {
-	SelectMgr_SelectableObject* GetObject() {
-	return (SelectMgr_SelectableObject*)$self->Access();
-	}
-};
-%extend Handle_SelectMgr_SelectableObject {
-	~Handle_SelectMgr_SelectableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectableObject\n");}
 	}
 };
 
@@ -817,6 +819,37 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 	~SelectMgr_IndexedDataMapOfOwnerCriterion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");}
+	}
+};
+
+
+%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
+class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject & Key() const;
+		%feature("autodoc", "1");
+		SelectMgr_SequenceOfSelector & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
+	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
 	}
 };
 
@@ -1135,72 +1168,6 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 
 
-%nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
-class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapNodeOfDataMapOfObjectSelectors(const Handle_SelectMgr_SelectableObject &K, const SelectMgr_SequenceOfSelector &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject & Key() const;
-		%feature("autodoc", "1");
-		SelectMgr_SequenceOfSelector & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors GetHandle() {
-	return *(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors*) &$self;
-	}
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
-	~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
-	}
-};
-
-
-%nodefaultctor SelectMgr_DataMapOfSelectionActivation;
-class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfSelectionActivation(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		SelectMgr_DataMapOfSelectionActivation & Assign(const SelectMgr_DataMapOfSelectionActivation &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_SelectMgr_Selection &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Handle_SelectMgr_Selection &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Handle_SelectMgr_Selection &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const Handle_SelectMgr_Selection &K);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
-
-};
-%extend SelectMgr_DataMapOfSelectionActivation {
-	~SelectMgr_DataMapOfSelectionActivation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");}
-	}
-};
-
-
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
 class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	public:
@@ -1308,78 +1275,6 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 };
 
 
-%nodefaultctor SelectMgr_Selection;
-class SelectMgr_Selection : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_Selection(const Standard_Integer IdMode=0);
-		%feature("autodoc", "1");
-		void Add(const Handle_SelectBasics_SensitiveEntity &aprimitive);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Mode() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_SelectBasics_SensitiveEntity & Sensitive() const;
-		%feature("autodoc", "1");
-		SelectMgr_TypeOfUpdate UpdateStatus() const;
-		%feature("autodoc", "1");
-		void UpdateStatus(const SelectMgr_TypeOfUpdate TheStat);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectMgr_Selection {
-	Handle_SelectMgr_Selection GetHandle() {
-	return *(Handle_SelectMgr_Selection*) &$self;
-	}
-};
-%extend SelectMgr_Selection {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend SelectMgr_Selection {
-	~SelectMgr_Selection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectMgr_Selection\n");}
-	}
-};
-
-
-%nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
-class SelectMgr_ListIteratorOfListOfFilter {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_ListIteratorOfListOfFilter();
-		%feature("autodoc", "1");
-		SelectMgr_ListIteratorOfListOfFilter(const SelectMgr_ListOfFilter &L);
-		%feature("autodoc", "1");
-		void Initialize(const SelectMgr_ListOfFilter &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Filter & Value() const;
-
-};
-%extend SelectMgr_ListIteratorOfListOfFilter {
-	~SelectMgr_ListIteratorOfListOfFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");}
-	}
-};
-
-
 %nodefaultctor SelectMgr_ListOfFilter;
 class SelectMgr_ListOfFilter {
 	public:
@@ -1427,6 +1322,53 @@ class SelectMgr_ListOfFilter {
 	~SelectMgr_ListOfFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_ListOfFilter\n");}
+	}
+};
+
+
+%nodefaultctor SelectMgr_Selection;
+class SelectMgr_Selection : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_Selection(const Standard_Integer IdMode=0);
+		%feature("autodoc", "1");
+		void Add(const Handle_SelectBasics_SensitiveEntity &aprimitive);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Mode() const;
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_SelectBasics_SensitiveEntity & Sensitive() const;
+		%feature("autodoc", "1");
+		SelectMgr_TypeOfUpdate UpdateStatus() const;
+		%feature("autodoc", "1");
+		void UpdateStatus(const SelectMgr_TypeOfUpdate TheStat);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_Selection {
+	Handle_SelectMgr_Selection GetHandle() {
+	return *(Handle_SelectMgr_Selection*) &$self;
+	}
+};
+%extend SelectMgr_Selection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend SelectMgr_Selection {
+	~SelectMgr_Selection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectMgr_Selection\n");}
 	}
 };
 
@@ -1759,65 +1701,27 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor SelectMgr_EntityOwner;
-class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
+%nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
+class SelectMgr_ListIteratorOfListOfFilter {
 	public:
 		%feature("autodoc", "1");
-		SelectMgr_EntityOwner(const Standard_Integer aPriority=0);
+		SelectMgr_ListIteratorOfListOfFilter();
 		%feature("autodoc", "1");
-		SelectMgr_EntityOwner(const Handle_SelectMgr_SelectableObject &aSO, const Standard_Integer aPriority=0);
+		SelectMgr_ListIteratorOfListOfFilter(const SelectMgr_ListOfFilter &L);
 		%feature("autodoc", "1");
-		Standard_Boolean HasSelectable() const;
+		void Initialize(const SelectMgr_ListOfFilter &L);
 		%feature("autodoc", "1");
-		Handle_SelectMgr_SelectableObject Selectable() const;
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void Set(const Handle_SelectMgr_SelectableObject &aSO);
+		void Next();
 		%feature("autodoc", "1");
-		virtual		void Hilight();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &aPM, const Quantity_NameOfColor aColor, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasLocation() const;
-		%feature("autodoc", "1");
-		virtual		void SetLocation(const TopLoc_Location &aLoc);
-		%feature("autodoc", "1");
-		virtual		void ResetLocation();
-		%feature("autodoc", "1");
-		virtual		const TopLoc_Location & Location() const;
-		%feature("autodoc", "1");
-		void State(const Standard_Integer aStatus);
-		%feature("autodoc", "1");
-		Standard_Integer State() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsAutoHilight() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsForcedHilight() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_SelectMgr_Filter & Value() const;
 
 };
-%extend SelectMgr_EntityOwner {
-	Handle_SelectMgr_EntityOwner GetHandle() {
-	return *(Handle_SelectMgr_EntityOwner*) &$self;
-	}
-};
-%extend SelectMgr_EntityOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend SelectMgr_EntityOwner {
-	~SelectMgr_EntityOwner() {
+%extend SelectMgr_ListIteratorOfListOfFilter {
+	~SelectMgr_ListIteratorOfListOfFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectMgr_EntityOwner\n");}
+	if (__env){printf("## Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");}
 	}
 };
 
@@ -1880,6 +1784,41 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 };
 
 
+%nodefaultctor SelectMgr_DataMapOfSelectionActivation;
+class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfSelectionActivation(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		SelectMgr_DataMapOfSelectionActivation & Assign(const SelectMgr_DataMapOfSelectionActivation &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_SelectMgr_Selection &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_SelectMgr_Selection &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		Standard_Integer & ChangeFind(const Handle_SelectMgr_Selection &K);
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
+
+};
+%extend SelectMgr_DataMapOfSelectionActivation {
+	~SelectMgr_DataMapOfSelectionActivation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");}
+	}
+};
+
+
 %nodefaultctor SelectMgr_CompareResults;
 class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	public:
@@ -1895,6 +1834,69 @@ class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	~SelectMgr_CompareResults() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_CompareResults\n");}
+	}
+};
+
+
+%nodefaultctor SelectMgr_EntityOwner;
+class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_EntityOwner(const Standard_Integer aPriority=0);
+		%feature("autodoc", "1");
+		SelectMgr_EntityOwner(const Handle_SelectMgr_SelectableObject &aSO, const Standard_Integer aPriority=0);
+		%feature("autodoc", "1");
+		Standard_Boolean HasSelectable() const;
+		%feature("autodoc", "1");
+		Handle_SelectMgr_SelectableObject Selectable() const;
+		%feature("autodoc", "1");
+		void Set(const Handle_SelectMgr_SelectableObject &aSO);
+		%feature("autodoc", "1");
+		virtual		void Hilight();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsHilighted(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		void Hilight(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void HilightWithColor(const Handle_PrsMgr_PresentationManager3d &aPM, const Quantity_NameOfColor aColor, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void Unhilight(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentationManager &aPM, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasLocation() const;
+		%feature("autodoc", "1");
+		virtual		void SetLocation(const TopLoc_Location &aLoc);
+		%feature("autodoc", "1");
+		virtual		void ResetLocation();
+		%feature("autodoc", "1");
+		virtual		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		void State(const Standard_Integer aStatus);
+		%feature("autodoc", "1");
+		Standard_Integer State() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsAutoHilight() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsForcedHilight() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectMgr_EntityOwner {
+	Handle_SelectMgr_EntityOwner GetHandle() {
+	return *(Handle_SelectMgr_EntityOwner*) &$self;
+	}
+};
+%extend SelectMgr_EntityOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend SelectMgr_EntityOwner {
+	~SelectMgr_EntityOwner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectMgr_EntityOwner\n");}
 	}
 };
 

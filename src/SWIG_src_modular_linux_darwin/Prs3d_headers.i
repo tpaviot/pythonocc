@@ -434,16 +434,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Quantity_Color.hxx>
-#include<Graphic3d_MaterialAspect.hxx>
-#include<Handle_Graphic3d_AspectFillArea3d.hxx>
-#include<Handle_Graphic3d_AspectLine3d.hxx>
 #include<Handle_Graphic3d_Group.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<gp_Pnt.hxx>
+#include<Quantity_Color.hxx>
+#include<Handle_Graphic3d_AspectLine3d.hxx>
 #include<Handle_Graphic3d_AspectText3d.hxx>
+#include<Graphic3d_MaterialAspect.hxx>
+#include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<gp_Pln.hxx>
-#include<Prs3d.hxx>
 #include<Handle_Graphic3d_StructureManager.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepSweep
 
+%include BRepSweep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -520,6 +522,37 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 };
 
 
+%nodefaultctor BRepSweep_Prism;
+class BRepSweep_Prism {
+	public:
+		%feature("autodoc", "1");
+		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		%feature("autodoc", "1");
+		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Dir &D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape();
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape(const TopoDS_Shape &aGenS);
+		%feature("autodoc", "1");
+		TopoDS_Shape FirstShape();
+		%feature("autodoc", "1");
+		TopoDS_Shape FirstShape(const TopoDS_Shape &aGenS);
+		%feature("autodoc", "1");
+		TopoDS_Shape LastShape();
+		%feature("autodoc", "1");
+		TopoDS_Shape LastShape(const TopoDS_Shape &aGenS);
+		%feature("autodoc", "1");
+		gp_Vec Vec() const;
+
+};
+%extend BRepSweep_Prism {
+	~BRepSweep_Prism() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
+	}
+};
+
+
 %nodefaultctor BRepSweep_Rotation;
 class BRepSweep_Rotation : public BRepSweep_Trsf {
 	public:
@@ -569,36 +602,5 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 	~BRepSweep_Rotation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Rotation\n");}
-	}
-};
-
-
-%nodefaultctor BRepSweep_Prism;
-class BRepSweep_Prism {
-	public:
-		%feature("autodoc", "1");
-		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Vec &V, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
-		%feature("autodoc", "1");
-		BRepSweep_Prism(const TopoDS_Shape &S, const gp_Dir &D, const Standard_Boolean Inf=1, const Standard_Boolean Copy=0, const Standard_Boolean Canonize=1);
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape();
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape(const TopoDS_Shape &aGenS);
-		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape();
-		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape &aGenS);
-		%feature("autodoc", "1");
-		TopoDS_Shape LastShape();
-		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape &aGenS);
-		%feature("autodoc", "1");
-		gp_Vec Vec() const;
-
-};
-%extend BRepSweep_Prism {
-	~BRepSweep_Prism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
 	}
 };

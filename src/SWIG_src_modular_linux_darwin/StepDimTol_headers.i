@@ -339,6 +339,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_StepBasic_MeasureWithUnit.hxx>
 #include<Handle_StepRepr_ShapeAspect.hxx>
-#include<Handle_StepShape_PlusMinusTolerance.hxx>
 #include<Handle_StepRepr_ProductDefinitionShape.hxx>
+#include<Handle_StepShape_PlusMinusTolerance.hxx>
 %}

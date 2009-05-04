@@ -89,12 +89,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Compound.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
 #include<BRepAlgo_Image.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<BRepOffset.hxx>
-#include<Handle_Geom_Surface.hxx>
 %}

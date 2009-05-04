@@ -1,0 +1,14 @@
+%rename(Handle_IndexedMapNodeOfIndexedMapOfLocation) Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
+%rename(StdMapNodeOfMapOfLocation) TopLoc_StdMapNodeOfMapOfLocation;
+%rename(MapLocationHasher) TopLoc_MapLocationHasher;
+%rename(IndexedMapOfLocation) TopLoc_IndexedMapOfLocation;
+%rename(Handle_StdMapNodeOfMapOfLocation) Handle_TopLoc_StdMapNodeOfMapOfLocation;
+%rename(MapIteratorOfMapOfLocation) TopLoc_MapIteratorOfMapOfLocation;
+%rename(SListOfItemLocation) TopLoc_SListOfItemLocation;
+%rename(ItemLocation) TopLoc_ItemLocation;
+%rename(Handle_Datum3D) Handle_TopLoc_Datum3D;
+%rename(IndexedMapNodeOfIndexedMapOfLocation) TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
+%rename(Handle_SListNodeOfSListOfItemLocation) Handle_TopLoc_SListNodeOfSListOfItemLocation;
+%rename(Datum3D) TopLoc_Datum3D;
+%rename(MapOfLocation) TopLoc_MapOfLocation;
+%rename(Location) TopLoc_Location;

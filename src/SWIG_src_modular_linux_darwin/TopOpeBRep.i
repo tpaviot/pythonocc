@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TopOpeBRep
 
+%include TopOpeBRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -111,12 +113,12 @@ Standard_Integer & function transformation
 
 %include TopOpeBRep_headers.i
 
-typedef IntSurf_PntOn2S * TopOpeBRep_PPntOn2S;
 typedef TopOpeBRep_FacesFiller * TopOpeBRep_PFacesFiller;
 typedef TopOpeBRep_EdgesIntersector * TopOpeBRep_PEdgesIntersector;
 typedef IntRes2d_IntersectionPoint * TopOpeBRep_PIntRes2d_IntersectionPoint;
 typedef TopOpeBRep_LineInter * TopOpeBRep_PLineInter;
 typedef TopOpeBRep_FacesIntersector * TopOpeBRep_PFacesIntersector;
+typedef IntSurf_PntOn2S * TopOpeBRep_PPntOn2S;
 typedef IntPatch_ThePointOfIntersection * TopOpeBRep_PThePointOfIntersection;
 
 enum TopOpeBRep_TypeLineCurve {
@@ -406,6 +408,117 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 	~TopOpeBRep_DataMapOfShapeInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRep_FacesFiller;
+class TopOpeBRep_FacesFiller {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRep_FacesFiller();
+		%feature("autodoc", "1");
+		void Insert(const TopoDS_Shape &F1, const TopoDS_Shape &F2, TopOpeBRep_FacesIntersector & FACINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		void ProcessSectionEdges();
+		%feature("autodoc", "1");
+		TopOpeBRep_PointClassifier & ChangePointClassifier();
+		%feature("autodoc", "1");
+		TopOpeBRepTool_PShapeClassifier PShapeClassifier() const;
+		%feature("autodoc", "1");
+		void SetPShapeClassifier(const TopOpeBRepTool_PShapeClassifier &PSC);
+		%feature("autodoc", "1");
+		void LoadLine(TopOpeBRep_LineInter & L);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckLine(TopOpeBRep_LineInter & L) const;
+		%feature("autodoc", "1");
+		void VP_Position(TopOpeBRep_FacesIntersector & FACINT);
+		%feature("autodoc", "1");
+		void VP_Position(TopOpeBRep_LineInter & L);
+		%feature("autodoc", "1");
+		void VP_PositionOnL(TopOpeBRep_LineInter & L);
+		%feature("autodoc", "1");
+		void VP_PositionOnR(TopOpeBRep_LineInter & L);
+		%feature("autodoc", "1");
+		void VP_Position(TopOpeBRep_VPointInter & VP, TopOpeBRep_VPointInterClassifier & VPC);
+		%feature("autodoc", "1");
+		void ProcessLine();
+		%feature("autodoc", "1");
+		void ResetDSC();
+		%feature("autodoc", "1");
+		void ProcessRLine();
+		%feature("autodoc", "1");
+		void FillLineVPonR();
+		%feature("autodoc", "1");
+		void FillLine();
+		%feature("autodoc", "1");
+		void AddShapesLine();
+		%feature("autodoc", "1");
+		void GetESL(TopTools_ListOfShape & LES);
+		%feature("autodoc", "1");
+		void ProcessVPR(TopOpeBRep_FacesFiller & FF, const TopOpeBRep_VPointInter &VP);
+		%feature("autodoc", "1");
+		void ProcessVPIonR(TopOpeBRep_VPointInterIterator & VPI, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
+		%feature("autodoc", "1");
+		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
+		%feature("autodoc", "1");
+		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
+		%feature("autodoc", "1");
+		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
+		%feature("autodoc", "1");
+		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
+		%feature("autodoc", "1");
+		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
+		%feature("autodoc", "1");
+		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
+		%feature("autodoc", "1");
+		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
+		%feature("autodoc", "1");
+		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
+		%feature("autodoc", "1");
+		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure HDataStructure();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataStructure & ChangeDataStructure();
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Transition & FaceFaceTransition(const TopOpeBRep_LineInter &L, const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Transition & FaceFaceTransition(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopOpeBRep_PFacesIntersector PFacesIntersectorDummy() const;
+		%feature("autodoc", "1");
+		TopOpeBRepDS_PDataStructure PDataStructureDummy() const;
+		%feature("autodoc", "1");
+		TopOpeBRep_PLineInter PLineInterDummy() const;
+		%feature("autodoc", "1");
+		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
+		%feature("autodoc", "1");
+		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean LSameDomainERL(const TopOpeBRep_LineInter &L, const TopTools_ListOfShape &ERL);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVPtransLok(const TopOpeBRep_LineInter &L, const Standard_Integer iVP, const Standard_Integer SI12, TopOpeBRepDS_Transition & T);
+		%feature("autodoc", "1");
+		Standard_Boolean TransvpOK(const TopOpeBRep_LineInter &L, const Standard_Integer iVP, const Standard_Integer SI, const Standard_Boolean isINOUT);
+		%feature("autodoc", "1");
+		Standard_Real VPParamOnER(const TopOpeBRep_VPointInter &vp, const TopOpeBRep_LineInter &Lrest);
+		%feature("autodoc", "1");
+		Standard_Boolean EqualpPonR(const TopOpeBRep_LineInter &Lrest, const TopOpeBRep_VPointInter &VP1, const TopOpeBRep_VPointInter &VP2);
+
+};
+%extend TopOpeBRep_FacesFiller {
+	~TopOpeBRep_FacesFiller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesFiller\n");}
 	}
 };
 
@@ -987,117 +1100,6 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TopOpeBRep_FacesFiller;
-class TopOpeBRep_FacesFiller {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRep_FacesFiller();
-		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &F1, const TopoDS_Shape &F2, TopOpeBRep_FacesIntersector & FACINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
-		%feature("autodoc", "1");
-		void ProcessSectionEdges();
-		%feature("autodoc", "1");
-		TopOpeBRep_PointClassifier & ChangePointClassifier();
-		%feature("autodoc", "1");
-		TopOpeBRepTool_PShapeClassifier PShapeClassifier() const;
-		%feature("autodoc", "1");
-		void SetPShapeClassifier(const TopOpeBRepTool_PShapeClassifier &PSC);
-		%feature("autodoc", "1");
-		void LoadLine(TopOpeBRep_LineInter & L);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckLine(TopOpeBRep_LineInter & L) const;
-		%feature("autodoc", "1");
-		void VP_Position(TopOpeBRep_FacesIntersector & FACINT);
-		%feature("autodoc", "1");
-		void VP_Position(TopOpeBRep_LineInter & L);
-		%feature("autodoc", "1");
-		void VP_PositionOnL(TopOpeBRep_LineInter & L);
-		%feature("autodoc", "1");
-		void VP_PositionOnR(TopOpeBRep_LineInter & L);
-		%feature("autodoc", "1");
-		void VP_Position(TopOpeBRep_VPointInter & VP, TopOpeBRep_VPointInterClassifier & VPC);
-		%feature("autodoc", "1");
-		void ProcessLine();
-		%feature("autodoc", "1");
-		void ResetDSC();
-		%feature("autodoc", "1");
-		void ProcessRLine();
-		%feature("autodoc", "1");
-		void FillLineVPonR();
-		%feature("autodoc", "1");
-		void FillLine();
-		%feature("autodoc", "1");
-		void AddShapesLine();
-		%feature("autodoc", "1");
-		void GetESL(TopTools_ListOfShape & LES);
-		%feature("autodoc", "1");
-		void ProcessVPR(TopOpeBRep_FacesFiller & FF, const TopOpeBRep_VPointInter &VP);
-		%feature("autodoc", "1");
-		void ProcessVPIonR(TopOpeBRep_VPointInterIterator & VPI, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
-		%feature("autodoc", "1");
-		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
-		%feature("autodoc", "1");
-		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
-		%feature("autodoc", "1");
-		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
-		%feature("autodoc", "1");
-		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
-		%feature("autodoc", "1");
-		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
-		%feature("autodoc", "1");
-		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
-		%feature("autodoc", "1");
-		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
-		%feature("autodoc", "1");
-		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc", "1");
-		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure HDataStructure();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataStructure & ChangeDataStructure();
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_Transition & FaceFaceTransition(const TopOpeBRep_LineInter &L, const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_Transition & FaceFaceTransition(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopOpeBRep_PFacesIntersector PFacesIntersectorDummy() const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_PDataStructure PDataStructureDummy() const;
-		%feature("autodoc", "1");
-		TopOpeBRep_PLineInter PLineInterDummy() const;
-		%feature("autodoc", "1");
-		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
-		%feature("autodoc", "1");
-		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean LSameDomainERL(const TopOpeBRep_LineInter &L, const TopTools_ListOfShape &ERL);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVPtransLok(const TopOpeBRep_LineInter &L, const Standard_Integer iVP, const Standard_Integer SI12, TopOpeBRepDS_Transition & T);
-		%feature("autodoc", "1");
-		Standard_Boolean TransvpOK(const TopOpeBRep_LineInter &L, const Standard_Integer iVP, const Standard_Integer SI, const Standard_Boolean isINOUT);
-		%feature("autodoc", "1");
-		Standard_Real VPParamOnER(const TopOpeBRep_VPointInter &vp, const TopOpeBRep_LineInter &Lrest);
-		%feature("autodoc", "1");
-		Standard_Boolean EqualpPonR(const TopOpeBRep_LineInter &Lrest, const TopOpeBRep_VPointInter &VP1, const TopOpeBRep_VPointInter &VP2);
-
-};
-%extend TopOpeBRep_FacesFiller {
-	~TopOpeBRep_FacesFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesFiller\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger;
 class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
@@ -1161,8 +1163,6 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 %nodefaultctor TopOpeBRep_FFTransitionTool;
 class TopOpeBRep_FFTransitionTool {
 	public:
-		%feature("autodoc", "1");
-		TopOpeBRep_FFTransitionTool();
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Transition ProcessLineTransition(const TopOpeBRep_VPointInter &P, const Standard_Integer Index, const TopAbs_Orientation EdgeOrientation);
 		%feature("autodoc", "1");
@@ -1281,23 +1281,6 @@ class TopOpeBRep_EdgesFiller {
 	~TopOpeBRep_EdgesFiller() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_EdgesFiller\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRep_FaceEdgeFiller;
-class TopOpeBRep_FaceEdgeFiller {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRep_FaceEdgeFiller();
-		%feature("autodoc", "1");
-		void Insert(const TopoDS_Shape &F, const TopoDS_Shape &E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
-
-};
-%extend TopOpeBRep_FaceEdgeFiller {
-	~TopOpeBRep_FaceEdgeFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");}
 	}
 };
 
@@ -1421,6 +1404,23 @@ class TopOpeBRep_ShapeIntersector {
 };
 
 
+%nodefaultctor TopOpeBRep_FaceEdgeFiller;
+class TopOpeBRep_FaceEdgeFiller {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRep_FaceEdgeFiller();
+		%feature("autodoc", "1");
+		void Insert(const TopoDS_Shape &F, const TopoDS_Shape &E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
+
+};
+%extend TopOpeBRep_FaceEdgeFiller {
+	~TopOpeBRep_FaceEdgeFiller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRep_ShapeScanner;
 class TopOpeBRep_ShapeScanner {
 	public:
@@ -1463,43 +1463,45 @@ class TopOpeBRep_ShapeScanner {
 };
 
 
-%nodefaultctor TopOpeBRep_Array1OfVPointInter;
-class TopOpeBRep_Array1OfVPointInter {
+%nodefaultctor TopOpeBRep_FFDumper;
+class TopOpeBRep_FFDumper : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRep_Array1OfVPointInter(const Standard_Integer Low, const Standard_Integer Up);
+		TopOpeBRep_FFDumper(const TopOpeBRep_PFacesFiller &PFF);
 		%feature("autodoc", "1");
-		TopOpeBRep_Array1OfVPointInter(const TopOpeBRep_VPointInter &Item, const Standard_Integer Low, const Standard_Integer Up);
+		void Init(const TopOpeBRep_PFacesFiller &PFF);
 		%feature("autodoc", "1");
-		void Init(const TopOpeBRep_VPointInter &V);
+		void DumpLine(const Standard_Integer I);
 		%feature("autodoc", "1");
-		void Destroy();
+		void DumpLine(const TopOpeBRep_LineInter &L);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		void DumpVP(const TopOpeBRep_VPointInter &VP);
 		%feature("autodoc", "1");
-		const TopOpeBRep_Array1OfVPointInter & Assign(const TopOpeBRep_Array1OfVPointInter &Other);
+		void DumpVP(const TopOpeBRep_VPointInter &VP, const Standard_Integer ISI);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Standard_Integer ExploreIndex(const TopoDS_Shape &S, const Standard_Integer ISI) const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void DumpDSP(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Kind GK, const Standard_Integer G, const Standard_Boolean newinDS) const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		TopOpeBRep_PFacesFiller PFacesFillerDummy() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TopOpeBRep_VPointInter &Value);
-		%feature("autodoc", "1");
-		const TopOpeBRep_VPointInter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TopOpeBRep_VPointInter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TopOpeBRep_VPointInter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TopOpeBRep_VPointInter & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRep_Array1OfVPointInter {
-	~TopOpeBRep_Array1OfVPointInter() {
+%extend TopOpeBRep_FFDumper {
+	Handle_TopOpeBRep_FFDumper GetHandle() {
+	return *(Handle_TopOpeBRep_FFDumper*) &$self;
+	}
+};
+%extend TopOpeBRep_FFDumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRep_FFDumper {
+	~TopOpeBRep_FFDumper() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFDumper\n");}
 	}
 };
 
@@ -1536,8 +1538,6 @@ class TopOpeBRep_WPointInterIterator {
 %nodefaultctor TopOpeBRep;
 class TopOpeBRep {
 	public:
-		%feature("autodoc", "1");
-		TopOpeBRep();
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TopOpeBRep_TypeLineCurve TLC, Standard_OStream & OS);
 
@@ -1732,49 +1732,6 @@ class TopOpeBRep_Point2d {
 };
 
 
-%nodefaultctor TopOpeBRep_FFDumper;
-class TopOpeBRep_FFDumper : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRep_FFDumper(const TopOpeBRep_PFacesFiller &PFF);
-		%feature("autodoc", "1");
-		void Init(const TopOpeBRep_PFacesFiller &PFF);
-		%feature("autodoc", "1");
-		void DumpLine(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void DumpLine(const TopOpeBRep_LineInter &L);
-		%feature("autodoc", "1");
-		void DumpVP(const TopOpeBRep_VPointInter &VP);
-		%feature("autodoc", "1");
-		void DumpVP(const TopOpeBRep_VPointInter &VP, const Standard_Integer ISI);
-		%feature("autodoc", "1");
-		Standard_Integer ExploreIndex(const TopoDS_Shape &S, const Standard_Integer ISI) const;
-		%feature("autodoc", "1");
-		void DumpDSP(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Kind GK, const Standard_Integer G, const Standard_Boolean newinDS) const;
-		%feature("autodoc", "1");
-		TopOpeBRep_PFacesFiller PFacesFillerDummy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRep_FFDumper {
-	Handle_TopOpeBRep_FFDumper GetHandle() {
-	return *(Handle_TopOpeBRep_FFDumper*) &$self;
-	}
-};
-%extend TopOpeBRep_FFDumper {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRep_FFDumper {
-	~TopOpeBRep_FFDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFDumper\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRep_ShapeIntersector2d;
 class TopOpeBRep_ShapeIntersector2d {
 	public:
@@ -1825,6 +1782,47 @@ class TopOpeBRep_PointClassifier {
 	~TopOpeBRep_PointClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointClassifier\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRep_Array1OfVPointInter;
+class TopOpeBRep_Array1OfVPointInter {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRep_Array1OfVPointInter(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TopOpeBRep_Array1OfVPointInter(const TopOpeBRep_VPointInter &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const TopOpeBRep_VPointInter &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TopOpeBRep_Array1OfVPointInter & Assign(const TopOpeBRep_Array1OfVPointInter &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TopOpeBRep_VPointInter &Value);
+		%feature("autodoc", "1");
+		const TopOpeBRep_VPointInter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TopOpeBRep_VPointInter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TopOpeBRep_VPointInter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TopOpeBRep_VPointInter & operator()(const Standard_Integer Index);
+
+};
+%extend TopOpeBRep_Array1OfVPointInter {
+	~TopOpeBRep_Array1OfVPointInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");}
 	}
 };
 

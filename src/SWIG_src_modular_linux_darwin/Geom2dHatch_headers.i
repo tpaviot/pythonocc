@@ -131,9 +131,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Geom2dAdaptor_Curve.hxx>
-#include<HatchGen_PointOnHatching.hxx>
-#include<HatchGen_Domain.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Dir2d.hxx>
+#include<HatchGen_PointOnHatching.hxx>
+#include<HatchGen_Domain.hxx>
 %}

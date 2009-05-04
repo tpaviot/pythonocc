@@ -125,14 +125,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<gp_Dir.hxx>
-#include<gp_Ax2.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_PColgp_HArray1OfPnt.hxx>
 #include<Handle_PColStd_HArray1OfReal.hxx>
 #include<Handle_PColStd_HArray1OfInteger.hxx>
 #include<Handle_PColgp_HArray2OfPnt.hxx>
 #include<Handle_PColStd_HArray2OfReal.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Pnt.hxx>
+#include<gp_Ax2.hxx>
 #include<gp_Ax3.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Trsf.hxx>

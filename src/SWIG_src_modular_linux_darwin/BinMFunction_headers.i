@@ -61,6 +61,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
 #include<BinObjMgt_RRelocationTable.hxx>
-#include<BinMFunction.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
 %}

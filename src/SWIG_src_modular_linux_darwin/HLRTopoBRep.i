@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module HLRTopoBRep
 
+%include HLRTopoBRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
-class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
-		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData* GetObject() {
-	return (HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*)$self->Access();
-	}
-};
-%extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
-	}
-};
-
-
 %nodefaultctor Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData;
 class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +138,32 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 	~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
+	}
+};
+
+
+%nodefaultctor Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
+class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData();
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData* GetObject() {
+	return (HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*)$self->Access();
+	}
+};
+%extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
 	}
 };
 
@@ -280,57 +282,6 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 	~HLRTopoBRep_MapOfShapeListOfVData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_ListOfVData;
-class HLRTopoBRep_ListOfVData {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListOfVData();
-		%feature("autodoc", "1");
-		void Assign(const HLRTopoBRep_ListOfVData &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const HLRTopoBRep_VData &I);
-		%feature("autodoc", "1");
-		void Prepend(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
-		%feature("autodoc", "1");
-		void Prepend(HLRTopoBRep_ListOfVData & Other);
-		%feature("autodoc", "1");
-		void Append(const HLRTopoBRep_VData &I);
-		%feature("autodoc", "1");
-		void Append(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
-		%feature("autodoc", "1");
-		void Append(HLRTopoBRep_ListOfVData & Other);
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & First() const;
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertBefore(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
-
-};
-%extend HLRTopoBRep_ListOfVData {
-	~HLRTopoBRep_ListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
 	}
 };
 
@@ -563,6 +514,25 @@ class HLRTopoBRep_VData {
 };
 
 
+%nodefaultctor HLRTopoBRep_FaceIsoLiner;
+class HLRTopoBRep_FaceIsoLiner {
+	public:
+		%feature("autodoc", "1");
+		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
+		%feature("autodoc", "1");
+		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+		%feature("autodoc", "1");
+		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+
+};
+%extend HLRTopoBRep_FaceIsoLiner {
+	~HLRTopoBRep_FaceIsoLiner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
+	}
+};
+
+
 %nodefaultctor HLRTopoBRep_ListIteratorOfListOfVData;
 class HLRTopoBRep_ListIteratorOfListOfVData {
 	public:
@@ -646,27 +616,6 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor HLRTopoBRep_FaceIsoLiner;
-class HLRTopoBRep_FaceIsoLiner {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_FaceIsoLiner();
-		%feature("autodoc", "1");
-		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
-		%feature("autodoc", "1");
-		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
-		%feature("autodoc", "1");
-		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
-
-};
-%extend HLRTopoBRep_FaceIsoLiner {
-	~HLRTopoBRep_FaceIsoLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
-	}
-};
-
-
 %nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
 class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
 	public:
@@ -698,11 +647,60 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 };
 
 
+%nodefaultctor HLRTopoBRep_ListOfVData;
+class HLRTopoBRep_ListOfVData {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListOfVData();
+		%feature("autodoc", "1");
+		void Assign(const HLRTopoBRep_ListOfVData &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const HLRTopoBRep_VData &I);
+		%feature("autodoc", "1");
+		void Prepend(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
+		%feature("autodoc", "1");
+		void Prepend(HLRTopoBRep_ListOfVData & Other);
+		%feature("autodoc", "1");
+		void Append(const HLRTopoBRep_VData &I);
+		%feature("autodoc", "1");
+		void Append(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
+		%feature("autodoc", "1");
+		void Append(HLRTopoBRep_ListOfVData & Other);
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & First() const;
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertBefore(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
+
+};
+%extend HLRTopoBRep_ListOfVData {
+	~HLRTopoBRep_ListOfVData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
+	}
+};
+
+
 %nodefaultctor HLRTopoBRep_DSFiller;
 class HLRTopoBRep_DSFiller {
 	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_DSFiller();
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 

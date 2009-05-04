@@ -1,0 +1,9 @@
+%rename(NamespaceDef) XmlLDrivers_NamespaceDef;
+%rename(Handle_SequenceNodeOfSequenceOfNamespaceDef) Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
+%rename(Handle_DocumentRetrievalDriver) Handle_XmlLDrivers_DocumentRetrievalDriver;
+%rename(DocumentRetrievalDriver) XmlLDrivers_DocumentRetrievalDriver;
+%rename(DocumentStorageDriver) XmlLDrivers_DocumentStorageDriver;
+%rename(SequenceNodeOfSequenceOfNamespaceDef) XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
+%rename(SequenceOfNamespaceDef) XmlLDrivers_SequenceOfNamespaceDef;
+%rename(XmlLDrivers) XmlLDrivers;
+%rename(Handle_DocumentStorageDriver) Handle_XmlLDrivers_DocumentStorageDriver;

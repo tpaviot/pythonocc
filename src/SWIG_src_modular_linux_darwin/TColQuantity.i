@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TColQuantity
 
+%include TColQuantity_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -207,6 +209,51 @@ class TColQuantity_Array1OfLength {
 };
 
 
+%nodefaultctor TColQuantity_Array2OfLength;
+class TColQuantity_Array2OfLength {
+	public:
+		%feature("autodoc", "1");
+		TColQuantity_Array2OfLength(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColQuantity_Array2OfLength(const Quantity_Length &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Quantity_Length &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Quantity_Length &Value);
+		%feature("autodoc", "1");
+		const Quantity_Length & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Quantity_Length & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TColQuantity_Array2OfLength {
+	~TColQuantity_Array2OfLength() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array2OfLength\n");}
+	}
+};
+
+
 %nodefaultctor TColQuantity_HArray1OfLength;
 class TColQuantity_HArray1OfLength : public MMgt_TShared {
 	public:
@@ -250,51 +297,6 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 	~TColQuantity_HArray1OfLength() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColQuantity_HArray1OfLength\n");}
-	}
-};
-
-
-%nodefaultctor TColQuantity_Array2OfLength;
-class TColQuantity_Array2OfLength {
-	public:
-		%feature("autodoc", "1");
-		TColQuantity_Array2OfLength(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColQuantity_Array2OfLength(const Quantity_Length &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Quantity_Length &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Quantity_Length &Value);
-		%feature("autodoc", "1");
-		const Quantity_Length & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Quantity_Length & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TColQuantity_Array2OfLength {
-	~TColQuantity_Array2OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array2OfLength\n");}
 	}
 };
 

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomAdaptor
 
+%include GeomAdaptor_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -332,8 +334,6 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 		GeomAdaptor_HSurface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		GeomAdaptor_HSurface(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU=0.0, const Standard_Real TolV=0.0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend GeomAdaptor_HSurface {
@@ -357,8 +357,6 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 %nodefaultctor GeomAdaptor;
 class GeomAdaptor {
 	public:
-		%feature("autodoc", "1");
-		GeomAdaptor();
 		%feature("autodoc", "1");
 		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");

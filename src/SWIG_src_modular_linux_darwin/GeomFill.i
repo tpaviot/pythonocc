@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomFill
 
+%include GeomFill_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -112,6 +114,11 @@ Standard_Integer & function transformation
 %include GeomFill_headers.i
 
 
+enum GeomFill_ApproxStyle {
+	GeomFill_Section,
+	GeomFill_Location,
+	};
+
 enum GeomFill_Trihedron {
 	GeomFill_IsCorrectedFrenet,
 	GeomFill_IsFixed,
@@ -130,11 +137,6 @@ enum GeomFill_FillingStyle {
 	GeomFill_CurvedStyle,
 	};
 
-enum GeomFill_ApproxStyle {
-	GeomFill_Section,
-	GeomFill_Location,
-	};
-
 enum GeomFill_PipeError {
 	GeomFill_PipeOk,
 	GeomFill_PipeNotOk,
@@ -142,214 +144,6 @@ enum GeomFill_PipeError {
 	GeomFill_ImpossibleContact,
 	};
 
-
-
-%nodefaultctor Handle_GeomFill_LocationLaw;
-class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationLaw();
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationLaw(const Handle_GeomFill_LocationLaw &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationLaw(const GeomFill_LocationLaw *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_LocationLaw {
-	GeomFill_LocationLaw* GetObject() {
-	return (GeomFill_LocationLaw*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_LocationLaw {
-	~Handle_GeomFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationLaw\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_CurveAndTrihedron;
-class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_CurveAndTrihedron();
-		%feature("autodoc", "1");
-		Handle_GeomFill_CurveAndTrihedron(const Handle_GeomFill_CurveAndTrihedron &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_CurveAndTrihedron(const GeomFill_CurveAndTrihedron *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_CurveAndTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_CurveAndTrihedron {
-	GeomFill_CurveAndTrihedron* GetObject() {
-	return (GeomFill_CurveAndTrihedron*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_CurveAndTrihedron {
-	~Handle_GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_TgtField;
-class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtField();
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtField(const Handle_GeomFill_TgtField &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtField(const GeomFill_TgtField *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtField const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_TgtField {
-	GeomFill_TgtField* GetObject() {
-	return (GeomFill_TgtField*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_TgtField {
-	~Handle_GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtField\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_TgtOnCoons;
-class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtOnCoons();
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtOnCoons(const Handle_GeomFill_TgtOnCoons &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtOnCoons(const GeomFill_TgtOnCoons *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TgtOnCoons const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_TgtOnCoons {
-	GeomFill_TgtOnCoons* GetObject() {
-	return (GeomFill_TgtOnCoons*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_TgtOnCoons {
-	~Handle_GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_LocationGuide;
-class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationGuide();
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationGuide(const Handle_GeomFill_LocationGuide &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationGuide(const GeomFill_LocationGuide *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationGuide const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_LocationGuide {
-	GeomFill_LocationGuide* GetObject() {
-	return (GeomFill_LocationGuide*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_LocationGuide {
-	~Handle_GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
-class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfLocationLaw();
-		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfLocationLaw(const Handle_GeomFill_HArray1OfLocationLaw &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfLocationLaw(const GeomFill_HArray1OfLocationLaw *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfLocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_HArray1OfLocationLaw {
-	GeomFill_HArray1OfLocationLaw* GetObject() {
-	return (GeomFill_HArray1OfLocationLaw*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_HArray1OfLocationLaw {
-	~Handle_GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfLocationLaw\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
-class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_SequenceNodeOfSequenceOfCurve();
-		%feature("autodoc", "1");
-		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const Handle_GeomFill_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const GeomFill_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
-	GeomFill_SequenceNodeOfSequenceOfCurve* GetObject() {
-	return (GeomFill_SequenceNodeOfSequenceOfCurve*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
-	~Handle_GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_CoonsAlgPatch;
-class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_CoonsAlgPatch();
-		%feature("autodoc", "1");
-		Handle_GeomFill_CoonsAlgPatch(const Handle_GeomFill_CoonsAlgPatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_CoonsAlgPatch(const GeomFill_CoonsAlgPatch *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_CoonsAlgPatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_CoonsAlgPatch {
-	GeomFill_CoonsAlgPatch* GetObject() {
-	return (GeomFill_CoonsAlgPatch*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_CoonsAlgPatch {
-	~Handle_GeomFill_CoonsAlgPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CoonsAlgPatch\n");}
-	}
-};
 
 
 %nodefaultctor Handle_GeomFill_TrihedronLaw;
@@ -374,58 +168,6 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	~Handle_GeomFill_TrihedronLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronLaw\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_TrihedronWithGuide;
-class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_TrihedronWithGuide();
-		%feature("autodoc", "1");
-		Handle_GeomFill_TrihedronWithGuide(const Handle_GeomFill_TrihedronWithGuide &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TrihedronWithGuide(const GeomFill_TrihedronWithGuide *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_TrihedronWithGuide const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_TrihedronWithGuide {
-	GeomFill_TrihedronWithGuide* GetObject() {
-	return (GeomFill_TrihedronWithGuide*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_TrihedronWithGuide {
-	~Handle_GeomFill_TrihedronWithGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_GuideTrihedronAC;
-class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGuide {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_GuideTrihedronAC();
-		%feature("autodoc", "1");
-		Handle_GeomFill_GuideTrihedronAC(const Handle_GeomFill_GuideTrihedronAC &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_GuideTrihedronAC(const GeomFill_GuideTrihedronAC *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_GuideTrihedronAC const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_GuideTrihedronAC {
-	GeomFill_GuideTrihedronAC* GetObject() {
-	return (GeomFill_GuideTrihedronAC*)$self->Access();
-	}
-};
-%extend Handle_GeomFill_GuideTrihedronAC {
-	~Handle_GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronAC\n");}
 	}
 };
 
@@ -534,28 +276,54 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 };
 
 
-%nodefaultctor Handle_GeomFill_SweepFunction;
-class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
+%nodefaultctor Handle_GeomFill_LocationLaw;
+class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_GeomFill_SweepFunction();
+		Handle_GeomFill_LocationLaw();
 		%feature("autodoc", "1");
-		Handle_GeomFill_SweepFunction(const Handle_GeomFill_SweepFunction &aHandle);
+		Handle_GeomFill_LocationLaw(const Handle_GeomFill_LocationLaw &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomFill_SweepFunction(const GeomFill_SweepFunction *anItem);
+		Handle_GeomFill_LocationLaw(const GeomFill_LocationLaw *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomFill_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomFill_LocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GeomFill_SweepFunction {
-	GeomFill_SweepFunction* GetObject() {
-	return (GeomFill_SweepFunction*)$self->Access();
+%extend Handle_GeomFill_LocationLaw {
+	GeomFill_LocationLaw* GetObject() {
+	return (GeomFill_LocationLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SweepFunction {
-	~Handle_GeomFill_SweepFunction() {
+%extend Handle_GeomFill_LocationLaw {
+	~Handle_GeomFill_LocationLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SweepFunction\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationLaw\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_CurveAndTrihedron;
+class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron();
+		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron(const Handle_GeomFill_CurveAndTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron(const GeomFill_CurveAndTrihedron *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_CurveAndTrihedron {
+	GeomFill_CurveAndTrihedron* GetObject() {
+	return (GeomFill_CurveAndTrihedron*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_CurveAndTrihedron {
+	~Handle_GeomFill_CurveAndTrihedron() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");}
 	}
 };
 
@@ -664,6 +432,110 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
+class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve();
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const Handle_GeomFill_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const GeomFill_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
+	GeomFill_SequenceNodeOfSequenceOfCurve* GetObject() {
+	return (GeomFill_SequenceNodeOfSequenceOfCurve*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
+	~Handle_GeomFill_SequenceNodeOfSequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_LocationGuide;
+class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide();
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide(const Handle_GeomFill_LocationGuide &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide(const GeomFill_LocationGuide *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_LocationGuide {
+	GeomFill_LocationGuide* GetObject() {
+	return (GeomFill_LocationGuide*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_LocationGuide {
+	~Handle_GeomFill_LocationGuide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_TgtField;
+class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField();
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField(const Handle_GeomFill_TgtField &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField(const GeomFill_TgtField *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_TgtField {
+	GeomFill_TgtField* GetObject() {
+	return (GeomFill_TgtField*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_TgtField {
+	~Handle_GeomFill_TgtField() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtField\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
+class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw();
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw(const Handle_GeomFill_HArray1OfSectionLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw(const GeomFill_HArray1OfSectionLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_HArray1OfSectionLaw {
+	GeomFill_HArray1OfSectionLaw* GetObject() {
+	return (GeomFill_HArray1OfSectionLaw*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_HArray1OfSectionLaw {
+	~Handle_GeomFill_HArray1OfSectionLaw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");}
+	}
+};
+
+
 %nodefaultctor Handle_GeomFill_Frenet;
 class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	public:
@@ -712,6 +584,32 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	~Handle_GeomFill_Darboux() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Darboux\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_CoonsAlgPatch;
+class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch();
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch(const Handle_GeomFill_CoonsAlgPatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch(const GeomFill_CoonsAlgPatch *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_CoonsAlgPatch {
+	GeomFill_CoonsAlgPatch* GetObject() {
+	return (GeomFill_CoonsAlgPatch*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_CoonsAlgPatch {
+	~Handle_GeomFill_CoonsAlgPatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CoonsAlgPatch\n");}
 	}
 };
 
@@ -768,6 +666,58 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 };
 
 
+%nodefaultctor Handle_GeomFill_TrihedronWithGuide;
+class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide();
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide(const Handle_GeomFill_TrihedronWithGuide &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide(const GeomFill_TrihedronWithGuide *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_TrihedronWithGuide {
+	GeomFill_TrihedronWithGuide* GetObject() {
+	return (GeomFill_TrihedronWithGuide*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_TrihedronWithGuide {
+	~Handle_GeomFill_TrihedronWithGuide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_GuideTrihedronAC;
+class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGuide {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC();
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC(const Handle_GeomFill_GuideTrihedronAC &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC(const GeomFill_GuideTrihedronAC *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_GuideTrihedronAC {
+	GeomFill_GuideTrihedronAC* GetObject() {
+	return (GeomFill_GuideTrihedronAC*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_GuideTrihedronAC {
+	~Handle_GeomFill_GuideTrihedronAC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronAC\n");}
+	}
+};
+
+
 %nodefaultctor Handle_GeomFill_CorrectedFrenet;
 class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	public:
@@ -820,28 +770,28 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 };
 
 
-%nodefaultctor Handle_GeomFill_UniformSection;
-class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
+%nodefaultctor Handle_GeomFill_SweepFunction;
+class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	public:
 		%feature("autodoc", "1");
-		Handle_GeomFill_UniformSection();
+		Handle_GeomFill_SweepFunction();
 		%feature("autodoc", "1");
-		Handle_GeomFill_UniformSection(const Handle_GeomFill_UniformSection &aHandle);
+		Handle_GeomFill_SweepFunction(const Handle_GeomFill_SweepFunction &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomFill_UniformSection(const GeomFill_UniformSection *anItem);
+		Handle_GeomFill_SweepFunction(const GeomFill_SweepFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomFill_UniformSection const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomFill_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GeomFill_UniformSection {
-	GeomFill_UniformSection* GetObject() {
-	return (GeomFill_UniformSection*)$self->Access();
+%extend Handle_GeomFill_SweepFunction {
+	GeomFill_SweepFunction* GetObject() {
+	return (GeomFill_SweepFunction*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_UniformSection {
-	~Handle_GeomFill_UniformSection() {
+%extend Handle_GeomFill_SweepFunction {
+	~Handle_GeomFill_SweepFunction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_UniformSection\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SweepFunction\n");}
 	}
 };
 
@@ -924,28 +874,54 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 };
 
 
-%nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
-class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
+%nodefaultctor Handle_GeomFill_UniformSection;
+class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	public:
 		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfSectionLaw();
+		Handle_GeomFill_UniformSection();
 		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfSectionLaw(const Handle_GeomFill_HArray1OfSectionLaw &aHandle);
+		Handle_GeomFill_UniformSection(const Handle_GeomFill_UniformSection &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfSectionLaw(const GeomFill_HArray1OfSectionLaw *anItem);
+		Handle_GeomFill_UniformSection(const GeomFill_UniformSection *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomFill_HArray1OfSectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GeomFill_UniformSection const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GeomFill_HArray1OfSectionLaw {
-	GeomFill_HArray1OfSectionLaw* GetObject() {
-	return (GeomFill_HArray1OfSectionLaw*)$self->Access();
+%extend Handle_GeomFill_UniformSection {
+	GeomFill_UniformSection* GetObject() {
+	return (GeomFill_UniformSection*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_HArray1OfSectionLaw {
-	~Handle_GeomFill_HArray1OfSectionLaw() {
+%extend Handle_GeomFill_UniformSection {
+	~Handle_GeomFill_UniformSection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_UniformSection\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
+class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw();
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw(const Handle_GeomFill_HArray1OfLocationLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw(const GeomFill_HArray1OfLocationLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_HArray1OfLocationLaw {
+	GeomFill_HArray1OfLocationLaw* GetObject() {
+	return (GeomFill_HArray1OfLocationLaw*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_HArray1OfLocationLaw {
+	~Handle_GeomFill_HArray1OfLocationLaw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfLocationLaw\n");}
 	}
 };
 
@@ -972,6 +948,32 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	~Handle_GeomFill_Fixed() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Fixed\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_TgtOnCoons;
+class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons();
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons(const Handle_GeomFill_TgtOnCoons &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons(const GeomFill_TgtOnCoons *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_TgtOnCoons {
+	GeomFill_TgtOnCoons* GetObject() {
+	return (GeomFill_TgtOnCoons*)$self->Access();
+	}
+};
+%extend Handle_GeomFill_TgtOnCoons {
+	~Handle_GeomFill_TgtOnCoons() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");}
 	}
 };
 
@@ -1013,6 +1015,596 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 	~GeomFill_SnglrFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomFill_SnglrFunc\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SectionPlacement;
+class GeomFill_SectionPlacement {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
+		%feature("autodoc", "1");
+		void SetLocation(const Handle_GeomFill_LocationLaw &L);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Adaptor3d_HCurve &Path, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real ParamOnPath, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnPath() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnSection() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		gp_Trsf Transformation(const Standard_Boolean WithTranslation, const Standard_Boolean WithCorrection=0) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Section(const Standard_Boolean WithTranslation) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
+
+};
+%extend GeomFill_SectionPlacement {
+	~GeomFill_SectionPlacement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionPlacement\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_TgtField;
+class GeomFill_TgtField : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsScalable() const;
+		%feature("autodoc", "1");
+		virtual		void Scale(const Handle_Law_BSpline &Func);
+		%feature("autodoc", "1");
+		virtual		gp_Vec Value(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec D1(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real W, gp_Vec & V, gp_Vec & DV) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_TgtField {
+	Handle_GeomFill_TgtField GetHandle() {
+	return *(Handle_GeomFill_TgtField*) &$self;
+	}
+};
+%extend GeomFill_TgtField {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_TgtField {
+	~GeomFill_TgtField() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtField\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Profiler;
+class GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Profiler();
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void AddCurve(const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		virtual		void Perform(const Standard_Real PTol);
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(const Standard_Integer Index, TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		void Weights(const Standard_Integer Index, TColStd_Array1OfReal & Weights) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
+
+};
+%extend GeomFill_Profiler {
+	~GeomFill_Profiler() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Profiler\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Generator;
+class GeomFill_Generator : public GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Generator();
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Surface() const;
+
+};
+%extend GeomFill_Generator {
+	~GeomFill_Generator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Generator\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Boundary;
+class GeomFill_Boundary : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec Norm(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		%feature("autodoc", "1");
+		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
+		%feature("autodoc", "1");
+		void Points(gp_Pnt & PFirst, gp_Pnt & PLast) const;
+		%feature("autodoc", "1");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDegenerated() const;
+		%feature("autodoc", "1");
+		Standard_Real Tol3d() const;
+		%feature("autodoc", "1");
+		void Tol3d(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Real Tolang() const;
+		%feature("autodoc", "1");
+		void Tolang(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Boundary {
+	Handle_GeomFill_Boundary GetHandle() {
+	return *(Handle_GeomFill_Boundary*) &$self;
+	}
+};
+%extend GeomFill_Boundary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_Boundary {
+	~GeomFill_Boundary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Boundary\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_DegeneratedBound;
+class GeomFill_DegeneratedBound : public GeomFill_Boundary {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_DegeneratedBound(const gp_Pnt &Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
+
+};
+%extend GeomFill_DegeneratedBound {
+	Handle_GeomFill_DegeneratedBound GetHandle() {
+	return *(Handle_GeomFill_DegeneratedBound*) &$self;
+	}
+};
+%extend GeomFill_DegeneratedBound {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_DegeneratedBound {
+	~GeomFill_DegeneratedBound() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_DegeneratedBound\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_TrihedronLaw;
+class GeomFill_TrihedronLaw : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		GeomFill_PipeError ErrorStatus() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_TrihedronLaw {
+	Handle_GeomFill_TrihedronLaw GetHandle() {
+	return *(Handle_GeomFill_TrihedronLaw*) &$self;
+	}
+};
+%extend GeomFill_TrihedronLaw {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_TrihedronLaw {
+	~GeomFill_TrihedronLaw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronLaw\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Darboux;
+class GeomFill_Darboux : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Darboux();
+
+};
+%extend GeomFill_Darboux {
+	Handle_GeomFill_Darboux GetHandle() {
+	return *(Handle_GeomFill_Darboux*) &$self;
+	}
+};
+%extend GeomFill_Darboux {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_Darboux {
+	~GeomFill_Darboux() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Darboux\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_PlanFunc;
+class GeomFill_PlanFunc : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_PlanFunc(const gp_Pnt &P, const gp_Vec &V, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend GeomFill_PlanFunc {
+	~GeomFill_PlanFunc() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_PlanFunc\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_ConstrainedFilling;
+class GeomFill_ConstrainedFilling {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
+		%feature("autodoc", "1");
+		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Standard_Boolean NoCheck=0);
+		%feature("autodoc", "1");
+		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4, const Standard_Boolean NoCheck=0);
+		%feature("autodoc", "1");
+		void SetDomain(const Standard_Real l, const Handle_GeomFill_BoundWithSurf &B);
+		%feature("autodoc", "1");
+		void ReBuild();
+		%feature("autodoc", "1");
+		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void CheckCoonsAlgPatch(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void CheckTgteField(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void CheckApprox(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void CheckResult(const Standard_Integer I);
+
+};
+%extend GeomFill_ConstrainedFilling {
+	~GeomFill_ConstrainedFilling() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstrainedFilling\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SequenceOfCurve;
+class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceOfCurve();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfCurve & Assign(const GeomFill_SequenceOfCurve &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void Append(GeomFill_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void Prepend(GeomFill_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Curve &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & First() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Curve &I);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend GeomFill_SequenceOfCurve {
+	~GeomFill_SequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_CoonsAlgPatch;
+class GeomFill_CoonsAlgPatch : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_CoonsAlgPatch(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4);
+		%feature("autodoc", "1");
+		void Func(Handle_Law_Function & f1, Handle_Law_Function & f2) const;
+		%feature("autodoc", "1");
+		void SetFunc(const Handle_Law_Function &f1, const Handle_Law_Function &f2);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
+		%feature("autodoc", "1");
+		gp_Vec D1U(const Standard_Real U, const Standard_Real V) const;
+		%feature("autodoc", "1");
+		gp_Vec D1V(const Standard_Real U, const Standard_Real V) const;
+		%feature("autodoc", "1");
+		gp_Vec DUV(const Standard_Real U, const Standard_Real V) const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Corner(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Handle_GeomFill_Boundary & Bound(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Handle_Law_Function & Func(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_CoonsAlgPatch {
+	Handle_GeomFill_CoonsAlgPatch GetHandle() {
+	return *(Handle_GeomFill_CoonsAlgPatch*) &$self;
+	}
+};
+%extend GeomFill_CoonsAlgPatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_CoonsAlgPatch {
+	~GeomFill_CoonsAlgPatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_CoonsAlgPatch\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Line;
+class GeomFill_Line : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Line();
+		%feature("autodoc", "1");
+		GeomFill_Line(const Standard_Integer NbPoints);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		Standard_Integer Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Line {
+	Handle_GeomFill_Line GetHandle() {
+	return *(Handle_GeomFill_Line*) &$self;
+	}
+};
+%extend GeomFill_Line {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_Line {
+	~GeomFill_Line() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Line\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_CorrectedFrenet;
+class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_CorrectedFrenet();
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_CorrectedFrenet {
+	Handle_GeomFill_CorrectedFrenet GetHandle() {
+	return *(Handle_GeomFill_CorrectedFrenet*) &$self;
+	}
+};
+%extend GeomFill_CorrectedFrenet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_CorrectedFrenet {
+	~GeomFill_CorrectedFrenet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_CorrectedFrenet\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Filling;
+class GeomFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Filling();
+		%feature("autodoc", "1");
+		Standard_Integer NbUPoles() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array2OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Boolean isRational() const;
+		%feature("autodoc", "1");
+		void Weights(TColStd_Array2OfReal & Weights) const;
+
+};
+%extend GeomFill_Filling {
+	~GeomFill_Filling() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Filling\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Curved;
+class GeomFill_Curved : public GeomFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Curved();
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+
+};
+%extend GeomFill_Curved {
+	~GeomFill_Curved() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Curved\n");}
 	}
 };
 
@@ -1174,189 +1766,121 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 };
 
 
-%nodefaultctor GeomFill;
-class GeomFill {
+%nodefaultctor GeomFill_QuasiAngularConvertor;
+class GeomFill_QuasiAngularConvertor {
 	public:
 		%feature("autodoc", "1");
-		GeomFill();
+		GeomFill_QuasiAngularConvertor();
 		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2);
+		Standard_Boolean Initialized() const;
 		%feature("autodoc", "1");
-		void GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &nplan, const gp_Pnt &pt1, const gp_Pnt &pt2, const Standard_Real Rayon, const gp_Pnt &Center, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
+		void Init();
 		%feature("autodoc", "1");
-		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt &Center, const gp_Vec &DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
 		%feature("autodoc", "1");
-		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
 		%feature("autodoc", "1");
-		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
-		%feature("autodoc", "1");
-		void Knots(const Convert_ParameterisationType TypeConv, TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		void Mults(const Convert_ParameterisationType TypeConv, TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		void GetMinimalWeights(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
+		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
 };
-%extend GeomFill {
-	~GeomFill() {
+%extend GeomFill_QuasiAngularConvertor {
+	~GeomFill_QuasiAngularConvertor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");}
 	}
 };
 
 
-%nodefaultctor GeomFill_FunctionDraft;
-class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
+%nodefaultctor GeomFill_HArray1OfSectionLaw;
+class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_FunctionDraft(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
+		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_SectionLaw &V);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
+		void Init(const Handle_GeomFill_SectionLaw &V);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Boolean DerivT(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &dN, const Standard_Real teta, math_Vector & F);
+		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
 		%feature("autodoc", "1");
-		Standard_Boolean Deriv2T(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &d2N, const Standard_Real teta, math_Vector & F);
+		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean DerivTX(const gp_Vec &dN, const Standard_Real teta, math_Matrix & D);
+		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
-
-};
-%extend GeomFill_FunctionDraft {
-	~GeomFill_FunctionDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
-class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
-	public:
+		const GeomFill_Array1OfSectionLaw & Array1() const;
 		%feature("autodoc", "1");
-		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Trsf & Value() const;
+		GeomFill_Array1OfSectionLaw & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	Handle_GeomFill_SequenceNodeOfSequenceOfTrsf GetHandle() {
-	return *(Handle_GeomFill_SequenceNodeOfSequenceOfTrsf*) &$self;
+%extend GeomFill_HArray1OfSectionLaw {
+	Handle_GeomFill_HArray1OfSectionLaw GetHandle() {
+	return *(Handle_GeomFill_HArray1OfSectionLaw*) &$self;
 	}
 };
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+%extend GeomFill_HArray1OfSectionLaw {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	~GeomFill_SequenceNodeOfSequenceOfTrsf() {
+%extend GeomFill_HArray1OfSectionLaw {
+	~GeomFill_HArray1OfSectionLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");}
 	}
 };
 
 
-%nodefaultctor GeomFill_SequenceOfTrsf;
-class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
+%nodefaultctor GeomFill_HArray1OfLocationLaw;
+class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_SequenceOfTrsf();
+		GeomFill_HArray1OfLocationLaw(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Clear();
+		GeomFill_HArray1OfLocationLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_LocationLaw &V);
 		%feature("autodoc", "1");
-		const GeomFill_SequenceOfTrsf & Assign(const GeomFill_SequenceOfTrsf &Other);
+		void Init(const Handle_GeomFill_LocationLaw &V);
 		%feature("autodoc", "1");
-		void Append(const gp_Trsf &T);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Append(GeomFill_SequenceOfTrsf & S);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Prepend(const gp_Trsf &T);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void Prepend(GeomFill_SequenceOfTrsf & S);
+		void SetValue(const Standard_Integer Index, const Handle_GeomFill_LocationLaw &Value);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Trsf &I);
+		const Handle_GeomFill_LocationLaw & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
+		Handle_GeomFill_LocationLaw & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Trsf &T);
+		const GeomFill_Array1OfLocationLaw & Array1() const;
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
+		GeomFill_Array1OfLocationLaw & ChangeArray1();
 		%feature("autodoc", "1");
-		const gp_Trsf & First() const;
-		%feature("autodoc", "1");
-		const gp_Trsf & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
-		%feature("autodoc", "1");
-		const gp_Trsf & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Trsf & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Trsf &I);
-		%feature("autodoc", "1");
-		gp_Trsf & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Trsf & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_SequenceOfTrsf {
-	~GeomFill_SequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfTrsf\n");}
+%extend GeomFill_HArray1OfLocationLaw {
+	Handle_GeomFill_HArray1OfLocationLaw GetHandle() {
+	return *(Handle_GeomFill_HArray1OfLocationLaw*) &$self;
 	}
 };
-
-
-%nodefaultctor GeomFill_Profiler;
-class GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Profiler();
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void AddCurve(const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		virtual		void Perform(const Standard_Real PTol);
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(const Standard_Integer Index, TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		void Weights(const Standard_Integer Index, TColStd_Array1OfReal & Weights) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
-
+%extend GeomFill_HArray1OfLocationLaw {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
 };
-%extend GeomFill_Profiler {
-	~GeomFill_Profiler() {
+%extend GeomFill_HArray1OfLocationLaw {
+	~GeomFill_HArray1OfLocationLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Profiler\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfLocationLaw\n");}
 	}
 };
 
@@ -1436,21 +1960,81 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 };
 
 
-%nodefaultctor GeomFill_TrihedronLaw;
-class GeomFill_TrihedronLaw : public MMgt_TShared {
+%nodefaultctor GeomFill_CurveAndTrihedron;
+class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		GeomFill_CurveAndTrihedron(const Handle_GeomFill_TrihedronLaw &Trihedron);
+
+};
+%extend GeomFill_CurveAndTrihedron {
+	Handle_GeomFill_CurveAndTrihedron GetHandle() {
+	return *(Handle_GeomFill_CurveAndTrihedron*) &$self;
+	}
+};
+%extend GeomFill_CurveAndTrihedron {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_CurveAndTrihedron {
+	~GeomFill_CurveAndTrihedron() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_CurveAndTrihedron\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
+class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
+	public:
 		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		virtual		GeomFill_PipeError ErrorStatus() const;
+		gp_Trsf & Value() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	Handle_GeomFill_SequenceNodeOfSequenceOfTrsf GetHandle() {
+	return *(Handle_GeomFill_SequenceNodeOfSequenceOfTrsf*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	~GeomFill_SequenceNodeOfSequenceOfTrsf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SweepFunction;
+class GeomFill_SweepFunction : public Approx_SweepFunction {
+	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		GeomFill_SweepFunction(const Handle_GeomFill_SectionLaw &Section, const Handle_GeomFill_LocationLaw &Location, const Standard_Real FirstParameter, const Standard_Real FirstParameterOnS, const Standard_Real RatioParameterOnS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		virtual		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Nb2dCurves() const;
+		%feature("autodoc", "1");
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
@@ -1458,31 +2042,144 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
-		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
+		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		virtual		gp_Pnt BarycentreOfSurf() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real MaximalSection() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_TrihedronLaw {
-	Handle_GeomFill_TrihedronLaw GetHandle() {
-	return *(Handle_GeomFill_TrihedronLaw*) &$self;
+%extend GeomFill_SweepFunction {
+	Handle_GeomFill_SweepFunction GetHandle() {
+	return *(Handle_GeomFill_SweepFunction*) &$self;
 	}
 };
-%extend GeomFill_TrihedronLaw {
+%extend GeomFill_SweepFunction {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_TrihedronLaw {
-	~GeomFill_TrihedronLaw() {
+%extend GeomFill_SweepFunction {
+	~GeomFill_SweepFunction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronLaw\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SweepFunction\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_LocFunction;
+class GeomFill_LocFunction {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_LocFunction(const Handle_GeomFill_LocationLaw &Law);
+		%feature("autodoc", "1");
+		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
+
+};
+%extend GeomFill_LocFunction {
+	~GeomFill_LocFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_LocFunction\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SequenceOfTrsf;
+class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceOfTrsf();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfTrsf & Assign(const GeomFill_SequenceOfTrsf &Other);
+		%feature("autodoc", "1");
+		void Append(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		void Append(GeomFill_SequenceOfTrsf & S);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		void Prepend(GeomFill_SequenceOfTrsf & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const gp_Trsf &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const gp_Trsf &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
+		%feature("autodoc", "1");
+		const gp_Trsf & First() const;
+		%feature("autodoc", "1");
+		const gp_Trsf & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, GeomFill_SequenceOfTrsf & S);
+		%feature("autodoc", "1");
+		const gp_Trsf & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Trsf & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Trsf &I);
+		%feature("autodoc", "1");
+		gp_Trsf & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Trsf & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend GeomFill_SequenceOfTrsf {
+	~GeomFill_SequenceOfTrsf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfTrsf\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill;
+class GeomFill {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface(const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2);
+		%feature("autodoc", "1");
+		void GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &nplan, const gp_Pnt &pt1, const gp_Pnt &pt2, const Standard_Real Rayon, const gp_Pnt &Center, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt &Center, const gp_Vec &DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
+		%feature("autodoc", "1");
+		void Knots(const Convert_ParameterisationType TypeConv, TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		void Mults(const Convert_ParameterisationType TypeConv, TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		void GetMinimalWeights(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
+
+};
+%extend GeomFill {
+	~GeomFill() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill\n");}
 	}
 };
 
@@ -1494,6 +2191,8 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 		virtual		Handle_Adaptor3d_HCurve Guide() const;
 		%feature("autodoc", "1");
 		virtual		void Origine(const Standard_Real Param1, const Standard_Real Param2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend GeomFill_TrihedronWithGuide {
@@ -1522,6 +2221,28 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 		%feature("autodoc", "1");
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &thePath);
 		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		GeomFill_PipeError ErrorStatus() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
 		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
 
 };
@@ -1539,6 +2260,91 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 	~GeomFill_GuideTrihedronPlan() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronPlan\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_LocationGuide;
+class GeomFill_LocationGuide : public GeomFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_LocationGuide(const Handle_GeomFill_TrihedronWithGuide &Triedre);
+		%feature("autodoc", "1");
+		void Set(const Handle_GeomFill_SectionLaw &Section, const Standard_Boolean rotat, const Standard_Real SFirst, const Standard_Real SLast, const Standard_Real PrecAngle, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void EraseRotation();
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
+		%feature("autodoc", "1");
+		virtual		void SetTrsf(const gp_Mat &Transfo);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_LocationLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasFirstRestriction() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasLastRestriction() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer TraceNumber() const;
+		%feature("autodoc", "1");
+		virtual		GeomFill_PipeError ErrorStatus() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMaximalNorm();
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Rotation(gp_Pnt & Center) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Section() const;
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve Guide() const;
+		%feature("autodoc", "1");
+		void SetOrigine(const Standard_Real Param1, const Standard_Real Param2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_LocationGuide {
+	Handle_GeomFill_LocationGuide GetHandle() {
+	return *(Handle_GeomFill_LocationGuide*) &$self;
+	}
+};
+%extend GeomFill_LocationGuide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_LocationGuide {
+	~GeomFill_LocationGuide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationGuide\n");}
 	}
 };
 
@@ -1566,6 +2372,84 @@ class GeomFill_Tensor {
 	~GeomFill_Tensor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Tensor\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Frenet;
+class GeomFill_Frenet : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Frenet();
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Frenet {
+	Handle_GeomFill_Frenet GetHandle() {
+	return *(Handle_GeomFill_Frenet*) &$self;
+	}
+};
+%extend GeomFill_Frenet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_Frenet {
+	~GeomFill_Frenet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Frenet\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
+class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceNodeOfSequenceOfCurve(const Handle_Geom_Curve &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_SequenceNodeOfSequenceOfCurve {
+	Handle_GeomFill_SequenceNodeOfSequenceOfCurve GetHandle() {
+	return *(Handle_GeomFill_SequenceNodeOfSequenceOfCurve*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfCurve {
+	~GeomFill_SequenceNodeOfSequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 
@@ -1633,47 +2517,102 @@ class GeomFill_Pipe {
 };
 
 
-%nodefaultctor GeomFill_CoonsAlgPatch;
-class GeomFill_CoonsAlgPatch : public MMgt_TShared {
+%nodefaultctor GeomFill_SimpleBound;
+class GeomFill_SimpleBound : public GeomFill_Boundary {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_CoonsAlgPatch(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4);
+		GeomFill_SimpleBound(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
-		void Func(Handle_Law_Function & f1, Handle_Law_Function & f2) const;
+		virtual		gp_Pnt Value(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		void SetFunc(const Handle_Law_Function &f1, const Handle_Law_Function &f2);
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
+		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc", "1");
-		gp_Vec D1U(const Standard_Real U, const Standard_Real V) const;
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		gp_Vec D1V(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
-		gp_Vec DUV(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Corner(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Handle_GeomFill_Boundary & Bound(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Handle_Law_Function & Func(const Standard_Integer I) const;
+		virtual		Standard_Boolean IsDegenerated() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_CoonsAlgPatch {
-	Handle_GeomFill_CoonsAlgPatch GetHandle() {
-	return *(Handle_GeomFill_CoonsAlgPatch*) &$self;
+%extend GeomFill_SimpleBound {
+	Handle_GeomFill_SimpleBound GetHandle() {
+	return *(Handle_GeomFill_SimpleBound*) &$self;
 	}
 };
-%extend GeomFill_CoonsAlgPatch {
+%extend GeomFill_SimpleBound {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CoonsAlgPatch {
-	~GeomFill_CoonsAlgPatch() {
+%extend GeomFill_SimpleBound {
+	~GeomFill_SimpleBound() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CoonsAlgPatch\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SimpleBound\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_AppSurf;
+class GeomFill_AppSurf : public AppBlend_Approx {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_AppSurf();
+		%feature("autodoc", "1");
+		GeomFill_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Boolean SpApprox=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Integer NbMaxP);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer UDegree() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array2OfReal & SurfWeights() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbCurves2d() const;
+		%feature("autodoc", "1");
+		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Curves2dDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
+		%feature("autodoc", "1");
+		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
+
+};
+%extend GeomFill_AppSurf {
+	~GeomFill_AppSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSurf\n");}
 	}
 };
 
@@ -1747,31 +2686,6 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 };
 
 
-%nodefaultctor GeomFill_Filling;
-class GeomFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Filling();
-		%feature("autodoc", "1");
-		Standard_Integer NbUPoles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array2OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Boolean isRational() const;
-		%feature("autodoc", "1");
-		void Weights(TColStd_Array2OfReal & Weights) const;
-
-};
-%extend GeomFill_Filling {
-	~GeomFill_Filling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Filling\n");}
-	}
-};
-
-
 %nodefaultctor GeomFill_Stretch;
 class GeomFill_Stretch : public GeomFill_Filling {
 	public:
@@ -1795,150 +2709,413 @@ class GeomFill_Stretch : public GeomFill_Filling {
 };
 
 
-%nodefaultctor GeomFill_Boundary;
-class GeomFill_Boundary : public MMgt_TShared {
+%nodefaultctor GeomFill_GuideTrihedronAC;
+class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 	public:
 		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
+		GeomFill_GuideTrihedronAC(const Handle_Adaptor3d_HCurve &guide);
 		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasNormals() const;
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
-		virtual		gp_Vec Norm(const Standard_Real U) const;
+		virtual		Handle_Adaptor3d_HCurve Guide() const;
 		%feature("autodoc", "1");
-		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
 		%feature("autodoc", "1");
-		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
 		%feature("autodoc", "1");
-		void Points(gp_Pnt & PFirst, gp_Pnt & PLast) const;
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
 		%feature("autodoc", "1");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDegenerated() const;
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		Standard_Real Tol3d() const;
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
-		void Tol3d(const Standard_Real Tol);
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
 		%feature("autodoc", "1");
-		Standard_Real Tolang() const;
+		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
-		void Tolang(const Standard_Real Tol);
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_Boundary {
-	Handle_GeomFill_Boundary GetHandle() {
-	return *(Handle_GeomFill_Boundary*) &$self;
+%extend GeomFill_GuideTrihedronAC {
+	Handle_GeomFill_GuideTrihedronAC GetHandle() {
+	return *(Handle_GeomFill_GuideTrihedronAC*) &$self;
 	}
 };
-%extend GeomFill_Boundary {
+%extend GeomFill_GuideTrihedronAC {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Boundary {
-	~GeomFill_Boundary() {
+%extend GeomFill_GuideTrihedronAC {
+	~GeomFill_GuideTrihedronAC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Boundary\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronAC\n");}
 	}
 };
 
 
-%nodefaultctor GeomFill_SimpleBound;
-class GeomFill_SimpleBound : public GeomFill_Boundary {
+%nodefaultctor GeomFill_BSplineCurves;
+class GeomFill_BSplineCurves {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_SimpleBound(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
+		GeomFill_BSplineCurves();
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineSurface & Surface() const;
 
 };
-%extend GeomFill_SimpleBound {
-	Handle_GeomFill_SimpleBound GetHandle() {
-	return *(Handle_GeomFill_SimpleBound*) &$self;
-	}
-};
-%extend GeomFill_SimpleBound {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_SimpleBound {
-	~GeomFill_SimpleBound() {
+%extend GeomFill_BSplineCurves {
+	~GeomFill_BSplineCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SimpleBound\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_BSplineCurves\n");}
 	}
 };
 
 
-%nodefaultctor GeomFill_QuasiAngularConvertor;
-class GeomFill_QuasiAngularConvertor {
+%nodefaultctor GeomFill_CornerState;
+class GeomFill_CornerState {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_QuasiAngularConvertor();
+		GeomFill_CornerState();
 		%feature("autodoc", "1");
-		Standard_Boolean Initialized() const;
+		Standard_Real Gap() const;
 		%feature("autodoc", "1");
-		void Init();
+		void Gap(const Standard_Real G);
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Pnt &Center, const gp_Vec &Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
+		Standard_Real TgtAng() const;
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &Dir, const gp_Vec &DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
+		void TgtAng(const Standard_Real Ang);
 		%feature("autodoc", "1");
-		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
+		Standard_Boolean HasConstraint() const;
+		%feature("autodoc", "1");
+		void Constraint();
+		%feature("autodoc", "1");
+		Standard_Real NorAng() const;
+		%feature("autodoc", "1");
+		void NorAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void DoKill(const Standard_Real Scal);
 
 };
-%extend GeomFill_QuasiAngularConvertor {
-	~GeomFill_QuasiAngularConvertor() {
+%extend GeomFill_CornerState {
+	~GeomFill_CornerState() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_CornerState\n");}
 	}
 };
 
 
-%nodefaultctor GeomFill_HArray1OfSectionLaw;
-class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
+%nodefaultctor GeomFill_LocationDraft;
+class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
+		GeomFill_LocationDraft(const gp_Dir &Direction, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		GeomFill_HArray1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_SectionLaw &V);
+		void SetStopSurf(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_SectionLaw &V);
+		void SetAngle(const Standard_Real Angle);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		virtual		void SetTrsf(const gp_Mat &Transfo);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
+		virtual		Handle_GeomFill_LocationLaw Copy() const;
 		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
 		%feature("autodoc", "1");
-		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
 		%feature("autodoc", "1");
-		const GeomFill_Array1OfSectionLaw & Array1() const;
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
 		%feature("autodoc", "1");
-		GeomFill_Array1OfSectionLaw & ChangeArray1();
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasFirstRestriction() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasLastRestriction() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer TraceNumber() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMaximalNorm();
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Rotation(gp_Pnt & Center) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIntersec() const;
+		%feature("autodoc", "1");
+		gp_Dir Direction() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_HArray1OfSectionLaw {
-	Handle_GeomFill_HArray1OfSectionLaw GetHandle() {
-	return *(Handle_GeomFill_HArray1OfSectionLaw*) &$self;
+%extend GeomFill_LocationDraft {
+	Handle_GeomFill_LocationDraft GetHandle() {
+	return *(Handle_GeomFill_LocationDraft*) &$self;
 	}
 };
-%extend GeomFill_HArray1OfSectionLaw {
+%extend GeomFill_LocationDraft {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_HArray1OfSectionLaw {
-	~GeomFill_HArray1OfSectionLaw() {
+%extend GeomFill_LocationDraft {
+	~GeomFill_LocationDraft() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationDraft\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_TgtOnCoons;
+class GeomFill_TgtOnCoons : public GeomFill_TgtField {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_TgtOnCoons(const Handle_GeomFill_CoonsAlgPatch &K, const Standard_Integer I);
+		%feature("autodoc", "1");
+		virtual		gp_Vec Value(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec D1(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_TgtOnCoons {
+	Handle_GeomFill_TgtOnCoons GetHandle() {
+	return *(Handle_GeomFill_TgtOnCoons*) &$self;
+	}
+};
+%extend GeomFill_TgtOnCoons {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_TgtOnCoons {
+	~GeomFill_TgtOnCoons() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtOnCoons\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_Sweep;
+class GeomFill_Sweep {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Sweep(const Handle_GeomFill_LocationLaw &Location, const Standard_Boolean WithKpart=1);
+		%feature("autodoc", "1");
+		void SetDomain(const Standard_Real First, const Standard_Real Last, const Standard_Real SectionFirst, const Standard_Real SectionLast);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0e+0);
+		%feature("autodoc", "1");
+		Standard_Boolean ExchangeUV() const;
+		%feature("autodoc", "1");
+		Standard_Boolean UReversed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean VReversed() const;
+		%feature("autodoc", "1");
+		void Build(const Handle_GeomFill_SectionLaw &Section, const GeomFill_ApproxStyle Methode=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=10, const Standard_Integer Segmax=30);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real ErrorOnSurface() const;
+		%feature("autodoc", "1");
+		void ErrorOnRestriction(const Standard_Boolean IsFirst, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void ErrorOnTrace(const Standard_Integer IndexOfTrace, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Restriction(const Standard_Boolean IsFirst) const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfTrace() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
+
+};
+%extend GeomFill_Sweep {
+	~GeomFill_Sweep() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Sweep\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_ConstantBiNormal;
+class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_ConstantBiNormal(const gp_Dir &BiNormal);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_ConstantBiNormal {
+	Handle_GeomFill_ConstantBiNormal GetHandle() {
+	return *(Handle_GeomFill_ConstantBiNormal*) &$self;
+	}
+};
+%extend GeomFill_ConstantBiNormal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomFill_ConstantBiNormal {
+	~GeomFill_ConstantBiNormal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstantBiNormal\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SectionGenerator;
+class GeomFill_SectionGenerator : public GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SectionGenerator();
+		%feature("autodoc", "1");
+		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
+		%feature("autodoc", "1");
+		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Knots(TColStd_Array1OfReal & TKnots) const;
+		%feature("autodoc", "1");
+		void Mults(TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths) const;
+		%feature("autodoc", "1");
+		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter(const Standard_Integer P) const;
+
+};
+%extend GeomFill_SectionGenerator {
+	~GeomFill_SectionGenerator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionGenerator\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_AppSweep;
+class GeomFill_AppSweep : public AppBlend_Approx {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_AppSweep();
+		%feature("autodoc", "1");
+		GeomFill_AppSweep(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Boolean SpApprox=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Integer NbMaxP);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer UDegree() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array2OfReal & SurfWeights() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbCurves2d() const;
+		%feature("autodoc", "1");
+		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Curves2dDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
+		%feature("autodoc", "1");
+		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
+
+};
+%extend GeomFill_AppSweep {
+	~GeomFill_AppSweep() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSweep\n");}
 	}
 };
 
@@ -2082,6 +3259,109 @@ class GeomFill_Coons : public GeomFill_Filling {
 };
 
 
+%nodefaultctor GeomFill_Array1OfSectionLaw;
+class GeomFill_Array1OfSectionLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Array1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		GeomFill_Array1OfSectionLaw(const Handle_GeomFill_SectionLaw &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_GeomFill_SectionLaw &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const GeomFill_Array1OfSectionLaw & Assign(const GeomFill_Array1OfSectionLaw &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
+		%feature("autodoc", "1");
+		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
+
+};
+%extend GeomFill_Array1OfSectionLaw {
+	~GeomFill_Array1OfSectionLaw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_BezierCurves;
+class GeomFill_BezierCurves {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_BezierCurves();
+		%feature("autodoc", "1");
+		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const GeomFill_FillingStyle Type);
+		%feature("autodoc", "1");
+		const Handle_Geom_BezierSurface & Surface() const;
+
+};
+%extend GeomFill_BezierCurves {
+	~GeomFill_BezierCurves() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_BezierCurves\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_FunctionDraft;
+class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_FunctionDraft(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Boolean DerivT(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &dN, const Standard_Real teta, math_Vector & F);
+		%feature("autodoc", "1");
+		Standard_Boolean Deriv2T(const Handle_Adaptor3d_HCurve &C, const Standard_Real Param, const Standard_Real W, const gp_Vec &d2N, const Standard_Real teta, math_Vector & F);
+		%feature("autodoc", "1");
+		Standard_Boolean DerivTX(const gp_Vec &dN, const Standard_Real teta, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
+
+};
+%extend GeomFill_FunctionDraft {
+	~GeomFill_FunctionDraft() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
+	}
+};
+
+
 %nodefaultctor GeomFill_Fixed;
 class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	public:
@@ -2125,119 +3405,45 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 };
 
 
-%nodefaultctor GeomFill_BSplineCurves;
-class GeomFill_BSplineCurves {
+%nodefaultctor GeomFill_BoundWithSurf;
+class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_BSplineCurves();
+		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		virtual		gp_Pnt Value(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 		%feature("autodoc", "1");
-		GeomFill_BSplineCurves(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		virtual		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const Handle_Geom_BSplineCurve &C4, const GeomFill_FillingStyle Type);
+		virtual		gp_Vec Norm(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const Handle_Geom_BSplineCurve &C3, const GeomFill_FillingStyle Type);
+		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &C1, const Handle_Geom_BSplineCurve &C2, const GeomFill_FillingStyle Type);
+		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc", "1");
-		const Handle_Geom_BSplineSurface & Surface() const;
-
-};
-%extend GeomFill_BSplineCurves {
-	~GeomFill_BSplineCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BSplineCurves\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_CorrectedFrenet;
-class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
-	public:
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		GeomFill_CorrectedFrenet();
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		virtual		Standard_Boolean IsDegenerated() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_CorrectedFrenet {
-	Handle_GeomFill_CorrectedFrenet GetHandle() {
-	return *(Handle_GeomFill_CorrectedFrenet*) &$self;
+%extend GeomFill_BoundWithSurf {
+	Handle_GeomFill_BoundWithSurf GetHandle() {
+	return *(Handle_GeomFill_BoundWithSurf*) &$self;
 	}
 };
-%extend GeomFill_CorrectedFrenet {
+%extend GeomFill_BoundWithSurf {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CorrectedFrenet {
-	~GeomFill_CorrectedFrenet() {
+%extend GeomFill_BoundWithSurf {
+	~GeomFill_BoundWithSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CorrectedFrenet\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Curved;
-class GeomFill_Curved : public GeomFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Curved();
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-
-};
-%extend GeomFill_Curved {
-	~GeomFill_Curved() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Curved\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomFill_BoundWithSurf\n");}
 	}
 };
 
@@ -2279,1241 +3485,5 @@ class GeomFill_Array1OfLocationLaw {
 	~GeomFill_Array1OfLocationLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Array1OfSectionLaw;
-class GeomFill_Array1OfSectionLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Array1OfSectionLaw(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		GeomFill_Array1OfSectionLaw(const Handle_GeomFill_SectionLaw &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_SectionLaw &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const GeomFill_Array1OfSectionLaw & Assign(const GeomFill_Array1OfSectionLaw &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomFill_SectionLaw &Value);
-		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_GeomFill_SectionLaw & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
-
-};
-%extend GeomFill_Array1OfSectionLaw {
-	~GeomFill_Array1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_LocationGuide;
-class GeomFill_LocationGuide : public GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_LocationGuide(const Handle_GeomFill_TrihedronWithGuide &Triedre);
-		%feature("autodoc", "1");
-		void Set(const Handle_GeomFill_SectionLaw &Section, const Standard_Boolean rotat, const Standard_Real SFirst, const Standard_Real SLast, const Standard_Real PrecAngle, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void EraseRotation();
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
-		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasFirstRestriction() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasLastRestriction() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer TraceNumber() const;
-		%feature("autodoc", "1");
-		virtual		GeomFill_PipeError ErrorStatus() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Section() const;
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve Guide() const;
-		%feature("autodoc", "1");
-		void SetOrigine(const Standard_Real Param1, const Standard_Real Param2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_LocationGuide {
-	Handle_GeomFill_LocationGuide GetHandle() {
-	return *(Handle_GeomFill_LocationGuide*) &$self;
-	}
-};
-%extend GeomFill_LocationGuide {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_LocationGuide {
-	~GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationGuide\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_TgtField;
-class GeomFill_TgtField : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsScalable() const;
-		%feature("autodoc", "1");
-		virtual		void Scale(const Handle_Law_BSpline &Func);
-		%feature("autodoc", "1");
-		virtual		gp_Vec Value(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec D1(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & V, gp_Vec & DV) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_TgtField {
-	Handle_GeomFill_TgtField GetHandle() {
-	return *(Handle_GeomFill_TgtField*) &$self;
-	}
-};
-%extend GeomFill_TgtField {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_TgtField {
-	~GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtField\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_TgtOnCoons;
-class GeomFill_TgtOnCoons : public GeomFill_TgtField {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_TgtOnCoons(const Handle_GeomFill_CoonsAlgPatch &K, const Standard_Integer I);
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
-
-};
-%extend GeomFill_TgtOnCoons {
-	Handle_GeomFill_TgtOnCoons GetHandle() {
-	return *(Handle_GeomFill_TgtOnCoons*) &$self;
-	}
-};
-%extend GeomFill_TgtOnCoons {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_TgtOnCoons {
-	~GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtOnCoons\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Generator;
-class GeomFill_Generator : public GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Generator();
-		%feature("autodoc", "1");
-		virtual		void Perform(const Standard_Real PTol);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface() const;
-
-};
-%extend GeomFill_Generator {
-	~GeomFill_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Generator\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SectionPlacement;
-class GeomFill_SectionPlacement {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SectionPlacement(const Handle_GeomFill_LocationLaw &L, const Handle_Geom_Geometry &Section);
-		%feature("autodoc", "1");
-		void SetLocation(const Handle_GeomFill_LocationLaw &L);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Path, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real ParamOnPath, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnPath() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnSection() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		gp_Trsf Transformation(const Standard_Boolean WithTranslation, const Standard_Boolean WithCorrection=0) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Section(const Standard_Boolean WithTranslation) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
-
-};
-%extend GeomFill_SectionPlacement {
-	~GeomFill_SectionPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionPlacement\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_DegeneratedBound;
-class GeomFill_DegeneratedBound : public GeomFill_Boundary {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_DegeneratedBound(const gp_Pnt &Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc", "1");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDegenerated() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_DegeneratedBound {
-	Handle_GeomFill_DegeneratedBound GetHandle() {
-	return *(Handle_GeomFill_DegeneratedBound*) &$self;
-	}
-};
-%extend GeomFill_DegeneratedBound {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_DegeneratedBound {
-	~GeomFill_DegeneratedBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_DegeneratedBound\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_CornerState;
-class GeomFill_CornerState {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_CornerState();
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		void Gap(const Standard_Real G);
-		%feature("autodoc", "1");
-		Standard_Real TgtAng() const;
-		%feature("autodoc", "1");
-		void TgtAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConstraint() const;
-		%feature("autodoc", "1");
-		void Constraint();
-		%feature("autodoc", "1");
-		Standard_Real NorAng() const;
-		%feature("autodoc", "1");
-		void NorAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void DoKill(const Standard_Real Scal);
-
-};
-%extend GeomFill_CornerState {
-	~GeomFill_CornerState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CornerState\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Darboux;
-class GeomFill_Darboux : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Darboux();
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_Darboux {
-	Handle_GeomFill_Darboux GetHandle() {
-	return *(Handle_GeomFill_Darboux*) &$self;
-	}
-};
-%extend GeomFill_Darboux {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_Darboux {
-	~GeomFill_Darboux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Darboux\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SectionGenerator;
-class GeomFill_SectionGenerator : public GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SectionGenerator();
-		%feature("autodoc", "1");
-		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
-		%feature("autodoc", "1");
-		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Knots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		void Mults(TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths) const;
-		%feature("autodoc", "1");
-		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter(const Standard_Integer P) const;
-
-};
-%extend GeomFill_SectionGenerator {
-	~GeomFill_SectionGenerator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionGenerator\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SequenceOfCurve;
-class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SequenceOfCurve();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const GeomFill_SequenceOfCurve & Assign(const GeomFill_SequenceOfCurve &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void Append(GeomFill_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void Prepend(GeomFill_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Curve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, GeomFill_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Curve &I);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend GeomFill_SequenceOfCurve {
-	~GeomFill_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Line;
-class GeomFill_Line : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Line();
-		%feature("autodoc", "1");
-		GeomFill_Line(const Standard_Integer NbPoints);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		Standard_Integer Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_Line {
-	Handle_GeomFill_Line GetHandle() {
-	return *(Handle_GeomFill_Line*) &$self;
-	}
-};
-%extend GeomFill_Line {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_Line {
-	~GeomFill_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Line\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_LocationDraft;
-class GeomFill_LocationDraft : public GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_LocationDraft(const gp_Dir &Direction, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		void SetStopSurf(const Handle_Adaptor3d_HSurface &Surf);
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real Angle);
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
-		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasFirstRestriction() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasLastRestriction() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer TraceNumber() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIntersec() const;
-		%feature("autodoc", "1");
-		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_LocationDraft {
-	Handle_GeomFill_LocationDraft GetHandle() {
-	return *(Handle_GeomFill_LocationDraft*) &$self;
-	}
-};
-%extend GeomFill_LocationDraft {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_LocationDraft {
-	~GeomFill_LocationDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationDraft\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_GuideTrihedronAC;
-class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_GuideTrihedronAC(const Handle_Adaptor3d_HCurve &guide);
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HCurve Guide() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_GuideTrihedronAC {
-	Handle_GeomFill_GuideTrihedronAC GetHandle() {
-	return *(Handle_GeomFill_GuideTrihedronAC*) &$self;
-	}
-};
-%extend GeomFill_GuideTrihedronAC {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_GuideTrihedronAC {
-	~GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronAC\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_HArray1OfLocationLaw;
-class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_HArray1OfLocationLaw(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		GeomFill_HArray1OfLocationLaw(const Standard_Integer Low, const Standard_Integer Up, const Handle_GeomFill_LocationLaw &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_LocationLaw &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_GeomFill_LocationLaw &Value);
-		%feature("autodoc", "1");
-		const Handle_GeomFill_LocationLaw & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_GeomFill_LocationLaw & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const GeomFill_Array1OfLocationLaw & Array1() const;
-		%feature("autodoc", "1");
-		GeomFill_Array1OfLocationLaw & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_HArray1OfLocationLaw {
-	Handle_GeomFill_HArray1OfLocationLaw GetHandle() {
-	return *(Handle_GeomFill_HArray1OfLocationLaw*) &$self;
-	}
-};
-%extend GeomFill_HArray1OfLocationLaw {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_HArray1OfLocationLaw {
-	~GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfLocationLaw\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_CurveAndTrihedron;
-class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_CurveAndTrihedron(const Handle_GeomFill_TrihedronLaw &Trihedron);
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
-		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat &Transfo);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_CurveAndTrihedron {
-	Handle_GeomFill_CurveAndTrihedron GetHandle() {
-	return *(Handle_GeomFill_CurveAndTrihedron*) &$self;
-	}
-};
-%extend GeomFill_CurveAndTrihedron {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_CurveAndTrihedron {
-	~GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CurveAndTrihedron\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SweepFunction;
-class GeomFill_SweepFunction : public Approx_SweepFunction {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SweepFunction(const Handle_GeomFill_SectionLaw &Section, const Handle_GeomFill_LocationLaw &Location, const Standard_Real FirstParameter, const Standard_Real FirstParameterOnS, const Standard_Real RatioParameterOnS);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
-		%feature("autodoc", "1");
-		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt BarycentreOfSurf() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real MaximalSection() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_SweepFunction {
-	Handle_GeomFill_SweepFunction GetHandle() {
-	return *(Handle_GeomFill_SweepFunction*) &$self;
-	}
-};
-%extend GeomFill_SweepFunction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_SweepFunction {
-	~GeomFill_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SweepFunction\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_LocFunction;
-class GeomFill_LocFunction {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_LocFunction(const Handle_GeomFill_LocationLaw &Law);
-		%feature("autodoc", "1");
-		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
-
-};
-%extend GeomFill_LocFunction {
-	~GeomFill_LocFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocFunction\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_AppSurf;
-class GeomFill_AppSurf : public AppBlend_Approx {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_AppSurf();
-		%feature("autodoc", "1");
-		GeomFill_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Boolean SpApprox=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Integer NbMaxP);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array2OfReal & SurfWeights() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc", "1");
-		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Curves2dDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc", "1");
-		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-
-};
-%extend GeomFill_AppSurf {
-	~GeomFill_AppSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSurf\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
-class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SequenceNodeOfSequenceOfCurve(const Handle_Geom_Curve &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_SequenceNodeOfSequenceOfCurve {
-	Handle_GeomFill_SequenceNodeOfSequenceOfCurve GetHandle() {
-	return *(Handle_GeomFill_SequenceNodeOfSequenceOfCurve*) &$self;
-	}
-};
-%extend GeomFill_SequenceNodeOfSequenceOfCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_SequenceNodeOfSequenceOfCurve {
-	~GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_PlanFunc;
-class GeomFill_PlanFunc : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_PlanFunc(const gp_Pnt &P, const gp_Vec &V, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend GeomFill_PlanFunc {
-	~GeomFill_PlanFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_PlanFunc\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Frenet;
-class GeomFill_Frenet : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Frenet();
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_Frenet {
-	Handle_GeomFill_Frenet GetHandle() {
-	return *(Handle_GeomFill_Frenet*) &$self;
-	}
-};
-%extend GeomFill_Frenet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_Frenet {
-	~GeomFill_Frenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Frenet\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_ConstrainedFilling;
-class GeomFill_ConstrainedFilling {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Standard_Boolean NoCheck=0);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4, const Standard_Boolean NoCheck=0);
-		%feature("autodoc", "1");
-		void SetDomain(const Standard_Real l, const Handle_GeomFill_BoundWithSurf &B);
-		%feature("autodoc", "1");
-		void ReBuild();
-		%feature("autodoc", "1");
-		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void CheckCoonsAlgPatch(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckTgteField(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckApprox(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckResult(const Standard_Integer I);
-
-};
-%extend GeomFill_ConstrainedFilling {
-	~GeomFill_ConstrainedFilling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstrainedFilling\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_Sweep;
-class GeomFill_Sweep {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Sweep(const Handle_GeomFill_LocationLaw &Location, const Standard_Boolean WithKpart=1);
-		%feature("autodoc", "1");
-		void SetDomain(const Standard_Real First, const Standard_Real Last, const Standard_Real SectionFirst, const Standard_Real SectionLast);
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0e+0);
-		%feature("autodoc", "1");
-		Standard_Boolean ExchangeUV() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UReversed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean VReversed() const;
-		%feature("autodoc", "1");
-		void Build(const Handle_GeomFill_SectionLaw &Section, const GeomFill_ApproxStyle Methode=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=10, const Standard_Integer Segmax=30);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real ErrorOnSurface() const;
-		%feature("autodoc", "1");
-		void ErrorOnRestriction(const Standard_Boolean IsFirst, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void ErrorOnTrace(const Standard_Integer IndexOfTrace, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Restriction(const Standard_Boolean IsFirst) const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfTrace() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
-
-};
-%extend GeomFill_Sweep {
-	~GeomFill_Sweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Sweep\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_ConstantBiNormal;
-class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_ConstantBiNormal(const gp_Dir &BiNormal);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_ConstantBiNormal {
-	Handle_GeomFill_ConstantBiNormal GetHandle() {
-	return *(Handle_GeomFill_ConstantBiNormal*) &$self;
-	}
-};
-%extend GeomFill_ConstantBiNormal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_ConstantBiNormal {
-	~GeomFill_ConstantBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstantBiNormal\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_AppSweep;
-class GeomFill_AppSweep : public AppBlend_Approx {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_AppSweep();
-		%feature("autodoc", "1");
-		GeomFill_AppSweep(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Boolean SpApprox=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Integer NbMaxP);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array2OfReal & SurfWeights() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc", "1");
-		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Curves2dDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc", "1");
-		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-
-};
-%extend GeomFill_AppSweep {
-	~GeomFill_AppSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSweep\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_BezierCurves;
-class GeomFill_BezierCurves {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_BezierCurves();
-		%feature("autodoc", "1");
-		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		GeomFill_BezierCurves(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const Handle_Geom_BezierCurve &C4, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const Handle_Geom_BezierCurve &C3, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BezierCurve &C1, const Handle_Geom_BezierCurve &C2, const GeomFill_FillingStyle Type);
-		%feature("autodoc", "1");
-		const Handle_Geom_BezierSurface & Surface() const;
-
-};
-%extend GeomFill_BezierCurves {
-	~GeomFill_BezierCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BezierCurves\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_BoundWithSurf;
-class GeomFill_BoundWithSurf : public GeomFill_Boundary {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasNormals() const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec Norm(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
-		%feature("autodoc", "1");
-		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc", "1");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDegenerated() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_BoundWithSurf {
-	Handle_GeomFill_BoundWithSurf GetHandle() {
-	return *(Handle_GeomFill_BoundWithSurf*) &$self;
-	}
-};
-%extend GeomFill_BoundWithSurf {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomFill_BoundWithSurf {
-	~GeomFill_BoundWithSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BoundWithSurf\n");}
 	}
 };

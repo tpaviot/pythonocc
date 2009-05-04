@@ -114,5 +114,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<PTColStd_TransientPersistentMap.hxx>
 #include<PTColStd_PersistentTransientMap.hxx>
 #include<PTopoDS_Shape1.hxx>
-#include<MgtTopoDS.hxx>
 %}

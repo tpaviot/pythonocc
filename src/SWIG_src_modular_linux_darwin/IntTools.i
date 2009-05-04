@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IntTools
 
+%include IntTools_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -505,11 +507,38 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 };
 
 
+%nodefaultctor IntTools_ListNodeOfListOfSurfaceRangeSample;
+class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntTools_ListNodeOfListOfSurfaceRangeSample(const IntTools_SurfaceRangeSample &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntTools_SurfaceRangeSample & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
+	Handle_IntTools_ListNodeOfListOfSurfaceRangeSample GetHandle() {
+	return *(Handle_IntTools_ListNodeOfListOfSurfaceRangeSample*) &$self;
+	}
+};
+%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
+	~IntTools_ListNodeOfListOfSurfaceRangeSample() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
+	}
+};
+
+
 %nodefaultctor IntTools_SurfaceRangeSampleMapHasher;
 class IntTools_SurfaceRangeSampleMapHasher {
 	public:
-		%feature("autodoc", "1");
-		IntTools_SurfaceRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_SurfaceRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -582,67 +611,41 @@ class IntTools_FClass2d {
 };
 
 
-%nodefaultctor IntTools_CommonPrt;
-class IntTools_CommonPrt {
+%nodefaultctor IntTools_Curve;
+class IntTools_Curve {
 	public:
 		%feature("autodoc", "1");
-		IntTools_CommonPrt();
+		IntTools_Curve();
 		%feature("autodoc", "1");
-		IntTools_CommonPrt(const IntTools_CommonPrt &aCPrt);
+		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
 		%feature("autodoc", "1");
-		IntTools_CommonPrt & Assign(const IntTools_CommonPrt &Other);
+		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
 		%feature("autodoc", "1");
-		void SetEdge1(const TopoDS_Edge &anE);
+		void SetCurve(const Handle_Geom_Curve &Curve3d);
 		%feature("autodoc", "1");
-		void SetEdge2(const TopoDS_Edge &anE);
+		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
 		%feature("autodoc", "1");
-		void SetType(const TopAbs_ShapeEnum aType);
+		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
 		%feature("autodoc", "1");
-		void SetRange1(const IntTools_Range &aR);
+		const Handle_Geom_Curve & Curve() const;
 		%feature("autodoc", "1");
-		void SetRange1(const Standard_Real tf, const Standard_Real tl);
+		const Handle_Geom2d_Curve & FirstCurve2d() const;
 		%feature("autodoc", "1");
-		void AppendRange2(const IntTools_Range &aR);
+		const Handle_Geom2d_Curve & SecondCurve2d() const;
 		%feature("autodoc", "1");
-		void AppendRange2(const Standard_Real tf, const Standard_Real tl);
+		Standard_Boolean HasBounds() const;
 		%feature("autodoc", "1");
-		void SetVertexParameter1(const Standard_Real tV);
+		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
 		%feature("autodoc", "1");
-		void SetVertexParameter2(const Standard_Real tV);
+		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge1() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge2() const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum Type() const;
-		%feature("autodoc", "1");
-		const IntTools_Range & Range1() const;
-		%feature("autodoc", "1");
-		void Range1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		const IntTools_SequenceOfRanges & Ranges2() const;
-		%feature("autodoc", "1");
-		IntTools_SequenceOfRanges & ChangeRanges2();
-		%feature("autodoc", "1");
-		Standard_Real VertexParameter1() const;
-		%feature("autodoc", "1");
-		Standard_Real VertexParameter2() const;
-		%feature("autodoc", "1");
-		void Copy(IntTools_CommonPrt & anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AllNullFlag() const;
-		%feature("autodoc", "1");
-		void SetAllNullFlag(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		void SetBoundingPoints(const gp_Pnt &aP1, const gp_Pnt &aP2);
-		%feature("autodoc", "1");
-		void BoundingPoints(gp_Pnt & aP1, gp_Pnt & aP2) const;
+		GeomAbs_CurveType Type() const;
 
 };
-%extend IntTools_CommonPrt {
-	~IntTools_CommonPrt() {
+%extend IntTools_Curve {
+	~IntTools_Curve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CommonPrt\n");}
+	if (__env){printf("## Call custom destructor for instance of IntTools_Curve\n");}
 	}
 };
 
@@ -672,39 +675,6 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 	~IntTools_ListNodeOfListOfBox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfBox\n");}
-	}
-};
-
-
-%nodefaultctor IntTools_PntOnFace;
-class IntTools_PntOnFace {
-	public:
-		%feature("autodoc", "1");
-		IntTools_PntOnFace();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &aF, const gp_Pnt &aP, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
-		%feature("autodoc", "1");
-		void SetPnt(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		void SetParameters(const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		void SetValid(const Standard_Boolean bF);
-		%feature("autodoc", "1");
-		Standard_Boolean Valid() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Pnt() const;
-		%feature("autodoc", "1");
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend IntTools_PntOnFace {
-	~IntTools_PntOnFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_PntOnFace\n");}
 	}
 };
 
@@ -979,41 +949,6 @@ class IntTools_Compare {
 };
 
 
-%nodefaultctor IntTools_DataMapOfCurveSampleBox;
-class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		IntTools_DataMapOfCurveSampleBox(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		IntTools_DataMapOfCurveSampleBox & Assign(const IntTools_DataMapOfCurveSampleBox &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const IntTools_CurveRangeSample &K, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const IntTools_CurveRangeSample &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const IntTools_CurveRangeSample &K);
-		%feature("autodoc", "1");
-		const Bnd_Box & Find(const IntTools_CurveRangeSample &K) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & operator()(const IntTools_CurveRangeSample &K) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeFind(const IntTools_CurveRangeSample &K);
-		%feature("autodoc", "1");
-		Bnd_Box & operator()(const IntTools_CurveRangeSample &K);
-
-};
-%extend IntTools_DataMapOfCurveSampleBox {
-	~IntTools_DataMapOfCurveSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");}
-	}
-};
-
-
 %nodefaultctor IntTools_CompareRange;
 class IntTools_CompareRange {
 	public:
@@ -1069,8 +1004,6 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 %nodefaultctor IntTools_QuickSort;
 class IntTools_QuickSort {
 	public:
-		%feature("autodoc", "1");
-		IntTools_QuickSort();
 		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
 
@@ -1210,6 +1143,86 @@ class IntTools_MarkedRangeSet {
 };
 
 
+%nodefaultctor IntTools_DataMapOfCurveSampleBox;
+class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		IntTools_DataMapOfCurveSampleBox(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		IntTools_DataMapOfCurveSampleBox & Assign(const IntTools_DataMapOfCurveSampleBox &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const IntTools_CurveRangeSample &K, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const IntTools_CurveRangeSample &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const IntTools_CurveRangeSample &K);
+		%feature("autodoc", "1");
+		const Bnd_Box & Find(const IntTools_CurveRangeSample &K) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & operator()(const IntTools_CurveRangeSample &K) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFind(const IntTools_CurveRangeSample &K);
+		%feature("autodoc", "1");
+		Bnd_Box & operator()(const IntTools_CurveRangeSample &K);
+
+};
+%extend IntTools_DataMapOfCurveSampleBox {
+	~IntTools_DataMapOfCurveSampleBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");}
+	}
+};
+
+
+%nodefaultctor IntTools_TopolTool;
+class IntTools_TopolTool : public Adaptor3d_TopolTool {
+	public:
+		%feature("autodoc", "1");
+		IntTools_TopolTool();
+		%feature("autodoc", "1");
+		IntTools_TopolTool(const Handle_Adaptor3d_HSurface &theSurface);
+		%feature("autodoc", "1");
+		virtual		void Initialize();
+		%feature("autodoc", "1");
+		virtual		void Initialize(const Handle_Adaptor3d_HSurface &theSurface);
+		%feature("autodoc", "1");
+		virtual		void ComputeSamplePoints();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSamplesU();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSamplesV();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSamples();
+		%feature("autodoc", "1");
+		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt & P3d);
+		%feature("autodoc", "1");
+		virtual		void SamplePnts(const Standard_Real theDefl, const Standard_Integer theNUmin, const Standard_Integer theNVmin);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntTools_TopolTool {
+	Handle_IntTools_TopolTool GetHandle() {
+	return *(Handle_IntTools_TopolTool*) &$self;
+	}
+};
+%extend IntTools_TopolTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntTools_TopolTool {
+	~IntTools_TopolTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntTools_TopolTool\n");}
+	}
+};
+
+
 %nodefaultctor IntTools_DataMapOfSurfaceSampleBox;
 class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 	public:
@@ -1282,6 +1295,37 @@ class IntTools_CArray1OfInteger {
 	~IntTools_CArray1OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntTools_CArray1OfInteger\n");}
+	}
+};
+
+
+%nodefaultctor IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
+class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox(const IntTools_SurfaceRangeSample &K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntTools_SurfaceRangeSample & Key() const;
+		%feature("autodoc", "1");
+		Bnd_Box & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
+	Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox GetHandle() {
+	return *(Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox*) &$self;
+	}
+};
+%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
+	~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
 
@@ -1725,8 +1769,6 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 class IntTools {
 	public:
 		%feature("autodoc", "1");
-		IntTools();
-		%feature("autodoc", "1");
 		Standard_Real Length(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		void RemoveIdenticalRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
@@ -1746,45 +1788,6 @@ class IntTools {
 	~IntTools() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntTools\n");}
-	}
-};
-
-
-%nodefaultctor IntTools_Curve;
-class IntTools_Curve {
-	public:
-		%feature("autodoc", "1");
-		IntTools_Curve();
-		%feature("autodoc", "1");
-		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &Curve3d);
-		%feature("autodoc", "1");
-		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
-		%feature("autodoc", "1");
-		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & FirstCurve2d() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & SecondCurve2d() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBounds() const;
-		%feature("autodoc", "1");
-		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType Type() const;
-
-};
-%extend IntTools_Curve {
-	~IntTools_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Curve\n");}
 	}
 };
 
@@ -1818,40 +1821,9 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor IntTools_ListNodeOfListOfSurfaceRangeSample;
-class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntTools_ListNodeOfListOfSurfaceRangeSample(const IntTools_SurfaceRangeSample &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		IntTools_SurfaceRangeSample & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
-	Handle_IntTools_ListNodeOfListOfSurfaceRangeSample GetHandle() {
-	return *(Handle_IntTools_ListNodeOfListOfSurfaceRangeSample*) &$self;
-	}
-};
-%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
-	~IntTools_ListNodeOfListOfSurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
-	}
-};
-
-
 %nodefaultctor IntTools_CurveRangeSampleMapHasher;
 class IntTools_CurveRangeSampleMapHasher {
 	public:
-		%feature("autodoc", "1");
-		IntTools_CurveRangeSampleMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const IntTools_CurveRangeSample &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1924,47 +1896,67 @@ class IntTools_CurveRangeLocalizeData {
 };
 
 
-%nodefaultctor IntTools_TopolTool;
-class IntTools_TopolTool : public Adaptor3d_TopolTool {
+%nodefaultctor IntTools_CommonPrt;
+class IntTools_CommonPrt {
 	public:
 		%feature("autodoc", "1");
-		IntTools_TopolTool();
+		IntTools_CommonPrt();
 		%feature("autodoc", "1");
-		IntTools_TopolTool(const Handle_Adaptor3d_HSurface &theSurface);
+		IntTools_CommonPrt(const IntTools_CommonPrt &aCPrt);
 		%feature("autodoc", "1");
-		virtual		void Initialize();
+		IntTools_CommonPrt & Assign(const IntTools_CommonPrt &Other);
 		%feature("autodoc", "1");
-		virtual		void Initialize(const Handle_Adaptor3d_HSurface &theSurface);
+		void SetEdge1(const TopoDS_Edge &anE);
 		%feature("autodoc", "1");
-		virtual		void ComputeSamplePoints();
+		void SetEdge2(const TopoDS_Edge &anE);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSamplesU();
+		void SetType(const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSamplesV();
+		void SetRange1(const IntTools_Range &aR);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSamples();
+		void SetRange1(const Standard_Real tf, const Standard_Real tl);
 		%feature("autodoc", "1");
-		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt & P3d);
+		void AppendRange2(const IntTools_Range &aR);
 		%feature("autodoc", "1");
-		virtual		void SamplePnts(const Standard_Real theDefl, const Standard_Integer theNUmin, const Standard_Integer theNVmin);
+		void AppendRange2(const Standard_Real tf, const Standard_Real tl);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void SetVertexParameter1(const Standard_Real tV);
+		%feature("autodoc", "1");
+		void SetVertexParameter2(const Standard_Real tV);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge2() const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum Type() const;
+		%feature("autodoc", "1");
+		const IntTools_Range & Range1() const;
+		%feature("autodoc", "1");
+		void Range1(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		const IntTools_SequenceOfRanges & Ranges2() const;
+		%feature("autodoc", "1");
+		IntTools_SequenceOfRanges & ChangeRanges2();
+		%feature("autodoc", "1");
+		Standard_Real VertexParameter1() const;
+		%feature("autodoc", "1");
+		Standard_Real VertexParameter2() const;
+		%feature("autodoc", "1");
+		void Copy(IntTools_CommonPrt & anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AllNullFlag() const;
+		%feature("autodoc", "1");
+		void SetAllNullFlag(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		void SetBoundingPoints(const gp_Pnt &aP1, const gp_Pnt &aP2);
+		%feature("autodoc", "1");
+		void BoundingPoints(gp_Pnt & aP1, gp_Pnt & aP2) const;
 
 };
-%extend IntTools_TopolTool {
-	Handle_IntTools_TopolTool GetHandle() {
-	return *(Handle_IntTools_TopolTool*) &$self;
-	}
-};
-%extend IntTools_TopolTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntTools_TopolTool {
-	~IntTools_TopolTool() {
+%extend IntTools_CommonPrt {
+	~IntTools_CommonPrt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_TopolTool\n");}
+	if (__env){printf("## Call custom destructor for instance of IntTools_CommonPrt\n");}
 	}
 };
 
@@ -2311,33 +2303,62 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 };
 
 
-%nodefaultctor IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
-class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNode {
+%nodefaultctor IntTools_MapOfSurfaceSample;
+class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox(const IntTools_SurfaceRangeSample &K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
+		IntTools_MapOfSurfaceSample(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		IntTools_SurfaceRangeSample & Key() const;
+		IntTools_MapOfSurfaceSample & Assign(const IntTools_MapOfSurfaceSample &Other);
 		%feature("autodoc", "1");
-		Bnd_Box & Value() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const IntTools_SurfaceRangeSample &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const IntTools_SurfaceRangeSample &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const IntTools_SurfaceRangeSample &aKey);
 
 };
-%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
-	Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox GetHandle() {
-	return *(Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox*) &$self;
-	}
-};
-%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
-	~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
+%extend IntTools_MapOfSurfaceSample {
+	~IntTools_MapOfSurfaceSample() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
+	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");}
+	}
+};
+
+
+%nodefaultctor IntTools_PntOnFace;
+class IntTools_PntOnFace {
+	public:
+		%feature("autodoc", "1");
+		IntTools_PntOnFace();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &aF, const gp_Pnt &aP, const Standard_Real U, const Standard_Real V);
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face &aF);
+		%feature("autodoc", "1");
+		void SetPnt(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		void SetParameters(const Standard_Real U, const Standard_Real V);
+		%feature("autodoc", "1");
+		void SetValid(const Standard_Boolean bF);
+		%feature("autodoc", "1");
+		Standard_Boolean Valid() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Pnt() const;
+		%feature("autodoc", "1");
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend IntTools_PntOnFace {
+	~IntTools_PntOnFace() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntTools_PntOnFace\n");}
 	}
 };
 
@@ -2546,8 +2567,6 @@ class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_Bas
 class IntTools_QuickSortRange {
 	public:
 		%feature("autodoc", "1");
-		IntTools_QuickSortRange();
-		%feature("autodoc", "1");
 		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
 
 };
@@ -2626,8 +2645,6 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 %nodefaultctor IntTools_Tools;
 class IntTools_Tools {
 	public:
-		%feature("autodoc", "1");
-		IntTools_Tools();
 		%feature("autodoc", "1");
 		Standard_Integer ComputeVV(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2);
 		%feature("autodoc", "1");
@@ -2905,33 +2922,6 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 	~IntTools_DataMapNodeOfDataMapOfCurveSampleBox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
-	}
-};
-
-
-%nodefaultctor IntTools_MapOfSurfaceSample;
-class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		IntTools_MapOfSurfaceSample(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		IntTools_MapOfSurfaceSample & Assign(const IntTools_MapOfSurfaceSample &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const IntTools_SurfaceRangeSample &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const IntTools_SurfaceRangeSample &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const IntTools_SurfaceRangeSample &aKey);
-
-};
-%extend IntTools_MapOfSurfaceSample {
-	~IntTools_MapOfSurfaceSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");}
 	}
 };
 

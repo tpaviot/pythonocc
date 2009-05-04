@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepVisual
 
+%include StepVisual_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -194,28 +196,28 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 };
 
 
-%nodefaultctor Handle_StepVisual_PresentationSize;
-class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_CompositeText;
+class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSize();
+		Handle_StepVisual_CompositeText();
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSize(const Handle_StepVisual_PresentationSize &aHandle);
+		Handle_StepVisual_CompositeText(const Handle_StepVisual_CompositeText &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSize(const StepVisual_PresentationSize *anItem);
+		Handle_StepVisual_CompositeText(const StepVisual_CompositeText *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSize const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_CompositeText const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_PresentationSize {
-	StepVisual_PresentationSize* GetObject() {
-	return (StepVisual_PresentationSize*)$self->Access();
+%extend Handle_StepVisual_CompositeText {
+	StepVisual_CompositeText* GetObject() {
+	return (StepVisual_CompositeText*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_PresentationSize {
-	~Handle_StepVisual_PresentationSize() {
+%extend Handle_StepVisual_CompositeText {
+	~Handle_StepVisual_CompositeText() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSize\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CompositeText\n");}
 	}
 };
 
@@ -242,32 +244,6 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	~Handle_StepVisual_SurfaceStyleSilhouette() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSilhouette\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_CompositeText;
-class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText();
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText(const Handle_StepVisual_CompositeText &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText(const StepVisual_CompositeText *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CompositeText const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_CompositeText {
-	StepVisual_CompositeText* GetObject() {
-	return (StepVisual_CompositeText*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_CompositeText {
-	~Handle_StepVisual_CompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CompositeText\n");}
 	}
 };
 
@@ -584,6 +560,32 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 };
 
 
+%nodefaultctor Handle_StepVisual_PresentationSize;
+class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize(const Handle_StepVisual_PresentationSize &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize(const StepVisual_PresentationSize *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationSize {
+	StepVisual_PresentationSize* GetObject() {
+	return (StepVisual_PresentationSize*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_PresentationSize {
+	~Handle_StepVisual_PresentationSize() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSize\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_CameraModel;
 class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -844,54 +846,54 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 };
 
 
-%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
-class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
+class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect();
+		Handle_StepVisual_PresentationStyleAssignment();
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
+		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
+		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleSelect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_PresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
-	StepVisual_HArray1OfPresentationStyleSelect* GetObject() {
-	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	StepVisual_PresentationStyleAssignment* GetObject() {
+	return (StepVisual_PresentationStyleAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
-	~Handle_StepVisual_HArray1OfPresentationStyleSelect() {
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	~Handle_StepVisual_PresentationStyleAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleSelect\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleAssignment\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepVisual_FillAreaStyleColour;
-class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_PresentationStyleByContext;
+class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour();
+		Handle_StepVisual_PresentationStyleByContext();
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour(const Handle_StepVisual_FillAreaStyleColour &aHandle);
+		Handle_StepVisual_PresentationStyleByContext(const Handle_StepVisual_PresentationStyleByContext &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour(const StepVisual_FillAreaStyleColour *anItem);
+		Handle_StepVisual_PresentationStyleByContext(const StepVisual_PresentationStyleByContext *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_PresentationStyleByContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_FillAreaStyleColour {
-	StepVisual_FillAreaStyleColour* GetObject() {
-	return (StepVisual_FillAreaStyleColour*)$self->Access();
+%extend Handle_StepVisual_PresentationStyleByContext {
+	StepVisual_PresentationStyleByContext* GetObject() {
+	return (StepVisual_PresentationStyleByContext*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_FillAreaStyleColour {
-	~Handle_StepVisual_FillAreaStyleColour() {
+%extend Handle_StepVisual_PresentationStyleByContext {
+	~Handle_StepVisual_PresentationStyleByContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_FillAreaStyleColour\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleByContext\n");}
 	}
 };
 
@@ -1078,32 +1080,6 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepVisual_HArray1OfDirectionCountSelect;
-class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect(const Handle_StepVisual_HArray1OfDirectionCountSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect(const StepVisual_HArray1OfDirectionCountSelect *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
-	StepVisual_HArray1OfDirectionCountSelect* GetObject() {
-	return (StepVisual_HArray1OfDirectionCountSelect*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
-	~Handle_StepVisual_HArray1OfDirectionCountSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfDirectionCountSelect\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_Colour;
 class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 	public:
@@ -1208,6 +1184,32 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepVisual_FillAreaStyleColour;
+class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour();
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour(const Handle_StepVisual_FillAreaStyleColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour(const StepVisual_FillAreaStyleColour *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_FillAreaStyleColour {
+	StepVisual_FillAreaStyleColour* GetObject() {
+	return (StepVisual_FillAreaStyleColour*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_FillAreaStyleColour {
+	~Handle_StepVisual_FillAreaStyleColour() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_FillAreaStyleColour\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_TemplateInstance;
 class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 	public:
@@ -1308,58 +1310,6 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 	~Handle_StepVisual_ExternallyDefinedTextFont() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedTextFont\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_ColourSpecification;
-class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification();
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification(const Handle_StepVisual_ColourSpecification &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification(const StepVisual_ColourSpecification *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourSpecification const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_ColourSpecification {
-	StepVisual_ColourSpecification* GetObject() {
-	return (StepVisual_ColourSpecification*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_ColourSpecification {
-	~Handle_StepVisual_ColourSpecification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourSpecification\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_ColourRgb;
-class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourRgb();
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourRgb(const Handle_StepVisual_ColourRgb &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourRgb(const StepVisual_ColourRgb *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_ColourRgb const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_ColourRgb {
-	StepVisual_ColourRgb* GetObject() {
-	return (StepVisual_ColourRgb*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_ColourRgb {
-	~Handle_StepVisual_ColourRgb() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourRgb\n");}
 	}
 };
 
@@ -1494,28 +1444,54 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 };
 
 
-%nodefaultctor Handle_StepVisual_PresentationView;
-class Handle_StepVisual_PresentationView : public Handle_StepVisual_PresentationRepresentation {
+%nodefaultctor Handle_StepVisual_ColourSpecification;
+class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationView();
+		Handle_StepVisual_ColourSpecification();
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationView(const Handle_StepVisual_PresentationView &aHandle);
+		Handle_StepVisual_ColourSpecification(const Handle_StepVisual_ColourSpecification &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationView(const StepVisual_PresentationView *anItem);
+		Handle_StepVisual_ColourSpecification(const StepVisual_ColourSpecification *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationView const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_ColourSpecification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_PresentationView {
-	StepVisual_PresentationView* GetObject() {
-	return (StepVisual_PresentationView*)$self->Access();
+%extend Handle_StepVisual_ColourSpecification {
+	StepVisual_ColourSpecification* GetObject() {
+	return (StepVisual_ColourSpecification*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_PresentationView {
-	~Handle_StepVisual_PresentationView() {
+%extend Handle_StepVisual_ColourSpecification {
+	~Handle_StepVisual_ColourSpecification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationView\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourSpecification\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_ColourRgb;
+class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb();
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb(const Handle_StepVisual_ColourRgb &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb(const StepVisual_ColourRgb *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_ColourRgb {
+	StepVisual_ColourRgb* GetObject() {
+	return (StepVisual_ColourRgb*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_ColourRgb {
+	~Handle_StepVisual_ColourRgb() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourRgb\n");}
 	}
 };
 
@@ -1598,32 +1574,6 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
-class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationStyleAssignment {
-	StepVisual_PresentationStyleAssignment* GetObject() {
-	return (StepVisual_PresentationStyleAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_PresentationStyleAssignment {
-	~Handle_StepVisual_PresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleAssignment\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
 class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 	public:
@@ -1676,32 +1626,6 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleAssignment;
-class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment();
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment(const StepVisual_HArray1OfPresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
-	StepVisual_HArray1OfPresentationStyleAssignment* GetObject() {
-	return (StepVisual_HArray1OfPresentationStyleAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
-	~Handle_StepVisual_HArray1OfPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleAssignment\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepVisual_HArray1OfBoxCharacteristicSelect;
 class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TShared {
 	public:
@@ -1728,28 +1652,28 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 };
 
 
-%nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationArea;
-class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handle_StepVisual_PresentationArea {
+%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleAssignment;
+class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_MechanicalDesignGeometricPresentationArea();
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment();
 		%feature("autodoc", "1");
-		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &aHandle);
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const StepVisual_MechanicalDesignGeometricPresentationArea *anItem);
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment(const StepVisual_HArray1OfPresentationStyleAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_MechanicalDesignGeometricPresentationArea const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
-	StepVisual_MechanicalDesignGeometricPresentationArea* GetObject() {
-	return (StepVisual_MechanicalDesignGeometricPresentationArea*)$self->Access();
+%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
+	StepVisual_HArray1OfPresentationStyleAssignment* GetObject() {
+	return (StepVisual_HArray1OfPresentationStyleAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
-	~Handle_StepVisual_MechanicalDesignGeometricPresentationArea() {
+%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
+	~Handle_StepVisual_HArray1OfPresentationStyleAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationArea\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleAssignment\n");}
 	}
 };
 
@@ -1828,6 +1752,32 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 	~Handle_StepVisual_SurfaceStyleUsage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleUsage\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationArea;
+class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handle_StepVisual_PresentationArea {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea();
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const StepVisual_MechanicalDesignGeometricPresentationArea *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
+	StepVisual_MechanicalDesignGeometricPresentationArea* GetObject() {
+	return (StepVisual_MechanicalDesignGeometricPresentationArea*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
+	~Handle_StepVisual_MechanicalDesignGeometricPresentationArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationArea\n");}
 	}
 };
 
@@ -1962,6 +1912,32 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 };
 
 
+%nodefaultctor Handle_StepVisual_PresentationView;
+class Handle_StepVisual_PresentationView : public Handle_StepVisual_PresentationRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView(const Handle_StepVisual_PresentationView &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView(const StepVisual_PresentationView *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationView {
+	StepVisual_PresentationView* GetObject() {
+	return (StepVisual_PresentationView*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_PresentationView {
+	~Handle_StepVisual_PresentationView() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationView\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_DraughtingModel;
 class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation {
 	public:
@@ -2036,6 +2012,32 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	~Handle_StepVisual_PresentationLayerUsage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationLayerUsage\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_HArray1OfDirectionCountSelect;
+class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect();
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect(const Handle_StepVisual_HArray1OfDirectionCountSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect(const StepVisual_HArray1OfDirectionCountSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
+	StepVisual_HArray1OfDirectionCountSelect* GetObject() {
+	return (StepVisual_HArray1OfDirectionCountSelect*)$self->Access();
+	}
+};
+%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
+	~Handle_StepVisual_HArray1OfDirectionCountSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfDirectionCountSelect\n");}
 	}
 };
 
@@ -2196,28 +2198,28 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 };
 
 
-%nodefaultctor Handle_StepVisual_PresentationStyleByContext;
-class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
+%nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
+class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext();
+		Handle_StepVisual_HArray1OfPresentationStyleSelect();
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext(const Handle_StepVisual_PresentationStyleByContext &aHandle);
+		Handle_StepVisual_HArray1OfPresentationStyleSelect(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext(const StepVisual_PresentationStyleByContext *anItem);
+		Handle_StepVisual_HArray1OfPresentationStyleSelect(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleByContext const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepVisual_HArray1OfPresentationStyleSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_PresentationStyleByContext {
-	StepVisual_PresentationStyleByContext* GetObject() {
-	return (StepVisual_PresentationStyleByContext*)$self->Access();
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
+	StepVisual_HArray1OfPresentationStyleSelect* GetObject() {
+	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
 	}
 };
-%extend Handle_StepVisual_PresentationStyleByContext {
-	~Handle_StepVisual_PresentationStyleByContext() {
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
+	~Handle_StepVisual_HArray1OfPresentationStyleSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleByContext\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleSelect\n");}
 	}
 };
 
@@ -2504,225 +2506,23 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepVisual_SurfaceStyleFillArea;
-class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
+%nodefaultctor StepVisual_PresentationRepresentationSelect;
+class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleFillArea();
+		StepVisual_PresentationRepresentationSelect();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void SetFillArea(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle FillArea() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_StepVisual_PresentationSet PresentationSet() const;
 
 };
-%extend StepVisual_SurfaceStyleFillArea {
-	Handle_StepVisual_SurfaceStyleFillArea GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleFillArea*) &$self;
-	}
-};
-%extend StepVisual_SurfaceStyleFillArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_SurfaceStyleFillArea {
-	~StepVisual_SurfaceStyleFillArea() {
+%extend StepVisual_PresentationRepresentationSelect {
+	~StepVisual_PresentationRepresentationSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleFillArea\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationLayerAssignment;
-class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationLayerAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepVisual_HArray1OfLayeredItem &aAssignedItems);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetAssignedItems(const Handle_StepVisual_HArray1OfLayeredItem &aAssignedItems);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfLayeredItem AssignedItems() const;
-		%feature("autodoc", "1");
-		StepVisual_LayeredItem AssignedItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbAssignedItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PresentationLayerAssignment {
-	Handle_StepVisual_PresentationLayerAssignment GetHandle() {
-	return *(Handle_StepVisual_PresentationLayerAssignment*) &$self;
-	}
-};
-%extend StepVisual_PresentationLayerAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_PresentationLayerAssignment {
-	~StepVisual_PresentationLayerAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerAssignment\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationRepresentation;
-class StepVisual_PresentationRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PresentationRepresentation {
-	Handle_StepVisual_PresentationRepresentation GetHandle() {
-	return *(Handle_StepVisual_PresentationRepresentation*) &$self;
-	}
-};
-%extend StepVisual_PresentationRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_PresentationRepresentation {
-	~StepVisual_PresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentation\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationArea;
-class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationArea();
-
-};
-%extend StepVisual_PresentationArea {
-	Handle_StepVisual_PresentationArea GetHandle() {
-	return *(Handle_StepVisual_PresentationArea*) &$self;
-	}
-};
-%extend StepVisual_PresentationArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_PresentationArea {
-	~StepVisual_PresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationArea\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
-class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_PresentationArea {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_MechanicalDesignGeometricPresentationArea();
-
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	Handle_StepVisual_MechanicalDesignGeometricPresentationArea GetHandle() {
-	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationArea*) &$self;
-	}
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	~StepVisual_MechanicalDesignGeometricPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationArea\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_StyledItem;
-class StepVisual_StyledItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_StyledItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles, const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		void SetStyles(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfPresentationStyleAssignment Styles() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment StylesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbStyles() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem Item() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_StyledItem {
-	Handle_StepVisual_StyledItem GetHandle() {
-	return *(Handle_StepVisual_StyledItem*) &$self;
-	}
-};
-%extend StepVisual_StyledItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_StyledItem {
-	~StepVisual_StyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_StyledItem\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_AnnotationOccurrence;
-class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_AnnotationOccurrence();
-
-};
-%extend StepVisual_AnnotationOccurrence {
-	Handle_StepVisual_AnnotationOccurrence GetHandle() {
-	return *(Handle_StepVisual_AnnotationOccurrence*) &$self;
-	}
-};
-%extend StepVisual_AnnotationOccurrence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_AnnotationOccurrence {
-	~StepVisual_AnnotationOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationOccurrence\n");}
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentationSelect\n");}
 	}
 };
 
@@ -2989,47 +2789,6 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 };
 
 
-%nodefaultctor StepVisual_SurfaceStyleParameterLine;
-class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleParameterLine();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines, const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
-		%feature("autodoc", "1");
-		void SetStyleOfParameterLines(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle StyleOfParameterLines() const;
-		%feature("autodoc", "1");
-		void SetDirectionCounts(const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfDirectionCountSelect DirectionCounts() const;
-		%feature("autodoc", "1");
-		StepVisual_DirectionCountSelect DirectionCountsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDirectionCounts() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_SurfaceStyleParameterLine {
-	Handle_StepVisual_SurfaceStyleParameterLine GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleParameterLine*) &$self;
-	}
-};
-%extend StepVisual_SurfaceStyleParameterLine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_SurfaceStyleParameterLine {
-	~StepVisual_SurfaceStyleParameterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleParameterLine\n");}
-	}
-};
-
-
 %nodefaultctor StepVisual_HArray1OfPresentationStyleSelect;
 class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 	public:
@@ -3137,53 +2896,107 @@ class StepVisual_Array1OfStyleContextSelect {
 };
 
 
-%nodefaultctor StepVisual_TextLiteral;
-class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
+%nodefaultctor StepVisual_StyledItem;
+class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_TextLiteral();
+		StepVisual_StyledItem();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aLiteral, const StepGeom_Axis2Placement &aPlacement, const Handle_TCollection_HAsciiString &aAlignment, const StepVisual_TextPath aPath, const StepVisual_FontSelect &aFont);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles, const Handle_StepRepr_RepresentationItem &aItem);
 		%feature("autodoc", "1");
-		void SetLiteral(const Handle_TCollection_HAsciiString &aLiteral);
+		void SetStyles(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aStyles);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Literal() const;
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment Styles() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment StylesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbStyles() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem Item() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_StyledItem {
+	Handle_StepVisual_StyledItem GetHandle() {
+	return *(Handle_StepVisual_StyledItem*) &$self;
+	}
+};
+%extend StepVisual_StyledItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_StyledItem {
+	~StepVisual_StyledItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_StyledItem\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_PlanarBox;
+class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PlanarBox();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY, const StepGeom_Axis2Placement &aPlacement);
 		%feature("autodoc", "1");
 		void SetPlacement(const StepGeom_Axis2Placement &aPlacement);
 		%feature("autodoc", "1");
 		StepGeom_Axis2Placement Placement() const;
 		%feature("autodoc", "1");
-		void SetAlignment(const Handle_TCollection_HAsciiString &aAlignment);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Alignment() const;
-		%feature("autodoc", "1");
-		void SetPath(const StepVisual_TextPath aPath);
-		%feature("autodoc", "1");
-		StepVisual_TextPath Path() const;
-		%feature("autodoc", "1");
-		void SetFont(const StepVisual_FontSelect &aFont);
-		%feature("autodoc", "1");
-		StepVisual_FontSelect Font() const;
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_TextLiteral {
-	Handle_StepVisual_TextLiteral GetHandle() {
-	return *(Handle_StepVisual_TextLiteral*) &$self;
+%extend StepVisual_PlanarBox {
+	Handle_StepVisual_PlanarBox GetHandle() {
+	return *(Handle_StepVisual_PlanarBox*) &$self;
 	}
 };
-%extend StepVisual_TextLiteral {
+%extend StepVisual_PlanarBox {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepVisual_TextLiteral {
-	~StepVisual_TextLiteral() {
+%extend StepVisual_PlanarBox {
+	~StepVisual_PlanarBox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextLiteral\n");}
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PlanarBox\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_AnnotationOccurrence;
+class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_AnnotationOccurrence();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_AnnotationOccurrence {
+	Handle_StepVisual_AnnotationOccurrence GetHandle() {
+	return *(Handle_StepVisual_AnnotationOccurrence*) &$self;
+	}
+};
+%extend StepVisual_AnnotationOccurrence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_AnnotationOccurrence {
+	~StepVisual_AnnotationOccurrence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationOccurrence\n");}
 	}
 };
 
@@ -3258,6 +3071,83 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 };
 
 
+%nodefaultctor StepVisual_PresentationRepresentation;
+class StepVisual_PresentationRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PresentationRepresentation {
+	Handle_StepVisual_PresentationRepresentation GetHandle() {
+	return *(Handle_StepVisual_PresentationRepresentation*) &$self;
+	}
+};
+%extend StepVisual_PresentationRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_PresentationRepresentation {
+	~StepVisual_PresentationRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_PresentationArea;
+class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationArea();
+
+};
+%extend StepVisual_PresentationArea {
+	Handle_StepVisual_PresentationArea GetHandle() {
+	return *(Handle_StepVisual_PresentationArea*) &$self;
+	}
+};
+%extend StepVisual_PresentationArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_PresentationArea {
+	~StepVisual_PresentationArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationArea\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
+class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_PresentationArea {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_MechanicalDesignGeometricPresentationArea();
+
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	Handle_StepVisual_MechanicalDesignGeometricPresentationArea GetHandle() {
+	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationArea*) &$self;
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	~StepVisual_MechanicalDesignGeometricPresentationArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationArea\n");}
+	}
+};
+
+
 %nodefaultctor StepVisual_PointStyle;
 class StepVisual_PointStyle : public MMgt_TShared {
 	public:
@@ -3299,45 +3189,6 @@ class StepVisual_PointStyle : public MMgt_TShared {
 	~StepVisual_PointStyle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PointStyle\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_CompositeText;
-class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_CompositeText();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
-		%feature("autodoc", "1");
-		void SetCollectedText(const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
-		%feature("autodoc", "1");
-		Handle_StepVisual_HArray1OfTextOrCharacter CollectedText() const;
-		%feature("autodoc", "1");
-		StepVisual_TextOrCharacter CollectedTextValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCollectedText() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_CompositeText {
-	Handle_StepVisual_CompositeText GetHandle() {
-	return *(Handle_StepVisual_CompositeText*) &$self;
-	}
-};
-%extend StepVisual_CompositeText {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_CompositeText {
-	~StepVisual_CompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CompositeText\n");}
 	}
 };
 
@@ -3596,29 +3447,43 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 };
 
 
-%nodefaultctor StepVisual_AnnotationText;
-class StepVisual_AnnotationText : public StepRepr_MappedItem {
+%nodefaultctor StepVisual_SurfaceStyleParameterLine;
+class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_AnnotationText();
+		StepVisual_SurfaceStyleParameterLine();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines, const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
+		%feature("autodoc", "1");
+		void SetStyleOfParameterLines(const Handle_StepVisual_CurveStyle &aStyleOfParameterLines);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle StyleOfParameterLines() const;
+		%feature("autodoc", "1");
+		void SetDirectionCounts(const Handle_StepVisual_HArray1OfDirectionCountSelect &aDirectionCounts);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect DirectionCounts() const;
+		%feature("autodoc", "1");
+		StepVisual_DirectionCountSelect DirectionCountsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDirectionCounts() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_AnnotationText {
-	Handle_StepVisual_AnnotationText GetHandle() {
-	return *(Handle_StepVisual_AnnotationText*) &$self;
+%extend StepVisual_SurfaceStyleParameterLine {
+	Handle_StepVisual_SurfaceStyleParameterLine GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleParameterLine*) &$self;
 	}
 };
-%extend StepVisual_AnnotationText {
+%extend StepVisual_SurfaceStyleParameterLine {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepVisual_AnnotationText {
-	~StepVisual_AnnotationText() {
+%extend StepVisual_SurfaceStyleParameterLine {
+	~StepVisual_SurfaceStyleParameterLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationText\n");}
+	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleParameterLine\n");}
 	}
 };
 
@@ -3683,6 +3548,45 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 	~StepVisual_CameraImage3dWithScale() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraImage3dWithScale\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_CompositeText;
+class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_CompositeText();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
+		%feature("autodoc", "1");
+		void SetCollectedText(const Handle_StepVisual_HArray1OfTextOrCharacter &aCollectedText);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter CollectedText() const;
+		%feature("autodoc", "1");
+		StepVisual_TextOrCharacter CollectedTextValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCollectedText() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_CompositeText {
+	Handle_StepVisual_CompositeText GetHandle() {
+	return *(Handle_StepVisual_CompositeText*) &$self;
+	}
+};
+%extend StepVisual_CompositeText {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_CompositeText {
+	~StepVisual_CompositeText() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_CompositeText\n");}
 	}
 };
 
@@ -3942,6 +3846,43 @@ class StepVisual_Array1OfTextOrCharacter {
 };
 
 
+%nodefaultctor StepVisual_FillAreaStyleColour;
+class StepVisual_FillAreaStyleColour : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_FillAreaStyleColour();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_Colour &aFillColour);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetFillColour(const Handle_StepVisual_Colour &aFillColour);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Colour FillColour() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_FillAreaStyleColour {
+	Handle_StepVisual_FillAreaStyleColour GetHandle() {
+	return *(Handle_StepVisual_FillAreaStyleColour*) &$self;
+	}
+};
+%extend StepVisual_FillAreaStyleColour {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_FillAreaStyleColour {
+	~StepVisual_FillAreaStyleColour() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_FillAreaStyleColour\n");}
+	}
+};
+
+
 %nodefaultctor StepVisual_PreDefinedItem;
 class StepVisual_PreDefinedItem : public MMgt_TShared {
 	public:
@@ -4081,6 +4022,57 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 	~StepVisual_PresentationLayerUsage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerUsage\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_TextLiteral;
+class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_TextLiteral();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aLiteral, const StepGeom_Axis2Placement &aPlacement, const Handle_TCollection_HAsciiString &aAlignment, const StepVisual_TextPath aPath, const StepVisual_FontSelect &aFont);
+		%feature("autodoc", "1");
+		void SetLiteral(const Handle_TCollection_HAsciiString &aLiteral);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Literal() const;
+		%feature("autodoc", "1");
+		void SetPlacement(const StepGeom_Axis2Placement &aPlacement);
+		%feature("autodoc", "1");
+		StepGeom_Axis2Placement Placement() const;
+		%feature("autodoc", "1");
+		void SetAlignment(const Handle_TCollection_HAsciiString &aAlignment);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Alignment() const;
+		%feature("autodoc", "1");
+		void SetPath(const StepVisual_TextPath aPath);
+		%feature("autodoc", "1");
+		StepVisual_TextPath Path() const;
+		%feature("autodoc", "1");
+		void SetFont(const StepVisual_FontSelect &aFont);
+		%feature("autodoc", "1");
+		StepVisual_FontSelect Font() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_TextLiteral {
+	Handle_StepVisual_TextLiteral GetHandle() {
+	return *(Handle_StepVisual_TextLiteral*) &$self;
+	}
+};
+%extend StepVisual_TextLiteral {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_TextLiteral {
+	~StepVisual_TextLiteral() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_TextLiteral\n");}
 	}
 };
 
@@ -4376,29 +4368,6 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepVisual_PresentationStyleSelect;
-class StepVisual_PresentationStyleSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationStyleSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PointStyle PointStyle() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle CurveStyle() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
-
-};
-%extend StepVisual_PresentationStyleSelect {
-	~StepVisual_PresentationStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleSelect\n");}
-	}
-};
-
-
 %nodefaultctor StepVisual_ExternallyDefinedTextFont;
 class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedItem {
 	public:
@@ -4494,39 +4463,29 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepVisual_FillAreaStyleColour;
-class StepVisual_FillAreaStyleColour : public MMgt_TShared {
+%nodefaultctor StepVisual_AnnotationText;
+class StepVisual_AnnotationText : public StepRepr_MappedItem {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_FillAreaStyleColour();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepVisual_Colour &aFillColour);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetFillColour(const Handle_StepVisual_Colour &aFillColour);
-		%feature("autodoc", "1");
-		Handle_StepVisual_Colour FillColour() const;
+		StepVisual_AnnotationText();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepVisual_FillAreaStyleColour {
-	Handle_StepVisual_FillAreaStyleColour GetHandle() {
-	return *(Handle_StepVisual_FillAreaStyleColour*) &$self;
+%extend StepVisual_AnnotationText {
+	Handle_StepVisual_AnnotationText GetHandle() {
+	return *(Handle_StepVisual_AnnotationText*) &$self;
 	}
 };
-%extend StepVisual_FillAreaStyleColour {
+%extend StepVisual_AnnotationText {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepVisual_FillAreaStyleColour {
-	~StepVisual_FillAreaStyleColour() {
+%extend StepVisual_AnnotationText {
+	~StepVisual_AnnotationText() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_FillAreaStyleColour\n");}
+	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationText\n");}
 	}
 };
 
@@ -4615,39 +4574,6 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 	~StepVisual_Array1OfBoxCharacteristicSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfBoxCharacteristicSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_SurfaceStyleControlGrid;
-class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_SurfaceStyleControlGrid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfControlGrid);
-		%feature("autodoc", "1");
-		void SetStyleOfControlGrid(const Handle_StepVisual_CurveStyle &aStyleOfControlGrid);
-		%feature("autodoc", "1");
-		Handle_StepVisual_CurveStyle StyleOfControlGrid() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_SurfaceStyleControlGrid {
-	Handle_StepVisual_SurfaceStyleControlGrid GetHandle() {
-	return *(Handle_StepVisual_SurfaceStyleControlGrid*) &$self;
-	}
-};
-%extend StepVisual_SurfaceStyleControlGrid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_SurfaceStyleControlGrid {
-	~StepVisual_SurfaceStyleControlGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleControlGrid\n");}
 	}
 };
 
@@ -4924,43 +4850,25 @@ class StepVisual_DirectionCountSelect {
 };
 
 
-%nodefaultctor StepVisual_Array1OfLayeredItem;
-class StepVisual_Array1OfLayeredItem {
+%nodefaultctor StepVisual_PresentationStyleSelect;
+class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_Array1OfLayeredItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepVisual_PresentationStyleSelect();
 		%feature("autodoc", "1");
-		StepVisual_Array1OfLayeredItem(const StepVisual_LayeredItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepVisual_LayeredItem &V);
+		Handle_StepVisual_PointStyle PointStyle() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_StepVisual_CurveStyle CurveStyle() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfLayeredItem & Assign(const StepVisual_Array1OfLayeredItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_LayeredItem &Value);
-		%feature("autodoc", "1");
-		const StepVisual_LayeredItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepVisual_LayeredItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_LayeredItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepVisual_LayeredItem & operator()(const Standard_Integer Index);
+		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
 
 };
-%extend StepVisual_Array1OfLayeredItem {
-	~StepVisual_Array1OfLayeredItem() {
+%extend StepVisual_PresentationStyleSelect {
+	~StepVisual_PresentationStyleSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfLayeredItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleSelect\n");}
 	}
 };
 
@@ -5047,33 +4955,6 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 	~StepVisual_Array1OfSurfaceStyleElementSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfSurfaceStyleElementSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
-class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public StepVisual_PresentationRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_MechanicalDesignGeometricPresentationRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
-	Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation GetHandle() {
-	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation*) &$self;
-	}
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
-	~StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
 	}
 };
 
@@ -5175,41 +5056,6 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 };
 
 
-%nodefaultctor StepVisual_PlanarBox;
-class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PlanarBox();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aSizeInX, const Standard_Real aSizeInY, const StepGeom_Axis2Placement &aPlacement);
-		%feature("autodoc", "1");
-		void SetPlacement(const StepGeom_Axis2Placement &aPlacement);
-		%feature("autodoc", "1");
-		StepGeom_Axis2Placement Placement() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_PlanarBox {
-	Handle_StepVisual_PlanarBox GetHandle() {
-	return *(Handle_StepVisual_PlanarBox*) &$self;
-	}
-};
-%extend StepVisual_PlanarBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_PlanarBox {
-	~StepVisual_PlanarBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PlanarBox\n");}
-	}
-};
-
-
 %nodefaultctor StepVisual_TemplateInstance;
 class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 	public:
@@ -5266,27 +5112,6 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 	~StepVisual_SurfaceStyleSegmentationCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleSegmentationCurve\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_PresentationRepresentationSelect;
-class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_PresentationRepresentationSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet PresentationSet() const;
-
-};
-%extend StepVisual_PresentationRepresentationSelect {
-	~StepVisual_PresentationRepresentationSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentationSelect\n");}
 	}
 };
 
@@ -5355,53 +5180,6 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 	~StepVisual_HArray1OfStyleContextSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfStyleContextSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepVisual_HArray1OfBoxCharacteristicSelect;
-class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_BoxCharacteristicSelect &V);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_BoxCharacteristicSelect &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_BoxCharacteristicSelect &Value);
-		%feature("autodoc", "1");
-		const StepVisual_BoxCharacteristicSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_BoxCharacteristicSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfBoxCharacteristicSelect & Array1() const;
-		%feature("autodoc", "1");
-		StepVisual_Array1OfBoxCharacteristicSelect & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_HArray1OfBoxCharacteristicSelect {
-	Handle_StepVisual_HArray1OfBoxCharacteristicSelect GetHandle() {
-	return *(Handle_StepVisual_HArray1OfBoxCharacteristicSelect*) &$self;
-	}
-};
-%extend StepVisual_HArray1OfBoxCharacteristicSelect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepVisual_HArray1OfBoxCharacteristicSelect {
-	~StepVisual_HArray1OfBoxCharacteristicSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfBoxCharacteristicSelect\n");}
 	}
 };
 
@@ -5498,8 +5276,6 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 class StepVisual_PresentedItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepVisual_PresentedItem();
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -5554,6 +5330,51 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 	~StepVisual_AreaInSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_AreaInSet\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_PresentationLayerAssignment;
+class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_PresentationLayerAssignment();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepVisual_HArray1OfLayeredItem &aAssignedItems);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetAssignedItems(const Handle_StepVisual_HArray1OfLayeredItem &aAssignedItems);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem AssignedItems() const;
+		%feature("autodoc", "1");
+		StepVisual_LayeredItem AssignedItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbAssignedItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_PresentationLayerAssignment {
+	Handle_StepVisual_PresentationLayerAssignment GetHandle() {
+	return *(Handle_StepVisual_PresentationLayerAssignment*) &$self;
+	}
+};
+%extend StepVisual_PresentationLayerAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_PresentationLayerAssignment {
+	~StepVisual_PresentationLayerAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerAssignment\n");}
 	}
 };
 
@@ -5677,6 +5498,66 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 };
 
 
+%nodefaultctor StepVisual_SurfaceStyleControlGrid;
+class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_SurfaceStyleControlGrid();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepVisual_CurveStyle &aStyleOfControlGrid);
+		%feature("autodoc", "1");
+		void SetStyleOfControlGrid(const Handle_StepVisual_CurveStyle &aStyleOfControlGrid);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle StyleOfControlGrid() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_SurfaceStyleControlGrid {
+	Handle_StepVisual_SurfaceStyleControlGrid GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleControlGrid*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleControlGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_SurfaceStyleControlGrid {
+	~StepVisual_SurfaceStyleControlGrid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleControlGrid\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
+class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public StepVisual_PresentationRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_MechanicalDesignGeometricPresentationRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation GetHandle() {
+	return *(Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation*) &$self;
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	~StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor StepVisual_HArray1OfFillStyleSelect;
 class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 	public:
@@ -5720,6 +5601,47 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 	~StepVisual_HArray1OfFillStyleSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfFillStyleSelect\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_Array1OfLayeredItem;
+class StepVisual_Array1OfLayeredItem {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_Array1OfLayeredItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_Array1OfLayeredItem(const StepVisual_LayeredItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_LayeredItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfLayeredItem & Assign(const StepVisual_Array1OfLayeredItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_LayeredItem &Value);
+		%feature("autodoc", "1");
+		const StepVisual_LayeredItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepVisual_LayeredItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_LayeredItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepVisual_LayeredItem & operator()(const Standard_Integer Index);
+
+};
+%extend StepVisual_Array1OfLayeredItem {
+	~StepVisual_Array1OfLayeredItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfLayeredItem\n");}
 	}
 };
 
@@ -5821,6 +5743,39 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 };
 
 
+%nodefaultctor StepVisual_SurfaceStyleFillArea;
+class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_SurfaceStyleFillArea();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		%feature("autodoc", "1");
+		void SetFillArea(const Handle_StepVisual_FillAreaStyle &aFillArea);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle FillArea() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	Handle_StepVisual_SurfaceStyleFillArea GetHandle() {
+	return *(Handle_StepVisual_SurfaceStyleFillArea*) &$self;
+	}
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_SurfaceStyleFillArea {
+	~StepVisual_SurfaceStyleFillArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleFillArea\n");}
+	}
+};
+
+
 %nodefaultctor StepVisual_InvisibilityContext;
 class StepVisual_InvisibilityContext : public StepData_SelectType {
 	public:
@@ -5861,5 +5816,52 @@ class StepVisual_TextOrCharacter : public StepData_SelectType {
 	~StepVisual_TextOrCharacter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepVisual_TextOrCharacter\n");}
+	}
+};
+
+
+%nodefaultctor StepVisual_HArray1OfBoxCharacteristicSelect;
+class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfBoxCharacteristicSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_BoxCharacteristicSelect &V);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_BoxCharacteristicSelect &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_BoxCharacteristicSelect &Value);
+		%feature("autodoc", "1");
+		const StepVisual_BoxCharacteristicSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_BoxCharacteristicSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfBoxCharacteristicSelect & Array1() const;
+		%feature("autodoc", "1");
+		StepVisual_Array1OfBoxCharacteristicSelect & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_HArray1OfBoxCharacteristicSelect {
+	Handle_StepVisual_HArray1OfBoxCharacteristicSelect GetHandle() {
+	return *(Handle_StepVisual_HArray1OfBoxCharacteristicSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfBoxCharacteristicSelect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepVisual_HArray1OfBoxCharacteristicSelect {
+	~StepVisual_HArray1OfBoxCharacteristicSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfBoxCharacteristicSelect\n");}
 	}
 };

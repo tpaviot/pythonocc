@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TransferBRep
 
+%include TransferBRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -357,51 +359,96 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 
 
-%nodefaultctor TransferBRep;
-class TransferBRep {
+%nodefaultctor TransferBRep_BinderOfShape;
+class TransferBRep_BinderOfShape : public Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
-		TransferBRep();
+		TransferBRep_BinderOfShape();
 		%feature("autodoc", "1");
-		TopoDS_Shape ShapeResult(const Handle_Transfer_Binder &binder);
+		TransferBRep_BinderOfShape(const TopoDS_Shape &res);
 		%feature("autodoc", "1");
-		TopoDS_Shape ShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
+		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		void SetShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent, const TopoDS_Shape &result);
+		virtual		Standard_CString ResultTypeName() const;
 		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Standard_Boolean rootsonly=1);
+		void SetResult(const TopoDS_Shape &res);
 		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list);
+		const TopoDS_Shape & Result() const;
 		%feature("autodoc", "1");
-		TopAbs_Orientation ShapeState(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		TopoDS_Shape & CResult();
 		%feature("autodoc", "1");
-		Handle_Transfer_Binder ResultFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient TransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		void SetTransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape, const Handle_Standard_Transient &result);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper ShapeMapper(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		void TransferResultInfo(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &EntityTypes, Handle_TransferBRep_HSequenceOfTransferResultInfo & InfoSeq);
-		%feature("autodoc", "1");
-		void TransferResultInfo(const Handle_Transfer_FinderProcess &FP, const Handle_TColStd_HSequenceOfInteger &ShapeTypes, Handle_TransferBRep_HSequenceOfTransferResultInfo & InfoSeq);
-		%feature("autodoc", "1");
-		void PrintResultInfo(const Handle_Message_Printer &Printer, const Message_Msg &Header, const Handle_TransferBRep_TransferResultInfo &ResultInfo, const Standard_Boolean printEmpty=1);
-		%feature("autodoc", "1");
-		Interface_CheckIterator ResultCheckList(const Interface_CheckIterator &chl, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient Checked(const Interface_CheckIterator &chl, const Standard_Boolean alsoshapes=0);
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape CheckedShapes(const Interface_CheckIterator &chl);
-		%feature("autodoc", "1");
-		Interface_CheckIterator CheckObject(const Interface_CheckIterator &chl, const Handle_Standard_Transient &obj);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TransferBRep {
-	~TransferBRep() {
+%extend TransferBRep_BinderOfShape {
+	Handle_TransferBRep_BinderOfShape GetHandle() {
+	return *(Handle_TransferBRep_BinderOfShape*) &$self;
+	}
+};
+%extend TransferBRep_BinderOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TransferBRep_BinderOfShape {
+	~TransferBRep_BinderOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TransferBRep\n");}
+	if (__env){printf("## Call custom destructor for instance of TransferBRep_BinderOfShape\n");}
+	}
+};
+
+
+%nodefaultctor TransferBRep_SequenceOfTransferResultInfo;
+class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TransferBRep_SequenceOfTransferResultInfo();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TransferBRep_SequenceOfTransferResultInfo & Assign(const TransferBRep_SequenceOfTransferResultInfo &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TransferBRep_TransferResultInfo &T);
+		%feature("autodoc", "1");
+		void Append(TransferBRep_SequenceOfTransferResultInfo & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TransferBRep_TransferResultInfo &T);
+		%feature("autodoc", "1");
+		void Prepend(TransferBRep_SequenceOfTransferResultInfo & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
+		%feature("autodoc", "1");
+		const Handle_TransferBRep_TransferResultInfo & First() const;
+		%feature("autodoc", "1");
+		const Handle_TransferBRep_TransferResultInfo & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
+		%feature("autodoc", "1");
+		const Handle_TransferBRep_TransferResultInfo & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TransferBRep_TransferResultInfo & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &I);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_TransferResultInfo & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_TransferResultInfo & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TransferBRep_SequenceOfTransferResultInfo {
+	~TransferBRep_SequenceOfTransferResultInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TransferBRep_SequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -477,147 +524,6 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 
 
-%nodefaultctor TransferBRep_BinderOfShape;
-class TransferBRep_BinderOfShape : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_BinderOfShape();
-		%feature("autodoc", "1");
-		TransferBRep_BinderOfShape(const TopoDS_Shape &res);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		void SetResult(const TopoDS_Shape &res);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & CResult();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TransferBRep_BinderOfShape {
-	Handle_TransferBRep_BinderOfShape GetHandle() {
-	return *(Handle_TransferBRep_BinderOfShape*) &$self;
-	}
-};
-%extend TransferBRep_BinderOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TransferBRep_BinderOfShape {
-	~TransferBRep_BinderOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TransferBRep_BinderOfShape\n");}
-	}
-};
-
-
-%nodefaultctor TransferBRep_ShapeBinder;
-class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_ShapeBinder();
-		%feature("autodoc", "1");
-		TransferBRep_ShapeBinder(const TopoDS_Shape &res);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex Vertex() const;
-		%feature("autodoc", "1");
-		TopoDS_Edge Edge() const;
-		%feature("autodoc", "1");
-		TopoDS_Wire Wire() const;
-		%feature("autodoc", "1");
-		TopoDS_Face Face() const;
-		%feature("autodoc", "1");
-		TopoDS_Shell Shell() const;
-		%feature("autodoc", "1");
-		TopoDS_Solid Solid() const;
-		%feature("autodoc", "1");
-		TopoDS_CompSolid CompSolid() const;
-		%feature("autodoc", "1");
-		TopoDS_Compound Compound() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TransferBRep_ShapeBinder {
-	Handle_TransferBRep_ShapeBinder GetHandle() {
-	return *(Handle_TransferBRep_ShapeBinder*) &$self;
-	}
-};
-%extend TransferBRep_ShapeBinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TransferBRep_ShapeBinder {
-	~TransferBRep_ShapeBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeBinder\n");}
-	}
-};
-
-
-%nodefaultctor TransferBRep_SequenceOfTransferResultInfo;
-class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_SequenceOfTransferResultInfo();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TransferBRep_SequenceOfTransferResultInfo & Assign(const TransferBRep_SequenceOfTransferResultInfo &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TransferBRep_TransferResultInfo &T);
-		%feature("autodoc", "1");
-		void Append(TransferBRep_SequenceOfTransferResultInfo & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TransferBRep_TransferResultInfo &T);
-		%feature("autodoc", "1");
-		void Prepend(TransferBRep_SequenceOfTransferResultInfo & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
-		%feature("autodoc", "1");
-		const Handle_TransferBRep_TransferResultInfo & First() const;
-		%feature("autodoc", "1");
-		const Handle_TransferBRep_TransferResultInfo & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TransferBRep_SequenceOfTransferResultInfo & S);
-		%feature("autodoc", "1");
-		const Handle_TransferBRep_TransferResultInfo & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TransferBRep_TransferResultInfo & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TransferBRep_TransferResultInfo &I);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_TransferResultInfo & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_TransferResultInfo & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TransferBRep_SequenceOfTransferResultInfo {
-	~TransferBRep_SequenceOfTransferResultInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TransferBRep_SequenceOfTransferResultInfo\n");}
-	}
-};
-
-
 %nodefaultctor TransferBRep_ShapeListBinder;
 class TransferBRep_ShapeListBinder : public Transfer_Binder {
 	public:
@@ -681,11 +587,56 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 
 
+%nodefaultctor TransferBRep_ShapeBinder;
+class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
+	public:
+		%feature("autodoc", "1");
+		TransferBRep_ShapeBinder();
+		%feature("autodoc", "1");
+		TransferBRep_ShapeBinder(const TopoDS_Shape &res);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex Vertex() const;
+		%feature("autodoc", "1");
+		TopoDS_Edge Edge() const;
+		%feature("autodoc", "1");
+		TopoDS_Wire Wire() const;
+		%feature("autodoc", "1");
+		TopoDS_Face Face() const;
+		%feature("autodoc", "1");
+		TopoDS_Shell Shell() const;
+		%feature("autodoc", "1");
+		TopoDS_Solid Solid() const;
+		%feature("autodoc", "1");
+		TopoDS_CompSolid CompSolid() const;
+		%feature("autodoc", "1");
+		TopoDS_Compound Compound() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TransferBRep_ShapeBinder {
+	Handle_TransferBRep_ShapeBinder GetHandle() {
+	return *(Handle_TransferBRep_ShapeBinder*) &$self;
+	}
+};
+%extend TransferBRep_ShapeBinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TransferBRep_ShapeBinder {
+	~TransferBRep_ShapeBinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeBinder\n");}
+	}
+};
+
+
 %nodefaultctor TransferBRep_ShapeInfo;
 class TransferBRep_ShapeInfo {
 	public:
-		%feature("autodoc", "1");
-		TransferBRep_ShapeInfo();
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const TopoDS_Shape &ent);
 		%feature("autodoc", "1");
@@ -741,6 +692,53 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 	~TransferBRep_TransferResultInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_TransferResultInfo\n");}
+	}
+};
+
+
+%nodefaultctor TransferBRep;
+class TransferBRep {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_Shape ShapeResult(const Handle_Transfer_Binder &binder);
+		%feature("autodoc", "1");
+		TopoDS_Shape ShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void SetShapeResult(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent, const TopoDS_Shape &result);
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Standard_Boolean rootsonly=1);
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape Shapes(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &list);
+		%feature("autodoc", "1");
+		TopAbs_Orientation ShapeState(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder ResultFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient TransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		void SetTransientFromShape(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape, const Handle_Standard_Transient &result);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper ShapeMapper(const Handle_Transfer_FinderProcess &FP, const TopoDS_Shape &shape);
+		%feature("autodoc", "1");
+		void TransferResultInfo(const Handle_Transfer_TransientProcess &TP, const Handle_TColStd_HSequenceOfTransient &EntityTypes, Handle_TransferBRep_HSequenceOfTransferResultInfo & InfoSeq);
+		%feature("autodoc", "1");
+		void TransferResultInfo(const Handle_Transfer_FinderProcess &FP, const Handle_TColStd_HSequenceOfInteger &ShapeTypes, Handle_TransferBRep_HSequenceOfTransferResultInfo & InfoSeq);
+		%feature("autodoc", "1");
+		void PrintResultInfo(const Handle_Message_Printer &Printer, const Message_Msg &Header, const Handle_TransferBRep_TransferResultInfo &ResultInfo, const Standard_Boolean printEmpty=1);
+		%feature("autodoc", "1");
+		Interface_CheckIterator ResultCheckList(const Interface_CheckIterator &chl, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Checked(const Interface_CheckIterator &chl, const Standard_Boolean alsoshapes=0);
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape CheckedShapes(const Interface_CheckIterator &chl);
+		%feature("autodoc", "1");
+		Interface_CheckIterator CheckObject(const Interface_CheckIterator &chl, const Handle_Standard_Transient &obj);
+
+};
+%extend TransferBRep {
+	~TransferBRep() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TransferBRep\n");}
 	}
 };
 

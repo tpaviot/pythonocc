@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BinMDocStd
 
+%include BinMDocStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,23 +142,6 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 };
 
 
-%nodefaultctor BinMDocStd;
-class BinMDocStd {
-	public:
-		%feature("autodoc", "1");
-		BinMDocStd();
-		%feature("autodoc", "1");
-		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
-
-};
-%extend BinMDocStd {
-	~BinMDocStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDocStd\n");}
-	}
-};
-
-
 %nodefaultctor BinMDocStd_XLinkDriver;
 class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	public:
@@ -186,5 +171,20 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	~BinMDocStd_XLinkDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMDocStd_XLinkDriver\n");}
+	}
+};
+
+
+%nodefaultctor BinMDocStd;
+class BinMDocStd {
+	public:
+		%feature("autodoc", "1");
+		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+
+};
+%extend BinMDocStd {
+	~BinMDocStd() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDocStd\n");}
 	}
 };

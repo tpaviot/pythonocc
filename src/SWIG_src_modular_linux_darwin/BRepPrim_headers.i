@@ -76,14 +76,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<gp_Ax2.hxx>
+#include<gp_Pln.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Pnt.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Pln.hxx>
-#include<gp_Lin.hxx>
 #include<BRep_Builder.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Shell.hxx>

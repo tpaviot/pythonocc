@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module UnitsAPI
 
+%include UnitsAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -123,8 +125,6 @@ enum UnitsAPI_SystemUnits {
 %nodefaultctor UnitsAPI;
 class UnitsAPI {
 	public:
-		%feature("autodoc", "1");
-		UnitsAPI();
 		%feature("autodoc", "1");
 		Standard_Real CurrentToLS(const Standard_Real aData, const char * aQuantity);
 		%feature("autodoc", "1");

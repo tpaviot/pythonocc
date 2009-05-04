@@ -119,7 +119,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<IGESCAFControl.hxx>
 #include<Quantity_Color.hxx>
 #include<Handle_XSControl_WorkSession.hxx>
 #include<Handle_TDocStd_Document.hxx>

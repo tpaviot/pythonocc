@@ -103,7 +103,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
-#include<Draft.hxx>
 #include<gp_Dir.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Pln.hxx>

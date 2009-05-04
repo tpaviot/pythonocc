@@ -290,7 +290,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_MDF_SRelocationTable.hxx>
 #include<Handle_MDF_RRelocationTable.hxx>
-#include<MDataStd.hxx>
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>
 #include<Handle_PGeom_Geometry.hxx>

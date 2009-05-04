@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Resource
 
+%include Resource_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -301,6 +303,21 @@ class Resource_Array1OfAsciiString {
 };
 
 
+%nodefaultctor Resource_QuickSortOfArray1;
+class Resource_QuickSortOfArray1 {
+	public:
+		%feature("autodoc", "1");
+		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
+
+};
+%extend Resource_QuickSortOfArray1 {
+	~Resource_QuickSortOfArray1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
+	}
+};
+
+
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
 	public:
@@ -408,8 +425,6 @@ class Resource_Manager : public MMgt_TShared {
 class Resource_Unicode {
 	public:
 		%feature("autodoc", "1");
-		Resource_Unicode();
-		%feature("autodoc", "1");
 		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");
 		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
@@ -445,40 +460,6 @@ class Resource_Unicode {
 };
 
 
-%nodefaultctor Resource_QuickSortOfArray1;
-class Resource_QuickSortOfArray1 {
-	public:
-		%feature("autodoc", "1");
-		Resource_QuickSortOfArray1();
-		%feature("autodoc", "1");
-		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
-
-};
-%extend Resource_QuickSortOfArray1 {
-	~Resource_QuickSortOfArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
-	}
-};
-
-
-%nodefaultctor Resource_LexicalCompare;
-class Resource_LexicalCompare {
-	public:
-		%feature("autodoc", "1");
-		Resource_LexicalCompare();
-		%feature("autodoc", "1");
-		Standard_Boolean IsLower(const TCollection_AsciiString &Left, const TCollection_AsciiString &Right) const;
-
-};
-%extend Resource_LexicalCompare {
-	~Resource_LexicalCompare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_LexicalCompare\n");}
-	}
-};
-
-
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollection_MapNode {
 	public:
@@ -506,6 +487,23 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
+	}
+};
+
+
+%nodefaultctor Resource_LexicalCompare;
+class Resource_LexicalCompare {
+	public:
+		%feature("autodoc", "1");
+		Resource_LexicalCompare();
+		%feature("autodoc", "1");
+		Standard_Boolean IsLower(const TCollection_AsciiString &Left, const TCollection_AsciiString &Right) const;
+
+};
+%extend Resource_LexicalCompare {
+	~Resource_LexicalCompare() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Resource_LexicalCompare\n");}
 	}
 };
 

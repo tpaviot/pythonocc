@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Expr
 
+%include Expr_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -192,32 +194,6 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 };
 
 
-%nodefaultctor Handle_Expr_Tangent;
-class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Tangent();
-		%feature("autodoc", "1");
-		Handle_Expr_Tangent(const Handle_Expr_Tangent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Tangent(const Expr_Tangent *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Tangent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Tangent {
-	Expr_Tangent* GetObject() {
-	return (Expr_Tangent*)$self->Access();
-	}
-};
-%extend Handle_Expr_Tangent {
-	~Handle_Expr_Tangent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Tangent\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Expr_LogOfe;
 class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 	public:
@@ -270,32 +246,6 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 };
 
 
-%nodefaultctor Handle_Expr_BinaryExpression;
-class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression();
-		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression(const Handle_Expr_BinaryExpression &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression(const Expr_BinaryExpression *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_BinaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_BinaryExpression {
-	Expr_BinaryExpression* GetObject() {
-	return (Expr_BinaryExpression*)$self->Access();
-	}
-};
-%extend Handle_Expr_BinaryExpression {
-	~Handle_Expr_BinaryExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_BinaryExpression\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Expr_UnaryMinus;
 class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 	public:
@@ -318,32 +268,6 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 	~Handle_Expr_UnaryMinus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryMinus\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Expr_Sign;
-class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Sign();
-		%feature("autodoc", "1");
-		Handle_Expr_Sign(const Handle_Expr_Sign &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Sign(const Expr_Sign *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Sign const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Sign {
-	Expr_Sign* GetObject() {
-	return (Expr_Sign*)$self->Access();
-	}
-};
-%extend Handle_Expr_Sign {
-	~Handle_Expr_Sign() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sign\n");}
 	}
 };
 
@@ -474,6 +398,32 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 	~Handle_Expr_InvalidOperand() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_InvalidOperand\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Expr_BinaryExpression;
+class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression();
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression(const Handle_Expr_BinaryExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression(const Expr_BinaryExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_BinaryExpression {
+	Expr_BinaryExpression* GetObject() {
+	return (Expr_BinaryExpression*)$self->Access();
+	}
+};
+%extend Handle_Expr_BinaryExpression {
+	~Handle_Expr_BinaryExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_BinaryExpression\n");}
 	}
 };
 
@@ -816,6 +766,32 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 };
 
 
+%nodefaultctor Handle_Expr_Difference;
+class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_Difference();
+		%feature("autodoc", "1");
+		Handle_Expr_Difference(const Handle_Expr_Difference &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Difference(const Expr_Difference *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Difference const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_Difference {
+	Expr_Difference* GetObject() {
+	return (Expr_Difference*)$self->Access();
+	}
+};
+%extend Handle_Expr_Difference {
+	~Handle_Expr_Difference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Difference\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Expr_NotAssigned;
 class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 	public:
@@ -868,32 +844,6 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 };
 
 
-%nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation;
-class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation();
-		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
-	Expr_SequenceNodeOfSequenceOfGeneralRelation* GetObject() {
-	return (Expr_SequenceNodeOfSequenceOfGeneralRelation*)$self->Access();
-	}
-};
-%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
-	~Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Expr_Sum;
 class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 	public:
@@ -916,6 +866,32 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 	~Handle_Expr_Sum() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sum\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Expr_Sign;
+class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_Sign();
+		%feature("autodoc", "1");
+		Handle_Expr_Sign(const Handle_Expr_Sign &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Sign(const Expr_Sign *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Sign const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_Sign {
+	Expr_Sign* GetObject() {
+	return (Expr_Sign*)$self->Access();
+	}
+};
+%extend Handle_Expr_Sign {
+	~Handle_Expr_Sign() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sign\n");}
 	}
 };
 
@@ -998,6 +974,32 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 };
 
 
+%nodefaultctor Handle_Expr_GreaterThan;
+class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan();
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan(const Handle_Expr_GreaterThan &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_GreaterThan {
+	Expr_GreaterThan* GetObject() {
+	return (Expr_GreaterThan*)$self->Access();
+	}
+};
+%extend Handle_Expr_GreaterThan {
+	~Handle_Expr_GreaterThan() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GreaterThan\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Expr_Sinh;
 class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 	public:
@@ -1020,6 +1022,32 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 	~Handle_Expr_Sinh() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sinh\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Expr_Cosh;
+class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_Cosh();
+		%feature("autodoc", "1");
+		Handle_Expr_Cosh(const Handle_Expr_Cosh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Cosh(const Expr_Cosh *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Cosh const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_Cosh {
+	Expr_Cosh* GetObject() {
+	return (Expr_Cosh*)$self->Access();
+	}
+};
+%extend Handle_Expr_Cosh {
+	~Handle_Expr_Cosh() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosh\n");}
 	}
 };
 
@@ -1098,32 +1126,6 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 	~Handle_Expr_LogOf10() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LogOf10\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Expr_GreaterThan;
-class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan();
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan(const Handle_Expr_GreaterThan &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_GreaterThan const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_GreaterThan {
-	Expr_GreaterThan* GetObject() {
-	return (Expr_GreaterThan*)$self->Access();
-	}
-};
-%extend Handle_Expr_GreaterThan {
-	~Handle_Expr_GreaterThan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GreaterThan\n");}
 	}
 };
 
@@ -1232,32 +1234,6 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 };
 
 
-%nodefaultctor Handle_Expr_Cosh;
-class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Cosh();
-		%feature("autodoc", "1");
-		Handle_Expr_Cosh(const Handle_Expr_Cosh &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Cosh(const Expr_Cosh *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Cosh const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Cosh {
-	Expr_Cosh* GetObject() {
-	return (Expr_Cosh*)$self->Access();
-	}
-};
-%extend Handle_Expr_Cosh {
-	~Handle_Expr_Cosh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosh\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Expr_ArcTangent;
 class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 	public:
@@ -1280,32 +1256,6 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 	~Handle_Expr_ArcTangent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcTangent\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Expr_GeneralFunction;
-class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction();
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralFunction const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_GeneralFunction {
-	Expr_GeneralFunction* GetObject() {
-	return (Expr_GeneralFunction*)$self->Access();
-	}
-};
-%extend Handle_Expr_GeneralFunction {
-	~Handle_Expr_GeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralFunction\n");}
 	}
 };
 
@@ -1388,6 +1338,32 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 };
 
 
+%nodefaultctor Handle_Expr_GeneralFunction;
+class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction();
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_GeneralFunction {
+	Expr_GeneralFunction* GetObject() {
+	return (Expr_GeneralFunction*)$self->Access();
+	}
+};
+%extend Handle_Expr_GeneralFunction {
+	~Handle_Expr_GeneralFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralFunction\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Expr_NamedFunction;
 class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 	public:
@@ -1436,32 +1412,6 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 	~Handle_Expr_SystemRelation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SystemRelation\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Expr_Difference;
-class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Difference();
-		%feature("autodoc", "1");
-		Handle_Expr_Difference(const Handle_Expr_Difference &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Difference(const Expr_Difference *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Difference const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Difference {
-	Expr_Difference* GetObject() {
-	return (Expr_Difference*)$self->Access();
-	}
-};
-%extend Handle_Expr_Difference {
-	~Handle_Expr_Difference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Difference\n");}
 	}
 };
 
@@ -1540,6 +1490,58 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 	~Handle_Expr_FunctionDerivative() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_FunctionDerivative\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Expr_Tangent;
+class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent();
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent(const Handle_Expr_Tangent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent(const Expr_Tangent *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_Tangent {
+	Expr_Tangent* GetObject() {
+	return (Expr_Tangent*)$self->Access();
+	}
+};
+%extend Handle_Expr_Tangent {
+	~Handle_Expr_Tangent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Tangent\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation;
+class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation();
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
+	Expr_SequenceNodeOfSequenceOfGeneralRelation* GetObject() {
+	return (Expr_SequenceNodeOfSequenceOfGeneralRelation*)$self->Access();
+	}
+};
+%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
+	~Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
 	}
 };
 
@@ -1783,45 +1785,6 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 };
 
 
-%nodefaultctor Expr_Sinh;
-class Expr_Sinh : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Sinh(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-
-};
-%extend Expr_Sinh {
-	Handle_Expr_Sinh GetHandle() {
-	return *(Handle_Expr_Sinh*) &$self;
-	}
-};
-%extend Expr_Sinh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_Sinh {
-	~Expr_Sinh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Sinh\n");}
-	}
-};
-
-
 %nodefaultctor Expr_Exponential;
 class Expr_Exponential : public Expr_UnaryExpression {
 	public:
@@ -1841,8 +1804,6 @@ class Expr_Exponential : public Expr_UnaryExpression {
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Expr_Exponential {
@@ -1859,6 +1820,47 @@ class Expr_Exponential : public Expr_UnaryExpression {
 	~Expr_Exponential() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_Exponential\n");}
+	}
+};
+
+
+%nodefaultctor Expr_Exponentiate;
+class Expr_Exponentiate : public Expr_BinaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Exponentiate(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_Exponentiate {
+	Handle_Expr_Exponentiate GetHandle() {
+	return *(Handle_Expr_Exponentiate*) &$self;
+	}
+};
+%extend Expr_Exponentiate {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_Exponentiate {
+	~Expr_Exponentiate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_Exponentiate\n");}
 	}
 };
 
@@ -2260,11 +2262,50 @@ class Expr_RelationIterator {
 };
 
 
+%nodefaultctor Expr_Array1OfGeneralExpression;
+class Expr_Array1OfGeneralExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Array1OfGeneralExpression(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Expr_Array1OfGeneralExpression(const Handle_Expr_GeneralExpression &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Expr_GeneralExpression &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Expr_Array1OfGeneralExpression & Assign(const Expr_Array1OfGeneralExpression &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &Value);
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralExpression & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index);
+
+};
+%extend Expr_Array1OfGeneralExpression {
+	~Expr_Array1OfGeneralExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfGeneralExpression\n");}
+	}
+};
+
+
 %nodefaultctor Expr;
 class Expr {
 	public:
-		%feature("autodoc", "1");
-		Expr();
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression CopyShare(const Handle_Expr_GeneralExpression &exp);
 		%feature("autodoc", "1");
@@ -2906,6 +2947,84 @@ class Expr_Equal : public Expr_SingleRelation {
 };
 
 
+%nodefaultctor Expr_GeneralFunction;
+class Expr_GeneralFunction : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbOfVariables() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_NamedUnknown Variable(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Copy() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString GetStringName() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_GeneralFunction {
+	Handle_Expr_GeneralFunction GetHandle() {
+	return *(Handle_Expr_GeneralFunction*) &$self;
+	}
+};
+%extend Expr_GeneralFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_GeneralFunction {
+	~Expr_GeneralFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_GeneralFunction\n");}
+	}
+};
+
+
+%nodefaultctor Expr_NamedFunction;
+class Expr_NamedFunction : public Expr_GeneralFunction {
+	public:
+		%feature("autodoc", "1");
+		Expr_NamedFunction(const TCollection_AsciiString &name, const Handle_Expr_GeneralExpression &exp, const Expr_Array1OfNamedUnknown &vars);
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &newname);
+		%feature("autodoc", "1");
+		TCollection_AsciiString GetName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression Expression() const;
+		%feature("autodoc", "1");
+		void SetExpression(const Handle_Expr_GeneralExpression &exp);
+
+};
+%extend Expr_NamedFunction {
+	Handle_Expr_NamedFunction GetHandle() {
+	return *(Handle_Expr_NamedFunction*) &$self;
+	}
+};
+%extend Expr_NamedFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_NamedFunction {
+	~Expr_NamedFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_NamedFunction\n");}
+	}
+};
+
+
 %nodefaultctor Expr_NotEvaluable;
 class Expr_NotEvaluable : public Expr_ExprFailure {
 	public:
@@ -2970,6 +3089,100 @@ class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNod
 };
 
 
+%nodefaultctor Expr_ArgTanh;
+class Expr_ArgTanh : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_ArgTanh(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_ArgTanh {
+	Handle_Expr_ArgTanh GetHandle() {
+	return *(Handle_Expr_ArgTanh*) &$self;
+	}
+};
+%extend Expr_ArgTanh {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_ArgTanh {
+	~Expr_ArgTanh() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_ArgTanh\n");}
+	}
+};
+
+
+%nodefaultctor Expr_NamedConstant;
+class Expr_NamedConstant : public Expr_NamedExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_NamedConstant(const TCollection_AsciiString &name, const Standard_Real value);
+		%feature("autodoc", "1");
+		Standard_Real GetValue() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSubExpressions() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Expr_GeneralExpression & SubExpression(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Simplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ContainsUnknowns() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_NamedConstant {
+	Handle_Expr_NamedConstant GetHandle() {
+	return *(Handle_Expr_NamedConstant*) &$self;
+	}
+};
+%extend Expr_NamedConstant {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_NamedConstant {
+	~Expr_NamedConstant() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_NamedConstant\n");}
+	}
+};
+
+
 %nodefaultctor Expr_Tangent;
 class Expr_Tangent : public Expr_UnaryExpression {
 	public:
@@ -3007,47 +3220,6 @@ class Expr_Tangent : public Expr_UnaryExpression {
 	~Expr_Tangent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_Tangent\n");}
-	}
-};
-
-
-%nodefaultctor Expr_Array1OfGeneralExpression;
-class Expr_Array1OfGeneralExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Array1OfGeneralExpression(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Expr_Array1OfGeneralExpression(const Handle_Expr_GeneralExpression &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Expr_GeneralExpression &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Expr_Array1OfGeneralExpression & Assign(const Expr_Array1OfGeneralExpression &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &Value);
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralExpression & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index);
-
-};
-%extend Expr_Array1OfGeneralExpression {
-	~Expr_Array1OfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfGeneralExpression\n");}
 	}
 };
 
@@ -3235,6 +3407,47 @@ class Expr_Sum : public Expr_PolyExpression {
 };
 
 
+%nodefaultctor Expr_Sinh;
+class Expr_Sinh : public Expr_UnaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Sinh(const Handle_Expr_GeneralExpression &exp);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString String() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_Sinh {
+	Handle_Expr_Sinh GetHandle() {
+	return *(Handle_Expr_Sinh*) &$self;
+	}
+};
+%extend Expr_Sinh {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_Sinh {
+	~Expr_Sinh() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_Sinh\n");}
+	}
+};
+
+
 %nodefaultctor Expr_Square;
 class Expr_Square : public Expr_UnaryExpression {
 	public:
@@ -3397,47 +3610,6 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 };
 
 
-%nodefaultctor Expr_Exponentiate;
-class Expr_Exponentiate : public Expr_BinaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Exponentiate(const Handle_Expr_GeneralExpression &exp1, const Handle_Expr_GeneralExpression &exp2);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_Exponentiate {
-	Handle_Expr_Exponentiate GetHandle() {
-	return *(Handle_Expr_Exponentiate*) &$self;
-	}
-};
-%extend Expr_Exponentiate {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_Exponentiate {
-	~Expr_Exponentiate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Exponentiate\n");}
-	}
-};
-
-
 %nodefaultctor Expr_SequenceOfGeneralExpression;
 class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 	public:
@@ -3489,27 +3661,6 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 	~Expr_SequenceOfGeneralExpression() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_SequenceOfGeneralExpression\n");}
-	}
-};
-
-
-%nodefaultctor Expr_RUIterator;
-class Expr_RUIterator {
-	public:
-		%feature("autodoc", "1");
-		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown Value() const;
-
-};
-%extend Expr_RUIterator {
-	~Expr_RUIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
 	}
 };
 
@@ -3625,47 +3776,6 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 };
 
 
-%nodefaultctor Expr_ArgTanh;
-class Expr_ArgTanh : public Expr_UnaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_ArgTanh(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralExpression &Other) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_ArgTanh {
-	Handle_Expr_ArgTanh GetHandle() {
-	return *(Handle_Expr_ArgTanh*) &$self;
-	}
-};
-%extend Expr_ArgTanh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_ArgTanh {
-	~Expr_ArgTanh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArgTanh\n");}
-	}
-};
-
-
 %nodefaultctor Expr_Difference;
 class Expr_Difference : public Expr_BinaryExpression {
 	public:
@@ -3705,59 +3815,6 @@ class Expr_Difference : public Expr_BinaryExpression {
 	~Expr_Difference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_Difference\n");}
-	}
-};
-
-
-%nodefaultctor Expr_NamedConstant;
-class Expr_NamedConstant : public Expr_NamedExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_NamedConstant(const TCollection_AsciiString &name, const Standard_Real value);
-		%feature("autodoc", "1");
-		Standard_Real GetValue() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSubExpressions() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Expr_GeneralExpression & SubExpression(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Simplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression ShallowSimplified() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ContainsUnknowns() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Derivative(const Handle_Expr_NamedUnknown &X) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression NDerivative(const Handle_Expr_NamedUnknown &X, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_NamedConstant {
-	Handle_Expr_NamedConstant GetHandle() {
-	return *(Handle_Expr_NamedConstant*) &$self;
-	}
-};
-%extend Expr_NamedConstant {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_NamedConstant {
-	~Expr_NamedConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedConstant\n");}
 	}
 };
 
@@ -3887,13 +3944,17 @@ class Expr_Cosh : public Expr_UnaryExpression {
 };
 
 
-%nodefaultctor Expr_GeneralFunction;
-class Expr_GeneralFunction : public MMgt_TShared {
+%nodefaultctor Expr_FunctionDerivative;
+class Expr_FunctionDerivative : public Expr_GeneralFunction {
 	public:
+		%feature("autodoc", "1");
+		Expr_FunctionDerivative(const Handle_Expr_GeneralFunction &func, const Handle_Expr_NamedUnknown &withX, const Standard_Integer deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbOfVariables() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_NamedUnknown Variable(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralFunction Copy() const;
 		%feature("autodoc", "1");
@@ -3901,42 +3962,9 @@ class Expr_GeneralFunction : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString GetStringName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_GeneralFunction {
-	Handle_Expr_GeneralFunction GetHandle() {
-	return *(Handle_Expr_GeneralFunction*) &$self;
-	}
-};
-%extend Expr_GeneralFunction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_GeneralFunction {
-	~Expr_GeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GeneralFunction\n");}
-	}
-};
-
-
-%nodefaultctor Expr_FunctionDerivative;
-class Expr_FunctionDerivative : public Expr_GeneralFunction {
-	public:
-		%feature("autodoc", "1");
-		Expr_FunctionDerivative(const Handle_Expr_GeneralFunction &func, const Handle_Expr_NamedUnknown &withX, const Standard_Integer deg);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction Function() const;
 		%feature("autodoc", "1");
@@ -3944,9 +3972,13 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown DerivVariable() const;
 		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString GetStringName() const;
+		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression Expression() const;
 		%feature("autodoc", "1");
 		void UpdateExpression();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Expr_FunctionDerivative {
@@ -4008,6 +4040,27 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 };
 
 
+%nodefaultctor Expr_RUIterator;
+class Expr_RUIterator {
+	public:
+		%feature("autodoc", "1");
+		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown Value() const;
+
+};
+%extend Expr_RUIterator {
+	~Expr_RUIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
+	}
+};
+
+
 %nodefaultctor Expr_NumericValue;
 class Expr_NumericValue : public Expr_GeneralExpression {
 	public:
@@ -4063,59 +4116,6 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 	~Expr_NumericValue() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_NumericValue\n");}
-	}
-};
-
-
-%nodefaultctor Expr_NamedFunction;
-class Expr_NamedFunction : public Expr_GeneralFunction {
-	public:
-		%feature("autodoc", "1");
-		Expr_NamedFunction(const TCollection_AsciiString &name, const Handle_Expr_GeneralExpression &exp, const Expr_Array1OfNamedUnknown &vars);
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &newname);
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbOfVariables() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_NamedUnknown Variable(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &values) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Copy() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralFunction Derivative(const Handle_Expr_NamedUnknown &var, const Standard_Integer deg) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsIdentical(const Handle_Expr_GeneralFunction &func) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLinearOnVariable(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString GetStringName() const;
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression Expression() const;
-		%feature("autodoc", "1");
-		void SetExpression(const Handle_Expr_GeneralExpression &exp);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_NamedFunction {
-	Handle_Expr_NamedFunction GetHandle() {
-	return *(Handle_Expr_NamedFunction*) &$self;
-	}
-};
-%extend Expr_NamedFunction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_NamedFunction {
-	~Expr_NamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedFunction\n");}
 	}
 };
 

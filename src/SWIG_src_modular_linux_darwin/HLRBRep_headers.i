@@ -138,11 +138,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Dir2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
+#include<IntSurf_Quadric.hxx>
 #include<BRepTopAdaptor_MapOfShapeTool.hxx>
 #include<Bnd_Box2d.hxx>
 #include<TopoDS_Shape.hxx>
 #include<HLRAlgo_ListIteratorOfInterferenceList.hxx>
-#include<IntSurf_Quadric.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 #include<gp_Pln.hxx>
@@ -163,7 +163,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_BezierSurface.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
-#include<HLRBRep.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
 #include<IntCurve_IConicTool.hxx>
 #include<math_FunctionSetRoot.hxx>

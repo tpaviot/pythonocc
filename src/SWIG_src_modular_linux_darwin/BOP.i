@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BOP
 
+%include BOP_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -113,8 +115,8 @@ Standard_Integer & function transformation
 
 typedef BRepClass3d_SolidClassifier * BOP_PSoClassif;
 typedef BOP_ShellFaceSet * BOP_PShellFaceSet;
-typedef BOP_WireEdgeSet * BOP_PWireEdgeSet;
 typedef BOP_Builder * BOP_PBuilder;
+typedef BOP_WireEdgeSet * BOP_PWireEdgeSet;
 
 enum BOP_LoopEnum {
 	BOP_ANYLOOP,
@@ -144,6 +146,58 @@ enum BOP_CheckStatus {
 
 
 
+%nodefaultctor Handle_BOP_HistoryCollector;
+class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_HistoryCollector();
+		%feature("autodoc", "1");
+		Handle_BOP_HistoryCollector(const Handle_BOP_HistoryCollector &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_HistoryCollector(const BOP_HistoryCollector *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_HistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_HistoryCollector {
+	BOP_HistoryCollector* GetObject() {
+	return (BOP_HistoryCollector*)$self->Access();
+	}
+};
+%extend Handle_BOP_HistoryCollector {
+	~Handle_BOP_HistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_HistoryCollector\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
+class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_ShellSolidHistoryCollector();
+		%feature("autodoc", "1");
+		Handle_BOP_ShellSolidHistoryCollector(const Handle_BOP_ShellSolidHistoryCollector &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_ShellSolidHistoryCollector(const BOP_ShellSolidHistoryCollector *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_ShellSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_ShellSolidHistoryCollector {
+	BOP_ShellSolidHistoryCollector* GetObject() {
+	return (BOP_ShellSolidHistoryCollector*)$self->Access();
+	}
+};
+%extend Handle_BOP_ShellSolidHistoryCollector {
+	~Handle_BOP_ShellSolidHistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BOP_SequenceNodeOfSeqOfSeqOfShape;
 class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNode {
 	public:
@@ -166,6 +220,58 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 	~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOP_Loop;
+class Handle_BOP_Loop : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_Loop();
+		%feature("autodoc", "1");
+		Handle_BOP_Loop(const Handle_BOP_Loop &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_Loop(const BOP_Loop *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_Loop {
+	BOP_Loop* GetObject() {
+	return (BOP_Loop*)$self->Access();
+	}
+};
+%extend Handle_BOP_Loop {
+	~Handle_BOP_Loop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_Loop\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOP_WireSolidHistoryCollector;
+class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_WireSolidHistoryCollector();
+		%feature("autodoc", "1");
+		Handle_BOP_WireSolidHistoryCollector(const Handle_BOP_WireSolidHistoryCollector &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_WireSolidHistoryCollector(const BOP_WireSolidHistoryCollector *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_WireSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_WireSolidHistoryCollector {
+	BOP_WireSolidHistoryCollector* GetObject() {
+	return (BOP_WireSolidHistoryCollector*)$self->Access();
+	}
+};
+%extend Handle_BOP_WireSolidHistoryCollector {
+	~Handle_BOP_WireSolidHistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");}
 	}
 };
 
@@ -196,136 +302,6 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 };
 
 
-%nodefaultctor Handle_BOP_HistoryCollector;
-class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_HistoryCollector();
-		%feature("autodoc", "1");
-		Handle_BOP_HistoryCollector(const Handle_BOP_HistoryCollector &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_HistoryCollector(const BOP_HistoryCollector *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_HistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_HistoryCollector {
-	BOP_HistoryCollector* GetObject() {
-	return (BOP_HistoryCollector*)$self->Access();
-	}
-};
-%extend Handle_BOP_HistoryCollector {
-	~Handle_BOP_HistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_HistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
-class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_SolidSolidHistoryCollector();
-		%feature("autodoc", "1");
-		Handle_BOP_SolidSolidHistoryCollector(const Handle_BOP_SolidSolidHistoryCollector &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_SolidSolidHistoryCollector(const BOP_SolidSolidHistoryCollector *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_SolidSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_SolidSolidHistoryCollector {
-	BOP_SolidSolidHistoryCollector* GetObject() {
-	return (BOP_SolidSolidHistoryCollector*)$self->Access();
-	}
-};
-%extend Handle_BOP_SolidSolidHistoryCollector {
-	~Handle_BOP_SolidSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
-class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfFaceInfo();
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfFaceInfo(const Handle_BOP_ListNodeOfListOfFaceInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfFaceInfo(const BOP_ListNodeOfListOfFaceInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_ListNodeOfListOfFaceInfo {
-	BOP_ListNodeOfListOfFaceInfo* GetObject() {
-	return (BOP_ListNodeOfListOfFaceInfo*)$self->Access();
-	}
-};
-%extend Handle_BOP_ListNodeOfListOfFaceInfo {
-	~Handle_BOP_ListNodeOfListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
-class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
-		%feature("autodoc", "1");
-		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier* GetObject() {
-	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
-	}
-};
-%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
-class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfEdgeInfo();
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfEdgeInfo(const Handle_BOP_ListNodeOfListOfEdgeInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfEdgeInfo(const BOP_ListNodeOfListOfEdgeInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_ListNodeOfListOfEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
-	BOP_ListNodeOfListOfEdgeInfo* GetObject() {
-	return (BOP_ListNodeOfListOfEdgeInfo*)$self->Access();
-	}
-};
-%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
-	~Handle_BOP_ListNodeOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public Handle_TCollection_MapNode {
 	public:
@@ -352,28 +328,28 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 };
 
 
-%nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
-class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector {
+%nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
+class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BOP_ShellSolidHistoryCollector();
+		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier();
 		%feature("autodoc", "1");
-		Handle_BOP_ShellSolidHistoryCollector(const Handle_BOP_ShellSolidHistoryCollector &aHandle);
+		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier &aHandle);
 		%feature("autodoc", "1");
-		Handle_BOP_ShellSolidHistoryCollector(const BOP_ShellSolidHistoryCollector *anItem);
+		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier *anItem);
 		%feature("autodoc", "1");
-		Handle_BOP_ShellSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BOP_ShellSolidHistoryCollector {
-	BOP_ShellSolidHistoryCollector* GetObject() {
-	return (BOP_ShellSolidHistoryCollector*)$self->Access();
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier* GetObject() {
+	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
 	}
 };
-%extend Handle_BOP_ShellSolidHistoryCollector {
-	~Handle_BOP_ShellSolidHistoryCollector() {
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
 	}
 };
 
@@ -430,6 +406,32 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 };
 
 
+%nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
+class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_SolidSolidHistoryCollector();
+		%feature("autodoc", "1");
+		Handle_BOP_SolidSolidHistoryCollector(const Handle_BOP_SolidSolidHistoryCollector &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_SolidSolidHistoryCollector(const BOP_SolidSolidHistoryCollector *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_SolidSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_SolidSolidHistoryCollector {
+	BOP_SolidSolidHistoryCollector* GetObject() {
+	return (BOP_SolidSolidHistoryCollector*)$self->Access();
+	}
+};
+%extend Handle_BOP_SolidSolidHistoryCollector {
+	~Handle_BOP_SolidSolidHistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BOP_ListNodeOfListOfLoop;
 class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -482,54 +484,28 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 };
 
 
-%nodefaultctor Handle_BOP_WireSolidHistoryCollector;
-class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector {
+%nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
+class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BOP_WireSolidHistoryCollector();
+		Handle_BOP_ListNodeOfListOfFaceInfo();
 		%feature("autodoc", "1");
-		Handle_BOP_WireSolidHistoryCollector(const Handle_BOP_WireSolidHistoryCollector &aHandle);
+		Handle_BOP_ListNodeOfListOfFaceInfo(const Handle_BOP_ListNodeOfListOfFaceInfo &aHandle);
 		%feature("autodoc", "1");
-		Handle_BOP_WireSolidHistoryCollector(const BOP_WireSolidHistoryCollector *anItem);
+		Handle_BOP_ListNodeOfListOfFaceInfo(const BOP_ListNodeOfListOfFaceInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_BOP_WireSolidHistoryCollector const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BOP_ListNodeOfListOfFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BOP_WireSolidHistoryCollector {
-	BOP_WireSolidHistoryCollector* GetObject() {
-	return (BOP_WireSolidHistoryCollector*)$self->Access();
+%extend Handle_BOP_ListNodeOfListOfFaceInfo {
+	BOP_ListNodeOfListOfFaceInfo* GetObject() {
+	return (BOP_ListNodeOfListOfFaceInfo*)$self->Access();
 	}
 };
-%extend Handle_BOP_WireSolidHistoryCollector {
-	~Handle_BOP_WireSolidHistoryCollector() {
+%extend Handle_BOP_ListNodeOfListOfFaceInfo {
+	~Handle_BOP_ListNodeOfListOfFaceInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOP_Loop;
-class Handle_BOP_Loop : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOP_Loop();
-		%feature("autodoc", "1");
-		Handle_BOP_Loop(const Handle_BOP_Loop &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOP_Loop(const BOP_Loop *anItem);
-		%feature("autodoc", "1");
-		Handle_BOP_Loop const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOP_Loop {
-	BOP_Loop* GetObject() {
-	return (BOP_Loop*)$self->Access();
-	}
-};
-%extend Handle_BOP_Loop {
-	~Handle_BOP_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_Loop\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");}
 	}
 };
 
@@ -556,6 +532,206 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 	~Handle_BOP_ListNodeOfListOfConnexityBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
+class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOP_ListNodeOfListOfEdgeInfo();
+		%feature("autodoc", "1");
+		Handle_BOP_ListNodeOfListOfEdgeInfo(const Handle_BOP_ListNodeOfListOfEdgeInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOP_ListNodeOfListOfEdgeInfo(const BOP_ListNodeOfListOfEdgeInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_BOP_ListNodeOfListOfEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
+	BOP_ListNodeOfListOfEdgeInfo* GetObject() {
+	return (BOP_ListNodeOfListOfEdgeInfo*)$self->Access();
+	}
+};
+%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
+	~Handle_BOP_ListNodeOfListOfEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListNodeOfListOfListOfLoop;
+class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListNodeOfListOfListOfLoop(const BOP_ListOfLoop &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOP_ListOfLoop & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_ListNodeOfListOfListOfLoop {
+	Handle_BOP_ListNodeOfListOfListOfLoop GetHandle() {
+	return *(Handle_BOP_ListNodeOfListOfListOfLoop*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfListOfLoop {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_ListNodeOfListOfListOfLoop {
+	~BOP_ListNodeOfListOfListOfLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");}
+	}
+};
+
+
+%nodefaultctor BOP_CorrectTolerances;
+class BOP_CorrectTolerances {
+	public:
+		%feature("autodoc", "1");
+		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+
+};
+%extend BOP_CorrectTolerances {
+	~BOP_CorrectTolerances() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_CorrectTolerances\n");}
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
+class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfEdgeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BOP_ListOfEdgeInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo GetHandle() {
+	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Builder;
+class BOP_Builder {
+	public:
+		%feature("autodoc", "1");
+		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		%feature("autodoc", "1");
+		void SetOperation(const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		void SetManifoldFlag(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape2() const;
+		%feature("autodoc", "1");
+		BOP_Operation Operation() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ManifoldFlag() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer ErrorStatus() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Result() const;
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void BuildResult();
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		void SortTypes(TopAbs_ShapeEnum & aType1, TopAbs_ShapeEnum & aType2);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape &aS) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDeleted(const TopoDS_Shape &aS) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & SectionEdges() const;
+		%feature("autodoc", "1");
+		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
+		%feature("autodoc", "1");
+		Handle_BOP_HistoryCollector GetHistoryCollector() const;
+
+};
+%extend BOP_Builder {
+	~BOP_Builder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Builder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireShape;
+class BOP_WireShape : public BOP_Builder {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireShape();
+		%feature("autodoc", "1");
+		void AddSplitPartsINOUT();
+		%feature("autodoc", "1");
+		void AddSplitPartsON();
+		%feature("autodoc", "1");
+		void MakeResult();
+
+};
+%extend BOP_WireShape {
+	~BOP_WireShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireShape\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireShell;
+class BOP_WireShell : public BOP_WireShape {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireShell();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
+
+};
+%extend BOP_WireShell {
+	~BOP_WireShell() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireShell\n");}
 	}
 };
 
@@ -624,31 +800,6 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 
 
-%nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
-class BOP_ListIteratorOfListOfFaceInfo {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfFaceInfo();
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfFaceInfo(const BOP_ListOfFaceInfo &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOP_ListOfFaceInfo &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOP_FaceInfo & Value() const;
-
-};
-%extend BOP_ListIteratorOfListOfFaceInfo {
-	~BOP_ListIteratorOfListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");}
-	}
-};
-
-
 %nodefaultctor BOP_AreaBuilder;
 class BOP_AreaBuilder {
 	public:
@@ -686,6 +837,350 @@ class BOP_AreaBuilder {
 	~BOP_AreaBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOP_AreaBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Area3dBuilder;
+class BOP_Area3dBuilder : public BOP_AreaBuilder {
+	public:
+		%feature("autodoc", "1");
+		BOP_Area3dBuilder();
+		%feature("autodoc", "1");
+		BOP_Area3dBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
+		%feature("autodoc", "1");
+		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass);
+
+};
+%extend BOP_Area3dBuilder {
+	~BOP_Area3dBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Area3dBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_SolidSolidHistoryCollector;
+class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		BOP_SolidSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
+		%feature("autodoc", "1");
+		void AddNewShape(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
+		%feature("autodoc", "1");
+		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_SolidSolidHistoryCollector {
+	Handle_BOP_SolidSolidHistoryCollector GetHandle() {
+	return *(Handle_BOP_SolidSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_SolidSolidHistoryCollector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_SolidSolidHistoryCollector {
+	~BOP_SolidSolidHistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");}
+	}
+};
+
+
+%nodefaultctor BOP_FaceInfo;
+class BOP_FaceInfo {
+	public:
+		%feature("autodoc", "1");
+		BOP_FaceInfo();
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face &aF);
+		%feature("autodoc", "1");
+		void SetPassed(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		void SetPOnEdge(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		void SetPInFace(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		void SetPInFace2D(const gp_Pnt2d &aP);
+		%feature("autodoc", "1");
+		void SetNormal(const gp_Dir &aD);
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real A);
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & POnEdge() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & PInFace() const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d & PInFace2D() const;
+		%feature("autodoc", "1");
+		const gp_Dir & Normal() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPassed() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+
+};
+%extend BOP_FaceInfo {
+	~BOP_FaceInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_FaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
+class BOP_ListIteratorOfListOfFaceInfo {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfFaceInfo();
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfFaceInfo(const BOP_ListOfFaceInfo &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOP_ListOfFaceInfo &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOP_FaceInfo & Value() const;
+
+};
+%extend BOP_ListIteratorOfListOfFaceInfo {
+	~BOP_ListIteratorOfListOfFaceInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_SFSCorrector;
+class BOP_SFSCorrector {
+	public:
+		%feature("autodoc", "1");
+		BOP_SFSCorrector();
+		%feature("autodoc", "1");
+		void SetSFS(const BOP_ShellFaceSet &aSFS);
+		%feature("autodoc", "1");
+		void Do();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer ErrorStatus() const;
+		%feature("autodoc", "1");
+		BOP_ShellFaceSet & SFS();
+		%feature("autodoc", "1");
+		BOP_ShellFaceSet & NewSFS();
+
+};
+%extend BOP_SFSCorrector {
+	~BOP_SFSCorrector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SFSCorrector\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
+class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListNodeOfListOfEdgeInfo(const BOP_EdgeInfo &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOP_EdgeInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_ListNodeOfListOfEdgeInfo {
+	Handle_BOP_ListNodeOfListOfEdgeInfo GetHandle() {
+	return *(Handle_BOP_ListNodeOfListOfEdgeInfo*) &$self;
+	}
+};
+%extend BOP_ListNodeOfListOfEdgeInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_ListNodeOfListOfEdgeInfo {
+	~BOP_ListNodeOfListOfEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_BlockIterator;
+class BOP_BlockIterator {
+	public:
+		%feature("autodoc", "1");
+		BOP_BlockIterator();
+		%feature("autodoc", "1");
+		BOP_BlockIterator(const Standard_Integer Lower, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		void Initialize();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Standard_Integer Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+
+};
+%extend BOP_BlockIterator {
+	~BOP_BlockIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_BlockIterator\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
+class BOP_ListIteratorOfListOfEdgeInfo {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfEdgeInfo();
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfEdgeInfo(const BOP_ListOfEdgeInfo &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOP_ListOfEdgeInfo &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOP_EdgeInfo & Value() const;
+
+};
+%extend BOP_ListIteratorOfListOfEdgeInfo {
+	~BOP_ListIteratorOfListOfEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapOfVertexListEdgeInfo;
+class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfVertexListEdgeInfo(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfVertexListEdgeInfo & Assign(const BOP_IndexedDataMapOfVertexListEdgeInfo &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_ListOfEdgeInfo & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_ListOfEdgeInfo & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BOP_ListOfEdgeInfo & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BOP_ListOfEdgeInfo & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const BOP_ListOfEdgeInfo & FindFromKey(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape &K);
+
+};
+%extend BOP_IndexedDataMapOfVertexListEdgeInfo {
+	~BOP_IndexedDataMapOfVertexListEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShellSolid;
+class BOP_ShellSolid : public BOP_Builder {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShellSolid();
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void BuildResult();
+		%feature("autodoc", "1");
+		virtual		void DoNewFaces();
+		%feature("autodoc", "1");
+		virtual		void Prepare();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckArgTypes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
+		%feature("autodoc", "1");
+		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
+
+};
+%extend BOP_ShellSolid {
+	~BOP_ShellSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolid\n");}
+	}
+};
+
+
+%nodefaultctor BOP_SolidSolid;
+class BOP_SolidSolid : public BOP_ShellSolid {
+	public:
+		%feature("autodoc", "1");
+		BOP_SolidSolid();
+
+};
+%extend BOP_SolidSolid {
+	~BOP_SolidSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolid\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Draw;
+class BOP_Draw {
+	public:
+		%feature("autodoc", "1");
+		void DrawListOfShape(const TopTools_ListOfShape &aList, const char * aName);
+		%feature("autodoc", "1");
+		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const char * aName);
+		%feature("autodoc", "1");
+		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const Standard_Integer anInd, const char * aName);
+		%feature("autodoc", "1");
+		void DrawEdgeWithPC(const TopoDS_Face &aFace, const TopoDS_Edge &aEdge, const char * aName);
+		%feature("autodoc", "1");
+		void Wait();
+
+};
+%extend BOP_Draw {
+	~BOP_Draw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Draw\n");}
 	}
 };
 
@@ -741,29 +1236,29 @@ class BOP_ListOfLoop {
 };
 
 
-%nodefaultctor BOP_BlockIterator;
-class BOP_BlockIterator {
+%nodefaultctor BOP_WESCorrector;
+class BOP_WESCorrector {
 	public:
 		%feature("autodoc", "1");
-		BOP_BlockIterator();
+		BOP_WESCorrector();
 		%feature("autodoc", "1");
-		BOP_BlockIterator(const Standard_Integer Lower, const Standard_Integer Upper);
+		void SetWES(const BOP_WireEdgeSet &aWES);
 		%feature("autodoc", "1");
-		void Initialize();
+		void Do();
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Integer ErrorStatus() const;
 		%feature("autodoc", "1");
-		Standard_Integer Value() const;
+		BOP_WireEdgeSet & WES();
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		BOP_WireEdgeSet & NewWES();
 
 };
-%extend BOP_BlockIterator {
-	~BOP_BlockIterator() {
+%extend BOP_WESCorrector {
+	~BOP_WESCorrector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BlockIterator\n");}
+	if (__env){printf("## Call custom destructor for instance of BOP_WESCorrector\n");}
 	}
 };
 
@@ -806,6 +1301,35 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 };
 
 
+%nodefaultctor BOP_SectionHistoryCollector;
+class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
+	public:
+		%feature("autodoc", "1");
+		BOP_SectionHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2);
+		%feature("autodoc", "1");
+		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_SectionHistoryCollector {
+	Handle_BOP_SectionHistoryCollector GetHandle() {
+	return *(Handle_BOP_SectionHistoryCollector*) &$self;
+	}
+};
+%extend BOP_SectionHistoryCollector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_SectionHistoryCollector {
+	~BOP_SectionHistoryCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SectionHistoryCollector\n");}
+	}
+};
+
+
 %nodefaultctor BOP_ListNodeOfListOfFaceInfo;
 class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 	public:
@@ -831,6 +1355,429 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 	~BOP_ListNodeOfListOfFaceInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Loop;
+class BOP_Loop : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BOP_Loop(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		BOP_Loop(const BOP_BlockIterator &BI);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsShape() const;
+		%feature("autodoc", "1");
+		virtual		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		const BOP_BlockIterator & BlockIterator() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_Loop {
+	Handle_BOP_Loop GetHandle() {
+	return *(Handle_BOP_Loop*) &$self;
+	}
+};
+%extend BOP_Loop {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_Loop {
+	~BOP_Loop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Loop\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Refiner;
+class BOP_Refiner {
+	public:
+		%feature("autodoc", "1");
+		BOP_Refiner();
+		%feature("autodoc", "1");
+		BOP_Refiner(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		void SetInternals(const TopTools_ListOfShape &aLS);
+		%feature("autodoc", "1");
+		void Do();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer ErrorStatus() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbRemovedVertices() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbRemovedEdges() const;
+
+};
+%extend BOP_Refiner {
+	~BOP_Refiner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Refiner\n");}
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
+class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfFaceInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BOP_ListOfFaceInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo GetHandle() {
+	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_LoopClassifier;
+class BOP_LoopClassifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		TopAbs_State Compare(const Handle_BOP_Loop &L1, const Handle_BOP_Loop &L2);
+
+};
+%extend BOP_LoopClassifier {
+	~BOP_LoopClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_LoopClassifier\n");}
+	}
+};
+
+
+%nodefaultctor BOP_CompositeClassifier;
+class BOP_CompositeClassifier : public BOP_LoopClassifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
+		%feature("autodoc", "1");
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
+		%feature("autodoc", "1");
+		virtual		void ResetShape(const TopoDS_Shape &B);
+		%feature("autodoc", "1");
+		virtual		void ResetElement(const TopoDS_Shape &E);
+		%feature("autodoc", "1");
+		virtual		void CompareElement(const TopoDS_Shape &E);
+		%feature("autodoc", "1");
+		virtual		TopAbs_State State();
+
+};
+%extend BOP_CompositeClassifier {
+	~BOP_CompositeClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_CompositeClassifier\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireEdgeClassifier;
+class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireEdgeClassifier(const TopoDS_Face &F, const BOP_BlockBuilder &BB);
+		%feature("autodoc", "1");
+		TopoDS_Shape LoopToShape(const Handle_BOP_Loop &L);
+		%feature("autodoc", "1");
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &W);
+
+};
+%extend BOP_WireEdgeClassifier {
+	~BOP_WireEdgeClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeClassifier\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ConnexityBlock;
+class BOP_ConnexityBlock {
+	public:
+		%feature("autodoc", "1");
+		BOP_ConnexityBlock();
+		%feature("autodoc", "1");
+		void SetShapes(const TopTools_ListOfShape &anEdges);
+		%feature("autodoc", "1");
+		void SetShapes(const TopTools_IndexedMapOfOrientedShape &nEdges);
+		%feature("autodoc", "1");
+		void SetRegularity(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Shapes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsRegular() const;
+
+};
+%extend BOP_ConnexityBlock {
+	~BOP_ConnexityBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ConnexityBlock\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListOfEdgeInfo;
+class BOP_ListOfEdgeInfo {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListOfEdgeInfo();
+		%feature("autodoc", "1");
+		void Assign(const BOP_ListOfEdgeInfo &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const BOP_EdgeInfo &I);
+		%feature("autodoc", "1");
+		void Prepend(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BOP_ListOfEdgeInfo & Other);
+		%feature("autodoc", "1");
+		void Append(const BOP_EdgeInfo &I);
+		%feature("autodoc", "1");
+		void Append(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & theIt);
+		%feature("autodoc", "1");
+		void Append(BOP_ListOfEdgeInfo & Other);
+		%feature("autodoc", "1");
+		BOP_EdgeInfo & First() const;
+		%feature("autodoc", "1");
+		BOP_EdgeInfo & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BOP_ListIteratorOfListOfEdgeInfo & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
+
+};
+%extend BOP_ListOfEdgeInfo {
+	~BOP_ListOfEdgeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListOfEdgeInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_EmptyBuilder;
+class BOP_EmptyBuilder : public BOP_Builder {
+	public:
+		%feature("autodoc", "1");
+		BOP_EmptyBuilder();
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void BuildResult();
+
+};
+%extend BOP_EmptyBuilder {
+	~BOP_EmptyBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_EmptyBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListOfFaceInfo;
+class BOP_ListOfFaceInfo {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListOfFaceInfo();
+		%feature("autodoc", "1");
+		void Assign(const BOP_ListOfFaceInfo &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const BOP_FaceInfo &I);
+		%feature("autodoc", "1");
+		void Prepend(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BOP_ListOfFaceInfo & Other);
+		%feature("autodoc", "1");
+		void Append(const BOP_FaceInfo &I);
+		%feature("autodoc", "1");
+		void Append(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & theIt);
+		%feature("autodoc", "1");
+		void Append(BOP_ListOfFaceInfo & Other);
+		%feature("autodoc", "1");
+		BOP_FaceInfo & First() const;
+		%feature("autodoc", "1");
+		BOP_FaceInfo & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BOP_ListIteratorOfListOfFaceInfo & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
+
+};
+%extend BOP_ListOfFaceInfo {
+	~BOP_ListOfFaceInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListOfFaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_BuilderTools;
+class BOP_BuilderTools {
+	public:
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape StateToCompare(const Standard_Integer iRank, const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		Standard_Boolean ToReverseSection(const Standard_Integer iRank, const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		Standard_Boolean ToReverseFace(const Standard_Integer iRank, const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		void OrientSectionEdgeOnF1(const TopoDS_Face &aF1, const TopoDS_Face &aF2, const Standard_Integer iRank, const BOP_Operation anOp, TopoDS_Edge & aE);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSameDomainFaceWithF1(const Standard_Integer nF1, const Standard_Integer nF2, const TColStd_IndexedMapOfInteger &aFFM, BOPTools_CArray1OfSSInterference & aFFs);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPartIN2DToKeep(const TopAbs_State aSt, const Standard_Integer iRank, const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPartOn2dToKeep(const TopAbs_State aSt, const Standard_Integer iRank, const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		void DoMap(BOPTools_CArray1OfSSInterference & aFFs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aFFMap);
+		%feature("autodoc", "1");
+		void MakeConnexityBlocks(const TopTools_ListOfShape &aLE, const TopAbs_ShapeEnum aType, BOP_ListOfConnexityBlock & aLConBlks);
+
+};
+%extend BOP_BuilderTools {
+	~BOP_BuilderTools() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_BuilderTools\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShapeSet;
+class BOP_ShapeSet {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShapeSet(const TopAbs_ShapeEnum SubShapeType);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		void AddShape(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void AddStartElement(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void AddElement(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & StartElements() const;
+		%feature("autodoc", "1");
+		void InitShapes();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreShapes() const;
+		%feature("autodoc", "1");
+		void NextShape();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		void InitStartElements();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreStartElements() const;
+		%feature("autodoc", "1");
+		void NextStartElement();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & StartElement() const;
+		%feature("autodoc", "1");
+		virtual		void InitNeighbours(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreNeighbours();
+		%feature("autodoc", "1");
+		void NextNeighbour();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Neighbour() const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeStartShapes();
+		%feature("autodoc", "1");
+		virtual		void FindNeighbours();
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
+		%feature("autodoc", "1");
+		Standard_Integer MaxNumberSubShape(const TopoDS_Shape &Shape);
+		%feature("autodoc", "1");
+		void ClearContents();
+
+};
+%extend BOP_ShapeSet {
+	~BOP_ShapeSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShapeSet\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShellFaceSet;
+class BOP_ShellFaceSet : public BOP_ShapeSet {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShellFaceSet();
+		%feature("autodoc", "1");
+		BOP_ShellFaceSet(const TopoDS_Solid &theSolid);
+		%feature("autodoc", "1");
+		const TopoDS_Solid & Solid() const;
+
+};
+%extend BOP_ShellFaceSet {
+	~BOP_ShellFaceSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceSet\n");}
 	}
 };
 
@@ -878,6 +1825,35 @@ class BOP_SolidBuilder {
 };
 
 
+%nodefaultctor BOP_SolidClassifier;
+class BOP_SolidClassifier {
+	public:
+		%feature("autodoc", "1");
+		BOP_SolidClassifier();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void LoadSolid(const TopoDS_Solid &aS);
+		%feature("autodoc", "1");
+		TopAbs_State Classify(const TopoDS_Solid &aS, const gp_Pnt &aP, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		void LoadShell(const TopoDS_Shell &S);
+		%feature("autodoc", "1");
+		TopAbs_State Classify(const TopoDS_Shell &aS, const gp_Pnt &aP, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend BOP_SolidClassifier {
+	~BOP_SolidClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SolidClassifier\n");}
+	}
+};
+
+
 %nodefaultctor BOP_IndexedDataMapOfEdgeListFaceInfo;
 class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 	public:
@@ -919,6 +1895,68 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 	~BOP_IndexedDataMapOfEdgeListFaceInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");}
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
+class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_PSoClassif &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc", "1");
+		Standard_Integer & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BOP_PSoClassif & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier GetHandle() {
+	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*) &$self;
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireSolid;
+class BOP_WireSolid : public BOP_WireShape {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireSolid();
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void BuildResult();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
+		%feature("autodoc", "1");
+		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
+
+};
+%extend BOP_WireSolid {
+	~BOP_WireSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireSolid\n");}
 	}
 };
 
@@ -1003,67 +2041,6 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 
 
-%nodefaultctor BOP_LoopClassifier;
-class BOP_LoopClassifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		TopAbs_State Compare(const Handle_BOP_Loop &L1, const Handle_BOP_Loop &L2);
-
-};
-%extend BOP_LoopClassifier {
-	~BOP_LoopClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_LoopClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_CompositeClassifier;
-class BOP_CompositeClassifier : public BOP_LoopClassifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
-		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
-		%feature("autodoc", "1");
-		virtual		void ResetShape(const TopoDS_Shape &B);
-		%feature("autodoc", "1");
-		virtual		void ResetElement(const TopoDS_Shape &E);
-		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape &E);
-		%feature("autodoc", "1");
-		virtual		TopAbs_State State();
-
-};
-%extend BOP_CompositeClassifier {
-	~BOP_CompositeClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CompositeClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WireEdgeClassifier;
-class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireEdgeClassifier(const TopoDS_Face &F, const BOP_BlockBuilder &BB);
-		%feature("autodoc", "1");
-		TopoDS_Shape LoopToShape(const Handle_BOP_Loop &L);
-		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &W);
-
-};
-%extend BOP_WireEdgeClassifier {
-	~BOP_WireEdgeClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeClassifier\n");}
-	}
-};
-
-
 %nodefaultctor BOP_ListOfCheckResult;
 class BOP_ListOfCheckResult {
 	public:
@@ -1115,6 +2092,41 @@ class BOP_ListOfCheckResult {
 };
 
 
+%nodefaultctor BOP_CheckResult;
+class BOP_CheckResult {
+	public:
+		%feature("autodoc", "1");
+		BOP_CheckResult();
+		%feature("autodoc", "1");
+		void SetShape1(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		void AddFaultyShape1(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		void SetShape2(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		void AddFaultyShape2(const TopoDS_Shape &TheShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & GetShape1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & GetShape2() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & GetFaultyShapes1() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & GetFaultyShapes2() const;
+		%feature("autodoc", "1");
+		void SetCheckStatus(const BOP_CheckStatus TheStatus);
+		%feature("autodoc", "1");
+		BOP_CheckStatus GetCheckStatus() const;
+
+};
+%extend BOP_CheckResult {
+	~BOP_CheckResult() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_CheckResult\n");}
+	}
+};
+
+
 %nodefaultctor BOP_ListIteratorOfListOfCheckResult;
 class BOP_ListIteratorOfListOfCheckResult {
 	public:
@@ -1136,6 +2148,35 @@ class BOP_ListIteratorOfListOfCheckResult {
 	~BOP_ListIteratorOfListOfCheckResult() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShellFaceClassifier;
+class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShellFaceClassifier(const BOP_BlockBuilder &theBlockBuilder);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
+		%feature("autodoc", "1");
+		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
+		%feature("autodoc", "1");
+		virtual		void ResetShape(const TopoDS_Shape &B);
+		%feature("autodoc", "1");
+		virtual		void ResetElement(const TopoDS_Shape &E);
+		%feature("autodoc", "1");
+		virtual		void CompareElement(const TopoDS_Shape &E);
+		%feature("autodoc", "1");
+		virtual		TopAbs_State State();
+
+};
+%extend BOP_ShellFaceClassifier {
+	~BOP_ShellFaceClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceClassifier\n");}
 	}
 };
 
@@ -1165,6 +2206,79 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 	~BOP_SequenceNodeOfSeqOfSeqOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShellShell;
+class BOP_ShellShell : public BOP_ShellSolid {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShellShell();
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void BuildResult();
+		%feature("autodoc", "1");
+		virtual		void DoNewFaces();
+
+};
+%extend BOP_ShellShell {
+	~BOP_ShellShell() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellShell\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
+class BOP_ListIteratorOfListOfListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfListOfLoop();
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfListOfLoop(const BOP_ListOfListOfLoop &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOP_ListOfListOfLoop &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOP_ListOfLoop & Value() const;
+
+};
+%extend BOP_ListIteratorOfListOfListOfLoop {
+	~BOP_ListIteratorOfListOfListOfLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");}
+	}
+};
+
+
+%nodefaultctor BOP_Section;
+class BOP_Section : public BOP_Builder {
+	public:
+		%feature("autodoc", "1");
+		BOP_Section();
+		%feature("autodoc", "1");
+		virtual		void Do();
+		%feature("autodoc", "1");
+		void Do(const Standard_Boolean toApprox, const Standard_Boolean toComputePCurve1, const Standard_Boolean toComputePCurve2);
+		%feature("autodoc", "1");
+		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
+
+};
+%extend BOP_Section {
+	~BOP_Section() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_Section\n");}
 	}
 };
 
@@ -1230,35 +2344,6 @@ class BOP_FaceBuilder {
 };
 
 
-%nodefaultctor BOP_ListNodeOfListOfLoop;
-class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListNodeOfListOfLoop(const Handle_BOP_Loop &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_BOP_Loop & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_ListNodeOfListOfLoop {
-	Handle_BOP_ListNodeOfListOfLoop GetHandle() {
-	return *(Handle_BOP_ListNodeOfListOfLoop*) &$self;
-	}
-};
-%extend BOP_ListNodeOfListOfLoop {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_ListNodeOfListOfLoop {
-	~BOP_ListNodeOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");}
-	}
-};
-
-
 %nodefaultctor BOP_ListOfListOfLoop;
 class BOP_ListOfListOfLoop {
 	public:
@@ -1310,76 +2395,339 @@ class BOP_ListOfListOfLoop {
 };
 
 
-%nodefaultctor BOP_Builder;
-class BOP_Builder {
+%nodefaultctor BOP_BlockBuilder;
+class BOP_BlockBuilder {
 	public:
 		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
+		BOP_BlockBuilder();
 		%feature("autodoc", "1");
-		void SetOperation(const BOP_Operation anOp);
+		BOP_BlockBuilder(BOP_ShapeSet & SS);
 		%feature("autodoc", "1");
-		void SetManifoldFlag(const Standard_Boolean aFlag);
+		void MakeBlock(BOP_ShapeSet & SS);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
+		void InitBlock();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
+		Standard_Boolean MoreBlock() const;
 		%feature("autodoc", "1");
-		BOP_Operation Operation() const;
+		void NextBlock();
 		%feature("autodoc", "1");
-		Standard_Boolean ManifoldFlag() const;
+		BOP_BlockIterator BlockIterator() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Element(const BOP_BlockIterator &BI) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Element(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer Element(const TopoDS_Shape &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ElementIsValid(const BOP_BlockIterator &BI) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ElementIsValid(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer AddElement(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void SetValid(const BOP_BlockIterator &BI, const Standard_Boolean IsValid);
+		%feature("autodoc", "1");
+		void SetValid(const Standard_Integer I, const Standard_Boolean IsValid);
+		%feature("autodoc", "1");
+		Standard_Boolean CurrentBlockIsRegular();
+
+};
+%extend BOP_BlockBuilder {
+	~BOP_BlockBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_BlockBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
+class BOP_ListIteratorOfListOfConnexityBlock {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfConnexityBlock();
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfConnexityBlock(const BOP_ListOfConnexityBlock &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOP_ListOfConnexityBlock &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BOP_ConnexityBlock & Value() const;
+
+};
+%extend BOP_ListIteratorOfListOfConnexityBlock {
+	~BOP_ListIteratorOfListOfConnexityBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ShellSplitter;
+class BOP_ShellSplitter {
+	public:
+		%feature("autodoc", "1");
+		BOP_ShellSplitter();
+		%feature("autodoc", "1");
+		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
+		%feature("autodoc", "1");
+		void SetShell(const TopoDS_Shell &aShell);
+		%feature("autodoc", "1");
+		const TopoDS_Shell & Shell() const;
+		%feature("autodoc", "1");
+		void DoWithShell();
+		%feature("autodoc", "1");
+		Standard_Boolean IsNothingToDo() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
+		const BOPTColStd_ListOfListOfShape & Shapes() const;
+
+};
+%extend BOP_ShellSplitter {
+	~BOP_ShellSplitter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellSplitter\n");}
+	}
+};
+
+
+%nodefaultctor BOP_LoopSet;
+class BOP_LoopSet {
+	public:
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Result() const;
+		BOP_LoopSet();
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		BOP_ListOfLoop & ChangeListOfLoop();
+		%feature("autodoc", "1");
+		virtual		void InitLoop();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MoreLoop() const;
+		%feature("autodoc", "1");
+		virtual		void NextLoop();
+		%feature("autodoc", "1");
+		virtual		const Handle_BOP_Loop & Loop() const;
+
+};
+%extend BOP_LoopSet {
+	~BOP_LoopSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_LoopSet\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireWire;
+class BOP_WireWire : public BOP_WireShape {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireWire();
 		%feature("autodoc", "1");
 		virtual		void Do();
 		%feature("autodoc", "1");
 		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
 		%feature("autodoc", "1");
-		virtual		void BuildResult();
-		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		void SortTypes(TopAbs_ShapeEnum & aType1, TopAbs_ShapeEnum & aType2);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &aS) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape &aS) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & SectionEdges() const;
-		%feature("autodoc", "1");
-		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
-		%feature("autodoc", "1");
-		Handle_BOP_HistoryCollector GetHistoryCollector() const;
+		virtual		void BuildResult();
 
 };
-%extend BOP_Builder {
-	~BOP_Builder() {
+%extend BOP_WireWire {
+	~BOP_WireWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Builder\n");}
+	if (__env){printf("## Call custom destructor for instance of BOP_WireWire\n");}
 	}
 };
 
 
-%nodefaultctor BOP_WireShape;
-class BOP_WireShape : public BOP_Builder {
+%nodefaultctor BOP_ShellSolidHistoryCollector;
+class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
 		%feature("autodoc", "1");
-		BOP_WireShape();
+		BOP_ShellSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
 		%feature("autodoc", "1");
-		void AddSplitPartsINOUT();
+		void AddNewFace(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
-		void AddSplitPartsON();
+		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
-		void MakeResult();
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BOP_WireShape {
-	~BOP_WireShape() {
+%extend BOP_ShellSolidHistoryCollector {
+	Handle_BOP_ShellSolidHistoryCollector GetHandle() {
+	return *(Handle_BOP_ShellSolidHistoryCollector*) &$self;
+	}
+};
+%extend BOP_ShellSolidHistoryCollector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOP_ShellSolidHistoryCollector {
+	~BOP_ShellSolidHistoryCollector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireShape\n");}
+	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireEdgeSet;
+class BOP_WireEdgeSet : public BOP_ShapeSet {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireEdgeSet();
+		%feature("autodoc", "1");
+		BOP_WireEdgeSet(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+		%feature("autodoc", "1");
+		virtual		void AddShape(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void AddStartElement(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void AddElement(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		virtual		void InitNeighbours(const TopoDS_Shape &E);
+		%feature("autodoc", "1");
+		virtual		void FindNeighbours();
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
+		%feature("autodoc", "1");
+		void IsUVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & uiso, Standard_Boolean & viso);
+		%feature("autodoc", "1");
+		void RemoveEdgeFromWES(const TopoDS_Edge &aE);
+		%feature("autodoc", "1");
+		Standard_Boolean KeptTwice(const TopoDS_Edge &aE) const;
+
+};
+%extend BOP_WireEdgeSet {
+	~BOP_WireEdgeSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeSet\n");}
+	}
+};
+
+
+%nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
+class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfSolidClassifier(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOP_IndexedDataMapOfSolidClassifier & Assign(const BOP_IndexedDataMapOfSolidClassifier &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape &K, const BOP_PSoClassif &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_PSoClassif &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BOP_PSoClassif & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BOP_PSoClassif & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape &K);
+
+};
+%extend BOP_IndexedDataMapOfSolidClassifier {
+	~BOP_IndexedDataMapOfSolidClassifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");}
+	}
+};
+
+
+%nodefaultctor BOP_SolidAreaBuilder;
+class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
+	public:
+		%feature("autodoc", "1");
+		BOP_SolidAreaBuilder();
+		%feature("autodoc", "1");
+		BOP_SolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag=0);
+		%feature("autodoc", "1");
+		void InitSolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag);
+
+};
+%extend BOP_SolidAreaBuilder {
+	~BOP_SolidAreaBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_SolidAreaBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BOP_ListIteratorOfListOfLoop;
+class BOP_ListIteratorOfListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfLoop();
+		%feature("autodoc", "1");
+		BOP_ListIteratorOfListOfLoop(const BOP_ListOfLoop &L);
+		%feature("autodoc", "1");
+		void Initialize(const BOP_ListOfLoop &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_BOP_Loop & Value() const;
+
+};
+%extend BOP_ListIteratorOfListOfLoop {
+	~BOP_ListIteratorOfListOfLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");}
+	}
+};
+
+
+%nodefaultctor BOP_WireSplitter;
+class BOP_WireSplitter {
+	public:
+		%feature("autodoc", "1");
+		BOP_WireSplitter();
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face &aF);
+		%feature("autodoc", "1");
+		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
+		%feature("autodoc", "1");
+		void DoWithFace();
+		%feature("autodoc", "1");
+		Standard_Boolean IsNothingToDo() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+		%feature("autodoc", "1");
+		const BOPTColStd_ListOfListOfShape & Shapes() const;
+
+};
+%extend BOP_WireSplitter {
+	~BOP_WireSplitter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOP_WireSplitter\n");}
 	}
 };
 
@@ -1439,99 +2787,45 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor BOP_WireWire;
-class BOP_WireWire : public BOP_WireShape {
+%nodefaultctor BOP_SDFWESFiller;
+class BOP_SDFWESFiller {
 	public:
 		%feature("autodoc", "1");
-		BOP_WireWire();
+		BOP_SDFWESFiller();
 		%feature("autodoc", "1");
-		virtual		void Do();
+		BOP_SDFWESFiller(const Standard_Integer nF1, const Standard_Integer nF2, const BOPTools_DSFiller &aDSF);
 		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
+		void SetStatesMap(const BOPTools_IndexedDataMapOfIntegerState &aStatesMap);
 		%feature("autodoc", "1");
-		virtual		void Destroy();
+		void SetFaces(const Standard_Integer nF1, const Standard_Integer nF2);
 		%feature("autodoc", "1");
-		virtual		void BuildResult();
+		void SetDSFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		void SetOperation(const BOP_Operation anOp);
+		%feature("autodoc", "1");
+		void SetSenseFlag(const Standard_Integer aFlag);
+		%feature("autodoc", "1");
+		void Prepare();
+		%feature("autodoc", "1");
+		void Do(const BOP_WireEdgeSet &aWES);
+		%feature("autodoc", "1");
+		const BOPTools_DSFiller & DSFiller() const;
+		%feature("autodoc", "1");
+		const BOPTools_IndexedDataMapOfIntegerState & StatesMap() const;
+		%feature("autodoc", "1");
+		void Faces(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer SenseFlag() const;
+		%feature("autodoc", "1");
+		BOP_Operation Operation() const;
+		%feature("autodoc", "1");
+		void UpdateDEStates3D();
 
 };
-%extend BOP_WireWire {
-	~BOP_WireWire() {
+%extend BOP_SDFWESFiller {
+	~BOP_SDFWESFiller() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireWire\n");}
-	}
-};
-
-
-%nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
-class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfSolidClassifier(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfSolidClassifier & Assign(const BOP_IndexedDataMapOfSolidClassifier &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOP_PSoClassif &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_PSoClassif &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BOP_PSoClassif & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BOP_PSoClassif & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const BOP_PSoClassif & FindFromKey(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape &K);
-
-};
-%extend BOP_IndexedDataMapOfSolidClassifier {
-	~BOP_IndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WireSplitter;
-class BOP_WireSplitter {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireSplitter();
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
-		%feature("autodoc", "1");
-		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
-		%feature("autodoc", "1");
-		void DoWithFace();
-		%feature("autodoc", "1");
-		Standard_Boolean IsNothingToDo() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		const BOPTColStd_ListOfListOfShape & Shapes() const;
-
-};
-%extend BOP_WireSplitter {
-	~BOP_WireSplitter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireSplitter\n");}
+	if (__env){printf("## Call custom destructor for instance of BOP_SDFWESFiller\n");}
 	}
 };
 
@@ -1612,57 +2906,6 @@ class BOP_ArgumentAnalyzer {
 };
 
 
-%nodefaultctor BOP_ListOfFaceInfo;
-class BOP_ListOfFaceInfo {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListOfFaceInfo();
-		%feature("autodoc", "1");
-		void Assign(const BOP_ListOfFaceInfo &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const BOP_FaceInfo &I);
-		%feature("autodoc", "1");
-		void Prepend(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BOP_ListOfFaceInfo & Other);
-		%feature("autodoc", "1");
-		void Append(const BOP_FaceInfo &I);
-		%feature("autodoc", "1");
-		void Append(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & theIt);
-		%feature("autodoc", "1");
-		void Append(BOP_ListOfFaceInfo & Other);
-		%feature("autodoc", "1");
-		BOP_FaceInfo & First() const;
-		%feature("autodoc", "1");
-		BOP_FaceInfo & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BOP_ListIteratorOfListOfFaceInfo & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const BOP_FaceInfo &I, BOP_ListIteratorOfListOfFaceInfo & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
-
-};
-%extend BOP_ListOfFaceInfo {
-	~BOP_ListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfFaceInfo\n");}
-	}
-};
-
-
 %nodefaultctor BOP_EdgeInfo;
 class BOP_EdgeInfo {
 	public:
@@ -1694,1287 +2937,30 @@ class BOP_EdgeInfo {
 };
 
 
-%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
-class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TCollection_MapNode {
+%nodefaultctor BOP_ListNodeOfListOfLoop;
+class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfEdgeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
-	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo GetHandle() {
-	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo*) &$self;
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListNodeOfListOfListOfLoop;
-class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListNodeOfListOfListOfLoop(const BOP_ListOfLoop &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOP_ListOfLoop & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_ListNodeOfListOfListOfLoop {
-	Handle_BOP_ListNodeOfListOfListOfLoop GetHandle() {
-	return *(Handle_BOP_ListNodeOfListOfListOfLoop*) &$self;
-	}
-};
-%extend BOP_ListNodeOfListOfListOfLoop {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_ListNodeOfListOfListOfLoop {
-	~BOP_ListNodeOfListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellSplitter;
-class BOP_ShellSplitter {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellSplitter();
-		%feature("autodoc", "1");
-		void DoWithListOfEdges(const TopTools_ListOfShape &aLE);
-		%feature("autodoc", "1");
-		void SetShell(const TopoDS_Shell &aShell);
-		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell() const;
-		%feature("autodoc", "1");
-		void DoWithShell();
-		%feature("autodoc", "1");
-		Standard_Boolean IsNothingToDo() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const BOPTColStd_ListOfListOfShape & Shapes() const;
-
-};
-%extend BOP_ShellSplitter {
-	~BOP_ShellSplitter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSplitter\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SectionHistoryCollector;
-class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
-	public:
-		%feature("autodoc", "1");
-		BOP_SectionHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2);
-		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_SectionHistoryCollector {
-	Handle_BOP_SectionHistoryCollector GetHandle() {
-	return *(Handle_BOP_SectionHistoryCollector*) &$self;
-	}
-};
-%extend BOP_SectionHistoryCollector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_SectionHistoryCollector {
-	~BOP_SectionHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SectionHistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SolidSolidHistoryCollector;
-class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
-	public:
-		%feature("autodoc", "1");
-		BOP_SolidSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
-		%feature("autodoc", "1");
-		void AddNewShape(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_SolidSolidHistoryCollector {
-	Handle_BOP_SolidSolidHistoryCollector GetHandle() {
-	return *(Handle_BOP_SolidSolidHistoryCollector*) &$self;
-	}
-};
-%extend BOP_SolidSolidHistoryCollector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_SolidSolidHistoryCollector {
-	~BOP_SolidSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
-class BOP_ListIteratorOfListOfEdgeInfo {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfEdgeInfo();
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfEdgeInfo(const BOP_ListOfEdgeInfo &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOP_ListOfEdgeInfo &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOP_EdgeInfo & Value() const;
-
-};
-%extend BOP_ListIteratorOfListOfEdgeInfo {
-	~BOP_ListIteratorOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_Area3dBuilder;
-class BOP_Area3dBuilder : public BOP_AreaBuilder {
-	public:
-		%feature("autodoc", "1");
-		BOP_Area3dBuilder();
-		%feature("autodoc", "1");
-		BOP_Area3dBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass);
-
-};
-%extend BOP_Area3dBuilder {
-	~BOP_Area3dBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Area3dBuilder\n");}
-	}
-};
-
-
-%nodefaultctor BOP_EmptyBuilder;
-class BOP_EmptyBuilder : public BOP_Builder {
-	public:
-		%feature("autodoc", "1");
-		BOP_EmptyBuilder();
-		%feature("autodoc", "1");
-		virtual		void Do();
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void BuildResult();
-
-};
-%extend BOP_EmptyBuilder {
-	~BOP_EmptyBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_EmptyBuilder\n");}
-	}
-};
-
-
-%nodefaultctor BOP_Draw;
-class BOP_Draw {
-	public:
-		%feature("autodoc", "1");
-		BOP_Draw();
-		%feature("autodoc", "1");
-		void DrawListOfShape(const TopTools_ListOfShape &aList, const char * aName);
-		%feature("autodoc", "1");
-		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const char * aName);
-		%feature("autodoc", "1");
-		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const Standard_Integer anInd, const char * aName);
-		%feature("autodoc", "1");
-		void DrawEdgeWithPC(const TopoDS_Face &aFace, const TopoDS_Edge &aEdge, const char * aName);
-		%feature("autodoc", "1");
-		void Wait();
-
-};
-%extend BOP_Draw {
-	~BOP_Draw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Draw\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WESCorrector;
-class BOP_WESCorrector {
-	public:
-		%feature("autodoc", "1");
-		BOP_WESCorrector();
-		%feature("autodoc", "1");
-		void SetWES(const BOP_WireEdgeSet &aWES);
-		%feature("autodoc", "1");
-		void Do();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
-		%feature("autodoc", "1");
-		BOP_WireEdgeSet & WES();
-		%feature("autodoc", "1");
-		BOP_WireEdgeSet & NewWES();
-
-};
-%extend BOP_WESCorrector {
-	~BOP_WESCorrector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WESCorrector\n");}
-	}
-};
-
-
-%nodefaultctor BOP_Refiner;
-class BOP_Refiner {
-	public:
-		%feature("autodoc", "1");
-		BOP_Refiner();
-		%feature("autodoc", "1");
-		BOP_Refiner(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		void SetInternals(const TopTools_ListOfShape &aLS);
-		%feature("autodoc", "1");
-		void Do();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbRemovedVertices() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbRemovedEdges() const;
-
-};
-%extend BOP_Refiner {
-	~BOP_Refiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Refiner\n");}
-	}
-};
-
-
-%nodefaultctor BOP_Loop;
-class BOP_Loop : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BOP_Loop(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		BOP_Loop(const BOP_BlockIterator &BI);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsShape() const;
-		%feature("autodoc", "1");
-		virtual		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		const BOP_BlockIterator & BlockIterator() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_Loop {
-	Handle_BOP_Loop GetHandle() {
-	return *(Handle_BOP_Loop*) &$self;
-	}
-};
-%extend BOP_Loop {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_Loop {
-	~BOP_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Loop\n");}
-	}
-};
-
-
-%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
-class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_ListOfFaceInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		BOP_ListOfFaceInfo & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
-	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo GetHandle() {
-	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo*) &$self;
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ConnexityBlock;
-class BOP_ConnexityBlock {
-	public:
-		%feature("autodoc", "1");
-		BOP_ConnexityBlock();
-		%feature("autodoc", "1");
-		void SetShapes(const TopTools_ListOfShape &anEdges);
-		%feature("autodoc", "1");
-		void SetShapes(const TopTools_IndexedMapOfOrientedShape &nEdges);
-		%feature("autodoc", "1");
-		void SetRegularity(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Shapes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsRegular() const;
-
-};
-%extend BOP_ConnexityBlock {
-	~BOP_ConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ConnexityBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
-class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListNodeOfListOfEdgeInfo(const BOP_EdgeInfo &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOP_EdgeInfo & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_ListNodeOfListOfEdgeInfo {
-	Handle_BOP_ListNodeOfListOfEdgeInfo GetHandle() {
-	return *(Handle_BOP_ListNodeOfListOfEdgeInfo*) &$self;
-	}
-};
-%extend BOP_ListNodeOfListOfEdgeInfo {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_ListNodeOfListOfEdgeInfo {
-	~BOP_ListNodeOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_BuilderTools;
-class BOP_BuilderTools {
-	public:
-		%feature("autodoc", "1");
-		BOP_BuilderTools();
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape StateToCompare(const Standard_Integer iRank, const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		Standard_Boolean ToReverseSection(const Standard_Integer iRank, const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		Standard_Boolean ToReverseFace(const Standard_Integer iRank, const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		void OrientSectionEdgeOnF1(const TopoDS_Face &aF1, const TopoDS_Face &aF2, const Standard_Integer iRank, const BOP_Operation anOp, TopoDS_Edge & aE);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameDomainFaceWithF1(const Standard_Integer nF1, const Standard_Integer nF2, const TColStd_IndexedMapOfInteger &aFFM, BOPTools_CArray1OfSSInterference & aFFs);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPartIN2DToKeep(const TopAbs_State aSt, const Standard_Integer iRank, const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPartOn2dToKeep(const TopAbs_State aSt, const Standard_Integer iRank, const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		void DoMap(BOPTools_CArray1OfSSInterference & aFFs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aFFMap);
-		%feature("autodoc", "1");
-		void MakeConnexityBlocks(const TopTools_ListOfShape &aLE, const TopAbs_ShapeEnum aType, BOP_ListOfConnexityBlock & aLConBlks);
-
-};
-%extend BOP_BuilderTools {
-	~BOP_BuilderTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BuilderTools\n");}
-	}
-};
-
-
-%nodefaultctor BOP_IndexedDataMapOfVertexListEdgeInfo;
-class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfVertexListEdgeInfo(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapOfVertexListEdgeInfo & Assign(const BOP_IndexedDataMapOfVertexListEdgeInfo &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const BOP_ListOfEdgeInfo &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_ListOfEdgeInfo & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOP_ListOfEdgeInfo & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const BOP_ListOfEdgeInfo & FindFromKey(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape &K);
-
-};
-%extend BOP_IndexedDataMapOfVertexListEdgeInfo {
-	~BOP_IndexedDataMapOfVertexListEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShapeSet;
-class BOP_ShapeSet {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShapeSet(const TopAbs_ShapeEnum SubShapeType);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		void AddShape(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void AddStartElement(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void AddElement(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & StartElements() const;
-		%feature("autodoc", "1");
-		void InitShapes();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreShapes() const;
-		%feature("autodoc", "1");
-		void NextShape();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		void InitStartElements();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreStartElements() const;
-		%feature("autodoc", "1");
-		void NextStartElement();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & StartElement() const;
-		%feature("autodoc", "1");
-		virtual		void InitNeighbours(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreNeighbours();
-		%feature("autodoc", "1");
-		void NextNeighbour();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Neighbour() const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeStartShapes();
-		%feature("autodoc", "1");
-		virtual		void FindNeighbours();
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
-		%feature("autodoc", "1");
-		Standard_Integer MaxNumberSubShape(const TopoDS_Shape &Shape);
-		%feature("autodoc", "1");
-		void ClearContents();
-
-};
-%extend BOP_ShapeSet {
-	~BOP_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShapeSet\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellFaceSet;
-class BOP_ShellFaceSet : public BOP_ShapeSet {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellFaceSet();
-		%feature("autodoc", "1");
-		BOP_ShellFaceSet(const TopoDS_Solid &theSolid);
-		%feature("autodoc", "1");
-		const TopoDS_Solid & Solid() const;
-
-};
-%extend BOP_ShellFaceSet {
-	~BOP_ShellFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceSet\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SolidClassifier;
-class BOP_SolidClassifier {
-	public:
-		%feature("autodoc", "1");
-		BOP_SolidClassifier();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void LoadSolid(const TopoDS_Solid &aS);
-		%feature("autodoc", "1");
-		TopAbs_State Classify(const TopoDS_Solid &aS, const gp_Pnt &aP, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		void LoadShell(const TopoDS_Shell &S);
-		%feature("autodoc", "1");
-		TopAbs_State Classify(const TopoDS_Shell &aS, const gp_Pnt &aP, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend BOP_SolidClassifier {
-	~BOP_SolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WireSolid;
-class BOP_WireSolid : public BOP_WireShape {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireSolid();
-		%feature("autodoc", "1");
-		virtual		void Do();
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void BuildResult();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
-		%feature("autodoc", "1");
-		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
-
-};
-%extend BOP_WireSolid {
-	~BOP_WireSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireSolid\n");}
-	}
-};
-
-
-%nodefaultctor BOP_CheckResult;
-class BOP_CheckResult {
-	public:
-		%feature("autodoc", "1");
-		BOP_CheckResult();
-		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &TheShape);
-		%feature("autodoc", "1");
-		void AddFaultyShape1(const TopoDS_Shape &TheShape);
-		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &TheShape);
-		%feature("autodoc", "1");
-		void AddFaultyShape2(const TopoDS_Shape &TheShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape1() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape2() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetFaultyShapes1() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetFaultyShapes2() const;
-		%feature("autodoc", "1");
-		void SetCheckStatus(const BOP_CheckStatus TheStatus);
-		%feature("autodoc", "1");
-		BOP_CheckStatus GetCheckStatus() const;
-
-};
-%extend BOP_CheckResult {
-	~BOP_CheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CheckResult\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellFaceClassifier;
-class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellFaceClassifier(const BOP_BlockBuilder &theBlockBuilder);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareShapes(const TopoDS_Shape &B1, const TopoDS_Shape &B2);
-		%feature("autodoc", "1");
-		virtual		TopAbs_State CompareElementToShape(const TopoDS_Shape &E, const TopoDS_Shape &B);
-		%feature("autodoc", "1");
-		virtual		void ResetShape(const TopoDS_Shape &B);
-		%feature("autodoc", "1");
-		virtual		void ResetElement(const TopoDS_Shape &E);
-		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape &E);
-		%feature("autodoc", "1");
-		virtual		TopAbs_State State();
-
-};
-%extend BOP_ShellFaceClassifier {
-	~BOP_ShellFaceClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
-class BOP_ListIteratorOfListOfListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfListOfLoop();
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfListOfLoop(const BOP_ListOfListOfLoop &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOP_ListOfListOfLoop &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOP_ListOfLoop & Value() const;
-
-};
-%extend BOP_ListIteratorOfListOfListOfLoop {
-	~BOP_ListIteratorOfListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");}
-	}
-};
-
-
-%nodefaultctor BOP_Section;
-class BOP_Section : public BOP_Builder {
-	public:
-		%feature("autodoc", "1");
-		BOP_Section();
-		%feature("autodoc", "1");
-		virtual		void Do();
-		%feature("autodoc", "1");
-		void Do(const Standard_Boolean toApprox, const Standard_Boolean toComputePCurve1, const Standard_Boolean toComputePCurve2);
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
-
-};
-%extend BOP_Section {
-	~BOP_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Section\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellSolid;
-class BOP_ShellSolid : public BOP_Builder {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellSolid();
-		%feature("autodoc", "1");
-		virtual		void Do();
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void BuildResult();
-		%feature("autodoc", "1");
-		virtual		void DoNewFaces();
-		%feature("autodoc", "1");
-		virtual		void Prepare();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckArgTypes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
-		%feature("autodoc", "1");
-		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
-
-};
-%extend BOP_ShellSolid {
-	~BOP_ShellSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolid\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellShell;
-class BOP_ShellShell : public BOP_ShellSolid {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellShell();
-
-};
-%extend BOP_ShellShell {
-	~BOP_ShellShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellShell\n");}
-	}
-};
-
-
-%nodefaultctor BOP_BlockBuilder;
-class BOP_BlockBuilder {
-	public:
-		%feature("autodoc", "1");
-		BOP_BlockBuilder();
-		%feature("autodoc", "1");
-		BOP_BlockBuilder(BOP_ShapeSet & SS);
-		%feature("autodoc", "1");
-		void MakeBlock(BOP_ShapeSet & SS);
-		%feature("autodoc", "1");
-		void InitBlock();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreBlock() const;
-		%feature("autodoc", "1");
-		void NextBlock();
-		%feature("autodoc", "1");
-		BOP_BlockIterator BlockIterator() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Element(const BOP_BlockIterator &BI) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Element(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer Element(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ElementIsValid(const BOP_BlockIterator &BI) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ElementIsValid(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer AddElement(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void SetValid(const BOP_BlockIterator &BI, const Standard_Boolean IsValid);
-		%feature("autodoc", "1");
-		void SetValid(const Standard_Integer I, const Standard_Boolean IsValid);
-		%feature("autodoc", "1");
-		Standard_Boolean CurrentBlockIsRegular();
-
-};
-%extend BOP_BlockBuilder {
-	~BOP_BlockBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BlockBuilder\n");}
-	}
-};
-
-
-%nodefaultctor BOP_CorrectTolerances;
-class BOP_CorrectTolerances {
-	public:
-		%feature("autodoc", "1");
-		BOP_CorrectTolerances();
-		%feature("autodoc", "1");
-		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
-
-};
-%extend BOP_CorrectTolerances {
-	~BOP_CorrectTolerances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CorrectTolerances\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SolidSolid;
-class BOP_SolidSolid : public BOP_ShellSolid {
-	public:
-		%feature("autodoc", "1");
-		BOP_SolidSolid();
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void DoNewFaces();
-		%feature("autodoc", "1");
-		virtual		void BuildResult();
-		%feature("autodoc", "1");
-		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
-
-};
-%extend BOP_SolidSolid {
-	~BOP_SolidSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolid\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
-class BOP_ListIteratorOfListOfConnexityBlock {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfConnexityBlock();
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfConnexityBlock(const BOP_ListOfConnexityBlock &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOP_ListOfConnexityBlock &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BOP_ConnexityBlock & Value() const;
-
-};
-%extend BOP_ListIteratorOfListOfConnexityBlock {
-	~BOP_ListIteratorOfListOfConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SFSCorrector;
-class BOP_SFSCorrector {
-	public:
-		%feature("autodoc", "1");
-		BOP_SFSCorrector();
-		%feature("autodoc", "1");
-		void SetSFS(const BOP_ShellFaceSet &aSFS);
-		%feature("autodoc", "1");
-		void Do();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
-		%feature("autodoc", "1");
-		BOP_ShellFaceSet & SFS();
-		%feature("autodoc", "1");
-		BOP_ShellFaceSet & NewSFS();
-
-};
-%extend BOP_SFSCorrector {
-	~BOP_SFSCorrector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SFSCorrector\n");}
-	}
-};
-
-
-%nodefaultctor BOP_LoopSet;
-class BOP_LoopSet {
-	public:
-		%feature("autodoc", "1");
-		BOP_LoopSet();
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		BOP_ListOfLoop & ChangeListOfLoop();
-		%feature("autodoc", "1");
-		virtual		void InitLoop();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MoreLoop() const;
-		%feature("autodoc", "1");
-		virtual		void NextLoop();
-		%feature("autodoc", "1");
-		virtual		const Handle_BOP_Loop & Loop() const;
-
-};
-%extend BOP_LoopSet {
-	~BOP_LoopSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_LoopSet\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WireEdgeSet;
-class BOP_WireEdgeSet : public BOP_ShapeSet {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireEdgeSet();
-		%feature("autodoc", "1");
-		BOP_WireEdgeSet(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		virtual		void AddShape(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void AddStartElement(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void AddElement(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		virtual		void InitNeighbours(const TopoDS_Shape &E);
-		%feature("autodoc", "1");
-		virtual		void FindNeighbours();
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & MakeNeighboursList(const TopoDS_Shape &E, const TopoDS_Shape &V);
-		%feature("autodoc", "1");
-		void IsUVISO(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Boolean & uiso, Standard_Boolean & viso);
-		%feature("autodoc", "1");
-		void RemoveEdgeFromWES(const TopoDS_Edge &aE);
-		%feature("autodoc", "1");
-		Standard_Boolean KeptTwice(const TopoDS_Edge &aE) const;
-
-};
-%extend BOP_WireEdgeSet {
-	~BOP_WireEdgeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeSet\n");}
-	}
-};
-
-
-%nodefaultctor BOP_WireShell;
-class BOP_WireShell : public BOP_WireShape {
-	public:
-		%feature("autodoc", "1");
-		BOP_WireShell();
-		%feature("autodoc", "1");
-		virtual		void Do();
-		%feature("autodoc", "1");
-		virtual		void DoWithFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void BuildResult();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
-
-};
-%extend BOP_WireShell {
-	~BOP_WireShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireShell\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SolidAreaBuilder;
-class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
-	public:
-		%feature("autodoc", "1");
-		BOP_SolidAreaBuilder();
-		%feature("autodoc", "1");
-		BOP_SolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag=0);
-		%feature("autodoc", "1");
-		void InitSolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag);
-
-};
-%extend BOP_SolidAreaBuilder {
-	~BOP_SolidAreaBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidAreaBuilder\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListIteratorOfListOfLoop;
-class BOP_ListIteratorOfListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfLoop();
-		%feature("autodoc", "1");
-		BOP_ListIteratorOfListOfLoop(const BOP_ListOfLoop &L);
-		%feature("autodoc", "1");
-		void Initialize(const BOP_ListOfLoop &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
+		BOP_ListNodeOfListOfLoop(const Handle_BOP_Loop &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_BOP_Loop & Value() const;
-
-};
-%extend BOP_ListIteratorOfListOfLoop {
-	~BOP_ListIteratorOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ShellSolidHistoryCollector;
-class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
-	public:
-		%feature("autodoc", "1");
-		BOP_ShellSolidHistoryCollector(const TopoDS_Shape &theShape1, const TopoDS_Shape &theShape2, const BOP_Operation theOperation);
-		%feature("autodoc", "1");
-		void AddNewFace(const TopoDS_Shape &theOldShape, const TopoDS_Shape &theNewShape, const BOPTools_PDSFiller &theDSFiller);
-		%feature("autodoc", "1");
-		virtual		void SetResult(const TopoDS_Shape &theResult, const BOPTools_PDSFiller &theDSFiller);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BOP_ShellSolidHistoryCollector {
-	Handle_BOP_ShellSolidHistoryCollector GetHandle() {
-	return *(Handle_BOP_ShellSolidHistoryCollector*) &$self;
+%extend BOP_ListNodeOfListOfLoop {
+	Handle_BOP_ListNodeOfListOfLoop GetHandle() {
+	return *(Handle_BOP_ListNodeOfListOfLoop*) &$self;
 	}
 };
-%extend BOP_ShellSolidHistoryCollector {
+%extend BOP_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ShellSolidHistoryCollector {
-	~BOP_ShellSolidHistoryCollector() {
+%extend BOP_ListNodeOfListOfLoop {
+	~BOP_ListNodeOfListOfLoop() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");}
-	}
-};
-
-
-%nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
-class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopoDS_Shape &K1, const Standard_Integer K2, const BOP_PSoClassif &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		BOP_PSoClassif & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier GetHandle() {
-	return *(Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*) &$self;
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BOP_SDFWESFiller;
-class BOP_SDFWESFiller {
-	public:
-		%feature("autodoc", "1");
-		BOP_SDFWESFiller();
-		%feature("autodoc", "1");
-		BOP_SDFWESFiller(const Standard_Integer nF1, const Standard_Integer nF2, const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		void SetStatesMap(const BOPTools_IndexedDataMapOfIntegerState &aStatesMap);
-		%feature("autodoc", "1");
-		void SetFaces(const Standard_Integer nF1, const Standard_Integer nF2);
-		%feature("autodoc", "1");
-		void SetDSFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		void SetOperation(const BOP_Operation anOp);
-		%feature("autodoc", "1");
-		void SetSenseFlag(const Standard_Integer aFlag);
-		%feature("autodoc", "1");
-		void Prepare();
-		%feature("autodoc", "1");
-		void Do(const BOP_WireEdgeSet &aWES);
-		%feature("autodoc", "1");
-		const BOPTools_DSFiller & DSFiller() const;
-		%feature("autodoc", "1");
-		const BOPTools_IndexedDataMapOfIntegerState & StatesMap() const;
-		%feature("autodoc", "1");
-		void Faces(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer SenseFlag() const;
-		%feature("autodoc", "1");
-		BOP_Operation Operation() const;
-		%feature("autodoc", "1");
-		void UpdateDEStates3D();
-
-};
-%extend BOP_SDFWESFiller {
-	~BOP_SDFWESFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SDFWESFiller\n");}
-	}
-};
-
-
-%nodefaultctor BOP_ListOfEdgeInfo;
-class BOP_ListOfEdgeInfo {
-	public:
-		%feature("autodoc", "1");
-		BOP_ListOfEdgeInfo();
-		%feature("autodoc", "1");
-		void Assign(const BOP_ListOfEdgeInfo &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const BOP_EdgeInfo &I);
-		%feature("autodoc", "1");
-		void Prepend(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BOP_ListOfEdgeInfo & Other);
-		%feature("autodoc", "1");
-		void Append(const BOP_EdgeInfo &I);
-		%feature("autodoc", "1");
-		void Append(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & theIt);
-		%feature("autodoc", "1");
-		void Append(BOP_ListOfEdgeInfo & Other);
-		%feature("autodoc", "1");
-		BOP_EdgeInfo & First() const;
-		%feature("autodoc", "1");
-		BOP_EdgeInfo & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BOP_ListIteratorOfListOfEdgeInfo & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const BOP_EdgeInfo &I, BOP_ListIteratorOfListOfEdgeInfo & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
-
-};
-%extend BOP_ListOfEdgeInfo {
-	~BOP_ListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfEdgeInfo\n");}
-	}
-};
-
-
-%nodefaultctor BOP_FaceInfo;
-class BOP_FaceInfo {
-	public:
-		%feature("autodoc", "1");
-		BOP_FaceInfo();
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &aF);
-		%feature("autodoc", "1");
-		void SetPassed(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		void SetPOnEdge(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		void SetPInFace(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		void SetPInFace2D(const gp_Pnt2d &aP);
-		%feature("autodoc", "1");
-		void SetNormal(const gp_Dir &aD);
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real A);
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & POnEdge() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & PInFace() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d & PInFace2D() const;
-		%feature("autodoc", "1");
-		const gp_Dir & Normal() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPassed() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-
-};
-%extend BOP_FaceInfo {
-	~BOP_FaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_FaceInfo\n");}
+	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");}
 	}
 };

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRepApprox
 
+%include BRepApprox_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -682,27 +684,41 @@ class BRepApprox_Approx {
 };
 
 
-%nodefaultctor BRepApprox_ThePrmPrmSvSurfacesOfApprox;
-class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
+%nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
+class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &Surf1, const BRepAdaptor_Surface &Surf2);
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const TColStd_Array1OfReal &Param, const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
 		%feature("autodoc", "1");
-		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		const IntSurf_PntOn2S & Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent() const;
+		%feature("autodoc", "1");
+		const gp_Dir & Direction() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d & DirectionOnS1() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d & DirectionOnS2() const;
+		%feature("autodoc", "1");
+		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
 
 };
-%extend BRepApprox_ThePrmPrmSvSurfacesOfApprox {
-	~BRepApprox_ThePrmPrmSvSurfacesOfApprox() {
+%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepApprox_ThePrmPrmSvSurfacesOfApprox\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -710,8 +726,6 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 %nodefaultctor BRepApprox_SurfaceTool;
 class BRepApprox_SurfaceTool {
 	public:
-		%feature("autodoc", "1");
-		BRepApprox_SurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const BRepAdaptor_Surface &Surf);
 		%feature("autodoc", "1");
@@ -827,6 +841,31 @@ class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 };
 
 
+%nodefaultctor BRepApprox_ThePrmPrmSvSurfacesOfApprox;
+class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_ThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &Surf1, const BRepAdaptor_Surface &Surf2);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		%feature("autodoc", "1");
+		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+
+};
+%extend BRepApprox_ThePrmPrmSvSurfacesOfApprox {
+	~BRepApprox_ThePrmPrmSvSurfacesOfApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ThePrmPrmSvSurfacesOfApprox\n");}
+	}
+};
+
+
 %nodefaultctor BRepApprox_TheComputeLineOfApprox;
 class BRepApprox_TheComputeLineOfApprox {
 	public:
@@ -876,45 +915,6 @@ class BRepApprox_TheComputeLineOfApprox {
 	~BRepApprox_TheComputeLineOfApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheComputeLineOfApprox\n");}
-	}
-};
-
-
-%nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
-class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const TColStd_Array1OfReal &Param, const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent() const;
-		%feature("autodoc", "1");
-		const gp_Dir & Direction() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d & DirectionOnS1() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d & DirectionOnS2() const;
-		%feature("autodoc", "1");
-		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
-
-};
-%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
-	~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -973,6 +973,49 @@ class BRepApprox_TheMultiLineOfApprox {
 	~BRepApprox_TheMultiLineOfApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineOfApprox\n");}
+	}
+};
+
+
+%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
+class BRepApprox_TheMultiLineToolOfApprox {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
+		%feature("autodoc", "1");
+		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
+		%feature("autodoc", "1");
+		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
+
+};
+%extend BRepApprox_TheMultiLineToolOfApprox {
+	~BRepApprox_TheMultiLineToolOfApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
 	}
 };
 
@@ -1045,51 +1088,6 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 	~BRepApprox_TheImpPrmSvSurfacesOfApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheImpPrmSvSurfacesOfApprox\n");}
-	}
-};
-
-
-%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
-class BRepApprox_TheMultiLineToolOfApprox {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineToolOfApprox();
-		%feature("autodoc", "1");
-		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
-		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
-		%feature("autodoc", "1");
-		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
-
-};
-%extend BRepApprox_TheMultiLineToolOfApprox {
-	~BRepApprox_TheMultiLineToolOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
 	}
 };
 

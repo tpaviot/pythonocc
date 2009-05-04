@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESToBRep
 
+%include IGESToBRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -140,32 +142,6 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 };
 
 
-%nodefaultctor Handle_IGESToBRep_AlgoContainer;
-class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer();
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESToBRep_AlgoContainer {
-	IGESToBRep_AlgoContainer* GetObject() {
-	return (IGESToBRep_AlgoContainer*)$self->Access();
-	}
-};
-%extend Handle_IGESToBRep_AlgoContainer {
-	~Handle_IGESToBRep_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESToBRep_IGESBoundary;
 class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	public:
@@ -192,6 +168,32 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_IGESToBRep_AlgoContainer;
+class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer();
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESToBRep_AlgoContainer {
+	IGESToBRep_AlgoContainer* GetObject() {
+	return (IGESToBRep_AlgoContainer*)$self->Access();
+	}
+};
+%extend Handle_IGESToBRep_AlgoContainer {
+	~Handle_IGESToBRep_AlgoContainer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESToBRep_ToolContainer;
 class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	public:
@@ -214,6 +216,35 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	~Handle_IGESToBRep_ToolContainer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");}
+	}
+};
+
+
+%nodefaultctor IGESToBRep_ToolContainer;
+class IGESToBRep_ToolContainer : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESToBRep_ToolContainer();
+		%feature("autodoc", "1");
+		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESToBRep_ToolContainer {
+	Handle_IGESToBRep_ToolContainer GetHandle() {
+	return *(Handle_IGESToBRep_ToolContainer*) &$self;
+	}
+};
+%extend IGESToBRep_ToolContainer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESToBRep_ToolContainer {
+	~IGESToBRep_ToolContainer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
 	}
 };
 
@@ -384,35 +415,6 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 };
 
 
-%nodefaultctor IGESToBRep_ToolContainer;
-class IGESToBRep_ToolContainer : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESToBRep_ToolContainer();
-		%feature("autodoc", "1");
-		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESToBRep_ToolContainer {
-	Handle_IGESToBRep_ToolContainer GetHandle() {
-	return *(Handle_IGESToBRep_ToolContainer*) &$self;
-	}
-};
-%extend IGESToBRep_ToolContainer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESToBRep_ToolContainer {
-	~IGESToBRep_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
-	}
-};
-
-
 %nodefaultctor IGESToBRep_Actor;
 class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	public:
@@ -455,8 +457,6 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 %nodefaultctor IGESToBRep;
 class IGESToBRep {
 	public:
-		%feature("autodoc", "1");
-		IGESToBRep();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -616,6 +616,41 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 };
 
 
+%nodefaultctor IGESToBRep_BasicSurface;
+class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface();
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface(const IGESToBRep_CurveAndSurface &CS);
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface TransferBasicSurface(const Handle_IGESData_IGESEntity &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane TransferPlaneSurface(const Handle_IGESSolid_PlaneSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_CylindricalSurface TransferRigthCylindricalSurface(const Handle_IGESSolid_CylindricalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface TransferRigthConicalSurface(const Handle_IGESSolid_ConicalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface TransferSphericalSurface(const Handle_IGESSolid_SphericalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface TransferToroidalSurface(const Handle_IGESSolid_ToroidalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface TransferSplineSurface(const Handle_IGESGeom_SplineSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
+
+};
+%extend IGESToBRep_BasicSurface {
+	~IGESToBRep_BasicSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicSurface\n");}
+	}
+};
+
+
 %nodefaultctor IGESToBRep_TopoSurface;
 class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	public:
@@ -698,40 +733,5 @@ class IGESToBRep_Reader {
 	~IGESToBRep_Reader() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Reader\n");}
-	}
-};
-
-
-%nodefaultctor IGESToBRep_BasicSurface;
-class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface();
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface TransferBasicSurface(const Handle_IGESData_IGESEntity &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Plane TransferPlaneSurface(const Handle_IGESSolid_PlaneSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_CylindricalSurface TransferRigthCylindricalSurface(const Handle_IGESSolid_CylindricalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface TransferRigthConicalSurface(const Handle_IGESSolid_ConicalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface TransferSphericalSurface(const Handle_IGESSolid_SphericalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface TransferToroidalSurface(const Handle_IGESSolid_ToroidalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface TransferSplineSurface(const Handle_IGESGeom_SplineSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
-
-};
-%extend IGESToBRep_BasicSurface {
-	~IGESToBRep_BasicSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicSurface\n");}
 	}
 };

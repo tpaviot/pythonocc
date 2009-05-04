@@ -345,7 +345,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_VersionedActionRequest.hxx>
 #include<Handle_StepBasic_DateAndTime.hxx>
 #include<Handle_StepBasic_DateTimeRole.hxx>
-#include<Handle_StepRepr_SuppliedPartRelationship.hxx>
 #include<Handle_StepBasic_ProductDefinition.hxx>
 #include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepBasic_SecurityClassification.hxx>
@@ -357,6 +356,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_PersonAndOrganization.hxx>
 #include<Handle_StepBasic_PersonAndOrganizationRole.hxx>
 #include<Handle_StepRepr_AssemblyComponentUsage.hxx>
+#include<Handle_StepRepr_SuppliedPartRelationship.hxx>
 #include<Handle_StepRepr_ConfigurationEffectivity.hxx>
 #include<Handle_StepBasic_Certification.hxx>
 #include<Handle_StepBasic_Document.hxx>

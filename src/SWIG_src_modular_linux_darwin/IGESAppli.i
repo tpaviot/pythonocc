@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module IGESAppli
 
+%include IGESAppli_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -114,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_IGESAppli_PinNumber;
-class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber(const Handle_IGESAppli_PinNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber(const IGESAppli_PinNumber *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PinNumber {
-	IGESAppli_PinNumber* GetObject() {
-	return (IGESAppli_PinNumber*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_PinNumber {
-	~Handle_IGESAppli_PinNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_ReadWriteModule;
 class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -162,58 +138,6 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	~Handle_IGESAppli_ReadWriteModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_ReadWriteModule\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESAppli_PartNumber;
-class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PartNumber();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PartNumber(const Handle_IGESAppli_PartNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PartNumber(const IGESAppli_PartNumber *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PartNumber const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PartNumber {
-	IGESAppli_PartNumber* GetObject() {
-	return (IGESAppli_PartNumber*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_PartNumber {
-	~Handle_IGESAppli_PartNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PartNumber\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESAppli_DrilledHole;
-class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_DrilledHole();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_DrilledHole(const Handle_IGESAppli_DrilledHole &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_DrilledHole(const IGESAppli_DrilledHole *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_DrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_DrilledHole {
-	IGESAppli_DrilledHole* GetObject() {
-	return (IGESAppli_DrilledHole*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_DrilledHole {
-	~Handle_IGESAppli_DrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_DrilledHole\n");}
 	}
 };
 
@@ -244,32 +168,6 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
-class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_NodalDisplAndRot();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_NodalDisplAndRot(const Handle_IGESAppli_NodalDisplAndRot &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_NodalDisplAndRot(const IGESAppli_NodalDisplAndRot *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_NodalDisplAndRot const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_NodalDisplAndRot {
-	IGESAppli_NodalDisplAndRot* GetObject() {
-	return (IGESAppli_NodalDisplAndRot*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_NodalDisplAndRot {
-	~Handle_IGESAppli_NodalDisplAndRot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalDisplAndRot\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_Protocol;
 class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	public:
@@ -292,6 +190,32 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	~Handle_IGESAppli_Protocol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Protocol\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
+class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap(const Handle_IGESAppli_LevelToPWBLayerMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap(const IGESAppli_LevelToPWBLayerMap *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_LevelToPWBLayerMap {
+	IGESAppli_LevelToPWBLayerMap* GetObject() {
+	return (IGESAppli_LevelToPWBLayerMap*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_LevelToPWBLayerMap {
+	~Handle_IGESAppli_LevelToPWBLayerMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LevelToPWBLayerMap\n");}
 	}
 };
 
@@ -426,6 +350,32 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESAppli_DrilledHole;
+class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole(const Handle_IGESAppli_DrilledHole &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole(const IGESAppli_DrilledHole *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_DrilledHole {
+	IGESAppli_DrilledHole* GetObject() {
+	return (IGESAppli_DrilledHole*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_DrilledHole {
+	~Handle_IGESAppli_DrilledHole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_DrilledHole\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESAppli_RegionRestriction;
 class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 	public:
@@ -474,6 +424,84 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	~Handle_IGESAppli_NodalConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
+class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot(const Handle_IGESAppli_NodalDisplAndRot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot(const IGESAppli_NodalDisplAndRot *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_NodalDisplAndRot {
+	IGESAppli_NodalDisplAndRot* GetObject() {
+	return (IGESAppli_NodalDisplAndRot*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_NodalDisplAndRot {
+	~Handle_IGESAppli_NodalDisplAndRot() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalDisplAndRot\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_PWBDrilledHole;
+class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole(const Handle_IGESAppli_PWBDrilledHole &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole(const IGESAppli_PWBDrilledHole *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PWBDrilledHole {
+	IGESAppli_PWBDrilledHole* GetObject() {
+	return (IGESAppli_PWBDrilledHole*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_PWBDrilledHole {
+	~Handle_IGESAppli_PWBDrilledHole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PWBDrilledHole\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_PinNumber;
+class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber(const Handle_IGESAppli_PinNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber(const IGESAppli_PinNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PinNumber {
+	IGESAppli_PinNumber* GetObject() {
+	return (IGESAppli_PinNumber*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_PinNumber {
+	~Handle_IGESAppli_PinNumber() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");}
 	}
 };
 
@@ -530,32 +558,6 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
-class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_LevelToPWBLayerMap();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_LevelToPWBLayerMap(const Handle_IGESAppli_LevelToPWBLayerMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_LevelToPWBLayerMap(const IGESAppli_LevelToPWBLayerMap *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_LevelToPWBLayerMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_LevelToPWBLayerMap {
-	IGESAppli_LevelToPWBLayerMap* GetObject() {
-	return (IGESAppli_LevelToPWBLayerMap*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_LevelToPWBLayerMap {
-	~Handle_IGESAppli_LevelToPWBLayerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LevelToPWBLayerMap\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_HArray1OfNode;
 class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	public:
@@ -578,6 +580,58 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	~Handle_IGESAppli_HArray1OfNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfNode\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_PipingFlow;
+class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow(const Handle_IGESAppli_PipingFlow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow(const IGESAppli_PipingFlow *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PipingFlow {
+	IGESAppli_PipingFlow* GetObject() {
+	return (IGESAppli_PipingFlow*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_PipingFlow {
+	~Handle_IGESAppli_PipingFlow() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PipingFlow\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_PartNumber;
+class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber(const Handle_IGESAppli_PartNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber(const IGESAppli_PartNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PartNumber {
+	IGESAppli_PartNumber* GetObject() {
+	return (IGESAppli_PartNumber*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_PartNumber {
+	~Handle_IGESAppli_PartNumber() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PartNumber\n");}
 	}
 };
 
@@ -608,6 +662,32 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_IGESAppli_SpecificModule;
+class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule(const Handle_IGESAppli_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule(const IGESAppli_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_SpecificModule {
+	IGESAppli_SpecificModule* GetObject() {
+	return (IGESAppli_SpecificModule*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_SpecificModule {
+	~Handle_IGESAppli_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
 class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	public:
@@ -634,32 +714,6 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_IGESAppli_PWBDrilledHole;
-class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole(const Handle_IGESAppli_PWBDrilledHole &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole(const IGESAppli_PWBDrilledHole *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PWBDrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PWBDrilledHole {
-	IGESAppli_PWBDrilledHole* GetObject() {
-	return (IGESAppli_PWBDrilledHole*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_PWBDrilledHole {
-	~Handle_IGESAppli_PWBDrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PWBDrilledHole\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_Flow;
 class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	public:
@@ -682,32 +736,6 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	~Handle_IGESAppli_Flow() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Flow\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESAppli_PipingFlow;
-class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PipingFlow();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PipingFlow(const Handle_IGESAppli_PipingFlow &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PipingFlow(const IGESAppli_PipingFlow *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PipingFlow const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PipingFlow {
-	IGESAppli_PipingFlow* GetObject() {
-	return (IGESAppli_PipingFlow*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_PipingFlow {
-	~Handle_IGESAppli_PipingFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PipingFlow\n");}
 	}
 };
 
@@ -760,32 +788,6 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	~Handle_IGESAppli_NodalResults() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalResults\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESAppli_SpecificModule;
-class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule(const Handle_IGESAppli_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule(const IGESAppli_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_SpecificModule {
-	IGESAppli_SpecificModule* GetObject() {
-	return (IGESAppli_SpecificModule*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_SpecificModule {
-	~Handle_IGESAppli_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");}
 	}
 };
 
@@ -889,6 +891,37 @@ class IGESAppli_ToolFlowLineSpec {
 	~IGESAppli_ToolFlowLineSpec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFlowLineSpec\n");}
+	}
+};
+
+
+%nodefaultctor IGESAppli_SpecificModule;
+class IGESAppli_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESAppli_SpecificModule {
+	Handle_IGESAppli_SpecificModule GetHandle() {
+	return *(Handle_IGESAppli_SpecificModule*) &$self;
+	}
+};
+%extend IGESAppli_SpecificModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESAppli_SpecificModule {
+	~IGESAppli_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_SpecificModule\n");}
 	}
 };
 
@@ -1178,37 +1211,6 @@ class IGESAppli_ToolNodalConstraint {
 };
 
 
-%nodefaultctor IGESAppli_SpecificModule;
-class IGESAppli_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESAppli_SpecificModule {
-	Handle_IGESAppli_SpecificModule GetHandle() {
-	return *(Handle_IGESAppli_SpecificModule*) &$self;
-	}
-};
-%extend IGESAppli_SpecificModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESAppli_SpecificModule {
-	~IGESAppli_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_SpecificModule\n");}
-	}
-};
-
-
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
 class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 	public:
@@ -1291,11 +1293,56 @@ class IGESAppli_Array1OfNode {
 };
 
 
+%nodefaultctor IGESAppli_HArray1OfFlow;
+class IGESAppli_HArray1OfFlow : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_HArray1OfFlow(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESAppli_HArray1OfFlow(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESAppli_Flow &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESAppli_Flow &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESAppli_Flow &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESAppli_Flow & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Flow & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const IGESAppli_Array1OfFlow & Array1() const;
+		%feature("autodoc", "1");
+		IGESAppli_Array1OfFlow & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESAppli_HArray1OfFlow {
+	Handle_IGESAppli_HArray1OfFlow GetHandle() {
+	return *(Handle_IGESAppli_HArray1OfFlow*) &$self;
+	}
+};
+%extend IGESAppli_HArray1OfFlow {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESAppli_HArray1OfFlow {
+	~IGESAppli_HArray1OfFlow() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_HArray1OfFlow\n");}
+	}
+};
+
+
 %nodefaultctor IGESAppli;
 class IGESAppli {
 	public:
-		%feature("autodoc", "1");
-		IGESAppli();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1461,6 +1508,35 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 	~IGESAppli_PWBDrilledHole() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_PWBDrilledHole\n");}
+	}
+};
+
+
+%nodefaultctor IGESAppli_ToolLevelToPWBLayerMap;
+class IGESAppli_ToolLevelToPWBLayerMap {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_ToolLevelToPWBLayerMap();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESAppli_LevelToPWBLayerMap &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESAppli_LevelToPWBLayerMap &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelToPWBLayerMap &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESAppli_LevelToPWBLayerMap &entfrom, const Handle_IGESAppli_LevelToPWBLayerMap &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESAppli_ToolLevelToPWBLayerMap {
+	~IGESAppli_ToolLevelToPWBLayerMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelToPWBLayerMap\n");}
 	}
 };
 
@@ -1642,53 +1718,6 @@ class IGESAppli_ToolNodalResults {
 };
 
 
-%nodefaultctor IGESAppli_HArray1OfFlow;
-class IGESAppli_HArray1OfFlow : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_HArray1OfFlow(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESAppli_HArray1OfFlow(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESAppli_Flow &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESAppli_Flow &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESAppli_Flow &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESAppli_Flow & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESAppli_Flow & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESAppli_Array1OfFlow & Array1() const;
-		%feature("autodoc", "1");
-		IGESAppli_Array1OfFlow & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESAppli_HArray1OfFlow {
-	Handle_IGESAppli_HArray1OfFlow GetHandle() {
-	return *(Handle_IGESAppli_HArray1OfFlow*) &$self;
-	}
-};
-%extend IGESAppli_HArray1OfFlow {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESAppli_HArray1OfFlow {
-	~IGESAppli_HArray1OfFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_HArray1OfFlow\n");}
-	}
-};
-
-
 %nodefaultctor IGESAppli_ToolDrilledHole;
 class IGESAppli_ToolDrilledHole {
 	public:
@@ -1866,31 +1895,74 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESAppli_ToolLevelToPWBLayerMap;
-class IGESAppli_ToolLevelToPWBLayerMap {
+%nodefaultctor IGESAppli_ToolLevelFunction;
+class IGESAppli_ToolLevelFunction {
 	public:
 		%feature("autodoc", "1");
-		IGESAppli_ToolLevelToPWBLayerMap();
+		IGESAppli_ToolLevelFunction();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESAppli_LevelFunction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESAppli_LevelToPWBLayerMap &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESAppli_LevelFunction &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESAppli_LevelToPWBLayerMap &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESAppli_LevelFunction &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelToPWBLayerMap &ent) const;
+		Standard_Boolean OwnCorrect(const Handle_IGESAppli_LevelFunction &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelFunction &ent) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESAppli_LevelToPWBLayerMap &entfrom, const Handle_IGESAppli_LevelToPWBLayerMap &entto, Interface_CopyTool & TC) const;
+		void OwnCheck(const Handle_IGESAppli_LevelFunction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnCopy(const Handle_IGESAppli_LevelFunction &entfrom, const Handle_IGESAppli_LevelFunction &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolLevelToPWBLayerMap {
-	~IGESAppli_ToolLevelToPWBLayerMap() {
+%extend IGESAppli_ToolLevelFunction {
+	~IGESAppli_ToolLevelFunction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelToPWBLayerMap\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");}
+	}
+};
+
+
+%nodefaultctor IGESAppli_LineWidening;
+class IGESAppli_LineWidening : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_LineWidening();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbPropVal, const Standard_Real aWidth, const Standard_Integer aCornering, const Standard_Integer aExtnFlag, const Standard_Integer aJustifFlag, const Standard_Real aExtnVal);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Real WidthOfMetalization() const;
+		%feature("autodoc", "1");
+		Standard_Integer CorneringCode() const;
+		%feature("autodoc", "1");
+		Standard_Integer ExtensionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer JustificationFlag() const;
+		%feature("autodoc", "1");
+		Standard_Real ExtensionValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESAppli_LineWidening {
+	Handle_IGESAppli_LineWidening GetHandle() {
+	return *(Handle_IGESAppli_LineWidening*) &$self;
+	}
+};
+%extend IGESAppli_LineWidening {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESAppli_LineWidening {
+	~IGESAppli_LineWidening() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_LineWidening\n");}
 	}
 };
 
@@ -1995,37 +2067,6 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 	~IGESAppli_NodalConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_NodalConstraint\n");}
-	}
-};
-
-
-%nodefaultctor IGESAppli_ToolLevelFunction;
-class IGESAppli_ToolLevelFunction {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_ToolLevelFunction();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESAppli_LevelFunction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESAppli_LevelFunction &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESAppli_LevelFunction &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESAppli_LevelFunction &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelFunction &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESAppli_LevelFunction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESAppli_LevelFunction &entfrom, const Handle_IGESAppli_LevelFunction &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESAppli_ToolLevelFunction {
-	~IGESAppli_ToolLevelFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");}
 	}
 };
 
@@ -2437,47 +2478,6 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 	~IGESAppli_PartNumber() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_PartNumber\n");}
-	}
-};
-
-
-%nodefaultctor IGESAppli_LineWidening;
-class IGESAppli_LineWidening : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_LineWidening();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const Standard_Real aWidth, const Standard_Integer aCornering, const Standard_Integer aExtnFlag, const Standard_Integer aJustifFlag, const Standard_Real aExtnVal);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Real WidthOfMetalization() const;
-		%feature("autodoc", "1");
-		Standard_Integer CorneringCode() const;
-		%feature("autodoc", "1");
-		Standard_Integer ExtensionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer JustificationFlag() const;
-		%feature("autodoc", "1");
-		Standard_Real ExtensionValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESAppli_LineWidening {
-	Handle_IGESAppli_LineWidening GetHandle() {
-	return *(Handle_IGESAppli_LineWidening*) &$self;
-	}
-};
-%extend IGESAppli_LineWidening {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESAppli_LineWidening {
-	~IGESAppli_LineWidening() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_LineWidening\n");}
 	}
 };
 

@@ -1,0 +1,12 @@
+%rename(Writer) IGESControl_Writer;
+%rename(Handle_ActorWrite) Handle_IGESControl_ActorWrite;
+%rename(Handle_ToolContainer) Handle_IGESControl_ToolContainer;
+%rename(Reader) IGESControl_Reader;
+%rename(Controller) IGESControl_Controller;
+%rename(ActorWrite) IGESControl_ActorWrite;
+%rename(ToolContainer) IGESControl_ToolContainer;
+%rename(AlgoContainer) IGESControl_AlgoContainer;
+%rename(Handle_IGESBoundary) Handle_IGESControl_IGESBoundary;
+%rename(Handle_Controller) Handle_IGESControl_Controller;
+%rename(Handle_AlgoContainer) Handle_IGESControl_AlgoContainer;
+%rename(IGESBoundary) IGESControl_IGESBoundary;

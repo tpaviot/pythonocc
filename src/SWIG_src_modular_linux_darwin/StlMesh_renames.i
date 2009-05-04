@@ -1,0 +1,17 @@
+%rename(Handle_Mesh) Handle_StlMesh_Mesh;
+%rename(MeshExplorer) StlMesh_MeshExplorer;
+%rename(SequenceNodeOfSequenceOfMesh) StlMesh_SequenceNodeOfSequenceOfMesh;
+%rename(Handle_SequenceNodeOfSequenceOfMesh) Handle_StlMesh_SequenceNodeOfSequenceOfMesh;
+%rename(Handle_MeshDomain) Handle_StlMesh_MeshDomain;
+%rename(Handle_MeshTriangle) Handle_StlMesh_MeshTriangle;
+%rename(SequenceNodeOfSequenceOfMeshDomain) StlMesh_SequenceNodeOfSequenceOfMeshDomain;
+%rename(MeshTriangle) StlMesh_MeshTriangle;
+%rename(SequenceNodeOfSequenceOfMeshTriangle) StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
+%rename(SequenceOfMeshDomain) StlMesh_SequenceOfMeshDomain;
+%rename(MeshDomain) StlMesh_MeshDomain;
+%rename(Mesh) StlMesh_Mesh;
+%rename(StlMesh) StlMesh;
+%rename(SequenceOfMeshTriangle) StlMesh_SequenceOfMeshTriangle;
+%rename(SequenceOfMesh) StlMesh_SequenceOfMesh;
+%rename(Handle_SequenceNodeOfSequenceOfMeshDomain) Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
+%rename(Handle_SequenceNodeOfSequenceOfMeshTriangle) Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle;

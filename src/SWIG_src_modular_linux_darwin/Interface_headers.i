@@ -143,8 +143,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TCollection_AsciiString.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>

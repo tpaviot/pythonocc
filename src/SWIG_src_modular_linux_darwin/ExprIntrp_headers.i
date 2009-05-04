@@ -69,8 +69,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Expr_NamedExpression.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Standard_SStream.hxx>
-#include<Handle_Expr_GeneralFunction.hxx>
-#include<ExprIntrp.hxx>
 #include<Handle_Expr_GeneralRelation.hxx>
+#include<Handle_Expr_GeneralFunction.hxx>
 #include<Handle_Expr_GeneralExpression.hxx>
 %}

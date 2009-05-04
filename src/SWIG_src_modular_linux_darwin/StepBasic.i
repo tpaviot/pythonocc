@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StepBasic
 
+%include StepBasic_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -306,32 +308,6 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 };
 
 
-%nodefaultctor Handle_StepBasic_Document;
-class Handle_StepBasic_Document : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document();
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document(const Handle_StepBasic_Document &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document(const StepBasic_Document *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_Document {
-	StepBasic_Document* GetObject() {
-	return (StepBasic_Document*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_Document {
-	~Handle_StepBasic_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Document\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_NamedUnit;
 class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	public:
@@ -406,6 +382,32 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 	~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_CertificationAssignment;
+class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment();
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment(const Handle_StepBasic_CertificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment(const StepBasic_CertificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_CertificationAssignment {
+	StepBasic_CertificationAssignment* GetObject() {
+	return (StepBasic_CertificationAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_CertificationAssignment {
+	~Handle_StepBasic_CertificationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");}
 	}
 };
 
@@ -592,32 +594,6 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 };
 
 
-%nodefaultctor Handle_StepBasic_ActionRequestAssignment;
-class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionRequestAssignment();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionRequestAssignment(const Handle_StepBasic_ActionRequestAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionRequestAssignment(const StepBasic_ActionRequestAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionRequestAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ActionRequestAssignment {
-	StepBasic_ActionRequestAssignment* GetObject() {
-	return (StepBasic_ActionRequestAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_ActionRequestAssignment {
-	~Handle_StepBasic_ActionRequestAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_IdentificationAssignment;
 class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	public:
@@ -666,6 +642,58 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 	~Handle_StepBasic_ExternalIdentificationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalIdentificationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_Effectivity;
+class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity();
+		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity(const Handle_StepBasic_Effectivity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity(const StepBasic_Effectivity *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_Effectivity {
+	StepBasic_Effectivity* GetObject() {
+	return (StepBasic_Effectivity*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_Effectivity {
+	~Handle_StepBasic_Effectivity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Effectivity\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_ProductDefinitionEffectivity;
+class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Effectivity {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity(const Handle_StepBasic_ProductDefinitionEffectivity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity(const StepBasic_ProductDefinitionEffectivity *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ProductDefinitionEffectivity {
+	StepBasic_ProductDefinitionEffectivity* GetObject() {
+	return (StepBasic_ProductDefinitionEffectivity*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_ProductDefinitionEffectivity {
+	~Handle_StepBasic_ProductDefinitionEffectivity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");}
 	}
 };
 
@@ -1008,6 +1036,58 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepBasic_Document;
+class Handle_StepBasic_Document : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document();
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document(const Handle_StepBasic_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document(const StepBasic_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_Document {
+	StepBasic_Document* GetObject() {
+	return (StepBasic_Document*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_Document {
+	~Handle_StepBasic_Document() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Document\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_ApprovalDateTime;
+class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime(const Handle_StepBasic_ApprovalDateTime &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime(const StepBasic_ApprovalDateTime *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ApprovalDateTime {
+	StepBasic_ApprovalDateTime* GetObject() {
+	return (StepBasic_ApprovalDateTime*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_ApprovalDateTime {
+	~Handle_StepBasic_ApprovalDateTime() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnit;
 class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -1342,32 +1422,6 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 	~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_RatioUnit;
-class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit(const Handle_StepBasic_RatioUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit(const StepBasic_RatioUnit *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_RatioUnit {
-	StepBasic_RatioUnit* GetObject() {
-	return (StepBasic_RatioUnit*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_RatioUnit {
-	~Handle_StepBasic_RatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");}
 	}
 };
 
@@ -1788,32 +1842,6 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepBasic_CertificationAssignment;
-class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment(const Handle_StepBasic_CertificationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment(const StepBasic_CertificationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_CertificationAssignment {
-	StepBasic_CertificationAssignment* GetObject() {
-	return (StepBasic_CertificationAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_CertificationAssignment {
-	~Handle_StepBasic_CertificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_SiUnitAndRatioUnit;
 class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -1862,6 +1890,32 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 	~Handle_StepBasic_HArray1OfProduct() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProduct\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_RatioUnit;
+class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit(const Handle_StepBasic_RatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit(const StepBasic_RatioUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_RatioUnit {
+	StepBasic_RatioUnit* GetObject() {
+	return (StepBasic_RatioUnit*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_RatioUnit {
+	~Handle_StepBasic_RatioUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");}
 	}
 };
 
@@ -2230,6 +2284,32 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 };
 
 
+%nodefaultctor Handle_StepBasic_OrganizationRole;
+class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole();
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole(const Handle_StepBasic_OrganizationRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole(const StepBasic_OrganizationRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_OrganizationRole {
+	StepBasic_OrganizationRole* GetObject() {
+	return (StepBasic_OrganizationRole*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_OrganizationRole {
+	~Handle_StepBasic_OrganizationRole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_DateAndTime;
 class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	public:
@@ -2282,6 +2362,32 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 };
 
 
+%nodefaultctor Handle_StepBasic_LocalTime;
+class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime();
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime(const Handle_StepBasic_LocalTime &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime(const StepBasic_LocalTime *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_LocalTime {
+	StepBasic_LocalTime* GetObject() {
+	return (StepBasic_LocalTime*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_LocalTime {
+	~Handle_StepBasic_LocalTime() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LocalTime\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_LengthUnit;
 class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -2330,58 +2436,6 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	~Handle_StepBasic_DateAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAssignment\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_Effectivity;
-class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_Effectivity();
-		%feature("autodoc", "1");
-		Handle_StepBasic_Effectivity(const Handle_StepBasic_Effectivity &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Effectivity(const StepBasic_Effectivity *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Effectivity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_Effectivity {
-	StepBasic_Effectivity* GetObject() {
-	return (StepBasic_Effectivity*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_Effectivity {
-	~Handle_StepBasic_Effectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Effectivity\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_PlaneAngleUnit;
-class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_PlaneAngleUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_PlaneAngleUnit(const Handle_StepBasic_PlaneAngleUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_PlaneAngleUnit(const StepBasic_PlaneAngleUnit *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_PlaneAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_PlaneAngleUnit {
-	StepBasic_PlaneAngleUnit* GetObject() {
-	return (StepBasic_PlaneAngleUnit*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_PlaneAngleUnit {
-	~Handle_StepBasic_PlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");}
 	}
 };
 
@@ -2464,28 +2518,28 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 };
 
 
-%nodefaultctor Handle_StepBasic_CharacterizedObject;
-class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepBasic_ApprovalPersonOrganization;
+class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepBasic_CharacterizedObject();
+		Handle_StepBasic_ApprovalPersonOrganization();
 		%feature("autodoc", "1");
-		Handle_StepBasic_CharacterizedObject(const Handle_StepBasic_CharacterizedObject &aHandle);
+		Handle_StepBasic_ApprovalPersonOrganization(const Handle_StepBasic_ApprovalPersonOrganization &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepBasic_CharacterizedObject(const StepBasic_CharacterizedObject *anItem);
+		Handle_StepBasic_ApprovalPersonOrganization(const StepBasic_ApprovalPersonOrganization *anItem);
 		%feature("autodoc", "1");
-		Handle_StepBasic_CharacterizedObject const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepBasic_ApprovalPersonOrganization const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepBasic_CharacterizedObject {
-	StepBasic_CharacterizedObject* GetObject() {
-	return (StepBasic_CharacterizedObject*)$self->Access();
+%extend Handle_StepBasic_ApprovalPersonOrganization {
+	StepBasic_ApprovalPersonOrganization* GetObject() {
+	return (StepBasic_ApprovalPersonOrganization*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CharacterizedObject {
-	~Handle_StepBasic_CharacterizedObject() {
+%extend Handle_StepBasic_ApprovalPersonOrganization {
+	~Handle_StepBasic_ApprovalPersonOrganization() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");}
 	}
 };
 
@@ -2512,32 +2566,6 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 	~Handle_StepBasic_ConversionBasedUnitAndLengthUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_OrganizationRole;
-class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_OrganizationRole();
-		%feature("autodoc", "1");
-		Handle_StepBasic_OrganizationRole(const Handle_StepBasic_OrganizationRole &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_OrganizationRole(const StepBasic_OrganizationRole *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_OrganizationRole const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_OrganizationRole {
-	StepBasic_OrganizationRole* GetObject() {
-	return (StepBasic_OrganizationRole*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_OrganizationRole {
-	~Handle_StepBasic_OrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");}
 	}
 };
 
@@ -2698,32 +2726,6 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepBasic_ProductDefinitionEffectivity;
-class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Effectivity {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionEffectivity();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionEffectivity(const Handle_StepBasic_ProductDefinitionEffectivity &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionEffectivity(const StepBasic_ProductDefinitionEffectivity *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionEffectivity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ProductDefinitionEffectivity {
-	StepBasic_ProductDefinitionEffectivity* GetObject() {
-	return (StepBasic_ProductDefinitionEffectivity*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_ProductDefinitionEffectivity {
-	~Handle_StepBasic_ProductDefinitionEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_ProductConceptContext;
 class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_ApplicationContextElement {
 	public:
@@ -2746,32 +2748,6 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 	~Handle_StepBasic_ProductConceptContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductConceptContext\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_Certification;
-class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_Certification();
-		%feature("autodoc", "1");
-		Handle_StepBasic_Certification(const Handle_StepBasic_Certification &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Certification(const StepBasic_Certification *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Certification const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_Certification {
-	StepBasic_Certification* GetObject() {
-	return (StepBasic_Certification*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_Certification {
-	~Handle_StepBasic_Certification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Certification\n");}
 	}
 };
 
@@ -3036,6 +3012,58 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 };
 
 
+%nodefaultctor Handle_StepBasic_Certification;
+class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification();
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification(const Handle_StepBasic_Certification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification(const StepBasic_Certification *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_Certification {
+	StepBasic_Certification* GetObject() {
+	return (StepBasic_Certification*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_Certification {
+	~Handle_StepBasic_Certification() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Certification\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_EulerAngles;
+class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles();
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles(const Handle_StepBasic_EulerAngles &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles(const StepBasic_EulerAngles *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_EulerAngles {
+	StepBasic_EulerAngles* GetObject() {
+	return (StepBasic_EulerAngles*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_EulerAngles {
+	~Handle_StepBasic_EulerAngles() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_SiUnitAndMassUnit;
 class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -3062,28 +3090,28 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 };
 
 
-%nodefaultctor Handle_StepBasic_UncertaintyMeasureWithUnit;
-class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
+%nodefaultctor Handle_StepBasic_CharacterizedObject;
+class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit();
+		Handle_StepBasic_CharacterizedObject();
 		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit(const Handle_StepBasic_UncertaintyMeasureWithUnit &aHandle);
+		Handle_StepBasic_CharacterizedObject(const Handle_StepBasic_CharacterizedObject &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit(const StepBasic_UncertaintyMeasureWithUnit *anItem);
+		Handle_StepBasic_CharacterizedObject(const StepBasic_CharacterizedObject *anItem);
 		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepBasic_CharacterizedObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
-	StepBasic_UncertaintyMeasureWithUnit* GetObject() {
-	return (StepBasic_UncertaintyMeasureWithUnit*)$self->Access();
+%extend Handle_StepBasic_CharacterizedObject {
+	StepBasic_CharacterizedObject* GetObject() {
+	return (StepBasic_CharacterizedObject*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
-	~Handle_StepBasic_UncertaintyMeasureWithUnit() {
+%extend Handle_StepBasic_CharacterizedObject {
+	~Handle_StepBasic_CharacterizedObject() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");}
 	}
 };
 
@@ -3136,6 +3164,32 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	~Handle_StepBasic_ContractAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_UncertaintyMeasureWithUnit;
+class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit(const Handle_StepBasic_UncertaintyMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit(const StepBasic_UncertaintyMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
+	StepBasic_UncertaintyMeasureWithUnit* GetObject() {
+	return (StepBasic_UncertaintyMeasureWithUnit*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
+	~Handle_StepBasic_UncertaintyMeasureWithUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -3270,6 +3324,32 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepBasic_ActionRequestAssignment;
+class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment(const Handle_StepBasic_ActionRequestAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment(const StepBasic_ActionRequestAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ActionRequestAssignment {
+	StepBasic_ActionRequestAssignment* GetObject() {
+	return (StepBasic_ActionRequestAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_ActionRequestAssignment {
+	~Handle_StepBasic_ActionRequestAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_VolumeUnit;
 class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -3322,32 +3402,6 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 };
 
 
-%nodefaultctor Handle_StepBasic_EulerAngles;
-class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_EulerAngles();
-		%feature("autodoc", "1");
-		Handle_StepBasic_EulerAngles(const Handle_StepBasic_EulerAngles &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_EulerAngles(const StepBasic_EulerAngles *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_EulerAngles const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_EulerAngles {
-	StepBasic_EulerAngles* GetObject() {
-	return (StepBasic_EulerAngles*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_EulerAngles {
-	~Handle_StepBasic_EulerAngles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_DocumentFile;
 class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	public:
@@ -3370,32 +3424,6 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	~Handle_StepBasic_DocumentFile() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentFile\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_LocalTime;
-class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_LocalTime();
-		%feature("autodoc", "1");
-		Handle_StepBasic_LocalTime(const Handle_StepBasic_LocalTime &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_LocalTime(const StepBasic_LocalTime *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_LocalTime const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_LocalTime {
-	StepBasic_LocalTime* GetObject() {
-	return (StepBasic_LocalTime*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_LocalTime {
-	~Handle_StepBasic_LocalTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LocalTime\n");}
 	}
 };
 
@@ -3478,6 +3506,32 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 };
 
 
+%nodefaultctor Handle_StepBasic_PlaneAngleUnit;
+class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit(const Handle_StepBasic_PlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit(const StepBasic_PlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_PlaneAngleUnit {
+	StepBasic_PlaneAngleUnit* GetObject() {
+	return (StepBasic_PlaneAngleUnit*)$self->Access();
+	}
+};
+%extend Handle_StepBasic_PlaneAngleUnit {
+	~Handle_StepBasic_PlaneAngleUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_Action;
 class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	public:
@@ -3556,32 +3610,6 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 };
 
 
-%nodefaultctor Handle_StepBasic_ApprovalDateTime;
-class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalDateTime();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalDateTime(const Handle_StepBasic_ApprovalDateTime &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalDateTime(const StepBasic_ApprovalDateTime *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalDateTime const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ApprovalDateTime {
-	StepBasic_ApprovalDateTime* GetObject() {
-	return (StepBasic_ApprovalDateTime*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_ApprovalDateTime {
-	~Handle_StepBasic_ApprovalDateTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_DimensionalExponents;
 class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	public:
@@ -3604,32 +3632,6 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	~Handle_StepBasic_DimensionalExponents() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_ApprovalPersonOrganization;
-class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization(const Handle_StepBasic_ApprovalPersonOrganization &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization(const StepBasic_ApprovalPersonOrganization *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ApprovalPersonOrganization {
-	StepBasic_ApprovalPersonOrganization* GetObject() {
-	return (StepBasic_ApprovalPersonOrganization*)$self->Access();
-	}
-};
-%extend Handle_StepBasic_ApprovalPersonOrganization {
-	~Handle_StepBasic_ApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");}
 	}
 };
 
@@ -3901,35 +3903,84 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_SecurityClassificationLevel;
-class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
+%nodefaultctor StepBasic_HArray1OfProductContext;
+class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_SecurityClassificationLevel();
+		StepBasic_HArray1OfProductContext(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		StepBasic_HArray1OfProductContext(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_ProductContext &V);
 		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
+		void Init(const Handle_StepBasic_ProductContext &V);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_ProductContext &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_ProductContext & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductContext & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfProductContext & Array1() const;
+		%feature("autodoc", "1");
+		StepBasic_Array1OfProductContext & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_SecurityClassificationLevel {
-	Handle_StepBasic_SecurityClassificationLevel GetHandle() {
-	return *(Handle_StepBasic_SecurityClassificationLevel*) &$self;
+%extend StepBasic_HArray1OfProductContext {
+	Handle_StepBasic_HArray1OfProductContext GetHandle() {
+	return *(Handle_StepBasic_HArray1OfProductContext*) &$self;
 	}
 };
-%extend StepBasic_SecurityClassificationLevel {
+%extend StepBasic_HArray1OfProductContext {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SecurityClassificationLevel {
-	~StepBasic_SecurityClassificationLevel() {
+%extend StepBasic_HArray1OfProductContext {
+	~StepBasic_HArray1OfProductContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_DateAndTimeAssignment;
+class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
+		%feature("autodoc", "1");
+		void SetAssignedDateAndTime(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateAndTime AssignedDateAndTime() const;
+		%feature("autodoc", "1");
+		void SetRole(const Handle_StepBasic_DateTimeRole &aRole);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateTimeRole Role() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_DateAndTimeAssignment {
+	Handle_StepBasic_DateAndTimeAssignment GetHandle() {
+	return *(Handle_StepBasic_DateAndTimeAssignment*) &$self;
+	}
+};
+%extend StepBasic_DateAndTimeAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_DateAndTimeAssignment {
+	~StepBasic_DateAndTimeAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");}
 	}
 };
 
@@ -3973,43 +4024,6 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 	~StepBasic_GeneralProperty() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_GeneralProperty\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_DateAndTimeAssignment;
-class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_DateAndTimeAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
-		%feature("autodoc", "1");
-		void SetAssignedDateAndTime(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime);
-		%feature("autodoc", "1");
-		Handle_StepBasic_DateAndTime AssignedDateAndTime() const;
-		%feature("autodoc", "1");
-		void SetRole(const Handle_StepBasic_DateTimeRole &aRole);
-		%feature("autodoc", "1");
-		Handle_StepBasic_DateTimeRole Role() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_DateAndTimeAssignment {
-	Handle_StepBasic_DateAndTimeAssignment GetHandle() {
-	return *(Handle_StepBasic_DateAndTimeAssignment*) &$self;
-	}
-};
-%extend StepBasic_DateAndTimeAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_DateAndTimeAssignment {
-	~StepBasic_DateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");}
 	}
 };
 
@@ -4393,53 +4407,6 @@ class StepBasic_DateRole : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_HArray1OfOrganization;
-class StepBasic_HArray1OfOrganization : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfOrganization(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfOrganization(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_Organization &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Organization &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Organization &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_Organization & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Organization & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfOrganization & Array1() const;
-		%feature("autodoc", "1");
-		StepBasic_Array1OfOrganization & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_HArray1OfOrganization {
-	Handle_StepBasic_HArray1OfOrganization GetHandle() {
-	return *(Handle_StepBasic_HArray1OfOrganization*) &$self;
-	}
-};
-%extend StepBasic_HArray1OfOrganization {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_HArray1OfOrganization {
-	~StepBasic_HArray1OfOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_DateTimeSelect;
 class StepBasic_DateTimeSelect : public StepData_SelectType {
 	public:
@@ -4498,53 +4465,6 @@ class StepBasic_RoleSelect : public StepData_SelectType {
 	~StepBasic_RoleSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_RoleSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_VersionedActionRequest;
-class StepBasic_VersionedActionRequest : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_VersionedActionRequest();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aVersion, const Handle_TCollection_HAsciiString &aPurpose, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Id() const;
-		%feature("autodoc", "1");
-		void SetId(const Handle_TCollection_HAsciiString &Id);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Version() const;
-		%feature("autodoc", "1");
-		void SetVersion(const Handle_TCollection_HAsciiString &Version);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Purpose() const;
-		%feature("autodoc", "1");
-		void SetPurpose(const Handle_TCollection_HAsciiString &Purpose);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_VersionedActionRequest {
-	Handle_StepBasic_VersionedActionRequest GetHandle() {
-	return *(Handle_StepBasic_VersionedActionRequest*) &$self;
-	}
-};
-%extend StepBasic_VersionedActionRequest {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_VersionedActionRequest {
-	~StepBasic_VersionedActionRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_VersionedActionRequest\n");}
 	}
 };
 
@@ -4613,6 +4533,39 @@ class StepBasic_Array1OfProductDefinition {
 	~StepBasic_Array1OfProductDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProductDefinition\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_SecurityClassificationLevel;
+class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_SecurityClassificationLevel();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_SecurityClassificationLevel {
+	Handle_StepBasic_SecurityClassificationLevel GetHandle() {
+	return *(Handle_StepBasic_SecurityClassificationLevel*) &$self;
+	}
+};
+%extend StepBasic_SecurityClassificationLevel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_SecurityClassificationLevel {
+	~StepBasic_SecurityClassificationLevel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");}
 	}
 };
 
@@ -4963,48 +4916,15 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 };
 
 
-%nodefaultctor StepBasic_AreaUnit;
-class StepBasic_AreaUnit : public StepBasic_NamedUnit {
+%nodefaultctor StepBasic_HArray1OfProduct;
+class StepBasic_HArray1OfProduct : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_AreaUnit();
+		StepBasic_HArray1OfProduct(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_AreaUnit {
-	Handle_StepBasic_AreaUnit GetHandle() {
-	return *(Handle_StepBasic_AreaUnit*) &$self;
-	}
-};
-%extend StepBasic_AreaUnit {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_AreaUnit {
-	~StepBasic_AreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_AreaUnit\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_Array1OfApproval;
-class StepBasic_Array1OfApproval {
-	public:
+		StepBasic_HArray1OfProduct(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_Product &V);
 		%feature("autodoc", "1");
-		StepBasic_Array1OfApproval(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_Array1OfApproval(const Handle_StepBasic_Approval &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Approval &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfApproval & Assign(const StepBasic_Array1OfApproval &Other);
+		void Init(const Handle_StepBasic_Product &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5012,68 +4932,68 @@ class StepBasic_Array1OfApproval {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Approval &Value);
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Product &Value);
 		%feature("autodoc", "1");
-		const Handle_StepBasic_Approval & Value(const Standard_Integer Index) const;
+		const Handle_StepBasic_Product & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const Handle_StepBasic_Approval & operator()(const Standard_Integer Index) const;
+		Handle_StepBasic_Product & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_StepBasic_Approval & ChangeValue(const Standard_Integer Index);
+		const StepBasic_Array1OfProduct & Array1() const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_Approval & operator()(const Standard_Integer Index);
-
-};
-%extend StepBasic_Array1OfApproval {
-	~StepBasic_Array1OfApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfApproval\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_HArray1OfProductContext;
-class StepBasic_HArray1OfProductContext : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfProductContext(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfProductContext(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_ProductContext &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_ProductContext &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_ProductContext &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_ProductContext & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductContext & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfProductContext & Array1() const;
-		%feature("autodoc", "1");
-		StepBasic_Array1OfProductContext & ChangeArray1();
+		StepBasic_Array1OfProduct & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_HArray1OfProductContext {
-	Handle_StepBasic_HArray1OfProductContext GetHandle() {
-	return *(Handle_StepBasic_HArray1OfProductContext*) &$self;
+%extend StepBasic_HArray1OfProduct {
+	Handle_StepBasic_HArray1OfProduct GetHandle() {
+	return *(Handle_StepBasic_HArray1OfProduct*) &$self;
 	}
 };
-%extend StepBasic_HArray1OfProductContext {
+%extend StepBasic_HArray1OfProduct {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfProductContext {
-	~StepBasic_HArray1OfProductContext() {
+%extend StepBasic_HArray1OfProduct {
+	~StepBasic_HArray1OfProduct() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProduct\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_SiUnitAndMassUnit;
+class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_SiUnitAndMassUnit();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_DimensionalExponents &aDimensions);
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Boolean hasAprefix, const StepBasic_SiPrefix aPrefix, const StepBasic_SiUnitName aName);
+		%feature("autodoc", "1");
+		void SetMassUnit(const Handle_StepBasic_MassUnit &aMassUnit);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MassUnit MassUnit() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_SiUnitAndMassUnit {
+	Handle_StepBasic_SiUnitAndMassUnit GetHandle() {
+	return *(Handle_StepBasic_SiUnitAndMassUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndMassUnit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_SiUnitAndMassUnit {
+	~StepBasic_SiUnitAndMassUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");}
 	}
 };
 
@@ -5361,35 +5281,80 @@ class StepBasic_Organization : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_ApplicationContext;
-class StepBasic_ApplicationContext : public MMgt_TShared {
+%nodefaultctor StepBasic_DateAndTime;
+class StepBasic_DateAndTime : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_ApplicationContext();
+		StepBasic_DateAndTime();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aApplication);
+		virtual		void Init(const Handle_StepBasic_Date &aDateComponent, const Handle_StepBasic_LocalTime &aTimeComponent);
 		%feature("autodoc", "1");
-		void SetApplication(const Handle_TCollection_HAsciiString &aApplication);
+		void SetDateComponent(const Handle_StepBasic_Date &aDateComponent);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Application() const;
+		Handle_StepBasic_Date DateComponent() const;
+		%feature("autodoc", "1");
+		void SetTimeComponent(const Handle_StepBasic_LocalTime &aTimeComponent);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime TimeComponent() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_ApplicationContext {
-	Handle_StepBasic_ApplicationContext GetHandle() {
-	return *(Handle_StepBasic_ApplicationContext*) &$self;
+%extend StepBasic_DateAndTime {
+	Handle_StepBasic_DateAndTime GetHandle() {
+	return *(Handle_StepBasic_DateAndTime*) &$self;
 	}
 };
-%extend StepBasic_ApplicationContext {
+%extend StepBasic_DateAndTime {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApplicationContext {
-	~StepBasic_ApplicationContext() {
+%extend StepBasic_DateAndTime {
+	~StepBasic_DateAndTime() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContext\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTime\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_Array1OfApproval;
+class StepBasic_Array1OfApproval {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_Array1OfApproval(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepBasic_Array1OfApproval(const Handle_StepBasic_Approval &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Approval &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfApproval & Assign(const StepBasic_Array1OfApproval &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Approval &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_Approval & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepBasic_Approval & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval & operator()(const Standard_Integer Index);
+
+};
+%extend StepBasic_Array1OfApproval {
+	~StepBasic_Array1OfApproval() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfApproval\n");}
 	}
 };
 
@@ -5425,6 +5390,82 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 	~StepBasic_ConversionBasedUnitAndTimeUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_Array1OfDerivedUnitElement;
+class StepBasic_Array1OfDerivedUnitElement {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_Array1OfDerivedUnitElement(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepBasic_Array1OfDerivedUnitElement(const Handle_StepBasic_DerivedUnitElement &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_DerivedUnitElement &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfDerivedUnitElement & Assign(const StepBasic_Array1OfDerivedUnitElement &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_DerivedUnitElement &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_DerivedUnitElement & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnitElement & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index);
+
+};
+%extend StepBasic_Array1OfDerivedUnitElement {
+	~StepBasic_Array1OfDerivedUnitElement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_SiUnitAndLengthUnit;
+class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_SiUnitAndLengthUnit();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_DimensionalExponents &aDimensions);
+		%feature("autodoc", "1");
+		virtual		void Init(const Standard_Boolean hasAprefix, const StepBasic_SiPrefix aPrefix, const StepBasic_SiUnitName aName);
+		%feature("autodoc", "1");
+		void SetLengthUnit(const Handle_StepBasic_LengthUnit &aLengthUnit);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LengthUnit LengthUnit() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_SiUnitAndLengthUnit {
+	Handle_StepBasic_SiUnitAndLengthUnit GetHandle() {
+	return *(Handle_StepBasic_SiUnitAndLengthUnit*) &$self;
+	}
+};
+%extend StepBasic_SiUnitAndLengthUnit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_SiUnitAndLengthUnit {
+	~StepBasic_SiUnitAndLengthUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");}
 	}
 };
 
@@ -5505,6 +5546,53 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 };
 
 
+%nodefaultctor StepBasic_DocumentProductAssociation;
+class StepBasic_DocumentProductAssociation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_DocumentProductAssociation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_Document &aRelatingDocument, const StepBasic_ProductOrFormationOrDefinition &aRelatedProduct);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document RelatingDocument() const;
+		%feature("autodoc", "1");
+		void SetRelatingDocument(const Handle_StepBasic_Document &RelatingDocument);
+		%feature("autodoc", "1");
+		StepBasic_ProductOrFormationOrDefinition RelatedProduct() const;
+		%feature("autodoc", "1");
+		void SetRelatedProduct(const StepBasic_ProductOrFormationOrDefinition &RelatedProduct);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_DocumentProductAssociation {
+	Handle_StepBasic_DocumentProductAssociation GetHandle() {
+	return *(Handle_StepBasic_DocumentProductAssociation*) &$self;
+	}
+};
+%extend StepBasic_DocumentProductAssociation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_DocumentProductAssociation {
+	~StepBasic_DocumentProductAssociation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_ProductType;
 class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 	public:
@@ -5532,39 +5620,35 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 };
 
 
-%nodefaultctor StepBasic_DateAndTime;
-class StepBasic_DateAndTime : public MMgt_TShared {
+%nodefaultctor StepBasic_MeasureValueMember;
+class StepBasic_MeasureValueMember : public StepData_SelectReal {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_DateAndTime();
+		StepBasic_MeasureValueMember();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Date &aDateComponent, const Handle_StepBasic_LocalTime &aTimeComponent);
+		virtual		Standard_Boolean HasName() const;
 		%feature("autodoc", "1");
-		void SetDateComponent(const Handle_StepBasic_Date &aDateComponent);
+		virtual		Standard_CString Name() const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_Date DateComponent() const;
-		%feature("autodoc", "1");
-		void SetTimeComponent(const Handle_StepBasic_LocalTime &aTimeComponent);
-		%feature("autodoc", "1");
-		Handle_StepBasic_LocalTime TimeComponent() const;
+		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_DateAndTime {
-	Handle_StepBasic_DateAndTime GetHandle() {
-	return *(Handle_StepBasic_DateAndTime*) &$self;
+%extend StepBasic_MeasureValueMember {
+	Handle_StepBasic_MeasureValueMember GetHandle() {
+	return *(Handle_StepBasic_MeasureValueMember*) &$self;
 	}
 };
-%extend StepBasic_DateAndTime {
+%extend StepBasic_MeasureValueMember {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateAndTime {
-	~StepBasic_DateAndTime() {
+%extend StepBasic_MeasureValueMember {
+	~StepBasic_MeasureValueMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTime\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureValueMember\n");}
 	}
 };
 
@@ -5631,6 +5715,53 @@ class StepBasic_Effectivity : public MMgt_TShared {
 	~StepBasic_Effectivity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Effectivity\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_HArray1OfOrganization;
+class StepBasic_HArray1OfOrganization : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_HArray1OfOrganization(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepBasic_HArray1OfOrganization(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_Organization &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Organization &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Organization &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_Organization & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Organization & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfOrganization & Array1() const;
+		%feature("autodoc", "1");
+		StepBasic_Array1OfOrganization & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_HArray1OfOrganization {
+	Handle_StepBasic_HArray1OfOrganization GetHandle() {
+	return *(Handle_StepBasic_HArray1OfOrganization*) &$self;
+	}
+};
+%extend StepBasic_HArray1OfOrganization {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_HArray1OfOrganization {
+	~StepBasic_HArray1OfOrganization() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");}
 	}
 };
 
@@ -5736,39 +5867,6 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 	~StepBasic_ActionAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionAssignment\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_OrganizationRole;
-class StepBasic_OrganizationRole : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_OrganizationRole();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_OrganizationRole {
-	Handle_StepBasic_OrganizationRole GetHandle() {
-	return *(Handle_StepBasic_OrganizationRole*) &$self;
-	}
-};
-%extend StepBasic_OrganizationRole {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_OrganizationRole {
-	~StepBasic_OrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationRole\n");}
 	}
 };
 
@@ -5905,6 +6003,31 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepBasic_SizeSelect;
+class StepBasic_SizeSelect : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_SizeSelect();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_SelectMember NewMember() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
+		%feature("autodoc", "1");
+		void SetRealValue(const Standard_Real aReal);
+		%feature("autodoc", "1");
+		Standard_Real RealValue() const;
+
+};
+%extend StepBasic_SizeSelect {
+	~StepBasic_SizeSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_SizeSelect\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_ApprovalStatus;
 class StepBasic_ApprovalStatus : public MMgt_TShared {
 	public:
@@ -6018,41 +6141,6 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 
 
-%nodefaultctor StepBasic_SiUnitAndMassUnit;
-class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_SiUnitAndMassUnit();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DimensionalExponents &aDimensions);
-		%feature("autodoc", "1");
-		virtual		void Init(const Standard_Boolean hasAprefix, const StepBasic_SiPrefix aPrefix, const StepBasic_SiUnitName aName);
-		%feature("autodoc", "1");
-		void SetMassUnit(const Handle_StepBasic_MassUnit &aMassUnit);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MassUnit MassUnit() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_SiUnitAndMassUnit {
-	Handle_StepBasic_SiUnitAndMassUnit GetHandle() {
-	return *(Handle_StepBasic_SiUnitAndMassUnit*) &$self;
-	}
-};
-%extend StepBasic_SiUnitAndMassUnit {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_SiUnitAndMassUnit {
-	~StepBasic_SiUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_PersonalAddress;
 class StepBasic_PersonalAddress : public StepBasic_Address {
 	public:
@@ -6125,39 +6213,6 @@ class StepBasic_CertificationType : public MMgt_TShared {
 	~StepBasic_CertificationType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationType\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_MeasureValueMember;
-class StepBasic_MeasureValueMember : public StepData_SelectReal {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_MeasureValueMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_MeasureValueMember {
-	Handle_StepBasic_MeasureValueMember GetHandle() {
-	return *(Handle_StepBasic_MeasureValueMember*) &$self;
-	}
-};
-%extend StepBasic_MeasureValueMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_MeasureValueMember {
-	~StepBasic_MeasureValueMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureValueMember\n");}
 	}
 };
 
@@ -6293,51 +6348,6 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 };
 
 
-%nodefaultctor StepBasic_CoordinatedUniversalTimeOffset;
-class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_CoordinatedUniversalTimeOffset();
-		%feature("autodoc", "1");
-		virtual		void Init(const Standard_Integer aHourOffset, const Standard_Boolean hasAminuteOffset, const Standard_Integer aMinuteOffset, const StepBasic_AheadOrBehind aSense);
-		%feature("autodoc", "1");
-		void SetHourOffset(const Standard_Integer aHourOffset);
-		%feature("autodoc", "1");
-		Standard_Integer HourOffset() const;
-		%feature("autodoc", "1");
-		void SetMinuteOffset(const Standard_Integer aMinuteOffset);
-		%feature("autodoc", "1");
-		void UnSetMinuteOffset();
-		%feature("autodoc", "1");
-		Standard_Integer MinuteOffset() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasMinuteOffset() const;
-		%feature("autodoc", "1");
-		void SetSense(const StepBasic_AheadOrBehind aSense);
-		%feature("autodoc", "1");
-		StepBasic_AheadOrBehind Sense() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_CoordinatedUniversalTimeOffset {
-	Handle_StepBasic_CoordinatedUniversalTimeOffset GetHandle() {
-	return *(Handle_StepBasic_CoordinatedUniversalTimeOffset*) &$self;
-	}
-};
-%extend StepBasic_CoordinatedUniversalTimeOffset {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_CoordinatedUniversalTimeOffset {
-	~StepBasic_CoordinatedUniversalTimeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_Group;
 class StepBasic_Group : public MMgt_TShared {
 	public:
@@ -6373,6 +6383,43 @@ class StepBasic_Group : public MMgt_TShared {
 	~StepBasic_Group() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Group\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_DocumentRepresentationType;
+class StepBasic_DocumentRepresentationType : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_DocumentRepresentationType();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_Document &aRepresentedDocument);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document RepresentedDocument() const;
+		%feature("autodoc", "1");
+		void SetRepresentedDocument(const Handle_StepBasic_Document &RepresentedDocument);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_DocumentRepresentationType {
+	Handle_StepBasic_DocumentRepresentationType GetHandle() {
+	return *(Handle_StepBasic_DocumentRepresentationType*) &$self;
+	}
+};
+%extend StepBasic_DocumentRepresentationType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_DocumentRepresentationType {
+	~StepBasic_DocumentRepresentationType() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");}
 	}
 };
 
@@ -6550,6 +6597,45 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 };
 
 
+%nodefaultctor StepBasic_ObjectRole;
+class StepBasic_ObjectRole : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_ObjectRole();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_ObjectRole {
+	Handle_StepBasic_ObjectRole GetHandle() {
+	return *(Handle_StepBasic_ObjectRole*) &$self;
+	}
+};
+%extend StepBasic_ObjectRole {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_ObjectRole {
+	~StepBasic_ObjectRole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_ObjectRole\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_MassUnit;
 class StepBasic_MassUnit : public StepBasic_NamedUnit {
 	public:
@@ -6580,8 +6666,6 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 %nodefaultctor StepBasic_SecurityClassificationAssignment;
 class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		StepBasic_SecurityClassificationAssignment();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_StepBasic_SecurityClassification &aAssignedSecurityClassification);
 		%feature("autodoc", "1");
@@ -6857,47 +6941,6 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 };
 
 
-%nodefaultctor StepBasic_ApprovalPersonOrganization;
-class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_ApprovalPersonOrganization();
-		%feature("autodoc", "1");
-		virtual		void Init(const StepBasic_PersonOrganizationSelect &aPersonOrganization, const Handle_StepBasic_Approval &aAuthorizedApproval, const Handle_StepBasic_ApprovalRole &aRole);
-		%feature("autodoc", "1");
-		void SetPersonOrganization(const StepBasic_PersonOrganizationSelect &aPersonOrganization);
-		%feature("autodoc", "1");
-		StepBasic_PersonOrganizationSelect PersonOrganization() const;
-		%feature("autodoc", "1");
-		void SetAuthorizedApproval(const Handle_StepBasic_Approval &aAuthorizedApproval);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Approval AuthorizedApproval() const;
-		%feature("autodoc", "1");
-		void SetRole(const Handle_StepBasic_ApprovalRole &aRole);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRole Role() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_ApprovalPersonOrganization {
-	Handle_StepBasic_ApprovalPersonOrganization GetHandle() {
-	return *(Handle_StepBasic_ApprovalPersonOrganization*) &$self;
-	}
-};
-%extend StepBasic_ApprovalPersonOrganization {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_ApprovalPersonOrganization {
-	~StepBasic_ApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_ProductDefinitionFormationRelationship;
 class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 	public:
@@ -6947,39 +6990,47 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_DocumentRepresentationType;
-class StepBasic_DocumentRepresentationType : public MMgt_TShared {
+%nodefaultctor StepBasic_CoordinatedUniversalTimeOffset;
+class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_DocumentRepresentationType();
+		StepBasic_CoordinatedUniversalTimeOffset();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_Document &aRepresentedDocument);
+		virtual		void Init(const Standard_Integer aHourOffset, const Standard_Boolean hasAminuteOffset, const Standard_Integer aMinuteOffset, const StepBasic_AheadOrBehind aSense);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
+		void SetHourOffset(const Standard_Integer aHourOffset);
 		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
+		Standard_Integer HourOffset() const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_Document RepresentedDocument() const;
+		void SetMinuteOffset(const Standard_Integer aMinuteOffset);
 		%feature("autodoc", "1");
-		void SetRepresentedDocument(const Handle_StepBasic_Document &RepresentedDocument);
+		void UnSetMinuteOffset();
+		%feature("autodoc", "1");
+		Standard_Integer MinuteOffset() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasMinuteOffset() const;
+		%feature("autodoc", "1");
+		void SetSense(const StepBasic_AheadOrBehind aSense);
+		%feature("autodoc", "1");
+		StepBasic_AheadOrBehind Sense() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_DocumentRepresentationType {
-	Handle_StepBasic_DocumentRepresentationType GetHandle() {
-	return *(Handle_StepBasic_DocumentRepresentationType*) &$self;
+%extend StepBasic_CoordinatedUniversalTimeOffset {
+	Handle_StepBasic_CoordinatedUniversalTimeOffset GetHandle() {
+	return *(Handle_StepBasic_CoordinatedUniversalTimeOffset*) &$self;
 	}
 };
-%extend StepBasic_DocumentRepresentationType {
+%extend StepBasic_CoordinatedUniversalTimeOffset {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentRepresentationType {
-	~StepBasic_DocumentRepresentationType() {
+%extend StepBasic_CoordinatedUniversalTimeOffset {
+	~StepBasic_CoordinatedUniversalTimeOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");}
 	}
 };
 
@@ -7050,45 +7101,6 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 	~StepBasic_SiUnitAndAreaUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_ObjectRole;
-class StepBasic_ObjectRole : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_ObjectRole();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_ObjectRole {
-	Handle_StepBasic_ObjectRole GetHandle() {
-	return *(Handle_StepBasic_ObjectRole*) &$self;
-	}
-};
-%extend StepBasic_ObjectRole {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_ObjectRole {
-	~StepBasic_ObjectRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ObjectRole\n");}
 	}
 };
 
@@ -7214,8 +7226,6 @@ class StepBasic_Action : public MMgt_TShared {
 class StepBasic_DocumentReference : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_DocumentReference();
-		%feature("autodoc", "1");
 		void Init0(const Handle_StepBasic_Document &aAssignedDocument, const Handle_TCollection_HAsciiString &aSource);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Document AssignedDocument() const;
@@ -7274,29 +7284,49 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 };
 
 
-%nodefaultctor StepBasic_DigitalDocument;
-class StepBasic_DigitalDocument : public StepBasic_Document {
+%nodefaultctor StepBasic_VersionedActionRequest;
+class StepBasic_VersionedActionRequest : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_DigitalDocument();
+		StepBasic_VersionedActionRequest();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aVersion, const Handle_TCollection_HAsciiString &aPurpose, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Id() const;
+		%feature("autodoc", "1");
+		void SetId(const Handle_TCollection_HAsciiString &Id);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Version() const;
+		%feature("autodoc", "1");
+		void SetVersion(const Handle_TCollection_HAsciiString &Version);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Purpose() const;
+		%feature("autodoc", "1");
+		void SetPurpose(const Handle_TCollection_HAsciiString &Purpose);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_DigitalDocument {
-	Handle_StepBasic_DigitalDocument GetHandle() {
-	return *(Handle_StepBasic_DigitalDocument*) &$self;
+%extend StepBasic_VersionedActionRequest {
+	Handle_StepBasic_VersionedActionRequest GetHandle() {
+	return *(Handle_StepBasic_VersionedActionRequest*) &$self;
 	}
 };
-%extend StepBasic_DigitalDocument {
+%extend StepBasic_VersionedActionRequest {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DigitalDocument {
-	~StepBasic_DigitalDocument() {
+%extend StepBasic_VersionedActionRequest {
+	~StepBasic_VersionedActionRequest() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DigitalDocument\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_VersionedActionRequest\n");}
 	}
 };
 
@@ -7620,6 +7650,41 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 };
 
 
+%nodefaultctor StepBasic_OrganizationAssignment;
+class StepBasic_OrganizationAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole);
+		%feature("autodoc", "1");
+		void SetAssignedOrganization(const Handle_StepBasic_Organization &aAssignedOrganization);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Organization AssignedOrganization() const;
+		%feature("autodoc", "1");
+		void SetRole(const Handle_StepBasic_OrganizationRole &aRole);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole Role() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_OrganizationAssignment {
+	Handle_StepBasic_OrganizationAssignment GetHandle() {
+	return *(Handle_StepBasic_OrganizationAssignment*) &$self;
+	}
+};
+%extend StepBasic_OrganizationAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_OrganizationAssignment {
+	~StepBasic_OrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationAssignment\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_OrdinalDate;
 class StepBasic_OrdinalDate : public StepBasic_Date {
 	public:
@@ -7651,43 +7716,6 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 	~StepBasic_OrdinalDate() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_OrdinalDate\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_OrganizationAssignment;
-class StepBasic_OrganizationAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_OrganizationAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole);
-		%feature("autodoc", "1");
-		void SetAssignedOrganization(const Handle_StepBasic_Organization &aAssignedOrganization);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Organization AssignedOrganization() const;
-		%feature("autodoc", "1");
-		void SetRole(const Handle_StepBasic_OrganizationRole &aRole);
-		%feature("autodoc", "1");
-		Handle_StepBasic_OrganizationRole Role() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_OrganizationAssignment {
-	Handle_StepBasic_OrganizationAssignment GetHandle() {
-	return *(Handle_StepBasic_OrganizationAssignment*) &$self;
-	}
-};
-%extend StepBasic_OrganizationAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_OrganizationAssignment {
-	~StepBasic_OrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationAssignment\n");}
 	}
 };
 
@@ -8224,47 +8252,6 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_Array1OfDocument;
-class StepBasic_Array1OfDocument {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_Array1OfDocument(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_Array1OfDocument(const Handle_StepBasic_Document &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Document &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfDocument & Assign(const StepBasic_Array1OfDocument &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Document &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_Document & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepBasic_Document & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document & operator()(const Standard_Integer Index);
-
-};
-%extend StepBasic_Array1OfDocument {
-	~StepBasic_Array1OfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDocument\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_HArray1OfProductDefinition;
 class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 	public:
@@ -8489,6 +8476,33 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 };
 
 
+%nodefaultctor StepBasic_AreaUnit;
+class StepBasic_AreaUnit : public StepBasic_NamedUnit {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_AreaUnit();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_AreaUnit {
+	Handle_StepBasic_AreaUnit GetHandle() {
+	return *(Handle_StepBasic_AreaUnit*) &$self;
+	}
+};
+%extend StepBasic_AreaUnit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_AreaUnit {
+	~StepBasic_AreaUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_AreaUnit\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_ProductCategoryRelationship;
 class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 	public:
@@ -8659,8 +8673,6 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 class StepBasic_ApprovalAssignment : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_ApprovalAssignment();
-		%feature("autodoc", "1");
 		virtual		void Init(const Handle_StepBasic_Approval &aAssignedApproval);
 		%feature("autodoc", "1");
 		void SetAssignedApproval(const Handle_StepBasic_Approval &aAssignedApproval);
@@ -8691,8 +8703,6 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 %nodefaultctor StepBasic_PersonAndOrganizationAssignment;
 class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		StepBasic_PersonAndOrganizationAssignment();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
 		%feature("autodoc", "1");
@@ -8728,8 +8738,6 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 %nodefaultctor StepBasic_DateAssignment;
 class StepBasic_DateAssignment : public MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		StepBasic_DateAssignment();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_StepBasic_Date &aAssignedDate, const Handle_StepBasic_DateRole &aRole);
 		%feature("autodoc", "1");
@@ -8805,6 +8813,80 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 };
 
 
+%nodefaultctor StepBasic_ApprovalPersonOrganization;
+class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_ApprovalPersonOrganization();
+		%feature("autodoc", "1");
+		virtual		void Init(const StepBasic_PersonOrganizationSelect &aPersonOrganization, const Handle_StepBasic_Approval &aAuthorizedApproval, const Handle_StepBasic_ApprovalRole &aRole);
+		%feature("autodoc", "1");
+		void SetPersonOrganization(const StepBasic_PersonOrganizationSelect &aPersonOrganization);
+		%feature("autodoc", "1");
+		StepBasic_PersonOrganizationSelect PersonOrganization() const;
+		%feature("autodoc", "1");
+		void SetAuthorizedApproval(const Handle_StepBasic_Approval &aAuthorizedApproval);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval AuthorizedApproval() const;
+		%feature("autodoc", "1");
+		void SetRole(const Handle_StepBasic_ApprovalRole &aRole);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRole Role() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_ApprovalPersonOrganization {
+	Handle_StepBasic_ApprovalPersonOrganization GetHandle() {
+	return *(Handle_StepBasic_ApprovalPersonOrganization*) &$self;
+	}
+};
+%extend StepBasic_ApprovalPersonOrganization {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_ApprovalPersonOrganization {
+	~StepBasic_ApprovalPersonOrganization() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_OrganizationRole;
+class StepBasic_OrganizationRole : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_OrganizationRole();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_OrganizationRole {
+	Handle_StepBasic_OrganizationRole GetHandle() {
+	return *(Handle_StepBasic_OrganizationRole*) &$self;
+	}
+};
+%extend StepBasic_OrganizationRole {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_OrganizationRole {
+	~StepBasic_OrganizationRole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationRole\n");}
+	}
+};
+
+
 %nodefaultctor StepBasic_DerivedUnit;
 class StepBasic_DerivedUnit : public MMgt_TShared {
 	public:
@@ -8875,58 +8957,13 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 };
 
 
-%nodefaultctor StepBasic_DocumentProductAssociation;
-class StepBasic_DocumentProductAssociation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_DocumentProductAssociation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_Document &aRelatingDocument, const StepBasic_ProductOrFormationOrDefinition &aRelatedProduct);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document RelatingDocument() const;
-		%feature("autodoc", "1");
-		void SetRelatingDocument(const Handle_StepBasic_Document &RelatingDocument);
-		%feature("autodoc", "1");
-		StepBasic_ProductOrFormationOrDefinition RelatedProduct() const;
-		%feature("autodoc", "1");
-		void SetRelatedProduct(const StepBasic_ProductOrFormationOrDefinition &RelatedProduct);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_DocumentProductAssociation {
-	Handle_StepBasic_DocumentProductAssociation GetHandle() {
-	return *(Handle_StepBasic_DocumentProductAssociation*) &$self;
-	}
-};
-%extend StepBasic_DocumentProductAssociation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_DocumentProductAssociation {
-	~StepBasic_DocumentProductAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_DocumentProductEquivalence;
 class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAssociation {
 	public:
 		%feature("autodoc", "1");
 		StepBasic_DocumentProductEquivalence();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepBasic_DocumentProductEquivalence {
@@ -9050,96 +9087,29 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 };
 
 
-%nodefaultctor StepBasic_HArray1OfProduct;
-class StepBasic_HArray1OfProduct : public MMgt_TShared {
+%nodefaultctor StepBasic_DigitalDocument;
+class StepBasic_DigitalDocument : public StepBasic_Document {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_HArray1OfProduct(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfProduct(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_Product &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Product &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Product &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_Product & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Product & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfProduct & Array1() const;
-		%feature("autodoc", "1");
-		StepBasic_Array1OfProduct & ChangeArray1();
+		StepBasic_DigitalDocument();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_HArray1OfProduct {
-	Handle_StepBasic_HArray1OfProduct GetHandle() {
-	return *(Handle_StepBasic_HArray1OfProduct*) &$self;
+%extend StepBasic_DigitalDocument {
+	Handle_StepBasic_DigitalDocument GetHandle() {
+	return *(Handle_StepBasic_DigitalDocument*) &$self;
 	}
 };
-%extend StepBasic_HArray1OfProduct {
+%extend StepBasic_DigitalDocument {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfProduct {
-	~StepBasic_HArray1OfProduct() {
+%extend StepBasic_DigitalDocument {
+	~StepBasic_DigitalDocument() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProduct\n");}
-	}
-};
-
-
-%nodefaultctor StepBasic_HArray1OfUncertaintyMeasureWithUnit;
-class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfUncertaintyMeasureWithUnit(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_HArray1OfUncertaintyMeasureWithUnit(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_UncertaintyMeasureWithUnit &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_UncertaintyMeasureWithUnit &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_UncertaintyMeasureWithUnit &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_UncertaintyMeasureWithUnit & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfUncertaintyMeasureWithUnit & Array1() const;
-		%feature("autodoc", "1");
-		StepBasic_Array1OfUncertaintyMeasureWithUnit & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
-	Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit GetHandle() {
-	return *(Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit*) &$self;
-	}
-};
-%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
-	~StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_DigitalDocument\n");}
 	}
 };
 
@@ -9425,31 +9395,6 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 
 
-%nodefaultctor StepBasic_SizeSelect;
-class StepBasic_SizeSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_SizeSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_SelectMember NewMember() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
-		%feature("autodoc", "1");
-		void SetRealValue(const Standard_Real aReal);
-		%feature("autodoc", "1");
-		Standard_Real RealValue() const;
-
-};
-%extend StepBasic_SizeSelect {
-	~StepBasic_SizeSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SizeSelect\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_HArray1OfApproval;
 class StepBasic_HArray1OfApproval : public MMgt_TShared {
 	public:
@@ -9520,6 +9465,47 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 	~StepBasic_TimeUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_TimeUnit\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_Array1OfDocument;
+class StepBasic_Array1OfDocument {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_Array1OfDocument(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepBasic_Array1OfDocument(const Handle_StepBasic_Document &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Document &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfDocument & Assign(const StepBasic_Array1OfDocument &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_Document &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_Document & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepBasic_Document & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document & operator()(const Standard_Integer Index);
+
+};
+%extend StepBasic_Array1OfDocument {
+	~StepBasic_Array1OfDocument() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDocument\n");}
 	}
 };
 
@@ -9604,47 +9590,6 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_Array1OfDerivedUnitElement;
-class StepBasic_Array1OfDerivedUnitElement {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_Array1OfDerivedUnitElement(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepBasic_Array1OfDerivedUnitElement(const Handle_StepBasic_DerivedUnitElement &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_DerivedUnitElement &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepBasic_Array1OfDerivedUnitElement & Assign(const StepBasic_Array1OfDerivedUnitElement &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepBasic_DerivedUnitElement &Value);
-		%feature("autodoc", "1");
-		const Handle_StepBasic_DerivedUnitElement & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_DerivedUnitElement & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index);
-
-};
-%extend StepBasic_Array1OfDerivedUnitElement {
-	~StepBasic_Array1OfDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");}
-	}
-};
-
-
 %nodefaultctor StepBasic_Contract;
 class StepBasic_Contract : public MMgt_TShared {
 	public:
@@ -9682,6 +9627,39 @@ class StepBasic_Contract : public MMgt_TShared {
 	~StepBasic_Contract() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Contract\n");}
+	}
+};
+
+
+%nodefaultctor StepBasic_ApplicationContext;
+class StepBasic_ApplicationContext : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_ApplicationContext();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aApplication);
+		%feature("autodoc", "1");
+		void SetApplication(const Handle_TCollection_HAsciiString &aApplication);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Application() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_ApplicationContext {
+	Handle_StepBasic_ApplicationContext GetHandle() {
+	return *(Handle_StepBasic_ApplicationContext*) &$self;
+	}
+};
+%extend StepBasic_ApplicationContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepBasic_ApplicationContext {
+	~StepBasic_ApplicationContext() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContext\n");}
 	}
 };
 
@@ -9766,36 +9744,48 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepBasic_SiUnitAndLengthUnit;
-class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
+%nodefaultctor StepBasic_HArray1OfUncertaintyMeasureWithUnit;
+class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_SiUnitAndLengthUnit();
+		StepBasic_HArray1OfUncertaintyMeasureWithUnit(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DimensionalExponents &aDimensions);
+		StepBasic_HArray1OfUncertaintyMeasureWithUnit(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepBasic_UncertaintyMeasureWithUnit &V);
 		%feature("autodoc", "1");
-		virtual		void Init(const Standard_Boolean hasAprefix, const StepBasic_SiPrefix aPrefix, const StepBasic_SiUnitName aName);
+		void Init(const Handle_StepBasic_UncertaintyMeasureWithUnit &V);
 		%feature("autodoc", "1");
-		void SetLengthUnit(const Handle_StepBasic_LengthUnit &aLengthUnit);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_LengthUnit LengthUnit() const;
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepBasic_UncertaintyMeasureWithUnit &Value);
+		%feature("autodoc", "1");
+		const Handle_StepBasic_UncertaintyMeasureWithUnit & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfUncertaintyMeasureWithUnit & Array1() const;
+		%feature("autodoc", "1");
+		StepBasic_Array1OfUncertaintyMeasureWithUnit & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_SiUnitAndLengthUnit {
-	Handle_StepBasic_SiUnitAndLengthUnit GetHandle() {
-	return *(Handle_StepBasic_SiUnitAndLengthUnit*) &$self;
+%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
+	Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit GetHandle() {
+	return *(Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit*) &$self;
 	}
 };
-%extend StepBasic_SiUnitAndLengthUnit {
+%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndLengthUnit {
-	~StepBasic_SiUnitAndLengthUnit() {
+%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
+	~StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
 	}
 };

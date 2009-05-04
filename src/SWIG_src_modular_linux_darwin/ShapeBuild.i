@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeBuild
 
+%include ShapeBuild_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -144,8 +146,6 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 class ShapeBuild {
 	public:
 		%feature("autodoc", "1");
-		ShapeBuild();
-		%feature("autodoc", "1");
 		Handle_Geom_Plane PlaneXOY();
 
 };
@@ -195,8 +195,6 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 %nodefaultctor ShapeBuild_Edge;
 class ShapeBuild_Edge {
 	public:
-		%feature("autodoc", "1");
-		ShapeBuild_Edge();
 		%feature("autodoc", "1");
 		TopoDS_Edge CopyReplaceVertices(const TopoDS_Edge &edge, const TopoDS_Vertex &V1, const TopoDS_Vertex &V2) const;
 		%feature("autodoc", "1");
@@ -248,8 +246,6 @@ class ShapeBuild_Edge {
 %nodefaultctor ShapeBuild_Vertex;
 class ShapeBuild_Vertex {
 	public:
-		%feature("autodoc", "1");
-		ShapeBuild_Vertex();
 		%feature("autodoc", "1");
 		TopoDS_Vertex CombineVertex(const TopoDS_Vertex &V1, const TopoDS_Vertex &V2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
 		%feature("autodoc", "1");

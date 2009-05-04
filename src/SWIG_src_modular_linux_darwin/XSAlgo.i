@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XSAlgo
 
+%include XSAlgo_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -175,8 +177,6 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 %nodefaultctor XSAlgo;
 class XSAlgo {
 	public:
-		%feature("autodoc", "1");
-		XSAlgo();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");

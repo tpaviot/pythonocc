@@ -308,11 +308,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Quantity_Color.hxx>
-#include<V3d.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Graphic3d_Vector.hxx>
 #include<Handle_Graphic3d_Group.hxx>
 #include<Standard_SStream.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Handle_Aspect_ColorScale.hxx>

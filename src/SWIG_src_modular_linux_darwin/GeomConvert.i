@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GeomConvert
 
+%include GeomConvert_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -194,8 +196,6 @@ class GeomConvert_BSplineCurveKnotSplitting {
 class GeomConvert {
 	public:
 		%feature("autodoc", "1");
-		GeomConvert();
-		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve SplitBSplineCurve(const Handle_Geom_BSplineCurve &C, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Boolean SameOrientation=1);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve SplitBSplineCurve(const Handle_Geom_BSplineCurve &C, const Standard_Real FromU1, const Standard_Real ToU2, const Standard_Real ParametricTolerance, const Standard_Boolean SameOrientation=1);
@@ -263,25 +263,6 @@ class GeomConvert_ApproxSurface {
 };
 
 
-%nodefaultctor GeomConvert_CompCurveToBSplineCurve;
-class GeomConvert_CompCurveToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomConvert_CompCurveToBSplineCurve(const Handle_Geom_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Geom_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0, const Standard_Boolean WithRatio=1, const Standard_Integer MinM=0);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSplineCurve() const;
-
-};
-%extend GeomConvert_CompCurveToBSplineCurve {
-	~GeomConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
-	}
-};
-
-
 %nodefaultctor GeomConvert_BSplineCurveToBezierCurve;
 class GeomConvert_BSplineCurveToBezierCurve {
 	public:
@@ -332,6 +313,25 @@ class GeomConvert_BSplineSurfaceToBezierSurface {
 	~GeomConvert_BSplineSurfaceToBezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceToBezierSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomConvert_CompCurveToBSplineCurve;
+class GeomConvert_CompCurveToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomConvert_CompCurveToBSplineCurve(const Handle_Geom_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Geom_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0, const Standard_Boolean WithRatio=1, const Standard_Integer MinM=0);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSplineCurve() const;
+
+};
+%extend GeomConvert_CompCurveToBSplineCurve {
+	~GeomConvert_CompCurveToBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
 	}
 };
 

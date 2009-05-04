@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Vrml
 
+%include Vrml_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -430,6 +432,46 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Vrml_Coordinate3;
+class Vrml_Coordinate3 : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Coordinate3(const Handle_TColgp_HArray1OfVec &aPoint);
+		%feature("autodoc", "1");
+		Vrml_Coordinate3();
+		%feature("autodoc", "1");
+		void SetPoint(const Handle_TColgp_HArray1OfVec &aPoint);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfVec Point() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_Coordinate3 {
+	Handle_Vrml_Coordinate3 GetHandle() {
+	return *(Handle_Vrml_Coordinate3*) &$self;
+	}
+};
+%extend Vrml_Coordinate3 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Vrml_Coordinate3 {
+	~Vrml_Coordinate3() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_Coordinate3\n");}
+	}
+};
+
+
 %nodefaultctor Vrml_Info;
 class Vrml_Info {
 	public:
@@ -478,6 +520,35 @@ class Vrml_Switch {
 	~Vrml_Switch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Switch\n");}
+	}
+};
+
+
+%nodefaultctor Vrml_Instancing;
+class Vrml_Instancing {
+	public:
+		%feature("autodoc", "1");
+		Vrml_Instancing(const TCollection_AsciiString &aString);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DEFToString() {
+			std::stringstream s;
+			self->DEF(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		%extend{
+			std::string USEToString() {
+			std::stringstream s;
+			self->USE(s);
+			return s.str();}
+		};
+
+};
+%extend Vrml_Instancing {
+	~Vrml_Instancing() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
 	}
 };
 
@@ -560,46 +631,6 @@ class Vrml_Sphere {
 	~Vrml_Sphere() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Sphere\n");}
-	}
-};
-
-
-%nodefaultctor Vrml_PointLight;
-class Vrml_PointLight {
-	public:
-		%feature("autodoc", "1");
-		Vrml_PointLight();
-		%feature("autodoc", "1");
-		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		void SetOnOff(const Standard_Boolean aOnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean OnOff() const;
-		%feature("autodoc", "1");
-		void SetIntensity(const Standard_Real aIntensity);
-		%feature("autodoc", "1");
-		Standard_Real Intensity() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		gp_Vec Location() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Vrml_PointLight {
-	~Vrml_PointLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
 	}
 };
 
@@ -875,21 +906,29 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 
 
-%nodefaultctor Vrml_LOD;
-class Vrml_LOD : public MMgt_TShared {
+%nodefaultctor Vrml_IndexedFaceSet;
+class Vrml_IndexedFaceSet : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Vrml_LOD();
+		Vrml_IndexedFaceSet(const Handle_TColStd_HArray1OfInteger &aCoordIndex, const Handle_TColStd_HArray1OfInteger &aMaterialIndex, const Handle_TColStd_HArray1OfInteger &aNormalIndex, const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
 		%feature("autodoc", "1");
-		Vrml_LOD(const Handle_TColStd_HArray1OfReal &aRange, const gp_Vec &aCenter);
+		Vrml_IndexedFaceSet();
 		%feature("autodoc", "1");
-		void SetRange(const Handle_TColStd_HArray1OfReal &aRange);
+		void SetCoordIndex(const Handle_TColStd_HArray1OfInteger &aCoordIndex);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal Range() const;
+		Handle_TColStd_HArray1OfInteger CoordIndex() const;
 		%feature("autodoc", "1");
-		void SetCenter(const gp_Vec &aCenter);
+		void SetMaterialIndex(const Handle_TColStd_HArray1OfInteger &aMaterialIndex);
 		%feature("autodoc", "1");
-		gp_Vec Center() const;
+		Handle_TColStd_HArray1OfInteger MaterialIndex() const;
+		%feature("autodoc", "1");
+		void SetNormalIndex(const Handle_TColStd_HArray1OfInteger &aNormalIndex);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger NormalIndex() const;
+		%feature("autodoc", "1");
+		void SetTextureCoordIndex(const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
@@ -901,20 +940,20 @@ class Vrml_LOD : public MMgt_TShared {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Vrml_LOD {
-	Handle_Vrml_LOD GetHandle() {
-	return *(Handle_Vrml_LOD*) &$self;
+%extend Vrml_IndexedFaceSet {
+	Handle_Vrml_IndexedFaceSet GetHandle() {
+	return *(Handle_Vrml_IndexedFaceSet*) &$self;
 	}
 };
-%extend Vrml_LOD {
+%extend Vrml_IndexedFaceSet {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Vrml_LOD {
-	~Vrml_LOD() {
+%extend Vrml_IndexedFaceSet {
+	~Vrml_IndexedFaceSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_LOD\n");}
+	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedFaceSet\n");}
 	}
 };
 
@@ -951,6 +990,46 @@ class Vrml_WWWInline {
 	~Vrml_WWWInline() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_WWWInline\n");}
+	}
+};
+
+
+%nodefaultctor Vrml_PointLight;
+class Vrml_PointLight {
+	public:
+		%feature("autodoc", "1");
+		Vrml_PointLight();
+		%feature("autodoc", "1");
+		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		void SetOnOff(const Standard_Boolean aOnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean OnOff() const;
+		%feature("autodoc", "1");
+		void SetIntensity(const Standard_Real aIntensity);
+		%feature("autodoc", "1");
+		Standard_Real Intensity() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		gp_Vec Location() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%extend Vrml_PointLight {
+	~Vrml_PointLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
 	}
 };
 
@@ -1069,6 +1148,44 @@ class Vrml_Texture2Transform {
 };
 
 
+%nodefaultctor Vrml_ShapeHints;
+class Vrml_ShapeHints {
+	public:
+		%feature("autodoc", "1");
+		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
+		%feature("autodoc", "1");
+		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
+		%feature("autodoc", "1");
+		Vrml_VertexOrdering VertexOrdering() const;
+		%feature("autodoc", "1");
+		void SetShapeType(const Vrml_ShapeType aShapeType);
+		%feature("autodoc", "1");
+		Vrml_ShapeType ShapeType() const;
+		%feature("autodoc", "1");
+		void SetFaceType(const Vrml_FaceType aFaceType);
+		%feature("autodoc", "1");
+		Vrml_FaceType FaceType() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%extend Vrml_ShapeHints {
+	~Vrml_ShapeHints() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
+	}
+};
+
+
 %nodefaultctor Vrml_SFRotation;
 class Vrml_SFRotation {
 	public:
@@ -1142,11 +1259,53 @@ class Vrml_OrthographicCamera {
 };
 
 
+%nodefaultctor Vrml_LOD;
+class Vrml_LOD : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Vrml_LOD();
+		%feature("autodoc", "1");
+		Vrml_LOD(const Handle_TColStd_HArray1OfReal &aRange, const gp_Vec &aCenter);
+		%feature("autodoc", "1");
+		void SetRange(const Handle_TColStd_HArray1OfReal &aRange);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal Range() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Vec &aCenter);
+		%feature("autodoc", "1");
+		gp_Vec Center() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Vrml_LOD {
+	Handle_Vrml_LOD GetHandle() {
+	return *(Handle_Vrml_LOD*) &$self;
+	}
+};
+%extend Vrml_LOD {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Vrml_LOD {
+	~Vrml_LOD() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_LOD\n");}
+	}
+};
+
+
 %nodefaultctor Vrml;
 class Vrml {
 	public:
-		%feature("autodoc", "1");
-		Vrml();
 		%feature("autodoc", "1");
 		%extend{
 			std::string VrmlHeaderWriterToString() {
@@ -1190,35 +1349,6 @@ class Vrml_Scale {
 	~Vrml_Scale() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Scale\n");}
-	}
-};
-
-
-%nodefaultctor Vrml_Instancing;
-class Vrml_Instancing {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Instancing(const TCollection_AsciiString &aString);
-		%feature("autodoc", "1");
-		%extend{
-			std::string DEFToString() {
-			std::stringstream s;
-			self->DEF(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		%extend{
-			std::string USEToString() {
-			std::stringstream s;
-			self->USE(s);
-			return s.str();}
-		};
-
-};
-%extend Vrml_Instancing {
-	~Vrml_Instancing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
 	}
 };
 
@@ -1471,58 +1601,6 @@ class Vrml_WWWAnchor {
 };
 
 
-%nodefaultctor Vrml_IndexedFaceSet;
-class Vrml_IndexedFaceSet : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_IndexedFaceSet(const Handle_TColStd_HArray1OfInteger &aCoordIndex, const Handle_TColStd_HArray1OfInteger &aMaterialIndex, const Handle_TColStd_HArray1OfInteger &aNormalIndex, const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
-		%feature("autodoc", "1");
-		Vrml_IndexedFaceSet();
-		%feature("autodoc", "1");
-		void SetCoordIndex(const Handle_TColStd_HArray1OfInteger &aCoordIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger CoordIndex() const;
-		%feature("autodoc", "1");
-		void SetMaterialIndex(const Handle_TColStd_HArray1OfInteger &aMaterialIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger MaterialIndex() const;
-		%feature("autodoc", "1");
-		void SetNormalIndex(const Handle_TColStd_HArray1OfInteger &aNormalIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger NormalIndex() const;
-		%feature("autodoc", "1");
-		void SetTextureCoordIndex(const Handle_TColStd_HArray1OfInteger &aTextureCoordIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Vrml_IndexedFaceSet {
-	Handle_Vrml_IndexedFaceSet GetHandle() {
-	return *(Handle_Vrml_IndexedFaceSet*) &$self;
-	}
-};
-%extend Vrml_IndexedFaceSet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Vrml_IndexedFaceSet {
-	~Vrml_IndexedFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedFaceSet\n");}
-	}
-};
-
-
 %nodefaultctor Vrml_Material;
 class Vrml_Material : public MMgt_TShared {
 	public:
@@ -1611,44 +1689,6 @@ class Vrml_Rotation {
 };
 
 
-%nodefaultctor Vrml_ShapeHints;
-class Vrml_ShapeHints {
-	public:
-		%feature("autodoc", "1");
-		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
-		%feature("autodoc", "1");
-		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
-		%feature("autodoc", "1");
-		Vrml_VertexOrdering VertexOrdering() const;
-		%feature("autodoc", "1");
-		void SetShapeType(const Vrml_ShapeType aShapeType);
-		%feature("autodoc", "1");
-		Vrml_ShapeType ShapeType() const;
-		%feature("autodoc", "1");
-		void SetFaceType(const Vrml_FaceType aFaceType);
-		%feature("autodoc", "1");
-		Vrml_FaceType FaceType() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Vrml_ShapeHints {
-	~Vrml_ShapeHints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
-	}
-};
-
-
 %nodefaultctor Vrml_Separator;
 class Vrml_Separator {
 	public:
@@ -1723,46 +1763,6 @@ class Vrml_Group {
 	~Vrml_Group() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Group\n");}
-	}
-};
-
-
-%nodefaultctor Vrml_Coordinate3;
-class Vrml_Coordinate3 : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Vrml_Coordinate3(const Handle_TColgp_HArray1OfVec &aPoint);
-		%feature("autodoc", "1");
-		Vrml_Coordinate3();
-		%feature("autodoc", "1");
-		void SetPoint(const Handle_TColgp_HArray1OfVec &aPoint);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfVec Point() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Vrml_Coordinate3 {
-	Handle_Vrml_Coordinate3 GetHandle() {
-	return *(Handle_Vrml_Coordinate3*) &$self;
-	}
-};
-%extend Vrml_Coordinate3 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Vrml_Coordinate3 {
-	~Vrml_Coordinate3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Coordinate3\n");}
 	}
 };
 

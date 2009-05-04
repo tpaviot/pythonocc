@@ -35,6 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Dir.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 %}

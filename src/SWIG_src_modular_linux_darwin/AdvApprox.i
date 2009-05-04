@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module AdvApprox
 
+%include AdvApprox_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -196,6 +198,8 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	public:
 		%feature("autodoc", "1");
 		AdvApprox_PrefAndRec(const TColStd_Array1OfReal &RecomendedCut, const TColStd_Array1OfReal &PrefferedCut, const Standard_Real Weight=5);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
 %extend AdvApprox_PrefAndRec {

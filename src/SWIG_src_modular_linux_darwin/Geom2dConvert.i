@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dConvert
 
+%include Geom2dConvert_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -136,8 +138,6 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 %nodefaultctor Geom2dConvert;
 class Geom2dConvert {
 	public:
-		%feature("autodoc", "1");
-		Geom2dConvert();
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve SplitBSplineCurve(const Handle_Geom2d_BSplineCurve &C, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Boolean SameOrientation=1);
 		%feature("autodoc", "1");

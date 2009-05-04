@@ -1,0 +1,4 @@
+%rename(Handle_SequenceNodeOfSequenceOfArray1OfPnt2d) Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d;
+%rename(SequenceNodeOfSequenceOfArray1OfPnt2d) AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d;
+%rename(Approx) AppBlend_Approx;
+%rename(SequenceOfArray1OfPnt2d) AppBlend_SequenceOfArray1OfPnt2d;

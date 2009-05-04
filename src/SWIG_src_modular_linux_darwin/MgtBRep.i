@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module MgtBRep
 
+%include MgtBRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -320,8 +322,6 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 %nodefaultctor MgtBRep;
 class MgtBRep {
 	public:
-		%feature("autodoc", "1");
-		MgtBRep();
 		%feature("autodoc", "1");
 		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module TDocStd
 
+%include TDocStd_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -245,6 +247,32 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_TDocStd_Application;
+class Handle_TDocStd_Application : public Handle_CDF_Application {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_Application {
+	TDocStd_Application* GetObject() {
+	return (TDocStd_Application*)$self->Access();
+	}
+};
+%extend Handle_TDocStd_Application {
+	~Handle_TDocStd_Application() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Application\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TDocStd_Owner;
 class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	public:
@@ -349,32 +377,6 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 };
 
 
-%nodefaultctor Handle_TDocStd_CompoundDelta;
-class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta();
-		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta(const Handle_TDocStd_CompoundDelta &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta(const TDocStd_CompoundDelta *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_CompoundDelta const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_CompoundDelta {
-	TDocStd_CompoundDelta* GetObject() {
-	return (TDocStd_CompoundDelta*)$self->Access();
-	}
-};
-%extend Handle_TDocStd_CompoundDelta {
-	~Handle_TDocStd_CompoundDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TDocStd_XLinkRoot;
 class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	public:
@@ -401,28 +403,53 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_TDocStd_Application;
-class Handle_TDocStd_Application : public Handle_CDF_Application {
+%nodefaultctor Handle_TDocStd_CompoundDelta;
+class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDocStd_Application();
+		Handle_TDocStd_CompoundDelta();
 		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
+		Handle_TDocStd_CompoundDelta(const Handle_TDocStd_CompoundDelta &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const TDocStd_Application *anItem);
+		Handle_TDocStd_CompoundDelta(const TDocStd_CompoundDelta *anItem);
 		%feature("autodoc", "1");
-		Handle_TDocStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TDocStd_CompoundDelta const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDocStd_Application {
-	TDocStd_Application* GetObject() {
-	return (TDocStd_Application*)$self->Access();
+%extend Handle_TDocStd_CompoundDelta {
+	TDocStd_CompoundDelta* GetObject() {
+	return (TDocStd_CompoundDelta*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_Application {
-	~Handle_TDocStd_Application() {
+%extend Handle_TDocStd_CompoundDelta {
+	~Handle_TDocStd_CompoundDelta() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Application\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");}
+	}
+};
+
+
+%nodefaultctor TDocStd_XLinkIterator;
+class TDocStd_XLinkIterator {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_XLinkIterator();
+		%feature("autodoc", "1");
+		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_TDocStd_Document &D);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TDocStd_XLink * Value() const;
+
+};
+%extend TDocStd_XLinkIterator {
+	~TDocStd_XLinkIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkIterator\n");}
 	}
 };
 
@@ -536,33 +563,6 @@ class TDocStd_Document : public CDM_Document {
 	~TDocStd_Document() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDocStd_Document\n");}
-	}
-};
-
-
-%nodefaultctor TDocStd_XLinkTool;
-class TDocStd_XLinkTool {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_XLinkTool();
-		%feature("autodoc", "1");
-		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		void UpdateLink(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet DataSet() const;
-		%feature("autodoc", "1");
-		Handle_TDF_RelocationTable RelocationTable() const;
-
-};
-%extend TDocStd_XLinkTool {
-	~TDocStd_XLinkTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkTool\n");}
 	}
 };
 
@@ -768,8 +768,6 @@ class TDocStd_Owner : public TDF_Attribute {
 class TDocStd {
 	public:
 		%feature("autodoc", "1");
-		TDocStd();
-		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
 
 };
@@ -939,6 +937,37 @@ class TDocStd_Application : public CDF_Application {
 };
 
 
+%nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
+class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_DataMapNodeOfLabelIDMapDataMap(const TDF_Label &K, const TDF_IDMap &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		TDF_IDMap & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap GetHandle() {
+	return *(Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap*) &$self;
+	}
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	~TDocStd_DataMapNodeOfLabelIDMapDataMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
+	}
+};
+
+
 %nodefaultctor TDocStd_PathParser;
 class TDocStd_PathParser {
 	public:
@@ -1032,6 +1061,60 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 
 
+%nodefaultctor TDocStd_XLinkTool;
+class TDocStd_XLinkTool {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_XLinkTool();
+		%feature("autodoc", "1");
+		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		void UpdateLink(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet DataSet() const;
+		%feature("autodoc", "1");
+		Handle_TDF_RelocationTable RelocationTable() const;
+
+};
+%extend TDocStd_XLinkTool {
+	~TDocStd_XLinkTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkTool\n");}
+	}
+};
+
+
+%nodefaultctor TDocStd_CompoundDelta;
+class TDocStd_CompoundDelta : public TDF_Delta {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_CompoundDelta();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_CompoundDelta {
+	Handle_TDocStd_CompoundDelta GetHandle() {
+	return *(Handle_TDocStd_CompoundDelta*) &$self;
+	}
+};
+%extend TDocStd_CompoundDelta {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TDocStd_CompoundDelta {
+	~TDocStd_CompoundDelta() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TDocStd_CompoundDelta\n");}
+	}
+};
+
+
 %nodefaultctor TDocStd_LabelIDMapDataMap;
 class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 	public:
@@ -1090,37 +1173,6 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 };
 
 
-%nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
-class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_DataMapNodeOfLabelIDMapDataMap(const TDF_Label &K, const TDF_IDMap &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		TDF_IDMap & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap GetHandle() {
-	return *(Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap*) &$self;
-	}
-};
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	~TDocStd_DataMapNodeOfLabelIDMapDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
-	}
-};
-
-
 %nodefaultctor TDocStd_SequenceOfApplicationDelta;
 class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 	public:
@@ -1172,58 +1224,6 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 	~TDocStd_SequenceOfApplicationDelta() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfApplicationDelta\n");}
-	}
-};
-
-
-%nodefaultctor TDocStd_XLinkIterator;
-class TDocStd_XLinkIterator {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_XLinkIterator();
-		%feature("autodoc", "1");
-		TDocStd_XLinkIterator(const Handle_TDocStd_Document &D);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_TDocStd_Document &D);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TDocStd_XLink * Value() const;
-
-};
-%extend TDocStd_XLinkIterator {
-	~TDocStd_XLinkIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkIterator\n");}
-	}
-};
-
-
-%nodefaultctor TDocStd_CompoundDelta;
-class TDocStd_CompoundDelta : public TDF_Delta {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_CompoundDelta();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_CompoundDelta {
-	Handle_TDocStd_CompoundDelta GetHandle() {
-	return *(Handle_TDocStd_CompoundDelta*) &$self;
-	}
-};
-%extend TDocStd_CompoundDelta {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TDocStd_CompoundDelta {
-	~TDocStd_CompoundDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_CompoundDelta\n");}
 	}
 };
 

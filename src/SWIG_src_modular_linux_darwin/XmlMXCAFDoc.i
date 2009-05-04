@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XmlMXCAFDoc
 
+%include XmlMXCAFDoc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -192,32 +194,6 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_XmlMXCAFDoc_GraphNodeDriver;
-class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_GraphNodeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_GraphNodeDriver(const Handle_XmlMXCAFDoc_GraphNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_GraphNodeDriver(const XmlMXCAFDoc_GraphNodeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
-	XmlMXCAFDoc_GraphNodeDriver* GetObject() {
-	return (XmlMXCAFDoc_GraphNodeDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
-	~Handle_XmlMXCAFDoc_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlMXCAFDoc_VolumeDriver;
 class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -292,6 +268,32 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMXCAFDoc_ColorDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XmlMXCAFDoc_GraphNodeDriver;
+class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_GraphNodeDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_GraphNodeDriver(const Handle_XmlMXCAFDoc_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_GraphNodeDriver(const XmlMXCAFDoc_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
+	XmlMXCAFDoc_GraphNodeDriver* GetObject() {
+	return (XmlMXCAFDoc_GraphNodeDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
+	~Handle_XmlMXCAFDoc_GraphNodeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
 
@@ -480,8 +482,6 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 %nodefaultctor XmlMXCAFDoc;
 class XmlMXCAFDoc {
 	public:
-		%feature("autodoc", "1");
-		XmlMXCAFDoc();
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 

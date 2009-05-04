@@ -1,0 +1,15 @@
+%rename(NotEnoughtPoints) GeomLib_NotEnoughtPoints;
+%rename(InversionProblem) GeomLib_InversionProblem;
+%rename(CheckBSplineCurve) GeomLib_CheckBSplineCurve;
+%rename(Array1OfMat) GeomLib_Array1OfMat;
+%rename(DegreeSmallerThan3) GeomLib_DegreeSmallerThan3;
+%rename(Check2dBSplineCurve) GeomLib_Check2dBSplineCurve;
+%rename(DenominatorMultiplier) GeomLib_DenominatorMultiplier;
+%rename(Tool) GeomLib_Tool;
+%rename(GeomLib) GeomLib;
+%rename(Interpolate) GeomLib_Interpolate;
+%rename(LogSample) GeomLib_LogSample;
+%rename(NoError) GeomLib_NoError;
+%rename(PolyFunc) GeomLib_PolyFunc;
+%rename(MakeCurvefromApprox) GeomLib_MakeCurvefromApprox;
+%rename(IsPlanarSurface) GeomLib_IsPlanarSurface;

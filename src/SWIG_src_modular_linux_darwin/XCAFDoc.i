@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module XCAFDoc
 
+%include XCAFDoc_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -146,28 +148,28 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_XCAFDoc_MaterialTool;
-class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
+%nodefaultctor Handle_XCAFDoc_GraphNode;
+class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool();
+		Handle_XCAFDoc_GraphNode();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool(const Handle_XCAFDoc_MaterialTool &aHandle);
+		Handle_XCAFDoc_GraphNode(const Handle_XCAFDoc_GraphNode &aHandle);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool(const XCAFDoc_MaterialTool *anItem);
+		Handle_XCAFDoc_GraphNode(const XCAFDoc_GraphNode *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XCAFDoc_MaterialTool {
-	XCAFDoc_MaterialTool* GetObject() {
-	return (XCAFDoc_MaterialTool*)$self->Access();
+%extend Handle_XCAFDoc_GraphNode {
+	XCAFDoc_GraphNode* GetObject() {
+	return (XCAFDoc_GraphNode*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_MaterialTool {
-	~Handle_XCAFDoc_MaterialTool() {
+%extend Handle_XCAFDoc_GraphNode {
+	~Handle_XCAFDoc_GraphNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_MaterialTool\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
 	}
 };
 
@@ -302,28 +304,28 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_XCAFDoc_GraphNode;
-class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
+%nodefaultctor Handle_XCAFDoc_MaterialTool;
+class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode();
+		Handle_XCAFDoc_MaterialTool();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode(const Handle_XCAFDoc_GraphNode &aHandle);
+		Handle_XCAFDoc_MaterialTool(const Handle_XCAFDoc_MaterialTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode(const XCAFDoc_GraphNode *anItem);
+		Handle_XCAFDoc_MaterialTool(const XCAFDoc_MaterialTool *anItem);
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XCAFDoc_GraphNode {
-	XCAFDoc_GraphNode* GetObject() {
-	return (XCAFDoc_GraphNode*)$self->Access();
+%extend Handle_XCAFDoc_MaterialTool {
+	XCAFDoc_MaterialTool* GetObject() {
+	return (XCAFDoc_MaterialTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_GraphNode {
-	~Handle_XCAFDoc_GraphNode() {
+%extend Handle_XCAFDoc_MaterialTool {
+	~Handle_XCAFDoc_MaterialTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_MaterialTool\n");}
 	}
 };
 
@@ -656,8 +658,6 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 %nodefaultctor XCAFDoc;
 class XCAFDoc {
 	public:
-		%feature("autodoc", "1");
-		XCAFDoc();
 		%feature("autodoc", "1");
 		Standard_GUID AssemblyGUID();
 		%feature("autodoc", "1");
@@ -1151,6 +1151,61 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 
 
+%nodefaultctor XCAFDoc_GraphNodeSequence;
+class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_GraphNodeSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const XCAFDoc_GraphNodeSequence & Assign(const XCAFDoc_GraphNodeSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void Append(XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void Prepend(XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & First() const;
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend XCAFDoc_GraphNodeSequence {
+	~XCAFDoc_GraphNodeSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
+	}
+};
+
+
 %nodefaultctor XCAFDoc_Datum;
 class XCAFDoc_Datum : public TDF_Attribute {
 	public:
@@ -1559,61 +1614,6 @@ class XCAFDoc_Material : public TDF_Attribute {
 	~XCAFDoc_Material() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Material\n");}
-	}
-};
-
-
-%nodefaultctor XCAFDoc_GraphNodeSequence;
-class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_GraphNodeSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const XCAFDoc_GraphNodeSequence & Assign(const XCAFDoc_GraphNodeSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void Append(XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void Prepend(XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & First() const;
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend XCAFDoc_GraphNodeSequence {
-	~XCAFDoc_GraphNodeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
 	}
 };
 
