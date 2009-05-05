@@ -114,10 +114,6 @@ Standard_Integer & function transformation
 %include StepFEA_headers.i
 
 
-enum StepFEA_CurveEdge {
-	StepFEA_ElementEdge,
-	};
-
 enum StepFEA_ElementVolume {
 	StepFEA_Volume,
 	};
@@ -136,6 +132,10 @@ enum StepFEA_CoordinateSystemType {
 	StepFEA_Cartesian,
 	StepFEA_Cylindrical,
 	StepFEA_Spherical,
+	};
+
+enum StepFEA_CurveEdge {
+	StepFEA_ElementEdge,
 	};
 
 enum StepFEA_UnspecifiedValue {
@@ -1996,35 +1996,6 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 };
 
 
-%nodefaultctor StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
-class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const Handle_StepFEA_Curve3dElementProperty &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepFEA_Curve3dElementProperty & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
-	Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty GetHandle() {
-	return *(Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty*) &$self;
-	}
-};
-%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
-	~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
-	}
-};
-
-
 %nodefaultctor StepFEA_FeaModel;
 class StepFEA_FeaModel : public StepRepr_Representation {
 	public:
@@ -2140,43 +2111,6 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 	~StepFEA_FeaMassDensity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMassDensity\n");}
-	}
-};
-
-
-%nodefaultctor StepFEA_CurveElementEndRelease;
-class StepFEA_CurveElementEndRelease : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_CurveElementEndRelease();
-		%feature("autodoc", "1");
-		void Init(const StepFEA_CurveElementEndCoordinateSystem &aCoordinateSystem, const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &aReleases);
-		%feature("autodoc", "1");
-		StepFEA_CurveElementEndCoordinateSystem CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const StepFEA_CurveElementEndCoordinateSystem &CoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray1OfCurveElementEndReleasePacket Releases() const;
-		%feature("autodoc", "1");
-		void SetReleases(const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &Releases);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_CurveElementEndRelease {
-	Handle_StepFEA_CurveElementEndRelease GetHandle() {
-	return *(Handle_StepFEA_CurveElementEndRelease*) &$self;
-	}
-};
-%extend StepFEA_CurveElementEndRelease {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepFEA_CurveElementEndRelease {
-	~StepFEA_CurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndRelease\n");}
 	}
 };
 
@@ -3740,6 +3674,43 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 };
 
 
+%nodefaultctor StepFEA_CurveElementEndRelease;
+class StepFEA_CurveElementEndRelease : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_CurveElementEndRelease();
+		%feature("autodoc", "1");
+		void Init(const StepFEA_CurveElementEndCoordinateSystem &aCoordinateSystem, const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &aReleases);
+		%feature("autodoc", "1");
+		StepFEA_CurveElementEndCoordinateSystem CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const StepFEA_CurveElementEndCoordinateSystem &CoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementEndReleasePacket Releases() const;
+		%feature("autodoc", "1");
+		void SetReleases(const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &Releases);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_CurveElementEndRelease {
+	Handle_StepFEA_CurveElementEndRelease GetHandle() {
+	return *(Handle_StepFEA_CurveElementEndRelease*) &$self;
+	}
+};
+%extend StepFEA_CurveElementEndRelease {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepFEA_CurveElementEndRelease {
+	~StepFEA_CurveElementEndRelease() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndRelease\n");}
+	}
+};
+
+
 %nodefaultctor StepFEA_CurveElementIntervalConstant;
 class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval {
 	public:
@@ -4186,39 +4157,6 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 	~StepFEA_HSequenceOfCurve3dElementProperty() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfCurve3dElementProperty\n");}
-	}
-};
-
-
-%nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
-class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_AlignedCurve3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	Handle_StepFEA_AlignedCurve3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_AlignedCurve3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	~StepFEA_AlignedCurve3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -4779,6 +4717,35 @@ class StepFEA_Array1OfNodeRepresentation {
 };
 
 
+%nodefaultctor StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
+class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const Handle_StepFEA_Curve3dElementProperty &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_StepFEA_Curve3dElementProperty & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty GetHandle() {
+	return *(Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty*) &$self;
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
+	}
+};
+
+
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
 class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_SeqNode {
 	public:
@@ -5013,6 +4980,39 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 	~StepFEA_SequenceOfElementRepresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfElementRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
+class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_AlignedCurve3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	Handle_StepFEA_AlignedCurve3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_AlignedCurve3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	~StepFEA_AlignedCurve3dElementCoordinateSystem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
 

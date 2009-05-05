@@ -300,37 +300,6 @@ class IGESControl_Reader : public XSControl_Reader {
 };
 
 
-%nodefaultctor IGESControl_IGESBoundary;
-class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
-	public:
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary();
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESControl_IGESBoundary {
-	Handle_IGESControl_IGESBoundary GetHandle() {
-	return *(Handle_IGESControl_IGESBoundary*) &$self;
-	}
-};
-%extend IGESControl_IGESBoundary {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESControl_IGESBoundary {
-	~IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
-	}
-};
-
-
 %nodefaultctor IGESControl_ActorWrite;
 class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	public:
@@ -387,6 +356,37 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	~IGESControl_ToolContainer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
+	}
+};
+
+
+%nodefaultctor IGESControl_IGESBoundary;
+class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
+	public:
+		%feature("autodoc", "1");
+		IGESControl_IGESBoundary();
+		%feature("autodoc", "1");
+		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
+		%feature("autodoc", "1");
+		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESControl_IGESBoundary {
+	Handle_IGESControl_IGESBoundary GetHandle() {
+	return *(Handle_IGESControl_IGESBoundary*) &$self;
+	}
+};
+%extend IGESControl_IGESBoundary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESControl_IGESBoundary {
+	~IGESControl_IGESBoundary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
 	}
 };
 

@@ -61,6 +61,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shell.hxx>
 #include<Handle_StepShape_TopologicalRepresentationItem.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopoDSToStep.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_Standard_Transient.hxx>
 %}

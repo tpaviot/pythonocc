@@ -1006,43 +1006,6 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 };
 
 
-%nodefaultctor StepDimTol_DatumReference;
-class StepDimTol_DatumReference : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_DatumReference();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aPrecedence, const Handle_StepDimTol_Datum &aReferencedDatum);
-		%feature("autodoc", "1");
-		Standard_Integer Precedence() const;
-		%feature("autodoc", "1");
-		void SetPrecedence(const Standard_Integer Precedence);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum ReferencedDatum() const;
-		%feature("autodoc", "1");
-		void SetReferencedDatum(const Handle_StepDimTol_Datum &ReferencedDatum);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_DatumReference {
-	Handle_StepDimTol_DatumReference GetHandle() {
-	return *(Handle_StepDimTol_DatumReference*) &$self;
-	}
-};
-%extend StepDimTol_DatumReference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_DatumReference {
-	~StepDimTol_DatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumReference\n");}
-	}
-};
-
-
 %nodefaultctor StepDimTol_RoundnessTolerance;
 class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -1560,6 +1523,43 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 	~StepDimTol_SymmetryTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_DatumReference;
+class StepDimTol_DatumReference : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_DatumReference();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aPrecedence, const Handle_StepDimTol_Datum &aReferencedDatum);
+		%feature("autodoc", "1");
+		Standard_Integer Precedence() const;
+		%feature("autodoc", "1");
+		void SetPrecedence(const Standard_Integer Precedence);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum ReferencedDatum() const;
+		%feature("autodoc", "1");
+		void SetReferencedDatum(const Handle_StepDimTol_Datum &ReferencedDatum);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_DatumReference {
+	Handle_StepDimTol_DatumReference GetHandle() {
+	return *(Handle_StepDimTol_DatumReference*) &$self;
+	}
+};
+%extend StepDimTol_DatumReference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_DatumReference {
+	~StepDimTol_DatumReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumReference\n");}
 	}
 };
 

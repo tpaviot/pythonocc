@@ -171,23 +171,24 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Face.hxx>
-#include<gp_Pnt2d.hxx>
-#include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<gp_Pnt.hxx>
 #include<Bnd_Box.hxx>
 #include<TopoDS_Shape.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<TopoDS_Edge.hxx>
-#include<TopoDS_Solid.hxx>
-#include<TopoDS_Vertex.hxx>
-#include<BRepAdaptor_Surface.hxx>
 #include<BRepAdaptor_Curve.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
+#include<gp_Pnt2d.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
 #include<Handle_GeomAdaptor_HSurface.hxx>
 #include<Handle_IntPatch_Line.hxx>
+#include<TopoDS_Face.hxx>
+#include<BRepAdaptor_Surface.hxx>
+#include<Handle_Geom_Curve.hxx>
+#include<TopoDS_Solid.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
 #include<gp_Dir.hxx>
 #include<IntSurf_ListOfPntOn2S.hxx>
+#include<Handle_Geom2d_Curve.hxx>
+#include<IntTools.hxx>
 %}

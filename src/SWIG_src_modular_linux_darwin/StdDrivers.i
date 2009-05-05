@@ -172,6 +172,8 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 class StdDrivers {
 	public:
 		%feature("autodoc", "1");
+		StdDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };

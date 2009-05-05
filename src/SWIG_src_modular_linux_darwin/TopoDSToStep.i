@@ -114,6 +114,12 @@ Standard_Integer & function transformation
 %include TopoDSToStep_headers.i
 
 
+enum TopoDSToStep_MakeWireError {
+	TopoDSToStep_WireDone,
+	TopoDSToStep_NonManifoldWire,
+	TopoDSToStep_WireOther,
+	};
+
 enum TopoDSToStep_MakeVertexError {
 	TopoDSToStep_VertexDone,
 	TopoDSToStep_VertexOther,
@@ -143,12 +149,6 @@ enum TopoDSToStep_FacetedError {
 	TopoDSToStep_FacetedDone,
 	TopoDSToStep_SurfaceNotPlane,
 	TopoDSToStep_PCurveNotLinear,
-	};
-
-enum TopoDSToStep_MakeWireError {
-	TopoDSToStep_WireDone,
-	TopoDSToStep_NonManifoldWire,
-	TopoDSToStep_WireOther,
 	};
 
 
@@ -202,6 +202,8 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 %nodefaultctor TopoDSToStep_FacetedTool;
 class TopoDSToStep_FacetedTool {
 	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
 		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
@@ -396,6 +398,8 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 %nodefaultctor TopoDSToStep;
 class TopoDSToStep {
 	public:
+		%feature("autodoc", "1");
+		TopoDSToStep();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString DecodeBuilderError(const TopoDSToStep_BuilderError E);
 		%feature("autodoc", "1");

@@ -1430,6 +1430,8 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 class Storage_MapPSDHasher {
 	public:
 		%feature("autodoc", "1");
+		Storage_MapPSDHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Standard_Persistent &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
@@ -1888,6 +1890,8 @@ class Storage_StreamWriteError : public Standard_Failure {
 class Storage {
 	public:
 		%feature("autodoc", "1");
+		Storage();
+		%feature("autodoc", "1");
 		TCollection_AsciiString Version();
 
 };
@@ -1956,6 +1960,8 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 %nodefaultctor Storage_stCONSTclCOM;
 class Storage_stCONSTclCOM {
 	public:
+		%feature("autodoc", "1");
+		Storage_stCONSTclCOM();
 
 };
 %extend Storage_stCONSTclCOM {

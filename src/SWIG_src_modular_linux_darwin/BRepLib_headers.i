@@ -69,6 +69,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_DataMapOfIntegerListOfShape.hxx>
 #include<TopTools_DataMapOfIntegerShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
+#include<BRepLib.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopTools_ListOfShape.hxx>

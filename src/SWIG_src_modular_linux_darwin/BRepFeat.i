@@ -165,6 +165,8 @@ enum BRepFeat_StatusError {
 class BRepFeat {
 	public:
 		%feature("autodoc", "1");
+		BRepFeat();
+		%feature("autodoc", "1");
 		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 		%feature("autodoc", "1");
 		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);

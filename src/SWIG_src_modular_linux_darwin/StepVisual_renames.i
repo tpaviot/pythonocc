@@ -129,7 +129,7 @@
 %rename(StepVisual_PresentationRepresentationSelect) StepVisual_PresentationRepresentationSelect;
 %rename(StepVisual_SurfaceStyleFillArea) StepVisual_SurfaceStyleFillArea;
 %rename(Handle_StepVisual_TemplateInstance) Handle_StepVisual_TemplateInstance;
-%rename(StepVisual_ContextDependentInvisibility) StepVisual_ContextDependentInvisibility;
+%rename(StepVisual_PointStyle) StepVisual_PointStyle;
 %rename(StepVisual_SurfaceStyleUsage) StepVisual_SurfaceStyleUsage;
 %rename(Handle_StepVisual_ExternallyDefinedTextFont) Handle_StepVisual_ExternallyDefinedTextFont;
 %rename(Handle_StepVisual_SurfaceStyleSegmentationCurve) Handle_StepVisual_SurfaceStyleSegmentationCurve;
@@ -189,7 +189,7 @@
 %rename(StepVisual_MarkerSelect) StepVisual_MarkerSelect;
 %rename(StepVisual_tpRight) StepVisual_tpRight;
 %rename(Handle_StepVisual_Invisibility) Handle_StepVisual_Invisibility;
-%rename(StepVisual_PointStyle) StepVisual_PointStyle;
+%rename(StepVisual_ContextDependentInvisibility) StepVisual_ContextDependentInvisibility;
 %rename(StepVisual_mtPlus) StepVisual_mtPlus;
 %rename(Handle_StepVisual_HArray1OfStyleContextSelect) Handle_StepVisual_HArray1OfStyleContextSelect;
 %rename(StepVisual_CompositeTextWithExtent) StepVisual_CompositeTextWithExtent;

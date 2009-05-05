@@ -142,32 +142,6 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_ShapeTool;
-class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ShapeTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ShapeTool(const Handle_PXCAFDoc_ShapeTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ShapeTool(const PXCAFDoc_ShapeTool *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ShapeTool const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_ShapeTool {
-	PXCAFDoc_ShapeTool* GetObject() {
-	return (PXCAFDoc_ShapeTool*)$self->Access();
-	}
-};
-%extend Handle_PXCAFDoc_ShapeTool {
-	~Handle_PXCAFDoc_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ShapeTool\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PXCAFDoc_Location;
 class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 	public:
@@ -268,6 +242,32 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	~Handle_PXCAFDoc_Centroid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_ShapeTool;
+class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_ShapeTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_ShapeTool(const Handle_PXCAFDoc_ShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_ShapeTool(const PXCAFDoc_ShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_ShapeTool const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_ShapeTool {
+	PXCAFDoc_ShapeTool* GetObject() {
+	return (PXCAFDoc_ShapeTool*)$self->Access();
+	}
+};
+%extend Handle_PXCAFDoc_ShapeTool {
+	~Handle_PXCAFDoc_ShapeTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ShapeTool\n");}
 	}
 };
 

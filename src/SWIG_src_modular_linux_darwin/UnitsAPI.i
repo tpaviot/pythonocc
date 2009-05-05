@@ -126,6 +126,8 @@ enum UnitsAPI_SystemUnits {
 class UnitsAPI {
 	public:
 		%feature("autodoc", "1");
+		UnitsAPI();
+		%feature("autodoc", "1");
 		Standard_Real CurrentToLS(const Standard_Real aData, const char * aQuantity);
 		%feature("autodoc", "1");
 		Standard_Real CurrentToSI(const Standard_Real aData, const char * aQuantity);

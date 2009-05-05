@@ -253,32 +253,6 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 };
 
 
-%nodefaultctor Handle_Graphic2d_HArray1OfVertex;
-class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic2d_HArray1OfVertex();
-		%feature("autodoc", "1");
-		Handle_Graphic2d_HArray1OfVertex(const Handle_Graphic2d_HArray1OfVertex &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_HArray1OfVertex(const Graphic2d_HArray1OfVertex *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_HArray1OfVertex const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic2d_HArray1OfVertex {
-	Graphic2d_HArray1OfVertex* GetObject() {
-	return (Graphic2d_HArray1OfVertex*)$self->Access();
-	}
-};
-%extend Handle_Graphic2d_HArray1OfVertex {
-	~Handle_Graphic2d_HArray1OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Graphic2d_Drawer;
 class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	public:
@@ -747,6 +721,32 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 };
 
 
+%nodefaultctor Handle_Graphic2d_HArray1OfVertex;
+class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic2d_HArray1OfVertex();
+		%feature("autodoc", "1");
+		Handle_Graphic2d_HArray1OfVertex(const Handle_Graphic2d_HArray1OfVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_HArray1OfVertex(const Graphic2d_HArray1OfVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_HArray1OfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic2d_HArray1OfVertex {
+	Graphic2d_HArray1OfVertex* GetObject() {
+	return (Graphic2d_HArray1OfVertex*)$self->Access();
+	}
+};
+%extend Handle_Graphic2d_HArray1OfVertex {
+	~Handle_Graphic2d_HArray1OfVertex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Graphic2d_Paragraph;
 class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	public:
@@ -847,6 +847,32 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 	~Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Graphic2d_ImageDefinitionError;
+class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic2d_ImageDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Graphic2d_ImageDefinitionError(const Handle_Graphic2d_ImageDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_ImageDefinitionError(const Graphic2d_ImageDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_ImageDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic2d_ImageDefinitionError {
+	Graphic2d_ImageDefinitionError* GetObject() {
+	return (Graphic2d_ImageDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Graphic2d_ImageDefinitionError {
+	~Handle_Graphic2d_ImageDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ImageDefinitionError\n");}
 	}
 };
 
@@ -1029,32 +1055,6 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 	~Handle_Graphic2d_MarkerDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_MarkerDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Graphic2d_ImageDefinitionError;
-class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic2d_ImageDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Graphic2d_ImageDefinitionError(const Handle_Graphic2d_ImageDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_ImageDefinitionError(const Graphic2d_ImageDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_ImageDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic2d_ImageDefinitionError {
-	Graphic2d_ImageDefinitionError* GetObject() {
-	return (Graphic2d_ImageDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_Graphic2d_ImageDefinitionError {
-	~Handle_Graphic2d_ImageDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ImageDefinitionError\n");}
 	}
 };
 
@@ -1948,19 +1948,6 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 };
 
 
-%nodefaultctor Graphic2d_CBitFields8;
-class Graphic2d_CBitFields8 {
-	public:
-
-};
-%extend Graphic2d_CBitFields8 {
-	~Graphic2d_CBitFields8() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_CBitFields8\n");}
-	}
-};
-
-
 %nodefaultctor Graphic2d_Image;
 class Graphic2d_Image : public Graphic2d_Primitive {
 	public:
@@ -2084,6 +2071,41 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 	~Graphic2d_TextDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_TextDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Graphic2d_ImageDefinitionError;
+class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Graphic2d_ImageDefinitionError();
+		%feature("autodoc", "1");
+		Graphic2d_ImageDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_ImageDefinitionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic2d_ImageDefinitionError {
+	Handle_Graphic2d_ImageDefinitionError GetHandle() {
+	return *(Handle_Graphic2d_ImageDefinitionError*) &$self;
+	}
+};
+%extend Graphic2d_ImageDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Graphic2d_ImageDefinitionError {
+	~Graphic2d_ImageDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageDefinitionError\n");}
 	}
 };
 
@@ -2809,41 +2831,6 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 };
 
 
-%nodefaultctor Graphic2d_ImageDefinitionError;
-class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Graphic2d_ImageDefinitionError();
-		%feature("autodoc", "1");
-		Graphic2d_ImageDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_ImageDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic2d_ImageDefinitionError {
-	Handle_Graphic2d_ImageDefinitionError GetHandle() {
-	return *(Handle_Graphic2d_ImageDefinitionError*) &$self;
-	}
-};
-%extend Graphic2d_ImageDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Graphic2d_ImageDefinitionError {
-	~Graphic2d_ImageDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageDefinitionError\n");}
-	}
-};
-
-
 %nodefaultctor Graphic2d_Buffer;
 class Graphic2d_Buffer : public MMgt_TShared {
 	public:
@@ -3429,6 +3416,61 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 };
 
 
+%nodefaultctor Graphic2d_SequenceOfVertex;
+class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Graphic2d_SequenceOfVertex();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Graphic2d_SequenceOfVertex & Assign(const Graphic2d_SequenceOfVertex &Other);
+		%feature("autodoc", "1");
+		void Append(const Graphic2d_Vertex &T);
+		%feature("autodoc", "1");
+		void Append(Graphic2d_SequenceOfVertex & S);
+		%feature("autodoc", "1");
+		void Prepend(const Graphic2d_Vertex &T);
+		%feature("autodoc", "1");
+		void Prepend(Graphic2d_SequenceOfVertex & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Graphic2d_Vertex &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Graphic2d_Vertex &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
+		%feature("autodoc", "1");
+		const Graphic2d_Vertex & First() const;
+		%feature("autodoc", "1");
+		const Graphic2d_Vertex & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
+		%feature("autodoc", "1");
+		const Graphic2d_Vertex & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Graphic2d_Vertex & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Graphic2d_Vertex &I);
+		%feature("autodoc", "1");
+		Graphic2d_Vertex & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Graphic2d_Vertex & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Graphic2d_SequenceOfVertex {
+	~Graphic2d_SequenceOfVertex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfVertex\n");}
+	}
+};
+
+
 %nodefaultctor Graphic2d_TransientDefinitionError;
 class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3499,6 +3541,21 @@ class Graphic2d_Marker : public Graphic2d_Line {
 	~Graphic2d_Marker() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Marker\n");}
+	}
+};
+
+
+%nodefaultctor Graphic2d_CBitFields8;
+class Graphic2d_CBitFields8 {
+	public:
+		%feature("autodoc", "1");
+		Graphic2d_CBitFields8();
+
+};
+%extend Graphic2d_CBitFields8 {
+	~Graphic2d_CBitFields8() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic2d_CBitFields8\n");}
 	}
 };
 
@@ -3626,61 +3683,6 @@ class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
 	~Graphic2d_SequenceOfPolyline() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfPolyline\n");}
-	}
-};
-
-
-%nodefaultctor Graphic2d_SequenceOfVertex;
-class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Graphic2d_SequenceOfVertex();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Graphic2d_SequenceOfVertex & Assign(const Graphic2d_SequenceOfVertex &Other);
-		%feature("autodoc", "1");
-		void Append(const Graphic2d_Vertex &T);
-		%feature("autodoc", "1");
-		void Append(Graphic2d_SequenceOfVertex & S);
-		%feature("autodoc", "1");
-		void Prepend(const Graphic2d_Vertex &T);
-		%feature("autodoc", "1");
-		void Prepend(Graphic2d_SequenceOfVertex & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Graphic2d_Vertex &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Graphic2d_Vertex &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
-		%feature("autodoc", "1");
-		const Graphic2d_Vertex & First() const;
-		%feature("autodoc", "1");
-		const Graphic2d_Vertex & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Graphic2d_SequenceOfVertex & S);
-		%feature("autodoc", "1");
-		const Graphic2d_Vertex & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Graphic2d_Vertex & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Graphic2d_Vertex &I);
-		%feature("autodoc", "1");
-		Graphic2d_Vertex & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Graphic2d_Vertex & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Graphic2d_SequenceOfVertex {
-	~Graphic2d_SequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfVertex\n");}
 	}
 };
 

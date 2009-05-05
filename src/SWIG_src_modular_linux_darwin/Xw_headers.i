@@ -169,4 +169,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Aspect_MarkMapEntry.hxx>
 #include<Handle_Aspect_MarkMap.hxx>
+#include<Xw.hxx>
 %}

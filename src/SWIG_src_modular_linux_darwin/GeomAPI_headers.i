@@ -51,6 +51,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_Array1OfReal.hxx>
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array2OfReal.hxx>
+#include<GeomAPI.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pln.hxx>
 %}

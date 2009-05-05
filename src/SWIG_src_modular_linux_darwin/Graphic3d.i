@@ -747,32 +747,6 @@ class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRan
 };
 
 
-%nodefaultctor Handle_Graphic3d_StructureDefinitionError;
-class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError(const Handle_Graphic3d_StructureDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError(const Graphic3d_StructureDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_StructureDefinitionError {
-	Graphic3d_StructureDefinitionError* GetObject() {
-	return (Graphic3d_StructureDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_Graphic3d_StructureDefinitionError {
-	~Handle_Graphic3d_StructureDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureDefinitionError\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Graphic3d_AspectFillArea3d;
 class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
 	public:
@@ -1501,6 +1475,32 @@ class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection
 };
 
 
+%nodefaultctor Handle_Graphic3d_StructureDefinitionError;
+class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError(const Handle_Graphic3d_StructureDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError(const Graphic3d_StructureDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_StructureDefinitionError {
+	Graphic3d_StructureDefinitionError* GetObject() {
+	return (Graphic3d_StructureDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Graphic3d_StructureDefinitionError {
+	~Handle_Graphic3d_StructureDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureDefinitionError\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Graphic3d_InitialisationError;
 class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 	public:
@@ -1686,6 +1686,8 @@ class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 %nodefaultctor Graphic3d_CBitFields20;
 class Graphic3d_CBitFields20 {
 	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields20();
 
 };
 %extend Graphic3d_CBitFields20 {
@@ -2171,33 +2173,6 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 };
 
 
-%nodefaultctor Graphic3d_ArrayOfPolylines;
-class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ArrayOfPolylines {
-	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
-	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
-	}
-};
-%extend Graphic3d_ArrayOfPolylines {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Graphic3d_ArrayOfPolylines {
-	~Graphic3d_ArrayOfPolylines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");}
-	}
-};
-
-
 %nodefaultctor Graphic3d_ListIteratorOfListOfPArray;
 class Graphic3d_ListIteratorOfListOfPArray {
 	public:
@@ -2455,6 +2430,51 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 	~Graphic3d_Texture2Dplane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dplane\n");}
+	}
+};
+
+
+%nodefaultctor Graphic3d_Array2OfVertexNT;
+class Graphic3d_Array2OfVertexNT {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_Array2OfVertexNT(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		Graphic3d_Array2OfVertexNT(const Graphic3d_VertexNT &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Graphic3d_VertexNT &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertexNT & Assign(const Graphic3d_Array2OfVertexNT &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexNT &Value);
+		%feature("autodoc", "1");
+		const Graphic3d_VertexNT & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Graphic3d_VertexNT & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend Graphic3d_Array2OfVertexNT {
+	~Graphic3d_Array2OfVertexNT() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");}
 	}
 };
 
@@ -2763,51 +2783,6 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 	~Graphic3d_TransformError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_TransformError\n");}
-	}
-};
-
-
-%nodefaultctor Graphic3d_Array2OfVertexNT;
-class Graphic3d_Array2OfVertexNT {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNT(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNT(const Graphic3d_VertexNT &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexNT &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexNT & Assign(const Graphic3d_Array2OfVertexNT &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexNT &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend Graphic3d_Array2OfVertexNT {
-	~Graphic3d_Array2OfVertexNT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");}
 	}
 };
 
@@ -3258,6 +3233,21 @@ class Graphic3d_Array1OfVertexNT {
 };
 
 
+%nodefaultctor Graphic3d_CBitFields16;
+class Graphic3d_CBitFields16 {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields16();
+
+};
+%extend Graphic3d_CBitFields16 {
+	~Graphic3d_CBitFields16() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields16\n");}
+	}
+};
+
+
 %nodefaultctor Graphic3d_Texture1D;
 class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 	public:
@@ -3289,28 +3279,32 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 };
 
 
-%nodefaultctor Graphic3d_CBitFields16;
-class Graphic3d_CBitFields16 {
-	public:
-
-};
-%extend Graphic3d_CBitFields16 {
-	~Graphic3d_CBitFields16() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields16\n");}
-	}
-};
-
-
 %nodefaultctor Graphic3d_CBitFields4;
 class Graphic3d_CBitFields4 {
 	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields4();
 
 };
 %extend Graphic3d_CBitFields4 {
 	~Graphic3d_CBitFields4() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields4\n");}
+	}
+};
+
+
+%nodefaultctor Graphic3d_CBitFields8;
+class Graphic3d_CBitFields8 {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields8();
+
+};
+%extend Graphic3d_CBitFields8 {
+	~Graphic3d_CBitFields8() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields8\n");}
 	}
 };
 
@@ -3850,6 +3844,8 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 class Graphic3d_Strips {
 	public:
 		%feature("autodoc", "1");
+		Graphic3d_Strips();
+		%feature("autodoc", "1");
 		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
 		%feature("autodoc", "1");
 		void STRIPT_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
@@ -4268,19 +4264,6 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 	~Graphic3d_SequenceNodeOfSequenceOfStructure() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
-	}
-};
-
-
-%nodefaultctor Graphic3d_CBitFields8;
-class Graphic3d_CBitFields8 {
-	public:
-
-};
-%extend Graphic3d_CBitFields8 {
-	~Graphic3d_CBitFields8() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields8\n");}
 	}
 };
 
@@ -4834,6 +4817,33 @@ class Graphic3d_SetIteratorOfSetOfGroup {
 	~Graphic3d_SetIteratorOfSetOfGroup() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_SetIteratorOfSetOfGroup\n");}
+	}
+};
+
+
+%nodefaultctor Graphic3d_ArrayOfPolylines;
+class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
+	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
+	}
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Graphic3d_ArrayOfPolylines {
+	~Graphic3d_ArrayOfPolylines() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");}
 	}
 };
 

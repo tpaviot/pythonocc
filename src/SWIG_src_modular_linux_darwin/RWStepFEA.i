@@ -536,6 +536,27 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaModel;
+class RWStepFEA_RWFeaModel {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaModel();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepFEA_RWFeaModel {
+	~RWStepFEA_RWFeaModel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWGeometricNode;
 class RWStepFEA_RWGeometricNode {
 	public:
@@ -931,27 +952,6 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 	~RWStepFEA_RWNodeWithSolutionCoordinateSystem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithSolutionCoordinateSystem\n");}
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaModel;
-class RWStepFEA_RWFeaModel {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaModel();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepFEA_RWFeaModel {
-	~RWStepFEA_RWFeaModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
 	}
 };
 

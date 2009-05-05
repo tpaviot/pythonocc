@@ -768,6 +768,8 @@ class TDocStd_Owner : public TDF_Attribute {
 class TDocStd {
 	public:
 		%feature("autodoc", "1");
+		TDocStd();
+		%feature("autodoc", "1");
 		void IDList(TDF_IDList & anIDList);
 
 };

@@ -232,6 +232,8 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 %nodefaultctor Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter;
 class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
 
 };
 %extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
@@ -245,6 +247,8 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 %nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	public:
+		%feature("autodoc", "1");
+		Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
 		%feature("autodoc", "1");
 		const Bnd_Box2d & Bounding(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
 		%feature("autodoc", "1");
@@ -423,6 +427,8 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 %nodefaultctor Geom2dInt_Geom2dCurveTool;
 class Geom2dInt_Geom2dCurveTool {
 	public:
+		%feature("autodoc", "1");
+		Geom2dInt_Geom2dCurveTool();
 		%feature("autodoc", "1");
 		GeomAbs_CurveType TheType(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
@@ -603,6 +609,8 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 %nodefaultctor Geom2dInt_TheProjPCurOfGInter;
 class Geom2dInt_TheProjPCurOfGInter {
 	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheProjPCurOfGInter();
 		%feature("autodoc", "1");
 		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");

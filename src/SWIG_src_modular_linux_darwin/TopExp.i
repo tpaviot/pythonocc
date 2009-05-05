@@ -147,6 +147,8 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 class TopExp {
 	public:
 		%feature("autodoc", "1");
+		TopExp();
+		%feature("autodoc", "1");
 		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
 		void MapShapes(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);

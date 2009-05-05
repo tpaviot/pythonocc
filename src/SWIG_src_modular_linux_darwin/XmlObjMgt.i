@@ -150,6 +150,8 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 class XmlObjMgt {
 	public:
 		%feature("autodoc", "1");
+		XmlObjMgt();
+		%feature("autodoc", "1");
 		const XmlObjMgt_DOMString & IdString();
 		%feature("autodoc", "1");
 		Standard_Boolean SetExtendedString(XmlObjMgt_Element & theElement, const TCollection_ExtendedString &theString);
@@ -186,6 +188,8 @@ class XmlObjMgt {
 %nodefaultctor XmlObjMgt_GP;
 class XmlObjMgt_GP {
 	public:
+		%feature("autodoc", "1");
+		XmlObjMgt_GP();
 		%feature("autodoc", "1");
 		XmlObjMgt_DOMString Translate(const gp_Trsf &aTrsf);
 		%feature("autodoc", "1");

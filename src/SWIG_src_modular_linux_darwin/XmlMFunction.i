@@ -231,6 +231,8 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 class XmlMFunction {
 	public:
 		%feature("autodoc", "1");
+		XmlMFunction();
+		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };

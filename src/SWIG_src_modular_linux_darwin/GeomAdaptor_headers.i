@@ -104,6 +104,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>
+#include<GeomAdaptor.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<Adaptor3d_Surface.hxx>
 #include<TColStd_Array1OfReal.hxx>

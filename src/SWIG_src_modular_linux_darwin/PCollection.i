@@ -295,6 +295,8 @@ class PCollection_IsNullTree : public Standard_Failure {
 class PCollection_PrivCompareOfInteger {
 	public:
 		%feature("autodoc", "1");
+		PCollection_PrivCompareOfInteger();
+		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
@@ -541,6 +543,8 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 %nodefaultctor PCollection_PrivCompareOfReal;
 class PCollection_PrivCompareOfReal {
 	public:
+		%feature("autodoc", "1");
+		PCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
 		%feature("autodoc", "1");

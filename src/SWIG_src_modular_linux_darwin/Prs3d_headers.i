@@ -443,6 +443,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<gp_Pln.hxx>
+#include<Prs3d.hxx>
 #include<Handle_Graphic3d_StructureManager.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>

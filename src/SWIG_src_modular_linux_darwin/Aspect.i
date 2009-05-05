@@ -254,6 +254,16 @@ enum Aspect_TypeOfUpdate {
 	Aspect_TOU_WAIT,
 	};
 
+enum Aspect_PolygonOffsetMode {
+	Aspect_POM_Off,
+	Aspect_POM_Fill,
+	Aspect_POM_Line,
+	Aspect_POM_Point,
+	Aspect_POM_All,
+	Aspect_POM_None,
+	Aspect_POM_Mask,
+	};
+
 enum Aspect_TypeOfMarker {
 	Aspect_TOM_POINT,
 	Aspect_TOM_PLUS,
@@ -299,16 +309,6 @@ enum Aspect_FormatOfSheetPaper {
 	Aspect_FOSP_B,
 	Aspect_FOSP_A,
 	Aspect_FOSP_UNKNOWN,
-	};
-
-enum Aspect_PolygonOffsetMode {
-	Aspect_POM_Off,
-	Aspect_POM_Fill,
-	Aspect_POM_Line,
-	Aspect_POM_Point,
-	Aspect_POM_All,
-	Aspect_POM_None,
-	Aspect_POM_Mask,
 	};
 
 enum Aspect_GridDrawMode {
@@ -518,32 +518,6 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	~Handle_Aspect_TypeMapDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Aspect_AspectLineDefinitionError;
-class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_AspectLineDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Aspect_AspectLineDefinitionError(const Handle_Aspect_AspectLineDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_AspectLineDefinitionError(const Aspect_AspectLineDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_AspectLineDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_AspectLineDefinitionError {
-	Aspect_AspectLineDefinitionError* GetObject() {
-	return (Aspect_AspectLineDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_Aspect_AspectLineDefinitionError {
-	~Handle_Aspect_AspectLineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");}
 	}
 };
 
@@ -830,6 +804,32 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 	~Handle_Aspect_GraphicDeviceDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDeviceDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Aspect_AspectLineDefinitionError;
+class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Aspect_AspectLineDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Aspect_AspectLineDefinitionError(const Handle_Aspect_AspectLineDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_AspectLineDefinitionError(const Aspect_AspectLineDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Aspect_AspectLineDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Aspect_AspectLineDefinitionError {
+	Aspect_AspectLineDefinitionError* GetObject() {
+	return (Aspect_AspectLineDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_Aspect_AspectLineDefinitionError {
+	~Handle_Aspect_AspectLineDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");}
 	}
 };
 
@@ -1802,6 +1802,8 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 %nodefaultctor Aspect_GraphicCallbackStruct;
 class Aspect_GraphicCallbackStruct {
 	public:
+		%feature("autodoc", "1");
+		Aspect_GraphicCallbackStruct();
 
 };
 %extend Aspect_GraphicCallbackStruct {
@@ -1843,49 +1845,6 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 	~Aspect_AspectFillAreaDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Aspect_AspectFillAreaDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Aspect_MarkerStyle;
-class Aspect_MarkerStyle {
-	public:
-		%feature("autodoc", "1");
-		Aspect_MarkerStyle();
-		%feature("autodoc", "1");
-		Aspect_MarkerStyle(const Aspect_TypeOfMarker aType);
-		%feature("autodoc", "1");
-		Aspect_MarkerStyle(const TColStd_Array1OfReal &aXpoint, const TColStd_Array1OfReal &aYpoint);
-		%feature("autodoc", "1");
-		Aspect_MarkerStyle(const TColStd_Array1OfReal &aXpoint, const TColStd_Array1OfReal &aYpoint, const TColStd_Array1OfBoolean &aSpoint);
-		%feature("autodoc", "1");
-		Aspect_MarkerStyle & Assign(const Aspect_MarkerStyle &Other);
-		%feature("autodoc", "1");
-		Aspect_TypeOfMarker Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		const TShort_Array1OfShortReal & XValues() const;
-		%feature("autodoc", "1");
-		const TShort_Array1OfShortReal & YValues() const;
-		%feature("autodoc", "1");
-		const TColStd_Array1OfBoolean & SValues() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_MarkerStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_MarkerStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNotEqual(const Aspect_MarkerStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
-
-};
-%extend Aspect_MarkerStyle {
-	~Aspect_MarkerStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyle\n");}
 	}
 };
 
@@ -2143,6 +2102,8 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 %nodefaultctor Aspect_RGBPixel;
 class Aspect_RGBPixel {
 	public:
+		%feature("autodoc", "1");
+		Aspect_RGBPixel();
 
 };
 %extend Aspect_RGBPixel {
@@ -3885,6 +3846,8 @@ class Aspect_ColorMapEntry {
 class Aspect {
 	public:
 		%feature("autodoc", "1");
+		Aspect();
+		%feature("autodoc", "1");
 		char * ValuesOfFOSP(const Aspect_FormatOfSheetPaper aFOSP, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		char * ToCString(const TCollection_ExtendedString &aString);
@@ -4142,6 +4105,49 @@ class Aspect_LineStyle {
 };
 
 
+%nodefaultctor Aspect_MarkerStyle;
+class Aspect_MarkerStyle {
+	public:
+		%feature("autodoc", "1");
+		Aspect_MarkerStyle();
+		%feature("autodoc", "1");
+		Aspect_MarkerStyle(const Aspect_TypeOfMarker aType);
+		%feature("autodoc", "1");
+		Aspect_MarkerStyle(const TColStd_Array1OfReal &aXpoint, const TColStd_Array1OfReal &aYpoint);
+		%feature("autodoc", "1");
+		Aspect_MarkerStyle(const TColStd_Array1OfReal &aXpoint, const TColStd_Array1OfReal &aYpoint, const TColStd_Array1OfBoolean &aSpoint);
+		%feature("autodoc", "1");
+		Aspect_MarkerStyle & Assign(const Aspect_MarkerStyle &Other);
+		%feature("autodoc", "1");
+		Aspect_TypeOfMarker Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		const TShort_Array1OfShortReal & XValues() const;
+		%feature("autodoc", "1");
+		const TShort_Array1OfShortReal & YValues() const;
+		%feature("autodoc", "1");
+		const TColStd_Array1OfBoolean & SValues() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_MarkerStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_MarkerStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNotEqual(const Aspect_MarkerStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
+
+};
+%extend Aspect_MarkerStyle {
+	~Aspect_MarkerStyle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyle\n");}
+	}
+};
+
+
 %nodefaultctor Aspect_DriverDefinitionError;
 class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4298,6 +4304,93 @@ class Aspect_BadAccess : public Standard_DomainError {
 	~Aspect_BadAccess() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Aspect_BadAccess\n");}
+	}
+};
+
+
+%nodefaultctor Aspect_WindowDriver;
+class Aspect_WindowDriver : public Aspect_Driver {
+	public:
+		%feature("autodoc", "1");
+		virtual		void BeginDraw(const Standard_Boolean DoubleBuffer=1, const Standard_Integer aRetainBuffer=0);
+		%feature("autodoc", "1");
+		virtual		Aspect_TypeOfResize ResizeSpace();
+		%feature("autodoc", "1");
+		Handle_Aspect_Window Window() const;
+		%feature("autodoc", "1");
+		virtual		void SetDrawMode(const Aspect_TypeOfDrawMode aMode);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OpenBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0, const Standard_Integer aWidthIndex=0, const Standard_Integer aColorIndex=0, const Standard_Integer aFontIndex=0, const Aspect_TypeOfDrawMode aDrawMode=Aspect_TODM_REPLACE);
+		%feature("autodoc", "1");
+		virtual		void CloseBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void ClearBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void DrawBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void EraseBuffer(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void MoveBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0) const;
+		%feature("autodoc", "1");
+		virtual		void ScaleBuffer(const Standard_Integer aRetainBuffer, const Quantity_Factor aScaleX=1.0e+0, const Quantity_Factor aScaleY=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsOpen(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsEmpty(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferIsDrawn(const Standard_Integer aRetainBuffer) const;
+		%feature("autodoc", "1");
+		virtual		void AngleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_PlaneAngle & anAngle) const;
+		%feature("autodoc", "1");
+		virtual		void ScaleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_Factor & aScaleX, Quantity_Factor & aScaleY) const;
+		%feature("autodoc", "1");
+		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
+		%feature("autodoc", "1");
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
+		%feature("autodoc", "1");
+		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_WindowDriver {
+	Handle_Aspect_WindowDriver GetHandle() {
+	return *(Handle_Aspect_WindowDriver*) &$self;
+	}
+};
+%extend Aspect_WindowDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Aspect_WindowDriver {
+	~Aspect_WindowDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Aspect_WindowDriver\n");}
 	}
 };
 
@@ -4781,92 +4874,5 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 	~Aspect_LineStyleDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor Aspect_WindowDriver;
-class Aspect_WindowDriver : public Aspect_Driver {
-	public:
-		%feature("autodoc", "1");
-		virtual		void BeginDraw(const Standard_Boolean DoubleBuffer=1, const Standard_Integer aRetainBuffer=0);
-		%feature("autodoc", "1");
-		virtual		Aspect_TypeOfResize ResizeSpace();
-		%feature("autodoc", "1");
-		Handle_Aspect_Window Window() const;
-		%feature("autodoc", "1");
-		virtual		void SetDrawMode(const Aspect_TypeOfDrawMode aMode);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OpenBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0, const Standard_Integer aWidthIndex=0, const Standard_Integer aColorIndex=0, const Standard_Integer aFontIndex=0, const Aspect_TypeOfDrawMode aDrawMode=Aspect_TODM_REPLACE);
-		%feature("autodoc", "1");
-		virtual		void CloseBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void ClearBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void DrawBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void EraseBuffer(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void MoveBuffer(const Standard_Integer aRetainBuffer, const Standard_ShortReal aPivotX=0.0, const Standard_ShortReal aPivotY=0.0) const;
-		%feature("autodoc", "1");
-		virtual		void ScaleBuffer(const Standard_Integer aRetainBuffer, const Quantity_Factor aScaleX=1.0e+0, const Quantity_Factor aScaleY=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsOpen(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsEmpty(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferIsDrawn(const Standard_Integer aRetainBuffer) const;
-		%feature("autodoc", "1");
-		virtual		void AngleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_PlaneAngle & anAngle) const;
-		%feature("autodoc", "1");
-		virtual		void ScaleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_Factor & aScaleX, Quantity_Factor & aScaleY) const;
-		%feature("autodoc", "1");
-		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
-		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
-		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_WindowDriver {
-	Handle_Aspect_WindowDriver GetHandle() {
-	return *(Handle_Aspect_WindowDriver*) &$self;
-	}
-};
-%extend Aspect_WindowDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Aspect_WindowDriver {
-	~Aspect_WindowDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WindowDriver\n");}
 	}
 };

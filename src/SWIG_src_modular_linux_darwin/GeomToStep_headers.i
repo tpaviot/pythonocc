@@ -70,8 +70,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Axis1Placement.hxx>
 #include<Handle_Geom2d_AxisPlacement.hxx>
 #include<Handle_Geom_ElementarySurface.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom2d_Parabola.hxx>
 #include<Handle_Geom_Parabola.hxx>
@@ -81,6 +79,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_ConicalSurface.hxx>
 #include<Handle_Geom_RectangularTrimmedSurface.hxx>
 #include<Handle_Geom_ToroidalSurface.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_Ax22d.hxx>
 #include<Handle_Geom2d_Hyperbola.hxx>
@@ -92,7 +92,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Pnt2d.hxx>
 #include<Handle_Geom_CartesianPoint.hxx>
 #include<Handle_Geom2d_CartesianPoint.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<gp_Elips.hxx>
 #include<Handle_Geom_Ellipse.hxx>
 #include<Handle_Geom2d_Ellipse.hxx>
@@ -104,6 +103,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_BoundedCurve.hxx>
 #include<Handle_Geom2d_BoundedCurve.hxx>
 #include<Handle_Geom_CylindricalSurface.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<gp_Circ.hxx>
 #include<Handle_Geom_Circle.hxx>
 #include<Handle_Geom2d_Circle.hxx>

@@ -579,8 +579,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import Standard.i
-%import Viewer.i
 %import MMgt.i
 %import Aspect.i
+%import Viewer.i
 %import Quantity.i
 %import TColStd.i

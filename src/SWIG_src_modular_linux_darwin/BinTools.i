@@ -198,6 +198,8 @@ class BinTools_LocationSet {
 class BinTools {
 	public:
 		%feature("autodoc", "1");
+		BinTools();
+		%feature("autodoc", "1");
 		Standard_OStream & PutReal(Standard_OStream & OS, const Standard_Real theValue);
 		%feature("autodoc", "1");
 		Standard_OStream & PutInteger(Standard_OStream & OS, const Standard_Integer theValue);

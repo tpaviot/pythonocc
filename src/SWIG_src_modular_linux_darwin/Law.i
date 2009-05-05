@@ -142,6 +142,32 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_Law_Linear;
+class Handle_Law_Linear : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Linear();
+		%feature("autodoc", "1");
+		Handle_Law_Linear(const Handle_Law_Linear &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Linear(const Law_Linear *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Linear {
+	Law_Linear* GetObject() {
+	return (Law_Linear*)$self->Access();
+	}
+};
+%extend Handle_Law_Linear {
+	~Handle_Law_Linear() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Law_Constant;
 class Handle_Law_Constant : public Handle_Law_Function {
 	public:
@@ -320,32 +346,6 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 	~Handle_Law_S() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Law_Linear;
-class Handle_Law_Linear : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Linear();
-		%feature("autodoc", "1");
-		Handle_Law_Linear(const Handle_Law_Linear &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Linear(const Law_Linear *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Linear {
-	Law_Linear* GetObject() {
-	return (Law_Linear*)$self->Access();
-	}
-};
-%extend Handle_Law_Linear {
-	~Handle_Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
 	}
 };
 
@@ -715,6 +715,8 @@ class Law_Laws {
 %nodefaultctor Law;
 class Law {
 	public:
+		%feature("autodoc", "1");
+		Law();
 		%feature("autodoc", "1");
 		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
 		%feature("autodoc", "1");

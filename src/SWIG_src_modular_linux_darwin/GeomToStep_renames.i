@@ -3,7 +3,7 @@
 %rename(GeomToStep_MakeCartesianPoint) GeomToStep_MakeCartesianPoint;
 %rename(GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface) GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface;
 %rename(GeomToStep_MakeConicalSurface) GeomToStep_MakeConicalSurface;
-%rename(GeomToStep_Root) GeomToStep_Root;
+%rename(GeomToStep_MakeAxis2Placement2d) GeomToStep_MakeAxis2Placement2d;
 %rename(GeomToStep_MakeSurfaceOfLinearExtrusion) GeomToStep_MakeSurfaceOfLinearExtrusion;
 %rename(GeomToStep_MakeBSplineCurveWithKnots) GeomToStep_MakeBSplineCurveWithKnots;
 %rename(GeomToStep_MakeSurface) GeomToStep_MakeSurface;
@@ -13,7 +13,7 @@
 %rename(GeomToStep_MakeSurfaceOfRevolution) GeomToStep_MakeSurfaceOfRevolution;
 %rename(GeomToStep_MakePolyline) GeomToStep_MakePolyline;
 %rename(GeomToStep_MakeSphericalSurface) GeomToStep_MakeSphericalSurface;
-%rename(GeomToStep_MakeAxis2Placement2d) GeomToStep_MakeAxis2Placement2d;
+%rename(GeomToStep_Root) GeomToStep_Root;
 %rename(GeomToStep_MakeCircle) GeomToStep_MakeCircle;
 %rename(GeomToStep_MakeBoundedCurve) GeomToStep_MakeBoundedCurve;
 %rename(GeomToStep_MakeParabola) GeomToStep_MakeParabola;

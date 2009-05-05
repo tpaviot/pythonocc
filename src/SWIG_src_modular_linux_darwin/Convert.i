@@ -179,6 +179,39 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 };
 
 
+%nodefaultctor Convert_CompPolynomialToPoles;
+class Convert_CompPolynomialToPoles {
+	public:
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Convert_CompPolynomialToPoles(const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Standard_Integer Degree, const TColStd_Array1OfReal &Coefficients, const TColStd_Array1OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(Handle_TColStd_HArray2OfReal & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void Knots(Handle_TColStd_HArray1OfReal & K) const;
+		%feature("autodoc", "1");
+		void Multiplicities(Handle_TColStd_HArray1OfInteger & M) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend Convert_CompPolynomialToPoles {
+	~Convert_CompPolynomialToPoles() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
+	}
+};
+
+
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode {
 	public:
@@ -241,56 +274,6 @@ class Convert_ConicToBSplineCurve {
 };
 
 
-%nodefaultctor Convert_CircleToBSplineCurve;
-class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-		%feature("autodoc", "1");
-		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-
-};
-%extend Convert_CircleToBSplineCurve {
-	~Convert_CircleToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CircleToBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Convert_CompPolynomialToPoles;
-class Convert_CompPolynomialToPoles {
-	public:
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Continuity, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Handle_TColStd_HArray1OfInteger &NumCoeffPerCurve, const Handle_TColStd_HArray1OfReal &Coefficients, const Handle_TColStd_HArray2OfReal &PolynomialIntervals, const Handle_TColStd_HArray1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer NumCurves, const Standard_Integer Dimension, const Standard_Integer MaxDegree, const TColStd_Array1OfInteger &Continuity, const TColStd_Array1OfInteger &NumCoeffPerCurve, const TColStd_Array1OfReal &Coefficients, const TColStd_Array2OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Convert_CompPolynomialToPoles(const Standard_Integer Dimension, const Standard_Integer MaxDegree, const Standard_Integer Degree, const TColStd_Array1OfReal &Coefficients, const TColStd_Array1OfReal &PolynomialIntervals, const TColStd_Array1OfReal &TrueIntervals);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(Handle_TColStd_HArray2OfReal & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void Knots(Handle_TColStd_HArray1OfReal & K) const;
-		%feature("autodoc", "1");
-		void Multiplicities(Handle_TColStd_HArray1OfInteger & M) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend Convert_CompPolynomialToPoles {
-	~Convert_CompPolynomialToPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
-	}
-};
-
-
 %nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
 class Convert_CompBezierCurvesToBSplineCurve {
 	public:
@@ -316,6 +299,23 @@ class Convert_CompBezierCurvesToBSplineCurve {
 	~Convert_CompBezierCurvesToBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor Convert_CircleToBSplineCurve;
+class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		%feature("autodoc", "1");
+		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+
+};
+%extend Convert_CircleToBSplineCurve {
+	~Convert_CircleToBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Convert_CircleToBSplineCurve\n");}
 	}
 };
 

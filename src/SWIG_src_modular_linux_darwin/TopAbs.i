@@ -146,6 +146,8 @@ enum TopAbs_ShapeEnum {
 class TopAbs {
 	public:
 		%feature("autodoc", "1");
+		TopAbs();
+		%feature("autodoc", "1");
 		TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
 		%feature("autodoc", "1");
 		TopAbs_Orientation Reverse(const TopAbs_Orientation Or);

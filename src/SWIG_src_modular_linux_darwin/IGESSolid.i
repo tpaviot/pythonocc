@@ -116,6 +116,32 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor Handle_IGESSolid_SpecificModule;
+class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule(const Handle_IGESSolid_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule(const IGESSolid_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_SpecificModule {
+	IGESSolid_SpecificModule* GetObject() {
+	return (IGESSolid_SpecificModule*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_SpecificModule {
+	~Handle_IGESSolid_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_Block;
 class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	public:
@@ -242,32 +268,6 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	~Handle_IGESSolid_RightAngularWedge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_SpecificModule;
-class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule(const Handle_IGESSolid_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule(const IGESSolid_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_SpecificModule {
-	IGESSolid_SpecificModule* GetObject() {
-	return (IGESSolid_SpecificModule*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_SpecificModule {
-	~Handle_IGESSolid_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");}
 	}
 };
 
@@ -1531,35 +1531,6 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_SpecificModule;
-class IGESSolid_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_SpecificModule {
-	Handle_IGESSolid_SpecificModule GetHandle() {
-	return *(Handle_IGESSolid_SpecificModule*) &$self;
-	}
-};
-%extend IGESSolid_SpecificModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_SpecificModule {
-	~IGESSolid_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
-	}
-};
-
-
 %nodefaultctor IGESSolid_SelectedComponent;
 class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 	public:
@@ -2412,6 +2383,8 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 class IGESSolid {
 	public:
 		%feature("autodoc", "1");
+		IGESSolid();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Protocol Protocol();
@@ -2811,6 +2784,35 @@ class IGESSolid_ToolShell {
 	~IGESSolid_ToolShell() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolShell\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_SpecificModule;
+class IGESSolid_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SpecificModule {
+	Handle_IGESSolid_SpecificModule GetHandle() {
+	return *(Handle_IGESSolid_SpecificModule*) &$self;
+	}
+};
+%extend IGESSolid_SpecificModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_SpecificModule {
+	~IGESSolid_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
 	}
 };
 

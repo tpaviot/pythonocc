@@ -622,6 +622,8 @@ class PCDM_Reference {
 class PCDM {
 	public:
 		%feature("autodoc", "1");
+		PCDM();
+		%feature("autodoc", "1");
 		Standard_Boolean FindStorageDriver(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
 		Handle_Storage_Schema Schema(const TCollection_ExtendedString &aSchemaName, const Handle_CDM_Application &anApplication);
@@ -631,49 +633,6 @@ class PCDM {
 	~PCDM() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCDM\n");}
-	}
-};
-
-
-%nodefaultctor PCDM_RetrievalDriver;
-class PCDM_RetrievalDriver : public PCDM_Reader {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
-		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
-		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SchemaName() const;
-		%feature("autodoc", "1");
-		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
-		%feature("autodoc", "1");
-		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		void SetFormat(const TCollection_ExtendedString &aformat);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString GetFormat() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCDM_RetrievalDriver {
-	Handle_PCDM_RetrievalDriver GetHandle() {
-	return *(Handle_PCDM_RetrievalDriver*) &$self;
-	}
-};
-%extend PCDM_RetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PCDM_RetrievalDriver {
-	~PCDM_RetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
 	}
 };
 
@@ -850,6 +809,49 @@ class PCDM_DriverError : public Standard_Failure {
 	~PCDM_DriverError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCDM_DriverError\n");}
+	}
+};
+
+
+%nodefaultctor PCDM_RetrievalDriver;
+class PCDM_RetrievalDriver : public PCDM_Reader {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		%feature("autodoc", "1");
+		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
+		%feature("autodoc", "1");
+		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		void SetFormat(const TCollection_ExtendedString &aformat);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString GetFormat() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_RetrievalDriver {
+	Handle_PCDM_RetrievalDriver GetHandle() {
+	return *(Handle_PCDM_RetrievalDriver*) &$self;
+	}
+};
+%extend PCDM_RetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PCDM_RetrievalDriver {
+	~PCDM_RetrievalDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
 	}
 };
 

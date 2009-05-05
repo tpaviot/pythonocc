@@ -376,32 +376,6 @@ class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
-class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
-	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
-	}
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopTools_ListNodeOfListOfShape;
 class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -554,6 +528,32 @@ class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection
 	~Handle_TopTools_StdMapNodeOfMapOfOrientedShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_StdMapNodeOfMapOfOrientedShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
+class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
+	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
+	}
+};
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");}
 	}
 };
 
@@ -711,6 +711,8 @@ class TopTools_LocationSet {
 %nodefaultctor TopTools;
 class TopTools {
 	public:
+		%feature("autodoc", "1");
+		TopTools();
 		%feature("autodoc", "1");
 		void Dump(const TopoDS_Shape &Sh, Standard_OStream & S);
 		%feature("autodoc", "1");
@@ -1167,6 +1169,8 @@ class TopTools_HArray2OfShape : public MMgt_TShared {
 class TopTools_ShapeMapHasher {
 	public:
 		%feature("autodoc", "1");
+		TopTools_ShapeMapHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1445,77 +1449,6 @@ class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 	~TopTools_IndexedMapNodeOfIndexedMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfShape\n");}
-	}
-};
-
-
-%nodefaultctor TopTools_HSequenceOfShape;
-class TopTools_HSequenceOfShape : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopTools_HSequenceOfShape();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & Sequence() const;
-		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_HSequenceOfShape {
-	Handle_TopTools_HSequenceOfShape GetHandle() {
-	return *(Handle_TopTools_HSequenceOfShape*) &$self;
-	}
-};
-%extend TopTools_HSequenceOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopTools_HSequenceOfShape {
-	~TopTools_HSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_HSequenceOfShape\n");}
 	}
 };
 
@@ -1806,6 +1739,8 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 class TopTools_OrientedShapeMapHasher {
 	public:
 		%feature("autodoc", "1");
+		TopTools_OrientedShapeMapHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TopoDS_Shape &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1981,6 +1916,77 @@ class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Basic
 	~TopTools_DataMapIteratorOfDataMapOfShapeInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeInteger\n");}
+	}
+};
+
+
+%nodefaultctor TopTools_HSequenceOfShape;
+class TopTools_HSequenceOfShape : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopTools_HSequenceOfShape();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const TopoDS_Shape &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const TopoDS_Shape &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const TopoDS_Shape &anItem);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TopTools_SequenceOfShape & Sequence() const;
+		%feature("autodoc", "1");
+		TopTools_SequenceOfShape & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_HSequenceOfShape {
+	Handle_TopTools_HSequenceOfShape GetHandle() {
+	return *(Handle_TopTools_HSequenceOfShape*) &$self;
+	}
+};
+%extend TopTools_HSequenceOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopTools_HSequenceOfShape {
+	~TopTools_HSequenceOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopTools_HSequenceOfShape\n");}
 	}
 };
 

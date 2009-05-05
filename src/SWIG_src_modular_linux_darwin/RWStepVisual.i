@@ -158,25 +158,6 @@ class RWStepVisual_RWAreaInSet {
 };
 
 
-%nodefaultctor RWStepVisual_RWPreDefinedItem;
-class RWStepVisual_RWPreDefinedItem {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPreDefinedItem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedItem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedItem &ent) const;
-
-};
-%extend RWStepVisual_RWPreDefinedItem {
-	~RWStepVisual_RWPreDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWCompositeTextWithExtent;
 class RWStepVisual_RWCompositeTextWithExtent {
 	public:
@@ -280,27 +261,6 @@ class RWStepVisual_RWFillAreaStyle {
 };
 
 
-%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
-class RWStepVisual_RWPresentedItemRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPresentedItemRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepVisual_RWPresentedItemRepresentation {
-	~RWStepVisual_RWPresentedItemRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");}
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
 class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 	public:
@@ -318,6 +278,27 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 	~RWStepVisual_RWTextStyleWithBoxCharacteristics() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleWithBoxCharacteristics\n");}
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
+class RWStepVisual_RWPresentedItemRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPresentedItemRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepVisual_RWPresentedItemRepresentation {
+	~RWStepVisual_RWPresentedItemRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");}
 	}
 };
 
@@ -526,27 +507,6 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 };
 
 
-%nodefaultctor RWStepVisual_RWCurveStyle;
-class RWStepVisual_RWCurveStyle {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWCurveStyle();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyle &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepVisual_RWCurveStyle {
-	~RWStepVisual_RWCurveStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWPresentationArea;
 class RWStepVisual_RWPresentationArea {
 	public:
@@ -690,25 +650,6 @@ class RWStepVisual_RWCameraUsage {
 	~RWStepVisual_RWCameraUsage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraUsage\n");}
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWDraughtingPreDefinedColour;
-class RWStepVisual_RWDraughtingPreDefinedColour {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWDraughtingPreDefinedColour();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
-
-};
-%extend RWStepVisual_RWDraughtingPreDefinedColour {
-	~RWStepVisual_RWDraughtingPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");}
 	}
 };
 
@@ -900,6 +841,25 @@ class RWStepVisual_RWCameraImage {
 };
 
 
+%nodefaultctor RWStepVisual_RWPreDefinedItem;
+class RWStepVisual_RWPreDefinedItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPreDefinedItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PreDefinedItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedItem &ent) const;
+
+};
+%extend RWStepVisual_RWPreDefinedItem {
+	~RWStepVisual_RWPreDefinedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
+	}
+};
+
+
 %nodefaultctor RWStepVisual_RWFillAreaStyleColour;
 class RWStepVisual_RWFillAreaStyleColour {
 	public:
@@ -1020,6 +980,27 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 	~RWStepVisual_RWDraughtingPreDefinedCurveFont() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");}
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWCurveStyle;
+class RWStepVisual_RWCurveStyle {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWCurveStyle();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyle &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepVisual_RWCurveStyle {
+	~RWStepVisual_RWCurveStyle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
 	}
 };
 
@@ -1327,5 +1308,24 @@ class RWStepVisual_RWCameraModelD3 {
 	~RWStepVisual_RWCameraModelD3() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");}
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWDraughtingPreDefinedColour;
+class RWStepVisual_RWDraughtingPreDefinedColour {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWDraughtingPreDefinedColour();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
+
+};
+%extend RWStepVisual_RWDraughtingPreDefinedColour {
+	~RWStepVisual_RWDraughtingPreDefinedColour() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");}
 	}
 };

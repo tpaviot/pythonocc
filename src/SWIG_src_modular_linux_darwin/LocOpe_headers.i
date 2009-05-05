@@ -260,6 +260,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Lin.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Pnt.hxx>
+#include<LocOpe.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pln.hxx>

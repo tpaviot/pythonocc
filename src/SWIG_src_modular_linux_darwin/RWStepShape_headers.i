@@ -391,8 +391,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepShape_LimitsAndFits.hxx>
 #include<Handle_StepShape_FaceOuterBound.hxx>
 #include<Handle_StepShape_AdvancedBrepShapeRepresentation.hxx>
+#include<Handle_StepShape_ManifoldSurfaceShapeRepresentation.hxx>
 #include<Handle_StepShape_GeometricSet.hxx>
 #include<Handle_StepShape_EdgeBasedWireframeModel.hxx>
+#include<Handle_StepShape_GeometricCurveSet.hxx>
 #include<Handle_StepShape_SolidReplica.hxx>
 #include<Handle_StepShape_ExtrudedAreaSolid.hxx>
 #include<Handle_StepShape_CompoundShapeRepresentation.hxx>
@@ -406,10 +408,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepShape_OrientedFace.hxx>
 #include<Handle_StepShape_OrientedClosedShell.hxx>
 #include<Handle_StepShape_Edge.hxx>
+#include<Handle_StepShape_Face.hxx>
 #include<Handle_StepShape_CsgSolid.hxx>
 #include<Handle_StepShape_FacetedBrepAndBrepWithVoids.hxx>
 #include<Handle_StepShape_ClosedShell.hxx>
-#include<Handle_StepShape_ManifoldSurfaceShapeRepresentation.hxx>
 #include<Handle_StepShape_PlusMinusTolerance.hxx>
 #include<Handle_StepShape_VertexLoop.hxx>
 #include<Handle_StepShape_SweptAreaSolid.hxx>
@@ -433,7 +435,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepShape_HalfSpaceSolid.hxx>
 #include<Handle_StepShape_TopologicalRepresentationItem.hxx>
 #include<Handle_StepShape_DimensionalSize.hxx>
-#include<Handle_StepShape_Face.hxx>
 #include<Handle_StepShape_NonManifoldSurfaceShapeRepresentation.hxx>
 #include<Handle_StepShape_ConnectedFaceSubSet.hxx>
 #include<Handle_StepShape_SolidModel.hxx>
@@ -446,7 +447,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepShape_Loop.hxx>
 #include<Handle_StepShape_SweptFaceSolid.hxx>
 #include<Handle_StepShape_Torus.hxx>
-#include<Handle_StepShape_GeometricCurveSet.hxx>
 #include<Handle_StepShape_DimensionalLocationWithPath.hxx>
 #include<Handle_StepShape_EdgeCurve.hxx>
 #include<Handle_StepShape_TransitionalShapeRepresentation.hxx>

@@ -145,6 +145,8 @@ class Geom2dLProp_NumericCurInf2d {
 class Geom2dLProp_Curve2dTool {
 	public:
 		%feature("autodoc", "1");
+		Geom2dLProp_Curve2dTool();
+		%feature("autodoc", "1");
 		void Value(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P);
 		%feature("autodoc", "1");
 		void D1(const Handle_Geom2d_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1);

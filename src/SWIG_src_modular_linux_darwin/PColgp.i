@@ -1680,6 +1680,82 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 };
 
 
+%nodefaultctor PColgp_HArray2OfVec2d;
+class PColgp_HArray2OfVec2d : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d &Value);
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		gp_Vec2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColgp_HArray2OfVec2d();
+		%feature("autodoc", "1");
+		PColgp_HArray2OfVec2d(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyLowerRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfVec2dmyLowerRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyLowerCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfVec2dmyLowerCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyUpperRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfVec2dmyUpperRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyUpperCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfVec2dmyUpperCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray2OfVec2d & _CSFDB_GetPColgp_HArray2OfVec2dData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_HArray2OfVec2d {
+	Handle_PColgp_HArray2OfVec2d GetHandle() {
+	return *(Handle_PColgp_HArray2OfVec2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfVec2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_HArray2OfVec2d {
+	~PColgp_HArray2OfVec2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfVec2d\n");}
+	}
+};
+
+
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfXYZ;
 class PColgp_SeqExplorerOfHSequenceOfXYZ {
 	public:
@@ -2313,82 +2389,6 @@ class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 	~PColgp_FieldOfHArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfCirc2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_HArray2OfVec2d;
-class PColgp_HArray2OfVec2d : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		PColgp_HArray2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d &Value);
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		gp_Vec2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColgp_HArray2OfVec2d();
-		%feature("autodoc", "1");
-		PColgp_HArray2OfVec2d(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyLowerRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfVec2dmyLowerRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyLowerCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfVec2dmyLowerCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyUpperRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfVec2dmyUpperRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfVec2dmyUpperCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfVec2dmyUpperCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray2OfVec2d & _CSFDB_GetPColgp_HArray2OfVec2dData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColgp_HArray2OfVec2d {
-	Handle_PColgp_HArray2OfVec2d GetHandle() {
-	return *(Handle_PColgp_HArray2OfVec2d*) &$self;
-	}
-};
-%extend PColgp_HArray2OfVec2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_HArray2OfVec2d {
-	~PColgp_HArray2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfVec2d\n");}
 	}
 };
 
@@ -3194,6 +3194,37 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 };
 
 
+%nodefaultctor PColgp_FieldOfHArray2OfDir;
+class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfDir();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfDir(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfDir(const PColgp_FieldOfHArray2OfDir &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray2OfDir &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		%feature("autodoc", "1");
+		gp_Dir & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Dir & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray2OfDir {
+	~PColgp_FieldOfHArray2OfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfDir\n");}
+	}
+};
+
+
 %nodefaultctor PColgp_HArray2OfDir2d;
 class PColgp_HArray2OfDir2d : public Standard_Persistent {
 	public:
@@ -3266,6 +3297,37 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 	~PColgp_HArray2OfDir2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray1OfLin2d;
+class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d(const PColgp_FieldOfHArray1OfLin2d &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray1OfLin2d &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
+		%feature("autodoc", "1");
+		gp_Lin2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Lin2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray1OfLin2d {
+	~PColgp_FieldOfHArray1OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");}
 	}
 };
 
@@ -3930,37 +3992,6 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray2OfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfPnt\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray2OfDir;
-class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfDir();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfDir(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfDir(const PColgp_FieldOfHArray2OfDir &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray2OfDir &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
-		%feature("autodoc", "1");
-		gp_Dir & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray2OfDir {
-	~PColgp_FieldOfHArray2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfDir\n");}
 	}
 };
 
@@ -4939,37 +4970,6 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 	~PColgp_FieldOfHArray1OfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfVec2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray1OfLin2d;
-class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d(const PColgp_FieldOfHArray1OfLin2d &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfLin2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
-		%feature("autodoc", "1");
-		gp_Lin2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Lin2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray1OfLin2d {
-	~PColgp_FieldOfHArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");}
 	}
 };
 

@@ -449,6 +449,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<ShapeProcess.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_BRepTools_Modification.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

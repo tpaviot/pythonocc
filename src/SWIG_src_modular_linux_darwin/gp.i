@@ -1475,6 +1475,109 @@ class gp_Torus {
 };
 
 
+%nodefaultctor gp_Dir;
+class gp_Dir {
+	public:
+		%feature("autodoc", "1");
+		gp_Dir();
+		%feature("autodoc", "1");
+		gp_Dir(const gp_Vec &V);
+		%feature("autodoc", "1");
+		gp_Dir(const gp_XYZ &XYZ);
+		%feature("autodoc", "1");
+		gp_Dir(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Integer Index, const Standard_Real Xi);
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
+		%feature("autodoc", "1");
+		void SetX(const Standard_Real X);
+		%feature("autodoc", "1");
+		void SetY(const Standard_Real Y);
+		%feature("autodoc", "1");
+		void SetZ(const Standard_Real Z);
+		%feature("autodoc", "1");
+		void SetXYZ(const gp_XYZ &XYZ);
+		%feature("autodoc", "1");
+		Standard_Real Coord(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real X() const;
+		%feature("autodoc", "1");
+		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		Standard_Real Z() const;
+		%feature("autodoc", "1");
+		const gp_XYZ & XYZ() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNormal(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpposite(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Real Angle(const gp_Dir &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real AngleWithRef(const gp_Dir &Other, const gp_Dir &VRef) const;
+		%feature("autodoc", "1");
+		void Cross(const gp_Dir &Right);
+		%feature("autodoc", "1");
+		void operator^=(const gp_Dir &Right);
+		%feature("autodoc", "1");
+		gp_Dir Crossed(const gp_Dir &Right) const;
+		%feature("autodoc", "1");
+		gp_Dir operator^(const gp_Dir &Right) const;
+		%feature("autodoc", "1");
+		void CrossCross(const gp_Dir &V1, const gp_Dir &V2);
+		%feature("autodoc", "1");
+		gp_Dir CrossCrossed(const gp_Dir &V1, const gp_Dir &V2) const;
+		%feature("autodoc", "1");
+		Standard_Real Dot(const gp_Dir &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real operator*(const gp_Dir &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real DotCross(const gp_Dir &V1, const gp_Dir &V2) const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		gp_Dir Reversed() const;
+		%feature("autodoc", "1");
+		gp_Dir operator-() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Dir &V);
+		%feature("autodoc", "1");
+		gp_Dir Mirrored(const gp_Dir &V) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax1 &A1);
+		%feature("autodoc", "1");
+		gp_Dir Mirrored(const gp_Ax1 &A1) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2 &A2);
+		%feature("autodoc", "1");
+		gp_Dir Mirrored(const gp_Ax2 &A2) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Ax1 &A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Dir Rotated(const gp_Ax1 &A1, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf &T);
+		%feature("autodoc", "1");
+		gp_Dir Transformed(const gp_Trsf &T) const;
+		%feature("autodoc", "1");
+		const gp_XYZ & _CSFDB_Getgp_Dircoord() const;
+
+};
+%extend gp_Dir {
+	~gp_Dir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gp_Dir\n");}
+	}
+};
+
+
 %nodefaultctor gp_Circ2d;
 class gp_Circ2d {
 	public:
@@ -3010,109 +3113,6 @@ class gp_Pnt2d {
 };
 
 
-%nodefaultctor gp_Dir;
-class gp_Dir {
-	public:
-		%feature("autodoc", "1");
-		gp_Dir();
-		%feature("autodoc", "1");
-		gp_Dir(const gp_Vec &V);
-		%feature("autodoc", "1");
-		gp_Dir(const gp_XYZ &XYZ);
-		%feature("autodoc", "1");
-		gp_Dir(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Integer Index, const Standard_Real Xi);
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
-		%feature("autodoc", "1");
-		void SetX(const Standard_Real X);
-		%feature("autodoc", "1");
-		void SetY(const Standard_Real Y);
-		%feature("autodoc", "1");
-		void SetZ(const Standard_Real Z);
-		%feature("autodoc", "1");
-		void SetXYZ(const gp_XYZ &XYZ);
-		%feature("autodoc", "1");
-		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real X() const;
-		%feature("autodoc", "1");
-		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		Standard_Real Z() const;
-		%feature("autodoc", "1");
-		const gp_XYZ & XYZ() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNormal(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpposite(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel(const gp_Dir &Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Real Angle(const gp_Dir &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real AngleWithRef(const gp_Dir &Other, const gp_Dir &VRef) const;
-		%feature("autodoc", "1");
-		void Cross(const gp_Dir &Right);
-		%feature("autodoc", "1");
-		void operator^=(const gp_Dir &Right);
-		%feature("autodoc", "1");
-		gp_Dir Crossed(const gp_Dir &Right) const;
-		%feature("autodoc", "1");
-		gp_Dir operator^(const gp_Dir &Right) const;
-		%feature("autodoc", "1");
-		void CrossCross(const gp_Dir &V1, const gp_Dir &V2);
-		%feature("autodoc", "1");
-		gp_Dir CrossCrossed(const gp_Dir &V1, const gp_Dir &V2) const;
-		%feature("autodoc", "1");
-		Standard_Real Dot(const gp_Dir &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real operator*(const gp_Dir &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real DotCross(const gp_Dir &V1, const gp_Dir &V2) const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		gp_Dir Reversed() const;
-		%feature("autodoc", "1");
-		gp_Dir operator-() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Dir &V);
-		%feature("autodoc", "1");
-		gp_Dir Mirrored(const gp_Dir &V) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax1 &A1);
-		%feature("autodoc", "1");
-		gp_Dir Mirrored(const gp_Ax1 &A1) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2 &A2);
-		%feature("autodoc", "1");
-		gp_Dir Mirrored(const gp_Ax2 &A2) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Ax1 &A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Dir Rotated(const gp_Ax1 &A1, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
-		gp_Dir Transformed(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
-		const gp_XYZ & _CSFDB_Getgp_Dircoord() const;
-
-};
-%extend gp_Dir {
-	~gp_Dir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Dir\n");}
-	}
-};
-
-
 %nodefaultctor gp_Circ;
 class gp_Circ {
 	public:
@@ -3387,6 +3387,8 @@ class gp_Ax2d {
 %nodefaultctor gp;
 class gp {
 	public:
+		%feature("autodoc", "1");
+		gp();
 		%feature("autodoc", "1");
 		Standard_Real Resolution();
 		%feature("autodoc", "1");

@@ -241,6 +241,8 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 class IntCurve_PConicTool {
 	public:
 		%feature("autodoc", "1");
+		IntCurve_PConicTool();
+		%feature("autodoc", "1");
 		Standard_Real EpsX(const IntCurve_PConic &C);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples(const IntCurve_PConic &C);
@@ -304,6 +306,8 @@ class IntCurve_IConicTool {
 %nodefaultctor IntCurve_ProjectOnPConicTool;
 class IntCurve_ProjectOnPConicTool {
 	public:
+		%feature("autodoc", "1");
+		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
 		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");

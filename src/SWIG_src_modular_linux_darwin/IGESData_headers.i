@@ -174,6 +174,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
 #include<gp_GTrsf.hxx>
 #include<Interface_EntityIterator.hxx>
+#include<IGESData.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>

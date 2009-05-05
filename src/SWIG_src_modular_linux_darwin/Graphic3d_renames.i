@@ -14,7 +14,7 @@
 %rename(Graphic3d_NOT_2D_MOTTLED) Graphic3d_NOT_2D_MOTTLED;
 %rename(Graphic3d_HSequenceOfGroup) Graphic3d_HSequenceOfGroup;
 %rename(Graphic3d_VertexC) Graphic3d_VertexC;
-%rename(Graphic3d_ArrayOfPolylines) Graphic3d_ArrayOfPolylines;
+%rename(Graphic3d_Array1OfVertexNT) Graphic3d_Array1OfVertexNT;
 %rename(Graphic3d_NOM_COPPER) Graphic3d_NOM_COPPER;
 %rename(Graphic3d_TOPA_POINTS) Graphic3d_TOPA_POINTS;
 %rename(Graphic3d_CBitFields16) Graphic3d_CBitFields16;
@@ -90,7 +90,7 @@
 %rename(Graphic3d_Array2OfVertexC) Graphic3d_Array2OfVertexC;
 %rename(Graphic3d_HTA_CENTER) Graphic3d_HTA_CENTER;
 %rename(Graphic3d_StructureDefinitionError) Graphic3d_StructureDefinitionError;
-%rename(Handle_Graphic3d_SequenceNodeOfSequenceOfStructure) Handle_Graphic3d_SequenceNodeOfSequenceOfStructure;
+%rename(Handle_Graphic3d_StructureDefinitionError) Handle_Graphic3d_StructureDefinitionError;
 %rename(Graphic3d_HSetOfGroup) Graphic3d_HSetOfGroup;
 %rename(Graphic3d_NOT_2D_CLOUDS) Graphic3d_NOT_2D_CLOUDS;
 %rename(Graphic3d_SequenceOfStructure) Graphic3d_SequenceOfStructure;
@@ -109,7 +109,7 @@
 %rename(Graphic3d_GroupDefinitionError) Graphic3d_GroupDefinitionError;
 %rename(Handle_Graphic3d_AspectLine3d) Handle_Graphic3d_AspectLine3d;
 %rename(Graphic3d_NOT_2D_ALIENSKIN) Graphic3d_NOT_2D_ALIENSKIN;
-%rename(Handle_Graphic3d_StructureDefinitionError) Handle_Graphic3d_StructureDefinitionError;
+%rename(Handle_Graphic3d_SequenceNodeOfSequenceOfStructure) Handle_Graphic3d_SequenceNodeOfSequenceOfStructure;
 %rename(Graphic3d_TP_LEFT) Graphic3d_TP_LEFT;
 %rename(Graphic3d_NOT_ENV_UNKNOWN) Graphic3d_NOT_ENV_UNKNOWN;
 %rename(Graphic3d_NOM_STONE) Graphic3d_NOM_STONE;
@@ -159,6 +159,7 @@
 %rename(Graphic3d_NOF_KANJI_MONO) Graphic3d_NOF_KANJI_MONO;
 %rename(Graphic3d_VTA_CAP) Graphic3d_VTA_CAP;
 %rename(Graphic3d_TOP_UNDEFINED) Graphic3d_TOP_UNDEFINED;
+%rename(Graphic3d_ArrayOfPolylines) Graphic3d_ArrayOfPolylines;
 %rename(Graphic3d_NOM_CHROME) Graphic3d_NOM_CHROME;
 %rename(Graphic3d_NOT_2D_GRASS) Graphic3d_NOT_2D_GRASS;
 %rename(Graphic3d_TextureEnv) Graphic3d_TextureEnv;
@@ -192,7 +193,6 @@
 %rename(Graphic3d_ArrayOfPrimitives) Graphic3d_ArrayOfPrimitives;
 %rename(Graphic3d_NOT_2D_BUMP) Graphic3d_NOT_2D_BUMP;
 %rename(Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup) Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup;
-%rename(Graphic3d_Array1OfVertexNT) Graphic3d_Array1OfVertexNT;
 %rename(Graphic3d_NOM_DEFAULT) Graphic3d_NOM_DEFAULT;
 %rename(Graphic3d_NOF_ASCII_SCRIPT_COMPLEX) Graphic3d_NOF_ASCII_SCRIPT_COMPLEX;
 %rename(Handle_Graphic3d_AspectText3d) Handle_Graphic3d_AspectText3d;

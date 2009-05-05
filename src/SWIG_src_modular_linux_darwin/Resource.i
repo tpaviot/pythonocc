@@ -307,6 +307,8 @@ class Resource_Array1OfAsciiString {
 class Resource_QuickSortOfArray1 {
 	public:
 		%feature("autodoc", "1");
+		Resource_QuickSortOfArray1();
+		%feature("autodoc", "1");
 		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
@@ -424,6 +426,8 @@ class Resource_Manager : public MMgt_TShared {
 %nodefaultctor Resource_Unicode;
 class Resource_Unicode {
 	public:
+		%feature("autodoc", "1");
+		Resource_Unicode();
 		%feature("autodoc", "1");
 		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
 		%feature("autodoc", "1");

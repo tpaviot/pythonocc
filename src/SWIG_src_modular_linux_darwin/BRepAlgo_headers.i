@@ -75,6 +75,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shape.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<Handle_TopOpeBRepDS_Interference.hxx>
+#include<BRepAlgo.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<TopTools_MapOfShape.hxx>

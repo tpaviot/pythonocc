@@ -960,53 +960,6 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 
 
-%nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
-class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGeom_TransformationMatrix &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_TransformationMatrix &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_TransformationMatrix &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESGeom_TransformationMatrix & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_TransformationMatrix & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESGeom_Array1OfTransformationMatrix & Array1() const;
-		%feature("autodoc", "1");
-		IGESGeom_Array1OfTransformationMatrix & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_HArray1OfTransformationMatrix {
-	Handle_IGESGeom_HArray1OfTransformationMatrix GetHandle() {
-	return *(Handle_IGESGeom_HArray1OfTransformationMatrix*) &$self;
-	}
-};
-%extend IGESGeom_HArray1OfTransformationMatrix {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGeom_HArray1OfTransformationMatrix {
-	~IGESGeom_HArray1OfTransformationMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");}
-	}
-};
-
-
 %nodefaultctor IGESGeom_SurfaceOfRevolution;
 class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 	public:
@@ -1483,6 +1436,37 @@ class IGESGeom_ToolSplineCurve {
 };
 
 
+%nodefaultctor IGESGeom_ToolFlash;
+class IGESGeom_ToolFlash {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolFlash();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_Flash &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_Flash &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Flash &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Flash &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_Flash &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_Flash &entfrom, const Handle_IGESGeom_Flash &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_Flash &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESGeom_ToolFlash {
+	~IGESGeom_ToolFlash() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolFlash\n");}
+	}
+};
+
+
 %nodefaultctor IGESGeom_RuledSurface;
 class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 	public:
@@ -1666,6 +1650,8 @@ class IGESGeom_Array1OfCurveOnSurface {
 class IGESGeom {
 	public:
 		%feature("autodoc", "1");
+		IGESGeom();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Protocol Protocol();
@@ -1733,55 +1719,6 @@ class IGESGeom_ToolSplineSurface {
 	~IGESGeom_ToolSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor IGESGeom_SplineSurface;
-class IGESGeom_SplineSurface : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_SplineSurface();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aBoundaryType, const Standard_Integer aPatchType, const Handle_TColStd_HArray1OfReal &allUBreakpoints, const Handle_TColStd_HArray1OfReal &allVBreakpoints, const Handle_IGESBasic_HArray2OfHArray1OfReal &allXCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allYCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allZCoeffs);
-		%feature("autodoc", "1");
-		Standard_Integer NbUSegments() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVSegments() const;
-		%feature("autodoc", "1");
-		Standard_Integer BoundaryType() const;
-		%feature("autodoc", "1");
-		Standard_Integer PatchType() const;
-		%feature("autodoc", "1");
-		Standard_Real UBreakPoint(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Real VBreakPoint(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal XPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal YPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal ZPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
-		%feature("autodoc", "1");
-		void Polynomials(Handle_IGESBasic_HArray2OfHArray1OfReal & XCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & YCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & ZCoef) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_SplineSurface {
-	Handle_IGESGeom_SplineSurface GetHandle() {
-	return *(Handle_IGESGeom_SplineSurface*) &$self;
-	}
-};
-%extend IGESGeom_SplineSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGeom_SplineSurface {
-	~IGESGeom_SplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGeom_SplineSurface\n");}
 	}
 };
 
@@ -1893,39 +1830,6 @@ class IGESGeom_ToolRuledSurface {
 };
 
 
-%nodefaultctor IGESGeom_Direction;
-class IGESGeom_Direction : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Direction();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aDirection);
-		%feature("autodoc", "1");
-		gp_Vec Value() const;
-		%feature("autodoc", "1");
-		gp_Vec TransformedValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_Direction {
-	Handle_IGESGeom_Direction GetHandle() {
-	return *(Handle_IGESGeom_Direction*) &$self;
-	}
-};
-%extend IGESGeom_Direction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESGeom_Direction {
-	~IGESGeom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGeom_Direction\n");}
-	}
-};
-
-
 %nodefaultctor IGESGeom_BSplineCurve;
 class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 	public:
@@ -1983,6 +1887,55 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 	~IGESGeom_BSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor IGESGeom_SplineSurface;
+class IGESGeom_SplineSurface : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_SplineSurface();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aBoundaryType, const Standard_Integer aPatchType, const Handle_TColStd_HArray1OfReal &allUBreakpoints, const Handle_TColStd_HArray1OfReal &allVBreakpoints, const Handle_IGESBasic_HArray2OfHArray1OfReal &allXCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allYCoeffs, const Handle_IGESBasic_HArray2OfHArray1OfReal &allZCoeffs);
+		%feature("autodoc", "1");
+		Standard_Integer NbUSegments() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVSegments() const;
+		%feature("autodoc", "1");
+		Standard_Integer BoundaryType() const;
+		%feature("autodoc", "1");
+		Standard_Integer PatchType() const;
+		%feature("autodoc", "1");
+		Standard_Real UBreakPoint(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Standard_Real VBreakPoint(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal XPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal YPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal ZPolynomial(const Standard_Integer anIndex1, const Standard_Integer anIndex2) const;
+		%feature("autodoc", "1");
+		void Polynomials(Handle_IGESBasic_HArray2OfHArray1OfReal & XCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & YCoef, Handle_IGESBasic_HArray2OfHArray1OfReal & ZCoef) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_SplineSurface {
+	Handle_IGESGeom_SplineSurface GetHandle() {
+	return *(Handle_IGESGeom_SplineSurface*) &$self;
+	}
+};
+%extend IGESGeom_SplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGeom_SplineSurface {
+	~IGESGeom_SplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGeom_SplineSurface\n");}
 	}
 };
 
@@ -2603,37 +2556,6 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESGeom_ToolFlash;
-class IGESGeom_ToolFlash {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolFlash();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Flash &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Flash &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Flash &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Flash &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Flash &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Flash &entfrom, const Handle_IGESGeom_Flash &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Flash &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESGeom_ToolFlash {
-	~IGESGeom_ToolFlash() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolFlash\n");}
-	}
-};
-
-
 %nodefaultctor IGESGeom_SplineCurve;
 class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 	public:
@@ -2835,6 +2757,39 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 };
 
 
+%nodefaultctor IGESGeom_Direction;
+class IGESGeom_Direction : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Direction();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ &aDirection);
+		%feature("autodoc", "1");
+		gp_Vec Value() const;
+		%feature("autodoc", "1");
+		gp_Vec TransformedValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Direction {
+	Handle_IGESGeom_Direction GetHandle() {
+	return *(Handle_IGESGeom_Direction*) &$self;
+	}
+};
+%extend IGESGeom_Direction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGeom_Direction {
+	~IGESGeom_Direction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGeom_Direction\n");}
+	}
+};
+
+
 %nodefaultctor IGESGeom_ToolBSplineSurface;
 class IGESGeom_ToolBSplineSurface {
 	public:
@@ -2889,6 +2844,53 @@ class IGESGeom_ToolTrimmedSurface {
 	~IGESGeom_ToolTrimmedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTrimmedSurface\n");}
+	}
+};
+
+
+%nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
+class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGeom_TransformationMatrix &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESGeom_TransformationMatrix &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_TransformationMatrix &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESGeom_TransformationMatrix & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TransformationMatrix & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const IGESGeom_Array1OfTransformationMatrix & Array1() const;
+		%feature("autodoc", "1");
+		IGESGeom_Array1OfTransformationMatrix & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	Handle_IGESGeom_HArray1OfTransformationMatrix GetHandle() {
+	return *(Handle_IGESGeom_HArray1OfTransformationMatrix*) &$self;
+	}
+};
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	~IGESGeom_HArray1OfTransformationMatrix() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");}
 	}
 };
 

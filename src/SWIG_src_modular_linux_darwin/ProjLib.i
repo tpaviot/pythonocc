@@ -548,6 +548,8 @@ class ProjLib_Sphere : public ProjLib_Projector {
 class ProjLib {
 	public:
 		%feature("autodoc", "1");
+		ProjLib();
+		%feature("autodoc", "1");
 		gp_Pnt2d Project(const gp_Pln &Pl, const gp_Pnt &P);
 		%feature("autodoc", "1");
 		gp_Lin2d Project(const gp_Pln &Pl, const gp_Lin &L);

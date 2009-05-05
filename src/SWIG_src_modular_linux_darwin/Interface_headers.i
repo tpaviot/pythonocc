@@ -151,6 +151,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Standard_SStream.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
-#include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Message_Msg.hxx>
+#include<Handle_TColStd_HSequenceOfTransient.hxx>
 %}

@@ -1865,49 +1865,6 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 };
 
 
-%nodefaultctor Expr_PolyExpression;
-class Expr_PolyExpression : public Expr_GeneralExpression {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NbOperands() const;
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralExpression & Operand(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		void SetOperand(const Handle_Expr_GeneralExpression &exp, const Standard_Integer index);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSubExpressions() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Expr_GeneralExpression & SubExpression(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ContainsUnknowns() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
-		%feature("autodoc", "1");
-		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
-		%feature("autodoc", "1");
-		virtual		Handle_Expr_GeneralExpression Simplified() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Expr_PolyExpression {
-	Handle_Expr_PolyExpression GetHandle() {
-	return *(Handle_Expr_PolyExpression*) &$self;
-	}
-};
-%extend Expr_PolyExpression {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Expr_PolyExpression {
-	~Expr_PolyExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_PolyExpression\n");}
-	}
-};
-
-
 %nodefaultctor Expr_Cosine;
 class Expr_Cosine : public Expr_UnaryExpression {
 	public:
@@ -2262,50 +2219,11 @@ class Expr_RelationIterator {
 };
 
 
-%nodefaultctor Expr_Array1OfGeneralExpression;
-class Expr_Array1OfGeneralExpression {
-	public:
-		%feature("autodoc", "1");
-		Expr_Array1OfGeneralExpression(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Expr_Array1OfGeneralExpression(const Handle_Expr_GeneralExpression &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Expr_GeneralExpression &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Expr_Array1OfGeneralExpression & Assign(const Expr_Array1OfGeneralExpression &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &Value);
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralExpression & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index);
-
-};
-%extend Expr_Array1OfGeneralExpression {
-	~Expr_Array1OfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfGeneralExpression\n");}
-	}
-};
-
-
 %nodefaultctor Expr;
 class Expr {
 	public:
+		%feature("autodoc", "1");
+		Expr();
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression CopyShare(const Handle_Expr_GeneralExpression &exp);
 		%feature("autodoc", "1");
@@ -2437,6 +2355,49 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 };
 
 
+%nodefaultctor Expr_PolyExpression;
+class Expr_PolyExpression : public Expr_GeneralExpression {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbOperands() const;
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralExpression & Operand(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		void SetOperand(const Handle_Expr_GeneralExpression &exp, const Standard_Integer index);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSubExpressions() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Expr_GeneralExpression & SubExpression(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean ContainsUnknowns() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Contains(const Handle_Expr_GeneralExpression &exp) const;
+		%feature("autodoc", "1");
+		virtual		void Replace(const Handle_Expr_NamedUnknown &var, const Handle_Expr_GeneralExpression &with);
+		%feature("autodoc", "1");
+		virtual		Handle_Expr_GeneralExpression Simplified() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Expr_PolyExpression {
+	Handle_Expr_PolyExpression GetHandle() {
+	return *(Handle_Expr_PolyExpression*) &$self;
+	}
+};
+%extend Expr_PolyExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Expr_PolyExpression {
+	~Expr_PolyExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_PolyExpression\n");}
+	}
+};
+
+
 %nodefaultctor Expr_PolyFunction;
 class Expr_PolyFunction : public Expr_PolyExpression {
 	public:
@@ -2458,8 +2419,6 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 		virtual		Standard_Real Evaluate(const Expr_Array1OfNamedUnknown &vars, const TColStd_Array1OfReal &vals) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString String() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Expr_PolyFunction {
@@ -3224,6 +3183,47 @@ class Expr_Tangent : public Expr_UnaryExpression {
 };
 
 
+%nodefaultctor Expr_Array1OfGeneralExpression;
+class Expr_Array1OfGeneralExpression {
+	public:
+		%feature("autodoc", "1");
+		Expr_Array1OfGeneralExpression(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Expr_Array1OfGeneralExpression(const Handle_Expr_GeneralExpression &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Expr_GeneralExpression &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Expr_Array1OfGeneralExpression & Assign(const Expr_Array1OfGeneralExpression &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Expr_GeneralExpression &Value);
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralExpression & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index);
+
+};
+%extend Expr_Array1OfGeneralExpression {
+	~Expr_Array1OfGeneralExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfGeneralExpression\n");}
+	}
+};
+
+
 %nodefaultctor Expr_InvalidOperand;
 class Expr_InvalidOperand : public Expr_ExprFailure {
 	public:
@@ -3665,6 +3665,27 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Expr_RUIterator;
+class Expr_RUIterator {
+	public:
+		%feature("autodoc", "1");
+		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown Value() const;
+
+};
+%extend Expr_RUIterator {
+	~Expr_RUIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
+	}
+};
+
+
 %nodefaultctor Expr_NotAssigned;
 class Expr_NotAssigned : public Expr_ExprFailure {
 	public:
@@ -4036,27 +4057,6 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 	~Expr_LogOf10() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Expr_LogOf10\n");}
-	}
-};
-
-
-%nodefaultctor Expr_RUIterator;
-class Expr_RUIterator {
-	public:
-		%feature("autodoc", "1");
-		Expr_RUIterator(const Handle_Expr_GeneralRelation &rel);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Expr_NamedUnknown Value() const;
-
-};
-%extend Expr_RUIterator {
-	~Expr_RUIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
 	}
 };
 

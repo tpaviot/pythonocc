@@ -143,4 +143,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_MFT_FontManager.hxx>
+#include<PlotMgt.hxx>
 %}

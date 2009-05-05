@@ -492,6 +492,27 @@ class RWStepShape_RWAdvancedBrepShapeRepresentation {
 };
 
 
+%nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
+class RWStepShape_RWManifoldSurfaceShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWManifoldSurfaceShapeRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepShape_RWManifoldSurfaceShapeRepresentation {
+	~RWStepShape_RWManifoldSurfaceShapeRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWManifoldSurfaceShapeRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWGeometricSet;
 class RWStepShape_RWGeometricSet {
 	public:
@@ -530,6 +551,27 @@ class RWStepShape_RWEdgeBasedWireframeModel {
 	~RWStepShape_RWEdgeBasedWireframeModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdgeBasedWireframeModel\n");}
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWGeometricCurveSet;
+class RWStepShape_RWGeometricCurveSet {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWGeometricCurveSet();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_GeometricCurveSet &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_GeometricCurveSet &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_GeometricCurveSet &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepShape_RWGeometricCurveSet {
+	~RWStepShape_RWGeometricCurveSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricCurveSet\n");}
 	}
 };
 
@@ -807,6 +849,27 @@ class RWStepShape_RWEdge {
 };
 
 
+%nodefaultctor RWStepShape_RWFace;
+class RWStepShape_RWFace {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWFace();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Face &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Face &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_Face &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepShape_RWFace {
+	~RWStepShape_RWFace() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFace\n");}
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWCsgSolid;
 class RWStepShape_RWCsgSolid {
 	public:
@@ -866,27 +929,6 @@ class RWStepShape_RWClosedShell {
 	~RWStepShape_RWClosedShell() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWClosedShell\n");}
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
-class RWStepShape_RWManifoldSurfaceShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWManifoldSurfaceShapeRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepShape_RWManifoldSurfaceShapeRepresentation {
-	~RWStepShape_RWManifoldSurfaceShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWManifoldSurfaceShapeRepresentation\n");}
 	}
 };
 
@@ -1370,27 +1412,6 @@ class RWStepShape_RWDimensionalSize {
 };
 
 
-%nodefaultctor RWStepShape_RWFace;
-class RWStepShape_RWFace {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWFace();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Face &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Face &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_Face &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepShape_RWFace {
-	~RWStepShape_RWFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFace\n");}
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWNonManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 	public:
@@ -1614,27 +1635,6 @@ class RWStepShape_RWTorus {
 	~RWStepShape_RWTorus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTorus\n");}
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWGeometricCurveSet;
-class RWStepShape_RWGeometricCurveSet {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWGeometricCurveSet();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_GeometricCurveSet &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_GeometricCurveSet &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_GeometricCurveSet &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepShape_RWGeometricCurveSet {
-	~RWStepShape_RWGeometricCurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricCurveSet\n");}
 	}
 };
 

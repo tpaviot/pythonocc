@@ -428,6 +428,32 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 };
 
 
+%nodefaultctor Handle_IGESSelect_SetGlobalParameter;
+class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetGlobalParameter();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetGlobalParameter(const Handle_IGESSelect_SetGlobalParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetGlobalParameter(const IGESSelect_SetGlobalParameter *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetGlobalParameter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SetGlobalParameter {
+	IGESSelect_SetGlobalParameter* GetObject() {
+	return (IGESSelect_SetGlobalParameter*)$self->Access();
+	}
+};
+%extend Handle_IGESSelect_SetGlobalParameter {
+	~Handle_IGESSelect_SetGlobalParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSelect_WorkLibrary;
 class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	public:
@@ -502,32 +528,6 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	~Handle_IGESSelect_IGESTypeForm() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESTypeForm\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSelect_SetGlobalParameter;
-class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SetGlobalParameter();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SetGlobalParameter(const Handle_IGESSelect_SetGlobalParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SetGlobalParameter(const IGESSelect_SetGlobalParameter *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SetGlobalParameter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SetGlobalParameter {
-	IGESSelect_SetGlobalParameter* GetObject() {
-	return (IGESSelect_SetGlobalParameter*)$self->Access();
-	}
-};
-%extend Handle_IGESSelect_SetGlobalParameter {
-	~Handle_IGESSelect_SetGlobalParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");}
 	}
 };
 
@@ -1951,6 +1951,37 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 };
 
 
+%nodefaultctor IGESSelect_UpdateFileName;
+class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_UpdateFileName();
+		%feature("autodoc", "1");
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_UpdateFileName {
+	Handle_IGESSelect_UpdateFileName GetHandle() {
+	return *(Handle_IGESSelect_UpdateFileName*) &$self;
+	}
+};
+%extend IGESSelect_UpdateFileName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSelect_UpdateFileName {
+	~IGESSelect_UpdateFileName() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
+	}
+};
+
+
 %nodefaultctor IGESSelect_AddGroup;
 class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 	public:
@@ -2203,33 +2234,21 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 };
 
 
-%nodefaultctor IGESSelect_UpdateFileName;
-class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
+%nodefaultctor IGESSelect;
+class IGESSelect {
 	public:
 		%feature("autodoc", "1");
-		IGESSelect_UpdateFileName();
+		IGESSelect();
 		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
+		void Run();
 		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
 
 };
-%extend IGESSelect_UpdateFileName {
-	Handle_IGESSelect_UpdateFileName GetHandle() {
-	return *(Handle_IGESSelect_UpdateFileName*) &$self;
-	}
-};
-%extend IGESSelect_UpdateFileName {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSelect_UpdateFileName {
-	~IGESSelect_UpdateFileName() {
+%extend IGESSelect {
+	~IGESSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
 	}
 };
 
@@ -2494,23 +2513,6 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 	~IGESSelect_SetVersion5() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetVersion5\n");}
-	}
-};
-
-
-%nodefaultctor IGESSelect;
-class IGESSelect {
-	public:
-		%feature("autodoc", "1");
-		void Run();
-		%feature("autodoc", "1");
-		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
-
-};
-%extend IGESSelect {
-	~IGESSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
 	}
 };
 

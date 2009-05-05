@@ -596,6 +596,8 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 class Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
+		Prs3d_Root();
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Group CurrentGroup(const Handle_Prs3d_Presentation &Prs3d);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
@@ -613,6 +615,8 @@ class Prs3d_Root {
 class Prs3d_Text : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
+		Prs3d_Text();
+		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
@@ -629,6 +633,8 @@ class Prs3d_Text : public Prs3d_Root {
 %nodefaultctor Prs3d_BasicAspect;
 class Prs3d_BasicAspect : public MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		Prs3d_BasicAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -698,6 +704,8 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 %nodefaultctor Prs3d_CompositeAspect;
 class Prs3d_CompositeAspect : public MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		Prs3d_CompositeAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -772,6 +780,8 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 class Prs3d_AnglePresentation : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
+		Prs3d_AnglePresentation();
+		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
 
 };
@@ -835,6 +845,77 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 	~Prs3d_DatumAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Prs3d_DatumAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_PlaneAspect;
+class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_PlaneAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect EdgesAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect IsoAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect ArrowAspect() const;
+		%feature("autodoc", "1");
+		void SetArrowsLength(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length ArrowsLength() const;
+		%feature("autodoc", "1");
+		void SetArrowsSize(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length ArrowsSize() const;
+		%feature("autodoc", "1");
+		void SetArrowsAngle(const Quantity_PlaneAngle ang);
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle ArrowsAngle() const;
+		%feature("autodoc", "1");
+		void SetDisplayCenterArrow(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayCenterArrow() const;
+		%feature("autodoc", "1");
+		void SetDisplayEdgesArrows(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayEdgesArrows() const;
+		%feature("autodoc", "1");
+		void SetDisplayEdges(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayEdges() const;
+		%feature("autodoc", "1");
+		void SetDisplayIso(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayIso() const;
+		%feature("autodoc", "1");
+		void SetPlaneLength(const Quantity_Length LX, const Quantity_Length LY);
+		%feature("autodoc", "1");
+		Quantity_Length PlaneXLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length PlaneYLength() const;
+		%feature("autodoc", "1");
+		void SetIsoDistance(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length IsoDistance() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_PlaneAspect {
+	Handle_Prs3d_PlaneAspect GetHandle() {
+	return *(Handle_Prs3d_PlaneAspect*) &$self;
+	}
+};
+%extend Prs3d_PlaneAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_PlaneAspect {
+	~Prs3d_PlaneAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
 	}
 };
 
@@ -1020,77 +1101,6 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 };
 
 
-%nodefaultctor Prs3d_PlaneAspect;
-class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_PlaneAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect EdgesAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect IsoAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect ArrowAspect() const;
-		%feature("autodoc", "1");
-		void SetArrowsLength(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length ArrowsLength() const;
-		%feature("autodoc", "1");
-		void SetArrowsSize(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length ArrowsSize() const;
-		%feature("autodoc", "1");
-		void SetArrowsAngle(const Quantity_PlaneAngle ang);
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle ArrowsAngle() const;
-		%feature("autodoc", "1");
-		void SetDisplayCenterArrow(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayCenterArrow() const;
-		%feature("autodoc", "1");
-		void SetDisplayEdgesArrows(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayEdgesArrows() const;
-		%feature("autodoc", "1");
-		void SetDisplayEdges(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayEdges() const;
-		%feature("autodoc", "1");
-		void SetDisplayIso(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayIso() const;
-		%feature("autodoc", "1");
-		void SetPlaneLength(const Quantity_Length LX, const Quantity_Length LY);
-		%feature("autodoc", "1");
-		Quantity_Length PlaneXLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length PlaneYLength() const;
-		%feature("autodoc", "1");
-		void SetIsoDistance(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length IsoDistance() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_PlaneAspect {
-	Handle_Prs3d_PlaneAspect GetHandle() {
-	return *(Handle_Prs3d_PlaneAspect*) &$self;
-	}
-};
-%extend Prs3d_PlaneAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_PlaneAspect {
-	~Prs3d_PlaneAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
-	}
-};
-
-
 %nodefaultctor Prs3d_LengthAspect;
 class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 	public:
@@ -1153,6 +1163,8 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 class Prs3d_LengthPresentation : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
+		Prs3d_LengthPresentation();
+		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
 
 };
@@ -1167,6 +1179,8 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 %nodefaultctor Prs3d;
 class Prs3d {
 	public:
+		%feature("autodoc", "1");
+		Prs3d();
 		%feature("autodoc", "1");
 		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
 
@@ -1686,6 +1700,8 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 %nodefaultctor Prs3d_Arrow;
 class Prs3d_Arrow : public Prs3d_Root {
 	public:
+		%feature("autodoc", "1");
+		Prs3d_Arrow();
 		%feature("autodoc", "1");
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 		%feature("autodoc", "1");

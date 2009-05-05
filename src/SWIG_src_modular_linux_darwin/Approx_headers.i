@@ -70,7 +70,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<AppCont_Function2d.hxx>
-#include<AppCont_Function.hxx>
 #include<AppParCurves_MultiCurve.hxx>
 #include<AppParCurves_SequenceOfMultiCurve.hxx>
 #include<gp_GTrsf2d.hxx>
@@ -81,6 +80,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfVec2d.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<gp_Pnt.hxx>
+#include<AppCont_Function.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array2OfReal.hxx>

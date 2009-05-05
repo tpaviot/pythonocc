@@ -154,32 +154,6 @@ enum MFT_TypeOfCommand {
 
 
 
-%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
-class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontHandle();
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontHandle(const Handle_MFT_SequenceNodeOfListOfFontHandle &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontHandle(const MFT_SequenceNodeOfListOfFontHandle *anItem);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontHandle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
-	MFT_SequenceNodeOfListOfFontHandle* GetObject() {
-	return (MFT_SequenceNodeOfListOfFontHandle*)$self->Access();
-	}
-};
-%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
-	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontName;
 class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNode {
 	public:
@@ -202,6 +176,32 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 	~Handle_MFT_SequenceNodeOfListOfFontName() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
+class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle();
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle(const Handle_MFT_SequenceNodeOfListOfFontHandle &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle(const MFT_SequenceNodeOfListOfFontHandle *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
+	MFT_SequenceNodeOfListOfFontHandle* GetObject() {
+	return (MFT_SequenceNodeOfListOfFontHandle*)$self->Access();
+	}
+};
+%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
+	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
 
@@ -374,6 +374,8 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 %nodefaultctor MFT;
 class MFT {
 	public:
+		%feature("autodoc", "1");
+		MFT();
 
 };
 %extend MFT {

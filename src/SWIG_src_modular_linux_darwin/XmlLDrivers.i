@@ -354,6 +354,8 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 class XmlLDrivers {
 	public:
 		%feature("autodoc", "1");
+		XmlLDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
 		TCollection_AsciiString CreationDate();

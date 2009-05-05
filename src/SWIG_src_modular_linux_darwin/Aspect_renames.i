@@ -59,7 +59,7 @@
 %rename(Aspect_TDM_NONE) Aspect_TDM_NONE;
 %rename(Aspect_POM_Mask) Aspect_POM_Mask;
 %rename(Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry) Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry;
-%rename(Aspect_POM_Fill) Aspect_POM_Fill;
+%rename(Aspect_HS_GRID_DIAGONAL) Aspect_HS_GRID_DIAGONAL;
 %rename(Aspect_CP_NorthEast) Aspect_CP_NorthEast;
 %rename(Aspect_HS_GRID_DIAGONAL_WIDE) Aspect_HS_GRID_DIAGONAL_WIDE;
 %rename(Handle_Aspect_AspectLine) Handle_Aspect_AspectLine;
@@ -67,7 +67,7 @@
 %rename(Handle_Aspect_GraphicDevice) Handle_Aspect_GraphicDevice;
 %rename(Aspect_POM_Point) Aspect_POM_Point;
 %rename(Aspect_TOM_O_PLUS) Aspect_TOM_O_PLUS;
-%rename(Aspect_HS_GRID_DIAGONAL) Aspect_HS_GRID_DIAGONAL;
+%rename(Aspect_POM_Fill) Aspect_POM_Fill;
 %rename(Aspect_WOL_VERYTHICK) Aspect_WOL_VERYTHICK;
 %rename(Aspect_TOTP_RIGHT_LOWER) Aspect_TOTP_RIGHT_LOWER;
 %rename(Aspect_LineStyleDefinitionError) Aspect_LineStyleDefinitionError;
@@ -113,7 +113,7 @@
 %rename(Aspect_GDM_None) Aspect_GDM_None;
 %rename(Aspect_CP_East) Aspect_CP_East;
 %rename(Aspect_PO_CENTER) Aspect_PO_CENTER;
-%rename(Aspect_MarkerStyle) Aspect_MarkerStyle;
+%rename(Aspect_WidthMap) Aspect_WidthMap;
 %rename(Aspect_SequenceNodeOfSequenceOfMarkMapEntry) Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
 %rename(Aspect_TOF_COURIER) Aspect_TOF_COURIER;
 %rename(Aspect_LineWidthDefinitionError) Aspect_LineWidthDefinitionError;
@@ -127,6 +127,7 @@
 %rename(Aspect_TOP_SEGMENTS) Aspect_TOP_SEGMENTS;
 %rename(Aspect_TODM_REPLACE) Aspect_TODM_REPLACE;
 %rename(Aspect_TOCS_RGB) Aspect_TOCS_RGB;
+%rename(Aspect_WidthMapDefinitionError) Aspect_WidthMapDefinitionError;
 %rename(Aspect_POM_All) Aspect_POM_All;
 %rename(Aspect_TOCS_BlackAndWhite) Aspect_TOCS_BlackAndWhite;
 %rename(Handle_Aspect_PolyStyleDefinitionError) Handle_Aspect_PolyStyleDefinitionError;
@@ -136,7 +137,7 @@
 %rename(Aspect_TOD_ABSOLUTE) Aspect_TOD_ABSOLUTE;
 %rename(Aspect_PolyStyleDefinitionError) Aspect_PolyStyleDefinitionError;
 %rename(Handle_Aspect_IdentDefinitionError) Handle_Aspect_IdentDefinitionError;
-%rename(Aspect_WidthMapDefinitionError) Aspect_WidthMapDefinitionError;
+%rename(Aspect_MarkerStyle) Aspect_MarkerStyle;
 %rename(Aspect_LPID_DIRPLOT) Aspect_LPID_DIRPLOT;
 %rename(Aspect_TOR_UNKNOWN) Aspect_TOR_UNKNOWN;
 %rename(Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry) Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
@@ -209,7 +210,6 @@
 %rename(Handle_Aspect_Grid) Handle_Aspect_Grid;
 %rename(Handle_Aspect_LineWidthDefinitionError) Handle_Aspect_LineWidthDefinitionError;
 %rename(Aspect_MarkMapEntry) Aspect_MarkMapEntry;
-%rename(Aspect_WidthMap) Aspect_WidthMap;
 %rename(Aspect_TOCSO_NONE) Aspect_TOCSO_NONE;
 %rename(Handle_Aspect_AspectMarkerDefinitionError) Handle_Aspect_AspectMarkerDefinitionError;
 %rename(Aspect_TOF_HELVETICA) Aspect_TOF_HELVETICA;

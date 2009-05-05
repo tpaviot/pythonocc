@@ -41,6 +41,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<GeomConvert.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TColGeom_Array1OfBSplineCurve.hxx>
 #include<TColStd_Array1OfReal.hxx>

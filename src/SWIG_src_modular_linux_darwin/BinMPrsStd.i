@@ -172,6 +172,8 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 class BinMPrsStd {
 	public:
 		%feature("autodoc", "1");
+		BinMPrsStd();
+		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };

@@ -457,6 +457,8 @@ class Handle_TNaming_StdMapNodeOfMapOfNamedShape : public Handle_TCollection_Map
 class TNaming_NamedShapeHasher {
 	public:
 		%feature("autodoc", "1");
+		TNaming_NamedShapeHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_TNaming_NamedShape &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_TNaming_NamedShape &K1, const Handle_TNaming_NamedShape &K2);
@@ -473,6 +475,8 @@ class TNaming_NamedShapeHasher {
 %nodefaultctor TNaming_Tool;
 class TNaming_Tool {
 	public:
+		%feature("autodoc", "1");
+		TNaming_Tool();
 		%feature("autodoc", "1");
 		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS);
 		%feature("autodoc", "1");
@@ -611,6 +615,8 @@ class TNaming_UsedShapes : public TDF_Attribute {
 %nodefaultctor TNaming_TranslateTool;
 class TNaming_TranslateTool : public MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		TNaming_TranslateTool();
 		%feature("autodoc", "1");
 		void Add(TopoDS_Shape & S1, const TopoDS_Shape &S2) const;
 		%feature("autodoc", "1");
@@ -1161,6 +1167,8 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 class TNaming_CopyShape {
 	public:
 		%feature("autodoc", "1");
+		TNaming_CopyShape();
+		%feature("autodoc", "1");
 		void CopyTool(const TopoDS_Shape &aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult);
 		%feature("autodoc", "1");
 		void Translate(const TopoDS_Shape &aShape, TColStd_IndexedDataMapOfTransientTransient & aMap, TopoDS_Shape & aResult, const Handle_TNaming_TranslateTool &TrTool);
@@ -1179,6 +1187,8 @@ class TNaming_CopyShape {
 %nodefaultctor TNaming_NamingTool;
 class TNaming_NamingTool {
 	public:
+		%feature("autodoc", "1");
+		TNaming_NamingTool();
 		%feature("autodoc", "1");
 		void CurrentShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &NS, TopTools_MapOfShape & MS);
 		%feature("autodoc", "1");
@@ -1799,6 +1809,8 @@ class TNaming_Naming : public TDF_Attribute {
 %nodefaultctor TNaming;
 class TNaming {
 	public:
+		%feature("autodoc", "1");
+		TNaming();
 		%feature("autodoc", "1");
 		void Substitute(const TDF_Label &labelsource, const TDF_Label &labelcible, TopTools_DataMapOfShapeShape & mapOldNew);
 		%feature("autodoc", "1");

@@ -38,4 +38,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepAdaptor_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
+#include<BRepLProp.hxx>
 %}

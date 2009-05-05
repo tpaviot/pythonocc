@@ -74,6 +74,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TDocStd_Document.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_RelocationTable.hxx>
+#include<XCAFDoc.hxx>
 #include<Standard_GUID.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>

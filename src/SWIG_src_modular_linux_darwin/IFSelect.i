@@ -783,6 +783,32 @@ class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract
 };
 
 
+%nodefaultctor Handle_IFSelect_SelectSharing;
+class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
+	public:
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing(const Handle_IFSelect_SelectSharing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing(const IFSelect_SelectSharing *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IFSelect_SelectSharing {
+	IFSelect_SelectSharing* GetObject() {
+	return (IFSelect_SelectSharing*)$self->Access();
+	}
+};
+%extend Handle_IFSelect_SelectSharing {
+	~Handle_IFSelect_SelectSharing() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IFSelect_SignCounter;
 class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
 	public:
@@ -1247,32 +1273,6 @@ class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
 	~Handle_IFSelect_SelectSignature() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignature\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IFSelect_SelectSharing;
-class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing(const Handle_IFSelect_SelectSharing &aHandle);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing(const IFSelect_SelectSharing *anItem);
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSharing const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IFSelect_SelectSharing {
-	IFSelect_SelectSharing* GetObject() {
-	return (IFSelect_SelectSharing*)$self->Access();
-	}
-};
-%extend Handle_IFSelect_SelectSharing {
-	~Handle_IFSelect_SelectSharing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");}
 	}
 };
 
@@ -3005,41 +3005,6 @@ class IFSelect_ContextModif {
 };
 
 
-%nodefaultctor IFSelect_SelectEntityNumber;
-class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectEntityNumber();
-		%feature("autodoc", "1");
-		void SetNumber(const Handle_IFSelect_IntParam &num);
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam Number() const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectEntityNumber {
-	Handle_IFSelect_SelectEntityNumber GetHandle() {
-	return *(Handle_IFSelect_SelectEntityNumber*) &$self;
-	}
-};
-%extend IFSelect_SelectEntityNumber {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IFSelect_SelectEntityNumber {
-	~IFSelect_SelectEntityNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectEntityNumber\n");}
-	}
-};
-
-
 %nodefaultctor IFSelect_SelectModelRoots;
 class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 	public:
@@ -3978,6 +3943,8 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 class IFSelect_Functions {
 	public:
 		%feature("autodoc", "1");
+		IFSelect_Functions();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient GiveEntity(const Handle_IFSelect_WorkSession &WS, const char * name="");
 		%feature("autodoc", "1");
 		Standard_Integer GiveEntityNumber(const Handle_IFSelect_WorkSession &WS, const char * name="");
@@ -4201,39 +4168,6 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 	~IFSelect_ModifEditForm() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFSelect_ModifEditForm\n");}
-	}
-};
-
-
-%nodefaultctor IFSelect_SelectRoots;
-class IFSelect_SelectRoots : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IFSelect_SelectRoots();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IFSelect_SelectRoots {
-	Handle_IFSelect_SelectRoots GetHandle() {
-	return *(Handle_IFSelect_SelectRoots*) &$self;
-	}
-};
-%extend IFSelect_SelectRoots {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IFSelect_SelectRoots {
-	~IFSelect_SelectRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRoots\n");}
 	}
 };
 
@@ -4657,6 +4591,39 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 };
 
 
+%nodefaultctor IFSelect_SelectRoots;
+class IFSelect_SelectRoots : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectRoots();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectRoots {
+	Handle_IFSelect_SelectRoots GetHandle() {
+	return *(Handle_IFSelect_SelectRoots*) &$self;
+	}
+};
+%extend IFSelect_SelectRoots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IFSelect_SelectRoots {
+	~IFSelect_SelectRoots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRoots\n");}
+	}
+};
+
+
 %nodefaultctor IFSelect_ListEditor;
 class IFSelect_ListEditor : public MMgt_TShared {
 	public:
@@ -5029,6 +4996,8 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 %nodefaultctor IFSelect;
 class IFSelect {
 	public:
+		%feature("autodoc", "1");
+		IFSelect();
 		%feature("autodoc", "1");
 		Standard_Boolean SaveSession(const Handle_IFSelect_WorkSession &WS, const char * file);
 		%feature("autodoc", "1");
@@ -5997,6 +5966,41 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 	~IFSelect_SequenceNodeOfSequenceOfInterfaceModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");}
+	}
+};
+
+
+%nodefaultctor IFSelect_SelectEntityNumber;
+class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
+	public:
+		%feature("autodoc", "1");
+		IFSelect_SelectEntityNumber();
+		%feature("autodoc", "1");
+		void SetNumber(const Handle_IFSelect_IntParam &num);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam Number() const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IFSelect_SelectEntityNumber {
+	Handle_IFSelect_SelectEntityNumber GetHandle() {
+	return *(Handle_IFSelect_SelectEntityNumber*) &$self;
+	}
+};
+%extend IFSelect_SelectEntityNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IFSelect_SelectEntityNumber {
+	~IFSelect_SelectEntityNumber() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectEntityNumber\n");}
 	}
 };
 

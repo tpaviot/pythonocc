@@ -59,4 +59,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<TColStd_IndexedMapOfTransient.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
+#include<BinMDF.hxx>
 %}

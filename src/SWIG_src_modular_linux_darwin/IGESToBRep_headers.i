@@ -152,6 +152,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Transfer_Binder.hxx>
+#include<IGESToBRep.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>

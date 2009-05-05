@@ -191,7 +191,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepGeom_CartesianTransformationOperator3d.hxx>
 #include<Handle_StepGeom_RectangularTrimmedSurface.hxx>
 #include<Handle_StepGeom_Direction.hxx>
-#include<Handle_StepGeom_CylindricalSurface.hxx>
 #include<Handle_StepGeom_Axis2Placement3d.hxx>
+#include<Handle_StepGeom_CylindricalSurface.hxx>
 #include<Handle_StepGeom_SurfaceOfLinearExtrusion.hxx>
 %}

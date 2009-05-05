@@ -61,5 +61,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
 #include<XmlObjMgt_RRelocationTable.hxx>
+#include<XmlMFunction.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 %}

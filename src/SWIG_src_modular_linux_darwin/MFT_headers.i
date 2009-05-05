@@ -177,6 +177,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Standard_SStream.hxx>
+#include<MFT.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Aspect_FontStyle.hxx>
 %}

@@ -170,5 +170,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Interface_CheckIterator.hxx>
 #include<Handle_Interface_UndefinedContent.hxx>
+#include<StepData.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 %}

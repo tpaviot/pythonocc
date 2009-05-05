@@ -338,6 +338,8 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 class Draft {
 	public:
 		%feature("autodoc", "1");
+		Draft();
+		%feature("autodoc", "1");
 		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
 
 };

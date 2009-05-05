@@ -1,11 +1,11 @@
 %rename(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
 %rename(MAT2d_SequenceOfBoolean) MAT2d_SequenceOfBoolean;
-%rename(MAT2d_DataMapOfBiIntInteger) MAT2d_DataMapOfBiIntInteger;
 %rename(MAT2d_SequenceOfSequenceOfGeometry) MAT2d_SequenceOfSequenceOfGeometry;
 %rename(MAT2d_Connexion) MAT2d_Connexion;
 %rename(MAT2d_DataMapNodeOfDataMapOfIntegerConnexion) MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
 %rename(MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve) MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
 %rename(MAT2d_DataMapOfIntegerVec2d) MAT2d_DataMapOfIntegerVec2d;
+%rename(MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d) MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
 %rename(MAT2d_Tool2d) MAT2d_Tool2d;
 %rename(MAT2d_SequenceOfConnexion) MAT2d_SequenceOfConnexion;
 %rename(MAT2d_BiInt) MAT2d_BiInt;
@@ -15,7 +15,7 @@
 %rename(MAT2d_DataMapNodeOfDataMapOfBiIntInteger) MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 %rename(MAT2d_SequenceOfSequenceOfCurve) MAT2d_SequenceOfSequenceOfCurve;
 %rename(MAT2d_DataMapOfBiIntSequenceOfInteger) MAT2d_DataMapOfBiIntSequenceOfInteger;
-%rename(MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d) MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
+%rename(MAT2d_DataMapOfBiIntInteger) MAT2d_DataMapOfBiIntInteger;
 %rename(MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d) MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
 %rename(MAT2d_DataMapNodeOfDataMapOfIntegerVec2d) MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
 %rename(MAT2d_SequenceNodeOfSequenceOfBoolean) MAT2d_SequenceNodeOfSequenceOfBoolean;

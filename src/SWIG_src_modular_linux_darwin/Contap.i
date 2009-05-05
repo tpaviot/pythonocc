@@ -400,9 +400,66 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 };
 
 
+%nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
+class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Contap_SequenceOfIWLineOfTheIWalkingOfContour();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void Append(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void Prepend(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & First() const;
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
+		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
+	~Contap_SequenceOfIWLineOfTheIWalkingOfContour() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");}
+	}
+};
+
+
 %nodefaultctor Contap_HSurfaceTool;
 class Contap_HSurfaceTool {
 	public:
+		%feature("autodoc", "1");
+		Contap_HSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
@@ -549,6 +606,8 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 %nodefaultctor Contap_TheSurfPropsOfContour;
 class Contap_TheSurfPropsOfContour {
 	public:
+		%feature("autodoc", "1");
+		Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
 		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N);
 		%feature("autodoc", "1");
@@ -1065,6 +1124,8 @@ class Contap_TheLineOfContour {
 class Contap_HContTool {
 	public:
 		%feature("autodoc", "1");
+		Contap_HContTool();
+		%feature("autodoc", "1");
 		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
@@ -1110,64 +1171,11 @@ class Contap_HContTool {
 };
 
 
-%nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
-class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Contap_SequenceOfIWLineOfTheIWalkingOfContour();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void Append(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void Prepend(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & First() const;
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
-		%feature("autodoc", "1");
-		Handle_Contap_TheIWLineOfTheIWalkingOfContour & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
-	~Contap_SequenceOfIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");}
-	}
-};
-
-
 %nodefaultctor Contap_HCurve2dTool;
 class Contap_HCurve2dTool {
 	public:
+		%feature("autodoc", "1");
+		Contap_HCurve2dTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");

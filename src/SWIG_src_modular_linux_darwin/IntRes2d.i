@@ -391,33 +391,6 @@ class IntRes2d_IntersectionPoint {
 };
 
 
-%nodefaultctor IntRes2d_Intersection;
-class IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetReversedParameters(const Standard_Boolean flag);
-
-};
-%extend IntRes2d_Intersection {
-	~IntRes2d_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
-	}
-};
-
-
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
 class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_SeqNode {
 	public:
@@ -443,6 +416,33 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 	~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
+	}
+};
+
+
+%nodefaultctor IntRes2d_Intersection;
+class IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetReversedParameters(const Standard_Boolean flag);
+
+};
+%extend IntRes2d_Intersection {
+	~IntRes2d_Intersection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
 	}
 };
 

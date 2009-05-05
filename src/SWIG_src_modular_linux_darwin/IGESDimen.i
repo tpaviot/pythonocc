@@ -2466,6 +2466,8 @@ class IGESDimen_ToolAngularDimension {
 class IGESDimen {
 	public:
 		%feature("autodoc", "1");
+		IGESDimen();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Protocol Protocol();

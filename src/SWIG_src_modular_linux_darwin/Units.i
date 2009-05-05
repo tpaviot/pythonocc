@@ -1578,64 +1578,11 @@ class Units_Explorer {
 };
 
 
-%nodefaultctor Units_TksSequence;
-class Units_TksSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Units_TksSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Units_TksSequence & Assign(const Units_TksSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Append(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Prepend(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & First() const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Units_Token & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Units_TksSequence {
-	~Units_TksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_TksSequence\n");}
-	}
-};
-
-
 %nodefaultctor Units;
 class Units {
 	public:
+		%feature("autodoc", "1");
+		Units();
 		%feature("autodoc", "1");
 		void UnitsFile(const char * afile);
 		%feature("autodoc", "1");
@@ -1904,5 +1851,60 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 	~Units_StrgSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_StrgSequence\n");}
+	}
+};
+
+
+%nodefaultctor Units_TksSequence;
+class Units_TksSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Units_TksSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Units_TksSequence & Assign(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Append(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Prepend(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & First() const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Units_Token & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Units_TksSequence {
+	~Units_TksSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_TksSequence\n");}
 	}
 };

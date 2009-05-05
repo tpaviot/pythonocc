@@ -278,6 +278,32 @@ class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 };
 
 
+%nodefaultctor Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
+class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence();
+		%feature("autodoc", "1");
+		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence(const Handle_Select3D_SequenceNodeOfSensitiveEntitySequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence(const Select3D_SequenceNodeOfSensitiveEntitySequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
+	Select3D_SequenceNodeOfSensitiveEntitySequence* GetObject() {
+	return (Select3D_SequenceNodeOfSensitiveEntitySequence*)$self->Access();
+	}
+};
+%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
+	~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Select3D_SensitiveFace;
 class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	public:
@@ -486,32 +512,6 @@ class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 };
 
 
-%nodefaultctor Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
-class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence();
-		%feature("autodoc", "1");
-		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence(const Handle_Select3D_SequenceNodeOfSensitiveEntitySequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence(const Select3D_SequenceNodeOfSensitiveEntitySequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SequenceNodeOfSensitiveEntitySequence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
-	Select3D_SequenceNodeOfSensitiveEntitySequence* GetObject() {
-	return (Select3D_SequenceNodeOfSensitiveEntitySequence*)$self->Access();
-	}
-};
-%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
-	~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
-	}
-};
-
-
 %nodefaultctor Select3D_Projector;
 class Select3D_Projector {
 	public:
@@ -607,6 +607,8 @@ class Select3D_ListIteratorOfListOfSensitive {
 %nodefaultctor Select3D_Pnt2d;
 class Select3D_Pnt2d {
 	public:
+		%feature("autodoc", "1");
+		Select3D_Pnt2d();
 
 };
 %extend Select3D_Pnt2d {
@@ -976,6 +978,51 @@ class Select3D_ListOfSensitiveTriangle {
 };
 
 
+%nodefaultctor Select3D_SensitivePoint;
+class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		virtual		void Project(const Select3D_Projector &aProjector);
+		%feature("autodoc", "1");
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
+		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+		%feature("autodoc", "1");
+		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Select3D_SensitivePoint {
+	Handle_Select3D_SensitivePoint GetHandle() {
+	return *(Handle_Select3D_SensitivePoint*) &$self;
+	}
+};
+%extend Select3D_SensitivePoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Select3D_SensitivePoint {
+	~Select3D_SensitivePoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoint\n");}
+	}
+};
+
+
 %nodefaultctor Select3D_Box2d;
 class Select3D_Box2d {
 	public:
@@ -1083,51 +1130,6 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 	~Select3D_SensitiveBox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveBox\n");}
-	}
-};
-
-
-%nodefaultctor Select3D_SensitivePoint;
-class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Select3D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		virtual		void Project(const Select3D_Projector &aProjector);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc", "1");
-		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Select3D_SensitivePoint {
-	Handle_Select3D_SensitivePoint GetHandle() {
-	return *(Handle_Select3D_SensitivePoint*) &$self;
-	}
-};
-%extend Select3D_SensitivePoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Select3D_SensitivePoint {
-	~Select3D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoint\n");}
 	}
 };
 

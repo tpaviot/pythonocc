@@ -676,35 +676,6 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 };
 
 
-%nodefaultctor NLPlate_StackNodeOfStackOfPlate;
-class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_StackNodeOfStackOfPlate(const Plate_Plate &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Plate_Plate & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NLPlate_StackNodeOfStackOfPlate {
-	Handle_NLPlate_StackNodeOfStackOfPlate GetHandle() {
-	return *(Handle_NLPlate_StackNodeOfStackOfPlate*) &$self;
-	}
-};
-%extend NLPlate_StackNodeOfStackOfPlate {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NLPlate_StackNodeOfStackOfPlate {
-	~NLPlate_StackNodeOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
-	}
-};
-
-
 %nodefaultctor NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
 class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNode {
 	public:
@@ -800,6 +771,35 @@ class NLPlate_NLPlate {
 	~NLPlate_NLPlate() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_StackNodeOfStackOfPlate;
+class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_StackNodeOfStackOfPlate(const Plate_Plate &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Plate_Plate & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
+	Handle_NLPlate_StackNodeOfStackOfPlate GetHandle() {
+	return *(Handle_NLPlate_StackNodeOfStackOfPlate*) &$self;
+	}
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
+	~NLPlate_StackNodeOfStackOfPlate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
 	}
 };
 

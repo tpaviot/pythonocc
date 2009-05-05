@@ -669,6 +669,8 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 %nodefaultctor ExprIntrp;
 class ExprIntrp {
 	public:
+		%feature("autodoc", "1");
+		ExprIntrp();
 
 };
 %extend ExprIntrp {

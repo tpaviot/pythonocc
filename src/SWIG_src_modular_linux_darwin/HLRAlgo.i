@@ -376,32 +376,6 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_HLRAlgo_PolyInternalNode;
-class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode(const Handle_HLRAlgo_PolyInternalNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode(const HLRAlgo_PolyInternalNode *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyInternalNode {
-	HLRAlgo_PolyInternalNode* GetObject() {
-	return (HLRAlgo_PolyInternalNode*)$self->Access();
-	}
-};
-%extend Handle_HLRAlgo_PolyInternalNode {
-	~Handle_HLRAlgo_PolyInternalNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");}
-	}
-};
-
-
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
 class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	public:
@@ -424,6 +398,32 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	~Handle_HLRAlgo_PolyAlgo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyAlgo\n");}
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_PolyInternalNode;
+class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode(const Handle_HLRAlgo_PolyInternalNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode(const HLRAlgo_PolyInternalNode *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyInternalNode {
+	HLRAlgo_PolyInternalNode* GetObject() {
+	return (HLRAlgo_PolyInternalNode*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_PolyInternalNode {
+	~Handle_HLRAlgo_PolyInternalNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");}
 	}
 };
 
@@ -1530,6 +1530,8 @@ class HLRAlgo_TriangleData {
 %nodefaultctor HLRAlgo;
 class HLRAlgo {
 	public:
+		%feature("autodoc", "1");
+		HLRAlgo();
 		%feature("autodoc", "1");
 		void UpdateMinMax(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Address Min, const Standard_Address Max);
 		%feature("autodoc", "1");

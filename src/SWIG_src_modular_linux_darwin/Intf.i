@@ -713,6 +713,8 @@ class Intf_Tool {
 class Intf {
 	public:
 		%feature("autodoc", "1");
+		Intf();
+		%feature("autodoc", "1");
 		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);

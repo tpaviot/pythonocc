@@ -204,13 +204,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Standard_SStream.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<TColStd_Array1OfBoolean.hxx>
 #include<Quantity_Color.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
+#include<Aspect.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<TColQuantity_Array1OfLength.hxx>
+#include<TColStd_Array1OfReal.hxx>
+#include<TColStd_Array1OfBoolean.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>
 %}

@@ -155,6 +155,8 @@ class BRepGProp_Sinert : public GProp_GProps {
 class BRepGProp {
 	public:
 		%feature("autodoc", "1");
+		BRepGProp();
+		%feature("autodoc", "1");
 		void LinearProperties(const TopoDS_Shape &S, GProp_GProps & LProps);
 		%feature("autodoc", "1");
 		void SurfaceProperties(const TopoDS_Shape &S, GProp_GProps & SProps);
@@ -181,6 +183,8 @@ class BRepGProp {
 %nodefaultctor BRepGProp_EdgeTool;
 class BRepGProp_EdgeTool {
 	public:
+		%feature("autodoc", "1");
+		BRepGProp_EdgeTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");

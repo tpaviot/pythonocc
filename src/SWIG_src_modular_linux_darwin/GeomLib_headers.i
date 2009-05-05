@@ -51,6 +51,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<math_Vector.hxx>
+#include<AdvApprox_ApproxAFunction.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
+#include<gp_Mat.hxx>
+#include<GeomLib.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<Adaptor3d_CurveOnSurface.hxx>
@@ -61,7 +65,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<Adaptor3d_Curve.hxx>
-#include<AdvApprox_ApproxAFunction.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
-#include<gp_Mat.hxx>
 %}

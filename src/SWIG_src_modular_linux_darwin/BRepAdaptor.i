@@ -283,6 +283,29 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 };
 
 
+%nodefaultctor BRepAdaptor_Curve2d;
+class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
+	public:
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve2d();
+		%feature("autodoc", "1");
+		BRepAdaptor_Curve2d(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Edge &E, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+
+};
+%extend BRepAdaptor_Curve2d {
+	~BRepAdaptor_Curve2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
+	}
+};
+
+
 %nodefaultctor BRepAdaptor_HArray1OfCurve;
 class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 	public:
@@ -525,29 +548,6 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 	~BRepAdaptor_Surface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Surface\n");}
-	}
-};
-
-
-%nodefaultctor BRepAdaptor_Curve2d;
-class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
-	public:
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve2d();
-		%feature("autodoc", "1");
-		BRepAdaptor_Curve2d(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-
-};
-%extend BRepAdaptor_Curve2d {
-	~BRepAdaptor_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
 	}
 };
 

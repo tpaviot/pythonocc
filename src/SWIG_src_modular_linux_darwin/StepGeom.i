@@ -165,32 +165,6 @@ enum StepGeom_TransitionCode {
 
 
 
-%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
-class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch();
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
-	StepGeom_HArray2OfSurfacePatch* GetObject() {
-	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
-	}
-};
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
-	~Handle_StepGeom_HArray2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepGeom_GeometricRepresentationItem;
 class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -1253,6 +1227,32 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 	~Handle_StepGeom_SeamCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SeamCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
+class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch();
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	StepGeom_HArray2OfSurfacePatch* GetObject() {
+	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
+	}
+};
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	~Handle_StepGeom_HArray2OfSurfacePatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
 	}
 };
 
@@ -4159,6 +4159,76 @@ class StepGeom_PointReplica : public StepGeom_Point {
 };
 
 
+%nodefaultctor StepGeom_ToroidalSurface;
+class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_ToroidalSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void SetMajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void SetMinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_ToroidalSurface {
+	Handle_StepGeom_ToroidalSurface GetHandle() {
+	return *(Handle_StepGeom_ToroidalSurface*) &$self;
+	}
+};
+%extend StepGeom_ToroidalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_ToroidalSurface {
+	~StepGeom_ToroidalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_ToroidalSurface\n");}
+	}
+};
+
+
+%nodefaultctor StepGeom_DegenerateToroidalSurface;
+class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_DegenerateToroidalSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius, const Standard_Boolean aSelectOuter);
+		%feature("autodoc", "1");
+		void SetSelectOuter(const Standard_Boolean aSelectOuter);
+		%feature("autodoc", "1");
+		Standard_Boolean SelectOuter() const;
+
+};
+%extend StepGeom_DegenerateToroidalSurface {
+	Handle_StepGeom_DegenerateToroidalSurface GetHandle() {
+	return *(Handle_StepGeom_DegenerateToroidalSurface*) &$self;
+	}
+};
+%extend StepGeom_DegenerateToroidalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepGeom_DegenerateToroidalSurface {
+	~StepGeom_DegenerateToroidalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");}
+	}
+};
+
+
 %nodefaultctor StepGeom_BSplineCurveWithKnots;
 class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 	public:
@@ -6088,45 +6158,6 @@ class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 };
 
 
-%nodefaultctor StepGeom_ToroidalSurface;
-class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_ToroidalSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		void SetMajorRadius(const Standard_Real aMajorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void SetMinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_ToroidalSurface {
-	Handle_StepGeom_ToroidalSurface GetHandle() {
-	return *(Handle_StepGeom_ToroidalSurface*) &$self;
-	}
-};
-%extend StepGeom_ToroidalSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_ToroidalSurface {
-	~StepGeom_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_ToroidalSurface\n");}
-	}
-};
-
-
 %nodefaultctor StepGeom_Axis2Placement3d;
 class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 	public:
@@ -6732,41 +6763,6 @@ class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 	~StepGeom_RectangularTrimmedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularTrimmedSurface\n");}
-	}
-};
-
-
-%nodefaultctor StepGeom_DegenerateToroidalSurface;
-class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_DegenerateToroidalSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis2Placement3d &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius, const Standard_Boolean aSelectOuter);
-		%feature("autodoc", "1");
-		void SetSelectOuter(const Standard_Boolean aSelectOuter);
-		%feature("autodoc", "1");
-		Standard_Boolean SelectOuter() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_DegenerateToroidalSurface {
-	Handle_StepGeom_DegenerateToroidalSurface GetHandle() {
-	return *(Handle_StepGeom_DegenerateToroidalSurface*) &$self;
-	}
-};
-%extend StepGeom_DegenerateToroidalSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepGeom_DegenerateToroidalSurface {
-	~StepGeom_DegenerateToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");}
 	}
 };
 

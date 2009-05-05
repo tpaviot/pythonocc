@@ -397,32 +397,6 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Transfer_ActorOfFinderProcess;
-class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess(const Handle_Transfer_ActorOfFinderProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess(const Transfer_ActorOfFinderProcess *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorOfFinderProcess {
-	Transfer_ActorOfFinderProcess* GetObject() {
-	return (Transfer_ActorOfFinderProcess*)$self->Access();
-	}
-};
-%extend Handle_Transfer_ActorOfFinderProcess {
-	~Handle_Transfer_ActorOfFinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Transfer_TransientMapper;
 class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	public:
@@ -657,6 +631,58 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 };
 
 
+%nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
+class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Transfer_DataMapNodeOfDataMapOfTransientTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	Transfer_DataMapNodeOfDataMapOfTransientTransient* GetObject() {
+	return (Transfer_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
+	}
+};
+%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ActorOfFinderProcess;
+class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess();
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess(const Handle_Transfer_ActorOfFinderProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess(const Transfer_ActorOfFinderProcess *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ActorOfFinderProcess {
+	Transfer_ActorOfFinderProcess* GetObject() {
+	return (Transfer_ActorOfFinderProcess*)$self->Access();
+	}
+};
+%extend Handle_Transfer_ActorOfFinderProcess {
+	~Handle_Transfer_ActorOfFinderProcess() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Transfer_DispatchControl;
 class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	public:
@@ -783,32 +809,6 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	~Handle_Transfer_ResultFromModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
-class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient(const Transfer_DataMapNodeOfDataMapOfTransientTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	Transfer_DataMapNodeOfDataMapOfTransientTransient* GetObject() {
-	return (Transfer_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
-	}
-};
-%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -1906,6 +1906,8 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 class Transfer_FindHasher {
 	public:
 		%feature("autodoc", "1");
+		Transfer_FindHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
@@ -2807,6 +2809,8 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 %nodefaultctor Transfer_DataInfo;
 class Transfer_DataInfo {
 	public:
+		%feature("autodoc", "1");
+		Transfer_DataInfo();
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");

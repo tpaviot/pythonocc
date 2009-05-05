@@ -841,6 +841,8 @@ class TopoDS_ListOfShape {
 class TopoDS {
 	public:
 		%feature("autodoc", "1");
+		TopoDS();
+		%feature("autodoc", "1");
 		const TopoDS_Vertex & Vertex(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		TopoDS_Vertex & Vertex(TopoDS_Shape & S);

@@ -114,14 +114,6 @@ Standard_Integer & function transformation
 %include BRepBuilderAPI_headers.i
 
 
-enum BRepBuilderAPI_ShapeModification {
-	BRepBuilderAPI_Preserved,
-	BRepBuilderAPI_Deleted,
-	BRepBuilderAPI_Trimmed,
-	BRepBuilderAPI_Merged,
-	BRepBuilderAPI_BoundaryModified,
-	};
-
 enum BRepBuilderAPI_FaceError {
 	BRepBuilderAPI_FaceDone,
 	BRepBuilderAPI_NoFace,
@@ -138,10 +130,12 @@ enum BRepBuilderAPI_PipeError {
 	BRepBuilderAPI_ImpossibleContact,
 	};
 
-enum BRepBuilderAPI_TransitionMode {
-	BRepBuilderAPI_Transformed,
-	BRepBuilderAPI_RightCorner,
-	BRepBuilderAPI_RoundCorner,
+enum BRepBuilderAPI_ShapeModification {
+	BRepBuilderAPI_Preserved,
+	BRepBuilderAPI_Deleted,
+	BRepBuilderAPI_Trimmed,
+	BRepBuilderAPI_Merged,
+	BRepBuilderAPI_BoundaryModified,
 	};
 
 enum BRepBuilderAPI_WireError {
@@ -149,6 +143,12 @@ enum BRepBuilderAPI_WireError {
 	BRepBuilderAPI_EmptyWire,
 	BRepBuilderAPI_DisconnectedWire,
 	BRepBuilderAPI_NonManifoldWire,
+	};
+
+enum BRepBuilderAPI_TransitionMode {
+	BRepBuilderAPI_Transformed,
+	BRepBuilderAPI_RightCorner,
+	BRepBuilderAPI_RoundCorner,
 	};
 
 enum BRepBuilderAPI_ShellError {
@@ -820,6 +820,8 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 %nodefaultctor BRepBuilderAPI;
 class BRepBuilderAPI {
 	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI();
 		%feature("autodoc", "1");
 		void Plane(const Handle_Geom_Plane &P);
 		%feature("autodoc", "1");

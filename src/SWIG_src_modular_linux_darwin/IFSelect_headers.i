@@ -256,6 +256,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_Interface_TypedValue.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
+#include<IFSelect.hxx>
 #include<Handle_Interface_HGraph.hxx>
 #include<TColStd_SequenceOfTransient.hxx>
 %}

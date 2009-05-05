@@ -638,6 +638,8 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 class TransferBRep_ShapeInfo {
 	public:
 		%feature("autodoc", "1");
+		TransferBRep_ShapeInfo();
+		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const TopoDS_Shape &ent);
 		%feature("autodoc", "1");
 		char * TypeName(const TopoDS_Shape &ent);
@@ -699,6 +701,8 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 %nodefaultctor TransferBRep;
 class TransferBRep {
 	public:
+		%feature("autodoc", "1");
+		TransferBRep();
 		%feature("autodoc", "1");
 		TopoDS_Shape ShapeResult(const Handle_Transfer_Binder &binder);
 		%feature("autodoc", "1");

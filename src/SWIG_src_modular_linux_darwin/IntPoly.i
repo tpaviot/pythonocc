@@ -390,6 +390,8 @@ class IntPoly_ShapeSection {
 class IntPoly_PntHasher {
 	public:
 		%feature("autodoc", "1");
+		IntPoly_PntHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
@@ -461,6 +463,8 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 %nodefaultctor IntPoly_Pnt2dHasher;
 class IntPoly_Pnt2dHasher {
 	public:
+		%feature("autodoc", "1");
+		IntPoly_Pnt2dHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const gp_Pnt2d &Point, const Standard_Integer upper);
 		%feature("autodoc", "1");

@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class BndLib_AddSurface {
 	public:
 		%feature("autodoc", "1");
+		BndLib_AddSurface();
+		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Surface &S, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
@@ -137,6 +139,8 @@ class BndLib_AddSurface {
 class BndLib_Add3dCurve {
 	public:
 		%feature("autodoc", "1");
+		BndLib_Add3dCurve();
+		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &C, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
@@ -153,6 +157,8 @@ class BndLib_Add3dCurve {
 %nodefaultctor BndLib;
 class BndLib {
 	public:
+		%feature("autodoc", "1");
+		BndLib();
 		%feature("autodoc", "1");
 		void Add(const gp_Lin &L, const Standard_Real P1, const Standard_Real P2, const Standard_Real Tol, Bnd_Box & B);
 		%feature("autodoc", "1");
@@ -210,6 +216,8 @@ class BndLib {
 %nodefaultctor BndLib_Add2dCurve;
 class BndLib_Add2dCurve {
 	public:
+		%feature("autodoc", "1");
+		BndLib_Add2dCurve();
 		%feature("autodoc", "1");
 		void Add(const Adaptor2d_Curve2d &C, const Standard_Real Tol, Bnd_Box2d & B);
 		%feature("autodoc", "1");

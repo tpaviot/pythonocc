@@ -518,27 +518,6 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 };
 
 
-%nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
-class Approx_MyLeastSquareOfFitAndDivide {
-	public:
-		%feature("autodoc", "1");
-		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc", "1");
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend Approx_MyLeastSquareOfFitAndDivide {
-	~Approx_MyLeastSquareOfFitAndDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
-	}
-};
-
-
 %nodefaultctor Approx_MCurvesToBSpCurve;
 class Approx_MCurvesToBSpCurve {
 	public:
@@ -942,6 +921,27 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 	~Approx_CurvlinFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Approx_CurvlinFunc\n");}
+	}
+};
+
+
+%nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
+class Approx_MyLeastSquareOfFitAndDivide {
+	public:
+		%feature("autodoc", "1");
+		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value();
+		%feature("autodoc", "1");
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend Approx_MyLeastSquareOfFitAndDivide {
+	~Approx_MyLeastSquareOfFitAndDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
 	}
 };
 

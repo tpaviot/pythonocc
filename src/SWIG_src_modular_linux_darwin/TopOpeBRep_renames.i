@@ -20,7 +20,7 @@
 %rename(TopOpeBRep_ANALYTIC) TopOpeBRep_ANALYTIC;
 %rename(TopOpeBRep_Point2d) TopOpeBRep_Point2d;
 %rename(TopOpeBRep_FaceEdgeFiller) TopOpeBRep_FaceEdgeFiller;
-%rename(TopOpeBRep_FacesFiller) TopOpeBRep_FacesFiller;
+%rename(TopOpeBRep_Hctxee2d) TopOpeBRep_Hctxee2d;
 %rename(TopOpeBRep_WALKING) TopOpeBRep_WALKING;
 %rename(TopOpeBRep_Hctxff2d) TopOpeBRep_Hctxff2d;
 %rename(TopOpeBRep_VPointInterClassifier) TopOpeBRep_VPointInterClassifier;
@@ -33,7 +33,7 @@
 %rename(Handle_TopOpeBRep_FFDumper) Handle_TopOpeBRep_FFDumper;
 %rename(Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d) Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d;
 %rename(TopOpeBRep_FacesIntersector) TopOpeBRep_FacesIntersector;
-%rename(TopOpeBRep_Hctxee2d) TopOpeBRep_Hctxee2d;
+%rename(TopOpeBRep_SequenceNodeOfSequenceOfPoint2d) TopOpeBRep_SequenceNodeOfSequenceOfPoint2d;
 %rename(TopOpeBRep_ListNodeOfListOfBipoint) TopOpeBRep_ListNodeOfListOfBipoint;
 %rename(TopOpeBRep_ShapeIntersector2d) TopOpeBRep_ShapeIntersector2d;
 %rename(TopOpeBRep_HArray1OfLineInter) TopOpeBRep_HArray1OfLineInter;
@@ -46,10 +46,10 @@
 %rename(TopOpeBRep_ShapeIntersector) TopOpeBRep_ShapeIntersector;
 %rename(TopOpeBRep_Array1OfVPointInter) TopOpeBRep_Array1OfVPointInter;
 %rename(TopOpeBRep_VPointInter) TopOpeBRep_VPointInter;
-%rename(TopOpeBRep_SequenceNodeOfSequenceOfPoint2d) TopOpeBRep_SequenceNodeOfSequenceOfPoint2d;
 %rename(TopOpeBRep_ListOfBipoint) TopOpeBRep_ListOfBipoint;
 %rename(TopOpeBRep_DataMapOfShapeInteger) TopOpeBRep_DataMapOfShapeInteger;
 %rename(Handle_TopOpeBRep_Hctxee2d) Handle_TopOpeBRep_Hctxee2d;
+%rename(TopOpeBRep_FacesFiller) TopOpeBRep_FacesFiller;
 %rename(TopOpeBRep_FFDumper) TopOpeBRep_FFDumper;
 %rename(TopOpeBRep_ShapeScanner) TopOpeBRep_ShapeScanner;
 %rename(Handle_TopOpeBRep_HArray1OfVPointInter) Handle_TopOpeBRep_HArray1OfVPointInter;

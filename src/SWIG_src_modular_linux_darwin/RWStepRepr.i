@@ -303,27 +303,6 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 };
 
 
-%nodefaultctor RWStepRepr_RWShapeAspect;
-class RWStepRepr_RWShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		RWStepRepr_RWShapeAspect();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspect &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspect &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepRepr_RWShapeAspect {
-	~RWStepRepr_RWShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");}
-	}
-};
-
-
 %nodefaultctor RWStepRepr_RWRepresentationContext;
 class RWStepRepr_RWRepresentationContext {
 	public:
@@ -814,6 +793,27 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 	~RWStepRepr_RWGlobalUncertaintyAssignedContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUncertaintyAssignedContext\n");}
+	}
+};
+
+
+%nodefaultctor RWStepRepr_RWShapeAspect;
+class RWStepRepr_RWShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		RWStepRepr_RWShapeAspect();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepRepr_ShapeAspect &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ShapeAspect &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepRepr_RWShapeAspect {
+	~RWStepRepr_RWShapeAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");}
 	}
 };
 

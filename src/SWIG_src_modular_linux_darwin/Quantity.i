@@ -145,6 +145,7 @@ typedef Standard_Real Quantity_Index;
 typedef Standard_Real Quantity_Molarity;
 typedef Standard_Real Quantity_MomentOfInertia;
 typedef Standard_Real Quantity_Momentum;
+typedef Standard_Real Quantity_MomentOfAForce;
 typedef Standard_Real Quantity_ElectricFieldStrength;
 typedef Standard_Real Quantity_Pressure;
 typedef Standard_Real Quantity_Power;
@@ -154,7 +155,6 @@ typedef Standard_Real Quantity_Density;
 typedef Standard_Real Quantity_Ratio;
 typedef Standard_Real Quantity_MolarMass;
 typedef Standard_Real Quantity_Conductivity;
-typedef Standard_Real Quantity_MomentOfAForce;
 typedef Standard_Real Quantity_Temperature;
 typedef Standard_Real Quantity_Speed;
 typedef Standard_Real Quantity_Consumption;
@@ -895,91 +895,6 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 };
 
 
-%nodefaultctor Quantity_Color;
-class Quantity_Color {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Color();
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc", "1");
-		Quantity_Color & Assign(const Quantity_Color &Other);
-		%feature("autodoc", "1");
-		void ChangeContrast(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void ChangeIntensity(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc", "1");
-		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Blue() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Green() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Hue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Light() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Name() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Red() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Saturation() const;
-		%feature("autodoc", "1");
-		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
-		%feature("autodoc", "1");
-		void SetEpsilon(const Quantity_Parameter AnEpsilon);
-		%feature("autodoc", "1");
-		Quantity_Parameter Epsilon();
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
-		%feature("autodoc", "1");
-		char * StringName(const Quantity_NameOfColor AColor);
-		%feature("autodoc", "1");
-		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void Test();
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
-
-};
-%extend Quantity_Color {
-	~Quantity_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
-	}
-};
-
-
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
 	public:
@@ -1262,6 +1177,91 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	~Quantity_PeriodDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Quantity_Color;
+class Quantity_Color {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Color();
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc", "1");
+		Quantity_Color & Assign(const Quantity_Color &Other);
+		%feature("autodoc", "1");
+		void ChangeContrast(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void ChangeIntensity(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc", "1");
+		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Blue() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Green() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Hue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator!=(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Light() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Name() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Red() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Saturation() const;
+		%feature("autodoc", "1");
+		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
+		%feature("autodoc", "1");
+		void SetEpsilon(const Quantity_Parameter AnEpsilon);
+		%feature("autodoc", "1");
+		Quantity_Parameter Epsilon();
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
+		%feature("autodoc", "1");
+		char * StringName(const Quantity_NameOfColor AColor);
+		%feature("autodoc", "1");
+		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void Test();
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
+
+};
+%extend Quantity_Color {
+	~Quantity_Color() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
 	}
 };
 

@@ -323,6 +323,8 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 class MgtBRep {
 	public:
 		%feature("autodoc", "1");
+		MgtBRep();
+		%feature("autodoc", "1");
 		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
 		%feature("autodoc", "1");
 		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);

@@ -142,6 +142,8 @@ enum CSLib_DerivativeStatus {
 class CSLib {
 	public:
 		%feature("autodoc", "1");
+		CSLib();
+		%feature("autodoc", "1");
 		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real SinTol, CSLib_DerivativeStatus & Status, gp_Dir & Normal);
 		%feature("autodoc", "1");
 		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const gp_Vec &D2U, const gp_Vec &D2V, const gp_Vec &D2UV, const Standard_Real SinTol, Standard_Boolean & Done, CSLib_NormalStatus & Status, gp_Dir & Normal);

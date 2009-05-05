@@ -9,7 +9,7 @@
 %rename(StepGeom_bssfSurfOfLinearExtrusion) StepGeom_bssfSurfOfLinearExtrusion;
 %rename(StepGeom_Vector) StepGeom_Vector;
 %rename(Handle_StepGeom_PointReplica) Handle_StepGeom_PointReplica;
-%rename(Handle_StepGeom_Curve) Handle_StepGeom_Curve;
+%rename(Handle_StepGeom_HArray2OfSurfacePatch) Handle_StepGeom_HArray2OfSurfacePatch;
 %rename(Handle_StepGeom_CompositeCurveSegment) Handle_StepGeom_CompositeCurveSegment;
 %rename(StepGeom_bssfToroidalSurf) StepGeom_bssfToroidalSurf;
 %rename(Handle_StepGeom_PointOnCurve) Handle_StepGeom_PointOnCurve;
@@ -155,7 +155,7 @@
 %rename(Handle_StepGeom_BSplineCurve) Handle_StepGeom_BSplineCurve;
 %rename(StepGeom_Array1OfTrimmingSelect) StepGeom_Array1OfTrimmingSelect;
 %rename(StepGeom_Array2OfSurfacePatch) StepGeom_Array2OfSurfacePatch;
-%rename(Handle_StepGeom_HArray2OfSurfacePatch) Handle_StepGeom_HArray2OfSurfacePatch;
+%rename(Handle_StepGeom_Curve) Handle_StepGeom_Curve;
 %rename(StepGeom_BezierSurfaceAndRationalBSplineSurface) StepGeom_BezierSurfaceAndRationalBSplineSurface;
 %rename(StepGeom_Array1OfCompositeCurveSegment) StepGeom_Array1OfCompositeCurveSegment;
 %rename(StepGeom_EvaluatedDegeneratePcurve) StepGeom_EvaluatedDegeneratePcurve;

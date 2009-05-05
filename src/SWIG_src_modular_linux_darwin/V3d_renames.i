@@ -1,11 +1,11 @@
 %rename(V3d_POSITIONCAMERA) V3d_POSITIONCAMERA;
 %rename(V3d_Viewer) V3d_Viewer;
-%rename(V3d_XnegYneg) V3d_XnegYneg;
+%rename(V3d_ASAP) V3d_ASAP;
 %rename(Handle_V3d_View) Handle_V3d_View;
 %rename(V3d_TOBM_AUTOMATIC) V3d_TOBM_AUTOMATIC;
 %rename(Handle_V3d_PositionLight) Handle_V3d_PositionLight;
 %rename(V3d_TEX_ALL) V3d_TEX_ALL;
-%rename(V3d_ASAP) V3d_ASAP;
+%rename(V3d_XnegYneg) V3d_XnegYneg;
 %rename(V3d_NOTHINGCAMERA) V3d_NOTHINGCAMERA;
 %rename(Handle_V3d_Light) Handle_V3d_Light;
 %rename(Handle_V3d_Camera) Handle_V3d_Camera;

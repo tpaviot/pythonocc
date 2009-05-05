@@ -1555,6 +1555,8 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 class AIS2D {
 	public:
 		%feature("autodoc", "1");
+		AIS2D();
+		%feature("autodoc", "1");
 		Standard_Boolean Save(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);
 		%feature("autodoc", "1");
 		Handle_AIS2D_InteractiveObject Retrieve(const Handle_AIS2D_InteractiveContext &aCntx, const char * aFile);

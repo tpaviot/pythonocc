@@ -446,6 +446,8 @@ class ShapeAnalysis_FreeBounds {
 class ShapeAnalysis {
 	public:
 		%feature("autodoc", "1");
+		ShapeAnalysis();
+		%feature("autodoc", "1");
 		TopoDS_Wire OuterWire(const TopoDS_Face &face);
 		%feature("autodoc", "1");
 		Standard_Real TotCross2D(const Handle_ShapeExtend_WireData &sewd, const TopoDS_Face &aFace);
@@ -692,6 +694,8 @@ class ShapeAnalysis_Edge {
 class ShapeAnalysis_Curve {
 	public:
 		%feature("autodoc", "1");
+		ShapeAnalysis_Curve();
+		%feature("autodoc", "1");
 		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt &P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
 		%feature("autodoc", "1");
 		Standard_Real Project(const Adaptor3d_Curve &C3D, const gp_Pnt &P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
@@ -729,175 +733,6 @@ class ShapeAnalysis_Curve {
 	~ShapeAnalysis_Curve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Curve\n");}
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_Wire;
-class ShapeAnalysis_Wire : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_Wire();
-		%feature("autodoc", "1");
-		ShapeAnalysis_Wire(const TopoDS_Wire &wire, const TopoDS_Face &face, const Standard_Real precision);
-		%feature("autodoc", "1");
-		ShapeAnalysis_Wire(const Handle_ShapeExtend_WireData &sbwd, const TopoDS_Face &face, const Standard_Real precision);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &wire, const TopoDS_Face &face, const Standard_Real precision);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &sbwd, const TopoDS_Face &face, const Standard_Real precision);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Wire &wire);
-		%feature("autodoc", "1");
-		void Load(const Handle_ShapeExtend_WireData &sbwd);
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &face);
-		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &surface);
-		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &surface, const TopLoc_Location &location);
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real precision);
-		%feature("autodoc", "1");
-		void ClearStatuses();
-		%feature("autodoc", "1");
-		Standard_Boolean IsLoaded() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsReady() const;
-		%feature("autodoc", "1");
-		Standard_Real Precision() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_WireData & WireData() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_Surface & Surface() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckOrder(const Standard_Boolean isClosed=1, const Standard_Boolean mode3d=1);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckConnected(const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSmall(const Standard_Real precsmall=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckEdgeCurves();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckDegenerated();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckClosed(const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSelfIntersection();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckLacking();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGaps3d();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGaps2d();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckCurveGaps();
-		%feature("autodoc", "1");
-		Standard_Boolean CheckOrder(ShapeAnalysis_WireOrder & sawo, const Standard_Boolean isClosed=1, const Standard_Boolean mode3d=1);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckConnected(const Standard_Integer num, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSmall(const Standard_Integer num, const Standard_Real precsmall=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSeam(const Standard_Integer num, Handle_Geom2d_Curve & C1, Handle_Geom2d_Curve & C2, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSeam(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckDegenerated(const Standard_Integer num, gp_Pnt2d & dgnr1, gp_Pnt2d & dgnr2);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckDegenerated(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGap3d(const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGap2d(const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckCurveGap(const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSelfIntersectingEdge(const Standard_Integer num, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSelfIntersectingEdge(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d, TColStd_SequenceOfReal & errors);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num1, const Standard_Integer num2, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d, TColStd_SequenceOfReal & errors);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num1, const Standard_Integer num2);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckLacking(const Standard_Integer num, const Standard_Real Tolerance, gp_Pnt2d & p2d1, gp_Pnt2d & p2d2);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckLacking(const Standard_Integer num, const Standard_Real Tolerance=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckOuterBound(const Standard_Boolean APIMake=1);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckNotchedEdges(const Standard_Integer num, Standard_Integer &OutValue, Standard_Real &OutValue, const Standard_Real Tolerance=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckSmallArea(const Standard_Real prec2d=0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckShapeConnect(const TopoDS_Shape &shape, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckShapeConnect(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const TopoDS_Shape &shape, const Standard_Real prec=0.0);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckLoop(TopTools_IndexedMapOfShape & aMapLoopVertices, TopTools_DataMapOfShapeListOfShape & aMapVertexEdges, TopTools_MapOfShape & aMapSmallEdges, TopTools_MapOfShape & aMapSeemEdges);
-		%feature("autodoc", "1");
-		Standard_Boolean StatusOrder(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusConnected(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusEdgeCurves(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusDegenerated(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusClosed(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusSmall(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusSelfIntersection(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusLacking(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusGaps3d(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusGaps2d(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusCurveGaps(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean StatusLoop(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean LastCheckStatus(const ShapeExtend_Status Status) const;
-		%feature("autodoc", "1");
-		Standard_Real MinDistance3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MinDistance2d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxDistance3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxDistance2d() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeAnalysis_Wire {
-	Handle_ShapeAnalysis_Wire GetHandle() {
-	return *(Handle_ShapeAnalysis_Wire*) &$self;
-	}
-};
-%extend ShapeAnalysis_Wire {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeAnalysis_Wire {
-	~ShapeAnalysis_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Wire\n");}
 	}
 };
 
@@ -1251,6 +1086,175 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 };
 
 
+%nodefaultctor ShapeAnalysis_Wire;
+class ShapeAnalysis_Wire : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_Wire();
+		%feature("autodoc", "1");
+		ShapeAnalysis_Wire(const TopoDS_Wire &wire, const TopoDS_Face &face, const Standard_Real precision);
+		%feature("autodoc", "1");
+		ShapeAnalysis_Wire(const Handle_ShapeExtend_WireData &sbwd, const TopoDS_Face &face, const Standard_Real precision);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &wire, const TopoDS_Face &face, const Standard_Real precision);
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeExtend_WireData &sbwd, const TopoDS_Face &face, const Standard_Real precision);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Wire &wire);
+		%feature("autodoc", "1");
+		void Load(const Handle_ShapeExtend_WireData &sbwd);
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face &face);
+		%feature("autodoc", "1");
+		void SetSurface(const Handle_Geom_Surface &surface);
+		%feature("autodoc", "1");
+		void SetSurface(const Handle_Geom_Surface &surface, const TopLoc_Location &location);
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real precision);
+		%feature("autodoc", "1");
+		void ClearStatuses();
+		%feature("autodoc", "1");
+		Standard_Boolean IsLoaded() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsReady() const;
+		%feature("autodoc", "1");
+		Standard_Real Precision() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeExtend_WireData & WireData() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_Surface & Surface() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckOrder(const Standard_Boolean isClosed=1, const Standard_Boolean mode3d=1);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckConnected(const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSmall(const Standard_Real precsmall=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckEdgeCurves();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckDegenerated();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckClosed(const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSelfIntersection();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckLacking();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGaps3d();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGaps2d();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCurveGaps();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckOrder(ShapeAnalysis_WireOrder & sawo, const Standard_Boolean isClosed=1, const Standard_Boolean mode3d=1);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckConnected(const Standard_Integer num, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSmall(const Standard_Integer num, const Standard_Real precsmall=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSeam(const Standard_Integer num, Handle_Geom2d_Curve & C1, Handle_Geom2d_Curve & C2, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSeam(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckDegenerated(const Standard_Integer num, gp_Pnt2d & dgnr1, gp_Pnt2d & dgnr2);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckDegenerated(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGap3d(const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGap2d(const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckCurveGap(const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSelfIntersectingEdge(const Standard_Integer num, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSelfIntersectingEdge(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d, TColStd_SequenceOfReal & errors);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num1, const Standard_Integer num2, IntRes2d_SequenceOfIntersectionPoint & points2d, TColgp_SequenceOfPnt & points3d, TColStd_SequenceOfReal & errors);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckIntersectingEdges(const Standard_Integer num1, const Standard_Integer num2);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckLacking(const Standard_Integer num, const Standard_Real Tolerance, gp_Pnt2d & p2d1, gp_Pnt2d & p2d2);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckLacking(const Standard_Integer num, const Standard_Real Tolerance=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckOuterBound(const Standard_Boolean APIMake=1);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckNotchedEdges(const Standard_Integer num, Standard_Integer &OutValue, Standard_Real &OutValue, const Standard_Real Tolerance=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckSmallArea(const Standard_Real prec2d=0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckShapeConnect(const TopoDS_Shape &shape, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckShapeConnect(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const TopoDS_Shape &shape, const Standard_Real prec=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckLoop(TopTools_IndexedMapOfShape & aMapLoopVertices, TopTools_DataMapOfShapeListOfShape & aMapVertexEdges, TopTools_MapOfShape & aMapSmallEdges, TopTools_MapOfShape & aMapSeemEdges);
+		%feature("autodoc", "1");
+		Standard_Boolean StatusOrder(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusConnected(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusEdgeCurves(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusDegenerated(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusClosed(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusSmall(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusSelfIntersection(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusLacking(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusGaps3d(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusGaps2d(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusCurveGaps(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean StatusLoop(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean LastCheckStatus(const ShapeExtend_Status Status) const;
+		%feature("autodoc", "1");
+		Standard_Real MinDistance3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MinDistance2d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxDistance3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxDistance2d() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeAnalysis_Wire {
+	Handle_ShapeAnalysis_Wire GetHandle() {
+	return *(Handle_ShapeAnalysis_Wire*) &$self;
+	}
+};
+%extend ShapeAnalysis_Wire {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeAnalysis_Wire {
+	~ShapeAnalysis_Wire() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Wire\n");}
+	}
+};
+
+
 %nodefaultctor ShapeAnalysis_CheckSmallFace;
 class ShapeAnalysis_CheckSmallFace {
 	public:
@@ -1586,6 +1590,8 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 class ShapeAnalysis_Geom {
 	public:
 		%feature("autodoc", "1");
+		ShapeAnalysis_Geom();
+		%feature("autodoc", "1");
 		Standard_Boolean NearestPlane(const TColgp_Array1OfPnt &Pnts, gp_Pln & aPln, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean PositionTrsf(const Handle_TColStd_HArray2OfReal &coefs, gp_Trsf & trsf, const Standard_Real unit, const Standard_Real prec);
@@ -1602,6 +1608,8 @@ class ShapeAnalysis_Geom {
 %nodefaultctor ShapeAnalysis_Shell;
 class ShapeAnalysis_Shell {
 	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_Shell();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");

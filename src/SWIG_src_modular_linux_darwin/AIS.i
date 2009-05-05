@@ -329,6 +329,32 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 };
 
 
+%nodefaultctor Handle_AIS_EllipseRadiusDimension;
+class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_EllipseRadiusDimension {
+	AIS_EllipseRadiusDimension* GetObject() {
+	return (AIS_EllipseRadiusDimension*)$self->Access();
+	}
+};
+%extend Handle_AIS_EllipseRadiusDimension {
+	~Handle_AIS_EllipseRadiusDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_MidPointRelation;
 class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	public:
@@ -1131,32 +1157,6 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 	~Handle_AIS_OffsetDimension() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_OffsetDimension\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_EllipseRadiusDimension;
-class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension();
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension(const Handle_AIS_EllipseRadiusDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_EllipseRadiusDimension {
-	AIS_EllipseRadiusDimension* GetObject() {
-	return (AIS_EllipseRadiusDimension*)$self->Access();
-	}
-};
-%extend Handle_AIS_EllipseRadiusDimension {
-	~Handle_AIS_EllipseRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
 	}
 };
 
@@ -3710,6 +3710,8 @@ class AIS_TexturedShape : public AIS_Shape {
 class AIS {
 	public:
 		%feature("autodoc", "1");
+		AIS();
+		%feature("autodoc", "1");
 		gp_Pnt Nearest(const TopoDS_Shape &aShape, const gp_Pnt &aPoint);
 		%feature("autodoc", "1");
 		gp_Pnt Farest(const TopoDS_Shape &aShape, const gp_Pnt &aPoint);
@@ -5289,6 +5291,8 @@ class AIS_InteractiveContext : public MMgt_TShared {
 %nodefaultctor AIS_GraphicTool;
 class AIS_GraphicTool {
 	public:
+		%feature("autodoc", "1");
+		AIS_GraphicTool();
 		%feature("autodoc", "1");
 		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
 		%feature("autodoc", "1");

@@ -72,5 +72,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom2d_Point.hxx>
 #include<Handle_Geom2d_TrimmedCurve.hxx>
+#include<Bisector.hxx>
 #include<IntRes2d_Domain.hxx>
 %}

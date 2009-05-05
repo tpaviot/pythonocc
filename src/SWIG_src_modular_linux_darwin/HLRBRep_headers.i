@@ -163,6 +163,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom_BezierSurface.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
+#include<HLRBRep.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
 #include<IntCurve_IConicTool.hxx>
 #include<math_FunctionSetRoot.hxx>

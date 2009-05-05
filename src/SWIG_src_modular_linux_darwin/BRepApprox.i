@@ -727,6 +727,8 @@ class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 class BRepApprox_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
+		BRepApprox_SurfaceTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const BRepAdaptor_Surface &Surf);
 		%feature("autodoc", "1");
 		Standard_Real FirstVParameter(const BRepAdaptor_Surface &Surf);
@@ -977,49 +979,6 @@ class BRepApprox_TheMultiLineOfApprox {
 };
 
 
-%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
-class BRepApprox_TheMultiLineToolOfApprox {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
-		%feature("autodoc", "1");
-		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
-		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
-		%feature("autodoc", "1");
-		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
-
-};
-%extend BRepApprox_TheMultiLineToolOfApprox {
-	~BRepApprox_TheMultiLineToolOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
-	}
-};
-
-
 %nodefaultctor BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
 class BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
 	public:
@@ -1088,6 +1047,51 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 	~BRepApprox_TheImpPrmSvSurfacesOfApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheImpPrmSvSurfacesOfApprox\n");}
+	}
+};
+
+
+%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
+class BRepApprox_TheMultiLineToolOfApprox {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheMultiLineToolOfApprox();
+		%feature("autodoc", "1");
+		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
+		%feature("autodoc", "1");
+		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
+		%feature("autodoc", "1");
+		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
+		%feature("autodoc", "1");
+		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
+
+};
+%extend BRepApprox_TheMultiLineToolOfApprox {
+	~BRepApprox_TheMultiLineToolOfApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
 	}
 };
 

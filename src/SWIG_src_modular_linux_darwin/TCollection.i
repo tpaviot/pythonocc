@@ -503,6 +503,8 @@ class TCollection_BasicMapIterator {
 class TCollection {
 	public:
 		%feature("autodoc", "1");
+		TCollection();
+		%feature("autodoc", "1");
 		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
 };
@@ -571,6 +573,8 @@ class TCollection_SeqNode : public MMgt_TShared {
 %nodefaultctor TCollection_PrivCompareOfInteger;
 class TCollection_PrivCompareOfInteger {
 	public:
+		%feature("autodoc", "1");
+		TCollection_PrivCompareOfInteger();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
 		%feature("autodoc", "1");
@@ -786,6 +790,8 @@ class TCollection_MapNode : public MMgt_TShared {
 %nodefaultctor TCollection_PrivCompareOfReal;
 class TCollection_PrivCompareOfReal {
 	public:
+		%feature("autodoc", "1");
+		TCollection_PrivCompareOfReal();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
 		%feature("autodoc", "1");

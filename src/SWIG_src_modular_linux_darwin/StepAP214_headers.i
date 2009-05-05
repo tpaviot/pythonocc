@@ -627,6 +627,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_DateRole.hxx>
 #include<Handle_StepBasic_ApprovalPersonOrganization.hxx>
 #include<Handle_StepBasic_Effectivity.hxx>
+#include<StepAP214.hxx>
 #include<Handle_StepBasic_HArray1OfApproval.hxx>
 #include<Handle_StepBasic_PhysicallyModeledProductDefinition.hxx>
 #include<Handle_StepRepr_DescriptiveRepresentationItem.hxx>

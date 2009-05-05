@@ -336,7 +336,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_ConfigurationItem.hxx>
 #include<Handle_StepRepr_MaterialPropertyRepresentation.hxx>
 #include<Handle_StepRepr_FunctionallyDefinedTransformation.hxx>
-#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepRepr_RepresentationContext.hxx>
 #include<Handle_StepRepr_SpecifiedHigherUsageOccurrence.hxx>
 #include<Handle_StepRepr_ConfigurationEffectivity.hxx>
@@ -361,6 +360,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_RepresentationItem.hxx>
 #include<Handle_StepRepr_ConfigurationDesign.hxx>
 #include<Handle_StepRepr_GlobalUncertaintyAssignedContext.hxx>
+#include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepRepr_GlobalUnitAssignedContext.hxx>
 #include<Handle_StepRepr_AssemblyComponentUsage.hxx>
 #include<Handle_StepRepr_PropertyDefinitionRelationship.hxx>

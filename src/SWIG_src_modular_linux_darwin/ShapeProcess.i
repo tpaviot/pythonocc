@@ -328,6 +328,8 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 class ShapeProcess {
 	public:
 		%feature("autodoc", "1");
+		ShapeProcess();
+		%feature("autodoc", "1");
 		Standard_Boolean RegisterOperator(const char * name, const Handle_ShapeProcess_Operator &op);
 		%feature("autodoc", "1");
 		Standard_Boolean FindOperator(const char * name, Handle_ShapeProcess_Operator & op);
@@ -381,6 +383,8 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 %nodefaultctor ShapeProcess_OperLibrary;
 class ShapeProcess_OperLibrary {
 	public:
+		%feature("autodoc", "1");
+		ShapeProcess_OperLibrary();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");

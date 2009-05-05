@@ -114,11 +114,6 @@ Standard_Integer & function transformation
 %include GeomFill_headers.i
 
 
-enum GeomFill_ApproxStyle {
-	GeomFill_Section,
-	GeomFill_Location,
-	};
-
 enum GeomFill_Trihedron {
 	GeomFill_IsCorrectedFrenet,
 	GeomFill_IsFixed,
@@ -129,6 +124,11 @@ enum GeomFill_Trihedron {
 	GeomFill_IsGuidePlan,
 	GeomFill_IsGuideACWithContact,
 	GeomFill_IsGuidePlanWithContact,
+	};
+
+enum GeomFill_ApproxStyle {
+	GeomFill_Section,
+	GeomFill_Location,
 	};
 
 enum GeomFill_FillingStyle {
@@ -974,47 +974,6 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	~Handle_GeomFill_TgtOnCoons() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");}
-	}
-};
-
-
-%nodefaultctor GeomFill_SnglrFunc;
-class GeomFill_SnglrFunc : public Adaptor3d_Curve {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SnglrFunc(const Handle_Adaptor3d_HCurve &HC);
-		%feature("autodoc", "1");
-		void SetRatio(const Standard_Real Ratio);
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_CurveType GetType() const;
-
-};
-%extend GeomFill_SnglrFunc {
-	~GeomFill_SnglrFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SnglrFunc\n");}
 	}
 };
 
@@ -2156,6 +2115,8 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 %nodefaultctor GeomFill;
 class GeomFill {
 	public:
+		%feature("autodoc", "1");
+		GeomFill();
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface(const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2);
 		%feature("autodoc", "1");
@@ -3358,6 +3319,47 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 	~GeomFill_FunctionDraft() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
+	}
+};
+
+
+%nodefaultctor GeomFill_SnglrFunc;
+class GeomFill_SnglrFunc : public Adaptor3d_Curve {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SnglrFunc(const Handle_Adaptor3d_HCurve &HC);
+		%feature("autodoc", "1");
+		void SetRatio(const Standard_Real Ratio);
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_CurveType GetType() const;
+
+};
+%extend GeomFill_SnglrFunc {
+	~GeomFill_SnglrFunc() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomFill_SnglrFunc\n");}
 	}
 };
 

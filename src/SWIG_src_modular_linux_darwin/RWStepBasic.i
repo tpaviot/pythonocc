@@ -1089,27 +1089,6 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 };
 
 
-%nodefaultctor RWStepBasic_RWDocumentFile;
-class RWStepBasic_RWDocumentFile {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDocumentFile();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentFile &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentFile &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWDocumentFile {
-	~RWStepBasic_RWDocumentFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWDateTimeRole;
 class RWStepBasic_RWDateTimeRole {
 	public:
@@ -1634,6 +1613,27 @@ class RWStepBasic_RWMechanicalContext {
 	~RWStepBasic_RWMechanicalContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMechanicalContext\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDocumentFile;
+class RWStepBasic_RWDocumentFile {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDocumentFile();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentFile &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentFile &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWDocumentFile {
+	~RWStepBasic_RWDocumentFile() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
 	}
 };
 

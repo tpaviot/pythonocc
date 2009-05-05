@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class IntImpParGen {
 	public:
 		%feature("autodoc", "1");
+		IntImpParGen();
+		%feature("autodoc", "1");
 		void DetermineTransition(const IntRes2d_Position Pos1, gp_Vec2d & Tan1, const gp_Vec2d &Norm1, IntRes2d_Transition & Trans1, const IntRes2d_Position Pos2, gp_Vec2d & Tan2, const gp_Vec2d &Norm2, IntRes2d_Transition & Trans2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		Standard_Boolean DetermineTransition(const IntRes2d_Position Pos1, gp_Vec2d & Tan1, IntRes2d_Transition & Trans1, const IntRes2d_Position Pos2, gp_Vec2d & Tan2, IntRes2d_Transition & Trans2, const Standard_Real Tol);

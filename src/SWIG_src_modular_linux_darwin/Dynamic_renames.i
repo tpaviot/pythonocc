@@ -64,7 +64,7 @@
 %rename(Handle_Dynamic_FuzzyDefinitionsDictionary) Handle_Dynamic_FuzzyDefinitionsDictionary;
 %rename(Handle_Dynamic_VariableNode) Handle_Dynamic_VariableNode;
 %rename(Dynamic_INTERNAL) Dynamic_INTERNAL;
-%rename(Dynamic_IN) Dynamic_IN;
+%rename(Handle_Dynamic_BooleanParameter) Handle_Dynamic_BooleanParameter;
 %rename(Handle_Dynamic_ParameterNode) Handle_Dynamic_ParameterNode;
 %rename(Handle_Dynamic_SequenceOfFuzzyDefinitions) Handle_Dynamic_SequenceOfFuzzyDefinitions;
 %rename(Dynamic_SequenceOfClasses) Dynamic_SequenceOfClasses;
@@ -75,4 +75,4 @@
 %rename(Dynamic_SeqOfMethods) Dynamic_SeqOfMethods;
 %rename(Dynamic_DynamicInstance) Dynamic_DynamicInstance;
 %rename(Handle_Dynamic_SequenceNodeOfSeqOfClasses) Handle_Dynamic_SequenceNodeOfSeqOfClasses;
-%rename(Handle_Dynamic_BooleanParameter) Handle_Dynamic_BooleanParameter;
+%rename(Dynamic_IN) Dynamic_IN;

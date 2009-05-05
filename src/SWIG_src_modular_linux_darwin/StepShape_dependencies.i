@@ -530,8 +530,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <StepRepr_ValueRange.hxx>
 %};
 
+%import StepRepr.i
 %import MMgt.i
 %import StepGeom.i
-%import StepRepr.i
 %import Standard.i
 %import StepData.i

@@ -178,6 +178,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_TDF_DataSet.hxx>
 #include<gp_Trsf.hxx>
+#include<TDataStd.hxx>
 #include<TDF_IDList.hxx>
 #include<Handle_TNaming_NamedShape.hxx>
 #include<TDF_LabelList.hxx>

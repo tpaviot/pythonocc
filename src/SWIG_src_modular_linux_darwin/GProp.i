@@ -428,6 +428,8 @@ class GProp_VelGProps : public GProp_GProps {
 class GProp {
 	public:
 		%feature("autodoc", "1");
+		GProp();
+		%feature("autodoc", "1");
 		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
 
 };

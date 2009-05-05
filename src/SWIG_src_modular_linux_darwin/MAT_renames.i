@@ -1,5 +1,5 @@
 %rename(MAT_Left) MAT_Left;
-%rename(MAT_DataMapIteratorOfDataMapOfIntegerNode) MAT_DataMapIteratorOfDataMapOfIntegerNode;
+%rename(MAT_Arc) MAT_Arc;
 %rename(MAT_ListOfBisector) MAT_ListOfBisector;
 %rename(MAT_DataMapOfIntegerBisector) MAT_DataMapOfIntegerBisector;
 %rename(MAT_SequenceOfBasicElt) MAT_SequenceOfBasicElt;
@@ -7,7 +7,7 @@
 %rename(Handle_MAT_BasicElt) Handle_MAT_BasicElt;
 %rename(MAT_DataMapNodeOfDataMapOfIntegerNode) MAT_DataMapNodeOfDataMapOfIntegerNode;
 %rename(MAT_DataMapNodeOfDataMapOfIntegerArc) MAT_DataMapNodeOfDataMapOfIntegerArc;
-%rename(MAT_Arc) MAT_Arc;
+%rename(MAT_DataMapIteratorOfDataMapOfIntegerNode) MAT_DataMapIteratorOfDataMapOfIntegerNode;
 %rename(Handle_MAT_ListOfBisector) Handle_MAT_ListOfBisector;
 %rename(MAT_DataMapOfIntegerNode) MAT_DataMapOfIntegerNode;
 %rename(Handle_MAT_Zone) Handle_MAT_Zone;

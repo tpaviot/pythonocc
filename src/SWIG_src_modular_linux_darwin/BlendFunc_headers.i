@@ -31,6 +31,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
+#include<BlendFunc.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>

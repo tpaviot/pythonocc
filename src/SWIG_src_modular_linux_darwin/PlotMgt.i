@@ -1255,6 +1255,8 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 class PlotMgt {
 	public:
 		%feature("autodoc", "1");
+		PlotMgt();
+		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString DeviceList();
 		%feature("autodoc", "1");
 		PlotMgt_TypeOfPlotterParameter TypeFromString(TCollection_AsciiString & aTypeString);

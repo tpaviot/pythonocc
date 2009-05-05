@@ -277,32 +277,6 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollecti
 };
 
 
-%nodefaultctor Handle_MAT_Node;
-class Handle_MAT_Node : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_Node();
-		%feature("autodoc", "1");
-		Handle_MAT_Node(const Handle_MAT_Node &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_Node(const MAT_Node *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_Node const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_Node {
-	MAT_Node* GetObject() {
-	return (MAT_Node*)$self->Access();
-	}
-};
-%extend Handle_MAT_Node {
-	~Handle_MAT_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MAT_Zone;
 class Handle_MAT_Zone : public Handle_MMgt_TShared {
 	public:
@@ -537,6 +511,32 @@ class Handle_MAT_Graph : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_MAT_Node;
+class Handle_MAT_Node : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_Node();
+		%feature("autodoc", "1");
+		Handle_MAT_Node(const Handle_MAT_Node &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Node(const MAT_Node *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Node const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_Node {
+	MAT_Node* GetObject() {
+	return (MAT_Node*)$self->Access();
+	}
+};
+%extend Handle_MAT_Node {
+	~Handle_MAT_Node() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
+	}
+};
+
+
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerArc;
 class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_MapNode {
 	public:
@@ -720,6 +720,69 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 	~MAT_DataMapNodeOfDataMapOfIntegerNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
+	}
+};
+
+
+%nodefaultctor MAT_Arc;
+class MAT_Arc : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const Handle_MAT_BasicElt &FirstElement, const Handle_MAT_BasicElt &SecondElement);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		Standard_Integer GeomIndex() const;
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt FirstElement() const;
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt SecondElement() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node FirstNode() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node SecondNode() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node TheOtherNode(const Handle_MAT_Node &aNode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasNeighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		%feature("autodoc", "1");
+		Handle_MAT_Arc Neighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		void SetGeomIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		void SetFirstElement(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		void SetSecondElement(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		void SetFirstNode(const Handle_MAT_Node &aNode);
+		%feature("autodoc", "1");
+		void SetSecondNode(const Handle_MAT_Node &aNode);
+		%feature("autodoc", "1");
+		void SetFirstArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetSecondArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetNeighbour(const MAT_Side aSide, const Handle_MAT_Node &aNode, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_Arc {
+	Handle_MAT_Arc GetHandle() {
+	return *(Handle_MAT_Arc*) &$self;
+	}
+};
+%extend MAT_Arc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT_Arc {
+	~MAT_Arc() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Arc\n");}
 	}
 };
 
@@ -1197,69 +1260,6 @@ class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIte
 	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
-	}
-};
-
-
-%nodefaultctor MAT_Arc;
-class MAT_Arc : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const Handle_MAT_BasicElt &FirstElement, const Handle_MAT_BasicElt &SecondElement);
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		Standard_Integer GeomIndex() const;
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt FirstElement() const;
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt SecondElement() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Node FirstNode() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Node SecondNode() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Node TheOtherNode(const Handle_MAT_Node &aNode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasNeighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
-		%feature("autodoc", "1");
-		Handle_MAT_Arc Neighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
-		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer anInteger);
-		%feature("autodoc", "1");
-		void SetGeomIndex(const Standard_Integer anInteger);
-		%feature("autodoc", "1");
-		void SetFirstElement(const Handle_MAT_BasicElt &aBasicElt);
-		%feature("autodoc", "1");
-		void SetSecondElement(const Handle_MAT_BasicElt &aBasicElt);
-		%feature("autodoc", "1");
-		void SetFirstNode(const Handle_MAT_Node &aNode);
-		%feature("autodoc", "1");
-		void SetSecondNode(const Handle_MAT_Node &aNode);
-		%feature("autodoc", "1");
-		void SetFirstArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
-		%feature("autodoc", "1");
-		void SetSecondArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
-		%feature("autodoc", "1");
-		void SetNeighbour(const MAT_Side aSide, const Handle_MAT_Node &aNode, const Handle_MAT_Arc &anArc);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_Arc {
-	Handle_MAT_Arc GetHandle() {
-	return *(Handle_MAT_Arc*) &$self;
-	}
-};
-%extend MAT_Arc {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT_Arc {
-	~MAT_Arc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Arc\n");}
 	}
 };
 

@@ -114,10 +114,6 @@ Standard_Integer & function transformation
 %include StepElement_headers.i
 
 
-enum StepElement_UnspecifiedValue {
-	StepElement_Unspecified,
-	};
-
 enum StepElement_EnumeratedCurveElementFreedom {
 	StepElement_XTranslation,
 	StepElement_YTranslation,
@@ -133,6 +129,10 @@ enum StepElement_ElementOrder {
 	StepElement_Linear,
 	StepElement_Quadratic,
 	StepElement_Cubic,
+	};
+
+enum StepElement_UnspecifiedValue {
+	StepElement_Unspecified,
 	};
 
 enum StepElement_EnumeratedSurfaceElementPurpose {
@@ -1912,6 +1912,78 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 };
 
 
+%nodefaultctor StepElement_ElementDescriptor;
+class StepElement_ElementDescriptor : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepElement_ElementDescriptor();
+		%feature("autodoc", "1");
+		void Init(const StepElement_ElementOrder aTopologyOrder, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		StepElement_ElementOrder TopologyOrder() const;
+		%feature("autodoc", "1");
+		void SetTopologyOrder(const StepElement_ElementOrder TopologyOrder);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepElement_ElementDescriptor {
+	Handle_StepElement_ElementDescriptor GetHandle() {
+	return *(Handle_StepElement_ElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_ElementDescriptor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_ElementDescriptor {
+	~StepElement_ElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_ElementDescriptor\n");}
+	}
+};
+
+
+%nodefaultctor StepElement_Volume3dElementDescriptor;
+class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescriptor {
+	public:
+		%feature("autodoc", "1");
+		StepElement_Volume3dElementDescriptor();
+		%feature("autodoc", "1");
+		void Init(const StepElement_ElementOrder aElementDescriptor_TopologyOrder, const Handle_TCollection_HAsciiString &aElementDescriptor_Description, const Handle_StepElement_HArray1OfVolumeElementPurposeMember &aPurpose, const StepElement_Volume3dElementShape aShape);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurposeMember Purpose() const;
+		%feature("autodoc", "1");
+		void SetPurpose(const Handle_StepElement_HArray1OfVolumeElementPurposeMember &Purpose);
+		%feature("autodoc", "1");
+		StepElement_Volume3dElementShape Shape() const;
+		%feature("autodoc", "1");
+		void SetShape(const StepElement_Volume3dElementShape Shape);
+
+};
+%extend StepElement_Volume3dElementDescriptor {
+	Handle_StepElement_Volume3dElementDescriptor GetHandle() {
+	return *(Handle_StepElement_Volume3dElementDescriptor*) &$self;
+	}
+};
+%extend StepElement_Volume3dElementDescriptor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepElement_Volume3dElementDescriptor {
+	~StepElement_Volume3dElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");}
+	}
+};
+
+
 %nodefaultctor StepElement_ElementAspectMember;
 class StepElement_ElementAspectMember : public StepData_SelectNamed {
 	public:
@@ -2578,43 +2650,6 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepElement_ElementDescriptor;
-class StepElement_ElementDescriptor : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepElement_ElementDescriptor();
-		%feature("autodoc", "1");
-		void Init(const StepElement_ElementOrder aTopologyOrder, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		StepElement_ElementOrder TopologyOrder() const;
-		%feature("autodoc", "1");
-		void SetTopologyOrder(const StepElement_ElementOrder TopologyOrder);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepElement_ElementDescriptor {
-	Handle_StepElement_ElementDescriptor GetHandle() {
-	return *(Handle_StepElement_ElementDescriptor*) &$self;
-	}
-};
-%extend StepElement_ElementDescriptor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_ElementDescriptor {
-	~StepElement_ElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementDescriptor\n");}
-	}
-};
-
-
 %nodefaultctor StepElement_Curve3dElementDescriptor;
 class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -2626,6 +2661,8 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember Purpose() const;
 		%feature("autodoc", "1");
 		void SetPurpose(const Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember &Purpose);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepElement_Curve3dElementDescriptor {
@@ -3276,43 +3313,6 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 	~StepElement_HArray2OfSurfaceElementPurposeMember() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");}
-	}
-};
-
-
-%nodefaultctor StepElement_Volume3dElementDescriptor;
-class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescriptor {
-	public:
-		%feature("autodoc", "1");
-		StepElement_Volume3dElementDescriptor();
-		%feature("autodoc", "1");
-		void Init(const StepElement_ElementOrder aElementDescriptor_TopologyOrder, const Handle_TCollection_HAsciiString &aElementDescriptor_Description, const Handle_StepElement_HArray1OfVolumeElementPurposeMember &aPurpose, const StepElement_Volume3dElementShape aShape);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray1OfVolumeElementPurposeMember Purpose() const;
-		%feature("autodoc", "1");
-		void SetPurpose(const Handle_StepElement_HArray1OfVolumeElementPurposeMember &Purpose);
-		%feature("autodoc", "1");
-		StepElement_Volume3dElementShape Shape() const;
-		%feature("autodoc", "1");
-		void SetShape(const StepElement_Volume3dElementShape Shape);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepElement_Volume3dElementDescriptor {
-	Handle_StepElement_Volume3dElementDescriptor GetHandle() {
-	return *(Handle_StepElement_Volume3dElementDescriptor*) &$self;
-	}
-};
-%extend StepElement_Volume3dElementDescriptor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepElement_Volume3dElementDescriptor {
-	~StepElement_Volume3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");}
 	}
 };
 

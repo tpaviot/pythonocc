@@ -344,14 +344,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<StepData_StepWriter.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Handle_StepVisual_AreaInSet.hxx>
-#include<Handle_StepVisual_PreDefinedItem.hxx>
 #include<Handle_StepVisual_CompositeTextWithExtent.hxx>
 #include<Handle_StepVisual_CurveStyleFontPattern.hxx>
 #include<Handle_StepVisual_BackgroundColour.hxx>
 #include<Handle_StepVisual_ContextDependentInvisibility.hxx>
 #include<Handle_StepVisual_FillAreaStyle.hxx>
-#include<Handle_StepVisual_PresentedItemRepresentation.hxx>
 #include<Handle_StepVisual_TextStyleWithBoxCharacteristics.hxx>
+#include<Handle_StepVisual_PresentedItemRepresentation.hxx>
 #include<Handle_StepVisual_SurfaceStyleUsage.hxx>
 #include<Handle_StepVisual_PreDefinedColour.hxx>
 #include<Handle_StepVisual_PreDefinedCurveFont.hxx>
@@ -362,7 +361,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepVisual_PresentationStyleByContext.hxx>
 #include<Handle_StepVisual_PresentationSet.hxx>
 #include<Handle_StepVisual_SurfaceStyleSegmentationCurve.hxx>
-#include<Handle_StepVisual_CurveStyle.hxx>
 #include<Handle_StepVisual_PresentationArea.hxx>
 #include<Handle_StepVisual_OverRidingStyledItem.hxx>
 #include<Handle_StepVisual_SurfaceSideStyle.hxx>
@@ -370,7 +368,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepVisual_SurfaceStyleParameterLine.hxx>
 #include<Handle_StepVisual_TextStyle.hxx>
 #include<Handle_StepVisual_CameraUsage.hxx>
-#include<Handle_StepVisual_DraughtingPreDefinedColour.hxx>
 #include<Handle_StepVisual_ExternallyDefinedCurveFont.hxx>
 #include<Handle_StepVisual_PresentationLayerAssignment.hxx>
 #include<Handle_StepVisual_PlanarExtent.hxx>
@@ -380,12 +377,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepVisual_SurfaceStyleBoundary.hxx>
 #include<Handle_StepVisual_ContextDependentOverRidingStyledItem.hxx>
 #include<Handle_StepVisual_CameraImage.hxx>
+#include<Handle_StepVisual_PreDefinedItem.hxx>
 #include<Handle_StepVisual_FillAreaStyleColour.hxx>
 #include<Handle_StepVisual_TemplateInstance.hxx>
 #include<Handle_StepVisual_SurfaceStyleFillArea.hxx>
 #include<Handle_StepVisual_Template.hxx>
 #include<Handle_StepVisual_ViewVolume.hxx>
 #include<Handle_StepVisual_DraughtingPreDefinedCurveFont.hxx>
+#include<Handle_StepVisual_CurveStyle.hxx>
 #include<Handle_StepVisual_CameraModelD2.hxx>
 #include<Handle_StepVisual_PointStyle.hxx>
 #include<Handle_StepVisual_CompositeText.hxx>
@@ -401,4 +400,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepVisual_ColourSpecification.hxx>
 #include<Handle_StepVisual_PresentationStyleAssignment.hxx>
 #include<Handle_StepVisual_CameraModelD3.hxx>
+#include<Handle_StepVisual_DraughtingPreDefinedColour.hxx>
 %}

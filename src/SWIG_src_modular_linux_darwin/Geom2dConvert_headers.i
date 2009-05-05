@@ -35,6 +35,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Geom2d_BoundedCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
+#include<Geom2dConvert.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColStd_Array1OfReal.hxx>

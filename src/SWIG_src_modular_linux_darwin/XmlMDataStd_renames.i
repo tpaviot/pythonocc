@@ -32,7 +32,7 @@
 %rename(XmlMDataStd_PatternStdDriver) XmlMDataStd_PatternStdDriver;
 %rename(Handle_XmlMDataStd_IntPackedMapDriver) Handle_XmlMDataStd_IntPackedMapDriver;
 %rename(XmlMDataStd_AsciiStringDriver) XmlMDataStd_AsciiStringDriver;
-%rename(Handle_XmlMDataStd_PatternStdDriver) Handle_XmlMDataStd_PatternStdDriver;
+%rename(Handle_XmlMDataStd_BooleanListDriver) Handle_XmlMDataStd_BooleanListDriver;
 %rename(Handle_XmlMDataStd_RelationDriver) Handle_XmlMDataStd_RelationDriver;
 %rename(Handle_XmlMDataStd_UAttributeDriver) Handle_XmlMDataStd_UAttributeDriver;
 %rename(Handle_XmlMDataStd_NoteBookDriver) Handle_XmlMDataStd_NoteBookDriver;
@@ -60,7 +60,7 @@
 %rename(XmlMDataStd_RelationDriver) XmlMDataStd_RelationDriver;
 %rename(XmlMDataStd_TickDriver) XmlMDataStd_TickDriver;
 %rename(XmlMDataStd_ExtStringArrayDriver) XmlMDataStd_ExtStringArrayDriver;
-%rename(Handle_XmlMDataStd_BooleanListDriver) Handle_XmlMDataStd_BooleanListDriver;
+%rename(Handle_XmlMDataStd_PatternStdDriver) Handle_XmlMDataStd_PatternStdDriver;
 %rename(XmlMDataStd_BooleanListDriver) XmlMDataStd_BooleanListDriver;
 %rename(XmlMDataStd_IntegerArrayDriver) XmlMDataStd_IntegerArrayDriver;
 %rename(Handle_XmlMDataStd_RealDriver) Handle_XmlMDataStd_RealDriver;

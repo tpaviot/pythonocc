@@ -422,6 +422,8 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 class Geom2dGcc_MyCurveTool {
 	public:
 		%feature("autodoc", "1");
+		Geom2dGcc_MyCurveTool();
+		%feature("autodoc", "1");
 		GeomAbs_CurveType TheType(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
 		gp_Lin2d Line(const Adaptor3d_OffsetCurve &C);
@@ -878,6 +880,8 @@ class Geom2dGcc_Lin2dTanObl {
 class Geom2dGcc_CurveTool {
 	public:
 		%feature("autodoc", "1");
+		Geom2dGcc_CurveTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Geom2dAdaptor_Curve &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Geom2dAdaptor_Curve &C);
@@ -941,6 +945,8 @@ class Geom2dGcc_Circ2dTanOnRad {
 %nodefaultctor Geom2dGcc;
 class Geom2dGcc {
 	public:
+		%feature("autodoc", "1");
+		Geom2dGcc();
 		%feature("autodoc", "1");
 		Geom2dGcc_QualifiedCurve Unqualified(const Geom2dAdaptor_Curve &Obj);
 		%feature("autodoc", "1");

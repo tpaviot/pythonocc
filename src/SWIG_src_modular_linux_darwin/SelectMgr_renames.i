@@ -2,7 +2,7 @@
 %rename(Handle_SelectMgr_SelectionManager) Handle_SelectMgr_SelectionManager;
 %rename(Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner) Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 %rename(SelectMgr_ListIteratorOfListOfFilter) SelectMgr_ListIteratorOfListOfFilter;
-%rename(SelectMgr_TOU_Partial) SelectMgr_TOU_Partial;
+%rename(SelectMgr_SOS_Sleeping) SelectMgr_SOS_Sleeping;
 %rename(Handle_SelectMgr_ListNodeOfListOfFilter) Handle_SelectMgr_ListNodeOfListOfFilter;
 %rename(SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive) SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
 %rename(SelectMgr_SelectionManager) SelectMgr_SelectionManager;
@@ -51,12 +51,12 @@
 %rename(Handle_SelectMgr_OrFilter) Handle_SelectMgr_OrFilter;
 %rename(SelectMgr_DataMapOfObjectSelectors) SelectMgr_DataMapOfObjectSelectors;
 %rename(SelectMgr_DataMapNodeOfDataMapOfSelectionActivation) SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
-%rename(SelectMgr_SOS_Sleeping) SelectMgr_SOS_Sleeping;
+%rename(SelectMgr_TOU_Partial) SelectMgr_TOU_Partial;
 %rename(Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors) Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
 %rename(SelectMgr_TOU_None) SelectMgr_TOU_None;
 %rename(SelectMgr_IndexedDataMapOfOwnerCriterion) SelectMgr_IndexedDataMapOfOwnerCriterion;
 %rename(SelectMgr_SOS_Any) SelectMgr_SOS_Any;
-%rename(SelectMgr_Selection) SelectMgr_Selection;
+%rename(SelectMgr_ListOfFilter) SelectMgr_ListOfFilter;
 %rename(Handle_SelectMgr_SequenceNodeOfSequenceOfSelector) Handle_SelectMgr_SequenceNodeOfSequenceOfSelector;
 %rename(SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation) SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
-%rename(SelectMgr_ListOfFilter) SelectMgr_ListOfFilter;
+%rename(SelectMgr_Selection) SelectMgr_Selection;

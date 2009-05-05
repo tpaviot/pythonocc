@@ -55,6 +55,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
+#include<ChFi3d.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_ChFiDS_Spine.hxx>

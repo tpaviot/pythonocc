@@ -54,5 +54,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Bnd_HArray1OfBox2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<SelectBasics.hxx>
 #include<TopLoc_Location.hxx>
 %}

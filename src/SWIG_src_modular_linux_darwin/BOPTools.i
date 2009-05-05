@@ -742,6 +742,8 @@ class BOPTools_CommonBlock {
 class BOPTools_Tools {
 	public:
 		%feature("autodoc", "1");
+		BOPTools_Tools();
+		%feature("autodoc", "1");
 		void MakeNewVertex(const gp_Pnt &aP1, const Standard_Real aTol, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
 		void MakeNewVertex(const TopoDS_Vertex &aV1, const TopoDS_Vertex &aV2, TopoDS_Vertex & aNewVertex);
@@ -1311,6 +1313,8 @@ class BOPTools_Curve {
 class BOPTools_QuickSortPave {
 	public:
 		%feature("autodoc", "1");
+		BOPTools_QuickSortPave();
+		%feature("autodoc", "1");
 		void Sort(BOPTools_Array1OfPave & TheArray, const BOPTools_ComparePave &Comp);
 
 };
@@ -1376,6 +1380,124 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 	~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_PaveFiller;
+class BOPTools_PaveFiller {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_PaveFiller();
+		%feature("autodoc", "1");
+		BOPTools_PaveFiller(const BOPTools_InterferencePool &aIP);
+		%feature("autodoc", "1");
+		BOPTools_PaveFiller(const BOPTools_InterferencePool &theIP, const BOPTools_SSIntersectionAttribute &theSectionAttribute);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		virtual		void PartialPerform(const TColStd_SetOfInteger &anObjSubSet, const TColStd_SetOfInteger &aToolSubSet);
+		%feature("autodoc", "1");
+		virtual		void ToCompletePerform();
+		%feature("autodoc", "1");
+		const IntTools_Context & Context() const;
+		%feature("autodoc", "1");
+		IntTools_Context & ChangeContext();
+		%feature("autodoc", "1");
+		void SetInterferencePool(const BOPTools_InterferencePool &aPool);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const BOPTools_PavePool & PavePool() const;
+		%feature("autodoc", "1");
+		BOPTools_PavePool & ChangePavePool();
+		%feature("autodoc", "1");
+		const BOPTools_CommonBlockPool & CommonBlockPool() const;
+		%feature("autodoc", "1");
+		BOPTools_CommonBlockPool & ChangeCommonBlockPool();
+		%feature("autodoc", "1");
+		const BOPTools_SplitShapesPool & SplitShapesPool() const;
+		%feature("autodoc", "1");
+		BOPTools_SplitShapesPool & ChangeSplitShapesPool();
+		%feature("autodoc", "1");
+		BooleanOperations_PShapesDataStructure DS();
+		%feature("autodoc", "1");
+		BOPTools_PInterferencePool InterfPool();
+		%feature("autodoc", "1");
+		const BOPTools_IteratorOfCoupleOfShape & IteratorOfCoupleOfShape() const;
+		%feature("autodoc", "1");
+		const BOPTools_SSIntersectionAttribute & SectionAttribute() const;
+		%feature("autodoc", "1");
+		void SetSectionAttribute(const BOPTools_SSIntersectionAttribute &anAtt);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsInFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsInFace(const Standard_Integer nE1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnEdge(const Standard_Integer nE1, const Standard_Integer nE2, TColStd_ListOfInteger & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnFace(const Standard_Integer nE1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsInFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsInFace(const Standard_Integer nE1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnEdge(const Standard_Integer nE1, const Standard_Integer nE2, BOPTools_ListOfPaveBlock & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnFace(const Standard_Integer nE1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer SplitsOnFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
+		%feature("autodoc", "1");
+		Standard_Integer FindSDVertex(const Standard_Integer nV) const;
+		%feature("autodoc", "1");
+		void PrepareSetForFace(const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_PaveSet & aPaveSet);
+
+};
+%extend BOPTools_PaveFiller {
+	~BOPTools_PaveFiller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_PaveFiller\n");}
+	}
+};
+
+
+%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
+class BOPTools_IteratorOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape();
+		%feature("autodoc", "1");
+		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc", "1");
+		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		virtual		void Next();
+		%feature("autodoc", "1");
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
+		%feature("autodoc", "1");
+		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
+		%feature("autodoc", "1");
+		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
+		%feature("autodoc", "1");
+		void DumpTableOfIntersectionStatus() const;
+
+};
+%extend BOPTools_IteratorOfCoupleOfShape {
+	~BOPTools_IteratorOfCoupleOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
 	}
 };
 
@@ -1530,43 +1652,6 @@ class BOPTools_CommonBlockPool {
 };
 
 
-%nodefaultctor BOPTools_IteratorOfCoupleOfShape;
-class BOPTools_IteratorOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape();
-		%feature("autodoc", "1");
-		BOPTools_IteratorOfCoupleOfShape(const BooleanOperations_PShapesDataStructure &PDS, const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc", "1");
-		void SetDataStructure(const BooleanOperations_PShapesDataStructure &PDS);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		virtual		void Next();
-		%feature("autodoc", "1");
-		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
-		%feature("autodoc", "1");
-		void SetIntersectionStatus(const Standard_Integer Index1, const Standard_Integer Index2, const BOPTools_IntersectionStatus theStatus);
-		%feature("autodoc", "1");
-		const Handle_BOPTools_HArray2OfIntersectionStatus & GetTableOfIntersectionStatus() const;
-		%feature("autodoc", "1");
-		void DumpTableOfIntersectionStatus() const;
-
-};
-%extend BOPTools_IteratorOfCoupleOfShape {
-	~BOPTools_IteratorOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_StateFiller;
 class BOPTools_StateFiller {
 	public:
@@ -1599,6 +1684,8 @@ class BOPTools_StateFiller {
 %nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
 class BOPTools_CoupleOfIntegerMapHasher {
 	public:
+		%feature("autodoc", "1");
+		BOPTools_CoupleOfIntegerMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTools_CoupleOfInteger &aPKey, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -1642,87 +1729,6 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 };
 
 
-%nodefaultctor BOPTools_PaveFiller;
-class BOPTools_PaveFiller {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_PaveFiller();
-		%feature("autodoc", "1");
-		BOPTools_PaveFiller(const BOPTools_InterferencePool &aIP);
-		%feature("autodoc", "1");
-		BOPTools_PaveFiller(const BOPTools_InterferencePool &theIP, const BOPTools_SSIntersectionAttribute &theSectionAttribute);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		virtual		void PartialPerform(const TColStd_SetOfInteger &anObjSubSet, const TColStd_SetOfInteger &aToolSubSet);
-		%feature("autodoc", "1");
-		virtual		void ToCompletePerform();
-		%feature("autodoc", "1");
-		const IntTools_Context & Context() const;
-		%feature("autodoc", "1");
-		IntTools_Context & ChangeContext();
-		%feature("autodoc", "1");
-		void SetInterferencePool(const BOPTools_InterferencePool &aPool);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const BOPTools_PavePool & PavePool() const;
-		%feature("autodoc", "1");
-		BOPTools_PavePool & ChangePavePool();
-		%feature("autodoc", "1");
-		const BOPTools_CommonBlockPool & CommonBlockPool() const;
-		%feature("autodoc", "1");
-		BOPTools_CommonBlockPool & ChangeCommonBlockPool();
-		%feature("autodoc", "1");
-		const BOPTools_SplitShapesPool & SplitShapesPool() const;
-		%feature("autodoc", "1");
-		BOPTools_SplitShapesPool & ChangeSplitShapesPool();
-		%feature("autodoc", "1");
-		BooleanOperations_PShapesDataStructure DS();
-		%feature("autodoc", "1");
-		BOPTools_PInterferencePool InterfPool();
-		%feature("autodoc", "1");
-		const BOPTools_IteratorOfCoupleOfShape & IteratorOfCoupleOfShape() const;
-		%feature("autodoc", "1");
-		const BOPTools_SSIntersectionAttribute & SectionAttribute() const;
-		%feature("autodoc", "1");
-		void SetSectionAttribute(const BOPTools_SSIntersectionAttribute &anAtt);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsInFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsInFace(const Standard_Integer nE1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnEdge(const Standard_Integer nE1, const Standard_Integer nE2, TColStd_ListOfInteger & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnFace(const Standard_Integer nE1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, TColStd_ListOfInteger & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsInFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsInFace(const Standard_Integer nE1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnEdge(const Standard_Integer nE1, const Standard_Integer nE2, BOPTools_ListOfPaveBlock & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnFace(const Standard_Integer nE1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer SplitsOnFace(const Standard_Integer aBid, const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
-		%feature("autodoc", "1");
-		Standard_Integer FindSDVertex(const Standard_Integer nV) const;
-		%feature("autodoc", "1");
-		void PrepareSetForFace(const Standard_Integer nF1, const Standard_Integer nF2, BOPTools_PaveSet & aPaveSet);
-
-};
-%extend BOPTools_PaveFiller {
-	~BOPTools_PaveFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTools_PaveFiller\n");}
-	}
-};
-
-
 %nodefaultctor BOPTools_Checker;
 class BOPTools_Checker : public BOPTools_PaveFiller {
 	public:
@@ -1733,7 +1739,11 @@ class BOPTools_Checker : public BOPTools_PaveFiller {
 		%feature("autodoc", "1");
 		BOPTools_Checker(const BOPTools_InterferencePool &aIP);
 		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
 		void SetPerformType(const Standard_Boolean StopOnFirstFaulty);
+		%feature("autodoc", "1");
+		virtual		void Perform();
 		%feature("autodoc", "1");
 		void SetShape(const TopoDS_Shape &aS);
 		%feature("autodoc", "1");
@@ -3183,6 +3193,8 @@ class BOPTools_Array2OfIntersectionStatus {
 class BOPTools_Tools2D {
 	public:
 		%feature("autodoc", "1");
+		BOPTools_Tools2D();
+		%feature("autodoc", "1");
 		void RemovePCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
 		%feature("autodoc", "1");
 		void BuildPCurveForEdgeOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF);
@@ -3239,6 +3251,8 @@ class BOPTools_Tools2D {
 %nodefaultctor BOPTools_Tools3D;
 class BOPTools_Tools3D {
 	public:
+		%feature("autodoc", "1");
+		BOPTools_Tools3D();
 		%feature("autodoc", "1");
 		Standard_Integer SubShapesAmount(const TopoDS_Shape &aS, const TopAbs_ShapeEnum aT);
 		%feature("autodoc", "1");
@@ -3716,6 +3730,8 @@ class BOPTools_PaveSet {
 %nodefaultctor BOPTools_PaveBlockMapHasher;
 class BOPTools_PaveBlockMapHasher {
 	public:
+		%feature("autodoc", "1");
+		BOPTools_PaveBlockMapHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTools_PaveBlock &aPB, const Standard_Integer Upper);
 		%feature("autodoc", "1");

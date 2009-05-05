@@ -406,6 +406,8 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 class TPrsStd_ConstraintTools {
 	public:
 		%feature("autodoc", "1");
+		TPrsStd_ConstraintTools();
+		%feature("autodoc", "1");
 		void UpdateOnlyValue(const Handle_TDataStd_Constraint &aConst, const Handle_AIS_InteractiveObject &anAIS);
 		%feature("autodoc", "1");
 		void ComputeDistance(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);

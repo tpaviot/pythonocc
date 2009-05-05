@@ -748,32 +748,6 @@ class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Interface_Static;
-class Handle_Interface_Static : public Handle_Interface_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_Static();
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Interface_Static *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Static const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Static {
-	Interface_Static* GetObject() {
-	return (Interface_Static*)$self->Access();
-	}
-};
-%extend Handle_Interface_Static {
-	~Handle_Interface_Static() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Static\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Interface_FileReaderData;
 class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 	public:
@@ -848,6 +822,32 @@ class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 	~Handle_Interface_HArray1OfHAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Interface_Static;
+class Handle_Interface_Static : public Handle_Interface_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Static();
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Interface_Static *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_Static const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_Static {
+	Interface_Static* GetObject() {
+	return (Interface_Static*)$self->Access();
+	}
+};
+%extend Handle_Interface_Static {
+	~Handle_Interface_Static() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Static\n");}
 	}
 };
 
@@ -2671,6 +2671,117 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 };
 
 
+%nodefaultctor Interface_Check;
+class Interface_Check : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_Check();
+		%feature("autodoc", "1");
+		Interface_Check(const Handle_Standard_Transient &anentity);
+		%feature("autodoc", "1");
+		void SendFail(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		void AddFail(const Handle_TCollection_HAsciiString &amess);
+		%feature("autodoc", "1");
+		void AddFail(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
+		%feature("autodoc", "1");
+		void AddFail(const char * amess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddFail(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		Standard_Boolean HasFailed() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFails() const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & Fail(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		char * CFail(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString Fails(const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		void SendWarning(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		void AddWarning(const Handle_TCollection_HAsciiString &amess);
+		%feature("autodoc", "1");
+		void AddWarning(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
+		%feature("autodoc", "1");
+		void AddWarning(const char * amess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddWarning(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		Standard_Boolean HasWarnings() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbWarnings() const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & Warning(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		char * CWarning(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString Warnings(const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		void SendMsg(const Message_Msg &amsg);
+		%feature("autodoc", "1");
+		Standard_Integer NbInfoMsgs() const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & InfoMsg(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		char * CInfoMsg(const Standard_Integer num, const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString InfoMsgs(const Standard_Boolean final=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complies(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complies(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasEntity() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Entity() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void ClearFails();
+		%feature("autodoc", "1");
+		void ClearWarnings();
+		%feature("autodoc", "1");
+		void ClearInfoMsgs();
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status);
+		%feature("autodoc", "1");
+		Standard_Boolean Mend(const char * pref, const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		void SetEntity(const Handle_Standard_Transient &anentity);
+		%feature("autodoc", "1");
+		void GetEntity(const Handle_Standard_Transient &anentity);
+		%feature("autodoc", "1");
+		void GetMessages(const Handle_Interface_Check &other);
+		%feature("autodoc", "1");
+		void GetAsWarning(const Handle_Interface_Check &other, const Standard_Boolean failsonly);
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Standard_Integer level, const Standard_Integer final=1) const;
+		%feature("autodoc", "1");
+		void Trace(const Standard_Integer level=-0x000000001, const Standard_Integer final=1) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_Check {
+	Handle_Interface_Check GetHandle() {
+	return *(Handle_Interface_Check*) &$self;
+	}
+};
+%extend Interface_Check {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_Check {
+	~Interface_Check() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Check\n");}
+	}
+};
+
+
 %nodefaultctor Interface_ReportEntity;
 class Interface_ReportEntity : public MMgt_TShared {
 	public:
@@ -2914,6 +3025,8 @@ class Interface_Protocol : public MMgt_TShared {
 class Interface_MapAsciiStringHasher {
 	public:
 		%feature("autodoc", "1");
+		Interface_MapAsciiStringHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
@@ -2978,117 +3091,6 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 	~Interface_SequenceOfCheck() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
-	}
-};
-
-
-%nodefaultctor Interface_Check;
-class Interface_Check : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_Check();
-		%feature("autodoc", "1");
-		Interface_Check(const Handle_Standard_Transient &anentity);
-		%feature("autodoc", "1");
-		void SendFail(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &amess);
-		%feature("autodoc", "1");
-		void AddFail(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
-		%feature("autodoc", "1");
-		void AddFail(const char * amess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddFail(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		Standard_Boolean HasFailed() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFails() const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & Fail(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		char * CFail(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString Fails(const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		void SendWarning(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &amess);
-		%feature("autodoc", "1");
-		void AddWarning(const Handle_TCollection_HAsciiString &amess, const Handle_TCollection_HAsciiString &orig);
-		%feature("autodoc", "1");
-		void AddWarning(const char * amess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddWarning(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		Standard_Boolean HasWarnings() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbWarnings() const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & Warning(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		char * CWarning(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString Warnings(const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		void SendMsg(const Message_Msg &amsg);
-		%feature("autodoc", "1");
-		Standard_Integer NbInfoMsgs() const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & InfoMsg(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		char * CInfoMsg(const Standard_Integer num, const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString InfoMsgs(const Standard_Boolean final=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Complies(const Interface_CheckStatus status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Complies(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasEntity() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Entity() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void ClearFails();
-		%feature("autodoc", "1");
-		void ClearWarnings();
-		%feature("autodoc", "1");
-		void ClearInfoMsgs();
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_TCollection_HAsciiString &mess, const Standard_Integer incl, const Interface_CheckStatus status);
-		%feature("autodoc", "1");
-		Standard_Boolean Mend(const char * pref, const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		void SetEntity(const Handle_Standard_Transient &anentity);
-		%feature("autodoc", "1");
-		void GetEntity(const Handle_Standard_Transient &anentity);
-		%feature("autodoc", "1");
-		void GetMessages(const Handle_Interface_Check &other);
-		%feature("autodoc", "1");
-		void GetAsWarning(const Handle_Interface_Check &other, const Standard_Boolean failsonly);
-		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Standard_Integer level, const Standard_Integer final=1) const;
-		%feature("autodoc", "1");
-		void Trace(const Standard_Integer level=-0x000000001, const Standard_Integer final=1) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_Check {
-	Handle_Interface_Check GetHandle() {
-	return *(Handle_Interface_Check*) &$self;
-	}
-};
-%extend Interface_Check {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_Check {
-	~Interface_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Check\n");}
 	}
 };
 

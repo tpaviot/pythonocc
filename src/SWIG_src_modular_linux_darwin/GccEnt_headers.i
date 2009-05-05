@@ -38,5 +38,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Lin2d.hxx>
 #include<Standard_SStream.hxx>
+#include<GccEnt.hxx>
 #include<gp_Circ2d.hxx>
 %}

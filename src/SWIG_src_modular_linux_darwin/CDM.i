@@ -520,31 +520,6 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 
 
-%nodefaultctor CDM_ListIteratorOfListOfReferences;
-class CDM_ListIteratorOfListOfReferences {
-	public:
-		%feature("autodoc", "1");
-		CDM_ListIteratorOfListOfReferences();
-		%feature("autodoc", "1");
-		CDM_ListIteratorOfListOfReferences(const CDM_ListOfReferences &L);
-		%feature("autodoc", "1");
-		void Initialize(const CDM_ListOfReferences &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_CDM_Reference & Value() const;
-
-};
-%extend CDM_ListIteratorOfListOfReferences {
-	~CDM_ListIteratorOfListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
-	}
-};
-
-
 %nodefaultctor CDM_ListIteratorOfListOfDocument;
 class CDM_ListIteratorOfListOfDocument {
 	public:
@@ -963,6 +938,8 @@ class CDM_MessageDriver : public Standard_Transient {
 %nodefaultctor CDM_COutMessageDriver;
 class CDM_COutMessageDriver : public CDM_MessageDriver {
 	public:
+		%feature("autodoc", "1");
+		CDM_COutMessageDriver();
 
 };
 %extend CDM_COutMessageDriver {
@@ -1072,6 +1049,31 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 	~CDM_NullMessageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDM_NullMessageDriver\n");}
+	}
+};
+
+
+%nodefaultctor CDM_ListIteratorOfListOfReferences;
+class CDM_ListIteratorOfListOfReferences {
+	public:
+		%feature("autodoc", "1");
+		CDM_ListIteratorOfListOfReferences();
+		%feature("autodoc", "1");
+		CDM_ListIteratorOfListOfReferences(const CDM_ListOfReferences &L);
+		%feature("autodoc", "1");
+		void Initialize(const CDM_ListOfReferences &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_CDM_Reference & Value() const;
+
+};
+%extend CDM_ListIteratorOfListOfReferences {
+	~CDM_ListIteratorOfListOfReferences() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
 	}
 };
 
@@ -1243,6 +1245,8 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 %nodefaultctor CDM_DocumentHasher;
 class CDM_DocumentHasher {
 	public:
+		%feature("autodoc", "1");
+		CDM_DocumentHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");

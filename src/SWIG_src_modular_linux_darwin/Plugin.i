@@ -282,6 +282,8 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 class Plugin {
 	public:
 		%feature("autodoc", "1");
+		Plugin();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Load(const Standard_GUID &aGUID);
 
 };

@@ -1318,6 +1318,8 @@ class IGESData_IGESEntity : public MMgt_TShared {
 %nodefaultctor IGESData_ColorEntity;
 class IGESData_ColorEntity : public IGESData_IGESEntity {
 	public:
+		%feature("autodoc", "1");
+		IGESData_ColorEntity();
 
 };
 %extend IGESData_ColorEntity {
@@ -1364,6 +1366,8 @@ class IGESData_IGESDumper {
 %nodefaultctor IGESData;
 class IGESData {
 	public:
+		%feature("autodoc", "1");
+		IGESData();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -2536,6 +2540,8 @@ class IGESData_DirChecker {
 class IGESData_LineFontEntity : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
+		IGESData_LineFontEntity();
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -2638,6 +2644,8 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 %nodefaultctor IGESData_LabelDisplayEntity;
 class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
 	public:
+		%feature("autodoc", "1");
+		IGESData_LabelDisplayEntity();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

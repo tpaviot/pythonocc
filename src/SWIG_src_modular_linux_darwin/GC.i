@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class GC_Root {
 	public:
 		%feature("autodoc", "1");
+		GC_Root();
+		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;

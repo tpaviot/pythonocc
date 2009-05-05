@@ -289,6 +289,8 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 class VrmlConverter_WFShape {
 	public:
 		%feature("autodoc", "1");
+		VrmlConverter_WFShape();
+		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
@@ -303,6 +305,8 @@ class VrmlConverter_WFShape {
 %nodefaultctor VrmlConverter_WFDeflectionShape;
 class VrmlConverter_WFDeflectionShape {
 	public:
+		%feature("autodoc", "1");
+		VrmlConverter_WFDeflectionShape();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
@@ -389,6 +393,8 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 class VrmlConverter_WFRestrictedFace {
 	public:
 		%feature("autodoc", "1");
+		VrmlConverter_WFRestrictedFace();
+		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
 		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
@@ -453,6 +459,8 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 class VrmlConverter_ShadedShape {
 	public:
 		%feature("autodoc", "1");
+		VrmlConverter_ShadedShape();
+		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
 		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
@@ -514,6 +522,8 @@ class VrmlConverter_Projector : public MMgt_TShared {
 class VrmlConverter_WFDeflectionRestrictedFace {
 	public:
 		%feature("autodoc", "1");
+		VrmlConverter_WFDeflectionRestrictedFace();
+		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
 		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
@@ -534,6 +544,8 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 %nodefaultctor VrmlConverter_Curve;
 class VrmlConverter_Curve {
 	public:
+		%feature("autodoc", "1");
+		VrmlConverter_Curve();
 		%feature("autodoc", "1");
 		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
 		%feature("autodoc", "1");
@@ -700,6 +712,8 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 class VrmlConverter_DeflectionCurve {
 	public:
 		%feature("autodoc", "1");
+		VrmlConverter_DeflectionCurve();
+		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer);
@@ -722,6 +736,8 @@ class VrmlConverter_DeflectionCurve {
 %nodefaultctor VrmlConverter_HLRShape;
 class VrmlConverter_HLRShape {
 	public:
+		%feature("autodoc", "1");
+		VrmlConverter_HLRShape();
 		%feature("autodoc", "1");
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 

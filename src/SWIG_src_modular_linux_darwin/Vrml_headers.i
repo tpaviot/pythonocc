@@ -142,12 +142,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TColgp_HArray1OfVec.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_TColStd_HArray1OfAsciiString.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Quantity_Color.hxx>
 #include<gp_Vec.hxx>
+#include<Handle_TColStd_HArray1OfAsciiString.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Vrml.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Quantity_HArray1OfColor.hxx>
 #include<Handle_TColgp_HArray1OfVec2d.hxx>

@@ -853,6 +853,8 @@ class IGESDefs_ToolAttributeTable {
 class IGESDefs {
 	public:
 		%feature("autodoc", "1");
+		IGESDefs();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESDefs_Protocol Protocol();

@@ -762,6 +762,8 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 class GeomInt_LineTool {
 	public:
 		%feature("autodoc", "1");
+		GeomInt_LineTool();
+		%feature("autodoc", "1");
 		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
 		%feature("autodoc", "1");
 		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
@@ -1013,6 +1015,8 @@ class GeomInt_ParameterAndOrientation {
 %nodefaultctor GeomInt_TheMultiLineToolOfWLApprox;
 class GeomInt_TheMultiLineToolOfWLApprox {
 	public:
+		%feature("autodoc", "1");
+		GeomInt_TheMultiLineToolOfWLApprox();
 		%feature("autodoc", "1");
 		Standard_Integer FirstPoint(const GeomInt_TheMultiLineOfWLApprox &ML);
 		%feature("autodoc", "1");

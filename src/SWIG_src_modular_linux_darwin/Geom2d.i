@@ -324,6 +324,32 @@ class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 };
 
 
+%nodefaultctor Handle_Geom2d_Parabola;
+class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_Parabola();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Parabola(const Handle_Geom2d_Parabola &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Parabola(const Geom2d_Parabola *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Parabola const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_Parabola {
+	Geom2d_Parabola* GetObject() {
+	return (Geom2d_Parabola*)$self->Access();
+	}
+};
+%extend Handle_Geom2d_Parabola {
+	~Handle_Geom2d_Parabola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Parabola\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Geom2d_OffsetCurve;
 class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 	public:
@@ -372,32 +398,6 @@ class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 	~Handle_Geom2d_UndefinedDerivative() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_UndefinedDerivative\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom2d_Parabola;
-class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_Parabola();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Parabola(const Handle_Geom2d_Parabola &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Parabola(const Geom2d_Parabola *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Parabola const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_Parabola {
-	Geom2d_Parabola* GetObject() {
-	return (Geom2d_Parabola*)$self->Access();
-	}
-};
-%extend Handle_Geom2d_Parabola {
-	~Handle_Geom2d_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Parabola\n");}
 	}
 };
 

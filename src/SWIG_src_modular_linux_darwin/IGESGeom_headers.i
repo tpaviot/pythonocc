@@ -226,8 +226,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_TColgp_HArray2OfXYZ.hxx>
 #include<gp_Vec.hxx>
-#include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
+#include<IGESGeom.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
 #include<gp_Dir.hxx>
 #include<gp_GTrsf.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>

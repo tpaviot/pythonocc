@@ -839,6 +839,8 @@ class Message_ListOfMsg {
 class Message {
 	public:
 		%feature("autodoc", "1");
+		Message();
+		%feature("autodoc", "1");
 		const Handle_Message_Messenger & DefaultMessenger();
 		%feature("autodoc", "1");
 		TCollection_AsciiString FillTime(const Standard_Integer Hour, const Standard_Integer Minute, const Standard_Real Second);
@@ -988,6 +990,8 @@ class Message_PrinterOStream : public Message_Printer {
 %nodefaultctor Message_MsgFile;
 class Message_MsgFile {
 	public:
+		%feature("autodoc", "1");
+		Message_MsgFile();
 		%feature("autodoc", "1");
 		Standard_Boolean Load(const char * theDirName, const char * theFileName);
 		%feature("autodoc", "1");

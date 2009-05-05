@@ -97,5 +97,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_ExtendedString.hxx>
 #include<Quantity_Color.hxx>
 #include<Aspect_FontStyle.hxx>
+#include<AIS2D.hxx>
 #include<TColStd_MapOfTransient.hxx>
 %}

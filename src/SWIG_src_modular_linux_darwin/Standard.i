@@ -1142,6 +1142,99 @@ class Standard_DomainError : public Standard_Failure {
 };
 
 
+%nodefaultctor Standard_NoSuchObject;
+class Standard_NoSuchObject : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NoSuchObject();
+		%feature("autodoc", "1");
+		Standard_NoSuchObject(const char * AString);
+		%feature("autodoc", "1");
+		Handle_Standard_NoSuchObject NewInstance(const char * aMessage);
+
+};
+%extend Standard_NoSuchObject {
+	Handle_Standard_NoSuchObject GetHandle() {
+	return *(Handle_Standard_NoSuchObject*) &$self;
+	}
+};
+%extend Standard_NoSuchObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_NoSuchObject {
+	~Standard_NoSuchObject() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_NoSuchObject\n");}
+	}
+};
+
+
+%nodefaultctor Standard_RangeError;
+class Standard_RangeError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_RangeError();
+		%feature("autodoc", "1");
+		Standard_RangeError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_RangeError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_RangeError {
+	Handle_Standard_RangeError GetHandle() {
+	return *(Handle_Standard_RangeError*) &$self;
+	}
+};
+%extend Standard_RangeError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_RangeError {
+	~Standard_RangeError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_RangeError\n");}
+	}
+};
+
+
+%nodefaultctor Standard_NullValue;
+class Standard_NullValue : public Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NullValue();
+		%feature("autodoc", "1");
+		Standard_NullValue(const char * AString);
+		%feature("autodoc", "1");
+		Handle_Standard_NullValue NewInstance(const char * aMessage);
+
+};
+%extend Standard_NullValue {
+	Handle_Standard_NullValue GetHandle() {
+	return *(Handle_Standard_NullValue*) &$self;
+	}
+};
+%extend Standard_NullValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_NullValue {
+	~Standard_NullValue() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_NullValue\n");}
+	}
+};
+
+
 %nodefaultctor Standard_ConstructionError;
 class Standard_ConstructionError : public Standard_DomainError {
 	public:
@@ -1150,7 +1243,13 @@ class Standard_ConstructionError : public Standard_DomainError {
 		%feature("autodoc", "1");
 		Standard_ConstructionError(const char * AString);
 		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
 		Handle_Standard_ConstructionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Standard_ConstructionError {
@@ -1281,41 +1380,6 @@ class Standard_NoMoreObject : public Standard_DomainError {
 	~Standard_NoMoreObject() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_NoMoreObject\n");}
-	}
-};
-
-
-%nodefaultctor Standard_RangeError;
-class Standard_RangeError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_RangeError();
-		%feature("autodoc", "1");
-		Standard_RangeError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_RangeError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_RangeError {
-	Handle_Standard_RangeError GetHandle() {
-	return *(Handle_Standard_RangeError*) &$self;
-	}
-};
-%extend Standard_RangeError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_RangeError {
-	~Standard_RangeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_RangeError\n");}
 	}
 };
 
@@ -1482,6 +1546,8 @@ class Standard_TypeMismatch : public Standard_DomainError {
 %nodefaultctor Standard_Storable;
 class Standard_Storable {
 	public:
+		%feature("autodoc", "1");
+		Standard_Storable();
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -1913,6 +1979,8 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 class Standard {
 	public:
 		%feature("autodoc", "1");
+		Standard();
+		%feature("autodoc", "1");
 		Standard_Address Allocate(const Standard_Size aSize);
 		%feature("autodoc", "1");
 		void Free(Standard_Address & aStorage);
@@ -2000,76 +2068,6 @@ class Standard_Overflow : public Standard_NumericError {
 	~Standard_Overflow() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_Overflow\n");}
-	}
-};
-
-
-%nodefaultctor Standard_NoSuchObject;
-class Standard_NoSuchObject : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NoSuchObject();
-		%feature("autodoc", "1");
-		Standard_NoSuchObject(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_NoSuchObject {
-	Handle_Standard_NoSuchObject GetHandle() {
-	return *(Handle_Standard_NoSuchObject*) &$self;
-	}
-};
-%extend Standard_NoSuchObject {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_NoSuchObject {
-	~Standard_NoSuchObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NoSuchObject\n");}
-	}
-};
-
-
-%nodefaultctor Standard_NullValue;
-class Standard_NullValue : public Standard_RangeError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NullValue();
-		%feature("autodoc", "1");
-		Standard_NullValue(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_NullValue NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_NullValue {
-	Handle_Standard_NullValue GetHandle() {
-	return *(Handle_Standard_NullValue*) &$self;
-	}
-};
-%extend Standard_NullValue {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_NullValue {
-	~Standard_NullValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NullValue\n");}
 	}
 };
 
@@ -2278,6 +2276,27 @@ class Standard_ErrorHandler {
 };
 
 
+%nodefaultctor Standard_Mutex;
+class Standard_Mutex : public Standard_ErrorHandlerCallback {
+	public:
+		%feature("autodoc", "1");
+		Standard_Mutex();
+		%feature("autodoc", "1");
+		void Lock();
+		%feature("autodoc", "1");
+		Standard_Boolean TryLock();
+		%feature("autodoc", "1");
+		void Unlock();
+
+};
+%extend Standard_Mutex {
+	~Standard_Mutex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_Mutex\n");}
+	}
+};
+
+
 %nodefaultctor Standard_Persistent;
 class Standard_Persistent {
 	public:
@@ -2355,26 +2374,5 @@ class Standard_OutOfRange : public Standard_RangeError {
 	~Standard_OutOfRange() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_OutOfRange\n");}
-	}
-};
-
-
-%nodefaultctor Standard_Mutex;
-class Standard_Mutex : public Standard_ErrorHandlerCallback {
-	public:
-		%feature("autodoc", "1");
-		Standard_Mutex();
-		%feature("autodoc", "1");
-		void Lock();
-		%feature("autodoc", "1");
-		Standard_Boolean TryLock();
-		%feature("autodoc", "1");
-		void Unlock();
-
-};
-%extend Standard_Mutex {
-	~Standard_Mutex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Mutex\n");}
 	}
 };

@@ -196,6 +196,8 @@ class GeomConvert_BSplineCurveKnotSplitting {
 class GeomConvert {
 	public:
 		%feature("autodoc", "1");
+		GeomConvert();
+		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve SplitBSplineCurve(const Handle_Geom_BSplineCurve &C, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Boolean SameOrientation=1);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineCurve SplitBSplineCurve(const Handle_Geom_BSplineCurve &C, const Standard_Real FromU1, const Standard_Real ToU2, const Standard_Real ParametricTolerance, const Standard_Boolean SameOrientation=1);

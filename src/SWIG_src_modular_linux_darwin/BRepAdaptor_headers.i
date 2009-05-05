@@ -101,6 +101,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
@@ -116,7 +117,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
-#include<TopoDS_Edge.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>

@@ -196,16 +196,16 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Vec.hxx>
 #include<Handle_Geom_Geometry.hxx>
+#include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Law_BSpline.hxx>
+#include<gp_Vec.hxx>
 #include<TColgp_Array1OfPnt.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Law_Function.hxx>
 #include<TColgp_Array2OfPnt.hxx>
@@ -214,6 +214,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
 #include<gp_Mat.hxx>
+#include<GeomFill.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>

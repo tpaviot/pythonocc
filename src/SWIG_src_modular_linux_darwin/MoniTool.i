@@ -898,6 +898,8 @@ class MoniTool_Element : public MMgt_TShared {
 class MoniTool_ElemHasher {
 	public:
 		%feature("autodoc", "1");
+		MoniTool_ElemHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
@@ -1074,6 +1076,8 @@ class MoniTool_TypedValue : public MMgt_TShared {
 %nodefaultctor MoniTool_DataInfo;
 class MoniTool_DataInfo {
 	public:
+		%feature("autodoc", "1");
+		MoniTool_DataInfo();
 		%feature("autodoc", "1");
 		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
@@ -1446,6 +1450,8 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 %nodefaultctor MoniTool_MTHasher;
 class MoniTool_MTHasher {
 	public:
+		%feature("autodoc", "1");
+		MoniTool_MTHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const char * Str, const Standard_Integer Upper);
 		%feature("autodoc", "1");

@@ -70,6 +70,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_CDM_Document.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_RelocationTable.hxx>
+#include<TDocStd.hxx>
 #include<TDF_IDList.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>

@@ -241,6 +241,8 @@ class IFGraph_SubPartsIterator {
 class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 	public:
 		%feature("autodoc", "1");
+		IFGraph_StrongComponants(IFGraph_StrongComponants & arg0);
+		%feature("autodoc", "1");
 		IFGraph_StrongComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 
 };
@@ -255,6 +257,8 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 %nodefaultctor IFGraph_ConnectedComponants;
 class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	public:
+		%feature("autodoc", "1");
+		IFGraph_ConnectedComponants(IFGraph_ConnectedComponants & arg0);
 		%feature("autodoc", "1");
 		IFGraph_ConnectedComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
@@ -379,6 +383,8 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 class IFGraph_SCRoots : public IFGraph_StrongComponants {
 	public:
 		%feature("autodoc", "1");
+		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
+		%feature("autodoc", "1");
 		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");
 		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
@@ -397,6 +403,8 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 %nodefaultctor IFGraph_Cycles;
 class IFGraph_Cycles : public IFGraph_SubPartsIterator {
 	public:
+		%feature("autodoc", "1");
+		IFGraph_Cycles(IFGraph_Cycles & arg0);
 		%feature("autodoc", "1");
 		IFGraph_Cycles(const Interface_Graph &agraph, const Standard_Boolean whole);
 		%feature("autodoc", "1");

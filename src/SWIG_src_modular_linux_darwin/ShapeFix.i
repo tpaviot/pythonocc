@@ -1081,6 +1081,8 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 class ShapeFix {
 	public:
 		%feature("autodoc", "1");
+		ShapeFix();
+		%feature("autodoc", "1");
 		Standard_Boolean SameParameter(const TopoDS_Shape &shape, const Standard_Boolean enforce, const Standard_Real preci=0.0);
 		%feature("autodoc", "1");
 		void EncodeRegularity(const TopoDS_Shape &shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);

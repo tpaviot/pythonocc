@@ -230,6 +230,8 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 class XmlXCAFDrivers {
 	public:
 		%feature("autodoc", "1");
+		XmlXCAFDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };

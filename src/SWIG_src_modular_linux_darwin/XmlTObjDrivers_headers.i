@@ -138,5 +138,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<XmlObjMgt_RRelocationTable.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<TCollection_ExtendedString.hxx>
+#include<XmlTObjDrivers.hxx>
 #include<Standard_GUID.hxx>
 %}

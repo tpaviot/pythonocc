@@ -113,10 +113,10 @@ Standard_Integer & function transformation
 
 %include BinObjMgt_headers.i
 
-typedef Standard_Byte * BinObjMgt_PByte;
 typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
 typedef Standard_ShortReal * BinObjMgt_PShortReal;
 typedef Standard_Real * BinObjMgt_PReal;
+typedef Standard_Byte * BinObjMgt_PByte;
 typedef Standard_Integer * BinObjMgt_PInteger;
 typedef Standard_Character * BinObjMgt_PChar;
 typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;

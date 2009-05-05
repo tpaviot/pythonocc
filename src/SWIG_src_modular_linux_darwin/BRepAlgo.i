@@ -611,6 +611,8 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 class BRepAlgo {
 	public:
 		%feature("autodoc", "1");
+		BRepAlgo();
+		%feature("autodoc", "1");
 		TopoDS_Wire ConcatenateWire(const TopoDS_Wire &Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid(const TopoDS_Shape &S);
@@ -683,6 +685,8 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 %nodefaultctor BRepAlgo_Tool;
 class BRepAlgo_Tool {
 	public:
+		%feature("autodoc", "1");
+		BRepAlgo_Tool();
 		%feature("autodoc", "1");
 		TopoDS_Shape Deboucle3D(const TopoDS_Shape &S, const TopTools_MapOfShape &Boundary);
 

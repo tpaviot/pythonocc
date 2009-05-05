@@ -463,6 +463,8 @@ class SelectBasics_ListOfSensitive {
 class SelectBasics_BasicTool {
 	public:
 		%feature("autodoc", "1");
+		SelectBasics_BasicTool();
+		%feature("autodoc", "1");
 		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
 		%feature("autodoc", "1");
 		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
@@ -481,6 +483,8 @@ class SelectBasics_BasicTool {
 %nodefaultctor SelectBasics;
 class SelectBasics {
 	public:
+		%feature("autodoc", "1");
+		SelectBasics();
 		%feature("autodoc", "1");
 		Standard_Integer MaxOwnerPriority();
 		%feature("autodoc", "1");

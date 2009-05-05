@@ -776,6 +776,8 @@ class BRepFill_TrimEdgeTool {
 class BRepFill_MultiLineTool {
 	public:
 		%feature("autodoc", "1");
+		BRepFill_MultiLineTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const BRepFill_MultiLine &ML);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const BRepFill_MultiLine &ML);
@@ -922,6 +924,8 @@ class BRepFill_OffsetAncestors {
 %nodefaultctor BRepFill_LocationLaw;
 class BRepFill_LocationLaw : public MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		BRepFill_LocationLaw();
 		%feature("autodoc", "1");
 		GeomFill_PipeError GetStatus() const;
 		%feature("autodoc", "1");
@@ -1070,29 +1074,6 @@ class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
-class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
-		%feature("autodoc", "1");
-		const Handle_MAT_Node & Key() const;
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeShape & Value() const;
-
-};
-%extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
-	~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape\n");}
-	}
-};
-
-
 %nodefaultctor BRepFill_SequenceOfEdgeFaceAndOrder;
 class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
 	public:
@@ -1173,33 +1154,6 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 	~BRepFill_ListNodeOfListOfOffsetWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_ListNodeOfListOfOffsetWire\n");}
-	}
-};
-
-
-%nodefaultctor BRepFill_Edge3DLaw;
-class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_Edge3DLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationLaw &Law);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepFill_Edge3DLaw {
-	Handle_BRepFill_Edge3DLaw GetHandle() {
-	return *(Handle_BRepFill_Edge3DLaw*) &$self;
-	}
-};
-%extend BRepFill_Edge3DLaw {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepFill_Edge3DLaw {
-	~BRepFill_Edge3DLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Edge3DLaw\n");}
 	}
 };
 
@@ -1519,6 +1473,29 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 };
 
 
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
+class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
+		%feature("autodoc", "1");
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
+		%feature("autodoc", "1");
+		const Handle_MAT_Node & Key() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeShape & Value() const;
+
+};
+%extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
+	~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape\n");}
+	}
+};
+
+
 %nodefaultctor BRepFill_DataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 	public:
@@ -1550,6 +1527,33 @@ class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 	~BRepFill_DataMapOfNodeDataMapOfShapeShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfNodeDataMapOfShapeShape\n");}
+	}
+};
+
+
+%nodefaultctor BRepFill_Edge3DLaw;
+class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_Edge3DLaw(const TopoDS_Wire &Path, const Handle_GeomFill_LocationLaw &Law);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepFill_Edge3DLaw {
+	Handle_BRepFill_Edge3DLaw GetHandle() {
+	return *(Handle_BRepFill_Edge3DLaw*) &$self;
+	}
+};
+%extend BRepFill_Edge3DLaw {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepFill_Edge3DLaw {
+	~BRepFill_Edge3DLaw() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFill_Edge3DLaw\n");}
 	}
 };
 
@@ -1876,6 +1880,31 @@ class BRepFill_Pipe {
 };
 
 
+%nodefaultctor BRepFill;
+class BRepFill {
+	public:
+		%feature("autodoc", "1");
+		BRepFill();
+		%feature("autodoc", "1");
+		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
+		%feature("autodoc", "1");
+		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
+		%feature("autodoc", "1");
+		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
+		%feature("autodoc", "1");
+		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
+
+};
+%extend BRepFill {
+	~BRepFill() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFill\n");}
+	}
+};
+
+
 %nodefaultctor BRepFill_Draft;
 class BRepFill_Draft {
 	public:
@@ -1949,29 +1978,6 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 	~BRepFill_ACRLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_ACRLaw\n");}
-	}
-};
-
-
-%nodefaultctor BRepFill;
-class BRepFill {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_Face Face(const TopoDS_Edge &Edge1, const TopoDS_Edge &Edge2);
-		%feature("autodoc", "1");
-		TopoDS_Shell Shell(const TopoDS_Wire &Wire1, const TopoDS_Wire &Wire2);
-		%feature("autodoc", "1");
-		void Axe(const TopoDS_Shape &Spine, const TopoDS_Wire &Profile, gp_Ax3 & AxeProf, Standard_Boolean & ProfOnSpine, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void ComputeACR(const TopoDS_Wire &wire, TColStd_Array1OfReal & ACR);
-		%feature("autodoc", "1");
-		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
-
-};
-%extend BRepFill {
-	~BRepFill() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill\n");}
 	}
 };
 

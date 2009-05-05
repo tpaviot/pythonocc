@@ -1215,6 +1215,8 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 class ShapeUpgrade {
 	public:
 		%feature("autodoc", "1");
+		ShapeUpgrade();
+		%feature("autodoc", "1");
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HSequenceOfBoundedCurve & seqBS);
 		%feature("autodoc", "1");
 		Standard_Boolean C0BSplineToSequenceOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HSequenceOfBoundedCurve & seqBS);

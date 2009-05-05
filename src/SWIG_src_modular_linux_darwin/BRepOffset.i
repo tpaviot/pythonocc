@@ -406,6 +406,8 @@ class BRepOffset_ListIteratorOfListOfInterval {
 class BRepOffset {
 	public:
 		%feature("autodoc", "1");
+		BRepOffset();
+		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
@@ -857,6 +859,8 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 class BRepOffset_Inter2d {
 	public:
 		%feature("autodoc", "1");
+		BRepOffset_Inter2d();
+		%feature("autodoc", "1");
 		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
@@ -873,6 +877,8 @@ class BRepOffset_Inter2d {
 %nodefaultctor BRepOffset_Tool;
 class BRepOffset_Tool {
 	public:
+		%feature("autodoc", "1");
+		BRepOffset_Tool();
 		%feature("autodoc", "1");
 		void EdgeVertices(const TopoDS_Edge &E, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
 		%feature("autodoc", "1");

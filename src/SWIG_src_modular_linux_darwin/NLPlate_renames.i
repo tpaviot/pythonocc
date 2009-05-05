@@ -13,9 +13,9 @@
 %rename(Handle_NLPlate_HPG2Constraint) Handle_NLPlate_HPG2Constraint;
 %rename(Handle_NLPlate_HPG0G3Constraint) Handle_NLPlate_HPG0G3Constraint;
 %rename(Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint) Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
-%rename(NLPlate_HPG1Constraint) NLPlate_HPG1Constraint;
-%rename(Handle_NLPlate_StackNodeOfStackOfPlate) Handle_NLPlate_StackNodeOfStackOfPlate;
 %rename(NLPlate_StackNodeOfStackOfPlate) NLPlate_StackNodeOfStackOfPlate;
+%rename(Handle_NLPlate_StackNodeOfStackOfPlate) Handle_NLPlate_StackNodeOfStackOfPlate;
+%rename(NLPlate_HPG1Constraint) NLPlate_HPG1Constraint;
 %rename(NLPlate_SequenceOfHGPPConstraint) NLPlate_SequenceOfHGPPConstraint;
 %rename(Handle_NLPlate_HGPPConstraint) Handle_NLPlate_HGPPConstraint;
 %rename(NLPlate_NLPlate) NLPlate_NLPlate;

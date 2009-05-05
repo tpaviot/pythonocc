@@ -262,6 +262,8 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 class BRepExtrema_Poly {
 	public:
 		%feature("autodoc", "1");
+		BRepExtrema_Poly();
+		%feature("autodoc", "1");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 
 };

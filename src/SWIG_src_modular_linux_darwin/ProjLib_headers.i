@@ -74,6 +74,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Hypr.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
+#include<ProjLib.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Cone.hxx>

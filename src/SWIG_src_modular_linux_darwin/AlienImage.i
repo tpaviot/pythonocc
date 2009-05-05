@@ -654,6 +654,36 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 
 
+%nodefaultctor AlienImage_SGIRGBFileHeader;
+class AlienImage_SGIRGBFileHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_SGIRGBFileHeader();
+
+};
+%extend AlienImage_SGIRGBFileHeader {
+	~AlienImage_SGIRGBFileHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");}
+	}
+};
+
+
+%nodefaultctor AlienImage_SUNRFFileHeader;
+class AlienImage_SUNRFFileHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_SUNRFFileHeader();
+
+};
+%extend AlienImage_SUNRFFileHeader {
+	~AlienImage_SUNRFFileHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
+	}
+};
+
+
 %nodefaultctor AlienImage_AlienUserImage;
 class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 	public:
@@ -725,6 +755,8 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 %nodefaultctor AlienImage_MemoryOperations;
 class AlienImage_MemoryOperations {
 	public:
+		%feature("autodoc", "1");
+		AlienImage_MemoryOperations();
 		%feature("autodoc", "1");
 		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
 		%feature("autodoc", "1");
@@ -865,6 +897,8 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 %nodefaultctor AlienImage_X11XColor;
 class AlienImage_X11XColor {
 	public:
+		%feature("autodoc", "1");
+		AlienImage_X11XColor();
 
 };
 %extend AlienImage_X11XColor {
@@ -912,22 +946,11 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor AlienImage_SGIRGBFileHeader;
-class AlienImage_SGIRGBFileHeader {
-	public:
-
-};
-%extend AlienImage_SGIRGBFileHeader {
-	~AlienImage_SGIRGBFileHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");}
-	}
-};
-
-
 %nodefaultctor AlienImage;
 class AlienImage {
 	public:
+		%feature("autodoc", "1");
+		AlienImage();
 		%feature("autodoc", "1");
 		Standard_Boolean CreateImage(const TCollection_AsciiString &theFileName, Handle_Image_Image & theImage);
 		%feature("autodoc", "1");
@@ -942,19 +965,6 @@ class AlienImage {
 	~AlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AlienImage\n");}
-	}
-};
-
-
-%nodefaultctor AlienImage_SUNRFFileHeader;
-class AlienImage_SUNRFFileHeader {
-	public:
-
-};
-%extend AlienImage_SUNRFFileHeader {
-	~AlienImage_SUNRFFileHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
 	}
 };
 
@@ -1129,19 +1139,6 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor AlienImage_BMPHeader;
-class AlienImage_BMPHeader {
-	public:
-
-};
-%extend AlienImage_BMPHeader {
-	~AlienImage_BMPHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
-	}
-};
-
-
 %nodefaultctor AlienImage_EuclidAlienImage;
 class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 	public:
@@ -1175,6 +1172,21 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 	~AlienImage_EuclidAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AlienImage_EuclidAlienImage\n");}
+	}
+};
+
+
+%nodefaultctor AlienImage_BMPHeader;
+class AlienImage_BMPHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_BMPHeader();
+
+};
+%extend AlienImage_BMPHeader {
+	~AlienImage_BMPHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
 	}
 };
 

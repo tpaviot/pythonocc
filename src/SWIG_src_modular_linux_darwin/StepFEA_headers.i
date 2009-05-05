@@ -281,7 +281,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepRepr_HArray1OfRepresentationItem.hxx>
 #include<Handle_StepRepr_RepresentationContext.hxx>
 #include<Handle_TColStd_HArray1OfAsciiString.hxx>
-#include<Handle_StepElement_HArray1OfCurveElementEndReleasePacket.hxx>
 #include<Handle_StepElement_SurfaceSection.hxx>
 #include<Handle_StepElement_AnalysisItemWithinRepresentation.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
@@ -291,6 +290,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_EulerAngles.hxx>
 #include<Handle_StepElement_Curve3dElementDescriptor.hxx>
 #include<Handle_StepElement_ElementMaterial.hxx>
+#include<Handle_StepElement_HArray1OfCurveElementEndReleasePacket.hxx>
 #include<Handle_StepElement_CurveElementSectionDefinition.hxx>
 #include<Handle_StepElement_Surface3dElementDescriptor.hxx>
 #include<Handle_StepElement_SurfaceElementProperty.hxx>

@@ -608,6 +608,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<AIS.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Face.hxx>
 #include<gp_Pln.hxx>

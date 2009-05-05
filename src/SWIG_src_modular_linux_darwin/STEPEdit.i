@@ -209,6 +209,8 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 class STEPEdit {
 	public:
 		%feature("autodoc", "1");
+		STEPEdit();
+		%feature("autodoc", "1");
 		Handle_Interface_Protocol Protocol();
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel NewModel();

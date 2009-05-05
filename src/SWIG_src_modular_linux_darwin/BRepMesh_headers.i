@@ -129,6 +129,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_ListOfInteger.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<gp_XY.hxx>
+#include<BRepMesh.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TCollection_AsciiString.hxx>

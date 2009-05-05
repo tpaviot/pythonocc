@@ -110,6 +110,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shape.hxx>
 #include<gp_Trsf.hxx>
 #include<BRep_Builder.hxx>
+#include<BRepTools.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Bnd_Box2d.hxx>
 #include<TopoDS_Shell.hxx>

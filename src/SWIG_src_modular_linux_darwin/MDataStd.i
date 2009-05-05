@@ -2648,6 +2648,8 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 class MDataStd {
 	public:
 		%feature("autodoc", "1");
+		MDataStd();
+		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
@@ -3132,41 +3134,6 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 };
 
 
-%nodefaultctor MDataStd_RealArrayStorageDriver;
-class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		MDataStd_RealArrayStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_PDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MDataStd_RealArrayStorageDriver {
-	Handle_MDataStd_RealArrayStorageDriver GetHandle() {
-	return *(Handle_MDataStd_RealArrayStorageDriver*) &$self;
-	}
-};
-%extend MDataStd_RealArrayStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MDataStd_RealArrayStorageDriver {
-	~MDataStd_RealArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayStorageDriver\n");}
-	}
-};
-
-
 %nodefaultctor MDataStd_IntegerListStorageDriver;
 class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 	public:
@@ -3548,6 +3515,41 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 	~MDataStd_IntegerStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor MDataStd_UAttributeStorageDriver;
+class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		MDataStd_UAttributeStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_PDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MDataStd_UAttributeStorageDriver {
+	Handle_MDataStd_UAttributeStorageDriver GetHandle() {
+	return *(Handle_MDataStd_UAttributeStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_UAttributeStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MDataStd_UAttributeStorageDriver {
+	~MDataStd_UAttributeStorageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeStorageDriver\n");}
 	}
 };
 
@@ -3972,6 +3974,41 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 };
 
 
+%nodefaultctor MDataStd_RealArrayStorageDriver;
+class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		MDataStd_RealArrayStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_PDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MDataStd_RealArrayStorageDriver {
+	Handle_MDataStd_RealArrayStorageDriver GetHandle() {
+	return *(Handle_MDataStd_RealArrayStorageDriver*) &$self;
+	}
+};
+%extend MDataStd_RealArrayStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MDataStd_RealArrayStorageDriver {
+	~MDataStd_RealArrayStorageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayStorageDriver\n");}
+	}
+};
+
+
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver_1;
 class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 	public:
@@ -4073,41 +4110,6 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 	~MDataStd_AsciiStringStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDataStd_AsciiStringStorageDriver\n");}
-	}
-};
-
-
-%nodefaultctor MDataStd_UAttributeStorageDriver;
-class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		MDataStd_UAttributeStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_PDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MDataStd_UAttributeStorageDriver {
-	Handle_MDataStd_UAttributeStorageDriver GetHandle() {
-	return *(Handle_MDataStd_UAttributeStorageDriver*) &$self;
-	}
-};
-%extend MDataStd_UAttributeStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MDataStd_UAttributeStorageDriver {
-	~MDataStd_UAttributeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeStorageDriver\n");}
 	}
 };
 

@@ -142,32 +142,6 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
-class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve();
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve(const Handle_PColPGeom_HArray1OfBezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve(const PColPGeom_HArray1OfBezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColPGeom_HArray1OfBezierCurve {
-	PColPGeom_HArray1OfBezierCurve* GetObject() {
-	return (PColPGeom_HArray1OfBezierCurve*)$self->Access();
-	}
-};
-%extend Handle_PColPGeom_HArray1OfBezierCurve {
-	~Handle_PColPGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle_PStandard_ArrayNode {
 	public:
@@ -298,6 +272,32 @@ class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persisten
 };
 
 
+%nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
+class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfBezierCurve();
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfBezierCurve(const Handle_PColPGeom_HArray1OfBezierCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfBezierCurve(const PColPGeom_HArray1OfBezierCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfBezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColPGeom_HArray1OfBezierCurve {
+	PColPGeom_HArray1OfBezierCurve* GetObject() {
+	return (PColPGeom_HArray1OfBezierCurve*)$self->Access();
+	}
+};
+%extend Handle_PColPGeom_HArray1OfBezierCurve {
+	~Handle_PColPGeom_HArray1OfBezierCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PColPGeom_HArray2OfBSplineSurface;
 class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persistent {
 	public:
@@ -346,32 +346,6 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 	~Handle_PColPGeom_HArray1OfBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColPGeom_HArray1OfCurve;
-class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfCurve();
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfCurve(const Handle_PColPGeom_HArray1OfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfCurve(const PColPGeom_HArray1OfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_HArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColPGeom_HArray1OfCurve {
-	PColPGeom_HArray1OfCurve* GetObject() {
-	return (PColPGeom_HArray1OfCurve*)$self->Access();
-	}
-};
-%extend Handle_PColPGeom_HArray1OfCurve {
-	~Handle_PColPGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");}
 	}
 };
 
@@ -450,6 +424,32 @@ class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent
 	~Handle_PColPGeom_HArray1OfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColPGeom_HArray1OfCurve;
+class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfCurve();
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfCurve(const Handle_PColPGeom_HArray1OfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfCurve(const PColPGeom_HArray1OfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_HArray1OfCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColPGeom_HArray1OfCurve {
+	PColPGeom_HArray1OfCurve* GetObject() {
+	return (PColPGeom_HArray1OfCurve*)$self->Access();
+	}
+};
+%extend Handle_PColPGeom_HArray1OfCurve {
+	~Handle_PColPGeom_HArray1OfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");}
 	}
 };
 

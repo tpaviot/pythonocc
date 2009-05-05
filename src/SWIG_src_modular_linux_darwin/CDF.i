@@ -359,6 +359,8 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 class CDF {
 	public:
 		%feature("autodoc", "1");
+		CDF();
+		%feature("autodoc", "1");
 		void GetLicense(const Standard_Integer anApplicationIdentifier);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);

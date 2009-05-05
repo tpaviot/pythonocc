@@ -335,6 +335,8 @@ class XCAFPrs_AISObject : public AIS_Shape {
 class XCAFPrs {
 	public:
 		%feature("autodoc", "1");
+		XCAFPrs();
+		%feature("autodoc", "1");
 		void CollectStyleSettings(const TDF_Label &L, const TopLoc_Location &loc, XCAFPrs_DataMapOfShapeStyle & settings);
 		%feature("autodoc", "1");
 		Standard_Boolean DispatchStyles(const TopoDS_Shape &shape, const XCAFPrs_DataMapOfShapeStyle &settings, XCAFPrs_DataMapOfStyleShape & items, const XCAFPrs_Style &DefStyle, const Standard_Boolean force=1, const TopAbs_ShapeEnum context=TopAbs_SHAPE);
@@ -506,6 +508,8 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 %nodefaultctor XCAFPrs_Driver;
 class XCAFPrs_Driver : public TPrsStd_Driver {
 	public:
+		%feature("autodoc", "1");
+		XCAFPrs_Driver();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
 		%feature("autodoc", "1");

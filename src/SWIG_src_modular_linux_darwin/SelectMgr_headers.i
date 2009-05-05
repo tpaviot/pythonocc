@@ -585,11 +585,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_SelectBasics_SensitiveEntity.hxx>
 #include<Handle_SelectBasics_EntityOwner.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Handle_PrsMgr_PresentationManager3d.hxx>
+#include<Handle_Prs3d_Presentation.hxx>
 #include<Bnd_Box2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColStd_ListOfInteger.hxx>
-#include<Handle_PrsMgr_PresentationManager3d.hxx>
-#include<Handle_Prs3d_Presentation.hxx>
 #include<Handle_PrsMgr_PresentationManager.hxx>
 #include<TopLoc_Location.hxx>
 %}

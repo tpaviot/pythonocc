@@ -458,6 +458,8 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 class IGESToBRep {
 	public:
 		%feature("autodoc", "1");
+		IGESToBRep();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		void SetAlgoContainer(const Handle_IGESToBRep_AlgoContainer &aContainer);

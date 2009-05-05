@@ -1513,6 +1513,8 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 class BRepBlend_HCurve2dTool {
 	public:
 		%feature("autodoc", "1");
+		BRepBlend_HCurve2dTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Handle_Adaptor2d_HCurve2d &C);
@@ -1668,6 +1670,8 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 %nodefaultctor BRepBlend_HCurveTool;
 class BRepBlend_HCurveTool {
 	public:
+		%feature("autodoc", "1");
+		BRepBlend_HCurveTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
@@ -2036,42 +2040,11 @@ class BRepBlend_Line : public MMgt_TShared {
 };
 
 
-%nodefaultctor BRepBlend_SurfCurvConstRadInv;
-class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfCurvConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real R, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%extend BRepBlend_SurfCurvConstRadInv {
-	~BRepBlend_SurfCurvConstRadInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvConstRadInv\n");}
-	}
-};
-
-
 %nodefaultctor BRepBlend_HSurfaceTool;
 class BRepBlend_HSurfaceTool {
 	public:
+		%feature("autodoc", "1");
+		BRepBlend_HSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
@@ -2323,6 +2296,39 @@ class BRepBlend_PointOnRst {
 };
 
 
+%nodefaultctor BRepBlend_SurfCurvConstRadInv;
+class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SurfCurvConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real R, const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%extend BRepBlend_SurfCurvConstRadInv {
+	~BRepBlend_SurfCurvConstRadInv() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvConstRadInv\n");}
+	}
+};
+
+
 %nodefaultctor BRepBlend_Walking;
 class BRepBlend_Walking {
 	public:
@@ -2373,6 +2379,8 @@ class BRepBlend_Walking {
 %nodefaultctor BRepBlend_BlendTool;
 class BRepBlend_BlendTool {
 	public:
+		%feature("autodoc", "1");
+		BRepBlend_BlendTool();
 		%feature("autodoc", "1");
 		Standard_Boolean Project(const gp_Pnt2d &P, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");

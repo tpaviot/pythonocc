@@ -321,9 +321,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_SequenceOfAsciiString.hxx>
 #include<Handle_StepAP214_AutoDesignNominalDateAssignment.hxx>
 #include<Handle_StepAP214_AppliedPersonAndOrganizationAssignment.hxx>
-#include<Handle_StepAP214_AutoDesignOrganizationAssignment.hxx>
 #include<Handle_StepAP214_AppliedGroupAssignment.hxx>
 #include<Handle_StepAP214_AppliedDateAndTimeAssignment.hxx>
+#include<Handle_StepAP214_AutoDesignOrganizationAssignment.hxx>
 #include<Handle_StepAP214_Class.hxx>
 #include<Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment.hxx>
 #include<Interface_ShareTool.hxx>
@@ -334,6 +334,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepAP214_AppliedApprovalAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignPresentedItem.hxx>
 #include<Handle_StepAP214_AppliedExternalIdentificationAssignment.hxx>
+#include<RWStepAP214.hxx>
 #include<Handle_StepAP214_RepItemGroup.hxx>
 #include<Handle_StepAP214_AppliedDocumentReference.hxx>
 #include<Handle_StepAP214_ExternallyDefinedGeneralProperty.hxx>

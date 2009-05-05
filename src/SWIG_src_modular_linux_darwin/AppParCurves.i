@@ -975,6 +975,8 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 class AppParCurves {
 	public:
 		%feature("autodoc", "1");
+		AppParCurves();
+		%feature("autodoc", "1");
 		void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A);
 		%feature("autodoc", "1");
 		void Bernstein(const Standard_Integer NbPoles, const math_Vector &U, math_Matrix & A, math_Matrix & DA);

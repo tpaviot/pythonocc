@@ -486,6 +486,8 @@ class BRepLib_FuseEdges {
 class BRepLib {
 	public:
 		%feature("autodoc", "1");
+		BRepLib();
+		%feature("autodoc", "1");
 		void Precision(const Standard_Real P);
 		%feature("autodoc", "1");
 		Standard_Real Precision();

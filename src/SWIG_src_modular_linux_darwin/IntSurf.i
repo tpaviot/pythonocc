@@ -285,9 +285,40 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 };
 
 
+%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
+class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntSurf_PntOn2S & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	~IntSurf_ListNodeOfListOfPntOn2S() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");}
+	}
+};
+
+
 %nodefaultctor IntSurf;
 class IntSurf {
 	public:
+		%feature("autodoc", "1");
+		IntSurf();
 		%feature("autodoc", "1");
 		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
@@ -874,6 +905,8 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 class IntSurf_InteriorPointTool {
 	public:
 		%feature("autodoc", "1");
+		IntSurf_InteriorPointTool();
+		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
 		%feature("autodoc", "1");
 		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -887,35 +920,6 @@ class IntSurf_InteriorPointTool {
 	~IntSurf_InteriorPointTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntSurf_InteriorPointTool\n");}
-	}
-};
-
-
-%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
-class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	~IntSurf_ListNodeOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");}
 	}
 };
 
@@ -978,6 +982,8 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 class IntSurf_PathPointTool {
 	public:
 		%feature("autodoc", "1");
+		IntSurf_PathPointTool();
+		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
 		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -1006,6 +1012,8 @@ class IntSurf_PathPointTool {
 %nodefaultctor IntSurf_QuadricTool;
 class IntSurf_QuadricTool {
 	public:
+		%feature("autodoc", "1");
+		IntSurf_QuadricTool();
 		%feature("autodoc", "1");
 		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 		%feature("autodoc", "1");

@@ -172,6 +172,8 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 class Geom2dAdaptor {
 	public:
 		%feature("autodoc", "1");
+		Geom2dAdaptor();
+		%feature("autodoc", "1");
 		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
 
 };

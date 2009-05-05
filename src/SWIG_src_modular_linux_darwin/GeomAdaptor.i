@@ -358,6 +358,8 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 class GeomAdaptor {
 	public:
 		%feature("autodoc", "1");
+		GeomAdaptor();
+		%feature("autodoc", "1");
 		Handle_Geom_Curve MakeCurve(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface MakeSurface(const Adaptor3d_Surface &S);

@@ -935,6 +935,8 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_Ba
 class BRepMesh_HeapSortIndexedVertexOfDelaun {
 	public:
 		%feature("autodoc", "1");
+		BRepMesh_HeapSortIndexedVertexOfDelaun();
+		%feature("autodoc", "1");
 		void Sort(TColStd_Array1OfInteger & TheArray, const BRepMesh_ComparatorOfIndexedVertexOfDelaun &Comp);
 
 };
@@ -1068,6 +1070,8 @@ class BRepMesh_ListOfXY {
 %nodefaultctor BRepMesh;
 class BRepMesh {
 	public:
+		%feature("autodoc", "1");
+		BRepMesh();
 		%feature("autodoc", "1");
 		void Mesh(const TopoDS_Shape &S, const Standard_Real d);
 
@@ -2261,6 +2265,8 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 class BRepMesh_HeapSortVertexOfDelaun {
 	public:
 		%feature("autodoc", "1");
+		BRepMesh_HeapSortVertexOfDelaun();
+		%feature("autodoc", "1");
 		void Sort(BRepMesh_Array1OfVertexOfDelaun & TheArray, const BRepMesh_ComparatorOfVertexOfDelaun &Comp);
 
 };
@@ -2424,6 +2430,8 @@ class BRepMesh_Vertex {
 class BRepMesh_LinkHasherOfDataStructureOfDelaun {
 	public:
 		%feature("autodoc", "1");
+		BRepMesh_LinkHasherOfDataStructureOfDelaun();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Edge &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Edge &K1, const BRepMesh_Edge &K2);
@@ -2566,6 +2574,8 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 class BRepMesh_VertexHasher {
 	public:
 		%feature("autodoc", "1");
+		BRepMesh_VertexHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Vertex &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &K1, const BRepMesh_Vertex &K2);
@@ -2582,6 +2592,8 @@ class BRepMesh_VertexHasher {
 %nodefaultctor BRepMesh_NodeHasherOfDataStructureOfDelaun;
 class BRepMesh_NodeHasherOfDataStructureOfDelaun {
 	public:
+		%feature("autodoc", "1");
+		BRepMesh_NodeHasherOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Vertex &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -3012,6 +3024,8 @@ class BRepMesh_Triangle {
 %nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
 class BRepMesh_ElemHasherOfDataStructureOfDelaun {
 	public:
+		%feature("autodoc", "1");
+		BRepMesh_ElemHasherOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");

@@ -29,6 +29,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
+#include<BRepBndLib.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Bnd_Box.hxx>
 %}

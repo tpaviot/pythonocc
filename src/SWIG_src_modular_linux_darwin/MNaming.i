@@ -259,6 +259,8 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 class MNaming {
 	public:
 		%feature("autodoc", "1");
+		MNaming();
+		%feature("autodoc", "1");
 		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);

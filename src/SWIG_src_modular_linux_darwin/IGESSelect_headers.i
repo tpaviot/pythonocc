@@ -231,6 +231,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IFSelect_ContextWrite.hxx>
 #include<IGESData_IGESWriter.hxx>
 #include<IFSelect_SessionFile.hxx>
+#include<IGESSelect.hxx>
 #include<IFGraph_SubPartsIterator.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
 #include<Interface_CheckIterator.hxx>

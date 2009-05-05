@@ -62,5 +62,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<XmlObjMgt_Persistent.hxx>
 #include<XmlObjMgt_RRelocationTable.hxx>
 #include<TopoDS_Shape.hxx>
+#include<XmlMNaming.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 %}

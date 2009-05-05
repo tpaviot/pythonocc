@@ -342,38 +342,11 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 
 
-%nodefaultctor Materials_MaterialDefinition;
-class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
-	public:
-		%feature("autodoc", "1");
-		Materials_MaterialDefinition();
-		%feature("autodoc", "1");
-		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Materials_MaterialDefinition {
-	Handle_Materials_MaterialDefinition GetHandle() {
-	return *(Handle_Materials_MaterialDefinition*) &$self;
-	}
-};
-%extend Materials_MaterialDefinition {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Materials_MaterialDefinition {
-	~Materials_MaterialDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
-	}
-};
-
-
 %nodefaultctor Materials;
 class Materials {
 	public:
+		%feature("autodoc", "1");
+		Materials();
 		%feature("autodoc", "1");
 		void MaterialFile(const char * afile);
 		%feature("autodoc", "1");
@@ -519,6 +492,35 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 	~Materials_SequenceNodeOfMtsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");}
+	}
+};
+
+
+%nodefaultctor Materials_MaterialDefinition;
+class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
+	public:
+		%feature("autodoc", "1");
+		Materials_MaterialDefinition();
+		%feature("autodoc", "1");
+		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Materials_MaterialDefinition {
+	Handle_Materials_MaterialDefinition GetHandle() {
+	return *(Handle_Materials_MaterialDefinition*) &$self;
+	}
+};
+%extend Materials_MaterialDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Materials_MaterialDefinition {
+	~Materials_MaterialDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
 	}
 };
 

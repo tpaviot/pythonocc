@@ -659,6 +659,8 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 class XCAFDoc {
 	public:
 		%feature("autodoc", "1");
+		XCAFDoc();
+		%feature("autodoc", "1");
 		Standard_GUID AssemblyGUID();
 		%feature("autodoc", "1");
 		Standard_GUID ShapeRefGUID();

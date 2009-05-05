@@ -143,32 +143,6 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
-class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
-	}
-};
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
 class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -217,6 +191,32 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 	~Handle_DBC_VArrayNodeOfVArrayOfCharacter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfCharacter\n");}
+	}
+};
+
+
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
+class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger();
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
+	}
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
 	}
 };
 

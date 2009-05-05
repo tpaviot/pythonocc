@@ -679,6 +679,8 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 class BRepCheck {
 	public:
 		%feature("autodoc", "1");
+		BRepCheck();
+		%feature("autodoc", "1");
 		void Add(BRepCheck_ListOfStatus & List, const BRepCheck_Status Stat);
 		%feature("autodoc", "1");
 		void Print(const BRepCheck_Status Stat, Standard_OStream & OS);

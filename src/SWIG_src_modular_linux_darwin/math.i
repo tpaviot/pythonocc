@@ -477,6 +477,8 @@ class math_Jacobi {
 class math {
 	public:
 		%feature("autodoc", "1");
+		math();
+		%feature("autodoc", "1");
 		Standard_Integer GaussPointsMax();
 		%feature("autodoc", "1");
 		void GaussPoints(const Standard_Integer Index, math_Vector & Points);
@@ -1301,6 +1303,8 @@ class math_Crout {
 %nodefaultctor math_QuickSortOfValueAndWeight;
 class math_QuickSortOfValueAndWeight {
 	public:
+		%feature("autodoc", "1");
+		math_QuickSortOfValueAndWeight();
 		%feature("autodoc", "1");
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 

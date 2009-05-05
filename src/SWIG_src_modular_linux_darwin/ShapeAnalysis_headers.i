@@ -473,6 +473,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TopTools_HSequenceOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopoDS_Compound.hxx>
+#include<ShapeAnalysis.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>
@@ -492,13 +493,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_XYZ.hxx>
 #include<TColgp_SequenceOfPnt2d.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
+#include<TColStd_ListOfReal.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
 #include<IntRes2d_SequenceOfIntersectionPoint.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
 #include<TopTools_MapOfShape.hxx>
-#include<TColStd_ListOfReal.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
 #include<gp_XY.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>

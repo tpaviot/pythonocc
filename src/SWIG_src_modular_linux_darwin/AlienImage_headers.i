@@ -189,6 +189,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<OSD_File.hxx>
 #include<Handle_Image_Image.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<AlienImage.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Handle_Image_PseudoColorImage.hxx>
 #include<Handle_Image_ColorImage.hxx>

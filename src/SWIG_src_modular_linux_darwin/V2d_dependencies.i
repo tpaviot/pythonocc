@@ -523,7 +523,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import Graphic2d.i
-%import Viewer.i
 %import Aspect.i
+%import Viewer.i
 %import Standard.i
 %import Quantity.i

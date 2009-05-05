@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class GeomProjLib {
 	public:
 		%feature("autodoc", "1");
+		GeomProjLib();
+		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last, const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last, const Handle_Geom_Surface &S, Standard_Real &OutValue);

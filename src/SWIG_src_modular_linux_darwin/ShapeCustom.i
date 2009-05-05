@@ -398,6 +398,8 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 class ShapeCustom_Curve2d {
 	public:
 		%feature("autodoc", "1");
+		ShapeCustom_Curve2d();
+		%feature("autodoc", "1");
 		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Line ConvertToLine2d(const Handle_Geom2d_Curve &theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -549,31 +551,6 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 
 
-%nodefaultctor ShapeCustom_Surface;
-class ShapeCustom_Surface {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_Surface();
-		%feature("autodoc", "1");
-		ShapeCustom_Surface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
-
-};
-%extend ShapeCustom_Surface {
-	~ShapeCustom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
-	}
-};
-
-
 %nodefaultctor ShapeCustom_BSplineRestriction;
 class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 	public:
@@ -659,9 +636,36 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 
 
+%nodefaultctor ShapeCustom_Surface;
+class ShapeCustom_Surface {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_Surface();
+		%feature("autodoc", "1");
+		ShapeCustom_Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
+
+};
+%extend ShapeCustom_Surface {
+	~ShapeCustom_Surface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
+	}
+};
+
+
 %nodefaultctor ShapeCustom;
 class ShapeCustom {
 	public:
+		%feature("autodoc", "1");
+		ShapeCustom();
 		%feature("autodoc", "1");
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
 		%feature("autodoc", "1");

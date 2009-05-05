@@ -298,39 +298,6 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 };
 
 
-%nodefaultctor BinTObjDrivers_XYZDriver;
-class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_XYZDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_XYZDriver {
-	Handle_BinTObjDrivers_XYZDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_XYZDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_XYZDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinTObjDrivers_XYZDriver {
-	~BinTObjDrivers_XYZDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");}
-	}
-};
-
-
 %nodefaultctor BinTObjDrivers_ModelDriver;
 class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 	public:
@@ -467,6 +434,8 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 class BinTObjDrivers {
 	public:
 		%feature("autodoc", "1");
+		BinTObjDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
@@ -534,5 +503,38 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 	~BinTObjDrivers_DocumentStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_XYZDriver;
+class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_XYZDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_XYZDriver {
+	Handle_BinTObjDrivers_XYZDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_XYZDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_XYZDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinTObjDrivers_XYZDriver {
+	~BinTObjDrivers_XYZDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");}
 	}
 };

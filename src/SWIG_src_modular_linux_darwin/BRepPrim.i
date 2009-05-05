@@ -116,77 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor BRepPrim_GWedge;
-class BRepPrim_GWedge {
-	public:
-		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
-		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
-		%feature("autodoc", "1");
-		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
-		%feature("autodoc", "1");
-		gp_Ax2 Axes() const;
-		%feature("autodoc", "1");
-		Standard_Real GetXMin() const;
-		%feature("autodoc", "1");
-		Standard_Real GetYMin() const;
-		%feature("autodoc", "1");
-		Standard_Real GetZMin() const;
-		%feature("autodoc", "1");
-		Standard_Real GetZ2Min() const;
-		%feature("autodoc", "1");
-		Standard_Real GetX2Min() const;
-		%feature("autodoc", "1");
-		Standard_Real GetXMax() const;
-		%feature("autodoc", "1");
-		Standard_Real GetYMax() const;
-		%feature("autodoc", "1");
-		Standard_Real GetZMax() const;
-		%feature("autodoc", "1");
-		Standard_Real GetZ2Max() const;
-		%feature("autodoc", "1");
-		Standard_Real GetX2Max() const;
-		%feature("autodoc", "1");
-		void Open(const Primitives_Direction d1);
-		%feature("autodoc", "1");
-		void Close(const Primitives_Direction d1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsInfinite(const Primitives_Direction d1) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shell & Shell();
-		%feature("autodoc", "1");
-		Standard_Boolean HasFace(const Primitives_Direction d1) const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face(const Primitives_Direction d1);
-		%feature("autodoc", "1");
-		gp_Pln Plane(const Primitives_Direction d1);
-		%feature("autodoc", "1");
-		Standard_Boolean HasWire(const Primitives_Direction d1) const;
-		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire(const Primitives_Direction d1);
-		%feature("autodoc", "1");
-		Standard_Boolean HasEdge(const Primitives_Direction d1, const Primitives_Direction d2) const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge(const Primitives_Direction d1, const Primitives_Direction d2);
-		%feature("autodoc", "1");
-		gp_Lin Line(const Primitives_Direction d1, const Primitives_Direction d2);
-		%feature("autodoc", "1");
-		Standard_Boolean HasVertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3) const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
-
-};
-%extend BRepPrim_GWedge {
-	~BRepPrim_GWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_GWedge\n");}
-	}
-};
-
-
 %nodefaultctor BRepPrim_OneAxis;
 class BRepPrim_OneAxis {
 	public:
@@ -353,6 +282,77 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 	~BRepPrim_Sphere() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Sphere\n");}
+	}
+};
+
+
+%nodefaultctor BRepPrim_GWedge;
+class BRepPrim_GWedge {
+	public:
+		%feature("autodoc", "1");
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz);
+		%feature("autodoc", "1");
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		%feature("autodoc", "1");
+		BRepPrim_GWedge(const BRepPrim_Builder &B, const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
+		%feature("autodoc", "1");
+		gp_Ax2 Axes() const;
+		%feature("autodoc", "1");
+		Standard_Real GetXMin() const;
+		%feature("autodoc", "1");
+		Standard_Real GetYMin() const;
+		%feature("autodoc", "1");
+		Standard_Real GetZMin() const;
+		%feature("autodoc", "1");
+		Standard_Real GetZ2Min() const;
+		%feature("autodoc", "1");
+		Standard_Real GetX2Min() const;
+		%feature("autodoc", "1");
+		Standard_Real GetXMax() const;
+		%feature("autodoc", "1");
+		Standard_Real GetYMax() const;
+		%feature("autodoc", "1");
+		Standard_Real GetZMax() const;
+		%feature("autodoc", "1");
+		Standard_Real GetZ2Max() const;
+		%feature("autodoc", "1");
+		Standard_Real GetX2Max() const;
+		%feature("autodoc", "1");
+		void Open(const Primitives_Direction d1);
+		%feature("autodoc", "1");
+		void Close(const Primitives_Direction d1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfinite(const Primitives_Direction d1) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shell & Shell();
+		%feature("autodoc", "1");
+		Standard_Boolean HasFace(const Primitives_Direction d1) const;
+		%feature("autodoc", "1");
+		const TopoDS_Face & Face(const Primitives_Direction d1);
+		%feature("autodoc", "1");
+		gp_Pln Plane(const Primitives_Direction d1);
+		%feature("autodoc", "1");
+		Standard_Boolean HasWire(const Primitives_Direction d1) const;
+		%feature("autodoc", "1");
+		const TopoDS_Wire & Wire(const Primitives_Direction d1);
+		%feature("autodoc", "1");
+		Standard_Boolean HasEdge(const Primitives_Direction d1, const Primitives_Direction d2) const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Edge(const Primitives_Direction d1, const Primitives_Direction d2);
+		%feature("autodoc", "1");
+		gp_Lin Line(const Primitives_Direction d1, const Primitives_Direction d2);
+		%feature("autodoc", "1");
+		Standard_Boolean HasVertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3) const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex & Vertex(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
+
+};
+%extend BRepPrim_GWedge {
+	~BRepPrim_GWedge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrim_GWedge\n");}
 	}
 };
 

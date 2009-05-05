@@ -116,32 +116,6 @@ Standard_Integer & function transformation
 
 
 
-%nodefaultctor Handle_RWHeaderSection_GeneralModule;
-class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_RWHeaderSection_GeneralModule {
-	RWHeaderSection_GeneralModule* GetObject() {
-	return (RWHeaderSection_GeneralModule*)$self->Access();
-	}
-};
-%extend Handle_RWHeaderSection_GeneralModule {
-	~Handle_RWHeaderSection_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_GeneralModule\n");}
-	}
-};
-
-
 %nodefaultctor Handle_RWHeaderSection_ReadWriteModule;
 class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteModule {
 	public:
@@ -164,6 +138,32 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 	~Handle_RWHeaderSection_ReadWriteModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_ReadWriteModule\n");}
+	}
+};
+
+
+%nodefaultctor Handle_RWHeaderSection_GeneralModule;
+class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_RWHeaderSection_GeneralModule {
+	RWHeaderSection_GeneralModule* GetObject() {
+	return (RWHeaderSection_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_RWHeaderSection_GeneralModule {
+	~Handle_RWHeaderSection_GeneralModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_GeneralModule\n");}
 	}
 };
 
@@ -267,6 +267,8 @@ class RWHeaderSection_RWFileName {
 %nodefaultctor RWHeaderSection;
 class RWHeaderSection {
 	public:
+		%feature("autodoc", "1");
+		RWHeaderSection();
 		%feature("autodoc", "1");
 		void Init();
 

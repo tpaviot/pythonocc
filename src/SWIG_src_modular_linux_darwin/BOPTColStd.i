@@ -310,6 +310,8 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 class BOPTColStd_ShapeWithRankHasher {
 	public:
 		%feature("autodoc", "1");
+		BOPTColStd_ShapeWithRankHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const BOPTColStd_ShapeWithRank &SR, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
@@ -757,6 +759,8 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 %nodefaultctor BOPTColStd_Dump;
 class BOPTColStd_Dump {
 	public:
+		%feature("autodoc", "1");
+		BOPTColStd_Dump();
 		%feature("autodoc", "1");
 		void PrintMessage(const TCollection_AsciiString &aMessage);
 		%feature("autodoc", "1");

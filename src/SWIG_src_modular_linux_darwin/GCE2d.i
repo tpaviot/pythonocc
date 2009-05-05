@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
+		GCE2d_Root();
+		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
@@ -370,29 +372,6 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 };
 
 
-%nodefaultctor GCE2d_MakeArcOfEllipse;
-class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Operator() const;
-
-};
-%extend GCE2d_MakeArcOfEllipse {
-	~GCE2d_MakeArcOfEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
-	}
-};
-
-
 %nodefaultctor GCE2d_MakeArcOfParabola;
 class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 	public:
@@ -456,6 +435,29 @@ class GCE2d_MakeMirror {
 	~GCE2d_MakeMirror() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeMirror\n");}
+	}
+};
+
+
+%nodefaultctor GCE2d_MakeArcOfEllipse;
+class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Operator() const;
+
+};
+%extend GCE2d_MakeArcOfEllipse {
+	~GCE2d_MakeArcOfEllipse() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
 	}
 };
 

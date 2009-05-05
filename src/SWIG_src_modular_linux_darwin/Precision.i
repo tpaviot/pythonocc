@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class Precision {
 	public:
 		%feature("autodoc", "1");
+		Precision();
+		%feature("autodoc", "1");
 		Standard_Real Angular();
 		%feature("autodoc", "1");
 		Standard_Real Confusion();

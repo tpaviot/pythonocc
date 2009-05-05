@@ -56,4 +56,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_TShort_HArray1OfShortReal.hxx>
+#include<Poly.hxx>
 %}

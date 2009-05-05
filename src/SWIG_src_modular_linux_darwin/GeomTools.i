@@ -248,6 +248,8 @@ class GeomTools_CurveSet {
 class GeomTools {
 	public:
 		%feature("autodoc", "1");
+		GeomTools();
+		%feature("autodoc", "1");
 		void Dump(const Handle_Geom_Surface &S, Standard_OStream & OS);
 		%feature("autodoc", "1");
 		void Write(const Handle_Geom_Surface &S, Standard_OStream & OS);

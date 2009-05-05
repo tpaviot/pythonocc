@@ -652,6 +652,8 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 class Poly {
 	public:
 		%feature("autodoc", "1");
+		Poly();
+		%feature("autodoc", "1");
 		void Write(const Handle_Poly_Triangulation &T, Standard_OStream & OS, const Standard_Boolean Compact=1);
 		%feature("autodoc", "1");
 		void Write(const Handle_Poly_Polygon3D &P, Standard_OStream & OS, const Standard_Boolean Compact=1);

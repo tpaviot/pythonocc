@@ -5,11 +5,10 @@
 %rename(Handle_CDM_DataMapNodeOfMetaDataLookUpTable) Handle_CDM_DataMapNodeOfMetaDataLookUpTable;
 %rename(CDM_ListOfReferences) CDM_ListOfReferences;
 %rename(Handle_CDM_StdMapNodeOfMapOfDocument) Handle_CDM_StdMapNodeOfMapOfDocument;
-%rename(CDM_ListIteratorOfListOfReferences) CDM_ListIteratorOfListOfReferences;
+%rename(CDM_ReferenceIterator) CDM_ReferenceIterator;
 %rename(CDM_ListOfDocument) CDM_ListOfDocument;
 %rename(CDM_CCS_OK) CDM_CCS_OK;
 %rename(CDM_NamesDirectory) CDM_NamesDirectory;
-%rename(CDM_ReferenceIterator) CDM_ReferenceIterator;
 %rename(Handle_CDM_ListNodeOfListOfReferences) Handle_CDM_ListNodeOfListOfReferences;
 %rename(Handle_CDM_DataMapNodeOfPresentationDirectory) Handle_CDM_DataMapNodeOfPresentationDirectory;
 %rename(CDM_DataMapIteratorOfNamesDirectory) CDM_DataMapIteratorOfNamesDirectory;
@@ -37,6 +36,7 @@
 %rename(CDM_DocumentHasher) CDM_DocumentHasher;
 %rename(CDM_COutMessageDriver) CDM_COutMessageDriver;
 %rename(Handle_CDM_Reference) Handle_CDM_Reference;
+%rename(CDM_ListIteratorOfListOfReferences) CDM_ListIteratorOfListOfReferences;
 %rename(CDM_CCS_UnstoredReferenced) CDM_CCS_UnstoredReferenced;
 %rename(Handle_CDM_MessageDriver) Handle_CDM_MessageDriver;
 %rename(Handle_CDM_Document) Handle_CDM_Document;

@@ -181,6 +181,8 @@ class BRepLProp_SLProps {
 class BRepLProp_CurveTool {
 	public:
 		%feature("autodoc", "1");
+		BRepLProp_CurveTool();
+		%feature("autodoc", "1");
 		void Value(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
 		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
@@ -249,6 +251,8 @@ class BRepLProp_CLProps {
 class BRepLProp_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
+		BRepLProp_SurfaceTool();
+		%feature("autodoc", "1");
 		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 		%feature("autodoc", "1");
 		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
@@ -273,6 +277,8 @@ class BRepLProp_SurfaceTool {
 %nodefaultctor BRepLProp;
 class BRepLProp {
 	public:
+		%feature("autodoc", "1");
+		BRepLProp();
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Real tl, const Standard_Real ta);
 		%feature("autodoc", "1");

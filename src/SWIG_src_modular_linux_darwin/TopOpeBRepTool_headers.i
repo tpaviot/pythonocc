@@ -118,6 +118,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Bnd_Box2d.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
+#include<TopOpeBRepTool.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
 #include<TopoDS_Edge.hxx>

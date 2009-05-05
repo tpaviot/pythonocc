@@ -3,8 +3,8 @@
 %rename(BRepBlend_SequenceOfLine) BRepBlend_SequenceOfLine;
 %rename(BRepBlend_ConstRad) BRepBlend_ConstRad;
 %rename(BRepBlend_SurfPointEvolRadInv) BRepBlend_SurfPointEvolRadInv;
+%rename(BRepBlend_SurfCurvConstRadInv) BRepBlend_SurfCurvConstRadInv;
 %rename(BRepBlend_Walking) BRepBlend_Walking;
-%rename(BRepBlend_PointOnRst) BRepBlend_PointOnRst;
 %rename(BRepBlend_SequenceNodeOfSequenceOfLine) BRepBlend_SequenceNodeOfSequenceOfLine;
 %rename(BRepBlend_Ruled) BRepBlend_Ruled;
 %rename(Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst) Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
@@ -27,7 +27,7 @@
 %rename(Handle_BRepBlend_AppFunc) Handle_BRepBlend_AppFunc;
 %rename(BRepBlend_SurfPointConstRadInv) BRepBlend_SurfPointConstRadInv;
 %rename(BRepBlend_CSConstRad) BRepBlend_CSConstRad;
-%rename(BRepBlend_SurfCurvConstRadInv) BRepBlend_SurfCurvConstRadInv;
+%rename(BRepBlend_PointOnRst) BRepBlend_PointOnRst;
 %rename(Handle_BRepBlend_Line) Handle_BRepBlend_Line;
 %rename(BRepBlend_EvolRadInv) BRepBlend_EvolRadInv;
 %rename(BRepBlend_RuledInv) BRepBlend_RuledInv;

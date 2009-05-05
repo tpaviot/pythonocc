@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class GeomLProp_CurveTool {
 	public:
 		%feature("autodoc", "1");
+		GeomLProp_CurveTool();
+		%feature("autodoc", "1");
 		void Value(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
 		void D1(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
@@ -249,6 +251,8 @@ class GeomLProp_CLProps {
 class GeomLProp {
 	public:
 		%feature("autodoc", "1");
+		GeomLProp();
+		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Boolean r1, const Standard_Boolean r2, const Standard_Real tl, const Standard_Real ta);
 		%feature("autodoc", "1");
 		GeomAbs_Shape Continuity(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Boolean r1, const Standard_Boolean r2);
@@ -265,6 +269,8 @@ class GeomLProp {
 %nodefaultctor GeomLProp_SurfaceTool;
 class GeomLProp_SurfaceTool {
 	public:
+		%feature("autodoc", "1");
+		GeomLProp_SurfaceTool();
 		%feature("autodoc", "1");
 		void Value(const Handle_Geom_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 		%feature("autodoc", "1");

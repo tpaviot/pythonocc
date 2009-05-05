@@ -128,32 +128,6 @@ enum PrsMgr_KindOfPrs {
 
 
 
-%nodefaultctor Handle_PrsMgr_PresentationManager;
-class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager();
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager(const Handle_PrsMgr_PresentationManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager(const PrsMgr_PresentationManager *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PrsMgr_PresentationManager {
-	PrsMgr_PresentationManager* GetObject() {
-	return (PrsMgr_PresentationManager*)$self->Access();
-	}
-};
-%extend Handle_PrsMgr_PresentationManager {
-	~Handle_PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PrsMgr_Prs;
 class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 	public:
@@ -232,28 +206,28 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 };
 
 
-%nodefaultctor Handle_PrsMgr_Presentation2d;
-class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
+%nodefaultctor Handle_PrsMgr_PresentationManager;
+class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation2d();
+		Handle_PrsMgr_PresentationManager();
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation2d(const Handle_PrsMgr_Presentation2d &aHandle);
+		Handle_PrsMgr_PresentationManager(const Handle_PrsMgr_PresentationManager &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation2d(const PrsMgr_Presentation2d *anItem);
+		Handle_PrsMgr_PresentationManager(const PrsMgr_PresentationManager *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PrsMgr_PresentationManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PrsMgr_Presentation2d {
-	PrsMgr_Presentation2d* GetObject() {
-	return (PrsMgr_Presentation2d*)$self->Access();
+%extend Handle_PrsMgr_PresentationManager {
+	PrsMgr_PresentationManager* GetObject() {
+	return (PrsMgr_PresentationManager*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_Presentation2d {
-	~Handle_PrsMgr_Presentation2d() {
+%extend Handle_PrsMgr_PresentationManager {
+	~Handle_PrsMgr_PresentationManager() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
 	}
 };
 
@@ -306,6 +280,32 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 	~Handle_PrsMgr_PresentationManager2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PrsMgr_Presentation2d;
+class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation2d();
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation2d(const Handle_PrsMgr_Presentation2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation2d(const PrsMgr_Presentation2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PrsMgr_Presentation2d {
+	PrsMgr_Presentation2d* GetObject() {
+	return (PrsMgr_Presentation2d*)$self->Access();
+	}
+};
+%extend Handle_PrsMgr_Presentation2d {
+	~Handle_PrsMgr_Presentation2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");}
 	}
 };
 

@@ -578,11 +578,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<TopLoc_Location.hxx>
-#include<Handle_Poly_Triangulation.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<TopLoc_Location.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<Handle_Poly_Triangulation.hxx>
 #include<Handle_Poly_Polygon3D.hxx>
 #include<Handle_Poly_Polygon2D.hxx>
 #include<Handle_Poly_PolygonOnTriangulation.hxx>

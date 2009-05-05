@@ -147,6 +147,8 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 class MeshAlgo {
 	public:
 		%feature("autodoc", "1");
+		MeshAlgo();
+		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer val);

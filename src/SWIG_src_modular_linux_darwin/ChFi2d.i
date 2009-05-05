@@ -135,6 +135,8 @@ enum ChFi2d_ConstructionError {
 %nodefaultctor ChFi2d;
 class ChFi2d {
 	public:
+		%feature("autodoc", "1");
+		ChFi2d();
 
 };
 %extend ChFi2d {

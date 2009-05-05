@@ -178,6 +178,8 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 class XSAlgo {
 	public:
 		%feature("autodoc", "1");
+		XSAlgo();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		void SetAlgoContainer(const Handle_XSAlgo_AlgoContainer &aContainer);

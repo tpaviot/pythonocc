@@ -59,6 +59,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<IntSurf.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pln.hxx>

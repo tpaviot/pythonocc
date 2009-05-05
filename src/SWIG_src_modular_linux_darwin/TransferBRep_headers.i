@@ -149,6 +149,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
+#include<TransferBRep.hxx>
 #include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_TransientProcess.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>

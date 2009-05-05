@@ -518,6 +518,8 @@ class HLRTopoBRep_VData {
 class HLRTopoBRep_FaceIsoLiner {
 	public:
 		%feature("autodoc", "1");
+		HLRTopoBRep_FaceIsoLiner();
+		%feature("autodoc", "1");
 		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
 		%feature("autodoc", "1");
 		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
@@ -701,6 +703,8 @@ class HLRTopoBRep_ListOfVData {
 %nodefaultctor HLRTopoBRep_DSFiller;
 class HLRTopoBRep_DSFiller {
 	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_DSFiller();
 		%feature("autodoc", "1");
 		void Insert(const TopoDS_Shape &S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 

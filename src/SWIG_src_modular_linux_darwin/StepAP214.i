@@ -714,6 +714,32 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 };
 
 
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem;
+class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem(const StepAP214_HArray1OfAutoDesignGeneralOrgItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+	StepAP214_HArray1OfAutoDesignGeneralOrgItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignGeneralOrgItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment;
 class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle_StepBasic_PersonAndOrganizationAssignment {
 	public:
@@ -1178,32 +1204,6 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_T
 	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem;
-class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem(const StepAP214_HArray1OfAutoDesignGeneralOrgItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	StepAP214_HArray1OfAutoDesignGeneralOrgItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignGeneralOrgItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
 	}
 };
 
@@ -2443,6 +2443,8 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 %nodefaultctor StepAP214;
 class StepAP214 {
 	public:
+		%feature("autodoc", "1");
+		StepAP214();
 		%feature("autodoc", "1");
 		Handle_StepAP214_Protocol Protocol();
 

@@ -462,6 +462,8 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 class StepToTopoDS_CartesianPointHasher {
 	public:
 		%feature("autodoc", "1");
+		StepToTopoDS_CartesianPointHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Handle_StepGeom_CartesianPoint &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
@@ -563,6 +565,8 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 %nodefaultctor StepToTopoDS_PointPairHasher;
 class StepToTopoDS_PointPairHasher {
 	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPairHasher();
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const StepToTopoDS_PointPair &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
@@ -791,6 +795,8 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 class StepToTopoDS_GeometricTool {
 	public:
 		%feature("autodoc", "1");
+		StepToTopoDS_GeometricTool();
+		%feature("autodoc", "1");
 		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
@@ -890,6 +896,8 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 %nodefaultctor StepToTopoDS;
 class StepToTopoDS {
 	public:
+		%feature("autodoc", "1");
+		StepToTopoDS();
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString DecodeBuilderError(const StepToTopoDS_BuilderError Error);
 		%feature("autodoc", "1");

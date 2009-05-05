@@ -493,6 +493,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Bnd_Box2d.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
+#include<ShapeFix.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Compound.hxx>
 #include<Handle_ShapeAnalysis_Wire.hxx>

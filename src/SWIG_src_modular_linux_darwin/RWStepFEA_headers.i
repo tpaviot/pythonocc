@@ -355,6 +355,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepFEA_ParametricCurve3dElementCoordinateDirection.hxx>
 #include<Handle_StepFEA_AlignedSurface3dElementCoordinateSystem.hxx>
 #include<Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion.hxx>
+#include<Handle_StepFEA_FeaModel.hxx>
 #include<Handle_StepFEA_GeometricNode.hxx>
 #include<Handle_StepFEA_FeaShellMembraneStiffness.hxx>
 #include<Handle_StepFEA_FeaShellShearStiffness.hxx>
@@ -374,7 +375,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepFEA_CurveElementEndRelease.hxx>
 #include<Handle_StepFEA_CurveElementIntervalLinearlyVarying.hxx>
 #include<Handle_StepFEA_NodeWithSolutionCoordinateSystem.hxx>
-#include<Handle_StepFEA_FeaModel.hxx>
 #include<Handle_StepFEA_NodeGroup.hxx>
 #include<Handle_StepFEA_FeaMoistureAbsorption.hxx>
 #include<Handle_StepFEA_FeaCurveSectionGeometricRelationship.hxx>

@@ -137,6 +137,8 @@ enum gce_ErrorType {
 class gce_Root {
 	public:
 		%feature("autodoc", "1");
+		gce_Root();
+		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		gce_ErrorType Status() const;
@@ -206,29 +208,6 @@ class gce_MakeLin2d : public gce_Root {
 };
 
 
-%nodefaultctor gce_MakeRotation;
-class gce_MakeRotation {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		gce_MakeRotation(const gp_Pnt &Point, const gp_Dir &Direc, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		const gp_Trsf & Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf & Operator() const;
-
-};
-%extend gce_MakeRotation {
-	~gce_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
-	}
-};
-
-
 %nodefaultctor gce_MakeMirror2d;
 class gce_MakeMirror2d {
 	public:
@@ -250,6 +229,29 @@ class gce_MakeMirror2d {
 	~gce_MakeMirror2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror2d\n");}
+	}
+};
+
+
+%nodefaultctor gce_MakeRotation;
+class gce_MakeRotation {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Lin &Line, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Ax1 &Axis, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		gce_MakeRotation(const gp_Pnt &Point, const gp_Dir &Direc, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		const gp_Trsf & Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf & Operator() const;
+
+};
+%extend gce_MakeRotation {
+	~gce_MakeRotation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
 	}
 };
 

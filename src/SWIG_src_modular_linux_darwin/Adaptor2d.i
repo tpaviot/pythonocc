@@ -256,6 +256,8 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 class Adaptor2d_Curve2d {
 	public:
 		%feature("autodoc", "1");
+		Adaptor2d_Curve2d();
+		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstParameter() const;

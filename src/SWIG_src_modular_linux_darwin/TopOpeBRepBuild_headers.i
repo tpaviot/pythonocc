@@ -215,10 +215,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
-#include<TopTools_ListOfShape.hxx>
 #include<TopOpeBRepDS_BuildTool.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
+#include<TopoDS_Shape.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopOpeBRepDS_SurfaceIterator.hxx>

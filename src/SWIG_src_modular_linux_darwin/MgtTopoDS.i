@@ -362,6 +362,8 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 class MgtTopoDS {
 	public:
 		%feature("autodoc", "1");
+		MgtTopoDS();
+		%feature("autodoc", "1");
 		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_TransientPersistentMap & M);
 		%feature("autodoc", "1");
 		void Translate(const Handle_PTopoDS_HShape &S, const Handle_MgtTopoDS_TranslateTool &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & Sh);

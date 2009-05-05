@@ -207,5 +207,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<TCollection_ExtendedString.hxx>
+#include<XmlXCAFDrivers.hxx>
 #include<Standard_GUID.hxx>
 %}

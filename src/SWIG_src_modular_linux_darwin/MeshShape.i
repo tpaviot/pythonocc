@@ -428,9 +428,30 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor MeshShape_CoupleHasher;
+class MeshShape_CoupleHasher {
+	public:
+		%feature("autodoc", "1");
+		MeshShape_CoupleHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
+
+};
+%extend MeshShape_CoupleHasher {
+	~MeshShape_CoupleHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
+	}
+};
+
+
 %nodefaultctor MeshShape;
 class MeshShape {
 	public:
+		%feature("autodoc", "1");
+		MeshShape();
 		%feature("autodoc", "1");
 		void SetMesure(const Standard_Boolean val);
 		%feature("autodoc", "1");
@@ -462,23 +483,6 @@ class MeshShape_PolygonPoint {
 	~MeshShape_PolygonPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MeshShape_PolygonPoint\n");}
-	}
-};
-
-
-%nodefaultctor MeshShape_CoupleHasher;
-class MeshShape_CoupleHasher {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const MeshShape_Couple &S, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
-
-};
-%extend MeshShape_CoupleHasher {
-	~MeshShape_CoupleHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
 	}
 };
 

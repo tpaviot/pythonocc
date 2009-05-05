@@ -328,6 +328,8 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 class XSControl {
 	public:
 		%feature("autodoc", "1");
+		XSControl();
+		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
@@ -420,6 +422,8 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 %nodefaultctor XSControl_FuncShape;
 class XSControl_FuncShape {
 	public:
+		%feature("autodoc", "1");
+		XSControl_FuncShape();
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -920,6 +924,8 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 %nodefaultctor XSControl_Functions;
 class XSControl_Functions {
 	public:
+		%feature("autodoc", "1");
+		XSControl_Functions();
 		%feature("autodoc", "1");
 		void Init();
 

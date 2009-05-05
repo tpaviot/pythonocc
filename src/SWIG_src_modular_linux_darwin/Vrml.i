@@ -635,6 +635,46 @@ class Vrml_Sphere {
 };
 
 
+%nodefaultctor Vrml_PointLight;
+class Vrml_PointLight {
+	public:
+		%feature("autodoc", "1");
+		Vrml_PointLight();
+		%feature("autodoc", "1");
+		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		void SetOnOff(const Standard_Boolean aOnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean OnOff() const;
+		%feature("autodoc", "1");
+		void SetIntensity(const Standard_Real aIntensity);
+		%feature("autodoc", "1");
+		Standard_Real Intensity() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Vec &aLocation);
+		%feature("autodoc", "1");
+		gp_Vec Location() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%extend Vrml_PointLight {
+	~Vrml_PointLight() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
+	}
+};
+
+
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
 	public:
@@ -994,46 +1034,6 @@ class Vrml_WWWInline {
 };
 
 
-%nodefaultctor Vrml_PointLight;
-class Vrml_PointLight {
-	public:
-		%feature("autodoc", "1");
-		Vrml_PointLight();
-		%feature("autodoc", "1");
-		Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color &aColor, const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		void SetOnOff(const Standard_Boolean aOnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean OnOff() const;
-		%feature("autodoc", "1");
-		void SetIntensity(const Standard_Real aIntensity);
-		%feature("autodoc", "1");
-		Standard_Real Intensity() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Vec &aLocation);
-		%feature("autodoc", "1");
-		gp_Vec Location() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Vrml_PointLight {
-	~Vrml_PointLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
-	}
-};
-
-
 %nodefaultctor Vrml_Normal;
 class Vrml_Normal : public MMgt_TShared {
 	public:
@@ -1144,44 +1144,6 @@ class Vrml_Texture2Transform {
 	~Vrml_Texture2Transform() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2Transform\n");}
-	}
-};
-
-
-%nodefaultctor Vrml_ShapeHints;
-class Vrml_ShapeHints {
-	public:
-		%feature("autodoc", "1");
-		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
-		%feature("autodoc", "1");
-		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
-		%feature("autodoc", "1");
-		Vrml_VertexOrdering VertexOrdering() const;
-		%feature("autodoc", "1");
-		void SetShapeType(const Vrml_ShapeType aShapeType);
-		%feature("autodoc", "1");
-		Vrml_ShapeType ShapeType() const;
-		%feature("autodoc", "1");
-		void SetFaceType(const Vrml_FaceType aFaceType);
-		%feature("autodoc", "1");
-		Vrml_FaceType FaceType() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Vrml_ShapeHints {
-	~Vrml_ShapeHints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
 	}
 };
 
@@ -1306,6 +1268,8 @@ class Vrml_LOD : public MMgt_TShared {
 %nodefaultctor Vrml;
 class Vrml {
 	public:
+		%feature("autodoc", "1");
+		Vrml();
 		%feature("autodoc", "1");
 		%extend{
 			std::string VrmlHeaderWriterToString() {
@@ -1685,6 +1649,44 @@ class Vrml_Rotation {
 	~Vrml_Rotation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Vrml_Rotation\n");}
+	}
+};
+
+
+%nodefaultctor Vrml_ShapeHints;
+class Vrml_ShapeHints {
+	public:
+		%feature("autodoc", "1");
+		Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering=Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType=Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType=Vrml_CONVEX, const Standard_Real aAngle=5.0e-1);
+		%feature("autodoc", "1");
+		void SetVertexOrdering(const Vrml_VertexOrdering aVertexOrdering);
+		%feature("autodoc", "1");
+		Vrml_VertexOrdering VertexOrdering() const;
+		%feature("autodoc", "1");
+		void SetShapeType(const Vrml_ShapeType aShapeType);
+		%feature("autodoc", "1");
+		Vrml_ShapeType ShapeType() const;
+		%feature("autodoc", "1");
+		void SetFaceType(const Vrml_FaceType aFaceType);
+		%feature("autodoc", "1");
+		Vrml_FaceType FaceType() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+
+};
+%extend Vrml_ShapeHints {
+	~Vrml_ShapeHints() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
 	}
 };
 

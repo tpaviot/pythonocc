@@ -770,115 +770,11 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 };
 
 
-%nodefaultctor Adaptor3d_HSurfaceOfRevolution;
-class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
-	public:
-		%feature("autodoc", "1");
-		Adaptor3d_HSurfaceOfRevolution();
-		%feature("autodoc", "1");
-		Adaptor3d_HSurfaceOfRevolution(const Adaptor3d_SurfaceOfRevolution &S);
-		%feature("autodoc", "1");
-		void Set(const Adaptor3d_SurfaceOfRevolution &S);
-		%feature("autodoc", "1");
-		virtual		const Adaptor3d_Surface & Surface() const;
-		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution & ChangeSurface();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Adaptor3d_HSurfaceOfRevolution {
-	Handle_Adaptor3d_HSurfaceOfRevolution GetHandle() {
-	return *(Handle_Adaptor3d_HSurfaceOfRevolution*) &$self;
-	}
-};
-%extend Adaptor3d_HSurfaceOfRevolution {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Adaptor3d_HSurfaceOfRevolution {
-	~Adaptor3d_HSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurfaceOfRevolution\n");}
-	}
-};
-
-
-%nodefaultctor Adaptor3d_Curve;
-class Adaptor3d_Curve {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		virtual		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		virtual		gp_Circ Circle() const;
-		%feature("autodoc", "1");
-		virtual		gp_Elips Ellipse() const;
-		%feature("autodoc", "1");
-		virtual		gp_Hypr Hyperbola() const;
-		%feature("autodoc", "1");
-		virtual		gp_Parab Parabola() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineCurve BSpline() const;
-
-};
-%extend Adaptor3d_Curve {
-	~Adaptor3d_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_Curve\n");}
-	}
-};
-
-
 %nodefaultctor Adaptor3d_Surface;
 class Adaptor3d_Surface {
 	public:
+		%feature("autodoc", "1");
+		Adaptor3d_Surface();
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -981,6 +877,139 @@ class Adaptor3d_Surface {
 	~Adaptor3d_Surface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_Surface\n");}
+	}
+};
+
+
+%nodefaultctor Adaptor3d_SurfaceOfRevolution;
+class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
+	public:
+		%feature("autodoc", "1");
+		Adaptor3d_SurfaceOfRevolution();
+		%feature("autodoc", "1");
+		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C, const gp_Ax1 &V);
+		%feature("autodoc", "1");
+		void Load(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		void Load(const gp_Ax1 &V);
+		%feature("autodoc", "1");
+		gp_Ax3 Axis() const;
+
+};
+%extend Adaptor3d_SurfaceOfRevolution {
+	~Adaptor3d_SurfaceOfRevolution() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Adaptor3d_SurfaceOfRevolution\n");}
+	}
+};
+
+
+%nodefaultctor Adaptor3d_HSurfaceOfRevolution;
+class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
+	public:
+		%feature("autodoc", "1");
+		Adaptor3d_HSurfaceOfRevolution();
+		%feature("autodoc", "1");
+		Adaptor3d_HSurfaceOfRevolution(const Adaptor3d_SurfaceOfRevolution &S);
+		%feature("autodoc", "1");
+		void Set(const Adaptor3d_SurfaceOfRevolution &S);
+		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Surface & Surface() const;
+		%feature("autodoc", "1");
+		Adaptor3d_SurfaceOfRevolution & ChangeSurface();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Adaptor3d_HSurfaceOfRevolution {
+	Handle_Adaptor3d_HSurfaceOfRevolution GetHandle() {
+	return *(Handle_Adaptor3d_HSurfaceOfRevolution*) &$self;
+	}
+};
+%extend Adaptor3d_HSurfaceOfRevolution {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Adaptor3d_HSurfaceOfRevolution {
+	~Adaptor3d_HSurfaceOfRevolution() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurfaceOfRevolution\n");}
+	}
+};
+
+
+%nodefaultctor Adaptor3d_Curve;
+class Adaptor3d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Adaptor3d_Curve();
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		virtual		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_CurveType GetType() const;
+		%feature("autodoc", "1");
+		virtual		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		virtual		gp_Circ Circle() const;
+		%feature("autodoc", "1");
+		virtual		gp_Elips Ellipse() const;
+		%feature("autodoc", "1");
+		virtual		gp_Hypr Hyperbola() const;
+		%feature("autodoc", "1");
+		virtual		gp_Parab Parabola() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_BSplineCurve BSpline() const;
+
+};
+%extend Adaptor3d_Curve {
+	~Adaptor3d_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Adaptor3d_Curve\n");}
 	}
 };
 
@@ -1107,121 +1136,6 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 	~Adaptor3d_CurveOnSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_CurveOnSurface\n");}
-	}
-};
-
-
-%nodefaultctor Adaptor3d_SurfaceOfRevolution;
-class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
-	public:
-		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution();
-		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Adaptor3d_SurfaceOfRevolution(const Handle_Adaptor3d_HCurve &C, const gp_Ax1 &V);
-		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		void Load(const gp_Ax1 &V);
-		%feature("autodoc", "1");
-		virtual		gp_Ax1 AxeOfRevolution() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstUParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastUParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstVParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastVParameter() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape UContinuity() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape VContinuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbUIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void UIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void VIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HSurface UTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HSurface VTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real UPeriod() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real VPeriod() const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real UResolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real VResolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_SurfaceType GetType() const;
-		%feature("autodoc", "1");
-		virtual		gp_Pln Plane() const;
-		%feature("autodoc", "1");
-		virtual		gp_Cylinder Cylinder() const;
-		%feature("autodoc", "1");
-		virtual		gp_Cone Cone() const;
-		%feature("autodoc", "1");
-		virtual		gp_Sphere Sphere() const;
-		%feature("autodoc", "1");
-		virtual		gp_Torus Torus() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbUPoles() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVPoles() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbUKnots() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVKnots() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsURational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsVRational() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BezierSurface Bezier() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_BSplineSurface BSpline() const;
-		%feature("autodoc", "1");
-		gp_Ax3 Axis() const;
-		%feature("autodoc", "1");
-		virtual		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HCurve BasisCurve() const;
-
-};
-%extend Adaptor3d_SurfaceOfRevolution {
-	~Adaptor3d_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_SurfaceOfRevolution\n");}
 	}
 };
 

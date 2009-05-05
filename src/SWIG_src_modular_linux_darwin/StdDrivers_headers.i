@@ -240,6 +240,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<StdDrivers.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_MDF_ARDriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>

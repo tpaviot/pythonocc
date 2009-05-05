@@ -38,4 +38,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Vec.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<gp_Dir.hxx>
+#include<GeomLProp.hxx>
 %}

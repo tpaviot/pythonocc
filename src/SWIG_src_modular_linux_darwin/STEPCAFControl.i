@@ -142,32 +142,6 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 };
 
 
-%nodefaultctor Handle_STEPCAFControl_Controller;
-class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_Controller();
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_Controller(const Handle_STEPCAFControl_Controller &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_Controller(const STEPCAFControl_Controller *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPCAFControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPCAFControl_Controller {
-	STEPCAFControl_Controller* GetObject() {
-	return (STEPCAFControl_Controller*)$self->Access();
-	}
-};
-%extend Handle_STEPCAFControl_Controller {
-	~Handle_STEPCAFControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_Controller\n");}
-	}
-};
-
-
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_TCollection_MapNode {
 	public:
@@ -424,6 +398,32 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");}
+	}
+};
+
+
+%nodefaultctor Handle_STEPCAFControl_Controller;
+class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller();
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller(const Handle_STEPCAFControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller(const STEPCAFControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPCAFControl_Controller {
+	STEPCAFControl_Controller* GetObject() {
+	return (STEPCAFControl_Controller*)$self->Access();
+	}
+};
+%extend Handle_STEPCAFControl_Controller {
+	~Handle_STEPCAFControl_Controller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_Controller\n");}
 	}
 };
 

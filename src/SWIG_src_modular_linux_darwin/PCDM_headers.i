@@ -69,6 +69,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_SequenceOfExtendedString.hxx>
 #include<Storage_BaseDriver.hxx>
 #include<Handle_CDM_Application.hxx>
+#include<PCDM.hxx>
 #include<Handle_Storage_Schema.hxx>
 #include<Handle_CDM_MetaData.hxx>
 #include<Standard_SStream.hxx>

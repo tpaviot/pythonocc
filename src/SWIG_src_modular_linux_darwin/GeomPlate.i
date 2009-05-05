@@ -686,25 +686,6 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 };
 
 
-%nodefaultctor GeomPlate_PlateG0Criterion;
-class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_PlateG0Criterion(const TColgp_SequenceOfXY &Data, const TColgp_SequenceOfXYZ &G0Data, const Standard_Real Maximum, const AdvApp2Var_CriterionType Type=AdvApp2Var_Absolute, const AdvApp2Var_CriterionRepartition Repart=AdvApp2Var_Regular);
-		%feature("autodoc", "1");
-		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
-
-};
-%extend GeomPlate_PlateG0Criterion {
-	~GeomPlate_PlateG0Criterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
-	}
-};
-
-
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
 class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 	public:
@@ -950,6 +931,25 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 
 
+%nodefaultctor GeomPlate_PlateG0Criterion;
+class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_PlateG0Criterion(const TColgp_SequenceOfXY &Data, const TColgp_SequenceOfXYZ &G0Data, const Standard_Real Maximum, const AdvApp2Var_CriterionType Type=AdvApp2Var_Absolute, const AdvApp2Var_CriterionRepartition Repart=AdvApp2Var_Regular);
+		%feature("autodoc", "1");
+		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
+
+};
+%extend GeomPlate_PlateG0Criterion {
+	~GeomPlate_PlateG0Criterion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
+	}
+};
+
+
 %nodefaultctor GeomPlate_MakeApprox;
 class GeomPlate_MakeApprox {
 	public:
@@ -969,35 +969,6 @@ class GeomPlate_MakeApprox {
 	~GeomPlate_MakeApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_MakeApprox\n");}
-	}
-};
-
-
-%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
-class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		GeomPlate_Aij & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
-	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
-	}
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	~GeomPlate_SequenceNodeOfSequenceOfAij() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
 	}
 };
 
@@ -1053,6 +1024,35 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 	~GeomPlate_SequenceOfPointConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceOfPointConstraint\n");}
+	}
+};
+
+
+%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
+class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		GeomPlate_Aij & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
+	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	~GeomPlate_SequenceNodeOfSequenceOfAij() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
 	}
 };
 

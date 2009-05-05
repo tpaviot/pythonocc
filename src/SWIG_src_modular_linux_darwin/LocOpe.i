@@ -856,6 +856,47 @@ class LocOpe_CurveShapeIntersector {
 };
 
 
+%nodefaultctor LocOpe_GluedShape;
+class LocOpe_GluedShape : public LocOpe_GeneratedShape {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_GluedShape();
+		%feature("autodoc", "1");
+		LocOpe_GluedShape(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void GlueOnFace(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & GeneratingEdges();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Edge Generated(const TopoDS_Vertex &V);
+		%feature("autodoc", "1");
+		virtual		TopoDS_Face Generated(const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & OrientedFaces();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend LocOpe_GluedShape {
+	Handle_LocOpe_GluedShape GetHandle() {
+	return *(Handle_LocOpe_GluedShape*) &$self;
+	}
+};
+%extend LocOpe_GluedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend LocOpe_GluedShape {
+	~LocOpe_GluedShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_GluedShape\n");}
+	}
+};
+
+
 %nodefaultctor LocOpe_DataMapOfShapePnt;
 class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 	public:
@@ -894,6 +935,8 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 %nodefaultctor LocOpe;
 class LocOpe {
 	public:
+		%feature("autodoc", "1");
+		LocOpe();
 		%feature("autodoc", "1");
 		Standard_Boolean Closed(const TopoDS_Wire &W, const TopoDS_Face &OnF);
 		%feature("autodoc", "1");
@@ -1152,47 +1195,6 @@ class LocOpe_PntFace {
 	~LocOpe_PntFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LocOpe_PntFace\n");}
-	}
-};
-
-
-%nodefaultctor LocOpe_GluedShape;
-class LocOpe_GluedShape : public LocOpe_GeneratedShape {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_GluedShape();
-		%feature("autodoc", "1");
-		LocOpe_GluedShape(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void GlueOnFace(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & GeneratingEdges();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Edge Generated(const TopoDS_Vertex &V);
-		%feature("autodoc", "1");
-		virtual		TopoDS_Face Generated(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & OrientedFaces();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_GluedShape {
-	Handle_LocOpe_GluedShape GetHandle() {
-	return *(Handle_LocOpe_GluedShape*) &$self;
-	}
-};
-%extend LocOpe_GluedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend LocOpe_GluedShape {
-	~LocOpe_GluedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_GluedShape\n");}
 	}
 };
 

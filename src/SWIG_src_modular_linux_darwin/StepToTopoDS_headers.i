@@ -182,6 +182,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepGeom_SurfaceCurve.hxx>
 #include<Handle_StepShape_EdgeLoop.hxx>
 #include<Handle_StepGeom_CurveBoundedSurface.hxx>
+#include<StepToTopoDS.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_StepShape_VertexLoop.hxx>
 %}

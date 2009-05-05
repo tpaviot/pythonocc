@@ -662,6 +662,67 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 };
 
 
+%nodefaultctor BRep_PointRepresentation;
+class BRep_PointRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		void Location(const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter2() const;
+		%feature("autodoc", "1");
+		virtual		void Parameter2(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		void Curve(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom2d_Curve & PCurve() const;
+		%feature("autodoc", "1");
+		virtual		void PCurve(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		virtual		void Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PointRepresentation {
+	Handle_BRep_PointRepresentation GetHandle() {
+	return *(Handle_BRep_PointRepresentation*) &$self;
+	}
+};
+%extend BRep_PointRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRep_PointRepresentation {
+	~BRep_PointRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
+	}
+};
+
+
 %nodefaultctor BRep_CurveRepresentation;
 class BRep_CurveRepresentation : public MMgt_TShared {
 	public:
@@ -835,70 +896,15 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 };
 
 
-%nodefaultctor BRep_PointRepresentation;
-class BRep_PointRepresentation : public MMgt_TShared {
+%nodefaultctor BRep_PointsOnSurface;
+class BRep_PointsOnSurface : public BRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & Location() const;
-		%feature("autodoc", "1");
-		void Location(const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter2() const;
-		%feature("autodoc", "1");
-		virtual		void Parameter2(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		void Curve(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom2d_Curve & PCurve() const;
-		%feature("autodoc", "1");
-		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Surface & Surface() const;
 		%feature("autodoc", "1");
 		virtual		void Surface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PointRepresentation {
-	Handle_BRep_PointRepresentation GetHandle() {
-	return *(Handle_BRep_PointRepresentation*) &$self;
-	}
-};
-%extend BRep_PointRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRep_PointRepresentation {
-	~BRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
-	}
-};
-
-
-%nodefaultctor BRep_PointsOnSurface;
-class BRep_PointsOnSurface : public BRep_PointRepresentation {
-	public:
 
 };
 %extend BRep_PointsOnSurface {
@@ -924,6 +930,14 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 	public:
 		%feature("autodoc", "1");
 		BRep_PointOnCurveOnSurface(const Standard_Real P, const Handle_Geom2d_Curve &C, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom2d_Curve & PCurve() const;
+		%feature("autodoc", "1");
+		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 
 };
 %extend BRep_PointOnCurveOnSurface {
@@ -972,6 +986,8 @@ class BRep_ListIteratorOfListOfCurveRepresentation {
 %nodefaultctor BRep_Tool;
 class BRep_Tool {
 	public:
+		%feature("autodoc", "1");
+		BRep_Tool();
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed(const TopoDS_Shape &S);
 		%feature("autodoc", "1");

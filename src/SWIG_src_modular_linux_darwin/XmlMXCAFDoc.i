@@ -483,6 +483,8 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 class XmlMXCAFDoc {
 	public:
 		%feature("autodoc", "1");
+		XmlMXCAFDoc();
+		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 
 };

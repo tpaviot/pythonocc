@@ -157,8 +157,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<IntTools_Range.hxx>
 #include<TColStd_ListOfInteger.hxx>
-#include<TColStd_IndexedMapOfInteger.hxx>
 #include<TColStd_SetOfInteger.hxx>
+#include<TColStd_IndexedMapOfInteger.hxx>
 #include<Handle_Geom_Geometry.hxx>
 #include<IntTools_CommonPrt.hxx>
 #include<IntTools_ShrunkRange.hxx>

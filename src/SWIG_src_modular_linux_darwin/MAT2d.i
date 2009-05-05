@@ -532,37 +532,6 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 };
 
 
-%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
-class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
-	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
-	}
-};
-
-
 %nodefaultctor MAT2d_DataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 	public:
@@ -1346,6 +1315,8 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 class MAT2d_MapBiIntHasher {
 	public:
 		%feature("autodoc", "1");
+		MAT2d_MapBiIntHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const MAT2d_BiInt &Key1, const Standard_Integer upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &Key1, const MAT2d_BiInt &Key2);
@@ -1661,6 +1632,37 @@ class MAT2d_MiniPath {
 	~MAT2d_MiniPath() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT2d_MiniPath\n");}
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
+class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
+	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
 	}
 };
 

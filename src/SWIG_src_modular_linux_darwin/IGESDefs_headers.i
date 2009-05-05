@@ -167,6 +167,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfTransient.hxx>
+#include<IGESDefs.hxx>
 #include<Handle_Interface_HArray1OfHAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_IGESGraph_TextDisplayTemplate.hxx>

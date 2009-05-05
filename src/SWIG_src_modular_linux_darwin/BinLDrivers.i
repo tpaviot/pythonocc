@@ -292,6 +292,8 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 class BinLDrivers {
 	public:
 		%feature("autodoc", "1");
+		BinLDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);

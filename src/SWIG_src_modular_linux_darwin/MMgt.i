@@ -146,6 +146,8 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 class MMgt_TShared : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
+		MMgt_TShared();
+		%feature("autodoc", "1");
 		virtual		void Delete() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

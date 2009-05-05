@@ -68,8 +68,12 @@ elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
-    OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
+    if OCC_ROOT!=None:
+        OCC_INC = os.path.join(OCC_ROOT,'inc')
+        OCC_LIB = os.path.join(OCC_ROOT,'lib')
+    else:
+        OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
+        OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
     SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
     SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml

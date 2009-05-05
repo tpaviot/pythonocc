@@ -120,6 +120,8 @@ Standard_Integer & function transformation
 class StepToGeom_Root {
 	public:
 		%feature("autodoc", "1");
+		StepToGeom_Root();
+		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
 };
@@ -743,23 +745,6 @@ class StepToGeom_MakeDirection : public StepToGeom_Root {
 };
 
 
-%nodefaultctor StepToGeom_MakeCylindricalSurface;
-class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeCylindricalSurface(const Handle_StepGeom_CylindricalSurface &Surf);
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Value() const;
-
-};
-%extend StepToGeom_MakeCylindricalSurface {
-	~StepToGeom_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeHyperbola2d;
 class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
 	public:
@@ -875,6 +860,23 @@ class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 	~StepToGeom_MakeCurve2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve2d\n");}
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeCylindricalSurface;
+class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCylindricalSurface(const Handle_StepGeom_CylindricalSurface &Surf);
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Value() const;
+
+};
+%extend StepToGeom_MakeCylindricalSurface {
+	~StepToGeom_MakeCylindricalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
 	}
 };
 

@@ -1445,6 +1445,8 @@ class Xw_MarkMap : public Standard_Transient {
 class Xw {
 	public:
 		%feature("autodoc", "1");
+		Xw();
+		%feature("autodoc", "1");
 		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
 
 };

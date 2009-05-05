@@ -81,5 +81,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_GTrsf2d.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Aspect_GenericColorMap.hxx>
+#include<Image.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 %}

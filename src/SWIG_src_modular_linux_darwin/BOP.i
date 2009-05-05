@@ -595,6 +595,8 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 class BOP_CorrectTolerances {
 	public:
 		%feature("autodoc", "1");
+		BOP_CorrectTolerances();
+		%feature("autodoc", "1");
 		void CorrectTolerances(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		void CorrectCurveOnSurface(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
@@ -1166,6 +1168,8 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 class BOP_Draw {
 	public:
 		%feature("autodoc", "1");
+		BOP_Draw();
+		%feature("autodoc", "1");
 		void DrawListOfShape(const TopTools_ListOfShape &aList, const char * aName);
 		%feature("autodoc", "1");
 		void DrawListOfEdgesWithPC(const TopoDS_Face &aFace, const TopTools_ListOfShape &aList, const char * aName);
@@ -1676,6 +1680,8 @@ class BOP_ListOfFaceInfo {
 %nodefaultctor BOP_BuilderTools;
 class BOP_BuilderTools {
 	public:
+		%feature("autodoc", "1");
+		BOP_BuilderTools();
 		%feature("autodoc", "1");
 		BooleanOperations_StateOfShape StateToCompare(const Standard_Integer iRank, const BOP_Operation anOp);
 		%feature("autodoc", "1");

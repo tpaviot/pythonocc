@@ -682,6 +682,8 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 class BinMDF {
 	public:
 		%feature("autodoc", "1");
+		BinMDF();
+		%feature("autodoc", "1");
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };

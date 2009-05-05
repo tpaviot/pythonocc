@@ -116,6 +116,32 @@ Standard_Integer & function transformation
 
 
 
+%nodefaultctor Handle_IGESAppli_PinNumber;
+class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber(const Handle_IGESAppli_PinNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber(const IGESAppli_PinNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_PinNumber {
+	IGESAppli_PinNumber* GetObject() {
+	return (IGESAppli_PinNumber*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_PinNumber {
+	~Handle_IGESAppli_PinNumber() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESAppli_ReadWriteModule;
 class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -480,32 +506,6 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESAppli_PinNumber;
-class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber(const Handle_IGESAppli_PinNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber(const IGESAppli_PinNumber *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_PinNumber const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_PinNumber {
-	IGESAppli_PinNumber* GetObject() {
-	return (IGESAppli_PinNumber*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_PinNumber {
-	~Handle_IGESAppli_PinNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_ReferenceDesignator;
 class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	public:
@@ -662,32 +662,6 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_IGESAppli_SpecificModule;
-class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule(const Handle_IGESAppli_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule(const IGESAppli_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESAppli_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESAppli_SpecificModule {
-	IGESAppli_SpecificModule* GetObject() {
-	return (IGESAppli_SpecificModule*)$self->Access();
-	}
-};
-%extend Handle_IGESAppli_SpecificModule {
-	~Handle_IGESAppli_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
 class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	public:
@@ -788,6 +762,32 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	~Handle_IGESAppli_NodalResults() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalResults\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESAppli_SpecificModule;
+class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule(const Handle_IGESAppli_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule(const IGESAppli_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESAppli_SpecificModule {
+	IGESAppli_SpecificModule* GetObject() {
+	return (IGESAppli_SpecificModule*)$self->Access();
+	}
+};
+%extend Handle_IGESAppli_SpecificModule {
+	~Handle_IGESAppli_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");}
 	}
 };
 
@@ -1344,6 +1344,8 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 class IGESAppli {
 	public:
 		%feature("autodoc", "1");
+		IGESAppli();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Protocol Protocol();
@@ -1895,37 +1897,6 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESAppli_ToolLevelFunction;
-class IGESAppli_ToolLevelFunction {
-	public:
-		%feature("autodoc", "1");
-		IGESAppli_ToolLevelFunction();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESAppli_LevelFunction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESAppli_LevelFunction &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESAppli_LevelFunction &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESAppli_LevelFunction &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelFunction &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESAppli_LevelFunction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESAppli_LevelFunction &entfrom, const Handle_IGESAppli_LevelFunction &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESAppli_ToolLevelFunction {
-	~IGESAppli_ToolLevelFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");}
-	}
-};
-
-
 %nodefaultctor IGESAppli_LineWidening;
 class IGESAppli_LineWidening : public IGESData_IGESEntity {
 	public:
@@ -2067,6 +2038,37 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 	~IGESAppli_NodalConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_NodalConstraint\n");}
+	}
+};
+
+
+%nodefaultctor IGESAppli_ToolLevelFunction;
+class IGESAppli_ToolLevelFunction {
+	public:
+		%feature("autodoc", "1");
+		IGESAppli_ToolLevelFunction();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESAppli_LevelFunction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESAppli_LevelFunction &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESAppli_LevelFunction &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESAppli_LevelFunction &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESAppli_LevelFunction &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESAppli_LevelFunction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESAppli_LevelFunction &entfrom, const Handle_IGESAppli_LevelFunction &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESAppli_ToolLevelFunction {
+	~IGESAppli_ToolLevelFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");}
 	}
 };
 

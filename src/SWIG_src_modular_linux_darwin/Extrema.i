@@ -1093,6 +1093,8 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 class Extrema_CurveTool {
 	public:
 		%feature("autodoc", "1");
+		Extrema_CurveTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Adaptor3d_Curve &C);
@@ -3510,6 +3512,8 @@ class Extrema_GenExtSS {
 class Extrema_Curve2dTool {
 	public:
 		%feature("autodoc", "1");
+		Extrema_Curve2dTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Adaptor2d_Curve2d &C);
@@ -4338,6 +4342,45 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 };
 
 
+%nodefaultctor Extrema_FuncExtCS;
+class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Extrema_FuncExtCS();
+		%feature("autodoc", "1");
+		Extrema_FuncExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & PointOnCurve(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
+
+};
+%extend Extrema_FuncExtCS {
+	~Extrema_FuncExtCS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_HArray2OfPOnCurv;
 class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 	public:
@@ -4627,45 +4670,6 @@ class Extrema_ExtCS {
 	~Extrema_ExtCS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCS\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_FuncExtCS;
-class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Extrema_FuncExtCS();
-		%feature("autodoc", "1");
-		Extrema_FuncExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & PointOnCurve(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
-
-};
-%extend Extrema_FuncExtCS {
-	~Extrema_FuncExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
 	}
 };
 

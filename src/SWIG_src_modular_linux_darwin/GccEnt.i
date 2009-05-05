@@ -263,6 +263,8 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 class GccEnt {
 	public:
 		%feature("autodoc", "1");
+		GccEnt();
+		%feature("autodoc", "1");
 		GccEnt_QualifiedLin Unqualified(const gp_Lin2d &Obj);
 		%feature("autodoc", "1");
 		GccEnt_QualifiedCirc Unqualified(const gp_Circ2d &Obj);

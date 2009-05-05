@@ -178,6 +178,8 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 class IntCurveSurface_ThePolyhedronToolOfHInter {
 	public:
 		%feature("autodoc", "1");
+		IntCurveSurface_ThePolyhedronToolOfHInter();
+		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
@@ -299,6 +301,8 @@ class IntCurveSurface_IntersectionPoint {
 class IntCurveSurface_TheHCurveTool {
 	public:
 		%feature("autodoc", "1");
+		IntCurveSurface_TheHCurveTool();
+		%feature("autodoc", "1");
 		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
@@ -386,6 +390,8 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
 class IntCurveSurface_TheHSurfaceTool {
 	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_TheHSurfaceTool();
 		%feature("autodoc", "1");
 		Standard_Real FirstUParameter(const Handle_Adaptor3d_HSurface &Surf);
 		%feature("autodoc", "1");
@@ -612,6 +618,8 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 %nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
 class IntCurveSurface_ThePolygonToolOfHInter {
 	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_ThePolygonToolOfHInter();
 		%feature("autodoc", "1");
 		const Bnd_Box & Bounding(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
 		%feature("autodoc", "1");

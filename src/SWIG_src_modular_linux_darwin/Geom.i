@@ -1234,6 +1234,61 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 };
 
 
+%nodefaultctor Geom_SequenceOfSurface;
+class Geom_SequenceOfSurface : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Geom_SequenceOfSurface();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Geom_SequenceOfSurface & Assign(const Geom_SequenceOfSurface &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void Append(Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void Prepend(Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Surface &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & First() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Geom_SequenceOfSurface & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &I);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Geom_SequenceOfSurface {
+	~Geom_SequenceOfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
+	}
+};
+
+
 %nodefaultctor Geom_Geometry;
 class Geom_Geometry : public MMgt_TShared {
 	public:
@@ -2365,61 +2420,6 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 	~Geom_SurfaceOfLinearExtrusion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom_SurfaceOfLinearExtrusion\n");}
-	}
-};
-
-
-%nodefaultctor Geom_SequenceOfSurface;
-class Geom_SequenceOfSurface : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Geom_SequenceOfSurface();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Geom_SequenceOfSurface & Assign(const Geom_SequenceOfSurface &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void Append(Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void Prepend(Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Surface &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Surface &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Geom_SequenceOfSurface & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &I);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Geom_SequenceOfSurface {
-	~Geom_SequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
 	}
 };
 

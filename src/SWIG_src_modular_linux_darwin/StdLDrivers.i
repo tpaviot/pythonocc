@@ -172,6 +172,8 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 class StdLDrivers {
 	public:
 		%feature("autodoc", "1");
+		StdLDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };

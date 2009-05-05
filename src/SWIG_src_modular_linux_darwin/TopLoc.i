@@ -507,6 +507,8 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 class TopLoc_MapLocationHasher {
 	public:
 		%feature("autodoc", "1");
+		TopLoc_MapLocationHasher();
+		%feature("autodoc", "1");
 		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);

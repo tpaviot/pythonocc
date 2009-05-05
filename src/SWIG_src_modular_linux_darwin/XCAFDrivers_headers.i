@@ -243,5 +243,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_MDF_ARDriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_MDF_ASDriverTable.hxx>
+#include<XCAFDrivers.hxx>
 #include<Standard_GUID.hxx>
 %}

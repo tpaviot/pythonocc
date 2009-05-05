@@ -477,6 +477,8 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 class BRepTools {
 	public:
 		%feature("autodoc", "1");
+		BRepTools();
+		%feature("autodoc", "1");
 		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void UVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);

@@ -446,7 +446,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_DocumentRelationship.hxx>
 #include<Handle_StepBasic_ExternalSource.hxx>
 #include<Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit.hxx>
-#include<Handle_StepBasic_DocumentFile.hxx>
 #include<Handle_StepBasic_DateTimeRole.hxx>
 #include<Handle_StepBasic_DerivedUnit.hxx>
 #include<Handle_StepBasic_ApplicationContext.hxx>
@@ -473,6 +472,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_StepBasic_ProductContext.hxx>
 #include<Handle_StepBasic_OrdinalDate.hxx>
 #include<Handle_StepBasic_MechanicalContext.hxx>
+#include<Handle_StepBasic_DocumentFile.hxx>
 #include<Handle_StepBasic_CoordinatedUniversalTimeOffset.hxx>
 #include<Handle_StepBasic_Product.hxx>
 #include<Handle_StepBasic_RoleAssociation.hxx>

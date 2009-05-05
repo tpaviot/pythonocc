@@ -105,6 +105,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<XSControl.hxx>
 #include<Handle_IFSelect_SessionPilot.hxx>
 #include<Handle_Transfer_TransientProcess.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>

@@ -413,6 +413,8 @@ class ShapeExtend_WireData : public MMgt_TShared {
 class ShapeExtend {
 	public:
 		%feature("autodoc", "1");
+		ShapeExtend();
+		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
 		Standard_Integer EncodeStatus(const ShapeExtend_Status status);

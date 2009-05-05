@@ -613,6 +613,8 @@ class Bisector_Bisec {
 class Bisector {
 	public:
 		%feature("autodoc", "1");
+		Bisector();
+		%feature("autodoc", "1");
 		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
 
 };

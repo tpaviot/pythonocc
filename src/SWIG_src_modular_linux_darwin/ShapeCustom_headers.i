@@ -166,6 +166,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom2d_Line.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<gp_Trsf.hxx>
+#include<ShapeCustom.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_BRepTools_Modification.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

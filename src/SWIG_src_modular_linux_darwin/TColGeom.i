@@ -272,6 +272,32 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollectio
 };
 
 
+%nodefaultctor Handle_TColGeom_HArray1OfBoundedCurve;
+class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray1OfBoundedCurve();
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray1OfBoundedCurve(const Handle_TColGeom_HArray1OfBoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray1OfBoundedCurve(const TColGeom_HArray1OfBoundedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom_HArray1OfBoundedCurve {
+	TColGeom_HArray1OfBoundedCurve* GetObject() {
+	return (TColGeom_HArray1OfBoundedCurve*)$self->Access();
+	}
+};
+%extend Handle_TColGeom_HArray1OfBoundedCurve {
+	~Handle_TColGeom_HArray1OfBoundedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBoundedCurve\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColGeom_HArray2OfBSplineSurface;
 class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 	public:
@@ -346,32 +372,6 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 	~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom_HArray1OfBoundedCurve;
-class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedCurve();
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedCurve(const Handle_TColGeom_HArray1OfBoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedCurve(const TColGeom_HArray1OfBoundedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray1OfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom_HArray1OfBoundedCurve {
-	TColGeom_HArray1OfBoundedCurve* GetObject() {
-	return (TColGeom_HArray1OfBoundedCurve*)$self->Access();
-	}
-};
-%extend Handle_TColGeom_HArray1OfBoundedCurve {
-	~Handle_TColGeom_HArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBoundedCurve\n");}
 	}
 };
 

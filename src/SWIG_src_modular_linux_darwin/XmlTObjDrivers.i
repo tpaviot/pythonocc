@@ -525,6 +525,8 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 class XmlTObjDrivers {
 	public:
 		%feature("autodoc", "1");
+		XmlTObjDrivers();
+		%feature("autodoc", "1");
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
