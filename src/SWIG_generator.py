@@ -167,6 +167,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 """
 
 nb_exported_classes = 0
@@ -359,6 +364,8 @@ class ModularBuilder(object):
         """
         Generate the file for dependencies.
         """
+        if self.MODULE_NAME=='GeomPlate' and sys.platform=='win32': #keep the file on the disk
+            return True
         if self.MODULE_NAME=='GEOM':
             self.MODULE_NAME='SGEOM'#back to the good name
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
@@ -437,8 +444,6 @@ class ModularBuilder(object):
         class_parent_name = mem_fun.parent.name
         if (not is_exportable) and not(class_parent_name in function_name):#for constructors and destructor
             print "\t\t %s method not exportable"%function_name
-            return True
-        if ("operator=" in function_name and not "==" in function_name):#not wrapped by SWIG
             return True
         if ("operator ::" in function_name): #Pb with SWIG
             return True
