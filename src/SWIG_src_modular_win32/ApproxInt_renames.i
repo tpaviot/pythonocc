@@ -1,1 +1,1 @@
-%rename(SvSurfaces) ApproxInt_SvSurfaces;
+%rename(ApproxInt_SvSurfaces) ApproxInt_SvSurfaces;

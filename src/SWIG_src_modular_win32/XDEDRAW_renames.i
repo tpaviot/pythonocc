@@ -1,6 +1,6 @@
-%rename(Layers) XDEDRAW_Layers;
+%rename(XDEDRAW_Colors) XDEDRAW_Colors;
 %rename(XDEDRAW) XDEDRAW;
-%rename(Shapes) XDEDRAW_Shapes;
-%rename(Colors) XDEDRAW_Colors;
-%rename(Common) XDEDRAW_Common;
-%rename(Props) XDEDRAW_Props;
+%rename(XDEDRAW_Props) XDEDRAW_Props;
+%rename(XDEDRAW_Common) XDEDRAW_Common;
+%rename(XDEDRAW_Layers) XDEDRAW_Layers;
+%rename(XDEDRAW_Shapes) XDEDRAW_Shapes;

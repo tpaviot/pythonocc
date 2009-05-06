@@ -1,6 +1,6 @@
-%rename(StackNodeOfStackOfIterator) TopExp_StackNodeOfStackOfIterator;
-%rename(Explorer) TopExp_Explorer;
+%rename(TopExp_StackOfIterator) TopExp_StackOfIterator;
+%rename(Handle_TopExp_StackNodeOfStackOfIterator) Handle_TopExp_StackNodeOfStackOfIterator;
+%rename(TopExp_Explorer) TopExp_Explorer;
 %rename(TopExp) TopExp;
-%rename(StackIteratorOfStackOfIterator) TopExp_StackIteratorOfStackOfIterator;
-%rename(Handle_StackNodeOfStackOfIterator) Handle_TopExp_StackNodeOfStackOfIterator;
-%rename(StackOfIterator) TopExp_StackOfIterator;
+%rename(TopExp_StackIteratorOfStackOfIterator) TopExp_StackIteratorOfStackOfIterator;
+%rename(TopExp_StackNodeOfStackOfIterator) TopExp_StackNodeOfStackOfIterator;

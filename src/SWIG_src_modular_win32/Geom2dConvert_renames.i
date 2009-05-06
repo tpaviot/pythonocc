@@ -1,5 +1,5 @@
-%rename(BSplineCurveToBezierCurve) Geom2dConvert_BSplineCurveToBezierCurve;
-%rename(CompCurveToBSplineCurve) Geom2dConvert_CompCurveToBSplineCurve;
+%rename(Geom2dConvert_CompCurveToBSplineCurve) Geom2dConvert_CompCurveToBSplineCurve;
 %rename(Geom2dConvert) Geom2dConvert;
-%rename(BSplineCurveKnotSplitting) Geom2dConvert_BSplineCurveKnotSplitting;
-%rename(ApproxCurve) Geom2dConvert_ApproxCurve;
+%rename(Geom2dConvert_BSplineCurveToBezierCurve) Geom2dConvert_BSplineCurveToBezierCurve;
+%rename(Geom2dConvert_BSplineCurveKnotSplitting) Geom2dConvert_BSplineCurveKnotSplitting;
+%rename(Geom2dConvert_ApproxCurve) Geom2dConvert_ApproxCurve;

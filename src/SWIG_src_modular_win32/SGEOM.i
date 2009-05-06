@@ -437,6 +437,8 @@ class GEOM_Parameter {
 		%feature("autodoc", "1");
 		GEOM_Parameter();
 		%feature("autodoc", "1");
+		GEOM_Parameter();
+		%feature("autodoc", "1");
 		GEOM_Parameter(TCollection_AsciiString );
 		%feature("autodoc", "1");
 		GEOM_Parameter(Standard_Real );
@@ -448,12 +450,22 @@ class GEOM_Parameter {
 		Standard_Real GetDouble() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString GetString() const;
+		%extend 
+		void operator=(Standard_Real aDouble);
+		void operator=(const TCollection_AsciiString& anAsciiString);
 
 };
+
 %extend GEOM_Parameter {
 	~GEOM_Parameter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
+	}
+};
+
+%extend GEOM_Parameter {
+	void Set(Standard_Real aDouble) {
+	$self=aDouble;
 	}
 };
 

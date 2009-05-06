@@ -1,8 +1,8 @@
-%rename(CurvatureNotDefined) LocalAnalysis_CurvatureNotDefined;
-%rename(CurveContinuity) LocalAnalysis_CurveContinuity;
+%rename(LocalAnalysis_NullSecondDerivative) LocalAnalysis_NullSecondDerivative;
+%rename(LocalAnalysis_TangentNotDefined) LocalAnalysis_TangentNotDefined;
 %rename(LocalAnalysis) LocalAnalysis;
-%rename(NormalNotDefined) LocalAnalysis_NormalNotDefined;
-%rename(TangentNotDefined) LocalAnalysis_TangentNotDefined;
-%rename(SurfaceContinuity) LocalAnalysis_SurfaceContinuity;
-%rename(NullSecondDerivative) LocalAnalysis_NullSecondDerivative;
-%rename(NullFirstDerivative) LocalAnalysis_NullFirstDerivative;
+%rename(LocalAnalysis_CurveContinuity) LocalAnalysis_CurveContinuity;
+%rename(LocalAnalysis_NullFirstDerivative) LocalAnalysis_NullFirstDerivative;
+%rename(LocalAnalysis_SurfaceContinuity) LocalAnalysis_SurfaceContinuity;
+%rename(LocalAnalysis_CurvatureNotDefined) LocalAnalysis_CurvatureNotDefined;
+%rename(LocalAnalysis_NormalNotDefined) LocalAnalysis_NormalNotDefined;

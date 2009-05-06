@@ -1,2 +1,2 @@
-%rename(Handle_ArrayNode) Handle_PStandard_ArrayNode;
-%rename(ArrayNode) PStandard_ArrayNode;
+%rename(Handle_PStandard_ArrayNode) Handle_PStandard_ArrayNode;
+%rename(PStandard_ArrayNode) PStandard_ArrayNode;

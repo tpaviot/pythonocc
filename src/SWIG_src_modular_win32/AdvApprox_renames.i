@@ -1,6 +1,6 @@
-%rename(PrefCutting) AdvApprox_PrefCutting;
-%rename(SimpleApprox) AdvApprox_SimpleApprox;
-%rename(DichoCutting) AdvApprox_DichoCutting;
-%rename(ApproxAFunction) AdvApprox_ApproxAFunction;
-%rename(Cutting) AdvApprox_Cutting;
-%rename(PrefAndRec) AdvApprox_PrefAndRec;
+%rename(AdvApprox_PrefCutting) AdvApprox_PrefCutting;
+%rename(AdvApprox_PrefAndRec) AdvApprox_PrefAndRec;
+%rename(AdvApprox_DichoCutting) AdvApprox_DichoCutting;
+%rename(AdvApprox_ApproxAFunction) AdvApprox_ApproxAFunction;
+%rename(AdvApprox_Cutting) AdvApprox_Cutting;
+%rename(AdvApprox_SimpleApprox) AdvApprox_SimpleApprox;

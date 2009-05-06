@@ -1,5 +1,5 @@
-%rename(Handle_NamingDriver) Handle_BinMNaming_NamingDriver;
-%rename(NamedShapeDriver) BinMNaming_NamedShapeDriver;
+%rename(Handle_BinMNaming_NamingDriver) Handle_BinMNaming_NamingDriver;
+%rename(BinMNaming_NamedShapeDriver) BinMNaming_NamedShapeDriver;
+%rename(Handle_BinMNaming_NamedShapeDriver) Handle_BinMNaming_NamedShapeDriver;
 %rename(BinMNaming) BinMNaming;
-%rename(NamingDriver) BinMNaming_NamingDriver;
-%rename(Handle_NamedShapeDriver) Handle_BinMNaming_NamedShapeDriver;
+%rename(BinMNaming_NamingDriver) BinMNaming_NamingDriver;

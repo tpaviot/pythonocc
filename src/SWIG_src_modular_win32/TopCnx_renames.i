@@ -1,1 +1,1 @@
-%rename(EdgeFaceTransition) TopCnx_EdgeFaceTransition;
+%rename(TopCnx_EdgeFaceTransition) TopCnx_EdgeFaceTransition;

@@ -1,7 +1,7 @@
-%rename(FacePassiveClassifier) BRepClass_FacePassiveClassifier;
-%rename(FaceClassifier) BRepClass_FaceClassifier;
-%rename(Intersector) BRepClass_Intersector;
-%rename(Edge) BRepClass_Edge;
-%rename(FClassifier) BRepClass_FClassifier;
-%rename(FClass2dOfFClassifier) BRepClass_FClass2dOfFClassifier;
-%rename(FaceExplorer) BRepClass_FaceExplorer;
+%rename(BRepClass_Edge) BRepClass_Edge;
+%rename(BRepClass_FaceExplorer) BRepClass_FaceExplorer;
+%rename(BRepClass_FClass2dOfFClassifier) BRepClass_FClass2dOfFClassifier;
+%rename(BRepClass_Intersector) BRepClass_Intersector;
+%rename(BRepClass_FClassifier) BRepClass_FClassifier;
+%rename(BRepClass_FacePassiveClassifier) BRepClass_FacePassiveClassifier;
+%rename(BRepClass_FaceClassifier) BRepClass_FaceClassifier;
