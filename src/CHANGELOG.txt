@@ -1,6 +1,21 @@
+2009/4/30:
+	- New feature: class renaming
+== pythonOCC-PDE2009 released
+2009/4/27:
+	- Added XML/RPC sample
+2009/4/26:
+	- added __getstate__ and __setstate__ methods for TopoDS_Shape serialization
+2009/4/23:
+	- added Standard_OStream and Standard_IStream handle
+2009/4/21:
+	- added ToString method to Standard_GUID class
+2009/4/20:
+	- added STEP.py script and DataExchange folder
+	- new byref parameter
+	
 == pythonOCC-wo0.2 released ==
 
-2009/5/10:
+2009/4/10:
 	- code clean up
 	- new wxSampleGui.py sample framework
 	- bugfix: in setup.py, ig OCC folder is not dir
@@ -19,7 +34,7 @@
 2009/3/31:
 	- overloaded __hash__() with HashCode() for *almost* all pythonOCC objects
 2009/3/27:
-	- bugfixes in CADViwer and CADViewerMDI
+	- bugfixes in CADViewer and CADViewerMDI
 	- new Mesh sample
 2009/3/26:
 	- the '==' operator is wrapped
