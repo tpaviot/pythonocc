@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module SGEOM
 
+%include SGEOM_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -27,7 +29,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
-%include std_basic_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -105,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include SGEOM_dependencies.i
 
@@ -124,6 +131,10 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 		%feature("autodoc", "1");
 		Handle_GEOM_SubShapeDriver(const GEOM_SubShapeDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const Handle_GEOM_SubShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const GEOM_SubShapeDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -139,6 +150,7 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOM_Object;
 class Handle_GEOM_Object : public Handle_MMgt_TShared {
 	public:
@@ -148,6 +160,10 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 		Handle_GEOM_Object(const Handle_GEOM_Object &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object(const GEOM_Object *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object & operator=(const Handle_GEOM_Object &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object & operator=(const GEOM_Object *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -164,6 +180,7 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GEOM_Application;
 class Handle_GEOM_Application : public Handle_TDocStd_Application {
 	public:
@@ -173,6 +190,10 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 		Handle_GEOM_Application(const Handle_GEOM_Application &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_Application(const GEOM_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Application & operator=(const Handle_GEOM_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Application & operator=(const GEOM_Application *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -189,6 +210,7 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 	}
 };
 
+
 %nodefaultctor Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
 class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCollection_MapNode {
 	public:
@@ -198,6 +220,10 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const GEOM_DataMapNodeOfDataMapOfAsciiStringTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient & operator=(const Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient & operator=(const GEOM_DataMapNodeOfDataMapOfAsciiStringTransient *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -214,6 +240,7 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 	}
 };
 
+
 %nodefaultctor Handle_GEOM_Function;
 class Handle_GEOM_Function : public Handle_MMgt_TShared {
 	public:
@@ -223,6 +250,10 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 		Handle_GEOM_Function(const Handle_GEOM_Function &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_Function(const GEOM_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const Handle_GEOM_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const GEOM_Function *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -238,6 +269,7 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Function\n");}
 	}
 };
+
 
 %nodefaultctor GEOM_Application;
 class GEOM_Application : public TDocStd_Application {
@@ -271,6 +303,7 @@ class GEOM_Application : public TDocStd_Application {
 	}
 };
 
+
 %nodefaultctor GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
 class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNode {
 	public:
@@ -302,6 +335,7 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapNodeOfDataMapOfAsciiStringTransient\n");}
 	}
 };
+
 
 %nodefaultctor GEOM_Engine;
 class GEOM_Engine {
@@ -363,6 +397,7 @@ class GEOM_Engine {
 	}
 };
 
+
 %nodefaultctor GEOM_IOperations;
 class GEOM_IOperations {
 	public:
@@ -397,6 +432,7 @@ class GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOM_DataMapOfAsciiStringTransient;
 class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 	public:
@@ -404,6 +440,8 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 		GEOM_DataMapOfAsciiStringTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		GEOM_DataMapOfAsciiStringTransient & Assign(const GEOM_DataMapOfAsciiStringTransient &Other);
+		%feature("autodoc", "1");
+		GEOM_DataMapOfAsciiStringTransient & operator=(const GEOM_DataMapOfAsciiStringTransient &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -431,11 +469,10 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor GEOM_Parameter;
 class GEOM_Parameter {
 	public:
-		%feature("autodoc", "1");
-		GEOM_Parameter();
 		%feature("autodoc", "1");
 		GEOM_Parameter();
 		%feature("autodoc", "1");
@@ -450,12 +487,12 @@ class GEOM_Parameter {
 		Standard_Real GetDouble() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString GetString() const;
-		%extend 
-		void operator=(Standard_Real aDouble);
-		void operator=(const TCollection_AsciiString& anAsciiString);
+		%feature("autodoc", "1");
+		void operator=(Standard_Real );
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &anAsciiString);
 
 };
-
 %extend GEOM_Parameter {
 	~GEOM_Parameter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
@@ -463,11 +500,6 @@ class GEOM_Parameter {
 	}
 };
 
-%extend GEOM_Parameter {
-	void Set(Standard_Real aDouble) {
-	$self=aDouble;
-	}
-};
 
 %nodefaultctor GEOM_Solver;
 class GEOM_Solver {
@@ -491,6 +523,7 @@ class GEOM_Solver {
 	}
 };
 
+
 %nodefaultctor GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
 class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_BasicMapIterator {
 	public:
@@ -513,6 +546,7 @@ class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_B
 	}
 };
 
+
 %nodefaultctor GEOM_ISubShape;
 class GEOM_ISubShape {
 	public:
@@ -534,6 +568,7 @@ class GEOM_ISubShape {
 	if (__env){printf("## Call custom destructor for instance of GEOM_ISubShape\n");}
 	}
 };
+
 
 %nodefaultctor GEOM_SubShapeDriver;
 class GEOM_SubShapeDriver : public TFunction_Driver {
@@ -568,6 +603,7 @@ class GEOM_SubShapeDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOM_SubShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOM_Function;
 class GEOM_Function : public MMgt_TShared {
@@ -678,6 +714,7 @@ class GEOM_Function : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GEOM_Function\n");}
 	}
 };
+
 
 %nodefaultctor GEOM_Object;
 class GEOM_Object : public MMgt_TShared {

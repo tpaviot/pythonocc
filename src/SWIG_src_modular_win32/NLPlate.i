@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include NLPlate_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_NLPlate_HGPPConstraint : public Handle_MMgt_TShared {
 		Handle_NLPlate_HGPPConstraint(const Handle_NLPlate_HGPPConstraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HGPPConstraint(const NLPlate_HGPPConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HGPPConstraint & operator=(const Handle_NLPlate_HGPPConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HGPPConstraint & operator=(const NLPlate_HGPPConstraint *anItem);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HGPPConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_NLPlate_HPG0Constraint : public Handle_NLPlate_HGPPConstraint {
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0Constraint(const NLPlate_HPG0Constraint *anItem);
 		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0Constraint & operator=(const Handle_NLPlate_HPG0Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0Constraint & operator=(const NLPlate_HPG0Constraint *anItem);
+		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
 		Handle_NLPlate_HPG0G1Constraint(const Handle_NLPlate_HPG0G1Constraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G1Constraint(const NLPlate_HPG0G1Constraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G1Constraint & operator=(const Handle_NLPlate_HPG0G1Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G1Constraint & operator=(const NLPlate_HPG0G1Constraint *anItem);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G1Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
 		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		%feature("autodoc", "1");
 		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_NLPlate_HPG1Constraint : public Handle_NLPlate_HGPPConstraint {
 		Handle_NLPlate_HPG1Constraint(const Handle_NLPlate_HPG1Constraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG1Constraint(const NLPlate_HPG1Constraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG1Constraint & operator=(const Handle_NLPlate_HPG1Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG1Constraint & operator=(const NLPlate_HPG1Constraint *anItem);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG1Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_NLPlate_HPG2Constraint : public Handle_NLPlate_HPG1Constraint {
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG2Constraint(const NLPlate_HPG2Constraint *anItem);
 		%feature("autodoc", "1");
+		Handle_NLPlate_HPG2Constraint & operator=(const Handle_NLPlate_HPG2Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG2Constraint & operator=(const NLPlate_HPG2Constraint *anItem);
+		%feature("autodoc", "1");
 		Handle_NLPlate_HPG2Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_NLPlate_HPG3Constraint : public Handle_NLPlate_HPG2Constraint {
 		Handle_NLPlate_HPG3Constraint(const Handle_NLPlate_HPG3Constraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG3Constraint(const NLPlate_HPG3Constraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG3Constraint & operator=(const Handle_NLPlate_HPG3Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG3Constraint & operator=(const NLPlate_HPG3Constraint *anItem);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG3Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_NLPlate_StackNodeOfStackOfPlate(const NLPlate_StackNodeOfStackOfPlate *anItem);
 		%feature("autodoc", "1");
+		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const Handle_NLPlate_StackNodeOfStackOfPlate &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const NLPlate_StackNodeOfStackOfPlate *anItem);
+		%feature("autodoc", "1");
 		Handle_NLPlate_StackNodeOfStackOfPlate const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +371,10 @@ class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G2Constraint(const NLPlate_HPG0G2Constraint *anItem);
 		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G2Constraint & operator=(const Handle_NLPlate_HPG0G2Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G2Constraint & operator=(const NLPlate_HPG0G2Constraint *anItem);
+		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G2Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -359,6 +400,10 @@ class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 		Handle_NLPlate_HPG0G3Constraint(const Handle_NLPlate_HPG0G3Constraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G3Constraint(const NLPlate_HPG0G3Constraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G3Constraint & operator=(const Handle_NLPlate_HPG0G3Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HPG0G3Constraint & operator=(const NLPlate_HPG0G3Constraint *anItem);
 		%feature("autodoc", "1");
 		Handle_NLPlate_HPG0G3Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -410,6 +455,8 @@ class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const NLPlate_SequenceOfHGPPConstraint & Assign(const NLPlate_SequenceOfHGPPConstraint &Other);
+		%feature("autodoc", "1");
+		const NLPlate_SequenceOfHGPPConstraint & operator=(const NLPlate_SequenceOfHGPPConstraint &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_NLPlate_HGPPConstraint &T);
 		%feature("autodoc", "1");
@@ -836,6 +883,8 @@ class NLPlate_StackOfPlate {
 		NLPlate_StackOfPlate();
 		%feature("autodoc", "1");
 		const NLPlate_StackOfPlate & Assign(const NLPlate_StackOfPlate &Other);
+		%feature("autodoc", "1");
+		const NLPlate_StackOfPlate & operator=(const NLPlate_StackOfPlate &Other);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

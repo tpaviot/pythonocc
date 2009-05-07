@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PTopLoc_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 		Handle_PTopLoc_Datum3D(const Handle_PTopLoc_Datum3D &aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D(const PTopLoc_Datum3D *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopLoc_Datum3D & operator=(const Handle_PTopLoc_Datum3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopLoc_Datum3D & operator=(const PTopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_Datum3D const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 		Handle_PTopLoc_ItemLocation(const Handle_PTopLoc_ItemLocation &aHandle);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation(const PTopLoc_ItemLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopLoc_ItemLocation & operator=(const Handle_PTopLoc_ItemLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopLoc_ItemLocation & operator=(const PTopLoc_ItemLocation *anItem);
 		%feature("autodoc", "1");
 		Handle_PTopLoc_ItemLocation const DownCast(const Handle_Standard_Persistent &AnObject);
 

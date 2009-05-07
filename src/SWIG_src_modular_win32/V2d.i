@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include V2d_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 		Handle_V2d_BackgroundGraphicObject(const Handle_V2d_BackgroundGraphicObject &aHandle);
 		%feature("autodoc", "1");
 		Handle_V2d_BackgroundGraphicObject(const V2d_BackgroundGraphicObject *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject & operator=(const Handle_V2d_BackgroundGraphicObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject & operator=(const V2d_BackgroundGraphicObject *anItem);
 		%feature("autodoc", "1");
 		Handle_V2d_BackgroundGraphicObject const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGraphicGrid(const V2d_RectangularGraphicGrid *anItem);
 		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid & operator=(const Handle_V2d_RectangularGraphicGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGraphicGrid & operator=(const V2d_RectangularGraphicGrid *anItem);
+		%feature("autodoc", "1");
 		Handle_V2d_RectangularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,10 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 		Handle_V2d_RectangularGrid(const Handle_V2d_RectangularGrid &aHandle);
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGrid(const V2d_RectangularGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGrid & operator=(const Handle_V2d_RectangularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_RectangularGrid & operator=(const V2d_RectangularGrid *anItem);
 		%feature("autodoc", "1");
 		Handle_V2d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -210,6 +227,10 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGraphicGrid(const V2d_CircularGraphicGrid *anItem);
 		%feature("autodoc", "1");
+		Handle_V2d_CircularGraphicGrid & operator=(const Handle_V2d_CircularGraphicGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGraphicGrid & operator=(const V2d_CircularGraphicGrid *anItem);
+		%feature("autodoc", "1");
 		Handle_V2d_CircularGraphicGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -235,6 +256,10 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 		Handle_V2d_CircularGrid(const Handle_V2d_CircularGrid &aHandle);
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGrid(const V2d_CircularGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid & operator=(const Handle_V2d_CircularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid & operator=(const V2d_CircularGrid *anItem);
 		%feature("autodoc", "1");
 		Handle_V2d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -262,6 +287,10 @@ class Handle_V2d_View : public Handle_Viewer_View {
 		%feature("autodoc", "1");
 		Handle_V2d_View(const V2d_View *anItem);
 		%feature("autodoc", "1");
+		Handle_V2d_View & operator=(const Handle_V2d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_View & operator=(const V2d_View *anItem);
+		%feature("autodoc", "1");
 		Handle_V2d_View const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -287,6 +316,10 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 		Handle_V2d_Viewer(const Handle_V2d_Viewer &aHandle);
 		%feature("autodoc", "1");
 		Handle_V2d_Viewer(const V2d_Viewer *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer & operator=(const Handle_V2d_Viewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_Viewer & operator=(const V2d_Viewer *anItem);
 		%feature("autodoc", "1");
 		Handle_V2d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
 

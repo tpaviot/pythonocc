@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TDF_dependencies.i
 
@@ -127,6 +132,10 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap(const Handle_TDF_DoubleMapNodeOfGUIDProgIDMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap(const TDF_DoubleMapNodeOfGUIDProgIDMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap & operator=(const Handle_TDF_DoubleMapNodeOfGUIDProgIDMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap & operator=(const TDF_DoubleMapNodeOfGUIDProgIDMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfGUIDProgIDMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -154,6 +163,10 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDF_AttributeDelta(const TDF_AttributeDelta *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_AttributeDelta & operator=(const Handle_TDF_AttributeDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_AttributeDelta & operator=(const TDF_AttributeDelta *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_AttributeDelta const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -179,6 +192,10 @@ class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 		Handle_TDF_DeltaOnForget(const Handle_TDF_DeltaOnForget &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnForget(const TDF_DeltaOnForget *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget & operator=(const Handle_TDF_DeltaOnForget &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnForget & operator=(const TDF_DeltaOnForget *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnForget const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -206,6 +223,10 @@ class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfLabelMap(const TDF_StdMapNodeOfLabelMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfLabelMap & operator=(const Handle_TDF_StdMapNodeOfLabelMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfLabelMap & operator=(const TDF_StdMapNodeOfLabelMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfLabelMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -231,6 +252,10 @@ class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 		Handle_TDF_DeltaOnRemoval(const Handle_TDF_DeltaOnRemoval &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnRemoval(const TDF_DeltaOnRemoval *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnRemoval & operator=(const Handle_TDF_DeltaOnRemoval &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnRemoval & operator=(const TDF_DeltaOnRemoval *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnRemoval const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -258,6 +283,10 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeDeltaList(const TDF_ListNodeOfAttributeDeltaList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfAttributeDeltaList & operator=(const Handle_TDF_ListNodeOfAttributeDeltaList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfAttributeDeltaList & operator=(const TDF_ListNodeOfAttributeDeltaList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeDeltaList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -283,6 +312,10 @@ class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 		Handle_TDF_ListNodeOfIDList(const Handle_TDF_ListNodeOfIDList &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfIDList(const TDF_ListNodeOfIDList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList & operator=(const Handle_TDF_ListNodeOfIDList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfIDList & operator=(const TDF_ListNodeOfIDList *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfIDList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -310,6 +343,10 @@ class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute(const TDF_Attribute *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_Attribute & operator=(const Handle_TDF_Attribute &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_Attribute & operator=(const TDF_Attribute *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_Attribute const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -335,6 +372,10 @@ class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNod
 		Handle_TDF_DataMapNodeOfLabelIntegerMap(const Handle_TDF_DataMapNodeOfLabelIntegerMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelIntegerMap(const TDF_DataMapNodeOfLabelIntegerMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelIntegerMap & operator=(const Handle_TDF_DataMapNodeOfLabelIntegerMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelIntegerMap & operator=(const TDF_DataMapNodeOfLabelIntegerMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelIntegerMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -362,6 +403,10 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDF_RelocationTable(const TDF_RelocationTable *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_RelocationTable & operator=(const Handle_TDF_RelocationTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_RelocationTable & operator=(const TDF_RelocationTable *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_RelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -387,6 +432,10 @@ class Handle_TDF_Reference : public Handle_TDF_Attribute {
 		Handle_TDF_Reference(const Handle_TDF_Reference &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_Reference(const TDF_Reference *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_Reference & operator=(const Handle_TDF_Reference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_Reference & operator=(const TDF_Reference *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_Reference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -414,6 +463,10 @@ class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfAttributeSequence(const TDF_SequenceNodeOfAttributeSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence & operator=(const Handle_TDF_SequenceNodeOfAttributeSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfAttributeSequence & operator=(const TDF_SequenceNodeOfAttributeSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfAttributeSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -439,6 +492,10 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 		Handle_TDF_Data(const Handle_TDF_Data &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_Data(const TDF_Data *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_Data & operator=(const Handle_TDF_Data &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_Data & operator=(const TDF_Data *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_Data const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -466,6 +523,10 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfLabelDoubleMap(const TDF_DoubleMapNodeOfLabelDoubleMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfLabelDoubleMap & operator=(const Handle_TDF_DoubleMapNodeOfLabelDoubleMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfLabelDoubleMap & operator=(const TDF_DoubleMapNodeOfLabelDoubleMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfLabelDoubleMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -491,6 +552,10 @@ class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection
 		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap(const Handle_TDF_IndexedMapNodeOfAttributeIndexedMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap(const TDF_IndexedMapNodeOfAttributeIndexedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap & operator=(const Handle_TDF_IndexedMapNodeOfAttributeIndexedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap & operator=(const TDF_IndexedMapNodeOfAttributeIndexedMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfAttributeIndexedMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -518,6 +583,10 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDF_HAttributeArray1(const TDF_HAttributeArray1 *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_HAttributeArray1 & operator=(const Handle_TDF_HAttributeArray1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_HAttributeArray1 & operator=(const TDF_HAttributeArray1 *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_HAttributeArray1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -543,6 +612,10 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 		Handle_TDF_DataMapNodeOfLabelLabelMap(const Handle_TDF_DataMapNodeOfLabelLabelMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelLabelMap(const TDF_DataMapNodeOfLabelLabelMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelLabelMap & operator=(const Handle_TDF_DataMapNodeOfLabelLabelMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelLabelMap & operator=(const TDF_DataMapNodeOfLabelLabelMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelLabelMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -570,6 +643,10 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDF_TagSource(const TDF_TagSource *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_TagSource & operator=(const Handle_TDF_TagSource &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_TagSource & operator=(const TDF_TagSource *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_TagSource const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -595,6 +672,10 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 		Handle_TDF_ListNodeOfDeltaList(const Handle_TDF_ListNodeOfDeltaList &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfDeltaList(const TDF_ListNodeOfDeltaList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList & operator=(const Handle_TDF_ListNodeOfDeltaList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfDeltaList & operator=(const TDF_ListNodeOfDeltaList *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfDeltaList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -622,6 +703,10 @@ class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeList(const TDF_ListNodeOfAttributeList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfAttributeList & operator=(const Handle_TDF_ListNodeOfAttributeList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfAttributeList & operator=(const TDF_ListNodeOfAttributeList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfAttributeList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -647,6 +732,10 @@ class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_M
 		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap(const Handle_TDF_DoubleMapNodeOfAttributeDoubleMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap(const TDF_DoubleMapNodeOfAttributeDoubleMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap & operator=(const Handle_TDF_DoubleMapNodeOfAttributeDoubleMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap & operator=(const TDF_DoubleMapNodeOfAttributeDoubleMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DoubleMapNodeOfAttributeDoubleMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -674,6 +763,10 @@ class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfAttributeMap(const TDF_StdMapNodeOfAttributeMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap & operator=(const Handle_TDF_StdMapNodeOfAttributeMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfAttributeMap & operator=(const TDF_StdMapNodeOfAttributeMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfAttributeMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -699,6 +792,10 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 		Handle_TDF_DeltaOnAddition(const Handle_TDF_DeltaOnAddition &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnAddition(const TDF_DeltaOnAddition *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnAddition & operator=(const Handle_TDF_DeltaOnAddition &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnAddition & operator=(const TDF_DeltaOnAddition *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnAddition const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -726,6 +823,10 @@ class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfLabelList(const TDF_ListNodeOfLabelList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList & operator=(const Handle_TDF_ListNodeOfLabelList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_ListNodeOfLabelList & operator=(const TDF_ListNodeOfLabelList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_ListNodeOfLabelList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -751,6 +852,10 @@ class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 		Handle_TDF_DataSet(const Handle_TDF_DataSet &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DataSet(const TDF_DataSet *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet & operator=(const Handle_TDF_DataSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet & operator=(const TDF_DataSet *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DataSet const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -778,6 +883,10 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnModification(const TDF_DeltaOnModification *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnModification & operator=(const Handle_TDF_DeltaOnModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnModification & operator=(const TDF_DeltaOnModification *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -803,6 +912,10 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 		Handle_TDF_DataMapNodeOfLabelDataMap(const Handle_TDF_DataMapNodeOfLabelDataMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelDataMap(const TDF_DataMapNodeOfLabelDataMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelDataMap & operator=(const Handle_TDF_DataMapNodeOfLabelDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfLabelDataMap & operator=(const TDF_DataMapNodeOfLabelDataMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfLabelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -830,6 +943,10 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnModification(const TDF_DefaultDeltaOnModification *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_DefaultDeltaOnModification & operator=(const Handle_TDF_DefaultDeltaOnModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DefaultDeltaOnModification & operator=(const TDF_DefaultDeltaOnModification *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -855,6 +972,10 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 		Handle_TDF_DefaultDeltaOnRemoval(const Handle_TDF_DefaultDeltaOnRemoval &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnRemoval(const TDF_DefaultDeltaOnRemoval *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DefaultDeltaOnRemoval & operator=(const Handle_TDF_DefaultDeltaOnRemoval &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DefaultDeltaOnRemoval & operator=(const TDF_DefaultDeltaOnRemoval *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DefaultDeltaOnRemoval const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -882,6 +1003,10 @@ class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfAttributeDataMap(const TDF_DataMapNodeOfAttributeDataMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfAttributeDataMap & operator=(const Handle_TDF_DataMapNodeOfAttributeDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DataMapNodeOfAttributeDataMap & operator=(const TDF_DataMapNodeOfAttributeDataMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_DataMapNodeOfAttributeDataMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -907,6 +1032,10 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 		Handle_TDF_DeltaOnResume(const Handle_TDF_DeltaOnResume &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnResume(const TDF_DeltaOnResume *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnResume & operator=(const Handle_TDF_DeltaOnResume &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_DeltaOnResume & operator=(const TDF_DeltaOnResume *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_DeltaOnResume const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -934,6 +1063,10 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfIDMap(const TDF_StdMapNodeOfIDMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap & operator=(const Handle_TDF_StdMapNodeOfIDMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_StdMapNodeOfIDMap & operator=(const TDF_StdMapNodeOfIDMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_StdMapNodeOfIDMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -959,6 +1092,10 @@ class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_Map
 		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const Handle_TDF_IndexedMapNodeOfLabelIndexedMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfLabelIndexedMap(const TDF_IndexedMapNodeOfLabelIndexedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap & operator=(const Handle_TDF_IndexedMapNodeOfLabelIndexedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_IndexedMapNodeOfLabelIndexedMap & operator=(const TDF_IndexedMapNodeOfLabelIndexedMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDF_IndexedMapNodeOfLabelIndexedMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -986,6 +1123,10 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDF_Delta(const TDF_Delta *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_Delta & operator=(const Handle_TDF_Delta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_Delta & operator=(const TDF_Delta *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_Delta const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1012,6 +1153,10 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfLabelSequence(const TDF_SequenceNodeOfLabelSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfLabelSequence & operator=(const Handle_TDF_SequenceNodeOfLabelSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDF_SequenceNodeOfLabelSequence & operator=(const TDF_SequenceNodeOfLabelSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_TDF_SequenceNodeOfLabelSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1035,6 +1180,8 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 		TDF_AttributeDoubleMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_AttributeDoubleMap & Assign(const TDF_AttributeDoubleMap &Other);
+		%feature("autodoc", "1");
+		TDF_AttributeDoubleMap & operator=(const TDF_AttributeDoubleMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1350,6 +1497,8 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_LabelDataMap & Assign(const TDF_LabelDataMap &Other);
 		%feature("autodoc", "1");
+		TDF_LabelDataMap & operator=(const TDF_LabelDataMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1472,6 +1621,8 @@ class TDF_AttributeList {
 		TDF_AttributeList();
 		%feature("autodoc", "1");
 		void Assign(const TDF_AttributeList &Other);
+		%feature("autodoc", "1");
+		void operator=(const TDF_AttributeList &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -1629,6 +1780,8 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		TDF_LabelDoubleMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_LabelDoubleMap & Assign(const TDF_LabelDoubleMap &Other);
+		%feature("autodoc", "1");
+		TDF_LabelDoubleMap & operator=(const TDF_LabelDoubleMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1963,6 +2116,8 @@ class TDF_AttributeDeltaList {
 		%feature("autodoc", "1");
 		void Assign(const TDF_AttributeDeltaList &Other);
 		%feature("autodoc", "1");
+		void operator=(const TDF_AttributeDeltaList &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -2264,6 +2419,8 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_LabelLabelMap & Assign(const TDF_LabelLabelMap &Other);
 		%feature("autodoc", "1");
+		TDF_LabelLabelMap & operator=(const TDF_LabelLabelMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -2298,6 +2455,8 @@ class TDF_LabelMap : public TCollection_BasicMap {
 		TDF_LabelMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_LabelMap & Assign(const TDF_LabelMap &Other);
+		%feature("autodoc", "1");
+		TDF_LabelMap & operator=(const TDF_LabelMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -2473,6 +2632,8 @@ class TDF_IDList {
 		%feature("autodoc", "1");
 		void Assign(const TDF_IDList &Other);
 		%feature("autodoc", "1");
+		void operator=(const TDF_IDList &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -2524,6 +2685,8 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_AttributeDataMap & Assign(const TDF_AttributeDataMap &Other);
 		%feature("autodoc", "1");
+		TDF_AttributeDataMap & operator=(const TDF_AttributeDataMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -2558,6 +2721,8 @@ class TDF_DeltaList {
 		TDF_DeltaList();
 		%feature("autodoc", "1");
 		void Assign(const TDF_DeltaList &Other);
+		%feature("autodoc", "1");
+		void operator=(const TDF_DeltaList &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -2664,6 +2829,8 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const TDF_LabelSequence & Assign(const TDF_LabelSequence &Other);
 		%feature("autodoc", "1");
+		const TDF_LabelSequence & operator=(const TDF_LabelSequence &Other);
+		%feature("autodoc", "1");
 		void Append(const TDF_Label &T);
 		%feature("autodoc", "1");
 		void Append(TDF_LabelSequence & S);
@@ -2749,6 +2916,8 @@ class TDF_LabelList {
 		TDF_LabelList();
 		%feature("autodoc", "1");
 		void Assign(const TDF_LabelList &Other);
+		%feature("autodoc", "1");
+		void operator=(const TDF_LabelList &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -2848,6 +3017,8 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const TDF_AttributeSequence & Assign(const TDF_AttributeSequence &Other);
+		%feature("autodoc", "1");
+		const TDF_AttributeSequence & operator=(const TDF_AttributeSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TDF_Attribute &T);
 		%feature("autodoc", "1");
@@ -3192,6 +3363,8 @@ class TDF_IDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_IDMap & Assign(const TDF_IDMap &Other);
 		%feature("autodoc", "1");
+		TDF_IDMap & operator=(const TDF_IDMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3249,6 +3422,8 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 		TDF_AttributeIndexedMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_AttributeIndexedMap & Assign(const TDF_AttributeIndexedMap &Other);
+		%feature("autodoc", "1");
+		TDF_AttributeIndexedMap & operator=(const TDF_AttributeIndexedMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3419,6 +3594,8 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 		TDF_AttributeMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_AttributeMap & Assign(const TDF_AttributeMap &Other);
+		%feature("autodoc", "1");
+		TDF_AttributeMap & operator=(const TDF_AttributeMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3593,6 +3770,8 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		TDF_LabelIndexedMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDF_LabelIndexedMap & Assign(const TDF_LabelIndexedMap &Other);
+		%feature("autodoc", "1");
+		TDF_LabelIndexedMap & operator=(const TDF_LabelIndexedMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3794,6 +3973,8 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_GUIDProgIDMap & Assign(const TDF_GUIDProgIDMap &Other);
 		%feature("autodoc", "1");
+		TDF_GUIDProgIDMap & operator=(const TDF_GUIDProgIDMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3879,6 +4060,8 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDF_LabelIntegerMap & Assign(const TDF_LabelIntegerMap &Other);
 		%feature("autodoc", "1");
+		TDF_LabelIntegerMap & operator=(const TDF_LabelIntegerMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3921,6 +4104,8 @@ class TDF_AttributeArray1 {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDF_AttributeArray1 & Assign(const TDF_AttributeArray1 &Other);
+		%feature("autodoc", "1");
+		const TDF_AttributeArray1 & operator=(const TDF_AttributeArray1 &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

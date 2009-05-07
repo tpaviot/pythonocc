@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GeomInt_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation & operator=(const GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -359,6 +368,8 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 		void Clear();
 		%feature("autodoc", "1");
 		const GeomInt_SequenceOfParameterAndOrientation & Assign(const GeomInt_SequenceOfParameterAndOrientation &Other);
+		%feature("autodoc", "1");
+		const GeomInt_SequenceOfParameterAndOrientation & operator=(const GeomInt_SequenceOfParameterAndOrientation &Other);
 		%feature("autodoc", "1");
 		void Append(const GeomInt_ParameterAndOrientation &T);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinMDF_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 		Handle_BinMDF_ADriver(const Handle_BinMDF_ADriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver(const BinMDF_ADriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriver & operator=(const Handle_BinMDF_ADriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriver & operator=(const BinMDF_ADriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_TagSourceDriver(const BinMDF_TagSourceDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver & operator=(const Handle_BinMDF_TagSourceDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_TagSourceDriver & operator=(const BinMDF_TagSourceDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMDF_TagSourceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const Handle_BinMDF_DataMapNodeOfTypeADriverMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfTypeADriverMap(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap & operator=(const Handle_BinMDF_DataMapNodeOfTypeADriverMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DataMapNodeOfTypeADriverMap & operator=(const BinMDF_DataMapNodeOfTypeADriverMap *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfTypeADriverMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMDF_ReferenceDriver(const BinMDF_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMDF_ReferenceDriver & operator=(const Handle_BinMDF_ReferenceDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ReferenceDriver & operator=(const BinMDF_ReferenceDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMDF_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDF_DoubleMapNodeOfTypeIdMap(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap & operator=(const Handle_BinMDF_DoubleMapNodeOfTypeIdMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DoubleMapNodeOfTypeIdMap & operator=(const BinMDF_DoubleMapNodeOfTypeIdMap *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMDF_DoubleMapNodeOfTypeIdMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfStringIdMap(const BinMDF_DataMapNodeOfStringIdMap *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMDF_DataMapNodeOfStringIdMap & operator=(const Handle_BinMDF_DataMapNodeOfStringIdMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_DataMapNodeOfStringIdMap & operator=(const BinMDF_DataMapNodeOfStringIdMap *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMDF_DataMapNodeOfStringIdMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 		Handle_BinMDF_ADriverTable(const Handle_BinMDF_ADriverTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable(const BinMDF_ADriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriverTable & operator=(const Handle_BinMDF_ADriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriverTable & operator=(const BinMDF_ADriverTable *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMDF_ADriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -531,6 +564,8 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BinMDF_StringIdMap & Assign(const BinMDF_StringIdMap &Other);
 		%feature("autodoc", "1");
+		BinMDF_StringIdMap & operator=(const BinMDF_StringIdMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -622,6 +657,8 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BinMDF_TypeADriverMap & Assign(const BinMDF_TypeADriverMap &Other);
 		%feature("autodoc", "1");
+		BinMDF_TypeADriverMap & operator=(const BinMDF_TypeADriverMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -679,6 +716,8 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 		BinMDF_TypeIdMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BinMDF_TypeIdMap & Assign(const BinMDF_TypeIdMap &Other);
+		%feature("autodoc", "1");
+		BinMDF_TypeIdMap & operator=(const BinMDF_TypeIdMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

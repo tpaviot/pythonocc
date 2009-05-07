@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GProp_dependencies.i
 
@@ -147,6 +152,10 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 		Handle_GProp_UndefinedAxis(const Handle_GProp_UndefinedAxis &aHandle);
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis(const GProp_UndefinedAxis *anItem);
+		%feature("autodoc", "1");
+		Handle_GProp_UndefinedAxis & operator=(const Handle_GProp_UndefinedAxis &aHandle);
+		%feature("autodoc", "1");
+		Handle_GProp_UndefinedAxis & operator=(const GProp_UndefinedAxis *anItem);
 		%feature("autodoc", "1");
 		Handle_GProp_UndefinedAxis const DownCast(const Handle_Standard_Transient &AnObject);
 

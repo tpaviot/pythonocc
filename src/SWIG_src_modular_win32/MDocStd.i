@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MDocStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver(const MDocStd_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentRetrievalDriver & operator=(const Handle_MDocStd_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_DocumentRetrievalDriver & operator=(const MDocStd_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDocStd_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDocStd_XLinkRetrievalDriver(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver(const MDocStd_XLinkRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver & operator=(const Handle_MDocStd_XLinkRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkRetrievalDriver & operator=(const MDocStd_XLinkRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver(const MDocStd_XLinkStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver & operator=(const Handle_MDocStd_XLinkStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDocStd_XLinkStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
+		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *anItem);
+		%feature("autodoc", "1");
 		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 		Handle_MDocStd_StdMapNodeOfPersistentMap(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap(const MDocStd_StdMapNodeOfPersistentMap *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *anItem);
 		%feature("autodoc", "1");
 		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -493,6 +522,8 @@ class MDocStd_DocEntryList {
 		%feature("autodoc", "1");
 		void Assign(const MDocStd_DocEntryList &Other);
 		%feature("autodoc", "1");
+		void operator=(const MDocStd_DocEntryList &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -578,6 +609,8 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		MDocStd_PersistentMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MDocStd_PersistentMap & Assign(const MDocStd_PersistentMap &Other);
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap & operator=(const MDocStd_PersistentMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

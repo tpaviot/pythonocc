@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESDimen_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_DiameterDimension(const Handle_IGESDimen_DiameterDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DiameterDimension(const IGESDimen_DiameterDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DiameterDimension & operator=(const Handle_IGESDimen_DiameterDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DiameterDimension & operator=(const IGESDimen_DiameterDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DiameterDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity 
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionDisplayData(const IGESDimen_DimensionDisplayData *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionDisplayData & operator=(const Handle_IGESDimen_DimensionDisplayData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionDisplayData & operator=(const IGESDimen_DimensionDisplayData *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionDisplayData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_GeneralSymbol(const Handle_IGESDimen_GeneralSymbol &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralSymbol(const IGESDimen_GeneralSymbol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralSymbol & operator=(const Handle_IGESDimen_GeneralSymbol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralSymbol & operator=(const IGESDimen_GeneralSymbol *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralSymbol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_LeaderArrow(const IGESDimen_LeaderArrow *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow & operator=(const Handle_IGESDimen_LeaderArrow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow & operator=(const IGESDimen_LeaderArrow *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_LeaderArrow const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_DimensionTolerance(const Handle_IGESDimen_DimensionTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionTolerance(const IGESDimen_DimensionTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionTolerance & operator=(const Handle_IGESDimen_DimensionTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionTolerance & operator=(const IGESDimen_DimensionTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfGeneralNote(const IGESDimen_HArray1OfGeneralNote *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const IGESDimen_HArray1OfGeneralNote *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_SectionedArea(const Handle_IGESDimen_SectionedArea &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_SectionedArea(const IGESDimen_SectionedArea *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_SectionedArea & operator=(const Handle_IGESDimen_SectionedArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_SectionedArea & operator=(const IGESDimen_SectionedArea *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_SectionedArea const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralLabel(const IGESDimen_GeneralLabel *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel & operator=(const Handle_IGESDimen_GeneralLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel & operator=(const IGESDimen_GeneralLabel *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_RadiusDimension(const Handle_IGESDimen_RadiusDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_RadiusDimension(const IGESDimen_RadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_RadiusDimension & operator=(const Handle_IGESDimen_RadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_RadiusDimension & operator=(const IGESDimen_RadiusDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_RadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_WitnessLine(const IGESDimen_WitnessLine *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_WitnessLine & operator=(const Handle_IGESDimen_WitnessLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_WitnessLine & operator=(const IGESDimen_WitnessLine *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_WitnessLine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_CurveDimension(const Handle_IGESDimen_CurveDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CurveDimension(const IGESDimen_CurveDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension & operator=(const Handle_IGESDimen_CurveDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CurveDimension & operator=(const IGESDimen_CurveDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CurveDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralModule(const IGESDimen_GeneralModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralModule & operator=(const Handle_IGESDimen_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralModule & operator=(const IGESDimen_GeneralModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_BasicDimension(const Handle_IGESDimen_BasicDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_BasicDimension(const IGESDimen_BasicDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_BasicDimension & operator=(const Handle_IGESDimen_BasicDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_BasicDimension & operator=(const IGESDimen_BasicDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_BasicDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Section(const IGESDimen_Section *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_Section & operator=(const Handle_IGESDimen_Section &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_Section & operator=(const IGESDimen_Section *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_Section const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_OrdinateDimension(const Handle_IGESDimen_OrdinateDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_OrdinateDimension(const IGESDimen_OrdinateDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_OrdinateDimension & operator=(const Handle_IGESDimen_OrdinateDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_OrdinateDimension & operator=(const IGESDimen_OrdinateDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_OrdinateDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESDimen_ReadWriteModule(const IGESDimen_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_ReadWriteModule & operator=(const Handle_IGESDimen_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_ReadWriteModule & operator=(const IGESDimen_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 		Handle_IGESDimen_Protocol(const Handle_IGESDimen_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Protocol(const IGESDimen_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_Protocol & operator=(const Handle_IGESDimen_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_Protocol & operator=(const IGESDimen_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_FlagNote(const IGESDimen_FlagNote *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_FlagNote & operator=(const Handle_IGESDimen_FlagNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_FlagNote & operator=(const IGESDimen_FlagNote *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_FlagNote const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_DimensionUnits(const Handle_IGESDimen_DimensionUnits &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionUnits(const IGESDimen_DimensionUnits *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionUnits & operator=(const Handle_IGESDimen_DimensionUnits &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionUnits & operator=(const IGESDimen_DimensionUnits *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionUnits const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_AngularDimension(const IGESDimen_AngularDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_AngularDimension & operator=(const Handle_IGESDimen_AngularDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_AngularDimension & operator=(const IGESDimen_AngularDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_AngularDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntit
 		Handle_IGESDimen_NewDimensionedGeometry(const Handle_IGESDimen_NewDimensionedGeometry &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewDimensionedGeometry(const IGESDimen_NewDimensionedGeometry *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewDimensionedGeometry & operator=(const Handle_IGESDimen_NewDimensionedGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewDimensionedGeometry & operator=(const IGESDimen_NewDimensionedGeometry *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewDimensionedGeometry const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfLeaderArrow(const IGESDimen_HArray1OfLeaderArrow *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const Handle_IGESDimen_HArray1OfLeaderArrow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const IGESDimen_HArray1OfLeaderArrow *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_HArray1OfLeaderArrow const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_DimensionedGeometry(const Handle_IGESDimen_DimensionedGeometry &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionedGeometry(const IGESDimen_DimensionedGeometry *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionedGeometry & operator=(const Handle_IGESDimen_DimensionedGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_DimensionedGeometry & operator=(const IGESDimen_DimensionedGeometry *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_DimensionedGeometry const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_PointDimension(const IGESDimen_PointDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension & operator=(const Handle_IGESDimen_PointDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension & operator=(const IGESDimen_PointDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_PointDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_NewGeneralNote(const Handle_IGESDimen_NewGeneralNote &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewGeneralNote(const IGESDimen_NewGeneralNote *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote & operator=(const Handle_IGESDimen_NewGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_NewGeneralNote & operator=(const IGESDimen_NewGeneralNote *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_NewGeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralNote(const IGESDimen_GeneralNote *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote & operator=(const Handle_IGESDimen_GeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote & operator=(const IGESDimen_GeneralNote *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_GeneralNote const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_LinearDimension(const Handle_IGESDimen_LinearDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_LinearDimension(const IGESDimen_LinearDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LinearDimension & operator=(const Handle_IGESDimen_LinearDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LinearDimension & operator=(const IGESDimen_LinearDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_LinearDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESDimen_SpecificModule(const IGESDimen_SpecificModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDimen_SpecificModule & operator=(const Handle_IGESDimen_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_SpecificModule & operator=(const IGESDimen_SpecificModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDimen_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 		Handle_IGESDimen_CenterLine(const Handle_IGESDimen_CenterLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CenterLine(const IGESDimen_CenterLine *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine & operator=(const Handle_IGESDimen_CenterLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine & operator=(const IGESDimen_CenterLine *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDimen_CenterLine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1831,6 +1952,8 @@ class IGESDimen_Array1OfLeaderArrow {
 		%feature("autodoc", "1");
 		const IGESDimen_Array1OfLeaderArrow & Assign(const IGESDimen_Array1OfLeaderArrow &Other);
 		%feature("autodoc", "1");
+		const IGESDimen_Array1OfLeaderArrow & operator=(const IGESDimen_Array1OfLeaderArrow &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1912,6 +2035,8 @@ class IGESDimen_Array1OfGeneralNote {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESDimen_Array1OfGeneralNote & Assign(const IGESDimen_Array1OfGeneralNote &Other);
+		%feature("autodoc", "1");
+		const IGESDimen_Array1OfGeneralNote & operator=(const IGESDimen_Array1OfGeneralNote &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

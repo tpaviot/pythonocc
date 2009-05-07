@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IFSelect_dependencies.i
 
@@ -169,6 +174,10 @@ class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignatureList(const IFSelect_SignatureList *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList & operator=(const Handle_IFSelect_SignatureList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignatureList & operator=(const IFSelect_SignatureList *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SignatureList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -194,6 +203,10 @@ class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
 		Handle_IFSelect_Selection(const Handle_IFSelect_Selection &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Selection(const IFSelect_Selection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & operator=(const Handle_IFSelect_Selection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Selection & operator=(const IFSelect_Selection *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Selection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -221,6 +234,10 @@ class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectDeduct(const IFSelect_SelectDeduct *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct & operator=(const Handle_IFSelect_SelectDeduct &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDeduct & operator=(const IFSelect_SelectDeduct *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectDeduct const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -246,6 +263,10 @@ class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
 		Handle_IFSelect_SelectExtract(const Handle_IFSelect_SelectExtract &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectExtract(const IFSelect_SelectExtract *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract & operator=(const Handle_IFSelect_SelectExtract &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExtract & operator=(const IFSelect_SelectExtract *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectExtract const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -273,6 +294,10 @@ class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectAnyType(const IFSelect_SelectAnyType *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType & operator=(const Handle_IFSelect_SelectAnyType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyType & operator=(const IFSelect_SelectAnyType *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectAnyType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -298,6 +323,10 @@ class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
 		Handle_IFSelect_SelectType(const Handle_IFSelect_SelectType &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectType(const IFSelect_SelectType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType & operator=(const Handle_IFSelect_SelectType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectType & operator=(const IFSelect_SelectType *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -325,6 +354,10 @@ class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_Transformer(const IFSelect_Transformer *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer & operator=(const Handle_IFSelect_Transformer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Transformer & operator=(const IFSelect_Transformer *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_Transformer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -350,6 +383,10 @@ class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
 		Handle_IFSelect_TransformStandard(const Handle_IFSelect_TransformStandard &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_TransformStandard(const IFSelect_TransformStandard *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard & operator=(const Handle_IFSelect_TransformStandard &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_TransformStandard & operator=(const IFSelect_TransformStandard *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_TransformStandard const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -377,6 +414,10 @@ class Handle_IFSelect_Signature : public Handle_Interface_SignType {
 		%feature("autodoc", "1");
 		Handle_IFSelect_Signature(const IFSelect_Signature *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_Signature & operator=(const Handle_IFSelect_Signature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature & operator=(const IFSelect_Signature *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_Signature const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -402,6 +443,10 @@ class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
 		Handle_IFSelect_SignCategory(const Handle_IFSelect_SignCategory &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignCategory(const IFSelect_SignCategory *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory & operator=(const Handle_IFSelect_SignCategory &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCategory & operator=(const IFSelect_SignCategory *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignCategory const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -429,6 +474,10 @@ class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_GeneralModifier(const IFSelect_GeneralModifier *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier & operator=(const Handle_IFSelect_GeneralModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GeneralModifier & operator=(const IFSelect_GeneralModifier *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_GeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -454,6 +503,10 @@ class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
 		Handle_IFSelect_Modifier(const Handle_IFSelect_Modifier &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Modifier(const IFSelect_Modifier *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier & operator=(const Handle_IFSelect_Modifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Modifier & operator=(const IFSelect_Modifier *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Modifier const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -481,6 +534,10 @@ class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
 		%feature("autodoc", "1");
 		Handle_IFSelect_ModifReorder(const IFSelect_ModifReorder *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder & operator=(const Handle_IFSelect_ModifReorder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifReorder & operator=(const IFSelect_ModifReorder *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_ModifReorder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -506,6 +563,10 @@ class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
 		Handle_IFSelect_Activator(const Handle_IFSelect_Activator &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Activator(const IFSelect_Activator *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator & operator=(const Handle_IFSelect_Activator &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Activator & operator=(const IFSelect_Activator *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Activator const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -533,6 +594,10 @@ class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectAnyList(const IFSelect_SelectAnyList *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList & operator=(const Handle_IFSelect_SelectAnyList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectAnyList & operator=(const IFSelect_SelectAnyList *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectAnyList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -558,6 +623,10 @@ class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
 		Handle_IFSelect_AppliedModifiers(const Handle_IFSelect_AppliedModifiers &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_AppliedModifiers(const IFSelect_AppliedModifiers *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers & operator=(const Handle_IFSelect_AppliedModifiers &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_AppliedModifiers & operator=(const IFSelect_AppliedModifiers *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_AppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -585,6 +654,10 @@ class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignMultiple(const IFSelect_SignMultiple *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple & operator=(const Handle_IFSelect_SignMultiple &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignMultiple & operator=(const IFSelect_SignMultiple *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SignMultiple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -610,6 +683,10 @@ class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 		Handle_IFSelect_Dispatch(const Handle_IFSelect_Dispatch &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Dispatch(const IFSelect_Dispatch *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch & operator=(const Handle_IFSelect_Dispatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Dispatch & operator=(const IFSelect_Dispatch *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_Dispatch const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -637,6 +714,10 @@ class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispGlobal(const IFSelect_DispGlobal *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_DispGlobal & operator=(const Handle_IFSelect_DispGlobal &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispGlobal & operator=(const IFSelect_DispGlobal *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_DispGlobal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -662,6 +743,10 @@ class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
 		Handle_IFSelect_SessionDumper(const Handle_IFSelect_SessionDumper &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SessionDumper(const IFSelect_SessionDumper *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper & operator=(const Handle_IFSelect_SessionDumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionDumper & operator=(const IFSelect_SessionDumper *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SessionDumper const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -689,6 +774,10 @@ class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectControl(const IFSelect_SelectControl *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl & operator=(const Handle_IFSelect_SelectControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectControl & operator=(const IFSelect_SelectControl *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectControl const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -714,6 +803,10 @@ class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract
 		Handle_IFSelect_SelectErrorEntities(const Handle_IFSelect_SelectErrorEntities &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectErrorEntities(const IFSelect_SelectErrorEntities *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities & operator=(const Handle_IFSelect_SelectErrorEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectErrorEntities & operator=(const IFSelect_SelectErrorEntities *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectErrorEntities const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -741,6 +834,10 @@ class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectFlag(const IFSelect_SelectFlag *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag & operator=(const Handle_IFSelect_SelectFlag &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectFlag & operator=(const IFSelect_SelectFlag *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectFlag const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -766,6 +863,10 @@ class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
 		Handle_IFSelect_SignCounter(const Handle_IFSelect_SignCounter &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignCounter(const IFSelect_SignCounter *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter & operator=(const Handle_IFSelect_SignCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignCounter & operator=(const IFSelect_SignCounter *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignCounter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -793,6 +894,10 @@ class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSent(const IFSelect_SelectSent *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent & operator=(const Handle_IFSelect_SelectSent &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSent & operator=(const IFSelect_SelectSent *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSent const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -818,6 +923,10 @@ class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 		Handle_IFSelect_PacketList(const Handle_IFSelect_PacketList &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_PacketList(const IFSelect_PacketList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList & operator=(const Handle_IFSelect_PacketList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_PacketList & operator=(const IFSelect_PacketList *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_PacketList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -845,6 +954,10 @@ class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtra
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectUnknownEntities(const IFSelect_SelectUnknownEntities *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities & operator=(const Handle_IFSelect_SelectUnknownEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnknownEntities & operator=(const IFSelect_SelectUnknownEntities *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectUnknownEntities const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -870,6 +983,10 @@ class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
 		Handle_IFSelect_SelectSuite(const Handle_IFSelect_SelectSuite &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSuite(const IFSelect_SelectSuite *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite & operator=(const Handle_IFSelect_SelectSuite &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSuite & operator=(const IFSelect_SelectSuite *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSuite const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -897,6 +1014,10 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier(const IFSelect_SequenceNodeOfSequenceOfGeneralModifier *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier & operator=(const Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier & operator=(const IFSelect_SequenceNodeOfSequenceOfGeneralModifier *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -922,6 +1043,10 @@ class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
 		Handle_IFSelect_SignType(const Handle_IFSelect_SignType &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignType(const IFSelect_SignType *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType & operator=(const Handle_IFSelect_SignType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignType & operator=(const IFSelect_SignType *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -949,6 +1074,10 @@ class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_Editor(const IFSelect_Editor *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_Editor & operator=(const Handle_IFSelect_Editor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Editor & operator=(const IFSelect_Editor *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_Editor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -974,6 +1103,10 @@ class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
 		Handle_IFSelect_ParamEditor(const Handle_IFSelect_ParamEditor &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_ParamEditor(const IFSelect_ParamEditor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor & operator=(const Handle_IFSelect_ParamEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ParamEditor & operator=(const IFSelect_ParamEditor *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_ParamEditor const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1001,6 +1134,10 @@ class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_IFSelect_WorkLibrary(const IFSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary & operator=(const Handle_IFSelect_WorkLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkLibrary & operator=(const IFSelect_WorkLibrary *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1026,6 +1163,10 @@ class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
 		Handle_IFSelect_SelectCombine(const Handle_IFSelect_SelectCombine &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectCombine(const IFSelect_SelectCombine *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine & operator=(const Handle_IFSelect_SelectCombine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectCombine & operator=(const IFSelect_SelectCombine *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectCombine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1053,6 +1194,10 @@ class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine 
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectIntersection(const IFSelect_SelectIntersection *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection & operator=(const Handle_IFSelect_SelectIntersection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIntersection & operator=(const IFSelect_SelectIntersection *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectIntersection const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1078,6 +1223,10 @@ class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
 		Handle_IFSelect_DispPerCount(const Handle_IFSelect_DispPerCount &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerCount(const IFSelect_DispPerCount *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount & operator=(const Handle_IFSelect_DispPerCount &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerCount & operator=(const IFSelect_DispPerCount *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerCount const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1105,6 +1254,10 @@ class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
 		%feature("autodoc", "1");
 		Handle_IFSelect_CheckCounter(const IFSelect_CheckCounter *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter & operator=(const Handle_IFSelect_CheckCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_CheckCounter & operator=(const IFSelect_CheckCounter *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_CheckCounter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1130,6 +1283,10 @@ class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
 		Handle_IFSelect_HSeqOfSelection(const Handle_IFSelect_HSeqOfSelection &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_HSeqOfSelection(const IFSelect_HSeqOfSelection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection & operator=(const Handle_IFSelect_HSeqOfSelection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_HSeqOfSelection & operator=(const IFSelect_HSeqOfSelection *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_HSeqOfSelection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1157,6 +1314,10 @@ class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectExplore(const IFSelect_SelectExplore *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore & operator=(const Handle_IFSelect_SelectExplore &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectExplore & operator=(const IFSelect_SelectExplore *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectExplore const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1182,6 +1343,10 @@ class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
 		Handle_IFSelect_SelectBase(const Handle_IFSelect_SelectBase &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectBase(const IFSelect_SelectBase *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase & operator=(const Handle_IFSelect_SelectBase &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectBase & operator=(const IFSelect_SelectBase *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectBase const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1209,6 +1374,10 @@ class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectModelRoots(const IFSelect_SelectModelRoots *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots & operator=(const Handle_IFSelect_SelectModelRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelRoots & operator=(const IFSelect_SelectModelRoots *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectModelRoots const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1234,6 +1403,10 @@ class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 		Handle_IFSelect_ModelCopier(const Handle_IFSelect_ModelCopier &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_ModelCopier(const IFSelect_ModelCopier *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModelCopier & operator=(const Handle_IFSelect_ModelCopier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModelCopier & operator=(const IFSelect_ModelCopier *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_ModelCopier const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1261,6 +1434,10 @@ class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerOne(const IFSelect_DispPerOne *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne & operator=(const Handle_IFSelect_DispPerOne &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerOne & operator=(const IFSelect_DispPerOne *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerOne const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1286,6 +1463,10 @@ class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
 		Handle_IFSelect_SelectShared(const Handle_IFSelect_SelectShared &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectShared(const IFSelect_SelectShared *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared & operator=(const Handle_IFSelect_SelectShared &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectShared & operator=(const IFSelect_SelectShared *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectShared const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1313,6 +1494,10 @@ class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignature(const IFSelect_SelectSignature *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature & operator=(const Handle_IFSelect_SelectSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature & operator=(const IFSelect_SelectSignature *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignature const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1338,6 +1523,10 @@ class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore
 		Handle_IFSelect_SelectSignedSharing(const Handle_IFSelect_SelectSignedSharing &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignedSharing(const IFSelect_SelectSignedSharing *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing & operator=(const Handle_IFSelect_SelectSignedSharing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedSharing & operator=(const IFSelect_SelectSignedSharing *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignedSharing const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1365,6 +1554,10 @@ class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_EditForm(const IFSelect_EditForm *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm & operator=(const Handle_IFSelect_EditForm &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_EditForm & operator=(const IFSelect_EditForm *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_EditForm const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1390,6 +1583,10 @@ class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
 		Handle_IFSelect_DispPerFiles(const Handle_IFSelect_DispPerFiles &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerFiles(const IFSelect_DispPerFiles *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles & operator=(const Handle_IFSelect_DispPerFiles &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerFiles & operator=(const IFSelect_DispPerFiles *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerFiles const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1417,6 +1614,10 @@ class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFla
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectIncorrectEntities(const IFSelect_SelectIncorrectEntities *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities & operator=(const Handle_IFSelect_SelectIncorrectEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectIncorrectEntities & operator=(const IFSelect_SelectIncorrectEntities *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectIncorrectEntities const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1442,6 +1643,10 @@ class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
 		Handle_IFSelect_SelectRange(const Handle_IFSelect_SelectRange &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRange(const IFSelect_SelectRange *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange & operator=(const Handle_IFSelect_SelectRange &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRange & operator=(const IFSelect_SelectRange *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRange const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1469,6 +1674,10 @@ class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
 		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerSignature(const IFSelect_DispPerSignature *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature & operator=(const Handle_IFSelect_DispPerSignature &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_DispPerSignature & operator=(const IFSelect_DispPerSignature *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_DispPerSignature const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1494,6 +1703,10 @@ class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
 		Handle_IFSelect_SelectInList(const Handle_IFSelect_SelectInList &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectInList(const IFSelect_SelectInList *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList & operator=(const Handle_IFSelect_SelectInList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectInList & operator=(const IFSelect_SelectInList *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectInList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1521,6 +1734,10 @@ class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_ShareOut(const IFSelect_ShareOut *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut & operator=(const Handle_IFSelect_ShareOut &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ShareOut & operator=(const IFSelect_ShareOut *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_ShareOut const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1546,6 +1763,10 @@ class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
 		Handle_IFSelect_BasicDumper(const Handle_IFSelect_BasicDumper &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_BasicDumper(const IFSelect_BasicDumper *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper & operator=(const Handle_IFSelect_BasicDumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_BasicDumper & operator=(const IFSelect_BasicDumper *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_BasicDumper const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1573,6 +1794,10 @@ class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectModelEntities(const IFSelect_SelectModelEntities *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities & operator=(const Handle_IFSelect_SelectModelEntities &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectModelEntities & operator=(const IFSelect_SelectModelEntities *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectModelEntities const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1598,6 +1823,10 @@ class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
 		Handle_IFSelect_SelectUnion(const Handle_IFSelect_SelectUnion &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectUnion(const IFSelect_SelectUnion *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion & operator=(const Handle_IFSelect_SelectUnion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectUnion & operator=(const IFSelect_SelectUnion *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectUnion const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1625,6 +1854,10 @@ class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
 		%feature("autodoc", "1");
 		Handle_IFSelect_GraphCounter(const IFSelect_GraphCounter *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter & operator=(const Handle_IFSelect_GraphCounter &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_GraphCounter & operator=(const IFSelect_GraphCounter *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_GraphCounter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1650,6 +1883,10 @@ class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
 		Handle_IFSelect_SelectDiff(const Handle_IFSelect_SelectDiff &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectDiff(const IFSelect_SelectDiff *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff & operator=(const Handle_IFSelect_SelectDiff &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectDiff & operator=(const IFSelect_SelectDiff *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectDiff const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1677,6 +1914,10 @@ class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_ListEditor(const IFSelect_ListEditor *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor & operator=(const Handle_IFSelect_ListEditor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ListEditor & operator=(const IFSelect_ListEditor *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_ListEditor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1702,6 +1943,10 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_S
 		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const Handle_IFSelect_SequenceNodeOfTSeqOfDispatch &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch(const IFSelect_SequenceNodeOfTSeqOfDispatch *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch & operator=(const Handle_IFSelect_SequenceNodeOfTSeqOfDispatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch & operator=(const IFSelect_SequenceNodeOfTSeqOfDispatch *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfTSeqOfDispatch const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1729,6 +1974,10 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_T
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers(const IFSelect_SequenceNodeOfSequenceOfAppliedModifiers *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers & operator=(const Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers & operator=(const IFSelect_SequenceNodeOfSequenceOfAppliedModifiers *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1754,6 +2003,10 @@ class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
 		Handle_IFSelect_IntParam(const Handle_IFSelect_IntParam &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_IntParam(const IFSelect_IntParam *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam & operator=(const Handle_IFSelect_IntParam &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam & operator=(const IFSelect_IntParam *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_IntParam const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1781,6 +2034,10 @@ class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 		%feature("autodoc", "1");
 		Handle_IFSelect_Act(const IFSelect_Act *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_Act & operator=(const Handle_IFSelect_Act &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_Act & operator=(const IFSelect_Act *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_Act const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1806,6 +2063,10 @@ class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
 		Handle_IFSelect_SignAncestor(const Handle_IFSelect_SignAncestor &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignAncestor(const IFSelect_SignAncestor *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor & operator=(const Handle_IFSelect_SignAncestor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignAncestor & operator=(const IFSelect_SignAncestor *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignAncestor const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1833,6 +2094,10 @@ class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRootComps(const IFSelect_SelectRootComps *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps & operator=(const Handle_IFSelect_SelectRootComps &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRootComps & operator=(const IFSelect_SelectRootComps *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRootComps const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1858,6 +2123,10 @@ class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
 		Handle_IFSelect_SignValidity(const Handle_IFSelect_SignValidity &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignValidity(const IFSelect_SignValidity *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity & operator=(const Handle_IFSelect_SignValidity &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SignValidity & operator=(const IFSelect_SignValidity *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SignValidity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1885,6 +2154,10 @@ class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
 		%feature("autodoc", "1");
 		Handle_IFSelect_ModifEditForm(const IFSelect_ModifEditForm *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm & operator=(const Handle_IFSelect_ModifEditForm &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_ModifEditForm & operator=(const IFSelect_ModifEditForm *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_ModifEditForm const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1910,6 +2183,10 @@ class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 		Handle_IFSelect_WorkSession(const Handle_IFSelect_WorkSession &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_WorkSession(const IFSelect_WorkSession *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession & operator=(const Handle_IFSelect_WorkSession &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_WorkSession & operator=(const IFSelect_WorkSession *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1937,6 +2214,10 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel(const IFSelect_SequenceNodeOfSequenceOfInterfaceModel *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel & operator=(const Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel & operator=(const IFSelect_SequenceNodeOfSequenceOfInterfaceModel *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1962,6 +2243,10 @@ class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
 		Handle_IFSelect_SelectRoots(const Handle_IFSelect_SelectRoots &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRoots(const IFSelect_SelectRoots *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots & operator=(const Handle_IFSelect_SelectRoots &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectRoots & operator=(const IFSelect_SelectRoots *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectRoots const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1989,6 +2274,10 @@ class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSharing(const IFSelect_SelectSharing *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing & operator=(const Handle_IFSelect_SelectSharing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSharing & operator=(const IFSelect_SelectSharing *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSharing const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2014,6 +2303,10 @@ class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore 
 		Handle_IFSelect_SelectSignedShared(const Handle_IFSelect_SelectSignedShared &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignedShared(const IFSelect_SelectSignedShared *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared & operator=(const Handle_IFSelect_SelectSignedShared &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignedShared & operator=(const IFSelect_SelectSignedShared *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectSignedShared const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2041,6 +2334,10 @@ class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SessionPilot(const IFSelect_SessionPilot *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot & operator=(const Handle_IFSelect_SessionPilot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SessionPilot & operator=(const IFSelect_SessionPilot *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SessionPilot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2066,6 +2363,10 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_
 		Handle_IFSelect_SequenceNodeOfTSeqOfSelection(const Handle_IFSelect_SequenceNodeOfTSeqOfSelection &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfTSeqOfSelection(const IFSelect_SequenceNodeOfTSeqOfSelection *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfSelection & operator=(const Handle_IFSelect_SequenceNodeOfTSeqOfSelection &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SequenceNodeOfTSeqOfSelection & operator=(const IFSelect_SequenceNodeOfTSeqOfSelection *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SequenceNodeOfTSeqOfSelection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2093,6 +2394,10 @@ class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectEntityNumber(const IFSelect_SelectEntityNumber *anItem);
 		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber & operator=(const Handle_IFSelect_SelectEntityNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectEntityNumber & operator=(const IFSelect_SelectEntityNumber *anItem);
+		%feature("autodoc", "1");
 		Handle_IFSelect_SelectEntityNumber const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2118,6 +2423,10 @@ class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
 		Handle_IFSelect_SelectPointed(const Handle_IFSelect_SelectPointed &aHandle);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectPointed(const IFSelect_SelectPointed *anItem);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed & operator=(const Handle_IFSelect_SelectPointed &aHandle);
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectPointed & operator=(const IFSelect_SelectPointed *anItem);
 		%feature("autodoc", "1");
 		Handle_IFSelect_SelectPointed const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2783,6 +3092,8 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfGeneralModifier & Assign(const IFSelect_SequenceOfGeneralModifier &Other);
 		%feature("autodoc", "1");
+		const IFSelect_SequenceOfGeneralModifier & operator=(const IFSelect_SequenceOfGeneralModifier &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_GeneralModifier &T);
 		%feature("autodoc", "1");
 		void Append(IFSelect_SequenceOfGeneralModifier & S);
@@ -2964,6 +3275,8 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IFSelect_TSeqOfDispatch & Assign(const IFSelect_TSeqOfDispatch &Other);
+		%feature("autodoc", "1");
+		const IFSelect_TSeqOfDispatch & operator=(const IFSelect_TSeqOfDispatch &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_Dispatch &T);
 		%feature("autodoc", "1");
@@ -4330,6 +4643,8 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const IFSelect_TSeqOfSelection & Assign(const IFSelect_TSeqOfSelection &Other);
 		%feature("autodoc", "1");
+		const IFSelect_TSeqOfSelection & operator=(const IFSelect_TSeqOfSelection &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_Selection &T);
 		%feature("autodoc", "1");
 		void Append(IFSelect_TSeqOfSelection & S);
@@ -4452,6 +4767,8 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfInterfaceModel & Assign(const IFSelect_SequenceOfInterfaceModel &Other);
+		%feature("autodoc", "1");
+		const IFSelect_SequenceOfInterfaceModel & operator=(const IFSelect_SequenceOfInterfaceModel &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Interface_InterfaceModel &T);
 		%feature("autodoc", "1");
@@ -5914,6 +6231,8 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IFSelect_SequenceOfAppliedModifiers & Assign(const IFSelect_SequenceOfAppliedModifiers &Other);
+		%feature("autodoc", "1");
+		const IFSelect_SequenceOfAppliedModifiers & operator=(const IFSelect_SequenceOfAppliedModifiers &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_IFSelect_AppliedModifiers &T);
 		%feature("autodoc", "1");

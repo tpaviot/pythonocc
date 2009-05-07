@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Extrema_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 		Handle_Extrema_HArray1OfPOnSurf(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnSurf(const Extrema_HArray1OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf & operator=(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf & operator=(const Extrema_HArray1OfPOnSurf *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d(const Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d(const Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 		Handle_Extrema_HArray2OfPOnCurv(const Handle_Extrema_HArray2OfPOnCurv &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv(const Extrema_HArray2OfPOnCurv *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnCurv & operator=(const Handle_Extrema_HArray2OfPOnCurv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnCurv & operator=(const Extrema_HArray2OfPOnCurv *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnSurf(const Extrema_HArray2OfPOnSurf *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv(const Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv(const Extrema_SequenceNodeOfSequenceOfPOnCurv *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv2d(const Extrema_HArray1OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 		Handle_Extrema_HArray1OfPOnCurv(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv(const Extrema_HArray1OfPOnCurv *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv & operator=(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv & operator=(const Extrema_HArray1OfPOnCurv *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d(const Extrema_SequenceNodeOfSequenceOfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d & operator=(const Extrema_SequenceNodeOfSequenceOfPOnCurv2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 		Handle_Extrema_SequenceNodeOfSequenceOfBoolean(const Handle_Extrema_SequenceNodeOfSequenceOfBoolean &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfBoolean(const Extrema_SequenceNodeOfSequenceOfBoolean *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfBoolean & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfBoolean & operator=(const Extrema_SequenceNodeOfSequenceOfBoolean *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d & operator=(const Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -646,6 +731,10 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv2d(const Extrema_HArray2OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnCurv2d & operator=(const Handle_Extrema_HArray2OfPOnCurv2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnCurv2d & operator=(const Extrema_HArray2OfPOnCurv2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Extrema_HArray2OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -671,6 +760,10 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
 		%feature("autodoc", "1");
 		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -726,6 +819,8 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfBoolean & Assign(const Extrema_SequenceOfBoolean &Other);
+		%feature("autodoc", "1");
+		const Extrema_SequenceOfBoolean & operator=(const Extrema_SequenceOfBoolean &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Boolean &T);
 		%feature("autodoc", "1");
@@ -831,6 +926,8 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC & operator=(const Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
@@ -954,6 +1051,8 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
@@ -1205,6 +1304,8 @@ class Extrema_Array1OfPOnSurf {
 		%feature("autodoc", "1");
 		const Extrema_Array1OfPOnSurf & Assign(const Extrema_Array1OfPOnSurf &Other);
 		%feature("autodoc", "1");
+		const Extrema_Array1OfPOnSurf & operator=(const Extrema_Array1OfPOnSurf &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1239,6 +1340,8 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
@@ -1867,6 +1970,8 @@ class Extrema_Array2OfPOnCurv {
 		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnCurv & Assign(const Extrema_Array2OfPOnCurv &Other);
 		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnCurv & operator=(const Extrema_Array2OfPOnCurv &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -1945,6 +2050,8 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & Assign(const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &Other);
 		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &Other);
+		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
 		void Append(Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & S);
@@ -1999,6 +2106,8 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
@@ -2217,6 +2326,8 @@ class Extrema_Array1OfPOnCurv {
 		%feature("autodoc", "1");
 		const Extrema_Array1OfPOnCurv & Assign(const Extrema_Array1OfPOnCurv &Other);
 		%feature("autodoc", "1");
+		const Extrema_Array1OfPOnCurv & operator=(const Extrema_Array1OfPOnCurv &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2288,6 +2399,8 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnSurf & Assign(const Extrema_SequenceOfPOnSurf &Other);
+		%feature("autodoc", "1");
+		const Extrema_SequenceOfPOnSurf & operator=(const Extrema_SequenceOfPOnSurf &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnSurf &T);
 		%feature("autodoc", "1");
@@ -2461,6 +2574,8 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d & Assign(const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d & operator=(const Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
@@ -2784,6 +2899,8 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & Assign(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
 		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
+		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
 		void Append(Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
@@ -2871,6 +2988,8 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnCurv2d & Assign(const Extrema_SequenceOfPOnCurv2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SequenceOfPOnCurv2d & operator=(const Extrema_SequenceOfPOnCurv2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
@@ -3172,6 +3291,8 @@ class Extrema_Array1OfPOnCurv2d {
 		%feature("autodoc", "1");
 		const Extrema_Array1OfPOnCurv2d & Assign(const Extrema_Array1OfPOnCurv2d &Other);
 		%feature("autodoc", "1");
+		const Extrema_Array1OfPOnCurv2d & operator=(const Extrema_Array1OfPOnCurv2d &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3317,6 +3438,8 @@ class Extrema_Array2OfPOnSurf {
 		void Destroy();
 		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnSurf & Assign(const Extrema_Array2OfPOnSurf &Other);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurf & operator=(const Extrema_Array2OfPOnSurf &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -3812,6 +3935,8 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC &Other);
 		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC &Other);
+		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
 		void Append(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC & S);
@@ -3867,6 +3992,8 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC & Assign(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC &Other);
 		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC & operator=(const Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC &Other);
+		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
 		void Append(Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC & S);
@@ -3921,6 +4048,8 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfExtPC & Assign(const Extrema_SeqPCOfPCFOfEPCOfExtPC &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCFOfEPCOfExtPC & operator=(const Extrema_SeqPCOfPCFOfEPCOfExtPC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
@@ -4067,6 +4196,8 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SequenceOfPOnCurv & Assign(const Extrema_SequenceOfPOnCurv &Other);
+		%feature("autodoc", "1");
+		const Extrema_SequenceOfPOnCurv & operator=(const Extrema_SequenceOfPOnCurv &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
@@ -4490,6 +4621,8 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 		%feature("autodoc", "1");
 		const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d &Other);
 		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & operator=(const Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d &Other);
+		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
 		void Append(Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d & S);
@@ -4573,6 +4706,8 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Extrema_SeqPCOfPCFOfEPCOfExtPC2d & Assign(const Extrema_SeqPCOfPCFOfEPCOfExtPC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCFOfEPCOfExtPC2d & operator=(const Extrema_SeqPCOfPCFOfEPCOfExtPC2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv2d &T);
 		%feature("autodoc", "1");
@@ -4671,6 +4806,8 @@ class Extrema_Array2OfPOnCurv2d {
 		void Destroy();
 		%feature("autodoc", "1");
 		const Extrema_Array2OfPOnCurv2d & Assign(const Extrema_Array2OfPOnCurv2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnCurv2d & operator=(const Extrema_Array2OfPOnCurv2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");

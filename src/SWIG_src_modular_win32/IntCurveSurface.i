@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntCurveSurface_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg(const IntCurveSurface_SequenceNodeOfSequenceOfSeg *anItem);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfSeg *anItem);
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -157,6 +166,10 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
 		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -243,6 +256,8 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfPnt & Assign(const IntCurveSurface_SequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		const IntCurveSurface_SequenceOfPnt & operator=(const IntCurveSurface_SequenceOfPnt &Other);
 		%feature("autodoc", "1");
 		void Append(const IntCurveSurface_IntersectionPoint &T);
 		%feature("autodoc", "1");
@@ -727,6 +742,8 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntCurveSurface_SequenceOfSeg & Assign(const IntCurveSurface_SequenceOfSeg &Other);
+		%feature("autodoc", "1");
+		const IntCurveSurface_SequenceOfSeg & operator=(const IntCurveSurface_SequenceOfSeg &Other);
 		%feature("autodoc", "1");
 		void Append(const IntCurveSurface_IntersectionSegment &T);
 		%feature("autodoc", "1");

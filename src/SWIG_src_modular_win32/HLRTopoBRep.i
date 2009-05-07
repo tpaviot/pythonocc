@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include HLRTopoBRep_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData &aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData *anItem);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner(const HLRTopoBRep_OutLiner *anItem);
 		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_OutLiner & operator=(const Handle_HLRTopoBRep_OutLiner &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_OutLiner & operator=(const HLRTopoBRep_OutLiner *anItem);
+		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_OutLiner const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
 		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData & operator=(const HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData *anItem);
+		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 		Handle_HLRTopoBRep_ListNodeOfListOfVData(const Handle_HLRTopoBRep_ListNodeOfListOfVData &aHandle);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_ListNodeOfListOfVData *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const Handle_HLRTopoBRep_ListNodeOfListOfVData &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRTopoBRep_ListNodeOfListOfVData & operator=(const HLRTopoBRep_ListNodeOfListOfVData *anItem);
 		%feature("autodoc", "1");
 		Handle_HLRTopoBRep_ListNodeOfListOfVData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -258,6 +279,8 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		HLRTopoBRep_MapOfShapeListOfVData(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		HLRTopoBRep_MapOfShapeListOfVData & Assign(const HLRTopoBRep_MapOfShapeListOfVData &Other);
+		%feature("autodoc", "1");
+		HLRTopoBRep_MapOfShapeListOfVData & operator=(const HLRTopoBRep_MapOfShapeListOfVData &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -401,6 +424,8 @@ class HLRTopoBRep_ListOfVData {
 		HLRTopoBRep_ListOfVData();
 		%feature("autodoc", "1");
 		void Assign(const HLRTopoBRep_ListOfVData &Other);
+		%feature("autodoc", "1");
+		void operator=(const HLRTopoBRep_ListOfVData &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -641,6 +666,8 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		HLRTopoBRep_DataMapOfShapeFaceData(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		HLRTopoBRep_DataMapOfShapeFaceData & Assign(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PCDM_dependencies.i
 
@@ -152,6 +157,10 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +186,10 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 		Handle_PCDM_Document(const Handle_PCDM_Document &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document(const PCDM_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document & operator=(const Handle_PCDM_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document & operator=(const PCDM_Document *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDM_Document const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +217,10 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +246,10 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 		Handle_PCDM_ReadWriter(const Handle_PCDM_ReadWriter &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter(const PCDM_ReadWriter *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_ReadWriter & operator=(const Handle_PCDM_ReadWriter &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_ReadWriter & operator=(const PCDM_ReadWriter *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +277,10 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1(const PCDM_ReadWriter_1 *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_ReadWriter_1 & operator=(const Handle_PCDM_ReadWriter_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_ReadWriter_1 & operator=(const PCDM_ReadWriter_1 *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_ReadWriter_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +306,10 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 		Handle_PCDM_Reader(const Handle_PCDM_Reader &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader(const PCDM_Reader *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_Reader & operator=(const Handle_PCDM_Reader &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_Reader & operator=(const PCDM_Reader *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDM_Reader const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +337,10 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver(const PCDM_RetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_RetrievalDriver & operator=(const Handle_PCDM_RetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_RetrievalDriver & operator=(const PCDM_RetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_RetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +366,10 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 		Handle_PCDM_Writer(const Handle_PCDM_Writer &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer(const PCDM_Writer *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_Writer & operator=(const Handle_PCDM_Writer &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_Writer & operator=(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDM_Writer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +397,10 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator(const PCDM_ReferenceIterator *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_ReferenceIterator & operator=(const Handle_PCDM_ReferenceIterator &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_ReferenceIterator & operator=(const PCDM_ReferenceIterator *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_ReferenceIterator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -386,6 +427,10 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver(const PCDM_StorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver & operator=(const Handle_PCDM_StorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_PCDM_StorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -411,6 +456,10 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDM_DriverError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -606,6 +655,8 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const PCDM_SequenceOfDocument & Assign(const PCDM_SequenceOfDocument &Other);
 		%feature("autodoc", "1");
+		const PCDM_SequenceOfDocument & operator=(const PCDM_SequenceOfDocument &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_PCDM_Document &T);
 		%feature("autodoc", "1");
 		void Append(PCDM_SequenceOfDocument & S);
@@ -660,6 +711,8 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const PCDM_SequenceOfReference & Assign(const PCDM_SequenceOfReference &Other);
+		%feature("autodoc", "1");
+		const PCDM_SequenceOfReference & operator=(const PCDM_SequenceOfReference &Other);
 		%feature("autodoc", "1");
 		void Append(const PCDM_Reference &T);
 		%feature("autodoc", "1");

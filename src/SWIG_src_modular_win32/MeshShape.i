@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MeshShape_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient(const Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient &aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient(const MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient & operator=(const Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient & operator=(const MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient *anItem);
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfPolygon(const MeshShape_ListNodeOfPolygon *anItem);
 		%feature("autodoc", "1");
+		Handle_MeshShape_ListNodeOfPolygon & operator=(const Handle_MeshShape_ListNodeOfPolygon &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_ListNodeOfPolygon & operator=(const MeshShape_ListNodeOfPolygon *anItem);
+		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfPolygon const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,10 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 		Handle_MeshShape_ListNodeOfListOfSurfacePoint(const Handle_MeshShape_ListNodeOfListOfSurfacePoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfListOfSurfacePoint(const MeshShape_ListNodeOfListOfSurfacePoint *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshShape_ListNodeOfListOfSurfacePoint & operator=(const Handle_MeshShape_ListNodeOfListOfSurfacePoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_ListNodeOfListOfSurfacePoint & operator=(const MeshShape_ListNodeOfListOfSurfacePoint *anItem);
 		%feature("autodoc", "1");
 		Handle_MeshShape_ListNodeOfListOfSurfacePoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -210,6 +227,10 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_MeshShape_StdMapNodeOfMapOfCouple(const MeshShape_StdMapNodeOfMapOfCouple *anItem);
 		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple & operator=(const Handle_MeshShape_StdMapNodeOfMapOfCouple &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_StdMapNodeOfMapOfCouple & operator=(const MeshShape_StdMapNodeOfMapOfCouple *anItem);
+		%feature("autodoc", "1");
 		Handle_MeshShape_StdMapNodeOfMapOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -236,6 +257,10 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY(const MeshShape_DataMapNodeOfDataMapOfIntegerXY *anItem);
 		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY & operator=(const Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY & operator=(const MeshShape_DataMapNodeOfDataMapOfIntegerXY *anItem);
+		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -261,6 +286,10 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt(const Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt &aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt(const MeshShape_DataMapNodeOfDataMapOfIntegerPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt & operator=(const Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt & operator=(const MeshShape_DataMapNodeOfDataMapOfIntegerPnt *anItem);
 		%feature("autodoc", "1");
 		Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -401,6 +430,8 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MeshShape_DataMapOfIntegerPnt & Assign(const MeshShape_DataMapOfIntegerPnt &Other);
 		%feature("autodoc", "1");
+		MeshShape_DataMapOfIntegerPnt & operator=(const MeshShape_DataMapOfIntegerPnt &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -517,6 +548,8 @@ class MeshShape_ListOfSurfacePoint {
 		MeshShape_ListOfSurfacePoint();
 		%feature("autodoc", "1");
 		void Assign(const MeshShape_ListOfSurfacePoint &Other);
+		%feature("autodoc", "1");
+		void operator=(const MeshShape_ListOfSurfacePoint &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -671,6 +704,8 @@ class MeshShape_Polygon {
 		%feature("autodoc", "1");
 		void Assign(const MeshShape_Polygon &Other);
 		%feature("autodoc", "1");
+		void operator=(const MeshShape_Polygon &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -744,6 +779,8 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 		MeshShape_DataMapOfIntegerXY(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MeshShape_DataMapOfIntegerXY & Assign(const MeshShape_DataMapOfIntegerXY &Other);
+		%feature("autodoc", "1");
+		MeshShape_DataMapOfIntegerXY & operator=(const MeshShape_DataMapOfIntegerXY &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -830,6 +867,8 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MeshShape_MapOfCouple & Assign(const MeshShape_MapOfCouple &Other);
 		%feature("autodoc", "1");
+		MeshShape_MapOfCouple & operator=(const MeshShape_MapOfCouple &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -887,6 +926,8 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 		MeshShape_DataMapOfShapeListOfTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MeshShape_DataMapOfShapeListOfTransient & Assign(const MeshShape_DataMapOfShapeListOfTransient &Other);
+		%feature("autodoc", "1");
+		MeshShape_DataMapOfShapeListOfTransient & operator=(const MeshShape_DataMapOfShapeListOfTransient &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

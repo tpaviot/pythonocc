@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepData_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 		Handle_StepData_EDescr(const Handle_StepData_EDescr &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr(const StepData_EDescr *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_EDescr & operator=(const Handle_StepData_EDescr &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_EDescr & operator=(const StepData_EDescr *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_EDescr const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule(const StepData_GeneralModule *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_GeneralModule & operator=(const Handle_StepData_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_GeneralModule & operator=(const StepData_GeneralModule *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,10 @@ class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 		Handle_StepData_DefaultGeneral(const Handle_StepData_DefaultGeneral &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral(const StepData_DefaultGeneral *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_DefaultGeneral & operator=(const Handle_StepData_DefaultGeneral &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_DefaultGeneral & operator=(const StepData_DefaultGeneral *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_DefaultGeneral const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -210,6 +227,10 @@ class Handle_StepData_Described : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_Described(const StepData_Described *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_Described & operator=(const Handle_StepData_Described &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Described & operator=(const StepData_Described *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_Described const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -235,6 +256,10 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 		Handle_StepData_Plex(const Handle_StepData_Plex &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_Plex(const StepData_Plex *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_Plex & operator=(const Handle_StepData_Plex &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Plex & operator=(const StepData_Plex *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_Plex const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -262,6 +287,10 @@ class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_SelectMember(const StepData_SelectMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_SelectMember & operator=(const Handle_StepData_SelectMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember & operator=(const StepData_SelectMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_SelectMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -287,6 +316,10 @@ class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 		Handle_StepData_SelectNamed(const Handle_StepData_SelectNamed &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed(const StepData_SelectNamed *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed & operator=(const Handle_StepData_SelectNamed &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectNamed & operator=(const StepData_SelectNamed *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectNamed const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -314,6 +347,10 @@ class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule(const StepData_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_ReadWriteModule & operator=(const Handle_StepData_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_ReadWriteModule & operator=(const StepData_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -339,6 +376,10 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 		Handle_StepData_DescrReadWrite(const Handle_StepData_DescrReadWrite &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite(const StepData_DescrReadWrite *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_DescrReadWrite & operator=(const Handle_StepData_DescrReadWrite &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_DescrReadWrite & operator=(const StepData_DescrReadWrite *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_DescrReadWrite const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -366,6 +407,10 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_PDescr(const StepData_PDescr *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_PDescr & operator=(const Handle_StepData_PDescr &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_PDescr & operator=(const StepData_PDescr *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_PDescr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -391,6 +436,10 @@ class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 		Handle_StepData_SelectReal(const Handle_StepData_SelectReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal(const StepData_SelectReal *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal & operator=(const Handle_StepData_SelectReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectReal & operator=(const StepData_SelectReal *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -418,6 +467,10 @@ class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 		%feature("autodoc", "1");
 		Handle_StepData_ESDescr(const StepData_ESDescr *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_ESDescr & operator=(const Handle_StepData_ESDescr &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_ESDescr & operator=(const StepData_ESDescr *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_ESDescr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -443,6 +496,10 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 		Handle_StepData_ECDescr(const Handle_StepData_ECDescr &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr(const StepData_ECDescr *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_ECDescr & operator=(const Handle_StepData_ECDescr &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_ECDescr & operator=(const StepData_ECDescr *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_ECDescr const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -470,6 +527,10 @@ class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral(const StepData_DescrGeneral *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_DescrGeneral & operator=(const Handle_StepData_DescrGeneral &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_DescrGeneral & operator=(const StepData_DescrGeneral *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_DescrGeneral const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -495,6 +556,10 @@ class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 		Handle_StepData_SelectInt(const Handle_StepData_SelectInt &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt(const StepData_SelectInt *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectInt & operator=(const Handle_StepData_SelectInt &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectInt & operator=(const StepData_SelectInt *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectInt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -522,6 +587,10 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity(const StepData_UndefinedEntity *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_UndefinedEntity & operator=(const Handle_StepData_UndefinedEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_UndefinedEntity & operator=(const StepData_UndefinedEntity *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_UndefinedEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -547,6 +616,10 @@ class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 		Handle_StepData_FreeFormEntity(const Handle_StepData_FreeFormEntity &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity(const StepData_FreeFormEntity *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_FreeFormEntity & operator=(const Handle_StepData_FreeFormEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_FreeFormEntity & operator=(const StepData_FreeFormEntity *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_FreeFormEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -574,6 +647,10 @@ class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 		%feature("autodoc", "1");
 		Handle_StepData_StepModel(const StepData_StepModel *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_StepModel & operator=(const Handle_StepData_StepModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_StepModel & operator=(const StepData_StepModel *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_StepModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -599,6 +676,10 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 		Handle_StepData_StepReaderData(const Handle_StepData_StepReaderData &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData(const StepData_StepReaderData *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_StepReaderData & operator=(const Handle_StepData_StepReaderData &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_StepReaderData & operator=(const StepData_StepReaderData *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_StepReaderData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -626,6 +707,10 @@ class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 		%feature("autodoc", "1");
 		Handle_StepData_Protocol(const StepData_Protocol *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_Protocol & operator=(const Handle_StepData_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol & operator=(const StepData_Protocol *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -651,6 +736,10 @@ class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 		Handle_StepData_FileProtocol(const Handle_StepData_FileProtocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol(const StepData_FileProtocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol & operator=(const Handle_StepData_FileProtocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol & operator=(const StepData_FileProtocol *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_FileProtocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -678,6 +767,10 @@ class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol(const StepData_DescrProtocol *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_DescrProtocol & operator=(const Handle_StepData_DescrProtocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_DescrProtocol & operator=(const StepData_DescrProtocol *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_DescrProtocol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -703,6 +796,10 @@ class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 		Handle_StepData_SelectArrReal(const Handle_StepData_SelectArrReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal(const StepData_SelectArrReal *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectArrReal & operator=(const Handle_StepData_SelectArrReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_SelectArrReal & operator=(const StepData_SelectArrReal *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_SelectArrReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -730,6 +827,10 @@ class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib(const StepData_GlobalNodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_GlobalNodeOfWriterLib & operator=(const Handle_StepData_GlobalNodeOfWriterLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_GlobalNodeOfWriterLib & operator=(const StepData_GlobalNodeOfWriterLib *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_GlobalNodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -755,6 +856,10 @@ class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 		Handle_StepData_HArray1OfField(const Handle_StepData_HArray1OfField &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField(const StepData_HArray1OfField *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_HArray1OfField & operator=(const Handle_StepData_HArray1OfField &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_HArray1OfField & operator=(const StepData_HArray1OfField *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_HArray1OfField const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -782,6 +887,10 @@ class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib(const StepData_NodeOfWriterLib *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_NodeOfWriterLib & operator=(const Handle_StepData_NodeOfWriterLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_NodeOfWriterLib & operator=(const StepData_NodeOfWriterLib *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_NodeOfWriterLib const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -808,6 +917,10 @@ class Handle_StepData_Simple : public Handle_StepData_Described {
 		%feature("autodoc", "1");
 		Handle_StepData_Simple(const StepData_Simple *anItem);
 		%feature("autodoc", "1");
+		Handle_StepData_Simple & operator=(const Handle_StepData_Simple &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Simple & operator=(const StepData_Simple *anItem);
+		%feature("autodoc", "1");
 		Handle_StepData_Simple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -833,6 +946,10 @@ class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 		Handle_StepData_FileRecognizer(const Handle_StepData_FileRecognizer &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer(const StepData_FileRecognizer *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_FileRecognizer & operator=(const Handle_StepData_FileRecognizer &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_FileRecognizer & operator=(const StepData_FileRecognizer *anItem);
 		%feature("autodoc", "1");
 		Handle_StepData_FileRecognizer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1987,6 +2104,8 @@ class StepData_Array1OfField {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepData_Array1OfField & Assign(const StepData_Array1OfField &Other);
+		%feature("autodoc", "1");
+		const StepData_Array1OfField & operator=(const StepData_Array1OfField &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

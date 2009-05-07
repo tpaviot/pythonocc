@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinMNaming_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMNaming_NamingDriver(const Handle_BinMNaming_NamingDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver(const BinMNaming_NamingDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMNaming_NamingDriver & operator=(const Handle_BinMNaming_NamingDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMNaming_NamingDriver & operator=(const BinMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMNaming_NamedShapeDriver(const Handle_BinMNaming_NamedShapeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver(const BinMNaming_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMNaming_NamedShapeDriver & operator=(const Handle_BinMNaming_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMNaming_NamedShapeDriver & operator=(const BinMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

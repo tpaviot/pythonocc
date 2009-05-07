@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include DNaming_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName(const Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName &aHandle);
 		%feature("autodoc", "1");
 		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName(const DNaming_DataMapNodeOfDataMapOfShapeOfName *anItem);
+		%feature("autodoc", "1");
+		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName & operator=(const Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName &aHandle);
+		%feature("autodoc", "1");
+		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName & operator=(const DNaming_DataMapNodeOfDataMapOfShapeOfName *anItem);
 		%feature("autodoc", "1");
 		Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -236,6 +245,8 @@ class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {
 		DNaming_DataMapOfShapeOfName(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		DNaming_DataMapOfShapeOfName & Assign(const DNaming_DataMapOfShapeOfName &Other);
+		%feature("autodoc", "1");
+		DNaming_DataMapOfShapeOfName & operator=(const DNaming_DataMapOfShapeOfName &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

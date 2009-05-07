@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PCollection_dependencies.i
 
@@ -136,6 +141,10 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
 		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -161,6 +170,10 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
 		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -188,6 +201,10 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot(const PCollection_IsNotRoot *anItem);
 		%feature("autodoc", "1");
+		Handle_PCollection_IsNotRoot & operator=(const Handle_PCollection_IsNotRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_IsNotRoot & operator=(const PCollection_IsNotRoot *anItem);
+		%feature("autodoc", "1");
 		Handle_PCollection_IsNotRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -214,6 +231,10 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_PCollection_IsContained(const PCollection_IsContained *anItem);
 		%feature("autodoc", "1");
+		Handle_PCollection_IsContained & operator=(const Handle_PCollection_IsContained &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_IsContained & operator=(const PCollection_IsContained *anItem);
+		%feature("autodoc", "1");
 		Handle_PCollection_IsContained const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -239,6 +260,10 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 		Handle_PCollection_IsNullTree(const Handle_PCollection_IsNullTree &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree(const PCollection_IsNullTree *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_IsNullTree & operator=(const Handle_PCollection_IsNullTree &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_IsNullTree & operator=(const PCollection_IsNullTree *anItem);
 		%feature("autodoc", "1");
 		Handle_PCollection_IsNullTree const DownCast(const Handle_Standard_Transient &AnObject);
 

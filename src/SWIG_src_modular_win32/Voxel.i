@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Voxel_dependencies.i
 
@@ -132,6 +137,10 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 		Handle_Voxel_Prs(const Handle_Voxel_Prs &aHandle);
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs(const Voxel_Prs *anItem);
+		%feature("autodoc", "1");
+		Handle_Voxel_Prs & operator=(const Handle_Voxel_Prs &aHandle);
+		%feature("autodoc", "1");
+		Handle_Voxel_Prs & operator=(const Voxel_Prs *anItem);
 		%feature("autodoc", "1");
 		Handle_Voxel_Prs const DownCast(const Handle_Standard_Transient &AnObject);
 

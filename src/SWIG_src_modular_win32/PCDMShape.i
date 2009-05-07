@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PCDMShape_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 		Handle_PCDMShape_Document(const Handle_PCDMShape_Document &aHandle);
 		%feature("autodoc", "1");
 		Handle_PCDMShape_Document(const PCDMShape_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDMShape_Document & operator=(const Handle_PCDMShape_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDMShape_Document & operator=(const PCDMShape_Document *anItem);
 		%feature("autodoc", "1");
 		Handle_PCDMShape_Document const DownCast(const Handle_Standard_Persistent &AnObject);
 

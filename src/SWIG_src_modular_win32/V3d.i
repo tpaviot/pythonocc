@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include V3d_dependencies.i
 
@@ -245,6 +250,10 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 		%feature("autodoc", "1");
 		Handle_V3d_UnMapped(const V3d_UnMapped *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_UnMapped & operator=(const Handle_V3d_UnMapped &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_UnMapped & operator=(const V3d_UnMapped *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_UnMapped const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -270,6 +279,10 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 		Handle_V3d_Plane(const Handle_V3d_Plane &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_Plane(const V3d_Plane *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_Plane & operator=(const Handle_V3d_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Plane & operator=(const V3d_Plane *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_Plane const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -297,6 +310,10 @@ class Handle_V3d_View : public Handle_Viewer_View {
 		%feature("autodoc", "1");
 		Handle_V3d_View(const V3d_View *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_View & operator=(const Handle_V3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_View & operator=(const V3d_View *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_View const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -322,6 +339,10 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 		Handle_V3d_PerspectiveView(const Handle_V3d_PerspectiveView &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_PerspectiveView(const V3d_PerspectiveView *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_PerspectiveView & operator=(const Handle_V3d_PerspectiveView &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PerspectiveView & operator=(const V3d_PerspectiveView *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_PerspectiveView const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -349,6 +370,10 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Light(const V3d_Light *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_Light & operator=(const Handle_V3d_Light &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Light & operator=(const V3d_Light *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_Light const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -374,6 +399,10 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 		Handle_V3d_AmbientLight(const Handle_V3d_AmbientLight &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_AmbientLight(const V3d_AmbientLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_AmbientLight & operator=(const Handle_V3d_AmbientLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_AmbientLight & operator=(const V3d_AmbientLight *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_AmbientLight const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -401,6 +430,10 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_V3d_Camera(const V3d_Camera *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_Camera & operator=(const Handle_V3d_Camera &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Camera & operator=(const V3d_Camera *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_Camera const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -426,6 +459,10 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 		Handle_V3d_LayerMgr(const Handle_V3d_LayerMgr &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_LayerMgr(const V3d_LayerMgr *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr & operator=(const Handle_V3d_LayerMgr &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr & operator=(const V3d_LayerMgr *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_LayerMgr const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -453,6 +490,10 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_CircularGrid(const V3d_CircularGrid *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_CircularGrid & operator=(const Handle_V3d_CircularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_CircularGrid & operator=(const V3d_CircularGrid *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_CircularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -478,6 +519,10 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 		Handle_V3d_ColorScale(const Handle_V3d_ColorScale &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_ColorScale(const V3d_ColorScale *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScale & operator=(const Handle_V3d_ColorScale &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_ColorScale & operator=(const V3d_ColorScale *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_ColorScale const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -505,6 +550,10 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 		%feature("autodoc", "1");
 		Handle_V3d_OrthographicView(const V3d_OrthographicView *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_OrthographicView & operator=(const Handle_V3d_OrthographicView &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_OrthographicView & operator=(const V3d_OrthographicView *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_OrthographicView const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -530,6 +579,10 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 		Handle_V3d_PositionLight(const Handle_V3d_PositionLight &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_PositionLight(const V3d_PositionLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight & operator=(const Handle_V3d_PositionLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight & operator=(const V3d_PositionLight *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_PositionLight const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -557,6 +610,10 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_SpotLight(const V3d_SpotLight *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_SpotLight & operator=(const Handle_V3d_SpotLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight & operator=(const V3d_SpotLight *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_SpotLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -582,6 +639,10 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 		Handle_V3d_Viewer(const Handle_V3d_Viewer &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_Viewer(const V3d_Viewer *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_Viewer & operator=(const Handle_V3d_Viewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Viewer & operator=(const V3d_Viewer *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -609,6 +670,10 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 		%feature("autodoc", "1");
 		Handle_V3d_DirectionalLight(const V3d_DirectionalLight *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_DirectionalLight & operator=(const Handle_V3d_DirectionalLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_DirectionalLight & operator=(const V3d_DirectionalLight *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_DirectionalLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -635,6 +700,10 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 		%feature("autodoc", "1");
 		Handle_V3d_RectangularGrid(const V3d_RectangularGrid *anItem);
 		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid & operator=(const Handle_V3d_RectangularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid & operator=(const V3d_RectangularGrid *anItem);
+		%feature("autodoc", "1");
 		Handle_V3d_RectangularGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -660,6 +729,10 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 		Handle_V3d_PositionalLight(const Handle_V3d_PositionalLight &aHandle);
 		%feature("autodoc", "1");
 		Handle_V3d_PositionalLight(const V3d_PositionalLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight & operator=(const Handle_V3d_PositionalLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight & operator=(const V3d_PositionalLight *anItem);
 		%feature("autodoc", "1");
 		Handle_V3d_PositionalLight const DownCast(const Handle_Standard_Transient &AnObject);
 

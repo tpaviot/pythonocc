@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include HeaderSection_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_HeaderSection_HeaderRecognizer : public Handle_StepData_FileRecogni
 		Handle_HeaderSection_HeaderRecognizer(const Handle_HeaderSection_HeaderRecognizer &aHandle);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_HeaderRecognizer(const HeaderSection_HeaderRecognizer *anItem);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_HeaderRecognizer & operator=(const Handle_HeaderSection_HeaderRecognizer &aHandle);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_HeaderRecognizer & operator=(const HeaderSection_HeaderRecognizer *anItem);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_HeaderRecognizer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileName(const HeaderSection_FileName *anItem);
 		%feature("autodoc", "1");
+		Handle_HeaderSection_FileName & operator=(const Handle_HeaderSection_FileName &aHandle);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_FileName & operator=(const HeaderSection_FileName *anItem);
+		%feature("autodoc", "1");
 		Handle_HeaderSection_FileName const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
 		Handle_HeaderSection_Protocol(const Handle_HeaderSection_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_Protocol(const HeaderSection_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_Protocol & operator=(const Handle_HeaderSection_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_Protocol & operator=(const HeaderSection_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileDescription(const HeaderSection_FileDescription *anItem);
 		%feature("autodoc", "1");
+		Handle_HeaderSection_FileDescription & operator=(const Handle_HeaderSection_FileDescription &aHandle);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_FileDescription & operator=(const HeaderSection_FileDescription *anItem);
+		%feature("autodoc", "1");
 		Handle_HeaderSection_FileDescription const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 		Handle_HeaderSection_FileSchema(const Handle_HeaderSection_FileSchema &aHandle);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileSchema(const HeaderSection_FileSchema *anItem);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_FileSchema & operator=(const Handle_HeaderSection_FileSchema &aHandle);
+		%feature("autodoc", "1");
+		Handle_HeaderSection_FileSchema & operator=(const HeaderSection_FileSchema *anItem);
 		%feature("autodoc", "1");
 		Handle_HeaderSection_FileSchema const DownCast(const Handle_Standard_Transient &AnObject);
 

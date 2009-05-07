@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GeomLib_dependencies.i
 
@@ -194,6 +199,8 @@ class GeomLib_Array1OfMat {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomLib_Array1OfMat & Assign(const GeomLib_Array1OfMat &Other);
+		%feature("autodoc", "1");
+		const GeomLib_Array1OfMat & operator=(const GeomLib_Array1OfMat &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

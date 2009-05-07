@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Intrv_dependencies.i
 
@@ -141,6 +146,10 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Handle_Intrv_SequenceNodeOfSequenceOfInterval &aHandle);
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval(const Intrv_SequenceNodeOfSequenceOfInterval *anItem);
+		%feature("autodoc", "1");
+		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Handle_Intrv_SequenceNodeOfSequenceOfInterval &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intrv_SequenceNodeOfSequenceOfInterval & operator=(const Intrv_SequenceNodeOfSequenceOfInterval *anItem);
 		%feature("autodoc", "1");
 		Handle_Intrv_SequenceNodeOfSequenceOfInterval const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -277,6 +286,8 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Intrv_SequenceOfInterval & Assign(const Intrv_SequenceOfInterval &Other);
+		%feature("autodoc", "1");
+		const Intrv_SequenceOfInterval & operator=(const Intrv_SequenceOfInterval &Other);
 		%feature("autodoc", "1");
 		void Append(const Intrv_Interval &T);
 		%feature("autodoc", "1");

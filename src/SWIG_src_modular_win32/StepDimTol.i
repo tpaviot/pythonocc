@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepDimTol_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 		Handle_StepDimTol_DatumTarget(const Handle_StepDimTol_DatumTarget &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumTarget(const StepDimTol_DatumTarget *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumTarget & operator=(const Handle_StepDimTol_DatumTarget &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumTarget & operator=(const StepDimTol_DatumTarget *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumTarget const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PlacedDatumTargetFeature(const StepDimTol_PlacedDatumTargetFeature *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_PlacedDatumTargetFeature & operator=(const Handle_StepDimTol_PlacedDatumTargetFeature &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_PlacedDatumTargetFeature & operator=(const StepDimTol_PlacedDatumTargetFeature *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_PlacedDatumTargetFeature const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,10 @@ class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 		Handle_StepDimTol_HArray1OfDatumReference(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_HArray1OfDatumReference(const StepDimTol_HArray1OfDatumReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_HArray1OfDatumReference & operator=(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_HArray1OfDatumReference & operator=(const StepDimTol_HArray1OfDatumReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_HArray1OfDatumReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -210,6 +227,10 @@ class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricTolerance(const StepDimTol_GeometricTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricTolerance & operator=(const Handle_StepDimTol_GeometricTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricTolerance & operator=(const StepDimTol_GeometricTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -235,6 +256,10 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 		Handle_StepDimTol_GeometricToleranceWithDatumReference(const Handle_StepDimTol_GeometricToleranceWithDatumReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceWithDatumReference(const StepDimTol_GeometricToleranceWithDatumReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricToleranceWithDatumReference & operator=(const Handle_StepDimTol_GeometricToleranceWithDatumReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricToleranceWithDatumReference & operator=(const StepDimTol_GeometricToleranceWithDatumReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceWithDatumReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -262,6 +287,10 @@ class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_Geometric
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CoaxialityTolerance(const StepDimTol_CoaxialityTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_CoaxialityTolerance & operator=(const Handle_StepDimTol_CoaxialityTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CoaxialityTolerance & operator=(const StepDimTol_CoaxialityTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_CoaxialityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -287,6 +316,10 @@ class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 		Handle_StepDimTol_Datum(const Handle_StepDimTol_Datum &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_Datum(const StepDimTol_Datum *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum & operator=(const Handle_StepDimTol_Datum &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum & operator=(const StepDimTol_Datum *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_Datum const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -314,6 +347,10 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 		%feature("autodoc", "1");
 		Handle_StepDimTol_LineProfileTolerance(const StepDimTol_LineProfileTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_LineProfileTolerance & operator=(const Handle_StepDimTol_LineProfileTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_LineProfileTolerance & operator=(const StepDimTol_LineProfileTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_LineProfileTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -339,6 +376,10 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 		Handle_StepDimTol_AngularityTolerance(const Handle_StepDimTol_AngularityTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_AngularityTolerance(const StepDimTol_AngularityTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_AngularityTolerance & operator=(const Handle_StepDimTol_AngularityTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_AngularityTolerance & operator=(const StepDimTol_AngularityTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_AngularityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -366,6 +407,10 @@ class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_Geome
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CircularRunoutTolerance(const StepDimTol_CircularRunoutTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance & operator=(const Handle_StepDimTol_CircularRunoutTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance & operator=(const StepDimTol_CircularRunoutTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_CircularRunoutTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -391,6 +436,10 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 		Handle_StepDimTol_TotalRunoutTolerance(const Handle_StepDimTol_TotalRunoutTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_TotalRunoutTolerance(const StepDimTol_TotalRunoutTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_TotalRunoutTolerance & operator=(const Handle_StepDimTol_TotalRunoutTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_TotalRunoutTolerance & operator=(const StepDimTol_TotalRunoutTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_TotalRunoutTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -418,6 +467,10 @@ class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTo
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PositionTolerance(const StepDimTol_PositionTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_PositionTolerance & operator=(const Handle_StepDimTol_PositionTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_PositionTolerance & operator=(const StepDimTol_PositionTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_PositionTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -443,6 +496,10 @@ class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TSha
 		Handle_StepDimTol_GeometricToleranceRelationship(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceRelationship(const StepDimTol_GeometricToleranceRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const StepDimTol_GeometricToleranceRelationship *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeometricToleranceRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -470,6 +527,10 @@ class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_Geomet
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ConcentricityTolerance(const StepDimTol_ConcentricityTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_ConcentricityTolerance & operator=(const Handle_StepDimTol_ConcentricityTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ConcentricityTolerance & operator=(const StepDimTol_ConcentricityTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_ConcentricityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -495,6 +556,10 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 		Handle_StepDimTol_ParallelismTolerance(const Handle_StepDimTol_ParallelismTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ParallelismTolerance(const StepDimTol_ParallelismTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ParallelismTolerance & operator=(const Handle_StepDimTol_ParallelismTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ParallelismTolerance & operator=(const StepDimTol_ParallelismTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ParallelismTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -522,6 +587,10 @@ class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_Geo
 		%feature("autodoc", "1");
 		Handle_StepDimTol_PerpendicularityTolerance(const StepDimTol_PerpendicularityTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_PerpendicularityTolerance & operator=(const Handle_StepDimTol_PerpendicularityTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_PerpendicularityTolerance & operator=(const StepDimTol_PerpendicularityTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_PerpendicularityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -547,6 +616,10 @@ class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_Geometr
 		Handle_StepDimTol_StraightnessTolerance(const Handle_StepDimTol_StraightnessTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_StraightnessTolerance(const StepDimTol_StraightnessTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance & operator=(const Handle_StepDimTol_StraightnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance & operator=(const StepDimTol_StraightnessTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_StraightnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -574,6 +647,10 @@ class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTo
 		%feature("autodoc", "1");
 		Handle_StepDimTol_FlatnessTolerance(const StepDimTol_FlatnessTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_FlatnessTolerance & operator=(const Handle_StepDimTol_FlatnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_FlatnessTolerance & operator=(const StepDimTol_FlatnessTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_FlatnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -599,6 +676,10 @@ class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 		Handle_StepDimTol_DatumReference(const Handle_StepDimTol_DatumReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumReference(const StepDimTol_DatumReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumReference & operator=(const Handle_StepDimTol_DatumReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumReference & operator=(const StepDimTol_DatumReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -626,6 +707,10 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumFeature(const StepDimTol_DatumFeature *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumFeature & operator=(const Handle_StepDimTol_DatumFeature &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumFeature & operator=(const StepDimTol_DatumFeature *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_DatumFeature const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -651,6 +736,10 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 		Handle_StepDimTol_CylindricityTolerance(const Handle_StepDimTol_CylindricityTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CylindricityTolerance(const StepDimTol_CylindricityTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CylindricityTolerance & operator=(const Handle_StepDimTol_CylindricityTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CylindricityTolerance & operator=(const StepDimTol_CylindricityTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CylindricityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -678,6 +767,10 @@ class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricTo
 		%feature("autodoc", "1");
 		Handle_StepDimTol_SymmetryTolerance(const StepDimTol_SymmetryTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_SymmetryTolerance & operator=(const Handle_StepDimTol_SymmetryTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_SymmetryTolerance & operator=(const StepDimTol_SymmetryTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_SymmetryTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -703,6 +796,10 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 		Handle_StepDimTol_SurfaceProfileTolerance(const Handle_StepDimTol_SurfaceProfileTolerance &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_SurfaceProfileTolerance(const StepDimTol_SurfaceProfileTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_SurfaceProfileTolerance & operator=(const Handle_StepDimTol_SurfaceProfileTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_SurfaceProfileTolerance & operator=(const StepDimTol_SurfaceProfileTolerance *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_SurfaceProfileTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -730,6 +827,10 @@ class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_Ge
 		%feature("autodoc", "1");
 		Handle_StepDimTol_ModifiedGeometricTolerance(const StepDimTol_ModifiedGeometricTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance & operator=(const Handle_StepDimTol_ModifiedGeometricTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_ModifiedGeometricTolerance & operator=(const StepDimTol_ModifiedGeometricTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_ModifiedGeometricTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -755,6 +856,10 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 		Handle_StepDimTol_CommonDatum(const Handle_StepDimTol_CommonDatum &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CommonDatum(const StepDimTol_CommonDatum *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CommonDatum & operator=(const Handle_StepDimTol_CommonDatum &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CommonDatum & operator=(const StepDimTol_CommonDatum *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_CommonDatum const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -782,6 +887,10 @@ class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricT
 		%feature("autodoc", "1");
 		Handle_StepDimTol_RoundnessTolerance(const StepDimTol_RoundnessTolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance & operator=(const Handle_StepDimTol_RoundnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance & operator=(const StepDimTol_RoundnessTolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepDimTol_RoundnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -807,6 +916,10 @@ class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public H
 		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol(const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol(const StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol & operator=(const Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol & operator=(const StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol *anItem);
 		%feature("autodoc", "1");
 		Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1017,6 +1130,8 @@ class StepDimTol_Array1OfDatumReference {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepDimTol_Array1OfDatumReference & Assign(const StepDimTol_Array1OfDatumReference &Other);
+		%feature("autodoc", "1");
+		const StepDimTol_Array1OfDatumReference & operator=(const StepDimTol_Array1OfDatumReference &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

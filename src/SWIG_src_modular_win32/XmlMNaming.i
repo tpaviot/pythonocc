@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlMNaming_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMNaming_NamingDriver(const Handle_XmlMNaming_NamingDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver(const XmlMNaming_NamingDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMNaming_NamingDriver & operator=(const Handle_XmlMNaming_NamingDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMNaming_NamingDriver & operator=(const XmlMNaming_NamingDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamingDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMNaming_NamedShapeDriver(const Handle_XmlMNaming_NamedShapeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver(const XmlMNaming_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMNaming_NamedShapeDriver & operator=(const Handle_XmlMNaming_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMNaming_NamedShapeDriver & operator=(const XmlMNaming_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMNaming_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepAP214_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_StepAP214_Class : public Handle_StepBasic_Group {
 		Handle_StepAP214_Class(const Handle_StepAP214_Class &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_Class(const StepAP214_Class *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class & operator=(const Handle_StepAP214_Class &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class & operator=(const StepAP214_Class *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_Class const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasi
 		%feature("autodoc", "1");
 		Handle_StepAP214_ExternallyDefinedGeneralProperty(const StepAP214_ExternallyDefinedGeneralProperty *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedGeneralProperty & operator=(const Handle_StepAP214_ExternallyDefinedGeneralProperty &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedGeneralProperty & operator=(const StepAP214_ExternallyDefinedGeneralProperty *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_ExternallyDefinedGeneralProperty const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_S
 		Handle_StepAP214_AppliedSecurityClassificationAssignment(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedSecurityClassificationAssignment(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedSecurityClassificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignActualDateAssignment(const StepAP214_AutoDesignActualDateAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const Handle_StepAP214_AutoDesignActualDateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const StepAP214_AutoDesignActualDateAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignActualDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_Presen
 		Handle_StepAP214_AutoDesignPresentedItem(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignPresentedItem(const StepAP214_AutoDesignPresentedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem & operator=(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem & operator=(const StepAP214_AutoDesignPresentedItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignPresentedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_StepAP214_HArray1OfGroupItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfGroupItem(const StepAP214_HArray1OfGroupItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfGroupItem & operator=(const Handle_StepAP214_HArray1OfGroupItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfGroupItem & operator=(const StepAP214_HArray1OfGroupItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfGroupItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_StepAP214_HArray1OfApprovalItem : public Handle_MMgt_TShared {
 		Handle_StepAP214_HArray1OfApprovalItem(const Handle_StepAP214_HArray1OfApprovalItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfApprovalItem(const StepAP214_HArray1OfApprovalItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfApprovalItem & operator=(const Handle_StepAP214_HArray1OfApprovalItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfApprovalItem & operator=(const StepAP214_HArray1OfApprovalItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfApprovalItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_StepAP214_HArray1OfSecurityClassificationItem : public Handle_MMgt_
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfSecurityClassificationItem(const StepAP214_HArray1OfSecurityClassificationItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfSecurityClassificationItem & operator=(const Handle_StepAP214_HArray1OfSecurityClassificationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfSecurityClassificationItem & operator=(const StepAP214_HArray1OfSecurityClassificationItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfSecurityClassificationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_St
 		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedPersonAndOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAss
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedGroupAssignment(const StepAP214_AppliedGroupAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment & operator=(const Handle_StepAP214_AppliedGroupAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment & operator=(const StepAP214_AppliedGroupAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedGroupAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic
 		Handle_StepAP214_AutoDesignNominalDateAssignment(const Handle_StepAP214_AutoDesignNominalDateAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignNominalDateAssignment(const StepAP214_AutoDesignNominalDateAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAssignment & operator=(const StepAP214_AutoDesignNominalDateAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignNominalDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDateAndTimeItem(const StepAP214_HArray1OfDateAndTimeItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateAndTimeItem & operator=(const StepAP214_HArray1OfDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDateAndTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_Da
 		Handle_StepAP214_AppliedDateAndTimeAssignment(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDateAndTimeAssignment(const StepAP214_AppliedDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const StepAP214_AppliedDateAndTimeAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_StepAP214_RepItemGroup : public Handle_StepBasic_Group {
 		%feature("autodoc", "1");
 		Handle_StepAP214_RepItemGroup(const StepAP214_RepItemGroup *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_RepItemGroup & operator=(const Handle_StepAP214_RepItemGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_RepItemGroup & operator=(const StepAP214_RepItemGroup *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_RepItemGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_StepAP214_HArray1OfDocumentReferenceItem : public Handle_MMgt_TShar
 		Handle_StepAP214_HArray1OfDocumentReferenceItem(const Handle_StepAP214_HArray1OfDocumentReferenceItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDocumentReferenceItem(const StepAP214_HArray1OfDocumentReferenceItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDocumentReferenceItem & operator=(const Handle_StepAP214_HArray1OfDocumentReferenceItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDocumentReferenceItem & operator=(const StepAP214_HArray1OfDocumentReferenceItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDocumentReferenceItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfPresentedItemSelect(const StepAP214_HArray1OfPresentedItemSelect *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfPresentedItemSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const StepAP214_HArray1OfPresentedItemSelect *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfPresentedItemSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_Docume
 		Handle_StepAP214_AppliedDocumentReference(const Handle_StepAP214_AppliedDocumentReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDocumentReference(const StepAP214_AppliedDocumentReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDocumentReference & operator=(const Handle_StepAP214_AppliedDocumentReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDocumentReference & operator=(const StepAP214_AppliedDocumentReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDocumentReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssig
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDateAssignment(const StepAP214_AppliedDateAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAssignment & operator=(const Handle_StepAP214_AppliedDateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAssignment & operator=(const StepAP214_AppliedDateAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_StepAP214_HArray1OfOrganizationItem : public Handle_MMgt_TShared {
 		Handle_StepAP214_HArray1OfOrganizationItem(const Handle_StepAP214_HArray1OfOrganizationItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfOrganizationItem(const StepAP214_HArray1OfOrganizationItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfOrganizationItem & operator=(const Handle_StepAP214_HArray1OfOrganizationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfOrganizationItem & operator=(const StepAP214_HArray1OfOrganizationItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_T
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignReferencingItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasi
 		Handle_StepAP214_AutoDesignOrganizationAssignment(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignOrganizationAssignment(const StepAP214_AutoDesignOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const StepAP214_AutoDesignOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_St
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
 		Handle_StepAP214_HArray1OfDateItem(const Handle_StepAP214_HArray1OfDateItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDateItem(const StepAP214_HArray1OfDateItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem & operator=(const Handle_StepAP214_HArray1OfDateItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem & operator=(const StepAP214_HArray1OfDateItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfDateItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TS
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem(const StepAP214_HArray1OfAutoDesignGeneralOrgItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem & operator=(const StepAP214_HArray1OfAutoDesignGeneralOrgItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_Ap
 		Handle_StepAP214_AutoDesignApprovalAssignment(const Handle_StepAP214_AutoDesignApprovalAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignApprovalAssignment(const StepAP214_AutoDesignApprovalAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignApprovalAssignment & operator=(const Handle_StepAP214_AutoDesignApprovalAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignApprovalAssignment & operator=(const StepAP214_AutoDesignApprovalAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignApprovalAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment(const StepAP214_AutoDesignPersonAndOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment & operator=(const StepAP214_AutoDesignPersonAndOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared
 		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDatedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
 		%feature("autodoc", "1");
 		Handle_StepAP214_ExternallyDefinedClass(const StepAP214_ExternallyDefinedClass *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass & operator=(const Handle_StepAP214_ExternallyDefinedClass &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass & operator=(const StepAP214_ExternallyDefinedClass *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_ExternallyDefinedClass const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_StepAP214_AutoDesignSecurityClassificationAssignment : public Handl
 		Handle_StepAP214_AutoDesignSecurityClassificationAssignment(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignSecurityClassificationAssignment(const StepAP214_AutoDesignSecurityClassificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignSecurityClassificationAssignment & operator=(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignSecurityClassificationAssignment & operator=(const StepAP214_AutoDesignSecurityClassificationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignSecurityClassificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -880,6 +1001,10 @@ class Handle_StepAP214_AutoDesignDateAndPersonAssignment : public Handle_StepBas
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignDateAndPersonAssignment(const StepAP214_AutoDesignDateAndPersonAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignDateAndPersonAssignment & operator=(const Handle_StepAP214_AutoDesignDateAndPersonAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignDateAndPersonAssignment & operator=(const StepAP214_AutoDesignDateAndPersonAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignDateAndPersonAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -905,6 +1030,10 @@ class Handle_StepAP214_AutoDesignDocumentReference : public Handle_StepBasic_Doc
 		Handle_StepAP214_AutoDesignDocumentReference(const Handle_StepAP214_AutoDesignDocumentReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignDocumentReference(const StepAP214_AutoDesignDocumentReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignDocumentReference & operator=(const Handle_StepAP214_AutoDesignDocumentReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignDocumentReference & operator=(const StepAP214_AutoDesignDocumentReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignDocumentReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -932,6 +1061,10 @@ class Handle_StepAP214_AutoDesignActualDateAndTimeAssignment : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignActualDateAndTimeAssignment(const StepAP214_AutoDesignActualDateAndTimeAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignActualDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAndTimeAssignment & operator=(const StepAP214_AutoDesignActualDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignActualDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -957,6 +1090,10 @@ class Handle_StepAP214_HArray1OfAutoDesignGroupedItem : public Handle_MMgt_TShar
 		Handle_StepAP214_HArray1OfAutoDesignGroupedItem(const Handle_StepAP214_HArray1OfAutoDesignGroupedItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignGroupedItem(const StepAP214_HArray1OfAutoDesignGroupedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGroupedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignGroupedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGroupedItem & operator=(const StepAP214_HArray1OfAutoDesignGroupedItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignGroupedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -984,6 +1121,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1009,6 +1150,10 @@ class Handle_StepAP214_AutoDesignGroupAssignment : public Handle_StepBasic_Group
 		Handle_StepAP214_AutoDesignGroupAssignment(const Handle_StepAP214_AutoDesignGroupAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignGroupAssignment(const StepAP214_AutoDesignGroupAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignGroupAssignment & operator=(const Handle_StepAP214_AutoDesignGroupAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignGroupAssignment & operator=(const StepAP214_AutoDesignGroupAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AutoDesignGroupAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1036,6 +1181,10 @@ class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfExternalIdentificationItem(const StepAP214_HArray1OfExternalIdentificationItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfExternalIdentificationItem & operator=(const Handle_StepAP214_HArray1OfExternalIdentificationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfExternalIdentificationItem & operator=(const StepAP214_HArray1OfExternalIdentificationItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfExternalIdentificationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1061,6 +1210,10 @@ class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_T
 		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfPersonAndOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1088,6 +1241,10 @@ class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_Presented
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedPresentedItem(const StepAP214_AppliedPresentedItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPresentedItem & operator=(const Handle_StepAP214_AppliedPresentedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPresentedItem & operator=(const StepAP214_AppliedPresentedItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedPresentedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1113,6 +1270,10 @@ class Handle_StepAP214_AppliedApprovalAssignment : public Handle_StepBasic_Appro
 		Handle_StepAP214_AppliedApprovalAssignment(const Handle_StepAP214_AppliedApprovalAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedApprovalAssignment(const StepAP214_AppliedApprovalAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedApprovalAssignment & operator=(const Handle_StepAP214_AppliedApprovalAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedApprovalAssignment & operator=(const StepAP214_AppliedApprovalAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedApprovalAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1140,6 +1301,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_T
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1165,6 +1330,10 @@ class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_S
 		Handle_StepAP214_AppliedExternalIdentificationAssignment(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedExternalIdentificationAssignment(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedExternalIdentificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1192,6 +1361,10 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1218,6 +1391,10 @@ class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_O
 		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedOrganizationAssignment(const StepAP214_AppliedOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const StepAP214_AppliedOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepAP214_AppliedOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1243,6 +1420,10 @@ class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
 		Handle_StepAP214_Protocol(const Handle_StepAP214_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepAP214_Protocol(const StepAP214_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol & operator=(const Handle_StepAP214_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol & operator=(const StepAP214_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_StepAP214_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1414,6 +1595,8 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignPresentedItemSelect & Assign(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1554,6 +1737,8 @@ class StepAP214_Array1OfPresentedItemSelect {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfPresentedItemSelect & Assign(const StepAP214_Array1OfPresentedItemSelect &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfPresentedItemSelect & operator=(const StepAP214_Array1OfPresentedItemSelect &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1594,6 +1779,8 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignGroupedItem & Assign(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGroupedItem & operator=(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1668,6 +1855,8 @@ class StepAP214_Array1OfDateItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDateItem & Assign(const StepAP214_Array1OfDateItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfDateItem & operator=(const StepAP214_Array1OfDateItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2363,6 +2552,8 @@ class StepAP214_Array1OfDateAndTimeItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDateAndTimeItem & Assign(const StepAP214_Array1OfDateAndTimeItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfDateAndTimeItem & operator=(const StepAP214_Array1OfDateAndTimeItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2440,6 +2631,8 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Assign(const StepAP214_Array1OfAutoDesignDateAndPersonItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndPersonItem & operator=(const StepAP214_Array1OfAutoDesignDateAndPersonItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2568,6 +2761,8 @@ class StepAP214_Array1OfApprovalItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfApprovalItem & Assign(const StepAP214_Array1OfApprovalItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfApprovalItem & operator=(const StepAP214_Array1OfApprovalItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2608,6 +2803,8 @@ class StepAP214_Array1OfOrganizationItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfOrganizationItem & Assign(const StepAP214_Array1OfOrganizationItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfOrganizationItem & operator=(const StepAP214_Array1OfOrganizationItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2989,6 +3186,8 @@ class StepAP214_Array1OfGroupItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfGroupItem & Assign(const StepAP214_Array1OfGroupItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfGroupItem & operator=(const StepAP214_Array1OfGroupItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3162,6 +3361,8 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfExternalIdentificationItem & Assign(const StepAP214_Array1OfExternalIdentificationItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfExternalIdentificationItem & operator=(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3325,6 +3526,8 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignReferencingItem & Assign(const StepAP214_Array1OfAutoDesignReferencingItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignReferencingItem & operator=(const StepAP214_Array1OfAutoDesignReferencingItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3575,6 +3778,8 @@ class StepAP214_Array1OfDocumentReferenceItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfDocumentReferenceItem & Assign(const StepAP214_Array1OfDocumentReferenceItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfDocumentReferenceItem & operator=(const StepAP214_Array1OfDocumentReferenceItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3686,6 +3891,8 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignGeneralOrgItem & Assign(const StepAP214_Array1OfAutoDesignGeneralOrgItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGeneralOrgItem & operator=(const StepAP214_Array1OfAutoDesignGeneralOrgItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3773,6 +3980,8 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignDatedItem & Assign(const StepAP214_Array1OfAutoDesignDatedItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDatedItem & operator=(const StepAP214_Array1OfAutoDesignDatedItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4017,6 +4226,8 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfPersonAndOrganizationItem & Assign(const StepAP214_Array1OfPersonAndOrganizationItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfPersonAndOrganizationItem & operator=(const StepAP214_Array1OfPersonAndOrganizationItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4163,6 +4374,8 @@ class StepAP214_Array1OfSecurityClassificationItem {
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfSecurityClassificationItem & Assign(const StepAP214_Array1OfSecurityClassificationItem &Other);
 		%feature("autodoc", "1");
+		const StepAP214_Array1OfSecurityClassificationItem & operator=(const StepAP214_Array1OfSecurityClassificationItem &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4203,6 +4416,8 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Assign(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

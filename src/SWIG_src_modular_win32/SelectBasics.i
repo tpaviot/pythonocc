@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include SelectBasics_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d(const SelectBasics_ListNodeOfListOfBox2d *anItem);
 		%feature("autodoc", "1");
+		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const Handle_SelectBasics_ListNodeOfListOfBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_ListNodeOfListOfBox2d & operator=(const SelectBasics_ListNodeOfListOfBox2d *anItem);
+		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfAddress &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress & operator=(const SelectBasics_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
+		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive(const SelectBasics_ListNodeOfListOfSensitive *anItem);
 		%feature("autodoc", "1");
+		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const Handle_SelectBasics_ListNodeOfListOfSensitive &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_ListNodeOfListOfSensitive & operator=(const SelectBasics_ListNodeOfListOfSensitive *anItem);
+		%feature("autodoc", "1");
 		Handle_SelectBasics_ListNodeOfListOfSensitive const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 		Handle_SelectBasics_EntityOwner(const Handle_SelectBasics_EntityOwner &aHandle);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner(const SelectBasics_EntityOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_EntityOwner & operator=(const Handle_SelectBasics_EntityOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_EntityOwner & operator=(const SelectBasics_EntityOwner *anItem);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -429,6 +458,8 @@ class SelectBasics_ListOfSensitive {
 		%feature("autodoc", "1");
 		void Assign(const SelectBasics_ListOfSensitive &Other);
 		%feature("autodoc", "1");
+		void operator=(const SelectBasics_ListOfSensitive &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -576,6 +607,8 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
+		const SelectBasics_SequenceOfAddress & operator=(const SelectBasics_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
 		%feature("autodoc", "1");
 		void Append(SelectBasics_SequenceOfAddress & S);
@@ -628,6 +661,8 @@ class SelectBasics_ListOfBox2d {
 		SelectBasics_ListOfBox2d();
 		%feature("autodoc", "1");
 		void Assign(const SelectBasics_ListOfBox2d &Other);
+		%feature("autodoc", "1");
+		void operator=(const SelectBasics_ListOfBox2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -730,6 +765,8 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const SelectBasics_SequenceOfOwner & Assign(const SelectBasics_SequenceOfOwner &Other);
+		%feature("autodoc", "1");
+		const SelectBasics_SequenceOfOwner & operator=(const SelectBasics_SequenceOfOwner &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_SelectBasics_EntityOwner &T);
 		%feature("autodoc", "1");

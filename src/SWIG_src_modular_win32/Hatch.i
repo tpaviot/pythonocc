@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Hatch_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Handle_Hatch_SequenceNodeOfSequenceOfLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine(const Hatch_SequenceNodeOfSequenceOfLine *anItem);
+		%feature("autodoc", "1");
+		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Handle_Hatch_SequenceNodeOfSequenceOfLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Hatch_SequenceNodeOfSequenceOfLine & operator=(const Hatch_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter(const Hatch_SequenceNodeOfSequenceOfParameter *anItem);
 		%feature("autodoc", "1");
+		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Handle_Hatch_SequenceNodeOfSequenceOfParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Hatch_SequenceNodeOfSequenceOfParameter & operator=(const Hatch_SequenceNodeOfSequenceOfParameter *anItem);
+		%feature("autodoc", "1");
 		Handle_Hatch_SequenceNodeOfSequenceOfParameter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,8 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Hatch_SequenceOfParameter & Assign(const Hatch_SequenceOfParameter &Other);
+		%feature("autodoc", "1");
+		const Hatch_SequenceOfParameter & operator=(const Hatch_SequenceOfParameter &Other);
 		%feature("autodoc", "1");
 		void Append(const Hatch_Parameter &T);
 		%feature("autodoc", "1");
@@ -343,6 +358,8 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Hatch_SequenceOfLine & Assign(const Hatch_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		const Hatch_SequenceOfLine & operator=(const Hatch_SequenceOfLine &Other);
 		%feature("autodoc", "1");
 		void Append(const Hatch_Line &T);
 		%feature("autodoc", "1");

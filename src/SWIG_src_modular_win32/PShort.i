@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PShort_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 		Handle_PShort_HArray2OfShortReal(const Handle_PShort_HArray2OfShortReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal(const PShort_HArray2OfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_HArray2OfShortReal & operator=(const Handle_PShort_HArray2OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_HArray2OfShortReal & operator=(const PShort_HArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal(const PShort_HSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal & operator=(const Handle_PShort_HSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal & operator=(const PShort_HSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_PShort_HSequenceOfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal & operator=(const PShort_SeqNodeOfHSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
 		Handle_PShort_SeqNodeOfHSequenceOfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStand
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStand
 		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 		Handle_PShort_HArray1OfShortReal(const Handle_PShort_HArray1OfShortReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal(const PShort_HArray1OfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_HArray1OfShortReal & operator=(const Handle_PShort_HArray1OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_HArray1OfShortReal & operator=(const PShort_HArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
 		Handle_PShort_HArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -306,6 +335,8 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const PShort_FieldOfHArray1OfShortReal &Other);
+		%feature("autodoc", "1");
+		void operator=(const PShort_FieldOfHArray1OfShortReal &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
 		%feature("autodoc", "1");
@@ -476,6 +507,8 @@ class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const PShort_FieldOfHArray2OfShortReal &Other);
+		%feature("autodoc", "1");
+		void operator=(const PShort_FieldOfHArray2OfShortReal &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
 		%feature("autodoc", "1");

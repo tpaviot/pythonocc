@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESBasic_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_Group(const Handle_IGESBasic_Group &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Group(const IGESBasic_Group *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group & operator=(const Handle_IGESBasic_Group &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Group & operator=(const IGESBasic_Group *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Group const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ReadWriteModule(const IGESBasic_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_ReadWriteModule & operator=(const Handle_IGESBasic_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ReadWriteModule & operator=(const IGESBasic_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity 
 		Handle_IGESBasic_SingleParent(const Handle_IGESBasic_SingleParent &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingleParent(const IGESBasic_SingleParent *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SingleParent & operator=(const Handle_IGESBasic_SingleParent &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SingleParent & operator=(const IGESBasic_SingleParent *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingleParent const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefLibName(const IGESBasic_ExternalRefLibName *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefLibName & operator=(const Handle_IGESBasic_ExternalRefLibName &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefLibName & operator=(const IGESBasic_ExternalRefLibName *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefLibName const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 		Handle_IGESBasic_Name(const Handle_IGESBasic_Name &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Name(const IGESBasic_Name *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name & operator=(const Handle_IGESBasic_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name & operator=(const IGESBasic_Name *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Name const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfIGESEntity(const IGESBasic_HArray1OfHArray1OfIGESEntity *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfIGESEntity & operator=(const Handle_IGESBasic_HArray1OfHArray1OfIGESEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfIGESEntity & operator=(const IGESBasic_HArray1OfHArray1OfIGESEntity *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfIGESEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 		Handle_IGESBasic_HArray1OfHArray1OfXY(const Handle_IGESBasic_HArray1OfHArray1OfXY &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXY(const IGESBasic_HArray1OfHArray1OfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXY & operator=(const Handle_IGESBasic_HArray1OfHArray1OfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXY & operator=(const IGESBasic_HArray1OfHArray1OfXY *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXY const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Protocol(const IGESBasic_Protocol *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_Protocol & operator=(const Handle_IGESBasic_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Protocol & operator=(const IGESBasic_Protocol *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_Hierarchy(const Handle_IGESBasic_Hierarchy &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Hierarchy(const IGESBasic_Hierarchy *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Hierarchy & operator=(const Handle_IGESBasic_Hierarchy &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Hierarchy & operator=(const IGESBasic_Hierarchy *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_Hierarchy const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfInteger(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const Handle_IGESBasic_HArray1OfHArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_SingularSubfigure(const Handle_IGESBasic_SingularSubfigure &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingularSubfigure(const IGESBasic_SingularSubfigure *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SingularSubfigure & operator=(const Handle_IGESBasic_SingularSubfigure &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SingularSubfigure & operator=(const IGESBasic_SingularSubfigure *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SingularSubfigure const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfLineFontEntity(const IGESBasic_HArray1OfLineFontEntity *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfLineFontEntity & operator=(const Handle_IGESBasic_HArray1OfLineFontEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfLineFontEntity & operator=(const IGESBasic_HArray1OfLineFontEntity *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfLineFontEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_ExternalRefFileName(const Handle_IGESBasic_ExternalRefFileName &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileName(const IGESBasic_ExternalRefFileName *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFileName & operator=(const Handle_IGESBasic_ExternalRefFileName &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFileName & operator=(const IGESBasic_ExternalRefFileName *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileName const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray2OfHArray1OfReal(const IGESBasic_HArray2OfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray2OfHArray1OfReal & operator=(const Handle_IGESBasic_HArray2OfHArray1OfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray2OfHArray1OfReal & operator=(const IGESBasic_HArray2OfHArray1OfReal *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray2OfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 		Handle_IGESBasic_GeneralModule(const Handle_IGESBasic_GeneralModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_GeneralModule(const IGESBasic_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_GeneralModule & operator=(const Handle_IGESBasic_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_GeneralModule & operator=(const IGESBasic_GeneralModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_GroupWithoutBackP(const IGESBasic_GroupWithoutBackP *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_GroupWithoutBackP & operator=(const Handle_IGESBasic_GroupWithoutBackP &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_GroupWithoutBackP & operator=(const IGESBasic_GroupWithoutBackP *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_GroupWithoutBackP const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_AssocGroupType(const Handle_IGESBasic_AssocGroupType &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_AssocGroupType(const IGESBasic_AssocGroupType *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_AssocGroupType & operator=(const Handle_IGESBasic_AssocGroupType &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_AssocGroupType & operator=(const IGESBasic_AssocGroupType *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_AssocGroupType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXYZ(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const Handle_IGESBasic_HArray1OfHArray1OfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 		Handle_IGESBasic_OrderedGroup(const Handle_IGESBasic_OrderedGroup &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroup(const IGESBasic_OrderedGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroup & operator=(const Handle_IGESBasic_OrderedGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroup & operator=(const IGESBasic_OrderedGroup *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefName(const IGESBasic_ExternalRefName *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefName & operator=(const Handle_IGESBasic_ExternalRefName &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefName & operator=(const IGESBasic_ExternalRefName *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefName const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group 
 		Handle_IGESBasic_OrderedGroupWithoutBackP(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroupWithoutBackP(const IGESBasic_OrderedGroupWithoutBackP *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const IGESBasic_OrderedGroupWithoutBackP *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_OrderedGroupWithoutBackP const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SubfigureDef(const IGESBasic_SubfigureDef *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef & operator=(const Handle_IGESBasic_SubfigureDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef & operator=(const IGESBasic_SubfigureDef *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_SubfigureDef const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity
 		Handle_IGESBasic_ExternalReferenceFile(const Handle_IGESBasic_ExternalReferenceFile &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalReferenceFile(const IGESBasic_ExternalReferenceFile *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalReferenceFile & operator=(const Handle_IGESBasic_ExternalReferenceFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalReferenceFile & operator=(const IGESBasic_ExternalReferenceFile *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalReferenceFile const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfReal(const IGESBasic_HArray1OfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfReal & operator=(const Handle_IGESBasic_HArray1OfHArray1OfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfReal & operator=(const IGESBasic_HArray1OfHArray1OfReal *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_HArray1OfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 		Handle_IGESBasic_SpecificModule(const Handle_IGESBasic_SpecificModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SpecificModule(const IGESBasic_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SpecificModule & operator=(const Handle_IGESBasic_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SpecificModule & operator=(const IGESBasic_SpecificModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity 
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileIndex(const IGESBasic_ExternalRefFileIndex *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFileIndex & operator=(const Handle_IGESBasic_ExternalRefFileIndex &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFileIndex & operator=(const IGESBasic_ExternalRefFileIndex *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFileIndex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 		Handle_IGESBasic_ExternalRefFile(const Handle_IGESBasic_ExternalRefFile &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFile(const IGESBasic_ExternalRefFile *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFile & operator=(const Handle_IGESBasic_ExternalRefFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_ExternalRefFile & operator=(const IGESBasic_ExternalRefFile *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESBasic_ExternalRefFile const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -893,6 +1006,8 @@ class IGESBasic_Array2OfHArray1OfReal {
 		void Destroy();
 		%feature("autodoc", "1");
 		const IGESBasic_Array2OfHArray1OfReal & Assign(const IGESBasic_Array2OfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		const IGESBasic_Array2OfHArray1OfReal & operator=(const IGESBasic_Array2OfHArray1OfReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -1649,6 +1764,8 @@ class IGESBasic_Array1OfLineFontEntity {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESBasic_Array1OfLineFontEntity & Assign(const IGESBasic_Array1OfLineFontEntity &Other);
+		%feature("autodoc", "1");
+		const IGESBasic_Array1OfLineFontEntity & operator=(const IGESBasic_Array1OfLineFontEntity &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

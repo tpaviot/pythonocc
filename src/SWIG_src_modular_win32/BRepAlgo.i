@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepAlgo_dependencies.i
 
@@ -130,6 +135,10 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -157,6 +166,10 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes(const BRepAlgo_AsDes *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepAlgo_AsDes & operator=(const Handle_BRepAlgo_AsDes &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_AsDes & operator=(const BRepAlgo_AsDes *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -182,6 +195,10 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -209,6 +226,10 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -235,6 +256,10 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_EdgeConnector(const BRepAlgo_EdgeConnector *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepAlgo_EdgeConnector & operator=(const Handle_BRepAlgo_EdgeConnector &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_EdgeConnector & operator=(const BRepAlgo_EdgeConnector *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepAlgo_EdgeConnector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -260,6 +285,10 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger(const BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -532,6 +561,8 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 		BRepAlgo_DataMapOfShapeBoolean(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepAlgo_DataMapOfShapeBoolean & Assign(const BRepAlgo_DataMapOfShapeBoolean &Other);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapOfShapeBoolean &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -978,6 +1009,8 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepAlgo_DataMapOfShapeInterference & Assign(const BRepAlgo_DataMapOfShapeInterference &Other);
 		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeInterference & operator=(const BRepAlgo_DataMapOfShapeInterference &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1014,6 +1047,8 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepAlgo_SequenceOfSequenceOfInteger & Assign(const BRepAlgo_SequenceOfSequenceOfInteger &Other);
+		%feature("autodoc", "1");
+		const BRepAlgo_SequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceOfSequenceOfInteger &Other);
 		%feature("autodoc", "1");
 		void Append(const TColStd_SequenceOfInteger &T);
 		%feature("autodoc", "1");
@@ -1067,6 +1102,8 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		BRepAlgo_DataMapOfShapeListOfInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepAlgo_DataMapOfShapeListOfInteger & Assign(const BRepAlgo_DataMapOfShapeListOfInteger &Other);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeListOfInteger & operator=(const BRepAlgo_DataMapOfShapeListOfInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

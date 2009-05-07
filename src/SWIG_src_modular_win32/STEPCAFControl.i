@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include STEPCAFControl_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TColle
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD(const STEPCAFControl_DataMapNodeOfDataMapOfShapePD *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfShapePD *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR(const STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 		Handle_STEPCAFControl_ActorWrite(const Handle_STEPCAFControl_ActorWrite &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ActorWrite(const STEPCAFControl_ActorWrite *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_ActorWrite & operator=(const Handle_STEPCAFControl_ActorWrite &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_ActorWrite & operator=(const STEPCAFControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile(const STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile(const Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile(const STEPCAFControl_StackItemOfDictionaryOfExternFile *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile & operator=(const Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile & operator=(const STEPCAFControl_StackItemOfDictionaryOfExternFile *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_T
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile(const STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 		Handle_STEPCAFControl_ExternFile(const Handle_STEPCAFControl_ExternFile &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile(const STEPCAFControl_ExternFile *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_ExternFile & operator=(const Handle_STEPCAFControl_ExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_ExternFile & operator=(const STEPCAFControl_ExternFile *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DictionaryOfExternFile(const STEPCAFControl_DictionaryOfExternFile *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DictionaryOfExternFile & operator=(const Handle_STEPCAFControl_DictionaryOfExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DictionaryOfExternFile & operator=(const STEPCAFControl_DictionaryOfExternFile *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DictionaryOfExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handl
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile(const STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient(const STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 		Handle_STEPCAFControl_Controller(const Handle_STEPCAFControl_Controller &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_Controller(const STEPCAFControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller & operator=(const Handle_STEPCAFControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_Controller & operator=(const STEPCAFControl_Controller *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape(const STEPCAFControl_DataMapNodeOfDataMapOfLabelShape *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfLabelShape *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel(const STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel & operator=(const Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel & operator=(const STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -484,6 +541,8 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 		STEPCAFControl_DataMapOfShapeTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfShapeTransient & Assign(const STEPCAFControl_DataMapOfShapeTransient &Other);
+		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfShapeTransient & operator=(const STEPCAFControl_DataMapOfShapeTransient &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -571,6 +630,8 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfShapePD & Assign(const STEPCAFControl_DataMapOfShapePD &Other);
 		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfShapePD & operator=(const STEPCAFControl_DataMapOfShapePD &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -605,6 +666,8 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		STEPCAFControl_DataMapOfShapeSDR(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfShapeSDR & Assign(const STEPCAFControl_DataMapOfShapeSDR &Other);
+		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfShapeSDR & operator=(const STEPCAFControl_DataMapOfShapeSDR &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -790,6 +853,8 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfShapeLabel & Assign(const STEPCAFControl_DataMapOfShapeLabel &Other);
 		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfShapeLabel & operator=(const STEPCAFControl_DataMapOfShapeLabel &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -953,6 +1018,8 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfPDExternFile & Assign(const STEPCAFControl_DataMapOfPDExternFile &Other);
 		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfPDExternFile & operator=(const STEPCAFControl_DataMapOfPDExternFile &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1011,6 +1078,8 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfSDRExternFile & Assign(const STEPCAFControl_DataMapOfSDRExternFile &Other);
 		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfSDRExternFile & operator=(const STEPCAFControl_DataMapOfSDRExternFile &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1045,6 +1114,8 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 		STEPCAFControl_DataMapOfLabelExternFile(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfLabelExternFile & Assign(const STEPCAFControl_DataMapOfLabelExternFile &Other);
+		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfLabelExternFile & operator=(const STEPCAFControl_DataMapOfLabelExternFile &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1134,6 +1205,8 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		STEPCAFControl_DataMapOfLabelShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		STEPCAFControl_DataMapOfLabelShape & Assign(const STEPCAFControl_DataMapOfLabelShape &Other);
+		%feature("autodoc", "1");
+		STEPCAFControl_DataMapOfLabelShape & operator=(const STEPCAFControl_DataMapOfLabelShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

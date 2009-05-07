@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepVisual_dependencies.i
 
@@ -154,6 +159,10 @@ class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Repr
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationRepresentation(const StepVisual_PresentationRepresentation *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationRepresentation & operator=(const Handle_StepVisual_PresentationRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationRepresentation & operator=(const StepVisual_PresentationRepresentation *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -179,6 +188,10 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation(const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation(const StepVisual_MechanicalDesignGeometricPresentationRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation & operator=(const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation & operator=(const StepVisual_MechanicalDesignGeometricPresentationRepresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -206,6 +219,10 @@ class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresen
 		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeText(const StepVisual_CompositeText *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText & operator=(const Handle_StepVisual_CompositeText &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeText & operator=(const StepVisual_CompositeText *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeText const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -231,6 +248,10 @@ class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 		Handle_StepVisual_Invisibility(const Handle_StepVisual_Invisibility &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_Invisibility(const StepVisual_Invisibility *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Invisibility & operator=(const Handle_StepVisual_Invisibility &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Invisibility & operator=(const StepVisual_Invisibility *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_Invisibility const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -258,6 +279,10 @@ class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresenta
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModel(const StepVisual_CameraModel *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModel & operator=(const Handle_StepVisual_CameraModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModel & operator=(const StepVisual_CameraModel *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -283,6 +308,10 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 		Handle_StepVisual_SurfaceStyleSegmentationCurve(const Handle_StepVisual_SurfaceStyleSegmentationCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSegmentationCurve(const StepVisual_SurfaceStyleSegmentationCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleSegmentationCurve & operator=(const Handle_StepVisual_SurfaceStyleSegmentationCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleSegmentationCurve & operator=(const StepVisual_SurfaceStyleSegmentationCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSegmentationCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -310,6 +339,10 @@ class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_Colour(const StepVisual_Colour *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_Colour & operator=(const Handle_StepVisual_Colour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Colour & operator=(const StepVisual_Colour *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_Colour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -335,6 +368,10 @@ class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 		Handle_StepVisual_PreDefinedColour(const Handle_StepVisual_PreDefinedColour &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedColour(const StepVisual_PreDefinedColour *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedColour & operator=(const Handle_StepVisual_PreDefinedColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedColour & operator=(const StepVisual_PreDefinedColour *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedColour const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -362,6 +399,10 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraUsage(const StepVisual_CameraUsage *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CameraUsage & operator=(const Handle_StepVisual_CameraUsage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraUsage & operator=(const StepVisual_CameraUsage *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CameraUsage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -387,6 +428,10 @@ class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 		Handle_StepVisual_AnnotationText(const Handle_StepVisual_AnnotationText &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationText(const StepVisual_AnnotationText *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationText & operator=(const Handle_StepVisual_AnnotationText &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationText & operator=(const StepVisual_AnnotationText *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationText const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -414,6 +459,10 @@ class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_
 		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentInvisibility(const StepVisual_ContextDependentInvisibility *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_ContextDependentInvisibility & operator=(const Handle_StepVisual_ContextDependentInvisibility &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ContextDependentInvisibility & operator=(const StepVisual_ContextDependentInvisibility *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentInvisibility const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -439,6 +488,10 @@ class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_Ext
 		Handle_StepVisual_ExternallyDefinedCurveFont(const Handle_StepVisual_ExternallyDefinedCurveFont &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedCurveFont(const StepVisual_ExternallyDefinedCurveFont *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ExternallyDefinedCurveFont & operator=(const Handle_StepVisual_ExternallyDefinedCurveFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ExternallyDefinedCurveFont & operator=(const StepVisual_ExternallyDefinedCurveFont *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedCurveFont const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -466,6 +519,10 @@ class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 		%feature("autodoc", "1");
 		Handle_StepVisual_MarkerMember(const StepVisual_MarkerMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_MarkerMember & operator=(const Handle_StepVisual_MarkerMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MarkerMember & operator=(const StepVisual_MarkerMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_MarkerMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -491,6 +548,10 @@ class Handle_StepVisual_PresentationView : public Handle_StepVisual_Presentation
 		Handle_StepVisual_PresentationView(const Handle_StepVisual_PresentationView &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationView(const StepVisual_PresentationView *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView & operator=(const Handle_StepVisual_PresentationView &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationView & operator=(const StepVisual_PresentationView *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationView const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -518,6 +579,10 @@ class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 		%feature("autodoc", "1");
 		Handle_StepVisual_StyledItem(const StepVisual_StyledItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_StyledItem & operator=(const Handle_StepVisual_StyledItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_StyledItem & operator=(const StepVisual_StyledItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_StyledItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -543,6 +608,10 @@ class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledIt
 		Handle_StepVisual_OverRidingStyledItem(const Handle_StepVisual_OverRidingStyledItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_OverRidingStyledItem(const StepVisual_OverRidingStyledItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_OverRidingStyledItem & operator=(const Handle_StepVisual_OverRidingStyledItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_OverRidingStyledItem & operator=(const StepVisual_OverRidingStyledItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_OverRidingStyledItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -570,6 +639,10 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentOverRidingStyledItem(const StepVisual_ContextDependentOverRidingStyledItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_ContextDependentOverRidingStyledItem & operator=(const Handle_StepVisual_ContextDependentOverRidingStyledItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ContextDependentOverRidingStyledItem & operator=(const StepVisual_ContextDependentOverRidingStyledItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_ContextDependentOverRidingStyledItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -595,6 +668,10 @@ class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 		Handle_StepVisual_PresentationSize(const Handle_StepVisual_PresentationSize &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSize(const StepVisual_PresentationSize *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize & operator=(const Handle_StepVisual_PresentationSize &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSize & operator=(const StepVisual_PresentationSize *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSize const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -622,6 +699,10 @@ class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_Pr
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedColour(const StepVisual_DraughtingPreDefinedColour *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const Handle_StepVisual_DraughtingPreDefinedColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const StepVisual_DraughtingPreDefinedColour *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedColour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -647,6 +728,10 @@ class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 		Handle_StepVisual_HArray1OfTextOrCharacter(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfTextOrCharacter(const StepVisual_HArray1OfTextOrCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const Handle_StepVisual_HArray1OfTextOrCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfTextOrCharacter & operator=(const StepVisual_HArray1OfTextOrCharacter *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfTextOrCharacter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -674,6 +759,10 @@ class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD2(const StepVisual_CameraModelD2 *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2 & operator=(const Handle_StepVisual_CameraModelD2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD2 & operator=(const StepVisual_CameraModelD2 *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD2 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -699,6 +788,10 @@ class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 		Handle_StepVisual_CameraModelD3(const Handle_StepVisual_CameraModelD3 &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD3(const StepVisual_CameraModelD3 *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD3 & operator=(const Handle_StepVisual_CameraModelD3 &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraModelD3 & operator=(const StepVisual_CameraModelD3 *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraModelD3 const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -726,6 +819,10 @@ class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage(const StepVisual_CameraImage *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage & operator=(const Handle_StepVisual_CameraImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage & operator=(const StepVisual_CameraImage *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -751,6 +848,10 @@ class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 		Handle_StepVisual_SurfaceStyleParameterLine(const Handle_StepVisual_SurfaceStyleParameterLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleParameterLine(const StepVisual_SurfaceStyleParameterLine *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleParameterLine & operator=(const Handle_StepVisual_SurfaceStyleParameterLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleParameterLine & operator=(const StepVisual_SurfaceStyleParameterLine *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleParameterLine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -778,6 +879,10 @@ class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledIt
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationOccurrence(const StepVisual_AnnotationOccurrence *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationOccurrence & operator=(const Handle_StepVisual_AnnotationOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationOccurrence & operator=(const StepVisual_AnnotationOccurrence *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -803,6 +908,10 @@ class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_Camera
 		Handle_StepVisual_CameraImage2dWithScale(const Handle_StepVisual_CameraImage2dWithScale &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage2dWithScale(const StepVisual_CameraImage2dWithScale *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage2dWithScale & operator=(const Handle_StepVisual_CameraImage2dWithScale &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage2dWithScale & operator=(const StepVisual_CameraImage2dWithScale *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage2dWithScale const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -830,6 +939,10 @@ class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMg
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleAssignment(const StepVisual_HArray1OfPresentationStyleAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment & operator=(const Handle_StepVisual_HArray1OfPresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleAssignment & operator=(const StepVisual_HArray1OfPresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -855,6 +968,10 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 		Handle_StepVisual_PresentationLayerAssignment(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerAssignment(const StepVisual_PresentationLayerAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerAssignment & operator=(const Handle_StepVisual_PresentationLayerAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerAssignment & operator=(const StepVisual_PresentationLayerAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -882,6 +999,10 @@ class Handle_StepVisual_PresentationArea : public Handle_StepVisual_Presentation
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationArea(const StepVisual_PresentationArea *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationArea & operator=(const Handle_StepVisual_PresentationArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationArea & operator=(const StepVisual_PresentationArea *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationArea const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -907,6 +1028,10 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handl
 		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationArea(const StepVisual_MechanicalDesignGeometricPresentationArea *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea & operator=(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_MechanicalDesignGeometricPresentationArea & operator=(const StepVisual_MechanicalDesignGeometricPresentationArea *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_MechanicalDesignGeometricPresentationArea const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -934,6 +1059,10 @@ class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const StepVisual_PresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -959,6 +1088,10 @@ class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_Pr
 		Handle_StepVisual_PresentationStyleByContext(const Handle_StepVisual_PresentationStyleByContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleByContext(const StepVisual_PresentationStyleByContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleByContext & operator=(const Handle_StepVisual_PresentationStyleByContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleByContext & operator=(const StepVisual_PresentationStyleByContext *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationStyleByContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -986,6 +1119,10 @@ class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_ViewVolume(const StepVisual_ViewVolume *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_ViewVolume & operator=(const Handle_StepVisual_ViewVolume &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ViewVolume & operator=(const StepVisual_ViewVolume *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_ViewVolume const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1011,6 +1148,10 @@ class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 		Handle_StepVisual_TextStyle(const Handle_StepVisual_TextStyle &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyle(const StepVisual_TextStyle *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyle & operator=(const Handle_StepVisual_TextStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyle & operator=(const StepVisual_TextStyle *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1038,6 +1179,10 @@ class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisu
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleWithBoxCharacteristics(const StepVisual_TextStyleWithBoxCharacteristics *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleWithBoxCharacteristics & operator=(const Handle_StepVisual_TextStyleWithBoxCharacteristics &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleWithBoxCharacteristics & operator=(const StepVisual_TextStyleWithBoxCharacteristics *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleWithBoxCharacteristics const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1063,6 +1208,10 @@ class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 		Handle_StepVisual_SurfaceSideStyle(const Handle_StepVisual_SurfaceSideStyle &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceSideStyle(const StepVisual_SurfaceSideStyle *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceSideStyle & operator=(const Handle_StepVisual_SurfaceSideStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceSideStyle & operator=(const StepVisual_SurfaceSideStyle *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceSideStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1090,6 +1239,10 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_PointStyle(const StepVisual_PointStyle *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PointStyle & operator=(const Handle_StepVisual_PointStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PointStyle & operator=(const StepVisual_PointStyle *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PointStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1115,6 +1268,10 @@ class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShar
 		Handle_StepVisual_HArray1OfDirectionCountSelect(const Handle_StepVisual_HArray1OfDirectionCountSelect &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfDirectionCountSelect(const StepVisual_HArray1OfDirectionCountSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect & operator=(const Handle_StepVisual_HArray1OfDirectionCountSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfDirectionCountSelect & operator=(const StepVisual_HArray1OfDirectionCountSelect *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfDirectionCountSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1142,6 +1299,10 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyle(const StepVisual_FillAreaStyle *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle & operator=(const Handle_StepVisual_FillAreaStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle & operator=(const StepVisual_FillAreaStyle *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1167,6 +1328,10 @@ class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 		Handle_StepVisual_ColourSpecification(const Handle_StepVisual_ColourSpecification &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ColourSpecification(const StepVisual_ColourSpecification *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification & operator=(const Handle_StepVisual_ColourSpecification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourSpecification & operator=(const StepVisual_ColourSpecification *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ColourSpecification const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1194,6 +1359,10 @@ class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification
 		%feature("autodoc", "1");
 		Handle_StepVisual_ColourRgb(const StepVisual_ColourRgb *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb & operator=(const Handle_StepVisual_ColourRgb &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ColourRgb & operator=(const StepVisual_ColourRgb *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_ColourRgb const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1219,6 +1388,10 @@ class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 		Handle_StepVisual_PresentationSet(const Handle_StepVisual_PresentationSet &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet(const StepVisual_PresentationSet *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet & operator=(const Handle_StepVisual_PresentationSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet & operator=(const StepVisual_PresentationSet *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationSet const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1246,6 +1419,10 @@ class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyle(const StepVisual_CurveStyle *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle & operator=(const Handle_StepVisual_CurveStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyle & operator=(const StepVisual_CurveStyle *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1271,6 +1448,10 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 		Handle_StepVisual_ExternallyDefinedTextFont(const Handle_StepVisual_ExternallyDefinedTextFont &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedTextFont(const StepVisual_ExternallyDefinedTextFont *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ExternallyDefinedTextFont & operator=(const Handle_StepVisual_ExternallyDefinedTextFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_ExternallyDefinedTextFont & operator=(const StepVisual_ExternallyDefinedTextFont *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_ExternallyDefinedTextFont const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1298,6 +1479,10 @@ class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 		%feature("autodoc", "1");
 		Handle_StepVisual_TemplateInstance(const StepVisual_TemplateInstance *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_TemplateInstance & operator=(const Handle_StepVisual_TemplateInstance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TemplateInstance & operator=(const StepVisual_TemplateInstance *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_TemplateInstance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1323,6 +1508,10 @@ class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 		Handle_StepVisual_HArray1OfFillStyleSelect(const Handle_StepVisual_HArray1OfFillStyleSelect &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfFillStyleSelect(const StepVisual_HArray1OfFillStyleSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfFillStyleSelect & operator=(const Handle_StepVisual_HArray1OfFillStyleSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfFillStyleSelect & operator=(const StepVisual_HArray1OfFillStyleSelect *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfFillStyleSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1350,6 +1539,10 @@ class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyleColour(const StepVisual_FillAreaStyleColour *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour & operator=(const Handle_StepVisual_FillAreaStyleColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyleColour & operator=(const StepVisual_FillAreaStyleColour *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_FillAreaStyleColour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1375,6 +1568,10 @@ class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_
 		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect(const Handle_StepVisual_HArray1OfSurfaceStyleElementSelect &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect(const StepVisual_HArray1OfSurfaceStyleElementSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect & operator=(const Handle_StepVisual_HArray1OfSurfaceStyleElementSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect & operator=(const StepVisual_HArray1OfSurfaceStyleElementSelect *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfSurfaceStyleElementSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1402,6 +1599,10 @@ class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleFillArea(const StepVisual_SurfaceStyleFillArea *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleFillArea & operator=(const Handle_StepVisual_SurfaceStyleFillArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleFillArea & operator=(const StepVisual_SurfaceStyleFillArea *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleFillArea const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1427,6 +1628,10 @@ class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 		Handle_StepVisual_PresentedItem(const Handle_StepVisual_PresentedItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItem(const StepVisual_PresentedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentedItem & operator=(const Handle_StepVisual_PresentedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentedItem & operator=(const StepVisual_PresentedItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1454,6 +1659,10 @@ class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 		%feature("autodoc", "1");
 		Handle_StepVisual_Template(const StepVisual_Template *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_Template & operator=(const Handle_StepVisual_Template &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_Template & operator=(const StepVisual_Template *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_Template const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1479,6 +1688,10 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 		Handle_StepVisual_AreaInSet(const Handle_StepVisual_AreaInSet &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_AreaInSet(const StepVisual_AreaInSet *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AreaInSet & operator=(const Handle_StepVisual_AreaInSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AreaInSet & operator=(const StepVisual_AreaInSet *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_AreaInSet const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1506,6 +1719,10 @@ class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleForDefinedFont(const StepVisual_TextStyleForDefinedFont *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont & operator=(const Handle_StepVisual_TextStyleForDefinedFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextStyleForDefinedFont & operator=(const StepVisual_TextStyleForDefinedFont *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_TextStyleForDefinedFont const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1531,6 +1748,10 @@ class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 		Handle_StepVisual_PreDefinedItem(const Handle_StepVisual_PreDefinedItem &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedItem(const StepVisual_PreDefinedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedItem & operator=(const Handle_StepVisual_PreDefinedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedItem & operator=(const StepVisual_PreDefinedItem *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1558,6 +1779,10 @@ class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefine
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedCurveFont(const StepVisual_PreDefinedCurveFont *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedCurveFont & operator=(const Handle_StepVisual_PreDefinedCurveFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedCurveFont & operator=(const StepVisual_PreDefinedCurveFont *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedCurveFont const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1583,6 +1808,10 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 		Handle_StepVisual_HArray1OfBoxCharacteristicSelect(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfBoxCharacteristicSelect(const StepVisual_HArray1OfBoxCharacteristicSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfBoxCharacteristicSelect & operator=(const Handle_StepVisual_HArray1OfBoxCharacteristicSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfBoxCharacteristicSelect & operator=(const StepVisual_HArray1OfBoxCharacteristicSelect *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfBoxCharacteristicSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1610,6 +1839,10 @@ class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefined
 		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedTextFont(const StepVisual_PreDefinedTextFont *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedTextFont & operator=(const Handle_StepVisual_PreDefinedTextFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PreDefinedTextFont & operator=(const StepVisual_PreDefinedTextFont *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PreDefinedTextFont const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1635,6 +1868,10 @@ class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 		Handle_StepVisual_CurveStyleFontPattern(const Handle_StepVisual_CurveStyleFontPattern &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFontPattern(const StepVisual_CurveStyleFontPattern *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFontPattern & operator=(const Handle_StepVisual_CurveStyleFontPattern &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFontPattern & operator=(const StepVisual_CurveStyleFontPattern *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFontPattern const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1662,6 +1899,10 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleUsage(const StepVisual_SurfaceStyleUsage *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleUsage & operator=(const Handle_StepVisual_SurfaceStyleUsage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleUsage & operator=(const StepVisual_SurfaceStyleUsage *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleUsage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1687,6 +1928,10 @@ class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresent
 		Handle_StepVisual_PlanarExtent(const Handle_StepVisual_PlanarExtent &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarExtent(const StepVisual_PlanarExtent *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PlanarExtent & operator=(const Handle_StepVisual_PlanarExtent &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PlanarExtent & operator=(const StepVisual_PlanarExtent *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarExtent const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1714,6 +1959,10 @@ class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarBox(const StepVisual_PlanarBox *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_PlanarBox & operator=(const Handle_StepVisual_PlanarBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PlanarBox & operator=(const StepVisual_PlanarBox *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_PlanarBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1739,6 +1988,10 @@ class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisua
 		Handle_StepVisual_DraughtingAnnotationOccurrence(const Handle_StepVisual_DraughtingAnnotationOccurrence &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingAnnotationOccurrence(const StepVisual_DraughtingAnnotationOccurrence *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingAnnotationOccurrence & operator=(const Handle_StepVisual_DraughtingAnnotationOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingAnnotationOccurrence & operator=(const StepVisual_DraughtingAnnotationOccurrence *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingAnnotationOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1766,6 +2019,10 @@ class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfCurveStyleFontPattern(const StepVisual_HArray1OfCurveStyleFontPattern *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfCurveStyleFontPattern & operator=(const Handle_StepVisual_HArray1OfCurveStyleFontPattern &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfCurveStyleFontPattern & operator=(const StepVisual_HArray1OfCurveStyleFontPattern *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfCurveStyleFontPattern const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1791,6 +2048,10 @@ class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TS
 		Handle_StepVisual_HArray1OfPresentationStyleSelect(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleSelect(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const Handle_StepVisual_HArray1OfPresentationStyleSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfPresentationStyleSelect & operator=(const StepVisual_HArray1OfPresentationStyleSelect *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfPresentationStyleSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1818,6 +2079,10 @@ class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_Anno
 		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationTextOccurrence(const StepVisual_AnnotationTextOccurrence *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationTextOccurrence & operator=(const Handle_StepVisual_AnnotationTextOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_AnnotationTextOccurrence & operator=(const StepVisual_AnnotationTextOccurrence *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_AnnotationTextOccurrence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1843,6 +2108,10 @@ class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual
 		Handle_StepVisual_DraughtingPreDefinedCurveFont(const Handle_StepVisual_DraughtingPreDefinedCurveFont &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedCurveFont(const StepVisual_DraughtingPreDefinedCurveFont *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedCurveFont & operator=(const Handle_StepVisual_DraughtingPreDefinedCurveFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedCurveFont & operator=(const StepVisual_DraughtingPreDefinedCurveFont *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingPreDefinedCurveFont const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1870,6 +2139,10 @@ class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresenta
 		%feature("autodoc", "1");
 		Handle_StepVisual_TextLiteral(const StepVisual_TextLiteral *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_TextLiteral & operator=(const Handle_StepVisual_TextLiteral &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_TextLiteral & operator=(const StepVisual_TextLiteral *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_TextLiteral const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1895,6 +2168,10 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 		Handle_StepVisual_CompositeTextWithExtent(const Handle_StepVisual_CompositeTextWithExtent &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeTextWithExtent(const StepVisual_CompositeTextWithExtent *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeTextWithExtent & operator=(const Handle_StepVisual_CompositeTextWithExtent &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CompositeTextWithExtent & operator=(const StepVisual_CompositeTextWithExtent *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CompositeTextWithExtent const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1922,6 +2199,10 @@ class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation 
 		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingModel(const StepVisual_DraughtingModel *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingModel & operator=(const Handle_StepVisual_DraughtingModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingModel & operator=(const StepVisual_DraughtingModel *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_DraughtingModel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1947,6 +2228,10 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 		Handle_StepVisual_SurfaceStyleBoundary(const Handle_StepVisual_SurfaceStyleBoundary &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleBoundary(const StepVisual_SurfaceStyleBoundary *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleBoundary & operator=(const Handle_StepVisual_SurfaceStyleBoundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleBoundary & operator=(const StepVisual_SurfaceStyleBoundary *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleBoundary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1974,6 +2259,10 @@ class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfLayeredItem(const StepVisual_HArray1OfLayeredItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem & operator=(const Handle_StepVisual_HArray1OfLayeredItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfLayeredItem & operator=(const StepVisual_HArray1OfLayeredItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfLayeredItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1999,6 +2288,10 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 		Handle_StepVisual_PresentationLayerUsage(const Handle_StepVisual_PresentationLayerUsage &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerUsage(const StepVisual_PresentationLayerUsage *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage & operator=(const Handle_StepVisual_PresentationLayerUsage &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationLayerUsage & operator=(const StepVisual_PresentationLayerUsage *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentationLayerUsage const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2026,6 +2319,10 @@ class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfStyleContextSelect(const StepVisual_HArray1OfStyleContextSelect *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const Handle_StepVisual_HArray1OfStyleContextSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfStyleContextSelect & operator=(const StepVisual_HArray1OfStyleContextSelect *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfStyleContextSelect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2051,6 +2348,10 @@ class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared
 		Handle_StepVisual_PresentedItemRepresentation(const Handle_StepVisual_PresentedItemRepresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItemRepresentation(const StepVisual_PresentedItemRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentedItemRepresentation & operator=(const Handle_StepVisual_PresentedItemRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentedItemRepresentation & operator=(const StepVisual_PresentedItemRepresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_PresentedItemRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2078,6 +2379,10 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfInvisibleItem(const StepVisual_HArray1OfInvisibleItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfInvisibleItem & operator=(const Handle_StepVisual_HArray1OfInvisibleItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_HArray1OfInvisibleItem & operator=(const StepVisual_HArray1OfInvisibleItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_HArray1OfInvisibleItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2103,6 +2408,10 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 		Handle_StepVisual_SurfaceStyleSilhouette(const Handle_StepVisual_SurfaceStyleSilhouette &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSilhouette(const StepVisual_SurfaceStyleSilhouette *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleSilhouette & operator=(const Handle_StepVisual_SurfaceStyleSilhouette &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleSilhouette & operator=(const StepVisual_SurfaceStyleSilhouette *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleSilhouette const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2130,6 +2439,10 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 		%feature("autodoc", "1");
 		Handle_StepVisual_BackgroundColour(const StepVisual_BackgroundColour *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour & operator=(const Handle_StepVisual_BackgroundColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_BackgroundColour & operator=(const StepVisual_BackgroundColour *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_BackgroundColour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2155,6 +2468,10 @@ class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_Camera
 		Handle_StepVisual_CameraImage3dWithScale(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage3dWithScale(const StepVisual_CameraImage3dWithScale *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage3dWithScale & operator=(const Handle_StepVisual_CameraImage3dWithScale &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CameraImage3dWithScale & operator=(const StepVisual_CameraImage3dWithScale *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_CameraImage3dWithScale const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2182,6 +2499,10 @@ class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFont(const StepVisual_CurveStyleFont *anItem);
 		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont & operator=(const Handle_StepVisual_CurveStyleFont &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_CurveStyleFont & operator=(const StepVisual_CurveStyleFont *anItem);
+		%feature("autodoc", "1");
 		Handle_StepVisual_CurveStyleFont const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2207,6 +2528,10 @@ class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 		Handle_StepVisual_SurfaceStyleControlGrid(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleControlGrid(const StepVisual_SurfaceStyleControlGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const Handle_StepVisual_SurfaceStyleControlGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_SurfaceStyleControlGrid & operator=(const StepVisual_SurfaceStyleControlGrid *anItem);
 		%feature("autodoc", "1");
 		Handle_StepVisual_SurfaceStyleControlGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2442,6 +2767,8 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfCurveStyleFontPattern & Assign(const StepVisual_Array1OfCurveStyleFontPattern &Other);
 		%feature("autodoc", "1");
+		const StepVisual_Array1OfCurveStyleFontPattern & operator=(const StepVisual_Array1OfCurveStyleFontPattern &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2482,6 +2809,8 @@ class StepVisual_Array1OfStyleContextSelect {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfStyleContextSelect & Assign(const StepVisual_Array1OfStyleContextSelect &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfStyleContextSelect & operator=(const StepVisual_Array1OfStyleContextSelect &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3894,6 +4223,8 @@ class StepVisual_Array1OfTextOrCharacter {
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfTextOrCharacter & Assign(const StepVisual_Array1OfTextOrCharacter &Other);
 		%feature("autodoc", "1");
+		const StepVisual_Array1OfTextOrCharacter & operator=(const StepVisual_Array1OfTextOrCharacter &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4191,6 +4522,8 @@ class StepVisual_Array1OfFillStyleSelect {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfFillStyleSelect & Assign(const StepVisual_Array1OfFillStyleSelect &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfFillStyleSelect & operator=(const StepVisual_Array1OfFillStyleSelect &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4610,6 +4943,8 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfBoxCharacteristicSelect & Assign(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
 		%feature("autodoc", "1");
+		const StepVisual_Array1OfBoxCharacteristicSelect & operator=(const StepVisual_Array1OfBoxCharacteristicSelect &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4787,6 +5122,8 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfPresentationStyleAssignment & Assign(const StepVisual_Array1OfPresentationStyleAssignment &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfPresentationStyleAssignment & operator=(const StepVisual_Array1OfPresentationStyleAssignment &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4985,6 +5322,8 @@ class StepVisual_Array1OfLayeredItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfLayeredItem & Assign(const StepVisual_Array1OfLayeredItem &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfLayeredItem & operator=(const StepVisual_Array1OfLayeredItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5236,6 +5575,8 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfPresentationStyleSelect & Assign(const StepVisual_Array1OfPresentationStyleSelect &Other);
 		%feature("autodoc", "1");
+		const StepVisual_Array1OfPresentationStyleSelect & operator=(const StepVisual_Array1OfPresentationStyleSelect &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -5351,6 +5692,8 @@ class StepVisual_Array1OfDirectionCountSelect {
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfDirectionCountSelect & Assign(const StepVisual_Array1OfDirectionCountSelect &Other);
 		%feature("autodoc", "1");
+		const StepVisual_Array1OfDirectionCountSelect & operator=(const StepVisual_Array1OfDirectionCountSelect &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -5391,6 +5734,8 @@ class StepVisual_Array1OfInvisibleItem {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfInvisibleItem & Assign(const StepVisual_Array1OfInvisibleItem &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfInvisibleItem & operator=(const StepVisual_Array1OfInvisibleItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5525,6 +5870,8 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepVisual_Array1OfSurfaceStyleElementSelect & Assign(const StepVisual_Array1OfSurfaceStyleElementSelect &Other);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfSurfaceStyleElementSelect & operator=(const StepVisual_Array1OfSurfaceStyleElementSelect &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

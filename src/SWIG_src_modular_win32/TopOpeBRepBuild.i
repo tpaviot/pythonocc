@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopOpeBRepBuild_dependencies.i
 
@@ -135,6 +140,10 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape :
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -160,6 +169,10 @@ class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 		Handle_TopOpeBRepBuild_Loop(const Handle_TopOpeBRepBuild_Loop &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Loop(const TopOpeBRepBuild_Loop *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & operator=(const Handle_TopOpeBRepBuild_Loop &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & operator=(const TopOpeBRepBuild_Loop *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Loop const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -187,6 +200,10 @@ class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Pave(const TopOpeBRepBuild_Pave *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Pave & operator=(const Handle_TopOpeBRepBuild_Pave &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Pave & operator=(const TopOpeBRepBuild_Pave *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_Pave const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -212,6 +229,10 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape(const Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape(const TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape & operator=(const Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape & operator=(const TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -239,6 +260,10 @@ class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -264,6 +289,10 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_Ma
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop(const Handle_TopOpeBRepBuild_ListNodeOfListOfLoop &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop(const TopOpeBRepBuild_ListNodeOfListOfLoop *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop & operator=(const Handle_TopOpeBRepBuild_ListNodeOfListOfLoop &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfLoop *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -291,6 +320,10 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfPave(const TopOpeBRepBuild_ListNodeOfListOfPave *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfPave & operator=(const Handle_TopOpeBRepBuild_ListNodeOfListOfPave &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfPave & operator=(const TopOpeBRepBuild_ListNodeOfListOfPave *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfPave const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -316,6 +349,10 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -343,6 +380,10 @@ class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder(const TopOpeBRepBuild_HBuilder *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_HBuilder & operator=(const Handle_TopOpeBRepBuild_HBuilder &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_HBuilder & operator=(const TopOpeBRepBuild_HBuilder *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -369,6 +410,10 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -394,6 +439,10 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollect
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop(const Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop(const TopOpeBRepBuild_ListNodeOfListOfListOfLoop *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop & operator=(const Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop & operator=(const TopOpeBRepBuild_ListNodeOfListOfListOfLoop *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -444,6 +493,8 @@ class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapOfShapeReal & Assign(const TopOpeBRepBuild_DataMapOfShapeReal &Other);
 		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapOfShapeReal &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -478,6 +529,8 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 		TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & Assign(const TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo &Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -828,6 +881,8 @@ class TopOpeBRepBuild_ListOfListOfLoop {
 		%feature("autodoc", "1");
 		void Assign(const TopOpeBRepBuild_ListOfListOfLoop &Other);
 		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfListOfLoop &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -879,6 +934,8 @@ class TopOpeBRepBuild_ListOfLoop {
 		%feature("autodoc", "1");
 		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
 		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -929,6 +986,8 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1757,6 +1816,8 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 		TopOpeBRepBuild_DataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_DataMapOfShapeInteger & Assign(const TopOpeBRepBuild_DataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeInteger & operator=(const TopOpeBRepBuild_DataMapOfShapeInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -2598,6 +2659,8 @@ class TopOpeBRepBuild_ListOfPave {
 		%feature("autodoc", "1");
 		void Assign(const TopOpeBRepBuild_ListOfPave &Other);
 		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfPave &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -2790,6 +2853,8 @@ class TopOpeBRepBuild_ListOfShapeListOfShape {
 		TopOpeBRepBuild_ListOfShapeListOfShape();
 		%feature("autodoc", "1");
 		void Assign(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

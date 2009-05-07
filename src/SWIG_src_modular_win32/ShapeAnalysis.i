@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeAnalysis_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_FreeBoundData(const ShapeAnalysis_FreeBoundData *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator=(const Handle_ShapeAnalysis_FreeBoundData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & operator=(const ShapeAnalysis_FreeBoundData *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_FreeBoundData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 		Handle_ShapeAnalysis_Wire(const Handle_ShapeAnalysis_Wire &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Wire(const ShapeAnalysis_Wire *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Wire & operator=(const Handle_ShapeAnalysis_Wire &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Wire & operator=(const ShapeAnalysis_Wire *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Wire const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +222,10 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters(const ShapeAnalysis_TransferParameters *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_TransferParameters & operator=(const Handle_ShapeAnalysis_TransferParameters &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_TransferParameters & operator=(const ShapeAnalysis_TransferParameters *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParameters const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 		Handle_ShapeAnalysis_TransferParametersProj(const Handle_ShapeAnalysis_TransferParametersProj &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParametersProj(const ShapeAnalysis_TransferParametersProj *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_TransferParametersProj & operator=(const Handle_ShapeAnalysis_TransferParametersProj &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_TransferParametersProj & operator=(const ShapeAnalysis_TransferParametersProj *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_TransferParametersProj const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -257,6 +282,10 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal & operator=(const Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +311,10 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_HSequenceOfFreeBounds const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -309,6 +342,10 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal & operator=(const ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +371,10 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 		Handle_ShapeAnalysis_Surface(const Handle_ShapeAnalysis_Surface &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Surface(const ShapeAnalysis_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface & operator=(const Handle_ShapeAnalysis_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_Surface & operator=(const ShapeAnalysis_Surface *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAnalysis_Surface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -745,6 +786,8 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		ShapeAnalysis_DataMapOfShapeReal & Assign(const ShapeAnalysis_DataMapOfShapeReal &Other);
 		%feature("autodoc", "1");
+		ShapeAnalysis_DataMapOfShapeReal & operator=(const ShapeAnalysis_DataMapOfShapeReal &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -968,6 +1011,8 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		ShapeAnalysis_DataMapOfShapeListOfReal & Assign(const ShapeAnalysis_DataMapOfShapeListOfReal &Other);
 		%feature("autodoc", "1");
+		ShapeAnalysis_DataMapOfShapeListOfReal & operator=(const ShapeAnalysis_DataMapOfShapeListOfReal &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1092,6 +1137,8 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const ShapeAnalysis_SequenceOfFreeBounds & Assign(const ShapeAnalysis_SequenceOfFreeBounds &Other);
+		%feature("autodoc", "1");
+		const ShapeAnalysis_SequenceOfFreeBounds & operator=(const ShapeAnalysis_SequenceOfFreeBounds &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_ShapeAnalysis_FreeBoundData &T);
 		%feature("autodoc", "1");

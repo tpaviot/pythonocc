@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Sketcher
 
+%include Sketcher_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -27,7 +29,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
-%include std_basic_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -104,6 +106,11 @@ Standard_Integer & function transformation
 %typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
     $1 = &temp;
 }
+
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
 
 
 %include Sketcher_dependencies.i

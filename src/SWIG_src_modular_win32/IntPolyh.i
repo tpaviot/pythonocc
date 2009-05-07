@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntPolyh_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints(const IntPolyh_SequenceNodeOfSeqOfStartPoints *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints & operator=(const IntPolyh_SequenceNodeOfSeqOfStartPoints *anItem);
 		%feature("autodoc", "1");
 		Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -184,6 +193,8 @@ class IntPolyh_StartPoint {
 		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Equal(const IntPolyh_StartPoint &StPt);
+		%feature("autodoc", "1");
+		void operator=(const IntPolyh_StartPoint &StPt);
 		%feature("autodoc", "1");
 		void SetXYZ(const Standard_Real XX, const Standard_Real YY, const Standard_Real ZZ);
 		%feature("autodoc", "1");
@@ -345,6 +356,8 @@ class IntPolyh_ArrayOfSectionLines {
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfSectionLines & Copy(const IntPolyh_ArrayOfSectionLines &Other);
 		%feature("autodoc", "1");
+		IntPolyh_ArrayOfSectionLines & operator=(const IntPolyh_ArrayOfSectionLines &Other);
+		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbSectionLines() const;
@@ -383,6 +396,8 @@ class IntPolyh_SectionLine {
 		IntPolyh_StartPoint & operator[](const Standard_Integer nn);
 		%feature("autodoc", "1");
 		IntPolyh_SectionLine & Copy(const IntPolyh_SectionLine &Other);
+		%feature("autodoc", "1");
+		IntPolyh_SectionLine & operator=(const IntPolyh_SectionLine &Other);
 		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
@@ -466,6 +481,8 @@ class IntPolyh_ArrayOfEdges {
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfEdges & Copy(const IntPolyh_ArrayOfEdges &Other);
 		%feature("autodoc", "1");
+		IntPolyh_ArrayOfEdges & operator=(const IntPolyh_ArrayOfEdges &Other);
+		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
 		void Dump() const;
@@ -498,6 +515,8 @@ class IntPolyh_ArrayOfTangentZones {
 		IntPolyh_StartPoint & operator[](const Standard_Integer nn);
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfTangentZones & Copy(const IntPolyh_ArrayOfTangentZones &Other);
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTangentZones & operator=(const IntPolyh_ArrayOfTangentZones &Other);
 		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
@@ -539,6 +558,8 @@ class IntPolyh_Point {
 		Standard_Integer PartOfCommon() const;
 		%feature("autodoc", "1");
 		void Equal(const IntPolyh_Point &Pt);
+		%feature("autodoc", "1");
+		void operator=(const IntPolyh_Point &Pt);
 		%feature("autodoc", "1");
 		void Set(const Standard_Real v1, const Standard_Real v2, const Standard_Real v3, const Standard_Real v4, const Standard_Real v5, const Standard_Integer II=1);
 		%feature("autodoc", "1");
@@ -613,6 +634,8 @@ class IntPolyh_ArrayOfStartPoints {
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfStartPoints & Copy(const IntPolyh_ArrayOfStartPoints &Other);
 		%feature("autodoc", "1");
+		IntPolyh_ArrayOfStartPoints & operator=(const IntPolyh_ArrayOfStartPoints &Other);
+		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		void Destroy();
@@ -674,6 +697,8 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntPolyh_SeqOfStartPoints & Assign(const IntPolyh_SeqOfStartPoints &Other);
+		%feature("autodoc", "1");
+		const IntPolyh_SeqOfStartPoints & operator=(const IntPolyh_SeqOfStartPoints &Other);
 		%feature("autodoc", "1");
 		void Append(const IntPolyh_StartPoint &T);
 		%feature("autodoc", "1");
@@ -740,6 +765,8 @@ class IntPolyh_ArrayOfPoints {
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfPoints & Copy(const IntPolyh_ArrayOfPoints &Other);
 		%feature("autodoc", "1");
+		IntPolyh_ArrayOfPoints & operator=(const IntPolyh_ArrayOfPoints &Other);
+		%feature("autodoc", "1");
 		Standard_Integer GetN() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -788,6 +815,8 @@ class IntPolyh_ArrayOfTriangles {
 		IntPolyh_Triangle & operator[](const Standard_Integer nn);
 		%feature("autodoc", "1");
 		IntPolyh_ArrayOfTriangles & Copy(const IntPolyh_ArrayOfTriangles &Other);
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTriangles & operator=(const IntPolyh_ArrayOfTriangles &Other);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");

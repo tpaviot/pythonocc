@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Convert_dependencies.i
 
@@ -137,6 +142,10 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
 		%feature("autodoc", "1");
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles &aHandle);
+		%feature("autodoc", "1");
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles *anItem);
+		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -162,6 +171,10 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d & operator=(const Convert_SequenceNodeOfSequenceOfArray1OfPoles2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -422,6 +435,8 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Convert_SequenceOfArray1OfPoles2d & Assign(const Convert_SequenceOfArray1OfPoles2d &Other);
 		%feature("autodoc", "1");
+		const Convert_SequenceOfArray1OfPoles2d & operator=(const Convert_SequenceOfArray1OfPoles2d &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
 		%feature("autodoc", "1");
 		void Append(Convert_SequenceOfArray1OfPoles2d & S);
@@ -524,6 +539,8 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Convert_SequenceOfArray1OfPoles & Assign(const Convert_SequenceOfArray1OfPoles &Other);
+		%feature("autodoc", "1");
+		const Convert_SequenceOfArray1OfPoles & operator=(const Convert_SequenceOfArray1OfPoles &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HArray1OfPnt &T);
 		%feature("autodoc", "1");

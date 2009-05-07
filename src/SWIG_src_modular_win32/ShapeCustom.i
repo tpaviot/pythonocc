@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeCustom_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 		Handle_ShapeCustom_BSplineRestriction(const Handle_ShapeCustom_BSplineRestriction &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction(const ShapeCustom_BSplineRestriction *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction & operator=(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_BSplineRestriction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification(const ShapeCustom_TrsfModification *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification & operator=(const Handle_ShapeCustom_TrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_TrsfModification & operator=(const ShapeCustom_TrsfModification *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeCustom_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 		Handle_ShapeCustom_SweptToElementary(const Handle_ShapeCustom_SweptToElementary &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary(const ShapeCustom_SweptToElementary *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_SweptToElementary & operator=(const Handle_ShapeCustom_SweptToElementary &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_SweptToElementary & operator=(const ShapeCustom_SweptToElementary *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_SweptToElementary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline(const ShapeCustom_ConvertToBSpline *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToBSpline & operator=(const Handle_ShapeCustom_ConvertToBSpline &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToBSpline & operator=(const ShapeCustom_ConvertToBSpline *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToBSpline const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 		Handle_ShapeCustom_ConvertToRevolution(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution(const ShapeCustom_ConvertToRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution & operator=(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_ConvertToRevolution const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters(const ShapeCustom_RestrictionParameters *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeCustom_RestrictionParameters & operator=(const Handle_ShapeCustom_RestrictionParameters &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_RestrictionParameters & operator=(const ShapeCustom_RestrictionParameters *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeCustom_RestrictionParameters const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 		Handle_ShapeCustom_DirectModification(const Handle_ShapeCustom_DirectModification &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification(const ShapeCustom_DirectModification *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_DirectModification & operator=(const Handle_ShapeCustom_DirectModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeCustom_DirectModification const DownCast(const Handle_Standard_Transient &AnObject);
 

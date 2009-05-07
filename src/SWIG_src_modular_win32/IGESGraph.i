@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESGraph_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 		Handle_IGESGraph_LineFontDefPattern(const Handle_IGESGraph_LineFontDefPattern &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern(const IGESGraph_LineFontDefPattern *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontDefPattern & operator=(const Handle_IGESGraph_LineFontDefPattern &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontDefPattern & operator=(const IGESGraph_LineFontDefPattern *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefPattern const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick(const IGESGraph_Pick *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_Pick & operator=(const Handle_IGESGraph_Pick &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_Pick & operator=(const IGESGraph_Pick *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_Pick const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate(const Handle_IGESGraph_HArray1OfTextDisplayTemplate &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate(const IGESGraph_HArray1OfTextDisplayTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const Handle_IGESGraph_HArray1OfTextDisplayTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfTextDisplayTemplate & operator=(const IGESGraph_HArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Color(const IGESGraph_Color *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_Color & operator=(const Handle_IGESGraph_Color &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_Color & operator=(const IGESGraph_Color *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_Color const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 		Handle_IGESGraph_TextDisplayTemplate(const Handle_IGESGraph_TextDisplayTemplate &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate(const IGESGraph_TextDisplayTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_TextDisplayTemplate & operator=(const Handle_IGESGraph_TextDisplayTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_TextDisplayTemplate & operator=(const IGESGraph_TextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize(const IGESGraph_NominalSize *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_NominalSize & operator=(const Handle_IGESGraph_NominalSize &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_NominalSize & operator=(const IGESGraph_NominalSize *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_NominalSize const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 		Handle_IGESGraph_DrawingSize(const Handle_IGESGraph_DrawingSize &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize(const IGESGraph_DrawingSize *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingSize & operator=(const Handle_IGESGraph_DrawingSize &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingSize & operator=(const IGESGraph_DrawingSize *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingSize const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits(const IGESGraph_DrawingUnits *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits & operator=(const Handle_IGESGraph_DrawingUnits &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DrawingUnits & operator=(const IGESGraph_DrawingUnits *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_DrawingUnits const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 		Handle_IGESGraph_IntercharacterSpacing(const Handle_IGESGraph_IntercharacterSpacing &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing(const IGESGraph_IntercharacterSpacing *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_IntercharacterSpacing & operator=(const Handle_IGESGraph_IntercharacterSpacing &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_IntercharacterSpacing & operator=(const IGESGraph_IntercharacterSpacing *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_IntercharacterSpacing const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule(const IGESGraph_GeneralModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule & operator=(const Handle_IGESGraph_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 		Handle_IGESGraph_HArray1OfColor(const Handle_IGESGraph_HArray1OfColor &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor(const IGESGraph_HArray1OfColor *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfColor & operator=(const Handle_IGESGraph_HArray1OfColor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfColor & operator=(const IGESGraph_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel(const IGESGraph_DefinitionLevel *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_DefinitionLevel & operator=(const Handle_IGESGraph_DefinitionLevel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_DefinitionLevel & operator=(const IGESGraph_DefinitionLevel *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_DefinitionLevel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 		Handle_IGESGraph_HArray1OfTextFontDef(const Handle_IGESGraph_HArray1OfTextFontDef &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef(const IGESGraph_HArray1OfTextFontDef *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const Handle_IGESGraph_HArray1OfTextFontDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HArray1OfTextFontDef & operator=(const IGESGraph_HArray1OfTextFontDef *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HArray1OfTextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule(const IGESGraph_SpecificModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule & operator=(const Handle_IGESGraph_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 		Handle_IGESGraph_UniformRectGrid(const Handle_IGESGraph_UniformRectGrid &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid(const IGESGraph_UniformRectGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid & operator=(const Handle_IGESGraph_UniformRectGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_UniformRectGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight(const IGESGraph_HighLight *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_HighLight & operator=(const Handle_IGESGraph_HighLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_HighLight & operator=(const IGESGraph_HighLight *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_HighLight const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 		Handle_IGESGraph_LineFontDefTemplate(const Handle_IGESGraph_LineFontDefTemplate &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate(const IGESGraph_LineFontDefTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontDefTemplate & operator=(const Handle_IGESGraph_LineFontDefTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontDefTemplate & operator=(const IGESGraph_LineFontDefTemplate *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontDefTemplate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule(const IGESGraph_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule & operator=(const Handle_IGESGraph_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 		Handle_IGESGraph_Protocol(const Handle_IGESGraph_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol(const IGESGraph_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_Protocol & operator=(const Handle_IGESGraph_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_Protocol & operator=(const IGESGraph_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef(const IGESGraph_TextFontDef *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGraph_TextFontDef & operator=(const Handle_IGESGraph_TextFontDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_TextFontDef & operator=(const IGESGraph_TextFontDef *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGraph_TextFontDef const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 		Handle_IGESGraph_LineFontPredefined(const Handle_IGESGraph_LineFontPredefined &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined(const IGESGraph_LineFontPredefined *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontPredefined & operator=(const Handle_IGESGraph_LineFontPredefined &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_LineFontPredefined & operator=(const IGESGraph_LineFontPredefined *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGraph_LineFontPredefined const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -815,6 +904,8 @@ class IGESGraph_Array1OfTextFontDef {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESGraph_Array1OfTextFontDef & Assign(const IGESGraph_Array1OfTextFontDef &Other);
+		%feature("autodoc", "1");
+		const IGESGraph_Array1OfTextFontDef & operator=(const IGESGraph_Array1OfTextFontDef &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1473,6 +1564,8 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 		%feature("autodoc", "1");
 		const IGESGraph_Array1OfTextDisplayTemplate & Assign(const IGESGraph_Array1OfTextDisplayTemplate &Other);
 		%feature("autodoc", "1");
+		const IGESGraph_Array1OfTextDisplayTemplate & operator=(const IGESGraph_Array1OfTextDisplayTemplate &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1861,6 +1954,8 @@ class IGESGraph_Array1OfColor {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESGraph_Array1OfColor & Assign(const IGESGraph_Array1OfColor &Other);
+		%feature("autodoc", "1");
+		const IGESGraph_Array1OfColor & operator=(const IGESGraph_Array1OfColor &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

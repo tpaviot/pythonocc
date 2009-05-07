@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GccEnt_dependencies.i
 
@@ -133,6 +138,10 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 		Handle_GccEnt_BadQualifier(const Handle_GccEnt_BadQualifier &aHandle);
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier(const GccEnt_BadQualifier *anItem);
+		%feature("autodoc", "1");
+		Handle_GccEnt_BadQualifier & operator=(const Handle_GccEnt_BadQualifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_GccEnt_BadQualifier & operator=(const GccEnt_BadQualifier *anItem);
 		%feature("autodoc", "1");
 		Handle_GccEnt_BadQualifier const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -227,6 +236,8 @@ class GccEnt_Array1OfPosition {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GccEnt_Array1OfPosition & Assign(const GccEnt_Array1OfPosition &Other);
+		%feature("autodoc", "1");
+		const GccEnt_Array1OfPosition & operator=(const GccEnt_Array1OfPosition &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

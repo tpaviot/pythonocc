@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinObjMgt_dependencies.i
 
@@ -133,6 +138,10 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable(const BinObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
+		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const Handle_BinObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinObjMgt_DataMapNodeOfRRelocationTable & operator=(const BinObjMgt_DataMapNodeOfRRelocationTable *anItem);
+		%feature("autodoc", "1");
 		Handle_BinObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -158,6 +167,10 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
+		%feature("autodoc", "1");
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
 		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -340,6 +353,8 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const BinObjMgt_SequenceOfAddress & Assign(const BinObjMgt_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
+		const BinObjMgt_SequenceOfAddress & operator=(const BinObjMgt_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
 		%feature("autodoc", "1");
 		void Append(BinObjMgt_SequenceOfAddress & S);
@@ -421,6 +436,8 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 		BinObjMgt_RRelocationTable(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BinObjMgt_RRelocationTable & Assign(const BinObjMgt_RRelocationTable &Other);
+		%feature("autodoc", "1");
+		BinObjMgt_RRelocationTable & operator=(const BinObjMgt_RRelocationTable &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

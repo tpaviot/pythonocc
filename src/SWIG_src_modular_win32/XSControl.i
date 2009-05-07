@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XSControl_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 		Handle_XSControl_SelectForTransfer(const Handle_XSControl_SelectForTransfer &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSControl_SelectForTransfer(const XSControl_SelectForTransfer *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer & operator=(const Handle_XSControl_SelectForTransfer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer & operator=(const XSControl_SelectForTransfer *anItem);
 		%feature("autodoc", "1");
 		Handle_XSControl_SelectForTransfer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter(const XSControl_TransferWriter *anItem);
 		%feature("autodoc", "1");
+		Handle_XSControl_TransferWriter & operator=(const Handle_XSControl_TransferWriter &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferWriter & operator=(const XSControl_TransferWriter *anItem);
+		%feature("autodoc", "1");
 		Handle_XSControl_TransferWriter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 		Handle_XSControl_SignTransferStatus(const Handle_XSControl_SignTransferStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSControl_SignTransferStatus(const XSControl_SignTransferStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_SignTransferStatus & operator=(const Handle_XSControl_SignTransferStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_SignTransferStatus & operator=(const XSControl_SignTransferStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_XSControl_SignTransferStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_TransferReader(const XSControl_TransferReader *anItem);
 		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader & operator=(const Handle_XSControl_TransferReader &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader & operator=(const XSControl_TransferReader *anItem);
+		%feature("autodoc", "1");
 		Handle_XSControl_TransferReader const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 		Handle_XSControl_Controller(const Handle_XSControl_Controller &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSControl_Controller(const XSControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller & operator=(const Handle_XSControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller & operator=(const XSControl_Controller *anItem);
 		%feature("autodoc", "1");
 		Handle_XSControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_XSControl_Vars(const XSControl_Vars *anItem);
 		%feature("autodoc", "1");
+		Handle_XSControl_Vars & operator=(const Handle_XSControl_Vars &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_Vars & operator=(const XSControl_Vars *anItem);
+		%feature("autodoc", "1");
 		Handle_XSControl_Vars const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +311,10 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession(const XSControl_WorkSession *anItem);
 		%feature("autodoc", "1");
+		Handle_XSControl_WorkSession & operator=(const Handle_XSControl_WorkSession &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_WorkSession & operator=(const XSControl_WorkSession *anItem);
+		%feature("autodoc", "1");
 		Handle_XSControl_WorkSession const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -307,6 +340,10 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 		Handle_XSControl_ConnectedShapes(const Handle_XSControl_ConnectedShapes &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSControl_ConnectedShapes(const XSControl_ConnectedShapes *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_ConnectedShapes & operator=(const Handle_XSControl_ConnectedShapes &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_ConnectedShapes & operator=(const XSControl_ConnectedShapes *anItem);
 		%feature("autodoc", "1");
 		Handle_XSControl_ConnectedShapes const DownCast(const Handle_Standard_Transient &AnObject);
 

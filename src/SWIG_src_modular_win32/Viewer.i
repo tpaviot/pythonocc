@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Viewer_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 		Handle_Viewer_BadValue(const Handle_Viewer_BadValue &aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue(const Viewer_BadValue *anItem);
+		%feature("autodoc", "1");
+		Handle_Viewer_BadValue & operator=(const Handle_Viewer_BadValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_Viewer_BadValue & operator=(const Viewer_BadValue *anItem);
 		%feature("autodoc", "1");
 		Handle_Viewer_BadValue const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Viewer_Viewer(const Viewer_Viewer *anItem);
 		%feature("autodoc", "1");
+		Handle_Viewer_Viewer & operator=(const Handle_Viewer_Viewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_Viewer_Viewer & operator=(const Viewer_Viewer *anItem);
+		%feature("autodoc", "1");
 		Handle_Viewer_Viewer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 		Handle_Viewer_View(const Handle_Viewer_View &aHandle);
 		%feature("autodoc", "1");
 		Handle_Viewer_View(const Viewer_View *anItem);
+		%feature("autodoc", "1");
+		Handle_Viewer_View & operator=(const Handle_Viewer_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Viewer_View & operator=(const Viewer_View *anItem);
 		%feature("autodoc", "1");
 		Handle_Viewer_View const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PDF_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 		Handle_PDF_Attribute(const Handle_PDF_Attribute &aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute(const PDF_Attribute *anItem);
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & operator=(const Handle_PDF_Attribute &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & operator=(const PDF_Attribute *anItem);
 		%feature("autodoc", "1");
 		Handle_PDF_Attribute const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PDF_TagSource(const PDF_TagSource *anItem);
 		%feature("autodoc", "1");
+		Handle_PDF_TagSource & operator=(const Handle_PDF_TagSource &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_TagSource & operator=(const PDF_TagSource *anItem);
+		%feature("autodoc", "1");
 		Handle_PDF_TagSource const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 		Handle_PDF_Reference(const Handle_PDF_Reference &aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_Reference(const PDF_Reference *anItem);
+		%feature("autodoc", "1");
+		Handle_PDF_Reference & operator=(const Handle_PDF_Reference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_Reference & operator=(const PDF_Reference *anItem);
 		%feature("autodoc", "1");
 		Handle_PDF_Reference const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PDF_Data(const PDF_Data *anItem);
 		%feature("autodoc", "1");
+		Handle_PDF_Data & operator=(const Handle_PDF_Data &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_Data & operator=(const PDF_Data *anItem);
+		%feature("autodoc", "1");
 		Handle_PDF_Data const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *anItem);
 		%feature("autodoc", "1");
+		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 & operator=(const PDF_VArrayNodeOfFieldOfHAttributeArray1 *anItem);
+		%feature("autodoc", "1");
 		Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 		Handle_PDF_HAttributeArray1(const Handle_PDF_HAttributeArray1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1(const PDF_HAttributeArray1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PDF_HAttributeArray1 & operator=(const Handle_PDF_HAttributeArray1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_HAttributeArray1 & operator=(const PDF_HAttributeArray1 *anItem);
 		%feature("autodoc", "1");
 		Handle_PDF_HAttributeArray1 const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -351,6 +380,8 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const PDF_FieldOfHAttributeArray1 &Other);
+		%feature("autodoc", "1");
+		void operator=(const PDF_FieldOfHAttributeArray1 &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
 		%feature("autodoc", "1");

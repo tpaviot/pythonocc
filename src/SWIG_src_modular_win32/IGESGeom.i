@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESGeom_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 		Handle_IGESGeom_SpecificModule(const Handle_IGESGeom_SpecificModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SpecificModule(const IGESGeom_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SpecificModule & operator=(const Handle_IGESGeom_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SpecificModule & operator=(const IGESGeom_SpecificModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CircularArc(const IGESGeom_CircularArc *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_CircularArc & operator=(const Handle_IGESGeom_CircularArc &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CircularArc & operator=(const IGESGeom_CircularArc *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_CircularArc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_SurfaceOfRevolution(const Handle_IGESGeom_SurfaceOfRevolution &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SurfaceOfRevolution(const IGESGeom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SurfaceOfRevolution & operator=(const Handle_IGESGeom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SurfaceOfRevolution & operator=(const IGESGeom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Boundary(const IGESGeom_Boundary *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_Boundary & operator=(const Handle_IGESGeom_Boundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Boundary & operator=(const IGESGeom_Boundary *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_Boundary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared
 		Handle_IGESGeom_HArray1OfTransformationMatrix(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfTransformationMatrix(const IGESGeom_HArray1OfTransformationMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const IGESGeom_HArray1OfTransformationMatrix *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfTransformationMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CurveOnSurface(const IGESGeom_CurveOnSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_CurveOnSurface & operator=(const Handle_IGESGeom_CurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CurveOnSurface & operator=(const IGESGeom_CurveOnSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_CurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 		Handle_IGESGeom_HArray1OfBoundary(const Handle_IGESGeom_HArray1OfBoundary &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfBoundary(const IGESGeom_HArray1OfBoundary *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfBoundary & operator=(const Handle_IGESGeom_HArray1OfBoundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfBoundary & operator=(const IGESGeom_HArray1OfBoundary *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfBoundary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CompositeCurve(const IGESGeom_CompositeCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_CompositeCurve & operator=(const Handle_IGESGeom_CompositeCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CompositeCurve & operator=(const IGESGeom_CompositeCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_CompositeCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 		Handle_IGESGeom_HArray1OfCurveOnSurface(const Handle_IGESGeom_HArray1OfCurveOnSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfCurveOnSurface(const IGESGeom_HArray1OfCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfCurveOnSurface & operator=(const Handle_IGESGeom_HArray1OfCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfCurveOnSurface & operator=(const IGESGeom_HArray1OfCurveOnSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_HArray1OfCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Flash(const IGESGeom_Flash *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash & operator=(const Handle_IGESGeom_Flash &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash & operator=(const IGESGeom_Flash *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_Flash const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_Line(const Handle_IGESGeom_Line &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Line(const IGESGeom_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Line & operator=(const Handle_IGESGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Line & operator=(const IGESGeom_Line *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Line const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix(const IGESGeom_TransformationMatrix *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_TransformationMatrix & operator=(const Handle_IGESGeom_TransformationMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TransformationMatrix & operator=(const IGESGeom_TransformationMatrix *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_RuledSurface(const Handle_IGESGeom_RuledSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_RuledSurface(const IGESGeom_RuledSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface & operator=(const Handle_IGESGeom_RuledSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface & operator=(const IGESGeom_RuledSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_RuledSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Plane(const IGESGeom_Plane *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_Plane & operator=(const Handle_IGESGeom_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Plane & operator=(const IGESGeom_Plane *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_Plane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_BSplineCurve(const Handle_IGESGeom_BSplineCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineCurve(const IGESGeom_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_BSplineCurve & operator=(const Handle_IGESGeom_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_BSplineCurve & operator=(const IGESGeom_BSplineCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BoundedSurface(const IGESGeom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_BoundedSurface & operator=(const Handle_IGESGeom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_BoundedSurface & operator=(const IGESGeom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_BoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 		Handle_IGESGeom_Protocol(const Handle_IGESGeom_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Protocol(const IGESGeom_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Protocol & operator=(const Handle_IGESGeom_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Protocol & operator=(const IGESGeom_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineSurface(const IGESGeom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_BSplineSurface & operator=(const Handle_IGESGeom_BSplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_BSplineSurface & operator=(const IGESGeom_BSplineSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_BSplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_ConicArc(const Handle_IGESGeom_ConicArc &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ConicArc(const IGESGeom_ConicArc *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_ConicArc & operator=(const Handle_IGESGeom_ConicArc &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_ConicArc & operator=(const IGESGeom_ConicArc *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ConicArc const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetSurface(const IGESGeom_OffsetSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_OffsetSurface & operator=(const Handle_IGESGeom_OffsetSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_OffsetSurface & operator=(const IGESGeom_OffsetSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_TrimmedSurface(const Handle_IGESGeom_TrimmedSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TrimmedSurface(const IGESGeom_TrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TrimmedSurface & operator=(const Handle_IGESGeom_TrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TrimmedSurface & operator=(const IGESGeom_TrimmedSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TrimmedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineCurve(const IGESGeom_SplineCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineCurve & operator=(const Handle_IGESGeom_SplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineCurve & operator=(const IGESGeom_SplineCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 		Handle_IGESGeom_ReadWriteModule(const Handle_IGESGeom_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ReadWriteModule(const IGESGeom_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_ReadWriteModule & operator=(const Handle_IGESGeom_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_ReadWriteModule & operator=(const IGESGeom_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Direction(const IGESGeom_Direction *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction & operator=(const Handle_IGESGeom_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction & operator=(const IGESGeom_Direction *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_Direction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_Point(const Handle_IGESGeom_Point &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Point(const IGESGeom_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point & operator=(const Handle_IGESGeom_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point & operator=(const IGESGeom_Point *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_Point const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineSurface(const IGESGeom_SplineSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface & operator=(const Handle_IGESGeom_SplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_SplineSurface & operator=(const IGESGeom_SplineSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_SplineSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 		Handle_IGESGeom_CopiousData(const Handle_IGESGeom_CopiousData &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CopiousData(const IGESGeom_CopiousData *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CopiousData & operator=(const Handle_IGESGeom_CopiousData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CopiousData & operator=(const IGESGeom_CopiousData *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_CopiousData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TabulatedCylinder(const IGESGeom_TabulatedCylinder *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_TabulatedCylinder & operator=(const Handle_IGESGeom_TabulatedCylinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TabulatedCylinder & operator=(const IGESGeom_TabulatedCylinder *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_TabulatedCylinder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -854,6 +971,10 @@ class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetCurve(const IGESGeom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESGeom_OffsetCurve & operator=(const Handle_IGESGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_OffsetCurve & operator=(const IGESGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESGeom_OffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -879,6 +1000,10 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 		Handle_IGESGeom_GeneralModule(const Handle_IGESGeom_GeneralModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_GeneralModule(const IGESGeom_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_GeneralModule & operator=(const Handle_IGESGeom_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_GeneralModule & operator=(const IGESGeom_GeneralModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESGeom_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1540,6 +1665,8 @@ class IGESGeom_Array1OfCurveOnSurface {
 		%feature("autodoc", "1");
 		const IGESGeom_Array1OfCurveOnSurface & Assign(const IGESGeom_Array1OfCurveOnSurface &Other);
 		%feature("autodoc", "1");
+		const IGESGeom_Array1OfCurveOnSurface & operator=(const IGESGeom_Array1OfCurveOnSurface &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2087,6 +2214,8 @@ class IGESGeom_Array1OfBoundary {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESGeom_Array1OfBoundary & Assign(const IGESGeom_Array1OfBoundary &Other);
+		%feature("autodoc", "1");
+		const IGESGeom_Array1OfBoundary & operator=(const IGESGeom_Array1OfBoundary &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2811,6 +2940,8 @@ class IGESGeom_Array1OfTransformationMatrix {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESGeom_Array1OfTransformationMatrix & Assign(const IGESGeom_Array1OfTransformationMatrix &Other);
+		%feature("autodoc", "1");
+		const IGESGeom_Array1OfTransformationMatrix & operator=(const IGESGeom_Array1OfTransformationMatrix &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

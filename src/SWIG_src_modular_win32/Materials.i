@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Materials_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 		Handle_Materials_FuzzyInstance(const Handle_Materials_FuzzyInstance &aHandle);
 		%feature("autodoc", "1");
 		Handle_Materials_FuzzyInstance(const Materials_FuzzyInstance *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance & operator=(const Handle_Materials_FuzzyInstance &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance & operator=(const Materials_FuzzyInstance *anItem);
 		%feature("autodoc", "1");
 		Handle_Materials_FuzzyInstance const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 		%feature("autodoc", "1");
 		Handle_Materials_Material(const Materials_Material *anItem);
 		%feature("autodoc", "1");
+		Handle_Materials_Material & operator=(const Handle_Materials_Material &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_Material & operator=(const Materials_Material *anItem);
+		%feature("autodoc", "1");
 		Handle_Materials_Material const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 		Handle_Materials_SequenceNodeOfMtsSequence(const Handle_Materials_SequenceNodeOfMtsSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence(const Materials_SequenceNodeOfMtsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_SequenceNodeOfMtsSequence & operator=(const Handle_Materials_SequenceNodeOfMtsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_SequenceNodeOfMtsSequence & operator=(const Materials_SequenceNodeOfMtsSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_Materials_SequenceNodeOfMtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsSequence(const Materials_MaterialsSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Materials_MaterialsSequence & operator=(const Handle_Materials_MaterialsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialsSequence & operator=(const Materials_MaterialsSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Materials_MaterialsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 		Handle_Materials_Color(const Handle_Materials_Color &aHandle);
 		%feature("autodoc", "1");
 		Handle_Materials_Color(const Materials_Color *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_Color & operator=(const Handle_Materials_Color &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_Color & operator=(const Materials_Color *anItem);
 		%feature("autodoc", "1");
 		Handle_Materials_Color const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialDefinition(const Materials_MaterialDefinition *anItem);
 		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition & operator=(const Handle_Materials_MaterialDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition & operator=(const Materials_MaterialDefinition *anItem);
+		%feature("autodoc", "1");
 		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 		Handle_Materials_MaterialsDictionary(const Handle_Materials_MaterialsDictionary &aHandle);
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary(const Materials_MaterialsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialsDictionary & operator=(const Handle_Materials_MaterialsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialsDictionary & operator=(const Materials_MaterialsDictionary *anItem);
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -536,6 +569,8 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Materials_MtsSequence & Assign(const Materials_MtsSequence &Other);
+		%feature("autodoc", "1");
+		const Materials_MtsSequence & operator=(const Materials_MtsSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Materials_Material &T);
 		%feature("autodoc", "1");

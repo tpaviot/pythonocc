@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Approx_dependencies.i
 
@@ -138,6 +143,10 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc(const Approx_CurvlinFunc *anItem);
 		%feature("autodoc", "1");
+		Handle_Approx_CurvlinFunc & operator=(const Handle_Approx_CurvlinFunc &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_CurvlinFunc & operator=(const Approx_CurvlinFunc *anItem);
+		%feature("autodoc", "1");
 		Handle_Approx_CurvlinFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -163,6 +172,10 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 		Handle_Approx_HArray1OfAdHSurface(const Handle_Approx_HArray1OfAdHSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface(const Approx_HArray1OfAdHSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Approx_HArray1OfAdHSurface & operator=(const Handle_Approx_HArray1OfAdHSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_HArray1OfAdHSurface & operator=(const Approx_HArray1OfAdHSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfAdHSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -190,6 +203,10 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction(const Approx_SweepFunction *anItem);
 		%feature("autodoc", "1");
+		Handle_Approx_SweepFunction & operator=(const Handle_Approx_SweepFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_SweepFunction & operator=(const Approx_SweepFunction *anItem);
+		%feature("autodoc", "1");
 		Handle_Approx_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -215,6 +232,10 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 		Handle_Approx_HArray1OfGTrsf2d(const Handle_Approx_HArray1OfGTrsf2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d(const Approx_HArray1OfGTrsf2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Approx_HArray1OfGTrsf2d & operator=(const Handle_Approx_HArray1OfGTrsf2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_HArray1OfGTrsf2d & operator=(const Approx_HArray1OfGTrsf2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Approx_HArray1OfGTrsf2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -242,6 +263,10 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Approx_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -267,6 +292,10 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal & operator=(const Approx_SequenceNodeOfSequenceOfHArray1OfReal *anItem);
 		%feature("autodoc", "1");
 		Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -356,6 +385,8 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColStd_HArray1OfReal &T);
 		%feature("autodoc", "1");
@@ -528,6 +559,8 @@ class Approx_Array1OfGTrsf2d {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Approx_Array1OfGTrsf2d & Assign(const Approx_Array1OfGTrsf2d &Other);
+		%feature("autodoc", "1");
+		const Approx_Array1OfGTrsf2d & operator=(const Approx_Array1OfGTrsf2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -941,6 +974,8 @@ class Approx_Array1OfAdHSurface {
 		%feature("autodoc", "1");
 		const Approx_Array1OfAdHSurface & Assign(const Approx_Array1OfAdHSurface &Other);
 		%feature("autodoc", "1");
+		const Approx_Array1OfAdHSurface & operator=(const Approx_Array1OfAdHSurface &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -996,6 +1031,8 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Approx_SequenceOfArray1OfPnt2d & Assign(const Approx_SequenceOfArray1OfPnt2d &Other);
+		%feature("autodoc", "1");
+		const Approx_SequenceOfArray1OfPnt2d & operator=(const Approx_SequenceOfArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
 		%feature("autodoc", "1");

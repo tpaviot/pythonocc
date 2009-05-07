@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StlMesh_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 		Handle_StlMesh_MeshDomain(const Handle_StlMesh_MeshDomain &aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain(const StlMesh_MeshDomain *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_MeshDomain & operator=(const Handle_StlMesh_MeshDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_MeshDomain & operator=(const StlMesh_MeshDomain *anItem);
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle(const StlMesh_MeshTriangle *anItem);
 		%feature("autodoc", "1");
+		Handle_StlMesh_MeshTriangle & operator=(const Handle_StlMesh_MeshTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_MeshTriangle & operator=(const StlMesh_MeshTriangle *anItem);
+		%feature("autodoc", "1");
 		Handle_StlMesh_MeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 		Handle_StlMesh_Mesh(const Handle_StlMesh_Mesh &aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh(const StlMesh_Mesh *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh & operator=(const Handle_StlMesh_Mesh &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *anItem);
 		%feature("autodoc", "1");
 		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh(const StlMesh_SequenceNodeOfSequenceOfMesh *anItem);
 		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMesh &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMesh & operator=(const StlMesh_SequenceNodeOfSequenceOfMesh *anItem);
+		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMesh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
+		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle &aHandle);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshTriangle *anItem);
 		%feature("autodoc", "1");
 		Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -385,6 +414,8 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMeshDomain & Assign(const StlMesh_SequenceOfMeshDomain &Other);
+		%feature("autodoc", "1");
+		const StlMesh_SequenceOfMeshDomain & operator=(const StlMesh_SequenceOfMeshDomain &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StlMesh_MeshDomain &T);
 		%feature("autodoc", "1");
@@ -609,6 +640,8 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMeshTriangle & Assign(const StlMesh_SequenceOfMeshTriangle &Other);
 		%feature("autodoc", "1");
+		const StlMesh_SequenceOfMeshTriangle & operator=(const StlMesh_SequenceOfMeshTriangle &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_StlMesh_MeshTriangle &T);
 		%feature("autodoc", "1");
 		void Append(StlMesh_SequenceOfMeshTriangle & S);
@@ -663,6 +696,8 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const StlMesh_SequenceOfMesh & Assign(const StlMesh_SequenceOfMesh &Other);
+		%feature("autodoc", "1");
+		const StlMesh_SequenceOfMesh & operator=(const StlMesh_SequenceOfMesh &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StlMesh_Mesh &T);
 		%feature("autodoc", "1");

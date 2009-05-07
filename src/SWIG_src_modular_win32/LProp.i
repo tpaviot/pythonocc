@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include LProp_dependencies.i
 
@@ -139,6 +144,10 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType(const LProp_SequenceNodeOfSequenceOfCIType *anItem);
 		%feature("autodoc", "1");
+		Handle_LProp_SequenceNodeOfSequenceOfCIType & operator=(const Handle_LProp_SequenceNodeOfSequenceOfCIType &aHandle);
+		%feature("autodoc", "1");
+		Handle_LProp_SequenceNodeOfSequenceOfCIType & operator=(const LProp_SequenceNodeOfSequenceOfCIType *anItem);
+		%feature("autodoc", "1");
 		Handle_LProp_SequenceNodeOfSequenceOfCIType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -165,6 +174,10 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_LProp_BadContinuity(const LProp_BadContinuity *anItem);
 		%feature("autodoc", "1");
+		Handle_LProp_BadContinuity & operator=(const Handle_LProp_BadContinuity &aHandle);
+		%feature("autodoc", "1");
+		Handle_LProp_BadContinuity & operator=(const LProp_BadContinuity *anItem);
+		%feature("autodoc", "1");
 		Handle_LProp_BadContinuity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -190,6 +203,10 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 		Handle_LProp_NotDefined(const Handle_LProp_NotDefined &aHandle);
 		%feature("autodoc", "1");
 		Handle_LProp_NotDefined(const LProp_NotDefined *anItem);
+		%feature("autodoc", "1");
+		Handle_LProp_NotDefined & operator=(const Handle_LProp_NotDefined &aHandle);
+		%feature("autodoc", "1");
+		Handle_LProp_NotDefined & operator=(const LProp_NotDefined *anItem);
 		%feature("autodoc", "1");
 		Handle_LProp_NotDefined const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -245,6 +262,8 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const LProp_SequenceOfCIType & Assign(const LProp_SequenceOfCIType &Other);
+		%feature("autodoc", "1");
+		const LProp_SequenceOfCIType & operator=(const LProp_SequenceOfCIType &Other);
 		%feature("autodoc", "1");
 		void Append(const LProp_CIType &T);
 		%feature("autodoc", "1");

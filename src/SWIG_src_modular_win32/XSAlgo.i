@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XSAlgo_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 		Handle_XSAlgo_ToolContainer(const Handle_XSAlgo_ToolContainer &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer(const XSAlgo_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_XSAlgo_ToolContainer & operator=(const Handle_XSAlgo_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSAlgo_ToolContainer & operator=(const XSAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
 		Handle_XSAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -157,6 +166,10 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		Handle_XSAlgo_AlgoContainer(const Handle_XSAlgo_AlgoContainer &aHandle);
 		%feature("autodoc", "1");
 		Handle_XSAlgo_AlgoContainer(const XSAlgo_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_XSAlgo_AlgoContainer & operator=(const Handle_XSAlgo_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSAlgo_AlgoContainer & operator=(const XSAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
 		Handle_XSAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Dico_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 		Handle_Dico_DictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient(const Dico_DictionaryOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient & operator=(const Handle_Dico_DictionaryOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient(const Dico_StackItemOfDictionaryOfTransient *anItem);
 		%feature("autodoc", "1");
+		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Handle_Dico_StackItemOfDictionaryOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_StackItemOfDictionaryOfTransient & operator=(const Dico_StackItemOfDictionaryOfTransient *anItem);
+		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger(const Dico_DictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfInteger & operator=(const Handle_Dico_DictionaryOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfInteger & operator=(const Dico_DictionaryOfInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_Dico_DictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 		Handle_Dico_StackItemOfDictionaryOfInteger(const Handle_Dico_StackItemOfDictionaryOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger(const Dico_StackItemOfDictionaryOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Handle_Dico_StackItemOfDictionaryOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_StackItemOfDictionaryOfInteger & operator=(const Dico_StackItemOfDictionaryOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_Dico_StackItemOfDictionaryOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 

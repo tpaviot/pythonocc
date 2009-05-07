@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StdSelect_dependencies.i
 
@@ -153,6 +158,10 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 		%feature("autodoc", "1");
 		Handle_StdSelect_SensitiveText2d(const StdSelect_SensitiveText2d *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_SensitiveText2d & operator=(const Handle_StdSelect_SensitiveText2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_SensitiveText2d & operator=(const StdSelect_SensitiveText2d *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_SensitiveText2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +187,10 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 		Handle_StdSelect_TextProjector2d(const Handle_StdSelect_TextProjector2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdSelect_TextProjector2d(const StdSelect_TextProjector2d *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_TextProjector2d & operator=(const Handle_StdSelect_TextProjector2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_TextProjector2d & operator=(const StdSelect_TextProjector2d *anItem);
 		%feature("autodoc", "1");
 		Handle_StdSelect_TextProjector2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +218,10 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_StdSelect_EdgeFilter(const StdSelect_EdgeFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter & operator=(const Handle_StdSelect_EdgeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_EdgeFilter & operator=(const StdSelect_EdgeFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_EdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +247,10 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 		Handle_StdSelect_BRepOwner(const Handle_StdSelect_BRepOwner &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdSelect_BRepOwner(const StdSelect_BRepOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_BRepOwner & operator=(const Handle_StdSelect_BRepOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_BRepOwner & operator=(const StdSelect_BRepOwner *anItem);
 		%feature("autodoc", "1");
 		Handle_StdSelect_BRepOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -257,6 +278,10 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 		%feature("autodoc", "1");
 		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +307,10 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 		Handle_StdSelect_Shape(const Handle_StdSelect_Shape &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdSelect_Shape(const StdSelect_Shape *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape & operator=(const Handle_StdSelect_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape & operator=(const StdSelect_Shape *anItem);
 		%feature("autodoc", "1");
 		Handle_StdSelect_Shape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -309,6 +338,10 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_StdSelect_FaceFilter(const StdSelect_FaceFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_FaceFilter & operator=(const Handle_StdSelect_FaceFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_FaceFilter & operator=(const StdSelect_FaceFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_FaceFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +367,10 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 		Handle_StdSelect_ViewerSelector2d(const Handle_StdSelect_ViewerSelector2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector2d(const StdSelect_ViewerSelector2d *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_ViewerSelector2d & operator=(const Handle_StdSelect_ViewerSelector2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_ViewerSelector2d & operator=(const StdSelect_ViewerSelector2d *anItem);
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -361,6 +398,10 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector3d(const StdSelect_ViewerSelector3d *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_ViewerSelector3d & operator=(const Handle_StdSelect_ViewerSelector3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_ViewerSelector3d & operator=(const StdSelect_ViewerSelector3d *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_ViewerSelector3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -386,6 +427,10 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 		Handle_StdSelect_ShapeTypeFilter(const Handle_StdSelect_ShapeTypeFilter &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdSelect_ShapeTypeFilter(const StdSelect_ShapeTypeFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_ShapeTypeFilter & operator=(const Handle_StdSelect_ShapeTypeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_ShapeTypeFilter & operator=(const StdSelect_ShapeTypeFilter *anItem);
 		%feature("autodoc", "1");
 		Handle_StdSelect_ShapeTypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -413,6 +458,10 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 		%feature("autodoc", "1");
 		Handle_StdSelect_Prs(const StdSelect_Prs *anItem);
 		%feature("autodoc", "1");
+		Handle_StdSelect_Prs & operator=(const Handle_StdSelect_Prs &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Prs & operator=(const StdSelect_Prs *anItem);
+		%feature("autodoc", "1");
 		Handle_StdSelect_Prs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -436,6 +485,8 @@ class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		StdSelect_IndexedDataMapOfOwnerPrs(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		StdSelect_IndexedDataMapOfOwnerPrs & Assign(const StdSelect_IndexedDataMapOfOwnerPrs &Other);
+		%feature("autodoc", "1");
+		StdSelect_IndexedDataMapOfOwnerPrs & operator=(const StdSelect_IndexedDataMapOfOwnerPrs &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

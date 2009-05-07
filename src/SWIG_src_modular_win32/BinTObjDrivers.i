@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinTObjDrivers_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 		Handle_BinTObjDrivers_ModelDriver(const Handle_BinTObjDrivers_ModelDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ModelDriver(const BinTObjDrivers_ModelDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ModelDriver & operator=(const Handle_BinTObjDrivers_ModelDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ModelDriver & operator=(const BinTObjDrivers_ModelDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ModelDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentRetrievalDriver(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const Handle_BinTObjDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 		Handle_BinTObjDrivers_ObjectDriver(const Handle_BinTObjDrivers_ObjectDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ObjectDriver(const BinTObjDrivers_ObjectDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ObjectDriver & operator=(const Handle_BinTObjDrivers_ObjectDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ObjectDriver & operator=(const BinTObjDrivers_ObjectDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ObjectDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_IntSparseArrayDriver(const BinTObjDrivers_IntSparseArrayDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_IntSparseArrayDriver & operator=(const Handle_BinTObjDrivers_IntSparseArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_IntSparseArrayDriver & operator=(const BinTObjDrivers_IntSparseArrayDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_IntSparseArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 		Handle_BinTObjDrivers_ReferenceDriver(const Handle_BinTObjDrivers_ReferenceDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ReferenceDriver(const BinTObjDrivers_ReferenceDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver & operator=(const Handle_BinTObjDrivers_ReferenceDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_ReferenceDriver & operator=(const BinTObjDrivers_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_ReferenceDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_XYZDriver(const BinTObjDrivers_XYZDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_XYZDriver & operator=(const Handle_BinTObjDrivers_XYZDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_XYZDriver & operator=(const BinTObjDrivers_XYZDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_XYZDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Do
 		Handle_BinTObjDrivers_DocumentStorageDriver(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentStorageDriver(const BinTObjDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const Handle_BinTObjDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentStorageDriver & operator=(const BinTObjDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinTObjDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

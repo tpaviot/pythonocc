@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BOPTColStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape(const BOPTColStd_ListNodeOfListOfListOfShape *anItem);
 		%feature("autodoc", "1");
+		Handle_BOPTColStd_ListNodeOfListOfListOfShape & operator=(const Handle_BOPTColStd_ListNodeOfListOfListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_ListNodeOfListOfListOfShape & operator=(const BOPTColStd_ListNodeOfListOfListOfShape *anItem);
+		%feature("autodoc", "1");
 		Handle_BOPTColStd_ListNodeOfListOfListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -227,6 +248,8 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		BOPTColStd_IndexedDataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapOfIntegerInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -313,6 +336,8 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -470,6 +495,8 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapOfSWRInteger & Assign(const BOPTColStd_IndexedDataMapOfSWRInteger &Other);
 		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapOfSWRInteger &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -539,6 +566,8 @@ class BOPTColStd_ListOfListOfShape {
 		BOPTColStd_ListOfListOfShape();
 		%feature("autodoc", "1");
 		void Assign(const BOPTColStd_ListOfListOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const BOPTColStd_ListOfListOfShape &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

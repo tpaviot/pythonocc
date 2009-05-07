@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Prs2d_dependencies.i
 
@@ -213,6 +218,10 @@ class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Tolerance(const Prs2d_Tolerance *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Tolerance & operator=(const Handle_Prs2d_Tolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Tolerance & operator=(const Prs2d_Tolerance *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Tolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -238,6 +247,10 @@ class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Flatness(const Handle_Prs2d_Flatness &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Flatness(const Prs2d_Flatness *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Flatness & operator=(const Handle_Prs2d_Flatness &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Flatness & operator=(const Prs2d_Flatness *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Flatness const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -265,6 +278,10 @@ class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_SurfProfile(const Prs2d_SurfProfile *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_SurfProfile & operator=(const Handle_Prs2d_SurfProfile &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_SurfProfile & operator=(const Prs2d_SurfProfile *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_SurfProfile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -290,6 +307,10 @@ class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 		Handle_Prs2d_Dimension(const Handle_Prs2d_Dimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Dimension(const Prs2d_Dimension *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Dimension & operator=(const Handle_Prs2d_Dimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Dimension & operator=(const Prs2d_Dimension *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Dimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -317,6 +338,10 @@ class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Repere(const Prs2d_Repere *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Repere & operator=(const Handle_Prs2d_Repere &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Repere & operator=(const Prs2d_Repere *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Repere const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -342,6 +367,10 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 		Handle_Prs2d_Axis(const Handle_Prs2d_Axis &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Axis(const Prs2d_Axis *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Axis & operator=(const Handle_Prs2d_Axis &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Axis & operator=(const Prs2d_Axis *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Axis const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -369,6 +398,10 @@ class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Radius(const Prs2d_Radius *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Radius & operator=(const Handle_Prs2d_Radius &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Radius & operator=(const Prs2d_Radius *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Radius const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -394,6 +427,10 @@ class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 		Handle_Prs2d_AspectRoot(const Handle_Prs2d_AspectRoot &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectRoot(const Prs2d_AspectRoot *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectRoot & operator=(const Handle_Prs2d_AspectRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectRoot & operator=(const Prs2d_AspectRoot *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -421,6 +458,10 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectFramedText(const Prs2d_AspectFramedText *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_AspectFramedText & operator=(const Handle_Prs2d_AspectFramedText &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectFramedText & operator=(const Prs2d_AspectFramedText *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_AspectFramedText const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -446,6 +487,10 @@ class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 		Handle_Prs2d_DrawSymbol(const Handle_Prs2d_DrawSymbol &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_DrawSymbol(const Prs2d_DrawSymbol *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol & operator=(const Handle_Prs2d_DrawSymbol &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DrawSymbol & operator=(const Prs2d_DrawSymbol *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_DrawSymbol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -473,6 +518,10 @@ class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Cylindric(const Prs2d_Cylindric *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric & operator=(const Handle_Prs2d_Cylindric &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Cylindric & operator=(const Prs2d_Cylindric *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Cylindric const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -498,6 +547,10 @@ class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_
 		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot(const Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot(const Prs2d_DataMapNodeOfDataMapOfAspectRoot *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot & operator=(const Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot & operator=(const Prs2d_DataMapNodeOfDataMapOfAspectRoot *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -525,6 +578,10 @@ class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Diameter(const Prs2d_Diameter *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Diameter & operator=(const Handle_Prs2d_Diameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Diameter & operator=(const Prs2d_Diameter *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Diameter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -550,6 +607,10 @@ class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 		Handle_Prs2d_Drawer(const Handle_Prs2d_Drawer &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Drawer(const Prs2d_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Drawer & operator=(const Handle_Prs2d_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Drawer & operator=(const Prs2d_Drawer *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -577,6 +638,10 @@ class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Length(const Prs2d_Length *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Length & operator=(const Handle_Prs2d_Length &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Length & operator=(const Prs2d_Length *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Length const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -602,6 +667,10 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Taper(const Handle_Prs2d_Taper &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Taper(const Prs2d_Taper *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Taper & operator=(const Handle_Prs2d_Taper &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Taper & operator=(const Prs2d_Taper *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Taper const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -629,6 +698,10 @@ class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Arrow(const Prs2d_Arrow *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Arrow & operator=(const Handle_Prs2d_Arrow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Arrow & operator=(const Prs2d_Arrow *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Arrow const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -654,6 +727,10 @@ class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 		Handle_Prs2d_ToleranceFrame(const Handle_Prs2d_ToleranceFrame &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_ToleranceFrame(const Prs2d_ToleranceFrame *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_ToleranceFrame & operator=(const Handle_Prs2d_ToleranceFrame &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_ToleranceFrame & operator=(const Prs2d_ToleranceFrame *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_ToleranceFrame const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -681,6 +758,10 @@ class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymCircular(const Prs2d_SymCircular *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_SymCircular & operator=(const Handle_Prs2d_SymCircular &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_SymCircular & operator=(const Prs2d_SymCircular *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_SymCircular const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -706,6 +787,10 @@ class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Position(const Handle_Prs2d_Position &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Position(const Prs2d_Position *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Position & operator=(const Handle_Prs2d_Position &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Position & operator=(const Prs2d_Position *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Position const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -733,6 +818,10 @@ class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Concentric(const Prs2d_Concentric *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Concentric & operator=(const Handle_Prs2d_Concentric &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Concentric & operator=(const Prs2d_Concentric *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Concentric const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -758,6 +847,10 @@ class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Perpendicular(const Handle_Prs2d_Perpendicular &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Perpendicular(const Prs2d_Perpendicular *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Perpendicular & operator=(const Handle_Prs2d_Perpendicular &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Perpendicular & operator=(const Prs2d_Perpendicular *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Perpendicular const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -785,6 +878,10 @@ class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_LineProfile(const Prs2d_LineProfile *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_LineProfile & operator=(const Handle_Prs2d_LineProfile &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_LineProfile & operator=(const Prs2d_LineProfile *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_LineProfile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -810,6 +907,10 @@ class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 		Handle_Prs2d_AspectHidingText(const Handle_Prs2d_AspectHidingText &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingText(const Prs2d_AspectHidingText *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectHidingText & operator=(const Handle_Prs2d_AspectHidingText &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectHidingText & operator=(const Prs2d_AspectHidingText *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingText const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -837,6 +938,10 @@ class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_Prs2d_RadiusIndep(const Prs2d_RadiusIndep *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_RadiusIndep & operator=(const Handle_Prs2d_RadiusIndep &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_RadiusIndep & operator=(const Prs2d_RadiusIndep *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_RadiusIndep const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -862,6 +967,10 @@ class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Angularity(const Handle_Prs2d_Angularity &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Angularity(const Prs2d_Angularity *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Angularity & operator=(const Handle_Prs2d_Angularity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Angularity & operator=(const Prs2d_Angularity *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Angularity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -889,6 +998,10 @@ class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Symmetry(const Prs2d_Symmetry *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Symmetry & operator=(const Handle_Prs2d_Symmetry &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Symmetry & operator=(const Prs2d_Symmetry *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Symmetry const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -914,6 +1027,10 @@ class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Circularity(const Handle_Prs2d_Circularity &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Circularity(const Prs2d_Circularity *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Circularity & operator=(const Handle_Prs2d_Circularity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Circularity & operator=(const Prs2d_Circularity *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Circularity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -941,6 +1058,10 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Straightness(const Prs2d_Straightness *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Straightness & operator=(const Handle_Prs2d_Straightness &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Straightness & operator=(const Prs2d_Straightness *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Straightness const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -966,6 +1087,10 @@ class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 		Handle_Prs2d_SymbolDefinitionError(const Handle_Prs2d_SymbolDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymbolDefinitionError(const Prs2d_SymbolDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_SymbolDefinitionError & operator=(const Handle_Prs2d_SymbolDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_SymbolDefinitionError & operator=(const Prs2d_SymbolDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymbolDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -993,6 +1118,10 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingPoly(const Prs2d_AspectHidingPoly *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_AspectHidingPoly & operator=(const Handle_Prs2d_AspectHidingPoly &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectHidingPoly & operator=(const Prs2d_AspectHidingPoly *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_AspectHidingPoly const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1018,6 +1147,10 @@ class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 		Handle_Prs2d_Point(const Handle_Prs2d_Point &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Point(const Prs2d_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Point & operator=(const Handle_Prs2d_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Point & operator=(const Prs2d_Point *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Point const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1045,6 +1178,10 @@ class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectText(const Prs2d_AspectText *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_AspectText & operator=(const Handle_Prs2d_AspectText &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectText & operator=(const Prs2d_AspectText *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_AspectText const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1070,6 +1207,10 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 		Handle_Prs2d_Parallelism(const Handle_Prs2d_Parallelism &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Parallelism(const Prs2d_Parallelism *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Parallelism & operator=(const Handle_Prs2d_Parallelism &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Parallelism & operator=(const Prs2d_Parallelism *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_Parallelism const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1097,6 +1238,10 @@ class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 		%feature("autodoc", "1");
 		Handle_Prs2d_SymTotal(const Prs2d_SymTotal *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_SymTotal & operator=(const Handle_Prs2d_SymTotal &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_SymTotal & operator=(const Prs2d_SymTotal *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_SymTotal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1123,6 +1268,10 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Handle_Prs2d_Angle(const Prs2d_Angle *anItem);
 		%feature("autodoc", "1");
+		Handle_Prs2d_Angle & operator=(const Handle_Prs2d_Angle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_Angle & operator=(const Prs2d_Angle *anItem);
+		%feature("autodoc", "1");
 		Handle_Prs2d_Angle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1148,6 +1297,10 @@ class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 		Handle_Prs2d_AspectLine(const Handle_Prs2d_AspectLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectLine(const Prs2d_AspectLine *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine & operator=(const Handle_Prs2d_AspectLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectLine & operator=(const Prs2d_AspectLine *anItem);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectLine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1300,6 +1453,8 @@ class Prs2d_DataMapOfAspectRoot : public TCollection_BasicMap {
 		Prs2d_DataMapOfAspectRoot(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Prs2d_DataMapOfAspectRoot & Assign(const Prs2d_DataMapOfAspectRoot &Other);
+		%feature("autodoc", "1");
+		Prs2d_DataMapOfAspectRoot & operator=(const Prs2d_DataMapOfAspectRoot &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

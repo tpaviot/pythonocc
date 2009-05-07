@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include NIS_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 		Handle_NIS_InteractiveObject(const Handle_NIS_InteractiveObject &aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject(const NIS_InteractiveObject *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_InteractiveObject & operator=(const Handle_NIS_InteractiveObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_InteractiveObject & operator=(const NIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_NIS_Triangulated(const NIS_Triangulated *anItem);
 		%feature("autodoc", "1");
+		Handle_NIS_Triangulated & operator=(const Handle_NIS_Triangulated &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_Triangulated & operator=(const NIS_Triangulated *anItem);
+		%feature("autodoc", "1");
 		Handle_NIS_Triangulated const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
 		%feature("autodoc", "1");
 		Handle_NIS_SelectFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_Drawer(const NIS_Drawer *anItem);
 		%feature("autodoc", "1");
+		Handle_NIS_Drawer & operator=(const Handle_NIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_Drawer & operator=(const NIS_Drawer *anItem);
+		%feature("autodoc", "1");
 		Handle_NIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 		Handle_NIS_TriangulatedDrawer(const Handle_NIS_TriangulatedDrawer &aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer(const NIS_TriangulatedDrawer *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_TriangulatedDrawer & operator=(const Handle_NIS_TriangulatedDrawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_TriangulatedDrawer & operator=(const NIS_TriangulatedDrawer *anItem);
 		%feature("autodoc", "1");
 		Handle_NIS_TriangulatedDrawer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext(const NIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
+		Handle_NIS_InteractiveContext & operator=(const Handle_NIS_InteractiveContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_InteractiveContext & operator=(const NIS_InteractiveContext *anItem);
+		%feature("autodoc", "1");
 		Handle_NIS_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 		Handle_NIS_Surface(const Handle_NIS_Surface &aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_Surface(const NIS_Surface *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_Surface & operator=(const Handle_NIS_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_Surface & operator=(const NIS_Surface *anItem);
 		%feature("autodoc", "1");
 		Handle_NIS_Surface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer(const NIS_SurfaceDrawer *anItem);
 		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer & operator=(const Handle_NIS_SurfaceDrawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer & operator=(const NIS_SurfaceDrawer *anItem);
+		%feature("autodoc", "1");
 		Handle_NIS_SurfaceDrawer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 		Handle_NIS_View(const Handle_NIS_View &aHandle);
 		%feature("autodoc", "1");
 		Handle_NIS_View(const NIS_View *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_View & operator=(const Handle_NIS_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_View & operator=(const NIS_View *anItem);
 		%feature("autodoc", "1");
 		Handle_NIS_View const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include EDL_dependencies.i
 
@@ -146,6 +151,10 @@ class Handle_EDL_Interpretor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_EDL_Interpretor(const EDL_Interpretor *anItem);
 		%feature("autodoc", "1");
+		Handle_EDL_Interpretor & operator=(const Handle_EDL_Interpretor &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_Interpretor & operator=(const EDL_Interpretor *anItem);
+		%feature("autodoc", "1");
 		Handle_EDL_Interpretor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -171,6 +180,10 @@ class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_Se
 		Handle_EDL_SequenceNodeOfSequenceOfVariable(const Handle_EDL_SequenceNodeOfSequenceOfVariable &aHandle);
 		%feature("autodoc", "1");
 		Handle_EDL_SequenceNodeOfSequenceOfVariable(const EDL_SequenceNodeOfSequenceOfVariable *anItem);
+		%feature("autodoc", "1");
+		Handle_EDL_SequenceNodeOfSequenceOfVariable & operator=(const Handle_EDL_SequenceNodeOfSequenceOfVariable &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_SequenceNodeOfSequenceOfVariable & operator=(const EDL_SequenceNodeOfSequenceOfVariable *anItem);
 		%feature("autodoc", "1");
 		Handle_EDL_SequenceNodeOfSequenceOfVariable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -198,6 +211,10 @@ class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode 
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfVariable(const EDL_DataMapNodeOfMapOfVariable *anItem);
 		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfVariable & operator=(const Handle_EDL_DataMapNodeOfMapOfVariable &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfVariable & operator=(const EDL_DataMapNodeOfMapOfVariable *anItem);
+		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfVariable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -223,6 +240,10 @@ class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode 
 		Handle_EDL_DataMapNodeOfMapOfTemplate(const Handle_EDL_DataMapNodeOfMapOfTemplate &aHandle);
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfTemplate(const EDL_DataMapNodeOfMapOfTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfTemplate & operator=(const Handle_EDL_DataMapNodeOfMapOfTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfTemplate & operator=(const EDL_DataMapNodeOfMapOfTemplate *anItem);
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfTemplate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -250,6 +271,10 @@ class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_EDL_StackNodeOfStackOfBoolean(const EDL_StackNodeOfStackOfBoolean *anItem);
 		%feature("autodoc", "1");
+		Handle_EDL_StackNodeOfStackOfBoolean & operator=(const Handle_EDL_StackNodeOfStackOfBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_StackNodeOfStackOfBoolean & operator=(const EDL_StackNodeOfStackOfBoolean *anItem);
+		%feature("autodoc", "1");
 		Handle_EDL_StackNodeOfStackOfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -275,6 +300,10 @@ class Handle_EDL_API : public Handle_MMgt_TShared {
 		Handle_EDL_API(const Handle_EDL_API &aHandle);
 		%feature("autodoc", "1");
 		Handle_EDL_API(const EDL_API *anItem);
+		%feature("autodoc", "1");
+		Handle_EDL_API & operator=(const Handle_EDL_API &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_API & operator=(const EDL_API *anItem);
 		%feature("autodoc", "1");
 		Handle_EDL_API const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -302,6 +331,10 @@ class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_EDL_HSequenceOfVariable(const EDL_HSequenceOfVariable *anItem);
 		%feature("autodoc", "1");
+		Handle_EDL_HSequenceOfVariable & operator=(const Handle_EDL_HSequenceOfVariable &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_HSequenceOfVariable & operator=(const EDL_HSequenceOfVariable *anItem);
+		%feature("autodoc", "1");
 		Handle_EDL_HSequenceOfVariable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -328,6 +361,10 @@ class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfFile(const EDL_DataMapNodeOfMapOfFile *anItem);
 		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfFile & operator=(const Handle_EDL_DataMapNodeOfMapOfFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfFile & operator=(const EDL_DataMapNodeOfMapOfFile *anItem);
+		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfFile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -353,6 +390,10 @@ class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 		Handle_EDL_DataMapNodeOfMapOfLibrary(const Handle_EDL_DataMapNodeOfMapOfLibrary &aHandle);
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfLibrary(const EDL_DataMapNodeOfMapOfLibrary *anItem);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfLibrary & operator=(const Handle_EDL_DataMapNodeOfMapOfLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_EDL_DataMapNodeOfMapOfLibrary & operator=(const EDL_DataMapNodeOfMapOfLibrary *anItem);
 		%feature("autodoc", "1");
 		Handle_EDL_DataMapNodeOfMapOfLibrary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -673,6 +714,8 @@ class EDL_StackOfBoolean {
 		%feature("autodoc", "1");
 		const EDL_StackOfBoolean & Assign(const EDL_StackOfBoolean &Other);
 		%feature("autodoc", "1");
+		const EDL_StackOfBoolean & operator=(const EDL_StackOfBoolean &Other);
+		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
@@ -737,6 +780,8 @@ class EDL_Library {
 		%feature("autodoc", "1");
 		void Assign(const EDL_Library &aLib);
 		%feature("autodoc", "1");
+		void operator=(const EDL_Library &aLib);
+		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
 		Standard_CString GetName() const;
@@ -792,6 +837,8 @@ class EDL_Template {
 		EDL_Template(const EDL_Template &aTmp);
 		%feature("autodoc", "1");
 		void Assign(const EDL_Template &aTemplate);
+		%feature("autodoc", "1");
+		void operator=(const EDL_Template &aTemplate);
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
@@ -1001,6 +1048,8 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const EDL_SequenceOfVariable & Assign(const EDL_SequenceOfVariable &Other);
 		%feature("autodoc", "1");
+		const EDL_SequenceOfVariable & operator=(const EDL_SequenceOfVariable &Other);
+		%feature("autodoc", "1");
 		void Append(const EDL_Variable &T);
 		%feature("autodoc", "1");
 		void Append(EDL_SequenceOfVariable & S);
@@ -1079,6 +1128,8 @@ class EDL_MapOfVariable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		EDL_MapOfVariable & Assign(const EDL_MapOfVariable &Other);
 		%feature("autodoc", "1");
+		EDL_MapOfVariable & operator=(const EDL_MapOfVariable &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1113,6 +1164,8 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 		EDL_MapOfTemplate(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		EDL_MapOfTemplate & Assign(const EDL_MapOfTemplate &Other);
+		%feature("autodoc", "1");
+		EDL_MapOfTemplate & operator=(const EDL_MapOfTemplate &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1172,6 +1225,8 @@ class EDL_MapOfFile : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		EDL_MapOfFile & Assign(const EDL_MapOfFile &Other);
 		%feature("autodoc", "1");
+		EDL_MapOfFile & operator=(const EDL_MapOfFile &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1209,6 +1264,8 @@ class EDL_File {
 		%feature("autodoc", "1");
 		void Assign(const EDL_File &aFile);
 		%feature("autodoc", "1");
+		void operator=(const EDL_File &aFile);
+		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
 		Standard_CString GetName() const;
@@ -1243,6 +1300,8 @@ class EDL_Variable {
 		EDL_Variable(const EDL_Variable &aVar);
 		%feature("autodoc", "1");
 		void Assign(const EDL_Variable &aVar);
+		%feature("autodoc", "1");
+		void operator=(const EDL_Variable &aVar);
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
@@ -1303,6 +1362,8 @@ class EDL_MapOfLibrary : public TCollection_BasicMap {
 		EDL_MapOfLibrary(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		EDL_MapOfLibrary & Assign(const EDL_MapOfLibrary &Other);
+		%feature("autodoc", "1");
+		EDL_MapOfLibrary & operator=(const EDL_MapOfLibrary &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

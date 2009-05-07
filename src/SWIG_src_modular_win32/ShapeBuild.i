@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeBuild_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 		Handle_ShapeBuild_ReShape(const Handle_ShapeBuild_ReShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape(const ShapeBuild_ReShape *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeBuild_ReShape & operator=(const Handle_ShapeBuild_ReShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeBuild_ReShape & operator=(const ShapeBuild_ReShape *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
 

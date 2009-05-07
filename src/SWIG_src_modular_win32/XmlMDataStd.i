@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlMDataStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XmlMDataStd_PointDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_PointDriver(const Handle_XmlMDataStd_PointDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PointDriver(const XmlMDataStd_PointDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver & operator=(const Handle_XmlMDataStd_PointDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PointDriver & operator=(const XmlMDataStd_PointDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntPackedMapDriver(const XmlMDataStd_IntPackedMapDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntPackedMapDriver & operator=(const Handle_XmlMDataStd_IntPackedMapDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntPackedMapDriver & operator=(const XmlMDataStd_IntPackedMapDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntPackedMapDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_PlacementDriver(const Handle_XmlMDataStd_PlacementDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PlacementDriver(const XmlMDataStd_PlacementDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver & operator=(const Handle_XmlMDataStd_PlacementDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlacementDriver & operator=(const XmlMDataStd_PlacementDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PlacementDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_XmlMDataStd_PlaneDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PlaneDriver(const XmlMDataStd_PlaneDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlaneDriver & operator=(const Handle_XmlMDataStd_PlaneDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PlaneDriver & operator=(const XmlMDataStd_PlaneDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_RealListDriver(const Handle_XmlMDataStd_RealListDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealListDriver(const XmlMDataStd_RealListDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver & operator=(const Handle_XmlMDataStd_RealListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver & operator=(const XmlMDataStd_RealListDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_AsciiStringDriver(const XmlMDataStd_AsciiStringDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver & operator=(const Handle_XmlMDataStd_AsciiStringDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver & operator=(const XmlMDataStd_AsciiStringDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_AsciiStringDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_ConstraintDriver(const Handle_XmlMDataStd_ConstraintDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ConstraintDriver(const XmlMDataStd_ConstraintDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver & operator=(const Handle_XmlMDataStd_ConstraintDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ConstraintDriver & operator=(const XmlMDataStd_ConstraintDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_XmlMDataStd_AxisDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_AxisDriver(const XmlMDataStd_AxisDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AxisDriver & operator=(const Handle_XmlMDataStd_AxisDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AxisDriver & operator=(const XmlMDataStd_AxisDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_XmlMDataStd_CommentDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_CommentDriver(const Handle_XmlMDataStd_CommentDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_CommentDriver(const XmlMDataStd_CommentDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_CommentDriver & operator=(const Handle_XmlMDataStd_CommentDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_CommentDriver & operator=(const XmlMDataStd_CommentDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_CommentDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_XmlMDataStd_ReferenceArrayDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ReferenceArrayDriver(const XmlMDataStd_ReferenceArrayDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ReferenceArrayDriver & operator=(const Handle_XmlMDataStd_ReferenceArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ReferenceArrayDriver & operator=(const XmlMDataStd_ReferenceArrayDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ReferenceArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_TreeNodeDriver(const Handle_XmlMDataStd_TreeNodeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_TreeNodeDriver(const XmlMDataStd_TreeNodeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TreeNodeDriver & operator=(const Handle_XmlMDataStd_TreeNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TreeNodeDriver & operator=(const XmlMDataStd_TreeNodeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_TreeNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_XmlMDataStd_GeometryDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_GeometryDriver(const XmlMDataStd_GeometryDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_GeometryDriver & operator=(const Handle_XmlMDataStd_GeometryDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_GeometryDriver & operator=(const XmlMDataStd_GeometryDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_XmlMDataStd_ExtStringListDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_ExtStringListDriver(const Handle_XmlMDataStd_ExtStringListDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExtStringListDriver(const XmlMDataStd_ExtStringListDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringListDriver & operator=(const Handle_XmlMDataStd_ExtStringListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringListDriver & operator=(const XmlMDataStd_ExtStringListDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExtStringListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_XmlMDataStd_ByteArrayDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ByteArrayDriver(const XmlMDataStd_ByteArrayDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ByteArrayDriver & operator=(const Handle_XmlMDataStd_ByteArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ByteArrayDriver & operator=(const XmlMDataStd_ByteArrayDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ByteArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_ExtStringArrayDriver(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExtStringArrayDriver(const XmlMDataStd_ExtStringArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const XmlMDataStd_ExtStringArrayDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExtStringArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PatternStdDriver(const XmlMDataStd_PatternStdDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PatternStdDriver & operator=(const Handle_XmlMDataStd_PatternStdDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_PatternStdDriver & operator=(const XmlMDataStd_PatternStdDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_PatternStdDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_RealDriver(const Handle_XmlMDataStd_RealDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealDriver(const XmlMDataStd_RealDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealDriver & operator=(const Handle_XmlMDataStd_RealDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealDriver & operator=(const XmlMDataStd_RealDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_XmlMDataStd_DirectoryDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_DirectoryDriver(const XmlMDataStd_DirectoryDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_DirectoryDriver & operator=(const Handle_XmlMDataStd_DirectoryDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_DirectoryDriver & operator=(const XmlMDataStd_DirectoryDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_DirectoryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_IntegerArrayDriver(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerArrayDriver(const XmlMDataStd_IntegerArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const XmlMDataStd_IntegerArrayDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_BooleanListDriver(const XmlMDataStd_BooleanListDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanListDriver & operator=(const Handle_XmlMDataStd_BooleanListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanListDriver & operator=(const XmlMDataStd_BooleanListDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_BooleanListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_UAttributeDriver(const Handle_XmlMDataStd_UAttributeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_UAttributeDriver(const XmlMDataStd_UAttributeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver & operator=(const Handle_XmlMDataStd_UAttributeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_UAttributeDriver & operator=(const XmlMDataStd_UAttributeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_UAttributeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerDriver(const XmlMDataStd_IntegerDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerDriver & operator=(const Handle_XmlMDataStd_IntegerDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerDriver & operator=(const XmlMDataStd_IntegerDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_TickDriver(const Handle_XmlMDataStd_TickDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_TickDriver(const XmlMDataStd_TickDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver & operator=(const Handle_XmlMDataStd_TickDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_TickDriver & operator=(const XmlMDataStd_TickDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_TickDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerListDriver(const XmlMDataStd_IntegerListDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerListDriver & operator=(const Handle_XmlMDataStd_IntegerListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerListDriver & operator=(const XmlMDataStd_IntegerListDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_IntegerListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_NoteBookDriver(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NoteBookDriver(const XmlMDataStd_NoteBookDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver & operator=(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver & operator=(const XmlMDataStd_NoteBookDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NoteBookDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_XmlMDataStd_ReferenceListDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ReferenceListDriver(const XmlMDataStd_ReferenceListDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ReferenceListDriver & operator=(const Handle_XmlMDataStd_ReferenceListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ReferenceListDriver & operator=(const XmlMDataStd_ReferenceListDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ReferenceListDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_NamedDataDriver(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NamedDataDriver(const XmlMDataStd_NamedDataDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NamedDataDriver & operator=(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NamedDataDriver & operator=(const XmlMDataStd_NamedDataDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NamedDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_BooleanArrayDriver(const XmlMDataStd_BooleanArrayDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const Handle_XmlMDataStd_BooleanArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const XmlMDataStd_BooleanArrayDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_BooleanArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_XmlMDataStd_ExpressionDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_ExpressionDriver(const Handle_XmlMDataStd_ExpressionDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExpressionDriver(const XmlMDataStd_ExpressionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExpressionDriver & operator=(const Handle_XmlMDataStd_ExpressionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExpressionDriver & operator=(const XmlMDataStd_ExpressionDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ExpressionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -880,6 +1001,10 @@ class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ShapeDriver(const XmlMDataStd_ShapeDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver & operator=(const Handle_XmlMDataStd_ShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ShapeDriver & operator=(const XmlMDataStd_ShapeDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_ShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -905,6 +1030,10 @@ class Handle_XmlMDataStd_RelationDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_RelationDriver(const Handle_XmlMDataStd_RelationDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RelationDriver(const XmlMDataStd_RelationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RelationDriver & operator=(const Handle_XmlMDataStd_RelationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RelationDriver & operator=(const XmlMDataStd_RelationDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RelationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -932,6 +1061,10 @@ class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NameDriver(const XmlMDataStd_NameDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NameDriver & operator=(const Handle_XmlMDataStd_NameDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NameDriver & operator=(const XmlMDataStd_NameDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_NameDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -958,6 +1091,10 @@ class Handle_XmlMDataStd_VariableDriver : public Handle_XmlMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_VariableDriver(const XmlMDataStd_VariableDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlMDataStd_VariableDriver & operator=(const Handle_XmlMDataStd_VariableDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_VariableDriver & operator=(const XmlMDataStd_VariableDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlMDataStd_VariableDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -983,6 +1120,10 @@ class Handle_XmlMDataStd_RealArrayDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDataStd_RealArrayDriver(const Handle_XmlMDataStd_RealArrayDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealArrayDriver(const XmlMDataStd_RealArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealArrayDriver & operator=(const Handle_XmlMDataStd_RealArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealArrayDriver & operator=(const XmlMDataStd_RealArrayDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDataStd_RealArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

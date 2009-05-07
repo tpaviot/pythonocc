@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XCAFPrs_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XCAFPrs_AISObject : public Handle_AIS_Shape {
 		Handle_XCAFPrs_AISObject(const Handle_XCAFPrs_AISObject &aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_AISObject(const XCAFPrs_AISObject *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_AISObject & operator=(const Handle_XCAFPrs_AISObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_AISObject & operator=(const XCAFPrs_AISObject *anItem);
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_AISObject const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const XCAFPrs_DataMapNodeOfDataMapOfShapeStyle *anItem);
 		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle & operator=(const Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle & operator=(const XCAFPrs_DataMapNodeOfDataMapOfShapeStyle *anItem);
+		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TColle
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient(const Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient &aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient(const XCAFPrs_DataMapNodeOfDataMapOfStyleTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient & operator=(const Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleTransient *anItem);
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_Driver(const XCAFPrs_Driver *anItem);
 		%feature("autodoc", "1");
+		Handle_XCAFPrs_Driver & operator=(const Handle_XCAFPrs_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_Driver & operator=(const XCAFPrs_Driver *anItem);
+		%feature("autodoc", "1");
 		Handle_XCAFPrs_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape(const XCAFPrs_DataMapNodeOfDataMapOfStyleShape *anItem);
 		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape & operator=(const Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape & operator=(const XCAFPrs_DataMapNodeOfDataMapOfStyleShape *anItem);
+		%feature("autodoc", "1");
 		Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -253,6 +278,8 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 		XCAFPrs_DataMapOfStyleShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		XCAFPrs_DataMapOfStyleShape & Assign(const XCAFPrs_DataMapOfStyleShape &Other);
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfStyleShape & operator=(const XCAFPrs_DataMapOfStyleShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -338,6 +365,8 @@ class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 		XCAFPrs_DataMapOfShapeStyle(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		XCAFPrs_DataMapOfShapeStyle & Assign(const XCAFPrs_DataMapOfShapeStyle &Other);
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfShapeStyle & operator=(const XCAFPrs_DataMapOfShapeStyle &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -427,6 +456,8 @@ class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
 		XCAFPrs_DataMapOfStyleTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		XCAFPrs_DataMapOfStyleTransient & Assign(const XCAFPrs_DataMapOfStyleTransient &Other);
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfStyleTransient & operator=(const XCAFPrs_DataMapOfStyleTransient &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

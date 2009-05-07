@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Adaptor3d_dependencies.i
 
@@ -128,6 +133,10 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 		Handle_Adaptor3d_HCurve(const Handle_Adaptor3d_HCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve(const Adaptor3d_HCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve & operator=(const Handle_Adaptor3d_HCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve & operator=(const Adaptor3d_HCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -155,6 +164,10 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve(const Adaptor3d_HIsoCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_Adaptor3d_HIsoCurve & operator=(const Handle_Adaptor3d_HIsoCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HIsoCurve & operator=(const Adaptor3d_HIsoCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_Adaptor3d_HIsoCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -180,6 +193,10 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 		Handle_Adaptor3d_HSurface(const Handle_Adaptor3d_HSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface(const Adaptor3d_HSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface & operator=(const Handle_Adaptor3d_HSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface & operator=(const Adaptor3d_HSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -207,6 +224,10 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution(const Adaptor3d_HSurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurfaceOfRevolution & operator=(const Handle_Adaptor3d_HSurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurfaceOfRevolution & operator=(const Adaptor3d_HSurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -232,6 +253,10 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 		Handle_Adaptor3d_HOffsetCurve(const Handle_Adaptor3d_HOffsetCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve(const Adaptor3d_HOffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HOffsetCurve & operator=(const Handle_Adaptor3d_HOffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HOffsetCurve & operator=(const Adaptor3d_HOffsetCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HOffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -259,6 +284,10 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool(const Adaptor3d_TopolTool *anItem);
 		%feature("autodoc", "1");
+		Handle_Adaptor3d_TopolTool & operator=(const Handle_Adaptor3d_TopolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_TopolTool & operator=(const Adaptor3d_TopolTool *anItem);
+		%feature("autodoc", "1");
 		Handle_Adaptor3d_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -284,6 +313,10 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 		Handle_Adaptor3d_HVertex(const Handle_Adaptor3d_HVertex &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex(const Adaptor3d_HVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HVertex & operator=(const Handle_Adaptor3d_HVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HVertex & operator=(const Adaptor3d_HVertex *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -311,6 +344,10 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface(const Adaptor3d_HCurveOnSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurveOnSurface & operator=(const Handle_Adaptor3d_HCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurveOnSurface & operator=(const Adaptor3d_HCurveOnSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -336,6 +373,10 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion(const Handle_Adaptor3d_HSurfaceOfLinearExtrusion &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion(const Adaptor3d_HSurfaceOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurfaceOfLinearExtrusion & operator=(const Handle_Adaptor3d_HSurfaceOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurfaceOfLinearExtrusion & operator=(const Adaptor3d_HSurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HSurfaceOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
 

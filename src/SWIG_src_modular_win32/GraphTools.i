@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GraphTools_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 		Handle_GraphTools_SC(const Handle_GraphTools_SC &aHandle);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC(const GraphTools_SC *anItem);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC & operator=(const Handle_GraphTools_SC &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC & operator=(const GraphTools_SC *anItem);
 		%feature("autodoc", "1");
 		Handle_GraphTools_SC const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList(const GraphTools_ListNodeOfSCList *anItem);
 		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfSCList & operator=(const Handle_GraphTools_ListNodeOfSCList &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfSCList & operator=(const GraphTools_ListNodeOfSCList *anItem);
+		%feature("autodoc", "1");
 		Handle_GraphTools_ListNodeOfSCList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -201,6 +218,8 @@ class GraphTools_ListOfSequenceOfInteger {
 		GraphTools_ListOfSequenceOfInteger();
 		%feature("autodoc", "1");
 		void Assign(const GraphTools_ListOfSequenceOfInteger &Other);
+		%feature("autodoc", "1");
+		void operator=(const GraphTools_ListOfSequenceOfInteger &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -283,6 +302,8 @@ class GraphTools_SCList {
 		GraphTools_SCList();
 		%feature("autodoc", "1");
 		void Assign(const GraphTools_SCList &Other);
+		%feature("autodoc", "1");
+		void operator=(const GraphTools_SCList &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

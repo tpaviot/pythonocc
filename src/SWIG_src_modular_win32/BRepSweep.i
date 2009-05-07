@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepSweep_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -278,6 +287,8 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		%feature("autodoc", "1");
 		const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
+		const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_SequenceOfShapesOfNumLinearRegularSweep &Other);
+		%feature("autodoc", "1");
 		void Append(const TopoDS_Shape &T);
 		%feature("autodoc", "1");
 		void Append(BRepSweep_SequenceOfShapesOfNumLinearRegularSweep & S);
@@ -336,6 +347,8 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		void Destroy();
 		%feature("autodoc", "1");
 		const BRepSweep_Array2OfShapesOfNumLinearRegularSweep & Assign(const BRepSweep_Array2OfShapesOfNumLinearRegularSweep &Other);
+		%feature("autodoc", "1");
+		const BRepSweep_Array2OfShapesOfNumLinearRegularSweep & operator=(const BRepSweep_Array2OfShapesOfNumLinearRegularSweep &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");

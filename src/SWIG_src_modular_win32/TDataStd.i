@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TDataStd_dependencies.i
 
@@ -173,6 +178,10 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray(const TDataStd_ReferenceArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceArray & operator=(const Handle_TDataStd_ReferenceArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceArray & operator=(const TDataStd_ReferenceArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -198,6 +207,10 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 		Handle_TDataStd_TreeNode(const Handle_TDataStd_TreeNode &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode(const TDataStd_TreeNode *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_TreeNode & operator=(const Handle_TDataStd_TreeNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_TreeNode & operator=(const TDataStd_TreeNode *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_TreeNode const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -225,6 +238,10 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfRealArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -250,6 +267,10 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 		Handle_TDataStd_Pattern(const Handle_TDataStd_Pattern &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern(const TDataStd_Pattern *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern & operator=(const Handle_TDataStd_Pattern &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Pattern & operator=(const TDataStd_Pattern *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Pattern const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -277,6 +298,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -302,6 +327,10 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 		Handle_TDataStd_Placement(const Handle_TDataStd_Placement &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement(const TDataStd_Placement *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Placement & operator=(const Handle_TDataStd_Placement &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Placement & operator=(const TDataStd_Placement *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Placement const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -329,6 +358,10 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint(const TDataStd_Constraint *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Constraint & operator=(const Handle_TDataStd_Constraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Constraint & operator=(const TDataStd_Constraint *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Constraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -354,6 +387,10 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 		Handle_TDataStd_IntegerList(const Handle_TDataStd_IntegerList &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList(const TDataStd_IntegerList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntegerList & operator=(const Handle_TDataStd_IntegerList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntegerList & operator=(const TDataStd_IntegerList *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -381,6 +418,10 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -406,6 +447,10 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 		Handle_TDataStd_Shape(const Handle_TDataStd_Shape &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape(const TDataStd_Shape *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Shape & operator=(const Handle_TDataStd_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Shape & operator=(const TDataStd_Shape *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Shape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -433,6 +478,10 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray(const TDataStd_RealArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_RealArray & operator=(const Handle_TDataStd_RealArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealArray & operator=(const TDataStd_RealArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_RealArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -458,6 +507,10 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 		Handle_TDataStd_NoteBook(const Handle_TDataStd_NoteBook &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook(const TDataStd_NoteBook *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_NoteBook & operator=(const Handle_TDataStd_NoteBook &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_NoteBook & operator=(const TDataStd_NoteBook *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NoteBook const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -485,6 +538,10 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Variable(const TDataStd_Variable *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Variable & operator=(const Handle_TDataStd_Variable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Variable & operator=(const TDataStd_Variable *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Variable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -510,6 +567,10 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 		Handle_TDataStd_Relation(const Handle_TDataStd_Relation &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation(const TDataStd_Relation *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Relation & operator=(const Handle_TDataStd_Relation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Relation & operator=(const TDataStd_Relation *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Relation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -537,6 +598,10 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry(const TDataStd_Geometry *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Geometry & operator=(const Handle_TDataStd_Geometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Geometry & operator=(const TDataStd_Geometry *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Geometry const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -562,6 +627,10 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_AsciiString & operator=(const Handle_TDataStd_AsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_AsciiString & operator=(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_AsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -589,6 +658,10 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray(const TDataStd_IntegerArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_IntegerArray & operator=(const Handle_TDataStd_IntegerArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntegerArray & operator=(const TDataStd_IntegerArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_IntegerArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -614,6 +687,10 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 		Handle_TDataStd_DeltaOnModificationOfByteArray(const Handle_TDataStd_DeltaOnModificationOfByteArray &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray(const TDataStd_DeltaOnModificationOfByteArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfByteArray & operator=(const Handle_TDataStd_DeltaOnModificationOfByteArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfByteArray & operator=(const TDataStd_DeltaOnModificationOfByteArray *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfByteArray const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -641,6 +718,10 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray(const TDataStd_ExtStringArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ExtStringArray & operator=(const Handle_TDataStd_ExtStringArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ExtStringArray & operator=(const TDataStd_ExtStringArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -666,6 +747,10 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 		Handle_TDataStd_Plane(const Handle_TDataStd_Plane &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane(const TDataStd_Plane *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Plane & operator=(const Handle_TDataStd_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Plane & operator=(const TDataStd_Plane *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Plane const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -693,6 +778,10 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList(const TDataStd_ReferenceList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList & operator=(const Handle_TDataStd_ReferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList & operator=(const TDataStd_ReferenceList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ReferenceList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -718,6 +807,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString(const Handle_TDataStd_DataMapNodeOfDataMapOfStringString &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString(const TDataStd_DataMapNodeOfDataMapOfStringString *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringString & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringString & operator=(const TDataStd_DataMapNodeOfDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -745,6 +838,10 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_HDataMapOfStringHArray1OfInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringHArray1OfInteger & operator=(const Handle_TDataStd_HDataMapOfStringHArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringHArray1OfInteger & operator=(const TDataStd_HDataMapOfStringHArray1OfInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -770,6 +867,10 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 		Handle_TDataStd_BooleanArray(const Handle_TDataStd_BooleanArray &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray(const TDataStd_BooleanArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray & operator=(const Handle_TDataStd_BooleanArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanArray & operator=(const TDataStd_BooleanArray *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanArray const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -797,6 +898,10 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd(const TDataStd_PatternStd *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd & operator=(const Handle_TDataStd_PatternStd &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_PatternStd & operator=(const TDataStd_PatternStd *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_PatternStd const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -822,6 +927,10 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfExtStringArray const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -849,6 +958,10 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Expression(const TDataStd_Expression *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Expression & operator=(const Handle_TDataStd_Expression &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression & operator=(const TDataStd_Expression *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Expression const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -874,6 +987,10 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 		Handle_TDataStd_Integer(const Handle_TDataStd_Integer &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer(const TDataStd_Integer *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Integer & operator=(const Handle_TDataStd_Integer &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Integer & operator=(const TDataStd_Integer *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Integer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -901,6 +1018,10 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray(const TDataStd_ByteArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ByteArray & operator=(const Handle_TDataStd_ByteArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ByteArray & operator=(const TDataStd_ByteArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ByteArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -926,6 +1047,10 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 		Handle_TDataStd_Real(const Handle_TDataStd_Real &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real(const TDataStd_Real *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real & operator=(const Handle_TDataStd_Real &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real & operator=(const TDataStd_Real *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Real const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -953,6 +1078,10 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte & operator=(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte & operator=(const TDataStd_HDataMapOfStringByte *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -978,6 +1107,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte(const Handle_TDataStd_DataMapNodeOfDataMapOfStringByte &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte(const TDataStd_DataMapNodeOfDataMapOfStringByte *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte & operator=(const TDataStd_DataMapNodeOfDataMapOfStringByte *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringByte const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1005,6 +1138,10 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList(const TDataStd_BooleanList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanList & operator=(const Handle_TDataStd_BooleanList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_BooleanList & operator=(const TDataStd_BooleanList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_BooleanList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1030,6 +1167,10 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 		Handle_TDataStd_UAttribute(const Handle_TDataStd_UAttribute &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute(const TDataStd_UAttribute *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_UAttribute & operator=(const Handle_TDataStd_UAttribute &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_UAttribute & operator=(const TDataStd_UAttribute *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_UAttribute const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1057,6 +1198,10 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal(const TDataStd_HDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringReal & operator=(const Handle_TDataStd_HDataMapOfStringReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringReal & operator=(const TDataStd_HDataMapOfStringReal *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1082,6 +1227,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1109,6 +1258,10 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString(const TDataStd_ListNodeOfListOfExtendedString *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ListNodeOfListOfExtendedString & operator=(const Handle_TDataStd_ListNodeOfListOfExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ListNodeOfListOfExtendedString & operator=(const TDataStd_ListNodeOfListOfExtendedString *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1134,6 +1287,10 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString & operator=(const Handle_TDataStd_HDataMapOfStringString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString & operator=(const TDataStd_HDataMapOfStringString *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1161,6 +1318,10 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Point(const TDataStd_Point *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Point & operator=(const Handle_TDataStd_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Point & operator=(const TDataStd_Point *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Point const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1186,6 +1347,10 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 		Handle_TDataStd_HLabelArray1(const Handle_TDataStd_HLabelArray1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1(const TDataStd_HLabelArray1 *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HLabelArray1 & operator=(const Handle_TDataStd_HLabelArray1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HLabelArray1 & operator=(const TDataStd_HLabelArray1 *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HLabelArray1 const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1213,6 +1378,10 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Position(const TDataStd_Position *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Position & operator=(const Handle_TDataStd_Position &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Position & operator=(const TDataStd_Position *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Position const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1238,6 +1407,10 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal(const Handle_TDataStd_HDataMapOfStringHArray1OfReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_HDataMapOfStringHArray1OfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringHArray1OfReal & operator=(const Handle_TDataStd_HDataMapOfStringHArray1OfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringHArray1OfReal & operator=(const TDataStd_HDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1265,6 +1438,10 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Directory(const TDataStd_Directory *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Directory & operator=(const Handle_TDataStd_Directory &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Directory & operator=(const TDataStd_Directory *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Directory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1290,6 +1467,10 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 		Handle_TDataStd_Comment(const Handle_TDataStd_Comment &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment(const TDataStd_Comment *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Comment & operator=(const Handle_TDataStd_Comment &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Comment & operator=(const TDataStd_Comment *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Comment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1317,6 +1498,10 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Current(const TDataStd_Current *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Current & operator=(const Handle_TDataStd_Current &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Current & operator=(const TDataStd_Current *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Current const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1342,6 +1527,10 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 		Handle_TDataStd_Axis(const Handle_TDataStd_Axis &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis(const TDataStd_Axis *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Axis & operator=(const Handle_TDataStd_Axis &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Axis & operator=(const TDataStd_Axis *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Axis const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1369,6 +1558,10 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte(const TDataStd_HArray1OfByte *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HArray1OfByte & operator=(const Handle_TDataStd_HArray1OfByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HArray1OfByte & operator=(const TDataStd_HArray1OfByte *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1394,6 +1587,10 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 		Handle_TDataStd_NamedData(const Handle_TDataStd_NamedData &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData(const TDataStd_NamedData *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_NamedData & operator=(const Handle_TDataStd_NamedData &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_NamedData & operator=(const TDataStd_NamedData *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_NamedData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1421,6 +1618,10 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray(const TDataStd_DeltaOnModificationOfIntArray *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntArray & operator=(const Handle_TDataStd_DeltaOnModificationOfIntArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntArray & operator=(const TDataStd_DeltaOnModificationOfIntArray *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_DeltaOnModificationOfIntArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1446,6 +1647,10 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_IntPackedMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1473,6 +1678,10 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger(const TDataStd_HDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger & operator=(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger & operator=(const TDataStd_HDataMapOfStringInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HDataMapOfStringInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1498,6 +1707,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger(const Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger(const TDataStd_DataMapNodeOfDataMapOfStringInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger & operator=(const TDataStd_DataMapNodeOfDataMapOfStringInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1525,6 +1738,10 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_Name(const TDataStd_Name *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_Name & operator=(const Handle_TDataStd_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Name & operator=(const TDataStd_Name *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_Name const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1550,6 +1767,10 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 		Handle_TDataStd_ExtStringList(const Handle_TDataStd_ExtStringList &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList(const TDataStd_ExtStringList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ExtStringList & operator=(const Handle_TDataStd_ExtStringList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ExtStringList & operator=(const TDataStd_ExtStringList *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_ExtStringList const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1577,6 +1798,10 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte(const TDataStd_ListNodeOfListOfByte *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_ListNodeOfListOfByte & operator=(const Handle_TDataStd_ListNodeOfListOfByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ListNodeOfListOfByte & operator=(const TDataStd_ListNodeOfListOfByte *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_ListNodeOfListOfByte const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1602,6 +1827,10 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 		Handle_TDataStd_Tick(const Handle_TDataStd_Tick &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick(const TDataStd_Tick *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Tick & operator=(const Handle_TDataStd_Tick &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Tick & operator=(const TDataStd_Tick *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_Tick const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1629,6 +1858,10 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf(const TDataStd_HArray1OfTrsf *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_HArray1OfTrsf & operator=(const Handle_TDataStd_HArray1OfTrsf &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HArray1OfTrsf & operator=(const TDataStd_HArray1OfTrsf *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfTrsf const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1655,6 +1888,10 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDataStd_RealList(const TDataStd_RealList *anItem);
 		%feature("autodoc", "1");
+		Handle_TDataStd_RealList & operator=(const Handle_TDataStd_RealList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_RealList & operator=(const TDataStd_RealList *anItem);
+		%feature("autodoc", "1");
 		Handle_TDataStd_RealList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1680,6 +1917,10 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal *anItem);
 		%feature("autodoc", "1");
 		Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1805,6 +2046,8 @@ class TDataStd_ListOfExtendedString {
 		TDataStd_ListOfExtendedString();
 		%feature("autodoc", "1");
 		void Assign(const TDataStd_ListOfExtendedString &Other);
+		%feature("autodoc", "1");
+		void operator=(const TDataStd_ListOfExtendedString &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -2036,6 +2279,8 @@ class TDataStd_Array1OfTrsf {
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfTrsf & Assign(const TDataStd_Array1OfTrsf &Other);
 		%feature("autodoc", "1");
+		const TDataStd_Array1OfTrsf & operator=(const TDataStd_Array1OfTrsf &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2146,6 +2391,8 @@ class TDataStd_LabelArray1 {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_LabelArray1 & Assign(const TDataStd_LabelArray1 &Other);
+		%feature("autodoc", "1");
+		const TDataStd_LabelArray1 & operator=(const TDataStd_LabelArray1 &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2549,6 +2796,8 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal & operator=(const TDataStd_DataMapOfStringReal &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3122,6 +3371,8 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringHArray1OfInteger & Assign(const TDataStd_DataMapOfStringHArray1OfInteger &Other);
 		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfInteger & operator=(const TDataStd_DataMapOfStringHArray1OfInteger &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3218,6 +3469,8 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		TDataStd_DataMapOfStringString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringString & Assign(const TDataStd_DataMapOfStringString &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringString & operator=(const TDataStd_DataMapOfStringString &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3931,6 +4184,8 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringByte & Assign(const TDataStd_DataMapOfStringByte &Other);
 		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringByte & operator=(const TDataStd_DataMapOfStringByte &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -4033,6 +4288,8 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		TDataStd_DataMapOfStringInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringInteger & Assign(const TDataStd_DataMapOfStringInteger &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringInteger & operator=(const TDataStd_DataMapOfStringInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -4497,6 +4754,8 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDataStd_DataMapOfStringHArray1OfReal & Assign(const TDataStd_DataMapOfStringHArray1OfReal &Other);
 		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapOfStringHArray1OfReal &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -4724,6 +4983,8 @@ class TDataStd_ListOfByte {
 		TDataStd_ListOfByte();
 		%feature("autodoc", "1");
 		void Assign(const TDataStd_ListOfByte &Other);
+		%feature("autodoc", "1");
+		void operator=(const TDataStd_ListOfByte &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -5296,6 +5557,8 @@ class TDataStd_Array1OfByte {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TDataStd_Array1OfByte & Assign(const TDataStd_Array1OfByte &Other);
+		%feature("autodoc", "1");
+		const TDataStd_Array1OfByte & operator=(const TDataStd_Array1OfByte &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

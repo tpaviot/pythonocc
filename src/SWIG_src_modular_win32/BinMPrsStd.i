@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinMPrsStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMPrsStd_PositionDriver(const Handle_BinMPrsStd_PositionDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver(const BinMPrsStd_PositionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_PositionDriver & operator=(const Handle_BinMPrsStd_PositionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_PositionDriver & operator=(const BinMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMPrsStd_AISPresentationDriver(const Handle_BinMPrsStd_AISPresentationDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_AISPresentationDriver(const BinMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_AISPresentationDriver & operator=(const Handle_BinMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_AISPresentationDriver & operator=(const BinMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PMMgt_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 		Handle_PMMgt_PManaged(const Handle_PMMgt_PManaged &aHandle);
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged(const PMMgt_PManaged *anItem);
+		%feature("autodoc", "1");
+		Handle_PMMgt_PManaged & operator=(const Handle_PMMgt_PManaged &aHandle);
+		%feature("autodoc", "1");
+		Handle_PMMgt_PManaged & operator=(const PMMgt_PManaged *anItem);
 		%feature("autodoc", "1");
 		Handle_PMMgt_PManaged const DownCast(const Handle_Standard_Persistent &AnObject);
 

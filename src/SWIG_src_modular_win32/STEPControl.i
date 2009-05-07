@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include STEPControl_dependencies.i
 
@@ -137,6 +142,10 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPControl_ActorRead const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -163,6 +172,10 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite(const STEPControl_ActorWrite *anItem);
 		%feature("autodoc", "1");
+		Handle_STEPControl_ActorWrite & operator=(const Handle_STEPControl_ActorWrite &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorWrite & operator=(const STEPControl_ActorWrite *anItem);
+		%feature("autodoc", "1");
 		Handle_STEPControl_ActorWrite const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -188,6 +201,10 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 		Handle_STEPControl_Controller(const Handle_STEPControl_Controller &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller(const STEPControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller & operator=(const Handle_STEPControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
 

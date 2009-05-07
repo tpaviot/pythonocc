@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Quantity_dependencies.i
 
@@ -801,6 +806,10 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Quantity_ColorDefinitionError *anItem);
 		%feature("autodoc", "1");
+		Handle_Quantity_ColorDefinitionError & operator=(const Handle_Quantity_ColorDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Quantity_ColorDefinitionError & operator=(const Quantity_ColorDefinitionError *anItem);
+		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -826,6 +835,10 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 		Handle_Quantity_PeriodDefinitionError(const Handle_Quantity_PeriodDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError(const Quantity_PeriodDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Quantity_PeriodDefinitionError & operator=(const Handle_Quantity_PeriodDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Quantity_PeriodDefinitionError & operator=(const Quantity_PeriodDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -853,6 +866,10 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor(const Quantity_HArray1OfColor *anItem);
 		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor & operator=(const Handle_Quantity_HArray1OfColor &aHandle);
+		%feature("autodoc", "1");
+		Handle_Quantity_HArray1OfColor & operator=(const Quantity_HArray1OfColor *anItem);
+		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -878,6 +895,10 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 		Handle_Quantity_DateDefinitionError(const Handle_Quantity_DateDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError(const Quantity_DateDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Quantity_DateDefinitionError & operator=(const Handle_Quantity_DateDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Quantity_DateDefinitionError & operator=(const Quantity_DateDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -908,6 +929,8 @@ class Quantity_Array2OfColor {
 		void Destroy();
 		%feature("autodoc", "1");
 		const Quantity_Array2OfColor & Assign(const Quantity_Array2OfColor &Other);
+		%feature("autodoc", "1");
+		const Quantity_Array2OfColor & operator=(const Quantity_Array2OfColor &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -955,6 +978,8 @@ class Quantity_Array1OfCoefficient {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Quantity_Array1OfCoefficient & Assign(const Quantity_Array1OfCoefficient &Other);
+		%feature("autodoc", "1");
+		const Quantity_Array1OfCoefficient & operator=(const Quantity_Array1OfCoefficient &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1126,6 +1151,8 @@ class Quantity_Array1OfColor {
 		%feature("autodoc", "1");
 		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
 		%feature("autodoc", "1");
+		const Quantity_Array1OfColor & operator=(const Quantity_Array1OfColor &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1162,6 +1189,8 @@ class Quantity_Color {
 		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
 		%feature("autodoc", "1");
 		Quantity_Color & Assign(const Quantity_Color &Other);
+		%feature("autodoc", "1");
+		Quantity_Color & operator=(const Quantity_Color &Other);
 		%feature("autodoc", "1");
 		void ChangeContrast(const Quantity_Rate ADelta);
 		%feature("autodoc", "1");

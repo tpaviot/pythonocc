@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Draft_dependencies.i
 
@@ -132,6 +137,10 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo &aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo & operator=(const Draft_DataMapNodeOfDataMapOfFaceFaceInfo *anItem);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -159,6 +168,10 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
 		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo *anItem);
+		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -185,6 +198,10 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 		%feature("autodoc", "1");
 		Handle_Draft_Modification(const Draft_Modification *anItem);
 		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
 		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -210,6 +227,10 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
 		%feature("autodoc", "1");
 		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -322,6 +343,8 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		Draft_DataMapOfEdgeEdgeInfo(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Draft_DataMapOfEdgeEdgeInfo & Assign(const Draft_DataMapOfEdgeEdgeInfo &Other);
+		%feature("autodoc", "1");
+		Draft_DataMapOfEdgeEdgeInfo & operator=(const Draft_DataMapOfEdgeEdgeInfo &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -581,6 +604,8 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Draft_DataMapOfFaceFaceInfo & Assign(const Draft_DataMapOfFaceFaceInfo &Other);
 		%feature("autodoc", "1");
+		Draft_DataMapOfFaceFaceInfo & operator=(const Draft_DataMapOfFaceFaceInfo &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -646,6 +671,8 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		Draft_DataMapOfVertexVertexInfo(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Draft_DataMapOfVertexVertexInfo & Assign(const Draft_DataMapOfVertexVertexInfo &Other);
+		%feature("autodoc", "1");
+		Draft_DataMapOfVertexVertexInfo & operator=(const Draft_DataMapOfVertexVertexInfo &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

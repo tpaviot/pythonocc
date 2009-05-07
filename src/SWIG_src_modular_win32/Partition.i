@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Partition
 
+%include Partition_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -27,7 +29,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
-%include std_basic_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -105,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Partition_dependencies.i
 
@@ -142,6 +149,7 @@ class Partition_Spliter {
 	}
 };
 
+
 %nodefaultctor Partition_Loop2d;
 class Partition_Loop2d {
 	public:
@@ -170,6 +178,7 @@ class Partition_Loop2d {
 	}
 };
 
+
 %nodefaultctor Partition_Inter2d;
 class Partition_Inter2d {
 	public:
@@ -191,6 +200,7 @@ class Partition_Inter2d {
 	if (__env){printf("## Call custom destructor for instance of Partition_Inter2d\n");}
 	}
 };
+
 
 %nodefaultctor Partition_Loop;
 class Partition_Loop {
@@ -217,6 +227,7 @@ class Partition_Loop {
 	if (__env){printf("## Call custom destructor for instance of Partition_Loop\n");}
 	}
 };
+
 
 %nodefaultctor Partition_Inter3d;
 class Partition_Inter3d {
@@ -263,6 +274,7 @@ class Partition_Inter3d {
 	if (__env){printf("## Call custom destructor for instance of Partition_Inter3d\n");}
 	}
 };
+
 
 %nodefaultctor Partition_Loop3d;
 class Partition_Loop3d {

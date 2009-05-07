@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepTools_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 		Handle_BRepTools_Modification(const Handle_BRepTools_Modification &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification(const BRepTools_Modification *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTools_Modification & operator=(const Handle_BRepTools_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_Modification & operator=(const BRepTools_Modification *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepTools_Modification const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification(const BRepTools_GTrsfModification *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification & operator=(const Handle_BRepTools_GTrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepTools_GTrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 		Handle_BRepTools_TrsfModification(const Handle_BRepTools_TrsfModification &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification(const BRepTools_TrsfModification *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTools_TrsfModification & operator=(const Handle_BRepTools_TrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_TrsfModification & operator=(const BRepTools_TrsfModification *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepTools_TrsfModification const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape(const BRepTools_ReShape *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape & operator=(const Handle_BRepTools_ReShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepTools_ReShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification(const BRepTools_NurbsConvertModification *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepTools_NurbsConvertModification & operator=(const Handle_BRepTools_NurbsConvertModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_NurbsConvertModification & operator=(const BRepTools_NurbsConvertModification *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepTools_NurbsConvertModification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d(const Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d & operator=(const BRepTools_DataMapNodeOfMapOfVertexPnt2d *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -439,6 +468,8 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 		BRepTools_MapOfVertexPnt2d(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepTools_MapOfVertexPnt2d & Assign(const BRepTools_MapOfVertexPnt2d &Other);
+		%feature("autodoc", "1");
+		BRepTools_MapOfVertexPnt2d & operator=(const BRepTools_MapOfVertexPnt2d &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

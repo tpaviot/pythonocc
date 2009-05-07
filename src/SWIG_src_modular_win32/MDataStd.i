@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MDataStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_DirectoryRetrievalDriver(const Handle_MDataStd_DirectoryRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryRetrievalDriver(const MDataStd_DirectoryRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_DirectoryRetrievalDriver & operator=(const Handle_MDataStd_DirectoryRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_DirectoryRetrievalDriver & operator=(const MDataStd_DirectoryRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver_1(const MDataStd_RealArrayRetrievalDriver_1 *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayRetrievalDriver_1 & operator=(const Handle_MDataStd_RealArrayRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayRetrievalDriver_1 & operator=(const MDataStd_RealArrayRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 		Handle_MDataStd_ByteArrayRetrievalDriver_1(const Handle_MDataStd_ByteArrayRetrievalDriver_1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver_1(const MDataStd_ByteArrayRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayRetrievalDriver_1 & operator=(const Handle_MDataStd_ByteArrayRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayRetrievalDriver_1 & operator=(const MDataStd_ByteArrayRetrievalDriver_1 *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListStorageDriver(const MDataStd_ReferenceListStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceListStorageDriver & operator=(const Handle_MDataStd_ReferenceListStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceListStorageDriver & operator=(const MDataStd_ReferenceListStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_IntegerListStorageDriver(const Handle_MDataStd_IntegerListStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListStorageDriver(const MDataStd_IntegerListStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerListStorageDriver & operator=(const Handle_MDataStd_IntegerListStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerListStorageDriver & operator=(const MDataStd_IntegerListStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListRetrievalDriver(const MDataStd_BooleanListRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanListRetrievalDriver & operator=(const Handle_MDataStd_BooleanListRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanListRetrievalDriver & operator=(const MDataStd_BooleanListRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriv
 		Handle_MDataStd_ExtStringArrayRetrievalDriver_1(const Handle_MDataStd_ExtStringArrayRetrievalDriver_1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver_1(const MDataStd_ExtStringArrayRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayRetrievalDriver_1 & operator=(const Handle_MDataStd_ExtStringArrayRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayRetrievalDriver_1 & operator=(const MDataStd_ExtStringArrayRetrievalDriver_1 *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeRetrievalDriver(const MDataStd_TreeNodeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_TreeNodeRetrievalDriver & operator=(const Handle_MDataStd_TreeNodeRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TreeNodeRetrievalDriver & operator=(const MDataStd_TreeNodeRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_CommentStorageDriver(const Handle_MDataStd_CommentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentStorageDriver(const MDataStd_CommentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_CommentStorageDriver & operator=(const Handle_MDataStd_CommentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_CommentStorageDriver & operator=(const MDataStd_CommentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneRetrievalDriver(const MDataStd_PlaneRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PlaneRetrievalDriver & operator=(const Handle_MDataStd_PlaneRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PlaneRetrievalDriver & operator=(const MDataStd_PlaneRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_NoteBookStorageDriver(const Handle_MDataStd_NoteBookStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookStorageDriver(const MDataStd_NoteBookStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NoteBookStorageDriver & operator=(const Handle_MDataStd_NoteBookStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NoteBookStorageDriver & operator=(const MDataStd_NoteBookStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdStorageDriver(const MDataStd_PatternStdStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PatternStdStorageDriver & operator=(const Handle_MDataStd_PatternStdStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PatternStdStorageDriver & operator=(const MDataStd_PatternStdStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver 
 		Handle_MDataStd_ExtStringListRetrievalDriver(const Handle_MDataStd_ExtStringListRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListRetrievalDriver(const MDataStd_ExtStringListRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringListRetrievalDriver & operator=(const Handle_MDataStd_ExtStringListRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringListRetrievalDriver & operator=(const MDataStd_ExtStringListRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayRetrievalDriver(const MDataStd_BooleanArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanArrayRetrievalDriver & operator=(const Handle_MDataStd_BooleanArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanArrayRetrievalDriver & operator=(const MDataStd_BooleanArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_IntegerListRetrievalDriver(const Handle_MDataStd_IntegerListRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListRetrievalDriver(const MDataStd_IntegerListRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerListRetrievalDriver & operator=(const Handle_MDataStd_IntegerListRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerListRetrievalDriver & operator=(const MDataStd_IntegerListRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerListRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_AxisStorageDriver(const MDataStd_AxisStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_AxisStorageDriver & operator=(const Handle_MDataStd_AxisStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_AxisStorageDriver & operator=(const MDataStd_AxisStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_AxisStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_VariableStorageDriver(const Handle_MDataStd_VariableStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableStorageDriver(const MDataStd_VariableStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_VariableStorageDriver & operator=(const Handle_MDataStd_VariableStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_VariableStorageDriver & operator=(const MDataStd_VariableStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryStorageDriver(const MDataStd_DirectoryStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_DirectoryStorageDriver & operator=(const Handle_MDataStd_DirectoryStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_DirectoryStorageDriver & operator=(const MDataStd_DirectoryStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_DirectoryStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_GeometryStorageDriver(const Handle_MDataStd_GeometryStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryStorageDriver(const MDataStd_GeometryStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_GeometryStorageDriver & operator=(const Handle_MDataStd_GeometryStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_GeometryStorageDriver & operator=(const MDataStd_GeometryStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealRetrievalDriver(const MDataStd_RealRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RealRetrievalDriver & operator=(const Handle_MDataStd_RealRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealRetrievalDriver & operator=(const MDataStd_RealRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RealRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_CommentRetrievalDriver(const Handle_MDataStd_CommentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentRetrievalDriver(const MDataStd_CommentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_CommentRetrievalDriver & operator=(const Handle_MDataStd_CommentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_CommentRetrievalDriver & operator=(const MDataStd_CommentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_CommentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealStorageDriver(const MDataStd_RealStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver & operator=(const Handle_MDataStd_RealStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver & operator=(const MDataStd_RealStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RealStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver
 		Handle_MDataStd_ReferenceArrayRetrievalDriver(const Handle_MDataStd_ReferenceArrayRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayRetrievalDriver(const MDataStd_ReferenceArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceArrayRetrievalDriver & operator=(const Handle_MDataStd_ReferenceArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceArrayRetrievalDriver & operator=(const MDataStd_ReferenceArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayStorageDriver(const MDataStd_RealArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayStorageDriver & operator=(const Handle_MDataStd_RealArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayStorageDriver & operator=(const MDataStd_RealArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_PatternStdRetrievalDriver(const Handle_MDataStd_PatternStdRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdRetrievalDriver(const MDataStd_PatternStdRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PatternStdRetrievalDriver & operator=(const Handle_MDataStd_PatternStdRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PatternStdRetrievalDriver & operator=(const MDataStd_PatternStdRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_PatternStdRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintRetrievalDriver(const MDataStd_ConstraintRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ConstraintRetrievalDriver & operator=(const Handle_MDataStd_ConstraintRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ConstraintRetrievalDriver & operator=(const MDataStd_ConstraintRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_AsciiStringRetrievalDriver(const Handle_MDataStd_AsciiStringRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringRetrievalDriver(const MDataStd_AsciiStringRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_AsciiStringRetrievalDriver & operator=(const Handle_MDataStd_AsciiStringRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_AsciiStringRetrievalDriver & operator=(const MDataStd_AsciiStringRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeStorageDriver(const MDataStd_UAttributeStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_UAttributeStorageDriver & operator=(const Handle_MDataStd_UAttributeStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_UAttributeStorageDriver & operator=(const MDataStd_UAttributeStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver
 		Handle_MDataStd_IntPackedMapRetrievalDriver_1(const Handle_MDataStd_IntPackedMapRetrievalDriver_1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver_1(const MDataStd_IntPackedMapRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver_1 & operator=(const Handle_MDataStd_IntPackedMapRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver_1 & operator=(const MDataStd_IntPackedMapRetrievalDriver_1 *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -880,6 +1001,10 @@ class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerStorageDriver(const MDataStd_IntegerStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerStorageDriver & operator=(const Handle_MDataStd_IntegerStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerStorageDriver & operator=(const MDataStd_IntegerStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -905,6 +1030,10 @@ class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_VariableRetrievalDriver(const Handle_MDataStd_VariableRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableRetrievalDriver(const MDataStd_VariableRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_VariableRetrievalDriver & operator=(const Handle_MDataStd_VariableRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_VariableRetrievalDriver & operator=(const MDataStd_VariableRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_VariableRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -932,6 +1061,10 @@ class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayStorageDriver(const MDataStd_ReferenceArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceArrayStorageDriver & operator=(const Handle_MDataStd_ReferenceArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceArrayStorageDriver & operator=(const MDataStd_ReferenceArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -957,6 +1090,10 @@ class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_ExpressionRetrievalDriver(const Handle_MDataStd_ExpressionRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionRetrievalDriver(const MDataStd_ExpressionRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExpressionRetrievalDriver & operator=(const Handle_MDataStd_ExpressionRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExpressionRetrievalDriver & operator=(const MDataStd_ExpressionRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -984,6 +1121,10 @@ class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayStorageDriver(const MDataStd_ExtStringArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayStorageDriver & operator=(const Handle_MDataStd_ExtStringArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayStorageDriver & operator=(const MDataStd_ExtStringArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1009,6 +1150,10 @@ class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_UAttributeRetrievalDriver(const Handle_MDataStd_UAttributeRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeRetrievalDriver(const MDataStd_UAttributeRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_UAttributeRetrievalDriver & operator=(const Handle_MDataStd_UAttributeRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_UAttributeRetrievalDriver & operator=(const MDataStd_UAttributeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_UAttributeRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1036,6 +1181,10 @@ class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RelationRetrievalDriver(const MDataStd_RelationRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RelationRetrievalDriver & operator=(const Handle_MDataStd_RelationRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RelationRetrievalDriver & operator=(const MDataStd_RelationRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RelationRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1061,6 +1210,10 @@ class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_TickRetrievalDriver(const Handle_MDataStd_TickRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_TickRetrievalDriver(const MDataStd_TickRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TickRetrievalDriver & operator=(const Handle_MDataStd_TickRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TickRetrievalDriver & operator=(const MDataStd_TickRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_TickRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1088,6 +1241,10 @@ class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PointRetrievalDriver(const MDataStd_PointRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PointRetrievalDriver & operator=(const Handle_MDataStd_PointRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PointRetrievalDriver & operator=(const MDataStd_PointRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PointRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1113,6 +1270,10 @@ class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_NoteBookRetrievalDriver(const Handle_MDataStd_NoteBookRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookRetrievalDriver(const MDataStd_NoteBookRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NoteBookRetrievalDriver & operator=(const Handle_MDataStd_NoteBookRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NoteBookRetrievalDriver & operator=(const MDataStd_NoteBookRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NoteBookRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1140,6 +1301,10 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver(const MDataStd_IntegerArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayRetrievalDriver & operator=(const Handle_MDataStd_IntegerArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayRetrievalDriver & operator=(const MDataStd_IntegerArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1165,6 +1330,10 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_IntPackedMapRetrievalDriver(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver(const MDataStd_IntPackedMapRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const MDataStd_IntPackedMapRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1192,6 +1361,10 @@ class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver(const MDataStd_ByteArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayRetrievalDriver & operator=(const Handle_MDataStd_ByteArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayRetrievalDriver & operator=(const MDataStd_ByteArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1217,6 +1390,10 @@ class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_NamedDataRetrievalDriver(const Handle_MDataStd_NamedDataRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NamedDataRetrievalDriver(const MDataStd_NamedDataRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver & operator=(const Handle_MDataStd_NamedDataRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataRetrievalDriver & operator=(const MDataStd_NamedDataRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NamedDataRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1244,6 +1421,10 @@ class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_NameRetrievalDriver(const MDataStd_NameRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_NameRetrievalDriver & operator=(const Handle_MDataStd_NameRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NameRetrievalDriver & operator=(const MDataStd_NameRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_NameRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1269,6 +1450,10 @@ class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_ExpressionStorageDriver(const Handle_MDataStd_ExpressionStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionStorageDriver(const MDataStd_ExpressionStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExpressionStorageDriver & operator=(const Handle_MDataStd_ExpressionStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExpressionStorageDriver & operator=(const MDataStd_ExpressionStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExpressionStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1296,6 +1481,10 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver(const MDataStd_ExtStringArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayRetrievalDriver & operator=(const Handle_MDataStd_ExtStringArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringArrayRetrievalDriver & operator=(const MDataStd_ExtStringArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1321,6 +1510,10 @@ class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_NameStorageDriver(const Handle_MDataStd_NameStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NameStorageDriver(const MDataStd_NameStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NameStorageDriver & operator=(const Handle_MDataStd_NameStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NameStorageDriver & operator=(const MDataStd_NameStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_NameStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1348,6 +1541,10 @@ class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PointStorageDriver(const MDataStd_PointStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PointStorageDriver & operator=(const Handle_MDataStd_PointStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PointStorageDriver & operator=(const MDataStd_PointStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PointStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1373,6 +1570,10 @@ class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_IntegerRetrievalDriver(const Handle_MDataStd_IntegerRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerRetrievalDriver(const MDataStd_IntegerRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerRetrievalDriver & operator=(const Handle_MDataStd_IntegerRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerRetrievalDriver & operator=(const MDataStd_IntegerRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1400,6 +1601,10 @@ class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealListRetrievalDriver(const MDataStd_RealListRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_RealListRetrievalDriver & operator=(const Handle_MDataStd_RealListRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealListRetrievalDriver & operator=(const MDataStd_RealListRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_RealListRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1425,6 +1630,10 @@ class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_BooleanArrayStorageDriver(const Handle_MDataStd_BooleanArrayStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayStorageDriver(const MDataStd_BooleanArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanArrayStorageDriver & operator=(const Handle_MDataStd_BooleanArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanArrayStorageDriver & operator=(const MDataStd_BooleanArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1452,6 +1661,10 @@ class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_NamedDataStorageDriver(const MDataStd_NamedDataStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataStorageDriver & operator=(const Handle_MDataStd_NamedDataStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_NamedDataStorageDriver & operator=(const MDataStd_NamedDataStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_NamedDataStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1477,6 +1690,10 @@ class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_ExtStringListStorageDriver(const Handle_MDataStd_ExtStringListStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListStorageDriver(const MDataStd_ExtStringListStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringListStorageDriver & operator=(const Handle_MDataStd_ExtStringListStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ExtStringListStorageDriver & operator=(const MDataStd_ExtStringListStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ExtStringListStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1504,6 +1721,10 @@ class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayStorageDriver(const MDataStd_ByteArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver & operator=(const Handle_MDataStd_ByteArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver & operator=(const MDataStd_ByteArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ByteArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1529,6 +1750,10 @@ class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_ShapeRetrievalDriver(const Handle_MDataStd_ShapeRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeRetrievalDriver(const MDataStd_ShapeRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ShapeRetrievalDriver & operator=(const Handle_MDataStd_ShapeRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ShapeRetrievalDriver & operator=(const MDataStd_ShapeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1556,6 +1781,10 @@ class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_AxisRetrievalDriver(const MDataStd_AxisRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_AxisRetrievalDriver & operator=(const Handle_MDataStd_AxisRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_AxisRetrievalDriver & operator=(const MDataStd_AxisRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_AxisRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1581,6 +1810,10 @@ class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_IntegerArrayStorageDriver(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayStorageDriver(const MDataStd_IntegerArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const MDataStd_IntegerArrayStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1608,6 +1841,10 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver_1(const MDataStd_IntegerArrayRetrievalDriver_1 *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayRetrievalDriver_1 & operator=(const Handle_MDataStd_IntegerArrayRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayRetrievalDriver_1 & operator=(const MDataStd_IntegerArrayRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_IntegerArrayRetrievalDriver_1 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1633,6 +1870,10 @@ class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_RealListStorageDriver(const Handle_MDataStd_RealListStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealListStorageDriver(const MDataStd_RealListStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealListStorageDriver & operator=(const Handle_MDataStd_RealListStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealListStorageDriver & operator=(const MDataStd_RealListStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealListStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1660,6 +1901,10 @@ class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementRetrievalDriver(const MDataStd_PlacementRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PlacementRetrievalDriver & operator=(const Handle_MDataStd_PlacementRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PlacementRetrievalDriver & operator=(const MDataStd_PlacementRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1685,6 +1930,10 @@ class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_IntPackedMapStorageDriver(const Handle_MDataStd_IntPackedMapStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapStorageDriver(const MDataStd_IntPackedMapStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapStorageDriver & operator=(const Handle_MDataStd_IntPackedMapStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapStorageDriver & operator=(const MDataStd_IntPackedMapStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_IntPackedMapStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1712,6 +1961,10 @@ class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver 
 		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListRetrievalDriver(const MDataStd_ReferenceListRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceListRetrievalDriver & operator=(const Handle_MDataStd_ReferenceListRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ReferenceListRetrievalDriver & operator=(const MDataStd_ReferenceListRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ReferenceListRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1737,6 +1990,10 @@ class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_PlaneStorageDriver(const Handle_MDataStd_PlaneStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneStorageDriver(const MDataStd_PlaneStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PlaneStorageDriver & operator=(const Handle_MDataStd_PlaneStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PlaneStorageDriver & operator=(const MDataStd_PlaneStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlaneStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1764,6 +2021,10 @@ class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringStorageDriver(const MDataStd_AsciiStringStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_AsciiStringStorageDriver & operator=(const Handle_MDataStd_AsciiStringStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_AsciiStringStorageDriver & operator=(const MDataStd_AsciiStringStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_AsciiStringStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1789,6 +2050,10 @@ class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_GeometryRetrievalDriver(const Handle_MDataStd_GeometryRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryRetrievalDriver(const MDataStd_GeometryRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_GeometryRetrievalDriver & operator=(const Handle_MDataStd_GeometryRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_GeometryRetrievalDriver & operator=(const MDataStd_GeometryRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_GeometryRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1816,6 +2081,10 @@ class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementStorageDriver(const MDataStd_PlacementStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_PlacementStorageDriver & operator=(const Handle_MDataStd_PlacementStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_PlacementStorageDriver & operator=(const MDataStd_PlacementStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_PlacementStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1841,6 +2110,10 @@ class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_TreeNodeStorageDriver(const Handle_MDataStd_TreeNodeStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeStorageDriver(const MDataStd_TreeNodeStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TreeNodeStorageDriver & operator=(const Handle_MDataStd_TreeNodeStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TreeNodeStorageDriver & operator=(const MDataStd_TreeNodeStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_TreeNodeStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1868,6 +2141,10 @@ class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeStorageDriver(const MDataStd_ShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ShapeStorageDriver & operator=(const Handle_MDataStd_ShapeStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ShapeStorageDriver & operator=(const MDataStd_ShapeStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ShapeStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1893,6 +2170,10 @@ class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_BooleanListStorageDriver(const Handle_MDataStd_BooleanListStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListStorageDriver(const MDataStd_BooleanListStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanListStorageDriver & operator=(const Handle_MDataStd_BooleanListStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_BooleanListStorageDriver & operator=(const MDataStd_BooleanListStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_BooleanListStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1920,6 +2201,10 @@ class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintStorageDriver(const MDataStd_ConstraintStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_ConstraintStorageDriver & operator=(const Handle_MDataStd_ConstraintStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ConstraintStorageDriver & operator=(const MDataStd_ConstraintStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_ConstraintStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1945,6 +2230,10 @@ class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MDataStd_RelationStorageDriver(const Handle_MDataStd_RelationStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RelationStorageDriver(const MDataStd_RelationStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RelationStorageDriver & operator=(const Handle_MDataStd_RelationStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RelationStorageDriver & operator=(const MDataStd_RelationStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RelationStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1972,6 +2261,10 @@ class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDataStd_TickStorageDriver(const MDataStd_TickStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDataStd_TickStorageDriver & operator=(const Handle_MDataStd_TickStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_TickStorageDriver & operator=(const MDataStd_TickStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDataStd_TickStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1997,6 +2290,10 @@ class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDataStd_RealArrayRetrievalDriver(const Handle_MDataStd_RealArrayRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver(const MDataStd_RealArrayRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayRetrievalDriver & operator=(const Handle_MDataStd_RealArrayRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealArrayRetrievalDriver & operator=(const MDataStd_RealArrayRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDataStd_RealArrayRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

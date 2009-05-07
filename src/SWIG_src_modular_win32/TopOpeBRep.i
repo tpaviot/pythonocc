@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopOpeBRep_dependencies.i
 
@@ -153,6 +158,10 @@ class Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d(const TopOpeBRep_SequenceNodeOfSequenceOfPoint2d *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d & operator=(const Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d & operator=(const TopOpeBRep_SequenceNodeOfSequenceOfPoint2d *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +187,10 @@ class Handle_TopOpeBRep_FFDumper : public Handle_MMgt_TShared {
 		Handle_TopOpeBRep_FFDumper(const Handle_TopOpeBRep_FFDumper &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_FFDumper(const TopOpeBRep_FFDumper *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_FFDumper & operator=(const Handle_TopOpeBRep_FFDumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_FFDumper & operator=(const TopOpeBRep_FFDumper *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_FFDumper const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +218,10 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool(const TopOpeBRep_DataMapNodeOfDataMapOfTopolTool *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool & operator=(const Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool & operator=(const TopOpeBRep_DataMapNodeOfDataMapOfTopolTool *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +247,10 @@ class Handle_TopOpeBRep_Hctxff2d : public Handle_MMgt_TShared {
 		Handle_TopOpeBRep_Hctxff2d(const Handle_TopOpeBRep_Hctxff2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_Hctxff2d(const TopOpeBRep_Hctxff2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_Hctxff2d & operator=(const Handle_TopOpeBRep_Hctxff2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_Hctxff2d & operator=(const TopOpeBRep_Hctxff2d *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_Hctxff2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -257,6 +278,10 @@ class Handle_TopOpeBRep_HArray1OfLineInter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_HArray1OfLineInter(const TopOpeBRep_HArray1OfLineInter *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRep_HArray1OfLineInter & operator=(const Handle_TopOpeBRep_HArray1OfLineInter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_HArray1OfLineInter & operator=(const TopOpeBRep_HArray1OfLineInter *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRep_HArray1OfLineInter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +307,10 @@ class Handle_TopOpeBRep_Hctxee2d : public Handle_MMgt_TShared {
 		Handle_TopOpeBRep_Hctxee2d(const Handle_TopOpeBRep_Hctxee2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_Hctxee2d(const TopOpeBRep_Hctxee2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_Hctxee2d & operator=(const Handle_TopOpeBRep_Hctxee2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_Hctxee2d & operator=(const TopOpeBRep_Hctxee2d *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_Hctxee2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -309,6 +338,10 @@ class Handle_TopOpeBRep_ListNodeOfListOfBipoint : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_ListNodeOfListOfBipoint(const TopOpeBRep_ListNodeOfListOfBipoint *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRep_ListNodeOfListOfBipoint & operator=(const Handle_TopOpeBRep_ListNodeOfListOfBipoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_ListNodeOfListOfBipoint & operator=(const TopOpeBRep_ListNodeOfListOfBipoint *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRep_ListNodeOfListOfBipoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +367,10 @@ class Handle_TopOpeBRep_HArray1OfVPointInter : public Handle_MMgt_TShared {
 		Handle_TopOpeBRep_HArray1OfVPointInter(const Handle_TopOpeBRep_HArray1OfVPointInter &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_HArray1OfVPointInter(const TopOpeBRep_HArray1OfVPointInter *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_HArray1OfVPointInter & operator=(const Handle_TopOpeBRep_HArray1OfVPointInter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_HArray1OfVPointInter & operator=(const TopOpeBRep_HArray1OfVPointInter *anItem);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_HArray1OfVPointInter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -361,6 +398,10 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger(const TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger & operator=(const Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -384,6 +425,8 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 		TopOpeBRep_DataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopOpeBRep_DataMapOfShapeInteger & Assign(const TopOpeBRep_DataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		TopOpeBRep_DataMapOfShapeInteger & operator=(const TopOpeBRep_DataMapOfShapeInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -912,6 +955,8 @@ class TopOpeBRep_Array1OfVPointInter {
 		%feature("autodoc", "1");
 		const TopOpeBRep_Array1OfVPointInter & Assign(const TopOpeBRep_Array1OfVPointInter &Other);
 		%feature("autodoc", "1");
+		const TopOpeBRep_Array1OfVPointInter & operator=(const TopOpeBRep_Array1OfVPointInter &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1265,6 +1310,8 @@ class TopOpeBRep_Array1OfLineInter {
 		%feature("autodoc", "1");
 		const TopOpeBRep_Array1OfLineInter & Assign(const TopOpeBRep_Array1OfLineInter &Other);
 		%feature("autodoc", "1");
+		const TopOpeBRep_Array1OfLineInter & operator=(const TopOpeBRep_Array1OfLineInter &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1418,6 +1465,8 @@ class TopOpeBRep_ListOfBipoint {
 		TopOpeBRep_ListOfBipoint();
 		%feature("autodoc", "1");
 		void Assign(const TopOpeBRep_ListOfBipoint &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRep_ListOfBipoint &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -1704,6 +1753,8 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TopOpeBRep_DataMapOfTopolTool & Assign(const TopOpeBRep_DataMapOfTopolTool &Other);
 		%feature("autodoc", "1");
+		TopOpeBRep_DataMapOfTopolTool & operator=(const TopOpeBRep_DataMapOfTopolTool &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1775,6 +1826,8 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const TopOpeBRep_SequenceOfPoint2d & Assign(const TopOpeBRep_SequenceOfPoint2d &Other);
+		%feature("autodoc", "1");
+		const TopOpeBRep_SequenceOfPoint2d & operator=(const TopOpeBRep_SequenceOfPoint2d &Other);
 		%feature("autodoc", "1");
 		void Append(const TopOpeBRep_Point2d &T);
 		%feature("autodoc", "1");

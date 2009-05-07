@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Select2D_dependencies.i
 
@@ -130,6 +135,10 @@ class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 		Handle_Select2D_Projector(const Handle_Select2D_Projector &aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector(const Select2D_Projector *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_Projector & operator=(const Handle_Select2D_Projector &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_Projector & operator=(const Select2D_Projector *anItem);
 		%feature("autodoc", "1");
 		Handle_Select2D_Projector const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -157,6 +166,10 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity(const Select2D_SensitiveEntity *anItem);
 		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveEntity & operator=(const Handle_Select2D_SensitiveEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveEntity & operator=(const Select2D_SensitiveEntity *anItem);
+		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -182,6 +195,10 @@ class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 		Handle_Select2D_SensitivePoint(const Handle_Select2D_SensitivePoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint(const Select2D_SensitivePoint *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitivePoint & operator=(const Handle_Select2D_SensitivePoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitivePoint & operator=(const Select2D_SensitivePoint *anItem);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitivePoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -209,6 +226,10 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc(const Select2D_SensitiveArc *anItem);
 		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveArc & operator=(const Handle_Select2D_SensitiveArc &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveArc & operator=(const Select2D_SensitiveArc *anItem);
+		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveArc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -234,6 +255,10 @@ class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity 
 		Handle_Select2D_SensitiveSegment(const Handle_Select2D_SensitiveSegment &aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment(const Select2D_SensitiveSegment *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveSegment & operator=(const Handle_Select2D_SensitiveSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveSegment & operator=(const Select2D_SensitiveSegment *anItem);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -261,6 +286,10 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle(const Select2D_SensitiveCircle *anItem);
 		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveCircle & operator=(const Handle_Select2D_SensitiveCircle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveCircle & operator=(const Select2D_SensitiveCircle *anItem);
+		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveCircle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -286,6 +315,10 @@ class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox & operator=(const Handle_Select2D_SensitiveBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox & operator=(const Select2D_SensitiveBox *anItem);
 		%feature("autodoc", "1");
 		Handle_Select2D_SensitiveBox const DownCast(const Handle_Standard_Transient &AnObject);
 

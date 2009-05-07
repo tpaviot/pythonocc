@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepElement_dependencies.i
 
@@ -189,6 +194,10 @@ class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_Se
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementPurposeMember(const StepElement_SurfaceElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember & operator=(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember & operator=(const StepElement_SurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -214,6 +223,10 @@ class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 		Handle_StepElement_ElementDescriptor(const Handle_StepElement_ElementDescriptor &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementDescriptor(const StepElement_ElementDescriptor *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementDescriptor & operator=(const Handle_StepElement_ElementDescriptor &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementDescriptor & operator=(const StepElement_ElementDescriptor *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementDescriptor const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -241,6 +254,10 @@ class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_
 		%feature("autodoc", "1");
 		Handle_StepElement_Surface3dElementDescriptor(const StepElement_Surface3dElementDescriptor *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_Surface3dElementDescriptor & operator=(const Handle_StepElement_Surface3dElementDescriptor &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_Surface3dElementDescriptor & operator=(const StepElement_Surface3dElementDescriptor *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_Surface3dElementDescriptor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -266,6 +283,10 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 		Handle_StepElement_SurfaceSection(const Handle_StepElement_SurfaceSection &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSection(const StepElement_SurfaceSection *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSection & operator=(const Handle_StepElement_SurfaceSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSection & operator=(const StepElement_SurfaceSection *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -293,6 +314,10 @@ class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : publi
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember(const StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember & operator=(const Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember & operator=(const StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -318,6 +343,10 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 		Handle_StepElement_CurveElementSectionDefinition(const Handle_StepElement_CurveElementSectionDefinition &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDefinition(const StepElement_CurveElementSectionDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition & operator=(const Handle_StepElement_CurveElementSectionDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition & operator=(const StepElement_CurveElementSectionDefinition *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -345,6 +374,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial(const StepElement_SequenceNodeOfSequenceOfElementMaterial *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial & operator=(const Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial & operator=(const StepElement_SequenceNodeOfSequenceOfElementMaterial *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -370,6 +403,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : pub
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember(const Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember(const StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember & operator=(const Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember & operator=(const StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -397,6 +434,10 @@ class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public 
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember(const StepElement_HArray1OfHSequenceOfCurveElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember & operator=(const Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember & operator=(const StepElement_HArray1OfHSequenceOfCurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -422,6 +463,10 @@ class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_S
 		Handle_StepElement_CurveElementSectionDerivedDefinitions(const Handle_StepElement_CurveElementSectionDerivedDefinitions &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDerivedDefinitions(const StepElement_CurveElementSectionDerivedDefinitions *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDerivedDefinitions & operator=(const Handle_StepElement_CurveElementSectionDerivedDefinitions &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDerivedDefinitions & operator=(const StepElement_CurveElementSectionDerivedDefinitions *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementSectionDerivedDefinitions const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -449,6 +494,10 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurpose(const StepElement_HArray2OfSurfaceElementPurpose *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurpose & operator=(const Handle_StepElement_HArray2OfSurfaceElementPurpose &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurpose & operator=(const StepElement_HArray2OfSurfaceElementPurpose *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurpose const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -474,6 +523,10 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 		Handle_StepElement_HSequenceOfElementMaterial(const Handle_StepElement_HSequenceOfElementMaterial &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfElementMaterial(const StepElement_HSequenceOfElementMaterial *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfElementMaterial & operator=(const Handle_StepElement_HSequenceOfElementMaterial &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfElementMaterial & operator=(const StepElement_HSequenceOfElementMaterial *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfElementMaterial const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -501,6 +554,10 @@ class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MM
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurposeMember(const StepElement_HArray2OfSurfaceElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember & operator=(const Handle_StepElement_HArray2OfSurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfSurfaceElementPurposeMember & operator=(const StepElement_HArray2OfSurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -526,6 +583,10 @@ class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt
 		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue(const Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue(const StepElement_HArray1OfMeasureOrUnspecifiedValue *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue & operator=(const Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue & operator=(const StepElement_HArray1OfMeasureOrUnspecifiedValue *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -553,6 +614,10 @@ class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_Sele
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementFreedomMember(const StepElement_CurveElementFreedomMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementFreedomMember & operator=(const Handle_StepElement_CurveElementFreedomMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementFreedomMember & operator=(const StepElement_CurveElementFreedomMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementFreedomMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -578,6 +643,10 @@ class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShar
 		Handle_StepElement_CurveElementEndReleasePacket(const Handle_StepElement_CurveElementEndReleasePacket &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementEndReleasePacket(const StepElement_CurveElementEndReleasePacket *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket & operator=(const Handle_StepElement_CurveElementEndReleasePacket &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementEndReleasePacket & operator=(const StepElement_CurveElementEndReleasePacket *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementEndReleasePacket const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -605,6 +674,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : p
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember(const StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember & operator=(const Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember & operator=(const StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -630,6 +703,10 @@ class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 		Handle_StepElement_SurfaceElementProperty(const Handle_StepElement_SurfaceElementProperty &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementProperty(const StepElement_SurfaceElementProperty *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementProperty & operator=(const Handle_StepElement_SurfaceElementProperty &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementProperty & operator=(const StepElement_SurfaceElementProperty *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceElementProperty const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -657,6 +734,10 @@ class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfCurveElementPurposeMember(const StepElement_HArray2OfCurveElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember & operator=(const Handle_StepElement_HArray2OfCurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray2OfCurveElementPurposeMember & operator=(const StepElement_HArray2OfCurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray2OfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -682,6 +763,10 @@ class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 		Handle_StepElement_SurfaceSectionField(const Handle_StepElement_SurfaceSectionField &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionField(const StepElement_SurfaceSectionField *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionField & operator=(const Handle_StepElement_SurfaceSectionField &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionField & operator=(const StepElement_SurfaceSectionField *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionField const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -709,6 +794,10 @@ class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MM
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember(const StepElement_HSequenceOfCurveElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator=(const Handle_StepElement_HSequenceOfCurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator=(const StepElement_HSequenceOfCurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -734,6 +823,10 @@ class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_M
 		Handle_StepElement_HArray1OfCurveElementEndReleasePacket(const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementEndReleasePacket(const StepElement_HArray1OfCurveElementEndReleasePacket *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementEndReleasePacket & operator=(const Handle_StepElement_HArray1OfCurveElementEndReleasePacket &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementEndReleasePacket & operator=(const StepElement_HArray1OfCurveElementEndReleasePacket *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementEndReleasePacket const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -761,6 +854,10 @@ class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_El
 		%feature("autodoc", "1");
 		Handle_StepElement_Curve3dElementDescriptor(const StepElement_Curve3dElementDescriptor *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_Curve3dElementDescriptor & operator=(const Handle_StepElement_Curve3dElementDescriptor &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_Curve3dElementDescriptor & operator=(const StepElement_Curve3dElementDescriptor *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_Curve3dElementDescriptor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -786,6 +883,10 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 		Handle_StepElement_VolumeElementPurposeMember(const Handle_StepElement_VolumeElementPurposeMember &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_VolumeElementPurposeMember(const StepElement_VolumeElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_VolumeElementPurposeMember & operator=(const Handle_StepElement_VolumeElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_VolumeElementPurposeMember & operator=(const StepElement_VolumeElementPurposeMember *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_VolumeElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -813,6 +914,10 @@ class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepDat
 		%feature("autodoc", "1");
 		Handle_StepElement_MeasureOrUnspecifiedValueMember(const StepElement_MeasureOrUnspecifiedValueMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_MeasureOrUnspecifiedValueMember & operator=(const Handle_StepElement_MeasureOrUnspecifiedValueMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_MeasureOrUnspecifiedValueMember & operator=(const StepElement_MeasureOrUnspecifiedValueMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_MeasureOrUnspecifiedValueMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -838,6 +943,10 @@ class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handl
 		Handle_StepElement_HSequenceOfCurveElementSectionDefinition(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementSectionDefinition(const StepElement_HSequenceOfCurveElementSectionDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementSectionDefinition & operator=(const Handle_StepElement_HSequenceOfCurveElementSectionDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfCurveElementSectionDefinition & operator=(const StepElement_HSequenceOfCurveElementSectionDefinition *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfCurveElementSectionDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -865,6 +974,10 @@ class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember(const StepElement_HSequenceOfSurfaceElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember & operator=(const Handle_StepElement_HSequenceOfSurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember & operator=(const StepElement_HSequenceOfSurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -890,6 +1003,10 @@ class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 		Handle_StepElement_HArray1OfSurfaceSection(const Handle_StepElement_HArray1OfSurfaceSection &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfSurfaceSection(const StepElement_HArray1OfSurfaceSection *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfSurfaceSection & operator=(const Handle_StepElement_HArray1OfSurfaceSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfSurfaceSection & operator=(const StepElement_HArray1OfSurfaceSection *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfSurfaceSection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -917,6 +1034,10 @@ class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_Sele
 		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementPurposeMember(const StepElement_CurveElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementPurposeMember & operator=(const Handle_StepElement_CurveElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementPurposeMember & operator=(const StepElement_CurveElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_CurveElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -942,6 +1063,10 @@ class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectName
 		Handle_StepElement_ElementAspectMember(const Handle_StepElement_ElementAspectMember &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementAspectMember(const StepElement_ElementAspectMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementAspectMember & operator=(const Handle_StepElement_ElementAspectMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementAspectMember & operator=(const StepElement_ElementAspectMember *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementAspectMember const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -969,6 +1094,10 @@ class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_E
 		%feature("autodoc", "1");
 		Handle_StepElement_Volume3dElementDescriptor(const StepElement_Volume3dElementDescriptor *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_Volume3dElementDescriptor & operator=(const Handle_StepElement_Volume3dElementDescriptor &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_Volume3dElementDescriptor & operator=(const StepElement_Volume3dElementDescriptor *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_Volume3dElementDescriptor const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -994,6 +1123,10 @@ class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_
 		Handle_StepElement_SurfaceSectionFieldVarying(const Handle_StepElement_SurfaceSectionFieldVarying &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldVarying(const StepElement_SurfaceSectionFieldVarying *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionFieldVarying & operator=(const Handle_StepElement_SurfaceSectionFieldVarying &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionFieldVarying & operator=(const StepElement_SurfaceSectionFieldVarying *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldVarying const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1021,6 +1154,10 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementSectionDefinition(const StepElement_HArray1OfCurveElementSectionDefinition *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementSectionDefinition & operator=(const Handle_StepElement_HArray1OfCurveElementSectionDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementSectionDefinition & operator=(const StepElement_HArray1OfCurveElementSectionDefinition *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfCurveElementSectionDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1046,6 +1183,10 @@ class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_Surfa
 		Handle_StepElement_UniformSurfaceSection(const Handle_StepElement_UniformSurfaceSection &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_UniformSurfaceSection(const StepElement_UniformSurfaceSection *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_UniformSurfaceSection & operator=(const Handle_StepElement_UniformSurfaceSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_UniformSurfaceSection & operator=(const StepElement_UniformSurfaceSection *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_UniformSurfaceSection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1073,6 +1214,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition :
 		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition(const StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition & operator=(const Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition & operator=(const StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1098,6 +1243,10 @@ class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_T
 		Handle_StepElement_AnalysisItemWithinRepresentation(const Handle_StepElement_AnalysisItemWithinRepresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_AnalysisItemWithinRepresentation(const StepElement_AnalysisItemWithinRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_AnalysisItemWithinRepresentation & operator=(const Handle_StepElement_AnalysisItemWithinRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_AnalysisItemWithinRepresentation & operator=(const StepElement_AnalysisItemWithinRepresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_AnalysisItemWithinRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1125,6 +1274,10 @@ class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMg
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurposeMember(const StepElement_HArray1OfVolumeElementPurposeMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurposeMember & operator=(const Handle_StepElement_HArray1OfVolumeElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurposeMember & operator=(const StepElement_HArray1OfVolumeElementPurposeMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurposeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1150,6 +1303,10 @@ class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 		Handle_StepElement_ElementMaterial(const Handle_StepElement_ElementMaterial &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementMaterial(const StepElement_ElementMaterial *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementMaterial & operator=(const Handle_StepElement_ElementMaterial &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementMaterial & operator=(const StepElement_ElementMaterial *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_ElementMaterial const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1177,6 +1334,10 @@ class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement
 		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldConstant(const StepElement_SurfaceSectionFieldConstant *anItem);
 		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionFieldConstant & operator=(const Handle_StepElement_SurfaceSectionFieldConstant &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceSectionFieldConstant & operator=(const StepElement_SurfaceSectionFieldConstant *anItem);
+		%feature("autodoc", "1");
 		Handle_StepElement_SurfaceSectionFieldConstant const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1202,6 +1363,10 @@ class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TSha
 		Handle_StepElement_HArray1OfVolumeElementPurpose(const Handle_StepElement_HArray1OfVolumeElementPurpose &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurpose(const StepElement_HArray1OfVolumeElementPurpose *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurpose & operator=(const Handle_StepElement_HArray1OfVolumeElementPurpose &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfVolumeElementPurpose & operator=(const StepElement_HArray1OfVolumeElementPurpose *anItem);
 		%feature("autodoc", "1");
 		Handle_StepElement_HArray1OfVolumeElementPurpose const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1275,6 +1440,8 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 		void Clear();
 		%feature("autodoc", "1");
 		const StepElement_SequenceOfSurfaceElementPurposeMember & Assign(const StepElement_SequenceOfSurfaceElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfSurfaceElementPurposeMember & operator=(const StepElement_SequenceOfSurfaceElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_SurfaceElementPurposeMember &T);
 		%feature("autodoc", "1");
@@ -1388,6 +1555,8 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 		void Clear();
 		%feature("autodoc", "1");
 		const StepElement_SequenceOfCurveElementPurposeMember & Assign(const StepElement_SequenceOfCurveElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfCurveElementPurposeMember & operator=(const StepElement_SequenceOfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_CurveElementPurposeMember &T);
 		%feature("autodoc", "1");
@@ -1636,6 +1805,8 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 		%feature("autodoc", "1");
 		const StepElement_Array2OfSurfaceElementPurposeMember & Assign(const StepElement_Array2OfSurfaceElementPurposeMember &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array2OfSurfaceElementPurposeMember & operator=(const StepElement_Array2OfSurfaceElementPurposeMember &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -1865,6 +2036,8 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfHSequenceOfCurveElementPurposeMember & Assign(const StepElement_Array1OfHSequenceOfCurveElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		const StepElement_Array1OfHSequenceOfCurveElementPurposeMember & operator=(const StepElement_Array1OfHSequenceOfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2674,6 +2847,8 @@ class StepElement_Array1OfSurfaceSection {
 		%feature("autodoc", "1");
 		const StepElement_Array1OfSurfaceSection & Assign(const StepElement_Array1OfSurfaceSection &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array1OfSurfaceSection & operator=(const StepElement_Array1OfSurfaceSection &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2743,6 +2918,8 @@ class StepElement_Array1OfVolumeElementPurpose {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfVolumeElementPurpose & Assign(const StepElement_Array1OfVolumeElementPurpose &Other);
+		%feature("autodoc", "1");
+		const StepElement_Array1OfVolumeElementPurpose & operator=(const StepElement_Array1OfVolumeElementPurpose &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2884,6 +3061,8 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 		%feature("autodoc", "1");
 		const StepElement_Array1OfMeasureOrUnspecifiedValue & Assign(const StepElement_Array1OfMeasureOrUnspecifiedValue &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array1OfMeasureOrUnspecifiedValue & operator=(const StepElement_Array1OfMeasureOrUnspecifiedValue &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2994,6 +3173,8 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 		%feature("autodoc", "1");
 		const StepElement_Array1OfCurveElementSectionDefinition & Assign(const StepElement_Array1OfCurveElementSectionDefinition &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array1OfCurveElementSectionDefinition & operator=(const StepElement_Array1OfCurveElementSectionDefinition &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3034,6 +3215,8 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember & Assign(const StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		const StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember & operator=(const StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3122,6 +3305,8 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 		void Clear();
 		%feature("autodoc", "1");
 		const StepElement_SequenceOfCurveElementSectionDefinition & Assign(const StepElement_SequenceOfCurveElementSectionDefinition &Other);
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfCurveElementSectionDefinition & operator=(const StepElement_SequenceOfCurveElementSectionDefinition &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_CurveElementSectionDefinition &T);
 		%feature("autodoc", "1");
@@ -3229,6 +3414,8 @@ class StepElement_Array2OfCurveElementPurposeMember {
 		%feature("autodoc", "1");
 		const StepElement_Array2OfCurveElementPurposeMember & Assign(const StepElement_Array2OfCurveElementPurposeMember &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array2OfCurveElementPurposeMember & operator=(const StepElement_Array2OfCurveElementPurposeMember &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -3269,6 +3456,8 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const StepElement_SequenceOfElementMaterial & Assign(const StepElement_SequenceOfElementMaterial &Other);
+		%feature("autodoc", "1");
+		const StepElement_SequenceOfElementMaterial & operator=(const StepElement_SequenceOfElementMaterial &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_StepElement_ElementMaterial &T);
 		%feature("autodoc", "1");
@@ -3329,6 +3518,8 @@ class StepElement_Array2OfSurfaceElementPurpose {
 		%feature("autodoc", "1");
 		const StepElement_Array2OfSurfaceElementPurpose & Assign(const StepElement_Array2OfSurfaceElementPurpose &Other);
 		%feature("autodoc", "1");
+		const StepElement_Array2OfSurfaceElementPurpose & operator=(const StepElement_Array2OfSurfaceElementPurpose &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -3375,6 +3566,8 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfVolumeElementPurposeMember & Assign(const StepElement_Array1OfVolumeElementPurposeMember &Other);
+		%feature("autodoc", "1");
+		const StepElement_Array1OfVolumeElementPurposeMember & operator=(const StepElement_Array1OfVolumeElementPurposeMember &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3732,6 +3925,8 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepElement_Array1OfCurveElementEndReleasePacket & Assign(const StepElement_Array1OfCurveElementEndReleasePacket &Other);
+		%feature("autodoc", "1");
+		const StepElement_Array1OfCurveElementEndReleasePacket & operator=(const StepElement_Array1OfCurveElementEndReleasePacket &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

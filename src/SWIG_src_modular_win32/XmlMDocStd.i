@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlMDocStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMDocStd_XLinkDriver(const Handle_XmlMDocStd_XLinkDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver(const XmlMDocStd_XLinkDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDocStd_XLinkDriver & operator=(const Handle_XmlMDocStd_XLinkDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDocStd_XLinkDriver & operator=(const XmlMDocStd_XLinkDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMDocStd_XLinkDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

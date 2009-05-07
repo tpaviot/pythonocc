@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeConstruct_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 		Handle_ShapeConstruct_ProjectCurveOnSurface(const Handle_ShapeConstruct_ProjectCurveOnSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeConstruct_ProjectCurveOnSurface(const ShapeConstruct_ProjectCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeConstruct_ProjectCurveOnSurface & operator=(const Handle_ShapeConstruct_ProjectCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeConstruct_ProjectCurveOnSurface & operator=(const ShapeConstruct_ProjectCurveOnSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeConstruct_ProjectCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 

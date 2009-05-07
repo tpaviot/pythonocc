@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TPrsStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 		Handle_TPrsStd_Driver(const Handle_TPrsStd_Driver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver(const TPrsStd_Driver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_Driver & operator=(const Handle_TPrsStd_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_Driver & operator=(const TPrsStd_Driver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_GeometryDriver(const TPrsStd_GeometryDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_TPrsStd_GeometryDriver & operator=(const Handle_TPrsStd_GeometryDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_GeometryDriver & operator=(const TPrsStd_GeometryDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_TPrsStd_GeometryDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 		Handle_TPrsStd_ConstraintDriver(const Handle_TPrsStd_ConstraintDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_ConstraintDriver(const TPrsStd_ConstraintDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_ConstraintDriver & operator=(const Handle_TPrsStd_ConstraintDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_ConstraintDriver & operator=(const TPrsStd_ConstraintDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_ConstraintDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISPresentation(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
+		Handle_TPrsStd_AISPresentation & operator=(const Handle_TPrsStd_AISPresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
+		%feature("autodoc", "1");
 		Handle_TPrsStd_AISPresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 		Handle_TPrsStd_PointDriver(const Handle_TPrsStd_PointDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PointDriver(const TPrsStd_PointDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PointDriver & operator=(const Handle_TPrsStd_PointDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PointDriver & operator=(const TPrsStd_PointDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PointDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 		Handle_TPrsStd_AxisDriver(const Handle_TPrsStd_AxisDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AxisDriver(const TPrsStd_AxisDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AxisDriver & operator=(const Handle_TPrsStd_AxisDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AxisDriver & operator=(const TPrsStd_AxisDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AxisDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TPrsStd_AISViewer(const TPrsStd_AISViewer *anItem);
 		%feature("autodoc", "1");
+		Handle_TPrsStd_AISViewer & operator=(const Handle_TPrsStd_AISViewer &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AISViewer & operator=(const TPrsStd_AISViewer *anItem);
+		%feature("autodoc", "1");
 		Handle_TPrsStd_AISViewer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 		Handle_TPrsStd_PlaneDriver(const Handle_TPrsStd_PlaneDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PlaneDriver(const TPrsStd_PlaneDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver & operator=(const Handle_TPrsStd_PlaneDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_PlaneDriver & operator=(const TPrsStd_PlaneDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_PlaneDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver(const TPrsStd_DataMapNodeOfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver & operator=(const Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver & operator=(const TPrsStd_DataMapNodeOfDataMapOfGUIDDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 		Handle_TPrsStd_NamedShapeDriver(const Handle_TPrsStd_NamedShapeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_NamedShapeDriver(const TPrsStd_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -882,6 +931,8 @@ class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		TPrsStd_DataMapOfGUIDDriver(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TPrsStd_DataMapOfGUIDDriver & Assign(const TPrsStd_DataMapOfGUIDDriver &Other);
+		%feature("autodoc", "1");
+		TPrsStd_DataMapOfGUIDDriver & operator=(const TPrsStd_DataMapOfGUIDDriver &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

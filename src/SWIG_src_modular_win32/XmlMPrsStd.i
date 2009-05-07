@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlMPrsStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMPrsStd_PositionDriver(const Handle_XmlMPrsStd_PositionDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver(const XmlMPrsStd_PositionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_PositionDriver & operator=(const Handle_XmlMPrsStd_PositionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_PositionDriver & operator=(const XmlMPrsStd_PositionDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_PositionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

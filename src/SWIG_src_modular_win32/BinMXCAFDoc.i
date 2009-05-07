@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinMXCAFDoc_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMXCAFDoc_LayerToolDriver(const Handle_BinMXCAFDoc_LayerToolDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver(const BinMXCAFDoc_LayerToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const Handle_BinMXCAFDoc_LayerToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LayerToolDriver & operator=(const BinMXCAFDoc_LayerToolDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LayerToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver(const BinMXCAFDoc_VolumeDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver & operator=(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_VolumeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMXCAFDoc_ShapeToolDriver(const Handle_BinMXCAFDoc_ShapeToolDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver(const BinMXCAFDoc_ShapeToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const Handle_BinMXCAFDoc_ShapeToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ShapeToolDriver & operator=(const BinMXCAFDoc_ShapeToolDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ShapeToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver(const BinMXCAFDoc_CentroidDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver & operator=(const Handle_BinMXCAFDoc_CentroidDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_CentroidDriver & operator=(const BinMXCAFDoc_CentroidDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_CentroidDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMXCAFDoc_ColorDriver(const Handle_BinMXCAFDoc_ColorDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver(const BinMXCAFDoc_ColorDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ColorDriver & operator=(const Handle_BinMXCAFDoc_ColorDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ColorDriver & operator=(const BinMXCAFDoc_ColorDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver(const BinMXCAFDoc_LocationDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver & operator=(const Handle_BinMXCAFDoc_LocationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_LocationDriver & operator=(const BinMXCAFDoc_LocationDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_LocationDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMXCAFDoc_AreaDriver(const Handle_BinMXCAFDoc_AreaDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver(const BinMXCAFDoc_AreaDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_AreaDriver & operator=(const Handle_BinMXCAFDoc_AreaDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_AreaDriver & operator=(const BinMXCAFDoc_AreaDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_AreaDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver(const BinMXCAFDoc_ColorToolDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const Handle_BinMXCAFDoc_ColorToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_ColorToolDriver & operator=(const BinMXCAFDoc_ColorToolDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_ColorToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +371,10 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver(const BinMXCAFDoc_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const Handle_BinMXCAFDoc_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_GraphNodeDriver & operator=(const BinMXCAFDoc_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -359,6 +400,10 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMXCAFDoc_DocumentToolDriver(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver(const BinMXCAFDoc_DocumentToolDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const Handle_BinMXCAFDoc_DocumentToolDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_DocumentToolDriver & operator=(const BinMXCAFDoc_DocumentToolDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMXCAFDoc_DocumentToolDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

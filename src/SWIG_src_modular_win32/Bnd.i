@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Bnd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox(const Bnd_SequenceNodeOfSeqOfBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
 		%feature("autodoc", "1");
 		Handle_Bnd_SequenceNodeOfSeqOfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d(const Bnd_HArray1OfBox2d *anItem);
 		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfBox2d & operator=(const Handle_Bnd_HArray1OfBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfBox2d & operator=(const Bnd_HArray1OfBox2d *anItem);
+		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 		Handle_Bnd_HArray1OfBox(const Handle_Bnd_HArray1OfBox &aHandle);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox(const Bnd_HArray1OfBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfBox & operator=(const Handle_Bnd_HArray1OfBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfBox & operator=(const Bnd_HArray1OfBox *anItem);
 		%feature("autodoc", "1");
 		Handle_Bnd_HArray1OfBox const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -350,6 +367,8 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
+		%feature("autodoc", "1");
+		const Bnd_SeqOfBox & operator=(const Bnd_SeqOfBox &Other);
 		%feature("autodoc", "1");
 		void Append(const Bnd_Box &T);
 		%feature("autodoc", "1");
@@ -858,6 +877,8 @@ class Bnd_Array1OfBox2d {
 		%feature("autodoc", "1");
 		const Bnd_Array1OfBox2d & Assign(const Bnd_Array1OfBox2d &Other);
 		%feature("autodoc", "1");
+		const Bnd_Array1OfBox2d & operator=(const Bnd_Array1OfBox2d &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -898,6 +919,8 @@ class Bnd_Array1OfBox {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Bnd_Array1OfBox & Assign(const Bnd_Array1OfBox &Other);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox & operator=(const Bnd_Array1OfBox &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

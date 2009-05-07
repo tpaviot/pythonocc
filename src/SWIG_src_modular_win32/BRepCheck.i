@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepCheck_dependencies.i
 
@@ -163,6 +168,10 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Result(const BRepCheck_Result *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepCheck_Result & operator=(const Handle_BRepCheck_Result &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Result & operator=(const BRepCheck_Result *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepCheck_Result const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -188,6 +197,10 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 		Handle_BRepCheck_Shell(const Handle_BRepCheck_Shell &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell(const BRepCheck_Shell *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell & operator=(const Handle_BRepCheck_Shell &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Shell & operator=(const BRepCheck_Shell *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Shell const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -215,6 +228,10 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -240,6 +257,10 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -267,6 +288,10 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepCheck_Wire const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -292,6 +317,10 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 		Handle_BRepCheck_ListNodeOfListOfStatus(const Handle_BRepCheck_ListNodeOfListOfStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus(const BRepCheck_ListNodeOfListOfStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const Handle_BRepCheck_ListNodeOfListOfStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_ListNodeOfListOfStatus & operator=(const BRepCheck_ListNodeOfListOfStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_ListNodeOfListOfStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -319,6 +348,10 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge(const BRepCheck_Edge *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge & operator=(const Handle_BRepCheck_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Edge & operator=(const BRepCheck_Edge *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepCheck_Edge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -345,6 +378,10 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepCheck_Vertex & operator=(const Handle_BRepCheck_Vertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepCheck_Vertex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -370,6 +407,10 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 		Handle_BRepCheck_Face(const Handle_BRepCheck_Face &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face(const BRepCheck_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face & operator=(const Handle_BRepCheck_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepCheck_Face const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -423,6 +464,8 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		BRepCheck_DataMapOfShapeListOfStatus(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepCheck_DataMapOfShapeListOfStatus & Assign(const BRepCheck_DataMapOfShapeListOfStatus &Other);
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapOfShapeListOfStatus &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -749,6 +792,8 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepCheck_DataMapOfShapeResult & Assign(const BRepCheck_DataMapOfShapeResult &Other);
 		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeResult & operator=(const BRepCheck_DataMapOfShapeResult &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -876,6 +921,8 @@ class BRepCheck_ListOfStatus {
 		BRepCheck_ListOfStatus();
 		%feature("autodoc", "1");
 		void Assign(const BRepCheck_ListOfStatus &Other);
+		%feature("autodoc", "1");
+		void operator=(const BRepCheck_ListOfStatus &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

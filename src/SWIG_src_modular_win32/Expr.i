@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Expr_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Expr_GeneralExpression : public Handle_MMgt_TShared {
 		Handle_Expr_GeneralExpression(const Handle_Expr_GeneralExpression &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression(const Expr_GeneralExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & operator=(const Handle_Expr_GeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & operator=(const Expr_GeneralExpression *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryExpression(const Expr_UnaryExpression *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_UnaryExpression & operator=(const Handle_Expr_UnaryExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryExpression & operator=(const Expr_UnaryExpression *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_UnaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Cosine(const Handle_Expr_Cosine &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosine(const Expr_Cosine *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Cosine & operator=(const Handle_Expr_Cosine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Cosine & operator=(const Expr_Cosine *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Cosine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcSine(const Expr_ArcSine *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ArcSine & operator=(const Handle_Expr_ArcSine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArcSine & operator=(const Expr_ArcSine *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ArcSine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 		Handle_Expr_UnaryMinus(const Handle_Expr_UnaryMinus &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryMinus(const Expr_UnaryMinus *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus & operator=(const Handle_Expr_UnaryMinus &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryMinus & operator=(const Expr_UnaryMinus *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryMinus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Expr_ExprFailure(const Expr_ExprFailure *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ExprFailure & operator=(const Handle_Expr_ExprFailure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ExprFailure & operator=(const Expr_ExprFailure *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ExprFailure const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
 		Handle_Expr_NotEvaluable(const Handle_Expr_NotEvaluable &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NotEvaluable(const Expr_NotEvaluable *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NotEvaluable & operator=(const Handle_Expr_NotEvaluable &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NotEvaluable & operator=(const Expr_NotEvaluable *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_NotEvaluable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NumericValue(const Expr_NumericValue *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_NumericValue & operator=(const Handle_Expr_NumericValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NumericValue & operator=(const Expr_NumericValue *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_NumericValue const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Sign(const Handle_Expr_Sign &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sign(const Expr_Sign *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Sign & operator=(const Handle_Expr_Sign &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Sign & operator=(const Expr_Sign *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Sign const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArgCosh(const Expr_ArgCosh *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ArgCosh & operator=(const Handle_Expr_ArgCosh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgCosh & operator=(const Expr_ArgCosh *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ArgCosh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
 		Handle_Expr_InvalidAssignment(const Handle_Expr_InvalidAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidAssignment(const Expr_InvalidAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidAssignment & operator=(const Handle_Expr_InvalidAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidAssignment & operator=(const Expr_InvalidAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcCosine(const Expr_ArcCosine *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ArcCosine & operator=(const Handle_Expr_ArcCosine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArcCosine & operator=(const Expr_ArcCosine *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ArcCosine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 		Handle_Expr_InvalidOperand(const Handle_Expr_InvalidOperand &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidOperand(const Expr_InvalidOperand *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidOperand & operator=(const Handle_Expr_InvalidOperand &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidOperand & operator=(const Expr_InvalidOperand *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidOperand const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation(const Expr_GeneralRelation *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_GeneralRelation & operator=(const Handle_Expr_GeneralRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralRelation & operator=(const Expr_GeneralRelation *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_GeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
 		Handle_Expr_SingleRelation(const Handle_Expr_SingleRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SingleRelation(const Expr_SingleRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_SingleRelation & operator=(const Handle_Expr_SingleRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SingleRelation & operator=(const Expr_SingleRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_SingleRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_Different(const Expr_Different *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Different & operator=(const Handle_Expr_Different &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Different & operator=(const Expr_Different *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Different const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
 		Handle_Expr_BinaryExpression(const Handle_Expr_BinaryExpression &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryExpression(const Expr_BinaryExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression & operator=(const Handle_Expr_BinaryExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryExpression & operator=(const Expr_BinaryExpression *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Division(const Expr_Division *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Division & operator=(const Handle_Expr_Division &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Division & operator=(const Expr_Division *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Division const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
 		Handle_Expr_PolyExpression(const Handle_Expr_PolyExpression &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyExpression(const Expr_PolyExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_PolyExpression & operator=(const Handle_Expr_PolyExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_PolyExpression & operator=(const Expr_PolyExpression *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArgSinh(const Expr_ArgSinh *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh & operator=(const Handle_Expr_ArgSinh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgSinh & operator=(const Expr_ArgSinh *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ArgSinh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
 		Handle_Expr_InvalidFunction(const Handle_Expr_InvalidFunction &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidFunction(const Expr_InvalidFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction & operator=(const Handle_Expr_InvalidFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_InvalidFunction & operator=(const Expr_InvalidFunction *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_InvalidFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_LessThan(const Expr_LessThan *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_LessThan & operator=(const Handle_Expr_LessThan &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_LessThan & operator=(const Expr_LessThan *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_LessThan const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 		Handle_Expr_GreaterThanOrEqual(const Handle_Expr_GreaterThanOrEqual &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThanOrEqual(const Expr_GreaterThanOrEqual *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThanOrEqual & operator=(const Handle_Expr_GreaterThanOrEqual &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThanOrEqual & operator=(const Expr_GreaterThanOrEqual *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThanOrEqual const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_LogOf10(const Expr_LogOf10 *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_LogOf10 & operator=(const Handle_Expr_LogOf10 &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_LogOf10 & operator=(const Expr_LogOf10 *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_LogOf10 const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Exponential(const Handle_Expr_Exponential &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponential(const Expr_Exponential *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponential & operator=(const Handle_Expr_Exponential &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponential & operator=(const Expr_Exponential *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponential const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Absolute(const Expr_Absolute *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Absolute & operator=(const Handle_Expr_Absolute &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Absolute & operator=(const Expr_Absolute *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Absolute const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 		Handle_Expr_PolyFunction(const Handle_Expr_PolyFunction &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyFunction(const Expr_PolyFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_PolyFunction & operator=(const Handle_Expr_PolyFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_PolyFunction & operator=(const Expr_PolyFunction *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_PolyFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_NamedExpression(const Expr_NamedExpression *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & operator=(const Handle_Expr_NamedExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & operator=(const Expr_NamedExpression *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_NamedExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 		Handle_Expr_NamedConstant(const Handle_Expr_NamedConstant &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedConstant(const Expr_NamedConstant *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedConstant & operator=(const Handle_Expr_NamedConstant &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedConstant & operator=(const Expr_NamedConstant *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedConstant const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -880,6 +1001,10 @@ class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 		%feature("autodoc", "1");
 		Handle_Expr_NotAssigned(const Expr_NotAssigned *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned & operator=(const Handle_Expr_NotAssigned &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NotAssigned & operator=(const Expr_NotAssigned *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_NotAssigned const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -905,6 +1030,10 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 		Handle_Expr_NamedUnknown(const Handle_Expr_NamedUnknown &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown(const Expr_NamedUnknown *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown & operator=(const Handle_Expr_NamedUnknown &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedUnknown & operator=(const Expr_NamedUnknown *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedUnknown const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -932,6 +1061,10 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sum(const Expr_Sum *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Sum & operator=(const Handle_Expr_Sum &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Sum & operator=(const Expr_Sum *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Sum const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -957,6 +1090,10 @@ class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 		Handle_Expr_LogOfe(const Handle_Expr_LogOfe &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOfe(const Expr_LogOfe *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_LogOfe & operator=(const Handle_Expr_LogOfe &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_LogOfe & operator=(const Expr_LogOfe *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_LogOfe const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -984,6 +1121,10 @@ class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_UnaryFunction(const Expr_UnaryFunction *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_UnaryFunction & operator=(const Handle_Expr_UnaryFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_UnaryFunction & operator=(const Expr_UnaryFunction *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_UnaryFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1009,6 +1150,10 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TColle
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation & operator=(const Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation & operator=(const Expr_SequenceNodeOfSequenceOfGeneralRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1036,6 +1181,10 @@ class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_BinaryFunction(const Expr_BinaryFunction *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_BinaryFunction & operator=(const Handle_Expr_BinaryFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_BinaryFunction & operator=(const Expr_BinaryFunction *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_BinaryFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1061,6 +1210,10 @@ class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 		Handle_Expr_Difference(const Handle_Expr_Difference &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Difference(const Expr_Difference *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Difference & operator=(const Handle_Expr_Difference &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Difference & operator=(const Expr_Difference *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Difference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1088,6 +1241,10 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_SquareRoot(const Expr_SquareRoot *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_SquareRoot & operator=(const Handle_Expr_SquareRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SquareRoot & operator=(const Expr_SquareRoot *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_SquareRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1113,6 +1270,10 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Sinh(const Handle_Expr_Sinh &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Sinh(const Expr_Sinh *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Sinh & operator=(const Handle_Expr_Sinh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Sinh & operator=(const Expr_Sinh *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Sinh const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1140,6 +1301,10 @@ class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Cosh(const Expr_Cosh *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Cosh & operator=(const Handle_Expr_Cosh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Cosh & operator=(const Expr_Cosh *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Cosh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1165,6 +1330,10 @@ class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 		Handle_Expr_Equal(const Handle_Expr_Equal &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Equal(const Expr_Equal *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Equal & operator=(const Handle_Expr_Equal &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Equal & operator=(const Expr_Equal *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Equal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1192,6 +1361,10 @@ class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Sine(const Expr_Sine *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Sine & operator=(const Handle_Expr_Sine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Sine & operator=(const Expr_Sine *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Sine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1217,6 +1390,10 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCol
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression(const Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression(const Expr_SequenceNodeOfSequenceOfGeneralExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression & operator=(const Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression & operator=(const Expr_SequenceNodeOfSequenceOfGeneralExpression *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1244,6 +1421,10 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_ArcTangent(const Expr_ArcTangent *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_ArcTangent & operator=(const Handle_Expr_ArcTangent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArcTangent & operator=(const Expr_ArcTangent *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_ArcTangent const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1269,6 +1450,10 @@ class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 		Handle_Expr_GeneralFunction(const Handle_Expr_GeneralFunction &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction(const Expr_GeneralFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction & operator=(const Handle_Expr_GeneralFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralFunction & operator=(const Expr_GeneralFunction *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_GeneralFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1296,6 +1481,10 @@ class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown & operator=(const Expr_IndexedMapNodeOfMapOfNamedUnknown *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1321,6 +1510,10 @@ class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 		Handle_Expr_Exponentiate(const Handle_Expr_Exponentiate &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponentiate(const Expr_Exponentiate *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate & operator=(const Handle_Expr_Exponentiate &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate & operator=(const Expr_Exponentiate *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Exponentiate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1348,6 +1541,10 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 		%feature("autodoc", "1");
 		Handle_Expr_Tanh(const Expr_Tanh *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_Tanh & operator=(const Handle_Expr_Tanh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Tanh & operator=(const Expr_Tanh *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_Tanh const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1373,6 +1570,10 @@ class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 		Handle_Expr_NamedFunction(const Handle_Expr_NamedFunction &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction(const Expr_NamedFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction & operator=(const Handle_Expr_NamedFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedFunction & operator=(const Expr_NamedFunction *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_NamedFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1400,6 +1601,10 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_SystemRelation(const Expr_SystemRelation *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_SystemRelation & operator=(const Handle_Expr_SystemRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_SystemRelation & operator=(const Expr_SystemRelation *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_SystemRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1425,6 +1630,10 @@ class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 		Handle_Expr_Product(const Handle_Expr_Product &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Product(const Expr_Product *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Product & operator=(const Handle_Expr_Product &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Product & operator=(const Expr_Product *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Product const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1452,6 +1661,10 @@ class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_LessThanOrEqual(const Expr_LessThanOrEqual *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_LessThanOrEqual & operator=(const Handle_Expr_LessThanOrEqual &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_LessThanOrEqual & operator=(const Expr_LessThanOrEqual *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_LessThanOrEqual const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1477,6 +1690,10 @@ class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 		Handle_Expr_ArgTanh(const Handle_Expr_ArgTanh &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgTanh(const Expr_ArgTanh *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgTanh & operator=(const Handle_Expr_ArgTanh &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_ArgTanh & operator=(const Expr_ArgTanh *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_ArgTanh const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1504,6 +1721,10 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 		%feature("autodoc", "1");
 		Handle_Expr_FunctionDerivative(const Expr_FunctionDerivative *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_FunctionDerivative & operator=(const Handle_Expr_FunctionDerivative &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_FunctionDerivative & operator=(const Expr_FunctionDerivative *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_FunctionDerivative const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1529,6 +1750,10 @@ class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Tangent(const Handle_Expr_Tangent &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Tangent(const Expr_Tangent *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent & operator=(const Handle_Expr_Tangent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Tangent & operator=(const Expr_Tangent *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Tangent const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1556,6 +1781,10 @@ class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 		%feature("autodoc", "1");
 		Handle_Expr_GreaterThan(const Expr_GreaterThan *anItem);
 		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan & operator=(const Handle_Expr_GreaterThan &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_GreaterThan & operator=(const Expr_GreaterThan *anItem);
+		%feature("autodoc", "1");
 		Handle_Expr_GreaterThan const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1581,6 +1810,10 @@ class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 		Handle_Expr_Square(const Handle_Expr_Square &aHandle);
 		%feature("autodoc", "1");
 		Handle_Expr_Square(const Expr_Square *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Square & operator=(const Handle_Expr_Square &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Square & operator=(const Expr_Square *anItem);
 		%feature("autodoc", "1");
 		Handle_Expr_Square const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2685,6 +2918,8 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Expr_SequenceOfGeneralRelation & Assign(const Expr_SequenceOfGeneralRelation &Other);
 		%feature("autodoc", "1");
+		const Expr_SequenceOfGeneralRelation & operator=(const Expr_SequenceOfGeneralRelation &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_Expr_GeneralRelation &T);
 		%feature("autodoc", "1");
 		void Append(Expr_SequenceOfGeneralRelation & S);
@@ -2873,6 +3108,8 @@ class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Expr_MapOfNamedUnknown & Assign(const Expr_MapOfNamedUnknown &Other);
 		%feature("autodoc", "1");
+		Expr_MapOfNamedUnknown & operator=(const Expr_MapOfNamedUnknown &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3009,6 +3246,8 @@ class Expr_Array1OfNamedUnknown {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Expr_Array1OfNamedUnknown & Assign(const Expr_Array1OfNamedUnknown &Other);
+		%feature("autodoc", "1");
+		const Expr_Array1OfNamedUnknown & operator=(const Expr_Array1OfNamedUnknown &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3351,6 +3590,8 @@ class Expr_Array1OfGeneralExpression {
 		%feature("autodoc", "1");
 		const Expr_Array1OfGeneralExpression & Assign(const Expr_Array1OfGeneralExpression &Other);
 		%feature("autodoc", "1");
+		const Expr_Array1OfGeneralExpression & operator=(const Expr_Array1OfGeneralExpression &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3448,6 +3689,8 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Expr_SequenceOfGeneralExpression & Assign(const Expr_SequenceOfGeneralExpression &Other);
 		%feature("autodoc", "1");
+		const Expr_SequenceOfGeneralExpression & operator=(const Expr_SequenceOfGeneralExpression &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_Expr_GeneralExpression &T);
 		%feature("autodoc", "1");
 		void Append(Expr_SequenceOfGeneralExpression & S);
@@ -3508,6 +3751,8 @@ class Expr_Array1OfSingleRelation {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Expr_Array1OfSingleRelation & Assign(const Expr_Array1OfSingleRelation &Other);
+		%feature("autodoc", "1");
+		const Expr_Array1OfSingleRelation & operator=(const Expr_Array1OfSingleRelation &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

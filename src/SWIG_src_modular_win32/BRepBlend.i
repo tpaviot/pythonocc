@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepBlend_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 		Handle_BRepBlend_AppFuncRoot(const Handle_BRepBlend_AppFuncRoot &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot(const BRepBlend_AppFuncRoot *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRoot & operator=(const Handle_BRepBlend_AppFuncRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRoot & operator=(const BRepBlend_AppFuncRoot *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst(const BRepBlend_AppFuncRst *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRst & operator=(const Handle_BRepBlend_AppFuncRst &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRst & operator=(const BRepBlend_AppFuncRst *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRst const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst & operator=(const BRepBlend_SequenceNodeOfSequenceOfPointOnRst *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 		Handle_BRepBlend_Line(const Handle_BRepBlend_Line &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line(const BRepBlend_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & operator=(const Handle_BRepBlend_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & operator=(const BRepBlend_Line *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_Line const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc(const BRepBlend_AppFunc *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFunc & operator=(const Handle_BRepBlend_AppFunc &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFunc & operator=(const BRepBlend_AppFunc *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 		Handle_BRepBlend_AppFuncRstRst(const Handle_BRepBlend_AppFuncRstRst &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst(const BRepBlend_AppFuncRstRst *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRstRst & operator=(const Handle_BRepBlend_AppFuncRstRst &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_AppFuncRstRst & operator=(const BRepBlend_AppFuncRstRst *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepBlend_AppFuncRstRst const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1388,6 +1421,8 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfLine & Assign(const BRepBlend_SequenceOfLine &Other);
 		%feature("autodoc", "1");
+		const BRepBlend_SequenceOfLine & operator=(const BRepBlend_SequenceOfLine &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_BRepBlend_Line &T);
 		%feature("autodoc", "1");
 		void Append(BRepBlend_SequenceOfLine & S);
@@ -2250,6 +2285,8 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepBlend_SequenceOfPointOnRst & Assign(const BRepBlend_SequenceOfPointOnRst &Other);
+		%feature("autodoc", "1");
+		const BRepBlend_SequenceOfPointOnRst & operator=(const BRepBlend_SequenceOfPointOnRst &Other);
 		%feature("autodoc", "1");
 		void Append(const BRepBlend_PointOnRst &T);
 		%feature("autodoc", "1");

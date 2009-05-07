@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StdFail_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 		Handle_StdFail_UndefinedValue(const Handle_StdFail_UndefinedValue &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue(const StdFail_UndefinedValue *anItem);
+		%feature("autodoc", "1");
+		Handle_StdFail_UndefinedValue & operator=(const Handle_StdFail_UndefinedValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdFail_UndefinedValue & operator=(const StdFail_UndefinedValue *anItem);
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedValue const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_StdFail_NotDone(const StdFail_NotDone *anItem);
 		%feature("autodoc", "1");
+		Handle_StdFail_NotDone & operator=(const Handle_StdFail_NotDone &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdFail_NotDone & operator=(const StdFail_NotDone *anItem);
+		%feature("autodoc", "1");
 		Handle_StdFail_NotDone const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 		Handle_StdFail_InfiniteSolutions(const Handle_StdFail_InfiniteSolutions &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdFail_InfiniteSolutions(const StdFail_InfiniteSolutions *anItem);
+		%feature("autodoc", "1");
+		Handle_StdFail_InfiniteSolutions & operator=(const Handle_StdFail_InfiniteSolutions &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdFail_InfiniteSolutions & operator=(const StdFail_InfiniteSolutions *anItem);
 		%feature("autodoc", "1");
 		Handle_StdFail_InfiniteSolutions const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_StdFail_Undefined(const StdFail_Undefined *anItem);
 		%feature("autodoc", "1");
+		Handle_StdFail_Undefined & operator=(const Handle_StdFail_Undefined &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdFail_Undefined & operator=(const StdFail_Undefined *anItem);
+		%feature("autodoc", "1");
 		Handle_StdFail_Undefined const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 		Handle_StdFail_UndefinedDerivative(const Handle_StdFail_UndefinedDerivative &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedDerivative(const StdFail_UndefinedDerivative *anItem);
+		%feature("autodoc", "1");
+		Handle_StdFail_UndefinedDerivative & operator=(const Handle_StdFail_UndefinedDerivative &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdFail_UndefinedDerivative & operator=(const StdFail_UndefinedDerivative *anItem);
 		%feature("autodoc", "1");
 		Handle_StdFail_UndefinedDerivative const DownCast(const Handle_Standard_Transient &AnObject);
 

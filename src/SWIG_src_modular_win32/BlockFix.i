@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BlockFix
 
+%include BlockFix_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
@@ -27,7 +29,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
-%include std_basic_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -105,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BlockFix_dependencies.i
 
@@ -124,6 +131,10 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier(const BlockFix_PeriodicSurfaceModifier *anItem);
 		%feature("autodoc", "1");
+		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const Handle_BlockFix_PeriodicSurfaceModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const BlockFix_PeriodicSurfaceModifier *anItem);
+		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -139,6 +150,7 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 	}
 };
 
+
 %nodefaultctor Handle_BlockFix_SphereSpaceModifier;
 class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification {
 	public:
@@ -148,6 +160,10 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 		Handle_BlockFix_SphereSpaceModifier(const Handle_BlockFix_SphereSpaceModifier &aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier(const BlockFix_SphereSpaceModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_BlockFix_SphereSpaceModifier & operator=(const Handle_BlockFix_SphereSpaceModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_SphereSpaceModifier & operator=(const BlockFix_SphereSpaceModifier *anItem);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -164,6 +180,7 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 	}
 };
 
+
 %nodefaultctor Handle_BlockFix_BlockFixAPI;
 class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 	public:
@@ -173,6 +190,10 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 		Handle_BlockFix_BlockFixAPI(const Handle_BlockFix_BlockFixAPI &aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI(const BlockFix_BlockFixAPI *anItem);
+		%feature("autodoc", "1");
+		Handle_BlockFix_BlockFixAPI & operator=(const Handle_BlockFix_BlockFixAPI &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_BlockFixAPI & operator=(const BlockFix_BlockFixAPI *anItem);
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -188,6 +209,7 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_BlockFixAPI\n");}
 	}
 };
+
 
 %nodefaultctor BlockFix;
 class BlockFix {
@@ -207,6 +229,7 @@ class BlockFix {
 	}
 };
 
+
 %nodefaultctor BlockFix_UnionEdges;
 class BlockFix_UnionEdges {
 	public:
@@ -222,6 +245,7 @@ class BlockFix_UnionEdges {
 	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionEdges\n");}
 	}
 };
+
 
 %nodefaultctor BlockFix_SphereSpaceModifier;
 class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
@@ -265,6 +289,7 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor BlockFix_CheckTool;
 class BlockFix_CheckTool {
 	public:
@@ -279,7 +304,12 @@ class BlockFix_CheckTool {
 		%feature("autodoc", "1");
 		TopoDS_Shape PossibleBlock(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void DumpCheckResult(Standard_OStream & S) const;
+		%extend{
+			std::string DumpCheckResultToString() {
+			std::stringstream s;
+			self->DumpCheckResult(s);
+			return s.str();}
+		};
 
 };
 %extend BlockFix_CheckTool {
@@ -288,6 +318,7 @@ class BlockFix_CheckTool {
 	if (__env){printf("## Call custom destructor for instance of BlockFix_CheckTool\n");}
 	}
 };
+
 
 %nodefaultctor BlockFix_PeriodicSurfaceModifier;
 class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
@@ -331,6 +362,7 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor BlockFix_UnionFaces;
 class BlockFix_UnionFaces {
 	public:
@@ -352,6 +384,7 @@ class BlockFix_UnionFaces {
 	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionFaces\n");}
 	}
 };
+
 
 %nodefaultctor BlockFix_BlockFixAPI;
 class BlockFix_BlockFixAPI : public MMgt_TShared {

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Units_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Units_NoSuchType : public Handle_Standard_NoSuchObject {
 		Handle_Units_NoSuchType(const Handle_Units_NoSuchType &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_NoSuchType(const Units_NoSuchType *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_NoSuchType & operator=(const Handle_Units_NoSuchType &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_NoSuchType & operator=(const Units_NoSuchType *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_NoSuchType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_QuantitiesSequence(const Units_QuantitiesSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence & operator=(const Handle_Units_QuantitiesSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence & operator=(const Units_QuantitiesSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_QuantitiesSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode
 		Handle_Units_SequenceNodeOfTksSequence(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfTksSequence(const Units_SequenceNodeOfTksSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence & operator=(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence & operator=(const Units_SequenceNodeOfTksSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfTksSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_StringsSequence(const Units_StringsSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_StringsSequence & operator=(const Handle_Units_StringsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_StringsSequence & operator=(const Units_StringsSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_StringsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 		Handle_Units_Lexicon(const Handle_Units_Lexicon &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_Lexicon(const Units_Lexicon *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon & operator=(const Handle_Units_Lexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon & operator=(const Units_Lexicon *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_Lexicon const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 		%feature("autodoc", "1");
 		Handle_Units_UnitsLexicon(const Units_UnitsLexicon *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon & operator=(const Handle_Units_UnitsLexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon & operator=(const Units_UnitsLexicon *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_UnitsLexicon const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 		Handle_Units_UnitsDictionary(const Handle_Units_UnitsDictionary &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsDictionary(const Units_UnitsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary & operator=(const Handle_Units_UnitsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary & operator=(const Units_UnitsDictionary *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_Units_Unit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_Unit(const Units_Unit *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_Unit & operator=(const Handle_Units_Unit &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Unit & operator=(const Units_Unit *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_Unit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 		Handle_Units_UnitsSystem(const Handle_Units_UnitsSystem &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSystem(const Units_UnitsSystem *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem & operator=(const Handle_Units_UnitsSystem &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem & operator=(const Units_UnitsSystem *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSystem const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_Units_Token : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_Token(const Units_Token *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_Token & operator=(const Handle_Units_Token &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Token & operator=(const Units_Token *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_Token const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_Units_ShiftedToken : public Handle_Units_Token {
 		Handle_Units_ShiftedToken(const Handle_Units_ShiftedToken &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedToken(const Units_ShiftedToken *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedToken & operator=(const Handle_Units_ShiftedToken &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedToken & operator=(const Units_ShiftedToken *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedToken const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfQtsSequence(const Units_SequenceNodeOfQtsSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Units_SequenceNodeOfQtsSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfQtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode
 		Handle_Units_SequenceNodeOfUtsSequence(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfUtsSequence(const Units_SequenceNodeOfUtsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Units_SequenceNodeOfUtsSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfUtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_TokensSequence(const Units_TokensSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Handle_Units_TokensSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Units_TokensSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_TokensSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 		Handle_Units_UnitsSequence(const Handle_Units_UnitsSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSequence(const Units_UnitsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence & operator=(const Handle_Units_UnitsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence & operator=(const Units_UnitsSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_UnitsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 		%feature("autodoc", "1");
 		Handle_Units_NoSuchUnit(const Units_NoSuchUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_NoSuchUnit & operator=(const Handle_Units_NoSuchUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_NoSuchUnit & operator=(const Units_NoSuchUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_NoSuchUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
 		Handle_Units_ShiftedUnit(const Handle_Units_ShiftedUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedUnit(const Units_ShiftedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit & operator=(const Handle_Units_ShiftedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit & operator=(const Units_ShiftedUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_ShiftedUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Units_Dimensions(const Units_Dimensions *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_Dimensions & operator=(const Handle_Units_Dimensions &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Dimensions & operator=(const Units_Dimensions *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_Dimensions const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -594,6 +671,10 @@ class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNod
 		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfStrgSequence(const Units_SequenceNodeOfStrgSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfStrgSequence & operator=(const Handle_Units_SequenceNodeOfStrgSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfStrgSequence & operator=(const Units_SequenceNodeOfStrgSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_Units_SequenceNodeOfStrgSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -619,6 +700,10 @@ class Handle_Units_Quantity : public Handle_MMgt_TShared {
 		Handle_Units_Quantity(const Handle_Units_Quantity &aHandle);
 		%feature("autodoc", "1");
 		Handle_Units_Quantity(const Units_Quantity *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & operator=(const Handle_Units_Quantity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & operator=(const Units_Quantity *anItem);
 		%feature("autodoc", "1");
 		Handle_Units_Quantity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -709,6 +794,8 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Units_StrgSequence & Assign(const Units_StrgSequence &Other);
+		%feature("autodoc", "1");
+		const Units_StrgSequence & operator=(const Units_StrgSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TCollection_HAsciiString &T);
 		%feature("autodoc", "1");
@@ -806,6 +893,8 @@ class Units_TksSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Units_TksSequence & Assign(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		const Units_TksSequence & operator=(const Units_TksSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Units_Token &T);
 		%feature("autodoc", "1");
@@ -1549,6 +1638,8 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Units_UtsSequence & Assign(const Units_UtsSequence &Other);
 		%feature("autodoc", "1");
+		const Units_UtsSequence & operator=(const Units_UtsSequence &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_Units_Unit &T);
 		%feature("autodoc", "1");
 		void Append(Units_UtsSequence & S);
@@ -1783,6 +1874,8 @@ class Units_QtsSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
+		%feature("autodoc", "1");
+		const Units_QtsSequence & operator=(const Units_QtsSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Units_Quantity &T);
 		%feature("autodoc", "1");

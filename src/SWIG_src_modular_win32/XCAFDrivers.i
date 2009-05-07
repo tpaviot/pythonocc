@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XCAFDrivers_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 		Handle_XCAFDrivers_DocumentRetrievalDriver(const Handle_XCAFDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver(const XCAFDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const Handle_XCAFDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDrivers_DocumentRetrievalDriver & operator=(const XCAFDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 		Handle_XCAFDrivers_DocumentStorageDriver(const Handle_XCAFDrivers_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver(const XCAFDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const Handle_XCAFDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDrivers_DocumentStorageDriver & operator=(const XCAFDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XCAFDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

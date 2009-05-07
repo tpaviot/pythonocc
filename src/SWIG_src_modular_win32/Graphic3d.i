@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Graphic3d_dependencies.i
 
@@ -341,6 +346,10 @@ class Handle_Graphic3d_TextureRoot : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureRoot(const Graphic3d_TextureRoot *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureRoot & operator=(const Handle_Graphic3d_TextureRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureRoot & operator=(const Graphic3d_TextureRoot *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -366,6 +375,10 @@ class Handle_Graphic3d_TextureMap : public Handle_Graphic3d_TextureRoot {
 		Handle_Graphic3d_TextureMap(const Handle_Graphic3d_TextureMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureMap(const Graphic3d_TextureMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureMap & operator=(const Handle_Graphic3d_TextureMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureMap & operator=(const Graphic3d_TextureMap *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -393,6 +406,10 @@ class Handle_Graphic3d_Texture2D : public Handle_Graphic3d_TextureMap {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2D(const Graphic3d_Texture2D *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2D & operator=(const Handle_Graphic3d_Texture2D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2D & operator=(const Graphic3d_Texture2D *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -418,6 +435,10 @@ class Handle_Graphic3d_Texture2Dmanual : public Handle_Graphic3d_Texture2D {
 		Handle_Graphic3d_Texture2Dmanual(const Handle_Graphic3d_Texture2Dmanual &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2Dmanual(const Graphic3d_Texture2Dmanual *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2Dmanual & operator=(const Handle_Graphic3d_Texture2Dmanual &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2Dmanual & operator=(const Graphic3d_Texture2Dmanual *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2Dmanual const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -445,6 +466,10 @@ class Handle_Graphic3d_DataStructureManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_DataStructureManager(const Graphic3d_DataStructureManager *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_DataStructureManager & operator=(const Handle_Graphic3d_DataStructureManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_DataStructureManager & operator=(const Graphic3d_DataStructureManager *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_DataStructureManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -470,6 +495,10 @@ class Handle_Graphic3d_Texture1D : public Handle_Graphic3d_TextureMap {
 		Handle_Graphic3d_Texture1D(const Handle_Graphic3d_Texture1D &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1D(const Graphic3d_Texture1D *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1D & operator=(const Handle_Graphic3d_Texture1D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1D & operator=(const Graphic3d_Texture1D *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1D const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -497,6 +526,10 @@ class Handle_Graphic3d_Texture1Dmanual : public Handle_Graphic3d_Texture1D {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1Dmanual(const Graphic3d_Texture1Dmanual *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1Dmanual & operator=(const Handle_Graphic3d_Texture1Dmanual &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1Dmanual & operator=(const Graphic3d_Texture1Dmanual *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1Dmanual const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -522,6 +555,10 @@ class Handle_Graphic3d_MaterialDefinitionError : public Handle_Standard_OutOfRan
 		Handle_Graphic3d_MaterialDefinitionError(const Handle_Graphic3d_MaterialDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_MaterialDefinitionError(const Graphic3d_MaterialDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_MaterialDefinitionError & operator=(const Handle_Graphic3d_MaterialDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_MaterialDefinitionError & operator=(const Graphic3d_MaterialDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_MaterialDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -549,6 +586,10 @@ class Handle_Graphic3d_HSequenceOfGroup : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HSequenceOfGroup(const Graphic3d_HSequenceOfGroup *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfGroup & operator=(const Handle_Graphic3d_HSequenceOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfGroup & operator=(const Graphic3d_HSequenceOfGroup *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_HSequenceOfGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -574,6 +615,10 @@ class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
 		Handle_Graphic3d_VectorError(const Handle_Graphic3d_VectorError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_VectorError(const Graphic3d_VectorError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError & operator=(const Handle_Graphic3d_VectorError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError & operator=(const Graphic3d_VectorError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_VectorError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -601,6 +646,10 @@ class Handle_Graphic3d_ListNodeOfListOfShortReal : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfListOfShortReal(const Graphic3d_ListNodeOfListOfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfListOfShortReal & operator=(const Handle_Graphic3d_ListNodeOfListOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfListOfShortReal & operator=(const Graphic3d_ListNodeOfListOfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfListOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -626,6 +675,10 @@ class Handle_Graphic3d_AspectTextDefinitionError : public Handle_Standard_OutOfR
 		Handle_Graphic3d_AspectTextDefinitionError(const Handle_Graphic3d_AspectTextDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectTextDefinitionError(const Graphic3d_AspectTextDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectTextDefinitionError & operator=(const Handle_Graphic3d_AspectTextDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectTextDefinitionError & operator=(const Graphic3d_AspectTextDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectTextDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -653,6 +706,10 @@ class Handle_Graphic3d_ArrayOfPrimitives : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPrimitives(const Graphic3d_ArrayOfPrimitives *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPrimitives & operator=(const Handle_Graphic3d_ArrayOfPrimitives &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPrimitives & operator=(const Graphic3d_ArrayOfPrimitives *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPrimitives const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -678,6 +735,10 @@ class Handle_Graphic3d_ArrayOfQuadrangleStrips : public Handle_Graphic3d_ArrayOf
 		Handle_Graphic3d_ArrayOfQuadrangleStrips(const Handle_Graphic3d_ArrayOfQuadrangleStrips &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfQuadrangleStrips(const Graphic3d_ArrayOfQuadrangleStrips *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfQuadrangleStrips & operator=(const Handle_Graphic3d_ArrayOfQuadrangleStrips &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfQuadrangleStrips & operator=(const Graphic3d_ArrayOfQuadrangleStrips *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfQuadrangleStrips const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -705,6 +766,10 @@ class Handle_Graphic3d_ListNodeOfListOfPArray : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfListOfPArray(const Graphic3d_ListNodeOfListOfPArray *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfListOfPArray & operator=(const Handle_Graphic3d_ListNodeOfListOfPArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfListOfPArray & operator=(const Graphic3d_ListNodeOfListOfPArray *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfListOfPArray const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -730,6 +795,10 @@ class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_Ma
 		Handle_Graphic3d_StdMapNodeOfMapOfStructure(const Handle_Graphic3d_StdMapNodeOfMapOfStructure &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StdMapNodeOfMapOfStructure(const Graphic3d_StdMapNodeOfMapOfStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StdMapNodeOfMapOfStructure & operator=(const Handle_Graphic3d_StdMapNodeOfMapOfStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StdMapNodeOfMapOfStructure & operator=(const Graphic3d_StdMapNodeOfMapOfStructure *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StdMapNodeOfMapOfStructure const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -757,6 +826,10 @@ class Handle_Graphic3d_ArrayOfQuadrangles : public Handle_Graphic3d_ArrayOfPrimi
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfQuadrangles(const Graphic3d_ArrayOfQuadrangles *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfQuadrangles & operator=(const Handle_Graphic3d_ArrayOfQuadrangles &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfQuadrangles & operator=(const Graphic3d_ArrayOfQuadrangles *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfQuadrangles const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -782,6 +855,10 @@ class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
 		Handle_Graphic3d_GraphicDriver(const Handle_Graphic3d_GraphicDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_GraphicDriver(const Graphic3d_GraphicDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_GraphicDriver & operator=(const Handle_Graphic3d_GraphicDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_GraphicDriver & operator=(const Graphic3d_GraphicDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_GraphicDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -809,6 +886,10 @@ class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange
 		%feature("autodoc", "1");
 		Handle_Graphic3d_PickIdDefinitionError(const Graphic3d_PickIdDefinitionError *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError & operator=(const Handle_Graphic3d_PickIdDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError & operator=(const Graphic3d_PickIdDefinitionError *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_PickIdDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -834,6 +915,10 @@ class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange 
 		Handle_Graphic3d_GroupDefinitionError(const Handle_Graphic3d_GroupDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_GroupDefinitionError(const Graphic3d_GroupDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_GroupDefinitionError & operator=(const Handle_Graphic3d_GroupDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_GroupDefinitionError & operator=(const Graphic3d_GroupDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_GroupDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -861,6 +946,10 @@ class Handle_Graphic3d_ArrayOfTriangleFans : public Handle_Graphic3d_ArrayOfPrim
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangleFans(const Graphic3d_ArrayOfTriangleFans *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangleFans & operator=(const Handle_Graphic3d_ArrayOfTriangleFans &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangleFans & operator=(const Graphic3d_ArrayOfTriangleFans *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangleFans const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -886,6 +975,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfStructure : public Handle_TCollec
 		Handle_Graphic3d_SequenceNodeOfSequenceOfStructure(const Handle_Graphic3d_SequenceNodeOfSequenceOfStructure &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfStructure(const Graphic3d_SequenceNodeOfSequenceOfStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfStructure & operator=(const Handle_Graphic3d_SequenceNodeOfSequenceOfStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfStructure & operator=(const Graphic3d_SequenceNodeOfSequenceOfStructure *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfStructure const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -913,6 +1006,10 @@ class Handle_Graphic3d_ArrayOfSegments : public Handle_Graphic3d_ArrayOfPrimitiv
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfSegments(const Graphic3d_ArrayOfSegments *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfSegments & operator=(const Handle_Graphic3d_ArrayOfSegments &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfSegments & operator=(const Graphic3d_ArrayOfSegments *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfSegments const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -938,6 +1035,10 @@ class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRang
 		Handle_Graphic3d_PlotterDefinitionError(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_PlotterDefinitionError(const Graphic3d_PlotterDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError & operator=(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError & operator=(const Graphic3d_PlotterDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_PlotterDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -965,6 +1066,10 @@ class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimiti
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPolylines(const Graphic3d_ArrayOfPolylines *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines & operator=(const Handle_Graphic3d_ArrayOfPolylines &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines & operator=(const Graphic3d_ArrayOfPolylines *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPolylines const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -990,6 +1095,10 @@ class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 		Handle_Graphic3d_Group(const Handle_Graphic3d_Group &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Group(const Graphic3d_Group *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group & operator=(const Handle_Graphic3d_Group &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group & operator=(const Graphic3d_Group *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Group const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1017,6 +1126,10 @@ class Handle_Graphic3d_ArrayOfTriangleStrips : public Handle_Graphic3d_ArrayOfPr
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangleStrips(const Graphic3d_ArrayOfTriangleStrips *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangleStrips & operator=(const Handle_Graphic3d_ArrayOfTriangleStrips &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangleStrips & operator=(const Graphic3d_ArrayOfTriangleStrips *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangleStrips const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1042,6 +1155,10 @@ class Handle_Graphic3d_ArrayOfPolygons : public Handle_Graphic3d_ArrayOfPrimitiv
 		Handle_Graphic3d_ArrayOfPolygons(const Handle_Graphic3d_ArrayOfPolygons &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPolygons(const Graphic3d_ArrayOfPolygons *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolygons & operator=(const Handle_Graphic3d_ArrayOfPolygons &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolygons & operator=(const Graphic3d_ArrayOfPolygons *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPolygons const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1069,6 +1186,10 @@ class Handle_Graphic3d_HArray1OfBytes : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HArray1OfBytes(const Graphic3d_HArray1OfBytes *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_HArray1OfBytes & operator=(const Handle_Graphic3d_HArray1OfBytes &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HArray1OfBytes & operator=(const Graphic3d_HArray1OfBytes *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_HArray1OfBytes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1094,6 +1215,10 @@ class Handle_Graphic3d_StructureManager : public Handle_MMgt_TShared {
 		Handle_Graphic3d_StructureManager(const Handle_Graphic3d_StructureManager &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StructureManager(const Graphic3d_StructureManager *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureManager & operator=(const Handle_Graphic3d_StructureManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureManager & operator=(const Graphic3d_StructureManager *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StructureManager const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1121,6 +1246,10 @@ class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRan
 		%feature("autodoc", "1");
 		Handle_Graphic3d_PriorityDefinitionError(const Graphic3d_PriorityDefinitionError *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_PriorityDefinitionError & operator=(const Handle_Graphic3d_PriorityDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PriorityDefinitionError & operator=(const Graphic3d_PriorityDefinitionError *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_PriorityDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1146,6 +1275,10 @@ class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
 		Handle_Graphic3d_AspectFillArea3d(const Handle_Graphic3d_AspectFillArea3d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectFillArea3d(const Graphic3d_AspectFillArea3d *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectFillArea3d & operator=(const Handle_Graphic3d_AspectFillArea3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectFillArea3d & operator=(const Graphic3d_AspectFillArea3d *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectFillArea3d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1173,6 +1306,10 @@ class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d(const Graphic3d_AspectLine3d *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectLine3d & operator=(const Handle_Graphic3d_AspectLine3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectLine3d & operator=(const Graphic3d_AspectLine3d *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1198,6 +1335,10 @@ class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 		Handle_Graphic3d_HSetOfGroup(const Handle_Graphic3d_HSetOfGroup &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HSetOfGroup(const Graphic3d_HSetOfGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSetOfGroup & operator=(const Handle_Graphic3d_HSetOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSetOfGroup & operator=(const Graphic3d_HSetOfGroup *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HSetOfGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1225,6 +1366,10 @@ class Handle_Graphic3d_Plotter : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Plotter(const Graphic3d_Plotter *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_Plotter & operator=(const Handle_Graphic3d_Plotter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Plotter & operator=(const Graphic3d_Plotter *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Plotter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1250,6 +1395,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 		Handle_Graphic3d_SequenceNodeOfSequenceOfAddress(const Handle_Graphic3d_SequenceNodeOfSequenceOfAddress &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfAddress(const Graphic3d_SequenceNodeOfSequenceOfAddress *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfAddress & operator=(const Handle_Graphic3d_SequenceNodeOfSequenceOfAddress &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfAddress & operator=(const Graphic3d_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1277,6 +1426,10 @@ class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d(const Graphic3d_AspectMarker3d *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectMarker3d & operator=(const Handle_Graphic3d_AspectMarker3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectMarker3d & operator=(const Graphic3d_AspectMarker3d *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1302,6 +1455,10 @@ class Handle_Graphic3d_TextureEnv : public Handle_Graphic3d_TextureRoot {
 		Handle_Graphic3d_TextureEnv(const Handle_Graphic3d_TextureEnv &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureEnv(const Graphic3d_TextureEnv *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureEnv & operator=(const Handle_Graphic3d_TextureEnv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureEnv & operator=(const Graphic3d_TextureEnv *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TextureEnv const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1329,6 +1486,10 @@ class Handle_Graphic3d_Texture2Dplane : public Handle_Graphic3d_Texture2D {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2Dplane(const Graphic3d_Texture2Dplane *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2Dplane & operator=(const Handle_Graphic3d_Texture2Dplane &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture2Dplane & operator=(const Graphic3d_Texture2Dplane *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture2Dplane const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1354,6 +1515,10 @@ class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRa
 		Handle_Graphic3d_StructureDefinitionError(const Handle_Graphic3d_StructureDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StructureDefinitionError(const Graphic3d_StructureDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError & operator=(const Handle_Graphic3d_StructureDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_StructureDefinitionError & operator=(const Graphic3d_StructureDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_StructureDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1381,6 +1546,10 @@ class Handle_Graphic3d_TransformError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_TransformError(const Graphic3d_TransformError *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_TransformError & operator=(const Handle_Graphic3d_TransformError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TransformError & operator=(const Graphic3d_TransformError *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_TransformError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1406,6 +1575,10 @@ class Handle_Graphic3d_ArrayOfPoints : public Handle_Graphic3d_ArrayOfPrimitives
 		Handle_Graphic3d_ArrayOfPoints(const Handle_Graphic3d_ArrayOfPoints &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPoints(const Graphic3d_ArrayOfPoints *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPoints & operator=(const Handle_Graphic3d_ArrayOfPoints &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPoints & operator=(const Graphic3d_ArrayOfPoints *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfPoints const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1433,6 +1606,10 @@ class Handle_Graphic3d_WNTGraphicDevice : public Handle_WNT_GraphicDevice {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_WNTGraphicDevice(const Graphic3d_WNTGraphicDevice *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_WNTGraphicDevice & operator=(const Handle_Graphic3d_WNTGraphicDevice &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_WNTGraphicDevice & operator=(const Graphic3d_WNTGraphicDevice *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_WNTGraphicDevice const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1458,6 +1635,10 @@ class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
 		Handle_Graphic3d_HSequenceOfStructure(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HSequenceOfStructure(const Graphic3d_HSequenceOfStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure & operator=(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure & operator=(const Graphic3d_HSequenceOfStructure *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_HSequenceOfStructure const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1485,6 +1666,10 @@ class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectText3d(const Graphic3d_AspectText3d *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectText3d & operator=(const Handle_Graphic3d_AspectText3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectText3d & operator=(const Graphic3d_AspectText3d *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectText3d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1510,6 +1695,10 @@ class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimiti
 		Handle_Graphic3d_ArrayOfTriangles(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangles(const Graphic3d_ArrayOfTriangles *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles & operator=(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles & operator=(const Graphic3d_ArrayOfTriangles *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ArrayOfTriangles const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1537,6 +1726,10 @@ class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup(const Graphic3d_ListNodeOfSetListOfSetOfGroup *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup & operator=(const Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup & operator=(const Graphic3d_ListNodeOfSetListOfSetOfGroup *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1562,6 +1755,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection
 		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1589,6 +1786,10 @@ class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_InitialisationError(const Graphic3d_InitialisationError *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_InitialisationError & operator=(const Handle_Graphic3d_InitialisationError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_InitialisationError & operator=(const Graphic3d_InitialisationError *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_InitialisationError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1614,6 +1815,10 @@ class Handle_Graphic3d_CycleError : public Handle_Standard_DomainError {
 		Handle_Graphic3d_CycleError(const Handle_Graphic3d_CycleError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_CycleError(const Graphic3d_CycleError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_CycleError & operator=(const Handle_Graphic3d_CycleError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_CycleError & operator=(const Graphic3d_CycleError *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_CycleError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1641,6 +1846,10 @@ class Handle_Graphic3d_Structure : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Structure(const Graphic3d_Structure *anItem);
 		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure & operator=(const Handle_Graphic3d_Structure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure & operator=(const Graphic3d_Structure *anItem);
+		%feature("autodoc", "1");
 		Handle_Graphic3d_Structure const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1666,6 +1875,10 @@ class Handle_Graphic3d_Texture1Dsegment : public Handle_Graphic3d_Texture1D {
 		Handle_Graphic3d_Texture1Dsegment(const Handle_Graphic3d_Texture1Dsegment &aHandle);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1Dsegment(const Graphic3d_Texture1Dsegment *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1Dsegment & operator=(const Handle_Graphic3d_Texture1Dsegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Texture1Dsegment & operator=(const Graphic3d_Texture1Dsegment *anItem);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Texture1Dsegment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1782,6 +1995,8 @@ class Graphic3d_Array2OfVertexC {
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexC & Assign(const Graphic3d_Array2OfVertexC &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertexC & operator=(const Graphic3d_Array2OfVertexC &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -1826,6 +2041,8 @@ class Graphic3d_Array2OfVertexN {
 		void Destroy();
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexN & Assign(const Graphic3d_Array2OfVertexN &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertexN & operator=(const Graphic3d_Array2OfVertexN &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -1873,6 +2090,8 @@ class Graphic3d_Array1OfVertexC {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexC & Assign(const Graphic3d_Array1OfVertexC &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVertexC & operator=(const Graphic3d_Array1OfVertexC &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2003,6 +2222,8 @@ class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Graphic3d_SequenceOfGroup & Assign(const Graphic3d_SequenceOfGroup &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfGroup & operator=(const Graphic3d_SequenceOfGroup &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Graphic3d_Group &T);
 		%feature("autodoc", "1");
@@ -2912,6 +3133,8 @@ class Graphic3d_Array1OfVertexN {
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexN & Assign(const Graphic3d_Array1OfVertexN &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVertexN & operator=(const Graphic3d_Array1OfVertexN &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -2965,6 +3188,8 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 		Graphic3d_MapOfStructure(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Graphic3d_MapOfStructure & Assign(const Graphic3d_MapOfStructure &Other);
+		%feature("autodoc", "1");
+		Graphic3d_MapOfStructure & operator=(const Graphic3d_MapOfStructure &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -3762,6 +3987,8 @@ class Graphic3d_Array2OfVertex {
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertex & Assign(const Graphic3d_Array2OfVertex &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertex & operator=(const Graphic3d_Array2OfVertex &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -3873,6 +4100,8 @@ class Graphic3d_Array1OfBytes {
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfBytes & Assign(const Graphic3d_Array1OfBytes &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array1OfBytes & operator=(const Graphic3d_Array1OfBytes &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3942,6 +4171,8 @@ class Graphic3d_SequenceOfStructure : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Graphic3d_SequenceOfStructure & Assign(const Graphic3d_SequenceOfStructure &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfStructure & operator=(const Graphic3d_SequenceOfStructure &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Graphic3d_Structure &T);
 		%feature("autodoc", "1");
@@ -4024,6 +4255,8 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Graphic3d_SequenceOfAddress & Assign(const Graphic3d_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfAddress & operator=(const Graphic3d_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
 		%feature("autodoc", "1");
@@ -4206,6 +4439,8 @@ class Graphic3d_Array1OfVertex {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertex & Assign(const Graphic3d_Array1OfVertex &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVertex & operator=(const Graphic3d_Array1OfVertex &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4443,6 +4678,8 @@ class Graphic3d_Array2OfVertexNT {
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexNT & Assign(const Graphic3d_Array2OfVertexNT &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertexNT & operator=(const Graphic3d_Array2OfVertexNT &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -4522,6 +4759,8 @@ class Graphic3d_Array2OfVertexNC {
 		void Destroy();
 		%feature("autodoc", "1");
 		const Graphic3d_Array2OfVertexNC & Assign(const Graphic3d_Array2OfVertexNC &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_Array2OfVertexNC & operator=(const Graphic3d_Array2OfVertexNC &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -4623,6 +4862,8 @@ class Graphic3d_ListOfPArray {
 		Graphic3d_ListOfPArray();
 		%feature("autodoc", "1");
 		void Assign(const Graphic3d_ListOfPArray &Other);
+		%feature("autodoc", "1");
+		void operator=(const Graphic3d_ListOfPArray &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -4806,6 +5047,8 @@ class Graphic3d_Array1OfVertexNC {
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexNC & Assign(const Graphic3d_Array1OfVertexNC &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVertexNC & operator=(const Graphic3d_Array1OfVertexNC &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4846,6 +5089,8 @@ class Graphic3d_Array1OfVertexNT {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVertexNT & Assign(const Graphic3d_Array1OfVertexNT &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVertexNT & operator=(const Graphic3d_Array1OfVertexNT &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5128,6 +5373,8 @@ class Graphic3d_Array1OfVector {
 		%feature("autodoc", "1");
 		const Graphic3d_Array1OfVector & Assign(const Graphic3d_Array1OfVector &Other);
 		%feature("autodoc", "1");
+		const Graphic3d_Array1OfVector & operator=(const Graphic3d_Array1OfVector &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -5160,6 +5407,8 @@ class Graphic3d_SetListOfSetOfGroup {
 		Graphic3d_SetListOfSetOfGroup();
 		%feature("autodoc", "1");
 		void Assign(const Graphic3d_SetListOfSetOfGroup &Other);
+		%feature("autodoc", "1");
+		void operator=(const Graphic3d_SetListOfSetOfGroup &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -5281,6 +5530,8 @@ class Graphic3d_ListOfShortReal {
 		Graphic3d_ListOfShortReal();
 		%feature("autodoc", "1");
 		void Assign(const Graphic3d_ListOfShortReal &Other);
+		%feature("autodoc", "1");
+		void operator=(const Graphic3d_ListOfShortReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

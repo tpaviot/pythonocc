@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRep_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 		Handle_BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_ListNodeOfListOfCurveRepresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation(const BRep_ListNodeOfListOfCurveRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfCurveRepresentation & operator=(const Handle_BRep_ListNodeOfListOfCurveRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfCurveRepresentation & operator=(const BRep_ListNodeOfListOfCurveRepresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfCurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveRepresentation(const BRep_CurveRepresentation *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_CurveRepresentation & operator=(const Handle_BRep_CurveRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveRepresentation & operator=(const BRep_CurveRepresentation *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_CurveRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 		Handle_BRep_GCurve(const Handle_BRep_GCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_GCurve(const BRep_GCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_GCurve & operator=(const Handle_BRep_GCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_GCurve & operator=(const BRep_GCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_GCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 		%feature("autodoc", "1");
 		Handle_BRep_Curve3D(const BRep_Curve3D *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_Curve3D & operator=(const Handle_BRep_Curve3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_Curve3D & operator=(const BRep_Curve3D *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_Curve3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 		Handle_BRep_TVertex(const Handle_BRep_TVertex &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_TVertex(const BRep_TVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_TVertex & operator=(const Handle_BRep_TVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_TVertex & operator=(const BRep_TVertex *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_TVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation(const BRep_PointRepresentation *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & operator=(const Handle_BRep_PointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & operator=(const BRep_PointRepresentation *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 		Handle_BRep_PointsOnSurface(const Handle_BRep_PointsOnSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_PointsOnSurface(const BRep_PointsOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PointsOnSurface & operator=(const Handle_BRep_PointsOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointsOnSurface & operator=(const BRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_PointsOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnSurface(const BRep_PointOnSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PointOnSurface & operator=(const Handle_BRep_PointOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnSurface & operator=(const BRep_PointOnSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PointOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 		Handle_BRep_ListNodeOfListOfPointRepresentation(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfPointRepresentation(const BRep_ListNodeOfListOfPointRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const BRep_ListNodeOfListOfPointRepresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_ListNodeOfListOfPointRepresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurve(const BRep_PointOnCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve & operator=(const Handle_BRep_PointOnCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve & operator=(const BRep_PointOnCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 		Handle_BRep_PolygonOnSurface(const Handle_BRep_PolygonOnSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnSurface(const BRep_PolygonOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface & operator=(const Handle_BRep_PolygonOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnSurface & operator=(const BRep_PolygonOnSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedSurface(const BRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface & operator=(const Handle_BRep_PolygonOnClosedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedSurface & operator=(const BRep_PolygonOnClosedSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 		Handle_BRep_TEdge(const Handle_BRep_TEdge &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_TEdge(const BRep_TEdge *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge & operator=(const Handle_BRep_TEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge & operator=(const BRep_TEdge *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_TEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurveOnSurface(const BRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurveOnSurface & operator=(const Handle_BRep_PointOnCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurveOnSurface & operator=(const BRep_PointOnCurveOnSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 		Handle_BRep_CurveOnSurface(const Handle_BRep_CurveOnSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnSurface(const BRep_CurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface & operator=(const Handle_BRep_CurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface & operator=(const BRep_CurveOnSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOn2Surfaces(const BRep_CurveOn2Surfaces *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces & operator=(const Handle_BRep_CurveOn2Surfaces &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces & operator=(const BRep_CurveOn2Surfaces *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 		Handle_BRep_CurveOnClosedSurface(const Handle_BRep_CurveOnClosedSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnClosedSurface(const BRep_CurveOnClosedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnClosedSurface & operator=(const Handle_BRep_CurveOnClosedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnClosedSurface & operator=(const BRep_CurveOnClosedSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_CurveOnClosedSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnTriangulation(const BRep_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnTriangulation & operator=(const Handle_BRep_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnTriangulation & operator=(const BRep_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 		Handle_BRep_PolygonOnClosedTriangulation(const Handle_BRep_PolygonOnClosedTriangulation &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedTriangulation(const BRep_PolygonOnClosedTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedTriangulation & operator=(const Handle_BRep_PolygonOnClosedTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PolygonOnClosedTriangulation & operator=(const BRep_PolygonOnClosedTriangulation *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_PolygonOnClosedTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 		%feature("autodoc", "1");
 		Handle_BRep_TFace(const BRep_TFace *anItem);
 		%feature("autodoc", "1");
+		Handle_BRep_TFace & operator=(const Handle_BRep_TFace &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_TFace & operator=(const BRep_TFace *anItem);
+		%feature("autodoc", "1");
 		Handle_BRep_TFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 		Handle_BRep_Polygon3D(const Handle_BRep_Polygon3D &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRep_Polygon3D(const BRep_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_Polygon3D & operator=(const Handle_BRep_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_Polygon3D & operator=(const BRep_Polygon3D *anItem);
 		%feature("autodoc", "1");
 		Handle_BRep_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1165,6 +1254,8 @@ class BRep_ListOfPointRepresentation {
 		BRep_ListOfPointRepresentation();
 		%feature("autodoc", "1");
 		void Assign(const BRep_ListOfPointRepresentation &Other);
+		%feature("autodoc", "1");
+		void operator=(const BRep_ListOfPointRepresentation &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -1762,6 +1853,8 @@ class BRep_ListOfCurveRepresentation {
 		BRep_ListOfCurveRepresentation();
 		%feature("autodoc", "1");
 		void Assign(const BRep_ListOfCurveRepresentation &Other);
+		%feature("autodoc", "1");
+		void operator=(const BRep_ListOfCurveRepresentation &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

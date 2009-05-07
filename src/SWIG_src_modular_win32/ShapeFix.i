@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeFix_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 		Handle_ShapeFix_EdgeProjAux(const Handle_ShapeFix_EdgeProjAux &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux(const ShapeFix_EdgeProjAux *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_EdgeProjAux & operator=(const Handle_ShapeFix_EdgeProjAux &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_EdgeProjAux & operator=(const ShapeFix_EdgeProjAux *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_EdgeProjAux const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Root(const ShapeFix_Root *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_Root & operator=(const Handle_ShapeFix_Root &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Root & operator=(const ShapeFix_Root *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_Root const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_Face(const Handle_ShapeFix_Face &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face(const ShapeFix_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Face & operator=(const Handle_ShapeFix_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Face & operator=(const ShapeFix_Face *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Face const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell(const ShapeFix_ComposeShell *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell & operator=(const Handle_ShapeFix_ComposeShell &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell & operator=(const ShapeFix_ComposeShell *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_ComposeShell const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex & operator=(const Handle_ShapeFix_SplitCommonVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SplitCommonVertex & operator=(const ShapeFix_SplitCommonVertex *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SplitCommonVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge(const ShapeFix_Edge *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge & operator=(const Handle_ShapeFix_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Edge & operator=(const ShapeFix_Edge *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_Edge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_Solid(const Handle_ShapeFix_Solid &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid(const ShapeFix_Solid *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Solid & operator=(const Handle_ShapeFix_Solid &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Solid & operator=(const ShapeFix_Solid *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Solid const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_Wire(const Handle_ShapeFix_Wire &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire(const ShapeFix_Wire *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wire & operator=(const Handle_ShapeFix_Wire &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wire & operator=(const ShapeFix_Wire *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wire const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_Wireframe(const Handle_ShapeFix_Wireframe &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe(const ShapeFix_Wireframe *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe & operator=(const Handle_ShapeFix_Wireframe &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe & operator=(const ShapeFix_Wireframe *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Wireframe const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape(const ShapeFix_Shape *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_Shape & operator=(const Handle_ShapeFix_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Shape & operator=(const ShapeFix_Shape *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_Shape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -438,6 +491,10 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace(const ShapeFix_FixSmallFace *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeFix_FixSmallFace & operator=(const Handle_ShapeFix_FixSmallFace &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_FixSmallFace & operator=(const ShapeFix_FixSmallFace *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeFix_FixSmallFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -463,6 +520,10 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 		Handle_ShapeFix_Shell(const Handle_ShapeFix_Shell &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell(const ShapeFix_Shell *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Shell & operator=(const Handle_ShapeFix_Shell &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Shell & operator=(const ShapeFix_Shell *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeFix_Shell const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1055,6 +1116,8 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const ShapeFix_SequenceOfWireSegment & Assign(const ShapeFix_SequenceOfWireSegment &Other);
 		%feature("autodoc", "1");
+		const ShapeFix_SequenceOfWireSegment & operator=(const ShapeFix_SequenceOfWireSegment &Other);
+		%feature("autodoc", "1");
 		void Append(const ShapeFix_WireSegment &T);
 		%feature("autodoc", "1");
 		void Append(ShapeFix_SequenceOfWireSegment & S);
@@ -1164,6 +1227,8 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		ShapeFix_DataMapOfShapeBox2d(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		ShapeFix_DataMapOfShapeBox2d & Assign(const ShapeFix_DataMapOfShapeBox2d &Other);
+		%feature("autodoc", "1");
+		ShapeFix_DataMapOfShapeBox2d & operator=(const ShapeFix_DataMapOfShapeBox2d &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

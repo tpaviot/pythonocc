@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include math_dependencies.i
 
@@ -134,6 +139,10 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 		%feature("autodoc", "1");
 		Handle_math_NotSquare(const math_NotSquare *anItem);
 		%feature("autodoc", "1");
+		Handle_math_NotSquare & operator=(const Handle_math_NotSquare &aHandle);
+		%feature("autodoc", "1");
+		Handle_math_NotSquare & operator=(const math_NotSquare *anItem);
+		%feature("autodoc", "1");
 		Handle_math_NotSquare const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -159,6 +168,10 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 		Handle_math_SingularMatrix(const Handle_math_SingularMatrix &aHandle);
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix(const math_SingularMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix & operator=(const Handle_math_SingularMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
 		%feature("autodoc", "1");
 		Handle_math_SingularMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -637,6 +650,8 @@ class math_Array1OfValueAndWeight {
 		%feature("autodoc", "1");
 		const math_Array1OfValueAndWeight & Assign(const math_Array1OfValueAndWeight &Other);
 		%feature("autodoc", "1");
+		const math_Array1OfValueAndWeight & operator=(const math_Array1OfValueAndWeight &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -965,6 +980,8 @@ class math_Matrix {
 		%feature("autodoc", "1");
 		math_Matrix & Initialized(const math_Matrix &Other);
 		%feature("autodoc", "1");
+		math_Matrix & operator=(const math_Matrix &Other);
+		%feature("autodoc", "1");
 		void Multiply(const math_Matrix &Right);
 		%feature("autodoc", "1");
 		void operator*=(const math_Matrix &Right);
@@ -1155,6 +1172,8 @@ class math_Vector {
 		Standard_Real & operator()(const Standard_Integer Num) const;
 		%feature("autodoc", "1");
 		math_Vector & Initialized(const math_Vector &Other);
+		%feature("autodoc", "1");
+		math_Vector & operator=(const math_Vector &Other);
 		%feature("autodoc", "1");
 		Standard_Real Multiplied(const math_Vector &Right) const;
 		%feature("autodoc", "1");
@@ -1521,6 +1540,8 @@ class math_IntegerVector {
 		Standard_Integer & operator()(const Standard_Integer Num) const;
 		%feature("autodoc", "1");
 		math_IntegerVector & Initialized(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		math_IntegerVector & operator=(const math_IntegerVector &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Multiplied(const math_IntegerVector &Right) const;
 		%feature("autodoc", "1");

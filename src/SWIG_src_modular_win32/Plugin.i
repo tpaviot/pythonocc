@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Plugin_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Handle_Plugin_DataMapNodeOfMapOfFunctions &aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions(const Plugin_DataMapNodeOfMapOfFunctions *anItem);
+		%feature("autodoc", "1");
+		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Handle_Plugin_DataMapNodeOfMapOfFunctions &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plugin_DataMapNodeOfMapOfFunctions & operator=(const Plugin_DataMapNodeOfMapOfFunctions *anItem);
 		%feature("autodoc", "1");
 		Handle_Plugin_DataMapNodeOfMapOfFunctions const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 		Handle_Plugin_Failure(const Handle_Plugin_Failure &aHandle);
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure(const Plugin_Failure *anItem);
+		%feature("autodoc", "1");
+		Handle_Plugin_Failure & operator=(const Handle_Plugin_Failure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plugin_Failure & operator=(const Plugin_Failure *anItem);
 		%feature("autodoc", "1");
 		Handle_Plugin_Failure const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -260,6 +273,8 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		Plugin_MapOfFunctions(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Plugin_MapOfFunctions & Assign(const Plugin_MapOfFunctions &Other);
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions & operator=(const Plugin_MapOfFunctions &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PFunction_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PFunction_Function : public Handle_PDF_Attribute {
 		Handle_PFunction_Function(const Handle_PFunction_Function &aHandle);
 		%feature("autodoc", "1");
 		Handle_PFunction_Function(const PFunction_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_PFunction_Function & operator=(const Handle_PFunction_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_PFunction_Function & operator=(const PFunction_Function *anItem);
 		%feature("autodoc", "1");
 		Handle_PFunction_Function const DownCast(const Handle_Standard_Persistent &AnObject);
 

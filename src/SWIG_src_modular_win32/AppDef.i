@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AppDef_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 		Handle_AppDef_MyCriterionOfTheVariational(const Handle_AppDef_MyCriterionOfTheVariational &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational(const AppDef_MyCriterionOfTheVariational *anItem);
+		%feature("autodoc", "1");
+		Handle_AppDef_MyCriterionOfTheVariational & operator=(const Handle_AppDef_MyCriterionOfTheVariational &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppDef_MyCriterionOfTheVariational & operator=(const AppDef_MyCriterionOfTheVariational *anItem);
 		%feature("autodoc", "1");
 		Handle_AppDef_MyCriterionOfTheVariational const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 		Handle_AppDef_HArray1OfMultiPointConstraint(const Handle_AppDef_HArray1OfMultiPointConstraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint(const AppDef_HArray1OfMultiPointConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_AppDef_HArray1OfMultiPointConstraint & operator=(const Handle_AppDef_HArray1OfMultiPointConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppDef_HArray1OfMultiPointConstraint & operator=(const AppDef_HArray1OfMultiPointConstraint *anItem);
 		%feature("autodoc", "1");
 		Handle_AppDef_HArray1OfMultiPointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1285,6 +1298,8 @@ class AppDef_Array1OfMultiPointConstraint {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppDef_Array1OfMultiPointConstraint & Assign(const AppDef_Array1OfMultiPointConstraint &Other);
+		%feature("autodoc", "1");
+		const AppDef_Array1OfMultiPointConstraint & operator=(const AppDef_Array1OfMultiPointConstraint &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

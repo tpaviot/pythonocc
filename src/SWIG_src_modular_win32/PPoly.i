@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PPoly_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 		Handle_PPoly_Polygon2D(const Handle_PPoly_Polygon2D &aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D(const PPoly_Polygon2D *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_Polygon2D & operator=(const Handle_PPoly_Polygon2D &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_Polygon2D & operator=(const PPoly_Polygon2D *anItem);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon2D const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
+		Handle_PPoly_HArray1OfTriangle & operator=(const Handle_PPoly_HArray1OfTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *anItem);
+		%feature("autodoc", "1");
 		Handle_PPoly_HArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 		Handle_PPoly_Polygon3D(const Handle_PPoly_Polygon3D &aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D(const PPoly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_Polygon3D & operator=(const Handle_PPoly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
 		Handle_PPoly_Polygon3D const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation(const PPoly_Triangulation *anItem);
 		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation & operator=(const Handle_PPoly_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *anItem);
+		%feature("autodoc", "1");
 		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
+		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle & operator=(const PPoly_VArrayNodeOfFieldOfHArray1OfTriangle *anItem);
+		%feature("autodoc", "1");
 		Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 		Handle_PPoly_PolygonOnTriangulation(const Handle_PPoly_PolygonOnTriangulation &aHandle);
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation(const PPoly_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation & operator=(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
 		Handle_PPoly_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -604,6 +633,8 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const PPoly_FieldOfHArray1OfTriangle &Other);
+		%feature("autodoc", "1");
+		void operator=(const PPoly_FieldOfHArray1OfTriangle &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
 		%feature("autodoc", "1");

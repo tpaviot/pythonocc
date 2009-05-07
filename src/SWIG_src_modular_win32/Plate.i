@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Plate_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint & operator=(const Plate_SequenceNodeOfSequenceOfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
 		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
+		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 		Handle_Plate_HArray1OfPinpointConstraint(const Handle_Plate_HArray1OfPinpointConstraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint(const Plate_HArray1OfPinpointConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Handle_Plate_HArray1OfPinpointConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_HArray1OfPinpointConstraint & operator=(const Plate_HArray1OfPinpointConstraint *anItem);
 		%feature("autodoc", "1");
 		Handle_Plate_HArray1OfPinpointConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *anItem);
 		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearScalarConstraint *anItem);
+		%feature("autodoc", "1");
 		Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,8 @@ class Plate_Plate {
 		Plate_Plate(const Plate_Plate &Ref);
 		%feature("autodoc", "1");
 		Plate_Plate & Copy(const Plate_Plate &Ref);
+		%feature("autodoc", "1");
+		Plate_Plate & operator=(const Plate_Plate &Ref);
 		%feature("autodoc", "1");
 		void Load(const Plate_PinpointConstraint &PConst);
 		%feature("autodoc", "1");
@@ -408,6 +431,8 @@ class Plate_Array1OfPinpointConstraint {
 		%feature("autodoc", "1");
 		const Plate_Array1OfPinpointConstraint & Assign(const Plate_Array1OfPinpointConstraint &Other);
 		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & operator=(const Plate_Array1OfPinpointConstraint &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -506,6 +531,8 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Plate_SequenceOfLinearXYZConstraint & Assign(const Plate_SequenceOfLinearXYZConstraint &Other);
 		%feature("autodoc", "1");
+		const Plate_SequenceOfLinearXYZConstraint & operator=(const Plate_SequenceOfLinearXYZConstraint &Other);
+		%feature("autodoc", "1");
 		void Append(const Plate_LinearXYZConstraint &T);
 		%feature("autodoc", "1");
 		void Append(Plate_SequenceOfLinearXYZConstraint & S);
@@ -581,6 +608,8 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Plate_SequenceOfPinpointConstraint & Assign(const Plate_SequenceOfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		const Plate_SequenceOfPinpointConstraint & operator=(const Plate_SequenceOfPinpointConstraint &Other);
 		%feature("autodoc", "1");
 		void Append(const Plate_PinpointConstraint &T);
 		%feature("autodoc", "1");
@@ -841,6 +870,8 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Plate_SequenceOfLinearScalarConstraint & Assign(const Plate_SequenceOfLinearScalarConstraint &Other);
+		%feature("autodoc", "1");
+		const Plate_SequenceOfLinearScalarConstraint & operator=(const Plate_SequenceOfLinearScalarConstraint &Other);
 		%feature("autodoc", "1");
 		void Append(const Plate_LinearScalarConstraint &T);
 		%feature("autodoc", "1");
