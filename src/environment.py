@@ -32,7 +32,7 @@ VERSION = '1st_may_2009'
 #
 # Wrap SalomeGEOM?
 #
-WRAP_SALOME_GEOM = False
+WRAP_SALOME_GEOM = True
 #
 # Define paths
 #
