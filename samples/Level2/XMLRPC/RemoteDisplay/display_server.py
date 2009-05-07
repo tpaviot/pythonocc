@@ -32,12 +32,13 @@ class StringReceiver(object):
         return "I got you"
     
     def SendShapeString(self,s):
+        print "Shape received. Gonna display it."
         QUEUE.put(s) #Adds this string to the queue
         return True
 
-    def SendCompressedShapeString(self,s, crc32):
+    def SendCompressedShapeString(self,s):
         """
-        Receive the string, decompress, and then check the crc32 flag.
+        Receive the string, decompress, and then check crc32.
         """
         s = zlib.decompress(s)
         QUEUE.put(s)
@@ -54,7 +55,7 @@ def run_server(port):
 def RemoteDisplay(port = 8888):
     class AppFrame(wx.Frame):
         def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+            wx.Frame.__init__(self, parent, -1, "Display server", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
             self.canva = wxViewer3d(self)
             # Start thread that listen Queue
             thread.start_new_thread(self.Listen,())
@@ -63,12 +64,8 @@ def RemoteDisplay(port = 8888):
             print "Wait for data to be processed"
             while True:
                 str_received = QUEUE.get()
-                #print str_received
-                # When a str is received, translate to
-                #dumped_box = shape_factory.getBox(10.,10.,10.)
                 shp = pickle.loads(str_received)
                 self.canva._display.DisplayShape(shp)
-                #self.canva.DisplayShape(s)
                     
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()

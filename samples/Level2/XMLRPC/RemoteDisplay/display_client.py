@@ -35,7 +35,12 @@ except socket.error:
             print "Trying to display shape but server is down."
     remote_display = FakeDisplay()
 
+def Display(shape):
+    string_to_send = pickle.dumps(shape)
+    remote_display.SendShapeString(string_to_send)
+    print "Shape %s send to display server"%shape
 # Send a simple box to display to the server    
 box_s = BRepPrimAPI_MakeBox(10.,20.,30).Shape()
-string_to_send = pickle.dumps(box_s)
-remote_display.SendShapeString(string_to_send)
+Display(box_s)
+raw_input("Press a key when you're bored by this demo.")
+
