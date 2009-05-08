@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopTrans_dependencies.i
 
@@ -154,6 +159,8 @@ class TopTrans_Array2OfOrientation {
 		void Destroy();
 		%feature("autodoc", "1");
 		const TopTrans_Array2OfOrientation & Assign(const TopTrans_Array2OfOrientation &Other);
+		%feature("autodoc", "1");
+		const TopTrans_Array2OfOrientation & operator=(const TopTrans_Array2OfOrientation &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Geom2dHatch_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher &aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher & operator=(const Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfHatchingsOfHatcher *anItem);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher &aHandle);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher & operator=(const Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher & operator=(const Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher *anItem);
 		%feature("autodoc", "1");
 		Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -202,6 +215,8 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		Geom2dHatch_MapOfElementsOfElementsOfHatcher(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Geom2dHatch_MapOfElementsOfElementsOfHatcher & Assign(const Geom2dHatch_MapOfElementsOfElementsOfHatcher &Other);
+		%feature("autodoc", "1");
+		Geom2dHatch_MapOfElementsOfElementsOfHatcher & operator=(const Geom2dHatch_MapOfElementsOfElementsOfHatcher &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -411,6 +426,8 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		Geom2dHatch_HatchingsOfHatcher(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Geom2dHatch_HatchingsOfHatcher & Assign(const Geom2dHatch_HatchingsOfHatcher &Other);
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingsOfHatcher & operator=(const Geom2dHatch_HatchingsOfHatcher &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

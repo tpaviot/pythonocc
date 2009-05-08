@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include SGEOM_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 		Handle_GEOM_Application(const Handle_GEOM_Application &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_Application(const GEOM_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Application & operator=(const Handle_GEOM_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Application & operator=(const GEOM_Application *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object(const GEOM_Object *anItem);
 		%feature("autodoc", "1");
+		Handle_GEOM_Object & operator=(const Handle_GEOM_Object &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object & operator=(const GEOM_Object *anItem);
+		%feature("autodoc", "1");
 		Handle_GEOM_Object const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const GEOM_DataMapNodeOfDataMapOfAsciiStringTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient & operator=(const Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient & operator=(const GEOM_DataMapNodeOfDataMapOfAsciiStringTransient *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function(const GEOM_Function *anItem);
 		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const Handle_GEOM_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const GEOM_Function *anItem);
+		%feature("autodoc", "1");
 		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 		Handle_GEOM_SubShapeDriver(const Handle_GEOM_SubShapeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_GEOM_SubShapeDriver(const GEOM_SubShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const Handle_GEOM_SubShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const GEOM_SubShapeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -276,6 +301,8 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 		GEOM_DataMapOfAsciiStringTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		GEOM_DataMapOfAsciiStringTransient & Assign(const GEOM_DataMapOfAsciiStringTransient &Other);
+		%feature("autodoc", "1");
+		GEOM_DataMapOfAsciiStringTransient & operator=(const GEOM_DataMapOfAsciiStringTransient &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -405,6 +432,10 @@ class GEOM_Parameter {
 		Standard_Real GetDouble() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString GetString() const;
+		%feature("autodoc", "1");
+		void operator=(Standard_Real );
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &anAsciiString);
 
 };
 %extend GEOM_Parameter {

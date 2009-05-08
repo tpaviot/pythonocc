@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepApprox_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 		Handle_BRepApprox_ApproxLine(const Handle_BRepApprox_ApproxLine &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine(const BRepApprox_ApproxLine *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepApprox_ApproxLine & operator=(const Handle_BRepApprox_ApproxLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepApprox_ApproxLine & operator=(const BRepApprox_ApproxLine *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepApprox_ApproxLine const DownCast(const Handle_Standard_Transient &AnObject);
 

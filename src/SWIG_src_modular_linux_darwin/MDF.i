@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MDF_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MDF_ARDriverHSequence : public Handle_MMgt_TShared {
 		Handle_MDF_ARDriverHSequence(const Handle_MDF_ARDriverHSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriverHSequence(const MDF_ARDriverHSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriverHSequence & operator=(const Handle_MDF_ARDriverHSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriverHSequence & operator=(const MDF_ARDriverHSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriverHSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfARDriverTable(const MDF_ListNodeOfDriverListOfARDriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ListNodeOfDriverListOfARDriverTable & operator=(const Handle_MDF_ListNodeOfDriverListOfARDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ListNodeOfDriverListOfARDriverTable & operator=(const MDF_ListNodeOfDriverListOfARDriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfARDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 		Handle_MDF_ASDriver(const Handle_MDF_ASDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver(const MDF_ASDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_ASDriver & operator=(const Handle_MDF_ASDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ASDriver & operator=(const MDF_ASDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDF_TagSourceStorageDriver(const MDF_TagSourceStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_TagSourceStorageDriver & operator=(const Handle_MDF_TagSourceStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_TagSourceStorageDriver & operator=(const MDF_TagSourceStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_TagSourceStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_T
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable(const MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable & operator=(const Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable & operator=(const MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MDF_ReferenceStorageDriver(const MDF_ReferenceStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ReferenceStorageDriver & operator=(const Handle_MDF_ReferenceStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ReferenceStorageDriver & operator=(const MDF_ReferenceStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ReferenceStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
 		Handle_MDF_ARDriver(const Handle_MDF_ARDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver(const MDF_ARDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriver & operator=(const Handle_MDF_ARDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriver & operator=(const MDF_ARDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 		%feature("autodoc", "1");
 		Handle_MDF_ReferenceRetrievalDriver(const MDF_ReferenceRetrievalDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ReferenceRetrievalDriver & operator=(const Handle_MDF_ReferenceRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ReferenceRetrievalDriver & operator=(const MDF_ReferenceRetrievalDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ReferenceRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqN
 		Handle_MDF_SequenceNodeOfASDriverSequence(const Handle_MDF_SequenceNodeOfASDriverSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfASDriverSequence(const MDF_SequenceNodeOfASDriverSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_SequenceNodeOfASDriverSequence & operator=(const Handle_MDF_SequenceNodeOfASDriverSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_SequenceNodeOfASDriverSequence & operator=(const MDF_SequenceNodeOfASDriverSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfASDriverSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_T
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable(const MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable & operator=(const Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable & operator=(const MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MDF_TagSourceRetrievalDriver(const Handle_MDF_TagSourceRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_TagSourceRetrievalDriver(const MDF_TagSourceRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_TagSourceRetrievalDriver & operator=(const Handle_MDF_TagSourceRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_TagSourceRetrievalDriver & operator=(const MDF_TagSourceRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_TagSourceRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriverTable(const MDF_ASDriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ASDriverTable & operator=(const Handle_MDF_ASDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ASDriverTable & operator=(const MDF_ASDriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ASDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 		Handle_MDF_SRelocationTable(const Handle_MDF_SRelocationTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_SRelocationTable(const MDF_SRelocationTable *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_SRelocationTable & operator=(const Handle_MDF_SRelocationTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_SRelocationTable & operator=(const MDF_SRelocationTable *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_SRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfASDriverTable(const MDF_ListNodeOfDriverListOfASDriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ListNodeOfDriverListOfASDriverTable & operator=(const Handle_MDF_ListNodeOfDriverListOfASDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ListNodeOfDriverListOfASDriverTable & operator=(const MDF_ListNodeOfDriverListOfASDriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ListNodeOfDriverListOfASDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNod
 		Handle_MDF_DataMapNodeOfTypeASDriverMap(const Handle_MDF_DataMapNodeOfTypeASDriverMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeASDriverMap(const MDF_DataMapNodeOfTypeASDriverMap *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeASDriverMap & operator=(const Handle_MDF_DataMapNodeOfTypeASDriverMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeASDriverMap & operator=(const MDF_DataMapNodeOfTypeASDriverMap *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeASDriverMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqN
 		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfARDriverSequence(const MDF_SequenceNodeOfARDriverSequence *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_SequenceNodeOfARDriverSequence & operator=(const Handle_MDF_SequenceNodeOfARDriverSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_SequenceNodeOfARDriverSequence & operator=(const MDF_SequenceNodeOfARDriverSequence *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_SequenceNodeOfARDriverSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
 		Handle_MDF_ASDriverHSequence(const Handle_MDF_ASDriverHSequence &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriverHSequence(const MDF_ASDriverHSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_ASDriverHSequence & operator=(const Handle_MDF_ASDriverHSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ASDriverHSequence & operator=(const MDF_ASDriverHSequence *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriverHSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeARDriverMap(const MDF_DataMapNodeOfTypeARDriverMap *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeARDriverMap & operator=(const Handle_MDF_DataMapNodeOfTypeARDriverMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_DataMapNodeOfTypeARDriverMap & operator=(const MDF_DataMapNodeOfTypeARDriverMap *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_DataMapNodeOfTypeARDriverMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -594,6 +671,10 @@ class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriverTable(const MDF_ARDriverTable *anItem);
 		%feature("autodoc", "1");
+		Handle_MDF_ARDriverTable & operator=(const Handle_MDF_ARDriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_ARDriverTable & operator=(const MDF_ARDriverTable *anItem);
+		%feature("autodoc", "1");
 		Handle_MDF_ARDriverTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -619,6 +700,10 @@ class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
 		Handle_MDF_RRelocationTable(const Handle_MDF_RRelocationTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_MDF_RRelocationTable(const MDF_RRelocationTable *anItem);
+		%feature("autodoc", "1");
+		Handle_MDF_RRelocationTable & operator=(const Handle_MDF_RRelocationTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDF_RRelocationTable & operator=(const MDF_RRelocationTable *anItem);
 		%feature("autodoc", "1");
 		Handle_MDF_RRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -809,6 +894,8 @@ class MDF_DriverListOfARDriverTable {
 		%feature("autodoc", "1");
 		void Assign(const MDF_DriverListOfARDriverTable &Other);
 		%feature("autodoc", "1");
+		void operator=(const MDF_DriverListOfARDriverTable &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -908,6 +995,8 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MDF_TypeDriverListMapOfARDriverTable & Assign(const MDF_TypeDriverListMapOfARDriverTable &Other);
 		%feature("autodoc", "1");
+		MDF_TypeDriverListMapOfARDriverTable & operator=(const MDF_TypeDriverListMapOfARDriverTable &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -942,6 +1031,8 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 		MDF_TypeARDriverMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MDF_TypeARDriverMap & Assign(const MDF_TypeARDriverMap &Other);
+		%feature("autodoc", "1");
+		MDF_TypeARDriverMap & operator=(const MDF_TypeARDriverMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1002,6 +1093,8 @@ class MDF_ASDriverSequence : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const MDF_ASDriverSequence & Assign(const MDF_ASDriverSequence &Other);
+		%feature("autodoc", "1");
+		const MDF_ASDriverSequence & operator=(const MDF_ASDriverSequence &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MDF_ASDriver &T);
 		%feature("autodoc", "1");
@@ -1211,6 +1304,8 @@ class MDF_ARDriverSequence : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const MDF_ARDriverSequence & Assign(const MDF_ARDriverSequence &Other);
 		%feature("autodoc", "1");
+		const MDF_ARDriverSequence & operator=(const MDF_ARDriverSequence &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_MDF_ARDriver &T);
 		%feature("autodoc", "1");
 		void Append(MDF_ARDriverSequence & S);
@@ -1327,6 +1422,8 @@ class MDF_DriverListOfASDriverTable {
 		MDF_DriverListOfASDriverTable();
 		%feature("autodoc", "1");
 		void Assign(const MDF_DriverListOfASDriverTable &Other);
+		%feature("autodoc", "1");
+		void operator=(const MDF_DriverListOfASDriverTable &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -1618,6 +1715,8 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		MDF_TypeDriverListMapOfASDriverTable & Assign(const MDF_TypeDriverListMapOfASDriverTable &Other);
 		%feature("autodoc", "1");
+		MDF_TypeDriverListMapOfASDriverTable & operator=(const MDF_TypeDriverListMapOfASDriverTable &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1681,6 +1780,8 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 		MDF_TypeASDriverMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MDF_TypeASDriverMap & Assign(const MDF_TypeASDriverMap &Other);
+		%feature("autodoc", "1");
+		MDF_TypeASDriverMap & operator=(const MDF_TypeASDriverMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

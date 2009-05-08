@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopBas_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 		Handle_TopBas_ListNodeOfListOfTestInterference(const Handle_TopBas_ListNodeOfListOfTestInterference &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference(const TopBas_ListNodeOfListOfTestInterference *anItem);
+		%feature("autodoc", "1");
+		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const Handle_TopBas_ListNodeOfListOfTestInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopBas_ListNodeOfListOfTestInterference & operator=(const TopBas_ListNodeOfListOfTestInterference *anItem);
 		%feature("autodoc", "1");
 		Handle_TopBas_ListNodeOfListOfTestInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -149,6 +158,8 @@ class TopBas_ListOfTestInterference {
 		TopBas_ListOfTestInterference();
 		%feature("autodoc", "1");
 		void Assign(const TopBas_ListOfTestInterference &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopBas_ListOfTestInterference &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

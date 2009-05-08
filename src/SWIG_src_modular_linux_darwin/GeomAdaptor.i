@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GeomAdaptor_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 		Handle_GeomAdaptor_GHCurve(const Handle_GeomAdaptor_GHCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve(const GeomAdaptor_GHCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_GHCurve & operator=(const Handle_GeomAdaptor_GHCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_GHCurve & operator=(const GeomAdaptor_GHCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve(const GeomAdaptor_HCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomAdaptor_HCurve & operator=(const Handle_GeomAdaptor_HCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_HCurve & operator=(const GeomAdaptor_HCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface(const GeomAdaptor_GHSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomAdaptor_GHSurface & operator=(const Handle_GeomAdaptor_GHSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_GHSurface & operator=(const GeomAdaptor_GHSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomAdaptor_GHSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 		Handle_GeomAdaptor_HSurface(const Handle_GeomAdaptor_HSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface(const GeomAdaptor_HSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_HSurface & operator=(const Handle_GeomAdaptor_HSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomAdaptor_HSurface & operator=(const GeomAdaptor_HSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomAdaptor_HSurface const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BiTgte_dependencies.i
 
@@ -135,6 +140,10 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
 		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
 		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -161,6 +170,10 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge(const BiTgte_HCurveOnEdge *anItem);
 		%feature("autodoc", "1");
+		Handle_BiTgte_HCurveOnEdge & operator=(const Handle_BiTgte_HCurveOnEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_HCurveOnEdge & operator=(const BiTgte_HCurveOnEdge *anItem);
+		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -186,6 +199,10 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 		Handle_BiTgte_HCurveOnVertex(const Handle_BiTgte_HCurveOnVertex &aHandle);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex(const BiTgte_HCurveOnVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_BiTgte_HCurveOnVertex & operator=(const Handle_BiTgte_HCurveOnVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_HCurveOnVertex & operator=(const BiTgte_HCurveOnVertex *anItem);
 		%feature("autodoc", "1");
 		Handle_BiTgte_HCurveOnVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -557,6 +574,8 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		BiTgte_DataMapOfShapeBox(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BiTgte_DataMapOfShapeBox & Assign(const BiTgte_DataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		BiTgte_DataMapOfShapeBox & operator=(const BiTgte_DataMapOfShapeBox &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

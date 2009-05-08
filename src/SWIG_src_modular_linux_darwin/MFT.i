@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MFT_dependencies.i
 
@@ -164,6 +169,10 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontName(const MFT_SequenceNodeOfListOfFontName *anItem);
 		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const MFT_SequenceNodeOfListOfFontName *anItem);
+		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontName const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -189,6 +198,10 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 		Handle_MFT_SequenceNodeOfListOfFontHandle(const Handle_MFT_SequenceNodeOfListOfFontHandle &aHandle);
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontHandle(const MFT_SequenceNodeOfListOfFontHandle *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle & operator=(const Handle_MFT_SequenceNodeOfListOfFontHandle &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontHandle & operator=(const MFT_SequenceNodeOfListOfFontHandle *anItem);
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontHandle const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -216,6 +229,10 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_MFT_TextManager(const MFT_TextManager *anItem);
 		%feature("autodoc", "1");
+		Handle_MFT_TextManager & operator=(const Handle_MFT_TextManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_TextManager & operator=(const MFT_TextManager *anItem);
+		%feature("autodoc", "1");
 		Handle_MFT_TextManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -241,6 +258,10 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 		Handle_MFT_FontManager(const Handle_MFT_FontManager &aHandle);
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager(const MFT_FontManager *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & operator=(const Handle_MFT_FontManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & operator=(const MFT_FontManager *anItem);
 		%feature("autodoc", "1");
 		Handle_MFT_FontManager const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -268,6 +289,10 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerError(const MFT_FontManagerError *anItem);
 		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError & operator=(const Handle_MFT_FontManagerError &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError & operator=(const MFT_FontManagerError *anItem);
+		%feature("autodoc", "1");
 		Handle_MFT_FontManagerError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -294,6 +319,10 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontReference(const MFT_SequenceNodeOfListOfFontReference *anItem);
 		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference & operator=(const Handle_MFT_SequenceNodeOfListOfFontReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontReference & operator=(const MFT_SequenceNodeOfListOfFontReference *anItem);
+		%feature("autodoc", "1");
 		Handle_MFT_SequenceNodeOfListOfFontReference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -319,6 +348,10 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 		Handle_MFT_FontManagerDefinitionError(const Handle_MFT_FontManagerDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerDefinitionError(const MFT_FontManagerDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerDefinitionError & operator=(const Handle_MFT_FontManagerDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerDefinitionError & operator=(const MFT_FontManagerDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_MFT_FontManagerDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -425,6 +458,8 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const MFT_ListOfFontHandle & Assign(const MFT_ListOfFontHandle &Other);
 		%feature("autodoc", "1");
+		const MFT_ListOfFontHandle & operator=(const MFT_ListOfFontHandle &Other);
+		%feature("autodoc", "1");
 		void Append(const MFT_FileHandle &T);
 		%feature("autodoc", "1");
 		void Append(MFT_ListOfFontHandle & S);
@@ -480,6 +515,8 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const MFT_ListOfFontName & Assign(const MFT_ListOfFontName &Other);
 		%feature("autodoc", "1");
+		const MFT_ListOfFontName & operator=(const MFT_ListOfFontName &Other);
+		%feature("autodoc", "1");
 		void Append(const TCollection_AsciiString &T);
 		%feature("autodoc", "1");
 		void Append(MFT_ListOfFontName & S);
@@ -534,6 +571,8 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const MFT_ListOfFontReference & Assign(const MFT_ListOfFontReference &Other);
+		%feature("autodoc", "1");
+		const MFT_ListOfFontReference & operator=(const MFT_ListOfFontReference &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Integer &T);
 		%feature("autodoc", "1");

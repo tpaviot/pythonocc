@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include CGM_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 		Handle_CGM_Driver(const Handle_CGM_Driver &aHandle);
 		%feature("autodoc", "1");
 		Handle_CGM_Driver(const CGM_Driver *anItem);
+		%feature("autodoc", "1");
+		Handle_CGM_Driver & operator=(const Handle_CGM_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_CGM_Driver & operator=(const CGM_Driver *anItem);
 		%feature("autodoc", "1");
 		Handle_CGM_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 

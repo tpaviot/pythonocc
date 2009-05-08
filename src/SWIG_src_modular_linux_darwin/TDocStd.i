@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TDocStd_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 		Handle_TDocStd_ApplicationDelta(const Handle_TDocStd_ApplicationDelta &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_ApplicationDelta(const TDocStd_ApplicationDelta *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_ApplicationDelta & operator=(const Handle_TDocStd_ApplicationDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_ApplicationDelta & operator=(const TDocStd_ApplicationDelta *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_ApplicationDelta const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Modified(const TDocStd_Modified *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_Modified & operator=(const Handle_TDocStd_Modified &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Modified & operator=(const TDocStd_Modified *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_Modified const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 		Handle_TDocStd_XLink(const Handle_TDocStd_XLink &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLink(const TDocStd_XLink *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLink & operator=(const Handle_TDocStd_XLink &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLink & operator=(const TDocStd_XLink *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLink const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +222,10 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Document(const TDocStd_Document *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_Document & operator=(const Handle_TDocStd_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & operator=(const TDocStd_Document *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_Document const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 		Handle_TDocStd_MultiTransactionManager(const Handle_TDocStd_MultiTransactionManager &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_MultiTransactionManager(const TDocStd_MultiTransactionManager *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager & operator=(const Handle_TDocStd_MultiTransactionManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager & operator=(const TDocStd_MultiTransactionManager *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_MultiTransactionManager const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -257,6 +282,10 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 		%feature("autodoc", "1");
 		Handle_TDocStd_Application(const TDocStd_Application *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +311,10 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 		Handle_TDocStd_Owner(const Handle_TDocStd_Owner &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_Owner(const TDocStd_Owner *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner & operator=(const Handle_TDocStd_Owner &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Owner & operator=(const TDocStd_Owner *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_Owner const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -309,6 +342,10 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta(const TDocStd_SequenceNodeOfSequenceOfApplicationDelta *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta & operator=(const Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta & operator=(const TDocStd_SequenceNodeOfSequenceOfApplicationDelta *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +371,10 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap(const Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap(const TDocStd_DataMapNodeOfLabelIDMapDataMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap & operator=(const Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap & operator=(const TDocStd_DataMapNodeOfLabelIDMapDataMap *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -361,6 +402,10 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfDocument(const TDocStd_SequenceNodeOfSequenceOfDocument *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_SequenceNodeOfSequenceOfDocument & operator=(const Handle_TDocStd_SequenceNodeOfSequenceOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_SequenceNodeOfSequenceOfDocument & operator=(const TDocStd_SequenceNodeOfSequenceOfDocument *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -387,6 +432,10 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_TDocStd_XLinkRoot(const TDocStd_XLinkRoot *anItem);
 		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot & operator=(const Handle_TDocStd_XLinkRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot & operator=(const TDocStd_XLinkRoot *anItem);
+		%feature("autodoc", "1");
 		Handle_TDocStd_XLinkRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -412,6 +461,10 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 		Handle_TDocStd_CompoundDelta(const Handle_TDocStd_CompoundDelta &aHandle);
 		%feature("autodoc", "1");
 		Handle_TDocStd_CompoundDelta(const TDocStd_CompoundDelta *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta & operator=(const Handle_TDocStd_CompoundDelta &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_CompoundDelta & operator=(const TDocStd_CompoundDelta *anItem);
 		%feature("autodoc", "1");
 		Handle_TDocStd_CompoundDelta const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -839,6 +892,8 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const TDocStd_SequenceOfDocument & Assign(const TDocStd_SequenceOfDocument &Other);
 		%feature("autodoc", "1");
+		const TDocStd_SequenceOfDocument & operator=(const TDocStd_SequenceOfDocument &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_TDocStd_Document &T);
 		%feature("autodoc", "1");
 		void Append(TDocStd_SequenceOfDocument & S);
@@ -1125,6 +1180,8 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		TDocStd_LabelIDMapDataMap & Assign(const TDocStd_LabelIDMapDataMap &Other);
 		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap & operator=(const TDocStd_LabelIDMapDataMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1184,6 +1241,8 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const TDocStd_SequenceOfApplicationDelta & Assign(const TDocStd_SequenceOfApplicationDelta &Other);
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfApplicationDelta & operator=(const TDocStd_SequenceOfApplicationDelta &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TDocStd_ApplicationDelta &T);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MgtTopoDS_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 		Handle_MgtTopoDS_TranslateTool(const Handle_MgtTopoDS_TranslateTool &aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool(const MgtTopoDS_TranslateTool *anItem);
+		%feature("autodoc", "1");
+		Handle_MgtTopoDS_TranslateTool & operator=(const Handle_MgtTopoDS_TranslateTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_MgtTopoDS_TranslateTool & operator=(const MgtTopoDS_TranslateTool *anItem);
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 		Handle_MgtTopoDS_TranslateTool1(const Handle_MgtTopoDS_TranslateTool1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool1(const MgtTopoDS_TranslateTool1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MgtTopoDS_TranslateTool1 & operator=(const Handle_MgtTopoDS_TranslateTool1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MgtTopoDS_TranslateTool1 & operator=(const MgtTopoDS_TranslateTool1 *anItem);
 		%feature("autodoc", "1");
 		Handle_MgtTopoDS_TranslateTool1 const DownCast(const Handle_Standard_Transient &AnObject);
 

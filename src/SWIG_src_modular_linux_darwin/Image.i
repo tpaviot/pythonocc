@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Image_dependencies.i
 
@@ -148,6 +153,10 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Image_Image(const Image_Image *anItem);
 		%feature("autodoc", "1");
+		Handle_Image_Image & operator=(const Handle_Image_Image &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_Image & operator=(const Image_Image *anItem);
+		%feature("autodoc", "1");
 		Handle_Image_Image const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -173,6 +182,10 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 		Handle_Image_DIndexedImage(const Handle_Image_DIndexedImage &aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage(const Image_DIndexedImage *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DIndexedImage & operator=(const Handle_Image_DIndexedImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DIndexedImage & operator=(const Image_DIndexedImage *anItem);
 		%feature("autodoc", "1");
 		Handle_Image_DIndexedImage const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -200,6 +213,10 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage(const Image_PseudoColorImage *anItem);
 		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage & operator=(const Handle_Image_PseudoColorImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage & operator=(const Image_PseudoColorImage *anItem);
+		%feature("autodoc", "1");
 		Handle_Image_PseudoColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -225,6 +242,10 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 		Handle_Image_DColorImage(const Handle_Image_DColorImage &aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage(const Image_DColorImage *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage & operator=(const Handle_Image_DColorImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
 		%feature("autodoc", "1");
 		Handle_Image_DColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -252,6 +273,10 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 		%feature("autodoc", "1");
 		Handle_Image_ColorImage(const Image_ColorImage *anItem);
 		%feature("autodoc", "1");
+		Handle_Image_ColorImage & operator=(const Handle_Image_ColorImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_ColorImage & operator=(const Image_ColorImage *anItem);
+		%feature("autodoc", "1");
 		Handle_Image_ColorImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -278,6 +303,10 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap(const Image_DataMapNodeOfColorPixelDataMap *anItem);
 		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
+		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfColorPixelDataMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -303,6 +332,10 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable & operator=(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
 		Handle_Image_DataMapNodeOfLookupTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -459,6 +492,8 @@ class Image_PixelRowOfDIndexedImage {
 		%feature("autodoc", "1");
 		const Image_PixelRowOfDIndexedImage & Assign(const Image_PixelRowOfDIndexedImage &Other);
 		%feature("autodoc", "1");
+		const Image_PixelRowOfDIndexedImage & operator=(const Image_PixelRowOfDIndexedImage &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -499,6 +534,8 @@ class Image_PixelRowOfDColorImage {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Image_PixelRowOfDColorImage & Assign(const Image_PixelRowOfDColorImage &Other);
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDColorImage & operator=(const Image_PixelRowOfDColorImage &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -555,6 +592,8 @@ class Image_LookupTable : public TCollection_BasicMap {
 		Image_LookupTable(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Image_LookupTable & Assign(const Image_LookupTable &Other);
+		%feature("autodoc", "1");
+		Image_LookupTable & operator=(const Image_LookupTable &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1020,6 +1059,8 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		Image_ColorPixelDataMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Image_ColorPixelDataMap & Assign(const Image_ColorPixelDataMap &Other);
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap & operator=(const Image_ColorPixelDataMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

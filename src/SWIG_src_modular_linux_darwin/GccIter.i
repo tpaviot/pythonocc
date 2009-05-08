@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GccIter_dependencies.i
 
@@ -154,6 +159,10 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 		Handle_GccIter_IsParallel(const Handle_GccIter_IsParallel &aHandle);
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel(const GccIter_IsParallel *anItem);
+		%feature("autodoc", "1");
+		Handle_GccIter_IsParallel & operator=(const Handle_GccIter_IsParallel &aHandle);
+		%feature("autodoc", "1");
+		Handle_GccIter_IsParallel & operator=(const GccIter_IsParallel *anItem);
 		%feature("autodoc", "1");
 		Handle_GccIter_IsParallel const DownCast(const Handle_Standard_Transient &AnObject);
 

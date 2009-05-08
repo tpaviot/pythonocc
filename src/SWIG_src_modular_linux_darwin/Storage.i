@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Storage_dependencies.i
 
@@ -158,6 +163,10 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_InternalData(const Storage_InternalData *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_InternalData & operator=(const Handle_Storage_InternalData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_InternalData & operator=(const Storage_InternalData *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_InternalData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +192,10 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 		Handle_Storage_IndexedDataMapNodeOfPType(const Handle_Storage_IndexedDataMapNodeOfPType &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_IndexedDataMapNodeOfPType(const Storage_IndexedDataMapNodeOfPType *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_IndexedDataMapNodeOfPType & operator=(const Handle_Storage_IndexedDataMapNodeOfPType &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_IndexedDataMapNodeOfPType & operator=(const Storage_IndexedDataMapNodeOfPType *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_IndexedDataMapNodeOfPType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -210,6 +223,10 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_HArrayOfCallBack(const Storage_HArrayOfCallBack *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack & operator=(const Handle_Storage_HArrayOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfCallBack & operator=(const Storage_HArrayOfCallBack *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_HArrayOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -235,6 +252,10 @@ class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode 
 		Handle_Storage_DataMapNodeOfMapOfPers(const Handle_Storage_DataMapNodeOfMapOfPers &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_DataMapNodeOfMapOfPers(const Storage_DataMapNodeOfMapOfPers *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers & operator=(const Handle_Storage_DataMapNodeOfMapOfPers &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfPers & operator=(const Storage_DataMapNodeOfMapOfPers *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_DataMapNodeOfMapOfPers const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -262,6 +283,10 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfPersistent(const Storage_SequenceNodeOfSeqOfPersistent *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent & operator=(const Handle_Storage_SequenceNodeOfSeqOfPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfPersistent & operator=(const Storage_SequenceNodeOfSeqOfPersistent *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -287,6 +312,10 @@ class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_Seq
 		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -314,6 +343,10 @@ class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfPersistent(const Storage_HSeqOfPersistent *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent & operator=(const Handle_Storage_HSeqOfPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfPersistent & operator=(const Storage_HSeqOfPersistent *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfPersistent const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -339,6 +372,10 @@ class Handle_Storage_HPArray : public Handle_MMgt_TShared {
 		Handle_Storage_HPArray(const Handle_Storage_HPArray &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_HPArray(const Storage_HPArray *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray & operator=(const Handle_Storage_HPArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HPArray & operator=(const Storage_HPArray *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_HPArray const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -366,6 +403,10 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Storage_StreamFormatError(const Storage_StreamFormatError *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError & operator=(const Handle_Storage_StreamFormatError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamFormatError & operator=(const Storage_StreamFormatError *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_StreamFormatError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -391,6 +432,10 @@ class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError & operator=(const Handle_Storage_StreamReadError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamReadError & operator=(const Storage_StreamReadError *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamReadError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -418,6 +463,10 @@ class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadE
 		%feature("autodoc", "1");
 		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError & operator=(const Handle_Storage_StreamTypeMismatchError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError & operator=(const Storage_StreamTypeMismatchError *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_StreamTypeMismatchError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -443,6 +492,10 @@ class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
 		Handle_Storage_HSeqOfCallBack(const Handle_Storage_HSeqOfCallBack &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfCallBack(const Storage_HSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack & operator=(const Handle_Storage_HSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack & operator=(const Storage_HSeqOfCallBack *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -470,6 +523,10 @@ class Handle_Storage_Root : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_Root(const Storage_Root *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_Root & operator=(const Handle_Storage_Root &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Root & operator=(const Storage_Root *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_Root const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -495,6 +552,10 @@ class Handle_Storage_Data : public Handle_MMgt_TShared {
 		Handle_Storage_Data(const Handle_Storage_Data &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_Data(const Storage_Data *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_Data & operator=(const Handle_Storage_Data &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Data & operator=(const Storage_Data *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_Data const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -522,6 +583,10 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_HArrayOfSchema(const Storage_HArrayOfSchema *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema & operator=(const Handle_Storage_HArrayOfSchema &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HArrayOfSchema & operator=(const Storage_HArrayOfSchema *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_HArrayOfSchema const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -547,6 +612,10 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 		Handle_Storage_Schema(const Handle_Storage_Schema &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_Schema(const Storage_Schema *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_Schema & operator=(const Handle_Storage_Schema &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_Schema & operator=(const Storage_Schema *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_Schema const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -574,6 +643,10 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_Storage_StreamWriteError(const Storage_StreamWriteError *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_StreamWriteError & operator=(const Handle_Storage_StreamWriteError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamWriteError & operator=(const Storage_StreamWriteError *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_StreamWriteError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -599,6 +672,10 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 		Handle_Storage_DataMapNodeOfMapOfCallBack(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_DataMapNodeOfMapOfCallBack(const Storage_DataMapNodeOfMapOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Storage_DataMapNodeOfMapOfCallBack *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_DataMapNodeOfMapOfCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -626,6 +703,10 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_RootData(const Storage_RootData *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_RootData & operator=(const Handle_Storage_RootData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_RootData & operator=(const Storage_RootData *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_RootData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -651,6 +732,10 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 		Handle_Storage_TypedCallBack(const Handle_Storage_TypedCallBack &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_TypedCallBack(const Storage_TypedCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & operator=(const Handle_Storage_TypedCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & operator=(const Storage_TypedCallBack *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_TypedCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -678,6 +763,10 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 		%feature("autodoc", "1");
 		Handle_Storage_StreamExtCharParityError(const Storage_StreamExtCharParityError *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_StreamExtCharParityError & operator=(const Handle_Storage_StreamExtCharParityError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamExtCharParityError & operator=(const Storage_StreamExtCharParityError *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_StreamExtCharParityError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -703,6 +792,10 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 		Handle_Storage_SequenceNodeOfSeqOfRoot(const Handle_Storage_SequenceNodeOfSeqOfRoot &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfRoot(const Storage_SequenceNodeOfSeqOfRoot *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfRoot & operator=(const Handle_Storage_SequenceNodeOfSeqOfRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfRoot & operator=(const Storage_SequenceNodeOfSeqOfRoot *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_SequenceNodeOfSeqOfRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -730,6 +823,10 @@ class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_TypeData(const Storage_TypeData *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_TypeData & operator=(const Handle_Storage_TypeData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypeData & operator=(const Storage_TypeData *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_TypeData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -755,6 +852,10 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 		Handle_Storage_StreamModeError(const Handle_Storage_StreamModeError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamModeError(const Storage_StreamModeError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamModeError & operator=(const Handle_Storage_StreamModeError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamModeError & operator=(const Storage_StreamModeError *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamModeError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -782,6 +883,10 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_HeaderData(const Storage_HeaderData *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_HeaderData & operator=(const Handle_Storage_HeaderData &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HeaderData & operator=(const Storage_HeaderData *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_HeaderData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -807,6 +912,10 @@ class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 		Handle_Storage_CallBack(const Handle_Storage_CallBack &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_CallBack(const Storage_CallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & operator=(const Handle_Storage_CallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & operator=(const Storage_CallBack *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_CallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -834,6 +943,10 @@ class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 		%feature("autodoc", "1");
 		Handle_Storage_DefaultCallBack(const Storage_DefaultCallBack *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack & operator=(const Handle_Storage_DefaultCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack & operator=(const Storage_DefaultCallBack *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_DefaultCallBack const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -859,6 +972,10 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 		Handle_Storage_StreamUnknownTypeError(const Handle_Storage_StreamUnknownTypeError &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamUnknownTypeError(const Storage_StreamUnknownTypeError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamUnknownTypeError & operator=(const Handle_Storage_StreamUnknownTypeError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamUnknownTypeError & operator=(const Storage_StreamUnknownTypeError *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_StreamUnknownTypeError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -886,6 +1003,10 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfRoot(const Storage_HSeqOfRoot *anItem);
 		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot & operator=(const Handle_Storage_HSeqOfRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot & operator=(const Storage_HSeqOfRoot *anItem);
+		%feature("autodoc", "1");
 		Handle_Storage_HSeqOfRoot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -911,6 +1032,10 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 		Handle_Storage_StdMapNodeOfMapOfAsciiString(const Handle_Storage_StdMapNodeOfMapOfAsciiString &aHandle);
 		%feature("autodoc", "1");
 		Handle_Storage_StdMapNodeOfMapOfAsciiString(const Storage_StdMapNodeOfMapOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StdMapNodeOfMapOfAsciiString & operator=(const Handle_Storage_StdMapNodeOfMapOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StdMapNodeOfMapOfAsciiString & operator=(const Storage_StdMapNodeOfMapOfAsciiString *anItem);
 		%feature("autodoc", "1");
 		Handle_Storage_StdMapNodeOfMapOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -966,6 +1091,8 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Storage_SeqOfRoot & Assign(const Storage_SeqOfRoot &Other);
+		%feature("autodoc", "1");
+		const Storage_SeqOfRoot & operator=(const Storage_SeqOfRoot &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Storage_Root &T);
 		%feature("autodoc", "1");
@@ -1051,6 +1178,8 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Storage_SeqOfCallBack & Assign(const Storage_SeqOfCallBack &Other);
 		%feature("autodoc", "1");
+		const Storage_SeqOfCallBack & operator=(const Storage_SeqOfCallBack &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_Storage_CallBack &T);
 		%feature("autodoc", "1");
 		void Append(Storage_SeqOfCallBack & S);
@@ -1111,6 +1240,8 @@ class Storage_ArrayOfCallBack {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Storage_ArrayOfCallBack & Assign(const Storage_ArrayOfCallBack &Other);
+		%feature("autodoc", "1");
+		const Storage_ArrayOfCallBack & operator=(const Storage_ArrayOfCallBack &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1244,6 +1375,8 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		Storage_MapOfCallBack(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Storage_MapOfCallBack & Assign(const Storage_MapOfCallBack &Other);
+		%feature("autodoc", "1");
+		Storage_MapOfCallBack & operator=(const Storage_MapOfCallBack &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1453,6 +1586,8 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Storage_MapOfAsciiString & Assign(const Storage_MapOfAsciiString &Other);
 		%feature("autodoc", "1");
+		Storage_MapOfAsciiString & operator=(const Storage_MapOfAsciiString &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1578,6 +1713,8 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		Storage_MapOfPers(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Storage_MapOfPers & Assign(const Storage_MapOfPers &Other);
+		%feature("autodoc", "1");
+		Storage_MapOfPers & operator=(const Storage_MapOfPers &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -1825,6 +1962,8 @@ class Storage_ArrayOfSchema {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Storage_ArrayOfSchema & Assign(const Storage_ArrayOfSchema &Other);
+		%feature("autodoc", "1");
+		const Storage_ArrayOfSchema & operator=(const Storage_ArrayOfSchema &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2342,6 +2481,8 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Storage_SeqOfPersistent & Assign(const Storage_SeqOfPersistent &Other);
 		%feature("autodoc", "1");
+		const Storage_SeqOfPersistent & operator=(const Storage_SeqOfPersistent &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_Standard_Persistent &T);
 		%feature("autodoc", "1");
 		void Append(Storage_SeqOfPersistent & S);
@@ -2473,6 +2614,8 @@ class Storage_PArray {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Storage_PArray & Assign(const Storage_PArray &Other);
+		%feature("autodoc", "1");
+		const Storage_PArray & operator=(const Storage_PArray &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2617,6 +2760,8 @@ class Storage_PType : public TCollection_BasicMap {
 		Storage_PType(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Storage_PType & Assign(const Storage_PType &Other);
+		%feature("autodoc", "1");
+		Storage_PType & operator=(const Storage_PType &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

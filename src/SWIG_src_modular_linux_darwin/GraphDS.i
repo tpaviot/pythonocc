@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GraphDS_dependencies.i
 
@@ -138,6 +143,10 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap(const GraphDS_DataMapNodeOfEntityRoleMap *anItem);
 		%feature("autodoc", "1");
+		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const Handle_GraphDS_DataMapNodeOfEntityRoleMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphDS_DataMapNodeOfEntityRoleMap & operator=(const GraphDS_DataMapNodeOfEntityRoleMap *anItem);
+		%feature("autodoc", "1");
 		Handle_GraphDS_DataMapNodeOfEntityRoleMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -161,6 +170,8 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		GraphDS_EntityRoleMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		GraphDS_EntityRoleMap & Assign(const GraphDS_EntityRoleMap &Other);
+		%feature("autodoc", "1");
+		GraphDS_EntityRoleMap & operator=(const GraphDS_EntityRoleMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

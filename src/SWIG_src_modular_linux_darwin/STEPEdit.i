@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include STEPEdit_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 		Handle_STEPEdit_EditSDR(const Handle_STEPEdit_EditSDR &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR(const STEPEdit_EditSDR *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPEdit_EditSDR & operator=(const Handle_STEPEdit_EditSDR &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPEdit_EditSDR & operator=(const STEPEdit_EditSDR *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditSDR const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 		Handle_STEPEdit_EditContext(const Handle_STEPEdit_EditContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext(const STEPEdit_EditContext *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPEdit_EditContext & operator=(const Handle_STEPEdit_EditContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPEdit_EditContext & operator=(const STEPEdit_EditContext *anItem);
 		%feature("autodoc", "1");
 		Handle_STEPEdit_EditContext const DownCast(const Handle_Standard_Transient &AnObject);
 

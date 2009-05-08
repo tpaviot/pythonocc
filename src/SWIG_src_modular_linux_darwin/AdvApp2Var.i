@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AdvApp2Var_dependencies.i
 
@@ -136,6 +141,10 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
 		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfPatch *anItem);
+		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -161,6 +170,10 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -188,6 +201,10 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
 		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfNode *anItem);
+		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -214,6 +231,10 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip(const AdvApp2Var_SequenceNodeOfStrip *anItem);
 		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfStrip &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfStrip & operator=(const AdvApp2Var_SequenceNodeOfStrip *anItem);
+		%feature("autodoc", "1");
 		Handle_AdvApp2Var_SequenceNodeOfStrip const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -239,6 +260,8 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfNode & Assign(const AdvApp2Var_SequenceOfNode &Other);
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfNode & operator=(const AdvApp2Var_SequenceOfNode &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Node &T);
 		%feature("autodoc", "1");
@@ -481,6 +504,8 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AdvApp2Var_Strip & Assign(const AdvApp2Var_Strip &Other);
 		%feature("autodoc", "1");
+		const AdvApp2Var_Strip & operator=(const AdvApp2Var_Strip &Other);
+		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Iso &T);
 		%feature("autodoc", "1");
 		void Append(AdvApp2Var_Strip & S);
@@ -655,6 +680,8 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfPatch & Assign(const AdvApp2Var_SequenceOfPatch &Other);
 		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfPatch & operator=(const AdvApp2Var_SequenceOfPatch &Other);
+		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Patch &T);
 		%feature("autodoc", "1");
 		void Append(AdvApp2Var_SequenceOfPatch & S);
@@ -709,6 +736,8 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AdvApp2Var_SequenceOfStrip & Assign(const AdvApp2Var_SequenceOfStrip &Other);
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfStrip & operator=(const AdvApp2Var_SequenceOfStrip &Other);
 		%feature("autodoc", "1");
 		void Append(const AdvApp2Var_Strip &T);
 		%feature("autodoc", "1");

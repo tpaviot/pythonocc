@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GGraphic2d_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError(const GGraphic2d_CurveDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve(const GGraphic2d_Curve *anItem);
 		%feature("autodoc", "1");
+		Handle_GGraphic2d_Curve & operator=(const Handle_GGraphic2d_Curve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_Curve & operator=(const GGraphic2d_Curve *anItem);
+		%feature("autodoc", "1");
 		Handle_GGraphic2d_Curve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 		Handle_GGraphic2d_SetOfCurves(const Handle_GGraphic2d_SetOfCurves &aHandle);
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves(const GGraphic2d_SetOfCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SetOfCurves & operator=(const Handle_GGraphic2d_SetOfCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SetOfCurves & operator=(const GGraphic2d_SetOfCurves *anItem);
 		%feature("autodoc", "1");
 		Handle_GGraphic2d_SetOfCurves const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -291,6 +312,8 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const GGraphic2d_SequenceOfCurve & Assign(const GGraphic2d_SequenceOfCurve &Other);
+		%feature("autodoc", "1");
+		const GGraphic2d_SequenceOfCurve & operator=(const GGraphic2d_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom2d_Curve &T);
 		%feature("autodoc", "1");

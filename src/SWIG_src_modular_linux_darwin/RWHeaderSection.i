@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include RWHeaderSection_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 		Handle_RWHeaderSection_ReadWriteModule(const Handle_RWHeaderSection_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule(const RWHeaderSection_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_ReadWriteModule & operator=(const Handle_RWHeaderSection_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_ReadWriteModule & operator=(const RWHeaderSection_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule & operator=(const Handle_RWHeaderSection_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *anItem);
 		%feature("autodoc", "1");
 		Handle_RWHeaderSection_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 

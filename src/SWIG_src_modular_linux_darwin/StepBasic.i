@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepBasic_dependencies.i
 
@@ -188,6 +193,10 @@ class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Person(const StepBasic_Person *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Person & operator=(const Handle_StepBasic_Person &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Person & operator=(const StepBasic_Person *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Person const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -213,6 +222,10 @@ class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 		Handle_StepBasic_IdentificationRole(const Handle_StepBasic_IdentificationRole &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationRole(const StepBasic_IdentificationRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_IdentificationRole & operator=(const Handle_StepBasic_IdentificationRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_IdentificationRole & operator=(const StepBasic_IdentificationRole *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationRole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -240,6 +253,10 @@ class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContextElement(const StepBasic_ApplicationContextElement *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationContextElement & operator=(const Handle_StepBasic_ApplicationContextElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationContextElement & operator=(const StepBasic_ApplicationContextElement *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContextElement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -265,6 +282,10 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 		Handle_StepBasic_MeasureWithUnit(const Handle_StepBasic_MeasureWithUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureWithUnit(const StepBasic_MeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit & operator=(const Handle_StepBasic_MeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit & operator=(const StepBasic_MeasureWithUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -292,6 +313,10 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleMeasureWithUnit(const StepBasic_PlaneAngleMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleMeasureWithUnit & operator=(const Handle_StepBasic_PlaneAngleMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleMeasureWithUnit & operator=(const StepBasic_PlaneAngleMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -317,6 +342,10 @@ class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 		Handle_StepBasic_NamedUnit(const Handle_StepBasic_NamedUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_NamedUnit(const StepBasic_NamedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_NamedUnit & operator=(const Handle_StepBasic_NamedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_NamedUnit & operator=(const StepBasic_NamedUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_NamedUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -344,6 +373,10 @@ class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnit(const StepBasic_SiUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnit & operator=(const Handle_StepBasic_SiUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnit & operator=(const StepBasic_SiUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -369,6 +402,10 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit(const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit(const StepBasic_SiUnitAndThermodynamicTemperatureUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit & operator=(const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit & operator=(const StepBasic_SiUnitAndThermodynamicTemperatureUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -396,6 +433,10 @@ class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationAssignment(const StepBasic_CertificationAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment & operator=(const Handle_StepBasic_CertificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment & operator=(const StepBasic_CertificationAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -421,6 +462,10 @@ class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 		Handle_StepBasic_ApprovalRelationship(const Handle_StepBasic_ApprovalRelationship &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRelationship(const StepBasic_ApprovalRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship & operator=(const Handle_StepBasic_ApprovalRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship & operator=(const StepBasic_ApprovalRelationship *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -448,6 +493,10 @@ class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalAssignment(const StepBasic_ApprovalAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalAssignment & operator=(const Handle_StepBasic_ApprovalAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalAssignment & operator=(const StepBasic_ApprovalAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -473,6 +522,10 @@ class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 		Handle_StepBasic_ApprovalStatus(const Handle_StepBasic_ApprovalStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalStatus(const StepBasic_ApprovalStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalStatus & operator=(const Handle_StepBasic_ApprovalStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalStatus & operator=(const StepBasic_ApprovalStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -500,6 +553,10 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionMethod(const StepBasic_ActionMethod *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ActionMethod & operator=(const Handle_StepBasic_ActionMethod &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionMethod & operator=(const StepBasic_ActionMethod *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ActionMethod const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -525,6 +582,10 @@ class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit 
 		Handle_StepBasic_SiUnitAndSolidAngleUnit(const Handle_StepBasic_SiUnitAndSolidAngleUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndSolidAngleUnit(const StepBasic_SiUnitAndSolidAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndSolidAngleUnit & operator=(const Handle_StepBasic_SiUnitAndSolidAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndSolidAngleUnit & operator=(const StepBasic_SiUnitAndSolidAngleUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndSolidAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -552,6 +613,10 @@ class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Approval(const StepBasic_Approval *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Approval & operator=(const Handle_StepBasic_Approval &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval & operator=(const StepBasic_Approval *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Approval const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -577,6 +642,10 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 		Handle_StepBasic_SiUnitAndTimeUnit(const Handle_StepBasic_SiUnitAndTimeUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndTimeUnit(const StepBasic_SiUnitAndTimeUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndTimeUnit & operator=(const Handle_StepBasic_SiUnitAndTimeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndTimeUnit & operator=(const StepBasic_SiUnitAndTimeUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndTimeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -604,6 +673,10 @@ class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationAssignment(const StepBasic_IdentificationAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_IdentificationAssignment & operator=(const Handle_StepBasic_IdentificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_IdentificationAssignment & operator=(const StepBasic_IdentificationAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_IdentificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -629,6 +702,10 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 		Handle_StepBasic_ExternalIdentificationAssignment(const Handle_StepBasic_ExternalIdentificationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalIdentificationAssignment(const StepBasic_ExternalIdentificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternalIdentificationAssignment & operator=(const Handle_StepBasic_ExternalIdentificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternalIdentificationAssignment & operator=(const StepBasic_ExternalIdentificationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalIdentificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -656,6 +733,10 @@ class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Effectivity(const StepBasic_Effectivity *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity & operator=(const Handle_StepBasic_Effectivity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Effectivity & operator=(const StepBasic_Effectivity *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Effectivity const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -681,6 +762,10 @@ class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Ef
 		Handle_StepBasic_ProductDefinitionEffectivity(const Handle_StepBasic_ProductDefinitionEffectivity &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionEffectivity(const StepBasic_ProductDefinitionEffectivity *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity & operator=(const Handle_StepBasic_ProductDefinitionEffectivity &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity & operator=(const StepBasic_ProductDefinitionEffectivity *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionEffectivity const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -708,6 +793,10 @@ class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition(const StepBasic_ProductDefinition *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinition & operator=(const Handle_StepBasic_ProductDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinition & operator=(const StepBasic_ProductDefinition *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -733,6 +822,10 @@ class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments(const StepBasic_ProductDefinitionWithAssociatedDocuments *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments & operator=(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments & operator=(const StepBasic_ProductDefinitionWithAssociatedDocuments *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -760,6 +853,10 @@ class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Date(const StepBasic_Date *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Date & operator=(const Handle_StepBasic_Date &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Date & operator=(const StepBasic_Date *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Date const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -785,6 +882,10 @@ class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 		Handle_StepBasic_OrdinalDate(const Handle_StepBasic_OrdinalDate &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrdinalDate(const StepBasic_OrdinalDate *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrdinalDate & operator=(const Handle_StepBasic_OrdinalDate &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrdinalDate & operator=(const StepBasic_OrdinalDate *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrdinalDate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -812,6 +913,10 @@ class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationConte
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductContext(const StepBasic_ProductContext *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductContext & operator=(const Handle_StepBasic_ProductContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductContext & operator=(const StepBasic_ProductContext *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -837,6 +942,10 @@ class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContex
 		Handle_StepBasic_MechanicalContext(const Handle_StepBasic_MechanicalContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MechanicalContext(const StepBasic_MechanicalContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext & operator=(const Handle_StepBasic_MechanicalContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MechanicalContext & operator=(const StepBasic_MechanicalContext *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MechanicalContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -864,6 +973,10 @@ class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWith
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassMeasureWithUnit(const StepBasic_MassMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_MassMeasureWithUnit & operator=(const Handle_StepBasic_MassMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MassMeasureWithUnit & operator=(const StepBasic_MassMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_MassMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -889,6 +1002,10 @@ class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_Applic
 		Handle_StepBasic_ProductDefinitionContext(const Handle_StepBasic_ProductDefinitionContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionContext(const StepBasic_ProductDefinitionContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionContext & operator=(const Handle_StepBasic_ProductDefinitionContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionContext & operator=(const StepBasic_ProductDefinitionContext *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -916,6 +1033,10 @@ class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinition
 		%feature("autodoc", "1");
 		Handle_StepBasic_DesignContext(const StepBasic_DesignContext *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DesignContext & operator=(const Handle_StepBasic_DesignContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DesignContext & operator=(const StepBasic_DesignContext *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DesignContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -941,6 +1062,10 @@ class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 		Handle_StepBasic_DateAndTimeAssignment(const Handle_StepBasic_DateAndTimeAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTimeAssignment(const StepBasic_DateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateAndTimeAssignment & operator=(const Handle_StepBasic_DateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateAndTimeAssignment & operator=(const StepBasic_DateAndTimeAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -968,6 +1093,10 @@ class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategoryRelationship(const StepBasic_ProductCategoryRelationship *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductCategoryRelationship & operator=(const Handle_StepBasic_ProductCategoryRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductCategoryRelationship & operator=(const StepBasic_ProductCategoryRelationship *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategoryRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -993,6 +1122,10 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 		Handle_StepBasic_ObjectRole(const Handle_StepBasic_ObjectRole &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ObjectRole(const StepBasic_ObjectRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ObjectRole & operator=(const Handle_StepBasic_ObjectRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ObjectRole & operator=(const StepBasic_ObjectRole *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ObjectRole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1020,6 +1153,10 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassification(const StepBasic_SecurityClassification *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassification & operator=(const Handle_StepBasic_SecurityClassification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassification & operator=(const StepBasic_SecurityClassification *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassification const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1045,6 +1182,10 @@ class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 		Handle_StepBasic_Document(const Handle_StepBasic_Document &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Document(const StepBasic_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document & operator=(const Handle_StepBasic_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document & operator=(const StepBasic_Document *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Document const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1072,6 +1213,10 @@ class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalDateTime(const StepBasic_ApprovalDateTime *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime & operator=(const Handle_StepBasic_ApprovalDateTime &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalDateTime & operator=(const StepBasic_ApprovalDateTime *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalDateTime const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1097,6 +1242,10 @@ class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 		Handle_StepBasic_ConversionBasedUnit(const Handle_StepBasic_ConversionBasedUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnit(const StepBasic_ConversionBasedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnit & operator=(const Handle_StepBasic_ConversionBasedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnit & operator=(const StepBasic_ConversionBasedUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1124,6 +1273,10 @@ class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndRatioUnit(const StepBasic_ConversionBasedUnitAndRatioUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndRatioUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndRatioUnit & operator=(const StepBasic_ConversionBasedUnitAndRatioUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndRatioUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1149,6 +1302,10 @@ class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 		Handle_StepBasic_PersonAndOrganization(const Handle_StepBasic_PersonAndOrganization &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganization(const StepBasic_PersonAndOrganization *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganization & operator=(const Handle_StepBasic_PersonAndOrganization &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganization & operator=(const StepBasic_PersonAndOrganization *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganization const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1176,6 +1333,10 @@ class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestSolution(const StepBasic_ActionRequestSolution *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestSolution & operator=(const Handle_StepBasic_ActionRequestSolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestSolution & operator=(const StepBasic_ActionRequestSolution *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestSolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1201,6 +1362,10 @@ class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 		Handle_StepBasic_DocumentReference(const Handle_StepBasic_DocumentReference &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentReference(const StepBasic_DocumentReference *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentReference & operator=(const Handle_StepBasic_DocumentReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentReference & operator=(const StepBasic_DocumentReference *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentReference const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1228,6 +1393,10 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 		%feature("autodoc", "1");
 		Handle_StepBasic_CoordinatedUniversalTimeOffset(const StepBasic_CoordinatedUniversalTimeOffset *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_CoordinatedUniversalTimeOffset & operator=(const Handle_StepBasic_CoordinatedUniversalTimeOffset &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CoordinatedUniversalTimeOffset & operator=(const StepBasic_CoordinatedUniversalTimeOffset *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_CoordinatedUniversalTimeOffset const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1253,6 +1422,10 @@ class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 		Handle_StepBasic_SolidAngleUnit(const Handle_StepBasic_SolidAngleUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleUnit(const StepBasic_SolidAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SolidAngleUnit & operator=(const Handle_StepBasic_SolidAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SolidAngleUnit & operator=(const StepBasic_SolidAngleUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1280,6 +1453,10 @@ class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureValueMember(const StepBasic_MeasureValueMember *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureValueMember & operator=(const Handle_StepBasic_MeasureValueMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureValueMember & operator=(const StepBasic_MeasureValueMember *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_MeasureValueMember const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1305,6 +1482,10 @@ class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 		Handle_StepBasic_SiUnitAndAreaUnit(const Handle_StepBasic_SiUnitAndAreaUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndAreaUnit(const StepBasic_SiUnitAndAreaUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndAreaUnit & operator=(const Handle_StepBasic_SiUnitAndAreaUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndAreaUnit & operator=(const StepBasic_SiUnitAndAreaUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndAreaUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1332,6 +1513,10 @@ class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentType(const StepBasic_DocumentType *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentType & operator=(const Handle_StepBasic_DocumentType &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentType & operator=(const StepBasic_DocumentType *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1357,6 +1542,10 @@ class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 		Handle_StepBasic_HArray1OfProductDefinition(const Handle_StepBasic_HArray1OfProductDefinition &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductDefinition(const StepBasic_HArray1OfProductDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProductDefinition & operator=(const Handle_StepBasic_HArray1OfProductDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProductDefinition & operator=(const StepBasic_HArray1OfProductDefinition *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1384,6 +1573,10 @@ class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation(const StepBasic_ProductDefinitionFormation *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation & operator=(const Handle_StepBasic_ProductDefinitionFormation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation & operator=(const StepBasic_ProductDefinitionFormation *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1409,6 +1602,10 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource(const StepBasic_ProductDefinitionFormationWithSpecifiedSource *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource & operator=(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource & operator=(const StepBasic_ProductDefinitionFormationWithSpecifiedSource *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1436,6 +1633,10 @@ class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRepresentationType(const StepBasic_DocumentRepresentationType *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRepresentationType & operator=(const Handle_StepBasic_DocumentRepresentationType &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRepresentationType & operator=(const StepBasic_DocumentRepresentationType *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRepresentationType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1461,6 +1662,10 @@ class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_Step
 		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit(const StepBasic_ConversionBasedUnitAndPlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit & operator=(const StepBasic_ConversionBasedUnitAndPlaneAngleUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1488,6 +1693,10 @@ class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_EffectivityAssignment(const StepBasic_EffectivityAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_EffectivityAssignment & operator=(const Handle_StepBasic_EffectivityAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_EffectivityAssignment & operator=(const StepBasic_EffectivityAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_EffectivityAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1513,6 +1722,10 @@ class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TSh
 		Handle_StepBasic_SecurityClassificationAssignment(const Handle_StepBasic_SecurityClassificationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationAssignment(const StepBasic_SecurityClassificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassificationAssignment & operator=(const Handle_StepBasic_SecurityClassificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassificationAssignment & operator=(const StepBasic_SecurityClassificationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1540,6 +1753,10 @@ class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategory(const StepBasic_ProductCategory *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductCategory & operator=(const Handle_StepBasic_ProductCategory &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductCategory & operator=(const StepBasic_ProductCategory *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductCategory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1565,6 +1782,10 @@ class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 		Handle_StepBasic_PersonAndOrganizationRole(const Handle_StepBasic_PersonAndOrganizationRole &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationRole(const StepBasic_PersonAndOrganizationRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganizationRole & operator=(const Handle_StepBasic_PersonAndOrganizationRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganizationRole & operator=(const StepBasic_PersonAndOrganizationRole *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationRole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1592,6 +1813,10 @@ class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfApproval(const StepBasic_HArray1OfApproval *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfApproval & operator=(const Handle_StepBasic_HArray1OfApproval &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfApproval & operator=(const StepBasic_HArray1OfApproval *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfApproval const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1617,6 +1842,10 @@ class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 		Handle_StepBasic_DocumentProductAssociation(const Handle_StepBasic_DocumentProductAssociation &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductAssociation(const StepBasic_DocumentProductAssociation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentProductAssociation & operator=(const Handle_StepBasic_DocumentProductAssociation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentProductAssociation & operator=(const StepBasic_DocumentProductAssociation *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductAssociation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1644,6 +1873,10 @@ class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_RoleAssociation(const StepBasic_RoleAssociation *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_RoleAssociation & operator=(const Handle_StepBasic_RoleAssociation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RoleAssociation & operator=(const StepBasic_RoleAssociation *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_RoleAssociation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1669,6 +1902,10 @@ class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_Docu
 		Handle_StepBasic_DocumentProductEquivalence(const Handle_StepBasic_DocumentProductEquivalence &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductEquivalence(const StepBasic_DocumentProductEquivalence *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentProductEquivalence & operator=(const Handle_StepBasic_DocumentProductEquivalence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentProductEquivalence & operator=(const StepBasic_DocumentProductEquivalence *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentProductEquivalence const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1696,6 +1933,10 @@ class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_P
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductRelatedProductCategory(const StepBasic_ProductRelatedProductCategory *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductRelatedProductCategory & operator=(const Handle_StepBasic_ProductRelatedProductCategory &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductRelatedProductCategory & operator=(const StepBasic_ProductRelatedProductCategory *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductRelatedProductCategory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1721,6 +1962,10 @@ class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 		Handle_StepBasic_DateRole(const Handle_StepBasic_DateRole &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateRole(const StepBasic_DateRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateRole & operator=(const Handle_StepBasic_DateRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateRole & operator=(const StepBasic_DateRole *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateRole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1748,6 +1993,10 @@ class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_GeneralProperty(const StepBasic_GeneralProperty *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_GeneralProperty & operator=(const Handle_StepBasic_GeneralProperty &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GeneralProperty & operator=(const StepBasic_GeneralProperty *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_GeneralProperty const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1773,6 +2022,10 @@ class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 		Handle_StepBasic_DigitalDocument(const Handle_StepBasic_DigitalDocument &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DigitalDocument(const StepBasic_DigitalDocument *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DigitalDocument & operator=(const Handle_StepBasic_DigitalDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DigitalDocument & operator=(const StepBasic_DigitalDocument *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DigitalDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1800,6 +2053,10 @@ class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_TimeUnit(const StepBasic_TimeUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_TimeUnit & operator=(const Handle_StepBasic_TimeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeUnit & operator=(const StepBasic_TimeUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_TimeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1825,6 +2082,10 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 		Handle_StepBasic_ExternalSource(const Handle_StepBasic_ExternalSource &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalSource(const StepBasic_ExternalSource *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternalSource & operator=(const Handle_StepBasic_ExternalSource &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternalSource & operator=(const StepBasic_ExternalSource *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternalSource const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1852,6 +2113,10 @@ class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndRatioUnit(const StepBasic_SiUnitAndRatioUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndRatioUnit & operator=(const Handle_StepBasic_SiUnitAndRatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndRatioUnit & operator=(const StepBasic_SiUnitAndRatioUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndRatioUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1877,6 +2142,10 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 		Handle_StepBasic_HArray1OfProduct(const Handle_StepBasic_HArray1OfProduct &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProduct(const StepBasic_HArray1OfProduct *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProduct & operator=(const Handle_StepBasic_HArray1OfProduct &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProduct & operator=(const StepBasic_HArray1OfProduct *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProduct const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1904,6 +2173,10 @@ class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_RatioUnit(const StepBasic_RatioUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit & operator=(const Handle_StepBasic_RatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit & operator=(const StepBasic_RatioUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_RatioUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1929,6 +2202,10 @@ class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 		Handle_StepBasic_Group(const Handle_StepBasic_Group &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Group(const StepBasic_Group *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Group & operator=(const Handle_StepBasic_Group &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Group & operator=(const StepBasic_Group *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Group const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1956,6 +2233,10 @@ class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_Measu
 		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleMeasureWithUnit(const StepBasic_SolidAngleMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SolidAngleMeasureWithUnit & operator=(const Handle_StepBasic_SolidAngleMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SolidAngleMeasureWithUnit & operator=(const StepBasic_SolidAngleMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SolidAngleMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1981,6 +2262,10 @@ class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MM
 		Handle_StepBasic_ProductDefinitionFormationRelationship(const Handle_StepBasic_ProductDefinitionFormationRelationship &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationRelationship(const StepBasic_ProductDefinitionFormationRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormationRelationship & operator=(const Handle_StepBasic_ProductDefinitionFormationRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormationRelationship & operator=(const StepBasic_ProductDefinitionFormationRelationship *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionFormationRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2008,6 +2293,10 @@ class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_NameAssignment(const StepBasic_NameAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_NameAssignment & operator=(const Handle_StepBasic_NameAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_NameAssignment & operator=(const StepBasic_NameAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_NameAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2033,6 +2322,10 @@ class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 		Handle_StepBasic_MassUnit(const Handle_StepBasic_MassUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassUnit(const StepBasic_MassUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MassUnit & operator=(const Handle_StepBasic_MassUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MassUnit & operator=(const StepBasic_MassUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_MassUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2060,6 +2353,10 @@ class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Address(const StepBasic_Address *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Address & operator=(const Handle_StepBasic_Address &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Address & operator=(const StepBasic_Address *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Address const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2085,6 +2382,10 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 		Handle_StepBasic_PersonalAddress(const Handle_StepBasic_PersonalAddress &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonalAddress(const StepBasic_PersonalAddress *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonalAddress & operator=(const Handle_StepBasic_PersonalAddress &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonalAddress & operator=(const StepBasic_PersonalAddress *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonalAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2112,6 +2413,10 @@ class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRelationship(const StepBasic_DocumentRelationship *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship & operator=(const Handle_StepBasic_DocumentRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentRelationship & operator=(const StepBasic_DocumentRelationship *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2137,6 +2442,10 @@ class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 		Handle_StepBasic_DerivedUnitElement(const Handle_StepBasic_DerivedUnitElement &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnitElement(const StepBasic_DerivedUnitElement *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnitElement & operator=(const Handle_StepBasic_DerivedUnitElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnitElement & operator=(const StepBasic_DerivedUnitElement *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnitElement const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2164,6 +2473,10 @@ class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasi
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndVolumeUnit(const StepBasic_ConversionBasedUnitAndVolumeUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndVolumeUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndVolumeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndVolumeUnit & operator=(const StepBasic_ConversionBasedUnitAndVolumeUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndVolumeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2189,6 +2502,10 @@ class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_
 		Handle_StepBasic_ConversionBasedUnitAndMassUnit(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndMassUnit(const StepBasic_ConversionBasedUnitAndMassUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndMassUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndMassUnit & operator=(const StepBasic_ConversionBasedUnitAndMassUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndMassUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2216,6 +2533,10 @@ class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionAssignment(const StepBasic_ActionAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment & operator=(const Handle_StepBasic_ActionAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment & operator=(const StepBasic_ActionAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ActionAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2241,6 +2562,10 @@ class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit 
 		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndPlaneAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2268,6 +2593,10 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 		%feature("autodoc", "1");
 		Handle_StepBasic_ThermodynamicTemperatureUnit(const StepBasic_ThermodynamicTemperatureUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ThermodynamicTemperatureUnit & operator=(const Handle_StepBasic_ThermodynamicTemperatureUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ThermodynamicTemperatureUnit & operator=(const StepBasic_ThermodynamicTemperatureUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ThermodynamicTemperatureUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2293,6 +2622,10 @@ class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 		Handle_StepBasic_OrganizationRole(const Handle_StepBasic_OrganizationRole &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationRole(const StepBasic_OrganizationRole *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole & operator=(const Handle_StepBasic_OrganizationRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationRole & operator=(const StepBasic_OrganizationRole *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationRole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2320,6 +2653,10 @@ class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTime(const StepBasic_DateAndTime *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DateAndTime & operator=(const Handle_StepBasic_DateAndTime &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateAndTime & operator=(const StepBasic_DateAndTime *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DateAndTime const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2345,6 +2682,10 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 		Handle_StepBasic_SiUnitAndVolumeUnit(const Handle_StepBasic_SiUnitAndVolumeUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndVolumeUnit(const StepBasic_SiUnitAndVolumeUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndVolumeUnit & operator=(const Handle_StepBasic_SiUnitAndVolumeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndVolumeUnit & operator=(const StepBasic_SiUnitAndVolumeUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndVolumeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2372,6 +2713,10 @@ class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_LocalTime(const StepBasic_LocalTime *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime & operator=(const Handle_StepBasic_LocalTime &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LocalTime & operator=(const StepBasic_LocalTime *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_LocalTime const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2397,6 +2742,10 @@ class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 		Handle_StepBasic_LengthUnit(const Handle_StepBasic_LengthUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_LengthUnit(const StepBasic_LengthUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LengthUnit & operator=(const Handle_StepBasic_LengthUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LengthUnit & operator=(const StepBasic_LengthUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_LengthUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2424,6 +2773,10 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateAssignment(const StepBasic_DateAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DateAssignment & operator=(const Handle_StepBasic_DateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateAssignment & operator=(const StepBasic_DateAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2449,6 +2802,10 @@ class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 		Handle_StepBasic_Product(const Handle_StepBasic_Product &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Product(const StepBasic_Product *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Product & operator=(const Handle_StepBasic_Product &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Product & operator=(const StepBasic_Product *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Product const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2476,6 +2833,10 @@ class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_GroupRelationship(const StepBasic_GroupRelationship *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship & operator=(const Handle_StepBasic_GroupRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupRelationship & operator=(const StepBasic_GroupRelationship *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_GroupRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2501,6 +2862,10 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 		Handle_StepBasic_HArray1OfDerivedUnitElement(const Handle_StepBasic_HArray1OfDerivedUnitElement &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDerivedUnitElement(const StepBasic_HArray1OfDerivedUnitElement *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfDerivedUnitElement & operator=(const Handle_StepBasic_HArray1OfDerivedUnitElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfDerivedUnitElement & operator=(const StepBasic_HArray1OfDerivedUnitElement *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDerivedUnitElement const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2528,6 +2893,10 @@ class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalPersonOrganization(const StepBasic_ApprovalPersonOrganization *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalPersonOrganization & operator=(const Handle_StepBasic_ApprovalPersonOrganization &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalPersonOrganization & operator=(const StepBasic_ApprovalPersonOrganization *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalPersonOrganization const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2553,6 +2922,10 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 		Handle_StepBasic_ConversionBasedUnitAndLengthUnit(const Handle_StepBasic_ConversionBasedUnitAndLengthUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndLengthUnit(const StepBasic_ConversionBasedUnitAndLengthUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndLengthUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndLengthUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndLengthUnit & operator=(const StepBasic_ConversionBasedUnitAndLengthUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndLengthUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2580,6 +2953,10 @@ class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_VersionedActionRequest(const StepBasic_VersionedActionRequest *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_VersionedActionRequest & operator=(const Handle_StepBasic_VersionedActionRequest &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_VersionedActionRequest & operator=(const StepBasic_VersionedActionRequest *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_VersionedActionRequest const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2605,6 +2982,10 @@ class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 		Handle_StepBasic_OrganizationAssignment(const Handle_StepBasic_OrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationAssignment(const StepBasic_OrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationAssignment & operator=(const Handle_StepBasic_OrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationAssignment & operator=(const StepBasic_OrganizationAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2632,6 +3013,10 @@ class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_Step
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit(const StepBasic_ConversionBasedUnitAndSolidAngleUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit & operator=(const StepBasic_ConversionBasedUnitAndSolidAngleUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2657,6 +3042,10 @@ class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 		Handle_StepBasic_CalendarDate(const Handle_StepBasic_CalendarDate &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_CalendarDate(const StepBasic_CalendarDate *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CalendarDate & operator=(const Handle_StepBasic_CalendarDate &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CalendarDate & operator=(const StepBasic_CalendarDate *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_CalendarDate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2684,6 +3073,10 @@ class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfPerson(const StepBasic_HArray1OfPerson *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfPerson & operator=(const Handle_StepBasic_HArray1OfPerson &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfPerson & operator=(const StepBasic_HArray1OfPerson *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfPerson const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2709,6 +3102,10 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 		Handle_StepBasic_ContractType(const Handle_StepBasic_ContractType &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ContractType(const StepBasic_ContractType *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ContractType & operator=(const Handle_StepBasic_ContractType &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ContractType & operator=(const StepBasic_ContractType *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ContractType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2736,6 +3133,10 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductConceptContext(const StepBasic_ProductConceptContext *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ProductConceptContext & operator=(const Handle_StepBasic_ProductConceptContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductConceptContext & operator=(const StepBasic_ProductConceptContext *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ProductConceptContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2761,6 +3162,10 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 		Handle_StepBasic_AreaUnit(const Handle_StepBasic_AreaUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_AreaUnit(const StepBasic_AreaUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_AreaUnit & operator=(const Handle_StepBasic_AreaUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_AreaUnit & operator=(const StepBasic_AreaUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_AreaUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2788,6 +3193,10 @@ class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared 
 		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationLevel(const StepBasic_SecurityClassificationLevel *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassificationLevel & operator=(const Handle_StepBasic_SecurityClassificationLevel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SecurityClassificationLevel & operator=(const StepBasic_SecurityClassificationLevel *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SecurityClassificationLevel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2813,6 +3222,10 @@ class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 		Handle_StepBasic_HArray1OfProductContext(const Handle_StepBasic_HArray1OfProductContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductContext(const StepBasic_HArray1OfProductContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProductContext & operator=(const Handle_StepBasic_HArray1OfProductContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfProductContext & operator=(const StepBasic_HArray1OfProductContext *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfProductContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2840,6 +3253,10 @@ class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndAreaUnit(const StepBasic_ConversionBasedUnitAndAreaUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndAreaUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndAreaUnit & operator=(const StepBasic_ConversionBasedUnitAndAreaUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndAreaUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2865,6 +3282,10 @@ class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 		Handle_StepBasic_Certification(const Handle_StepBasic_Certification &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Certification(const StepBasic_Certification *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification & operator=(const Handle_StepBasic_Certification &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Certification & operator=(const StepBasic_Certification *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Certification const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2892,6 +3313,10 @@ class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfNamedUnit(const StepBasic_HArray1OfNamedUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfNamedUnit & operator=(const Handle_StepBasic_HArray1OfNamedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfNamedUnit & operator=(const StepBasic_HArray1OfNamedUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfNamedUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2917,6 +3342,10 @@ class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 		Handle_StepBasic_HArray1OfOrganization(const Handle_StepBasic_HArray1OfOrganization &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfOrganization(const StepBasic_HArray1OfOrganization *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfOrganization & operator=(const Handle_StepBasic_HArray1OfOrganization &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfOrganization & operator=(const StepBasic_HArray1OfOrganization *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfOrganization const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2944,6 +3373,10 @@ class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_
 		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndTimeUnit(const StepBasic_ConversionBasedUnitAndTimeUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndTimeUnit & operator=(const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ConversionBasedUnitAndTimeUnit & operator=(const StepBasic_ConversionBasedUnitAndTimeUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ConversionBasedUnitAndTimeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -2969,6 +3402,10 @@ class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 		Handle_StepBasic_OrganizationalAddress(const Handle_StepBasic_OrganizationalAddress &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationalAddress(const StepBasic_OrganizationalAddress *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationalAddress & operator=(const Handle_StepBasic_OrganizationalAddress &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_OrganizationalAddress & operator=(const StepBasic_OrganizationalAddress *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_OrganizationalAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2996,6 +3433,10 @@ class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ExternallyDefinedItem(const StepBasic_ExternallyDefinedItem *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ExternallyDefinedItem & operator=(const Handle_StepBasic_ExternallyDefinedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternallyDefinedItem & operator=(const StepBasic_ExternallyDefinedItem *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ExternallyDefinedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3021,6 +3462,10 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 		Handle_StepBasic_WeekOfYearAndDayDate(const Handle_StepBasic_WeekOfYearAndDayDate &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_WeekOfYearAndDayDate(const StepBasic_WeekOfYearAndDayDate *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_WeekOfYearAndDayDate & operator=(const Handle_StepBasic_WeekOfYearAndDayDate &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_WeekOfYearAndDayDate & operator=(const StepBasic_WeekOfYearAndDayDate *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_WeekOfYearAndDayDate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3048,6 +3493,10 @@ class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_EulerAngles(const StepBasic_EulerAngles *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles & operator=(const Handle_StepBasic_EulerAngles &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles & operator=(const StepBasic_EulerAngles *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_EulerAngles const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3073,6 +3522,10 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 		Handle_StepBasic_SiUnitAndMassUnit(const Handle_StepBasic_SiUnitAndMassUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndMassUnit(const StepBasic_SiUnitAndMassUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndMassUnit & operator=(const Handle_StepBasic_SiUnitAndMassUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndMassUnit & operator=(const StepBasic_SiUnitAndMassUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndMassUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3100,6 +3553,10 @@ class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_CharacterizedObject(const StepBasic_CharacterizedObject *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_CharacterizedObject & operator=(const Handle_StepBasic_CharacterizedObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CharacterizedObject & operator=(const StepBasic_CharacterizedObject *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_CharacterizedObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3125,6 +3582,10 @@ class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShare
 		Handle_StepBasic_ProductDefinitionRelationship(const Handle_StepBasic_ProductDefinitionRelationship &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionRelationship(const StepBasic_ProductDefinitionRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship & operator=(const Handle_StepBasic_ProductDefinitionRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship & operator=(const StepBasic_ProductDefinitionRelationship *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinitionRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3152,6 +3613,10 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ContractAssignment(const StepBasic_ContractAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ContractAssignment & operator=(const Handle_StepBasic_ContractAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ContractAssignment & operator=(const StepBasic_ContractAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ContractAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3177,6 +3642,10 @@ class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_Meas
 		Handle_StepBasic_UncertaintyMeasureWithUnit(const Handle_StepBasic_UncertaintyMeasureWithUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_UncertaintyMeasureWithUnit(const StepBasic_UncertaintyMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit & operator=(const Handle_StepBasic_UncertaintyMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit & operator=(const StepBasic_UncertaintyMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_UncertaintyMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3204,6 +3673,10 @@ class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWi
 		%feature("autodoc", "1");
 		Handle_StepBasic_LengthMeasureWithUnit(const StepBasic_LengthMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_LengthMeasureWithUnit & operator=(const Handle_StepBasic_LengthMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LengthMeasureWithUnit & operator=(const StepBasic_LengthMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_LengthMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3229,6 +3702,10 @@ class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 		Handle_StepBasic_CertificationType(const Handle_StepBasic_CertificationType &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationType(const StepBasic_CertificationType *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationType & operator=(const Handle_StepBasic_CertificationType &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationType & operator=(const StepBasic_CertificationType *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_CertificationType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3256,6 +3733,10 @@ class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRole(const StepBasic_ApprovalRole *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRole & operator=(const Handle_StepBasic_ApprovalRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRole & operator=(const StepBasic_ApprovalRole *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApprovalRole const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3281,6 +3762,10 @@ class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 		Handle_StepBasic_DerivedUnit(const Handle_StepBasic_DerivedUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnit(const StepBasic_DerivedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnit & operator=(const Handle_StepBasic_DerivedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DerivedUnit & operator=(const StepBasic_DerivedUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_DerivedUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3308,6 +3793,10 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDocument(const StepBasic_HArray1OfDocument *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfDocument & operator=(const Handle_StepBasic_HArray1OfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfDocument & operator=(const StepBasic_HArray1OfDocument *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfDocument const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3333,6 +3822,10 @@ class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 		Handle_StepBasic_ActionRequestAssignment(const Handle_StepBasic_ActionRequestAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestAssignment(const StepBasic_ActionRequestAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment & operator=(const Handle_StepBasic_ActionRequestAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionRequestAssignment & operator=(const StepBasic_ActionRequestAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ActionRequestAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3360,6 +3853,10 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_VolumeUnit(const StepBasic_VolumeUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_VolumeUnit & operator=(const Handle_StepBasic_VolumeUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_VolumeUnit & operator=(const StepBasic_VolumeUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_VolumeUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3385,6 +3882,10 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 		Handle_StepBasic_SizeMember(const Handle_StepBasic_SizeMember &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SizeMember(const StepBasic_SizeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SizeMember & operator=(const Handle_StepBasic_SizeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SizeMember & operator=(const StepBasic_SizeMember *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_SizeMember const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3412,6 +3913,10 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentFile(const StepBasic_DocumentFile *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentFile & operator=(const Handle_StepBasic_DocumentFile &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentFile & operator=(const StepBasic_DocumentFile *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentFile const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3437,6 +3942,10 @@ class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProdu
 		Handle_StepBasic_ProductType(const Handle_StepBasic_ProductType &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductType(const StepBasic_ProductType *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductType & operator=(const Handle_StepBasic_ProductType &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductType & operator=(const StepBasic_ProductType *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductType const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3464,6 +3973,10 @@ class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndLengthUnit(const StepBasic_SiUnitAndLengthUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndLengthUnit & operator=(const Handle_StepBasic_SiUnitAndLengthUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndLengthUnit & operator=(const StepBasic_SiUnitAndLengthUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_SiUnitAndLengthUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3489,6 +4002,10 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit(const StepBasic_HArray1OfUncertaintyMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit & operator=(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit & operator=(const StepBasic_HArray1OfUncertaintyMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3516,6 +4033,10 @@ class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleUnit(const StepBasic_PlaneAngleUnit *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit & operator=(const Handle_StepBasic_PlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PlaneAngleUnit & operator=(const StepBasic_PlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_PlaneAngleUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3541,6 +4062,10 @@ class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 		Handle_StepBasic_Action(const Handle_StepBasic_Action &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Action(const StepBasic_Action *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Action & operator=(const Handle_StepBasic_Action &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Action & operator=(const StepBasic_Action *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Action const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3568,6 +4093,10 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_Organization(const StepBasic_Organization *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_Organization & operator=(const Handle_StepBasic_Organization &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Organization & operator=(const StepBasic_Organization *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_Organization const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3593,6 +4122,10 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 		Handle_StepBasic_TimeMeasureWithUnit(const Handle_StepBasic_TimeMeasureWithUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_TimeMeasureWithUnit(const StepBasic_TimeMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit & operator=(const Handle_StepBasic_TimeMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_TimeMeasureWithUnit & operator=(const StepBasic_TimeMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_TimeMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3620,6 +4153,10 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DimensionalExponents(const StepBasic_DimensionalExponents *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DimensionalExponents & operator=(const Handle_StepBasic_DimensionalExponents &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DimensionalExponents & operator=(const StepBasic_DimensionalExponents *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DimensionalExponents const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3645,6 +4182,10 @@ class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWit
 		Handle_StepBasic_RatioMeasureWithUnit(const Handle_StepBasic_RatioMeasureWithUnit &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_RatioMeasureWithUnit(const StepBasic_RatioMeasureWithUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioMeasureWithUnit & operator=(const Handle_StepBasic_RatioMeasureWithUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioMeasureWithUnit & operator=(const StepBasic_RatioMeasureWithUnit *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_RatioMeasureWithUnit const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3672,6 +4213,10 @@ class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShare
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationProtocolDefinition(const StepBasic_ApplicationProtocolDefinition *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationProtocolDefinition & operator=(const Handle_StepBasic_ApplicationProtocolDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationProtocolDefinition & operator=(const StepBasic_ApplicationProtocolDefinition *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationProtocolDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3697,6 +4242,10 @@ class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 		Handle_StepBasic_ApplicationContext(const Handle_StepBasic_ApplicationContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContext(const StepBasic_ApplicationContext *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationContext & operator=(const Handle_StepBasic_ApplicationContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApplicationContext & operator=(const StepBasic_ApplicationContext *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ApplicationContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3724,6 +4273,10 @@ class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DateTimeRole(const StepBasic_DateTimeRole *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DateTimeRole & operator=(const Handle_StepBasic_DateTimeRole &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DateTimeRole & operator=(const StepBasic_DateTimeRole *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DateTimeRole const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3749,6 +4302,10 @@ class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 		Handle_StepBasic_GroupAssignment(const Handle_StepBasic_GroupAssignment &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_GroupAssignment(const StepBasic_GroupAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupAssignment & operator=(const Handle_StepBasic_GroupAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_GroupAssignment & operator=(const StepBasic_GroupAssignment *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_GroupAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3776,6 +4333,10 @@ class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TSha
 		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationAssignment(const StepBasic_PersonAndOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganizationAssignment & operator=(const Handle_StepBasic_PersonAndOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganizationAssignment & operator=(const StepBasic_PersonAndOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_PersonAndOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3801,6 +4362,10 @@ class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBa
 		Handle_StepBasic_PhysicallyModeledProductDefinition(const Handle_StepBasic_PhysicallyModeledProductDefinition &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PhysicallyModeledProductDefinition(const StepBasic_PhysicallyModeledProductDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PhysicallyModeledProductDefinition & operator=(const Handle_StepBasic_PhysicallyModeledProductDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PhysicallyModeledProductDefinition & operator=(const StepBasic_PhysicallyModeledProductDefinition *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_PhysicallyModeledProductDefinition const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -3828,6 +4393,10 @@ class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentUsageConstraint(const StepBasic_DocumentUsageConstraint *anItem);
 		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentUsageConstraint & operator=(const Handle_StepBasic_DocumentUsageConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentUsageConstraint & operator=(const StepBasic_DocumentUsageConstraint *anItem);
+		%feature("autodoc", "1");
 		Handle_StepBasic_DocumentUsageConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -3853,6 +4422,10 @@ class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 		Handle_StepBasic_Contract(const Handle_StepBasic_Contract &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Contract(const StepBasic_Contract *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Contract & operator=(const Handle_StepBasic_Contract &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Contract & operator=(const StepBasic_Contract *anItem);
 		%feature("autodoc", "1");
 		Handle_StepBasic_Contract const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -4203,6 +4776,8 @@ class StepBasic_Array1OfProduct {
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProduct & Assign(const StepBasic_Array1OfProduct &Other);
 		%feature("autodoc", "1");
+		const StepBasic_Array1OfProduct & operator=(const StepBasic_Array1OfProduct &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -4513,6 +5088,8 @@ class StepBasic_Array1OfProductDefinition {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProductDefinition & Assign(const StepBasic_Array1OfProductDefinition &Other);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfProductDefinition & operator=(const StepBasic_Array1OfProductDefinition &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -5061,6 +5638,8 @@ class StepBasic_Array1OfOrganization {
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfOrganization & Assign(const StepBasic_Array1OfOrganization &Other);
 		%feature("autodoc", "1");
+		const StepBasic_Array1OfOrganization & operator=(const StepBasic_Array1OfOrganization &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -5335,6 +5914,8 @@ class StepBasic_Array1OfApproval {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfApproval & Assign(const StepBasic_Array1OfApproval &Other);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfApproval & operator=(const StepBasic_Array1OfApproval &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -7036,6 +7617,8 @@ class StepBasic_Array1OfProductContext {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfProductContext & Assign(const StepBasic_Array1OfProductContext &Other);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfProductContext & operator=(const StepBasic_Array1OfProductContext &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -8926,6 +9509,8 @@ class StepBasic_Array1OfNamedUnit {
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfNamedUnit & Assign(const StepBasic_Array1OfNamedUnit &Other);
 		%feature("autodoc", "1");
+		const StepBasic_Array1OfNamedUnit & operator=(const StepBasic_Array1OfNamedUnit &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -8987,6 +9572,8 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfUncertaintyMeasureWithUnit & Assign(const StepBasic_Array1OfUncertaintyMeasureWithUnit &Other);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfUncertaintyMeasureWithUnit & operator=(const StepBasic_Array1OfUncertaintyMeasureWithUnit &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -9458,6 +10045,8 @@ class StepBasic_Array1OfDocument {
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfDocument & Assign(const StepBasic_Array1OfDocument &Other);
 		%feature("autodoc", "1");
+		const StepBasic_Array1OfDocument & operator=(const StepBasic_Array1OfDocument &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -9579,6 +10168,8 @@ class StepBasic_Array1OfDerivedUnitElement {
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfDerivedUnitElement & Assign(const StepBasic_Array1OfDerivedUnitElement &Other);
 		%feature("autodoc", "1");
+		const StepBasic_Array1OfDerivedUnitElement & operator=(const StepBasic_Array1OfDerivedUnitElement &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -9693,6 +10284,8 @@ class StepBasic_Array1OfPerson {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const StepBasic_Array1OfPerson & Assign(const StepBasic_Array1OfPerson &Other);
+		%feature("autodoc", "1");
+		const StepBasic_Array1OfPerson & operator=(const StepBasic_Array1OfPerson &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

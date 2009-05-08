@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Intf_dependencies.i
 
@@ -132,6 +137,10 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfTangentZone const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -159,6 +168,10 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine(const Intf_SequenceNodeOfSeqOfSectionLine *anItem);
 		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Handle_Intf_SequenceNodeOfSeqOfSectionLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfSectionLine & operator=(const Intf_SequenceNodeOfSeqOfSectionLine *anItem);
+		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionLine const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -184,6 +197,10 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint(const Handle_Intf_SequenceNodeOfSeqOfSectionPoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint(const Intf_SequenceNodeOfSeqOfSectionPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Handle_Intf_SequenceNodeOfSeqOfSectionPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfSectionPoint & operator=(const Intf_SequenceNodeOfSeqOfSectionPoint *anItem);
 		%feature("autodoc", "1");
 		Handle_Intf_SequenceNodeOfSeqOfSectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -318,6 +335,8 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const Intf_SeqOfTangentZone & Assign(const Intf_SeqOfTangentZone &Other);
 		%feature("autodoc", "1");
+		const Intf_SeqOfTangentZone & operator=(const Intf_SeqOfTangentZone &Other);
+		%feature("autodoc", "1");
 		void Append(const Intf_TangentZone &T);
 		%feature("autodoc", "1");
 		void Append(Intf_SeqOfTangentZone & S);
@@ -372,6 +391,8 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Intf_SeqOfSectionLine & Assign(const Intf_SeqOfSectionLine &Other);
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionLine & operator=(const Intf_SeqOfSectionLine &Other);
 		%feature("autodoc", "1");
 		void Append(const Intf_SectionLine &T);
 		%feature("autodoc", "1");
@@ -463,6 +484,8 @@ class Intf_Array1OfLin {
 		%feature("autodoc", "1");
 		const Intf_Array1OfLin & Assign(const Intf_Array1OfLin &Other);
 		%feature("autodoc", "1");
+		const Intf_Array1OfLin & operator=(const Intf_Array1OfLin &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -532,6 +555,8 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionPoint & operator=(const Intf_SeqOfSectionPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const Intf_SectionPoint &T);
 		%feature("autodoc", "1");

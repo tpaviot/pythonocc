@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepClass3d_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const Handle_BRepClass3d_DataMapNodeOfMapOfInter &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter(const BRepClass3d_DataMapNodeOfMapOfInter *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const Handle_BRepClass3d_DataMapNodeOfMapOfInter &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepClass3d_DataMapNodeOfMapOfInter & operator=(const BRepClass3d_DataMapNodeOfMapOfInter *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepClass3d_DataMapNodeOfMapOfInter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -367,6 +376,8 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		BRepClass3d_MapOfInter(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepClass3d_MapOfInter & Assign(const BRepClass3d_MapOfInter &Other);
+		%feature("autodoc", "1");
+		BRepClass3d_MapOfInter & operator=(const BRepClass3d_MapOfInter &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

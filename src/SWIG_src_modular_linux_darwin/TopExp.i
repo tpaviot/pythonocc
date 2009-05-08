@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopExp_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 		Handle_TopExp_StackNodeOfStackOfIterator(const Handle_TopExp_StackNodeOfStackOfIterator &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopExp_StackNodeOfStackOfIterator(const TopExp_StackNodeOfStackOfIterator *anItem);
+		%feature("autodoc", "1");
+		Handle_TopExp_StackNodeOfStackOfIterator & operator=(const Handle_TopExp_StackNodeOfStackOfIterator &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopExp_StackNodeOfStackOfIterator & operator=(const TopExp_StackNodeOfStackOfIterator *anItem);
 		%feature("autodoc", "1");
 		Handle_TopExp_StackNodeOfStackOfIterator const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -235,6 +244,8 @@ class TopExp_StackOfIterator {
 		TopExp_StackOfIterator();
 		%feature("autodoc", "1");
 		const TopExp_StackOfIterator & Assign(const TopExp_StackOfIterator &Other);
+		%feature("autodoc", "1");
+		const TopExp_StackOfIterator & operator=(const TopExp_StackOfIterator &Other);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

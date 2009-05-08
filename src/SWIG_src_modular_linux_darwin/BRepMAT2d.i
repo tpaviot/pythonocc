@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepMAT2d_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape & operator=(const BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -334,6 +351,8 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & Assign(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
+		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -370,6 +389,8 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepMAT2d_SequenceOfBasicElt & Assign(const BRepMAT2d_SequenceOfBasicElt &Other);
+		%feature("autodoc", "1");
+		const BRepMAT2d_SequenceOfBasicElt & operator=(const BRepMAT2d_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_MAT_BasicElt &T);
 		%feature("autodoc", "1");
@@ -454,6 +475,8 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		BRepMAT2d_DataMapOfBasicEltShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepMAT2d_DataMapOfBasicEltShape & Assign(const BRepMAT2d_DataMapOfBasicEltShape &Other);
+		%feature("autodoc", "1");
+		BRepMAT2d_DataMapOfBasicEltShape & operator=(const BRepMAT2d_DataMapOfBasicEltShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

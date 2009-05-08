@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include CDF_dependencies.i
 
@@ -183,6 +188,10 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError(const CDF_MetaDataDriverError *anItem);
 		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError & operator=(const Handle_CDF_MetaDataDriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *anItem);
+		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -208,6 +217,10 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 		Handle_CDF_Session(const Handle_CDF_Session &aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Session(const CDF_Session *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_Session & operator=(const Handle_CDF_Session &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_Session & operator=(const CDF_Session *anItem);
 		%feature("autodoc", "1");
 		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -235,6 +248,10 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_StoreList(const CDF_StoreList *anItem);
 		%feature("autodoc", "1");
+		Handle_CDF_StoreList & operator=(const Handle_CDF_StoreList &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_StoreList & operator=(const CDF_StoreList *anItem);
+		%feature("autodoc", "1");
 		Handle_CDF_StoreList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -260,6 +277,10 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 		Handle_CDF_Directory(const Handle_CDF_Directory &aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_Directory(const CDF_Directory *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_Directory & operator=(const Handle_CDF_Directory &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_Directory & operator=(const CDF_Directory *anItem);
 		%feature("autodoc", "1");
 		Handle_CDF_Directory const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -287,6 +308,10 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 		%feature("autodoc", "1");
 		Handle_CDF_Application(const CDF_Application *anItem);
 		%feature("autodoc", "1");
+		Handle_CDF_Application & operator=(const Handle_CDF_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_Application & operator=(const CDF_Application *anItem);
+		%feature("autodoc", "1");
 		Handle_CDF_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -313,6 +338,10 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory(const CDF_MetaDataDriverFactory *anItem);
 		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverFactory & operator=(const Handle_CDF_MetaDataDriverFactory &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverFactory & operator=(const CDF_MetaDataDriverFactory *anItem);
+		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriverFactory const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -338,6 +367,10 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

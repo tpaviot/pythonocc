@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepBuilderAPI_dependencies.i
 
@@ -179,6 +184,10 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 		Handle_BRepBuilderAPI_Sewing(const Handle_BRepBuilderAPI_Sewing &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing(const BRepBuilderAPI_Sewing *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBuilderAPI_Sewing & operator=(const Handle_BRepBuilderAPI_Sewing &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBuilderAPI_Sewing & operator=(const BRepBuilderAPI_Sewing *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepBuilderAPI_Sewing const DownCast(const Handle_Standard_Transient &AnObject);
 

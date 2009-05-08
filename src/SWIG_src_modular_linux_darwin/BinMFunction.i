@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BinMFunction_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMFunction_ScopeDriver(const BinMFunction_ScopeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const Handle_BinMFunction_ScopeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 		%feature("autodoc", "1");
 		Handle_BinMFunction_GraphNodeDriver(const BinMFunction_GraphNodeDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_BinMFunction_GraphNodeDriver & operator=(const Handle_BinMFunction_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_GraphNodeDriver & operator=(const BinMFunction_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_BinMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 		Handle_BinMFunction_FunctionDriver(const Handle_BinMFunction_FunctionDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_BinMFunction_FunctionDriver(const BinMFunction_FunctionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_FunctionDriver & operator=(const Handle_BinMFunction_FunctionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_FunctionDriver & operator=(const BinMFunction_FunctionDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_BinMFunction_FunctionDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

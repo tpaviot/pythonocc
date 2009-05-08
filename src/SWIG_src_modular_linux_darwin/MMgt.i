@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MMgt_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 		Handle_MMgt_TShared(const Handle_MMgt_TShared &aHandle);
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared(const MMgt_TShared *anItem);
+		%feature("autodoc", "1");
+		Handle_MMgt_TShared & operator=(const Handle_MMgt_TShared &aHandle);
+		%feature("autodoc", "1");
+		Handle_MMgt_TShared & operator=(const MMgt_TShared *anItem);
 		%feature("autodoc", "1");
 		Handle_MMgt_TShared const DownCast(const Handle_Standard_Transient &AnObject);
 

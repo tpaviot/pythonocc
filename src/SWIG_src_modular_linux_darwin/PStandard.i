@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PStandard_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 		Handle_PStandard_ArrayNode(const Handle_PStandard_ArrayNode &aHandle);
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode(const PStandard_ArrayNode *anItem);
+		%feature("autodoc", "1");
+		Handle_PStandard_ArrayNode & operator=(const Handle_PStandard_ArrayNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_PStandard_ArrayNode & operator=(const PStandard_ArrayNode *anItem);
 		%feature("autodoc", "1");
 		Handle_PStandard_ArrayNode const DownCast(const Handle_Standard_Persistent &AnObject);
 

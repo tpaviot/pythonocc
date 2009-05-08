@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MeshAlgo_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc &aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc & operator=(const MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc *anItem);
 		%feature("autodoc", "1");
 		Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -169,6 +178,8 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		MeshAlgo_DataMapOfIntegerCirc(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MeshAlgo_DataMapOfIntegerCirc & Assign(const MeshAlgo_DataMapOfIntegerCirc &Other);
+		%feature("autodoc", "1");
+		MeshAlgo_DataMapOfIntegerCirc & operator=(const MeshAlgo_DataMapOfIntegerCirc &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntPoly_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d *anItem);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
 		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d *anItem);
+		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt & operator=(const IntPoly_IndexedMapNodeOfIndexedMapOfPnt *anItem);
 		%feature("autodoc", "1");
 		Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
 		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,8 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt2d & Assign(const IntPoly_SequenceOfSequenceOfPnt2d &Other);
+		%feature("autodoc", "1");
+		const IntPoly_SequenceOfSequenceOfPnt2d & operator=(const IntPoly_SequenceOfSequenceOfPnt2d &Other);
 		%feature("autodoc", "1");
 		void Append(const TColgp_SequenceOfPnt2d &T);
 		%feature("autodoc", "1");
@@ -415,6 +438,8 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const IntPoly_SequenceOfSequenceOfPnt & Assign(const IntPoly_SequenceOfSequenceOfPnt &Other);
 		%feature("autodoc", "1");
+		const IntPoly_SequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceOfSequenceOfPnt &Other);
+		%feature("autodoc", "1");
 		void Append(const TColgp_SequenceOfPnt &T);
 		%feature("autodoc", "1");
 		void Append(IntPoly_SequenceOfSequenceOfPnt & S);
@@ -516,6 +541,8 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		IntPoly_IndexedMapOfPnt2d & Assign(const IntPoly_IndexedMapOfPnt2d &Other);
 		%feature("autodoc", "1");
+		IntPoly_IndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapOfPnt2d &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -612,6 +639,8 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		IntPoly_IndexedMapOfPnt(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		IntPoly_IndexedMapOfPnt & Assign(const IntPoly_IndexedMapOfPnt &Other);
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapOfPnt & operator=(const IntPoly_IndexedMapOfPnt &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlObjMgt_dependencies.i
 
@@ -129,6 +134,10 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const Handle_XmlObjMgt_DataMapNodeOfRRelocationTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable(const XmlObjMgt_DataMapNodeOfRRelocationTable *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const Handle_XmlObjMgt_DataMapNodeOfRRelocationTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable & operator=(const XmlObjMgt_DataMapNodeOfRRelocationTable *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlObjMgt_DataMapNodeOfRRelocationTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -302,6 +311,8 @@ class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {
 		XmlObjMgt_RRelocationTable(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		XmlObjMgt_RRelocationTable & Assign(const XmlObjMgt_RRelocationTable &Other);
+		%feature("autodoc", "1");
+		XmlObjMgt_RRelocationTable & operator=(const XmlObjMgt_RRelocationTable &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

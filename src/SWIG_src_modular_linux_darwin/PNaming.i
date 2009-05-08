@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PNaming_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 		Handle_PNaming_Name(const Handle_PNaming_Name &aHandle);
 		%feature("autodoc", "1");
 		Handle_PNaming_Name(const PNaming_Name *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name & operator=(const Handle_PNaming_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Name & operator=(const PNaming_Name *anItem);
 		%feature("autodoc", "1");
 		Handle_PNaming_Name const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_PNaming_HArray1OfNamedShape(const PNaming_HArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape & operator=(const Handle_PNaming_HArray1OfNamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_HArray1OfNamedShape & operator=(const PNaming_HArray1OfNamedShape *anItem);
+		%feature("autodoc", "1");
 		Handle_PNaming_HArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 		Handle_PNaming_NamedShape(const Handle_PNaming_NamedShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_PNaming_NamedShape(const PNaming_NamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape & operator=(const Handle_PNaming_NamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape & operator=(const PNaming_NamedShape *anItem);
 		%feature("autodoc", "1");
 		Handle_PNaming_NamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 		%feature("autodoc", "1");
 		Handle_PNaming_Naming(const PNaming_Naming *anItem);
 		%feature("autodoc", "1");
+		Handle_PNaming_Naming & operator=(const Handle_PNaming_Naming &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_Naming & operator=(const PNaming_Naming *anItem);
+		%feature("autodoc", "1");
 		Handle_PNaming_Naming const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape & operator=(const Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape & operator=(const PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape *anItem);
 		%feature("autodoc", "1");
 		Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -360,6 +385,8 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const PNaming_FieldOfHArray1OfNamedShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const PNaming_FieldOfHArray1OfNamedShape &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Handle_PNaming_NamedShape &Value);
 		%feature("autodoc", "1");

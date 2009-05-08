@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GeomFill_dependencies.i
 
@@ -156,6 +161,10 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronLaw(const GeomFill_TrihedronLaw *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronLaw & operator=(const Handle_GeomFill_TrihedronLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronLaw & operator=(const GeomFill_TrihedronLaw *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -181,6 +190,10 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 		Handle_GeomFill_SectionLaw(const Handle_GeomFill_SectionLaw &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SectionLaw(const GeomFill_SectionLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SectionLaw & operator=(const Handle_GeomFill_SectionLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SectionLaw & operator=(const GeomFill_SectionLaw *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -208,6 +221,10 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_NSections(const GeomFill_NSections *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_NSections & operator=(const Handle_GeomFill_NSections &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_NSections & operator=(const GeomFill_NSections *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_NSections const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -233,6 +250,10 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 		Handle_GeomFill_Boundary(const Handle_GeomFill_Boundary &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_Boundary(const GeomFill_Boundary *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Boundary & operator=(const Handle_GeomFill_Boundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Boundary & operator=(const GeomFill_Boundary *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_Boundary const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -260,6 +281,10 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 		%feature("autodoc", "1");
 		Handle_GeomFill_SimpleBound(const GeomFill_SimpleBound *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_SimpleBound & operator=(const Handle_GeomFill_SimpleBound &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SimpleBound & operator=(const GeomFill_SimpleBound *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_SimpleBound const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -285,6 +310,10 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 		Handle_GeomFill_LocationLaw(const Handle_GeomFill_LocationLaw &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationLaw(const GeomFill_LocationLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationLaw & operator=(const Handle_GeomFill_LocationLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationLaw & operator=(const GeomFill_LocationLaw *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -312,6 +341,10 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_CurveAndTrihedron(const GeomFill_CurveAndTrihedron *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron & operator=(const Handle_GeomFill_CurveAndTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CurveAndTrihedron & operator=(const GeomFill_CurveAndTrihedron *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_CurveAndTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -337,6 +370,10 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 		Handle_GeomFill_CircularBlendFunc(const Handle_GeomFill_CircularBlendFunc &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_CircularBlendFunc(const GeomFill_CircularBlendFunc *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CircularBlendFunc & operator=(const Handle_GeomFill_CircularBlendFunc &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CircularBlendFunc & operator=(const GeomFill_CircularBlendFunc *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_CircularBlendFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -364,6 +401,10 @@ class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationDraft(const GeomFill_LocationDraft *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft & operator=(const Handle_GeomFill_LocationDraft &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationDraft & operator=(const GeomFill_LocationDraft *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_LocationDraft const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -389,6 +430,10 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 		Handle_GeomFill_BoundWithSurf(const Handle_GeomFill_BoundWithSurf &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_BoundWithSurf(const GeomFill_BoundWithSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_BoundWithSurf & operator=(const Handle_GeomFill_BoundWithSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_BoundWithSurf & operator=(const GeomFill_BoundWithSurf *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_BoundWithSurf const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -416,6 +461,10 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomFill_Line(const GeomFill_Line *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_Line & operator=(const Handle_GeomFill_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Line & operator=(const GeomFill_Line *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_Line const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -441,6 +490,10 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const Handle_GeomFill_SequenceNodeOfSequenceOfCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfCurve(const GeomFill_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve & operator=(const Handle_GeomFill_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfCurve & operator=(const GeomFill_SequenceNodeOfSequenceOfCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -468,6 +521,10 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_LocationGuide(const GeomFill_LocationGuide *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide & operator=(const Handle_GeomFill_LocationGuide &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_LocationGuide & operator=(const GeomFill_LocationGuide *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_LocationGuide const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -493,6 +550,10 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 		Handle_GeomFill_TgtField(const Handle_GeomFill_TgtField &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtField(const GeomFill_TgtField *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField & operator=(const Handle_GeomFill_TgtField &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtField & operator=(const GeomFill_TgtField *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtField const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -520,6 +581,10 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfSectionLaw(const GeomFill_HArray1OfSectionLaw *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw & operator=(const Handle_GeomFill_HArray1OfSectionLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfSectionLaw & operator=(const GeomFill_HArray1OfSectionLaw *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfSectionLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -545,6 +610,10 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 		Handle_GeomFill_Frenet(const Handle_GeomFill_Frenet &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_Frenet(const GeomFill_Frenet *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Frenet & operator=(const Handle_GeomFill_Frenet &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Frenet & operator=(const GeomFill_Frenet *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_Frenet const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -572,6 +641,10 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_Darboux(const GeomFill_Darboux *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_Darboux & operator=(const Handle_GeomFill_Darboux &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Darboux & operator=(const GeomFill_Darboux *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_Darboux const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -597,6 +670,10 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 		Handle_GeomFill_CoonsAlgPatch(const Handle_GeomFill_CoonsAlgPatch &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_CoonsAlgPatch(const GeomFill_CoonsAlgPatch *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch & operator=(const Handle_GeomFill_CoonsAlgPatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CoonsAlgPatch & operator=(const GeomFill_CoonsAlgPatch *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_CoonsAlgPatch const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -624,6 +701,10 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_ConstantBiNormal(const GeomFill_ConstantBiNormal *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_ConstantBiNormal & operator=(const Handle_GeomFill_ConstantBiNormal &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_ConstantBiNormal & operator=(const GeomFill_ConstantBiNormal *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_ConstantBiNormal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -649,6 +730,10 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 		Handle_GeomFill_DegeneratedBound(const Handle_GeomFill_DegeneratedBound &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_DegeneratedBound(const GeomFill_DegeneratedBound *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound & operator=(const Handle_GeomFill_DegeneratedBound &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound & operator=(const GeomFill_DegeneratedBound *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_DegeneratedBound const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -676,6 +761,10 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronWithGuide(const GeomFill_TrihedronWithGuide *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide & operator=(const Handle_GeomFill_TrihedronWithGuide &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TrihedronWithGuide & operator=(const GeomFill_TrihedronWithGuide *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_TrihedronWithGuide const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -701,6 +790,10 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 		Handle_GeomFill_GuideTrihedronAC(const Handle_GeomFill_GuideTrihedronAC &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronAC(const GeomFill_GuideTrihedronAC *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC & operator=(const Handle_GeomFill_GuideTrihedronAC &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronAC & operator=(const GeomFill_GuideTrihedronAC *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronAC const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -728,6 +821,10 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_CorrectedFrenet(const GeomFill_CorrectedFrenet *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_CorrectedFrenet & operator=(const Handle_GeomFill_CorrectedFrenet &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_CorrectedFrenet & operator=(const GeomFill_CorrectedFrenet *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_CorrectedFrenet const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -753,6 +850,10 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 		Handle_GeomFill_GuideTrihedronPlan(const Handle_GeomFill_GuideTrihedronPlan &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronPlan(const GeomFill_GuideTrihedronPlan *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronPlan & operator=(const Handle_GeomFill_GuideTrihedronPlan &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_GuideTrihedronPlan & operator=(const GeomFill_GuideTrihedronPlan *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_GuideTrihedronPlan const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -780,6 +881,10 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 		%feature("autodoc", "1");
 		Handle_GeomFill_SweepFunction(const GeomFill_SweepFunction *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_SweepFunction & operator=(const Handle_GeomFill_SweepFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SweepFunction & operator=(const GeomFill_SweepFunction *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_SweepFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -805,6 +910,10 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf(const Handle_GeomFill_SequenceNodeOfSequenceOfTrsf &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf(const GeomFill_SequenceNodeOfSequenceOfTrsf *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf & operator=(const Handle_GeomFill_SequenceNodeOfSequenceOfTrsf &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf & operator=(const GeomFill_SequenceNodeOfSequenceOfTrsf *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_SequenceNodeOfSequenceOfTrsf const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -832,6 +941,10 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_EvolvedSection(const GeomFill_EvolvedSection *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_EvolvedSection & operator=(const Handle_GeomFill_EvolvedSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_EvolvedSection & operator=(const GeomFill_EvolvedSection *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_EvolvedSection const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -857,6 +970,10 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 		Handle_GeomFill_DraftTrihedron(const Handle_GeomFill_DraftTrihedron &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_DraftTrihedron(const GeomFill_DraftTrihedron *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DraftTrihedron & operator=(const Handle_GeomFill_DraftTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DraftTrihedron & operator=(const GeomFill_DraftTrihedron *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_DraftTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -884,6 +1001,10 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_UniformSection(const GeomFill_UniformSection *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_UniformSection & operator=(const Handle_GeomFill_UniformSection &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_UniformSection & operator=(const GeomFill_UniformSection *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_UniformSection const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -909,6 +1030,10 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 		Handle_GeomFill_HArray1OfLocationLaw(const Handle_GeomFill_HArray1OfLocationLaw &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfLocationLaw(const GeomFill_HArray1OfLocationLaw *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw & operator=(const Handle_GeomFill_HArray1OfLocationLaw &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HArray1OfLocationLaw & operator=(const GeomFill_HArray1OfLocationLaw *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_HArray1OfLocationLaw const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -936,6 +1061,10 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		Handle_GeomFill_Fixed(const GeomFill_Fixed *anItem);
 		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed & operator=(const Handle_GeomFill_Fixed &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed & operator=(const GeomFill_Fixed *anItem);
+		%feature("autodoc", "1");
 		Handle_GeomFill_Fixed const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -961,6 +1090,10 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 		Handle_GeomFill_TgtOnCoons(const Handle_GeomFill_TgtOnCoons &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtOnCoons(const GeomFill_TgtOnCoons *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons & operator=(const Handle_GeomFill_TgtOnCoons &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_TgtOnCoons & operator=(const GeomFill_TgtOnCoons *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomFill_TgtOnCoons const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1331,6 +1464,8 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfCurve & Assign(const GeomFill_SequenceOfCurve &Other);
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfCurve & operator=(const GeomFill_SequenceOfCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Geom_Curve &T);
 		%feature("autodoc", "1");
@@ -2066,6 +2201,8 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const GeomFill_SequenceOfTrsf & Assign(const GeomFill_SequenceOfTrsf &Other);
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfTrsf & operator=(const GeomFill_SequenceOfTrsf &Other);
 		%feature("autodoc", "1");
 		void Append(const gp_Trsf &T);
 		%feature("autodoc", "1");
@@ -3236,6 +3373,8 @@ class GeomFill_Array1OfSectionLaw {
 		%feature("autodoc", "1");
 		const GeomFill_Array1OfSectionLaw & Assign(const GeomFill_Array1OfSectionLaw &Other);
 		%feature("autodoc", "1");
+		const GeomFill_Array1OfSectionLaw & operator=(const GeomFill_Array1OfSectionLaw &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -3465,6 +3604,8 @@ class GeomFill_Array1OfLocationLaw {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const GeomFill_Array1OfLocationLaw & Assign(const GeomFill_Array1OfLocationLaw &Other);
+		%feature("autodoc", "1");
+		const GeomFill_Array1OfLocationLaw & operator=(const GeomFill_Array1OfLocationLaw &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

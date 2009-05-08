@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BooleanOperations_dependencies.i
 
@@ -153,6 +158,10 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *anItem);
 		%feature("autodoc", "1");
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger & operator=(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +187,10 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
+		%feature("autodoc", "1");
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		%feature("autodoc", "1");
+		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
 		%feature("autodoc", "1");
 		Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -471,6 +484,8 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		%feature("autodoc", "1");
 		BooleanOperations_IndexedDataMapOfShapeInteger & Assign(const BooleanOperations_IndexedDataMapOfShapeInteger &Other);
 		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeInteger & operator=(const BooleanOperations_IndexedDataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -515,6 +530,8 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Assign(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

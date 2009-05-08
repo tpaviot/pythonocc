@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ProjLib_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		Handle_ProjLib_HCompProjectedCurve(const Handle_ProjLib_HCompProjectedCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve(const ProjLib_HCompProjectedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve & operator=(const Handle_ProjLib_HCompProjectedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve(const ProjLib_HProjectedCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_ProjLib_HProjectedCurve & operator=(const Handle_ProjLib_HProjectedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HProjectedCurve & operator=(const ProjLib_HProjectedCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_ProjLib_HProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
 		Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
 		%feature("autodoc", "1");
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt & operator=(const ProjLib_HSequenceOfHSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
 		Handle_ProjLib_HSequenceOfHSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,8 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HSequenceOfPnt &T);
 		%feature("autodoc", "1");

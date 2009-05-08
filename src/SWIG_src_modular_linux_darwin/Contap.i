@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Contap_dependencies.i
 
@@ -140,6 +145,10 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour(const Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour *anItem);
 		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour & operator=(const Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour & operator=(const Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour *anItem);
+		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -165,6 +174,10 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -192,6 +205,10 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
 		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -217,6 +234,10 @@ class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : publi
 		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour &aHandle);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour(const Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour & operator=(const Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour & operator=(const Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour *anItem);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -244,6 +265,10 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_Contap_TheIWLineOfTheIWalkingOfContour(const Contap_TheIWLineOfTheIWalkingOfContour *anItem);
 		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator=(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator=(const Contap_TheIWLineOfTheIWalkingOfContour *anItem);
+		%feature("autodoc", "1");
 		Handle_Contap_TheIWLineOfTheIWalkingOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -270,6 +295,10 @@ class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Contap_TheHSequenceOfPointOfContour(const Contap_TheHSequenceOfPointOfContour *anItem);
 		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour & operator=(const Handle_Contap_TheHSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_TheHSequenceOfPointOfContour & operator=(const Contap_TheHSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
 		Handle_Contap_TheHSequenceOfPointOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -295,6 +324,10 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour(const Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour &aHandle);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour(const Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour & operator=(const Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour & operator=(const Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour *anItem);
 		%feature("autodoc", "1");
 		Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -409,6 +442,8 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 		void Clear();
 		%feature("autodoc", "1");
 		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & operator=(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
 		%feature("autodoc", "1");
@@ -558,6 +593,8 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 		%feature("autodoc", "1");
 		const Contap_SequenceOfSegmentOfTheSearchOfContour & Assign(const Contap_SequenceOfSegmentOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
+		const Contap_SequenceOfSegmentOfTheSearchOfContour & operator=(const Contap_SequenceOfSegmentOfTheSearchOfContour &Other);
+		%feature("autodoc", "1");
 		void Append(const Contap_TheSegmentOfTheSearchOfContour &T);
 		%feature("autodoc", "1");
 		void Append(Contap_SequenceOfSegmentOfTheSearchOfContour & S);
@@ -662,6 +699,8 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 		void Clear();
 		%feature("autodoc", "1");
 		const Contap_SequenceOfPathPointOfTheSearchOfContour & Assign(const Contap_SequenceOfPathPointOfTheSearchOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_SequenceOfPathPointOfTheSearchOfContour & operator=(const Contap_SequenceOfPathPointOfTheSearchOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_ThePathPointOfTheSearchOfContour &T);
 		%feature("autodoc", "1");
@@ -911,6 +950,8 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Contap_TheSequenceOfPointOfContour & Assign(const Contap_TheSequenceOfPointOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_TheSequenceOfPointOfContour & operator=(const Contap_TheSequenceOfPointOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_ThePointOfContour &T);
 		%feature("autodoc", "1");
@@ -1299,6 +1340,8 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Contap_TheSequenceOfLineOfContour & Assign(const Contap_TheSequenceOfLineOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_TheSequenceOfLineOfContour & operator=(const Contap_TheSequenceOfLineOfContour &Other);
 		%feature("autodoc", "1");
 		void Append(const Contap_TheLineOfContour &T);
 		%feature("autodoc", "1");

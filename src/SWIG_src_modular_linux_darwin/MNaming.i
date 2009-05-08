@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MNaming_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MNaming_NamingRetrievalDriver(const Handle_MNaming_NamingRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingRetrievalDriver(const MNaming_NamingRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver & operator=(const Handle_MNaming_NamingRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver & operator=(const MNaming_NamingRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeStorageDriver(const MNaming_NamedShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MNaming_NamedShapeStorageDriver & operator=(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamedShapeStorageDriver & operator=(const MNaming_NamedShapeStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 		%feature("autodoc", "1");
 		Handle_MNaming_NamingStorageDriver(const MNaming_NamingStorageDriver *anItem);
 		%feature("autodoc", "1");
+		Handle_MNaming_NamingStorageDriver & operator=(const Handle_MNaming_NamingStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingStorageDriver & operator=(const MNaming_NamingStorageDriver *anItem);
+		%feature("autodoc", "1");
 		Handle_MNaming_NamingStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MNaming_NamedShapeRetrievalDriver(const Handle_MNaming_NamedShapeRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeRetrievalDriver(const MNaming_NamedShapeRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamedShapeRetrievalDriver & operator=(const Handle_MNaming_NamedShapeRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamedShapeRetrievalDriver & operator=(const MNaming_NamedShapeRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MNaming_NamedShapeRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

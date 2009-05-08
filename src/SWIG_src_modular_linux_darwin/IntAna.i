@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntAna_dependencies.i
 
@@ -138,6 +143,10 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 		Handle_IntAna_ListNodeOfListOfCurve(const Handle_IntAna_ListNodeOfListOfCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve(const IntAna_ListNodeOfListOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_IntAna_ListNodeOfListOfCurve & operator=(const Handle_IntAna_ListNodeOfListOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntAna_ListNodeOfListOfCurve & operator=(const IntAna_ListNodeOfListOfCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_IntAna_ListNodeOfListOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -479,6 +488,8 @@ class IntAna_ListOfCurve {
 		IntAna_ListOfCurve();
 		%feature("autodoc", "1");
 		void Assign(const IntAna_ListOfCurve &Other);
+		%feature("autodoc", "1");
+		void operator=(const IntAna_ListOfCurve &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

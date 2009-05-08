@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GeomTools_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 		Handle_GeomTools_UndefinedTypeHandler(const Handle_GeomTools_UndefinedTypeHandler &aHandle);
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler(const GeomTools_UndefinedTypeHandler *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomTools_UndefinedTypeHandler & operator=(const Handle_GeomTools_UndefinedTypeHandler &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomTools_UndefinedTypeHandler & operator=(const GeomTools_UndefinedTypeHandler *anItem);
 		%feature("autodoc", "1");
 		Handle_GeomTools_UndefinedTypeHandler const DownCast(const Handle_Standard_Transient &AnObject);
 

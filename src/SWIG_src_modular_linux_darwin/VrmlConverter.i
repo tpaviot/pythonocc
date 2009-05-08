@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include VrmlConverter_dependencies.i
 
@@ -139,6 +144,10 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect(const VrmlConverter_ShadingAspect *anItem);
 		%feature("autodoc", "1");
+		Handle_VrmlConverter_ShadingAspect & operator=(const Handle_VrmlConverter_ShadingAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_ShadingAspect & operator=(const VrmlConverter_ShadingAspect *anItem);
+		%feature("autodoc", "1");
 		Handle_VrmlConverter_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -164,6 +173,10 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 		Handle_VrmlConverter_PointAspect(const Handle_VrmlConverter_PointAspect &aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect(const VrmlConverter_PointAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_PointAspect & operator=(const Handle_VrmlConverter_PointAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_PointAspect & operator=(const VrmlConverter_PointAspect *anItem);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -191,6 +204,10 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect(const VrmlConverter_LineAspect *anItem);
 		%feature("autodoc", "1");
+		Handle_VrmlConverter_LineAspect & operator=(const Handle_VrmlConverter_LineAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_LineAspect & operator=(const VrmlConverter_LineAspect *anItem);
+		%feature("autodoc", "1");
 		Handle_VrmlConverter_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -216,6 +233,10 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 		Handle_VrmlConverter_Projector(const Handle_VrmlConverter_Projector &aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector(const VrmlConverter_Projector *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Projector & operator=(const Handle_VrmlConverter_Projector &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -243,6 +264,10 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect(const VrmlConverter_IsoAspect *anItem);
 		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect & operator=(const Handle_VrmlConverter_IsoAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
+		%feature("autodoc", "1");
 		Handle_VrmlConverter_IsoAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -268,6 +293,10 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
 		%feature("autodoc", "1");
 		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 

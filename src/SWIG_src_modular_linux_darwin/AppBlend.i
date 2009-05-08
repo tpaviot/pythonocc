@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AppBlend_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
+		%feature("autodoc", "1");
+		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
 		Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -235,6 +244,8 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AppBlend_SequenceOfArray1OfPnt2d & Assign(const AppBlend_SequenceOfArray1OfPnt2d &Other);
+		%feature("autodoc", "1");
+		const AppBlend_SequenceOfArray1OfPnt2d & operator=(const AppBlend_SequenceOfArray1OfPnt2d &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TColgp_HArray1OfPnt2d &T);
 		%feature("autodoc", "1");

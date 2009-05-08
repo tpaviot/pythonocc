@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PTColStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const Handle_PTColStd_DataMapNodeOfTransientPersistentMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
+		%feature("autodoc", "1");
+		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const Handle_PTColStd_DataMapNodeOfTransientPersistentMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTColStd_DataMapNodeOfTransientPersistentMap & operator=(const PTColStd_DataMapNodeOfTransientPersistentMap *anItem);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfTransientPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
 		%feature("autodoc", "1");
+		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const Handle_PTColStd_DataMapNodeOfPersistentTransientMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTColStd_DataMapNodeOfPersistentTransientMap & operator=(const PTColStd_DataMapNodeOfPersistentTransientMap *anItem);
+		%feature("autodoc", "1");
 		Handle_PTColStd_DataMapNodeOfPersistentTransientMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent &aHandle);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
+		%feature("autodoc", "1");
+		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent *anItem);
 		%feature("autodoc", "1");
 		Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -267,6 +284,8 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		PTColStd_DoubleMapOfTransientPersistent & Assign(const PTColStd_DoubleMapOfTransientPersistent &Other);
 		%feature("autodoc", "1");
+		PTColStd_DoubleMapOfTransientPersistent & operator=(const PTColStd_DoubleMapOfTransientPersistent &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -304,6 +323,8 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		PTColStd_PersistentTransientMap & Assign(const PTColStd_PersistentTransientMap &Other);
 		%feature("autodoc", "1");
+		PTColStd_PersistentTransientMap & operator=(const PTColStd_PersistentTransientMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -338,6 +359,8 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 		PTColStd_TransientPersistentMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		PTColStd_TransientPersistentMap & Assign(const PTColStd_TransientPersistentMap &Other);
+		%feature("autodoc", "1");
+		PTColStd_TransientPersistentMap & operator=(const PTColStd_TransientPersistentMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

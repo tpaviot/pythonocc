@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepOffsetAPI_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal & operator=(const BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -334,6 +351,8 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepOffsetAPI_SequenceOfSequenceOfReal & Assign(const BRepOffsetAPI_SequenceOfSequenceOfReal &Other);
+		%feature("autodoc", "1");
+		const BRepOffsetAPI_SequenceOfSequenceOfReal & operator=(const BRepOffsetAPI_SequenceOfSequenceOfReal &Other);
 		%feature("autodoc", "1");
 		void Append(const TColStd_SequenceOfReal &T);
 		%feature("autodoc", "1");
@@ -522,6 +541,8 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepOffsetAPI_SequenceOfSequenceOfShape & Assign(const BRepOffsetAPI_SequenceOfSequenceOfShape &Other);
+		%feature("autodoc", "1");
+		const BRepOffsetAPI_SequenceOfSequenceOfShape & operator=(const BRepOffsetAPI_SequenceOfSequenceOfShape &Other);
 		%feature("autodoc", "1");
 		void Append(const TopTools_SequenceOfShape &T);
 		%feature("autodoc", "1");
@@ -807,6 +828,8 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		BRepOffsetAPI_DataMapOfShapeSequenceOfShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		BRepOffsetAPI_DataMapOfShapeSequenceOfShape & Assign(const BRepOffsetAPI_DataMapOfShapeSequenceOfShape &Other);
+		%feature("autodoc", "1");
+		BRepOffsetAPI_DataMapOfShapeSequenceOfShape & operator=(const BRepOffsetAPI_DataMapOfShapeSequenceOfShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

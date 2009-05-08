@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StdDrivers_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Document
 		Handle_StdDrivers_DocumentRetrievalDriver(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentRetrievalDriver(const StdDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const StdDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 		Handle_StdDrivers_DocumentStorageDriver(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentStorageDriver(const StdDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver & operator=(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver & operator=(const StdDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_StdDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepExtrema_dependencies.i
 
@@ -131,6 +136,10 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -158,6 +167,10 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape(const BRepExtrema_UnCompatibleShape *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepExtrema_UnCompatibleShape & operator=(const Handle_BRepExtrema_UnCompatibleShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_UnCompatibleShape & operator=(const BRepExtrema_UnCompatibleShape *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepExtrema_UnCompatibleShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -183,6 +196,8 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepExtrema_SeqOfSolution & Assign(const BRepExtrema_SeqOfSolution &Other);
+		%feature("autodoc", "1");
+		const BRepExtrema_SeqOfSolution & operator=(const BRepExtrema_SeqOfSolution &Other);
 		%feature("autodoc", "1");
 		void Append(const BRepExtrema_SolutionElem &T);
 		%feature("autodoc", "1");

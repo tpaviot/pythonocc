@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESDefs_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 		Handle_IGESDefs_Protocol(const Handle_IGESDefs_Protocol &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_Protocol(const IGESDefs_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol & operator=(const Handle_IGESDefs_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol & operator=(const IGESDefs_Protocol *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_GeneralModule(const IGESDefs_GeneralModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_GeneralModule & operator=(const Handle_IGESDefs_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_GeneralModule & operator=(const IGESDefs_GeneralModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 		Handle_IGESDefs_SpecificModule(const Handle_IGESDefs_SpecificModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_SpecificModule(const IGESDefs_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_SpecificModule & operator=(const Handle_IGESDefs_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_SpecificModule & operator=(const IGESDefs_SpecificModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfTabularData(const IGESDefs_HArray1OfTabularData *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData & operator=(const Handle_IGESDefs_HArray1OfTabularData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfTabularData & operator=(const IGESDefs_HArray1OfTabularData *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfTabularData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 		Handle_IGESDefs_GenericData(const Handle_IGESDefs_GenericData &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_GenericData(const IGESDefs_GenericData *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_GenericData & operator=(const Handle_IGESDefs_GenericData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_GenericData & operator=(const IGESDefs_GenericData *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_GenericData const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_TabularData(const IGESDefs_TabularData *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_TabularData & operator=(const Handle_IGESDefs_TabularData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_TabularData & operator=(const IGESDefs_TabularData *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_TabularData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 		Handle_IGESDefs_AssociativityDef(const Handle_IGESDefs_AssociativityDef &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AssociativityDef(const IGESDefs_AssociativityDef *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AssociativityDef & operator=(const Handle_IGESDefs_AssociativityDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AssociativityDef & operator=(const IGESDefs_AssociativityDef *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AssociativityDef const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeTable(const IGESDefs_AttributeTable *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable & operator=(const Handle_IGESDefs_AttributeTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable & operator=(const IGESDefs_AttributeTable *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeTable const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 		Handle_IGESDefs_AttributeDef(const Handle_IGESDefs_AttributeDef &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeDef(const IGESDefs_AttributeDef *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeDef & operator=(const Handle_IGESDefs_AttributeDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeDef & operator=(const IGESDefs_AttributeDef *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_AttributeDef const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_UnitsData(const IGESDefs_UnitsData *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_UnitsData & operator=(const Handle_IGESDefs_UnitsData &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_UnitsData & operator=(const IGESDefs_UnitsData *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_UnitsData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 		%feature("autodoc", "1");
 		Handle_IGESDefs_ReadWriteModule(const IGESDefs_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESDefs_ReadWriteModule & operator=(const Handle_IGESDefs_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_ReadWriteModule & operator=(const IGESDefs_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESDefs_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 		Handle_IGESDefs_MacroDef(const Handle_IGESDefs_MacroDef &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_MacroDef(const IGESDefs_MacroDef *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_MacroDef & operator=(const Handle_IGESDefs_MacroDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_MacroDef & operator=(const IGESDefs_MacroDef *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESDefs_MacroDef const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1166,6 +1223,8 @@ class IGESDefs_Array1OfTabularData {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESDefs_Array1OfTabularData & Assign(const IGESDefs_Array1OfTabularData &Other);
+		%feature("autodoc", "1");
+		const IGESDefs_Array1OfTabularData & operator=(const IGESDefs_Array1OfTabularData &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Adaptor2d_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 		Handle_Adaptor2d_HCurve2d(const Handle_Adaptor2d_HCurve2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d(const Adaptor2d_HCurve2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d & operator=(const Handle_Adaptor2d_HCurve2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d & operator=(const Adaptor2d_HCurve2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 		Handle_Adaptor2d_HLine2d(const Handle_Adaptor2d_HLine2d &aHandle);
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HLine2d(const Adaptor2d_HLine2d *anItem);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HLine2d & operator=(const Handle_Adaptor2d_HLine2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HLine2d & operator=(const Adaptor2d_HLine2d *anItem);
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HLine2d const DownCast(const Handle_Standard_Transient &AnObject);
 

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include gp_dependencies.i
 
@@ -137,6 +142,10 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 		Handle_gp_VectorWithNullMagnitude(const Handle_gp_VectorWithNullMagnitude &aHandle);
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude(const gp_VectorWithNullMagnitude *anItem);
+		%feature("autodoc", "1");
+		Handle_gp_VectorWithNullMagnitude & operator=(const Handle_gp_VectorWithNullMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_gp_VectorWithNullMagnitude & operator=(const gp_VectorWithNullMagnitude *anItem);
 		%feature("autodoc", "1");
 		Handle_gp_VectorWithNullMagnitude const DownCast(const Handle_Standard_Transient &AnObject);
 

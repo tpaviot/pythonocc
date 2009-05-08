@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AppStdL_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_AppStdL_Application : public Handle_TDocStd_Application {
 		Handle_AppStdL_Application(const Handle_AppStdL_Application &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppStdL_Application(const AppStdL_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_AppStdL_Application & operator=(const Handle_AppStdL_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppStdL_Application & operator=(const AppStdL_Application *anItem);
 		%feature("autodoc", "1");
 		Handle_AppStdL_Application const DownCast(const Handle_Standard_Transient &AnObject);
 

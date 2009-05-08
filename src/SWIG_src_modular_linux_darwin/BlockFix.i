@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BlockFix_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 		Handle_BlockFix_PeriodicSurfaceModifier(const Handle_BlockFix_PeriodicSurfaceModifier &aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier(const BlockFix_PeriodicSurfaceModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const Handle_BlockFix_PeriodicSurfaceModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_PeriodicSurfaceModifier & operator=(const BlockFix_PeriodicSurfaceModifier *anItem);
 		%feature("autodoc", "1");
 		Handle_BlockFix_PeriodicSurfaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI(const BlockFix_BlockFixAPI *anItem);
 		%feature("autodoc", "1");
+		Handle_BlockFix_BlockFixAPI & operator=(const Handle_BlockFix_BlockFixAPI &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_BlockFixAPI & operator=(const BlockFix_BlockFixAPI *anItem);
+		%feature("autodoc", "1");
 		Handle_BlockFix_BlockFixAPI const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 		Handle_BlockFix_SphereSpaceModifier(const Handle_BlockFix_SphereSpaceModifier &aHandle);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier(const BlockFix_SphereSpaceModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_BlockFix_SphereSpaceModifier & operator=(const Handle_BlockFix_SphereSpaceModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_BlockFix_SphereSpaceModifier & operator=(const BlockFix_SphereSpaceModifier *anItem);
 		%feature("autodoc", "1");
 		Handle_BlockFix_SphereSpaceModifier const DownCast(const Handle_Standard_Transient &AnObject);
 

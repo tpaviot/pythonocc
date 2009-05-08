@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TCollection_dependencies.i
 
@@ -134,6 +139,10 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode(const TCollection_SeqNode *anItem);
 		%feature("autodoc", "1");
+		Handle_TCollection_SeqNode & operator=(const Handle_TCollection_SeqNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_SeqNode & operator=(const TCollection_SeqNode *anItem);
+		%feature("autodoc", "1");
 		Handle_TCollection_SeqNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -159,6 +168,10 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 		Handle_TCollection_HAsciiString(const Handle_TCollection_HAsciiString &aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString(const TCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & operator=(const Handle_TCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & operator=(const TCollection_HAsciiString *anItem);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -186,6 +199,10 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString(const TCollection_HExtendedString *anItem);
 		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString & operator=(const Handle_TCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString & operator=(const TCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -212,6 +229,10 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode(const TCollection_AVLBaseNode *anItem);
 		%feature("autodoc", "1");
+		Handle_TCollection_AVLBaseNode & operator=(const Handle_TCollection_AVLBaseNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_AVLBaseNode & operator=(const TCollection_AVLBaseNode *anItem);
+		%feature("autodoc", "1");
 		Handle_TCollection_AVLBaseNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -237,6 +258,10 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 		Handle_TCollection_MapNode(const Handle_TCollection_MapNode &aHandle);
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode(const TCollection_MapNode *anItem);
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode & operator=(const Handle_TCollection_MapNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_TCollection_MapNode & operator=(const TCollection_MapNode *anItem);
 		%feature("autodoc", "1");
 		Handle_TCollection_MapNode const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -332,7 +357,11 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		void Copy(const char * fromwhere);
 		%feature("autodoc", "1");
+		void operator=(const char * fromwhere);
+		%feature("autodoc", "1");
 		void Copy(const TCollection_AsciiString &fromwhere);
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &fromwhere);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -669,6 +698,8 @@ class TCollection_ExtendedString {
 		void Clear();
 		%feature("autodoc", "1");
 		void Copy(const TCollection_ExtendedString &fromwhere);
+		%feature("autodoc", "1");
+		void operator=(const TCollection_ExtendedString &fromwhere);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");

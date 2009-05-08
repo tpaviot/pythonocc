@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include APIHeaderSection_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 		Handle_APIHeaderSection_EditHeader(const Handle_APIHeaderSection_EditHeader &aHandle);
 		%feature("autodoc", "1");
 		Handle_APIHeaderSection_EditHeader(const APIHeaderSection_EditHeader *anItem);
+		%feature("autodoc", "1");
+		Handle_APIHeaderSection_EditHeader & operator=(const Handle_APIHeaderSection_EditHeader &aHandle);
+		%feature("autodoc", "1");
+		Handle_APIHeaderSection_EditHeader & operator=(const APIHeaderSection_EditHeader *anItem);
 		%feature("autodoc", "1");
 		Handle_APIHeaderSection_EditHeader const DownCast(const Handle_Standard_Transient &AnObject);
 

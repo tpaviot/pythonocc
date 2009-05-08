@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Resource_dependencies.i
 
@@ -132,6 +137,10 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString *anItem);
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -159,6 +168,10 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
 		%feature("autodoc", "1");
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString *anItem);
+		%feature("autodoc", "1");
 		Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -184,6 +197,10 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 		Handle_Resource_NoSuchResource(const Handle_Resource_NoSuchResource &aHandle);
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource(const Resource_NoSuchResource *anItem);
+		%feature("autodoc", "1");
+		Handle_Resource_NoSuchResource & operator=(const Handle_Resource_NoSuchResource &aHandle);
+		%feature("autodoc", "1");
+		Handle_Resource_NoSuchResource & operator=(const Resource_NoSuchResource *anItem);
 		%feature("autodoc", "1");
 		Handle_Resource_NoSuchResource const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -211,6 +228,10 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Resource_Manager(const Resource_Manager *anItem);
 		%feature("autodoc", "1");
+		Handle_Resource_Manager & operator=(const Handle_Resource_Manager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Resource_Manager & operator=(const Resource_Manager *anItem);
+		%feature("autodoc", "1");
 		Handle_Resource_Manager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -234,6 +255,8 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		Resource_DataMapOfAsciiStringAsciiString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Resource_DataMapOfAsciiStringAsciiString & Assign(const Resource_DataMapOfAsciiStringAsciiString &Other);
+		%feature("autodoc", "1");
+		Resource_DataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapOfAsciiStringAsciiString &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -277,6 +300,8 @@ class Resource_Array1OfAsciiString {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Resource_Array1OfAsciiString & Assign(const Resource_Array1OfAsciiString &Other);
+		%feature("autodoc", "1");
+		const Resource_Array1OfAsciiString & operator=(const Resource_Array1OfAsciiString &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -554,6 +579,8 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		Resource_DataMapOfAsciiStringExtendedString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		Resource_DataMapOfAsciiStringExtendedString & Assign(const Resource_DataMapOfAsciiStringExtendedString &Other);
+		%feature("autodoc", "1");
+		Resource_DataMapOfAsciiStringExtendedString & operator=(const Resource_DataMapOfAsciiStringExtendedString &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

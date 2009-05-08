@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TColQuantity_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 		Handle_TColQuantity_HArray1OfLength(const Handle_TColQuantity_HArray1OfLength &aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength(const TColQuantity_HArray1OfLength *anItem);
+		%feature("autodoc", "1");
+		Handle_TColQuantity_HArray1OfLength & operator=(const Handle_TColQuantity_HArray1OfLength &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColQuantity_HArray1OfLength & operator=(const TColQuantity_HArray1OfLength *anItem);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray1OfLength const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 		Handle_TColQuantity_HArray2OfLength(const Handle_TColQuantity_HArray2OfLength &aHandle);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength(const TColQuantity_HArray2OfLength *anItem);
+		%feature("autodoc", "1");
+		Handle_TColQuantity_HArray2OfLength & operator=(const Handle_TColQuantity_HArray2OfLength &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColQuantity_HArray2OfLength & operator=(const TColQuantity_HArray2OfLength *anItem);
 		%feature("autodoc", "1");
 		Handle_TColQuantity_HArray2OfLength const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -183,6 +196,8 @@ class TColQuantity_Array1OfLength {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TColQuantity_Array1OfLength & Assign(const TColQuantity_Array1OfLength &Other);
+		%feature("autodoc", "1");
+		const TColQuantity_Array1OfLength & operator=(const TColQuantity_Array1OfLength &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -222,6 +237,8 @@ class TColQuantity_Array2OfLength {
 		void Destroy();
 		%feature("autodoc", "1");
 		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
+		%feature("autodoc", "1");
+		const TColQuantity_Array2OfLength & operator=(const TColQuantity_Array2OfLength &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");

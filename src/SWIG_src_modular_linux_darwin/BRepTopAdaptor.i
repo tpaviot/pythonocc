@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include BRepTopAdaptor_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 		Handle_BRepTopAdaptor_TopolTool(const Handle_BRepTopAdaptor_TopolTool &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool(const BRepTopAdaptor_TopolTool *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool & operator=(const Handle_BRepTopAdaptor_TopolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex(const BRepTopAdaptor_HVertex *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_HVertex & operator=(const Handle_BRepTopAdaptor_HVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_HVertex & operator=(const BRepTopAdaptor_HVertex *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_HVertex const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
 		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr & operator=(const BRepTopAdaptor_SequenceNodeOfSeqOfPtr *anItem);
+		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -297,6 +318,8 @@ class BRepTopAdaptor_FClass2d {
 		void Destroy();
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_FClass2d & Copy(const BRepTopAdaptor_FClass2d &Other) const;
+		%feature("autodoc", "1");
+		const BRepTopAdaptor_FClass2d & operator=(const BRepTopAdaptor_FClass2d &Other) const;
 		%feature("autodoc", "1");
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 
@@ -431,6 +454,8 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		BRepTopAdaptor_MapOfShapeTool & Assign(const BRepTopAdaptor_MapOfShapeTool &Other);
 		%feature("autodoc", "1");
+		BRepTopAdaptor_MapOfShapeTool & operator=(const BRepTopAdaptor_MapOfShapeTool &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -467,6 +492,8 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const BRepTopAdaptor_SeqOfPtr & Assign(const BRepTopAdaptor_SeqOfPtr &Other);
+		%feature("autodoc", "1");
+		const BRepTopAdaptor_SeqOfPtr & operator=(const BRepTopAdaptor_SeqOfPtr &Other);
 		%feature("autodoc", "1");
 		void Append(const Standard_Address &T);
 		%feature("autodoc", "1");

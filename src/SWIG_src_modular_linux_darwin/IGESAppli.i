@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESAppli_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_PinNumber(const Handle_IGESAppli_PinNumber &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PinNumber(const IGESAppli_PinNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber & operator=(const Handle_IGESAppli_PinNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PinNumber & operator=(const IGESAppli_PinNumber *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PinNumber const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ReadWriteModule(const IGESAppli_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_ReadWriteModule & operator=(const Handle_IGESAppli_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_ReadWriteModule & operator=(const IGESAppli_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_FiniteElement(const Handle_IGESAppli_FiniteElement &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FiniteElement(const IGESAppli_FiniteElement *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_FiniteElement & operator=(const Handle_IGESAppli_FiniteElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_FiniteElement & operator=(const IGESAppli_FiniteElement *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FiniteElement const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Protocol(const IGESAppli_Protocol *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_Protocol & operator=(const Handle_IGESAppli_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Protocol & operator=(const IGESAppli_Protocol *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_LevelToPWBLayerMap(const Handle_IGESAppli_LevelToPWBLayerMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelToPWBLayerMap(const IGESAppli_LevelToPWBLayerMap *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap & operator=(const Handle_IGESAppli_LevelToPWBLayerMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelToPWBLayerMap & operator=(const IGESAppli_LevelToPWBLayerMap *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelToPWBLayerMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LineWidening(const IGESAppli_LineWidening *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_LineWidening & operator=(const Handle_IGESAppli_LineWidening &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LineWidening & operator=(const IGESAppli_LineWidening *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_LineWidening const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_Node(const Handle_IGESAppli_Node &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Node(const IGESAppli_Node *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Node & operator=(const Handle_IGESAppli_Node &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Node & operator=(const IGESAppli_Node *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Node const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ElementResults(const IGESAppli_ElementResults *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_ElementResults & operator=(const Handle_IGESAppli_ElementResults &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_ElementResults & operator=(const IGESAppli_ElementResults *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_ElementResults const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_LevelFunction(const Handle_IGESAppli_LevelFunction &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelFunction(const IGESAppli_LevelFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelFunction & operator=(const Handle_IGESAppli_LevelFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_LevelFunction & operator=(const IGESAppli_LevelFunction *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_LevelFunction const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBArtworkStackup(const IGESAppli_PWBArtworkStackup *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBArtworkStackup & operator=(const Handle_IGESAppli_PWBArtworkStackup &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBArtworkStackup & operator=(const IGESAppli_PWBArtworkStackup *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBArtworkStackup const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_DrilledHole(const Handle_IGESAppli_DrilledHole &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_DrilledHole(const IGESAppli_DrilledHole *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole & operator=(const Handle_IGESAppli_DrilledHole &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_DrilledHole & operator=(const IGESAppli_DrilledHole *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_DrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_RegionRestriction(const IGESAppli_RegionRestriction *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction & operator=(const Handle_IGESAppli_RegionRestriction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_RegionRestriction & operator=(const IGESAppli_RegionRestriction *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_RegionRestriction const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_NodalConstraint(const Handle_IGESAppli_NodalConstraint &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalConstraint(const IGESAppli_NodalConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalConstraint & operator=(const Handle_IGESAppli_NodalConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalConstraint & operator=(const IGESAppli_NodalConstraint *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalConstraint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalDisplAndRot(const IGESAppli_NodalDisplAndRot *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot & operator=(const Handle_IGESAppli_NodalDisplAndRot &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalDisplAndRot & operator=(const IGESAppli_NodalDisplAndRot *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalDisplAndRot const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_PWBDrilledHole(const Handle_IGESAppli_PWBDrilledHole &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBDrilledHole(const IGESAppli_PWBDrilledHole *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole & operator=(const Handle_IGESAppli_PWBDrilledHole &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PWBDrilledHole & operator=(const IGESAppli_PWBDrilledHole *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PWBDrilledHole const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_ReferenceDesignator(const IGESAppli_ReferenceDesignator *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_ReferenceDesignator & operator=(const Handle_IGESAppli_ReferenceDesignator &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_ReferenceDesignator & operator=(const IGESAppli_ReferenceDesignator *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_ReferenceDesignator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_FlowLineSpec(const Handle_IGESAppli_FlowLineSpec &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FlowLineSpec(const IGESAppli_FlowLineSpec *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_FlowLineSpec & operator=(const Handle_IGESAppli_FlowLineSpec &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_FlowLineSpec & operator=(const IGESAppli_FlowLineSpec *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_FlowLineSpec const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfNode(const IGESAppli_HArray1OfNode *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfNode & operator=(const Handle_IGESAppli_HArray1OfNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfNode & operator=(const IGESAppli_HArray1OfNode *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfNode const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_PipingFlow(const Handle_IGESAppli_PipingFlow &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PipingFlow(const IGESAppli_PipingFlow *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow & operator=(const Handle_IGESAppli_PipingFlow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PipingFlow & operator=(const IGESAppli_PipingFlow *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PipingFlow const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_PartNumber(const IGESAppli_PartNumber *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber & operator=(const Handle_IGESAppli_PartNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_PartNumber & operator=(const IGESAppli_PartNumber *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_PartNumber const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 		Handle_IGESAppli_HArray1OfFlow(const Handle_IGESAppli_HArray1OfFlow &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFlow(const IGESAppli_HArray1OfFlow *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfFlow & operator=(const Handle_IGESAppli_HArray1OfFlow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfFlow & operator=(const IGESAppli_HArray1OfFlow *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFlow const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFiniteElement(const IGESAppli_HArray1OfFiniteElement *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfFiniteElement & operator=(const Handle_IGESAppli_HArray1OfFiniteElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_HArray1OfFiniteElement & operator=(const IGESAppli_HArray1OfFiniteElement *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_HArray1OfFiniteElement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 		Handle_IGESAppli_Flow(const Handle_IGESAppli_Flow &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Flow(const IGESAppli_Flow *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Flow & operator=(const Handle_IGESAppli_Flow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_Flow & operator=(const IGESAppli_Flow *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_Flow const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_GeneralModule(const IGESAppli_GeneralModule *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule & operator=(const Handle_IGESAppli_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_GeneralModule & operator=(const IGESAppli_GeneralModule *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -750,6 +851,10 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalResults(const IGESAppli_NodalResults *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalResults & operator=(const Handle_IGESAppli_NodalResults &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_NodalResults & operator=(const IGESAppli_NodalResults *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESAppli_NodalResults const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -775,6 +880,10 @@ class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 		Handle_IGESAppli_SpecificModule(const Handle_IGESAppli_SpecificModule &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_SpecificModule(const IGESAppli_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule & operator=(const Handle_IGESAppli_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESAppli_SpecificModule & operator=(const IGESAppli_SpecificModule *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESAppli_SpecificModule const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -840,6 +949,8 @@ class IGESAppli_Array1OfFlow {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESAppli_Array1OfFlow & Assign(const IGESAppli_Array1OfFlow &Other);
+		%feature("autodoc", "1");
+		const IGESAppli_Array1OfFlow & operator=(const IGESAppli_Array1OfFlow &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1268,6 +1379,8 @@ class IGESAppli_Array1OfNode {
 		%feature("autodoc", "1");
 		const IGESAppli_Array1OfNode & Assign(const IGESAppli_Array1OfNode &Other);
 		%feature("autodoc", "1");
+		const IGESAppli_Array1OfNode & operator=(const IGESAppli_Array1OfNode &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1665,6 +1778,8 @@ class IGESAppli_Array1OfFiniteElement {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const IGESAppli_Array1OfFiniteElement & Assign(const IGESAppli_Array1OfFiniteElement &Other);
+		%feature("autodoc", "1");
+		const IGESAppli_Array1OfFiniteElement & operator=(const IGESAppli_Array1OfFiniteElement &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

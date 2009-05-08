@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PPrsStd_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 		Handle_PPrsStd_AISPresentation(const Handle_PPrsStd_AISPresentation &aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation(const PPrsStd_AISPresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_PPrsStd_AISPresentation & operator=(const Handle_PPrsStd_AISPresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPrsStd_AISPresentation & operator=(const PPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 		Handle_PPrsStd_AISPresentation_1(const Handle_PPrsStd_AISPresentation_1 &aHandle);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1(const PPrsStd_AISPresentation_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PPrsStd_AISPresentation_1 & operator=(const Handle_PPrsStd_AISPresentation_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPrsStd_AISPresentation_1 & operator=(const PPrsStd_AISPresentation_1 *anItem);
 		%feature("autodoc", "1");
 		Handle_PPrsStd_AISPresentation_1 const DownCast(const Handle_Standard_Persistent &AnObject);
 

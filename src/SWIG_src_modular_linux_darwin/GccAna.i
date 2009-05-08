@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include GccAna_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 		Handle_GccAna_NoSolution(const Handle_GccAna_NoSolution &aHandle);
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution(const GccAna_NoSolution *anItem);
+		%feature("autodoc", "1");
+		Handle_GccAna_NoSolution & operator=(const Handle_GccAna_NoSolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_GccAna_NoSolution & operator=(const GccAna_NoSolution *anItem);
 		%feature("autodoc", "1");
 		Handle_GccAna_NoSolution const DownCast(const Handle_Standard_Transient &AnObject);
 

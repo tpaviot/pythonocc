@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include FEmTool_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 		Handle_FEmTool_ElementaryCriterion(const Handle_FEmTool_ElementaryCriterion &aHandle);
 		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion(const FEmTool_ElementaryCriterion *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ElementaryCriterion & operator=(const Handle_FEmTool_ElementaryCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ElementaryCriterion & operator=(const FEmTool_ElementaryCriterion *anItem);
 		%feature("autodoc", "1");
 		Handle_FEmTool_ElementaryCriterion const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearFlexion(const FEmTool_LinearFlexion *anItem);
 		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion & operator=(const Handle_FEmTool_LinearFlexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion & operator=(const FEmTool_LinearFlexion *anItem);
+		%feature("autodoc", "1");
 		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
 		%feature("autodoc", "1");
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
 		%feature("autodoc", "1");
 		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearTension(const FEmTool_LinearTension *anItem);
 		%feature("autodoc", "1");
+		Handle_FEmTool_LinearTension & operator=(const Handle_FEmTool_LinearTension &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearTension & operator=(const FEmTool_LinearTension *anItem);
+		%feature("autodoc", "1");
 		Handle_FEmTool_LinearTension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 		Handle_FEmTool_ListNodeOfListOfVectors(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
 		%feature("autodoc", "1");
 		Handle_FEmTool_ListNodeOfListOfVectors(const FEmTool_ListNodeOfListOfVectors *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
 		%feature("autodoc", "1");
 		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 		%feature("autodoc", "1");
 		Handle_FEmTool_LinearJerk(const FEmTool_LinearJerk *anItem);
 		%feature("autodoc", "1");
+		Handle_FEmTool_LinearJerk & operator=(const Handle_FEmTool_LinearJerk &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearJerk & operator=(const FEmTool_LinearJerk *anItem);
+		%feature("autodoc", "1");
 		Handle_FEmTool_LinearJerk const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 		Handle_FEmTool_SparseMatrix(const Handle_FEmTool_SparseMatrix &aHandle);
 		%feature("autodoc", "1");
 		Handle_FEmTool_SparseMatrix(const FEmTool_SparseMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix & operator=(const Handle_FEmTool_SparseMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SparseMatrix & operator=(const FEmTool_SparseMatrix *anItem);
 		%feature("autodoc", "1");
 		Handle_FEmTool_SparseMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 		%feature("autodoc", "1");
 		Handle_FEmTool_ProfileMatrix(const FEmTool_ProfileMatrix *anItem);
 		%feature("autodoc", "1");
+		Handle_FEmTool_ProfileMatrix & operator=(const Handle_FEmTool_ProfileMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ProfileMatrix & operator=(const FEmTool_ProfileMatrix *anItem);
+		%feature("autodoc", "1");
 		Handle_FEmTool_ProfileMatrix const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -334,6 +371,10 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_FEmTool_Curve(const FEmTool_Curve *anItem);
 		%feature("autodoc", "1");
+		Handle_FEmTool_Curve & operator=(const Handle_FEmTool_Curve &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_Curve & operator=(const FEmTool_Curve *anItem);
+		%feature("autodoc", "1");
 		Handle_FEmTool_Curve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -359,6 +400,10 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 		Handle_FEmTool_HAssemblyTable(const Handle_FEmTool_HAssemblyTable &aHandle);
 		%feature("autodoc", "1");
 		Handle_FEmTool_HAssemblyTable(const FEmTool_HAssemblyTable *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_HAssemblyTable & operator=(const Handle_FEmTool_HAssemblyTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_HAssemblyTable & operator=(const FEmTool_HAssemblyTable *anItem);
 		%feature("autodoc", "1");
 		Handle_FEmTool_HAssemblyTable const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -734,6 +779,8 @@ class FEmTool_ListOfVectors {
 		%feature("autodoc", "1");
 		void Assign(const FEmTool_ListOfVectors &Other);
 		%feature("autodoc", "1");
+		void operator=(const FEmTool_ListOfVectors &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -844,6 +891,8 @@ class FEmTool_AssemblyTable {
 		%feature("autodoc", "1");
 		const FEmTool_AssemblyTable & Assign(const FEmTool_AssemblyTable &Other);
 		%feature("autodoc", "1");
+		const FEmTool_AssemblyTable & operator=(const FEmTool_AssemblyTable &Other);
+		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
 		Standard_Integer RowLength() const;
@@ -940,6 +989,8 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const FEmTool_SeqOfLinConstr & Assign(const FEmTool_SeqOfLinConstr &Other);
+		%feature("autodoc", "1");
+		const FEmTool_SeqOfLinConstr & operator=(const FEmTool_SeqOfLinConstr &Other);
 		%feature("autodoc", "1");
 		void Append(const FEmTool_ListOfVectors &T);
 		%feature("autodoc", "1");

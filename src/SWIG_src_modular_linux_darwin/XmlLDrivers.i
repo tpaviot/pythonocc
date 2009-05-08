@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XmlLDrivers_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 		Handle_XmlLDrivers_DocumentStorageDriver(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver(const XmlLDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const Handle_XmlLDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentStorageDriver & operator=(const XmlLDrivers_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
 		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef & operator=(const XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef *anItem);
+		%feature("autodoc", "1");
 		Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 		Handle_XmlLDrivers_DocumentRetrievalDriver(const Handle_XmlLDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver(const XmlLDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlLDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlLDrivers_DocumentRetrievalDriver & operator=(const XmlLDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_XmlLDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -275,6 +292,8 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const XmlLDrivers_SequenceOfNamespaceDef & Assign(const XmlLDrivers_SequenceOfNamespaceDef &Other);
+		%feature("autodoc", "1");
+		const XmlLDrivers_SequenceOfNamespaceDef & operator=(const XmlLDrivers_SequenceOfNamespaceDef &Other);
 		%feature("autodoc", "1");
 		void Append(const XmlLDrivers_NamespaceDef &T);
 		%feature("autodoc", "1");

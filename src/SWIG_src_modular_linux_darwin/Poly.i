@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Poly_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 		Handle_Poly_PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation(const Poly_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_PolygonOnTriangulation & operator=(const Handle_Poly_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_PolygonOnTriangulation & operator=(const Poly_PolygonOnTriangulation *anItem);
 		%feature("autodoc", "1");
 		Handle_Poly_PolygonOnTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle(const Poly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle & operator=(const Handle_Poly_HArray1OfTriangle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_HArray1OfTriangle & operator=(const Poly_HArray1OfTriangle *anItem);
+		%feature("autodoc", "1");
 		Handle_Poly_HArray1OfTriangle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 		Handle_Poly_Polygon2D(const Handle_Poly_Polygon2D &aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D(const Poly_Polygon2D *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon2D & operator=(const Handle_Poly_Polygon2D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon2D & operator=(const Poly_Polygon2D *anItem);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Poly_Triangulation(const Poly_Triangulation *anItem);
 		%feature("autodoc", "1");
+		Handle_Poly_Triangulation & operator=(const Handle_Poly_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Triangulation & operator=(const Poly_Triangulation *anItem);
+		%feature("autodoc", "1");
 		Handle_Poly_Triangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
+		Handle_Poly_CoherentTriangulation & operator=(const Handle_Poly_CoherentTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *anItem);
+		%feature("autodoc", "1");
 		Handle_Poly_CoherentTriangulation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -255,6 +280,10 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon3D const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -407,6 +436,8 @@ class Poly_Array1OfTriangle {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Poly_Array1OfTriangle & Assign(const Poly_Array1OfTriangle &Other);
+		%feature("autodoc", "1");
+		const Poly_Array1OfTriangle & operator=(const Poly_Array1OfTriangle &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

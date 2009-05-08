@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include HatchGen_dependencies.i
 
@@ -141,6 +146,10 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains(const HatchGen_SequenceNodeOfDomains *anItem);
 		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains & operator=(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains & operator=(const HatchGen_SequenceNodeOfDomains *anItem);
+		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfDomains const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -167,6 +176,10 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnElement(const HatchGen_SequenceNodeOfPointsOnElement *anItem);
 		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfPointsOnElement & operator=(const Handle_HatchGen_SequenceNodeOfPointsOnElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfPointsOnElement & operator=(const HatchGen_SequenceNodeOfPointsOnElement *anItem);
+		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnElement const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -192,6 +205,10 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching(const Handle_HatchGen_SequenceNodeOfPointsOnHatching &aHandle);
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching(const HatchGen_SequenceNodeOfPointsOnHatching *anItem);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfPointsOnHatching & operator=(const Handle_HatchGen_SequenceNodeOfPointsOnHatching &aHandle);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfPointsOnHatching & operator=(const HatchGen_SequenceNodeOfPointsOnHatching *anItem);
 		%feature("autodoc", "1");
 		Handle_HatchGen_SequenceNodeOfPointsOnHatching const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -288,6 +305,8 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const HatchGen_PointsOnHatching & Assign(const HatchGen_PointsOnHatching &Other);
+		%feature("autodoc", "1");
+		const HatchGen_PointsOnHatching & operator=(const HatchGen_PointsOnHatching &Other);
 		%feature("autodoc", "1");
 		void Append(const HatchGen_PointOnHatching &T);
 		%feature("autodoc", "1");
@@ -423,6 +442,8 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const HatchGen_PointsOnElement & Assign(const HatchGen_PointsOnElement &Other);
+		%feature("autodoc", "1");
+		const HatchGen_PointsOnElement & operator=(const HatchGen_PointsOnElement &Other);
 		%feature("autodoc", "1");
 		void Append(const HatchGen_PointOnElement &T);
 		%feature("autodoc", "1");
@@ -565,6 +586,8 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const HatchGen_Domains & Assign(const HatchGen_Domains &Other);
+		%feature("autodoc", "1");
+		const HatchGen_Domains & operator=(const HatchGen_Domains &Other);
 		%feature("autodoc", "1");
 		void Append(const HatchGen_Domain &T);
 		%feature("autodoc", "1");

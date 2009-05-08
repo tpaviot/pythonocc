@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AppParCurves_dependencies.i
 
@@ -132,6 +137,10 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 		Handle_AppParCurves_HArray1OfMultiCurve(const Handle_AppParCurves_HArray1OfMultiCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve(const AppParCurves_HArray1OfMultiCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const Handle_AppParCurves_HArray1OfMultiCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiCurve & operator=(const AppParCurves_HArray1OfMultiCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -159,6 +168,10 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -184,6 +197,10 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SmoothCriterion const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -211,6 +228,10 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint(const AppParCurves_HArray1OfMultiPoint *anItem);
 		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const Handle_AppParCurves_HArray1OfMultiPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiPoint & operator=(const AppParCurves_HArray1OfMultiPoint *anItem);
+		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -236,6 +257,10 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve & operator=(const AppParCurves_SequenceNodeOfSequenceOfMultiCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -263,6 +288,10 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple(const AppParCurves_HArray1OfConstraintCouple *anItem);
 		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const Handle_AppParCurves_HArray1OfConstraintCouple &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfConstraintCouple & operator=(const AppParCurves_HArray1OfConstraintCouple *anItem);
+		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfConstraintCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -289,6 +318,10 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_AppParCurves_HArray1OfMultiBSpCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -314,6 +347,8 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiCurve & Assign(const AppParCurves_SequenceOfMultiCurve &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_SequenceOfMultiCurve & operator=(const AppParCurves_SequenceOfMultiCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const AppParCurves_MultiCurve &T);
 		%feature("autodoc", "1");
@@ -477,6 +512,8 @@ class AppParCurves_Array1OfMultiCurve {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiCurve & Assign(const AppParCurves_Array1OfMultiCurve &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiCurve & operator=(const AppParCurves_Array1OfMultiCurve &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -727,6 +764,8 @@ class AppParCurves_Array1OfConstraintCouple {
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfConstraintCouple & Assign(const AppParCurves_Array1OfConstraintCouple &Other);
 		%feature("autodoc", "1");
+		const AppParCurves_Array1OfConstraintCouple & operator=(const AppParCurves_Array1OfConstraintCouple &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -761,6 +800,8 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AppParCurves_SequenceOfMultiBSpCurve & Assign(const AppParCurves_SequenceOfMultiBSpCurve &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_SequenceOfMultiBSpCurve & operator=(const AppParCurves_SequenceOfMultiBSpCurve &Other);
 		%feature("autodoc", "1");
 		void Append(const AppParCurves_MultiBSpCurve &T);
 		%feature("autodoc", "1");
@@ -851,6 +892,8 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiBSpCurve & Assign(const AppParCurves_Array1OfMultiBSpCurve &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiBSpCurve & operator=(const AppParCurves_Array1OfMultiBSpCurve &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1056,6 +1099,8 @@ class AppParCurves_Array1OfMultiPoint {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & operator=(const AppParCurves_Array1OfMultiPoint &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Blend_dependencies.i
 
@@ -143,6 +148,10 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Handle_Blend_SequenceNodeOfSequenceOfPoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint(const Blend_SequenceNodeOfSequenceOfPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Handle_Blend_SequenceNodeOfSequenceOfPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Blend_SequenceNodeOfSequenceOfPoint & operator=(const Blend_SequenceNodeOfSequenceOfPoint *anItem);
 		%feature("autodoc", "1");
 		Handle_Blend_SequenceNodeOfSequenceOfPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -447,6 +456,8 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const Blend_SequenceOfPoint & Assign(const Blend_SequenceOfPoint &Other);
+		%feature("autodoc", "1");
+		const Blend_SequenceOfPoint & operator=(const Blend_SequenceOfPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const Blend_Point &T);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include XCAFApp_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_XCAFApp_Application : public Handle_TDocStd_Application {
 		Handle_XCAFApp_Application(const Handle_XCAFApp_Application &aHandle);
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application(const XCAFApp_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFApp_Application & operator=(const Handle_XCAFApp_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFApp_Application & operator=(const XCAFApp_Application *anItem);
 		%feature("autodoc", "1");
 		Handle_XCAFApp_Application const DownCast(const Handle_Standard_Transient &AnObject);
 

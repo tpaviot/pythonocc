@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeExtend_dependencies.i
 
@@ -154,6 +159,10 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator(const ShapeExtend_BasicMsgRegistrator *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const Handle_ShapeExtend_BasicMsgRegistrator &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_BasicMsgRegistrator & operator=(const ShapeExtend_BasicMsgRegistrator *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeExtend_BasicMsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -179,6 +188,10 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 		Handle_ShapeExtend_MsgRegistrator(const Handle_ShapeExtend_MsgRegistrator &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator(const ShapeExtend_MsgRegistrator *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_MsgRegistrator & operator=(const Handle_ShapeExtend_MsgRegistrator &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_MsgRegistrator & operator=(const ShapeExtend_MsgRegistrator *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_MsgRegistrator const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -206,6 +219,10 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -231,6 +248,10 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 		Handle_ShapeExtend_ComplexCurve(const Handle_ShapeExtend_ComplexCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve(const ShapeExtend_ComplexCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_ComplexCurve & operator=(const Handle_ShapeExtend_ComplexCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_ComplexCurve & operator=(const ShapeExtend_ComplexCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_ComplexCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -258,6 +279,10 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData(const ShapeExtend_WireData *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeExtend_WireData & operator=(const Handle_ShapeExtend_WireData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_WireData & operator=(const ShapeExtend_WireData *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeExtend_WireData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -284,6 +309,10 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_ShapeExtend_CompositeSurface & operator=(const Handle_ShapeExtend_CompositeSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_ShapeExtend_CompositeSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -309,6 +338,10 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -437,6 +470,8 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		ShapeExtend_DataMapOfShapeListOfMsg(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		ShapeExtend_DataMapOfShapeListOfMsg & Assign(const ShapeExtend_DataMapOfShapeListOfMsg &Other);
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapOfShapeListOfMsg &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -733,6 +768,8 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		ShapeExtend_DataMapOfTransientListOfMsg(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		ShapeExtend_DataMapOfTransientListOfMsg & Assign(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

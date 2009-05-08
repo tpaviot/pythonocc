@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TransferBRep_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 		Handle_TransferBRep_BinderOfShape(const Handle_TransferBRep_BinderOfShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_BinderOfShape(const TransferBRep_BinderOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_BinderOfShape & operator=(const Handle_TransferBRep_BinderOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_BinderOfShape & operator=(const TransferBRep_BinderOfShape *anItem);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_BinderOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeBinder(const TransferBRep_ShapeBinder *anItem);
 		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeBinder & operator=(const Handle_TransferBRep_ShapeBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeBinder & operator=(const TransferBRep_ShapeBinder *anItem);
+		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeBinder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 		Handle_TransferBRep_HSequenceOfTransferResultInfo(const Handle_TransferBRep_HSequenceOfTransferResultInfo &aHandle);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_HSequenceOfTransferResultInfo(const TransferBRep_HSequenceOfTransferResultInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_HSequenceOfTransferResultInfo & operator=(const Handle_TransferBRep_HSequenceOfTransferResultInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_HSequenceOfTransferResultInfo & operator=(const TransferBRep_HSequenceOfTransferResultInfo *anItem);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_HSequenceOfTransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 		%feature("autodoc", "1");
 		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo(const TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo *anItem);
 		%feature("autodoc", "1");
+		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo & operator=(const Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo & operator=(const TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo *anItem);
+		%feature("autodoc", "1");
 		Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 		Handle_TransferBRep_ShapeListBinder(const Handle_TransferBRep_ShapeListBinder &aHandle);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeListBinder(const TransferBRep_ShapeListBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder & operator=(const Handle_TransferBRep_ShapeListBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeListBinder & operator=(const TransferBRep_ShapeListBinder *anItem);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeListBinder const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeMapper(const TransferBRep_ShapeMapper *anItem);
 		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper & operator=(const Handle_TransferBRep_ShapeMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper & operator=(const TransferBRep_ShapeMapper *anItem);
+		%feature("autodoc", "1");
 		Handle_TransferBRep_ShapeMapper const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +311,10 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 		%feature("autodoc", "1");
 		Handle_TransferBRep_OrientedShapeMapper(const TransferBRep_OrientedShapeMapper *anItem);
 		%feature("autodoc", "1");
+		Handle_TransferBRep_OrientedShapeMapper & operator=(const Handle_TransferBRep_OrientedShapeMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_OrientedShapeMapper & operator=(const TransferBRep_OrientedShapeMapper *anItem);
+		%feature("autodoc", "1");
 		Handle_TransferBRep_OrientedShapeMapper const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -307,6 +340,10 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 		Handle_TransferBRep_TransferResultInfo(const Handle_TransferBRep_TransferResultInfo &aHandle);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_TransferResultInfo(const TransferBRep_TransferResultInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_TransferResultInfo & operator=(const Handle_TransferBRep_TransferResultInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_TransferResultInfo & operator=(const TransferBRep_TransferResultInfo *anItem);
 		%feature("autodoc", "1");
 		Handle_TransferBRep_TransferResultInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -407,6 +444,8 @@ class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequenc
 		void Clear();
 		%feature("autodoc", "1");
 		const TransferBRep_SequenceOfTransferResultInfo & Assign(const TransferBRep_SequenceOfTransferResultInfo &Other);
+		%feature("autodoc", "1");
+		const TransferBRep_SequenceOfTransferResultInfo & operator=(const TransferBRep_SequenceOfTransferResultInfo &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_TransferBRep_TransferResultInfo &T);
 		%feature("autodoc", "1");

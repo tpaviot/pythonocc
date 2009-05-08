@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include StepToTopoDS_dependencies.i
 
@@ -175,6 +180,10 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
 		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
+		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -201,6 +210,10 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap(const StepToTopoDS_DataMapNodeOfPointVertexMap *anItem);
 		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap & operator=(const Handle_StepToTopoDS_DataMapNodeOfPointVertexMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap & operator=(const StepToTopoDS_DataMapNodeOfPointVertexMap *anItem);
+		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointVertexMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -226,6 +239,10 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap(const Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_DataMapNodeOfPointEdgeMap *anItem);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap & operator=(const Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap & operator=(const StepToTopoDS_DataMapNodeOfPointEdgeMap *anItem);
 		%feature("autodoc", "1");
 		Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -620,6 +637,8 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		StepToTopoDS_DataMapOfTRI & Assign(const StepToTopoDS_DataMapOfTRI &Other);
 		%feature("autodoc", "1");
+		StepToTopoDS_DataMapOfTRI & operator=(const StepToTopoDS_DataMapOfTRI &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -726,6 +745,8 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		StepToTopoDS_PointVertexMap & Assign(const StepToTopoDS_PointVertexMap &Other);
 		%feature("autodoc", "1");
+		StepToTopoDS_PointVertexMap & operator=(const StepToTopoDS_PointVertexMap &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -821,6 +842,8 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		StepToTopoDS_PointEdgeMap(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		StepToTopoDS_PointEdgeMap & Assign(const StepToTopoDS_PointEdgeMap &Other);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointEdgeMap & operator=(const StepToTopoDS_PointEdgeMap &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

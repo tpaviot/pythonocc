@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Xw_dependencies.i
 
@@ -157,6 +162,10 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 		%feature("autodoc", "1");
 		Handle_Xw_TextManager(const Xw_TextManager *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_TextManager & operator=(const Handle_Xw_TextManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_TextManager & operator=(const Xw_TextManager *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_TextManager const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -182,6 +191,10 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 		Handle_Xw_Driver(const Handle_Xw_Driver &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_Driver(const Xw_Driver *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Driver & operator=(const Handle_Xw_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Driver & operator=(const Xw_Driver *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_Driver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -209,6 +222,10 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Xw_WidthMap(const Xw_WidthMap *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_WidthMap & operator=(const Handle_Xw_WidthMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap & operator=(const Xw_WidthMap *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_WidthMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -234,6 +251,10 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 		Handle_Xw_Window(const Handle_Xw_Window &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_Window(const Xw_Window *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Handle_Xw_Window &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Xw_Window *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_Window const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -261,6 +282,10 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Xw_ColorMap(const Xw_ColorMap *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_ColorMap & operator=(const Handle_Xw_ColorMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap & operator=(const Xw_ColorMap *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_ColorMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -286,6 +311,10 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts & operator=(const Handle_Xw_HListOfMFTFonts &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts & operator=(const Xw_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -313,6 +342,10 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 		%feature("autodoc", "1");
 		Handle_Xw_GraphicDevice(const Xw_GraphicDevice *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_GraphicDevice & operator=(const Handle_Xw_GraphicDevice &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_GraphicDevice & operator=(const Xw_GraphicDevice *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_GraphicDevice const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -338,6 +371,10 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 		Handle_Xw_HListOfMFTSizes(const Handle_Xw_HListOfMFTSizes &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTSizes(const Xw_HListOfMFTSizes *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes & operator=(const Handle_Xw_HListOfMFTSizes &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTSizes & operator=(const Xw_HListOfMFTSizes *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -365,6 +402,10 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Xw_FontMap(const Xw_FontMap *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_FontMap & operator=(const Handle_Xw_FontMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_FontMap & operator=(const Xw_FontMap *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_FontMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -390,6 +431,10 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 		Handle_Xw_HListOfIndexs(const Handle_Xw_HListOfIndexs &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfIndexs(const Xw_HListOfIndexs *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfIndexs & operator=(const Handle_Xw_HListOfIndexs &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfIndexs & operator=(const Xw_HListOfIndexs *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_HListOfIndexs const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -417,6 +462,10 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 		%feature("autodoc", "1");
 		Handle_Xw_IconBox(const Xw_IconBox *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_IconBox & operator=(const Handle_Xw_IconBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox & operator=(const Xw_IconBox *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_IconBox const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -442,6 +491,10 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 		Handle_Xw_TypeMap(const Handle_Xw_TypeMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_TypeMap(const Xw_TypeMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_TypeMap & operator=(const Handle_Xw_TypeMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_TypeMap & operator=(const Xw_TypeMap *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_TypeMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -469,6 +522,10 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 		%feature("autodoc", "1");
 		Handle_Xw_PixMap(const Xw_PixMap *anItem);
 		%feature("autodoc", "1");
+		Handle_Xw_PixMap & operator=(const Handle_Xw_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_PixMap & operator=(const Xw_PixMap *anItem);
+		%feature("autodoc", "1");
 		Handle_Xw_PixMap const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -494,6 +551,10 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
 		%feature("autodoc", "1");
 		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap & operator=(const Handle_Xw_MarkMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap & operator=(const Xw_MarkMap *anItem);
 		%feature("autodoc", "1");
 		Handle_Xw_MarkMap const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -587,6 +648,8 @@ class Xw_ListOfMFTFonts {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & operator=(const Xw_ListOfMFTFonts &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1381,6 +1444,8 @@ class Xw_ListOfIndexs {
 		%feature("autodoc", "1");
 		const Xw_ListOfIndexs & Assign(const Xw_ListOfIndexs &Other);
 		%feature("autodoc", "1");
+		const Xw_ListOfIndexs & operator=(const Xw_ListOfIndexs &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		Standard_Integer Lower() const;
@@ -1473,6 +1538,8 @@ class Xw_ListOfMFTSizes {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const Xw_ListOfMFTSizes & Assign(const Xw_ListOfMFTSizes &Other);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTSizes & operator=(const Xw_ListOfMFTSizes &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");

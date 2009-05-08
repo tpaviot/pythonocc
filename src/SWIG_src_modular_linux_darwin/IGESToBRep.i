@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IGESToBRep_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 		Handle_IGESToBRep_Actor(const Handle_IGESToBRep_Actor &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor(const IGESToBRep_Actor *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_Actor & operator=(const Handle_IGESToBRep_Actor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_Actor & operator=(const IGESToBRep_Actor *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_Actor const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_IGESBoundary(const IGESToBRep_IGESBoundary *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESToBRep_IGESBoundary & operator=(const Handle_IGESToBRep_IGESBoundary &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_IGESBoundary & operator=(const IGESToBRep_IGESBoundary *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESToBRep_IGESBoundary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
 		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
 		Handle_IGESToBRep_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 		Handle_IGESToBRep_ToolContainer(const Handle_IGESToBRep_ToolContainer &aHandle);
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_ToolContainer(const IGESToBRep_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_ToolContainer & operator=(const Handle_IGESToBRep_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_ToolContainer & operator=(const IGESToBRep_ToolContainer *anItem);
 		%feature("autodoc", "1");
 		Handle_IGESToBRep_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 

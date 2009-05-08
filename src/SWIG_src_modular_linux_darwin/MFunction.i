@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MFunction_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 		Handle_MFunction_FunctionRetrievalDriver(const Handle_MFunction_FunctionRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver(const MFunction_FunctionRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MFunction_FunctionRetrievalDriver & operator=(const Handle_MFunction_FunctionRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFunction_FunctionRetrievalDriver & operator=(const MFunction_FunctionRetrievalDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 		Handle_MFunction_FunctionStorageDriver(const Handle_MFunction_FunctionStorageDriver &aHandle);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver(const MFunction_FunctionStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MFunction_FunctionStorageDriver & operator=(const Handle_MFunction_FunctionStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFunction_FunctionStorageDriver & operator=(const MFunction_FunctionStorageDriver *anItem);
 		%feature("autodoc", "1");
 		Handle_MFunction_FunctionStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 

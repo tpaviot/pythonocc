@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include DBC_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
+		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -179,6 +192,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
 		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfCharacter & operator=(const DBC_VArrayNodeOfVArrayOfCharacter *anItem);
+		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfCharacter const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -204,6 +221,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -360,6 +381,8 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 		%feature("autodoc", "1");
 		void Assign(const DBC_VArrayOfReal &Other);
 		%feature("autodoc", "1");
+		void operator=(const DBC_VArrayOfReal &Other);
+		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
 		%feature("autodoc", "1");
 		Standard_Real & Value(const Standard_Integer Index) const;
@@ -390,6 +413,8 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const DBC_VArrayOfCharacter &Other);
+		%feature("autodoc", "1");
+		void operator=(const DBC_VArrayOfCharacter &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Character &Value);
 		%feature("autodoc", "1");
@@ -460,6 +485,8 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const DBC_VArrayOfInteger &Other);
+		%feature("autodoc", "1");
+		void operator=(const DBC_VArrayOfInteger &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
 		%feature("autodoc", "1");
@@ -572,6 +599,8 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
 		void Assign(const DBC_VArrayOfExtCharacter &Other);
+		%feature("autodoc", "1");
+		void operator=(const DBC_VArrayOfExtCharacter &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_ExtCharacter &Value);
 		%feature("autodoc", "1");

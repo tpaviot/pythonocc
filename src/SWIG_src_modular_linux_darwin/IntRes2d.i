@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntRes2d_dependencies.i
 
@@ -145,6 +150,10 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
 		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint *anItem);
+		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -171,6 +180,10 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
 		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment *anItem);
+		%feature("autodoc", "1");
 		Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -196,6 +209,8 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionSegment & Assign(const IntRes2d_SequenceOfIntersectionSegment &Other);
+		%feature("autodoc", "1");
+		const IntRes2d_SequenceOfIntersectionSegment & operator=(const IntRes2d_SequenceOfIntersectionSegment &Other);
 		%feature("autodoc", "1");
 		void Append(const IntRes2d_IntersectionSegment &T);
 		%feature("autodoc", "1");
@@ -503,6 +518,8 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntRes2d_SequenceOfIntersectionPoint & Assign(const IntRes2d_SequenceOfIntersectionPoint &Other);
+		%feature("autodoc", "1");
+		const IntRes2d_SequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceOfIntersectionPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const IntRes2d_IntersectionPoint &T);
 		%feature("autodoc", "1");

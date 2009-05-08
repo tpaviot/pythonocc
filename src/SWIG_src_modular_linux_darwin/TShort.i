@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TShort_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 		Handle_TShort_HSequenceOfShortReal(const Handle_TShort_HSequenceOfShortReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_TShort_HSequenceOfShortReal(const TShort_HSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TShort_HSequenceOfShortReal & operator=(const Handle_TShort_HSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_HSequenceOfShortReal & operator=(const TShort_HSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
 		Handle_TShort_HSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TShort_HArray1OfShortReal(const TShort_HArray1OfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_TShort_HArray1OfShortReal & operator=(const Handle_TShort_HArray1OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_HArray1OfShortReal & operator=(const TShort_HArray1OfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_TShort_HArray1OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 		%feature("autodoc", "1");
 		Handle_TShort_SequenceNodeOfSequenceOfShortReal(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
 		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const Handle_TShort_SequenceNodeOfSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
 		Handle_TShort_SequenceNodeOfSequenceOfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 		Handle_TShort_HArray2OfShortReal(const Handle_TShort_HArray2OfShortReal &aHandle);
 		%feature("autodoc", "1");
 		Handle_TShort_HArray2OfShortReal(const TShort_HArray2OfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TShort_HArray2OfShortReal & operator=(const Handle_TShort_HArray2OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_HArray2OfShortReal & operator=(const TShort_HArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
 		Handle_TShort_HArray2OfShortReal const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -277,6 +298,8 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const TShort_SequenceOfShortReal & Assign(const TShort_SequenceOfShortReal &Other);
 		%feature("autodoc", "1");
+		const TShort_SequenceOfShortReal & operator=(const TShort_SequenceOfShortReal &Other);
+		%feature("autodoc", "1");
 		void Append(const Standard_ShortReal &T);
 		%feature("autodoc", "1");
 		void Append(TShort_SequenceOfShortReal & S);
@@ -337,6 +360,8 @@ class TShort_Array1OfShortReal {
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
 		const TShort_Array1OfShortReal & Assign(const TShort_Array1OfShortReal &Other);
+		%feature("autodoc", "1");
+		const TShort_Array1OfShortReal & operator=(const TShort_Array1OfShortReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -429,6 +454,8 @@ class TShort_Array2OfShortReal {
 		void Destroy();
 		%feature("autodoc", "1");
 		const TShort_Array2OfShortReal & Assign(const TShort_Array2OfShortReal &Other);
+		%feature("autodoc", "1");
+		const TShort_Array2OfShortReal & operator=(const TShort_Array2OfShortReal &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");

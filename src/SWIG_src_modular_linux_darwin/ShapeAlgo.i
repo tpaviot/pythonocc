@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include ShapeAlgo_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 		Handle_ShapeAlgo_AlgoContainer(const Handle_ShapeAlgo_AlgoContainer &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer(const ShapeAlgo_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_AlgoContainer & operator=(const Handle_ShapeAlgo_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_AlgoContainer & operator=(const ShapeAlgo_AlgoContainer *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_AlgoContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -151,6 +160,10 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer & operator=(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *anItem);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer const DownCast(const Handle_Standard_Transient &AnObject);
 

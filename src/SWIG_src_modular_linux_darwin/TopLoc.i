@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include TopLoc_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 		Handle_TopLoc_SListNodeOfSListOfItemLocation(const Handle_TopLoc_SListNodeOfSListOfItemLocation &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation(const TopLoc_SListNodeOfSListOfItemLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const Handle_TopLoc_SListNodeOfSListOfItemLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_SListNodeOfSListOfItemLocation & operator=(const TopLoc_SListNodeOfSListOfItemLocation *anItem);
 		%feature("autodoc", "1");
 		Handle_TopLoc_SListNodeOfSListOfItemLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D(const TopLoc_Datum3D *anItem);
 		%feature("autodoc", "1");
+		Handle_TopLoc_Datum3D & operator=(const Handle_TopLoc_Datum3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_Datum3D & operator=(const TopLoc_Datum3D *anItem);
+		%feature("autodoc", "1");
 		Handle_TopLoc_Datum3D const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 		Handle_TopLoc_StdMapNodeOfMapOfLocation(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const Handle_TopLoc_StdMapNodeOfMapOfLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_StdMapNodeOfMapOfLocation & operator=(const TopLoc_StdMapNodeOfMapOfLocation *anItem);
 		%feature("autodoc", "1");
 		Handle_TopLoc_StdMapNodeOfMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +222,10 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
 		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
+		%feature("autodoc", "1");
 		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -228,6 +249,8 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 		TopLoc_MapOfLocation(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopLoc_MapOfLocation & Assign(const TopLoc_MapOfLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_MapOfLocation & operator=(const TopLoc_MapOfLocation &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -255,6 +278,8 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		TopLoc_IndexedMapOfLocation(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		TopLoc_IndexedMapOfLocation & Assign(const TopLoc_IndexedMapOfLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_IndexedMapOfLocation & operator=(const TopLoc_IndexedMapOfLocation &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -322,6 +347,8 @@ class TopLoc_ItemLocation {
 		%feature("autodoc", "1");
 		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
 		%feature("autodoc", "1");
+		TopLoc_ItemLocation & operator=(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
 		void Destroy();
 
 };
@@ -344,6 +371,8 @@ class TopLoc_SListOfItemLocation {
 		TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation &Other);
 		%feature("autodoc", "1");
 		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & operator=(const TopLoc_SListOfItemLocation &Other);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");

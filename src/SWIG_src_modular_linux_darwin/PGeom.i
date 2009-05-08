@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include PGeom_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_PGeom_Geometry : public Handle_Standard_Persistent {
 		Handle_PGeom_Geometry(const Handle_PGeom_Geometry &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Geometry(const PGeom_Geometry *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Geometry & operator=(const Handle_PGeom_Geometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Geometry & operator=(const PGeom_Geometry *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Geometry const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom_Surface(const PGeom_Surface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Surface & operator=(const Handle_PGeom_Surface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface & operator=(const PGeom_Surface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Surface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -177,6 +190,10 @@ class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
 		Handle_PGeom_BoundedSurface(const Handle_PGeom_BoundedSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedSurface(const PGeom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface & operator=(const Handle_PGeom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface & operator=(const PGeom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -204,6 +221,10 @@ class Handle_PGeom_Curve : public Handle_PGeom_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom_Curve(const PGeom_Curve *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Curve & operator=(const Handle_PGeom_Curve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve & operator=(const PGeom_Curve *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Curve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -229,6 +250,10 @@ class Handle_PGeom_BoundedCurve : public Handle_PGeom_Curve {
 		Handle_PGeom_BoundedCurve(const Handle_PGeom_BoundedCurve &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedCurve(const PGeom_BoundedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedCurve & operator=(const Handle_PGeom_BoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedCurve & operator=(const PGeom_BoundedCurve *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_BoundedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -256,6 +281,10 @@ class Handle_PGeom_TrimmedCurve : public Handle_PGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom_TrimmedCurve(const PGeom_TrimmedCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_TrimmedCurve & operator=(const Handle_PGeom_TrimmedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_TrimmedCurve & operator=(const PGeom_TrimmedCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_TrimmedCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -281,6 +310,10 @@ class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
 		Handle_PGeom_Transformation(const Handle_PGeom_Transformation &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Transformation(const PGeom_Transformation *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation & operator=(const Handle_PGeom_Transformation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation & operator=(const PGeom_Transformation *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Transformation const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -308,6 +341,10 @@ class Handle_PGeom_Point : public Handle_PGeom_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom_Point(const PGeom_Point *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Point & operator=(const Handle_PGeom_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Point & operator=(const PGeom_Point *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Point const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -333,6 +370,10 @@ class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
 		Handle_PGeom_CartesianPoint(const Handle_PGeom_CartesianPoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_CartesianPoint(const PGeom_CartesianPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint & operator=(const Handle_PGeom_CartesianPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint & operator=(const PGeom_CartesianPoint *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_CartesianPoint const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -360,6 +401,10 @@ class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_PGeom_ElementarySurface(const PGeom_ElementarySurface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface & operator=(const Handle_PGeom_ElementarySurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_ElementarySurface & operator=(const PGeom_ElementarySurface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_ElementarySurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -385,6 +430,10 @@ class Handle_PGeom_SphericalSurface : public Handle_PGeom_ElementarySurface {
 		Handle_PGeom_SphericalSurface(const Handle_PGeom_SphericalSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_SphericalSurface(const PGeom_SphericalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_SphericalSurface & operator=(const Handle_PGeom_SphericalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SphericalSurface & operator=(const PGeom_SphericalSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_SphericalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -412,6 +461,10 @@ class Handle_PGeom_Conic : public Handle_PGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom_Conic(const PGeom_Conic *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Conic & operator=(const Handle_PGeom_Conic &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Conic & operator=(const PGeom_Conic *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Conic const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -437,6 +490,10 @@ class Handle_PGeom_Parabola : public Handle_PGeom_Conic {
 		Handle_PGeom_Parabola(const Handle_PGeom_Parabola &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Parabola(const PGeom_Parabola *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Parabola & operator=(const Handle_PGeom_Parabola &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Parabola & operator=(const PGeom_Parabola *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Parabola const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -464,6 +521,10 @@ class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom_AxisPlacement(const PGeom_AxisPlacement *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_AxisPlacement & operator=(const Handle_PGeom_AxisPlacement &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_AxisPlacement & operator=(const PGeom_AxisPlacement *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_AxisPlacement const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -489,6 +550,10 @@ class Handle_PGeom_BSplineSurface : public Handle_PGeom_BoundedSurface {
 		Handle_PGeom_BSplineSurface(const Handle_PGeom_BSplineSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_BSplineSurface(const PGeom_BSplineSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_BSplineSurface & operator=(const Handle_PGeom_BSplineSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BSplineSurface & operator=(const PGeom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_BSplineSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -516,6 +581,10 @@ class Handle_PGeom_BezierSurface : public Handle_PGeom_BoundedSurface {
 		%feature("autodoc", "1");
 		Handle_PGeom_BezierSurface(const PGeom_BezierSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_BezierSurface & operator=(const Handle_PGeom_BezierSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierSurface & operator=(const PGeom_BezierSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_BezierSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -541,6 +610,10 @@ class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 		Handle_PGeom_Circle(const Handle_PGeom_Circle &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Circle(const PGeom_Circle *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Circle & operator=(const Handle_PGeom_Circle &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Circle & operator=(const PGeom_Circle *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Circle const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -568,6 +641,10 @@ class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom_BSplineCurve(const PGeom_BSplineCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_BSplineCurve & operator=(const Handle_PGeom_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BSplineCurve & operator=(const PGeom_BSplineCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_BSplineCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -593,6 +670,10 @@ class Handle_PGeom_Plane : public Handle_PGeom_ElementarySurface {
 		Handle_PGeom_Plane(const Handle_PGeom_Plane &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Plane(const PGeom_Plane *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Plane & operator=(const Handle_PGeom_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Plane & operator=(const PGeom_Plane *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Plane const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -620,6 +701,10 @@ class Handle_PGeom_Vector : public Handle_PGeom_Geometry {
 		%feature("autodoc", "1");
 		Handle_PGeom_Vector(const PGeom_Vector *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Vector & operator=(const Handle_PGeom_Vector &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Vector & operator=(const PGeom_Vector *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Vector const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -645,6 +730,10 @@ class Handle_PGeom_Direction : public Handle_PGeom_Vector {
 		Handle_PGeom_Direction(const Handle_PGeom_Direction &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Direction(const PGeom_Direction *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Direction & operator=(const Handle_PGeom_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Direction & operator=(const PGeom_Direction *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Direction const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -672,6 +761,10 @@ class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
 		%feature("autodoc", "1");
 		Handle_PGeom_OffsetCurve(const PGeom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const Handle_PGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const PGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -697,6 +790,10 @@ class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 		Handle_PGeom_OffsetSurface(const Handle_PGeom_OffsetSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_OffsetSurface(const PGeom_OffsetSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetSurface & operator=(const Handle_PGeom_OffsetSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetSurface & operator=(const PGeom_OffsetSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_OffsetSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -724,6 +821,10 @@ class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
 		%feature("autodoc", "1");
 		Handle_PGeom_SweptSurface(const PGeom_SweptSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface & operator=(const Handle_PGeom_SweptSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface & operator=(const PGeom_SweptSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_SweptSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -749,6 +850,10 @@ class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
 		Handle_PGeom_SurfaceOfRevolution(const Handle_PGeom_SurfaceOfRevolution &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfRevolution(const PGeom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution & operator=(const Handle_PGeom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution & operator=(const PGeom_SurfaceOfRevolution *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfRevolution const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -776,6 +881,10 @@ class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
 		%feature("autodoc", "1");
 		Handle_PGeom_VectorWithMagnitude(const PGeom_VectorWithMagnitude *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude & operator=(const Handle_PGeom_VectorWithMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude & operator=(const PGeom_VectorWithMagnitude *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_VectorWithMagnitude const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -801,6 +910,10 @@ class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 		Handle_PGeom_ToroidalSurface(const Handle_PGeom_ToroidalSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_ToroidalSurface(const PGeom_ToroidalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_ToroidalSurface & operator=(const Handle_PGeom_ToroidalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_ToroidalSurface & operator=(const PGeom_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_ToroidalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -828,6 +941,10 @@ class Handle_PGeom_SurfaceOfLinearExtrusion : public Handle_PGeom_SweptSurface {
 		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfLinearExtrusion(const PGeom_SurfaceOfLinearExtrusion *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfLinearExtrusion & operator=(const Handle_PGeom_SurfaceOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfLinearExtrusion & operator=(const PGeom_SurfaceOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_SurfaceOfLinearExtrusion const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -853,6 +970,10 @@ class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 		Handle_PGeom_Ellipse(const Handle_PGeom_Ellipse &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Ellipse(const PGeom_Ellipse *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse & operator=(const Handle_PGeom_Ellipse &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse & operator=(const PGeom_Ellipse *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Ellipse const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -880,6 +1001,10 @@ class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_PGeom_CylindricalSurface(const PGeom_CylindricalSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface & operator=(const Handle_PGeom_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface & operator=(const PGeom_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_CylindricalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -905,6 +1030,10 @@ class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
 		Handle_PGeom_Hyperbola(const Handle_PGeom_Hyperbola &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Hyperbola(const PGeom_Hyperbola *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola & operator=(const Handle_PGeom_Hyperbola &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola & operator=(const PGeom_Hyperbola *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Hyperbola const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -932,6 +1061,10 @@ class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 		%feature("autodoc", "1");
 		Handle_PGeom_Axis1Placement(const PGeom_Axis1Placement *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_Axis1Placement & operator=(const Handle_PGeom_Axis1Placement &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Axis1Placement & operator=(const PGeom_Axis1Placement *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_Axis1Placement const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -957,6 +1090,10 @@ class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurfac
 		Handle_PGeom_RectangularTrimmedSurface(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_RectangularTrimmedSurface(const PGeom_RectangularTrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface & operator=(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface & operator=(const PGeom_RectangularTrimmedSurface *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_RectangularTrimmedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -984,6 +1121,10 @@ class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 		%feature("autodoc", "1");
 		Handle_PGeom_ConicalSurface(const PGeom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface & operator=(const Handle_PGeom_ConicalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_ConicalSurface & operator=(const PGeom_ConicalSurface *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_ConicalSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -1009,6 +1150,10 @@ class Handle_PGeom_Line : public Handle_PGeom_Curve {
 		Handle_PGeom_Line(const Handle_PGeom_Line &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Line(const PGeom_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const Handle_PGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const PGeom_Line *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Line const DownCast(const Handle_Standard_Persistent &AnObject);
 
@@ -1036,6 +1181,10 @@ class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 		%feature("autodoc", "1");
 		Handle_PGeom_BezierCurve(const PGeom_BezierCurve *anItem);
 		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve & operator=(const Handle_PGeom_BezierCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve & operator=(const PGeom_BezierCurve *anItem);
+		%feature("autodoc", "1");
 		Handle_PGeom_BezierCurve const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
@@ -1061,6 +1210,10 @@ class Handle_PGeom_Axis2Placement : public Handle_PGeom_AxisPlacement {
 		Handle_PGeom_Axis2Placement(const Handle_PGeom_Axis2Placement &aHandle);
 		%feature("autodoc", "1");
 		Handle_PGeom_Axis2Placement(const PGeom_Axis2Placement *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Axis2Placement & operator=(const Handle_PGeom_Axis2Placement &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Axis2Placement & operator=(const PGeom_Axis2Placement *anItem);
 		%feature("autodoc", "1");
 		Handle_PGeom_Axis2Placement const DownCast(const Handle_Standard_Persistent &AnObject);
 

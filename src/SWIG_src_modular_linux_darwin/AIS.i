@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include AIS_dependencies.i
 
@@ -287,6 +292,10 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject(const AIS_InteractiveObject *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & operator=(const Handle_AIS_InteractiveObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & operator=(const AIS_InteractiveObject *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_InteractiveObject const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -312,6 +321,10 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 		Handle_AIS_Relation(const Handle_AIS_Relation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation(const AIS_Relation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Relation & operator=(const Handle_AIS_Relation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Relation & operator=(const AIS_Relation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Relation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -339,6 +352,10 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension & operator=(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -364,6 +381,10 @@ class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 		Handle_AIS_MidPointRelation(const Handle_AIS_MidPointRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MidPointRelation(const AIS_MidPointRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation & operator=(const Handle_AIS_MidPointRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MidPointRelation & operator=(const AIS_MidPointRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_MidPointRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -391,6 +412,10 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension(const AIS_DiameterDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_DiameterDimension & operator=(const Handle_AIS_DiameterDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DiameterDimension & operator=(const AIS_DiameterDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_DiameterDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -416,6 +441,10 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -443,6 +472,10 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_MultipleConnectedInteractive & operator=(const Handle_AIS_MultipleConnectedInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -468,6 +501,10 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 		Handle_AIS_FixRelation(const Handle_AIS_FixRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation(const AIS_FixRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_FixRelation & operator=(const Handle_AIS_FixRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_FixRelation & operator=(const AIS_FixRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_FixRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -495,6 +532,10 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation(const AIS_EqualDistanceRelation *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_EqualDistanceRelation & operator=(const Handle_AIS_EqualDistanceRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EqualDistanceRelation & operator=(const AIS_EqualDistanceRelation *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_EqualDistanceRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -520,6 +561,10 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus(const Handle_AIS_DataMapNodeOfDataMapOfIOStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus(const AIS_DataMapNodeOfDataMapOfIOStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const Handle_AIS_DataMapNodeOfDataMapOfIOStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfIOStatus & operator=(const AIS_DataMapNodeOfDataMapOfIOStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfIOStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -547,6 +592,10 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive(const AIS_ConnectedInteractive *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_ConnectedInteractive & operator=(const Handle_AIS_ConnectedInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ConnectedInteractive & operator=(const AIS_ConnectedInteractive *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_ConnectedInteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -572,6 +621,10 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 		Handle_AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape(const AIS_ConnectedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ConnectedShape & operator=(const Handle_AIS_ConnectedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ConnectedShape & operator=(const AIS_ConnectedShape *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_ConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -599,6 +652,10 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Trihedron(const AIS_Trihedron *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Trihedron & operator=(const Handle_AIS_Trihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Trihedron & operator=(const AIS_Trihedron *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Trihedron const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -624,6 +681,10 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 		Handle_AIS_RadiusDimension(const Handle_AIS_RadiusDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension(const AIS_RadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_RadiusDimension & operator=(const Handle_AIS_RadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_RadiusDimension & operator=(const AIS_RadiusDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_RadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -651,6 +712,10 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_AngleDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -676,6 +741,10 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 		Handle_AIS_Point(const Handle_AIS_Point &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Point(const AIS_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Point & operator=(const Handle_AIS_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Point & operator=(const AIS_Point *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Point const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -703,6 +772,10 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension(const AIS_LengthDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_LengthDimension & operator=(const Handle_AIS_LengthDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_LengthDimension & operator=(const AIS_LengthDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_LengthDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -728,6 +801,10 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Line(const AIS_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const AIS_Line *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Line const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -755,6 +832,10 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_TangentRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -780,6 +861,10 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 		Handle_AIS_MultipleConnectedShape(const Handle_AIS_MultipleConnectedShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape(const AIS_MultipleConnectedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_MultipleConnectedShape & operator=(const Handle_AIS_MultipleConnectedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MultipleConnectedShape & operator=(const AIS_MultipleConnectedShape *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_MultipleConnectedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -807,6 +892,10 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -832,6 +921,10 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 		Handle_AIS_ConcentricRelation(const Handle_AIS_ConcentricRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation(const AIS_ConcentricRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ConcentricRelation & operator=(const Handle_AIS_ConcentricRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_ConcentricRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -859,6 +952,10 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension(const AIS_Chamf2dDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Chamf2dDimension & operator=(const Handle_AIS_Chamf2dDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Chamf2dDimension & operator=(const AIS_Chamf2dDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Chamf2dDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -884,6 +981,10 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 		Handle_AIS_ExclusionFilter(const Handle_AIS_ExclusionFilter &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter(const AIS_ExclusionFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ExclusionFilter & operator=(const Handle_AIS_ExclusionFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ExclusionFilter & operator=(const AIS_ExclusionFilter *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_ExclusionFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -911,6 +1012,10 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter(const AIS_AttributeFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_AttributeFilter & operator=(const Handle_AIS_AttributeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AttributeFilter & operator=(const AIS_AttributeFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_AttributeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -936,6 +1041,10 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 		Handle_AIS_EqualRadiusRelation(const Handle_AIS_EqualRadiusRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation(const AIS_EqualRadiusRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_EqualRadiusRelation & operator=(const Handle_AIS_EqualRadiusRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EqualRadiusRelation & operator=(const AIS_EqualRadiusRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_EqualRadiusRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -963,6 +1072,10 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus(const AIS_GlobalStatus *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_GlobalStatus & operator=(const Handle_AIS_GlobalStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_GlobalStatus & operator=(const AIS_GlobalStatus *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -988,6 +1101,10 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 		Handle_AIS_DimensionOwner(const Handle_AIS_DimensionOwner &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner(const AIS_DimensionOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DimensionOwner & operator=(const Handle_AIS_DimensionOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DimensionOwner & operator=(const AIS_DimensionOwner *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_DimensionOwner const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1015,6 +1132,10 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_BadEdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1040,6 +1161,10 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 		Handle_AIS_PerpendicularRelation(const Handle_AIS_PerpendicularRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation(const AIS_PerpendicularRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_PerpendicularRelation & operator=(const Handle_AIS_PerpendicularRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_PerpendicularRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1067,6 +1192,10 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter(const AIS_TypeFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_TypeFilter & operator=(const Handle_AIS_TypeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TypeFilter & operator=(const AIS_TypeFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_TypeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1092,6 +1221,10 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 		Handle_AIS_SignatureFilter(const Handle_AIS_SignatureFilter &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter(const AIS_SignatureFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SignatureFilter & operator=(const Handle_AIS_SignatureFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SignatureFilter & operator=(const AIS_SignatureFilter *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_SignatureFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1119,6 +1252,10 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext(const AIS_InteractiveContext *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_InteractiveContext & operator=(const Handle_AIS_InteractiveContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveContext & operator=(const AIS_InteractiveContext *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_InteractiveContext const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1144,6 +1281,10 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 		Handle_AIS_OffsetDimension(const Handle_AIS_OffsetDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension(const AIS_OffsetDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_OffsetDimension & operator=(const Handle_AIS_OffsetDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_OffsetDimension & operator=(const AIS_OffsetDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_OffsetDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1171,6 +1312,10 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Axis(const AIS_Axis *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Axis & operator=(const Handle_AIS_Axis &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Axis & operator=(const AIS_Axis *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Axis const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1196,6 +1341,10 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		Handle_AIS_MinRadiusDimension(const Handle_AIS_MinRadiusDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension(const AIS_MinRadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_MinRadiusDimension & operator=(const Handle_AIS_MinRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MinRadiusDimension & operator=(const AIS_MinRadiusDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_MinRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1223,6 +1372,10 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter(const AIS_C0RegularityFilter *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_C0RegularityFilter & operator=(const Handle_AIS_C0RegularityFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_C0RegularityFilter & operator=(const AIS_C0RegularityFilter *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_C0RegularityFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1248,6 +1401,10 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 		Handle_AIS_Plane(const Handle_AIS_Plane &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Plane(const AIS_Plane *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Plane & operator=(const Handle_AIS_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Plane & operator=(const AIS_Plane *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Plane const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1275,6 +1432,10 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension(const AIS_MaxRadiusDimension *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_MaxRadiusDimension & operator=(const Handle_AIS_MaxRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_MaxRadiusDimension & operator=(const AIS_MaxRadiusDimension *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_MaxRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1300,6 +1461,10 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 		Handle_AIS_LocalStatus(const Handle_AIS_LocalStatus &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus(const AIS_LocalStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_LocalStatus & operator=(const Handle_AIS_LocalStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_LocalStatus & operator=(const AIS_LocalStatus *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1327,6 +1492,10 @@ class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 		%feature("autodoc", "1");
 		Handle_AIS_Drawer(const AIS_Drawer *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1352,6 +1521,10 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 		Handle_AIS_LocalContext(const Handle_AIS_LocalContext &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext(const AIS_LocalContext *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & operator=(const Handle_AIS_LocalContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & operator=(const AIS_LocalContext *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1379,6 +1552,10 @@ class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNod
 		%feature("autodoc", "1");
 		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1404,6 +1581,10 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1431,6 +1612,10 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Circle(const AIS_Circle *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Circle & operator=(const Handle_AIS_Circle &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Circle & operator=(const AIS_Circle *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Circle const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1456,6 +1641,10 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_SequenceNodeOfSequenceOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1483,6 +1672,10 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_Shape(const AIS_Shape *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_Shape & operator=(const Handle_AIS_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Shape & operator=(const AIS_Shape *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_Shape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1508,6 +1701,10 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 		Handle_AIS_SymmetricRelation(const Handle_AIS_SymmetricRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation(const AIS_SymmetricRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation & operator=(const Handle_AIS_SymmetricRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_SymmetricRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1535,6 +1732,10 @@ class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TColle
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const Handle_AIS_DataMapNodeOfDataMapOfTransientTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient & operator=(const AIS_DataMapNodeOfDataMapOfTransientTransient *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfTransientTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1560,6 +1761,10 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 		Handle_AIS_Selection(const Handle_AIS_Selection &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Selection(const AIS_Selection *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Selection & operator=(const Handle_AIS_Selection &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Selection & operator=(const AIS_Selection *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Selection const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1587,6 +1792,10 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs & operator=(const AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1612,6 +1821,10 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 		Handle_AIS_ParallelRelation(const Handle_AIS_ParallelRelation &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation(const AIS_ParallelRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation & operator=(const Handle_AIS_ParallelRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_ParallelRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1639,6 +1852,10 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat(const AIS_DataMapNodeOfDataMapOfSelStat *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const Handle_AIS_DataMapNodeOfDataMapOfSelStat &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfSelStat & operator=(const AIS_DataMapNodeOfDataMapOfSelStat *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_DataMapNodeOfDataMapOfSelStat const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1664,6 +1881,10 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_TexturedShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1691,6 +1912,10 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 		%feature("autodoc", "1");
 		Handle_AIS_IdenticRelation(const AIS_IdenticRelation *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation & operator=(const Handle_AIS_IdenticRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_IdenticRelation & operator=(const AIS_IdenticRelation *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_IdenticRelation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1716,6 +1941,10 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 		Handle_AIS_ListNodeOfListOfInteractive(const Handle_AIS_ListNodeOfListOfInteractive &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive(const AIS_ListNodeOfListOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ListNodeOfListOfInteractive & operator=(const Handle_AIS_ListNodeOfListOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ListNodeOfListOfInteractive & operator=(const AIS_ListNodeOfListOfInteractive *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_ListNodeOfListOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -1743,6 +1972,10 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron(const AIS_PlaneTrihedron *anItem);
 		%feature("autodoc", "1");
+		Handle_AIS_PlaneTrihedron & operator=(const Handle_AIS_PlaneTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_PlaneTrihedron & operator=(const AIS_PlaneTrihedron *anItem);
+		%feature("autodoc", "1");
 		Handle_AIS_PlaneTrihedron const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -1768,6 +2001,10 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 		Handle_AIS_Chamf3dDimension(const Handle_AIS_Chamf3dDimension &aHandle);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension(const AIS_Chamf3dDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Chamf3dDimension & operator=(const Handle_AIS_Chamf3dDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Chamf3dDimension & operator=(const AIS_Chamf3dDimension *anItem);
 		%feature("autodoc", "1");
 		Handle_AIS_Chamf3dDimension const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -2310,6 +2547,8 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		AIS_DataMapOfSelStat & Assign(const AIS_DataMapOfSelStat &Other);
 		%feature("autodoc", "1");
+		AIS_DataMapOfSelStat & operator=(const AIS_DataMapOfSelStat &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -2400,6 +2639,8 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const AIS_SequenceOfDimension & Assign(const AIS_SequenceOfDimension &Other);
 		%feature("autodoc", "1");
+		const AIS_SequenceOfDimension & operator=(const AIS_SequenceOfDimension &Other);
+		%feature("autodoc", "1");
 		void Append(const Handle_AIS_Relation &T);
 		%feature("autodoc", "1");
 		void Append(AIS_SequenceOfDimension & S);
@@ -2489,6 +2730,8 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const AIS_SequenceOfInteractive & Assign(const AIS_SequenceOfInteractive &Other);
+		%feature("autodoc", "1");
+		const AIS_SequenceOfInteractive & operator=(const AIS_SequenceOfInteractive &Other);
 		%feature("autodoc", "1");
 		void Append(const Handle_AIS_InteractiveObject &T);
 		%feature("autodoc", "1");
@@ -2840,6 +3083,8 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		AIS_DataMapOfIOStatus & Assign(const AIS_DataMapOfIOStatus &Other);
 		%feature("autodoc", "1");
+		AIS_DataMapOfIOStatus & operator=(const AIS_DataMapOfIOStatus &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -3165,6 +3410,8 @@ class AIS_ListOfInteractive {
 		AIS_ListOfInteractive();
 		%feature("autodoc", "1");
 		void Assign(const AIS_ListOfInteractive &Other);
+		%feature("autodoc", "1");
+		void operator=(const AIS_ListOfInteractive &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -3517,6 +3764,8 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		AIS_IndexedDataMapOfOwnerPrs(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		AIS_IndexedDataMapOfOwnerPrs & Assign(const AIS_IndexedDataMapOfOwnerPrs &Other);
+		%feature("autodoc", "1");
+		AIS_IndexedDataMapOfOwnerPrs & operator=(const AIS_IndexedDataMapOfOwnerPrs &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -4050,6 +4299,8 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 		AIS_MapOfInteractive(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		AIS_MapOfInteractive & Assign(const AIS_MapOfInteractive &Other);
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive & operator=(const AIS_MapOfInteractive &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -4591,6 +4842,8 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		AIS_DataMapofIntegerListOfinteractive(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		AIS_DataMapofIntegerListOfinteractive & Assign(const AIS_DataMapofIntegerListOfinteractive &Other);
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive & operator=(const AIS_DataMapofIntegerListOfinteractive &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -5454,6 +5707,8 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		AIS_DataMapOfTransientTransient & Assign(const AIS_DataMapOfTransientTransient &Other);
 		%feature("autodoc", "1");
+		AIS_DataMapOfTransientTransient & operator=(const AIS_DataMapOfTransientTransient &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -5488,6 +5743,8 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 		AIS_DataMapOfILC(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		AIS_DataMapOfILC & Assign(const AIS_DataMapOfILC &Other);
+		%feature("autodoc", "1");
+		AIS_DataMapOfILC & operator=(const AIS_DataMapOfILC &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

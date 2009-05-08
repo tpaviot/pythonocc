@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include CSLib_dependencies.i
 
@@ -203,6 +208,8 @@ class CSLib_Class2d {
 		Standard_Integer InternalSiDansOuOn(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
 		const CSLib_Class2d & Copy(const CSLib_Class2d &Other) const;
+		%feature("autodoc", "1");
+		const CSLib_Class2d & operator=(const CSLib_Class2d &Other) const;
 		%feature("autodoc", "1");
 		void Destroy();
 

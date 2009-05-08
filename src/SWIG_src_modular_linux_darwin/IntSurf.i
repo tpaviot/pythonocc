@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include IntSurf_dependencies.i
 
@@ -139,6 +144,10 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S(const IntSurf_LineOn2S *anItem);
 		%feature("autodoc", "1");
+		Handle_IntSurf_LineOn2S & operator=(const Handle_IntSurf_LineOn2S &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_LineOn2S & operator=(const IntSurf_LineOn2S *anItem);
+		%feature("autodoc", "1");
 		Handle_IntSurf_LineOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -164,6 +173,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint(const Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfInteriorPoint *anItem);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -191,6 +204,10 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
 		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const Handle_IntSurf_ListNodeOfListOfPntOn2S &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_ListNodeOfListOfPntOn2S & operator=(const IntSurf_ListNodeOfListOfPntOn2S *anItem);
+		%feature("autodoc", "1");
 		Handle_IntSurf_ListNodeOfListOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -216,6 +233,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint(const Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint(const IntSurf_SequenceNodeOfSequenceOfPathPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint & operator=(const IntSurf_SequenceNodeOfSequenceOfPathPoint *anItem);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -243,6 +264,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple(const IntSurf_SequenceNodeOfSequenceOfCouple *anItem);
 		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfCouple &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfCouple & operator=(const IntSurf_SequenceNodeOfSequenceOfCouple *anItem);
+		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfCouple const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -268,6 +293,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S(const Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S &aHandle);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *anItem);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S & operator=(const IntSurf_SequenceNodeOfSequenceOfPntOn2S *anItem);
 		%feature("autodoc", "1");
 		Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -528,6 +557,8 @@ class IntSurf_ListOfPntOn2S {
 		%feature("autodoc", "1");
 		void Assign(const IntSurf_ListOfPntOn2S &Other);
 		%feature("autodoc", "1");
+		void operator=(const IntSurf_ListOfPntOn2S &Other);
+		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
@@ -657,6 +688,8 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfPathPoint & Assign(const IntSurf_SequenceOfPathPoint &Other);
 		%feature("autodoc", "1");
+		const IntSurf_SequenceOfPathPoint & operator=(const IntSurf_SequenceOfPathPoint &Other);
+		%feature("autodoc", "1");
 		void Append(const IntSurf_PathPoint &T);
 		%feature("autodoc", "1");
 		void Append(IntSurf_SequenceOfPathPoint & S);
@@ -740,6 +773,8 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfCouple & Assign(const IntSurf_SequenceOfCouple &Other);
+		%feature("autodoc", "1");
+		const IntSurf_SequenceOfCouple & operator=(const IntSurf_SequenceOfCouple &Other);
 		%feature("autodoc", "1");
 		void Append(const IntSurf_Couple &T);
 		%feature("autodoc", "1");
@@ -855,6 +890,8 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfPntOn2S & Assign(const IntSurf_SequenceOfPntOn2S &Other);
+		%feature("autodoc", "1");
+		const IntSurf_SequenceOfPntOn2S & operator=(const IntSurf_SequenceOfPntOn2S &Other);
 		%feature("autodoc", "1");
 		void Append(const IntSurf_PntOn2S &T);
 		%feature("autodoc", "1");
@@ -1041,6 +1078,8 @@ class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {
 		void Clear();
 		%feature("autodoc", "1");
 		const IntSurf_SequenceOfInteriorPoint & Assign(const IntSurf_SequenceOfInteriorPoint &Other);
+		%feature("autodoc", "1");
+		const IntSurf_SequenceOfInteriorPoint & operator=(const IntSurf_SequenceOfInteriorPoint &Other);
 		%feature("autodoc", "1");
 		void Append(const IntSurf_InteriorPoint &T);
 		%feature("autodoc", "1");

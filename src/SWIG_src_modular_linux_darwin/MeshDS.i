@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include MeshDS_dependencies.i
 
@@ -139,6 +144,10 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -217,6 +226,8 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		MeshDS_DataMapOfIntegerMapOfInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		MeshDS_DataMapOfIntegerMapOfInteger & Assign(const MeshDS_DataMapOfIntegerMapOfInteger &Other);
+		%feature("autodoc", "1");
+		MeshDS_DataMapOfIntegerMapOfInteger & operator=(const MeshDS_DataMapOfIntegerMapOfInteger &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");

@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include NMTTools_dependencies.i
 
@@ -126,6 +131,10 @@ class Handle_NMTTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 		Handle_NMTTools_ListNodeOfListOfCommonBlock(const Handle_NMTTools_ListNodeOfListOfCommonBlock &aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCommonBlock(const NMTTools_ListNodeOfListOfCommonBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_ListNodeOfListOfCommonBlock & operator=(const Handle_NMTTools_ListNodeOfListOfCommonBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_ListNodeOfListOfCommonBlock & operator=(const NMTTools_ListNodeOfListOfCommonBlock *anItem);
 		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCommonBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -153,6 +162,10 @@ class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_Map
 		%feature("autodoc", "1");
 		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
 		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const Handle_NMTTools_StdMapNodeOfMapOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
+		%feature("autodoc", "1");
 		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Hand
 		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
 		%feature("autodoc", "1");
 		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -205,6 +222,10 @@ class Handle_NMTTools_ListNodeOfListOfCoupleOfShape : public Handle_TCollection_
 		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCoupleOfShape(const NMTTools_ListNodeOfListOfCoupleOfShape *anItem);
 		%feature("autodoc", "1");
+		Handle_NMTTools_ListNodeOfListOfCoupleOfShape & operator=(const Handle_NMTTools_ListNodeOfListOfCoupleOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_ListNodeOfListOfCoupleOfShape & operator=(const NMTTools_ListNodeOfListOfCoupleOfShape *anItem);
+		%feature("autodoc", "1");
 		Handle_NMTTools_ListNodeOfListOfCoupleOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -230,6 +251,10 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -257,6 +282,10 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : publi
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock *anItem);
 		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock *anItem);
+		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -282,6 +311,10 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : 
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
 		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -325,6 +358,8 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & Assign(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -370,6 +405,8 @@ class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
 		NMTTools_MapOfPaveBlock(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
 		NMTTools_MapOfPaveBlock & Assign(const NMTTools_MapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & operator=(const NMTTools_MapOfPaveBlock &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
@@ -552,6 +589,8 @@ class NMTTools_ListOfCommonBlock {
 		NMTTools_ListOfCommonBlock();
 		%feature("autodoc", "1");
 		void Assign(const NMTTools_ListOfCommonBlock &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTTools_ListOfCommonBlock &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
@@ -926,6 +965,8 @@ class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap
 		%feature("autodoc", "1");
 		NMTTools_IndexedDataMapOfIndexedMapOfInteger & Assign(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
 		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfIndexedMapOfInteger & operator=(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1054,6 +1095,8 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		NMTTools_IndexedDataMapOfShapePaveBlock & Assign(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
 		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapePaveBlock & operator=(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1157,6 +1200,8 @@ class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		NMTTools_DataMapOfIntegerListOfPaveBlock & Assign(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
 		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
+		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
@@ -1191,6 +1236,8 @@ class NMTTools_ListOfCoupleOfShape {
 		NMTTools_ListOfCoupleOfShape();
 		%feature("autodoc", "1");
 		void Assign(const NMTTools_ListOfCoupleOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTTools_ListOfCoupleOfShape &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Extent() const;
 		%feature("autodoc", "1");

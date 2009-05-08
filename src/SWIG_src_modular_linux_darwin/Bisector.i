@@ -107,6 +107,11 @@ Standard_Integer & function transformation
     $1 = &temp;
 }
 
+/*
+Renaming operator = that can't be wrapped in Python
+*/
+%rename(Set) *::operator=;
+
 
 %include Bisector_dependencies.i
 
@@ -125,6 +130,10 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 		Handle_Bisector_Curve(const Handle_Bisector_Curve &aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve(const Bisector_Curve *anItem);
+		%feature("autodoc", "1");
+		Handle_Bisector_Curve & operator=(const Handle_Bisector_Curve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bisector_Curve & operator=(const Bisector_Curve *anItem);
 		%feature("autodoc", "1");
 		Handle_Bisector_Curve const DownCast(const Handle_Standard_Transient &AnObject);
 
@@ -152,6 +161,10 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna(const Bisector_BisecAna *anItem);
 		%feature("autodoc", "1");
+		Handle_Bisector_BisecAna & operator=(const Handle_Bisector_BisecAna &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bisector_BisecAna & operator=(const Bisector_BisecAna *anItem);
+		%feature("autodoc", "1");
 		Handle_Bisector_BisecAna const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -178,6 +191,10 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC(const Bisector_BisecCC *anItem);
 		%feature("autodoc", "1");
+		Handle_Bisector_BisecCC & operator=(const Handle_Bisector_BisecCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bisector_BisecCC & operator=(const Bisector_BisecCC *anItem);
+		%feature("autodoc", "1");
 		Handle_Bisector_BisecCC const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
@@ -203,6 +220,10 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 		Handle_Bisector_BisecPC(const Handle_Bisector_BisecPC &aHandle);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC(const Bisector_BisecPC *anItem);
+		%feature("autodoc", "1");
+		Handle_Bisector_BisecPC & operator=(const Handle_Bisector_BisecPC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bisector_BisecPC & operator=(const Bisector_BisecPC *anItem);
 		%feature("autodoc", "1");
 		Handle_Bisector_BisecPC const DownCast(const Handle_Standard_Transient &AnObject);
 
