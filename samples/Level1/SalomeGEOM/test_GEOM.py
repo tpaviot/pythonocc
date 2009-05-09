@@ -121,30 +121,6 @@ if prim_operations.IsDone():
 else:
     print 'did not update box'
 
-
-print 'something seriously f*cked up with the topology module!!!'
-print 'most likely because of failed hashing...'
-
-from OCC.BRepPrimAPI import *
-bx = BRepPrimAPI_MakeBox(12,5,3).Shape()
-print 'print vertices'
-print_vertices(bx)
-
-from OCC.TopExp import *
-from OCC.TopAbs import *
-from OCC.TopoDS import TopoDS
-tds = TopoDS()
-
-print 'TopExp_Explorer' 
-
-te = TopExp_Explorer(bx, TopAbs_VERTEX)
-
-n = 0
-while te.More():
-    print 'vertex:', n, ' --- ', BRep_Tool().Pnt(tds.Vertex(te.Current())).Coord()
-    te.Next(); n+=1
-
-
 start_display()
 
 
