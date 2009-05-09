@@ -25,7 +25,8 @@ import environment
 # (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
 
 MODULES = [
-           ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump']}),
+           ('Standard',[],['Standard_SStream'],{'Handle_Standard_Persistent':['ShallowDump'],\
+'Standard_Failure':['operator=']}),
            ('MMgt',[],[]),
            ('Precision',[],[]),
            ('Quantity',[],[]),
