@@ -1,5 +1,10 @@
+2009/5/10:
+	- Work on SCons script
+	- Work on NIS display
+2009/5/6:
+	- operator = wrapped
 2009/4/30:
-	- New feature: class renaming
+	- New feature: class renaming #ROLLED BACK NEW BRANCH CREATED
 == pythonOCC-PDE2009 released
 2009/4/27:
 	- Added XML/RPC sample
