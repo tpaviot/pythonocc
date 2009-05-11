@@ -529,6 +529,7 @@ else:
                     ('TPrsStd',['OSD','MFT','Xw','Aspect',],[]),
                     ('XCAFPrs',['Aspect','MFT','TDF','OSD','Graphic3d',\
                                 'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr'],[]),
+                    ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer'],['NIS_Triangulated']),          
                     ])
     MODULES.extend([
                     ('Image',[],[]), #bug on Windows
