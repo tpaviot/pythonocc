@@ -26,6 +26,7 @@ import SCons
 import SCons.Util
 import platform
 from Modules import MODULES
+import environment
 
 ##########################################################################################
 ########## PROXY TO NEWER SCONS (DOWNLOADED IF NEEDED) ###################################
@@ -103,67 +104,60 @@ OCC_INCLUDE_PATH = ARGUMENTS.get('OCC_INCLUDE_PATH', '')
 OCC_LIBRARY_PATH = ARGUMENTS.get('OCC_LIBRARY_PATH', '')
 OCC_CONFIG_H_PATH = ARGUMENTS.get('OCC_CONFIG_H_PATH', '')
 BuildDir(BUILD_DIR,'.',duplicate = 0)
+##
+## Define paths
+##
+#try:
+#    OCC_ROOT = os.environ['CASROOT']
+#except KeyError:
+#    print "OpenCascade CASROOT environment variable not set."
+#    OCC_ROOT = None
 #
-# First define platform specific settings
-#
-#
-# pythonOCC version
-#
-VERSION = 'wo0.2'
-#
-# Define paths
-#
-try:
-    OCC_ROOT = os.environ['CASROOT']
-except KeyError:
-    print "OpenCascade CASROOT environment variable not set."
-    OCC_ROOT = None
-
-if sys.platform=='win32':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_win32')
-    # Try to find OCC paths from environment analysis
-    if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
-        OCC_LIB = os.path.join(OCC_ROOT,'win32','lib')
-    GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
-    PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
-    DEFINE_MACROS = ['WNT','WIN32','_WINDOWS','CSFDB','NDEBUG']
-    ECA = ['/Ox','/MD','/W3','/GX','/link']
-    SWIG_OPTS = ['-O','-w302,314,509,512','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir',BUILD_DIR]
-    ELA = []
-    EXTRA_LIBS = []    
-elif sys.platform=='linux2':
-    architecture = platform.machine() #returns i386, i686 etc.
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
-    OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
-    CONFIG_H_PATH = '/usr/local/inc'
-    OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
-    GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
-    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
-    DEFINE_MACROS = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL',('_GNU_SOURCE','1')]
-    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1'],#'-outdir',BUILD_DIR]
-    ECA = ['-O0','-march=%s'%architecture]
-    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    ELA = ['-Wl,--no-undefined']
-    EXTRA_LIBS = ['m','stc++',lib_python]
-elif sys.platform=='darwin':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
-    architecture = platform.machine()
-    CONFIG_H_PATH = '/usr/local/inc'
-    OCC_INC = '/usr/local/inc'
-    OCC_LIB = '/usr/local/lib'
-    GCC_XML_PATH = '/usr/bin' 
-    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
-    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
-    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-DOCC_CONVERT_SIGNALS'],#'-outdir',BUILD_DIR]
-    ECA = ['-O0','-march=%s'%architecture]
-    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    ELA = ['-Wl,--no-undefined']
-    EXTRA_LIBS = ['m','stc++',lib_python]
-else:
-    raise "Unsupported platform"
+#if sys.platform=='win32':
+#    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_win32')
+#    # Try to find OCC paths from environment analysis
+#    if OCC_ROOT!=None:
+#        OCC_INC = os.path.join(OCC_ROOT,'inc')
+#        OCC_LIB = os.path.join(OCC_ROOT,'win32','lib')
+#    GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
+#    PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
+#    DEFINE_MACROS = ['WNT','WIN32','_WINDOWS','CSFDB','NDEBUG']
+#    ECA = ['/Ox','/MD','/W3','/GX','/link']
+#    SWIG_OPTS = ['-O','-w302,314,509,512','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir',BUILD_DIR]
+#    ELA = []
+#    EXTRA_LIBS = []    
+#elif sys.platform=='linux2':
+#    architecture = platform.machine() #returns i386, i686 etc.
+#    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
+#    OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
+#    CONFIG_H_PATH = '/usr/local/inc'
+#    OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
+#    GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
+#    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
+#    DEFINE_MACROS = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL',('_GNU_SOURCE','1')]
+#    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+#                 '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1'],#'-outdir',BUILD_DIR]
+#    ECA = ['-O0','-march=%s'%architecture]
+#    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
+#    ELA = ['-Wl,--no-undefined']
+#    EXTRA_LIBS = ['m','stc++',lib_python]
+#elif sys.platform=='darwin':
+#    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
+#    architecture = platform.machine()
+#    CONFIG_H_PATH = '/usr/local/inc'
+#    OCC_INC = '/usr/local/inc'
+#    OCC_LIB = '/usr/local/lib'
+#    GCC_XML_PATH = '/usr/bin' 
+#    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
+#    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
+#    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+#                 '-DOCC_CONVERT_SIGNALS'],#'-outdir',BUILD_DIR]
+#    ECA = ['-O0','-march=%s'%architecture]
+#    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
+#    ELA = ['-Wl,--no-undefined']
+#    EXTRA_LIBS = ['m','stc++',lib_python]
+#else:
+#    raise "Unsupported platform"
 #
 # Overwrite default values with users
 #
@@ -183,23 +177,23 @@ if env['PLATFORM']=='win32':
 	env.Append(LIBPATH=os.environ['LIB'].split(';'))
 	env['ENV']['TMP'] = os.environ['TMP']
 
-print 'Build pythonOCC-%s for platform: %s'%(VERSION,platform.platform())
+print 'Build pythonOCC-%s for platform: %s'%(environment.VERSION,platform.platform())
 
-env.Append(CXXFLAGS=ECA)
-env.Append(CPPDEFINES=DEFINE_MACROS)	
-env.Append(LINKFLAGS=ELA)
-#
-# Setting paths
-#
-PYTHON_INC = sysconfig.get_python_inc()
-PYTHON_LIB = sysconfig.get_python_lib()
-VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
-MISC_PATH = os.path.join(os.getcwd(),'Misc')
-env.Append( CPPPATH= [PYTHON_INC,OCC_INC, VISUALIZATION_PATH, MISC_PATH])
-env.Append( LIBPATH = [OCC_LIB] )
-env.Append( LIBPATH = PYTHON_LIB)
+env.Append(CXXFLAGS=environment.ECA)
+env.Append(CPPDEFINES=environment.DEFINE_MACROS)	
+env.Append(LINKFLAGS=environment.ELA)
+##
+## Setting paths
+##
+#PYTHON_INC = sysconfig.get_python_inc()
+#PYTHON_LIB = sysconfig.get_python_lib()
+#VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
+#MISC_PATH = os.path.join(os.getcwd(),'Misc')
+env.Append( CPPPATH= [environment.PYTHON_INC,environment.OCC_INC,environment.VISUALIZATION_PATH, environment.MISC_PATH])
+env.Append( LIBPATH = [environment.OCC_LIB] )
+env.Append( LIBPATH = environment.PYTHON_LIB)
 if env['PLATFORM']!='win32':
-    env.Append( CPPPATH= [CONFIG_H_PATH])
+    env.Append( CPPPATH= [environment.CONFIG_H_PATH])
 #
 # Check configuration
 #
@@ -247,20 +241,24 @@ def CheckConfiguration(env):
 	conf = env.Configure(custom_tests={'CheckCXX':CheckCXX,'CheckSwig':CheckSwig,'CheckOCC':CheckOCC},)
 	conf.CheckCXX()
 	conf.CheckSwig()
+	headers = ['stdlib.h','string.h','Python.h','stdexcept','X11/XWDFile.h','cstdlib']
+	for header in headers:
+		if not conf.CheckCXXHeader(header,'<>'):
+		    Exit(1)
 	#conf.CheckOCC() don't work
-	if not conf.CheckCXXHeader('stdlib.h','<>'):
-		Exit(1)
-	if not conf.CheckCXXHeader('string.h','<>'):
-		Exit(1)
-	if not conf.CheckCXXHeader('Python.h','<>'):
-		Exit(1)
-	if not conf.CheckCXXHeader('stdexcept','<>'):
-		Exit(1)
-	if env['PLATFORM']=='posix':
-		if not conf.CheckCXXHeader('X11/XWDFile.h','<>'):
-			Exit(1)
-		if not conf.CheckCXXHeader('cstdlib','<>'):
-			Exit(1)
+#	if not conf.CheckCXXHeader('stdlib.h','<>'):
+#		Exit(1)
+#	if not conf.CheckCXXHeader('string.h','<>'):
+#		Exit(1)
+#	if not conf.CheckCXXHeader('Python.h','<>'):
+#		Exit(1)
+#	if not conf.CheckCXXHeader('stdexcept','<>'):
+#		Exit(1)
+#	if env['PLATFORM']=='posix':
+#		if not conf.CheckCXXHeader('X11/XWDFile.h','<>'):
+#			Exit(1)
+#		if not conf.CheckCXXHeader('cstdlib','<>'):
+#			Exit(1)
 	#
 	# Check available OpenCascade libs on dest machine
 	# The ALL_ACC_LIBRARIES list is generated from the Windows distribution
@@ -287,7 +285,7 @@ def CheckConfiguration(env):
 	# Check extra libs
 	#
 	AVAILABLE_EXTRA_LIBS = []
-	for extra_lib in EXTRA_LIBS:
+	for extra_lib in environment.EXTRA_LIBS:
 		if conf.CheckLib(extra_lib, language = "C++"):
 			AVAILABLE_EXTRA_LIBS.append(extra_lib)
 	#
@@ -308,28 +306,10 @@ def Create__init__():
     print "Creating __init__.py script."
     init_fp = open(os.path.join(BUILD_DIR,'__init__.py'),'w')
     #
-    # First set important OpenCascade env var
-    # These settings are taken from OCC message forum:
-    # http://www.opencascade.org/org/forum/thread_12800/
-    # I did a test case in my OCAF application, and i could not see any problem, even with your first case.My environment variables concerning the memory manager are:
-    #
-    #MMGT_OPT=1 //use the optimised memory manager
-    #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
-    #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
-    #init_fp.write('import os\n')
-    #init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
-    #init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
-    #init_fp.write("os.environ['MMGT_OPT']='1'\n")
-    #init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
-    #init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
-    # Display stuff
-    #init_fp.write("os.environ['DISPLAY']=':0.0'\n")
-    #init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so'\n")
-    #
     # Include Version number
     #
-    init_fp.write("VERSION='%s'\n"%VERSION)
-    #
+    init_fp.write("VERSION='%s'\n"%environment.VERSION)
+    
     init_fp.write('__all__=[')
     for module_tuple in MODULES:
         module_name = module_tuple[0]
@@ -347,7 +327,7 @@ if BUILD:
 	#
 	for module in MODULES:
 		module_name = module[0]
-		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
+		SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
 	#	if not (os.path.isfile(SWIG_source_file)): #if no .i file, generate_it		
 	#		import SWIG_generator
 	#		builder = SWIG_generator.ModularBuilder(module, False)
@@ -358,28 +338,27 @@ if BUILD:
 	#
 	# SWIGing .i files
 	#
-	env['SWIGFLAGS'] = [SWIG_OPTS]
-	env['SWIGPATH']  = [OCC_INC]
-	env['LIBS']= ALL_LIBS#AVAILABLE_OCC_LIBS + AVAILABLE_EXTRA_LIBS
+	env['SWIGFLAGS'] = [environment.SWIG_OPTS]
+	env['SWIGPATH']  = [environment.OCC_INC]
+	env['LIBS']= ALL_LIBS
 	#
 	# Build shared libraries
 	#
 	for module in MODULES:
 		module_name = module[0]
-		print 'Processing %s'%module_name
-		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-		#SWIG_SOURCE_FILES.append(SWIG_source_file)
+		#print 'Processing %s'%module_name
+		SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
 		SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
 		env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Visualization
-	SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
-	CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
-	CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
-	CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
+	SWIG_source_file = os.path.join(environment.VISUALIZATION_PATH,'Visualization.i')
+	CC1 = os.path.join(environment.VISUALIZATION_PATH,'Display2d.cpp')
+	CC2 = os.path.join(environment.VISUALIZATION_PATH,'Display3d.cpp')
+	CC3 = os.path.join(environment.VISUALIZATION_PATH,'NISDisplay3d.cpp')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Misc
-	SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
+	SWIG_source_file = os.path.join(environment.MISC_PATH,'Misc.i')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	#

@@ -58,7 +58,6 @@ class Display3d {
 	void Test();
 };
 
-#ifdef WNT
 class NISDisplay3d {
  public:
 	%feature("autodoc", "1");
@@ -76,5 +75,4 @@ class NISDisplay3d {
 	%feature("autodoc", "1");
 	void Test();
 };
-#endif
 

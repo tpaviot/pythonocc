@@ -19,8 +19,6 @@
 
 #include "Visualization.h"
 
-#ifdef WNT
-
 #define ZVIEW_SIZE 100
 
 NISDisplay3d::NISDisplay3d()
@@ -33,7 +31,7 @@ NISDisplay3d::NISDisplay3d()
 	printf("Graphic device created.\n");
 	#endif
 	// Create V3dViewer
-    myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
+    	myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
   	printf("Viewer created.\n");
   	myV3dViewer->Init();
 	myV3dViewer->SetDefaultLights();
@@ -81,4 +79,4 @@ void NISDisplay3d::Test()
       //myV3dView->ZFitAll();
       //myV3dView->FitAll();
 }
-#endif
+
