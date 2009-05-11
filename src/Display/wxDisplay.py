@@ -28,8 +28,6 @@ else:
     import wx.glcanvas
     BaseClass = wx.glcanvas.GLCanvas
    
-BaseClass = wx.Panel
-
 class wxBaseViewer(BaseClass):
     def __init__(self, parent = None):
         BaseClass.__init__(self,parent)
@@ -337,6 +335,8 @@ def TestNIS3d():
     class AppFrame(wx.Frame):
         def __init__(self, parent):
             wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+            self.canva = wxNISViewer3d(self)
+
             menuBar = wx.MenuBar()
             DemoMenu = wx.Menu()
             demo_id = wx.NewId()
@@ -346,26 +346,18 @@ def TestNIS3d():
             self.SetMenuBar(menuBar)
         
         def doit(self,event=None):
-            display = OCCViewer.NISViewer3d(self.GetHandle())
-            display.Create()
-            print "oui"
-            
+            print "popo"
+            self.canva._display.Test()
+         
         def runTests(self):
             self.canva._display.Test()
             
-    #display = OCCViewer.NISViewer3d(0)
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()
     frame = AppFrame(None)
     frame.Show(True)
-    #wx.SafeYield()
-    #h = frame.GetHandle()
-    #display.SetWindow(h)
-    #display.Create()
-    #frame.canva.InitDriver()
-    #frame.Show(True)
-    #wx.SafeYield()
-
+    wx.SafeYield()
+    frame.canva.InitDriver()
     #frame.runTests()
     app.SetTopWindow(frame)
     app.MainLoop()     
@@ -390,5 +382,5 @@ def Test2d():
     app.MainLoop()            
 
 if __name__=="__main__":
-    Test3d()
+    TestNIS3d()
     #Test3d()

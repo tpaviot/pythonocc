@@ -36,6 +36,7 @@
 #include <AIS_InteractiveContext.hxx>
 #include <NIS_InteractiveContext.hxx>
 #include <NIS_View.hxx>
+#include <NIS_Surface.hxx>
 #include <AIS2D_InteractiveContext.hxx>
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
@@ -92,6 +93,8 @@ protected:
    Handle_NIS_InteractiveContext myNISContext;
    Handle_V3d_Viewer myV3dViewer;
    Handle_NIS_View myNISView;
+   Handle_AIS_InteractiveContext myAISContext;
+   Handle_V3d_View myV3dView;
    #ifdef WNT
    Handle_WNT_Window myWindow;
    Handle_Graphic3d_WNTGraphicDevice gd;

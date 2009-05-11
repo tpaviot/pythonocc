@@ -23,23 +23,6 @@
 
 NISDisplay3d::NISDisplay3d()
 {
-	#ifdef WNT
-	gd = new Graphic3d_WNTGraphicDevice();
-	printf("WNT Graphic device created.\n");
-	#else
-	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
-	printf("Graphic device created.\n");
-	#endif
-	// Create V3dViewer
-    	myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
-  	printf("Viewer created.\n");
-  	myV3dViewer->Init();
-	myV3dViewer->SetDefaultLights();
-	myV3dViewer->SetLightOn();
-	// Create the OCC interactive context and attach the view.
-	Handle_NIS_InteractiveContext myNISContext = new NIS_InteractiveContext();
-	printf("NIS Interactive context created.\n");
-    printf("NISDisplay3d class successfully initialized.\n");
 }
 
 NISDisplay3d::~NISDisplay3d()
@@ -48,35 +31,61 @@ NISDisplay3d::~NISDisplay3d()
 
 void NISDisplay3d::Init(int window_handle)
 {
-    printf("NISDisplay3d class initialization starting ...\n");
-	short hi = static_cast<short>(window_handle >> 16);
-	short lo = static_cast<short>(window_handle);
-	// Create Graphic Device and Window
-	#ifdef WNT	
-	myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
+        printf("NISDisplay3d class initialization starting ...\n");
+        short hi = static_cast<short>(window_handle >> 16);
+	short lo = static_cast<short>(window_handle);       
+	#ifdef WNT
+	gd = new Graphic3d_WNTGraphicDevice();
+	printf("WNT Graphic device created.\n");
+        myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
 	printf("WNT window created.\n");
 	#else
-	myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
+	gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
+	printf("Graphic device created.\n");
+        myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_SAMEQUALITY);
 	printf("Xw_Window created.\n");
 	#endif
+	// Create V3dViewer
+    	myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
+  	printf("Viewer created.\n");
+  	myV3dViewer->Init();
+	myV3dViewer->SetDefaultLights();
+	myV3dViewer->SetLightOn();
+	// Create the OCC interactive context and attach the view.
+	// Extracted from: http://www.opencascade.org/org/forum/thread_15167/
+	myNISContext = new NIS_InteractiveContext();
+        myNISContext->SetSelectionMode (NIS_InteractiveContext::Mode_Normal);
+        myNISContext->SetSelectionMode (NIS_InteractiveContext::Mode_Normal);
+	printf("NIS Interactive context created.\n");
 	if (!myWindow->IsMapped())
 		myWindow->Map();
 		printf("Window mapped.\n");
-	Handle_NIS_View myNISView = new NIS_View(myV3dViewer,myWindow);
+	myNISView = new NIS_View(myV3dViewer,myWindow);
+        myNISView->SetBackgroundColor(Quantity_NOC_MIDNIGHTBLUE);
 	printf("NIS View created.\n");
 	myNISContext->AttachView(myNISView);
-	printf("Window attached to NISView");
-	
+	printf("Window attached to NISView.\n");
+        myNISView->TriedronDisplay(Aspect_TOTP_LEFT_LOWER,Quantity_NOC_WHITE,0.1, V3d_ZBUFFER);
+        myNISView->MustBeResized();
+        printf("NISDisplay3d class successfully initialized.\n");
+        
 }
 
 void NISDisplay3d::Test()
 {
-      //BRepPrimAPI_MakeTorus S(60,10);
-      printf("NIS Test");
+      //myNISView->TriedronDisplay(Aspect_TOTP_LEFT_LOWER,Quantity_NOC_WHITE,0.1, V3d_ZBUFFER);
+      printf("Ouioui");
+      BRepPrimAPI_MakeBox S(100,50,40);
+      Handle_NIS_Surface surface = new NIS_Surface(S.Shape());
+      //printf("Ouioui");
+      myNISContext->Display(surface,NULL,Standard_False);
+      myNISContext->UpdateViews();
+      myNISView->Redraw();
+      myNISView->MustBeResized();
       //BRepPrimAPI_MakeBox S(100,50,40);
       //Handle(AIS_Shape) anAISShape = new AIS_Shape(S.Shape());
       //myAISContext->Display(anAISShape);
-      //myV3dView->ZFitAll();
-      //myV3dView->FitAll();
+      //myNISView->ZFitAll();
+      //myNISView->FitAll();
 }
 

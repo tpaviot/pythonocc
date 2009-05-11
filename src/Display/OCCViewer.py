@@ -27,13 +27,7 @@ import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
-
-try:
-    import OCC.NIS
-    HAVE_NIS = False
-except ImportError:
-    HAVE_NIS = False
-
+import OCC.NIS
 import sys
 
 class BaseDriver(object):
@@ -109,14 +103,14 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
 
-if HAVE_NIS:
-    class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
-        def __init__(self, window_handle ):
-            BaseDriver.__init__(self,window_handle)
-            OCC.Visualization.NISDisplay3d.__init__(self)
-              
-        def OnResize(self):
-            self.View.MustBeResized()
+
+class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
+    def __init__(self, window_handle ):
+        BaseDriver.__init__(self,window_handle)
+        OCC.Visualization.NISDisplay3d.__init__(self)
+          
+    def OnResize(self):
+        self.View.MustBeResized()
         
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
