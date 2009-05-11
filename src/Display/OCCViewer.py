@@ -28,6 +28,9 @@ import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
 import OCC.NIS
+from OCC.TopExp import TopExp_Explorer
+from OCC.TopAbs import TopAbs_FACE
+from OCC.BRepMesh import BRepMesh
 import sys
 
 class BaseDriver(object):
@@ -111,6 +114,16 @@ class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
           
     def OnResize(self):
         self.View.MustBeResized()
+        
+    def DisplayShape(self,shape, precision = 0.1):
+        exp = TopExp_Explorer(shape,TopAbs_FACE)
+        while exp.More():
+            face = OCC.TopoDS.TopoDS().Face(exp.Current())
+            BRepMesh().Mesh(face,precision)
+            shape_to_display = OCC.NIS.NIS_Surface(shape)
+            self.Context.Display(shape_to_display.GetHandle())
+            exp.Next()
+        self.Context.UpdateViews()
         
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):

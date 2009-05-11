@@ -128,8 +128,10 @@ class wxNISViewer3d(wxBaseViewer):
         #self._display.DisplayTriedron()
         #self._display.SetModeShaded()
         self._inited = True
-        print "Inited!!"
-        #print dir(self._3dDisplay)  
+    
+    def OnPaint(self, event):
+        if self._inited:
+            self._display.Repaint()
         
 class wxViewer3d(wxBaseViewer):
     def __init__(self, *kargs):
@@ -346,9 +348,12 @@ def TestNIS3d():
             self.SetMenuBar(menuBar)
         
         def doit(self,event=None):
-            print "popo"
-            self.canva._display.Test()
-         
+            #aCyl = BRepPrim_Cylinder(gp_Ax2(gp_Pnt(0., 0., 0.), gp_Dir(0.,0.,1.)),10., 20.)
+            #shape = aCyl.Shell();
+            from OCC.BRepPrimAPI import BRepPrimAPI_MakeTorus
+            shape = BRepPrimAPI_MakeTorus(300,100).Shape()
+            self.canva._display.DisplayShape(shape,10)
+                     
         def runTests(self):
             self.canva._display.Test()
             
