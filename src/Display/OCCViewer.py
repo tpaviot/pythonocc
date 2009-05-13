@@ -107,24 +107,171 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         self.FitAll()
 
 
-class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
+class BaseDriver3d(BaseDriver):        
+    """
+    Parent class of both Viewer3d and NISViewer3d
+    """
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)
-        OCC.Visualization.NISDisplay3d.__init__(self)
-          
+        self.selected_shape = None
+    
     def OnResize(self):
         self.View.MustBeResized()
+
+    def ResetView(self):
+        self.View.Reset()
+    
+    def Repaint(self):
+        self.Viewer.Redraw()
         
-    def DisplayShape(self,shape, precision = 0.1):
-        exp = TopExp_Explorer(shape,TopAbs_FACE)
-        while exp.More():
-            face = OCC.TopoDS.TopoDS().Face(exp.Current())
-            BRepMesh().Mesh(face,precision)
-            shape_to_display = OCC.NIS.NIS_Surface(shape)
-            self.Context.Display(shape_to_display.GetHandle())
-            exp.Next()
-        self.Context.UpdateViews()
+#    def SetModeWireFrame(self):
+#        self.View.SetComputedMode(False)
+#        self.Context.SetDisplayMode(OCC.AIS.AIS_WireFrame)
+#
+#    def SetModeShaded(self):
+#        self.View.SetComputedMode(False)
+#        self.View.SetAntialiasingOff()
+#        self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
+#     
+#    def SetModeQuickHLR(self):
+#        self.View.SetComputedMode(True)
+#        self.Context.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
+#    
+#    def SetModeExactHLR(self):
+#        self.View.SetComputedMode(True)
+#        self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
+    
+    def View_Top(self):
+        self.View.SetProj(OCC.V3d.V3d_Zpos) 
+
+    def View_Bottom(self):
+        self.View.SetProj(OCC.V3d.V3d_Zneg)
         
+    def View_Left(self):
+        self.View.SetProj(OCC.V3d.V3d_Xneg)
+
+    def View_Right(self):
+        self.View.SetProj(OCC.V3d.V3d_Xpos)
+
+    def View_Front(self):
+        self.View.SetProj(OCC.V3d.V3d_Yneg)
+
+    def View_Rear(self):
+        self.View.SetProj(OCC.V3d.V3d_Ypos)
+
+    def View_Iso(self):
+        self.View.SetProj(OCC.V3d.V3d_XposYnegZpos)
+        
+    def ExportToImage(self,Filename):
+        self.View.Dump(Filename)
+
+    def SetBackgroundImage(self, Filename, Stretch = True):
+        if (Stretch):
+            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
+        else:
+            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
+            
+    def DisplayTriedron(self):
+        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
+        self.Repaint()
+    
+    def EnableAntiAliasing(self):
+        self.View.SetAntialiasingOn()
+        self.Repaint()
+
+    def DisableAntiAliasing(self):
+        self.View.SetAntialiasingOff()
+        self.Repaint()
+    
+    def EraseAll(self):
+        self._objects_displayed = []
+        self.Context.EraseAll()
+        
+    def Tumble(self,NumImages,Animation = True):
+        self.View.Tumble(NumImages, Animation)
+        
+    def Pan(self,Dx,Dy):
+        self.View.Pan(Dx,Dy)
+    
+#    def SetSelectionMode(self,mode = OCC.TopAbs.TopAbs_FACE):
+#        self.Context.CloseAllContexts()
+#        self.Context.OpenLocalContext()
+#        self.Context.ActivateStandardMode(mode)
+#    
+#    def OpenLocalContext(self):
+#        if not self._local_context_opened:
+#            self.Context.OpenLocalContext()
+#            self._local_context_opened = True
+#        
+#    def SetSelectionModeVertex(self):
+#        self.OpenLocalContext()
+#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
+#        
+#    def SetSelectionModeEdge(self):
+#        self.OpenLocalContext()
+#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
+#        
+#    def SetSelectionModeFace(self):
+#        self.OpenLocalContext()
+#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
+#        
+#    def SetSelectionModeShape(self):
+#        self.Context.CloseAllContexts()
+#        self.Context.OpenLocalContext()
+#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_SHAPE)        
+#    
+#    def SetSelectionModeNeutral(self):
+#        self.Context.CloseAllContexts()
+#    
+#    def GetSelectedShape(self):
+#        """
+#        Returns the current selected shape
+#        """
+#        return self.selected_shape
+#    
+#    def Select(self,X,Y):
+#        self.Context.Select()
+#        self.Context.InitSelected()
+#        print self.Context.MoreSelected()
+#        if self.Context.MoreSelected():
+#            if self.Context.HasSelectedShape():
+#                print "Something selected"
+#                self.selected_shape = self.Context.SelectedShape()
+#                print self.selected_shape
+#        else:
+#            print "Nothing selected"
+#            self.selected_shape = None
+        
+    def Rotation(self,X,Y):
+        self.View.Rotation(X,Y)
+    
+    def DynamicZoom(self,X1,Y1,X2,Y2):
+        self.View.Zoom(X1,Y1,X2,Y2)
+    
+    def ZoomArea(self,X1,Y1,X2,Y2):
+        self.View.WindowFit(X1,Y1,X2,Y2)
+    
+    def Zoom(self,X,Y):
+        self.View.Zoom(X,Y)
+    
+    def StartRotation(self,X,Y):
+        self.View.StartRotation(X,Y)
+    
+class NISViewer3d(BaseDriver3d, OCC.Visualization.NISDisplay3d):
+    def __init__(self, window_handle ):
+        BaseDriver3d.__init__(self,window_handle)
+        OCC.Visualization.NISDisplay3d.__init__(self)
+                 
+    def DisplayShape(self,shape, quality = 0.1):
+        """
+        quality is a float. High quality (for instance 0.01) results in good display quality but
+        high memory footprint. Low quality leads to bad display quality but small memory consumption.
+        """
+        BRepMesh().Mesh(shape,quality)
+        shape_to_display = OCC.NIS.NIS_Surface(shape)
+        self.Context.Display(shape_to_display.GetHandle())
+        self.FitAll()
+                
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)

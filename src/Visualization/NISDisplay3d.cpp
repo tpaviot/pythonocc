@@ -55,7 +55,7 @@ void NISDisplay3d::Init(int window_handle)
 	// Extracted from: http://www.opencascade.org/org/forum/thread_15167/
 	myNISContext = new NIS_InteractiveContext();
         myNISContext->SetSelectionMode (NIS_InteractiveContext::Mode_Normal);
-        myNISContext->SetSelectionMode (NIS_InteractiveContext::Mode_Normal);
+        //myNISContext->SetSelectionMode (NIS_InteractiveContext::Mode_Normal);
 	printf("NIS Interactive context created.\n");
 	if (!myWindow->IsMapped())
 		myWindow->Map();
@@ -65,7 +65,7 @@ void NISDisplay3d::Init(int window_handle)
 	printf("NIS View created.\n");
 	myNISContext->AttachView(myNISView);
 	printf("Window attached to NISView.\n");
-        myNISView->TriedronDisplay(Aspect_TOTP_LEFT_LOWER,Quantity_NOC_WHITE,0.1, V3d_ZBUFFER);
+        //myNISView->TriedronDisplay(Aspect_TOTP_LEFT_LOWER,Quantity_NOC_WHITE,0.1, V3d_ZBUFFER);
         myNISView->MustBeResized();
         printf("NISDisplay3d class successfully initialized.\n");
         
