@@ -36,11 +36,49 @@
 
 from OCC.Bnd import *
 from OCC.BRepBndLib import *
-
+from OCC.TColgp import *
+from OCC.TColGeom import *
+from OCC.TCollection import *
 
 def get_boundingbox(shape, tol=1e-4):
     bbox = Bnd_Box()
     BRepBndLib().Add(shape, bbox)
     bbox.SetGap(tol)
     return bbox
+
+#===============================================================================
+# Data type utilities
+#===============================================================================
+
+def _Tcol_dim_1(li, _type):
+    '''function factory for 1-dimensional TCol* types'''
+    pts = _type(0, len(li)-1)
+    for n,i in enumerate(li):
+        pts.SetValue(n,i)
+    pts.thisown = False
+    return pts
+
+def _Tcol_dim_2(li, _type):
+    '''function factory for 2-dimensional TCol* types'''
+    length_nested = len(li[0])-1
+    pts = _type(0, len(li)-1, 0, length_nested)
+    pts.thisown = False
+    return pts
+    for n1,i in enumerate(li):
+        for n2,j in enumerate(i):
+            pts.SetValue(n1,n2,j)
+    return pts
+
+def point_list_to_TColgp_Array1OfPnt(li):
+    pts = TColgp_Array1OfPnt(0, len(li)-1)
+    for n,i in enumerate(li):
+        pts.SetValue(n,i)
+    return pts
+
+def point2d_list_to_TColgp_Array1OfPnt2d(li):
+    return _Tcol_dim_1(li, TColgp_Array1OfPnt2d)
+
+
+
+
 

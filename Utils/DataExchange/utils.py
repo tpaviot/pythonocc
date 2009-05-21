@@ -30,23 +30,46 @@ def shape_to_file(shape, pth, filename, format='iges'):
         return _file
         
     elif format == 'brep':
-        raise NotImplementedError
+        from OCC import TopoDS, BRep, BRepTools
+        shape = TopoDS.TopoDS_Shape()
+        builder = BRep.BRep_Builder()
+        BRepTools.BRepTools().Read(shape,_file,builder)    
     
     elif format == 'stl':
-        raise NotImplementedError
-    
+        from OCC import TopoDS, StlAPI
+        shape = TopoDS.TopoDS_Shape()
+        stl_reader = StlAPI.StlAPI_Reader()
+        stl_reader.Read(shape,str(filename))    
+            
+
 
 def file_to_shape(pth):
     '''get a Shape from an .iges or .step file'''
     assert os.path.isfile(pth), '%s is not a valid directory' % (pth)
     ext = os.path.splitext(pth)[1]
-    assert ext in ['.iges', '.igs', '.stp', '.step'], '%s is not an writable formar  file' % ( ext )
+    print 'ext', ext
+    assert ext in ['.iges', '.igs', '.stp', '.step', '.brep', '.stl'], '%s is not an readable format' % ( ext )
     
     if ext in ['.iges', '.igs']:
         __i = IGESControl_Controller(); __i.Init()
         reader = IGESControl_Reader()
-    else:
+    
+    elif ext in ['.step','.stp']:
         reader = STEPControl_Reader()
+    
+    elif ext == '.brep':
+        from OCC import TopoDS, BRep, BRepTools
+        shape = TopoDS.TopoDS_Shape()
+        builder = BRep.BRep_Builder()
+        BRepTools.BRepTools().Read(shape,pth,builder)
+        return shape
+    
+    elif ext == '.stl':
+        from OCC import TopoDS, StlAPI
+        shape = TopoDS.TopoDS_Shape()
+        stl_reader = StlAPI.StlAPI_Reader()
+        stl_reader.Read(shape,pth)
+        return shape    
         
     reader.ReadFile(pth)
     n_translated = reader.TransferRoots()
