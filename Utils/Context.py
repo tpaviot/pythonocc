@@ -8,7 +8,6 @@ class assert_isdone(object):
         
     def __enter__(self, ):
         if self.to_check.IsDone():
-            print 'done!'
             pass
         else:
             raise AssertionError, self.error_statement
