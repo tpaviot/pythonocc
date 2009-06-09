@@ -51,6 +51,14 @@ def add_variabele_to_engine(engine, docId, varString, varValue):
 def set_param_update(param, new_value):
     SetParameterValue(param, new_value)
 
+from OCC.TPrsStd import *
+from OCC.TNaming import *
+
+def register_presentation(geomObject):
+    result_label = geomObject.GetLastFunction().GetObject().GetEntry().FindChild(RESULT_LABEL)
+    prs_main = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
+    prs_main.Display(True)
+    return prs_main
 #===============================================================================
 # EXAMPLE
 #===============================================================================
@@ -84,55 +92,39 @@ prim_operations.StartOperation()
 Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
 prim_operations.FinishOperation()
 
-if prim_operations.IsDone():
-    print 'build a box'
-    print_vertices(Box.GetValue())
-    display.DisplayColoredShape(Box.GetValue(), "BLUE")
-else:
-    print 'did not build box'
+#def solve(prim_operations):
+#    solver = prim_operations.GetSolver()
+#    seq = TDF_LabelSequence() 
+#    solver.Update(docId, seq)
 
-add_variabele_to_engine(engine, docId, "HEIGHT", 24)
-add_variabele_to_engine(engine, docId, "DEPTH", 24)
 solver = prim_operations.GetSolver()
+root = doc.Main().Root()
+viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
+prs = register_presentation(Box)
 
-seq = TDF_LabelSequence() 
-solver.Update(docId, seq)
-if prim_operations.IsDone():
-    print 'update box height'
-    print_vertices(Box.GetValue())
-    display.DisplayColoredShape(Box.GetValue(), "RED")
-else:
-    print 'did not update box'
+def update():
+    seq = TDF_LabelSequence() 
+    solver.Update(docId, seq)
+    prs.Update()
+    viewer.Update()
+    
+for i in range(-66, -11):
+    add_variabele_to_engine(engine, docId, "DEPTH_A", i)
+    update()
+    display.FitAll()
+    time.sleep(.05)
 
-add_variabele_to_engine(engine, docId, "WIDTH", 11)
-add_variabele_to_engine(engine, docId, "HEIGHT", 33)
-add_variabele_to_engine(engine, docId, "DEPTH", 66)
-add_variabele_to_engine(engine, docId, "WIDTH_A", -11)
-add_variabele_to_engine(engine, docId, "HEIGHT_A", -80)
-add_variabele_to_engine(engine, docId, "DEPTH_A", -110)
-solver = prim_operations.GetSolver()
-
-seq = TDF_LabelSequence() 
-solver.Update(docId, seq)
-if prim_operations.IsDone():
-    print 'update box width'
-    print_vertices(Box.GetValue())
-    display.DisplayColoredShape(Box.GetValue(), "GREEN")
-else:
-    print 'did not update box'
+for i in range(-80, 0):
+    add_variabele_to_engine(engine, docId, "HEIGHT_A", i)
+    update()
+    display.FitAll()
+    time.sleep(.05)
+    
+for i in range(-44, 0):
+    add_variabele_to_engine(engine, docId, "WIDTH_A", i)
+    update()
+    display.FitAll()
+    time.sleep(.05)
 
 start_display()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
