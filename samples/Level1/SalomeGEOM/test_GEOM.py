@@ -1,3 +1,4 @@
+from __future__ import with_statement
 from OCC.GEOMImpl import *
 from OCC.SGEOM import *
 from OCC.BRep import *
@@ -5,7 +6,7 @@ from OCC.gp import *
 from OCC.TDF import *
 
 from OCC.Utils.Topology import Topo
-from OCC.Display.wxSamplesGui import start_display, display
+from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
 
 import time
 
@@ -25,23 +26,92 @@ doc   = doc_h.GetObject()
 # get access to operations
 prim_operations = myEngine.GetI3DPrimOperations(docId)
 basic_operations = myEngine.GetIBasicOperations(docId)
+bool_operations = myEngine.GetIBooleanOperations(docId)
 
 #===============================================================================
 # UTILITIES
 #===============================================================================
 
-def print_vertices(shape):
-#    import ipdb; ipdb.set_trace()
-    for i,v in enumerate(Topo(shape).vertices()):
-        print 'Vertex: %s Coord: %s' % ( i, BRep_Tool().Pnt(v).Coord())
+class operation(object):
+    '''
+    raises an assertion error when IsDone() returns false, with the error specified in error_statement
+    '''
+    def __init__(self, operation):
+        self.operation = operation
     
+    def __enter__(self):
+        print 'start operation'
+        self.operation.StartOperation()
+    
+    def __exit__(self, type, value, traceback):
+        print 'finish operation'
+        self.operation.FinishOperation()
+        if not self.operation.IsDone():
+            error_code = self.operation.GetErrorCode()
+            raise AssertionError('did not complete operation.\nused operation class: %s \nerror code: %s' % (self.operation.__class__, error_code) )
 
-from OCC.TCollection import TCollection_AsciiString as String
 def to_string(_str):
+    from OCC.TCollection import TCollection_AsciiString as String
     return String(_str)
 
 def to_param(x):
     return GEOM_Parameter(x)
+
+class Parameters(object):
+    def __init__(self, engine, docId):
+        object.__setattr__(self, 'engine', engine)
+        object.__setattr__(self, 'docId', docId)
+        object.__setattr__(self, 'solvers', [])
+        object.__setattr__(self, 'callbacks', [])
+    
+    def add_solver(self, solver):
+        assert isinstance( solver, GEOM_Solver), '%s is not a GEOM_Solver instance' % ( solver.__class__ )
+        self.solvers.append(solver)
+    
+    def add_callback(self, call):
+        if callable(call):
+            self.callbacks.append(call)
+        else:
+            raise TypeError('%s is not a callable object' % ( call.__class__ ) )
+        
+    
+    def __setattr__(self, name, value):
+        # if an attribute is a numerical value ( integer or float )
+        # than its considered to be a parameter
+        # hence, the interpreter constant is updated
+        # and all solvers that have been added are updated
+        if isinstance(value, int) or isinstance(value, float):
+            print 'got numerical value', value
+        else:
+            raise TypeError('an paramter ( that is an attribute of the class Parameters ) is either a float or integer')
+            
+        object.__setattr__(self, name, value)
+        docId = object.__getattribute__(self, 'docId')
+        
+        self.engine.SetInterpreterConstant( docId,
+                                             to_string(name),
+                                              value)
+        for solv in self.solvers:
+            seq = TDF_LabelSequence() 
+            print 'calling solver:', solv.__class__
+            solv.Update(docId, seq)
+            
+        for call in self.callbacks:
+            print 'calling callback:', call
+            call()
+                
+    def __getattribute__(self, name):
+        attr = object.__getattribute__(self, name)
+        if isinstance(attr, int) or isinstance(attr, float):
+            print 'parameter: %s value: %s' % (name, attr)
+            return to_param(to_string(name))
+        else:
+            return attr
+
+
+def print_vertices(shape):
+    for i,v in enumerate(Topo(shape).vertices()):
+        print 'Vertex: %s Coord: %s' % ( i, BRep_Tool().Pnt(v).Coord())
 
 def add_variabele_to_engine(engine, docId, varString, varValue):
     '''
@@ -59,72 +129,93 @@ def register_presentation(geomObject):
     prs_main = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
     prs_main.Display(True)
     return prs_main
+
 #===============================================================================
 # EXAMPLE
 #===============================================================================
 
-add_variabele_to_engine(engine, docId, "WIDTH", 12)
-add_variabele_to_engine(engine, docId, "HEIGHT", 70)
-add_variabele_to_engine(engine, docId, "DEPTH", 12)
-
-basic_operations.StartOperation()
-pnt1 = basic_operations.MakePointXYZ(to_param(to_string("WIDTH")),
-                                     to_param(to_string("DEPTH")),
-                                     to_param(to_string("HEIGHT"))
-                                    )
-pnt1.GetObject().SetName("point 1")
-basic_operations.FinishOperation()
-
-add_variabele_to_engine(engine, docId, "WIDTH_A", 0)
-add_variabele_to_engine(engine, docId, "HEIGHT_A", 0)
-add_variabele_to_engine(engine, docId, "DEPTH_A", 0)
-
-basic_operations.StartOperation()
-pnt2 = basic_operations.MakePointXYZ(to_param(to_string("WIDTH_A")),
-                                     to_param(to_string("DEPTH_A")),
-                                     to_param(to_string("HEIGHT_A"))
-                                    )
-pnt2.GetObject().SetName("point 2")
-basic_operations.FinishOperation()
-
-
-prim_operations.StartOperation()
-Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
-prim_operations.FinishOperation()
-
-#def solve(prim_operations):
-#    solver = prim_operations.GetSolver()
-#    seq = TDF_LabelSequence() 
-#    solver.Update(docId, seq)
-
-solver = prim_operations.GetSolver()
-root = doc.Main().Root()
-viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
-prs = register_presentation(Box)
-
-def update():
-    seq = TDF_LabelSequence() 
-    solver.Update(docId, seq)
-    prs.Update()
-    viewer.Update()
+def example_parametric_box(blah):
+    parameters = Parameters(engine, docId)
+    parameters.add_solver(prim_operations.GetSolver())
+    parameters.add_solver(basic_operations.GetSolver())
+    parameters.add_solver(bool_operations.GetSolver())
     
-for i in range(-66, -11):
-    add_variabele_to_engine(engine, docId, "DEPTH_A", i)
-    update()
-    display.FitAll()
-    time.sleep(.05)
-
-for i in range(-80, 0):
-    add_variabele_to_engine(engine, docId, "HEIGHT_A", i)
-    update()
-    display.FitAll()
-    time.sleep(.05)
+    # box 1
+    parameters.depth    = 12
+    parameters.height   = 70
+    parameters.width    = 12
+    parameters.depth_a  = 0
+    parameters.height_a = 0
+    parameters.width_a  = 0
     
-for i in range(-44, 0):
-    add_variabele_to_engine(engine, docId, "WIDTH_A", i)
-    update()
-    display.FitAll()
-    time.sleep(.05)
+    # box 2
+    parameters.lower  = -100
+    parameters.upper  = 100
+    parameters.fixed_height_lower = 0
+    parameters.fixed_height_higher = 10
+    
+    with operation(basic_operations):
+        pnt1 = basic_operations.MakePointXYZ(parameters.width,
+                                              parameters.depth,
+                                               parameters.height)
+        pnt1.GetObject().SetName("point 1")
+        pnt2 = basic_operations.MakePointXYZ(parameters.width_a,
+                                              parameters.depth_a,
+                                               parameters.height_a)
+        pnt2.GetObject().SetName("point 2")
+        
+        pnt3 = basic_operations.MakePointXYZ(parameters.lower,
+                                              parameters.lower,
+                                               parameters.fixed_height_lower)
+        pnt3.GetObject().SetName("point 3")
+        pnt4 = basic_operations.MakePointXYZ(parameters.upper,
+                                              parameters.upper,
+                                               parameters.fixed_height_higher)
+        pnt4.GetObject().SetName("point 4")
+        
+    
+    with operation(prim_operations):
+        Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
+        BoxBool = prim_operations.MakeBoxTwoPnt(pnt3, pnt4).GetObject()
+    
+    root = doc.Main().Root()
+    viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
 
+    with operation(bool_operations):
+        fff = bool_operations.MakeBoolean(Box.GetHandle(), BoxBool.GetHandle(), 1).GetObject()
+    
+    prs1 = register_presentation(Box)
+    prs2 = register_presentation(BoxBool)
+    prs3 = register_presentation(fff)
+    prs1.SetTransparency(0.8)
+    prs2.SetTransparency(0.8)
+    prs1.SetColor(100)
+    prs2.SetColor(200)
+    prs3.SetColor(100)
+    
+    def update():
+        prs1.Update()
+        prs2.Update()
+        prs3.Update()
+        viewer.Update()
+        display.FitAll()
+    
+    parameters.add_callback(update)
+            
+    for i in range(-66, -11):
+        parameters.depth_a = i
+    
+    for i in range(-80, 0):
+        parameters.height_a = i
+        
+    for i in range(-44, 0):
+        parameters.width_a = i
+
+def example_variable_fillet(blah):
+    from OCC.BRepPrimAPI import *
+    box = BRepPrimAPI_MakeBox(10,10,10).Shape()
+
+add_menu('GEOM')
+add_function_to_menu('GEOM', example_parametric_box)
 start_display()
 
