@@ -189,7 +189,7 @@ def example_parametric_box(blah):
     prs3 = register_presentation(fff)
     prs1.SetTransparency(0.8)
     prs2.SetTransparency(0.8)
-    prs1.SetColor(100)
+    prs1.SetColor(12)
     prs2.SetColor(200)
     prs3.SetColor(100)
     
