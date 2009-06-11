@@ -89,20 +89,23 @@ class STEPImporter(object):
             return self._shape
 
 class STEPExporter(object):
-    def __init__(self, aShape, filename):
-        #
+    def __init__(self, filename):
+        self._shapes = []
+        self._filename = filename
+        self.stepWriter = STEPControl_Writer()
+    
+    def AddShape(self, aShape):
         # First check the shape
-        #
         if aShape.IsNull():
             raise "STEPExporter Error: the shape is NULL"
-        self._shape = aShape
-        self._filename = filename
-
+        else: 
+            self._shapes.append(aShape)
+    
     def WriteFile(self):
-        stepWriter = STEPControl_Writer()
-        status = stepWriter.Transfer(self._shape, STEPControl_AsIs )
+        for shp in self._shapes:
+            status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
         if status == IFSelect_RetDone:
-            status = stepWriter.Write(self._filename)
+            status = self.stepWriter.Write(self._filename)
         else:
             return False
         if status == IFSelect_RetDone:
@@ -110,7 +113,7 @@ class STEPExporter(object):
             return True
         else:
             return False
-        
+    
 
 def TestImport():
     """
@@ -125,8 +128,11 @@ def TestExport():
     Exports a TopoDS_Shape to a STEP file.
     """
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
-    test_shape = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
-    myExporter = STEPExporter(test_shape, 'test.stp')
+    test_shape1 = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
+    test_shape2 = BRepPrimAPI_MakeBox(100.,100.,100.).Shape()
+    myExporter = STEPExporter('test.stp')
+    myExporter.AddShape(test_shape1)
+    myExporter.AddShape(test_shape2)
     myExporter.WriteFile()
 
 if __name__=='__main__':
