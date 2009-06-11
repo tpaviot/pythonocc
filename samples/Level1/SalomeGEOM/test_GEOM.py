@@ -7,6 +7,8 @@ from OCC.TDF import *
 
 from OCC.Utils.Topology import Topo
 from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
+from OCC.TPrsStd import *
+from OCC.TNaming import *
 
 import time
 
@@ -27,6 +29,14 @@ doc   = doc_h.GetObject()
 prim_operations = myEngine.GetI3DPrimOperations(docId)
 basic_operations = myEngine.GetIBasicOperations(docId)
 bool_operations = myEngine.GetIBooleanOperations(docId)
+block_operations = myEngine.GetIBlocksOperations(docId)
+curves_operations = myEngine.GetICurvesOperations(docId)
+group_operations = myEngine.GetIGroupOperations(docId)
+insert_operations = myEngine.GetIInsertOperations(docId)
+local_operations = myEngine.GetILocalOperations(docId)
+measure_operations = myEngine.GetIMeasureOperations(docId)
+
+display.EnableAntiAliasing()
 
 #===============================================================================
 # UTILITIES
@@ -49,6 +59,22 @@ class operation(object):
         if not self.operation.IsDone():
             error_code = self.operation.GetErrorCode()
             raise AssertionError('did not complete operation.\nused operation class: %s \nerror code: %s' % (self.operation.__class__, error_code) )
+
+class undo(object):
+    '''
+    raises an assertion error when IsDone() returns false, with the error specified in error_statement
+    '''
+    def __init__(self, document):
+        self.doc = document
+    
+    def __enter__(self):
+        print 'start command'
+        self.doc.OpenCommand()
+        self.doc.NewCommand()
+    
+    def __exit__(self, type, value, traceback):
+        print 'finish command'
+        self.doc.CommitCommand()
 
 def to_string(_str):
     from OCC.TCollection import TCollection_AsciiString as String
@@ -88,9 +114,11 @@ class Parameters(object):
         object.__setattr__(self, name, value)
         docId = object.__getattribute__(self, 'docId')
         
+        doc.NewCommand()
         self.engine.SetInterpreterConstant( docId,
                                              to_string(name),
                                               value)
+    
         for solv in self.solvers:
             seq = TDF_LabelSequence() 
             print 'calling solver:', solv.__class__
@@ -99,6 +127,7 @@ class Parameters(object):
         for call in self.callbacks:
             print 'calling callback:', call
             call()
+        doc.CommitCommand()
                 
     def __getattribute__(self, name):
         attr = object.__getattribute__(self, name)
@@ -113,17 +142,6 @@ def print_vertices(shape):
     for i,v in enumerate(Topo(shape).vertices()):
         print 'Vertex: %s Coord: %s' % ( i, BRep_Tool().Pnt(v).Coord())
 
-def add_variabele_to_engine(engine, docId, varString, varValue):
-    '''
-    '''
-    engine.SetInterpreterConstant(docId, to_string(varString), varValue)
-
-def set_param_update(param, new_value):
-    SetParameterValue(param, new_value)
-
-from OCC.TPrsStd import *
-from OCC.TNaming import *
-
 def register_presentation(geomObject):
     result_label = geomObject.GetLastFunction().GetObject().GetEntry().FindChild(RESULT_LABEL)
     prs_main = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
@@ -134,88 +152,104 @@ def register_presentation(geomObject):
 # EXAMPLE
 #===============================================================================
 
-def example_parametric_box(blah):
-    parameters = Parameters(engine, docId)
-    parameters.add_solver(prim_operations.GetSolver())
-    parameters.add_solver(basic_operations.GetSolver())
-    parameters.add_solver(bool_operations.GetSolver())
-    
-    # box 1
-    parameters.depth    = 12
-    parameters.height   = 70
-    parameters.width    = 12
-    parameters.depth_a  = 0
-    parameters.height_a = 0
-    parameters.width_a  = 0
-    
-    # box 2
-    parameters.lower  = -100
-    parameters.upper  = 100
-    parameters.fixed_height_lower = 0
-    parameters.fixed_height_higher = 10
-    
-    with operation(basic_operations):
-        pnt1 = basic_operations.MakePointXYZ(parameters.width,
-                                              parameters.depth,
-                                               parameters.height)
-        pnt1.GetObject().SetName("point 1")
-        pnt2 = basic_operations.MakePointXYZ(parameters.width_a,
-                                              parameters.depth_a,
-                                               parameters.height_a)
-        pnt2.GetObject().SetName("point 2")
-        
-        pnt3 = basic_operations.MakePointXYZ(parameters.lower,
-                                              parameters.lower,
-                                               parameters.fixed_height_lower)
-        pnt3.GetObject().SetName("point 3")
-        pnt4 = basic_operations.MakePointXYZ(parameters.upper,
-                                              parameters.upper,
-                                               parameters.fixed_height_higher)
-        pnt4.GetObject().SetName("point 4")
-        
-    
-    with operation(prim_operations):
-        Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
-        BoxBool = prim_operations.MakeBoxTwoPnt(pnt3, pnt4).GetObject()
-    
-    root = doc.Main().Root()
-    viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
+#def example_parametric_box(blah):
 
-    with operation(bool_operations):
-        fff = bool_operations.MakeBoolean(Box.GetHandle(), BoxBool.GetHandle(), 1).GetObject()
+parameters = Parameters(engine, docId)
+parameters.add_solver(prim_operations.GetSolver())
+parameters.add_solver(basic_operations.GetSolver())
+parameters.add_solver(bool_operations.GetSolver())
+parameters.add_solver(local_operations.GetSolver())
+
+# box 1
+parameters.depth    = 12
+parameters.height   = 70
+parameters.width    = 12
+parameters.depth_a  = 0
+parameters.height_a = 0
+parameters.width_a  = 0
+
+# box 2
+parameters.lower  = -100
+parameters.upper  = 100
+parameters.fixed_height_lower = 0
+parameters.fixed_height_higher = 10
+
+parameters.fillet_radius = 1
+
+
+with operation(basic_operations):
+    pnt1 = basic_operations.MakePointXYZ(parameters.width,
+                                          parameters.depth,
+                                           parameters.height)
+    pnt1.GetObject().SetName("point 1")
+    pnt2 = basic_operations.MakePointXYZ(parameters.width_a,
+                                          parameters.depth_a,
+                                           parameters.height_a)
+    pnt2.GetObject().SetName("point 2")
     
-    prs1 = register_presentation(Box)
-    prs2 = register_presentation(BoxBool)
-    prs3 = register_presentation(fff)
-    prs1.SetTransparency(0.8)
-    prs2.SetTransparency(0.8)
-    prs1.SetColor(12)
-    prs2.SetColor(200)
-    prs3.SetColor(100)
+    pnt3 = basic_operations.MakePointXYZ(parameters.lower,
+                                          parameters.lower,
+                                           parameters.fixed_height_lower)
+    pnt3.GetObject().SetName("point 3")
+    pnt4 = basic_operations.MakePointXYZ(parameters.upper,
+                                          parameters.upper,
+                                           parameters.fixed_height_higher)
+    pnt4.GetObject().SetName("point 4")
     
-    def update():
-        prs1.Update()
-        prs2.Update()
-        prs3.Update()
-        viewer.Update()
-        display.FitAll()
+
+with operation(prim_operations):
+    Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
+    BoxBool = prim_operations.MakeBoxTwoPnt(pnt3, pnt4).GetObject()
+
+root = doc.Main().Root()
+viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
+
+with operation(bool_operations):
+    fff = bool_operations.MakeBoolean(Box.GetHandle(), BoxBool.GetHandle(), 1).GetObject()
     
-    parameters.add_callback(update)
-            
-    for i in range(-66, -11):
-        parameters.depth_a = i
-    
-    for i in range(-80, 0):
-        parameters.height_a = i
+with operation(local_operations):
+    ggg = local_operations.MakeFilletAll(fff.GetHandle(), parameters.fillet_radius).GetObject()
+
+#    dt = TPrsStd_DriverTable()
+#    dt.Get()
+#    dt.InitStandardDrivers()
+
+#prs1 = register_presentation(Box)
+#prs1.SetTransparency(0.8)
+#prs1.SetColor(12)
+#
+#prs2 = register_presentation(BoxBool)
+#prs2.SetTransparency(0.8)
+#prs2.SetColor(200)
+#
+#prs3 = register_presentation(fff)
+#prs3.SetTransparency(0.6)
+#prs3.SetColor(100)
+
+prs4 = register_presentation(ggg)
+prs4.SetColor(1)
+
+def update():
+#    prs1.Update()
+#    prs2.Update()
+#    prs3.Update()
+    prs4.Update()
+    viewer.Update()
+    display.FitAll()
+
+parameters.add_callback(update)
         
-    for i in range(-44, 0):
-        parameters.width_a = i
+#for i in range(-66, -11):
+#    parameters.depth_a = i
+#
+#for i in range(-80, 0):
+#    parameters.height_a = i
+    
+for i in range(-44, 0):
+    parameters.width_a = i
 
-def example_variable_fillet(blah):
-    from OCC.BRepPrimAPI import *
-    box = BRepPrimAPI_MakeBox(10,10,10).Shape()
 
-add_menu('GEOM')
-add_function_to_menu('GEOM', example_parametric_box)
-start_display()
+#add_menu('GEOM')
+#add_function_to_menu('GEOM', example_parametric_box)
+#start_display()
 
