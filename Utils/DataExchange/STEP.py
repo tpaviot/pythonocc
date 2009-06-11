@@ -89,10 +89,14 @@ class STEPImporter(object):
             return self._shape
 
 class STEPExporter(object):
-    def __init__(self, filename):
+    def __init__(self, filename, verbose=False):
         self._shapes = []
+        self.verbose = verbose
         self._filename = filename
         self.stepWriter = STEPControl_Writer()
+        
+    def SetTolerance(self, tolerance=0.0001):
+        self.stepWriter.SetTolerance(tolerance)
     
     def AddShape(self, aShape):
         # First check the shape
@@ -108,6 +112,10 @@ class STEPExporter(object):
             status = self.stepWriter.Write(self._filename)
         else:
             return False
+        
+        if self.verbose:
+            self.stepWriter.PrintStatsTransfer()
+        
         if status == IFSelect_RetDone:
             print "STEP transfer successful."
             return True
