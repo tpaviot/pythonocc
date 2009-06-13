@@ -13,3 +13,16 @@ class assert_isdone(object):
             raise AssertionError, self.error_statement
     def __exit__(self, type, value, traceback):
         pass
+
+class operation(object):
+    '''
+    raises an assertion error when IsDone() returns false, with the error specified in error_statement
+    '''
+    def __init__(self, operation):
+        self.operation = operation
+    
+    def __enter__(self, ):
+        self.operation.StartOperation()
+    
+    def __exit__(self, type, value, traceback):
+        self.operation.FinishOperation()

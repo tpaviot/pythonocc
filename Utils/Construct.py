@@ -1,4 +1,5 @@
 from __future__ import with_statement
+from OCC.ShapeFix import *
 # -*- coding: iso-8859-1 -*-
 #!/usr/bin/env python
 
@@ -26,28 +27,58 @@ This modules makes the construction of geometry a little easier
 '''
 
 from OCC.BRepBuilderAPI import *
-
 from OCC.Utils.Context import assert_isdone
+from KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
+def make_solid(*args):
+    sld = BRepBuilderAPI_MakeSolid( *args )
+    with assert_isdone(sld, 'failed to produce solid'):
+        result = sld.Solid()
+        sld.Delete()
+        return result
+
+def make_shell(*args):
+    shp = BRepBuilderAPI_MakeShape( *args )
+    with assert_isdone(shell, 'failed to produce shape'):
+        result = shp.Shape()
+        shp.Delete()
+        return result
+
+def make_shell(*args):
+    shell = BRepBuilderAPI_MakeShell( *args )
+    with assert_isdone(shell, 'failed to produce shell'):
+        result = shell.Shell()
+        shell.Delete()
+        return result
+    
 def make_face(*args):
     face = BRepBuilderAPI_MakeFace( *args )
     with assert_isdone(face, 'failed to produce face'):
-        return face.Face()
+        result = face.Face()
+        face.Delete()
+        return result
 
 def make_edge(*args):
     edge = BRepBuilderAPI_MakeEdge(*args)
     with assert_isdone(edge, 'failed to produce edge'):
-        return edge.Edge()
+        result = edge.Edge()
+        edge.Delete()
+        return result
 
 def make_vertex(*args):
     vert = BRepBuilderAPI_MakeVertex(*args)
     with assert_isdone(vert, 'failed to produce vertex'):
-        return vert.Vertex()
+        result = vert.Vertex()
+        vert.Delete()
+        return result
+        
 
 def make_wire(*args):
     wire = BRepBuilderAPI_MakeWire(*args)
     with assert_isdone(wire, 'failed to produce wire'):
-        return wire.Wire()
+        result = wire.Wire()
+        wire.Delete()
+        return result
 
 def add_wire_to_face(face, wire, reverse=False):
     '''
@@ -61,4 +92,43 @@ def add_wire_to_face(face, wire, reverse=False):
     if reverse:
         wire.Reverse()
     face.Add(wire)
-    return face.Face()
+    result = face.Face()
+    face.Delete()
+    return result
+
+def sew_shapes( *shapes ):
+#    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
+#    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
+    sew = BRepBuilderAPI_Sewing(1e-1)
+    for shp in shapes:
+        if isinstance(shp, list):
+            for i in shp:
+                sew.Add(i)
+        else:
+            sew.Add(shp)
+    sew.Perform()
+    
+    print 'n degenerated shapes',sew.NbDegeneratedShapes()
+    print 'n deleted faces:',sew.NbDeletedFaces()
+    print 'n free edges',sew.NbFreeEdges()
+    print 'n multiple edges:',sew.NbMultipleEdges()
+    
+    result = sew.SewedShape()
+    sew.Delete()
+    return result
+
+def fix_shape(shp, tolerance=1e-3):
+    te = ShapeToTopology()
+    fix = ShapeFix_Shape(shp)
+#    fix.SetMaxTolerance(tolerance)
+    fix.LimitTolerance(tolerance)
+    fix.Perform()
+    return fix.Shape()
+
+def fix_face(shp, tolerance=1e-3):
+    fix = ShapeFix_Face(shp)
+    fix.SetMaxTolerance(tolerance)
+    fix.Perform()
+    return fix.Face()
+
+
