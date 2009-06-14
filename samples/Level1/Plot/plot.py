@@ -10,17 +10,16 @@ from OCC.HLRAlgo import *
 #from plot_view import display, start_display
 from OCC.Display.wxSamplesGui import display, start_display
 
-
 # interesting display.View.PostScriptOutput
-
 #box = BRepPrimAPI_MakeBox(1,1,1).Shape()
 
 from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
-box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
+#box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
+box = file_to_shape('../../../data/_3dmodels/Pump_Bottom.brep')
 
 box_ais = display.DisplayShape(box)
-#display.Context.SetTransparency(box_ais, 0.8)
+display.Context.SetTransparency(box_ais, 0.8)
 
 # make the PostScript plotter 
 
@@ -30,17 +29,20 @@ from OCC.PlotMgt import *
 from OCC.TCollection import *
 from OCC.TColStd import *
 
-printer_list = PlotMgt().DeviceList().GetObject()
-tmp = [printer_list.Value(i) for i in range(1,printer_list.Length())]
-
-# crashes otherwise
-printer_available = tmp[0].ToCString()
-
-#plt_mgr = PlotMgt_Plotter(tmp[1], False)
-#ps = PS.PS_Driver(tmp[0].ToCString(), 1000,1000)
-
-img = PlotMgt_ImageDriver(tmp[0].ToCString())
-
+try:
+    printer_list = PlotMgt().DeviceList().GetObject()
+    tmp = [printer_list.Value(i) for i in range(1,printer_list.Length())]
+    # crashes otherwise
+    printer_available = tmp[0].ToCString()
+    #plt_mgr = PlotMgt_Plotter(tmp[1], False)
+    #ps = PS.PS_Driver(tmp[0].ToCString(), 1000,1000)
+    img = PlotMgt_ImageDriver(tmp[0].ToCString())
+except:
+    print 'Looks like you havent got a printer installed?'
+    import traceback
+    print 'Anyways, OCC complained with this message:'
+    traceback.print_exc()
+   
 #display.View.SetPlotter(img)
 
 
@@ -89,9 +91,6 @@ hlr.Update()
 hlr_to_shp = HLRBRep_PolyHLRToShape()
 hlr_to_shp.Update(hlr.GetHandle())
 
-
-for i in [
-    hlr_to_shp.VCompound(),
 #    hlr_to_shp.HCompound(),
 #    hlr_to_shp.Rg1LineHCompound(),
 #    hlr_to_shp.Rg1LineVCompound(),
@@ -99,13 +98,15 @@ for i in [
 #    hlr_to_shp.RgNLineVCompound(),
 #    hlr_to_shp.OutLineVCompound(),
 #    hlr_to_shp.OutLineHCompound(),
-    ]:
-    
+display.DisplayColoredShape(hlr_to_shp.HCompound(), 'BLUE')
+display.DisplayColoredShape(hlr_to_shp.VCompound(), 'RED')
+#display.DisplayColoredShape(hlr_to_shp.HCompound(), 'GREEN')
+
 #    display.EraseAll()
-    display.DisplayShape(i)
+#    display.DisplayShape(i)
 #    import ipdb; ipdb.set_trace()
     # works
-    display.View.ScreenCopy(img.GetHandle())
+#    display.View.ScreenCopy(img.GetHandle())
     # crash
 #    img.Spool(Aspect_PM_NPLOTTER, tmp[0] )
     
