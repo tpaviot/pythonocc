@@ -19,7 +19,7 @@ from OCC.Aspect import *
 box = file_to_shape('../../../data/_3dmodels/Pump_Bottom.brep')
 
 box_ais = display.DisplayShape(box)
-display.Context.SetTransparency(box_ais.GetHandle(), 0.8)
+display.Context.SetTransparency(box_ais, 0.8)
 
 # make the PostScript plotter 
 
