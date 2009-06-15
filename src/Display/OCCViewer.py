@@ -113,10 +113,10 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display)
+                    ais_shapes.append(shape_to_display.GetHandle())
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
-                ais_shapes.append(shape_to_display)
+                ais_shapes.append(shape_to_display.GetHandle())
                 #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
@@ -277,10 +277,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display)
+                    ais_shapes.append(shape_to_display.GetHandle())
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
-                ais_shapes.append(shape_to_display)
+                ais_shapes.append(shape_to_display.GetHandle())
                 #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
@@ -313,7 +313,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 # comes in handy when adding lots and lots of objects 
                 self.Context.Display(shape_to_display, False)
             self.FitAll()
-        ais_shapes.append(shape_to_display)
+        ais_shapes.append(shape_to_display.GetHandle())
         if SOLO:
             return ais_shapes[0]
         else:
