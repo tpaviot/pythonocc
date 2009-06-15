@@ -310,7 +310,7 @@ class wxViewer3d(wxBaseViewer3d):
         self._display = OCCViewer.Viewer3d(self.GetHandle())
         self._display.Create()
         self._display.DisplayTriedron()
-        #self._display.SetModeShaded()
+        self._display.SetModeShaded()
         self._inited = True
 
         # dict mapping keys to functions
