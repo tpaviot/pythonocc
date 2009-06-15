@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from OCC.TopoDS import *
 
 ##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
 ##
@@ -17,7 +18,7 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-import os, os.path
+import os, os.path, types
 
 import OCC.Visualization
 import OCC.V3d
@@ -27,10 +28,13 @@ import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
-import OCC.NIS
-from OCC.TopExp import TopExp_Explorer
-from OCC.TopAbs import TopAbs_FACE
-from OCC.BRepMesh import BRepMesh
+
+try:
+    import OCC.NIS
+    HAVE_NIS = False
+except ImportError:
+    HAVE_NIS = False
+
 import sys
 
 class BaseDriver(object):
@@ -87,191 +91,43 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
     def OnResize(self):
         self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
     
-    def DisplayShape(self,shape,material=None,texture=None):
-        if material:#careful: != operator segfaults
-            self.View.SetSurfaceDetail(OCC._TEX_ALL)
-            shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-            shape_to_display.SetMaterial(material)
-            if texture:
-                filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
-                shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
-                shape_to_display.SetTextureMapOn()
-                shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
-                shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
-                shape_to_display.SetTextureOrigin(True, originU, originV)
-                shape_to_display.SetDisplayMode(3);
-        else:
-            shape_to_display = OCC.AIS.AIS_Shape(shape)
-        #self._objects_displayed.append(shape_to_display)
-        self.Context.Display(shape_to_display.GetHandle())
-        self.FitAll()
-
-
-class BaseDriver3d(BaseDriver):        
-    """
-    Parent class of both Viewer3d and NISViewer3d
-    """
-    def __init__(self, window_handle ):
-        BaseDriver.__init__(self,window_handle)
-        self.selected_shape = None
-    
-    def OnResize(self):
-        self.View.MustBeResized()
-
-    def ResetView(self):
-        self.View.Reset()
-    
-    def Repaint(self):
-        self.Viewer.Redraw()
-        
-#    def SetModeWireFrame(self):
-#        self.View.SetComputedMode(False)
-#        self.Context.SetDisplayMode(OCC.AIS.AIS_WireFrame)
-#
-#    def SetModeShaded(self):
-#        self.View.SetComputedMode(False)
-#        self.View.SetAntialiasingOff()
-#        self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
-#     
-#    def SetModeQuickHLR(self):
-#        self.View.SetComputedMode(True)
-#        self.Context.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
-#    
-#    def SetModeExactHLR(self):
-#        self.View.SetComputedMode(True)
-#        self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
-    
-    def View_Top(self):
-        self.View.SetProj(OCC.V3d.V3d_Zpos) 
-
-    def View_Bottom(self):
-        self.View.SetProj(OCC.V3d.V3d_Zneg)
-        
-    def View_Left(self):
-        self.View.SetProj(OCC.V3d.V3d_Xneg)
-
-    def View_Right(self):
-        self.View.SetProj(OCC.V3d.V3d_Xpos)
-
-    def View_Front(self):
-        self.View.SetProj(OCC.V3d.V3d_Yneg)
-
-    def View_Rear(self):
-        self.View.SetProj(OCC.V3d.V3d_Ypos)
-
-    def View_Iso(self):
-        self.View.SetProj(OCC.V3d.V3d_XposYnegZpos)
-        
-    def ExportToImage(self,Filename):
-        self.View.Dump(Filename)
-
-    def SetBackgroundImage(self, Filename, Stretch = True):
-        if (Stretch):
-            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
-        else:
-            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
+    def DisplayShape(self, shapes, material=None, texture=None, ):
+        ais_shapes = []
+        if issubclass(shapes, TopoDS_Shape):
+            shapes = [shapes]
             
-    def DisplayTriedron(self):
-        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
-        self.Repaint()
-    
-    def EnableAntiAliasing(self):
-        self.View.SetAntialiasingOn()
-        self.Repaint()
+        for shape in shapes:
+            if material:#careful: != operator segfaults
+                print 'material', material
+                self.View.SetSurfaceDetail(OCC._TEX_ALL)
+                shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
+                shape_to_display.SetMaterial(material)
+                if texture:
+                    filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
+                    shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
+                    shape_to_display.SetTextureMapOn()
+                    shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
+                    shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
+                    shape_to_display.SetTextureOrigin(True, originU, originV)
+                    shape_to_display.SetDisplayMode(3);
+                    ais_shapes.append(shape_to_display)
+            else:
+                shape_to_display = OCC.AIS.AIS_Shape(shape)
+                ais_shapes.append(shape_to_display)
+                #self._objects_displayed.append(shape_to_display)
+            self.Context.Display(shape_to_display.GetHandle())
+            self.FitAll()
+        return ais_shapes
 
-    def DisableAntiAliasing(self):
-        self.View.SetAntialiasingOff()
-        self.Repaint()
-    
-    def EraseAll(self):
-        self._objects_displayed = []
-        self.Context.EraseAll()
+if HAVE_NIS:
+    class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
+        def __init__(self, window_handle ):
+            BaseDriver.__init__(self,window_handle)
+            OCC.Visualization.NISDisplay3d.__init__(self)
+              
+        def OnResize(self):
+            self.View.MustBeResized()
         
-    def Tumble(self,NumImages,Animation = True):
-        self.View.Tumble(NumImages, Animation)
-        
-    def Pan(self,Dx,Dy):
-        self.View.Pan(Dx,Dy)
-    
-#    def SetSelectionMode(self,mode = OCC.TopAbs.TopAbs_FACE):
-#        self.Context.CloseAllContexts()
-#        self.Context.OpenLocalContext()
-#        self.Context.ActivateStandardMode(mode)
-#    
-#    def OpenLocalContext(self):
-#        if not self._local_context_opened:
-#            self.Context.OpenLocalContext()
-#            self._local_context_opened = True
-#        
-#    def SetSelectionModeVertex(self):
-#        self.OpenLocalContext()
-#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
-#        
-#    def SetSelectionModeEdge(self):
-#        self.OpenLocalContext()
-#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
-#        
-#    def SetSelectionModeFace(self):
-#        self.OpenLocalContext()
-#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
-#        
-#    def SetSelectionModeShape(self):
-#        self.Context.CloseAllContexts()
-#        self.Context.OpenLocalContext()
-#        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_SHAPE)        
-#    
-#    def SetSelectionModeNeutral(self):
-#        self.Context.CloseAllContexts()
-#    
-#    def GetSelectedShape(self):
-#        """
-#        Returns the current selected shape
-#        """
-#        return self.selected_shape
-#    
-#    def Select(self,X,Y):
-#        self.Context.Select()
-#        self.Context.InitSelected()
-#        print self.Context.MoreSelected()
-#        if self.Context.MoreSelected():
-#            if self.Context.HasSelectedShape():
-#                print "Something selected"
-#                self.selected_shape = self.Context.SelectedShape()
-#                print self.selected_shape
-#        else:
-#            print "Nothing selected"
-#            self.selected_shape = None
-        
-    def Rotation(self,X,Y):
-        self.View.Rotation(X,Y)
-    
-    def DynamicZoom(self,X1,Y1,X2,Y2):
-        self.View.Zoom(X1,Y1,X2,Y2)
-    
-    def ZoomArea(self,X1,Y1,X2,Y2):
-        self.View.WindowFit(X1,Y1,X2,Y2)
-    
-    def Zoom(self,X,Y):
-        self.View.Zoom(X,Y)
-    
-    def StartRotation(self,X,Y):
-        self.View.StartRotation(X,Y)
-    
-class NISViewer3d(BaseDriver3d, OCC.Visualization.NISDisplay3d):
-    def __init__(self, window_handle ):
-        BaseDriver3d.__init__(self,window_handle)
-        OCC.Visualization.NISDisplay3d.__init__(self)
-                 
-    def DisplayShape(self,shape, quality = 0.1):
-        """
-        quality is a float. High quality (for instance 0.01) results in good display quality but
-        high memory footprint. Low quality leads to bad display quality but small memory consumption.
-        """
-        BRepMesh().Mesh(shape,quality)
-        shape_to_display = OCC.NIS.NIS_Surface(shape)
-        self.Context.Display(shape_to_display.GetHandle())
-        self.FitAll()
-                
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)
@@ -389,47 +245,67 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 #        self.Context.Display(anAIS.GetHandle())
 
         
-    def DisplayShape(self,shape,material=None,texture=None, update=True):
-        if material:#careful: != operator segfaults
-            self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
-            shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-            shape_to_display.SetMaterial(material)
-            if texture:
-                filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
-                shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
-                shape_to_display.SetTextureMapOn()
-                shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
-                shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
-                shape_to_display.SetTextureOrigin(True, originU, originV)
-                shape_to_display.SetDisplayMode(3);
-        else:
-            shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
-        #self._objects_displayed.append(shape_to_display)
-        if update:
-            self.Context.Display(shape_to_display, True)
-        else:
-            # don't update the view when shape_to_display is added
-            # comes in handy when adding lots and lots of objects 
-            self.Context.Display(shape_to_display, False)
-        self.FitAll()
-        return shape_to_display
+#    def DisplayShape(self, , *shapes):
+    def DisplayShape(self, shapes, material=None, texture=None, update=True):
+        '''
+        '''
+        if issubclass(shapes, TopoDS_Shape):
+            shapes = [shapes]
+            
+        ais_shapes = []
+        if not 'material' in kwargs:
+            material = None
+        if not 'update' in kwargs:
+            update = True
+        if not 'texture' in kwargs:
+            texture = None
+        
+        for shape in shapes:
+            if material:#careful: != operator segfaults
+                print 'material', material
+                self.View.SetSurfaceDetail(OCC._TEX_ALL)
+                shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
+                shape_to_display.SetMaterial(material)
+                if texture:
+                    filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
+                    shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
+                    shape_to_display.SetTextureMapOn()
+                    shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
+                    shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
+                    shape_to_display.SetTextureOrigin(True, originU, originV)
+                    shape_to_display.SetDisplayMode(3);
+                    ais_shapes.append(shape_to_display)
+            else:
+                shape_to_display = OCC.AIS.AIS_Shape(shape)
+                ais_shapes.append(shape_to_display)
+                #self._objects_displayed.append(shape_to_display)
+            self.Context.Display(shape_to_display.GetHandle())
+            self.FitAll()
+        return ais_shapes
 
-    def DisplayColoredShape(self,shape,color, update=True):
-        dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,\
-                      'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,\
-                      'RED':OCC.Quantity.Quantity_NOC_RED,\
-                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN,\
+    def DisplayColoredShape(self, shapes, color='YELLOW', update=True, ):
+        ais_shapes = []
+        dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
+                      'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,
+                      'RED':OCC.Quantity.Quantity_NOC_RED,
+                      'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
                       'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW}
-        shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
-        self.Context.SetColor(shape_to_display,dict_color[color],0)
-        if update:
-            self.Context.Display(shape_to_display, True)
-        else:
-            # don't update the view when shape_to_display is added
-            # comes in handy when adding lots and lots of objects 
-            self.Context.Display(shape_to_display, False)
-        self.FitAll()
-        return shape_to_display
+
+        if issubclass(shapes, TopoDS_Shape):
+            shapes = [shapes]
+            
+        for shape in shapes:
+            shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
+            self.Context.SetColor(shape_to_display,dict_color[color],0)
+            if update:
+                self.Context.Display(shape_to_display, True)
+            else:
+                # don't update the view when shape_to_display is added
+                # comes in handy when adding lots and lots of objects 
+                self.Context.Display(shape_to_display, False)
+            self.FitAll()
+        ais_shapes.append(shape_to_display)
+        return ais_shapes
         
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
