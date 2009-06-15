@@ -313,7 +313,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 # comes in handy when adding lots and lots of objects 
                 self.Context.Display(shape_to_display, False)
             self.FitAll()
-        ais_shapes.append(shape_to_display.GetHandle())
+        ais_shapes.append(shape_to_display)
         if SOLO:
             return ais_shapes[0]
         else:
