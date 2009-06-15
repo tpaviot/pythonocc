@@ -93,7 +93,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
     
     def DisplayShape(self, shapes, material=None, texture=None, ):
         ais_shapes = []
-        if issubclass(shapes, TopoDS_Shape):
+        if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
             
         for shape in shapes:
@@ -249,7 +249,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def DisplayShape(self, shapes, material=None, texture=None, update=True):
         '''
         '''
-        if issubclass(shapes, TopoDS_Shape):
+        if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
             
         ais_shapes = []
@@ -291,7 +291,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                       'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
                       'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW}
 
-        if issubclass(shapes, TopoDS_Shape):
+        if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
             
         for shape in shapes:
