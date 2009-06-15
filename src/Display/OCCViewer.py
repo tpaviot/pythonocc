@@ -253,13 +253,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             shapes = [shapes]
             
         ais_shapes = []
-        if not 'material' in kwargs:
-            material = None
-        if not 'update' in kwargs:
-            update = True
-        if not 'texture' in kwargs:
-            texture = None
-        
+
         for shape in shapes:
             if material:#careful: != operator segfaults
                 print 'material', material
