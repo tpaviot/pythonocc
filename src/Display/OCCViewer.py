@@ -95,6 +95,9 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         ais_shapes = []
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
+            SOLO = True
+        else:
+            SOLO = False
             
         for shape in shapes:
             if material:#careful: != operator segfaults
@@ -117,7 +120,10 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                 #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
-        return ais_shapes
+        if SOLO:
+            return ais_shapes[0]
+        else:
+            return ais_shapes
 
 if HAVE_NIS:
     class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
@@ -251,6 +257,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         '''
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
+            SOLO = True
+        else:
+            SOLO = False
             
         ais_shapes = []
 
@@ -275,7 +284,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
-        return ais_shapes
+        if SOLO:
+            return  ais_shapes[0]
+        else:
+            return ais_shapes
 
     def DisplayColoredShape(self, shapes, color='YELLOW', update=True, ):
         ais_shapes = []
@@ -287,6 +299,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
+            SOLO = True
+        else:
+            SOLO = False
             
         for shape in shapes:
             shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
@@ -299,7 +314,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 self.Context.Display(shape_to_display, False)
             self.FitAll()
         ais_shapes.append(shape_to_display)
-        return ais_shapes
+        if SOLO:
+            return ais_shapes[0]
+        else:
+            return ais_shapes
         
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
