@@ -33,6 +33,7 @@ from OCC.BRep import *
 from OCC.Precision import *
 
 from OCC.Display.wxSamplesGui import display
+from OCC.BRepLib import *
 import math, sys
 
 def edge(event=None):
@@ -191,7 +192,7 @@ def face(event=None):
     ##    
     BSplineSurf = GeomAPI_PointsToBSplineSurface(array2,3,8,GeomAbs_C2,0.001)
     ##    
-    aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface())    
+    aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface()).Face()
     ##
     ##//2d lines    
     P12d = gp_Pnt2d(0.9,0.1)
@@ -203,13 +204,13 @@ def face(event=None):
     line3 = Geom2d_Line(P32d,gp_Dir2d((0.9-0.02),(0.1-0.1)))
     ##        
     ##//Edges are on the BSpline surface    
-    Edge1 = BRepBuilderAPI_MakeEdge(line1.GetHandle(),BSplineSurf,0,P12d.Distance(P22d)).Edge()
-    Edge2 = BRepBuilderAPI_MakeEdge(line2.GetHandle(),BSplineSurf,0,P22d.Distance(P32d)).Edge()
-    Edge3 = BRepBuilderAPI_MakeEdge(line3.GetHandle(),BSplineSurf,0,P32d.Distance(P12d)).Edge()
+    Edge1 = BRepBuilderAPI_MakeEdge(line1.GetHandle(),BSplineSurf.Surface(),0,P12d.Distance(P22d)).Edge()
+    Edge2 = BRepBuilderAPI_MakeEdge(line2.GetHandle(),BSplineSurf.Surface(),0,P22d.Distance(P32d)).Edge()
+    Edge3 = BRepBuilderAPI_MakeEdge(line3.GetHandle(),BSplineSurf.Surface(),0,P32d.Distance(P12d)).Edge()
     ##
     Wire1 = BRepBuilderAPI_MakeWire(Edge1,Edge2,Edge3).Wire()
     Wire1.Reverse()
-    PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1)
+    PinkFace = BRepBuilderAPI_MakeFace(aFace,Wire1).Face()
     BRepLib().BuildCurves3d(PinkFace)
     
     display.EraseAll()
