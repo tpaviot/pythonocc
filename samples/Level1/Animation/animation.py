@@ -37,12 +37,12 @@ def rotating_cube_1_axis(event=None):
     Ax1 = gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,0,1))
     aCubeTrsf = gp_Trsf()
     angle = 0.0
-    for i in range(200):
+    for i in range(2000):
         aCubeTrsf.SetRotation(Ax1,angle)
         aCubeToploc = TopLoc_Location(aCubeTrsf)
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
-        angle += 0.1
+        angle += 0.001
 
 def rotating_cube_2_axis(event=None):
     build_shape()
@@ -52,13 +52,13 @@ def rotating_cube_2_axis(event=None):
     aCubeTrsf2 = gp_Trsf()
     angle = 0.0
     angle2 = 0.0
-    for i in range(200):
+    for i in range(2000):
         aCubeTrsf.SetRotation(Ax1,angle)
         aCubeTrsf2.SetRotation(Ax2,angle)
         aCubeToploc = TopLoc_Location(aCubeTrsf*aCubeTrsf2)
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
-        angle += 0.1
+        angle += 0.001
     
 if __name__ == '__main__':
     from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu

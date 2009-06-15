@@ -114,15 +114,21 @@ def brepfeat_prism(event=None):
     wire.Add( BRepBuilderAPI_MakeEdge( circle, srf, pi, 2.*pi ).Edge() )
     wire.Build()
     
+    display.DisplayShape(wire.Wire())
+    
     mkf = BRepBuilderAPI_MakeFace()
     mkf.Init(srf, False)
     mkf.Add(wire.Wire())
     mkf.Build()
+    import ipdb; ipdb.set_trace()
     
     # bit obscure why this is nessecary...
     # segfaults without...
     new_face = mkf.Face()
     BRepLib().BuildCurves3d(new_face)
+    
+    display.DisplayShape(new_face)
+    import ipdb; ipdb.set_trace()
     
     prism = BRepFeat_MakeDPrism(box,
                                 mkf.Face(),
@@ -261,7 +267,10 @@ def brep_feat_rib(event=None):
     mkw.Add(BRepBuilderAPI_MakeEdge(gp_Pnt(0.,0.,200.),gp_Pnt(0.,0.,0.)).Edge())
     
     S = BRepPrimAPI_MakePrism(BRepBuilderAPI_MakeFace(mkw.Wire()).Face(), 
-                                       gp_Vec(gp_Pnt(0.,0.,0.),gp_Pnt(0.,100.,0.)))
+                                       gp_Vec(gp_Pnt(0.,0.,0.),
+                                              gp_Pnt(0.,100.,0.)
+                                              )
+                                       )
     display.EraseAll()
 #    display.DisplayShape(S.Shape())
     

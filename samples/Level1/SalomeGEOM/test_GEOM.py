@@ -9,6 +9,7 @@ from OCC.Utils.Topology import Topo
 from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
 from OCC.TPrsStd import *
 from OCC.TNaming import *
+from OCC.TDocStd import *
 
 import time
 
@@ -18,12 +19,59 @@ import time
 
 RESULT_LABEL = 2
 
+class MyDocument(object):
+#    def __init__(self, t_doc_std_document):
+##        self.doc = t_doc_std_document
+#        self.callbacks = []
+    
+    def Redo(self):
+        self.doc.Undo()
+        for i in self.callbacks: i()
+        
+    def Undo(self):
+        self.doc.Redo()
+        for i in self.callbacks: i()
+    
+    def add_callback(self, callback):
+        if callable(callback):
+            self.callbacks.append(callback)
+        else:
+            raise TypeError('expected a callable')
+    
+
+
+from OCC._GEOMImpl import *
+
+
+class MyEngine(GEOMImpl_Gen):
+    def __init__(self):
+        #super(self, GEOMImpl_Gen).__init__()
+#        this = GEOMImpl_Gen
+        self.__class__ = GEOMImpl_Gen
+#        GEOMImpl_Gen.__init__(tmp)
+    
+    def GetDocument(self, docId):
+        return MyDocument(self.GetDocument(docId))
+
 # Create engine
 docId = 100
-myEngine = GEOMImpl_Gen()
+#myEngine = GEOMImpl_Gen()
+myEngine = MyEngine()
+
 engine = myEngine.GetEngine()
-doc_h = myEngine.GetDocument(docId)
-doc   = doc_h.GetObject()
+
+doc = myEngine.GetDocument(docId)
+
+class CThreadPtr(GEOMImpl_Gen):
+    def __init__(self,this):
+        self.this = this
+        if not hasattr(self,"thisown"): self.thisown = 0
+        self.__class__ = GEOMImpl_Gen
+
+    
+CThreadPtr(GEOMImpl_Gen)
+
+#doc   = doc_h.GetObject()
 
 # get access to operations
 prim_operations = myEngine.GetI3DPrimOperations(docId)
