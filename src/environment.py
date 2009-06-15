@@ -29,7 +29,7 @@ import subprocess
 #
 # Define pythonOCC version
 #
-VERSION = '1st_may_2009'
+VERSION = '06_15_2009'
 #
 # Wrap SalomeGEOM?
 #
@@ -90,7 +90,7 @@ if sys.platform=='win32':
                      ('_WINDOWS',None),('CSFDB',None),\
                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
     #ECA = ['/D"WNT"','/D"WIN32"','/D"_WINDOWS"','/D"CSFDB"','/link /MACHINE:X86 /SUBSYSTEM:WINDOWS']
-    ECA = ['/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
+    ECA = ['/GL','/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
