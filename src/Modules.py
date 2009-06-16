@@ -138,7 +138,6 @@ MODULES = [
            ('MeshAlgo',[],['MeshAlgo_Edge','MeshAlgo_Vertex','MeshAlgo_Triangle','MeshAlgo_CircleInspector']),
            ('MeshDS',[],[]), 
            ('MeshShape',[],['MeshShape_Edge','MeshShape_Vertex','MeshShape_Triangle']),
-           #('MeshVS',[],[]),
 ###################################
 ######### FemTool ####################
            ('FEmTool',[],[]),
@@ -529,7 +528,8 @@ else:
                     ('TPrsStd',['OSD','MFT','Xw','Aspect',],[]),
                     ('XCAFPrs',['Aspect','MFT','TDF','OSD','Graphic3d',\
                                 'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr'],[]),
-                    ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer'],['NIS_Triangulated']),          
+                    ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer'],['NIS_Triangulated']),
+                    ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr'],[]),          
                     ])
     MODULES.extend([
                     ('Image',[],[]), #bug on Windows
