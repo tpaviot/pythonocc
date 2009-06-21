@@ -99,6 +99,7 @@ def step_caf_import(event=None):
     display.FitAll()
     print shapes
     
+
 def assembly(event=None):
     #
     # Create the TDocStd document
