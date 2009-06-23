@@ -27,8 +27,6 @@ def set_background_image(blah):
     display.Repaint()
 
 def set_layer(blah):
-    import ipdb; ipdb.set_trace()
-#    view_mgr = display.View.Viewer().GetObject().Viewer()
     view_mgr = display.View.View().GetObject().ViewManager()
     layer = Visual3d_Layer(view_mgr, Aspect_TOL_UNDERLAY, True)
     a,b,c,d = frame.GetScreenRect()
