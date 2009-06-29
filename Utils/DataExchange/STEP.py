@@ -21,7 +21,33 @@ import os, os.path
 from OCC.TopoDS import *
 from OCC.BRep import *
 from OCC.STEPControl import *
+from OCC.IGESControl import *
 from OCC.IFSelect import *
+
+
+from OCC.XCAFApp import *
+from OCC.STEPCAFControl import *
+from OCC.TDocStd import *
+from OCC.TCollection import *
+from OCC.XCAFDoc import *
+from OCC.TDF import *
+from OCC.TopoDS import *
+
+from OCC import XCAFApp, TDocStd, TCollection, XCAFDoc, BRepPrimAPI, Quantity, TopLoc, gp, TPrsStd, XCAFPrs
+
+from OCC.Display.wxSamplesGui import *
+from OCC.STEPCAFControl import *
+from OCC.XSControl import *
+from OCC.STEPControl import *
+from OCC.IGESCAFControl import *
+import os
+
+
+
+
+
+
+
 
 class STEPImporter(object):
     def __init__(self,filename):        
@@ -121,7 +147,123 @@ class STEPExporter(object):
             return True
         else:
             return False
+
+#class IGESExporter(object):
+#    def __init__(self, filename, verbose=False):
+#        self._shapes = []
+#        self.verbose = verbose
+#        self._filename = filename
+#        self.stepWriter = IGESControl_Writer()
+#        
+#    def SetTolerance(self, tolerance=0.0001):
+#        self.stepWriter.SetTolerance(tolerance)
+#    
+#    def AddShape(self, aShape):
+#        # First check the shape
+#        if aShape.IsNull():
+#            raise "STEPExporter Error: the shape is NULL"
+#        else: 
+#            self._shapes.append(aShape)
+#    
+#    def WriteFile(self):
+#        for shp in self._shapes:
+#            status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
+#        if status == IFSelect_RetDone:
+#            status = self.stepWriter.Write(self._filename)
+#        else:
+#            return False
+#        
+#        if self.verbose:
+#            self.stepWriter.PrintStatsTransfer()
+#        
+#        if status == IFSelect_RetDone:
+#            print "STEP transfer successful."
+#            return True
+#        else:
+#            return False
+
+
+class StepOCAF_Export(object):
+    '''
+    STEP export that support layers & colors
+    '''
+    def __init__(self, filename, layer_name='layer-00'):
+        self.filename = filename
+        self.h_doc = h_doc = TDocStd.Handle_TDocStd_Document()
+        print "Empty Doc?", h_doc.IsNull()
+        
+        # Create the application
+        app = XCAFApp.GetApplication().GetObject()
+        app.NewDocument(TCollection.TCollection_ExtendedString("MDTV-CAF"),h_doc)
+        
+        # Get root assembly
+        doc = h_doc.GetObject()
+        h_shape_tool = XCAFDoc.XCAFDoc_DocumentTool().ShapeTool(doc.Main())
+        l_Colors = XCAFDoc.XCAFDoc_DocumentTool().ColorTool(doc.Main())
+        l_Layers = XCAFDoc.XCAFDoc_DocumentTool().LayerTool(doc.Main())
+        
+        self.shape_tool = h_shape_tool.GetObject()
+        self.top_label = self.shape_tool.NewShape()
+        self.colors = l_Colors.GetObject()
+        self.layers = l_Layers.GetObject()
     
+        self.current_color = Quantity.Quantity_Color(Quantity.Quantity_NOC_RED)  
+        self.current_layer = self.layers.AddLayer(TCollection_ExtendedString(layer_name))
+        self.layer_names = []
+    
+    def set_color(self, r=1,g=1,b=1, color=None):
+        if not color is None:
+            self.current_color = color
+        else:
+            clr = Quantity.Quantity_Color(r,g,b,0)
+            self.current_color = clr
+    
+    def set_layer(self, layer_name):
+        if layer_name not in self.layer_names:
+            self.current_layer = self.layers.AddLayer(TCollection_ExtendedString(layer_name))
+            self.layer_names.append(layer_name)
+    
+    def add_shape(self, shape):
+        assert issubclass(shape.__class__, TopoDS_Shape) or isinstance(shape, TopoDS_Shape), 'not a TopoDS_Shape or subclass'
+        shp_label = self.shape_tool.AddShape( shape )
+        
+        self.colors.SetColor(shp_label, self.current_color, XCAFDoc.XCAFDoc_ColorGen)
+        self.layers.SetLayer(shp_label, self.current_layer)
+        
+    def write(self):
+#        assert os.path.isdir(path), '%s not a valid directory'
+#        if filename.sub('step') or filename.sub('stp'):
+#            filename = os.path.join(path, filename)
+#        else:
+#            filename = os.path.join(path, filename+'.step')
+        
+        WS = XSControl_WorkSession()
+        writer = STEPCAFControl_Writer( WS.GetHandle(), False )
+        writer.Transfer(self.h_doc, STEPControl_AsIs)
+        print 'writing STEP file'
+        status = writer.Write(self.filename)
+        print 'status:', status
+    
+
+class IgesOCAF_Export(StepOCAF_Export):
+    def __init__(self, *args, **kwargs):
+        StepOCAF_Export.__init__(self, *args, **kwargs)
+    
+    def write(self):
+        WS = XSControl_WorkSession()
+        
+        '''
+        
+        CRASHES WHEN CALLING THE NEXT METHOD
+        
+        '''
+        
+        writer = IGESCAFControl_Writer( WS.GetHandle(), False )
+        writer.Transfer(self.h_doc)
+        print 'writing IGES file: ', self.filename 
+        status = writer.Write(self.filename)
+        print 'status:', status
+
 
 def TestImport():
     """
