@@ -247,6 +247,7 @@ class StepOCAF_Export(object):
 
 class IgesOCAF_Export(StepOCAF_Export):
     def __init__(self, *args, **kwargs):
+        raise NotImplementedError('bugs when calling IGESCAFControl_Writer')
         StepOCAF_Export.__init__(self, *args, **kwargs)
     
     def write(self):
