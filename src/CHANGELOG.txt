@@ -1,3 +1,8 @@
+2009/06/30:
+	- operators overloading in GEOM_Parameter class
+	- better compilation of SalomeGEOM (with the /Od) flag
+2009/12/17:
+	- replaced 'Quantity_Parameter' with Standard_Real wherever possible
 2009/5/10:
 	- Work on SCons script
 	- Work on NIS display
