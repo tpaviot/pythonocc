@@ -444,7 +444,34 @@ class GEOM_Parameter {
 	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
 	}
 };
-
+%extend GEOM_Parameter {
+%pythoncode {
+	def __add__(self, value):
+		if (isinstance(value,int) or isinstance(value,float)):
+			val = self.GetDouble() + value
+		elif isinstance(value,GEOM_Parameter):
+			val = self.GetDouble() + value.GetDouble()
+		return val
+	def __sub__(self, value):
+		if (isinstance(value,int) or isinstance(value,float)):
+			val = self.GetDouble() - value
+		elif isinstance(value,GEOM_Parameter):
+			val = self.GetDouble() - value.GetDouble()
+		return val
+	def __mul__(self, value):
+		if (isinstance(value,int) or isinstance(value,float)):
+			val = self.GetDouble() * value
+		elif isinstance(value,GEOM_Parameter):
+			val = self.GetDouble() * value.GetDouble()
+		return val
+	def __div__(self, value):
+		if (isinstance(value,int) or isinstance(value,float)):
+			val = self.GetDouble() / value
+		elif isinstance(value,GEOM_Parameter):
+			val = self.GetDouble() / value.GetDouble()
+		return val
+	}
+};
 
 %nodefaultctor GEOM_IOperations;
 class GEOM_IOperations {

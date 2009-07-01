@@ -588,7 +588,6 @@ class ModularBuilder(object):
                     to_write += "%s %s"%(argument_type,argument_name)
             if 'Standard_CString' in to_write:
                 to_write = to_write.replace('Standard_CString','char *')
-            
             if argument_default_value!="None" and next_argument_default_value!="None":
                 # default value may be "1u"or "::AspectCentered" etc.
                 if argument_default_value=="1u":
@@ -598,7 +597,6 @@ class ModularBuilder(object):
                 elif argument_default_value.startswith('::'):
                     argument_default_value = argument_default_value[2:]
                 to_write += "=%s"%argument_default_value
-
             is_first = False
         if mem_fun.decl_string.endswith(" const"):
             to_write += ") const;\n"
@@ -776,7 +774,36 @@ class ModularBuilder(object):
             self.fp.write('\t\tthe_shape = ss.Shape(ss.NbShapes())\n')
             self.fp.write('\t\tself.this = the_shape.this\n')
             self.fp.write('\t}\n};\n')
-
+        #
+        # Extra operators for GEOM_Parameter
+        #
+        if (class_name=='GEOM_Parameter'):
+            self.fp.write('%extend GEOM_Parameter {\n%pythoncode {\n')
+            self.fp.write('\tdef __add__(self, value):\n')
+            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() + value\n')
+            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() + value.GetDouble()\n')
+            self.fp.write('\t\treturn val\n')
+            self.fp.write('\tdef __sub__(self, value):\n')
+            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() - value\n')
+            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() - value.GetDouble()\n')
+            self.fp.write('\t\treturn val\n')
+            self.fp.write('\tdef __mul__(self, value):\n')
+            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() * value\n')
+            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() * value.GetDouble()\n')
+            self.fp.write('\t\treturn val\n')
+            self.fp.write('\tdef __div__(self, value):\n')
+            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() / value\n')
+            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+            self.fp.write('\t\t\tval = self.GetDouble() / value.GetDouble()\n')
+            self.fp.write('\t\treturn val\n')
+            self.fp.write('\t}\n};\n')
         #
         # On l'ajoute a la liste des classes deja exposees
         #
@@ -957,7 +984,15 @@ class ModularBuilder(object):
         typedefs = self._mb.global_ns.typedefs()
         for elem in typedefs:
             if (elem.name.startswith('%s_'%self.MODULE_NAME)) and (not '::' in '%s'%elem.type):
-                self.fp.write('typedef %s %s;\n'%(elem.type,elem.name))
+                # Careful:
+                # typedef Standard_Real Quantity_Parameter leads to a bug
+                # it should rather be:
+                # typedef double Quantity_Parameter
+                if "%s"%elem.type=="Standard_Real":
+                    elem_type = "double"
+                else:
+                    elem_type = "%s"%elem.type
+                self.fp.write('typedef %s %s;\n'%(elem_type,elem.name))
         self.fp.write('\n')
         
     def BuildModule(self):
