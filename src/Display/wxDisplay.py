@@ -114,20 +114,6 @@ class wxBaseViewer3d(wxBaseViewer):
         self._rightisdown = False
         self._selection = None
 
-#    def InitDriver(self):
-#        try:
-#            os.environ["CSF_GraphicShr"]
-#        except KeyError:
-#            raise "Please set the CSF_GraphicShr environment variable."
-#        self._display = OCCViewer.Viewer3d(self.GetHandle())
-#        self._display.Create()
-#        self._display.DisplayTriedron()
-#        #self._display.SetModeShaded()
-#        self._inited = True
-#
-#        # dict mapping keys to functions
-#        self._SetupKeyMap()
-
     def _SetupKeyMap(self):
         
         def set_shade_mode():

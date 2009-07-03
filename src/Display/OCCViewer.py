@@ -101,7 +101,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
             
         for shape in shapes:
             if material:#careful: != operator segfaults
-                print 'material', material
+                #print 'material', material
                 self.View.SetSurfaceDetail(OCC._TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                 shape_to_display.SetMaterial(material)
@@ -117,7 +117,6 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 ais_shapes.append(shape_to_display.GetHandle())
-                #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
         if SOLO:
@@ -265,7 +264,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         for shape in shapes:
             if material:#careful: != operator segfaults
-                print 'material', material
+                #print 'material', material
                 self.View.SetSurfaceDetail(OCC._TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                 shape_to_display.SetMaterial(material)
@@ -380,14 +379,11 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def Select(self,X,Y):
         self.Context.Select()
         self.Context.InitSelected()
-        print self.Context.MoreSelected()
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
-                print "Something selected"
                 self.selected_shape = self.Context.SelectedShape()
-                print self.selected_shape
+                print "Current selection:",self.selected_shape
         else:
-            print "Nothing selected"
             self.selected_shape = None
         
     def Rotation(self,X,Y):
