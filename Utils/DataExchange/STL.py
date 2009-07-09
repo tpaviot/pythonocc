@@ -53,8 +53,8 @@ class STLExporter(object):
     """
     def __init__(self, filename=None,ASCIIMode=True):
         self._shape = None #only one shape can be exported
-        self._filename = filename
         self._ASCIIMode = ASCIIMode
+        self.SetFilename(filename)
     
     def SetShape(self, aShape):
         # First check the shape
