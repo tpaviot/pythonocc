@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -59,7 +59,7 @@ header files.
 def WriteLicenseHeader(fp):
     header = """/*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 

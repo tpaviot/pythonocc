@@ -2,7 +2,7 @@
 
 ##Copyright 2008-2009 Thomas Paviot
 ##
-##thomas.paviot@free.fr
+##tpaviot@gmail.com
 ##
 ##pythonOCC is a computer program whose purpose is to provide a complete set
 ##of python bindings for OpenCasacde library.

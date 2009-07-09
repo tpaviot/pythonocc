@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -268,7 +268,7 @@ setup(name = "pythonOCC",
       license = "GPL V3",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
-      author_email = "thomas.paviot@free.fr",
+      author_email = "tpaviot@gmail.com",
       description = "OpenCascade 6.3.0 Python bindings",
       version=VERSION,
       long_description = """PythonOCC is a Python wrapper module for the

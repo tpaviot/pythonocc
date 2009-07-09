@@ -114,18 +114,6 @@ class Parameter(GEOM_Parameter):
         # Then return this float value
         return v
     
-#    def __add__(self,value):
-#        if self.IsDouble() and (isinstance(value,int) or isinstance(value,float)):
-#            return self.GetDouble() + value
-#        elif self.IsString() and (isinstance(value,str)):
-#            return self.GetString() + value
-#        else:
-#            # trying to make "X"+3 for instance
-#            k = parameters.__getattribute__(self._name)
-#            print k
-#            sys.exit()
-#                                
-        
 class Rule(object):
     def __init__(self, parameter_class, string_parameter_name, function):#,parameter_object,p):
         """ Adds a rule over the parameter
@@ -227,7 +215,7 @@ class Parameters(object):
             callback()
 
         self.context.doc.CommitCommand()
-        # Create the parameter
+        # Create the parameter (if not already done)
         if not self._parameters.has_key(name):
             self._parameters[name] = Parameter(name)
        

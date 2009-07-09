@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from OCC.TopoDS import *
 
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##

@@ -23,9 +23,8 @@ from OCC import VERSION
 
 class AppFrame(wx.Frame):
     def __init__(self, parent):
-        wx.Frame.__init__(self, parent, -1, "pythonOCC %s 3d viewer"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-        self.canva = wxViewer3d(self)
-        
+        wx.Frame.__init__(self, parent, -1, "pythonOCC-%s 3d viewer"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+        self.canva = wxViewer3d(self)      
         self.menuBar = wx.MenuBar()
         self._menus = {}
         self._menu_methods = {}
@@ -55,6 +54,7 @@ wx.SafeYield()
 frame.canva.InitDriver()
 app.SetTopWindow(frame)
 display = frame.canva._display
+display.SetBackgroundImage("./bg.bmp")
 
 def add_menu(*args, **kwargs):
     frame.add_menu(*args, **kwargs)

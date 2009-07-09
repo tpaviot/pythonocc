@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -105,7 +105,7 @@ class AppFrame(wx.MDIParentFrame):
         info.Description = """CAD Viewer is part of pythonOCC, an free set of Python bindings to OpenCascade library.
         This sample can open and display STEP, STL and IGES CAD files."""
         info.WebSite = ("http://www.pythonocc.org", "pythonOCC home page")
-        info.Developers = [ "Thomas Paviot (thomas.paviot@free.fr)"]
+        info.Developers = [ "Thomas Paviot (tpaviot@gmail.com)"]
         info.License = """This file is part of pythonOCC.
 
 pythonOCC is free software: you can redistribute it and/or modify

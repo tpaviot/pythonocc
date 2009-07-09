@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+##Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -131,7 +131,8 @@ class wxBaseViewer3d(wxBaseViewer):
         ord('F'): self._display.FitAll,
         #ord('F'): self._display.ExportToImage("essai.BMP"),
         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-        ord('G'): self._display.SetSelectionModeVertex
+        ord('G'): self._display.SetSelectionModeVertex,
+        ord('H'): self._display.SetBackgroundImage("bg.bmp")
         }                 
         
     def OnKeyDown(self,evt):
