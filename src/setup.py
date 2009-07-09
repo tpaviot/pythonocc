@@ -285,8 +285,9 @@ This version is built against OpenCascade 6.3.0""",
                      'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'..','Utils','DataExchange'),
                      'OCC.Toolkits':os.path.join(os.getcwd(),'..','Toolkits'),
                      'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'..','Toolkits','FoundationClasses'),
-                     'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'..','Toolkits','ModelingData'),},
-      packages = ['OCC','OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.Toolkits',\
+                     'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'..','Toolkits','ModelingData'),
+                     'OCC.PAF':os.path.join(os.getcwd(),'..','PAF'),},
+      packages = ['OCC','OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.Toolkits','OCC.PAF',\
                   'OCC.Toolkits.FoundationClasses',\
                   'OCC.Toolkits.ModelingData'],
       data_files = [data],
