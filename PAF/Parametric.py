@@ -18,7 +18,12 @@
 from OCC.SGEOM import GEOM_Solver,GEOM_Parameter
 from OCC.TDF import TDF_LabelSequence
 from OCC.TCollection import TCollection_AsciiString
-from sympy import Symbol
+try:
+    from sympy import Symbol
+    HAVE_SYMPY = True
+except ImportError:
+    HAVE_SYMPY = False
+    print "The Relation class needs the sympy library. Please check http://code.google.com/p/sympy/"
 
 def symb(parameter_tuple):
     """ Returns the sympy symbol to define the relations
@@ -80,7 +85,7 @@ class Relation(object):
         
     def Perform(self):
         self.BuildSubs() #necessary to update with all current values
-        new_parameter_value = float(self._relation.evalf(subs=self._subs))
+        new_parameter_value = float(self._relation.evalf(subs=self._subs)) #require sympy library
         # Compare with the old value to avoid setting the parameter
         # and have infinte recurrent calls 
         old_value = self.p1.__getattribute__(self.p2)[1]
