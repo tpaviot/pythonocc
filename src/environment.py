@@ -29,7 +29,7 @@ import subprocess
 #
 # Define pythonOCC version
 #
-VERSION = '06_15_2009'
+VERSION = 'sg0.3'
 #
 # Wrap SalomeGEOM?
 #
@@ -168,7 +168,7 @@ elif sys.platform=='darwin':
 else:
     raise "Unsupported platform"
 #
-# Various paths
+# Common paths
 #
 PYTHON_INC = sysconfig.get_python_inc()
 PYTHON_LIB = sysconfig.get_python_lib()
