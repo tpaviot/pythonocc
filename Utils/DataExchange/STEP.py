@@ -21,7 +21,7 @@ import os, os.path
 from OCC.TopoDS import *
 from OCC.BRep import *
 from OCC.STEPControl import *
-from OCC.IGESControl import *
+
 from OCC.IFSelect import *
 
 
@@ -31,49 +31,42 @@ from OCC.TDocStd import *
 from OCC.TCollection import *
 from OCC.XCAFDoc import *
 from OCC.TDF import *
-from OCC.TopoDS import *
+#from OCC.TopoDS import *
 
 from OCC import XCAFApp, TDocStd, TCollection, XCAFDoc, BRepPrimAPI, Quantity, TopLoc, gp, TPrsStd, XCAFPrs
 
-from OCC.Display.wxSamplesGui import *
 from OCC.STEPCAFControl import *
 from OCC.XSControl import *
 from OCC.STEPControl import *
-from OCC.IGESCAFControl import *
+
 import os
 
-
-
-
-
-
-
-
 class STEPImporter(object):
-    def __init__(self,filename):        
+    def __init__(self,filename=None):        
+        self._shapes = []
+        self._nbs = 0
         self.SetFilename(filename)
-        self._shape = None
 
+    def GetNbrShapes(self):
+        """ Return the number of shapes from the importer
+        """
+        return self._nbs
+       
     def SetFilename(self, filename):
         if not os.path.isfile(filename):
             print "STEPImporter initialization Error: file %s not found."%filename
             self._filename = None
         else:
             self._filename = filename
-            
+        
     def ReadFile(self):
         """
-        Read the STEP file and stores the result in a TopoDS_Shape
+        Read the STEP file and stores the result in a _shapes list
         """
         if not self._filename:
             print "ReadFile Error: first set the filename."
             return False
-        
         aReader = STEPControl_Reader()
-        aResShape = TopoDS_Shape()
-        compound = TopoDS_Compound()
-        B = BRep_Builder()
-        B.MakeCompound(compound)
         status = aReader.ReadFile(self._filename)
         if status==IFSelect_RetDone:
             failsonly = False
@@ -83,36 +76,42 @@ class STEPImporter(object):
             aReader.PrintCheckTransfer(failsonly, IFSelect_ItemsByEntity)
             for n in range(1,nbr+1):
                 ok = aReader.TransferRoot(n)
-                nbs = aReader.NbShapes()
-                print "%i shapes"%nbs
-                if nbs == 0:
+                self.nbs = aReader.NbShapes()
+                if self.nbs == 0:
                     print "At least one shape in STEP cannot be transfered"
-                elif (nbr==1 and nbs==1):
+                elif (nbr==1 and self.nbs==1):
                     aResShape = aReader.Shape(1)
-                    break
-                for i in range(1,nbs+1):
-                    aShape = aReader.Shape(i)
-                    if aShape.IsNull():
+                    if aResShape.IsNull():
                         print "At least one shape in STEP cannot be transferred"
-                    else:
-                        B.Add(compound,aShape)
-            if aResShape.IsNull():
-                aResShape = compound
-            else:
-                print "Error: Wrong format of the imported file. Cannot import file."
-                aResShape.Nullify()
-            self._shape = aResShape
+                    self._shapes.append(aResShape)
+                else:                    
+                    for i in range(1,self.nbs+1):
+                        aShape = aReader.Shape(i)
+                        if aShape.IsNull():
+                            print "At least one shape in STEP cannot be transferred"
+                        else:
+                            self._shapes.append(aShape)
+                            #B.Add(compound,aShape)
             return True
         else:
             print "Error: can't read file %s"%self._filename
             return False
         return False
 
-    def GetShape(self):
-        if self._shape.IsNull():
-            raise "Error"
-        else:
-            return self._shape
+    def GetCompound(self):
+        """ Create and returns a compound from the _shapes list
+        """
+        # Create a compound
+        compound = TopoDS_Compound()
+        B = BRep_Builder()
+        B.MakeCompound(compound)
+        # Populate the compound
+        for shape in self._shapes:
+            B.Add(compound,shape)
+        return compound
+    
+    def GetShapes(self):
+        return self._shapes
 
 class STEPExporter(object):
     def __init__(self, filename, verbose=False):
@@ -147,41 +146,6 @@ class STEPExporter(object):
             return True
         else:
             return False
-
-#class IGESExporter(object):
-#    def __init__(self, filename, verbose=False):
-#        self._shapes = []
-#        self.verbose = verbose
-#        self._filename = filename
-#        self.stepWriter = IGESControl_Writer()
-#        
-#    def SetTolerance(self, tolerance=0.0001):
-#        self.stepWriter.SetTolerance(tolerance)
-#    
-#    def AddShape(self, aShape):
-#        # First check the shape
-#        if aShape.IsNull():
-#            raise "STEPExporter Error: the shape is NULL"
-#        else: 
-#            self._shapes.append(aShape)
-#    
-#    def WriteFile(self):
-#        for shp in self._shapes:
-#            status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
-#        if status == IFSelect_RetDone:
-#            status = self.stepWriter.Write(self._filename)
-#        else:
-#            return False
-#        
-#        if self.verbose:
-#            self.stepWriter.PrintStatsTransfer()
-#        
-#        if status == IFSelect_RetDone:
-#            print "STEP transfer successful."
-#            return True
-#        else:
-#            return False
-
 
 class StepOCAF_Export(object):
     '''
@@ -243,28 +207,6 @@ class StepOCAF_Export(object):
         print 'writing STEP file'
         status = writer.Write(self.filename)
         print 'status:', status
-    
-
-class IgesOCAF_Export(StepOCAF_Export):
-    def __init__(self, *args, **kwargs):
-        raise NotImplementedError('bugs when calling IGESCAFControl_Writer')
-        StepOCAF_Export.__init__(self, *args, **kwargs)
-    
-    def write(self):
-        WS = XSControl_WorkSession()
-        
-        '''
-        
-        CRASHES WHEN CALLING THE NEXT METHOD
-        
-        '''
-        
-        writer = IGESCAFControl_Writer( WS.GetHandle(), False )
-        writer.Transfer(self.h_doc)
-        print 'writing IGES file: ', self.filename 
-        status = writer.Write(self.filename)
-        print 'status:', status
-
 
 def TestImport():
     """
