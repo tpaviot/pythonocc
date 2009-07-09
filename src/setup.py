@@ -57,11 +57,6 @@ With [options]:
     print help_str
     sys.exit(0)
 
-try:
-    import psyco
-    psyco.full()
-except:
-    print "psyco not found. This module can speed up pythonOCC compilation time by about 10%."
 import distutils
 from distutils.core import setup, Extension
 from distutils import sysconfig
