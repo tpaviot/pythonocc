@@ -1,6 +1,6 @@
-from Context import Context
-from Parametric import Parameters, symb, value, Relation
-import Factory
+from OCC.PAF.Context import Context
+from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
+from OCC.PAF.Factory import Factory
 from sympy import *
 
 # Create and initialize a parametric context

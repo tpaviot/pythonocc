@@ -1,7 +1,7 @@
-from Context import Context
-import Parametric
-import Factory
-import Presentation
+from OCC.PAF.Context import Context
+from OCC.PAF.Parametric import Parameters, Rule, Relation
+from OCC.PAF.Factory import Factory
+from OCC.PAF.Presentation import Presentation
 from math import pi
 
 # Create and initialize a parametric context
@@ -9,14 +9,14 @@ my_context = Context()
 my_context.Init()
 
 # Create a presentation to display geometry
-my_presentation = Presentation.Presentation(my_context)
+my_presentation = Presentation(my_context)
 
 # Then creates a parameters set
-p = Parametric.Parameters(my_context)
+p = Parameters(my_context)
 p.register_callback(my_presentation.update) #tells that viewer should be updated after each parameter modification
 
 # The factory gives access to geometry creation using parameters
-my_factory = Factory.Factory(my_context)
+my_factory = Factory(my_context)
 
 # Create a Point
 p.X = 0.0

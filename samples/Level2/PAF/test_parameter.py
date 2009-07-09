@@ -1,13 +1,12 @@
-from Context import Context
-import Parametric
-import Factory
+from OCC.PAF.Context import Context
+from OCC.PAF.Parametric import Parameters
 
 # Create and initialize a parametric context
 my_context = Context()
 my_context.Init()
 
 # Then creates a parameters set
-p = Parametric.Parameters(my_context)
+p = Parameters(my_context)
 
 # Create one parameter
 p.X = 10

@@ -18,11 +18,10 @@
 # A sample that shows how to generate the gear geometry according
 # to knowledge
 
-from Context import Context
-import Parametric
-from Parametric import Parameters, symb, Relation
-import Factory
-import Presentation
+from OCC.PAF.Context import Context
+from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
+from OCC.PAF.Factory import Factory
+from OCC.PAF.Presentation import Presentation
 from math import pi
 from sympy import *
 
@@ -31,10 +30,10 @@ from sympy import *
 #
 my_context = Context()
 my_context.Init()
-my_presentation = Presentation.Presentation(my_context)
+my_presentation = Presentation(my_context)
 p = Parameters(my_context)
 p.register_callback(my_presentation.update) #tells that viewer should be updated after each parameter modification
-my_factory = Factory.Factory(my_context)
+my_factory = Factory(my_context)
 
 #
 # Define the first gear (actually modelized by a cylinder)
@@ -92,12 +91,12 @@ def DefineRules():
     # The number of teeth must be greater than 0 and also be an integer
     def CheckZ(Z):
         return (int(Z)/Z==1.0 and Z>0)
-    R1 = Parametric.Rule(p,"Z1",CheckZ)
-    R2 = Parametric.Rule(p,"Z2",CheckZ)
+    R1 = Rule(p,"Z1",CheckZ)
+    R2 = Rule(p,"Z2",CheckZ)
     # The modulus cannot take any value (notice that this list is not exhaustive.
     def Checkm(m):
         return m in [0.06,0.08,0.1,1,1.25,1.5,2,2.5,3]
-    R3 = Parametric.Rule(p,"m",Checkm)
+    R3 = Rule(p,"m",Checkm)
         
 def DefineRelations():
     # The three relations are:

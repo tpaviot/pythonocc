@@ -1,13 +1,12 @@
-from Context import Context
-import Parametric
-import Factory
+from OCC.PAF.Context import Context
+from OCC.PAF.Parametric import Parameters, Rule
 
 # Create and initialize a parametric context
 my_context = Context()
 my_context.Init()
 
 # Then creates a parameters set
-p = Parametric.Parameters(my_context)
+p = Parameters(my_context)
 
 # Define the function
 def IsPositive(x):
@@ -17,4 +16,4 @@ def IsPositive(x):
 p.X = 10
 
 #Create a Rule
-R1 = Parametric.Rule(p,"X",IsPositive)
+R1 = Rule(p,"X",IsPositive)
