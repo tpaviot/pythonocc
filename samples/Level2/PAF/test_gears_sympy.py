@@ -22,6 +22,9 @@ from OCC.PAF.Context import Context
 from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
 from OCC.PAF.Factory import Factory
 from OCC.PAF.Presentation import Presentation
+
+from OCC.Display.wxSamplesGui import start_display
+
 from math import pi
 from sympy import *
 
@@ -116,3 +119,5 @@ def DefineRelations():
 
 DefineRules()
 DefineRelations()
+
+start_display()
