@@ -29,6 +29,8 @@ import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
 
+from OCC import Prs3d
+
 try:
     import OCC.NIS
     HAVE_NIS = False
@@ -81,6 +83,9 @@ class BaseDriver(object):
         self.Viewer = self.Viewer_handle.GetObject()
         self.View = self.View_handle.GetObject()
         self._inited = True
+        
+        # nessecary for text rendering
+        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
     
         
 class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
@@ -154,7 +159,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def SetModeShaded(self):
         self.View.SetComputedMode(False)
-        self.View.SetAntialiasingOff()
         self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
      
     def SetModeQuickHLR(self):
@@ -201,7 +205,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         text_to_write: a string
         """
         #print dir(self.View)
-        self.view_manager = self.View.View().GetObject().ViewManager()
+#        self.view_manager = self.View.View().GetObject().ViewManager()
         #print view_manager
         #self.myLayer= OCC.Visual3d.Visual3d_Layer(self.view_manager,OCC.Aspect.Aspect_TOL_OVERLAY, False)
         #myLayer.SetViewport(640,480)
@@ -244,9 +248,21 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 #        V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
 #        aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
 #        aDrawer = aisShape.Attributes()
-#        aPresentation = OCC.Prs3d.Prs3d_Presentation(self.Viewer_handle)
-#        Prs3d_Text().Draw(aPresentation,aDrawer,"Test", point)
-#        aPresentation.Display()
+        
+        # TODO - should be imported!
+        def to_string_extended(_str):
+            from OCC.TCollection import TCollection_ExtendedString as String
+            return String(_str)
+        
+        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
+        text_aspect = Prs3d.Prs3d_TextAspect()
+        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
+                                 text_aspect.GetHandle(),
+                                  to_string_extended(text_to_write),
+                                   point)
+        aPresentation.Display()
+        # it would be more coherent if a AIS_InteractiveObject would be returned
+        return aPresentation
 #        self.Context.Display(anAIS.GetHandle())
 
         
@@ -294,7 +310,14 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                       'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,
                       'RED':OCC.Quantity.Quantity_NOC_RED,
                       'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
-                      'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW}
+                      'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW,
+                      # new
+                      'CYAN':OCC.Quantity.Quantity_NOC_CYAN1,
+                      'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
+                      'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
+                      'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE,
+                      
+                      }
 
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
