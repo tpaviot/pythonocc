@@ -38,6 +38,7 @@ from OCC import XCAFApp, TDocStd, TCollection, XCAFDoc, BRepPrimAPI, Quantity, T
 from OCC.STEPCAFControl import *
 from OCC.XSControl import *
 from OCC.STEPControl import *
+from OCC.Quantity import *
 
 import os
 
@@ -173,7 +174,7 @@ class StepOCAF_Export(object):
     
         self.current_color = Quantity.Quantity_Color(Quantity.Quantity_NOC_RED)  
         self.current_layer = self.layers.AddLayer(TCollection_ExtendedString(layer_name))
-        self.layer_names = []
+        self.layer_names = {}
     
     def set_color(self, r=1,g=1,b=1, color=None):
         if not color is None:
@@ -183,16 +184,49 @@ class StepOCAF_Export(object):
             self.current_color = clr
     
     def set_layer(self, layer_name):
-        if layer_name not in self.layer_names:
+        '''set the current layer name
+        
+        if the layer has already been set before, that TDF_Label will be used 
+        
+        @param layer_name: string that is the name of the layer
+        '''
+        if layer_name in self.layer_names:
+            self.current_layer = self.layer_names[layer_name]
+        else:
             self.current_layer = self.layers.AddLayer(TCollection_ExtendedString(layer_name))
-            self.layer_names.append(layer_name)
+            self.layer_names[layer_name] = self.current_layer
     
-    def add_shape(self, shape):
+    def add_shape(self, shape, color=None, layer=None):
+        '''add a shape to export
+        
+        a layer and color can be specified.
+        
+        note that the set colors / layers will be used for further objects
+        added too! 
+        
+        @param shape:     the TopoDS_Shape to export
+        @param color:     can be a tuple: (r,g,b) or a Quantity_Color instance
+        @param layer:     string with the layer name
+        '''
         assert issubclass(shape.__class__, TopoDS_Shape) or isinstance(shape, TopoDS_Shape), 'not a TopoDS_Shape or subclass'
         shp_label = self.shape_tool.AddShape( shape )
         
-        self.colors.SetColor(shp_label, self.current_color, XCAFDoc.XCAFDoc_ColorGen)
-        self.layers.SetLayer(shp_label, self.current_layer)
+        if color is None:  
+            self.colors.SetColor(shp_label, self.current_color, XCAFDoc.XCAFDoc_ColorGen)
+        else:
+            if isinstance(color, Quantity_Color):
+                self.current_color = color
+            else:
+                assert len(color) == 3, 'expected a tuple with three values < 1.'
+                r,g,b = color
+                self.set_color(r,g,b)
+            self.colors.SetColor(shp_label, self.current_color, XCAFDoc.XCAFDoc_ColorGen)
+        
+        if layer is None:
+            self.layers.SetLayer(shp_label, self.current_layer)
+        else:
+            self.set_layer(layer)
+            self.layers.SetLayer(shp_label, self.current_layer)
         
     def write(self):
 #        assert os.path.isdir(path), '%s not a valid directory'

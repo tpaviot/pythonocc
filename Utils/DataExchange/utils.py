@@ -31,17 +31,18 @@ def shape_to_file(shape, pth, filename, format='iges'):
         
     elif format == 'brep':
         from OCC import TopoDS, BRep, BRepTools
-        shape = TopoDS.TopoDS_Shape()
+        #shape = TopoDS.TopoDS_Shape()
         builder = BRep.BRep_Builder()
-        BRepTools.BRepTools().Read(shape,_file,builder)    
+        BRepTools.BRepTools().Write(shape, _file)
     
     elif format == 'stl':
         from OCC import TopoDS, StlAPI
-        shape = TopoDS.TopoDS_Shape()
-        stl_reader = StlAPI.StlAPI_Reader()
-        stl_reader.Read(shape,str(filename))    
-            
-
+        #shape = TopoDS.TopoDS_Shape()
+        stl_reader = StlAPI.StlAPI_Writer()
+        stl_reader.Read(shape,_file)
+        
+    else:
+        raise TypeError('format should be one of [iges,igs], [step,stp], brep, stl\ngot %s' % (format))
 
 def file_to_shape(pth):
     '''get a Shape from an .iges or .step file'''
