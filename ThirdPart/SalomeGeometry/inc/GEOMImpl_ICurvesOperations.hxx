@@ -39,16 +39,17 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 
   Standard_EXPORT Handle(GEOM_Object) MakeCircleThreePnt (Handle(GEOM_Object) thePnt1,
                                                           Handle(GEOM_Object) thePnt2,
-														  Handle(GEOM_Object) thePnt3);
+                                                          Handle(GEOM_Object) thePnt3);
   Standard_EXPORT Handle(GEOM_Object) MakeCircleCenter2Pnt (Handle(GEOM_Object) thePnt1,
                                                             Handle(GEOM_Object) thePnt2,
-															Handle(GEOM_Object) thePnt3);
+                                                            Handle(GEOM_Object) thePnt3);
   Standard_EXPORT Handle(GEOM_Object) MakeCirclePntVecR  (Handle(GEOM_Object) thePnt,
-														  Handle(GEOM_Object) theVec, const GEOM_Parameter& theR);
+                                                          Handle(GEOM_Object) theVec, const GEOM_Parameter& theR);
 
   Standard_EXPORT Handle(GEOM_Object) MakeEllipse (Handle(GEOM_Object) thePnt,
                                                    Handle(GEOM_Object) theVec,
-                                                   const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor);
+                                                   const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor,
+                                                   Handle(GEOM_Object) theVecMaj);
 
   Standard_EXPORT Handle(GEOM_Object) MakeEllipseThreePnt (Handle(GEOM_Object) theMajor,
                                                            Handle(GEOM_Object) theMinor,
@@ -63,17 +64,24 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
                                                      Handle(GEOM_Object) thePnt3,
                                                      bool                theSense);
 
+  Standard_EXPORT Handle(GEOM_Object) MakeArcOfEllipse (Handle(GEOM_Object) thePnt1,
+                            Handle(GEOM_Object) thePnt2,
+                            Handle(GEOM_Object) thePnt3);
+
   Standard_EXPORT Handle(GEOM_Object) MakeSplineBezier        (std::list<Handle(GEOM_Object)> thePoints);
   Standard_EXPORT Handle(GEOM_Object) MakeSplineInterpolation (std::list<Handle(GEOM_Object)> thePoints);
 
   Standard_EXPORT Handle(GEOM_Object) MakeSketcher (const TCollection_AsciiString& theCommand,
                                                     std::list<GEOM_Parameter> theWorkingPlane);
+
+  Standard_EXPORT Handle(GEOM_Object) Make3DSketcher (std::list<TCollection_AsciiString> theCoordinates);
+
   Standard_EXPORT Handle(GEOM_Object) MakeSketcherOnPlane (const TCollection_AsciiString& theCommand,
                                                            Handle(GEOM_Object) theWorkingPlane);
   Standard_EXPORT Handle(GEOM_Object) MakeCurveSplitByParam (Handle(GEOM_Object) theCurve, 
-													         const GEOM_Parameter& thePar);
-  Standard_EXPORT Handle(GEOM_Object) MakeCurveSplitByCurve (Handle(GEOM_Object) theCurve, 
-															 Handle(GEOM_Object) theTool);
+                                                             const GEOM_Parameter& thePar);
+  Standard_EXPORT Handle(GEOM_Object) MakeCurveSplitByCurve (Handle(GEOM_Object) theCurve,
+                                                             Handle(GEOM_Object) theTool);
 };
 
 #endif

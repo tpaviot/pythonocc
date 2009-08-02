@@ -27,7 +27,10 @@
 #define PRISM_ARG_BASE  3
 #define PRISM_ARG_PNT_F 4
 #define PRISM_ARG_PNT_L 5
-#define PRISM_ARG_ANG 	6
+#define PRISM_ARG_ANG   6
+#define PRISM_ARG_DX    7
+#define PRISM_ARG_DY    8
+#define PRISM_ARG_DZ    9
 
 class GEOMImpl_IPrism
 {
@@ -53,6 +56,20 @@ class GEOMImpl_IPrism
 
   double GetH() { return _func->GetReal(PRISM_ARG_H); }
   double GetAngle() { return _func->GetReal(PRISM_ARG_ANG); }
+
+  void SetDX(double theDX) { _func->SetReal(PRISM_ARG_DX, theDX); }
+  void SetDX(const TCollection_AsciiString& theDX) { _func->SetReal(PRISM_ARG_DX, theDX); }
+
+  void SetDY(double theDY) { _func->SetReal(PRISM_ARG_DY, theDY); }
+  void SetDY(const TCollection_AsciiString& theDY) { _func->SetReal(PRISM_ARG_DY, theDY); }
+
+  void SetDZ(double theDZ) { _func->SetReal(PRISM_ARG_DZ, theDZ); }
+  void SetDZ(const TCollection_AsciiString& theDZ) { _func->SetReal(PRISM_ARG_DZ, theDZ); }
+
+  double GetDX() { return _func->GetReal(PRISM_ARG_DX); }
+  double GetDY() { return _func->GetReal(PRISM_ARG_DY); }
+  double GetDZ() { return _func->GetReal(PRISM_ARG_DZ); }
+
 
  private:
 

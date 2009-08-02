@@ -22,12 +22,13 @@
 
 #include "SGEOM_Function.hxx"
 
-#define ELLIPS_ARG_CC   1
-#define ELLIPS_ARG_VV   2
-#define ELLIPS_ARG_RMAJ 3
-#define ELLIPS_ARG_RMIN 4
-#define ELLIPS_ARG_PMAJ 5
-#define ELLIPS_ARG_PMIN 6
+#define ELLIPS_ARG_CC    1
+#define ELLIPS_ARG_VV    2
+#define ELLIPS_ARG_RMAJ  3
+#define ELLIPS_ARG_RMIN  4
+#define ELLIPS_ARG_PMAJ  5
+#define ELLIPS_ARG_PMIN  6
+#define ELLIPS_ARG_VVMAJ 7
 
 class GEOMImpl_IEllipse
 {
@@ -44,6 +45,8 @@ class GEOMImpl_IEllipse
   void SetRMajor(const TCollection_AsciiString& theR) { _func->SetReal(ELLIPS_ARG_RMAJ, theR); }
   void SetRMinor(const TCollection_AsciiString& theR) { _func->SetReal(ELLIPS_ARG_RMIN, theR); }
 
+  void SetVectorMajor(Handle(GEOM_Function) theV) { _func->SetReference(ELLIPS_ARG_VVMAJ, theV); }
+
   void SetPMajor(Handle(GEOM_Function) theP) { _func->SetReference(ELLIPS_ARG_PMAJ, theP); }
   void SetPMinor(Handle(GEOM_Function) theP) { _func->SetReference(ELLIPS_ARG_PMIN, theP); }
 
@@ -55,6 +58,8 @@ class GEOMImpl_IEllipse
 
   Handle(GEOM_Function) GetPMajor() { return _func->GetReference(ELLIPS_ARG_PMAJ); }
   Handle(GEOM_Function) GetPMinor() { return _func->GetReference(ELLIPS_ARG_PMIN); }
+
+  Handle(GEOM_Function) GetVectorMajor() { return _func->GetReference(ELLIPS_ARG_VVMAJ); }
 
  private:
 

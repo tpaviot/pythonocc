@@ -17,36 +17,25 @@
 //
 // See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
-// NOTE: This is an intreface to a function for the Shapes
-// (Wire, Face, Shell, Solid and Compound) creation.
+//NOTE: This is an interface to a function for the Sketcher creation.
 
 
 #include "SGEOM_Function.hxx"
 
-#include "TColStd_HSequenceOfTransient.hxx"
-#include "TColStd_HArray1OfInteger.hxx"
+#include <TColStd_HArray1OfReal.hxx>
 
-#define SUBSHAPE_ARG_MAIN_SHAPE     1
-#define SUBSHAPE_ARG_INDICES        2
-#define SUBSHAPE_ARG_SORTED         3
+#define SKETCH_ARG_COORDS  1
 
-//!Interface class for subshape driver
-class GEOM_ISubShape
+class GEOMImpl_I3DSketcher
 {
  public:
 
-  GEOM_ISubShape(Handle(GEOM_Function) theFunction): _func(theFunction) {}
+  GEOMImpl_I3DSketcher(Handle(GEOM_Function) theFunction): _func(theFunction) {}
 
-  void SetMainShape(Handle(GEOM_Function) theRefBase)
-  { _func->SetReference(SUBSHAPE_ARG_MAIN_SHAPE, theRefBase); }
+  void SetCoordinates(const Handle(TColStd_HArray1OfAsciiString)& theValue)
+              { _func->SetRealArray(SKETCH_ARG_COORDS, theValue); }
 
-  Handle(GEOM_Function) GetMainShape() { return _func->GetReference(SUBSHAPE_ARG_MAIN_SHAPE); }
-
-  void SetIndices(const Handle(TColStd_HArray1OfInteger)& theIndices)
-  { _func->SetIntegerArray(SUBSHAPE_ARG_INDICES, theIndices); }
-
-  Handle(TColStd_HArray1OfInteger) GetIndices()
-  { return _func->GetIntegerArray(SUBSHAPE_ARG_INDICES); }
+  Handle(TColStd_HArray1OfReal) GetCoordinates() { return _func->GetRealArray(SKETCH_ARG_COORDS); }
 
  private:
 

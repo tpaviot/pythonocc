@@ -35,6 +35,7 @@
 #define TRANSLATE_ARG_DY       13
 #define TRANSLATE_ARG_DZ       14
 #define TRANSLATE_ARG_DISTANCE 15
+#define TRANSLATE_ARG_RAIL     16
 
 class GEOMImpl_ITranslate
 {
@@ -101,6 +102,10 @@ class GEOMImpl_ITranslate
   void SetDistance(const TCollection_AsciiString& theDistance) { return _func->SetReal(TRANSLATE_ARG_DISTANCE, theDistance); }
 
   double GetDistance() { return _func->GetReal(TRANSLATE_ARG_DISTANCE); }
+
+  void SetRailShape(Handle(GEOM_Function) theRail) { _func->SetReference(TRANSLATE_ARG_RAIL, theRail); }
+
+  Handle(GEOM_Function) GetRailShape() { return _func->GetReference(TRANSLATE_ARG_RAIL); }
 
  private:
   

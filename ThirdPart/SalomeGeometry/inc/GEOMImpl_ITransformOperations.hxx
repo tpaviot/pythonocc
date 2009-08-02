@@ -60,6 +60,9 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
   Standard_EXPORT Handle(GEOM_Object) Translate2D (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theVector, const GEOM_Parameter&  theStep1, const GEOM_Parameter&  theNbTimes1,
 				   Handle(GEOM_Object) theVector2, const GEOM_Parameter&  theStep2, const GEOM_Parameter&  theNbTimes2);
 
+  Standard_EXPORT Handle(GEOM_Object) TranslateAlongRail( Handle(GEOM_Object) theObject,
+                    Handle(GEOM_Object) theRail, const GEOM_Parameter& theStep, const GEOM_Parameter& theNbTimes, const GEOM_Parameter& theType);
+
   Standard_EXPORT Handle(GEOM_Object) MirrorPlane (Handle(GEOM_Object) theObject,
                                    Handle(GEOM_Object) thePlane);
 

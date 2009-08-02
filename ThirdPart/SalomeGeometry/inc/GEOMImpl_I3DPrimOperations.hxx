@@ -39,6 +39,17 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
   Standard_EXPORT Handle(GEOM_Object) MakeBoxTwoPnt (Handle(GEOM_Object) thePnt1,
 									 Handle(GEOM_Object) thePnt2);
 
+  Standard_EXPORT Handle(GEOM_Object) MakeFaceHW (const GEOM_Parameter& theH, const GEOM_Parameter& theW, int theOrientation);
+  Standard_EXPORT Handle(GEOM_Object) MakeFaceObjHW (Handle(GEOM_Object) theObj,
+						     const GEOM_Parameter& theH, const GEOM_Parameter& theW);
+  Standard_EXPORT Handle(GEOM_Object) MakeDiskThreePnt (Handle(GEOM_Object) thePnt1,
+							Handle(GEOM_Object) thePnt2,
+							Handle(GEOM_Object) thePnt3);
+  Standard_EXPORT Handle(GEOM_Object) MakeDiskPntVecR (Handle(GEOM_Object) thePnt1,
+						       Handle(GEOM_Object) theVec,
+						       const GEOM_Parameter& theR);
+  Standard_EXPORT Handle(GEOM_Object) MakeDiskR (const GEOM_Parameter& theR, int theOrientation);
+
   Standard_EXPORT Handle(GEOM_Object) MakeCylinderRH       (const GEOM_Parameter& theR, const GEOM_Parameter& theH, const GEOM_Parameter& theAngle = 0.);
   Standard_EXPORT Handle(GEOM_Object) MakeCylinderPntVecRH (Handle(GEOM_Object) thePnt,
 											Handle(GEOM_Object) theVec,
@@ -78,6 +89,12 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
   Standard_EXPORT Handle(GEOM_Object) MakePrismTwoPnt2Ways (Handle(GEOM_Object) theBase,
                                        Handle(GEOM_Object) thePoint1,
                                        Handle(GEOM_Object) thePoint2);
+
+  Standard_EXPORT Handle(GEOM_Object) MakePrismDXDYDZ (Handle(GEOM_Object) theBase,
+                                     const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ);
+
+  Standard_EXPORT Handle(GEOM_Object) MakePrismDXDYDZ2Ways (Handle(GEOM_Object) theBase,
+                                     const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ);
 
   Standard_EXPORT Handle(GEOM_Object) MakePipe (Handle(GEOM_Object) theBase,
                                 Handle(GEOM_Object) thePath);

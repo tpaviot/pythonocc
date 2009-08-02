@@ -42,6 +42,40 @@
 #undef GetObject
 #endif
 
+#include <map>
+#include <vector>
+
+struct TVariable{
+  TCollection_AsciiString myVariable;
+  bool isVariable;
+
+  TVariable(const TCollection_AsciiString& theVariable, bool theFlag = true):
+    myVariable(theVariable),
+    isVariable(theFlag){}
+};
+
+typedef std::vector<TVariable> TState;
+typedef std::vector<TState>    TAllStates;
+
+class ObjectStates
+{
+public:
+  Standard_EXPORT ObjectStates();
+  ~ObjectStates();
+
+  TAllStates GetAllStates() const { return _states; }
+
+  TState GetCurrectState() const;
+  Standard_EXPORT void AddState(const TState &theState);
+  void IncrementState();
+
+private:
+  TAllStates              _states;
+  int                     _dumpstate;
+};
+
+typedef std::map<TCollection_AsciiString, ObjectStates* > TVariablesList;
+
 //!Manages documents and objects in a document
 class GEOM_Engine
 {
@@ -93,14 +127,15 @@ class GEOM_Engine
 
   //!Adds a new sub shape object of the MainShape object
   Standard_EXPORT Handle(GEOM_Object) AddSubShape(Handle(GEOM_Object) theMainShape, 
-				  Handle(TColStd_HArray1OfInteger) theIndices,
-				  bool isStandaloneOperation = false);
+                    Handle(TColStd_HArray1OfInteger) theIndices,
+                    bool isStandaloneOperation = false);
 
   //!Returns Python script of document
-  Standard_EXPORT TCollection_AsciiString DumpPython(int theDocID, 
-					 Resource_DataMapOfAsciiStringAsciiString& theObjectNames,
-				     bool isPublished, 
-					 bool& aValidScript);
+  Standard_EXPORT TCollection_AsciiString DumpPython(int theDocID,
+                        Resource_DataMapOfAsciiStringAsciiString& theObjectNames,
+                        TVariablesList theVariables,
+                        bool isPublished,
+                        bool& aValidScript);
 
   //!Returns dump name
   Standard_EXPORT const char* GetDumpName (const char* theStudyEntry) const;

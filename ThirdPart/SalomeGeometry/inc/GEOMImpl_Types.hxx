@@ -95,6 +95,10 @@
 
 #define GEOM_SHAPES_ON_SHAPE 47
 
+#define GEOM_ELLIPSE_ARC 48
+
+#define GEOM_3DSKETCHER 49
+
 
 //GEOM_Function types
 
@@ -135,6 +139,7 @@
 #define TRANSLATE_XYZ             7
 #define TRANSLATE_XYZ_COPY        8
 #define TRANSLATE_VECTOR_DISTANCE 9
+#define TRANSLATE_ALONG_RAIL      10
 
 #define ROTATE                    1
 #define ROTATE_COPY               2
@@ -187,6 +192,8 @@
 #define PRISM_BASE_VEC_H_ANG     3
 #define PRISM_BASE_VEC_H_2WAYS   4
 #define PRISM_BASE_TWO_PNT_2WAYS 5
+#define PRISM_BASE_DXDYDZ        6
+#define PRISM_BASE_DXDYDZ_2WAYS  7
 
 #define REVOLUTION_BASE_AXIS_ANGLE        1
 #define REVOLUTION_BASE_AXIS_ANGLE_OFFSET 2
@@ -225,8 +232,9 @@
 #define SPLINE_BEZIER        1
 #define SPLINE_INTERPOLATION 2
 
-#define ELLIPSE_PNT_VEC_RR 1
-#define ELLIPSE_THREE_PNT 2
+#define ELLIPSE_PNT_VEC_RR         1
+#define ELLIPSE_THREE_PNT          2
+#define ELLIPSE_ARC_CENTER_TWO_PNT 3
 
 #define CIRC_ARC_THREE_PNT 1
 #define CIRC_ARC_CENTER    2
@@ -312,6 +320,8 @@
 // Face
 #define FACE_THREE_PNT           3
 #define FACE_FOUR_PNT            4
+#define FACE_OBJ_H_W             5
+#define FACE_H_W                 6
 
 // Plate
 #define PLATE_BY_SHAPES_LIST	1
@@ -319,3 +329,9 @@
 // Drafts
 #define DRAFT_BY_FACE_PLN_ANG 1
 #define DRAFT_BY_FACE_STA_ANG 2
+
+//Disk
+#define DISK_PNT_VEC_R    1
+#define DISK_THREE_PNT    2
+#define DISK_R            3
+
