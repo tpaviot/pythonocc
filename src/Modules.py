@@ -120,18 +120,18 @@ MODULES = [
             ('Approx',[],[]),
             ('ApproxInt',[],[]),
             ('AppBlend',[],[]),
-            ('AppCont',[],[]), #LINUX TEST
+            ('AppCont',[],[]),
             ('AppDef',['TCollection'],[],{'AppDef_TheResol':['Error'],\
                                           'AppDef_ResConstraintOfTheGradient':['Error'],\
                                           'AppDef_ResConstraintOfMyGradientOfCompute':['Error'],\
                                           'AppDef_ResConstraintOfMyGradientbisOfBSplineCompute':['Error'],\
                                           'AppDef_MultiLine':['SetParameter']}), #LINUX TEST
-            ('CDM',[],['CDM_Document']),#LINUX TEST
+            ('CDM',[],['CDM_Document']),
             ('CGM',['Standard','Quantity','TCollection','OSD','MFT','Aspect'],['CGM_Driver']),
-            ('CDF',['TCollection'],[]), #LINUX TEST
-            ('TDocStd',[],[]), #LINUX TEST
-            ('AppStd',['TCollection','CDM','CDF','TDF'],[]), #LINUX TEST
-            ('AppStdL',['TCollection','CDM','CDF','TDF'],[]), #LINUX TEST
+            ('CDF',['TCollection'],[]),
+            ('TDocStd',[],[]),
+            ('AppStd',['TCollection','CDM','CDF','TDF'],[]),
+            ('AppStdL',['TCollection','CDM','CDF','TDF'],[]),
 ###################################
 ######### Mesh ####################
 ###################################
@@ -545,16 +545,17 @@ if environment.WRAP_SALOME_GEOM:
                            ('SGEOM',['TColStd','TDF','CDM','CDF'],[],\
                             {'GEOM_SubShapeDriver':['GetID']}),
                            ('GEOMAlgo',['Handle_TCollection'],[]),
-                           ('GEOMImpl',['TDocStd','CDM','TDF','Handle_TCollection','CDF'],['GEOMImpl_Block6Explorer'],\
+                           ('GEOMImpl',['TDocStd','CDM','TDF','Handle_TCollection','CDF'],\
+                            ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
                             {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
-                             'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes']}),
+                             'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],}),
                            ('BlockFix',['TopTools','Handle_TCollection'],[],\
                             {'BlockFix_SphereSpaceModifier':['ForRotation']}),
                             ('NMTDS',[],[]),
                             ('NMTTools',[],[],\
                              {'NMTTools_IteratorOfCoupleOfShape':['DS']}),
                             ('Partition',['TopoDS_Vertex','gp_Vec'],[]),
-                            #('ShHealOper',[],[]),doesn't work
+                            ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
                             ('Sketcher',[],[]),
                            ]
        

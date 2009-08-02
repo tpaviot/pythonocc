@@ -286,7 +286,10 @@ class ModularBuilder(object):
         """
         Fill in the typedef_list with all typedef defined in this module
         """
-        typedefs = self._mb.global_ns.typedefs()
+        try:
+            typedefs = self._mb.global_ns.typedefs()
+        except:
+            return False #no typedefs defined in this package
         for typedef in typedefs:
             typedef_name = typedef.name
             self._typedef_list.append(typedef_name)
@@ -341,6 +344,8 @@ class ModularBuilder(object):
         if 'XW' in module_name: #TODO: better handling of XW.i dependency with Xw module under Linux
             return True
         if module_name == 'Selector': #SalomeGEOM
+            return True
+        if module_name=='TVariablesList': #SGEOM module
             return True
         if sys.platform=='win32' and module_name=='WNT':
             return True
@@ -777,33 +782,33 @@ class ModularBuilder(object):
         #
         # Extra operators for GEOM_Parameter
         #
-        if (class_name=='GEOM_Parameter'):
-            self.fp.write('%extend GEOM_Parameter {\n%pythoncode {\n')
-            self.fp.write('\tdef __add__(self, value):\n')
-            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() + value\n')
-            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() + value.GetDouble()\n')
-            self.fp.write('\t\treturn val\n')
-            self.fp.write('\tdef __sub__(self, value):\n')
-            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() - value\n')
-            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() - value.GetDouble()\n')
-            self.fp.write('\t\treturn val\n')
-            self.fp.write('\tdef __mul__(self, value):\n')
-            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() * value\n')
-            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() * value.GetDouble()\n')
-            self.fp.write('\t\treturn val\n')
-            self.fp.write('\tdef __div__(self, value):\n')
-            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() / value\n')
-            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-            self.fp.write('\t\t\tval = self.GetDouble() / value.GetDouble()\n')
-            self.fp.write('\t\treturn val\n')
-            self.fp.write('\t}\n};\n')
+#        if (class_name=='GEOM_Parameter'):
+#            self.fp.write('%extend GEOM_Parameter {\n%pythoncode {\n')
+#            self.fp.write('\tdef __add__(self, value):\n')
+#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() + value\n')
+#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() + value.GetDouble()\n')
+#            self.fp.write('\t\treturn val\n')
+#            self.fp.write('\tdef __sub__(self, value):\n')
+#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() - value\n')
+#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() - value.GetDouble()\n')
+#            self.fp.write('\t\treturn val\n')
+#            self.fp.write('\tdef __mul__(self, value):\n')
+#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() * value\n')
+#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() * value.GetDouble()\n')
+#            self.fp.write('\t\treturn val\n')
+#            self.fp.write('\tdef __div__(self, value):\n')
+#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() / value\n')
+#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
+#            self.fp.write('\t\t\tval = self.GetDouble() / value.GetDouble()\n')
+#            self.fp.write('\t\treturn val\n')
+#            self.fp.write('\t}\n};\n')
         #
         # On l'ajoute a la liste des classes deja exposees
         #
@@ -887,6 +892,7 @@ class ModularBuilder(object):
                           'TopOpeBRepBuild_SplitEdge.hxx',
                           'Message_Algorithm.hxx',
                           'Message_ExecStatus.hxx',
+                          'GEOMImpl_Template.hxx',
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
