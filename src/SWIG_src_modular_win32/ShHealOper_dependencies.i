@@ -19,7 +19,29 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <Handle_MMgt_TShared.hxx>
+#include <Handle_ShapeUpgrade_ClosedEdgeDivide.hxx>
+#include <Handle_ShapeUpgrade_ClosedFaceDivide.hxx>
+#include <Handle_ShapeUpgrade_ConvertCurve2dToBezier.hxx>
+#include <Handle_ShapeUpgrade_ConvertCurve3dToBezier.hxx>
+#include <Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis.hxx>
+#include <Handle_ShapeUpgrade_EdgeDivide.hxx>
+#include <Handle_ShapeUpgrade_FaceDivide.hxx>
+#include <Handle_ShapeUpgrade_FaceDivideArea.hxx>
+#include <Handle_ShapeUpgrade_FixSmallBezierCurves.hxx>
+#include <Handle_ShapeUpgrade_FixSmallCurves.hxx>
+#include <Handle_ShapeUpgrade_RemoveInternalWires.hxx>
+#include <Handle_ShapeUpgrade_RemoveLocations.hxx>
+#include <Handle_ShapeUpgrade_SplitCurve.hxx>
+#include <Handle_ShapeUpgrade_SplitCurve2d.hxx>
+#include <Handle_ShapeUpgrade_SplitCurve2dContinuity.hxx>
+#include <Handle_ShapeUpgrade_SplitCurve3d.hxx>
+#include <Handle_ShapeUpgrade_SplitCurve3dContinuity.hxx>
+#include <Handle_ShapeUpgrade_SplitSurface.hxx>
+#include <Handle_ShapeUpgrade_SplitSurfaceAngle.hxx>
+#include <Handle_ShapeUpgrade_SplitSurfaceArea.hxx>
+#include <Handle_ShapeUpgrade_SplitSurfaceContinuity.hxx>
+#include <Handle_ShapeUpgrade_Tool.hxx>
+#include <Handle_ShapeUpgrade_WireDivide.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -49,13 +71,37 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <Handle_TCollection_AVLBaseNode.hxx>
-#include <Handle_TCollection_HAsciiString.hxx>
-#include <Handle_TCollection_HExtendedString.hxx>
-#include <Handle_TCollection_MapNode.hxx>
-#include <Handle_TCollection_SeqNode.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
+#include <ShapeUpgrade_ClosedEdgeDivide.hxx>
+#include <ShapeUpgrade_ClosedFaceDivide.hxx>
+#include <ShapeUpgrade_ConvertCurve2dToBezier.hxx>
+#include <ShapeUpgrade_ConvertCurve3dToBezier.hxx>
+#include <ShapeUpgrade_ConvertSurfaceToBezierBasis.hxx>
+#include <ShapeUpgrade_EdgeDivide.hxx>
+#include <ShapeUpgrade_FaceDivide.hxx>
+#include <ShapeUpgrade_FaceDivideArea.hxx>
+#include <ShapeUpgrade_FixSmallBezierCurves.hxx>
+#include <ShapeUpgrade_FixSmallCurves.hxx>
+#include <ShapeUpgrade_RemoveInternalWires.hxx>
+#include <ShapeUpgrade_RemoveLocations.hxx>
+#include <ShapeUpgrade_ShapeConvertToBezier.hxx>
+#include <ShapeUpgrade_ShapeDivide.hxx>
+#include <ShapeUpgrade_ShapeDivideAngle.hxx>
+#include <ShapeUpgrade_ShapeDivideArea.hxx>
+#include <ShapeUpgrade_ShapeDivideClosed.hxx>
+#include <ShapeUpgrade_ShapeDivideClosedEdges.hxx>
+#include <ShapeUpgrade_ShapeDivideContinuity.hxx>
+#include <ShapeUpgrade_ShellSewing.hxx>
+#include <ShapeUpgrade_SplitCurve.hxx>
+#include <ShapeUpgrade_SplitCurve2d.hxx>
+#include <ShapeUpgrade_SplitCurve2dContinuity.hxx>
+#include <ShapeUpgrade_SplitCurve3d.hxx>
+#include <ShapeUpgrade_SplitCurve3dContinuity.hxx>
+#include <ShapeUpgrade_SplitSurface.hxx>
+#include <ShapeUpgrade_SplitSurfaceAngle.hxx>
+#include <ShapeUpgrade_SplitSurfaceArea.hxx>
+#include <ShapeUpgrade_SplitSurfaceContinuity.hxx>
+#include <ShapeUpgrade_Tool.hxx>
+#include <ShapeUpgrade_WireDivide.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -137,7 +183,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopAbs_State.hxx>
 %};
 
-%import TCollection.i
-%import MMgt.i
+%import ShapeUpgrade.i
 %import Standard.i
 %import TopAbs.i

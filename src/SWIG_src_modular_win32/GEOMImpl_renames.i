@@ -4,13 +4,13 @@
 %rename(GEOMImpl_IPlane) GEOMImpl_IPlane;
 %rename(GEOMImpl_TorusDriver) GEOMImpl_TorusDriver;
 %rename(GEOMImpl_IBlockTrsf) GEOMImpl_IBlockTrsf;
+%rename(Handle_GEOMImpl_DiskDriver) Handle_GEOMImpl_DiskDriver;
 %rename(GEOMImpl_ICurvesOperations) GEOMImpl_ICurvesOperations;
 %rename(GEOMImpl_IBox) GEOMImpl_IBox;
 %rename(GEOMImpl_CircleDriver) GEOMImpl_CircleDriver;
 %rename(Handle_GEOMImpl_ThickSolidDriver) Handle_GEOMImpl_ThickSolidDriver;
 %rename(Handle_GEOMImpl_LineDriver) Handle_GEOMImpl_LineDriver;
-%rename(GEOMImpl_MeasureDriver) GEOMImpl_MeasureDriver;
-%rename(Handle_GEOMImpl_Template) Handle_GEOMImpl_Template;
+%rename(GEOMImpl_CopyDriver) GEOMImpl_CopyDriver;
 %rename(GEOMImpl_ArchimedeDriver) GEOMImpl_ArchimedeDriver;
 %rename(GEOMImpl_IMeasure) GEOMImpl_IMeasure;
 %rename(Handle_GEOMImpl_ExportDriver) Handle_GEOMImpl_ExportDriver;
@@ -31,6 +31,7 @@
 %rename(GEOMImpl_IPolyline) GEOMImpl_IPolyline;
 %rename(GEOMImpl_ICopy) GEOMImpl_ICopy;
 %rename(GEOMImpl_ISketcher) GEOMImpl_ISketcher;
+%rename(GEOMImpl_IRevolution) GEOMImpl_IRevolution;
 %rename(GEOMImpl_IBlocksOperations) GEOMImpl_IBlocksOperations;
 %rename(GEOMImpl_Gen) GEOMImpl_Gen;
 %rename(GEOMImpl_ShapeDriver) GEOMImpl_ShapeDriver;
@@ -53,7 +54,6 @@
 %rename(Handle_GEOMImpl_ThruSectionsDriver) Handle_GEOMImpl_ThruSectionsDriver;
 %rename(Handle_GEOMImpl_MirrorDriver) Handle_GEOMImpl_MirrorDriver;
 %rename(GEOMImpl_IMirror) GEOMImpl_IMirror;
-%rename(GEOMImpl_CopyDriver) GEOMImpl_CopyDriver;
 %rename(GEOMImpl_IPipeDiffSect) GEOMImpl_IPipeDiffSect;
 %rename(Handle_GEOMImpl_ImportDriver) Handle_GEOMImpl_ImportDriver;
 %rename(GEOMImpl_IBooleanOperations) GEOMImpl_IBooleanOperations;
@@ -78,6 +78,7 @@
 %rename(Handle_GEOMImpl_SketcherDriver) Handle_GEOMImpl_SketcherDriver;
 %rename(Handle_GEOMImpl_MeasureDriver) Handle_GEOMImpl_MeasureDriver;
 %rename(GEOMImpl_ISpline) GEOMImpl_ISpline;
+%rename(GEOMImpl_MeasureDriver) GEOMImpl_MeasureDriver;
 %rename(GEOMImpl_IScale) GEOMImpl_IScale;
 %rename(Handle_GEOMImpl_CircleDriver) Handle_GEOMImpl_CircleDriver;
 %rename(GEOMImpl_IThickSolid) GEOMImpl_IThickSolid;
@@ -91,7 +92,6 @@
 %rename(GEOMImpl_ExportDriver) GEOMImpl_ExportDriver;
 %rename(GEOMImpl_VariableFilletDriver) GEOMImpl_VariableFilletDriver;
 %rename(GEOMImpl_IArchimede) GEOMImpl_IArchimede;
-%rename(GEOMImpl_Template) GEOMImpl_Template;
 %rename(Handle_GEOMImpl_BooleanDriver) Handle_GEOMImpl_BooleanDriver;
 %rename(Handle_GEOMImpl_ShapeDriver) Handle_GEOMImpl_ShapeDriver;
 %rename(GEOMImpl_IBoolean) GEOMImpl_IBoolean;
@@ -100,9 +100,12 @@
 %rename(GEOMImpl_IPlate) GEOMImpl_IPlate;
 %rename(GEOMImpl_BlockDriver) GEOMImpl_BlockDriver;
 %rename(Handle_GEOMImpl_EllipseDriver) Handle_GEOMImpl_EllipseDriver;
+%rename(GEOMImpl_I3DSketcher) GEOMImpl_I3DSketcher;
+%rename(GEOMImpl_IDisk) GEOMImpl_IDisk;
 %rename(GEOMImpl_IRotate) GEOMImpl_IRotate;
 %rename(GEOMImpl_IPipe) GEOMImpl_IPipe;
 %rename(Handle_GEOMImpl_VectorDriver) Handle_GEOMImpl_VectorDriver;
+%rename(Handle_GEOMImpl_3DSketcherDriver) Handle_GEOMImpl_3DSketcherDriver;
 %rename(Handle_GEOMImpl_MarkerDriver) Handle_GEOMImpl_MarkerDriver;
 %rename(GEOMImpl_ThruSectionsDriver) GEOMImpl_ThruSectionsDriver;
 %rename(Handle_GEOMImpl_CylinderDriver) Handle_GEOMImpl_CylinderDriver;
@@ -133,7 +136,7 @@
 %rename(GEOMImpl_VectorDriver) GEOMImpl_VectorDriver;
 %rename(GEOMImpl_PlaneDriver) GEOMImpl_PlaneDriver;
 %rename(Handle_GEOMImpl_CopyDriver) Handle_GEOMImpl_CopyDriver;
-%rename(GEOMImpl_IRevolution) GEOMImpl_IRevolution;
+%rename(GEOMImpl_DiskDriver) GEOMImpl_DiskDriver;
 %rename(GEOMImpl_CurveDriver) GEOMImpl_CurveDriver;
 %rename(GEOMImpl_ICircle) GEOMImpl_ICircle;
 %rename(Handle_GEOMImpl_GlueDriver) Handle_GEOMImpl_GlueDriver;
@@ -153,4 +156,5 @@
 %rename(GEOMImpl_PointDriver) GEOMImpl_PointDriver;
 %rename(GEOMImpl_IHealing) GEOMImpl_IHealing;
 %rename(GEOMImpl_OffsetDriver) GEOMImpl_OffsetDriver;
+%rename(GEOMImpl_3DSketcherDriver) GEOMImpl_3DSketcherDriver;
 %rename(GEOMImpl_FaceDriver) GEOMImpl_FaceDriver;
