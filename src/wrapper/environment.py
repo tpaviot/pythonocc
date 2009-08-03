@@ -29,7 +29,7 @@ import subprocess
 #
 # Define pythonOCC version
 #
-VERSION = 'sg0.3'
+VERSION = '0.3'
 #
 # Wrap SalomeGEOM?
 #
@@ -146,7 +146,7 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_LIB = '/usr/local/lib/OCC'
     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','..','bin','SalomeGeometry','lib')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','lib')
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -169,5 +169,6 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
+
 if __name__=='__main__':
     print GetOCCPaths()
