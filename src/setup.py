@@ -22,11 +22,15 @@ import os,os.path
 import sys
 import shutil
 import time
+
+# add the ./src directory to the sys.path list
+sys.path.append(os.path.join(os.getcwd(),'wrapper'))
 import Modules
-#from Modules import MODULES
+from environment import VERSION
 
 init_time = time.time()
-print "Building pythonOCC"
+print "Building pythonOCC %s for %s."%(VERSION,sys.platform)
+
 # Check whether generate swig .i files
 if '-generate_swig' in sys.argv:
     GENERATE_SWIG = True
@@ -257,8 +261,8 @@ if environment.WRAP_SALOME_GEOM:
 
 install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
 data = (install_dir,\
-        [os.path.join(os.getcwd(),'AUTHORS'),
-         os.path.join(os.getcwd(),'..','gpl.txt')])
+        [os.path.join(os.getcwd(),'..','AUTHORS'),
+         os.path.join(os.getcwd(),'..','LICENSE')])
     
 KARGS = {"ext_modules":extension}
 #
@@ -269,20 +273,20 @@ setup(name = "pythonOCC",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
       author_email = "tpaviot@gmail.com",
-      description = "OpenCascade 6.3.0 Python bindings",
+      description = "A framework for agile CAD development",
       version=VERSION,
       long_description = """PythonOCC is a Python wrapper module for the
 OpenCascade library. It contains python functions and classes
 that will allow you to fully utilitize the OpenCascade library.
 This version is built against OpenCascade 6.3.0""",
-      package_dir = {'OCC.Display':os.path.join(os.getcwd(),'Display'),
-                     'OCC.Utils':os.path.join(os.getcwd(),'..','Utils'),
-                     'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'..','Utils','DataExchange'),
-                     'OCC.Toolkits':os.path.join(os.getcwd(),'..','Toolkits'),
-                     'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'..','Toolkits','FoundationClasses'),
-                     'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'..','Toolkits','ModelingData'),
-                     'OCC.PAF':os.path.join(os.getcwd(),'..','PAF'),},
-      packages = ['OCC','OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.Toolkits','OCC.PAF',\
+      package_dir = {'OCC.Display':os.path.join(os.getcwd(),'addons','Display'),
+                     'OCC.Utils':os.path.join(os.getcwd(),'addons','Utils'),
+                     'OCC.Utils.DataExchange':os.path.join(os.getcwd(),'addons','Utils','DataExchange'),
+                     'OCC.Toolkits':os.path.join(os.getcwd(),'wrapper','Toolkits'),
+                     'OCC.Toolkits.FoundationClasses':os.path.join(os.getcwd(),'wrapper','Toolkits','FoundationClasses'),
+                     'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'wrapper','Toolkits','ModelingData'),
+                     'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),},
+      packages = ['OCC','OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.PAF','OCC.Toolkits',\
                   'OCC.Toolkits.FoundationClasses',\
                   'OCC.Toolkits.ModelingData'],
       data_files = [data],
