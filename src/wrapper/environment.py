@@ -76,28 +76,25 @@ try:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
     OCC_ROOT = None
-    OCC_INC = '/you_path'
+    OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
 
 if sys.platform=='win32':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_win32')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
-    SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc_pythonocc')
-    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
-    GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','win32','lib')
+    GCC_XML_PATH = os.path.join(os.getcwd(),'..','bin','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\
-                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
-    #ECA = ['/D"WNT"','/D"WIN32"','/D"_WINDOWS"','/D"CSFDB"','/link /MACHINE:X86 /SUBSYSTEM:WINDOWS']
-    ECA = ['/GL','/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
-    #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
+                     ('__PYTHONOCC_MAXINT__',sys.maxint)]   
+    ECA = ['/GL','/link']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = []
     EXTRA_LIBS = []
 elif sys.platform=='linux2':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     if OCC_ROOT!=None:
@@ -106,7 +103,6 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
         OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
-    SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc_pythonocc')
     SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
@@ -122,7 +118,7 @@ elif sys.platform=='linux2':
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
     EXTRA_LIBS = ['m','stc++',lib_python]
 elif sys.platform=='darwin':
-    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
+    SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     #
     # Fill in this part with your own settings
     #
@@ -150,8 +146,7 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_LIB = '/usr/local/lib/OCC'
     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-    SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc_pythonocc')
-    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','lib')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','..','bin','SalomeGeometry','lib')
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -161,8 +156,6 @@ elif sys.platform=='darwin':
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
-    #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    #ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
     ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
     EXTRA_LIBS = ['m','stc++',lib_python]
 else:
@@ -175,6 +168,6 @@ PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
-
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','contrib','SalomeGeometry','inc_pythonocc')
 if __name__=='__main__':
     print GetOCCPaths()
