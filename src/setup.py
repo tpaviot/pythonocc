@@ -29,7 +29,7 @@ import Modules
 from environment import VERSION
 
 init_time = time.time()
-print "Building pythonOCC %s for %s."%(VERSION,sys.platform)
+print "Building pythonOCC-%s for %s."%(VERSION,sys.platform)
 
 # Check whether generate swig .i files
 if '-generate_swig' in sys.argv:
