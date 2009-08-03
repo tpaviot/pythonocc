@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -117,5 +117,4 @@ Renaming operator = that can't be wrapped in Python
 
 
 %include Archimede_headers.i
-
 

@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -118,11 +118,11 @@ Renaming operator = that can't be wrapped in Python
 
 %include V3d_headers.i
 
-typedef Standard_Real V3d_Parameter;
+typedef double V3d_Parameter;
 typedef V3d_LayerMgr * V3d_LayerMgrPointer;
 typedef V3d_View * V3d_ViewPointer;
 typedef V3d_Viewer * V3d_ViewerPointer;
-typedef Standard_Real V3d_Coordinate;
+typedef double V3d_Coordinate;
 
 enum V3d_TypeOfProjectionModel {
 	V3d_TPM_SCREEN,

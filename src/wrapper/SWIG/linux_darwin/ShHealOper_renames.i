@@ -1,0 +1,16 @@
+%rename(ShHealOper_RemoveFace) ShHealOper_RemoveFace;
+%rename(ShHealOper_SplitCurve3d) ShHealOper_SplitCurve3d;
+%rename(ShHealOper_Tool) ShHealOper_Tool;
+%rename(ShHealOper_RemoveInternalWires) ShHealOper_RemoveInternalWires;
+%rename(Handle_ShHealOper_SplitCurve2d) Handle_ShHealOper_SplitCurve2d;
+%rename(ShHealOper_SplitCurve2d) ShHealOper_SplitCurve2d;
+%rename(ShHealOper_EdgeDivide) ShHealOper_EdgeDivide;
+%rename(ShHealOper_CloseContour) ShHealOper_CloseContour;
+%rename(ShHealOper_FillHoles) ShHealOper_FillHoles;
+%rename(ShHealOper_Sewing) ShHealOper_Sewing;
+%rename(ShHealOper_InvalidParameters) ShHealOper_InvalidParameters;
+%rename(ShHealOper_ShapeProcess) ShHealOper_ShapeProcess;
+%rename(ShHealOper_NotError) ShHealOper_NotError;
+%rename(ShHealOper_ChangeOrientation) ShHealOper_ChangeOrientation;
+%rename(Handle_ShHealOper_SplitCurve3d) Handle_ShHealOper_SplitCurve3d;
+%rename(ShHealOper_ErrorExecution) ShHealOper_ErrorExecution;

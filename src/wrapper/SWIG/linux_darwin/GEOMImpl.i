@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -511,6 +511,36 @@ class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
 };
 
 
+%nodefaultctor Handle_GEOMImpl_DiskDriver;
+class Handle_GEOMImpl_DiskDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver();
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver(const Handle_GEOMImpl_DiskDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver(const GEOMImpl_DiskDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver & operator=(const Handle_GEOMImpl_DiskDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver & operator=(const GEOMImpl_DiskDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_DiskDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMImpl_DiskDriver {
+	GEOMImpl_DiskDriver* GetObject() {
+	return (GEOMImpl_DiskDriver*)$self->Access();
+	}
+};
+%extend Handle_GEOMImpl_DiskDriver {
+	~Handle_GEOMImpl_DiskDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_DiskDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_GEOMImpl_PolylineDriver;
 class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 	public:
@@ -777,36 +807,6 @@ class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 	~Handle_GEOMImpl_ShapeDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ShapeDriver\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GEOMImpl_Template;
-class Handle_GEOMImpl_Template : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template(const Handle_GEOMImpl_Template &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template(const GEOMImpl_Template *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template & operator=(const Handle_GEOMImpl_Template &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template & operator=(const GEOMImpl_Template *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_Template const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_Template {
-	GEOMImpl_Template* GetObject() {
-	return (GEOMImpl_Template*)$self->Access();
-	}
-};
-%extend Handle_GEOMImpl_Template {
-	~Handle_GEOMImpl_Template() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_Template\n");}
 	}
 };
 
@@ -1171,6 +1171,36 @@ class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 };
 
 
+%nodefaultctor Handle_GEOMImpl_3DSketcherDriver;
+class Handle_GEOMImpl_3DSketcherDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver();
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver(const Handle_GEOMImpl_3DSketcherDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver(const GEOMImpl_3DSketcherDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver & operator=(const Handle_GEOMImpl_3DSketcherDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver & operator=(const GEOMImpl_3DSketcherDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_3DSketcherDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMImpl_3DSketcherDriver {
+	GEOMImpl_3DSketcherDriver* GetObject() {
+	return (GEOMImpl_3DSketcherDriver*)$self->Access();
+	}
+};
+%extend Handle_GEOMImpl_3DSketcherDriver {
+	~Handle_GEOMImpl_3DSketcherDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_3DSketcherDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_GEOMImpl_BoxDriver;
 class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 	public:
@@ -1231,36 +1261,6 @@ class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
 };
 
 
-%nodefaultctor Handle_GEOMImpl_BlockDriver;
-class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver(const Handle_GEOMImpl_BlockDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver(const GEOMImpl_BlockDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver & operator=(const Handle_GEOMImpl_BlockDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver & operator=(const GEOMImpl_BlockDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_BlockDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_BlockDriver {
-	GEOMImpl_BlockDriver* GetObject() {
-	return (GEOMImpl_BlockDriver*)$self->Access();
-	}
-};
-%extend Handle_GEOMImpl_BlockDriver {
-	~Handle_GEOMImpl_BlockDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BlockDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GEOMImpl_CopyDriver;
 class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 	public:
@@ -1317,6 +1317,36 @@ class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 	~Handle_GEOMImpl_TranslateDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_TranslateDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GEOMImpl_BlockDriver;
+class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver();
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver(const Handle_GEOMImpl_BlockDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver(const GEOMImpl_BlockDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver & operator=(const Handle_GEOMImpl_BlockDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver & operator=(const GEOMImpl_BlockDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_BlockDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMImpl_BlockDriver {
+	GEOMImpl_BlockDriver* GetObject() {
+	return (GEOMImpl_BlockDriver*)$self->Access();
+	}
+};
+%extend Handle_GEOMImpl_BlockDriver {
+	~Handle_GEOMImpl_BlockDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BlockDriver\n");}
 	}
 };
 
@@ -1615,6 +1645,51 @@ class GEOMImpl_IPartition {
 	~GEOMImpl_IPartition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPartition\n");}
+	}
+};
+
+
+%nodefaultctor GEOMImpl_IDisk;
+class GEOMImpl_IDisk {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_IDisk(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetPoint1(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetPoint2(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetPoint3(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetCenter(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetVector(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetRadius(double );
+		%feature("autodoc", "1");
+		void SetRadius(const TCollection_AsciiString &theR);
+		%feature("autodoc", "1");
+		void SetOrientation(double );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetPoint1();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetPoint2();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetPoint3();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetCenter();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetVector();
+		%feature("autodoc", "1");
+		double GetRadius();
+		%feature("autodoc", "1");
+		double GetOrientation();
+
+};
+%extend GEOMImpl_IDisk {
+	~GEOMImpl_IDisk() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IDisk\n");}
 	}
 };
 
@@ -2041,6 +2116,10 @@ class GEOMImpl_ITranslate {
 		void SetDistance(const TCollection_AsciiString &theDistance);
 		%feature("autodoc", "1");
 		double GetDistance();
+		%feature("autodoc", "1");
+		void SetRailShape(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetRailShape();
 
 };
 %extend GEOMImpl_ITranslate {
@@ -2620,6 +2699,80 @@ class GEOMImpl_ICurve {
 };
 
 
+%nodefaultctor GEOMImpl_VectorDriver;
+class GEOMImpl_VectorDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_VectorDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_VectorDriver {
+	Handle_GEOMImpl_VectorDriver GetHandle() {
+	return *(Handle_GEOMImpl_VectorDriver*) &$self;
+	}
+};
+%extend GEOMImpl_VectorDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMImpl_VectorDriver {
+	~GEOMImpl_VectorDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VectorDriver\n");}
+	}
+};
+
+
+%nodefaultctor GEOMImpl_PrismDriver;
+class GEOMImpl_PrismDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_PrismDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_PrismDriver {
+	Handle_GEOMImpl_PrismDriver GetHandle() {
+	return *(Handle_GEOMImpl_PrismDriver*) &$self;
+	}
+};
+%extend GEOMImpl_PrismDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMImpl_PrismDriver {
+	~GEOMImpl_PrismDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PrismDriver\n");}
+	}
+};
+
+
 %nodefaultctor GEOMImpl_IVector;
 class GEOMImpl_IVector {
 	public:
@@ -2665,43 +2818,6 @@ class GEOMImpl_IVector {
 	~GEOMImpl_IVector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IVector\n");}
-	}
-};
-
-
-%nodefaultctor GEOMImpl_PrismDriver;
-class GEOMImpl_PrismDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_PrismDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_PrismDriver {
-	Handle_GEOMImpl_PrismDriver GetHandle() {
-	return *(Handle_GEOMImpl_PrismDriver*) &$self;
-	}
-};
-%extend GEOMImpl_PrismDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMImpl_PrismDriver {
-	~GEOMImpl_PrismDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PrismDriver\n");}
 	}
 };
 
@@ -2932,6 +3048,25 @@ class GEOMImpl_IArc {
 };
 
 
+%nodefaultctor GEOMImpl_I3DSketcher;
+class GEOMImpl_I3DSketcher {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_I3DSketcher(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetCoordinates(const Handle_TColStd_HArray1OfAsciiString &theValue);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal GetCoordinates();
+
+};
+%extend GEOMImpl_I3DSketcher {
+	~GEOMImpl_I3DSketcher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_I3DSketcher\n");}
+	}
+};
+
+
 %nodefaultctor GEOMImpl_IOffset;
 class GEOMImpl_IOffset {
 	public:
@@ -3037,43 +3172,6 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 	~GEOMImpl_IHealingOperations() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IHealingOperations\n");}
-	}
-};
-
-
-%nodefaultctor GEOMImpl_PipeDriver;
-class GEOMImpl_PipeDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_PipeDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_PipeDriver {
-	Handle_GEOMImpl_PipeDriver GetHandle() {
-	return *(Handle_GEOMImpl_PipeDriver*) &$self;
-	}
-};
-%extend GEOMImpl_PipeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMImpl_PipeDriver {
-	~GEOMImpl_PipeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PipeDriver\n");}
 	}
 };
 
@@ -3256,6 +3354,16 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeBoxTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeFaceHW(const GEOM_Parameter &theH, const GEOM_Parameter &theW, int );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeFaceObjHW(Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theW);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeDiskThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeDiskPntVecR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeDiskR(const GEOM_Parameter &theR, int );
+		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCylinderRH(const GEOM_Parameter &theR, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCylinderPntVecRH(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
@@ -3281,6 +3389,10 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakePrismVecHAng(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theAng);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePrismTwoPnt2Ways(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePrismDXDYDZ(Handle_GEOM_Object , const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePrismDXDYDZ2Ways(Handle_GEOM_Object , const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePipe(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3511,7 +3623,7 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCirclePntVecR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeEllipse(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor);
+		Handle_GEOM_Object MakeEllipse(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor, Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEllipseThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3519,11 +3631,15 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeArcCenter(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , bool );
 		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeArcOfEllipse(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSplineBezier(std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSplineInterpolation(std::list<Handle_GEOM_Object>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSketcher(const TCollection_AsciiString &theCommand, std::list<GEOM_Parameter>);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object Make3DSketcher(std::list<TCollection_AsciiString>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSketcherOnPlane(const TCollection_AsciiString &theCommand, Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3600,6 +3716,8 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		Handle_GEOM_Object Translate1D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep, const GEOM_Parameter &theNbTimes);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object Translate2D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep1, const GEOM_Parameter &theNbTimes1, Handle_GEOM_Object , const GEOM_Parameter &theStep2, const GEOM_Parameter &theNbTimes2);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object TranslateAlongRail(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep, const GEOM_Parameter &theNbTimes, const GEOM_Parameter &theType);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MirrorPlane(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3687,11 +3805,11 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 };
 
 
-%nodefaultctor GEOMImpl_RotateDriver;
-class GEOMImpl_RotateDriver : public TFunction_Driver {
+%nodefaultctor GEOMImpl_3DSketcherDriver;
+class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 	public:
 		%feature("autodoc", "1");
-		GEOMImpl_RotateDriver();
+		GEOMImpl_3DSketcherDriver();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
 		%feature("autodoc", "1");
@@ -3706,20 +3824,20 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
 
 };
-%extend GEOMImpl_RotateDriver {
-	Handle_GEOMImpl_RotateDriver GetHandle() {
-	return *(Handle_GEOMImpl_RotateDriver*) &$self;
+%extend GEOMImpl_3DSketcherDriver {
+	Handle_GEOMImpl_3DSketcherDriver GetHandle() {
+	return *(Handle_GEOMImpl_3DSketcherDriver*) &$self;
 	}
 };
-%extend GEOMImpl_RotateDriver {
+%extend GEOMImpl_3DSketcherDriver {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOMImpl_RotateDriver {
-	~GEOMImpl_RotateDriver() {
+%extend GEOMImpl_3DSketcherDriver {
+	~GEOMImpl_3DSketcherDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_RotateDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_3DSketcherDriver\n");}
 	}
 };
 
@@ -3835,6 +3953,26 @@ class GEOMImpl_IFace {
 		Handle_GEOM_Function GetPoint3();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint4();
+		%feature("autodoc", "1");
+		void SetRef1(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetRef1();
+		%feature("autodoc", "1");
+		void SetOrientation(int );
+		%feature("autodoc", "1");
+		int GetOrientation();
+		%feature("autodoc", "1");
+		void SetH(double );
+		%feature("autodoc", "1");
+		void SetH(const TCollection_AsciiString &theH);
+		%feature("autodoc", "1");
+		void SetW(double );
+		%feature("autodoc", "1");
+		void SetW(const TCollection_AsciiString &SetW);
+		%feature("autodoc", "1");
+		double GetH();
+		%feature("autodoc", "1");
+		double GetW();
 
 };
 %extend GEOMImpl_IFace {
@@ -3876,6 +4014,43 @@ class GEOMImpl_IShapes {
 	~GEOMImpl_IShapes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IShapes\n");}
+	}
+};
+
+
+%nodefaultctor GEOMImpl_RotateDriver;
+class GEOMImpl_RotateDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_RotateDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_RotateDriver {
+	Handle_GEOMImpl_RotateDriver GetHandle() {
+	return *(Handle_GEOMImpl_RotateDriver*) &$self;
+	}
+};
+%extend GEOMImpl_RotateDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMImpl_RotateDriver {
+	~GEOMImpl_RotateDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_RotateDriver\n");}
 	}
 };
 
@@ -4140,43 +4315,6 @@ class GEOMImpl_ISketcher {
 	~GEOMImpl_ISketcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISketcher\n");}
-	}
-};
-
-
-%nodefaultctor GEOMImpl_Template;
-class GEOMImpl_Template : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_Template();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_Template {
-	Handle_GEOMImpl_Template GetHandle() {
-	return *(Handle_GEOMImpl_Template*) &$self;
-	}
-};
-%extend GEOMImpl_Template {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMImpl_Template {
-	~GEOMImpl_Template() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_Template\n");}
 	}
 };
 
@@ -5208,43 +5346,6 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 };
 
 
-%nodefaultctor GEOMImpl_VectorDriver;
-class GEOMImpl_VectorDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_VectorDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_VectorDriver {
-	Handle_GEOMImpl_VectorDriver GetHandle() {
-	return *(Handle_GEOMImpl_VectorDriver*) &$self;
-	}
-};
-%extend GEOMImpl_VectorDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMImpl_VectorDriver {
-	~GEOMImpl_VectorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VectorDriver\n");}
-	}
-};
-
-
 %nodefaultctor GEOMImpl_IEllipse;
 class GEOMImpl_IEllipse {
 	public:
@@ -5263,6 +5364,8 @@ class GEOMImpl_IEllipse {
 		%feature("autodoc", "1");
 		void SetRMinor(const TCollection_AsciiString &theR);
 		%feature("autodoc", "1");
+		void SetVectorMajor(Handle_GEOM_Function );
+		%feature("autodoc", "1");
 		void SetPMajor(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetPMinor(Handle_GEOM_Function );
@@ -5278,12 +5381,51 @@ class GEOMImpl_IEllipse {
 		Handle_GEOM_Function GetPMajor();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPMinor();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetVectorMajor();
 
 };
 %extend GEOMImpl_IEllipse {
 	~GEOMImpl_IEllipse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IEllipse\n");}
+	}
+};
+
+
+%nodefaultctor GEOMImpl_PipeDriver;
+class GEOMImpl_PipeDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_PipeDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_PipeDriver {
+	Handle_GEOMImpl_PipeDriver GetHandle() {
+	return *(Handle_GEOMImpl_PipeDriver*) &$self;
+	}
+};
+%extend GEOMImpl_PipeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMImpl_PipeDriver {
+	~GEOMImpl_PipeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PipeDriver\n");}
 	}
 };
 
@@ -5432,6 +5574,43 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 	~GEOMImpl_ChamferDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ChamferDriver\n");}
+	}
+};
+
+
+%nodefaultctor GEOMImpl_DiskDriver;
+class GEOMImpl_DiskDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_DiskDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_DiskDriver {
+	Handle_GEOMImpl_DiskDriver GetHandle() {
+	return *(Handle_GEOMImpl_DiskDriver*) &$self;
+	}
+};
+%extend GEOMImpl_DiskDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMImpl_DiskDriver {
+	~GEOMImpl_DiskDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMImpl_DiskDriver\n");}
 	}
 };
 
@@ -5679,6 +5858,24 @@ class GEOMImpl_IPrism {
 		double GetH();
 		%feature("autodoc", "1");
 		double GetAngle();
+		%feature("autodoc", "1");
+		void SetDX(double );
+		%feature("autodoc", "1");
+		void SetDX(const TCollection_AsciiString &theDX);
+		%feature("autodoc", "1");
+		void SetDY(double );
+		%feature("autodoc", "1");
+		void SetDY(const TCollection_AsciiString &theDY);
+		%feature("autodoc", "1");
+		void SetDZ(double );
+		%feature("autodoc", "1");
+		void SetDZ(const TCollection_AsciiString &theDZ);
+		%feature("autodoc", "1");
+		double GetDX();
+		%feature("autodoc", "1");
+		double GetDY();
+		%feature("autodoc", "1");
+		double GetDZ();
 
 };
 %extend GEOMImpl_IPrism {

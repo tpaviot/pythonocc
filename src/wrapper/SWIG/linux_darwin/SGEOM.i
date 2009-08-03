@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -354,6 +354,37 @@ class GEOM_ISubShape {
 };
 
 
+%nodefaultctor GEOM_Parameter;
+class GEOM_Parameter {
+	public:
+		%feature("autodoc", "1");
+		GEOM_Parameter();
+		%feature("autodoc", "1");
+		GEOM_Parameter(TCollection_AsciiString );
+		%feature("autodoc", "1");
+		GEOM_Parameter(Standard_Real );
+		%feature("autodoc", "1");
+		Standard_Boolean IsString() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDouble() const;
+		%feature("autodoc", "1");
+		Standard_Real GetDouble() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString GetString() const;
+		%feature("autodoc", "1");
+		void operator=(Standard_Real );
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &anAsciiString);
+
+};
+%extend GEOM_Parameter {
+	~GEOM_Parameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
+	}
+};
+
+
 %nodefaultctor GEOM_Engine;
 class GEOM_Engine {
 	public:
@@ -390,7 +421,7 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddSubShape(Handle_GEOM_Object , Handle_TColStd_HArray1OfInteger , bool =false);
 		%feature("autodoc", "1");
-		TCollection_AsciiString DumpPython(int , Resource_DataMapOfAsciiStringAsciiString & theObjectNames, bool , bool & aValidScript);
+		TCollection_AsciiString DumpPython(int , Resource_DataMapOfAsciiStringAsciiString & theObjectNames, TVariablesList , bool , bool & aValidScript);
 		%feature("autodoc", "1");
 		const char * GetDumpName(const char *theStudyEntry) const;
 		%feature("autodoc", "1");
@@ -414,64 +445,6 @@ class GEOM_Engine {
 	}
 };
 
-
-%nodefaultctor GEOM_Parameter;
-class GEOM_Parameter {
-	public:
-		%feature("autodoc", "1");
-		GEOM_Parameter();
-		%feature("autodoc", "1");
-		GEOM_Parameter(TCollection_AsciiString );
-		%feature("autodoc", "1");
-		GEOM_Parameter(Standard_Real );
-		%feature("autodoc", "1");
-		Standard_Boolean IsString() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDouble() const;
-		%feature("autodoc", "1");
-		Standard_Real GetDouble() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetString() const;
-		%feature("autodoc", "1");
-		void operator=(Standard_Real );
-		%feature("autodoc", "1");
-		void operator=(const TCollection_AsciiString &anAsciiString);
-
-};
-%extend GEOM_Parameter {
-	~GEOM_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
-	}
-};
-%extend GEOM_Parameter {
-%pythoncode {
-	def __add__(self, value):
-		if (isinstance(value,int) or isinstance(value,float)):
-			val = self.GetDouble() + value
-		elif isinstance(value,GEOM_Parameter):
-			val = self.GetDouble() + value.GetDouble()
-		return val
-	def __sub__(self, value):
-		if (isinstance(value,int) or isinstance(value,float)):
-			val = self.GetDouble() - value
-		elif isinstance(value,GEOM_Parameter):
-			val = self.GetDouble() - value.GetDouble()
-		return val
-	def __mul__(self, value):
-		if (isinstance(value,int) or isinstance(value,float)):
-			val = self.GetDouble() * value
-		elif isinstance(value,GEOM_Parameter):
-			val = self.GetDouble() * value.GetDouble()
-		return val
-	def __div__(self, value):
-		if (isinstance(value,int) or isinstance(value,float)):
-			val = self.GetDouble() / value
-		elif isinstance(value,GEOM_Parameter):
-			val = self.GetDouble() / value.GetDouble()
-		return val
-	}
-};
 
 %nodefaultctor GEOM_IOperations;
 class GEOM_IOperations {
@@ -771,6 +744,10 @@ class GEOM_Object : public MMgt_TShared {
 		void SetAuxData(const char *theData);
 		%feature("autodoc", "1");
 		TCollection_AsciiString GetAuxData();
+		%feature("autodoc", "1");
+		void SetParameters(const TCollection_AsciiString &theParameters);
+		%feature("autodoc", "1");
+		TCollection_AsciiString GetParameters() const;
 		%feature("autodoc", "1");
 		bool IsMainShape();
 		%feature("autodoc", "1");

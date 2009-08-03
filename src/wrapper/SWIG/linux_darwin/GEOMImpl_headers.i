@@ -1,6 +1,6 @@
 /*
 
-Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 
@@ -22,6 +22,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Headers necessary to define wrapped classes.
 
+#include<GEOMImpl_3DSketcherDriver.hxx>
 #include<GEOMImpl_ArcDriver.hxx>
 #include<GEOMImpl_ArchimedeDriver.hxx>
 #include<GEOMImpl_Block6Explorer.hxx>
@@ -34,6 +35,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_CopyDriver.hxx>
 #include<GEOMImpl_CurveDriver.hxx>
 #include<GEOMImpl_CylinderDriver.hxx>
+#include<GEOMImpl_DiskDriver.hxx>
 #include<GEOMImpl_DraftDriver.hxx>
 #include<GEOMImpl_EllipseDriver.hxx>
 #include<GEOMImpl_ExportDriver.hxx>
@@ -44,6 +46,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_GlueDriver.hxx>
 #include<GEOMImpl_HealingDriver.hxx>
 #include<GEOMImpl_I3DPrimOperations.hxx>
+#include<GEOMImpl_I3DSketcher.hxx>
 #include<GEOMImpl_IArc.hxx>
 #include<GEOMImpl_IArchimede.hxx>
 #include<GEOMImpl_IBasicOperations.hxx>
@@ -60,6 +63,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_ICurve.hxx>
 #include<GEOMImpl_ICurvesOperations.hxx>
 #include<GEOMImpl_ICylinder.hxx>
+#include<GEOMImpl_IDisk.hxx>
 #include<GEOMImpl_IDraft.hxx>
 #include<GEOMImpl_IEllipse.hxx>
 #include<GEOMImpl_IFace.hxx>
@@ -125,7 +129,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_SketcherDriver.hxx>
 #include<GEOMImpl_SphereDriver.hxx>
 #include<GEOMImpl_SplineDriver.hxx>
-#include<GEOMImpl_Template.hxx>
 #include<GEOMImpl_ThickSolidDriver.hxx>
 #include<GEOMImpl_ThruSectionsDriver.hxx>
 #include<GEOMImpl_TorusDriver.hxx>
