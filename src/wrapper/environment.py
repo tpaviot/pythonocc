@@ -168,6 +168,6 @@ PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','contrib','SalomeGeometry','inc_pythonocc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
 if __name__=='__main__':
     print GetOCCPaths()
