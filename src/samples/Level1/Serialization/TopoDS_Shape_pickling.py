@@ -31,7 +31,8 @@ box1 = BRepPrimAPI_MakeBox(10.,10.,10.).Shape()
 
 # Dump shape in a string
 box_dump_string = pickle.dumps(box1)
+print "Box (10,10,10) dump:\n",box_dump_string
 
 #Create another box from the dump
 box2 = pickle.loads(box_dump_string)
-
+print "Box sucessfully loaded."
