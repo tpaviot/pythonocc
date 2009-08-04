@@ -26,17 +26,21 @@ import shutil
 import platform
 from distutils import sysconfig
 import subprocess
-#
-# Define pythonOCC version
-#
-VERSION = '0.3'
-#
-# Wrap SalomeGEOM?
-#
-WRAP_SALOME_GEOM = True
-#
+
+
+#===============================================================================
+# VARIABLES
+#===============================================================================
+
+VERSION = '0.3'         # Define pythonOCC version
+WRAP_SALOME_GEOM = True # Wrap SalomeGEOM?
+
+#===============================================================================
+# UTILITIES
+#===============================================================================
+
 # Automatic detection of OpenCASCADE required headers and libs paths
-#
+
 def GetOCCPaths():
     """
     Returns the tuple (OCC_INC, OCC_LIB)
@@ -56,7 +60,11 @@ def GetOCCPaths():
     occ_inc = possible_occ_inc.pop() #Take the last one
     print occ_inc
     print "Finding OCC_LIB..."
-    l = subprocess.Popen(['locate','libTKOpenGl.so'],stdout=subprocess.PIPE).communicate()[0]
+    if not sys.platform == 'darwin':
+        l = subprocess.Popen(['locate','libTKOpenGl.so'],stdout=subprocess.PIPE).communicate()[0]
+    else:
+        # on OSX the .dylib extension is used rather than .so or .dll
+        l = subprocess.Popen(['locate','libTKOpenGl.dylib'],stdout=subprocess.PIPE).communicate()[0]
     possible_occ_lib = map(os.path.dirname,l.split('\n'))
     # Remove possible occ_src from possible occ_lib
     for path in possible_occ_src:
@@ -64,9 +72,23 @@ def GetOCCPaths():
             possible_occ_lib.remove(path)
     occ_lib = possible_occ_lib.pop()
     return (occ_inc,occ_lib)
-#
+
+def which(executable, path_only=True):
+    '''
+    mimics the `which` command
+    @param executable: the name of the executable your looking for
+    @param path_only: will just return the path of the executable
+    so, rather /usr/local/bin rather than /usr/local/bin/gccxml  
+    '''
+    l = subprocess.Popen(['which',executable],stdout=subprocess.PIPE).communicate()[0]
+    if not path_only:
+        return l
+    else:
+        return os.path.split(l.strip())[0]
+    
+#===============================================================================
 # Define paths
-#
+#===============================================================================
 try:
     OCC_ROOT = os.environ['CASROOT']
     OCC_INC = os.path.join(OCC_ROOT,'inc')
@@ -75,9 +97,13 @@ try:
     else:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
-    OCC_ROOT = None
-    OCC_INC = '/your_path'
-    OCC_LIB = '/your_lib'
+    # I dont understand why the nonsense variables are set
+    # better to raise a EnviromentError?
+    raise EnviromentError('the $CASROOT variable was not set.\nmake sure to set up your enviroment variables properly')    
+    #OCC_ROOT = None
+    #OCC_INC = '/your_path'
+    #OCC_LIB = '/your_lib'
+    
 
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
@@ -93,6 +119,7 @@ if sys.platform=='win32':
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = []
     EXTRA_LIBS = []
+    
 elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     os.environ['CC'] = 'g++'
@@ -117,11 +144,10 @@ elif sys.platform=='linux2':
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
     EXTRA_LIBS = ['m','stc++',lib_python]
+    
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
-    #
     # Fill in this part with your own settings
-    #
 #     os.environ['CC'] = 'g++'
 #     os.environ['CPP'] = 'g++'
 # #    OCC_INC = '/usr/local/inc'
@@ -139,15 +165,22 @@ elif sys.platform=='darwin':
 #                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
 #                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
 #     ECA = ['-O0','-march=%s'%platform.machine()]
-#     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
+    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
 #     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     OCC_LIB = '/usr/local/lib/OCC'
     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','lib')
-    GCC_XML_PATH = '/usr/bin' 
+    #OCC_INC = OCC_LIB+'/inc'
+    #SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','lib')
+    #SALOME_GEOM_LIB = 'usr/local/lib/SalomeGeom'
+    SALOME_GEOM_LIB = 'usr/local/lib'
+    #GCC_XML_PATH = '/usr/bin' 
+    GCC_XML_PATH = which('gccxml')
+    if GCC_XML_PATH == '':
+        print 'gccxml was not found'
+    
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
@@ -158,11 +191,13 @@ elif sys.platform=='darwin':
     ECA = ['-O0']
     ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
     EXTRA_LIBS = ['m','stc++',lib_python]
+
 else:
-    raise "Unsupported platform"
-#
+    raise "Unsupported platform\nCurrently win32 / linux / osx are supported"
+
+#===============================================================================
 # Common paths
-#
+#===============================================================================
 PYTHON_INC = sysconfig.get_python_inc()
 PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
