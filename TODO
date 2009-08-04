@@ -1,0 +1,29 @@
+
+Wrapping:
+
+    Some arguments in for instance the ShapeFix module have non-standard arguments:
+
+		In [8]: print sfs.FixShellMode() # sfs = ShapeFix_Solid()
+		 <Swig Object of type 'Standard_Integer *' at 0x7f4ea40> 
+		 
+		The best fix would be that you simple call sfs.FixShellMode(True) evidently
+		
+0.4 release:
+
+    *   Quartz / Carbon bindings for the OCC OSX binaries, such that we can get rid of X11
+    *   SMESH wrapped
+    *   QT support via PyQT
+    *   Display module threaded, such that it remains interactive while the python interpreter is doing something else
+        That should be a godsend while debugging ;')
+        
+
+0.5 release:
+
+    *   Manipulators
+        It would be really cool if there is a manipulator such that the tangent over a curve or surface can be evaluated
+        
+        
+ 
+    
+    
+    
