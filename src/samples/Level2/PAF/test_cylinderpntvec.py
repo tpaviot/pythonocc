@@ -46,7 +46,7 @@ my_presentation.register_object(my_cyl,color=1)
 
 for i in range(1,15):
     p.DZ = i
-    import ipdb; ipdb.set_trace()
+    #import ipdb; ipdb.set_trace()
     print 'update p.DZ from %s to %s' % ( p.DZ[1], i)
     print 'NOT UPDATING, PROBABLY my_context.basic_operations.GetSolver().Update() not called'
 
