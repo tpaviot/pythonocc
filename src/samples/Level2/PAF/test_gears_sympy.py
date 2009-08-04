@@ -120,4 +120,9 @@ def DefineRelations():
 DefineRules()
 DefineRelations()
 
+for i in range(40,120,3):
+    p.a = i
+    print 'updated p.a from %s to %s ' % (p.a[1], i)
+    
+
 start_display()

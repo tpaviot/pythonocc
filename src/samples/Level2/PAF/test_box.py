@@ -3,6 +3,9 @@ from OCC.PAF.Parametric import Parameters, Rule, Relation
 from OCC.PAF.Factory import Factory
 from OCC.PAF.Presentation import Presentation
 
+from OCC.Display.wxSamplesGui import start_display, display
+import time
+
 # Create and initialize a parametric context
 my_context = Context()
 my_context.Init()
@@ -38,3 +41,10 @@ my_box = my_factory.BoxTwoPnt(my_pnt1,my_pnt2,"Box1")
 my_presentation.register_object(my_pnt1)
 my_presentation.register_object(my_pnt2)
 my_presentation.register_object(my_box)
+
+
+for i in range(31,60):
+    print 'changed parameter p.Z2 and p.Y2 from %s to %s' % ( i-1, i ) 
+    p.Z2, p.Y2 = i, i
+
+start_display()

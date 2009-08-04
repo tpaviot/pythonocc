@@ -4,6 +4,8 @@ from OCC.PAF.Factory import Factory
 from OCC.PAF.Presentation import Presentation
 from math import pi
 
+from OCC.Display.wxSamplesGui import start_display, display
+
 # Create and initialize a parametric context
 my_context = Context()
 my_context.Init()
@@ -41,3 +43,11 @@ my_cyl = my_factory.CylinderPntVecRH(my_pnt,my_vec,p.R,p.H,p.Angle,"Cyl")
 my_presentation.register_object(my_pnt)
 my_presentation.register_object(my_vec)
 my_presentation.register_object(my_cyl,color=1)
+
+for i in range(1,15):
+    p.DZ = i
+    import ipdb; ipdb.set_trace()
+    print 'update p.DZ from %s to %s' % ( p.DZ[1], i)
+    print 'NOT UPDATING, PROBABLY my_context.basic_operations.GetSolver().Update() not called'
+
+start_display()
