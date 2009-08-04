@@ -333,7 +333,6 @@ MODULES = [
 #############################
             ('PS',['Aspect','TCollection','MFT','OSD'],[]),
             ('PlotMgt',['OSD'],[],{'PlotMgt_Plotter':['SetPaperFormat']}),
-            ('PS_Driver',['OSD','Handle_TCollection'],[]),
 #############################
 ########   Xml         ######
 #############################
