@@ -15,8 +15,8 @@ from OCC.Display.wxSamplesGui import display, start_display
 
 from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
-#box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
-box = file_to_shape('../../../data/_3dmodels/Pump_Bottom.brep')
+
+box = file_to_shape('../../../../data/_3dmodels/Pump_Bottom.brep')
 
 box_ais = display.DisplayShape(box)
 display.Context.SetTransparency(box_ais, 0.8)
