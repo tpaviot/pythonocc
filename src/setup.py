@@ -214,12 +214,12 @@ for module in Modules.MODULES:
     extension.append(module_extension)
 # Add Visualization
 extension.append(Extension("OCC._Visualization",
-                    sources = [os.path.join(os.getcwd(),'Visualization','Visualization.i'),
-                               os.path.join(os.getcwd(),'Visualization','Display3d.cpp'),
-                               os.path.join(os.getcwd(),'Visualization','Display2d.cpp'),
-                               os.path.join(os.getcwd(),'Visualization','NISDisplay3d.cpp'),
+                    sources = [os.path.join(os.getcwd(),'wrapper','Visualization','Visualization.i'),
+                               os.path.join(os.getcwd(),'wrapper','Visualization','Display3d.cpp'),
+                               os.path.join(os.getcwd(),'wrapper','Visualization','Display2d.cpp'),
+                               os.path.join(os.getcwd(),'wrapper','Visualization','NISDisplay3d.cpp'),
                                ],
-                    include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
+                    include_dirs=[OCC_INC,os.path.join(os.getcwd(),'wrapper','Visualization')],
                     library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
@@ -229,7 +229,7 @@ extension.append(Extension("OCC._Visualization",
                     ))
 # Add Misc
 extension.append(Extension("OCC._Misc",
-                    sources = [os.path.join(os.getcwd(),'Misc','Misc.i')],
+                    sources = [os.path.join(os.getcwd(),'wrapper','Misc','Misc.i')],
                     include_dirs=[OCC_INC],
                     library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
                     define_macros= DEFINE_MACROS,
