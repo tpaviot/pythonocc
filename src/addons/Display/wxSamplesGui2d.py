@@ -53,7 +53,7 @@ frame.Show(True)
 wx.SafeYield()
 frame.canva.InitDriver()
 app.SetTopWindow(frame)
-display = frame.canva._display
+display2d = frame.canva._display
 
 def add_menu(*args, **kwargs):
     frame.add_menu(*args, **kwargs)
@@ -61,7 +61,7 @@ def add_menu(*args, **kwargs):
 def add_function_to_menu(*args, **kwargs):
     frame.add_function_to_menu(*args, **kwargs)
 
-def start_display():
+def start_display2d():
     '''
     call the mainloop
     '''

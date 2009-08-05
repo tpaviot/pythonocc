@@ -172,7 +172,14 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def SetModeExactHLR(self):
         self.View.SetComputedMode(True)
         self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
-    
+        
+    def SetOrthographic(self, _bool):
+        '''
+        sets whether this view is a orthographic or perspective view
+        @param _bool:
+        '''
+        pass
+        
     def View_Top(self):
         self.View.SetProj(OCC.V3d.V3d_Zpos) 
 
