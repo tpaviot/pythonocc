@@ -361,6 +361,10 @@ class ModularBuilder(object):
         is_exportable = mem_fun.exportable
         function_name = mem_fun.name
         class_parent_name = mem_fun.parent.name
+        FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
+        param_list = [] # a dict that contain param names and their types (used for python docstring construction).
+        return_list = []
+        default_value={}
         if (not is_exportable) and not(class_parent_name in function_name):#for constructors and destructor
             print "\t\t %s method not exportable"%function_name
             return True
@@ -390,8 +394,7 @@ class ModularBuilder(object):
                         self.NEEDED_HXX.append('%s.hxx'%return_type)
         #print return_type
         print "\t\t %s added."%function_name
-        # FEATURE AUTODOC
-        to_write = '\t\t%feature("autodoc", "1");\n'
+        to_write = ''
         # FEATURE DOCSTRING
         # First try to find the key (necessary for overloaded functions
         # the key can be Coord, Coord_1 or Coord_2
@@ -475,7 +478,7 @@ class ModularBuilder(object):
                 #We have something like:
                 #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
                 #
-                print argument_types
+                #print argument_types
                 tmp = argument_types[0]
                 tmp = tmp.split('<')[1]
                 tmp = tmp.split(',')[0]
@@ -486,23 +489,36 @@ class ModularBuilder(object):
                 argument_types[0] = 'std::list'
                 argument_types[1] = tmp               
                 to_write += "%s<%s>"%(argument_types[0],argument_types[1])
+                param_dict["String"]="aString"
             elif argument_types[1]=='*' and len(argument_types)==2:
                 #Case: GEOM_Engine* theEngine
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
+                param_list.append([argument_types[0],argument_name])
             elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
                 to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
+                param_list.append([argument_types[1],argument_name])
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
                 to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
+                param_list.append([argument_types[0],argument_name])
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
+                param_list.append([argument_types[1],argument_name])
             else:
                 if ('Standard_Real &' in argument_type) or\
                  ('Quantity_Parameter &' in argument_type) or\
                  ('Quantity_Length &' in argument_type) or\
                  ('V3d_Coordinate &' in argument_type): # byref Standard_Float parameter
-                    to_write += "Standard_Real &OutValue"
+                    to_write += 'Standard_Real &OutValue'
+                    return_list.append(['Standard_Real',argument_name])
+                    FUNCTION_MODIFIED = True
                 elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
-                    to_write += "Standard_Integer &OutValue"
+                    to_write += 'Standard_Integer &OutValue'
+                    return_list.append(['Standard_Integer',argument_name])
+                    FUNCTION_MODIFIED = True
+                elif 'FairCurve_AnalysisCode &' in argument_type:
+                    to_write += 'FairCurve_AnalysisCode &OutValue'
+                    return_list.append(['FairCurve_AnalysisCode',argument_name])
+                    FUNCTION_MODIFIED = True
                 else:
                     to_write += "%s %s"%(argument_type,argument_name)
             if 'Standard_CString' in to_write:
@@ -516,6 +532,7 @@ class ModularBuilder(object):
                 elif argument_default_value.startswith('::'):
                     argument_default_value = argument_default_value[2:]
                 to_write += "=%s"%argument_default_value
+                default_value[argument_name]=argument_default_value
             is_first = False
         if mem_fun.decl_string.endswith(" const"):
             to_write += ") const;\n"
@@ -529,7 +546,7 @@ class ModularBuilder(object):
         if parent_is_abstract and ("%s();"%class_parent_name in to_write):
             return False
         #
-        # Finally, process Standard_OStream and Standard_ISteam selated methods
+        # Finally, process Standard_OStream and Standard_ISteam selected methods
         #
         if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
             if 'Standard_OStream &' in '%s'%arguments[0].type:#argument_type:
@@ -544,6 +561,44 @@ class ModularBuilder(object):
                 to_write+='%sFromString(std::string src) {\n\t\t\tstd::stringstream s(src);\n'%function_name
                 to_write+='\t\t\tself->%s(s);}\n'%function_name
                 to_write+='\t\t};\n'
+        # Log
+        if FUNCTION_MODIFIED:
+            self.AddFunctionTransformation("%s::%s\n"%(class_parent_name,function_name))
+        # Write docstring to file
+        if FUNCTION_MODIFIED: # The docstring has to be changed
+            for arg in mem_fun.arguments:
+                print arg
+            meth_doc = "%s("%function_name
+            index=1
+            for param in param_list:
+                meth_doc+=param[0]
+                meth_doc+=" "
+                meth_doc+=param[1]
+                if default_value.has_key(param[1]):
+                    meth_doc+="=%s"%default_value[param[1]][:8]#eight digits maxi
+                if index<len(param_list):
+                    meth_doc+=", "
+                index+=1
+            docstring = '\t\t%feature("autodoc",'
+            docstring+='"%s)'%meth_doc
+            # Add return
+            if len(return_list)<=1:#just one value
+                docstring+='->%s'%return_list[0][0]
+            else:
+                docstring+='->['
+                index_2=1
+                for rt in return_list:
+                    docstring+='%s'%str(rt[0])
+                    if index<len(return_list):
+                        docstring+=", "
+                    index+=1
+                docstring+=']'
+            docstring+='");\n'            
+        else:
+            # automatically generated docstring by SWUG is perfect
+            docstring = '\t\t%feature("autodoc", "1");\n'
+        self.fp.write(docstring)
+        # Write method
         self.fp.write(to_write)
         self._CURRENT_CLASS_EXPOSED_METHODS.append(to_write)     
             
@@ -642,7 +697,6 @@ class ModularBuilder(object):
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            #self.fp.write("\treturn $self->HashCode(LONG_MAX);\n\t}\n};")
             self.fp.write("\treturn $self->HashCode(__PYTHONOCC_MAXINT__);\n\t}\n};")
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
@@ -759,6 +813,14 @@ class ModularBuilder(object):
             else:
                 return param_name.split("_")[0]            
         return False
+    
+    def AddFunctionTransformation(self,t):
+        """ This methods writes in a file all classes/methods that are modified by the wrapper.
+        For instance all the byref Standard_Real etc. This is just a logfile.
+        """
+        f = open('function_transformation.log','a')
+        f.write(t)
+        f.close()
                 
     def InitBaseSwigFile(self):
         # create OCC.i script
