@@ -489,7 +489,7 @@ class ModularBuilder(object):
                 argument_types[0] = 'std::list'
                 argument_types[1] = tmp               
                 to_write += "%s<%s>"%(argument_types[0],argument_types[1])
-                param_dict["String"]="aString"
+                param_list.append(["String","aString"])
             elif argument_types[1]=='*' and len(argument_types)==2:
                 #Case: GEOM_Engine* theEngine
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
