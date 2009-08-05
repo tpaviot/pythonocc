@@ -1,6 +1,11 @@
 from OCC.gp import *
 from pprint import pprint
-import sys, os.path, fontforge
+import sys, os.path
+try:
+    import fontforge
+except ImportError:
+    print 'Please install fontforge (http://fontforge.sf.net)'
+    sys.exit()
 from collections import defaultdict
 
 from OCC.Geom import *
