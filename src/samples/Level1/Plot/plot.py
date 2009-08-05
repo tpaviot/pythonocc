@@ -17,10 +17,9 @@ from OCC.Display.wxSamplesGui2d import display2d, start_display2d
 from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
 from OCC.AIS2D import *
-#box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
-#box = file_to_shape('../../../data/_3dmodels/Pump_Bottom.brep')
-
-box = BRepPrimAPI_MakeBox(1,1,1).Shape()
+#box = file_to_shape('../../../../data/_3dmodels/aube_pleine.stp')
+box = file_to_shape('../../../../data/_3dmodels/Pump_Bottom.brep')
+#box = BRepPrimAPI_MakeBox(1,1,1).Shape()
 
 
 box_ais = display.DisplayShape(box)
