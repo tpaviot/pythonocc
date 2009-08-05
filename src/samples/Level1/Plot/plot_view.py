@@ -84,6 +84,6 @@ if __name__ == '__main__':
     add_function_to_menu('primitives',  sphere)
     add_function_to_menu('primitives',  cube)
     add_function_to_menu('primitives',  exit)
-    StartDisplay()
+    start_display()
 
 
