@@ -9,14 +9,19 @@ from OCC.HLRAlgo import *
 # for 2d version
 #from plot_view import display, start_display
 from OCC.Display.wxSamplesGui import display, start_display
+from OCC.Display.wxSamplesGui2d import display2d, start_display2d
 
 # interesting display.View.PostScriptOutput
 #box = BRepPrimAPI_MakeBox(1,1,1).Shape()
 
 from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
+from OCC.AIS2D import *
+#box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
+#box = file_to_shape('../../../data/_3dmodels/Pump_Bottom.brep')
 
-box = file_to_shape('../../../../data/_3dmodels/Pump_Bottom.brep')
+box = BRepPrimAPI_MakeBox(1,1,1).Shape()
+
 
 box_ais = display.DisplayShape(box)
 display.Context.SetTransparency(box_ais, 0.8)
@@ -126,4 +131,23 @@ notes printing:
 #_proj = HLRBRep_P
 
 
+#===============================================================================
+# THIS IS THER INTERESTING PART
+# FAILS WHEN CALLING projection.Add
+#===============================================================================
+
+'''
+
+
+projection = AIS2D_ProjShape(proj)
+projection.SetContext(display2d.Context_handle)
+projection.Add(box)
+
+display2d.Context.Load( projection.GetHandle() )
+display2d.Context.Display( projection.GetHandle() )
+
+'''
+
 start_display()
+start_display2d()
+
