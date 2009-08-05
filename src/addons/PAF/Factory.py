@@ -24,6 +24,7 @@ class operation(object):
     '''
     def __init__(self, operation):
         self.operation = operation
+        print 'initialized context with', self.operation.__class__
     
     def __enter__(self):
         print 'start operation'

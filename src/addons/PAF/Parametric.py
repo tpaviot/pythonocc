@@ -100,7 +100,13 @@ class Parameter(GEOM_Parameter):
         self._name = name
         GEOM_Parameter.__init__(self,TCollection_AsciiString(name))
         print "Parameter %s created"%name
+        
         # Create a sympy Symbol so that it's possible to include it in a relation
+        # --- TODO one problem of this method is that when Undo is called
+        # the ._symbol attribute will no more be in sync with the Parameter value...
+        # so, to do this well we need to add a callback from Undo such that these 
+        # attributes will be updated
+        # Not easy at all to implement
         self._symbol = Symbol(name)
     
     def GetSymbol(self):
