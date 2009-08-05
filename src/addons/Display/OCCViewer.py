@@ -53,7 +53,7 @@ class BaseDriver(object):
         self.Context = None
         self.Viewer = None
         self.View = None
-        #self._objects_displayed = []#list to save in memory displayed objects
+        #self._objects_displayed = []#list to save in memory displayed objects        
     
     def MoveTo(self,X,Y):
         self.Context.MoveTo(X,Y,self.View_handle)
@@ -85,7 +85,11 @@ class BaseDriver(object):
         self._inited = True
         
         # nessecary for text rendering
-        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        try:
+            self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        except:
+            pass
+
     
         
 class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
@@ -143,7 +147,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         BaseDriver.__init__(self,window_handle)
         OCC.Visualization.Display3d.__init__(self)
         self.selected_shape = None
-          
+                
     def OnResize(self):
         self.View.MustBeResized()
 
