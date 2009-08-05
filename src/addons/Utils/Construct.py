@@ -28,7 +28,7 @@ This modules makes the construction of geometry a little easier
 
 from OCC.BRepBuilderAPI import *
 from OCC.Utils.Context import assert_isdone
-from KBE.TypesLookup import GeometryLookup, ShapeToTopology
+from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
 def make_solid(*args):
     sld = BRepBuilderAPI_MakeSolid( *args )
