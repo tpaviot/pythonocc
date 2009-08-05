@@ -163,6 +163,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def SetModeShaded(self):
         self.View.SetComputedMode(False)
+        if sys.platform=='win32':
+            self.View.SetAntialiasingOff()
         self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
      
     def SetModeQuickHLR(self):
