@@ -37,6 +37,10 @@ class operation(object):
             error_code = self.operation.GetErrorCode()
             raise AssertionError('did not complete operation.\nused operation class: %s \nerror code: %s' % (self.operation.__class__, error_code) )
 
+#===============================================================================
+# OBSOLOTE?
+#===============================================================================
+
 class Factory(object):
     """ This class allows to create parametrized geometry.
     """

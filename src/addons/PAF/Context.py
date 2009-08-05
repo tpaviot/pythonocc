@@ -74,8 +74,12 @@ def _operation_decorator(function, _operations):
         # in this case, we'd like the function to be executed
         # within the context of an operation
         with operation(_operations):
-            res = function(*args, **kwargs)
+            res = function(*args)
             print 'result:', res
+        if 'name' in kwargs:
+            res.GetObject().SetName(kwargs['name'])
+            print 'set object name:', kwargs['name']
+        
         return res
     # return the sub-function
     return __operation_decorator
@@ -94,6 +98,7 @@ class Context(object):
         self.basic_operations = None
         self._inited = False
         self.solvers = []
+        self.object_names = []
 
     def Init(self):
         if not self._inited:
@@ -111,7 +116,7 @@ class Context(object):
             self.group_operations = self.myEngine.GetIGroupOperations(self.docId)
             self.healing_operations = self.myEngine.GetIHealingOperations(self.docId)
             self.insert_operations = self.myEngine.GetIInsertOperations(self.docId)
-            self.local_operatios = self.myEngine.GetILocalOperations(self.docId)
+            self.local_operations = self.myEngine.GetILocalOperations(self.docId)
             self.measure_operations = self.myEngine.GetIMeasureOperations(self.docId)
             self.shapes_operations = self.myEngine.GetIShapesOperations(self.docId)
             self.transform_operations = self.myEngine.GetITransformOperations(self.docId)
@@ -138,31 +143,34 @@ class Context(object):
             # trying to wrap all the methods in *operations such that they are executed
             # in the context of StartOperation / EndOperation
             #===============================================================================
-            
-            
             for i in dir(self):
                 if i.endswith('operations'):
                     op = i.split('_')[0]
-                    #_class = op+'_ops'
-                    #exec('class prim_ops(object):\n    pass'% ( i ))
-                    klass_name = "%s_ops" % (op)
+                    
+                    # create a new class to which the wrapped methods will be added
+                    # these classes will replace the self.myEngine.GetIShapesOperations(self.docId) instance
+                    # so self.myEngine.GetIShapesOperations(self.docId) -> self.shapes_ops
+                    #klass_name = "%s_ops" % (op)
+                    klass_name = "%s_operations" % (op)
                     klass = type(klass_name, (object,), {})
                     klass_instance = klass()
                     
-                    #self.primitive_ops = prim_ops()
-                      
                     for j in dir(getattr(self, i)):
+                        # filter out the methods that aren't methods that do stuff
+                        # to geometry / topology
                         if j.startswith('_'):
                             continue
                         elif j not in no_ops:
                             print 'method being wrapped:',j
-                            func = _operation_decorator(getattr(getattr(self, i), j), self.prim_operations)
+                            func = _operation_decorator(
+                                                        getattr(getattr(self, i), j),   # for example: self.basic_operations.MakeVectorDXDYDZ
+                                                        getattr(self, i)                # for example: self.basic_operations
+                                                    )
+                            
                             exec('klass.%s = func' % ( j ) )
                     
                     # add the newly generated klass to self
                     setattr(self, klass_name, klass_instance)
-                    
-                    
 
 if __name__=='__main__':
     c = Context()

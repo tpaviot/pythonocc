@@ -18,7 +18,11 @@
 from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
 from OCC.TPrsStd import *
 from OCC.TNaming import *
+from OCC.SGEOM import *
+
 from wx import SafeYield
+
+
 
 class Presentation(object):
     """ For rendering geometry
@@ -29,6 +33,11 @@ class Presentation(object):
         self.pres = [] #a list of all objects currently displayed
 
     def register_object(self,obj,color=0):
+        
+        # normalize input, we'll accept both Geom_object and Handle_Geom_object
+        if isinstance(obj, Handle_GEOM_Object):
+            obj = obj.GetObject()
+        
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         prs.SetColor(color)

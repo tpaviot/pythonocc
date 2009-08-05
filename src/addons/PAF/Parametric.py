@@ -226,6 +226,13 @@ class Parameters(object):
             self._parameters[name] = Parameter(name)
        
     def __getattribute__(self, name):
+        
+        # this is _really_ ugly and confusing
+        # with getters and setters we could find out who is getting a value
+        # and return Geom_Parameter when class X calls, return a Symbol when class Y calls 
+        # still, its much more clear to use properties
+        # such that you just use Parameter.geom / Parameter.symbol
+        
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
             print 'parameter: %s value: %s' % (name, attr)                     
