@@ -28,9 +28,13 @@ def set_background_image(blah):
 
 def set_layer(blah):
     view_mgr = display.View.View().GetObject().ViewManager()
-    layer = Visual3d_Layer(view_mgr, Aspect_TOL_UNDERLAY, True)
+    layer = Visual3d_Layer(view_mgr, Aspect_TOL_OVERLAY, False)
     a,b,c,d = frame.GetScreenRect()
-    #layer.SetViewport(c,d)
+    import ipdb; ipdb.set_trace()
+    
+    h,w = display.View.Window().GetObject().Size()
+#    layer.SetViewport(h,w)
+    #layer.SetViewport(1,1)
     layer.Begin()
 
     layer.SetTextAttributes( Graphic3d_NOF_ASCII_ITALIC_COMPLEX, Aspect_TODT_NORMAL, Quantity_Color(Quantity_NOC_ORANGE ))
@@ -44,7 +48,8 @@ def set_layer(blah):
 #    layer.AddVertex (1,-1)
 #    layer.AddVertex (-1,-1)
 #    layer.ClosePrimitive()
-    layer.End()
+#    layer.End()
+
     display.Repaint()
 
 
@@ -52,7 +57,7 @@ def set_layer(blah):
 if __name__ == '__main__':
     add_menu('background')
     add_function_to_menu('background', set_background_color )
-    add_function_to_menu('background', set_layer )
+    #add_function_to_menu('background', set_layer )
     start_display()
 
 
