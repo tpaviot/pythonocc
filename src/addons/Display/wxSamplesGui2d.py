@@ -23,7 +23,7 @@ from OCC import VERSION
 
 class AppFrame(wx.Frame):
     def __init__(self, parent):
-        wx.Frame.__init__(self, parent, -1, "pythonOCC-%s 3d viewer"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+        wx.Frame.__init__(self, parent, -1, "pythonOCC-%s 2d viewer"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
         self.canva = wxViewer2d(self)      
         self.menuBar = wx.MenuBar()
         self._menus = {}
