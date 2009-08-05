@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Visual3d
 
 %include Visual3d_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Visual3d_dependencies.i
 
@@ -1252,7 +1166,7 @@ class Visual3d_ViewMapping {
 		Graphic3d_Vertex ProjectionReferencePoint() const;
 		%feature("autodoc", "1");
 		Standard_Real ViewPlaneDistance() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WindowLimit()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void WindowLimit(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
@@ -1785,7 +1699,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 		virtual		void Update() const;
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfView ActivatedView() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ConvertCoord(const AWindow, const AVertex)->[Standard_IntegerStandard_Integer]");
 		void ConvertCoord(const Handle_Aspect_Window &AWindow, const Graphic3d_Vertex &AVertex, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Graphic3d_Vertex ConvertCoord(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV) const;
@@ -1901,7 +1815,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 		void SetPlane(const Standard_Real ACoefA, const Standard_Real ACoefB, const Standard_Real ACoefC, const Standard_Real ACoefD);
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
-		%feature("autodoc", "1");
+		%feature("autodoc","Plane()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2086,7 +2000,7 @@ class Visual3d_Layer : public MMgt_TShared {
 		void DrawRectangle(const Standard_Real X, const Standard_Real Y, const Standard_Real Width, const Standard_Real Height);
 		%feature("autodoc", "1");
 		void DrawText(const char * AText, const Standard_Real X, const Standard_Real Y, const Standard_Real AHeight);
-		%feature("autodoc", "1");
+		%feature("autodoc","TextSize(Standard_CString AText, Standard_Real AHeight)->[Standard_RealStandard_RealStandard_Real]");
 		void TextSize(const char * AText, const Standard_Real AHeight, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &AColor);
@@ -2200,9 +2114,9 @@ class Visual3d_Light : public MMgt_TShared {
 		void Values(Quantity_Color & Color) const;
 		%feature("autodoc", "1");
 		void Values(Quantity_Color & Color, Graphic3d_Vector & Direction) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->[Standard_Real, Standard_Real]");
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
@@ -2543,17 +2457,17 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		Standard_Boolean IsDefined() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDeleted() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues(const ASet)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues(const ASet)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfDisplayedStructures() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Projects(Standard_Real AX, Standard_Real AY, Standard_Real AZ)->[Standard_RealStandard_RealStandard_Real]");
 		void Projects(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const TColStd_Array2OfReal & Transform() const;
@@ -2719,9 +2633,9 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
 		%feature("autodoc", "1");
 		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
@@ -3046,7 +2960,7 @@ class Visual3d_ViewOrientation {
 		Graphic3d_Vertex ViewReferencePoint() const;
 		%feature("autodoc", "1");
 		Graphic3d_Vector ViewReferenceUp() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","AxialScale()->[Standard_Real, Standard_Real, Standard_Real]");
 		void AxialScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;

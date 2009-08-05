@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module BOPTools
 
 %include BOPTools_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include BOPTools_dependencies.i
 
@@ -733,7 +647,7 @@ class BOPTools_ShapeShapeInterference {
 		Standard_Integer Index1() const;
 		%feature("autodoc", "1");
 		Standard_Integer Index2() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Indices()->[Standard_Integer, Standard_Integer]");
 		void Indices(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer OppositeIndex(const Standard_Integer anIndex) const;
@@ -758,7 +672,7 @@ class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 		BOPTools_VSInterference(const Standard_Integer anIndex1, const Standard_Integer anIndex2, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
 		void SetUV(const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
+		%feature("autodoc","UV()->[Standard_Real, Standard_Real]");
 		void UV(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1039,7 +953,7 @@ class BOPTools_PointBetween {
 		void SetPnt(const gp_Pnt &aP);
 		%feature("autodoc", "1");
 		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","UV()->[Standard_Real, Standard_Real]");
 		void UV(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
@@ -1625,7 +1539,7 @@ class BOPTools_IteratorOfCoupleOfShape {
 		virtual		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		virtual		void Next();
-		%feature("autodoc", "1");
+		%feature("autodoc","Current()->[Standard_Integer, Standard_Integer]");
 		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
 		%feature("autodoc", "1");
 		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
@@ -2873,7 +2787,7 @@ class BOPTools_PaveBlock {
 		Standard_Boolean IsValid() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BOPTools_PaveBlock &Other) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const IntTools_Range & Range() const;
@@ -2970,7 +2884,7 @@ class BOPTools_InterferencePool {
 		Standard_Boolean HasInterference(const Standard_Integer anInd) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsComputed(const Standard_Integer anInd1, const Standard_Integer anInd2) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SortTypes()->[Standard_Integer, Standard_Integer]");
 		void SortTypes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		BooleanOperations_KindOfInterference InterferenceType(const Standard_Integer anInd1, const Standard_Integer anInd2) const;
@@ -3173,7 +3087,7 @@ class BOPTools_CoupleOfInteger {
 		void SetFirst(const Standard_Integer aFirst);
 		%feature("autodoc", "1");
 		void SetSecond(const Standard_Integer aSecond);
-		%feature("autodoc", "1");
+		%feature("autodoc","Couple()->[Standard_Integer, Standard_Integer]");
 		void Couple(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer First() const;
@@ -3328,23 +3242,23 @@ class BOPTools_Tools2D {
 		Standard_Boolean EdgeTangent(const TopoDS_Edge &anE, const Standard_Real aT, gp_Vec & Tau);
 		%feature("autodoc", "1");
 		void FaceNormal(const TopoDS_Face &aF, const Standard_Real U, const Standard_Real V, gp_Vec & aN);
-		%feature("autodoc", "1");
+		%feature("autodoc","PointOnSurface(const aE, const aF, Standard_Real aT)->[Standard_RealStandard_Real]");
 		void PointOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Standard_Real aT, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","CurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d)->Standard_Real");
 		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
-		%feature("autodoc", "1");
+		%feature("autodoc","CurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d)->[Standard_RealStandard_RealStandard_Real]");
 		void CurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
-		%feature("autodoc", "1");
+		%feature("autodoc","HasCurveOnSurface(const aE, const aF)->[Standard_RealStandard_RealStandard_Real]");
 		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean HasCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF);
-		%feature("autodoc", "1");
+		%feature("autodoc","MakeCurveOnSurface(const aE, const aF, Standard_Boolean aTrim3d)->[Standard_RealStandard_RealStandard_Real]");
 		void MakeCurveOnSurface(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
-		%feature("autodoc", "1");
+		%feature("autodoc","Make2D(const aE, const aF, Standard_Boolean aTrim3d)->[Standard_RealStandard_RealStandard_Real]");
 		void Make2D(const TopoDS_Edge &aE, const TopoDS_Face &aF, Handle_Geom2d_Curve & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean aTrim3d);
-		%feature("autodoc", "1");
+		%feature("autodoc","MakePCurveOnFace(const aF, const C3D)->Standard_Real");
 		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MakePCurveOnFace(const aF, const C3D, Standard_Real aT1, Standard_Real aT2)->Standard_Real");
 		void MakePCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Standard_Real aT1, const Standard_Real aT2, Handle_Geom2d_Curve & aC, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void AdjustPCurveOnFace(const TopoDS_Face &aF, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
@@ -3358,7 +3272,7 @@ class BOPTools_Tools2D {
 		Standard_Boolean TangentOnEdge(const TopoDS_Edge &anE, gp_Dir & aDTang);
 		%feature("autodoc", "1");
 		Standard_Boolean TangentOnVertex(const TopoDS_Vertex &aVF, const TopoDS_Vertex &aVL, const TopoDS_Edge &anE, gp_Vec & aTang);
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeBounds(const anE)->[Standard_RealStandard_Real]");
 		void EdgeBounds(const TopoDS_Edge &anE, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real IntermediatePoint(const Standard_Real aFirst, const Standard_Real aLast);

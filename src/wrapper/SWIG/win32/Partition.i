@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Partition
 
 %include Partition_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Partition_dependencies.i
 
@@ -186,7 +100,7 @@ class Partition_Inter2d {
 		Partition_Inter2d();
 		%feature("autodoc", "1");
 		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
-		%feature("autodoc", "1");
+		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E)->Standard_Real");
 		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);
@@ -287,7 +201,7 @@ class Partition_Loop3d {
 		void AddSectionFaces(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot)->Standard_Real");
 		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
 		%feature("autodoc", "1");
 		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);

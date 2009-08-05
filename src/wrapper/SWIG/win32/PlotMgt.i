@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module PlotMgt
 
 %include PlotMgt_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include PlotMgt_dependencies.i
 
@@ -628,7 +542,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		virtual		void ClosePrimitive();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc", "1");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -674,19 +588,19 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		TCollection_AsciiString DrawingName() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString SpoolDirectory() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LineAttrib()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PolyAttrib()->[Standard_Integer, Standard_Integer]");
 		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1025,13 +939,13 @@ class PlotMgt_Plotter : public MMgt_TShared {
 		Standard_Real PaperWidth();
 		%feature("autodoc", "1");
 		Standard_Real PaperLength();
-		%feature("autodoc", "1");
+		%feature("autodoc","PaperSize()->[Standard_Real, Standard_Real]");
 		void PaperSize(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","HardMargins()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void HardMargins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Margins()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Margins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","HardMappings()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void HardMappings(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real SpaceDrawing();
@@ -1374,7 +1288,7 @@ class PlotMgt {
 		PlotMgt_PaperFormat PaperFormatFromString(TCollection_AsciiString & aPaperFormatString);
 		%feature("autodoc", "1");
 		TCollection_AsciiString StringFromPaperFormat(const PlotMgt_PaperFormat aPaperFormat);
-		%feature("autodoc", "1");
+		%feature("autodoc","PaperSize()->[Standard_Real, Standard_Real]");
 		void PaperSize(TCollection_AsciiString & aFormat, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

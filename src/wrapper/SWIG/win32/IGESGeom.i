@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IGESGeom
 
 %include IGESGeom_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IGESGeom_dependencies.i
 
@@ -1895,7 +1809,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		Standard_Boolean OwnCorrect();
 		%feature("autodoc", "1");
 		Standard_Integer ComputedFormNumber() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Equation()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ZPlane() const;
@@ -1919,11 +1833,11 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		gp_Dir Axis() const;
 		%feature("autodoc", "1");
 		gp_Dir TransformedAxis() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Definition()->[Standard_Real, Standard_Real]");
 		void Definition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformedDefinition()->[Standard_Real, Standard_Real]");
 		void TransformedDefinition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ComputedDefinition()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1956,9 +1870,9 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Handle_IGESData_IGESEntity &aCurve, const gp_XYZ &attach, const Standard_Real aSize);
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
-		%feature("autodoc", "1");
+		%feature("autodoc","Equation()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformedEquation()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TransformedEquation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasBoundingCurve() const;
@@ -2733,17 +2647,17 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
 		Standard_Real BreakPoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XCoordPolynomial(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void XCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","YCoordPolynomial(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void YCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ZCoordPolynomial(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void ZCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void XValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","YValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void YValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ZValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void ZValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -3117,7 +3031,7 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 		gp_Vec NormalVector() const;
 		%feature("autodoc", "1");
 		gp_Vec TransformedNormalVector() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real StartParameter() const;

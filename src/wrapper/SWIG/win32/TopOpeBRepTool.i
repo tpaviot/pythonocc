@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module TopOpeBRepTool
 
 %include TopOpeBRepTool_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include TopOpeBRepTool_dependencies.i
 
@@ -849,11 +763,11 @@ class TopOpeBRepTool_GeomTool {
 		void DefinePCurves2(const Standard_Boolean CompPC2);
 		%feature("autodoc", "1");
 		void Define(const TopOpeBRepTool_GeomTool &GT);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real tol3d, const Standard_Real tol2d);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & relative) const;
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real tol3d, const Standard_Real tol2d, const Standard_Boolean relative);
@@ -1026,6 +940,7 @@ class TopOpeBRepTool_ShapeExplorer {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpCurrentToString() {
 			std::stringstream s;
@@ -1177,7 +1092,7 @@ class TopOpeBRepTool_CORRISO {
 		const TopoDS_Face & Fref() const;
 		%feature("autodoc", "1");
 		const GeomAdaptor_Surface & GASref() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Refclosed(Standard_Integer x)->Standard_Real");
 		Standard_Boolean Refclosed(const Standard_Integer x, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Init(const TopoDS_Shape &S);
@@ -1191,15 +1106,15 @@ class TopOpeBRepTool_CORRISO {
 		Standard_Real Tol(const Standard_Integer I, const Standard_Real tol3d) const;
 		%feature("autodoc", "1");
 		Standard_Boolean PurgeFyClosingE(const TopTools_ListOfShape &ClEds, TopTools_ListOfShape & fyClEds) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeOUTofBoundsUV(const E, Standard_Boolean onU, Standard_Real tolx)->Standard_Real");
 		Standard_Integer EdgeOUTofBoundsUV(const TopoDS_Edge &E, const Standard_Boolean onU, const Standard_Real tolx, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesOUTofBoundsUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Boolean onU, const Standard_Real tolx, TopTools_DataMapOfOrientedShapeInteger & FyEds) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeWithFaultyUV(const E)->Standard_Integer");
 		Standard_Boolean EdgeWithFaultyUV(const TopoDS_Edge &E, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopTools_DataMapOfOrientedShapeInteger & FyEds, const Standard_Boolean stopatfirst=0) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeWithFaultyUV(const EdsToCheck, Standard_Integer nfybounds)->Standard_Integer");
 		Standard_Boolean EdgeWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopoDS_Shape & fyE, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean TrslUV(const Standard_Boolean onU, const TopTools_DataMapOfOrientedShapeInteger &FyEds);
@@ -1489,7 +1404,7 @@ class TopOpeBRepTool_C2DF {
 		void SetPC(const Handle_Geom2d_Curve &PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol);
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","PC()->[Standard_Real, Standard_Real, Standard_Real]");
 		const Handle_Geom2d_Curve & PC(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
@@ -1522,7 +1437,7 @@ class TopOpeBRepTool_CurveTool {
 		const TopOpeBRepTool_GeomTool & GetGeomTool() const;
 		%feature("autodoc", "1");
 		void SetGeomTool(const TopOpeBRepTool_GeomTool &GT);
-		%feature("autodoc", "1");
+		%feature("autodoc","MakeCurves(Standard_Real min, Standard_Real max, const C3D, const PC1, const PC2, const S1, const S2)->[Standard_RealStandard_Real]");
 		Standard_Boolean MakeCurves(const Standard_Real min, const Standard_Real max, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &PC1, const Handle_Geom2d_Curve &PC2, const TopoDS_Shape &S1, const TopoDS_Shape &S2, Handle_Geom_Curve & C3DN, Handle_Geom2d_Curve & PC1N, Handle_Geom2d_Curve & PC2N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Curve MakeBSpline1fromPnt(const TColgp_Array1OfPnt &P);
@@ -1530,7 +1445,7 @@ class TopOpeBRepTool_CurveTool {
 		Handle_Geom2d_Curve MakeBSpline1fromPnt2d(const TColgp_Array1OfPnt2d &P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsProjectable(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","MakePCurveOnFace(const S, const C, Standard_Real first=0.0, Standard_Real last=0.0)->Standard_Real");
 		Handle_Geom2d_Curve MakePCurveOnFace(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, const Standard_Real first=0.0, const Standard_Real last=0.0);
 
 };
@@ -1569,9 +1484,9 @@ class TopOpeBRepTool_TOOL {
 		Standard_Integer OnBoundary(const Standard_Real par, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		gp_Pnt2d UVF(const Standard_Real par, const TopOpeBRepTool_C2DF &C2DF);
-		%feature("autodoc", "1");
+		%feature("autodoc","ParISO(const p2d, const e, const f)->Standard_Real");
 		Standard_Boolean ParISO(const gp_Pnt2d &p2d, const TopoDS_Edge &e, const TopoDS_Face &f, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ParE2d(const p2d, const e, const f)->[Standard_RealStandard_Real]");
 		Standard_Boolean ParE2d(const gp_Pnt2d &p2d, const TopoDS_Edge &e, const TopoDS_Face &f, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Getduv(const TopoDS_Face &f, const gp_Pnt2d &uv, const gp_Vec &dir, const Standard_Real factor, gp_Dir2d & duv);
@@ -1585,13 +1500,13 @@ class TopOpeBRepTool_TOOL {
 		Standard_Real minDUV(const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		Standard_Boolean outUVbounds(const gp_Pnt2d &uv, const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","stuvF(const uv, const F)->[Standard_IntegerStandard_Integer]");
 		void stuvF(const gp_Pnt2d &uv, const TopoDS_Face &F, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const BRepAdaptor_Curve &BC, gp_Vec & Tg);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const TopoDS_Edge &E, gp_Vec & Tg);
-		%feature("autodoc", "1");
+		%feature("autodoc","TgINSIDE(const v, const E)->Standard_Integer");
 		Standard_Boolean TgINSIDE(const TopoDS_Vertex &v, const TopoDS_Edge &E, gp_Vec & Tg, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec2d Tg2d(const Standard_Integer iv, const TopoDS_Edge &E, const TopOpeBRepTool_C2DF &C2DF);
@@ -1615,9 +1530,9 @@ class TopOpeBRepTool_TOOL {
 		Standard_Boolean IsQuad(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		Standard_Boolean IsQuad(const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","CurvE(const E, Standard_Real par, const tg0)->Standard_Real");
 		Standard_Boolean CurvE(const TopoDS_Edge &E, const Standard_Real par, const gp_Dir &tg0, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","CurvF(const F, const uv, const tg0)->Standard_Real");
 		Standard_Boolean CurvF(const TopoDS_Face &F, const gp_Pnt2d &uv, const gp_Dir &tg0, Standard_Real &OutValue, Standard_Boolean & direct);
 		%feature("autodoc", "1");
 		Standard_Boolean UVISO(const Handle_Geom2d_Curve &PC, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
@@ -1637,11 +1552,11 @@ class TopOpeBRepTool_TOOL {
 		Standard_Real Matter(const gp_Vec &d1, const gp_Vec &d2, const gp_Vec &ref);
 		%feature("autodoc", "1");
 		Standard_Real Matter(const gp_Vec2d &d1, const gp_Vec2d &d2);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matter(const xx1, const nt1, const xx2, const nt2, Standard_Real tola)->Standard_Real");
 		Standard_Boolean Matter(const gp_Dir &xx1, const gp_Dir &nt1, const gp_Dir &xx2, const gp_Dir &nt2, const Standard_Real tola, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matter(const f1, const f2, const e, Standard_Real pare, Standard_Real tola)->Standard_Real");
 		Standard_Boolean Matter(const TopoDS_Face &f1, const TopoDS_Face &f2, const TopoDS_Edge &e, const Standard_Real pare, const Standard_Real tola, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MatterKPtg(const f1, const f2, const e)->Standard_Real");
 		Standard_Boolean MatterKPtg(const TopoDS_Face &f1, const TopoDS_Face &f2, const TopoDS_Edge &e, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Getstp3dF(const gp_Pnt &p, const TopoDS_Face &f, gp_Pnt2d & uv, TopAbs_State & st);
@@ -1682,11 +1597,11 @@ class TopOpeBRepTool_ShapeTool {
 		Handle_Geom_Surface BASISSURFACE(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface BASISSURFACE(const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","UVBOUNDS(const S)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void UVBOUNDS(const Handle_Geom_Surface &S, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","UVBOUNDS(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void UVBOUNDS(const TopoDS_Face &F, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","AdjustOnPeriodic(const S)->[Standard_RealStandard_Real]");
 		void AdjustOnPeriodic(const TopoDS_Shape &S, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Closed(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1702,9 +1617,9 @@ class TopOpeBRepTool_ShapeTool {
 		Standard_Boolean CurvesSameOriented(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2);
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesSameOriented(const TopoDS_Shape &E1, const TopoDS_Shape &E2);
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeData(const BRAC, Standard_Real P)->Standard_Real");
 		Standard_Real EdgeData(const BRepAdaptor_Curve &BRAC, const Standard_Real P, gp_Dir & T, gp_Dir & N, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeData(const E, Standard_Real P)->Standard_Real");
 		Standard_Real EdgeData(const TopoDS_Shape &E, const Standard_Real P, gp_Dir & T, gp_Dir & N, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Resolution3dU(const Handle_Geom_Surface &SU, const Standard_Real Tol2d);

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module XSControl
 
 %include XSControl_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include XSControl_dependencies.i
 
@@ -530,7 +444,7 @@ class XSControl_Controller : public MMgt_TShared {
 		void SetModeWrite(const Standard_Integer modemin, const Standard_Integer modemax, const Standard_Boolean shape=1);
 		%feature("autodoc", "1");
 		void SetModeWriteHelp(const Standard_Integer modetrans, const char * help, const Standard_Boolean shape=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","ModeWriteBounds(Standard_Boolean shape=1)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean ModeWriteBounds(Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean shape=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModeWrite(const Standard_Integer modetrans, const Standard_Boolean shape=1) const;
@@ -689,7 +603,7 @@ class XSControl_Reader {
 		void PrintCheckTransfer(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
 		%feature("autodoc", "1");
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetStatsTransfer(const list)->[Standard_Integer, Standard_IntegerStandard_Integer]");
 		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
@@ -763,7 +677,7 @@ class XSControl_Utils {
 		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
 		%feature("autodoc", "1");
 		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","DateValues(Standard_CString text)->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
 		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;

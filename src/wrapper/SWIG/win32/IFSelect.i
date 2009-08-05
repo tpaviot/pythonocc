@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IFSelect
 
 %include IFSelect_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IFSelect_dependencies.i
 
@@ -2583,7 +2497,7 @@ class IFSelect_Signature : public Interface_SignType {
 	public:
 		%feature("autodoc", "1");
 		void SetIntCase(const Standard_Boolean hasmin, const Standard_Integer valmin, const Standard_Boolean hasmax, const Standard_Integer valmax);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsIntCase()->[Standard_Integer, Standard_Integer]");
 		Standard_Boolean IsIntCase(Standard_Boolean & hasmin, Standard_Integer &OutValue, Standard_Boolean & hasmax, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void AddCase(const char * acase);
@@ -2762,7 +2676,7 @@ class IFSelect_Activator : public MMgt_TShared {
 		void SetCurrentAlias(const char * conf);
 		%feature("autodoc", "1");
 		TCollection_AsciiString Alias(const char * command);
-		%feature("autodoc", "1");
+		%feature("autodoc","Select(Standard_CString command)->Standard_Integer");
 		Standard_Boolean Select(const char * command, Standard_Integer &OutValue, Handle_IFSelect_Activator & actor);
 		%feature("autodoc", "1");
 		Standard_Integer Mode(const char * command);
@@ -3015,13 +2929,13 @@ class IFSelect_Dispatch : public MMgt_TShared {
 		IFSelect_SelectionIterator Selections() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean CanHaveRemainder() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LimitedMax(Standard_Integer nbent)->Standard_Integer");
 		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator GetEntities(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsCount(const G)->Standard_Integer");
 		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
@@ -3811,9 +3725,9 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 		Standard_Integer CountValue() const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LimitedMax(Standard_Integer nbent)->Standard_Integer");
 		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsCount(const G)->Standard_Integer");
 		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
@@ -3903,7 +3817,7 @@ class IFSelect_ShareOutResult {
 		Handle_IFSelect_Dispatch Dispatch() const;
 		%feature("autodoc", "1");
 		Standard_Integer DispatchRank() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsInDispatch()->[Standard_Integer, Standard_Integer]");
 		void PacketsInDispatch(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Interface_EntityIterator PacketRoot();
@@ -4384,7 +4298,7 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 		void DumpEntity(const Handle_Interface_InterfaceModel &model, const Handle_Interface_Protocol &protocol, const Handle_Standard_Transient &entity, const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
 		void SetDumpLevels(const Standard_Integer def, const Standard_Integer max);
-		%feature("autodoc", "1");
+		%feature("autodoc","DumpLevels()->[Standard_Integer, Standard_Integer]");
 		void DumpLevels(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDumpHelp(const Standard_Integer level, const char * help);
@@ -4513,9 +4427,9 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 		Standard_Integer CountValue() const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LimitedMax(Standard_Integer nbent)->Standard_Integer");
 		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsCount(const G)->Standard_Integer");
 		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
@@ -4730,9 +4644,9 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 		IFSelect_DispGlobal();
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LimitedMax(Standard_Integer nbent)->Standard_Integer");
 		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsCount(const G)->Standard_Integer");
 		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
@@ -5097,7 +5011,7 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 		Standard_Boolean AddNum(const Standard_Integer nument);
 		%feature("autodoc", "1");
 		Standard_Integer Count() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Item(Standard_Integer num)->Standard_Integer");
 		Standard_Boolean Item(const Standard_Integer num, Handle_IFSelect_GeneralModifier & modif, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer ItemNum(const Standard_Integer nument) const;
@@ -5739,9 +5653,9 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 		IFSelect_DispPerOne();
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LimitedMax(Standard_Integer nbent)->Standard_Integer");
 		virtual		Standard_Boolean LimitedMax(const Standard_Integer nbent, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PacketsCount(const G)->Standard_Integer");
 		virtual		Standard_Boolean PacketsCount(const Interface_Graph &G, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module PColStd
 
 %include PColStd_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include PColStd_dependencies.i
 
@@ -1107,6 +1021,7 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -1409,6 +1324,7 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -1508,6 +1424,7 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -1694,6 +1611,7 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -1827,6 +1745,7 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -1912,6 +1831,7 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -1979,6 +1899,7 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 		Handle_Standard_Persistent Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -2332,6 +2253,7 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -2476,6 +2398,7 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -2562,6 +2485,7 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 		void ChangeForwardPointer(const Handle_PColStd_HDoubleListOfReal &ForwardPointer);
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -2662,6 +2586,7 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -2816,6 +2741,7 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -2914,6 +2840,7 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -2998,6 +2925,7 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 		Handle_Standard_Persistent Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -3169,6 +3097,7 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -3292,6 +3221,7 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
 			std::stringstream s;
@@ -3367,6 +3297,7 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -3515,6 +3446,7 @@ class PColStd_HArray1OfExtendedString : public Standard_Persistent {
 		Handle_PCollection_HExtendedString Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module ShapeFix
 
 %include ShapeFix_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include ShapeFix_dependencies.i
 
@@ -1375,7 +1289,7 @@ class ShapeFix_IntersectionTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real preci) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","FixSelfIntersectWire(const face)->[Standard_Integer, Standard_IntegerStandard_Integer]");
 		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
@@ -1503,7 +1417,7 @@ class ShapeFix_SplitTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param1, const Standard_Real param2, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d)->Standard_Integer");
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };

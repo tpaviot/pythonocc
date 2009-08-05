@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IntCurveSurface
 
 %include IntCurveSurface_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IntCurveSurface_dependencies.i
 
@@ -200,11 +114,11 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc", "1");
+		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
-		%feature("autodoc", "1");
+		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge)->[Standard_IntegerStandard_Integer]");
 		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnBound(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
@@ -313,7 +227,7 @@ class IntCurveSurface_IntersectionPoint {
 		IntCurveSurface_IntersectionPoint(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
 		%feature("autodoc", "1");
 		void SetValues(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
@@ -440,7 +354,7 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 		Standard_Real Root(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Intervals(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -566,7 +480,7 @@ class IntCurveSurface_TheExactHInter {
 		const gp_Pnt & Point() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnCurve() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParameterOnSurface()->[Standard_Real, Standard_Real]");
 		void ParameterOnSurface(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		IntCurveSurface_TheCSFunctionOfHInter & Function();
@@ -585,11 +499,11 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 	public:
 		%feature("autodoc", "1");
 		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

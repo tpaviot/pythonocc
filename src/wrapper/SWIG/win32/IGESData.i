@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IGESData
 
 %include IGESData_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IGESData_dependencies.i
 
@@ -1408,7 +1322,7 @@ class IGESData_DirPart {
 		IGESData_DirPart();
 		%feature("autodoc", "1");
 		void Init(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4, const Standard_Integer i5, const Standard_Integer i6, const Standard_Integer i7, const Standard_Integer i8, const Standard_Integer i9, const Standard_Integer i19, const Standard_Integer i11, const Standard_Integer i12, const Standard_Integer i13, const Standard_Integer i14, const Standard_Integer i15, const Standard_Integer i16, const Standard_Integer i17, const char * res1, const char * res2, const char * label, const char * subscript);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_CString res1, Standard_CString res2, Standard_CString label, Standard_CString subscript)->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_IntegerStandard_IntegerStandard_IntegerStandard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, const char * res1, const char * res2, const char * label, const char * subscript) const;
 		%feature("autodoc", "1");
 		IGESData_IGESType Type() const;
@@ -1827,7 +1741,7 @@ class IGESData_WriterLib {
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
-		%feature("autodoc", "1");
+		%feature("autodoc","Select(const obj)->Standard_Integer");
 		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -1864,7 +1778,7 @@ class IGESData_SpecificLib {
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
-		%feature("autodoc", "1");
+		%feature("autodoc","Select(const obj)->Standard_Integer");
 		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_SpecificModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -2145,17 +2059,17 @@ class IGESData_ParamReader {
 		IGESData_ParamCursor CurrentList(const Standard_Integer nb, const Standard_Integer size=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean DefinedElseSkip();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadInteger(const PC)->Standard_Integer");
 		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadInteger(const PC, Standard_CString mess)->Standard_Integer");
 		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, const char * mess, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Standard_Boolean & val, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const char * mess, Standard_Boolean & val, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadReal(const PC)->Standard_Real");
 		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadReal(const PC, Standard_CString mess)->Standard_Real");
 		Standard_Boolean ReadReal(const IGESData_ParamCursor &PC, const char * mess, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadXY(const IGESData_ParamCursor &PC, Message_Msg & amsg, gp_XY & val);
@@ -2197,13 +2111,13 @@ class IGESData_ParamReader {
 		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, Message_Msg & amsg, Interface_EntityList & val, const Standard_Boolean ord=1);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadEntList(const Handle_IGESData_IGESReaderData &IR, const IGESData_ParamCursor &PC, const char * mess, Interface_EntityList & val, const Standard_Boolean ord=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadingReal(Standard_Integer num)->Standard_Real");
 		Standard_Boolean ReadingReal(const Standard_Integer num, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadingReal(Standard_Integer num, Standard_CString mess)->Standard_Real");
 		Standard_Boolean ReadingReal(const Standard_Integer num, const char * mess, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadingEntityNumber(Standard_Integer num)->Standard_Integer");
 		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadingEntityNumber(Standard_Integer num, Standard_CString mess)->Standard_Integer");
 		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, const char * mess, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void SendFail(const Message_Msg &amsg);
@@ -2395,6 +2309,7 @@ class IGESData_IGESWriter {
 		void Send(const gp_XYZ &val);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString SectionStrings(const Standard_Integer numsec) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IntSurf
 
 %include IntSurf_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IntSurf_dependencies.i
 
@@ -447,7 +361,7 @@ class IntSurf_Quadric {
 		Standard_Real Distance(const gp_Pnt &P) const;
 		%feature("autodoc", "1");
 		gp_Vec Gradient(const gp_Pnt &P) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ValAndGrad(const P)->Standard_Real");
 		void ValAndGrad(const gp_Pnt &P, Standard_Real &OutValue, gp_Vec & Grad) const;
 		%feature("autodoc", "1");
 		GeomAbs_SurfaceType TypeQuadric() const;
@@ -467,7 +381,7 @@ class IntSurf_Quadric {
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
 		gp_Vec Normale(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters(const P)->[Standard_RealStandard_Real]");
 		void Parameters(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Vec Normale(const gp_Pnt &P) const;
@@ -551,11 +465,11 @@ class IntSurf_PntOn2S {
 		void SetValue(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2);
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS1()->[Standard_Real, Standard_Real]");
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS2()->[Standard_Real, Standard_Real]");
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -643,7 +557,7 @@ class IntSurf_PathPoint {
 		void SetPassing(const Standard_Boolean Pass);
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Value2d()->[Standard_Real, Standard_Real]");
 		void Value2d(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPassingPnt() const;
@@ -655,7 +569,7 @@ class IntSurf_PathPoint {
 		const gp_Dir2d & Direction2d() const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -724,7 +638,7 @@ class IntSurf_PathPointTool {
 		IntSurf_PathPointTool();
 		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value2d(const PStart)->[Standard_RealStandard_Real]");
 		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
@@ -736,7 +650,7 @@ class IntSurf_PathPointTool {
 		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult)->[Standard_RealStandard_Real]");
 		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -788,7 +702,7 @@ class IntSurf_InteriorPoint {
 		void SetValue(const gp_Pnt &P, const Standard_Real U, const Standard_Real V, const gp_Vec &Direc, const gp_Vec2d &Direc2d);
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real UParameter() const;
@@ -1005,7 +919,7 @@ class IntSurf_InteriorPointTool {
 		IntSurf_InteriorPointTool();
 		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value2d(const PStart)->[Standard_RealStandard_Real]");
 		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
@@ -1055,7 +969,7 @@ class IntSurf_QuadricTool {
 		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 		%feature("autodoc", "1");
 		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec & V);
-		%feature("autodoc", "1");
+		%feature("autodoc","ValueAndGradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z)->Standard_Real");
 		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec & V);
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const IntSurf_Quadric &Quad);

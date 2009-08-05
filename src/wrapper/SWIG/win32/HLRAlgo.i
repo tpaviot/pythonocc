@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module HLRAlgo
 
 %include HLRAlgo_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include HLRAlgo_dependencies.i
 
@@ -756,7 +670,7 @@ class HLRAlgo_Projector {
 		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Project(const P)->[Standard_Real, Standard_RealStandard_Real]");
 		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
@@ -783,7 +697,7 @@ class HLRAlgo_EdgeIterator {
 		Standard_Boolean MoreHidden() const;
 		%feature("autodoc", "1");
 		void NextHidden();
-		%feature("autodoc", "1");
+		%feature("autodoc","Hidden()->[Standard_Real, Standard_Real]");
 		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void InitVisible(const HLRAlgo_EdgeStatus &status);
@@ -791,7 +705,7 @@ class HLRAlgo_EdgeIterator {
 		Standard_Boolean MoreVisible() const;
 		%feature("autodoc", "1");
 		void NextVisible();
-		%feature("autodoc", "1");
+		%feature("autodoc","Visible()->[Standard_Real, Standard_Real]");
 		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
 };
@@ -1085,7 +999,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		Standard_Boolean MoreHide() const;
 		%feature("autodoc", "1");
 		void NextHide();
-		%feature("autodoc", "1");
+		%feature("autodoc","Hide()->Standard_Integer");
 		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		void InitShow();
@@ -1093,7 +1007,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		Standard_Boolean MoreShow() const;
 		%feature("autodoc", "1");
 		void NextShow();
-		%feature("autodoc", "1");
+		%feature("autodoc","Show()->Standard_Integer");
 		void Show(Standard_Address & Coordinates, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1681,11 +1595,11 @@ class HLRAlgo_EdgeStatus {
 		HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbVisiblePart() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","VisiblePart(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void Hide(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd, const Standard_Boolean OnFace, const Standard_Boolean OnBoundary);
@@ -1720,7 +1634,7 @@ class HLRAlgo_Coincidence {
 		void Set2D(const Standard_Integer FE, const Standard_Real Param);
 		%feature("autodoc", "1");
 		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value2D()->[Standard_Integer, Standard_Real]");
 		void Value2D(Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;

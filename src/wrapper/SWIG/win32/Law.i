@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Law
 
 %include Law_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Law_dependencies.i
 
@@ -402,13 +316,13 @@ class Law_Function : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc", "1");
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -507,13 +421,13 @@ class Law_Constant : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc", "1");
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -665,13 +579,13 @@ class Law_Composite : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc", "1");
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Law_Function & ChangeElementaryLaw(const Standard_Real W);
@@ -797,13 +711,13 @@ class Law_Linear : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc", "1");
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -887,7 +801,7 @@ class Law_BSpline : public MMgt_TShared {
 		void SetKnots(const TColStd_Array1OfReal &K);
 		%feature("autodoc", "1");
 		void SetKnot(const Standard_Integer Index, const Standard_Real K, const Standard_Integer M);
-		%feature("autodoc", "1");
+		%feature("autodoc","PeriodicNormalization()->Standard_Real");
 		void PeriodicNormalization(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPeriodic();
@@ -915,25 +829,25 @@ class Law_BSpline : public MMgt_TShared {
 		Standard_Integer Degree() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","D0(Standard_Real U)->Standard_Real");
 		void D0(const Standard_Real U, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","D1(Standard_Real U)->[Standard_RealStandard_Real]");
 		void D1(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real U)->[Standard_Real, Standard_RealStandard_Real]");
 		void D2(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","D3(Standard_Real U)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void D3(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Real LocalValue(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalD0(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->Standard_Real");
 		void LocalD0(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalD1(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_Real]");
 		void LocalD1(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalD2(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_RealStandard_Real]");
 		void LocalD2(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalD3(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
 		void LocalD3(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real LocalDN(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Integer N) const;
@@ -955,7 +869,7 @@ class Law_BSpline : public MMgt_TShared {
 		Standard_Integer LastUKnotIndex() const;
 		%feature("autodoc", "1");
 		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
@@ -977,9 +891,9 @@ class Law_BSpline : public MMgt_TShared {
 		void Weights(TColStd_Array1OfReal & W) const;
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePointAndTangent(Standard_Real U, Standard_Real NewValue, Standard_Real Derivative, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition)->Standard_Integer");
 		void MovePointAndTangent(const Standard_Real U, const Standard_Real NewValue, const Standard_Real Derivative, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->Standard_Real");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Law_BSpline Copy() const;

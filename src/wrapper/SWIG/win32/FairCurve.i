@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module FairCurve
 
 %include FairCurve_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include FairCurve_dependencies.i
 
@@ -210,8 +124,8 @@ class FairCurve_Batten {
 		void SetSlope(const Standard_Real Slope);
 		%feature("autodoc", "1");
 		void SetSlidingFactor(const Standard_Real SlidingFactor);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode & Code, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000)->FairCurve_AnalysisCode");
+		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real SlidingOfReference() const;
 		%feature("autodoc", "1");
@@ -236,6 +150,7 @@ class FairCurve_Batten {
 		Standard_Real GetSlidingFactor() const;
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve Curve() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -264,7 +179,7 @@ class FairCurve_BattenLaw : public math_Function {
 		void SetHeigth(const Standard_Real Heigth);
 		%feature("autodoc", "1");
 		void SetSlope(const Standard_Real Slope);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real T)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real T, Standard_Real &OutValue);
 
 };
@@ -304,14 +219,15 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		void SetCurvature2(const Standard_Real Curvature);
 		%feature("autodoc", "1");
 		void SetPhysicalRatio(const Standard_Real Ratio);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode & ACode, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000)->FairCurve_AnalysisCode");
+		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real GetCurvature1() const;
 		%feature("autodoc", "1");
 		Standard_Real GetCurvature2() const;
 		%feature("autodoc", "1");
 		Standard_Real GetPhysicalRatio() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -334,13 +250,13 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(const X)->Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(const X)->Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(const X)->Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Variable(math_Vector & X) const;

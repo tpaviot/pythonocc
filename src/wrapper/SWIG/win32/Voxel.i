@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Voxel
 
 %include Voxel_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Voxel_dependencies.i
 
@@ -185,15 +99,15 @@ class Voxel_DS {
 		Standard_Integer GetNbY() const;
 		%feature("autodoc", "1");
 		Standard_Integer GetNbZ() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetCenter(Standard_Integer ix, Standard_Integer iy, Standard_Integer iz)->[Standard_RealStandard_RealStandard_Real]");
 		void GetCenter(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetVoxel(Standard_Real x, Standard_Real y, Standard_Real z)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		Standard_Boolean GetVoxel(const Standard_Real x, const Standard_Real y, const Standard_Real z, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetVoxelX(Standard_Real x)->Standard_Integer");
 		Standard_Boolean GetVoxelX(const Standard_Real x, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetVoxelY(Standard_Real y)->Standard_Integer");
 		Standard_Boolean GetVoxelY(const Standard_Real y, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetVoxelZ(Standard_Real z)->Standard_Integer");
 		Standard_Boolean GetVoxelZ(const Standard_Real z, Standard_Integer &OutValue) const;
 
 };
@@ -270,7 +184,7 @@ class Voxel_Selector {
 		void SetVoxels(const Voxel_BoolDS &voxels);
 		%feature("autodoc", "1");
 		void SetVoxels(const Voxel_ColorDS &voxels);
-		%feature("autodoc", "1");
+		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
@@ -375,7 +289,7 @@ class Voxel_FastConverter {
 		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
 		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer ithread=1)->Standard_Integer");
 		Standard_Boolean Convert(Standard_Integer &OutValue, const Standard_Integer ithread=1);
 		%feature("autodoc", "1");
 		Standard_Boolean FillInVolume(const Standard_Byte inner, const Standard_Integer ithread=1);

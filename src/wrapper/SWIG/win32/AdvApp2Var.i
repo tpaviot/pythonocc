@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module AdvApp2Var
 
 %include AdvApp2Var_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include AdvApp2Var_dependencies.i
 
@@ -315,7 +229,7 @@ class AdvApp2Var_Network {
 		AdvApp2Var_Network();
 		%feature("autodoc", "1");
 		AdvApp2Var_Network(const AdvApp2Var_SequenceOfPatch &Net, const TColStd_SequenceOfReal &TheU, const TColStd_SequenceOfReal &TheV);
-		%feature("autodoc", "1");
+		%feature("autodoc","FirstNotApprox()->Standard_Integer");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		AdvApp2Var_Patch & ChangePatch(const Standard_Integer Index);
@@ -325,7 +239,7 @@ class AdvApp2Var_Network {
 		void UpdateInU(const Standard_Real CuttingValue);
 		%feature("autodoc", "1");
 		void UpdateInV(const Standard_Real CuttingValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","SameDegree(Standard_Integer iu, Standard_Integer iv)->[Standard_IntegerStandard_Integer]");
 		void SameDegree(const Standard_Integer iu, const Standard_Integer iv, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbPatch() const;
@@ -387,7 +301,7 @@ class AdvApp2Var_Framework {
 		AdvApp2Var_Framework();
 		%feature("autodoc", "1");
 		AdvApp2Var_Framework(const AdvApp2Var_SequenceOfNode &Frame, const AdvApp2Var_SequenceOfStrip &UFrontier, const AdvApp2Var_SequenceOfStrip &VFrontier);
-		%feature("autodoc", "1");
+		%feature("autodoc","FirstNotApprox()->[Standard_Integer, Standard_Integer]");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue, Standard_Integer &OutValue, AdvApp2Var_Iso & anIso) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode(const GeomAbs_IsoType Type, const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;
@@ -793,6 +707,7 @@ class AdvApp2Var_ApproxAFunc2Var {
 		Standard_Real VFrontError(const Standard_Integer Dimension, const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real CritError(const Standard_Integer Dimension, const Standard_Integer Index) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {

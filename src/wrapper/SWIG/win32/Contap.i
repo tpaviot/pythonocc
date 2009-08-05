@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Contap
 
 %include Contap_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Contap_dependencies.i
 
@@ -1060,9 +974,9 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 		Standard_Integer LastPointIndex() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPassingPoint() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PassingPoint(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
 		void PassingPoint(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TangentVector()->Standard_Integer");
 		const gp_Vec & TangentVector(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentAtBegining() const;
@@ -1144,15 +1058,15 @@ class Contap_HContTool {
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplePoints(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
+		%feature("autodoc","SamplePoint(const S, Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void SamplePoint(const Handle_Adaptor3d_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean HasBeenSeen(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesOnArc(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds(const C)->[Standard_RealStandard_Real]");
 		void Bounds(const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Project(const C, const P)->Standard_Real");
 		Standard_Boolean Project(const Handle_Adaptor2d_HCurve2d &C, const gp_Pnt2d &P, Standard_Real &OutValue, gp_Pnt2d & Ptproj);
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
@@ -1160,7 +1074,7 @@ class Contap_HContTool {
 		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(const C, Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt & Pt, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index);
@@ -1168,9 +1082,9 @@ class Contap_HContTool {
 		void Vertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Handle_Adaptor3d_HVertex & V);
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","HasFirstPoint(const C, Standard_Integer Index)->Standard_Integer");
 		Standard_Boolean HasFirstPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","HasLastPoint(const C, Standard_Integer Index)->Standard_Integer");
 		Standard_Boolean HasLastPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllSolution(const Handle_Adaptor2d_HCurve2d &C);
@@ -1383,7 +1297,7 @@ class Contap_ThePointOfContour {
 		const gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnLine() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnArc() const;
@@ -1488,11 +1402,11 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 		void Set(const gp_Pnt &Eye, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		void Set(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples() const;
