@@ -24,16 +24,16 @@ class TestPAF(unittest.TestCase):
         self.assert_(p.X+2==12)
         self.assert_(p.X-2==8)
     
-    def test_rules_simple(self):
+    def test_Rule_simple(self):
         '''
         BrokeRule should be raised, since p.Y < 0.0
         '''
-        rules = Rules(p)
+        rule = Rule(p)
         p.X = 10
         p.Y = -10
-        rules.add_rule( "X", IsPositive )
-        rules.add_rule( "Y", IsPositive )
-        self.assertRaises(BrokeRule, rules.eval)
+        rule.add_rule( "X", IsPositive )
+        rule.add_rule( "Y", IsPositive )
+        self.assertRaises(BrokeRule, rule.eval)
         
 #    NOT DONE
 

@@ -191,7 +191,7 @@ class Context(object):
         """ Adds a relation to this set of parameters
         """
         if isinstance(relation,Relation):
-            self.register_callback(relation.Perform)
+            self.register_callback(relation.eval)
         else:
             raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
         
@@ -199,13 +199,14 @@ class Context(object):
         """
         Adds a rule to this parameter. Each time the parameter is updated,
         then the rule is checked"""
-        if isinstance(rule,Rule):
+        if isinstance(rule,Rules):
             self.register_callback(rule.Check)
         else:
             raise TypeError('%s is not a Rule object' % ( rule.__class__ ) )
     
     
     def set_parameter(self, name, value):
+        
         self.doc.NewCommand()
         self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value)
 

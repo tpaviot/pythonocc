@@ -21,7 +21,7 @@ from OCC.TCollection import TCollection_AsciiString
 
 
 try:
-    from sympy import Symbol
+    import sympy
     HAVE_SYMPY = True
 except ImportError:
     HAVE_SYMPY = False
@@ -37,133 +37,58 @@ def value(parameter_tuple):
     """
     return parameter_tuple[1]
 
-#class MyTuple(tuple):
-#    """ This class allows to do the following:
-#    t = (GEOM_Parameter,12)
-#    t + 3 -> 15
-#    t - 2 -> 10
-#    t * 4 -> 48
-#    etc.
-#    """
-#    def __add__(self,value):
-#        return self[1] + value
-#    
-#    def __sub__(self,value):
-#        return self[1] - value
-#    
-#    def __mul__(self,value):
-#        return self[1] * value
-#    
-#    def __div__(self,value):
-#        return self[1] / value
-#
-#    def get_value(self):
-#        """ Returns the value of this tuple
-#        """
-#        return self[1]
+class RelationError(Exception):
+    pass
 
 class Relation(object):
     """ Defines a relation between two or more parameters
     """
-    def __init__(self,parameter_class,string_parameter_name,relation):
-        # The relation is actually a sympy equation
+    def __init__(self,parameters_instance,string_parameter_name,relation, tolerance=0.0001):
+        '''
+        @param parameters_instance:            Parameters instance
+        @param string_parameter_name:      string of the argument on Parameters ( eg. Parameters.X -> "X" )
+        @param relation:                   Sympy equation
+        '''
+        
+        # assert isinstance(parameters_instance, Parameters)
+        assert issubclass(relation.__class__, sympy.core.basic.Basic ), 'relation should be a subclass of sympy.core.basic.Basic, got a %s' % ( relation.__class__)
+        
         self._relation = relation
-        self.p1 = parameter_class
-        self.p2 = string_parameter_name
-        self.p1.register_relation(self)
-        self.already_performed = False
-        self._subs = {}
+        self.parameters = parameters_instance
+        self.param_str = string_parameter_name
+        self.tolerance = tolerance
+        self.parameters.context.register_relation(self)
         
     def BuildSubs(self):
         """ First have to set all the parameters keys/values so that sympy can compute
         the relation
         """
         d = {}
-        parameter_names = self.p1.GetAllParameters().keys()
-        for parameter_name in parameter_names:
-            param_tuple = self.p1.__getattribute__(parameter_name)           
-            d[symb(param_tuple)] = value(param_tuple)
-        self._subs = d
+        for v in self.parameters.GetAllParameters().itervalues():
+            d[v.symbol.name]=v.value#            
+        return d
         
-    def Perform(self):
-        self.BuildSubs() #necessary to update with all current values
-        new_parameter_value = float(self._relation.evalf(subs=self._subs)) #require sympy library
-        # Compare with the old value to avoid setting the parameter
-        # and have infinte recurrent calls 
-        old_value = self.p1.__getattribute__(self.p2)[1]
-        if not abs(new_parameter_value-old_value)<0.0001:
-            self.p1.__setattr__(self.p2,new_parameter_value)
-
-
-class Parameter(GEOM_Parameter):
-    def __init__(self, name, value):
-        # Check if the param name is a string
-        assert(isinstance(name,str))
-        # Init parameter
-        self._name = name
-        GEOM_Parameter.__init__(self,TCollection_AsciiString(name))
-        print "Parameter %s created"%name
+    def eval(self):
+        _subs = self.BuildSubs()
+        try:
+            # Compare with the old value to avoid setting the parameter
+            # and have infinte recurrent calls 
+            new_parameter_value = self._relation.evalf(subs=_subs, n=10) #require sympy library
+            new_parameter_value = float(new_parameter_value)
+            old_value = getattr(self.parameters, self.param_str).value
+            print '%s :old parameter value, new parameter value: %s %s ', ( self.param_str, old_value, new_parameter_value ) 
+            error = abs(new_parameter_value-old_value)
+            print 'error',error
+        except:
+            print 'error evaluating relation\nrelation: %s' % (self._relation)
+            raise 
         
-        # Create a sympy Symbol so that it's possible to include it in a relation
-        # --- TODO one problem of this method is that when Undo is called
-        # the ._symbol attribute will no more be in sync with the Parameter value...
-        # so, to do this well we need to add a callback from Undo such that these 
-        # attributes will be updated
-        # Not easy at all to implement
-        self._symbol = Symbol(name)
-        self._value = value
+        if error > self.tolerance:
+            setattr(self.parameters, self.param_str, new_parameter_value)
 
-    def __add__(self,value):
-        return self._value + value
-    
-    def __sub__(self,value):
-        return self._value - value
-    
-    def __mul__(self,value):
-        return self._value * value
-    
-    def __div__(self,value):
-        return self._value / value
-        
-    @property
-    def symbol(self):
-        '''
-        returns a Symbol instance based on the value of the parameter
-        '''
-        return self._symbol
-
-    @property
-    def value(self):
-        """ Returns the value of the parameter
-        """
-        return self._value
     
 class BrokeRule(Exception):
     pass
-
-#class Rules(object):
-#    def __init__(self, parameter_class, string_parameter_name, function):#,parameter_object,p):
-#        """ Adds a rule over the parameter
-#        """
-#        self.attach_parameter(parameter_class,string_parameter_name)
-#        self.callbacks = []
-#        self.register_condition(function)
-#        
-#    def attach_parameter(self,parameter_class,string_parameter_name):
-#        """ For instance, attach_parameter(parameters,"X")
-#        """
-#        self.p1 = parameter_class
-#        self.p2 = string_parameter_name
-#        self.p1.register_rule(self)
-#        
-#    def register_condition(self,call):
-#        assert callable(call)
-#        self.callbacks.append(call)
-#
-#    def Check(self):
-#        value = self.p1.__getattribute__(self.p2).value
-#        print 'value:',value
-#        assert self._function(value),'Rule broken over parameter %s'%self.p2
 
 class RulesError(Exception):
     pass
@@ -197,8 +122,45 @@ class Rules(object):
                 print 'with parameter:', param
                 # re-raising the old exception
                 raise
+
+
+class Parameter(GEOM_Parameter):
+    def __init__(self, name, value):
+        # Check if the param name is a string
+        assert(isinstance(name,str))
+        # Init parameter
+        self._name = name
+        GEOM_Parameter.__init__(self,TCollection_AsciiString(name))
+        print "Parameter %s created"%name
         
-            
+        self._symbol = sympy.Symbol(name)
+        self._value = value
+
+    def __add__(self,value):
+        return self._value + value
+    
+    def __sub__(self,value):
+        return self._value - value
+    
+    def __mul__(self,value):
+        return self._value * value
+    
+    def __div__(self,value):
+        return self._value / value
+        
+    @property
+    def symbol(self):
+        '''
+        returns a Symbol instance based on the value of the parameter
+        '''
+        return self._symbol
+
+    @property
+    def value(self):
+        """ Returns the value of the parameter
+        """
+        return self._value
+
 
 class Parameters(object):
     """ This class defines a set of parameters that are handled by both
@@ -228,64 +190,19 @@ class Parameters(object):
 
         # Set the attribute value    
         object.__setattr__(self, name, value)
+        
+        # create a Parameter instance, and add it to the dict
+        # that shadows self.attributes
+        self._parameters[name] = Parameter(name, value)
+        
+        # add the parameter to the Interpreter ( which does the real work )
         self.context.set_parameter(name,value)
-
-        # Create the parameter (if not already done)
-        if not self._parameters.has_key(name):
-            self._parameters[name] = Parameter(name, value)
        
     def __getattribute__(self, name):
-        
-        # this is _really_ ugly and confusing
-        # with getters and setters we could find out who is getting a value
-        # and return Geom_Parameter when class X calls, return a Symbol when class Y calls 
-        # still, its much more clear to use properties
-        # such that you just use Parameter.geom / Parameter.symbol
-        
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
             print 'parameter: %s value: %s' % (name, attr)                     
-            #return MyTuple((self._parameters[name],attr))
-            tmp = self._parameters[name]
             return self._parameters[name]
         else:
             return attr
-
-
-
-
-
-#
-#class RevealAccess(object):
-#    """A data descriptor that sets and returns values
-#       normally and prints a message logging their access.
-#    """
-#    def __init__(self, initval=None, name='var'):
-#        self.val = initval
-#        self.name = name
-#    
-#    def __get__(self, obj, objtype):
-#        print 'Retrieving', self.name
-#        print 'obj:', obj
-#        print 'objtype:', objtype
-#        return self.val
-#    
-#    def __set__(self, obj, val):
-#        print 'obj:', obj
-#        print 'Updating' , self.name
-#        self.val = val
-#
-#class MyClass(object):
-#    x = RevealAccess(10, 'var "x"')
-#    y = 5
-#
-#m = MyClass()
-#m.x = p.X
-
-
-
-
-
-
-
 
