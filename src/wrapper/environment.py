@@ -97,12 +97,9 @@ try:
     else:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
-    # I dont understand why the nonsense variables are set
-    # better to raise a EnviromentError?
-    raise EnviromentError('the $CASROOT variable was not set.\nmake sure to set up your enviroment variables properly')    
-    #OCC_ROOT = None
-    #OCC_INC = '/your_path'
-    #OCC_LIB = '/your_lib'
+    OCC_ROOT = None
+    OCC_INC = '/your_path'
+    OCC_LIB = '/your_lib'
     
 
 if sys.platform=='win32':
@@ -113,7 +110,9 @@ if sys.platform=='win32':
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\
-                     ('__PYTHONOCC_MAXINT__',sys.maxint)]   
+                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
+    if sys.version_info[:3] >= (2,6,0):
+        DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
     ECA = ['/GL','/link']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
