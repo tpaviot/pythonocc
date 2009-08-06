@@ -18,8 +18,8 @@ from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
 from OCC.AIS2D import *
 #box = file_to_shape('../../../../data/_3dmodels/aube_pleine.stp')
-box = file_to_shape('../../../../data/_3dmodels/Pump_Bottom.brep')
-#box = BRepPrimAPI_MakeBox(1,1,1).Shape()
+#box = file_to_shape('../../../../data/_3dmodels/Pump_Bottom.brep')
+box = BRepPrimAPI_MakeSphere(40).Shape()
 
 
 box_ais = display.DisplayShape(box)
@@ -27,7 +27,7 @@ display.Context.SetTransparency(box_ais, 0.8)
 
 # make the PostScript plotter 
 
-from OCC.PS_Driver import *
+from OCC.PS import *
 from OCC.PlotMgt import *
 
 from OCC.TCollection import *
@@ -134,18 +134,20 @@ notes printing:
 # THIS IS THER INTERESTING PART
 # FAILS WHEN CALLING projection.Add
 #===============================================================================
-
-'''
-
-
-projection = AIS2D_ProjShape(proj)
+import ipdb; ipdb.set_trace()
+#projection = AIS2D_ProjShape()
+projection = AIS2D_ProjShape(proj, 3, True, True)
 projection.SetContext(display2d.Context_handle)
+##projection.SetProjector(proj)
+#projection.SetPolyAlgo(False) # if not set construction error is raised!
+##
+##projection.SetNbIsos(0)
+##projection.SetHLMode(False)
+#
 projection.Add(box)
-
-display2d.Context.Load( projection.GetHandle() )
-display2d.Context.Display( projection.GetHandle() )
-
-'''
+#
+#display2d.Context.Load( projection.GetHandle() )
+#display2d.Context.Display( projection.GetHandle() )
 
 start_display()
 start_display2d()

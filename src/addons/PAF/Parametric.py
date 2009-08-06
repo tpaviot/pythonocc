@@ -19,6 +19,7 @@ from OCC.SGEOM import GEOM_Solver,GEOM_Parameter
 from OCC.TDF import TDF_LabelSequence
 from OCC.TCollection import TCollection_AsciiString
 
+
 try:
     from sympy import Symbol
     HAVE_SYMPY = True
@@ -36,31 +37,31 @@ def value(parameter_tuple):
     """
     return parameter_tuple[1]
 
-class MyTuple(tuple):
-    """ This class allows to do the following:
-    t = (GEOM_Parameter,12)
-    t + 3 -> 15
-    t - 2 -> 10
-    t * 4 -> 48
-    etc.
-    """
-    def __add__(self,value):
-        return self[1] + value
-    
-    def __sub__(self,value):
-        return self[1] - value
-    
-    def __mul__(self,value):
-        return self[1] * value
-    
-    def __div__(self,value):
-        return self[1] / value
+#class MyTuple(tuple):
+#    """ This class allows to do the following:
+#    t = (GEOM_Parameter,12)
+#    t + 3 -> 15
+#    t - 2 -> 10
+#    t * 4 -> 48
+#    etc.
+#    """
+#    def __add__(self,value):
+#        return self[1] + value
+#    
+#    def __sub__(self,value):
+#        return self[1] - value
+#    
+#    def __mul__(self,value):
+#        return self[1] * value
+#    
+#    def __div__(self,value):
+#        return self[1] / value
+#
+#    def get_value(self):
+#        """ Returns the value of this tuple
+#        """
+#        return self[1]
 
-    def get_value(self):
-        """ Returns the value of this tuple
-        """
-        return self[1]
-    
 class Relation(object):
     """ Defines a relation between two or more parameters
     """
@@ -72,7 +73,7 @@ class Relation(object):
         self.p1.register_relation(self)
         self.already_performed = False
         self._subs = {}
-                
+        
     def BuildSubs(self):
         """ First have to set all the parameters keys/values so that sympy can compute
         the relation
@@ -130,35 +131,74 @@ class Parameter(GEOM_Parameter):
         returns a Symbol instance based on the value of the parameter
         '''
         return self._symbol
-    
+
     @property
     def value(self):
         """ Returns the value of the parameter
         """
         return self._value
     
-class Rule(object):
-    def __init__(self, parameter_class, string_parameter_name, function):#,parameter_object,p):
-        """ Adds a rule over the parameter
-        """
-        self.attach_parameter(parameter_class,string_parameter_name)
-        self.register_condition(function)
-        
-    def attach_parameter(self,parameter_class,string_parameter_name):
-        """ For instance, attach_parameter(parameters,"X")
-        """
-        self.p1 = parameter_class
-        self.p2 = string_parameter_name
-        self.p1.register_rule(self)
-        
-    def register_condition(self,call):
-        assert callable(call)
-        self._function = call
+class BrokeRule(Exception):
+    pass
 
-    def Check(self):
-        value = self.p1.__getattribute__(self.p2)[1]
-        assert self._function(value),'Rule broken over parameter %s'%self.p2
+#class Rules(object):
+#    def __init__(self, parameter_class, string_parameter_name, function):#,parameter_object,p):
+#        """ Adds a rule over the parameter
+#        """
+#        self.attach_parameter(parameter_class,string_parameter_name)
+#        self.callbacks = []
+#        self.register_condition(function)
+#        
+#    def attach_parameter(self,parameter_class,string_parameter_name):
+#        """ For instance, attach_parameter(parameters,"X")
+#        """
+#        self.p1 = parameter_class
+#        self.p2 = string_parameter_name
+#        self.p1.register_rule(self)
+#        
+#    def register_condition(self,call):
+#        assert callable(call)
+#        self.callbacks.append(call)
+#
+#    def Check(self):
+#        value = self.p1.__getattribute__(self.p2).value
+#        print 'value:',value
+#        assert self._function(value),'Rule broken over parameter %s'%self.p2
 
+class RulesError(Exception):
+    pass
+
+class Rules(object):
+    def __init__(self, parameters):
+        self.parameters = parameters
+        self._rules  = []
+        
+    def add_rule(self, attr, func):
+        assert callable(func), 'func not a callable'
+        try:
+            param = getattr(self.parameters, attr)
+        except AttributeError:
+            raise RulesError( 'Parameter instance hasnt got attribute %s' % ( attr ) )
+        
+        self._rules.append((param, func))
+        
+    def eval(self):
+        for r in self._rules:
+            try:
+                param, func = r
+                print 'param, func:',param,func
+                r = func(param)
+                print 'r:',r
+                if not r:
+                    raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( func, param))
+            except:
+                print 'exception raised while evaluating rules'
+                print 'the function that raised an error is:', func
+                print 'with parameter:', param
+                # re-raising the old exception
+                raise
+        
+            
 
 class Parameters(object):
     """ This class defines a set of parameters that are handled by both
@@ -206,7 +246,46 @@ class Parameters(object):
         if isinstance(attr, int) or isinstance(attr, float):
             print 'parameter: %s value: %s' % (name, attr)                     
             #return MyTuple((self._parameters[name],attr))
+            tmp = self._parameters[name]
             return self._parameters[name]
         else:
             return attr
+
+
+
+
+
+#
+#class RevealAccess(object):
+#    """A data descriptor that sets and returns values
+#       normally and prints a message logging their access.
+#    """
+#    def __init__(self, initval=None, name='var'):
+#        self.val = initval
+#        self.name = name
+#    
+#    def __get__(self, obj, objtype):
+#        print 'Retrieving', self.name
+#        print 'obj:', obj
+#        print 'objtype:', objtype
+#        return self.val
+#    
+#    def __set__(self, obj, val):
+#        print 'obj:', obj
+#        print 'Updating' , self.name
+#        self.val = val
+#
+#class MyClass(object):
+#    x = RevealAccess(10, 'var "x"')
+#    y = 5
+#
+#m = MyClass()
+#m.x = p.X
+
+
+
+
+
+
+
 

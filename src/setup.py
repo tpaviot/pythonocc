@@ -241,6 +241,9 @@ extension.append(Extension("OCC._Misc",
 #
 # Salome Geom extensions
 #
+
+
+
 if environment.WRAP_SALOME_GEOM:
     for module in Modules.SALOME_GEOM_MODULES:
         SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])

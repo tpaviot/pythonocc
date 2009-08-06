@@ -23,7 +23,7 @@ from OCC.TPrsStd import *
 from OCC.TNaming import *
 from wx import SafeYield
 
-from Parametric import Relation, Rule, Parameters
+from OCC.PAF.Parametric import Relation, Rules, Parameters
 from OCC.TCollection import TCollection_AsciiString
 
 class operation(object):

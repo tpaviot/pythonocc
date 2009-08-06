@@ -145,6 +145,8 @@ elif sys.platform=='linux2':
     EXTRA_LIBS = ['m','stc++',lib_python]
     
 elif sys.platform=='darwin':
+    
+    # --- OSX
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     # Fill in this part with your own settings
 #     os.environ['CC'] = 'g++'
@@ -160,23 +162,30 @@ elif sys.platform=='darwin':
 #     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
 #                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
 #                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
-#     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-#                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-#                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+
+
+
+    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
+                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+
 #     ECA = ['-O0','-march=%s'%platform.machine()]
-    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
+    #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
+    
+    # some how this variable is not being picked up
+    # returns '', not this...
+    # found more here: http://archives.free.net.ph/message/20081230.180055.3a24f2d2.ca.html
+    lib_python = '-L. -lpython2.5' 
 #     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
     OCC_LIB = '/usr/local/lib/OCC'
     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-    #OCC_INC = OCC_LIB+'/inc'
-    #SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','lib')
-    #SALOME_GEOM_LIB = 'usr/local/lib/SalomeGeom'
-    SALOME_GEOM_LIB = 'usr/local/lib'
-    #GCC_XML_PATH = '/usr/bin' 
-    GCC_XML_PATH = which('gccxml')
+    SALOME_GEOM_LIB = 'usr/local/lib/SalomeGeom'
+    #GCC_XML_PATH = which('gccxml')
+    GCC_XML_PATH = 'usr/bin'
+    
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
     
@@ -184,12 +193,35 @@ elif sys.platform=='darwin':
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
-    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+#    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+#                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
+#                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
-    EXTRA_LIBS = ['m','stc++',lib_python]
+    #EXTRA_LIBS = ['m','stc++',lib_python]
+    
+    '''
+        os.environ['CC'] = 'g++'
+        os.environ['CPP'] = 'g++'
+        OCC_LIB = '/usr/local/lib/OCC'
+        OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
+        SALOME_GEOM_INC = '/Volumes/DATA/Src/OCC/pythonocc/pythonocc_SVN/ThirdPart/SalomeGeometry/inc' # '/Volumes/OSX/usr/local/lib/SalomeGeom/include'
+        SALOME_GEOM_LIB = '/Volumes/OSX/usr/local/lib/SalomeGeom/lib'
+        GCC_XML_PATH = '/usr/bin' 
+        PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
+        DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
+                         ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
+                         ('__PYTHONOCC_MAXINT__',sys.maxint)]
+        SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+                     '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
+                     '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+        ECA = ['-O0']
+        #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
+        #ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+        ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
+    
+    '''    
+    
 
 else:
     raise "Unsupported platform\nCurrently win32 / linux / osx are supported"
