@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module math
 
 %include math_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include math_dependencies.i
 
@@ -203,6 +117,7 @@ class math_BracketedRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -237,6 +152,7 @@ class math_TrigonometricFunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -269,6 +185,7 @@ class math_BissecNewton {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -290,7 +207,7 @@ class math_MultipleVarFunction {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(const X)->Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -311,7 +228,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(const X)->Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 
 };
@@ -326,7 +243,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
 	public:
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(const X)->Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 
 };
@@ -366,6 +283,7 @@ class math_BFGS {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -401,6 +319,7 @@ class math_DirectPolynomialRoots {
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer Nieme) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -440,7 +359,7 @@ class math_IntegerRandom {
 %nodefaultctor math_Function;
 class math_Function {
 	public:
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -469,6 +388,7 @@ class math_Jacobi {
 		const math_Matrix & Vectors() const;
 		%feature("autodoc", "1");
 		void Vector(const Standard_Integer Num, math_Vector & V) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -537,6 +457,7 @@ class math_Powell {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -570,6 +491,7 @@ class math_FunctionRoot {
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -677,6 +599,7 @@ class math_Householder {
 		%feature("autodoc", "1");
 		const math_Matrix & AllValues() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -737,9 +660,9 @@ class math_FunctionAllRoots {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void GetInterval(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetIntervalState(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
 		void GetIntervalState(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -747,6 +670,7 @@ class math_FunctionAllRoots {
 		Standard_Real GetPoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer GetPointState(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -769,7 +693,7 @@ class math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
 		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -823,6 +747,7 @@ class math_Gauss {
 		Standard_Real Determinant() const;
 		%feature("autodoc", "1");
 		void Invert(math_Matrix & Inv) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -914,6 +839,7 @@ class math_GaussSingleIntegration {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1053,6 +979,7 @@ class math_Matrix {
 		%feature("autodoc", "1");
 		math_Matrix operator-();
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1111,6 +1038,7 @@ class math_GaussSetIntegration {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		const math_Vector & Value() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1236,6 +1164,7 @@ class math_Vector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Real Left, const math_Vector &Right);
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1302,6 +1231,7 @@ class math_Crout {
 		void Invert(math_Matrix & Inv) const;
 		%feature("autodoc", "1");
 		Standard_Real Determinant() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1379,6 +1309,7 @@ class math_NewtonFunctionRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1406,6 +1337,7 @@ class math_SVD {
 		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
 		%feature("autodoc", "1");
 		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1444,6 +1376,7 @@ class math_BrentMinimum {
 		Standard_Real Minimum() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1545,6 +1478,7 @@ class math_IntegerVector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1599,6 +1533,7 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		void FunctionSetErrors(math_Vector & Err) const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1626,10 +1561,11 @@ class math_BracketMinimum {
 		math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA, const Standard_Real FB);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","FunctionValues()->[Standard_Real, Standard_Real, Standard_Real]");
 		void FunctionValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1652,11 +1588,11 @@ class math_FunctionWithDerivative : public math_Function {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1742,6 +1678,7 @@ class math_Uzawa {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseCont() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1795,6 +1732,7 @@ class math_FunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1820,6 +1758,7 @@ class math_GaussLeastSquare {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		void Solve(const math_Vector &B, math_Vector & X) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1862,7 +1801,7 @@ class math_KronrodSingleIntegration {
 		Standard_Integer OrderReached() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterReached() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW)->[Standard_RealStandard_Real]");
 		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1901,6 +1840,7 @@ class math_FRPR {
 		void Gradient(math_Vector & Grad) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
@@ -1946,6 +1886,7 @@ class math_GaussMultipleIntegration {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {

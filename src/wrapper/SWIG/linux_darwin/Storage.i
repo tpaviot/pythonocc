@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Storage
 
 %include Storage_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Storage_dependencies.i
 
@@ -2204,7 +2118,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error EndWriteInfoSection();
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadInfoSection();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadInfo()->Standard_Integer");
 		virtual		void ReadInfo(Standard_Integer &OutValue, TCollection_AsciiString & dbVersion, TCollection_AsciiString & date, TCollection_AsciiString & schemaName, TCollection_AsciiString & schemaVersion, TCollection_ExtendedString & appName, TCollection_AsciiString & appVersion, TCollection_ExtendedString & objectType, TColStd_SequenceOfAsciiString & userInfo);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadInfoSection();
@@ -2232,7 +2146,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadTypeSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer TypeSectionSize();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadTypeInformations()->Standard_Integer");
 		virtual		void ReadTypeInformations(Standard_Integer &OutValue, TCollection_AsciiString & typeName);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadTypeSection();
@@ -2248,7 +2162,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadRootSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RootSectionSize();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadRoot()->Standard_Integer");
 		virtual		void ReadRoot(TCollection_AsciiString & rootName, Standard_Integer &OutValue, TCollection_AsciiString & aType);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRootSection();
@@ -2264,7 +2178,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadRefSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RefSectionSize();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadReferenceType()->[Standard_Integer, Standard_Integer]");
 		virtual		void ReadReferenceType(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRefSection();
@@ -2284,7 +2198,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error EndWriteDataSection();
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadDataSection();
-		%feature("autodoc", "1");
+		%feature("autodoc","ReadPersistentObjectHeader()->[Standard_Integer, Standard_Integer]");
 		virtual		void ReadPersistentObjectHeader(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void BeginReadPersistentObjectData();
@@ -2312,17 +2226,17 @@ class Storage_BaseDriver {
 		virtual		Storage_BaseDriver & PutReal(const Standard_Real aValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & PutShortReal(const Standard_ShortReal aValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetReference()->Standard_Integer");
 		virtual		Storage_BaseDriver & GetReference(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetCharacter(Standard_Character & aValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetExtCharacter(Standard_ExtCharacter & aValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInteger()->Standard_Integer");
 		virtual		Storage_BaseDriver & GetInteger(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetBoolean(Standard_Boolean & aValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetReal()->Standard_Real");
 		virtual		Storage_BaseDriver & GetReal(Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetShortReal(Standard_ShortReal & aValue);

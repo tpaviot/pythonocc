@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module gp
 
 %include gp_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include gp_dependencies.i
 
@@ -190,7 +104,7 @@ class gp_Cone {
 		Standard_Boolean Direct() const;
 		%feature("autodoc", "1");
 		const gp_Ax1 & Axis() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Location() const;
@@ -281,7 +195,7 @@ class gp_Hypr2d {
 		gp_Ax2d Asymptote1() const;
 		%feature("autodoc", "1");
 		gp_Ax2d Asymptote2() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Hypr2d ConjugateBranch1() const;
@@ -392,7 +306,7 @@ class gp_Dir2d {
 		void SetXY(const gp_XY &XY);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -473,7 +387,7 @@ class gp_Parab2d {
 		void SetMirrorAxis(const gp_Ax2d &A);
 		%feature("autodoc", "1");
 		void SetAxis(const gp_Ax22d &A);
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Ax2d Directrix() const;
@@ -670,7 +584,7 @@ class gp_XYZ {
 		void SetZ(const Standard_Real Z);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer i) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -926,7 +840,7 @@ class gp_Vec2d {
 		void SetXY(const gp_XY &Coord);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1168,7 +1082,7 @@ class gp_Vec {
 		void SetXYZ(const gp_XYZ &Coord);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1509,7 +1423,7 @@ class gp_Dir {
 		void SetXYZ(const gp_XYZ &XYZ);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1608,7 +1522,7 @@ class gp_Circ2d {
 		void SetRadius(const Standard_Real Radius);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const gp_Pnt2d &P, const Standard_Real LinearTolerance) const;
@@ -1780,7 +1694,7 @@ class gp_XY {
 		void SetY(const Standard_Real Y);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer i) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1907,7 +1821,7 @@ class gp_Lin2d {
 		void SetLocation(const gp_Pnt2d &P);
 		%feature("autodoc", "1");
 		void SetPosition(const gp_Ax2d &A);
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Dir2d & Direction() const;
@@ -2099,7 +2013,7 @@ class gp_Elips2d {
 		void SetYAxis(const gp_Ax2d &A);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Ax2d Directrix1() const;
@@ -2222,7 +2136,7 @@ class gp_Trsf {
 		Standard_Real ScaleFactor() const;
 		%feature("autodoc", "1");
 		const gp_XYZ & TranslationPart() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetRotation()->Standard_Real");
 		Standard_Boolean GetRotation(gp_XYZ & theAxis, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Mat VectorialPart() const;
@@ -2248,7 +2162,7 @@ class gp_Trsf {
 		void Power(const Standard_Integer N);
 		%feature("autodoc", "1");
 		gp_Trsf Powered(const Standard_Integer N);
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XYZ & Coord) const;
@@ -2335,7 +2249,7 @@ class gp_Trsf2d {
 		void Power(const Standard_Integer N);
 		%feature("autodoc", "1");
 		gp_Trsf2d Powered(const Standard_Integer N);
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XY & Coord) const;
@@ -2467,7 +2381,7 @@ class gp_Cylinder {
 		Standard_Boolean Direct() const;
 		%feature("autodoc", "1");
 		const gp_Ax1 & Axis() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Location() const;
@@ -2617,7 +2531,7 @@ class gp_Sphere {
 		void SetRadius(const Standard_Real R);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void UReverse();
@@ -2738,7 +2652,7 @@ class gp_GTrsf {
 		gp_GTrsf Powered(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XYZ & Coord) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Trsf Trsf() const;
@@ -2775,7 +2689,7 @@ class gp_Pln {
 		gp_Pln(const gp_Pnt &P, const gp_Dir &V);
 		%feature("autodoc", "1");
 		gp_Pln(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetAxis(const gp_Ax1 &A1);
@@ -2977,7 +2891,7 @@ class gp_Pnt {
 		void SetXYZ(const gp_XYZ &Coordinates);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -3064,7 +2978,7 @@ class gp_Pnt2d {
 		void SetXY(const gp_XY &Coordinates);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -3495,7 +3409,7 @@ class gp_GTrsf2d {
 		void Transforms(gp_XY & Coord) const;
 		%feature("autodoc", "1");
 		gp_XY Transformed(const gp_XY &Coord) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Trsf2d Trsf2d() const;

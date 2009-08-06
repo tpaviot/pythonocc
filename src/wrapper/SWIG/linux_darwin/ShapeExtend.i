@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module ShapeExtend
 
 %include ShapeExtend_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include ShapeExtend_dependencies.i
 
@@ -574,7 +488,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Integer LocateUParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		Standard_Integer LocateVParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateUVPoint(const pnt)->[Standard_IntegerStandard_Integer]");
 		void LocateUVPoint(const gp_Pnt2d &pnt, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Patch(const Standard_Real U, const Standard_Real V) const;
@@ -592,7 +506,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Real VGlobalToLocal(const Standard_Integer i, const Standard_Integer j, const Standard_Real V) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d GlobalToLocal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d &UV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GlobalToLocalTransformation(Standard_Integer i, Standard_Integer j)->Standard_Real");
 		Standard_Boolean GlobalToLocalTransformation(const Standard_Integer i, const Standard_Integer j, Standard_Real &OutValue, gp_Trsf2d & Trsf) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
@@ -606,7 +520,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -828,7 +742,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 		virtual		Standard_Integer NbCurves() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Curve & Curve(const Standard_Integer index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateParameter(Standard_Real U)->Standard_Real");
 		virtual		Standard_Integer LocateParameter(const Standard_Real U, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LocalToGlobal(const Standard_Integer index, const Standard_Real Ulocal) const;

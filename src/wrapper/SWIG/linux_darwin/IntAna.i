@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IntAna
 
 %include IntAna_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IntAna_dependencies.i
 
@@ -235,9 +149,9 @@ class IntAna_Quadric {
 		void SetQuadric(const gp_Cone &Con);
 		%feature("autodoc", "1");
 		void SetQuadric(const gp_Cylinder &Cyl);
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCoefficients(const Axis)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
@@ -351,7 +265,7 @@ class IntAna_IntQuadQuad {
 		Standard_Integer NbPnt() const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters(Standard_Integer N)->[Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasNextCurve(const Standard_Integer I) const;
@@ -382,7 +296,7 @@ class IntAna_Curve {
 		void SetConeQuadValues(const gp_Cone &Cone, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOpen() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Domain()->[Standard_Real, Standard_Real]");
 		void Domain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsConstant() const;
@@ -394,13 +308,13 @@ class IntAna_Curve {
 		gp_Pnt Value(const Standard_Real Theta);
 		%feature("autodoc", "1");
 		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc", "1");
+		%feature("autodoc","FindParameter(const P)->Standard_Real");
 		Standard_Boolean FindParameter(const gp_Pnt &P, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetIsFirstOpen(const Standard_Boolean Flag);
 		%feature("autodoc", "1");
 		void SetIsLastOpen(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
+		%feature("autodoc","InternalUVValue(Standard_Real Param)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void InternalUVValue(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
@@ -580,7 +494,7 @@ class IntAna_IntLinTorus {
 		const gp_Pnt & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnLine(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParamOnTorus(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

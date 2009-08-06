@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module TopOpeBRepBuild
 
 %include TopOpeBRepBuild_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include TopOpeBRepBuild_dependencies.i
 
@@ -674,11 +588,11 @@ class TopOpeBRepBuild_Builder {
 		Standard_Integer KPisfafash(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
 		Standard_Integer KPissososh(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","KPiskoleanalyse(TopAbs_State FT1, TopAbs_State FT2, TopAbs_State ST1, TopAbs_State ST2)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		void KPiskoleanalyse(const TopAbs_State FT1, const TopAbs_State FT2, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","KPiskoletgeanalyse(TopOpeBRepDS_Config Conf, TopAbs_State ST1, TopAbs_State ST2)->Standard_Integer");
 		void KPiskoletgeanalyse(const TopOpeBRepDS_Config Conf, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","KPisdisjanalyse(TopAbs_State ST1, TopAbs_State ST2)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		void KPisdisjanalyse(const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_ListOfShape & L);
@@ -760,7 +674,7 @@ class TopOpeBRepBuild_Builder {
 		void GFillPointTopologyPVS(const TopoDS_Shape &E, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_PaveSet & PVS);
 		%feature("autodoc", "1");
 		void GFillPointTopologyPVS(const TopoDS_Shape &E, const TopOpeBRepDS_PointIterator &IT, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_PaveSet & PVS) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GParamOnReference(const V, const E)->Standard_Real");
 		Standard_Boolean GParamOnReference(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GKeepShape(const TopoDS_Shape &S, const TopTools_ListOfShape &Lref, const TopAbs_State T);
@@ -858,7 +772,7 @@ class TopOpeBRepBuild_Builder {
 		Standard_Boolean GtraceSPS(const Standard_Integer iS, const Standard_Integer jS) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GtraceSPS(const TopoDS_Shape &S) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GtraceSPS(const S)->Standard_Integer");
 		Standard_Boolean GtraceSPS(const TopoDS_Shape &S, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void GdumpSHASETreset();
@@ -1637,6 +1551,7 @@ class TopOpeBRepBuild_GIter {
 		%feature("autodoc", "1");
 		void Current(TopAbs_State & s1, TopAbs_State & s2) const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -1819,7 +1734,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 		Standard_Integer GetDSFaceFromDSCurve(const Standard_Integer indexCur, const Standard_Integer rank);
 		%feature("autodoc", "1");
 		Standard_Integer GetDSPointFromNewVertex(const TopoDS_Shape &NewVert);
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeCurveAncestors(const E)->Standard_Integer");
 		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean EdgeSectionAncestors(const TopoDS_Shape &E, TopTools_ListOfShape & LF1, TopTools_ListOfShape & LF2, TopTools_ListOfShape & LE1, TopTools_ListOfShape & LE2);
@@ -2323,7 +2238,7 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		void SetFirstParameter(const Standard_Real P);
 		%feature("autodoc", "1");
 		void ClosedVertices(const Standard_Boolean B);
-		%feature("autodoc", "1");
+		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol)->Standard_Integer");
 		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
 
 };
@@ -2396,6 +2311,7 @@ class TopOpeBRepBuild_GTool {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo GComDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string DumpToString() {
 			std::stringstream s;
@@ -2447,10 +2363,11 @@ class TopOpeBRepBuild_GTopo {
 		Standard_Integer GIndex(const TopAbs_State S) const;
 		%feature("autodoc", "1");
 		TopAbs_State GState(const Standard_Integer I) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Index(Standard_Integer II)->[Standard_IntegerStandard_Integer]");
 		void Index(const Standard_Integer II, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpTypeToString() {

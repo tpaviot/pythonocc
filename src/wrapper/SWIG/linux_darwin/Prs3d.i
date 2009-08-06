@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Prs3d
 
 %include Prs3d_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Prs3d_dependencies.i
 
@@ -752,6 +666,7 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -827,6 +742,7 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -897,6 +813,7 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 		Quantity_Length SecondAxisLength() const;
 		%feature("autodoc", "1");
 		Quantity_Length ThirdAxisLength() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
@@ -1035,6 +952,7 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectText3d Aspect() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -1125,9 +1043,9 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 		gp_Pln Plane() const;
 		%feature("autodoc", "1");
 		Quantity_Length Offset() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Location()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1208,6 +1126,7 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Standard_Boolean DrawSecondArrow() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -1258,7 +1177,7 @@ class Prs3d {
 	public:
 		%feature("autodoc", "1");
 		Prs3d();
-		%feature("autodoc", "1");
+		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2)->Standard_Real");
 		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
 
 };
@@ -1357,6 +1276,7 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		void SetArrowAspect(const Handle_Prs3d_ArrowAspect &anAspect);
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -1405,13 +1325,14 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d Aspect() const;
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
 			self->Print(s);
 			return s.str();}
 		};
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTextureSize()->[Standard_Integer, Standard_Integer]");
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
@@ -1612,6 +1533,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetSectionAspect(const Handle_Prs3d_LineAspect &anAspect);
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -1710,6 +1632,7 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 		void SetNumber(const Standard_Integer aNumber);
 		%feature("autodoc", "1");
 		Standard_Integer Number() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {

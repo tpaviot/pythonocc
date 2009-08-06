@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Geom2dInt
 
 %include Geom2dInt_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Geom2dInt_dependencies.i
 
@@ -181,13 +95,13 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
-		%feature("autodoc", "1");
+		%feature("autodoc","Perform(const Poly1, const Poly2)->[Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
 		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 		%feature("autodoc", "1");
 		Standard_Integer NbRoots() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Roots()->[Standard_Real, Standard_Real]");
 		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean AnErrorOccurred() const;
@@ -212,11 +126,11 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -285,11 +199,11 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -472,7 +386,7 @@ class Geom2dInt_Geom2dCurveTool {
 		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & Tab);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval(const arg0, Standard_Integer i, const Tab)->[Standard_RealStandard_Real]");
 		void GetInterval(const Adaptor2d_Curve2d &arg0, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -703,7 +617,7 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Adaptor2d_Curve2d &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul)->Standard_Integer");
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };

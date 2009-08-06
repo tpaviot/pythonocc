@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module GeomFill
 
 %include GeomFill_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include GeomFill_dependencies.i
 
@@ -1256,7 +1170,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc", "1");
 		void Points(gp_Pnt & PFirst, gp_Pnt & PLast) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;
@@ -1336,7 +1250,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
@@ -1396,17 +1310,17 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		GeomFill_PlanFunc(const gp_Pnt &P, const gp_Vec &V, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
 		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV)->Standard_Real");
 		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V)->[Standard_RealStandard_RealStandard_Real]");
 		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1435,7 +1349,7 @@ class GeomFill_ConstrainedFilling {
 		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface Surface() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Eval(Standard_Real W, Standard_Integer Ord)->Standard_Real");
 		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void CheckCoonsAlgPatch(const Standard_Integer I);
@@ -1741,7 +1655,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -1798,7 +1712,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -1816,9 +1730,9 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -1830,11 +1744,11 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsConstant()->Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsConicalLaw()->Standard_Real");
 		virtual		Standard_Boolean IsConicalLaw(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve CirclSection(const Standard_Real Param) const;
@@ -2014,11 +1928,11 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
@@ -2026,9 +1940,9 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsTranslation()->Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsRotation()->Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -2121,7 +2035,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -2135,7 +2049,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -2180,7 +2094,7 @@ class GeomFill_LocFunction {
 		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","DN(Standard_Real Param, Standard_Real First, Standard_Real Last, Standard_Integer Order)->[Standard_RealStandard_Integer]");
 		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
@@ -2262,7 +2176,7 @@ class GeomFill {
 		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt &Center, const gp_Vec &DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetShape(Standard_Real MaxAng)->[Standard_Integer, Standard_IntegerStandard_Integer]");
 		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");
 		void Knots(const Convert_ParameterisationType TypeConv, TColStd_Array1OfReal & TKnots);
@@ -2367,7 +2281,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
 		GeomFill_LocationGuide(const Handle_GeomFill_TrihedronWithGuide &Triedre);
-		%feature("autodoc", "1");
+		%feature("autodoc","Set(const Section, Standard_Boolean rotat, Standard_Real SFirst, Standard_Real SLast, Standard_Real PrecAngle)->Standard_Real");
 		void Set(const Handle_GeomFill_SectionLaw &Section, const Standard_Boolean rotat, const Standard_Real SFirst, const Standard_Real SLast, const Standard_Real PrecAngle, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void EraseRotation();
@@ -2401,21 +2315,21 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsTranslation()->Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsRotation()->Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -2626,7 +2540,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;
@@ -2667,7 +2581,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Integer NbMaxP);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -2689,7 +2603,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -2701,7 +2615,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
@@ -2728,7 +2642,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -2746,9 +2660,9 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -2758,7 +2672,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsConstant()->Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
@@ -2910,7 +2824,7 @@ class GeomFill_CornerState {
 		Standard_Real NorAng() const;
 		%feature("autodoc", "1");
 		void NorAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsToKill()->Standard_Real");
 		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void DoKill(const Standard_Real Scal);
@@ -2961,19 +2875,19 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsTranslation()->Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsRotation()->Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -3057,9 +2971,9 @@ class GeomFill_Sweep {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real ErrorOnSurface() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ErrorOnRestriction(Standard_Boolean IsFirst)->[Standard_RealStandard_Real]");
 		void ErrorOnRestriction(const Standard_Boolean IsFirst, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ErrorOnTrace(Standard_Integer IndexOfTrace)->[Standard_RealStandard_Real]");
 		void ErrorOnTrace(const Standard_Integer IndexOfTrace, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface() const;
@@ -3133,7 +3047,7 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		GeomFill_SectionGenerator();
 		%feature("autodoc", "1");
 		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -3170,7 +3084,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Integer NbMaxP);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -3192,7 +3106,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -3204,7 +3118,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
@@ -3231,7 +3145,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -3249,9 +3163,9 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -3261,7 +3175,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsConstant()->Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
@@ -3563,7 +3477,7 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;

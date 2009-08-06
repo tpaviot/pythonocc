@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IntTools
 
 %include IntTools_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IntTools_dependencies.i
 
@@ -1360,7 +1274,7 @@ class IntTools_LineConstructor {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbParts() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Part(Standard_Integer I)->[Standard_RealStandard_Real]");
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1690,7 +1604,7 @@ class IntTools_Root {
 		Standard_Real LayerHeight() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Interval()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Interval(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1846,7 +1760,7 @@ class IntTools_EdgeFace {
 		const IntTools_SequenceOfCommonPrts & CommonParts() const;
 		%feature("autodoc", "1");
 		const IntTools_Range & Range() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IsEqDistance(const aP, const aS, Standard_Real aT)->Standard_Real");
 		Standard_Boolean IsEqDistance(const gp_Pnt &aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
 
 };
@@ -2265,9 +2179,9 @@ class IntTools_SurfaceRangeSample {
 		void GetRanges(IntTools_CurveRangeSample & theRangeU, IntTools_CurveRangeSample & theRangeV) const;
 		%feature("autodoc", "1");
 		void SetIndexes(const Standard_Integer theIndexU, const Standard_Integer theIndexV);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetIndexes()->[Standard_Integer, Standard_Integer]");
 		void GetIndexes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDepths()->[Standard_Integer, Standard_Integer]");
 		void GetDepths(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetSampleRangeU(const IntTools_CurveRangeSample &theRangeSampleU);
@@ -2357,7 +2271,7 @@ class IntTools_Range {
 		Standard_Real First() const;
 		%feature("autodoc", "1");
 		Standard_Real Last() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Range()->[Standard_Real, Standard_Real]");
 		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -2478,7 +2392,7 @@ class IntTools_PntOnFace {
 		const TopoDS_Face & Face() const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -2532,9 +2446,9 @@ class IntTools_Context {
 		IntTools_SurfaceRangeLocalizeData & SurfaceData(const TopoDS_Face &aF);
 		%feature("autodoc", "1");
 		BRepClass3d_SolidClassifier & SolidClassifier(const TopoDS_Solid &aSolid);
-		%feature("autodoc", "1");
+		%feature("autodoc","ComputeVE(const aV, const aE)->Standard_Real");
 		Standard_Integer ComputeVE(const TopoDS_Vertex &aV, const TopoDS_Edge &aE, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ComputeVS(const aV, const aF)->[Standard_RealStandard_Real]");
 		Standard_Integer ComputeVS(const TopoDS_Vertex &aV, const TopoDS_Face &aF, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		TopAbs_State StatePointFace(const TopoDS_Face &aF, const gp_Pnt2d &aP2D);
@@ -2550,11 +2464,11 @@ class IntTools_Context {
 		Standard_Boolean IsValidBlockForFace(const Standard_Real aT1, const Standard_Real aT2, const IntTools_Curve &aIC, const TopoDS_Face &aF, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		Standard_Boolean IsValidBlockForFaces(const Standard_Real aT1, const Standard_Real aT2, const IntTools_Curve &aIC, const TopoDS_Face &aF1, const TopoDS_Face &aF2, const Standard_Real aTol);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsVertexOnLine(const aV, const aIC, Standard_Real aTolC)->Standard_Real");
 		Standard_Boolean IsVertexOnLine(const TopoDS_Vertex &aV, const IntTools_Curve &aIC, const Standard_Real aTolC, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","IsVertexOnLine(const aV, Standard_Real aTolV, const aIC, Standard_Real aTolC)->Standard_Real");
 		Standard_Boolean IsVertexOnLine(const TopoDS_Vertex &aV, const Standard_Real aTolV, const IntTools_Curve &aIC, const Standard_Real aTolC, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ProjectPointOnEdge(const aP, const aE)->Standard_Real");
 		Standard_Boolean ProjectPointOnEdge(const gp_Pnt &aP, const TopoDS_Edge &aE, Standard_Real &OutValue);
 
 };
@@ -2795,7 +2709,7 @@ class IntTools_CommonPrt {
 		TopAbs_ShapeEnum Type() const;
 		%feature("autodoc", "1");
 		const IntTools_Range & Range1() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Range1()->[Standard_Real, Standard_Real]");
 		void Range1(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const IntTools_SequenceOfRanges & Ranges2() const;
@@ -2967,9 +2881,9 @@ class IntTools_Curve {
 		const Handle_Geom2d_Curve & SecondCurve2d() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasBounds() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","D0()->Standard_Real");
 		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
 		%feature("autodoc", "1");
 		GeomAbs_CurveType Type() const;
@@ -3060,9 +2974,9 @@ class IntTools {
 		void SortRoots(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsT);
 		%feature("autodoc", "1");
 		void FindRootStates(IntTools_SequenceOfRoots & aSeq, const Standard_Real anEpsNull);
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameter(const P, const Curve)->Standard_Real");
 		Standard_Integer Parameter(const gp_Pnt &P, const Handle_Geom_Curve &Curve, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetRadius(const C, Standard_Real t1, Standard_Real t3)->Standard_Real");
 		Standard_Integer GetRadius(const BRepAdaptor_Curve &C, const Standard_Real t1, const Standard_Real t3, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer PrepareArgs(BRepAdaptor_Curve & C, const Standard_Real tMax, const Standard_Real tMin, const Standard_Integer Discret, const Standard_Real Deflect, IntTools_CArray1OfReal & anArgs);

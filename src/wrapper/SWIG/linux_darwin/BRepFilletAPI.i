@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module BRepFilletAPI
 
 %include BRepFilletAPI_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include BRepFilletAPI_dependencies.i
 
@@ -244,19 +158,19 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		void Add(const Standard_Real Dis, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDist(Standard_Integer IC)->Standard_Real");
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","Dists(Standard_Integer IC)->[Standard_RealStandard_Real]");
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetDistAngle(Standard_Integer IC)->[Standard_RealStandard_Real]");
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSymetric(const Standard_Integer IC) const;
@@ -359,7 +273,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex &V);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetBounds(Standard_Integer IC, const E)->[Standard_RealStandard_Real]");
 		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge &E);

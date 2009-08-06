@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Select2D
 
 %include Select2D_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Select2D_dependencies.i
 
@@ -386,7 +300,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 		Select2D_SensitiveCircle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Circ2d &TheCirc, const Select2D_TypeOfSelection TheType=Select2D_TOS_BOUNDARY);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -433,7 +347,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 		const gp_Pnt2d & EndPoint() const;
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aSeq);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -468,7 +382,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 		Select2D_SensitiveArc(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -503,7 +417,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 		Select2D_SensitiveBox(const Handle_SelectBasics_EntityOwner &OwnerId, const Standard_Real Xmin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc", "1");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -567,7 +481,7 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
 		%feature("autodoc", "1");
 		const gp_Pnt2d & Location() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);

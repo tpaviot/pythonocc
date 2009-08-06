@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Geom2d
 
 %include Geom2d_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Geom2d_dependencies.i
 
@@ -1067,7 +981,7 @@ class Geom2d_Line : public Geom2d_Curve {
 %nodefaultctor Geom2d_Point;
 class Geom2d_Point : public Geom2d_Geometry {
 	public:
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Pnt2d() const;
@@ -1149,7 +1063,7 @@ class Geom2d_Vector : public Geom2d_Geometry {
 		Handle_Geom2d_Vector Reversed() const;
 		%feature("autodoc", "1");
 		Standard_Real Angle(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Magnitude() const;
@@ -1332,7 +1246,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		void SetKnots(const TColStd_Array1OfReal &K);
 		%feature("autodoc", "1");
 		void SetKnot(const Standard_Integer Index, const Standard_Real K, const Standard_Integer M);
-		%feature("autodoc", "1");
+		%feature("autodoc","PeriodicNormalization()->Standard_Real");
 		void PeriodicNormalization(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPeriodic();
@@ -1346,9 +1260,9 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight);
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePoint(Standard_Real U, const P, Standard_Integer Index1, Standard_Integer Index2)->[Standard_IntegerStandard_Integer]");
 		void MovePoint(const Standard_Real U, const gp_Pnt2d &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePointAndTangent(Standard_Real U, const P, const Tangent, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition)->Standard_Integer");
 		void MovePointAndTangent(const Standard_Real U, const gp_Pnt2d &P, const gp_Vec2d &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
@@ -1400,7 +1314,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		Standard_Integer LastUKnotIndex() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
@@ -1422,7 +1336,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		virtual		void Transform(const gp_Trsf2d &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real ToleranceUV)->Standard_Real");
 		void Resolution(const Standard_Real ToleranceUV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
@@ -1590,7 +1504,7 @@ class Geom2d_Transformation : public MMgt_TShared {
 		Handle_Geom2d_Transformation Powered(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void PreMultiply(const Handle_Geom2d_Transformation &Other);
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom2d_Transformation Copy() const;
@@ -1738,7 +1652,7 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		virtual		void Transform(const gp_Trsf2d &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real ToleranceUV)->Standard_Real");
 		void Resolution(const Standard_Real ToleranceUV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;

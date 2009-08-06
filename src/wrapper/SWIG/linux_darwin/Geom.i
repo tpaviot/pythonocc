@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Geom
 
 %include Geom_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Geom_dependencies.i
 
@@ -1628,11 +1542,11 @@ class Geom_Surface : public Geom_Geometry {
 		Handle_Geom_Surface VReversed() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -1734,7 +1648,7 @@ class Geom_OffsetSurface : public Geom_Surface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
@@ -1786,7 +1700,7 @@ class Geom_OffsetSurface : public Geom_Surface {
 		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer VSide, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
@@ -1879,7 +1793,7 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
@@ -1933,7 +1847,7 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->[Standard_RealStandard_Real]");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
@@ -2155,7 +2069,7 @@ class Geom_Vector : public Geom_Geometry {
 		Standard_Real Angle(const Handle_Geom_Vector &Other) const;
 		%feature("autodoc", "1");
 		Standard_Real AngleWithRef(const Handle_Geom_Vector &Other, const Handle_Geom_Vector &VRef) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Magnitude() const;
@@ -2341,7 +2255,7 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 %nodefaultctor Geom_Point;
 class Geom_Point : public Geom_Geometry {
 	public:
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Pnt() const;
@@ -2537,7 +2451,7 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -2577,7 +2491,7 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 		gp_Vec LocalDN(const Standard_Real U, const Standard_Real V, const Standard_Integer USide, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
@@ -2843,11 +2757,11 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -2967,7 +2881,7 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
@@ -3003,7 +2917,7 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
@@ -3201,13 +3115,13 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 		virtual		Standard_Real UReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
@@ -3449,15 +3363,15 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
 		%feature("autodoc", "1");
 		virtual		void VReverse();
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		gp_Pnt Apex() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real RefRadius() const;
@@ -3603,7 +3517,7 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 		virtual		Standard_Real VReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Coefficients(TColStd_Array1OfReal & Coef) const;
@@ -3684,13 +3598,13 @@ class Geom_Plane : public Geom_ElementarySurface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -3808,7 +3722,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		void SetKnots(const TColStd_Array1OfReal &K);
 		%feature("autodoc", "1");
 		void SetKnot(const Standard_Integer Index, const Standard_Real K, const Standard_Integer M);
-		%feature("autodoc", "1");
+		%feature("autodoc","PeriodicNormalization()->Standard_Real");
 		void PeriodicNormalization(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPeriodic();
@@ -3824,9 +3738,9 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		void SetPole(const Standard_Integer Index, const gp_Pnt &P, const Standard_Real Weight);
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePoint(Standard_Real U, const P, Standard_Integer Index1, Standard_Integer Index2)->[Standard_IntegerStandard_Integer]");
 		void MovePoint(const Standard_Real U, const gp_Pnt &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePointAndTangent(Standard_Real U, const P, const Tangent, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition)->Standard_Integer");
 		void MovePointAndTangent(const Standard_Real U, const gp_Pnt &P, const gp_Vec &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
@@ -3880,7 +3794,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		Standard_Integer LastUKnotIndex() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
@@ -3904,7 +3818,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->Standard_Real");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
@@ -4103,7 +4017,7 @@ class Geom_Transformation : public MMgt_TShared {
 		Handle_Geom_Transformation Powered(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void PreMultiply(const Handle_Geom_Transformation &Other);
-		%feature("autodoc", "1");
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Transformation Copy() const;
@@ -4204,7 +4118,7 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->Standard_Real");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
@@ -4247,7 +4161,7 @@ class Geom_CartesianPoint : public Geom_Point {
 		void SetY(const Standard_Real Y);
 		%feature("autodoc", "1");
 		void SetZ(const Standard_Real Z);
-		%feature("autodoc", "1");
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Pnt() const;
@@ -4296,7 +4210,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		void SetUPeriodic();
 		%feature("autodoc", "1");
 		void SetVPeriodic();
-		%feature("autodoc", "1");
+		%feature("autodoc","PeriodicNormalization()->[Standard_Real, Standard_Real]");
 		void PeriodicNormalization(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetUOrigin(const Standard_Integer Index);
@@ -4356,9 +4270,9 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		void SetVKnots(const TColStd_Array1OfReal &VK);
 		%feature("autodoc", "1");
 		void SetVKnot(const Standard_Integer VIndex, const Standard_Real K, const Standard_Integer M);
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocateV(Standard_Real V, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
 		void LocateV(const Standard_Real V, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		void SetPole(const Standard_Integer UIndex, const Standard_Integer VIndex, const gp_Pnt &P);
@@ -4378,7 +4292,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		void SetWeightCol(const Standard_Integer VIndex, const TColStd_Array1OfReal &CPoleWeights);
 		%feature("autodoc", "1");
 		void SetWeightRow(const Standard_Integer UIndex, const TColStd_Array1OfReal &CPoleWeights);
-		%feature("autodoc", "1");
+		%feature("autodoc","MovePoint(Standard_Real U, Standard_Real V, const P, Standard_Integer UIndex1, Standard_Integer UIndex2, Standard_Integer VIndex1, Standard_Integer VIndex2)->[Standard_IntegerStandard_IntegerStandard_IntegerStandard_Integer]");
 		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Pnt &P, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -4398,7 +4312,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		Standard_Boolean IsVRational() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCacheValid(const Standard_Real UParameter, const Standard_Real VParameter) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity() const;
@@ -4488,7 +4402,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		virtual		void Transform(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc", "1");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->[Standard_RealStandard_Real]");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
@@ -4533,9 +4447,9 @@ class Geom_SphericalSurface : public Geom_ElementarySurface {
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;

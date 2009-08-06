@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module BRepClass3d
 
 %include BRepClass3d_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include BRepClass3d_dependencies.i
 
@@ -195,19 +109,19 @@ class BRepClass3d_SolidExplorer {
 		void InitShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","FindAPointInTheFace(const F)->Standard_Real");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_Real, Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P);
-		%feature("autodoc", "1");
+		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","PointInTheFace(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Integer]");
 		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2)->[Standard_RealStandard_RealStandard_RealStandard_Integer]");
 		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
 		%feature("autodoc", "1");
 		void InitShell();
@@ -229,9 +143,9 @@ class BRepClass3d_SolidExplorer {
 		TopoDS_Face CurrentFace() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean RejectFace(const gp_Lin &L) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Segment(const P)->Standard_Real");
 		Standard_Integer Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","OtherSegment(const P)->Standard_Real");
 		Standard_Integer OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer GetFaceSegmentIndex() const;

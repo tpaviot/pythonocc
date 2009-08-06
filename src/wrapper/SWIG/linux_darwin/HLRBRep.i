@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module HLRBRep
 
 %include HLRBRep_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include HLRBRep_dependencies.i
 
@@ -980,11 +894,11 @@ class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_Function
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf(const IntSurf_Quadric &Q, const gp_Lin &C);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1276,13 +1190,13 @@ class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real Tol);
-		%feature("autodoc", "1");
+		%feature("autodoc","Perform(const Poly1, const Poly2)->[Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
 		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 		%feature("autodoc", "1");
 		Standard_Integer NbRoots() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Roots()->[Standard_Real, Standard_Real]");
 		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean AnErrorOccurred() const;
@@ -1406,7 +1320,7 @@ class HLRBRep_SLPropsATool {
 		gp_Vec DN(const Standard_Address A, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
 		Standard_Integer Continuity(const Standard_Address arg0);
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds(Standard_Address arg0)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void Bounds(const Standard_Address arg0, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1848,9 +1762,9 @@ class HLRBRep_Data : public MMgt_TShared {
 		Standard_Boolean AboveInterference();
 		%feature("autodoc", "1");
 		HLRAlgo_Interference & Interference();
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalLEGeometry2D(Standard_Real Param)->Standard_Real");
 		void LocalLEGeometry2D(const Standard_Real Param, gp_Dir2d & Tg, gp_Dir2d & Nm, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalFEGeometry2D(Standard_Integer FE, Standard_Real Param)->Standard_Real");
 		void LocalFEGeometry2D(const Standard_Integer FE, const Standard_Real Param, gp_Dir2d & Tg, gp_Dir2d & Nm, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void EdgeState(const Standard_Real p1, const Standard_Real p2, TopAbs_State & stbef, TopAbs_State & staf);
@@ -2023,7 +1937,7 @@ class HLRBRep_EdgeInterferenceTool {
 		Standard_Real CurrentParameter() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","EdgeGeometry(Standard_Real Param)->Standard_Real");
 		void EdgeGeometry(const Standard_Real Param, gp_Dir & Tgt, gp_Dir & Nrm, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOfInterference(const HLRAlgo_Interference &I) const;
@@ -2031,7 +1945,7 @@ class HLRBRep_EdgeInterferenceTool {
 		Standard_Boolean SameInterferences(const HLRAlgo_Interference &I1, const HLRAlgo_Interference &I2) const;
 		%feature("autodoc", "1");
 		Standard_Boolean SameVertexAndInterference(const HLRAlgo_Interference &I) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","InterferenceBoundaryGeometry(const I)->Standard_Real");
 		void InterferenceBoundaryGeometry(const HLRAlgo_Interference &I, gp_Dir & Tang, gp_Dir & Norm, Standard_Real &OutValue) const;
 
 };
@@ -2475,11 +2389,11 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc", "1");
+		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index)->[Standard_IntegerStandard_IntegerStandard_Integer]");
 		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
-		%feature("autodoc", "1");
+		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge)->[Standard_IntegerStandard_Integer]");
 		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnBound(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
@@ -2586,7 +2500,7 @@ class HLRBRep {
 		HLRBRep();
 		%feature("autodoc", "1");
 		TopoDS_Edge MakeEdge(const HLRBRep_Curve &ec, const Standard_Real U1, const Standard_Real U2);
-		%feature("autodoc", "1");
+		%feature("autodoc","PolyHLRAngleAndDeflection(Standard_Real InAngl)->[Standard_RealStandard_Real]");
 		void PolyHLRAngleAndDeflection(const Standard_Real InAngl, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -2708,7 +2622,7 @@ class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Interse
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Standard_Address &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul)->Standard_Integer");
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
@@ -2862,7 +2776,7 @@ class HLRBRep_EdgeFaceTool {
 		HLRBRep_EdgeFaceTool();
 		%feature("autodoc", "1");
 		Standard_Real CurvatureValue(const Standard_Address F, const Standard_Real U, const Standard_Real V, const gp_Dir &Tg);
-		%feature("autodoc", "1");
+		%feature("autodoc","UVPoint(Standard_Real Par, Standard_Address E, Standard_Address F)->[Standard_RealStandard_Real]");
 		Standard_Boolean UVPoint(const Standard_Real Par, const Standard_Address E, const Standard_Address F, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -2891,7 +2805,7 @@ class HLRBRep_TheExactInterCSurf {
 		const gp_Pnt & Point() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnCurve() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParameterOnSurface()->[Standard_Real, Standard_Real]");
 		void ParameterOnSurface(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		HLRBRep_TheCSFunctionOfInterCSurf & Function();
@@ -2957,9 +2871,9 @@ class HLRBRep_ShapeBounds {
 		void NbOfIso(const Standard_Integer nbIso);
 		%feature("autodoc", "1");
 		Standard_Integer NbOfIso() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Sizes()->[Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Sizes(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Bounds()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Bounds(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void UpdateMinMax(const Standard_Address TotMinMax);
@@ -3017,7 +2931,7 @@ class HLRBRep_TheQuadCurvExactInterCSurf {
 		Standard_Real Root(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Intervals(Standard_Integer Index)->[Standard_RealStandard_Real]");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -3044,7 +2958,7 @@ class HLRBRep_CurveTool {
 		Standard_Integer NbIntervals(const Standard_Address C);
 		%feature("autodoc", "1");
 		void Intervals(const Standard_Address C, TColStd_Array1OfReal & Tab);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetInterval(Standard_Address C, Standard_Integer i, const Tab)->[Standard_RealStandard_Real]");
 		void GetInterval(const Standard_Address C, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed(const Standard_Address C);
@@ -3148,11 +3062,11 @@ class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public ma
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool &IT, const Standard_Address &PC);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -3364,11 +3278,11 @@ class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_Function
 		void Initialize(const Standard_Address &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
+		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module IGESGraph
 
 %include IGESGraph_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include IGESGraph_dependencies.i
 
@@ -1672,13 +1586,13 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 		Standard_Integer NbCharacters() const;
 		%feature("autodoc", "1");
 		Standard_Integer ASCIICode(const Standard_Integer Chnum) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","NextCharOrigin(Standard_Integer Chnum)->[Standard_IntegerStandard_Integer]");
 		void NextCharOrigin(const Standard_Integer Chnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPenMotions(const Standard_Integer Chnum) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPenUp(const Standard_Integer Chnum, const Standard_Integer Motionnum) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","NextPenPosition(Standard_Integer Chnum, Standard_Integer Motionnum)->[Standard_IntegerStandard_Integer]");
 		void NextPenPosition(const Standard_Integer Chnum, const Standard_Integer Motionnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1874,11 +1788,11 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 		IGESGraph_Color();
 		%feature("autodoc", "1");
 		void Init(const Standard_Real red, const Standard_Real green, const Standard_Real blue, const Handle_TCollection_HAsciiString &aColorName);
-		%feature("autodoc", "1");
+		%feature("autodoc","RGBIntensity()->[Standard_Real, Standard_Real, Standard_Real]");
 		void RGBIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","CMYIntensity()->[Standard_Real, Standard_Real, Standard_Real]");
 		void CMYIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","HLSPercentage()->[Standard_Real, Standard_Real, Standard_Real]");
 		void HLSPercentage(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasColorName() const;

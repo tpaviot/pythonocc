@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Xw
 
 %include Xw_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Xw_dependencies.i
 
@@ -603,9 +517,9 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 		Standard_CString Display() const;
 		%feature("autodoc", "1");
 		Standard_Address XDisplay() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","DisplaySize()->[Standard_Integer, Standard_Integer]");
 		void DisplaySize(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","DisplaySize()->[Standard_Real, Standard_Real]");
 		void DisplaySize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer PlaneLayer(const Standard_Integer aVisualID) const;
@@ -748,7 +662,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 		virtual		void SetMarkerAttrib(const Standard_Integer ColorIndex, const Standard_Integer EdgeWidthIndex, const Standard_Boolean FillMarker=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc", "1");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -816,7 +730,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 		virtual		void ScaleBuffer(const Standard_Integer aRetainBuffer, const Quantity_Factor aScaleX=1.0e+0, const Quantity_Factor aScaleY=1.0e+0) const;
 		%feature("autodoc", "1");
 		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
@@ -830,9 +744,9 @@ class Xw_Driver : public Aspect_WindowDriver {
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean BufferIsOpen(const Standard_Integer aRetainBuffer) const;
@@ -846,23 +760,23 @@ class Xw_Driver : public Aspect_WindowDriver {
 		virtual		void ScaleOfBuffer(const Standard_Integer aRetainBuffer, Quantity_Factor & aScaleX, Quantity_Factor & aScaleY) const;
 		%feature("autodoc", "1");
 		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ColorBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","FontBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TypeBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WidthBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MarkBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
@@ -948,7 +862,7 @@ class Xw_ColorMap : public MMgt_TShared {
 		void FreePixelOfColor(const Standard_Integer aPixel) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetColorOfPixel(const Standard_Integer aPixel, const Quantity_Color &aColor) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Entry(Standard_Integer Index)->[Standard_Real, Standard_RealStandard_Real]");
 		virtual		Standard_Integer Entry(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HighlightPixel() const;
@@ -958,9 +872,9 @@ class Xw_ColorMap : public MMgt_TShared {
 		Standard_Integer MaxOverlayColors() const;
 		%feature("autodoc", "1");
 		Aspect_Handle XColorMap() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XColorCube()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		Standard_Boolean XColorCube(Aspect_Handle & ColormapID, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XGrayRamp()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		Standard_Boolean XGrayRamp(Aspect_Handle & ColormapID, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_Handle XOverlayColorMap() const;
@@ -1174,35 +1088,35 @@ class Xw_Window : public Aspect_Window {
 		virtual		Standard_Boolean IsMapped() const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Ratio Ratio() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Position()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
 		virtual		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Size()->[Standard_Integer, Standard_Integer]");
 		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MMSize()->[Standard_Real, Standard_Real]");
 		virtual		void MMSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Parameter Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Parameter DV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Quantity_Parameter DX, Quantity_Parameter DY)->[Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_Handle XWindow() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XWindow()->[Standard_Integer, Standard_Integer]");
 		void XWindow(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_Handle XParentWindow() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","XParentWindow()->[Standard_Integer, Standard_Integer]");
 		void XParentWindow(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_Handle XPixmap() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PointerPosition()->[Standard_Integer, Standard_Integer]");
 		virtual		Standard_Boolean PointerPosition(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Xw_ColorMap ColorMap() const;
@@ -1226,11 +1140,11 @@ class Xw_Window : public Aspect_Window {
 		Standard_Integer VisualID() const;
 		%feature("autodoc", "1");
 		Xw_WindowQuality Quality() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PixelOfColor(Quantity_NameOfColor aColor)->Standard_Integer");
 		Standard_Boolean PixelOfColor(const Quantity_NameOfColor aColor, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","PixelOfColor(const aColor)->Standard_Integer");
 		Standard_Boolean PixelOfColor(const Quantity_Color &aColor, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","BackgroundPixel()->Standard_Integer");
 		Standard_Boolean BackgroundPixel(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1273,7 +1187,7 @@ class Xw_IconBox : public Xw_Window {
 		Standard_Integer IconNumber() const;
 		%feature("autodoc", "1");
 		char * IconName(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","IconSize(Standard_CString Name)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean IconSize(const char * Name, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_Handle IconPixmap(const char * Name) const;

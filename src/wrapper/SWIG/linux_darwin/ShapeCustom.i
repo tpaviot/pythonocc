@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module ShapeCustom
 
 %include ShapeCustom_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include ShapeCustom_dependencies.i
 
@@ -342,15 +256,15 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 		void SetRevolutionMode(const Standard_Boolean revolMode);
 		%feature("autodoc", "1");
 		void SetOffsetMode(const Standard_Boolean offsetMode);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -432,9 +346,9 @@ class ShapeCustom_Curve2d {
 	public:
 		%feature("autodoc", "1");
 		ShapeCustom_Curve2d();
-		%feature("autodoc", "1");
+		%feature("autodoc","IsLinear(const thePoles, Standard_Real theTolerance)->Standard_Real");
 		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","ConvertToLine2d(const theCurve, Standard_Real theFirstIn, Standard_Real theLastIn, Standard_Real theTolerance)->[Standard_RealStandard_RealStandard_Real]");
 		Handle_Geom2d_Line ConvertToLine2d(const Handle_Geom2d_Curve &theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
@@ -474,15 +388,15 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
 		ShapeCustom_SweptToElementary();
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -513,15 +427,15 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
 		ShapeCustom_ConvertToRevolution();
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -552,15 +466,15 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	public:
 		%feature("autodoc", "1");
 		ShapeCustom_TrsfModification(const gp_Trsf &T);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -593,17 +507,17 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		ShapeCustom_BSplineRestriction(const Standard_Boolean anApproxSurfaceFlag, const Standard_Boolean anApproxCurve3dFlag, const Standard_Boolean anApproxCurve2dFlag, const Standard_Real aTol3d, const Standard_Real aTol2d, const GeomAbs_Shape aContinuity3d, const GeomAbs_Shape aContinuity2d, const Standard_Integer aMaxDegree, const Standard_Integer aNbMaxSeg, const Standard_Boolean Degree, const Standard_Boolean Rational);
 		%feature("autodoc", "1");
 		ShapeCustom_BSplineRestriction(const Standard_Boolean anApproxSurfaceFlag, const Standard_Boolean anApproxCurve3dFlag, const Standard_Boolean anApproxCurve2dFlag, const Standard_Real aTol3d, const Standard_Real aTol2d, const GeomAbs_Shape aContinuity3d, const GeomAbs_Shape aContinuity2d, const Standard_Integer aMaxDegree, const Standard_Integer aNbMaxSeg, const Standard_Boolean Degree, const Standard_Boolean Rational, const Handle_ShapeCustom_RestrictionParameters &aModes);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean ConvertSurface(const Handle_Geom_Surface &aSurface, Handle_Geom_Surface & S, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Boolean IsOf=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","ConvertCurve(Standard_Boolean IsConvert, Standard_Real First, Standard_Real Last, Standard_Boolean IsOf=1)->Standard_Real");
 		Standard_Boolean ConvertCurve(Handle_Geom_Curve & aCurve, Handle_Geom_Curve & C, const Standard_Boolean IsConvert, const Standard_Real First, const Standard_Real Last, Standard_Real &OutValue, const Standard_Boolean IsOf=1);
-		%feature("autodoc", "1");
+		%feature("autodoc","ConvertCurve2d(Standard_Boolean IsConvert, Standard_Real First, Standard_Real Last, Standard_Boolean IsOf=1)->Standard_Real");
 		Standard_Boolean ConvertCurve2d(Handle_Geom2d_Curve & aCurve, Handle_Geom2d_Curve & C, const Standard_Boolean IsConvert, const Standard_Real First, const Standard_Real Last, Standard_Real &OutValue, const Standard_Boolean IsOf=1);
 		%feature("autodoc", "1");
 		void SetTol3d(const Standard_Real Tol3d);
@@ -637,13 +551,13 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		Standard_Real Curve2dError() const;
 		%feature("autodoc", "1");
 		Standard_Real SurfaceError() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
-		%feature("autodoc", "1");
+		%feature("autodoc","MaxErrors()->[Standard_Real, Standard_Real]");
 		Standard_Real MaxErrors(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbOfSpan() const;
@@ -720,15 +634,15 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
 		ShapeCustom_DirectModification();
-		%feature("autodoc", "1");
+		%feature("autodoc","NewSurface(const F)->Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve(const E)->Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewPoint(const V)->Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);

@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module TopOpeBRep
 
 %include TopOpeBRep_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include TopOpeBRep_dependencies.i
 
@@ -614,11 +528,11 @@ class TopOpeBRep_WPointInter {
 		TopOpeBRep_WPointInter();
 		%feature("autodoc", "1");
 		void Set(const IntSurf_PntOn2S &P);
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS1()->[Standard_Real, Standard_Real]");
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS2()->[Standard_Real, Standard_Real]");
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOnS1() const;
@@ -681,7 +595,7 @@ class TopOpeBRep_FacesIntersector {
 		TopOpeBRep_LineInter & ChangeLine(const Standard_Integer IL);
 		%feature("autodoc", "1");
 		void ForceTolerances(const Standard_Real tolarc, const Standard_Real toltang);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -725,7 +639,7 @@ class TopOpeBRep_VPointInter {
 		void SetPoint(const IntPatch_ThePointOfIntersection &P);
 		%feature("autodoc", "1");
 		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetShapes()->[Standard_Integer, Standard_Integer]");
 		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		IntSurf_Transition TransitionOnS1() const;
@@ -739,9 +653,9 @@ class TopOpeBRep_VPointInter {
 		Standard_Boolean IsOnDomS1() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnDomS2() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS1()->[Standard_Real, Standard_Real]");
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParametersOnS2()->[Standard_Real, Standard_Real]");
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
@@ -801,7 +715,7 @@ class TopOpeBRep_VPointInter {
 		void ChangeKeep(const Standard_Boolean keep);
 		%feature("autodoc", "1");
 		Standard_Boolean EqualpP(const TopOpeBRep_VPointInter &VP) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ParonE(const E)->Standard_Real");
 		Standard_Boolean ParonE(const TopoDS_Edge &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Index(const Standard_Integer I);
@@ -862,7 +776,7 @@ class TopOpeBRep_EdgesIntersector {
 		Standard_Boolean FacesSameOriented() const;
 		%feature("autodoc", "1");
 		Standard_Real ToleranceMax() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Tolerances()->[Standard_Real, Standard_Real]");
 		void Tolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -1324,7 +1238,7 @@ class TopOpeBRep_ShapeIntersector {
 		TopOpeBRep_FaceEdgeIntersector & ChangeFaceEdgeIntersector();
 		%feature("autodoc", "1");
 		const TopoDS_Shape & CurrentGeomShape(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpCurrent(const Standard_Integer K) const;
@@ -1384,6 +1298,7 @@ class TopOpeBRep_ShapeScanner {
 		TopOpeBRepTool_BoxSort & ChangeBoxSort();
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string DumpCurrentToString() {
@@ -1495,21 +1410,21 @@ class TopOpeBRep_FacesFiller {
 		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
 		%feature("autodoc", "1");
 		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
-		%feature("autodoc", "1");
+		%feature("autodoc","ProcessVPondgE(const VP, Standard_Integer ShapeIndex)->Standard_Integer");
 		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
 		%feature("autodoc", "1");
 		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
 		%feature("autodoc", "1");
 		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetGeometry(const VP)->Standard_Integer");
 		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetFFGeometry(const DSP)->Standard_Integer");
 		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetFFGeometry(const VP)->Standard_Integer");
 		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
@@ -1531,9 +1446,9 @@ class TopOpeBRep_FacesFiller {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 		%feature("autodoc", "1");
 		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTraceIndex()->[Standard_Integer, Standard_Integer]");
 		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Lminmax(const L)->[Standard_RealStandard_Real]");
 		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean LSameDomainERL(const TopOpeBRep_LineInter &L, const TopTools_ListOfShape &ERL);
@@ -1684,7 +1599,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 		void SetHSurfaces(const Handle_BRepAdaptor_HSurface &S1, const Handle_BRepAdaptor_HSurface &S2);
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetMaxTolerance() const;
@@ -1778,7 +1693,7 @@ class TopOpeBRep_Point2d {
 		Standard_Boolean IsPointOfSegment() const;
 		%feature("autodoc", "1");
 		void SetSegmentAncestors(const Standard_Integer IP1, const Standard_Integer IP2);
-		%feature("autodoc", "1");
+		%feature("autodoc","SegmentAncestors()->[Standard_Integer, Standard_Integer]");
 		Standard_Boolean SegmentAncestors(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetStatus(const TopOpeBRep_P2Dstatus I);

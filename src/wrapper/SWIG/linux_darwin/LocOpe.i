@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module LocOpe
 
 %include LocOpe_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include LocOpe_dependencies.i
 
@@ -597,7 +511,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 		virtual		void NextEdge();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
-		%feature("autodoc", "1");
+		%feature("autodoc","OnEdge(const V)->Standard_Real");
 		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -883,13 +797,13 @@ class LocOpe_CurveShapeIntersector {
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		const LocOpe_PntFace & Point(const Standard_Integer I) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeAfter(Standard_Real From)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeBefore(Standard_Real From)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
@@ -1139,13 +1053,13 @@ class LocOpe_CSIntersector {
 		Standard_Integer NbPoints(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const LocOpe_PntFace & Point(const Standard_Integer I, const Standard_Integer Index) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Real From, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer I, const Standard_Real From, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Real From, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer I, const Standard_Real From, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer I, const Standard_Integer FromInd, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer I, const Standard_Integer FromInd, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Destroy();

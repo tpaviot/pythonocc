@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module Aspect
 
 %include Aspect_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include Aspect_dependencies.i
 
@@ -2062,6 +1976,7 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 class Aspect_Pixel {
 	public:
 		%feature("autodoc", "1");
+		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
 			std::stringstream s;
@@ -2089,6 +2004,7 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		const Quantity_Color & Value() const;
 		%feature("autodoc", "1");
 		void SetValue(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
@@ -2167,7 +2083,7 @@ class Aspect_PixMap : public MMgt_TShared {
 		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
 		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Size()->[Standard_Integer, Standard_Integer]");
 		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
@@ -2237,7 +2153,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 		void SetScale(const Standard_Real AScale);
 		%feature("autodoc", "1");
 		void SetType(const Aspect_TypeOfMarker AType);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->Standard_Real");
 		void Values(Quantity_Color & AColor, Aspect_TypeOfMarker & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2274,6 +2190,7 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		void SetValue(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string PrintToString() {
@@ -2442,7 +2359,7 @@ class Aspect_Driver : public MMgt_TShared {
 		virtual		void SetMarkerAttrib(const Standard_Integer ColorIndex, const Standard_Integer WidthIndex, const Standard_Boolean FillMarker=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc", "1");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -2500,15 +2417,15 @@ class Aspect_Driver : public MMgt_TShared {
 		Handle_Aspect_FontMap FontMap() const;
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkMap MarkMap() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UseMFT() const;
@@ -2642,7 +2559,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 		Aspect_ColorRampColorMap(const Standard_Integer basepixel, const Standard_Integer dimension, const Quantity_Color &color);
 		%feature("autodoc", "1");
 		Aspect_ColorRampColorMap(const Standard_Integer basepixel, const Standard_Integer dimension, const Quantity_NameOfColor colorName);
-		%feature("autodoc", "1");
+		%feature("autodoc","ColorRampDefinition()->[Standard_Integer, Standard_Integer]");
 		void ColorRampDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Quantity_Color & color) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer ColorMapEntryIndex) const;
@@ -2924,9 +2841,9 @@ class Aspect_Grid : public MMgt_TShared {
 		void Translate(const Quantity_Length aDx, const Quantity_Length aDy);
 		%feature("autodoc", "1");
 		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
+		%feature("autodoc","Hit(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
 		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
 		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Activate();
@@ -3243,9 +3160,9 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 		void SetInteriorStyle(const Aspect_InteriorStyle AStyle);
 		%feature("autodoc", "1");
 		Aspect_HatchStyle HatchStyle() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->Standard_Real");
 		void Values(Aspect_InteriorStyle & AStyle, Quantity_Color & AIntColor, Quantity_Color & AEdgeColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->Standard_Real");
 		void Values(Aspect_InteriorStyle & AStyle, Quantity_Color & AIntColor, Quantity_Color & BackIntColor, Quantity_Color & AEdgeColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -3348,7 +3265,7 @@ class Aspect_Edge {
 		Aspect_Edge(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Aspect_TypeOfEdge & AType) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstIndex() const;
@@ -3445,7 +3362,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 	public:
 		%feature("autodoc", "1");
 		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
-		%feature("autodoc", "1");
+		%feature("autodoc","ColorCubeDefinition()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void ColorCubeDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer AColorMapEntryIndex) const;
@@ -3709,23 +3626,23 @@ class Aspect_Window : public MMgt_TShared {
 		virtual		Standard_Boolean IsMapped() const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Ratio Ratio() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Position()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
 		virtual		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Size()->[Standard_Integer, Standard_Integer]");
 		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MMSize()->[Standard_Real, Standard_Real]");
 		virtual		void MMSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Parameter Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Parameter DV) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Convert(Quantity_Parameter DX, Quantity_Parameter DY)->[Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean BackingStore() const;
@@ -4072,7 +3989,7 @@ class Aspect {
 	public:
 		%feature("autodoc", "1");
 		Aspect();
-		%feature("autodoc", "1");
+		%feature("autodoc","ValuesOfFOSP(Aspect_FormatOfSheetPaper aFOSP)->[Standard_RealStandard_Real]");
 		char * ValuesOfFOSP(const Aspect_FormatOfSheetPaper aFOSP, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		char * ToCString(const TCollection_ExtendedString &aString);
@@ -4097,7 +4014,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 		void SetType(const Aspect_TypeOfLine AType);
 		%feature("autodoc", "1");
 		void SetWidth(const Standard_Real AWidth);
-		%feature("autodoc", "1");
+		%feature("autodoc","Values()->Standard_Real");
 		void Values(Quantity_Color & AColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -4224,7 +4141,7 @@ class Aspect_CircularGrid : public Aspect_Grid {
 		void SetDivisionNumber(const Standard_Integer aNumber);
 		%feature("autodoc", "1");
 		void SetGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc", "1");
+		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
 		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length RadiusStep() const;
@@ -4353,7 +4270,7 @@ class Aspect_MarkerStyle {
 		Aspect_TypeOfMarker Type() const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","Values(Standard_Integer aRank)->[Standard_RealStandard_Real]");
 		Standard_Boolean Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const TShort_Array1OfShortReal & XValues() const;
@@ -4586,23 +4503,23 @@ class Aspect_WindowDriver : public Aspect_Driver {
 		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
 		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","ColorBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","FontBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","TypeBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","WidthBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
+		%feature("autodoc","MarkBoundIndexs()->[Standard_Integer, Standard_Integer]");
 		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
@@ -4871,7 +4788,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		Standard_Real GetMin() const;
 		%feature("autodoc", "1");
 		Standard_Real GetMax() const;
-		%feature("autodoc", "1");
+		%feature("autodoc","GetRange()->[Standard_Real, Standard_Real]");
 		void GetRange(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_TypeOfColorScaleData GetLabelType() const;
@@ -4933,7 +4850,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		void SetReversed(const Standard_Boolean aReverse);
 		%feature("autodoc", "1");
 		void SetLabelAtBorder(const Standard_Boolean anOn);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetSize()->[Standard_Real, Standard_Real]");
 		void GetSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetWidth() const;
@@ -4945,7 +4862,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		void SetWidth(const Standard_Real aWidth);
 		%feature("autodoc", "1");
 		void SetHeight(const Standard_Real aHeight);
-		%feature("autodoc", "1");
+		%feature("autodoc","GetPosition()->[Standard_Real, Standard_Real]");
 		void GetPosition(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetXPosition() const;

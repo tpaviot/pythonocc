@@ -21,97 +21,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %module GeomProjLib
 
 %include GeomProjLib_renames.i
-
-%include typemaps.i
-%include cmalloc.i
-%include cpointer.i
-%include carrays.i
-%include exception.i
-%include std_list.i
-%include std_string.i
-%include <python/std_basic_string.i>
-
-#ifndef _Standard_TypeDef_HeaderFile
-#define _Standard_TypeDef_HeaderFile
-#define Standard_False (Standard_Boolean) 0
-#define Standard_True  (Standard_Boolean) 1
-#endif
-
-/*
-Exception handling
-*/
-%{#include <Standard_Failure.hxx>%}
-%exception
-{
-    try
-    {
-        $action
-    } 
-    catch(Standard_Failure)
-    {
-        SWIG_exception(SWIG_RuntimeError,Standard_Failure::Caught()->DynamicType()->Name());
-    }
-}
-
-/*
-Standard_Real & function transformation
-*/
-%typemap(argout) Standard_Real &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyFloat_FromDouble(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
-    $1 = &temp;
-}
-
-/*
-Standard_Integer & function transformation
-*/
-%typemap(argout) Standard_Integer &OutValue {
-    PyObject *o, *o2, *o3;
-    o = PyInt_FromLong(*$1);
-    if ((!$result) || ($result == Py_None)) {
-        $result = o;
-    } else {
-        if (!PyTuple_Check($result)) {
-            PyObject *o2 = $result;
-            $result = PyTuple_New(1);
-            PyTuple_SetItem($result,0,o2);
-        }
-        o3 = PyTuple_New(1);
-        PyTuple_SetItem(o3,0,o);
-        o2 = $result;
-        $result = PySequence_Concat(o2,o3);
-        Py_DECREF(o2);
-        Py_DECREF(o3);
-    }
-}
-
-%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
-    $1 = &temp;
-}
-
-/*
-Renaming operator = that can't be wrapped in Python
-*/
-%rename(Set) *::operator=;
-
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
 
 %include GeomProjLib_dependencies.i
 
@@ -126,9 +40,9 @@ class GeomProjLib {
 	public:
 		%feature("autodoc", "1");
 		GeomProjLib();
-		%feature("autodoc", "1");
+		%feature("autodoc","Curve2d(const C, Standard_Real First, Standard_Real Last, const S, Standard_Real UFirst, Standard_Real ULast, Standard_Real VFirst, Standard_Real VLast)->Standard_Real");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last, const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, Standard_Real &OutValue);
-		%feature("autodoc", "1");
+		%feature("autodoc","Curve2d(const C, Standard_Real First, Standard_Real Last, const S)->Standard_Real");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last, const Handle_Geom_Surface &S, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Standard_Real First, const Standard_Real Last, const Handle_Geom_Surface &S);
@@ -136,7 +50,7 @@ class GeomProjLib {
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S, const Standard_Real UDeb, const Standard_Real UFin, const Standard_Real VDeb, const Standard_Real VFin);
-		%feature("autodoc", "1");
+		%feature("autodoc","Curve2d(const C, const S, Standard_Real UDeb, Standard_Real UFin, Standard_Real VDeb, Standard_Real VFin)->Standard_Real");
 		Handle_Geom2d_Curve Curve2d(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S, const Standard_Real UDeb, const Standard_Real UFin, const Standard_Real VDeb, const Standard_Real VFin, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Geom_Curve Project(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
