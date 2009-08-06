@@ -6,11 +6,6 @@ p = Parameters()            # Create a parameters set
 my_context = Context(p)     # Create and initialize a parametric context
 
 p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4                                   # Create 7 parameters
-#my_pnt1 = my_context.basic_operations.MakePointXYZ(p.X1[0],p.Y1[0],p.Z1[0],name="Pnt1", show=True)   # Create the first point
-#my_pnt2 = my_context.basic_operations.MakePointXYZ(p.X2[0],p.Y2[0],p.Z2[0],name="Pnt2", show=True)   # Create the second point
-
-
-import ipdb; ipdb.set_trace()
 
 my_pnt1 = my_context.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)   # Create the first point
 my_pnt2 = my_context.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
