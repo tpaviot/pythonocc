@@ -25,7 +25,7 @@ import sys
 import os
 from environment import VERSION
 
-DOC_SYSTEM = "epydoc" #or "epydoc"
+DOC_SYSTEM = "epydoc" #or "pydoc"
 
 if DOC_SYSTEM == "pydoc":
     import pydoc
@@ -41,5 +41,5 @@ if DOC_SYSTEM == "pydoc":
             pydoc.writedoc(md)
 
 elif DOC_SYSTEM == "epydoc":
-    os.system('epydoc.py OCC -o ./APIREF --html --no-sourcecode  --graph all -v --name="pythonOCC %s API reference"'%VERSION)
+    os.system('epydoc OCC -o ./APIREF%s --html --no-sourcecode  --graph all -v --name="pythonOCC %s API reference"'%(VERSION,VERSION))
 
