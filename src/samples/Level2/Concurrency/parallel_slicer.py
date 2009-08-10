@@ -7,7 +7,14 @@ from OCC.Geom import *
 from OCC.TopoDS import *
 
 from OCC.Display.wxSamplesGui import display, start_display
-import time, processing, numpy, os, pickle, sys
+
+import time, numpy, os, pickle, sys
+if sys.version_info[:3] >= (2,6,0):
+   import multiprocessing as processing
+else:
+   import processing
+
+
 
 
 def get_brep():
