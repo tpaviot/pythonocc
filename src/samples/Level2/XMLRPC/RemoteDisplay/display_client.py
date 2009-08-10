@@ -22,7 +22,6 @@ import pickle
 import socket
 from OCC.TopoDS import *
 from OCC.BRepPrimAPI import *
-import zlib
 
 # Connect the graphic server
 try:
@@ -37,8 +36,8 @@ except socket.error:
     remote_display = FakeDisplay()
 
 def Display(shape):
-    string_to_send = unicode(zlib.compress(pickle.dumps(shape)))
-    remote_display.SendCompressedShapeString(string_to_send)
+    string_to_send = pickle.dumps(shape)
+    remote_display.SendShapeString(string_to_send)
     print "Shape %s send to display server"%shape
 # Send a simple box to display to the server    
 box_s = BRepPrimAPI_MakeBox(10.,20.,30).Shape()

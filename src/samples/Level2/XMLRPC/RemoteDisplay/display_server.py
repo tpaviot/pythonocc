@@ -18,7 +18,6 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import wx
-import zlib
 from OCC.Display.wxDisplay import wxViewer3d
 import SimpleXMLRPCServer
 import thread
@@ -36,15 +35,6 @@ class StringReceiver(object):
         QUEUE.put(s) #Adds this string to the queue
         return True
 
-    def SendCompressedShapeString(self,s):
-        """
-        Receive the string, decompress, and then check crc32.
-        """
-        s = zlib.decompress(s)
-        QUEUE.put(s)
-        return True
-
-  
 def run_server(port):
     server = SimpleXMLRPCServer.SimpleXMLRPCServer(("localhost", port))
     print 'listening on port %s'%port
