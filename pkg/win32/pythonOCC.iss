@@ -138,18 +138,6 @@ Name: {group}\{cm:uninstall}; Filename: {app}\unins000.exe;IconFileName: {app}\u
 ;Name: {group}\Exemples\SolidWorks\Pince de préhension (SW2003);Filename:{app}\samples\SolidWorks\Pince_schraeder_SW2003\Pince_parker.Dec; IconFileName: {app}\bin\decade.exe
 ;Name: {group}\Exemples\SolidWorks\Réducteur FDA (SW2003);Filename:{app}\samples\SolidWorks\Reducteur_FDA_SW2003\Reducteur_FDA.Dec; IconFileName: {app}\bin\decade.exe
 
-;
-; Desktop shortcuts
-;
-;Name: {userdesktop}\Decade 1.5; Filename: {app}\bin\decade.exe; Parameters:"--STANDALONE";WorkingDir: {app}\bin; MinVersion: 4,4; Tasks: desktopicon1; IconFileName: {app}\bin\decade.exe
-Name: {userdesktop}\DecadeWORKS 1.5;   Filename: {app}\bin\decade.exe; Parameters:"--SOLIDWORKS";WorkingDir: {app}\bin; MinVersion: 4,4; Tasks: desktopicon2; IconFileName: {app}\bin\decade.exe
-Name: {userdesktop}\DecadeCATIA 1.5;   Filename: {app}\bin\decade.exe; Parameters:"--CATIA";WorkingDir: {app}\bin; MinVersion: 4,4; Tasks: desktopicon3; IconFileName: {app}\bin\decade.exe
-Name: {userdesktop}\DecadeInventor 1.5;Filename: {app}\bin\decade.exe; Parameters:"--INVENTOR";WorkingDir: {app}\bin; MinVersion: 4,4; Tasks: desktopicon4; IconFileName: {app}\bin\decade.exe
-;
-; On ajoute également ces icones dans labarre de lancement rapide, pour éviter d'avoir à chercher sur le Bureau
-;
-Name: {userappdata}\Microsoft\Internet Explorer\Quick Launch\DecadeCATIA 1.5; Filename: {app}\bin\decade.exe; Parameters:"--CATIA";WorkingDir: {app}\bin; Tasks: quicklaunchicon1; IconFileName: {app}\bitmaps\icons\decade.ico
-Name: {userappdata}\Microsoft\Internet Explorer\Quick Launch\DecadeWorks 1.5; Filename: {app}\bin\decade.exe; Parameters:"--SOLIDWORKS";WorkingDir: {app}\bin; Tasks: quicklaunchicon2; IconFileName: {app}\bitmaps\icons\decade.ico
 ;[Run]
 ;Filename: {sys}\regsvr32.exe; Parameters: {app}\ActiveX\proxy_catia.dll; Description: Register ActiveX proxy_catia.dll; Flags: nowait runhidden;StatusMsg: "Registerig ActiveX..."
 ;Filename: {app}\bin\decade.exe; Description: Launch Decade; Flags: nowait postinstall skipifsilent
