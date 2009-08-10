@@ -134,7 +134,7 @@ notes printing:
 # THIS IS THER INTERESTING PART
 # FAILS WHEN CALLING projection.Add
 #===============================================================================
-import ipdb; ipdb.set_trace()
+#import ipdb; ipdb.set_trace()
 #projection = AIS2D_ProjShape()
 projection = AIS2D_ProjShape(proj, 3, True, True)
 projection.SetContext(display2d.Context_handle)
