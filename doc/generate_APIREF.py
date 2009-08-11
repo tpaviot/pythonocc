@@ -23,7 +23,7 @@
 #
 import sys
 import os
-from environment import VERSION
+from OCC import VERSION
 
 DOC_SYSTEM = "epydoc" #or "pydoc"
 
