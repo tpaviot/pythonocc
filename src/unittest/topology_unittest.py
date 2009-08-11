@@ -50,6 +50,18 @@ class TestTopology(unittest.TestCase):
         self.assert_( len(edges_from_face) == self.topo.number_of_edges_from_face(face) )
 
 #===============================================================================
+# EDGE <-> WIRE
+#===============================================================================
+
+    def test_edge_wire(self): 
+        edg = self.topo.edges().next()
+        wire = self.topo.wires().next()
+        wires_from_edge = [i for i in self.topo.wires_from_edge(edg)]
+        self.assert_( len(wires_from_edge) == self.topo.number_of_wires_from_edge(edg) )
+        edges_from_wire = [i for i in self.topo.edges_from_wire(wire)]
+        self.assert_( len(edges_from_wire) == self.topo.number_of_edges_from_wire(wire) )
+
+#===============================================================================
 # VERTEX <-> EDGE
 #===============================================================================
 

@@ -2,6 +2,7 @@ from OCC.PAF.Context import *
 from OCC.PAF.Parametric import *
 
 import unittest
+
 # Then creates a parameters set
 p = Parameters()
 # Create and initialize a parametric context
@@ -38,7 +39,7 @@ class TestPAF(unittest.TestCase):
 #    NOT DONE
 
     def test_relation_sympy(self):
-        X = symb(p.X)
+        X = p.X.symbol
         first_relation = 1/ X **2 + 1
         u=Relation(p,"Y",first_relation)
         
