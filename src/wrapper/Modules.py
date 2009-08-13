@@ -534,29 +534,27 @@ else:
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection'],[]),
                    ])
-#    
 #
 # SalomeGEOM stuff
 #
-if environment.WRAP_SALOME_GEOM:
-    SALOME_GEOM_MODULES = [
-                           ('Archimede',[],[]),
-                           ('SGEOM',['TColStd','TDF','CDM','CDF'],[],\
-                            {'GEOM_SubShapeDriver':['GetID']}),
-                           ('GEOMAlgo',['Handle_TCollection'],[]),
-                           ('GEOMImpl',['TDocStd','CDM','TDF','Handle_TCollection','CDF'],\
-                            ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
-                            {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
-                             'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],}),
-                           ('BlockFix',['TopTools','Handle_TCollection'],[],\
-                            {'BlockFix_SphereSpaceModifier':['ForRotation']}),
-                            ('NMTDS',[],[]),
-                            ('NMTTools',[],[],\
-                             {'NMTTools_IteratorOfCoupleOfShape':['DS']}),
-                            ('Partition',['TopoDS_Vertex','gp_Vec'],[]),
-                            ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
-                            ('Sketcher',[],[]),
-                           ]
+SALOME_GEOM_MODULES = [
+                       ('Archimede',[],[]),
+                       ('SGEOM',['TColStd','TDF','CDM','CDF'],[],\
+                        {'GEOM_SubShapeDriver':['GetID']}),
+                       ('GEOMAlgo',['Handle_TCollection'],[]),
+                       ('GEOMImpl',['TDocStd','CDM','TDF','Handle_TCollection','CDF'],\
+                        ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
+                        {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
+                         'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],}),
+                       ('BlockFix',['TopTools','Handle_TCollection'],[],\
+                        {'BlockFix_SphereSpaceModifier':['ForRotation']}),
+                        ('NMTDS',[],[]),
+                        ('NMTTools',[],[],\
+                         {'NMTTools_IteratorOfCoupleOfShape':['DS']}),
+                        ('Partition',['TopoDS_Vertex','gp_Vec'],[]),
+                        ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
+                        ('Sketcher',[],[]),
+                       ]
        
 def PythonOCCStats():
     """

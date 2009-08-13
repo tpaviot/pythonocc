@@ -33,7 +33,6 @@ import subprocess
 #===============================================================================
 
 VERSION = '0.3'         # Define pythonOCC version
-WRAP_SALOME_GEOM = True # Wrap SalomeGEOM?
 
 #===============================================================================
 # UTILITIES
