@@ -172,7 +172,7 @@ class RadiusConstrainedSurface():
         if isinstance(z, types.FloatType):
             self.pnt.SetX(z)
         else:
-            self.pnt.SetX(z[0])
+            self.pnt.SetX(float(z[0]))
         self.build_surface()
         uv = uv_from_projected_point_on_face(self.plate, self.pnt)
         radius = radius_at_uv(self.plate, uv[0], uv[1])
