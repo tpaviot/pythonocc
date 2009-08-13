@@ -55,9 +55,7 @@ import wx.aui
 import wx.py
 from wxDisplay import GraphicsCanva3D
 import time
-from OCC import STEPControl, StlAPI, IGESControl, TopoDS, BRep, BRepTools
-
-VERSION = "md0.1"
+from OCC import STEPControl, StlAPI, IGESControl, TopoDS, BRep, BRepTools, VERSION
 
 def CreateMaskedBitmap(fname, h=16, w=16):
     '''Ceate a masked bitmap where the mask colour is pink.'''
