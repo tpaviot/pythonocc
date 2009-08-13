@@ -58,12 +58,15 @@ else:
 
 if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC builder system - (c) Thomas Paviot, 2008-2009.
-usage: python setup.py build [options]
+Usage: python setup.py build [options]
 With [options]:
     -generate_swig: process swig files generation (if .i files already exist, you should skip this option)
-    -modular: build modular
-    -with_doc: add docstrings to pythonOCC classes
+    -NO_GEOM: tells setup.py to *not* wrapp Salome GEOM package.
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
+Examples:
+    - under Windows: python setup.py build -cmsvc install
+    - under Windows, without the GEOM module: python setup.py build -cmsvc -NO_GEOM install
+    - under Linux: python setup.py build install
     """
     print help_str
     sys.exit(0)
