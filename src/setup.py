@@ -49,6 +49,13 @@ if ('-with_doc' in sys.argv) and GENERATE_SWIG:
         sys.exit(0)
 else:
     GENERATE_DOC = False
+# Check whether Salome GEOM package must be wrapped. True by default.
+if '-NO_GEOM' in sys.argv:
+    WRAP_SALOME_GEOM = False #overload default behaviour
+    sys.argv.remove('-NO_GEOM')
+else:
+    WRAP_SALOME_GEOM = True
+
 if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC builder system - (c) Thomas Paviot, 2008-2009.
 usage: python setup.py build [options]
@@ -134,21 +141,6 @@ def Create__init__():
         os.mkdir(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
     #
-    # First set important OpenCascade env var
-    # These settings are taken from OCC message forum:
-    # http://www.opencascade.org/org/forum/thread_12800/
-    # I did a test case in my OCAF application, and i could not see any problem, even with your first case.My environment variables concerning the memory manager are:
-    #
-    #MMGT_OPT=1 //use the optimised memory manager
-    #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
-    #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
-    #init_fp.write('import os\n')
-    #init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
-    #init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
-    #init_fp.write("os.environ['MMGT_OPT']='1'\n")
-    #init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
-    #init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
-    #
     # Include Version number
     #
     init_fp.write("VERSION='%s'\n"%VERSION)
@@ -177,19 +169,20 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 
              'TKSTEPBase', 'TKSTL', 'TKTCPPExt', 'TKTObj', 'TKTObjDRAW', 'TKTopAlgo', 'TKTopTest',\
              'TKV2d', 'TKV3d', 'TKViewerTest', 'TKVRML', 'TKWOK', 'TKWOKTcl', 'TKXCAF', 'TKXCAFSchema',\
              'TKXDEDRAW', 'TKXDEIGES', 'TKXDESTEP', 'TKXMesh', 'TKXml', 'TKXmlL', 'TKXmlTObj',\
-             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW', 'wokcmd', 'wokdeliverysteps', 'wokdfltsteps',\
-             'wokobjssteps', 'wokorbixsteps', 'woksteps', 'woktoolscmd', 'wokutilscmd', 'XCAFPlugin',\
+             'TKXmlXCAF', 'TKXSBase', 'TKXSDRAW', 'XCAFPlugin',\
              'XmlLPlugin', 'XmlPlugin', 'XmlXCAFPlugin']
 # Find the lib in OCC_LIB path and add it to the LIBS list
 LIBS = []
 for library in libraries:
     found = glob.glob(os.path.join(OCC_LIB,'*%s*'%library))
     if len(found)>0:
-        LIBS.append(library)                 
+        LIBS.append(library)
+    else:
+        raw_input('Warning: the library %s was not found is the path. Press akey to continue anyway'%library)
 #
 # Salome Geom libs
 #
-if environment.WRAP_SALOME_GEOM:
+if WRAP_SALOME_GEOM:
     LIBS.extend(['Sketcher','ShHealOper','Partition','NMTTools',\
                         'NMTDS','GEOM','GEOMImpl',
                         'GEOMAlgo','Archimede'])
@@ -241,10 +234,7 @@ extension.append(Extension("OCC._Misc",
 #
 # Salome Geom extensions
 #
-
-
-
-if environment.WRAP_SALOME_GEOM:
+if WRAP_SALOME_GEOM:
     for module in Modules.SALOME_GEOM_MODULES:
         SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
         if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
