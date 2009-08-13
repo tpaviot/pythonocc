@@ -1,7 +1,7 @@
 ABOUT:
 
 pythonOCC is a computer program whose purpose is to provide a complete set
-of python bindings for OpenCasacde library.
+of python bindings for the OpenCascade library as well as the GEOM Salome package..
 
 BUILD:
 
@@ -18,7 +18,7 @@ variable).
 - OpenCascade 6.3.0 proper install
 
 Step 1:
-extract the content of pythonOCC-md0.1
+extract the content of pythonOCC-0.3
 
 Step 2: 
 cd /pythonOCC/src
@@ -29,7 +29,7 @@ Step 3:
 python setup.py build install (Windows)
 sudo setup.py build install (Linux)
 
-Step 5: check installation. From a python prompt, just enter 'from OCC import *'. You should not
+Step 4: check installation. From a python prompt, just enter 'from OCC import *'. You should not
 get any error. 
 
 * Case B: build your own wrapper
@@ -42,7 +42,7 @@ but it's not tested.
 - pygccxml 1.0 and Py++ 1.0
 
 Step 1:
-extract the content of pythonOCC-1.0pre2 
+extract the content of pythonOCC-0.3
 
 Step 2:
 python setup.py build -cmsvc -generate_swig (Windows)
