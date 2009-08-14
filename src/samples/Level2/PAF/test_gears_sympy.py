@@ -18,7 +18,7 @@
 # A sample that shows how to generate the gear geometry according
 # to knowledge
 
-from OCC.PAF.Context import Context, start_display
+from OCC.PAF.Context import Context
 from OCC.PAF.Parametric import Parameters, Rules, Relation, symb
 
 
@@ -28,7 +28,7 @@ from sympy import *
 # Initialization
 p = Parameters()
 my_context = Context( p )
-
+my_context.init_display()
 
 # Define the first gear (actually modelized by a cylinder)
 # location of the first gear
@@ -124,4 +124,4 @@ for i in range( 40, 120, 3 ):
     print 'updated p.a from %s to %s ' % ( p.a.value, i )
     
 
-start_display()
+my_context.start_display()

@@ -4,12 +4,11 @@ from OCC.PAF.Factory import Factory
 from OCC.PAF.Presentation import Presentation
 from math import pi
 
-from OCC.Display.wxSamplesGui import start_display, display
-
 
 # Create and initialize a parametric context
 my_context = Context()
 my_context.Init()
+my_context.init_display()
 
 # Create a presentation to display geometry
 my_presentation = Presentation(my_context)
@@ -36,4 +35,4 @@ for i,j in zip(range(50,100), range(1,50)):
     p.R, p.H = i, j
     print 'update p.R, p.H from %s, %s to %s, %s' % ( p.R[1], p.H[1], i, j)
 
-start_display()
+my_context.start_display()

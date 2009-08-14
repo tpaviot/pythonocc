@@ -3,13 +3,12 @@ from OCC.PAF.Parametric import Parameters, Rule, Relation
 from OCC.PAF.Factory import Factory
 from OCC.PAF.Presentation import Presentation
 
-from OCC.Display.wxSamplesGui import start_display, display
 from OCC.TDF import *
 import time
 
 # Create and initialize a parametric context
 my_context = Context()
-
+my_context.init_display()
 # Then creates a parameters set
 my_params = Parameters(my_context)
 
@@ -48,4 +47,4 @@ for i in range(30,50, 5):
     print 'changed parameter my_params.Z2 from %s to %s' % ( i-1, i ) 
     my_params.Z2 = i
 
-start_display()
+my_context.start_display()
