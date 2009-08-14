@@ -56,6 +56,13 @@ if '-NO_GEOM' in sys.argv:
 else:
     WRAP_SALOME_GEOM = True
 
+#Check whether build a 'all_in_one' distro (for Win32)
+if '-ALL_IN_ONE' in sys.argv:
+    ALL_IN_ONE = True #overload default behaviour
+    sys.argv.remove('-ALL_IN_ONE')
+else:
+    ALL_IN_ONE = False
+
 if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC builder system - (c) Thomas Paviot, 2008-2009.
 Usage: python setup.py build [options]
@@ -144,12 +151,16 @@ def Create__init__():
         os.mkdir(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
     #
+    # if it is 'all_in_one' build, then the __init__.py script sets the env CSF_GraphicShr:
+    #
+    if ALL_IN_ONE and sys.platform=='win32':
+        init_fp.write('import os\n')
+        init_fp.write('import sys\n')
+        init_fp.write("os.environ['CSF_GraphicShr'] = os.path.join(__path__[0],'TKOpenGl.dll')\n"
+    #
     # Include Version number
     #
     init_fp.write("VERSION='%s'\n"%VERSION)
-    #
-    #
-    #
     init_fp.write('__all__=[')
     for module_tuple in Modules.MODULES:
         module_name = module_tuple[0]
@@ -262,7 +273,12 @@ KARGS = {"ext_modules":extension}
 #
 # SETUP
 #
-setup(name = "pythonOCC",
+if ALL_IN_ONE and sys.platform=='win32':
+    package_name = "pythonOCC-all_in_one"
+else:
+    package_name = "pythonOCC"
+
+setup(name = package_name,
       license = "GPL V3",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
