@@ -18,7 +18,7 @@ from __future__ import with_statement
 from OCC.GEOMImpl import GEOMImpl_Gen
 from OCC.SGEOM import *
 from OCC.TDF import *
-from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
+#from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
 from OCC.TPrsStd import *
 from OCC.TNaming import *
 from wx import SafeYield
@@ -99,7 +99,9 @@ class Context(object):
         self.engine = self.myEngine.GetEngine()
         self.doc    = self.myEngine.GetDocument(self.docId).GetObject()
         self.root   = self.doc.Main().Root()
-        self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+        # display stuff
+        self.viewer = None #Set up when init_display is called
+	self.DISPLAY_INITED = False
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self.callbacks      = [self._update]    # callbacks, such as used for updating presentations
@@ -124,6 +126,17 @@ class Context(object):
         parameters._set_context(self)
         print "Context initialized"
     
+    def init_display(self):
+        from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
+	self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+	self.DISPLAY_INITED = True
+
+    def start_display(self):
+        if self.DISPLAY_INITED:
+            start_display()
+        else:
+            print "You have to init_display first"
+
     def _initialize_operation(self):
         '''
         get all the solvers for all operations
@@ -225,22 +238,23 @@ class Context(object):
     def _register_object(self,obj,color=0):
         # we'll accept both Geom_object and Handle_Geom_object
         if isinstance(obj, Handle_GEOM_Object):
-            obj = obj.GetObject()
-        
+            obj = obj.GetObject()        
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         prs.SetColor(color)
         prs.Display(True)
         self.pres.append(prs)
-        display.FitAll()
+        if self.DISPLAY_INITED:
+            display.FitAll()
         return prs
 
     def _update(self):
-        for prs in self.pres:
-            prs.Update()
-        self.viewer.Update()
-        display.FitAll()
-        SafeYield() #to prevent window freeze 
+        if self.DISPLAY_INITED:
+            for prs in self.pres:
+	        prs.Update()
+	        self.viewer.Update()
+	        display.FitAll()
+                SafeYield() #to prevent window freeze 
 
 if __name__=='__main__':
     c = Context()
