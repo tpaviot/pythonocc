@@ -180,8 +180,6 @@ for library in libraries:
     found = glob.glob(os.path.join(OCC_LIB,'*%s*'%library))
     if len(found)>0:
         LIBS.append(library)
-    else:
-        raw_input('Warning: the library %s was not found is the path. Press akey to continue anyway'%library)
 #
 # Salome Geom libs
 #
