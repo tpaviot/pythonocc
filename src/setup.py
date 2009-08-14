@@ -156,7 +156,7 @@ def Create__init__():
     if ALL_IN_ONE and sys.platform=='win32':
         init_fp.write('import os\n')
         init_fp.write('import sys\n')
-        init_fp.write("os.environ['CSF_GraphicShr'] = os.path.join(__path__[0],'TKOpenGl.dll')\n"
+        init_fp.write("os.environ['CSF_GraphicShr'] = os.path.join(__path__[0],'TKOpenGl.dll')\n")
     #
     # Include Version number
     #
