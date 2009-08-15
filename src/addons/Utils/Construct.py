@@ -80,6 +80,39 @@ def make_wire(*args):
         wire.Delete()
         return result
 
+def make_polygon(args, closed=False):
+    poly = BRepBuilderAPI_MakePolygon()
+    for pt in args:
+        # support nested lists
+        if isinstance(pt, list) or isinstance(pt, tuple):
+            for i in pt:
+                poly.Add(i)
+        else:
+            poly.Add(pt)
+    if closed:
+        poly.Close()
+    poly.Build()
+    
+    with assert_isdone(poly, 'failed to produce wire'):
+        result = poly.Wire()
+#        wire.Delete()
+        return result
+
+def make_closed_polygon(*args):
+    poly = BRepBuilderAPI_MakePolygon()
+    for pt in args:
+        if isinstance(pt, list) or isinstance(pt, tuple):
+            for i in pt:
+                poly.Add(i)
+        else:
+            poly.Add(pt)
+    poly.Build()
+    poly.Close()
+    with assert_isdone(poly, 'failed to produce wire'):
+        result = poly.Wire()
+#        wire.Delete()
+        return result
+
 def add_wire_to_face(face, wire, reverse=False):
     '''
     apply a wire to a face
