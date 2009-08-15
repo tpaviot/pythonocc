@@ -72,12 +72,21 @@ def make_vertex(*args):
         vert.Delete()
         return result
         
-
 def make_wire(*args):
+    # if we get an iterable, than add all edges to wire builder
+    if len(args) == 1:
+        if isinstance(args[0], list) or isinstance(args[0], tuple):
+            wire = BRepBuilderAPI_MakeWire()
+            for i in args[0]:
+                    wire.Add(i)
+            wire.Build()
+            return wire.Wire()
+    
     wire = BRepBuilderAPI_MakeWire(*args)
+    wire.Build()
     with assert_isdone(wire, 'failed to produce wire'):
         result = wire.Wire()
-        wire.Delete()
+#        wire.Delete()
         return result
 
 def make_polygon(args, closed=False):
@@ -129,10 +138,11 @@ def add_wire_to_face(face, wire, reverse=False):
     face.Delete()
     return result
 
-def sew_shapes( *shapes ):
+def sew_shapes( shapes, tolerance=0.001 ):
 #    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
 #    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
-    sew = BRepBuilderAPI_Sewing(1e-1)
+    sew = BRepBuilderAPI_Sewing(tolerance)
+    sew.SetFloatingEdgesMode(True)
     for shp in shapes:
         if isinstance(shp, list):
             for i in shp:
@@ -140,14 +150,14 @@ def sew_shapes( *shapes ):
         else:
             sew.Add(shp)
     sew.Perform()
-    
     print 'n degenerated shapes',sew.NbDegeneratedShapes()
     print 'n deleted faces:',sew.NbDeletedFaces()
     print 'n free edges',sew.NbFreeEdges()
     print 'n multiple edges:',sew.NbMultipleEdges()
     
     result = sew.SewedShape()
-    sew.Delete()
+    # This fucks up big time!
+#    sew.Delete()
     return result
 
 def fix_shape(shp, tolerance=1e-3):
