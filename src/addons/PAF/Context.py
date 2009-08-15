@@ -89,7 +89,7 @@ def _operation_decorator(context, function, _operations):
 class Context(object):
     """ Initialize a parametric context
     """
-    def __init__(self, parameters, undo=False):
+    def __init__(self, parameters, undo = False, display = True):
 
         assert isinstance(parameters, Parameters), 'expected a Parameters instance, got a ' % ( parameters.__class__)
 
@@ -101,6 +101,8 @@ class Context(object):
         self.root   = self.doc.Main().Root()
         # display stuff
         self.viewer = None #Set up when init_display is called
+        self.display_loop = None
+        self.display = None
 	self.DISPLAY_INITED = False
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
@@ -124,16 +126,22 @@ class Context(object):
         
         self._initialize_operation()
         parameters._set_context(self)
+        if display:
+            self.init_display()
         print "Context initialized"
     
     def init_display(self):
-        from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
-	self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+	global display, start_display
+        from OCC.Display.wxSamplesGui import start_display as s_d
+        from OCC.Display.wxSamplesGui import display as d
+        self.display = d
+        self.display_loop = s_d
+	self.viewer = TPrsStd_AISViewer().New(self.root, self.display.Context_handle).GetObject()
 	self.DISPLAY_INITED = True
 
     def start_display(self):
         if self.DISPLAY_INITED:
-            start_display()
+            self.display_loop()
         else:
             print "You have to init_display first"
 
@@ -245,7 +253,7 @@ class Context(object):
         prs.Display(True)
         self.pres.append(prs)
         if self.DISPLAY_INITED:
-            display.FitAll()
+            self.display.FitAll()
         return prs
 
     def _update(self):
@@ -253,7 +261,7 @@ class Context(object):
             for prs in self.pres:
 	        prs.Update()
 	        self.viewer.Update()
-	        display.FitAll()
+	        self.display.FitAll()
                 SafeYield() #to prevent window freeze 
 
 if __name__=='__main__':
