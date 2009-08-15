@@ -85,6 +85,30 @@ class TestTopology(unittest.TestCase):
         self.assert_( len(verts_from_face) == self.topo.number_of_vertices_from_face(face) )
         
 #===============================================================================
+# FACE <-> SOLID
+#===============================================================================
+
+    def test_face_solid(self):
+        face = self.topo.faces().next()
+        solid = self.topo.solids().next()
+        faces_from_solid = [i for i in self.topo.faces_from_solids(face)]
+        self.assert_( len(faces_from_solid) == self.topo.number_of_faces_from_solids(face) )
+        solids_from_face = [i for i in self.topo.solids_from_face(face)]
+        self.assert_( len(solids_from_face) == self.topo.number_of_solids_from_face(face) )
+        
+#===============================================================================
+# WIRE <-> FACE
+#===============================================================================
+
+    def test_wire_face(self):
+        wire = self.topo.wires().next()
+        face = self.topo.faces().next()
+        faces_from_wire = [i for i in self.topo.faces_from_wire(wire)]
+        self.assert_( len(faces_from_wire) == self.topo.number_of_faces_from_wires(wire) )   
+        wires_from_face = [i for i in self.topo.wires_from_face(face)]
+        self.assert_( len(wires_from_face) == self.topo.number_of_wires_from_face(face) )
+
+#===============================================================================
 # TEST POINTERS OUT OF SCOPE            
 #===============================================================================
     
