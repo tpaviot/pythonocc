@@ -28,6 +28,7 @@ from sympy import *
 # Initialization
 p = Parameters()
 my_context = Context( p )
+my_context.init_display()
 
 # Define the first gear (actually modelized by a cylinder)
 # location of the first gear
