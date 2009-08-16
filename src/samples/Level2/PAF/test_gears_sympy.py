@@ -33,7 +33,7 @@ my_context.register_operations(my_context.basic_operations)
 
 # Define the first gear (actually modelized by a cylinder)
 # location of the first gear
-p.X1 = 0.0
+p.X1 = 0.0001 #sympy have sometimes problems with 0 value
 p.Y1 = 0.0
 p.Z1 = 0.0
 my_pnt1 = my_context.basic_operations.MakePointXYZ( p.X1, p.Y1, p.Z1, name="Pnt1" )
@@ -105,16 +105,11 @@ def DefineRelations():
     
     Rel1 = a / ( 1 + r )
     Rel2 = a * r / ( 1 + r )    
-
-    # ----------- BUG -----------
     Rel3 = X1 + a
-    # ----------- BUG -----------
-    
-    
-    
+     
     Relation( p, "R1", Rel1 )
     Relation( p, "R2", Rel2 )
-    #Relation( p, "X2", Rel3 )
+    Relation( p, "X2", Rel3 )
 
 DefineRules()
 DefineRelations()
