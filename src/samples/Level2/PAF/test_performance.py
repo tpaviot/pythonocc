@@ -327,7 +327,7 @@ def profile_main():
      stats.print_stats(80)  # 80 = how many to print
      # The rest is optional.
      stats.print_callees()
-#      stats.print_callers()
+      stats.print_callers()
      print "</pre>"
 
 profile_main()

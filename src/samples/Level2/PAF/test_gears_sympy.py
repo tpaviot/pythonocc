@@ -29,6 +29,7 @@ from sympy import *
 p = Parameters()
 my_context = Context( p )
 my_context.init_display()
+my_context.register_operations(my_context.basic_operations)
 
 # Define the first gear (actually modelized by a cylinder)
 # location of the first gear
@@ -92,7 +93,6 @@ def DefineRules():
     rules.add_rule( "Z1", CheckZ )
     rules.add_rule( "Z2", CheckZ )
     rules.add_rule( "m", Checkm )
-    
     
         
 def DefineRelations():
