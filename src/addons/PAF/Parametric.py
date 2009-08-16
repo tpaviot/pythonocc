@@ -166,9 +166,9 @@ class Parameters(object):
     """ This class defines a set of parameters that are handled by both
     pythonOCC and SalomeGEOM
     """
-#    def __init__(self, context ):
     def __init__(self):        
         object.__setattr__(self, '_parameters', {})
+        object.__setattr__(self, '_commit', False)
         
     def GetAllParameters(self):
         """ Returns the dict of all defined parameters
@@ -177,6 +177,9 @@ class Parameters(object):
     
     def _set_context(self, context):
         object.__setattr__(self, 'context', context)
+    
+    def _set_commit(self, commit):
+        object.__setattr__(self, '_commit', commit)
     
     def __setattr__(self, name, value):
         """if an attribute is a numerical value ( integer or float )
@@ -196,13 +199,16 @@ class Parameters(object):
         self._parameters[name] = Parameter(name, value)
         
         # add the parameter to the Interpreter ( which does the real work )
-        self.context.set_parameter(name,value)
+        self.context.set_parameter(name,value, self._commit)
        
     def __getattribute__(self, name):
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
-            print 'parameter: %s value: %s' % (name, attr)                     
-            return self._parameters[name]
+            try:
+                print 'parameter: %s value: %s' % (name, attr)                     
+                return self._parameters[name]
+            except KeyError:
+                return attr
         else:
             return attr
 

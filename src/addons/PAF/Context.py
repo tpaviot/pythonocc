@@ -18,13 +18,13 @@ from __future__ import with_statement
 from OCC.GEOMImpl import GEOMImpl_Gen
 from OCC.SGEOM import *
 from OCC.TDF import *
-#from OCC.Display.wxSamplesGui import start_display, display, add_function_to_menu, add_menu
 from OCC.TPrsStd import *
 from OCC.TNaming import *
 from wx import SafeYield
 
 from OCC.PAF.Parametric import Relation, Rules, Parameters
 from OCC.TCollection import TCollection_AsciiString
+import time
 
 class operation(object):
     '''
@@ -78,18 +78,18 @@ def _operation_decorator(context, function, _operations):
         # this way it will be rendered in the viewer
         if kwargs.get('show'):
             context._register_object(res)
-            
-        if undo: # for Undo / Redo
-            _operations.CommitCommand()
         
+        if undo: # for Undo / Redo
+            _operations.CommitCommand()    
         return res
+    
     return __operation_decorator
 
 
 class Context(object):
     """ Initialize a parametric context
     """
-    def __init__(self, parameters, undo = False, display = True):
+    def __init__(self, parameters, undo=False, commit=False):
 
         assert isinstance(parameters, Parameters), 'expected a Parameters instance, got a ' % ( parameters.__class__)
 
@@ -101,14 +101,12 @@ class Context(object):
         self.root   = self.doc.Main().Root()
         # display stuff
         self.viewer = None #Set up when init_display is called
-        self.display_loop = None
-        self.display = None
-	self.DISPLAY_INITED = False
+        self.DISPLAY_INITED = False
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self.callbacks      = [self._update]    # callbacks, such as used for updating presentations
         self.object_names   = []                # set of all named parametric objects
-        self.pres           = []                # a list of all objects currently displayed
+        self.pres           = {}                # hash Geom_object instance to its presentation
         
         # get access to operations
         self.prim_operations = self.myEngine.GetI3DPrimOperations(self.docId)
@@ -126,22 +124,21 @@ class Context(object):
         
         self._initialize_operation()
         parameters._set_context(self)
-        if display:
-            self.init_display()
+        parameters._set_commit(commit)
+        
         print "Context initialized"
     
     def init_display(self):
-	global display, start_display
-        from OCC.Display.wxSamplesGui import start_display as s_d
-        from OCC.Display.wxSamplesGui import display as d
-        self.display = d
-        self.display_loop = s_d
-	self.viewer = TPrsStd_AISViewer().New(self.root, self.display.Context_handle).GetObject()
-	self.DISPLAY_INITED = True
+        from OCC.Display.wxSamplesGui import start_display, display
+        self.display = display
+        self._start_display = start_display
+        
+        self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+        self.DISPLAY_INITED = True
 
     def start_display(self):
         if self.DISPLAY_INITED:
-            self.display_loop()
+            self._start_display()
         else:
             print "You have to init_display first"
 
@@ -193,7 +190,6 @@ class Context(object):
                                                     getattr(self, i)                # for example: self.basic_operations
                                                 )
                         
-                        #exec('klass.%s = func' % ( j ) )
                         setattr(klass, j, func)
                 
                 # add the newly generated klass to self
@@ -226,12 +222,14 @@ class Context(object):
             raise TypeError('%s is not a Rule object' % ( rule.__class__ ) )
     
     
-    def set_parameter(self, name, value):
+    def set_parameter(self, name, value, does_commit):
         
-        self.doc.NewCommand()
+        if does_commit:
+            self.doc.NewCommand()
+        
         self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value)
 
-        # update registered solvers
+        #update registered solvers
         for solver in self.solvers:
             seq = TDF_LabelSequence() 
             solver.Update(self.docId, seq)
@@ -240,28 +238,50 @@ class Context(object):
         for callback in self.callbacks:
             #print 'calling callback:', callback
             callback()
+        if does_commit:
+            self.doc.CommitCommand()            
+#        self._update()
 
-        self.doc.CommitCommand()
+    def get_presentation(self, geom_obj):
+        if hasattr(geom_obj, 'GetObject'):
+            geom_obj = geom_obj.GetObject()
+            print 'handle'
+            
+        result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
+        # TPrsStd_AISPresentation().Set can create or retrieve the AIS_Presentation
+        # so, this is not re-creating the TPrsStd_AISPresentation presentation
+        prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
+        return prs
 
     def _register_object(self,obj,color=0):
         # we'll accept both Geom_object and Handle_Geom_object
         if isinstance(obj, Handle_GEOM_Object):
-            obj = obj.GetObject()        
+            obj = obj.GetObject()
+                
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         prs.SetColor(color)
         prs.Display(True)
-        self.pres.append(prs)
+        self.pres[obj]=prs
+        
         if self.DISPLAY_INITED:
             self.display.FitAll()
         return prs
 
+#    def update(self, geom_obj):
+#        for slv in self.solvers:
+#            seq = TDF_LabelSequence()
+##            slv.Update(self.docId, seq)
+##            slv.UpdateObject(geom_obj, seq)
+#            slv.ComputeObject(geom_obj)
+#        self._update()
+
     def _update(self):
         if self.DISPLAY_INITED:
-            for prs in self.pres:
-	        prs.Update()
-	        self.viewer.Update()
-	        self.display.FitAll()
+            for prs in self.pres.itervalues():
+                prs.Update()
+                self.viewer.Update()
+                #self.display.FitAll()
                 SafeYield() #to prevent window freeze 
 
 if __name__=='__main__':
