@@ -212,103 +212,122 @@ def register_presentation(geomObject):
 
 #def example_parametric_box(blah):
 
-parameters = Parameters(engine, docId)
-parameters.add_solver(prim_operations.GetSolver())
-parameters.add_solver(basic_operations.GetSolver())
-parameters.add_solver(bool_operations.GetSolver())
-parameters.add_solver(local_operations.GetSolver())
-
-# box 1
-parameters.depth    = 12
-parameters.height   = 70
-parameters.width    = 12
-parameters.depth_a  = 0
-parameters.height_a = 0
-parameters.width_a  = 0
-
-# box 2
-parameters.lower  = -100
-parameters.upper  = 100
-parameters.fixed_height_lower = 0
-parameters.fixed_height_higher = 10
-
-parameters.fillet_radius = 1
-
-
-with operation(basic_operations):
-    pnt1 = basic_operations.MakePointXYZ(parameters.width,
-                                          parameters.depth,
-                                           parameters.height)
-    pnt1.GetObject().SetName("point 1")
-    pnt2 = basic_operations.MakePointXYZ(parameters.width_a,
-                                          parameters.depth_a,
-                                           parameters.height_a)
-    pnt2.GetObject().SetName("point 2")
+def main():
+    parameters = Parameters(engine, docId)
+    parameters.add_solver(prim_operations.GetSolver())
+    parameters.add_solver(basic_operations.GetSolver())
+    parameters.add_solver(bool_operations.GetSolver())
+    parameters.add_solver(local_operations.GetSolver())
     
-    pnt3 = basic_operations.MakePointXYZ(parameters.lower,
-                                          parameters.lower,
-                                           parameters.fixed_height_lower)
-    pnt3.GetObject().SetName("point 3")
-    pnt4 = basic_operations.MakePointXYZ(parameters.upper,
-                                          parameters.upper,
-                                           parameters.fixed_height_higher)
-    pnt4.GetObject().SetName("point 4")
+    # box 1
+    parameters.depth    = 12
+    parameters.height   = 70
+    parameters.width    = 12
+    parameters.depth_a  = 0
+    parameters.height_a = 0
+    parameters.width_a  = 0
     
-
-with operation(prim_operations):
-    Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
-    BoxBool = prim_operations.MakeBoxTwoPnt(pnt3, pnt4).GetObject()
-
-root = doc.Main().Root()
-viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
-
-with operation(bool_operations):
-    fff = bool_operations.MakeBoolean(Box.GetHandle(), BoxBool.GetHandle(), 1).GetObject()
+    # box 2
+    parameters.lower  = -100
+    parameters.upper  = 100
+    parameters.fixed_height_lower = 0
+    parameters.fixed_height_higher = 10
     
-with operation(local_operations):
-    ggg = local_operations.MakeFilletAll(fff.GetHandle(), parameters.fillet_radius).GetObject()
-
-#    dt = TPrsStd_DriverTable()
-#    dt.Get()
-#    dt.InitStandardDrivers()
-
-prs1 = register_presentation(Box)
-prs1.SetTransparency(0.8)
-prs1.SetColor(12)
-
-prs2 = register_presentation(BoxBool)
-prs2.SetTransparency(0.8)
-prs2.SetColor(200)
-#
-#prs3 = register_presentation(fff)
-#prs3.SetTransparency(0.6)
-#prs3.SetColor(100)
-
-prs4 = register_presentation(ggg)
-prs4.SetColor(1)
-
-def update():
-    prs1.Update()
-    prs2.Update()
-#    prs3.Update()
-    prs4.Update()
-    viewer.Update()
-    display.FitAll()
-
-parameters.add_callback(update)
+    parameters.fillet_radius = 1
+    
+    
+    with operation(basic_operations):
+        pnt1 = basic_operations.MakePointXYZ(parameters.width,
+                                              parameters.depth,
+                                               parameters.height)
+        pnt1.GetObject().SetName("point 1")
+        pnt2 = basic_operations.MakePointXYZ(parameters.width_a,
+                                              parameters.depth_a,
+                                               parameters.height_a)
+        pnt2.GetObject().SetName("point 2")
         
-#for i in range(-66, -11):
-#    parameters.depth_a = i
-#
-#for i in range(-80, 0):
-#    parameters.height_a = i
+        pnt3 = basic_operations.MakePointXYZ(parameters.lower,
+                                              parameters.lower,
+                                               parameters.fixed_height_lower)
+        pnt3.GetObject().SetName("point 3")
+        pnt4 = basic_operations.MakePointXYZ(parameters.upper,
+                                              parameters.upper,
+                                               parameters.fixed_height_higher)
+        pnt4.GetObject().SetName("point 4")
+        
     
-for i in range(-44, 0):
-    tA = time.time()
-    parameters.width_a = i
-    print 'operation took:', time.time() - tA
+    with operation(prim_operations):
+        Box = prim_operations.MakeBoxTwoPnt(pnt1, pnt2).GetObject()
+        BoxBool = prim_operations.MakeBoxTwoPnt(pnt3, pnt4).GetObject()
+    
+    root = doc.Main().Root()
+    viewer = TPrsStd_AISViewer().New(root, display.Context_handle).GetObject()
+    
+    with operation(bool_operations):
+        fff = bool_operations.MakeBoolean(Box.GetHandle(), BoxBool.GetHandle(), 1).GetObject()
+        
+    with operation(local_operations):
+        ggg = local_operations.MakeFilletAll(fff.GetHandle(), parameters.fillet_radius).GetObject()
+    
+    #    dt = TPrsStd_DriverTable()
+    #    dt.Get()
+    #    dt.InitStandardDrivers()
+    
+    prs1 = register_presentation(Box)
+    prs1.SetTransparency(0.8)
+    prs1.SetColor(12)
+    
+    prs2 = register_presentation(BoxBool)
+    prs2.SetTransparency(0.8)
+    prs2.SetColor(200)
+    #
+    #prs3 = register_presentation(fff)
+    #prs3.SetTransparency(0.6)
+    #prs3.SetColor(100)
+    
+    prs4 = register_presentation(ggg)
+    prs4.SetColor(1)
+    
+    def update():
+        prs1.Update()
+        prs2.Update()
+    #    prs3.Update()
+        prs4.Update()
+        viewer.Update()
+        display.FitAll()
+    
+    parameters.add_callback(update)
+            
+    #for i in range(-66, -11):
+    #    parameters.depth_a = i
+    #
+    #for i in range(-80, 0):
+    #    parameters.height_a = i
+        
+    for i in range(-44, 0):
+        tA = time.time()
+        parameters.width_a = i
+        print 'operation took:', time.time() - tA
+    
+    
+    #add_menu('GEOM')
+    #add_function_to_menu('GEOM', example_parametric_box)
+    #start_display()
 
 
-#add_menu('GEOM')
-#add_function_to_menu('GEOM', example_parametric_box)
-#start_display()
+def profile_main():
+     # This is the main function for profiling 
+     # We've renamed our original main() above to real_main()
+     import cProfile, pstats
+     prof = cProfile.Profile()
+     prof = prof.runctx("main()", globals(), locals())
+     print "<pre>"
+     stats = pstats.Stats(prof)
+     stats.sort_stats("time")  # Or cumulative
+     stats.print_stats(80)  # 80 = how many to print
+     # The rest is optional.
+     stats.print_callees()
+#      stats.print_callers()
+     print "</pre>"
+
+profile_main()
