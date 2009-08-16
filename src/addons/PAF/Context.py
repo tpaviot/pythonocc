@@ -104,6 +104,7 @@ class Context(object):
         self.DISPLAY_INITED = False
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
+        self._old_ops_news_ops = {}             # hashes the old self.myEngine.*Operations class, to the one wrapped by ._initialize operation
         self.callbacks      = [self._update]    # callbacks, such as used for updating presentations
         self.object_names   = []                # set of all named parametric objects
         self.pres           = {}                # hash Geom_object instance to its presentation
@@ -128,20 +129,6 @@ class Context(object):
         
         print "Context initialized"
     
-    def init_display(self):
-        from OCC.Display.wxSamplesGui import start_display, display
-        self.display = display
-        self._start_display = start_display
-        
-        self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
-        self.DISPLAY_INITED = True
-
-    def start_display(self):
-        if self.DISPLAY_INITED:
-            self._start_display()
-        else:
-            print "You have to init_display first"
-
     def _initialize_operation(self):
         '''
         get all the solvers for all operations
@@ -149,16 +136,10 @@ class Context(object):
         we wont be able to access these objects when they are overwritten by the newly generated classes ( wrapping with operation )
         '''
         
-        for i in dir(self):
-            if i.endswith('operations'):
-                print 'added solver:', i
-                slv = getattr(self, i).GetSolver()
-                if slv not in self.solvers:
-                    self.solvers.append( slv )
         
         # these are the methods that all Operations modules share
-        no_ops = ('GetEngine', 'SetErrorCode', 'StartOperation', 'GetErrorCode',
-                   'GetSolver', 'SetNotDone', 'AbortOperation', 'FinishOperation',
+        no_ops = ('GetEngine', 'SetErrorCode', 'StartOperation', 'GetErrorCode','GetSolver',
+                   'SetNotDone', 'AbortOperation', 'FinishOperation',
                     'IsDone', 'GetDocID', 'this', 'thisown')
         
         #===============================================================================
@@ -166,7 +147,8 @@ class Context(object):
         # in the context of StartOperation / EndOperation
         #===============================================================================
         for i in dir(self):
-            if i.endswith('operations'):
+            if i.endswith('operations') and not i.startswith('register'):
+                old_operation = getattr(self, i)
                 op = i.split('_')[0]
                 
                 # create a new class to which the wrapped methods will be added
@@ -194,34 +176,64 @@ class Context(object):
                 
                 # add the newly generated klass to self
                 setattr(self, klass_name, klass_instance)
+                # hash the old operation to the new one, such that news operation
+                # instances can be registered
+                self._old_ops_news_ops[klass_instance] = old_operation
     
-    def register_callback(self, call):
+    def init_display(self):
+        from OCC.Display.wxSamplesGui import start_display, display
+        self.display = display
+        self._start_display = start_display
+        
+        self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+        self.DISPLAY_INITED = True
+
+    def start_display(self):
+        if self.DISPLAY_INITED:
+            self._start_display()
+        else:
+            print "You have to init_display first"    
+    
+    def register_operations(self, *_operations):
+        for _operation in _operations:
+            try:
+                slv = self._old_ops_news_ops[_operation]
+                if not slv in self.solvers:
+                    self.solvers.append(slv.GetSolver())
+             
+            except KeyError:
+                print 'no solver found for class:', _operation.__class__
+                raise
+    
+    def register_callbacks(self, *calls):
         """ Defines a callback for the parameter
         """
-        if callable(call):
-            self.callbacks.append(call)
-        else:
-            raise TypeError('%s is not a callable object' % ( call.__class__ ) )
-        print "Callback added"
+        for call in calls:
+            if callable(call):
+                self.callbacks.append(call)
+            else:
+                raise TypeError('%s is not a callable object' % ( call.__class__ ) )
+            print "Callback added"
     
-    def register_relation(self,relation):
+    def register_relations(self, *relations):
         """ Adds a relation to this set of parameters
         """
-        if isinstance(relation,Relation):
-            self.register_callback(relation.eval)
-        else:
-            raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
+        for relation in relations:
+            if isinstance(relation,Relation):
+                self.register_callbacks(relation.eval)
+            else:
+                raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
         
-    def register_rule(self,rule):
-        """
-        Adds a rule to this parameter. Each time the parameter is updated,
-        then the rule is checked"""
-        if isinstance(rule,Rules):
-            self.register_callback(rule.Check)
-        else:
-            raise TypeError('%s is not a Rule object' % ( rule.__class__ ) )
-    
-    
+#    def register_rules(self, *rules):
+#        """
+#        Adds a rule to this parameter. Each time the parameter is updated,
+#        then the rule is checked"""
+#        for rule in rules:
+#            if isinstance(rule,Rules):
+#                self.register_callback(rule.Check)
+#            else:
+#                raise TypeError('%s is not a Rule object' % ( rule.__class__ ) )
+        
     def set_parameter(self, name, value, does_commit):
         
         if does_commit:

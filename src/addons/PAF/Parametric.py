@@ -57,7 +57,7 @@ class Relation(object):
         self.parameters = parameters_instance
         self.param_str = string_parameter_name
         self.tolerance = tolerance
-        self.parameters.context.register_relation(self)
+        self.parameters.context.register_relations(self)
         
     def BuildSubs(self):
         """ First have to set all the parameters keys/values so that sympy can compute
@@ -160,7 +160,6 @@ class Parameter(GEOM_Parameter):
         """ Returns the value of the parameter
         """
         return self._value
-
 
 class Parameters(object):
     """ This class defines a set of parameters that are handled by both
