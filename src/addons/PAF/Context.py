@@ -86,7 +86,7 @@ def _operation_decorator(context, function, _operations):
     return __operation_decorator
 
 
-class Context(object):
+class ParametricModelingContext(object):
     """ Initialize a parametric context
     """
     
@@ -94,13 +94,13 @@ class Context(object):
     
     def __init__(self, parameters, undo=False, commit=False):
         '''
-        Initialize a ParametricContext
-        a ParametricContext always takes a Parameters instance as argument
+        Initialize a ParametricModelingContext
+        a ParametricModelingContext always takes a Parameters instance as argument
 
         >>> from OCC.PAF.Parametric import Parameters 
         >>> p = Parameters() 
-        >>> my_context = Context(p) 
-        Context initialized
+        >>> my_context = ParametricModelingContext(p) 
+        ParametricModelingContext initialized
         
         Initialize context, such that every operation is added to the Undo / Redo stack
         
@@ -109,20 +109,20 @@ class Context(object):
         even if you initialized it with commit=False
         This way you have fine grained control over the Undo / Redo stack  
         
-        >>> my_context = Context(p, commit=True) 
-        Context initialized with commit enabled
+        >>> my_context = ParametricModelingContext(p, commit=True) 
+        ParametricModelingContext initialized with commit enabled
                 
-        Since the ParametricContext controls how objects are rendered
-        the viewer has to be initialized by the ParametricContext object
+        Since the ParametricModelingContext controls how objects are rendered
+        the viewer has to be initialized by the ParametricModelingContext object
         
         >>> my_context.init_display()
         Display initialized
         
         Now we've got a viewer up and running
-        To enter the GUI loop, just call .start_display from your ParametricContext instance
+        To enter the GUI loop, just call .start_display from your ParametricModelingContext instance
         
         # ( cannot be run as a doctest, since it'll never return )
-        #>>> my_context.start_display   
+        #>>> my_context.start_display()   
         
         '''
 
@@ -163,9 +163,9 @@ class Context(object):
         parameters._set_commit(commit)
         
         if commit:
-            print "Context initialized with commit enabled"
+            print "ParametricModelingContext initialized with commit enabled"
         else:
-            print "Context initialized"
+            print "ParametricModelingContext initialized"
     
     def _initialize_operation(self):
         '''

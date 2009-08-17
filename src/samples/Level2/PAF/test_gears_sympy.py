@@ -18,7 +18,7 @@
 # A sample that shows how to generate the gear geometry according
 # to knowledge
 
-from OCC.PAF.Context import Context
+from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters, Rules, Relation, symb
 
 
@@ -27,7 +27,7 @@ from sympy import *
 
 # Initialization
 p = Parameters()
-my_context = Context( p )
+my_context = ParametricModelingContext( p )
 my_context.init_display()
 my_context.register_operations(my_context.basic_operations)
 

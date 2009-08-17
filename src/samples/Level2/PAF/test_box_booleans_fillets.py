@@ -1,11 +1,11 @@
-from OCC.PAF.Context import Context
+from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters
 
 import time
 
 def main():
     p = Parameters()                          # Create a parameters set
-    my_context = Context(p, commit=False)     # Create and initialize a parametric context
+    my_context = ParametricModelingContext(p, commit=False)     # Create and initialize a parametric context
     my_context.init_display()                 # start the graphic display
     
     

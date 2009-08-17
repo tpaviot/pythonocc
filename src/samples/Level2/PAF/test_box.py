@@ -1,8 +1,8 @@
-from OCC.PAF.Context import Context
+from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters
 
 p = Parameters()            # Create a parameters set
-my_context = Context(p)     # Create and initialize a parametric context
+my_context = ParametricModelingContext(p)     # Create and initialize a parametric context
 my_context.init_display()   # start display
 my_context.register_operations(my_context.prim_operations)
 
