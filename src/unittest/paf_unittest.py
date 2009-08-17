@@ -6,7 +6,7 @@ import unittest
 # Then creates a parameters set
 p = Parameters()
 # Create and initialize a parametric context
-my_context = Context(p,display=False)
+my_context = Context(p)
 
 
 # Define the function

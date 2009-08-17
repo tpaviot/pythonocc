@@ -95,7 +95,7 @@ class TestTopology(unittest.TestCase):
         self.assert_( len(faces_from_solid) == self.topo.number_of_faces_from_solids(face) )
         solids_from_face = [i for i in self.topo.solids_from_face(face)]
         self.assert_( len(solids_from_face) == self.topo.number_of_solids_from_face(face) )
-        
+
 #===============================================================================
 # WIRE <-> FACE
 #===============================================================================
