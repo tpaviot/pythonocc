@@ -13,6 +13,21 @@ from OCC.TopoDS import *
 from OCC.Utils.Topology import Topo 
 
 
+'''
+
+LINKS OF INTEREST:
+
+# med->abacus ( med is salome's neutral FEM file )
+http://caelinux.com/CMS/index.php?option=com_joomlaboard&Itemid=52&func=view&catid=16&id=800
+
+# I know they have been working too on a OCC backend for reading geometry
+# Note that its free for academics $ for industry 
+http://cubit.sandia.gov/fact/cubit-fact-sheet.html
+
+
+'''
+
+
 #===============================================================================
 # MESHING DRIVERS
 #===============================================================================
