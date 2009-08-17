@@ -1,6 +1,6 @@
 '''
 
-skeleton for a high-level FEM framework
+skeleton for a high-level FEMSimulation framework
 all fictional for the moment...
 
 '''
@@ -17,7 +17,7 @@ from OCC.Utils.Topology import Topo
 
 LINKS OF INTEREST:
 
-# med->abacus ( med is salome's neutral FEM file )
+# med->abacus ( med is salome's neutral FEMSimulation file )
 http://caelinux.com/CMS/index.php?option=com_joomlaboard&Itemid=52&func=view&catid=16&id=800
 
 # I know they have been working too on a OCC backend for reading geometry
@@ -32,9 +32,16 @@ http://cubit.sandia.gov/fact/cubit-fact-sheet.html
 # MESHING DRIVERS
 #===============================================================================
 
+#class tmp(GEOM_IOperations):
+#    def __init__(self):
+#        engine = GEOM_Engine()
+#        GEOM_IOperations.__init__(engine, 100)
+#
+#tmp()
+
 class MeshDriver(object):
     '''
-    abstract class for an associative FEM mesh driver
+    abstract class for an associative FEMSimulation mesh driver
     '''
     def __init__(self, hypothesis):
         '''
@@ -46,11 +53,10 @@ class MeshDriver(object):
         # this does work
         ops = GEOM_IOperations(engine, 100)
         self.hypothesis = hypothesis
-        pass
     
     def _set_shape(self, shape):
         '''
-        when the MeshDriver instance will be registered to the FEM instance
+        when the MeshDriver instance will be registered to the FEMSimulation instance
         this method will be called in order to set the shape-to-be-meshed
         @param shape:
         '''
@@ -78,11 +84,11 @@ class QuadMeshDriver(MeshDriver):
 
 class Analysis(object):
     '''
-    abstract class for FEM analysis types
+    abstract class for FEMSimulation analysis types
     think of these as building blocks for simulations
     so, ElasticityAnalysis | ThermalAnalysis and so on...
     
-    following the concept of Bricks in getfem++
+    following the concept of Bricks in getFEMSimulation++
     where a analysis has been wrapped in a high-level class
     '''
     def __init__(self):
@@ -112,7 +118,7 @@ class NonLinearElasticityAnalysis(Analysis):
     
 class Solver(object):
     '''
-    abstract class for implementing FEM solver ( abacus, ls-dyna, getfem++, code aster, * ) 
+    abstract class for implementing FEMSimulation solver ( abacus, ls-dyna, getFEMSimulation++, code aster, * ) 
     '''
     def __init__(self):
         pass
@@ -126,43 +132,88 @@ class AbacusSolver(Solver):
         Solver.__init__()
 
 
-class GetFemPlusPlusSolver(Solver):
+class GetFEMSimulationPlusPlusSolver(Solver):
     '''
-    concrete class implementing the GetFem++ solver
+    concrete class implementing the GetFEMSimulation++ solver
     '''
     def __init__(self):
         Solver.__init__()
 
 #===============================================================================
-# FEM
+# FEMSimulation
 #===============================================================================
 
-class FEM(object):
+
+class Unsolved(Exception):
+    pass
+
+class FEMSimulation(object):
+    
+    '''
+
+    Perhaps it would be elegant to have few methods on the co-operating classes, and have this class 
+    be the main interface to the simulation
+    
+    
+    Possible a set of methods between
+    #===============================================================================
+    # I just like to do this
+    #===============================================================================
+    Could become another co-operating class
+    So, that's why its important to keep related methods together ;')
+    
+    
+    '''
+
+    
     def __init__(self, solid):
         '''
         initialize a Finite Element Analysis
         @param solid: the TopoDS_Solid that will be analyzed
         
-        NOTE TO SELF: FEM isnt limited to solids, right?
-        so perhaps, FEM should be an abstract class, with concrete classes
-        such as FEMShell, FEMFace, FEMSolid, FEMWire?
+        NOTE TO SELF: FEMSimulation isnt limited to solids, right?
+        so perhaps, FEMSimulation should be an abstract class, with concrete classes
+        such as FEMSimulationShell, FEMSimulationFace, FEMSimulationSolid, FEMSimulationWire?
         
         arrrrrrgh clueless already...
         
         '''
         assert isinstance(solid, TopoDS_Solid)
-        self.solid = solid
+        
+        # shape to analyze
+        self._solid = solid
         
         # attributes
-        self.mesh_driver = None
-        self.analysis = None
-        self.solver = None
+        self._mesh_driver = None
+        self._analysis = None
+        self._solver = None
         
         # status
         self._stat_solver_set   = False
         self._stat_analysis_set = False
         self._stat_mesh_driver_set = False
+        self._stat_output_set = False
         
+        # administration
+        self._output_dir = None
+        self._start_time = None     # tracking how long it took to solve simulation 
+        self._finish_time = None
+        
+    #===============================================================================
+    # administration boooooooooooooh boring! ---
+    #===============================================================================
+    
+    def get_output_dir(self):
+        return self._output_dir
+    
+    def set_output_dir(self, pth):
+        raise NotImplementedError
+    
+    output_dir = property(get_output_dir, set_output_dir)
+
+    #===============================================================================
+    # setting up the simulation --- 
+    #===============================================================================
         
     def lock(self, topological_element, x=True, y=True, z=True):
         '''
@@ -185,49 +236,160 @@ class FEM(object):
         @param vector: the direction of the force; if None, the normal will be used
         '''
         raise NotImplementedError
-        
-    def register_solver(self, solver):
+    
+    
+    def boundary(self):
         '''
-        register the solver that will compute the FEM analysis
+        I've got to follow some MIT courseware on FEMSimulation...
+        ;')
+        '''
+        raise NotImplementedError
+    
+    #===============================================================================
+    # register co-operating classes ---
+    #===============================================================================
+    
+    def set_solver(self, solver):
+        '''
+        register the solver that will compute the FEMSimulation analysis
         @param solver: a subclass of Solver
         '''
-        self.solver = solver
+        self._solver = solver
         assert issubclass(solver.__class__, Solver), 'need a subclass of Solver, got %s ' % ( solver.__class__)
     
-    def register_analysis(self, analysis):
+    def get_solver(self):
+        return self._solver
+    
+    solver = property(get_solver, set_solver)
+    
+    def set_analysis(self, analysis):
         '''
         register the type of analysis that will be solved
         @param solver: a subclass of Analysis
         '''
-        self.analysis = analysis
+        self._analysis = analysis
         assert issubclass(analysis.__class__, Analysis), 'need a subclass of Solver, got %s ' % ( analysis.__class__)
 
-    def register_mesh_driver(self, mesh_driver):
+    def get_analysis(self):
+        return self._analysis
+    
+    analysis = property(get_analysis, set_analysis)
+
+    def set_mesh_driver(self, mesh_driver):
         '''
         register the type of analysis that will be solved
         @param solver: a subclass of Analysis
         '''
-        self.mesh_driver = mesh_driver
+        self._mesh_driver = mesh_driver
         assert issubclass(mesh_driver.__class__, Analysis), 'need a subclass of Solver, got %s ' % ( mesh_driver.__class__)
         # attach the shape to the mesh driver
-        mesh_driver._set_shape(self.solid)
+        self._mesh_driver._set_shape(self.solid)
+        
+    def get_mesh_driver(self):
+        return self._mesh_driver
     
+    mesh_driver = property(get_mesh_driver, set_mesh_driver)
+
+    # make shape readonly
     @property
+    def shape(self):
+        return self._shape 
+    
+    #===============================================================================
+    # query results ---
+    #===============================================================================
+
+    def value_by_face(self, face, u,v ):
+        '''
+        retrieve the corresponding value on the FEMSimulation mesh at a given location `u,v` on `face`
+        @param face: the face to query
+        @param u,v: coordinate on the surface of the face
+        
+        >>> fem_sim.value_by_face( face, u,v )
+        12e2
+        
+        '''
+        raise NotImplementedError
+        
+    def value_by_point(self, point):
+        '''
+        retrieve the corresponding value on the FEMSimulation mesh at `point` 
+        '''
+        raise NotImplementedError
+    
+    def value_by_averaged_face(self, face):
+        '''
+        returns the average result on `face` 
+        '''
+        raise NotImplementedError
+
+    #===============================================================================
+    # start crunching ---
+    #===============================================================================
+    
+    def solve(self, nprocs=2):
+        '''
+        fires up the simulation
+        @param nprocs: the number of processes you can spare
+        '''
+        raise NotImplementedError
+        
+    def solve_distributed(self):
+        '''
+        havent got a clue, but it sounds promising
+        '''
+        raise NotImplementedError
+
+    @property
+    def solve_duration(self):
+        '''
+        print time it took to solve simulation 
+        '''
+        assert self.is_solved()
+        return self._finish_time - self._start_time
+    
+    #===============================================================================
+    # status administration ---
+    #===============================================================================
+    
     def is_solved(self):
         '''
         returns boolean indicating whether the analysis has been completed 
         '''
         raise NotImplementedError
     
-    @property
     def is_setup(self):
         '''
         returns boolean indicating whether the analysis has been set up correctly
         meaning that all nessecary co-operating classes ( Analysis, Solver ) have been registered
         ''' 
+        raise NotImplementedError
+    
+    def error(self):
+        '''
+        report the error of the resulting simulation
+        '''
+        raise NotImplementedError
+        
+    def report(self):
+        '''
+        one could make some pdf report with lots of stats and images here
+        '''
+        raise NotImplementedError
+    
+    def progress(self, interval=10):
+        '''
+        would be really cool if progress would be reported every 10 seconds by default
+        while the simulation is being solved
+        '''
+        raise NotImplementedError
+            
+    #===============================================================================
+    # representation prints status of the simulation ---
+    #===============================================================================
 
     def __repr__(self):
-        msg = '< FEM instance >\n'
+        msg = '< FEMSimulation instance >\n'
         msg += 'Shape: %s \n' % ( self.solid )
         
         if self._stat_analysis_set:
@@ -243,25 +405,30 @@ class FEM(object):
         if self._stat_solver_set:
             msg += 'Solver set: %s \n' % ( self.solver )
         else:
-            msg += 'No solver set\n'
+            msg += 'No solver set \n'
+            
+        if self._stat_output_dir:
+            msg += 'Output directory set: %s \n' % ( self._output_dir)
+        else:
+            msg += 'No output directory set \n'
         
         return msg
 
 
-class FEMShell(FEM):
+class FEMSimulationShell(FEMSimulation):
     '''
-    !!! No clue whether its a good idea to implement FEM classes for topological types
-    '''
-    def __init__(self):
-        FEM.__init__()
-
-
-class FEMSolid(FEM):
-    '''
-    !!! No clue whether its a good idea to implement FEM classes for topological types
+    !!! No clue whether its a good idea to implement FEMSimulation classes for topological types
     '''
     def __init__(self):
-        FEM.__init__()
+        FEMSimulation.__init__()
+
+
+class FEMSimulationSolid(FEMSimulation):
+    '''
+    !!! No clue whether its a good idea to implement FEMSimulation classes for topological types
+    '''
+    def __init__(self):
+        FEMSimulation.__init__()
         
         
 #===============================================================================
@@ -270,12 +437,12 @@ class FEMSolid(FEM):
 
 
 class VisualizeAnalysis(object):
-    def __init__(self, FEM):
+    def __init__(self, FEMSimulation):
         '''
         visualize the results of the analysis
-        @param FEM: FEM subclass instance
+        @param FEMSimulation: FEMSimulation subclass instance
         '''
-        self.FEM = FEM
+        self.FEMSimulation = FEMSimulation
         
     def display(self):
         '''
@@ -285,7 +452,7 @@ class VisualizeAnalysis(object):
     
     def set_camera(self, occ_camera):
         '''
-        if we have 2 panels, a cad viewer, and a fem viewer, it would be cool to have 
+        if we have 2 panels, a cad viewer, and a FEMSimulation viewer, it would be cool to have 
         synchronized views
         @param occ_camera: the cad viewer camera
         '''
@@ -318,14 +485,16 @@ mesh_driver = QuadMeshDriver('nadah')       # set up the mesh driver. when geome
 analysis    = LinearElasticityAnalysis()    # set up the problem to be solved
 solver      = AbacusSolver()                # configure the solver
 
-fem = FEM(shape)            
-fem.load(face1, gp_Vec())       
-fem.lock(face2, x=False, y=False, z=True)
-fem.register_analysis(analysis)
-fem.register_solver(solver)
-fem.solve()
+FEMSimulation = FEMSimulation(shape)            
+FEMSimulation.load(face1, gp_Vec())       
+FEMSimulation.lock(face2, x=False, y=False, z=True)
+FEMSimulation.analysis = analysis
+FEMSimulation.solver = solver
+FEMSimulation.mesh_driver = mesh_driver
+FEMSimulation.output_dir = '/dev/null/simulation.fem'
+FEMSimulation.solve()
 
-viz = VisualizeAnalysis(fem)                # show the Von Mises stresses in VTK
+viz = VisualizeAnalysis(FEMSimulation)                # show the Von Mises stresses in VTK
 viz.display()                               # would be really cool to have a viz. panel next to the CAD viewer, with synchronized cameras!
 
 #===============================================================================
