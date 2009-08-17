@@ -1,6 +1,6 @@
 '''
 
-skeleton for a high-level FEMSimulation framework
+scaffold for a high-level FEMSimulation framework
 all fictional for the moment...
 
 '''
@@ -11,6 +11,7 @@ from OCC.SGEOM import GEOM_IOperations, GEOM_Engine
 # topology
 from OCC.TopoDS import *
 from OCC.Utils.Topology import Topo 
+from OCC.Display.wxSamplesGui import display
 
 
 '''
@@ -322,6 +323,48 @@ class FEMSimulation(object):
         returns the average result on `face` 
         '''
         raise NotImplementedError
+    
+    def locate_value(self, value, radius):
+        '''
+        locate `value` on shape
+        returns an iterator of locations ( face, u,v, point ) of a given `value` on the shape
+        
+        in order not to return an infinity of results a radius has to be set 
+        
+        @param value:
+        @param radius:
+        '''
+        raise NotImplementedError
+    
+    def locate_range(self, value_min, value_max, radius):
+        '''
+        locate a range of values on shape
+        similar to locate_value, but for a range of values
+        
+        returns an iterator of locations ( face, u,v, point )
+        between `value_max` and `value_min` on the shape
+        
+        in order not to return an infinity of results a radius has to be set 
+        
+        @param value_min: lowest value in range
+        @param value_max: upper value in range 
+        @param radius: used to filter the number of found locations
+        '''
+        raise NotImplementedError
+
+    def locate_minimum(self):
+        '''
+        locate the lowest value on shape
+        returns a location ( face, u,v, point )
+        '''
+        raise NotImplementedError
+        
+    def locate_maximum(self):
+        '''
+        locate the lowest value on shape
+        returns a location ( face, u,v, point )
+        '''
+        raise NotImplementedError
 
     #===============================================================================
     # start crunching ---
@@ -439,10 +482,11 @@ class FEMSimulationSolid(FEMSimulation):
 class VisualizeAnalysis(object):
     def __init__(self, FEMSimulation):
         '''
-        visualize the results of the analysis
+        abstract class to visualize the results of the analysis
         @param FEMSimulation: FEMSimulation subclass instance
         '''
         self.FEMSimulation = FEMSimulation
+        self.occ_camera = None
         
     def display(self):
         '''
@@ -463,10 +507,28 @@ class VisualizeAnalysis(object):
         raise NotImplementedError
     
     def sync_cameras(self):
+        '''
+        would be cool if the CAD panel and FEM viz. panel would be synchronized
+        that would be pretty insightful
+        '''
         raise NotImplementedError
     
     camera = property(set_camera,get_camera) 
 
+
+class GmShVisualizeAnalysis(VisualizeAnalysis):
+    '''
+    concrete visualization class, using the gmsh viewer
+    '''
+    raise NotImplementedError
+
+    
+class VtkVisualizeAnalysis(VisualizeAnalysis):
+    '''
+    concrete visualization class, using the vtk
+    '''
+    raise NotImplementedError
+    
 
 #===============================================================================
 # Example of usage of the future framework
@@ -494,7 +556,8 @@ FEMSimulation.mesh_driver = mesh_driver
 FEMSimulation.output_dir = '/dev/null/simulation.fem'
 FEMSimulation.solve()
 
-viz = VisualizeAnalysis(FEMSimulation)                # show the Von Mises stresses in VTK
+viz = VtkVisualizeAnalysis(FEMSimulation)   # show the Von Mises stresses in VTK
+viz.camera = display                        # display is the OCC viewer instance we use
 viz.display()                               # would be really cool to have a viz. panel next to the CAD viewer, with synchronized cameras!
 
 #===============================================================================
