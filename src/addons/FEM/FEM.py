@@ -28,9 +28,40 @@ http://cubit.sandia.gov/fact/cubit-fact-sheet.html
 
 '''
 
+#===============================================================================
+# EXCEPTIONS
+#===============================================================================
+
+
+class Unsolved(Exception):
+    '''
+    when for instance looking up values on a simulation that has not yet run
+    '''
+    pass
+
+class SolverError(Exception):
+    pass
+
+class AbacusSolverError(SolverError):
+    '''
+    when errors occur while solving with Abacus
+    '''
+    pass
+
+class MeshingError(Exception):
+    '''
+    when meshing fails
+    '''
+    pass
+
+class QuadMeshingError(MeshingError):
+    '''
+    when failing to mesh with the QuadMeshDriver
+    '''
+    pass
 
 #===============================================================================
-# MESHING DRIVERS
+# MESHING DRIVERS ---
 #===============================================================================
 
 #class tmp(GEOM_IOperations):
@@ -66,7 +97,7 @@ class MeshDriver(object):
 
 class NetGenMeshDriver(MeshDriver):
     '''
-    concrete class implmenting a 
+    concrete class implementing a netgen mesher 
     '''
     def __init__(self, hypothesis):
         MeshDriver.__init__(hypothesis)
@@ -74,14 +105,15 @@ class NetGenMeshDriver(MeshDriver):
     
 class QuadMeshDriver(MeshDriver):
     '''
-    concrete class implementing a Quad mesher
+    concrete class implementing a quad mesher
     '''
     def __init__(self, hypothesis):
         MeshDriver.__init__(hypothesis)
 
 #===============================================================================
-# ANALYSIS
+# ANALYSIS ---
 #===============================================================================
+
 
 class Analysis(object):
     '''
@@ -113,8 +145,9 @@ class NonLinearElasticityAnalysis(Analysis):
     def __init__(self):
         Analysis.__init__()
 
+
 #===============================================================================
-# SOLVERS
+# SOLVERS ---
 #===============================================================================
     
 class Solver(object):
@@ -141,12 +174,9 @@ class GetFEMSimulationPlusPlusSolver(Solver):
         Solver.__init__()
 
 #===============================================================================
-# FEMSimulation
+# FEMSimulation ---
 #===============================================================================
 
-
-class Unsolved(Exception):
-    pass
 
 class FEMSimulation(object):
     
@@ -475,7 +505,7 @@ class FEMSimulationSolid(FEMSimulation):
         
         
 #===============================================================================
-# VISUALIZATION
+# VISUALIZATION ---
 #===============================================================================
 
 
@@ -531,7 +561,7 @@ class VtkVisualizeAnalysis(VisualizeAnalysis):
     
 
 #===============================================================================
-# Example of usage of the future framework
+# Example of usage of the future framework ---
 #===============================================================================
 
 from OCC.BRepPrimAPI import *
@@ -561,7 +591,7 @@ viz.camera = display                        # display is the OCC viewer instance
 viz.display()                               # would be really cool to have a viz. panel next to the CAD viewer, with synchronized cameras!
 
 #===============================================================================
-# UNITTEST
+# MAIN == UNITTEST ---
 #===============================================================================
 
 if __name__=='__main__':
