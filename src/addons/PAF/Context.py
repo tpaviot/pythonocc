@@ -89,7 +89,42 @@ def _operation_decorator(context, function, _operations):
 class Context(object):
     """ Initialize a parametric context
     """
+    
+    # --- TODO get rid of commit, replace by undo ( functionality doubled )
+    
     def __init__(self, parameters, undo=False, commit=False):
+        '''
+        Initialize a ParametricContext
+        a ParametricContext always takes a Parameters instance as argument
+
+        >>> from OCC.PAF.Parametric import Parameters 
+        >>> p = Parameters() 
+        >>> my_context = Context(p) 
+        Context initialized
+        
+        Initialize context, such that every operation is added to the Undo / Redo stack
+        
+        Note that if in your operation, you can set an additional "undo" argument
+        If this you use this argument, than that operation will be added to the Undo / Redo stack
+        even if you initialized it with commit=False
+        This way you have fine grained control over the Undo / Redo stack  
+        
+        >>> my_context = Context(p, commit=True) 
+        Context initialized with commit enabled
+                
+        Since the ParametricContext controls how objects are rendered
+        the viewer has to be initialized by the ParametricContext object
+        
+        >>> my_context.init_display()
+        Display initialized
+        
+        Now we've got a viewer up and running
+        To enter the GUI loop, just call .start_display from your ParametricContext instance
+        
+        # ( cannot be run as a doctest, since it'll never return )
+        #>>> my_context.start_display   
+        
+        '''
 
         assert isinstance(parameters, Parameters), 'expected a Parameters instance, got a ' % ( parameters.__class__)
 
@@ -127,7 +162,10 @@ class Context(object):
         parameters._set_context(self)
         parameters._set_commit(commit)
         
-        print "Context initialized"
+        if commit:
+            print "Context initialized with commit enabled"
+        else:
+            print "Context initialized"
     
     def _initialize_operation(self):
         '''
@@ -165,7 +203,7 @@ class Context(object):
                     if j.startswith('_'):
                         continue
                     elif j not in no_ops:
-                        print 'method being wrapped:',j
+                        #print 'method being wrapped:',j
                         func = _operation_decorator(
                                                     self,
                                                     getattr(getattr(self, i), j),   # for example: self.basic_operations.MakeVectorDXDYDZ
@@ -187,6 +225,7 @@ class Context(object):
         
         self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
         self.DISPLAY_INITED = True
+        print 'Display initialized'
 
     def start_display(self):
         if self.DISPLAY_INITED:
@@ -250,6 +289,7 @@ class Context(object):
         for callback in self.callbacks:
             #print 'calling callback:', callback
             callback()
+        
         if does_commit:
             self.doc.CommitCommand()            
 #        self._update()
@@ -297,5 +337,6 @@ class Context(object):
                 SafeYield() #to prevent window freeze 
 
 if __name__=='__main__':
-    c = Context()
-    
+    import doctest, sys
+    doctest.testmod(sys.modules[__name__])
+        
