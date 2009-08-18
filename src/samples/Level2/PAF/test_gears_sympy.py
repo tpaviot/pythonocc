@@ -83,17 +83,19 @@ p.r = 0.5   # The speed ratio
 def DefineRules():
     # The number of teeth must be greater than 0 and also be an integer
     def CheckZ( Z ):
+        print 'checking Z for param:',Z
         return ( int( Z ) / Z == 1.0 and Z > 0 )
     
     # The modulus cannot take any value (notice that this list is not exhaustive.
     def Checkm( m ):
+        print 'checking M for param:', m
         return m in [0.06, 0.08, 0.1, 1, 1.25, 1.5, 2, 2.5, 3]
     
     rules = Rules( p )    
     rules.add_rule( "Z1", CheckZ )
     rules.add_rule( "Z2", CheckZ )
     rules.add_rule( "m", Checkm )
-    
+    my_context.register_rules(rules)
         
 def DefineRelations():
     # The three relations are:

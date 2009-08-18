@@ -38,7 +38,7 @@ def main():
     box2 = my_context.prim_operations.MakeBoxTwoPnt(my_pnt3,my_pnt4,name="Box2", show=True)            # Create the box
     
     # boolean subtract box2 from box1 
-    booled_box = my_context.boolean_operations.MakeBoolean( box1, box2, 1, name='BooleanBox', show=False)
+    booled_box = my_context.boolean_operations.MakeBoolean( box1, box2, 2, name='BooleanBox', show=False)
     
     # add fillets to the booleaned box
     fillet_box = my_context.local_operations.MakeFilletAll( booled_box, p.RADIUS, name='FilletBox', show=True)
@@ -60,7 +60,7 @@ def main():
         p.RADIUS = i/10.
         print 'updating geometry took:', time.time() - tA
     
-#    my_context.start_display()
+    my_context.start_display()
 
 def profile_main():
      # This is the main function for profiling 
