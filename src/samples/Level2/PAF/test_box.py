@@ -3,7 +3,7 @@ from OCC.PAF.Parametric import Parameters
 
 p = Parameters()            # Create a parameters set
 my_context = ParametricModelingContext(p)     # Create and initialize a parametric context
-my_context.init_display()   # start display
+my_context.init_display()   # start display#
 my_context.register_operations(my_context.prim_operations)
 
 p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4                                   # Create 7 parameters

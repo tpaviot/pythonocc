@@ -21,6 +21,8 @@ Wrapping:
 
     *   PAF framework refactored with descriptors ( easier to extend / inherit )
 
+    *   Fix Standard_Integer& returned values (for instance ShapeFix_Solid.FixShellMode())
+
 0.5 release:
     target date: mid December
 
