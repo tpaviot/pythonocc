@@ -19,7 +19,7 @@
 # to knowledge
 
 from OCC.PAF.Context import ParametricModelingContext
-from OCC.PAF.Parametric import Parameters, Rules, Relation, symb
+from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
 
 
 from math import pi
@@ -91,11 +91,9 @@ def DefineRules():
         print 'checking M for param:', m
         return m in [0.06, 0.08, 0.1, 1, 1.25, 1.5, 2, 2.5, 3]
     
-    rules = Rules( p )    
-    rules.add_rule( "Z1", CheckZ )
-    rules.add_rule( "Z2", CheckZ )
-    rules.add_rule( "m", Checkm )
-    my_context.register_rules(rules)
+    Rule(p, "Z1", CheckZ )
+    Rule(p, "Z2", CheckZ )
+    Rule(p, "m", Checkm )
         
 def DefineRelations():
     # The three relations are:
