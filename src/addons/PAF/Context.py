@@ -146,7 +146,7 @@ class ParametricModelingContext(object):
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self._old_ops_news_ops = {}             # hashes the old self.myEngine.*Operations class, to the one wrapped by ._initialize operation
-        self.callbacks      = [self._update]    # callbacks, such as used for updating presentations
+        self.callbacks      = []    # callbacks, such as used for updating Rules and Relations
         self.object_names   = []                # set of all named parametric objects
         self.pres           = {}                # hash Geom_object instance to its presentation
         
@@ -274,12 +274,17 @@ class ParametricModelingContext(object):
         Adds a rule to this parameter. Each time the parameter is updated,
         then the rule is checked"""
         if isinstance(rules,Rule):
-            self.callbacks.append(rules.eval)
+            # the Rule callback has to be prepended to the callbacks list.
+            self.callbacks = [rules.eval]+self.callbacks
         else:
             raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
         
     def set_parameter(self, name, value, does_commit):
-        
+        # call registered callbacks. Rules/Relations have to be updated before the geometry is modified. 
+        for callback in self.callbacks:
+            #print 'calling callback:', callback
+            callback()
+
         if does_commit:
             self.doc.NewCommand()
         
@@ -288,16 +293,11 @@ class ParametricModelingContext(object):
         #update registered solvers
         for solver in self.solvers:
             seq = TDF_LabelSequence() 
-            solver.Update(self.docId, seq)
-
-        # call registered callbacks    
-        for callback in self.callbacks:
-            #print 'calling callback:', callback
-            callback()
+            solver.Update(self.docId, seq)        
         
         if does_commit:
             self.doc.CommitCommand()            
-#        self._update()
+        self._update()
 
     def get_presentation(self, geom_obj):
         if hasattr(geom_obj, 'GetObject'):
