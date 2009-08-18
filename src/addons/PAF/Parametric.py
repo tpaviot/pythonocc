@@ -63,7 +63,7 @@ class Relation(object):
         self.tolerance = tolerance
         self.parameters.context.register_relations(self)
         
-    def BuildSubs(self):
+    def build_subs(self):
         """ First have to set all the parameters keys/values so that sympy can compute
         the relation
         """
@@ -73,7 +73,7 @@ class Relation(object):
         return d
         
     def eval(self):
-        _subs = self.BuildSubs()
+        _subs = self.build_subs()
         try:
             # Compare with the old value to avoid setting the parameter
             # and have infinte recurrent calls 
