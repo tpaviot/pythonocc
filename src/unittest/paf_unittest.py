@@ -11,7 +11,7 @@ my_context = ParametricModelingContext(p)
 
 # Define the function
 def IsPositive(param):
-    return param.value>0.0
+    return param>0.0
 
 
 class TestPAF(unittest.TestCase):
@@ -29,15 +29,21 @@ class TestPAF(unittest.TestCase):
         '''
         BrokeRule should be raised, since p.Y < 0.0
         '''
-        rules = Rules(p)
         p.X = 10
         p.Y = -10
-        rules.add_rule( "X", IsPositive )
-        rules.add_rule( "Y", IsPositive )
-        self.assertRaises(BrokeRule, rules.eval)
         
-#    NOT DONE
-
+        # this rule is fine
+        r1 = Rule(p, "X", IsPositive )
+        
+        # this rule should raise exception BrokeRule
+        
+        # rule is evaluated while constructed
+        # so, if the rule is False to start with
+        # its will raise BrokeRule
+        # dont know how to fix this unittest though...
+        # its should work when you think of it!!!
+        self.assertRaises(BrokeRule, Rule(p, "Y", IsPositive ))
+        
     def test_relation_sympy(self):
         X = p.X.symbol
         first_relation = 1/ X **2 + 1
