@@ -50,7 +50,6 @@ class Relation(object):
         @param relation:                   Sympy equation
         '''
         
-        # assert isinstance(parameters_instance, Parameters)
         assert issubclass(relation.__class__, sympy.core.basic.Basic ), 'relation should be a subclass of sympy.core.basic.Basic, got a %s' % ( relation.__class__)
         
         self._relation = relation
@@ -76,7 +75,7 @@ class Relation(object):
             new_parameter_value = self._relation.evalf(subs=_subs, n=10) #require sympy library
             new_parameter_value = float(new_parameter_value)
             old_value = getattr(self.parameters, self.param_str).value
-            print '%s :old parameter value, new parameter value: %s %s ', ( self.param_str, old_value, new_parameter_value ) 
+            print '%s :old parameter value, new parameter value: %s %s ' % ( self.param_str, old_value, new_parameter_value ) 
             error = abs(new_parameter_value-old_value)
             print 'error',error
         except:
@@ -112,8 +111,8 @@ class Rules(object):
             try:
                 param, func = r
                 print 'param, func:',param,func
-                r = func(param)
-                print 'r:',r
+                r = func(param.value)
+                print 'rule:',r
                 if not r:
                     raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( func, param))
             except:
@@ -199,7 +198,7 @@ class Parameters(object):
         
         # add the parameter to the Interpreter ( which does the real work )
         self.context.set_parameter(name,value, self._commit)
-       
+        
     def __getattribute__(self, name):
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
@@ -210,4 +209,8 @@ class Parameters(object):
                 return attr
         else:
             return attr
+
+
+
+
 

@@ -118,6 +118,12 @@ class ParametricModelingContext(object):
         >>> my_context.init_display()
         Display initialized
         
+        Now you see that a my_context.display attribute is in place
+        This is the same .display object you've come to learn and love
+        
+        >>> my_context.display # doctest: +ELLIPSIS
+        <OCC.Display.OCCViewer.Viewer3d; proxy of <Swig Object of type 'Display3d *' at 0xd1f9e80> >
+        
         Now we've got a viewer up and running
         To enter the GUI loop, just call .start_display from your ParametricModelingContext instance
         
@@ -263,15 +269,14 @@ class ParametricModelingContext(object):
             else:
                 raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
         
-#    def register_rules(self, *rules):
-#        """
-#        Adds a rule to this parameter. Each time the parameter is updated,
-#        then the rule is checked"""
-#        for rule in rules:
-#            if isinstance(rule,Rules):
-#                self.register_callback(rule.Check)
-#            else:
-#                raise TypeError('%s is not a Rule object' % ( rule.__class__ ) )
+    def register_rules(self, rules):
+        """
+        Adds a rule to this parameter. Each time the parameter is updated,
+        then the rule is checked"""
+        if isinstance(rules,Rules):
+            self.callbacks.append(rules.eval)
+        else:
+            raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
         
     def set_parameter(self, name, value, does_commit):
         
