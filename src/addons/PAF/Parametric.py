@@ -89,6 +89,9 @@ class Relation(object):
         
         if error > self.tolerance:
             setattr(self.parameters, self.param_str, new_parameter_value)
+            
+    def __call__(self):
+        self.eval()
 
     
 class BrokeRule(Exception):
@@ -123,13 +126,16 @@ class Rule(object):
             r = self._func(param.value)
             print 'rule:',r
             if not r:
-                raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( self._func, param))
+                raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( self._func, param.value))
         except:
             print 'exception raised while evaluating rule:', self
             print 'the function that raised an error is:', self._func
             print 'with parameter:', param
             # re-raising the old exception
             raise
+    
+    def __call__(self):
+        self.eval()
 
 
 class Parameter(GEOM_Parameter):
