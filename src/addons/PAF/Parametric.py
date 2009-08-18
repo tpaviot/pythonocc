@@ -43,7 +43,12 @@ class RelationError(Exception):
 class Relation(object):
     """ Defines a relation between two or more parameters
     """
-    def __init__(self,parameters_instance,string_parameter_name,relation, tolerance=0.0001):
+    def __init__(self,
+                  parameters_instance,
+                   string_parameter_name,
+                    relation,
+                     tolerance=0.0001
+                     ):
         '''
         @param parameters_instance:            Parameters instance
         @param string_parameter_name:      string of the argument on Parameters ( eg. Parameters.X -> "X" )
@@ -92,35 +97,39 @@ class BrokeRule(Exception):
 class RulesError(Exception):
     pass
 
-class Rules(object):
-    def __init__(self, parameters):
-        self.parameters = parameters
-        self._rules  = []
+class Rule(object):
+    def __init__(self,
+                  parameters_instance,
+                   string_parameter_name,
+                    func ):
         
-    def add_rule(self, attr, func):
         assert callable(func), 'func not a callable'
-        try:
-            param = getattr(self.parameters, attr)
-        except AttributeError:
-            raise RulesError( 'Parameter instance hasnt got attribute %s' % ( attr ) )
+        self.parameters = parameters_instance
+        self.param_str = string_parameter_name
+        self._func = func
         
-        self._rules.append((param, func))
-        
+        # register rules
+        self.parameters.context.register_rules(self)
+    
     def eval(self):
-        for r in self._rules:
-            try:
-                param, func = r
-                print 'param, func:',param,func
-                r = func(param.value)
-                print 'rule:',r
-                if not r:
-                    raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( func, param))
-            except:
-                print 'exception raised while evaluating rules'
-                print 'the function that raised an error is:', func
-                print 'with parameter:', param
-                # re-raising the old exception
-                raise
+        
+        try: 
+            param = self.parameters.GetAllParameters()[self.param_str]
+        except KeyError:
+            print 'no parameter: %s found' % (self.param_str)
+
+        try:
+            print 'param, func:',param, self._func
+            r = self._func(param.value)
+            print 'rule:',r
+            if not r:
+                raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( self._func, param))
+        except:
+            print 'exception raised while evaluating rule:', self
+            print 'the function that raised an error is:', self._func
+            print 'with parameter:', param
+            # re-raising the old exception
+            raise
 
 
 class Parameter(GEOM_Parameter):

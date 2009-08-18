@@ -22,7 +22,7 @@ from OCC.TPrsStd import *
 from OCC.TNaming import *
 from wx import SafeYield
 
-from OCC.PAF.Parametric import Relation, Rules, Parameters
+from OCC.PAF.Parametric import Relation, Rule, Parameters
 from OCC.TCollection import TCollection_AsciiString
 import time
 
@@ -273,7 +273,7 @@ class ParametricModelingContext(object):
         """
         Adds a rule to this parameter. Each time the parameter is updated,
         then the rule is checked"""
-        if isinstance(rules,Rules):
+        if isinstance(rules,Rule):
             self.callbacks.append(rules.eval)
         else:
             raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
