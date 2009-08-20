@@ -43,23 +43,27 @@ class RelationError(Exception):
 class Relation(object):
     """ Defines a relation between two or more parameters
     """
-    def __init__(self,parameters_instance,string_parameter_name,relation, tolerance=0.0001):
+    def __init__(self,
+                  parameters_instance,
+                   string_parameter_name,
+                    relation,
+                     tolerance=0.0001
+                     ):
         '''
         @param parameters_instance:            Parameters instance
         @param string_parameter_name:      string of the argument on Parameters ( eg. Parameters.X -> "X" )
         @param relation:                   Sympy equation
         '''
         
-        # assert isinstance(parameters_instance, Parameters)
         assert issubclass(relation.__class__, sympy.core.basic.Basic ), 'relation should be a subclass of sympy.core.basic.Basic, got a %s' % ( relation.__class__)
         
         self._relation = relation
         self.parameters = parameters_instance
         self.param_str = string_parameter_name
         self.tolerance = tolerance
-        self.parameters.context.register_relation(self)
+        self.parameters.context.register_relations(self)
         
-    def BuildSubs(self):
+    def build_subs(self):
         """ First have to set all the parameters keys/values so that sympy can compute
         the relation
         """
@@ -69,14 +73,14 @@ class Relation(object):
         return d
         
     def eval(self):
-        _subs = self.BuildSubs()
+        _subs = self.build_subs()
         try:
             # Compare with the old value to avoid setting the parameter
             # and have infinte recurrent calls 
             new_parameter_value = self._relation.evalf(subs=_subs, n=10) #require sympy library
             new_parameter_value = float(new_parameter_value)
             old_value = getattr(self.parameters, self.param_str).value
-            print '%s :old parameter value, new parameter value: %s %s ', ( self.param_str, old_value, new_parameter_value ) 
+            print '%s :old parameter value, new parameter value: %s %s ' % ( self.param_str, old_value, new_parameter_value ) 
             error = abs(new_parameter_value-old_value)
             print 'error',error
         except:
@@ -85,6 +89,9 @@ class Relation(object):
         
         if error > self.tolerance:
             setattr(self.parameters, self.param_str, new_parameter_value)
+            
+    def __call__(self):
+        self.eval()
 
     
 class BrokeRule(Exception):
@@ -93,35 +100,42 @@ class BrokeRule(Exception):
 class RulesError(Exception):
     pass
 
-class Rules(object):
-    def __init__(self, parameters):
-        self.parameters = parameters
-        self._rules  = []
+class Rule(object):
+    def __init__(self,
+                  parameters_instance,
+                   string_parameter_name,
+                    func ):
         
-    def add_rule(self, attr, func):
         assert callable(func), 'func not a callable'
-        try:
-            param = getattr(self.parameters, attr)
-        except AttributeError:
-            raise RulesError( 'Parameter instance hasnt got attribute %s' % ( attr ) )
+        self.parameters = parameters_instance
+        self.param_str = string_parameter_name
+        self._func = func
         
-        self._rules.append((param, func))
-        
+        # register rules
+        self.parameters.context.register_rules(self)
+    
     def eval(self):
-        for r in self._rules:
-            try:
-                param, func = r
-                print 'param, func:',param,func
-                r = func(param)
-                print 'r:',r
-                if not r:
-                    raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( func, param))
-            except:
-                print 'exception raised while evaluating rules'
-                print 'the function that raised an error is:', func
-                print 'with parameter:', param
-                # re-raising the old exception
-                raise
+        
+        try: 
+            param = self.parameters.GetAllParameters()[self.param_str]
+        except KeyError:
+            print 'no parameter: %s found' % (self.param_str)
+
+        try:
+            print 'param, func:',param, self._func
+            r = self._func(param.value)
+            print 'rule:',r
+            if not r:
+                raise BrokeRule('the rule with function: %s broke with argument(s):%s' % ( self._func, param.value))
+        except:
+            print 'exception raised while evaluating rule:', self
+            print 'the function that raised an error is:', self._func
+            print 'with parameter:', param
+            # re-raising the old exception
+            raise
+    
+    def __call__(self):
+        self.eval()
 
 
 class Parameter(GEOM_Parameter):
@@ -161,14 +175,13 @@ class Parameter(GEOM_Parameter):
         """
         return self._value
 
-
 class Parameters(object):
     """ This class defines a set of parameters that are handled by both
     pythonOCC and SalomeGEOM
     """
-#    def __init__(self, context ):
     def __init__(self):        
         object.__setattr__(self, '_parameters', {})
+        object.__setattr__(self, '_commit', False)
         
     def GetAllParameters(self):
         """ Returns the dict of all defined parameters
@@ -177,6 +190,9 @@ class Parameters(object):
     
     def _set_context(self, context):
         object.__setattr__(self, 'context', context)
+    
+    def _set_commit(self, commit):
+        object.__setattr__(self, '_commit', commit)
     
     def __setattr__(self, name, value):
         """if an attribute is a numerical value ( integer or float )
@@ -196,13 +212,20 @@ class Parameters(object):
         self._parameters[name] = Parameter(name, value)
         
         # add the parameter to the Interpreter ( which does the real work )
-        self.context.set_parameter(name,value)
-       
+        self.context.set_parameter(name,value, self._commit)
+        
     def __getattribute__(self, name):
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
-            print 'parameter: %s value: %s' % (name, attr)                     
-            return self._parameters[name]
+            try:
+                print 'parameter: %s value: %s' % (name, attr)                     
+                return self._parameters[name]
+            except KeyError:
+                return attr
         else:
             return attr
+
+
+
+
 

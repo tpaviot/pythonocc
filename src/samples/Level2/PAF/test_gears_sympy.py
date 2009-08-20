@@ -18,8 +18,8 @@
 # A sample that shows how to generate the gear geometry according
 # to knowledge
 
-from OCC.PAF.Context import Context, start_display
-from OCC.PAF.Parametric import Parameters, Rules, Relation, symb
+from OCC.PAF.Context import ParametricModelingContext
+from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
 
 
 from math import pi
@@ -27,12 +27,13 @@ from sympy import *
 
 # Initialization
 p = Parameters()
-my_context = Context( p )
-
+my_context = ParametricModelingContext( p )
+my_context.init_display()
+my_context.register_operations(my_context.basic_operations)
 
 # Define the first gear (actually modelized by a cylinder)
 # location of the first gear
-p.X1 = 0.0
+p.X1 = 0.0001 #sympy have sometimes problems with 0 value
 p.Y1 = 0.0
 p.Z1 = 0.0
 my_pnt1 = my_context.basic_operations.MakePointXYZ( p.X1, p.Y1, p.Z1, name="Pnt1" )
@@ -82,18 +83,17 @@ p.r = 0.5   # The speed ratio
 def DefineRules():
     # The number of teeth must be greater than 0 and also be an integer
     def CheckZ( Z ):
+        print 'checking Z for param:',Z
         return ( int( Z ) / Z == 1.0 and Z > 0 )
     
     # The modulus cannot take any value (notice that this list is not exhaustive.
     def Checkm( m ):
+        print 'checking M for param:', m
         return m in [0.06, 0.08, 0.1, 1, 1.25, 1.5, 2, 2.5, 3]
     
-    rules = Rules( p )    
-    rules.add_rule( "Z1", CheckZ )
-    rules.add_rule( "Z2", CheckZ )
-    rules.add_rule( "m", Checkm )
-    
-    
+    Rule(p, "Z1", CheckZ )
+    Rule(p, "Z2", CheckZ )
+    Rule(p, "m", Checkm )
         
 def DefineRelations():
     # The three relations are:
@@ -105,16 +105,11 @@ def DefineRelations():
     
     Rel1 = a / ( 1 + r )
     Rel2 = a * r / ( 1 + r )    
-
-    # ----------- BUG -----------
     Rel3 = X1 + a
-    # ----------- BUG -----------
-    
-    
-    
+     
     Relation( p, "R1", Rel1 )
     Relation( p, "R2", Rel2 )
-    #Relation( p, "X2", Rel3 )
+    Relation( p, "X2", Rel3 )
 
 DefineRules()
 DefineRelations()
@@ -124,4 +119,4 @@ for i in range( 40, 120, 3 ):
     print 'updated p.a from %s to %s ' % ( p.a.value, i )
     
 
-start_display()
+my_context.start_display()

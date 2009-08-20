@@ -65,7 +65,7 @@ class ViewerFrame(wx.MDIChildFrame):
         
 class AppFrame(wx.MDIParentFrame):
     def __init__(self, parent):
-        wx.MDIParentFrame.__init__(self, parent, -1, "CAD Viewer %s - pythonOCC 0.99"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (800,600))
+        wx.MDIParentFrame.__init__(self, parent, -1, "CAD Viewer MDI - pythonOCC %s"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (800,600))
         # Creating Menu
         menuBar = wx.MenuBar()
         menu1 = wx.Menu()
