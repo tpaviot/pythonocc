@@ -266,12 +266,12 @@ def Test3d():
             self.setWindowTitle(self.tr("qtDisplay3d sample"))
             self.resize(640,480)
             self.canva = qtViewer3d(self)
-            self.canva.InitDriver()
             self.setCentralWidget(self.canva)
-            self.canva._display.Test()
     app = QtGui.QApplication(sys.argv)
     win = MainWindow()
     win.show()
+    win.canva.InitDriver()
+    win.canva._display.Test()
     app.exec_()
     
 def Test3d_bis():
@@ -281,7 +281,6 @@ def Test3d_bis():
             self.setWindowTitle(self.tr("qtDisplay3d sample"))
             self.resize(640, 480)
             self.canva = qtViewer3d(self)
-            self.canva.InitDriver()
             mainLayout = QtGui.QHBoxLayout()
             mainLayout.addWidget(self.canva)
             mainLayout.setMargin(0)
@@ -293,6 +292,7 @@ def Test3d_bis():
     app = QtGui.QApplication(sys.argv)
     frame = AppFrame()
     frame.show()
+    frame.canva.InitDriver()
     frame.runTests()
     sys.exit(app.exec_())
 
