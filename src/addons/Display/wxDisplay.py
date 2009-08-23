@@ -273,7 +273,6 @@ class wxViewer3d(wxBaseViewer):
         if self._drawbox:
             r = wx.Rect(*self._drawbox)
             dc.DrawRectangleRect(r)
-
         r = wx.Rect(self.dragStartPos.x, self.dragStartPos.y , dx, dy)
         dc.DrawRectangleRect(r)
         dc.EndDrawing()

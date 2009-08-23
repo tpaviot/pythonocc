@@ -421,12 +421,15 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 print "Current selection:",self.selected_shape
         else:
             self.selected_shape = None
-        
+    
     def Rotation(self,X,Y):
         self.View.Rotation(X,Y)
     
     def DynamicZoom(self,X1,Y1,X2,Y2):
         self.View.Zoom(X1,Y1,X2,Y2)
+        
+    def ZoomFactor(self,zoom_factor):
+        self.View.SetZoom(zoom_factor)
     
     def ZoomArea(self,X1,Y1,X2,Y2):
         self.View.WindowFit(X1,Y1,X2,Y2)
