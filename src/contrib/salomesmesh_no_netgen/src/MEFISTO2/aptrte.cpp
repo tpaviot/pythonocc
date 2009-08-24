@@ -34,11 +34,13 @@ extern "C"
 {
   R aretemaxface_;
   MEFISTO2D_EXPORT   
-	void
-	  MEFISTO2D_STDCALL
-	  areteideale(R &_areteideale)
+    R
+  #ifdef WIN32
+      __stdcall
+  #endif
+      areteideale()//( R3 xyz, R3 direction )
   {
-	_areteideale = aretemaxface_;
+    return aretemaxface_;
   }
 }
 //calcul de la longueur ideale de l'arete au sommet xyz (z ici inactif)
@@ -48,7 +50,7 @@ extern "C"
 
 static double cpunew, cpuold=0;
 
-void MEFISTO2D_STDCALL tempscpu_( double & tempsec )
+void tempscpu_( double & tempsec )
 //Retourne le temps CPU utilise en secondes
 {  
   tempsec = ( (double) clock() ) / CLOCKS_PER_SEC;
@@ -56,7 +58,7 @@ void MEFISTO2D_STDCALL tempscpu_( double & tempsec )
 }
 
 
-void MEFISTO2D_STDCALL deltacpu_( R & dtcpu )
+void deltacpu_( R & dtcpu )
 //Retourne le temps CPU utilise en secondes depuis le precedent appel
 {
   tempscpu_( cpunew );
@@ -226,7 +228,7 @@ void  aptrte( Z   nutysu, R      aretmx,
     ns0 = nudslf[n-1];
     mnpxyd[ns0].x = uvslf[ns0].x;
     mnpxyd[ns0].y = uvslf[ns0].y;
-	areteideale(mnpxyd[ns0].z);//( mnpxyd[ns0], direction );
+    mnpxyd[ns0].z = areteideale();//( mnpxyd[ns0], direction );
 //     MESSAGE("Sommet " << ns0 << ": " << mnpxyd[ns0].x
 // 	 << " " << mnpxyd[ns0].y << " longueur arete=" << mnpxyd[ns0].z);
 
@@ -279,11 +281,11 @@ void  aptrte( Z   nutysu, R      aretmx,
 //debut ajout  5/10/2006  ................................................
       nuds = Max( nuds, ns );   //le numero du dernier sommet traite
 //fin   ajout  5/10/2006  ................................................
-	  mnpxyd[ns].x = uvslf[ns].x;
-	  mnpxyd[ns].y = uvslf[ns].y;
-	  areteideale(mnpxyd[ns].z );//( mnpxyd[ns], direction );
-	  MESSAGE("Sommet " << ns << ": " << mnpxyd[ns].x
- 	   << " " << mnpxyd[ns].y << " longueur arete=" << mnpxyd[ns].z);
+      mnpxyd[ns].x = uvslf[ns].x;
+      mnpxyd[ns].y = uvslf[ns].y;
+      mnpxyd[ns].z = areteideale();//( mnpxyd[ns], direction );
+//       MESSAGE("Sommet " << ns << ": " << mnpxyd[ns].x
+// 	   << " " << mnpxyd[ns].y << " longueur arete=" << mnpxyd[ns].z);
 
       //carre de la longueur de l'arete
       d = pow( uvslf[ns2-1].x - uvslf[ns1-1].x, 2) 
@@ -373,7 +375,7 @@ void  aptrte( Z   nutysu, R      aretmx,
     //les 2 coordonnees du point i de sommet nbs
     mnpxyd[ns1].x = uvpti[i].x;
     mnpxyd[ns1].y = uvpti[i].y;
-	areteideale(mnpxyd[ns1].z);//( mnpxyd[ns1], direction );
+    mnpxyd[ns1].z = areteideale();//( mnpxyd[ns1], direction );
     //le numero i du point interne
     mnslig[ns1] = i+1;
     ns1++;
@@ -732,8 +734,11 @@ void  aptrte( Z   nutysu, R      aretmx,
     goto NETTOYAGE;
   }
 }
-
-void MEFISTO2D_STDCALL qualitetrte( R3 *mnpxyd,
+void
+#ifdef WIN32
+              __stdcall
+#endif
+ qualitetrte( R3 *mnpxyd,
 		   Z & mosoar, Z & mxsoar, Z *mnsoar,
 		   Z & moartr, Z & mxartr, Z *mnartr,
 		   Z & nbtria, R & quamoy, R & quamin )
