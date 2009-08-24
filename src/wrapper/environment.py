@@ -32,7 +32,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.3'         # Define pythonOCC version
+VERSION = 'path_to_0.4'         # Define pythonOCC version
 
 #===============================================================================
 # UTILITIES
@@ -105,7 +105,7 @@ if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
     SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','win32','lib')
-    GCC_XML_PATH = os.path.join(os.getcwd(),'..','bin','gccxml_bin','v09','win32','bin')
+    GCC_XML_PATH = os.path.join(os.getcwd(),'contrib','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\
