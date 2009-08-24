@@ -256,7 +256,6 @@ $(srcdir)/$(smeshdir)inc/SMESH_Gen.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_Group.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_HypoFilter.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_Hypothesis.hxx \
-$(srcdir)/$(smeshdir)inc/SMESH_IndexedDataMap.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_IndexedDataMapOfShapeIndexedMapOfShape.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_IndexedMap.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_Mesh.hxx \
