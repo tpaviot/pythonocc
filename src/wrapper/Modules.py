@@ -535,7 +535,7 @@ else:
                     ('AlienImage',['Quantity','TCollection'],[]),
                    ])
 #
-# SalomeGEOM stuff
+# SalomeGEOM modules
 #
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
@@ -555,7 +555,13 @@ SALOME_GEOM_MODULES = [
                         ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
                         ('Sketcher',[],[]),
                        ]
-       
+
+#
+# SalomeSMESH modules
+#
+SALOME_SMESH_MODULES = [
+                       ('StdMeshers',[],[]),
+                       ]
 def PythonOCCStats():
     """
     This function takes all *.hxx headers and returns a list of available packages:

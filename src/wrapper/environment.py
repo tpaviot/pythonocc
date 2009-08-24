@@ -126,9 +126,10 @@ elif sys.platform=='linux2':
         OCC_INC = os.path.join(OCC_ROOT,'inc')
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
     else:
-        OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
-        OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
+        OCC_INC = '/opt/OpenCASCADE6.3.0/inc'
+        OCC_LIB = '/opt/OpenCASCADE6.3.0/lib' # Ubuntu 8.04 Hardy default installation path for libraries
     SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
+    SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -234,6 +235,7 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
+SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','inc')
 
 if __name__=='__main__':
     print GetOCCPaths()

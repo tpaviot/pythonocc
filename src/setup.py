@@ -56,6 +56,13 @@ if '-NO_GEOM' in sys.argv:
 else:
     WRAP_SALOME_GEOM = True
 
+# Check whether Salome GEOM package must be wrapped. True by default.
+if '-SMESH' in sys.argv:
+    WRAP_SALOME_SMESH = True #overload default behaviour
+    sys.argv.remove('-SMESH')
+else:
+    WRAP_SALOME_SMESH = False
+
 #Check whether build a 'all_in_one' distro (for Win32)
 if '-ALL_IN_ONE' in sys.argv:
     ALL_IN_ONE = True #overload default behaviour
@@ -199,6 +206,13 @@ if WRAP_SALOME_GEOM:
                         'NMTDS','GEOM','GEOMImpl',
                         'GEOMAlgo','Archimede'])
 #
+# Salome SMESH libs
+#
+if WRAP_SALOME_SMESH:
+    LIBS.extend(['Driver','DriverDAT','DriverSTL','DriverUNV',\
+                        'MEFISTO2','SMDS','SMESH',
+                        'SMESHDS','StdMeshers'])
+#
 # OpenCascade wrapper extensions
 #
 extension = []
@@ -256,6 +270,27 @@ if WRAP_SALOME_GEOM:
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,environment.SALOME_GEOM_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
                     library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    define_macros= DEFINE_MACROS,
+                    swig_opts = SWIG_OPTS,
+                    libraries = LIBS,
+                    extra_compile_args = ECA,
+                    extra_link_args = ELA,
+                    )
+        extension.append(module_extension)
+
+#
+# Salome SMESH extensions
+#
+if WRAP_SALOME_SMESH:
+    for module in Modules.SALOME_SMESH_MODULES:
+        SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
+        if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
+            print SWIG_source_file
+            builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_SMESH_INC)
+        module_extension = Extension("OCC._%s"%module[0],
+                    sources = [SWIG_source_file],
+                    include_dirs=[OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
