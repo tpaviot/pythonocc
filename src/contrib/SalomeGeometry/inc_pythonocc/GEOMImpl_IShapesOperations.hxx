@@ -56,7 +56,8 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations
   Standard_EXPORT Handle(GEOM_Object) MakeEdge (Handle(GEOM_Object) thePoint1,
                                 Handle(GEOM_Object) thePoint2);
 
-  Standard_EXPORT Handle(GEOM_Object) MakeWire (std::list<Handle(GEOM_Object)> theEdgesAndWires);
+  Standard_EXPORT Handle(GEOM_Object) MakeWire (std::list<Handle(GEOM_Object)> theEdgesAndWires,
+                                                const Standard_Real            theTolerance);
 
   Standard_EXPORT Handle(GEOM_Object) MakeFace (Handle(GEOM_Object) theWire, const bool isPlanarWanted);
 
@@ -102,8 +103,8 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations
 
   Standard_EXPORT TCollection_AsciiString GetShapeTypeString (Handle(GEOM_Object) theShape);
 
-  Standard_EXPORT Standard_Integer NumberOfFaces (Handle(GEOM_Object) theShape);
-  Standard_EXPORT Standard_Integer NumberOfEdges (Handle(GEOM_Object) theShape);
+  Standard_EXPORT Standard_Integer NumberOfSubShapes (Handle(GEOM_Object)    theShape,
+                                                      const Standard_Integer theShapeType);
 
   Standard_EXPORT Handle(GEOM_Object) ReverseShape(Handle(GEOM_Object) theShapes);
 

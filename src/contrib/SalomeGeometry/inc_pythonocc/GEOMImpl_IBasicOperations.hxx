@@ -85,6 +85,13 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 
   Standard_EXPORT Handle(GEOM_Object) MakePlaneFace (Handle(GEOM_Object) theFace, const GEOM_Parameter& theSize);
 
+  Standard_EXPORT Handle(GEOM_Object) MakePlane2Vec (Handle(GEOM_Object) theVec1,
+                                                     Handle(GEOM_Object) theVec2,
+                                                     const GEOM_Parameter& theSize);
+
+  Standard_EXPORT Handle(GEOM_Object) MakePlaneLCS (Handle(GEOM_Object) theFace, const GEOM_Parameter& theSize, const GEOM_Parameter& theOrientation);
+
+
   //! Marker
   Standard_EXPORT Handle(GEOM_Object) MakeMarker (const GEOM_Parameter& theOX,  const GEOM_Parameter& theOY,  const GEOM_Parameter& theOZ,
 								  const GEOM_Parameter& theXDX, const GEOM_Parameter& theXDY, const GEOM_Parameter& theXDZ,

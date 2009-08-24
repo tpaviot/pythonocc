@@ -121,10 +121,12 @@
 #define VECTOR_PNT_DX_DY_DZ 4
 #define VECTOR_FACE_NORMALE 5
 
-#define PLANE_PNT_VEC   1
-#define PLANE_FACE      2
-#define PLANE_THREE_PNT 3
+#define PLANE_PNT_VEC      1
+#define PLANE_FACE         2
+#define PLANE_THREE_PNT    3
 #define PLANE_TANGENT_FACE 4
+#define PLANE_2_VEC        5
+#define PLANE_LCS          6
 
 #define LINE_TWO_PNT   1
 #define LINE_PNT_DIR   2

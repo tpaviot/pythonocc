@@ -36,6 +36,14 @@
 
 #define PLN_ARG_PARAM_V 8
 
+#define PLN_ARG_VEC1    9
+#define PLN_ARG_VEC2    10
+
+#define PLN_ARG_ORIENT  11
+
+#define PLN_ARG_LCS     12
+
+
 class GEOMImpl_IPlane
 {
  public:
@@ -46,11 +54,19 @@ class GEOMImpl_IPlane
   void SetSize(const TCollection_AsciiString& theSize) { _func->SetReal(PLN_ARG_SIZE, theSize); }
 
   double GetSize() { return _func->GetReal(PLN_ARG_SIZE); }
+  
+  void SetOrientation(double theOrientation) { _func->SetReal(PLN_ARG_ORIENT, theOrientation); }
+  void SetOrientation(const TCollection_AsciiString& theOrientation) { _func->SetReal(PLN_ARG_ORIENT, theOrientation); }
+  
+  double GetOrientation() { return _func->GetReal(PLN_ARG_ORIENT); }
 
   void SetPoint (Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_PNT1, theRef); }
   void SetVector(Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_VEC , theRef); }
+  void SetVector1(Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_VEC1 , theRef); }
+  void SetVector2(Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_VEC2 , theRef); }
 
   void SetFace  (Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_REF , theRef); }
+  void SetLCS   (Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_LCS , theRef); }
 
   void SetPoint1(Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_PNT1, theRef); }
   void SetPoint2(Handle(GEOM_Function) theRef) { _func->SetReference(PLN_ARG_PNT2, theRef); }
@@ -58,9 +74,13 @@ class GEOMImpl_IPlane
 
   Handle(GEOM_Function) GetPoint () { return _func->GetReference(PLN_ARG_PNT1); }
   Handle(GEOM_Function) GetVector() { return _func->GetReference(PLN_ARG_VEC ); }
+  Handle(GEOM_Function) GetVector1() { return _func->GetReference(PLN_ARG_VEC1 ); }
+  Handle(GEOM_Function) GetVector2() { return _func->GetReference(PLN_ARG_VEC2 ); }
+
 
   Handle(GEOM_Function) GetFace  () { return _func->GetReference(PLN_ARG_REF ); }
-
+  Handle(GEOM_Function) GetLCS   () { return _func->GetReference(PLN_ARG_LCS ); }
+  
   Handle(GEOM_Function) GetPoint1() { return _func->GetReference(PLN_ARG_PNT1); }
   Handle(GEOM_Function) GetPoint2() { return _func->GetReference(PLN_ARG_PNT2); }
   Handle(GEOM_Function) GetPoint3() { return _func->GetReference(PLN_ARG_PNT3); }

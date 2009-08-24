@@ -43,6 +43,7 @@
 #endif
 
 #include <map>
+#include <list>
 #include <vector>
 
 struct TVariable{
@@ -75,6 +76,10 @@ private:
 };
 
 typedef std::map<TCollection_AsciiString, ObjectStates* > TVariablesList;
+
+#ifdef MEM_OPTIMISED_LABEL
+typedef std::map<int, std::list<TDF_Label> > TFreeLabelsList;
+#endif
 
 //!Manages documents and objects in a document
 class GEOM_Engine
@@ -172,7 +177,10 @@ class GEOM_Engine
 
   Resource_DataMapOfAsciiStringAsciiString _studyEntry2NameMap;
 
-  TDF_Label _lastCleared;
+  #ifdef MEM_OPTIMISED_LABEL
+  TFreeLabelsList _freeLabels;
+  #endif
+
 };
 
 #endif
