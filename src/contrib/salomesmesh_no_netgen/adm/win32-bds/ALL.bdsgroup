@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{C870A831-BE73-44E5-9F3C-580FBD7FD7E1}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="MEFISTO2.dll">MEFISTO2.bdsproj</Projects>
+      <Projects Name="SMDS.dll">SMDS.bdsproj</Projects>
+      <Projects Name="Driver.dll">Driver.bdsproj</Projects>
+      <Projects Name="DriverSTL.dll">DriverSTL.bdsproj</Projects>
+      <Projects Name="DriverDAT.dll">DriverDAT.bdsproj</Projects>
+      <Projects Name="DriverUNV.dll">DriverUNV.bdsproj</Projects>
+      <Projects Name="SMESHDS.dll">SMESHDS.bdsproj</Projects>
+      <Projects Name="SMESH.dll">SMESH.bdsproj</Projects>
+      <Projects Name="StdMeshers.dll">StdMeshers.bdsproj</Projects>
+      <Projects Name="Targets">MEFISTO2.dll SMDS.dll Driver.dll DriverSTL.dll DriverDAT.dll DriverUNV.dll SMESHDS.dll SMESH.dll StdMeshers.dll</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>
