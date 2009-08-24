@@ -1,0 +1,14 @@
+How to compile SalomeSMESH for Linux
+
+How to compile salomesmesh
+
+1. install the fort77 package
+2. Be sure that the $CASROOT env is defined
+3. Start the build process
+
+autoreconf --install
+./configure --prefix=/opt/salomesmesh (or whatever)
+make
+sudo make install
+
+
