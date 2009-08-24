@@ -249,7 +249,6 @@ $(srcdir)/$(smeshdir)inc/SMESH_Controls.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_ControlsDef.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_DataMapOfElemPtrSequenceOfElemPtr.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_DefineArray2.hxx \
-$(srcdir)/$(smeshdir)inc/SMESH_DefineIndexedDataMap.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_DefineIndexedMap.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_ExceptHandlers.hxx \
 $(srcdir)/$(smeshdir)inc/SMESH_Exception.hxx \
