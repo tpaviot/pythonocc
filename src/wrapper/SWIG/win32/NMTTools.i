@@ -1020,6 +1020,8 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		BOPTools_PavePool & ChangePavePool();
 		%feature("autodoc", "1");
+		BOPTools_PavePool & ChangePavePoolNew();
+		%feature("autodoc", "1");
 		const NMTTools_CommonBlockPool & CommonBlockPool() const;
 		%feature("autodoc", "1");
 		NMTTools_CommonBlockPool & ChangeCommonBlockPool();

@@ -32,4 +32,3 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %include Archimede_headers.i
 
-

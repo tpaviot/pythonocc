@@ -286,6 +286,8 @@ class BlockFix_UnionFaces {
 		%feature("autodoc", "1");
 		Standard_Real & GetTolerance();
 		%feature("autodoc", "1");
+		Standard_Integer & GetOptimumNbFaces();
+		%feature("autodoc", "1");
 		TopoDS_Shape Perform(const TopoDS_Shape &Shape);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSameDomain(const TopoDS_Face &aFace, const TopoDS_Face &aChekedFace) const;
@@ -316,6 +318,8 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 		Handle_ShapeBuild_ReShape & Context();
 		%feature("autodoc", "1");
 		Standard_Real & Tolerance();
+		%feature("autodoc", "1");
+		Standard_Integer & OptimumNbFaces();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
