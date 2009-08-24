@@ -36,7 +36,8 @@ install-exec-local:
 
 # set MEFISTO2 sources (areteideale can be safelly excluded ?)
 libMEFISTO2_la_SOURCES = $(srcdir)/$(smeshdir)src/MEFISTO2/aptrte.cpp \
-$(srcdir)/$(smeshdir)src/MEFISTO2/trte.for
+$(srcdir)/$(smeshdir)src/MEFISTO2/trte.for \
+$(srcdir)/$(smeshdir)src/MEFISTO2/areteideale.for
 
 # set SMDS sources
 libSMDS_la_SOURCES = $(srcdir)/$(smeshdir)src/SMDS/SMDS_EdgePosition.cpp \
