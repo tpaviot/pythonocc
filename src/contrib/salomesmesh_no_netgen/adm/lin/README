@@ -6,6 +6,8 @@ How to compile salomesmesh
 2. Be sure that the $CASROOT env is defined
 3. Start the build process
 
+cd salomesmesh_no_netgen
+libtoolize
 autoreconf --install
 ./configure --prefix=/opt/salomesmesh (or whatever)
 make
