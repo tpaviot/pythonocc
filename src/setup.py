@@ -223,7 +223,7 @@ for module in Modules.MODULES:
     module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
-                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
@@ -239,7 +239,7 @@ extension.append(Extension("OCC._Visualization",
                                os.path.join(os.getcwd(),'wrapper','Visualization','NISDisplay3d.cpp'),
                                ],
                     include_dirs=[OCC_INC,os.path.join(os.getcwd(),'wrapper','Visualization')],
-                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
@@ -250,7 +250,7 @@ extension.append(Extension("OCC._Visualization",
 extension.append(Extension("OCC._Misc",
                     sources = [os.path.join(os.getcwd(),'wrapper','Misc','Misc.i')],
                     include_dirs=[OCC_INC],
-                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
@@ -287,9 +287,12 @@ if WRAP_SALOME_SMESH:
         if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
             print SWIG_source_file
             builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_SMESH_INC)
+        INCLUDE_DIRS = [OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR] #for TopOpeBRep_tools.hxx
+        if sys.platform=='win32':
+            INCLUDE_DIRS.append(environment.BOOST_INC)
         module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
-                    include_dirs=[OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
+                    include_dirs=INCLUDE_DIRS,
                     library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
