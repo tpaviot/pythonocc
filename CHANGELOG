@@ -1,3 +1,7 @@
+2009/08/26:
+	- added experimental SMESH 5.1.2 support
+2009/08/24:
+	- updated to SalomeGEOM 5.1.2 (salomegeometry svn rev.178)
 2009/08/23:
 	- added PyQt4 support
 	- OCCViewer updated to enable wheel zoom
