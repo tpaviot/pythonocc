@@ -895,10 +895,10 @@ class ModularBuilder(object):
         if sys.platform != 'win32':
             for hxx_file in HXX_FILES:
                 if 'WNT' in hxx_file:
-                    HXX_TO_EXCLUDE.append(hxx_file)
-        # Under Windows, remove all X11/Xfw headers
+                    HXX_TO_EXCLUDE.append(hxx_file)        
         elif sys.platform == 'win32':
-            for hxx_file in HXX_FILES:
+            HXX_TO_EXCLUDE.append('SMESH_ControlsDef.hxx') #SMESH pygccxml error
+            for hxx_file in HXX_FILES: # Under Windows, remove all X11/Xfw headers
                 if ('X11' in hxx_file) or ('XWD' in hxx_file):
                     HXX_TO_EXCLUDE.append(hxx_file)
         if len(HXX_FILES)==0:
@@ -977,7 +977,7 @@ class ModularBuilder(object):
             return # TODO: Problem with a typedef in OSD module
         typedefs = self._mb.global_ns.typedefs()
         for elem in typedefs:
-            if (elem.name.startswith('%s_'%self.MODULE_NAME)) and (not '::' in '%s'%elem.type):
+            if (elem.name.startswith('%s_'%self.MODULE_NAME)) and (not '::' in '%s'%elem.type) and not(elem.name=='MeshVS_SelectionModeFlags'):
                 # Careful:
                 # typedef Standard_Real Quantity_Parameter leads to a bug
                 # it should rather be:
@@ -993,11 +993,14 @@ class ModularBuilder(object):
         """
         Generate _mb with pygccxml
         """
+        PATHS = [self.INC_PATH, environment.SWIG_FILES_PATH_MODULAR, environment.OCC_INC]
+        if sys.platform=='win32':
+            PATHS+=[environment.BOOST_INC]
         self._mb = module_builder.module_builder_t(
                 files=[self._wrapper_filename],
                 gccxml_path=environment.GCC_XML_PATH,
                 define_symbols=environment.PYGCCXML_DEFINES,
-                include_paths=[self.INC_PATH, environment.SWIG_FILES_PATH_MODULAR, environment.OCC_INC])
+                include_paths=PATHS)
         # Excluding member functions that cause compilation fail
         #if self.MODULE_NAME == 'ShapeSchema':
         #    member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))

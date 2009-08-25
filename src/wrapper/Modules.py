@@ -503,6 +503,7 @@ if sys.platform=='win32':
              ('TPrsStd',['Aspect',],[]),
              ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity'],[]),
              #('WNT',[],[]), gccxml error
+             ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d'],[]),
              ])
     MODULES.extend([
                ('XDEDRAW',[],[]),
@@ -585,16 +586,18 @@ SALOME_SMESH_MODULES = [
                                   'Xw','MFT','Aspect','Quantity','Prs3d','Handle_TCollection',\
                                   'OSD','Standard','math'],\
                          ['SMESH_Comment','SMESH_OctreeNode','SMESH_MeshEditor',\
-                                     'SMESH_0D_Algo','SMESH_1D_Algo','SMESH_2D_Algo','SMESH_3D_Algo'],\
+                                     'SMESH_0D_Algo','SMESH_1D_Algo','SMESH_2D_Algo','SMESH_3D_Algo','SMESH_Octree'],\
                          {'SMESH_Algo':['SMESH_Algo','GetNodeParamOnEdge','GetSortedNodesOnEdge'],\
                           'SMESH_Block':['GetFaceEdgesIDs','GetEdgeVertexIDs'],\
                           'SMESH_Mesh':['GetGroupSubMeshesContaining','GetGroupIds','GetHypotheses'],
                           'SMESH_Pattern':['Apply','GetMappedPoints','GetPoints'],\
                           'SMESH_Hypothesis':['SMESH_Hypothesis'],\
-                          'SMESH_Octree':['SMESH_Octree'],
                           }),
-                        ('StdMeshers',['SMDS'],[],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}),
-                        ]
+                         ]
+if sys.platform!='win32':
+    SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],[],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}),)
+else:
+    SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
 def PythonOCCStats():
     """
