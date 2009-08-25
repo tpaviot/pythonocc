@@ -560,8 +560,42 @@ SALOME_GEOM_MODULES = [
 # SalomeSMESH modules
 #
 SALOME_SMESH_MODULES = [
-                       ('StdMeshers',[],[]),
-                       ]
+                        ('SMDS',[],['SMDS_PolyhedralVolumeOfNodes','SMDS_IteratorOfElements'],\
+                         {'SMDS_Mesh':['AddVolumeWithID','AddVolume','AddFaceWithID',\
+                                       'AddFace','AddPolygonalFace','AddPolygonalFaceWithID',\
+                                       'AddPolyhedralVolume','AddPolyhedralVolumeWithID',\
+                                       'RemoveElement','FindFace','ChangeElementNodes',\
+                                       'boundaryFaces','boundaryEdges'],\
+                        'SMDS_PolygonalFaceOfNodes':['ChangeNodes'],\
+                        'SMDS_FaceOfNodes':['ChangeNodes'],\
+                        'SMDS_QuadraticFaceOfNodes':['ChangeNodes'],\
+                        'SMDS_VolumeOfNodes':['ChangeNodes'],\
+                        'SMDS_QuadraticVolumeOfNodes':['ChangeNodes'],\
+                        'SMDS_SpacePosition':['SetCoords']}),
+                       ('SMESHDS',[],[],{'SMESHDS_Command':['AddPolygonalFace','ChangePolyhedronNodes','AddPolyhedralVolume'],\
+                                         'SMESHDS_Script':['AddPolygonalFace','AddPolyhedralVolume','ChangePolyhedronNodes'],\
+                                         'SMESHDS_Mesh':['AddPolygonalFaceWithID','AddPolygonalFace',\
+                                                         'AddPolyhedralVolumeWithID',\
+                                                         'AddPolyhedralVolume','ChangePolygonNodes','ChangePolyhedronNodes',\
+                                                         'SubMeshIndices','ChangeElementNodes',],\
+                                         'SMESHDS_Hypothesis':['SMESHDS_Hypothesis'],
+                                         'SMESHDS_GroupBase':['SMESHDS_GroupBase']}),
+                        ('SMESH',['SMDS','SelectBasics','Select3D','TColStd',\
+                                  'AIS','SelectMgr','MeshVS','PrsMgr','Graphic3d',\
+                                  'Xw','MFT','Aspect','Quantity','Prs3d','Handle_TCollection',\
+                                  'OSD','Standard','math'],\
+                         ['SMESH_Comment','SMESH_OctreeNode','SMESH_MeshEditor',\
+                                     'SMESH_0D_Algo','SMESH_1D_Algo','SMESH_2D_Algo','SMESH_3D_Algo'],\
+                         {'SMESH_Algo':['SMESH_Algo','GetNodeParamOnEdge','GetSortedNodesOnEdge'],\
+                          'SMESH_Block':['GetFaceEdgesIDs','GetEdgeVertexIDs'],\
+                          'SMESH_Mesh':['GetGroupSubMeshesContaining','GetGroupIds','GetHypotheses'],
+                          'SMESH_Pattern':['Apply','GetMappedPoints','GetPoints'],\
+                          'SMESH_Hypothesis':['SMESH_Hypothesis'],\
+                          'SMESH_Octree':['SMESH_Octree'],
+                          }),
+                        ('StdMeshers',['SMDS'],[],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}),
+                        ]
+
 def PythonOCCStats():
     """
     This function takes all *.hxx headers and returns a list of available packages:

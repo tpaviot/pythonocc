@@ -192,6 +192,11 @@ class ModularBuilder(object):
         Create the modulename_renames.i file
         """
         renames_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_renames.i'%self.MODULE_NAME),"w")
+        # Currently, there is no renaming of classes/methods
+        renames_fp.write('/* Feature currently unavailable */\n')
+        renames_fp.close()
+        return True
+        # But, in the fututre, use this:
         for pythonOCC_class_name in self.CLASS_TO_RENAME.keys():
             OCC_class_name = self.CLASS_TO_RENAME[pythonOCC_class_name]
             renames_fp.write('%%rename(%s) %s;\n'%(pythonOCC_class_name, OCC_class_name))
@@ -253,6 +258,13 @@ class ModularBuilder(object):
         """
         Add a dependency with other module.
         """
+        # Exclude a number of extra dependencies for the SMESH module:
+        if module_name in ['TSideVector','TError','Z','TParam2ColumnMap',\
+                           'basic','exception','MeshDimension','TSetOfInt',\
+                           'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
+                           'TElemOfElemListMap','TNodeNodeMap','EventListener',\
+                           'EventListenerData','SMDSAbs']:
+            return True
         if module_name=='GEOM':
             module_name='SGEOM'
         if 'XW' in module_name: #TODO: better handling of XW.i dependency with Xw module under Linux
@@ -908,9 +920,9 @@ class ModularBuilder(object):
         self.HXX_FILES = self.OSFilterHeaders(self.HXX_FILES)
         print " %i headers - GCCXML parsing"%len(self.HXX_FILES)
         # Include additionnal headers
-        print self.ADDITIONAL_HEADERS
         for additional_header in self.ADDITIONAL_HEADERS:
-            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s*.hxx'%additional_header))       
+            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s*.hxx'%additional_header))
+            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))
         self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
         ### TO OPTIMIZE
         if self.INC_PATH == environment.SALOME_GEOM_INC:
