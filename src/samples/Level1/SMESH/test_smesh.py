@@ -11,6 +11,7 @@ from OCC.MeshVS import *
 
 #Create the shape to mesh
 aShape = BRepPrimAPI_MakeSphere(40).Shape()
+#aShape = BRepPrimAPI_MakeTorus(400,40).Shape()
 
 aMeshGen = SMESH_Gen()
 aMesh = aMeshGen.CreateMesh(0,True)
@@ -58,8 +59,9 @@ aMeshVS.AddBuilder(aPrsBuilder.GetHandle(),True)
 #Create the graphic window and display the mesh
 from OCC.Display.wxSamplesGui import display, start_display
 context = display.Context
-print dir(context)
 context.Display(aMeshVS.GetHandle())
+context.Deactivate(aMeshVS.GetHandle())
+display.DisplayShape(aShape)
 start_display()
 
 
