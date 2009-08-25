@@ -269,7 +269,7 @@ if WRAP_SALOME_GEOM:
         module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,environment.SALOME_GEOM_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
-                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
