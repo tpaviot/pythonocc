@@ -63,5 +63,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <SMESH_subMeshEventListener.hxx>
 %};
 
+%import SMESH.i
 %import TopAbs.i
-

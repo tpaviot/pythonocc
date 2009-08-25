@@ -1,5 +1,5 @@
 /*
-po
+
 Copyright 2008-2009 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
@@ -100,8 +100,6 @@ class StdMeshers_Hexa_3D : public SMESH_3D_Algo {
 		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
-		%feature("autodoc", "1");
-		//TopoDS_Vertex OppositeVertex(const TopoDS_Vertex &aVertex, const TopTools_IndexedMapOfShape &aQuads0Vertices, * FaceQuadStruct *aQuads);
 
 };
 %extend StdMeshers_Hexa_3D {
@@ -184,8 +182,6 @@ class StdMeshers_MEFISTO_2D : public SMESH_2D_Algo {
 		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 		%feature("autodoc", "1");
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
-		%feature("autodoc", "1");
-		//bool LoadPoints(std::vector<boost::shared_ptr<StdMeshers_FaceSide>,std::allocator<boost::shared_ptr<StdMeshers_FaceSide> >wires, R2* uvslf, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & mefistoToDS, double , double );
 		%feature("autodoc", "1");
 		void ComputeScaleOnFace(SMESH_Mesh & aMesh, const TopoDS_Face &aFace, double & scalex, double & scaley);
 		%feature("autodoc", "1");
