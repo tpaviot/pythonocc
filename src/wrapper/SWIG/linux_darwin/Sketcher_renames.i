@@ -1,1 +1,1 @@
-%rename(Sketcher_Profile) Sketcher_Profile;
+/* Feature currently unavailable */

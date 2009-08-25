@@ -2089,7 +2089,7 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEdge(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeWire(std::list<Handle_GEOM_Object>);
+		Handle_GEOM_Object MakeWire(std::list<Handle_GEOM_Object>, const Standard_Real theTolerance);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeFace(Handle_GEOM_Object , const bool isPlanarWanted);
 		%feature("autodoc", "1");
@@ -2121,9 +2121,7 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		TCollection_AsciiString GetShapeTypeString(Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Standard_Integer NumberOfFaces(Handle_GEOM_Object );
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfEdges(Handle_GEOM_Object );
+		Standard_Integer NumberOfSubShapes(Handle_GEOM_Object , const Standard_Integer theShapeType);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object ReverseShape(Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -2795,6 +2793,10 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePlaneFace(Handle_GEOM_Object , const GEOM_Parameter &theSize);
 		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePlane2Vec(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theSize);
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePlaneLCS(Handle_GEOM_Object , const GEOM_Parameter &theSize, const GEOM_Parameter &theOrientation);
+		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeMarker(const GEOM_Parameter &theOX, const GEOM_Parameter &theOY, const GEOM_Parameter &theOZ, const GEOM_Parameter &theXDX, const GEOM_Parameter &theXDY, const GEOM_Parameter &theXDZ, const GEOM_Parameter &theYDX, const GEOM_Parameter &theYDY, const GEOM_Parameter &theYDZ);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeTangentPlaneOnFace(const Handle_GEOM_Object &theFace, const GEOM_Parameter &theParamU, const GEOM_Parameter &theParamV, const GEOM_Parameter &theSize);
@@ -3176,11 +3178,23 @@ class GEOMImpl_IPlane {
 		%feature("autodoc", "1");
 		double GetSize();
 		%feature("autodoc", "1");
+		void SetOrientation(double );
+		%feature("autodoc", "1");
+		void SetOrientation(const TCollection_AsciiString &theOrientation);
+		%feature("autodoc", "1");
+		double GetOrientation();
+		%feature("autodoc", "1");
 		void SetPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetVector(Handle_GEOM_Function );
 		%feature("autodoc", "1");
+		void SetVector1(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetVector2(Handle_GEOM_Function );
+		%feature("autodoc", "1");
 		void SetFace(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetLCS(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetPoint1(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -3192,7 +3206,13 @@ class GEOMImpl_IPlane {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetVector();
 		%feature("autodoc", "1");
+		Handle_GEOM_Function GetVector1();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetVector2();
+		%feature("autodoc", "1");
 		Handle_GEOM_Function GetFace();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetLCS();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint1();
 		%feature("autodoc", "1");
@@ -3317,8 +3337,6 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakeRevolutionAxisAngleOffset(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle, const GEOM_Parameter &theOffset, const GEOM_Parameter &theConeAngle=0.0);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeRevolutionAxisAngle2Ways(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSolidShell(Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeFilling(Handle_GEOM_Object , int , int , double , double , int , bool );
 		%feature("autodoc", "1");
@@ -3922,6 +3940,10 @@ class GEOMImpl_IShapes {
 		void SetIndices(const Handle_TColStd_HArray1OfInteger &theIndices);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger GetIndices();
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theValue);
+		%feature("autodoc", "1");
+		Standard_Real GetTolerance();
 
 };
 %extend GEOMImpl_IShapes {
@@ -4434,6 +4456,8 @@ class GEOMImpl_IBlockTrsf {
 		%feature("autodoc", "1");
 		void SetNbIterV(const TCollection_AsciiString &theNbIter);
 		%feature("autodoc", "1");
+		void SetOptimumNbFaces(int );
+		%feature("autodoc", "1");
 		int GetFace1U();
 		%feature("autodoc", "1");
 		int GetFace2U();
@@ -4445,6 +4469,8 @@ class GEOMImpl_IBlockTrsf {
 		int GetNbIterU();
 		%feature("autodoc", "1");
 		int GetNbIterV();
+		%feature("autodoc", "1");
+		int GetOptimumNbFaces();
 
 };
 %extend GEOMImpl_IBlockTrsf {
@@ -5679,7 +5705,7 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		TCollection_AsciiString PrintBCErrors(Handle_GEOM_Object , std::list<GEOMImpl_IBlocksOperations::BCError>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object RemoveExtraEdges(Handle_GEOM_Object );
+		Handle_GEOM_Object RemoveExtraEdges(Handle_GEOM_Object , const Standard_Integer theOptimumNbFaces=6);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object CheckAndImprove(Handle_GEOM_Object );
 		%feature("autodoc", "1");

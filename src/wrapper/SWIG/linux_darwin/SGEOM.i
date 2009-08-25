@@ -360,41 +360,6 @@ class GEOM_Engine {
 };
 
 
-%nodefaultctor GEOM_IOperations;
-class GEOM_IOperations {
-	public:
-		%feature("autodoc", "1");
-		GEOM_IOperations(GEOM_Engine* theEngine, int );
-		%feature("autodoc", "1");
-		void StartOperation();
-		%feature("autodoc", "1");
-		void FinishOperation();
-		%feature("autodoc", "1");
-		void AbortOperation();
-		%feature("autodoc", "1");
-		bool IsDone();
-		%feature("autodoc", "1");
-		void SetNotDone();
-		%feature("autodoc", "1");
-		void SetErrorCode(const TCollection_AsciiString &theErrorCode);
-		%feature("autodoc", "1");
-		const char * GetErrorCode();
-		%feature("autodoc", "1");
-		GEOM_Engine * GetEngine();
-		%feature("autodoc", "1");
-		GEOM_Solver * GetSolver();
-		%feature("autodoc", "1");
-		int GetDocID();
-
-};
-%extend GEOM_IOperations {
-	~GEOM_IOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_IOperations\n");}
-	}
-};
-
-
 %nodefaultctor GEOM_Application;
 class GEOM_Application : public TDocStd_Application {
 	public:
@@ -729,5 +694,40 @@ class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_B
 	~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient\n");}
+	}
+};
+
+
+%nodefaultctor GEOM_IOperations;
+class GEOM_IOperations {
+	public:
+		%feature("autodoc", "1");
+		GEOM_IOperations(GEOM_Engine* theEngine, int );
+		%feature("autodoc", "1");
+		void StartOperation();
+		%feature("autodoc", "1");
+		void FinishOperation();
+		%feature("autodoc", "1");
+		void AbortOperation();
+		%feature("autodoc", "1");
+		bool IsDone();
+		%feature("autodoc", "1");
+		void SetNotDone();
+		%feature("autodoc", "1");
+		void SetErrorCode(const TCollection_AsciiString &theErrorCode);
+		%feature("autodoc", "1");
+		const char * GetErrorCode();
+		%feature("autodoc", "1");
+		GEOM_Engine * GetEngine();
+		%feature("autodoc", "1");
+		GEOM_Solver * GetSolver();
+		%feature("autodoc", "1");
+		int GetDocID();
+
+};
+%extend GEOM_IOperations {
+	~GEOM_IOperations() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOM_IOperations\n");}
 	}
 };

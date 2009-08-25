@@ -1,10 +1,1 @@
-%rename(BlockFix_BlockFixAPI) BlockFix_BlockFixAPI;
-%rename(BlockFix_UnionFaces) BlockFix_UnionFaces;
-%rename(BlockFix_UnionEdges) BlockFix_UnionEdges;
-%rename(Handle_BlockFix_BlockFixAPI) Handle_BlockFix_BlockFixAPI;
-%rename(BlockFix_SphereSpaceModifier) BlockFix_SphereSpaceModifier;
-%rename(Handle_BlockFix_SphereSpaceModifier) Handle_BlockFix_SphereSpaceModifier;
-%rename(BlockFix) BlockFix;
-%rename(Handle_BlockFix_PeriodicSurfaceModifier) Handle_BlockFix_PeriodicSurfaceModifier;
-%rename(BlockFix_CheckTool) BlockFix_CheckTool;
-%rename(BlockFix_PeriodicSurfaceModifier) BlockFix_PeriodicSurfaceModifier;
+/* Feature currently unavailable */
