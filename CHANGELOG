@@ -1,5 +1,6 @@
 2009/08/26:
-	- added experimental SMESH 5.1.2 support
+	- added MeshVS module to Windows
+	- added experimental SMESH 5.1.2 support (Linux/Windows)
 2009/08/24:
 	- updated to SalomeGEOM 5.1.2 (salomegeometry svn rev.178)
 2009/08/23:
