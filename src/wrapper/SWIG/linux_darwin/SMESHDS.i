@@ -66,6 +66,13 @@ enum SMESHDS_CommandType {
 %nodefaultctor SMESHDS_Hypothesis;
 class SMESHDS_Hypothesis {
 	public:
+		enum hypothesis_type {
+			PARAM_ALGO,
+			ALGO_0D,
+			ALGO_1D,
+			ALGO_2D,
+			ALGO_3D,
+		};
 		%feature("autodoc", "1");
 		const char * GetName() const;
 		%feature("autodoc", "1");

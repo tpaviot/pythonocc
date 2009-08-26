@@ -94,6 +94,18 @@ class SMDS_SpacePosition : public SMDS_Position {
 %nodefaultctor SMDS_VolumeTool;
 class SMDS_VolumeTool {
 	public:
+		enum VolumeType {
+			UNKNOWN,
+			TETRA,
+			PYRAM,
+			PENTA,
+			HEXA,
+			QUAD_TETRA,
+			QUAD_PYRAM,
+			QUAD_PENTA,
+			QUAD_HEXA,
+			POLYHEDA,
+		};
 		%feature("autodoc", "1");
 		SMDS_VolumeTool();
 		%feature("autodoc", "1");
