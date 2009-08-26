@@ -18,8 +18,45 @@ You should have received a copy of the GNU General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-%{
-#include <SMDSAbs_ElementType.hxx>
-%};
+%module SMDSAbs
 
-%import SMDSAbs.i
+%include SMDSAbs_renames.i
+%include ../CommonIncludes.i
+%include ../StandardDefines.i
+%include ../ExceptionCatcher.i
+%include ../FunctionTransformers.i
+%include ../Operators.i
+
+%include SMDSAbs_dependencies.i
+
+
+%include SMDSAbs_headers.i
+
+enum SMDSAbs_GeometryType {
+	SMDSGeom_POINT,
+	SMDSGeom_EDGE,
+	SMDSGeom_TRIANGLE,
+	SMDSGeom_QUADRANGLE,
+	SMDSGeom_POLYGON,
+	SMDSGeom_TETRA,
+	SMDSGeom_PYRAMID,
+	SMDSGeom_HEXA,
+	SMDSGeom_PENTA,
+	SMDSGeom_POLYHEDRA,
+	};
+
+enum SMDSAbs_ElementOrder {
+	ORDER_ANY,
+	ORDER_LINEAR,
+	ORDER_QUADRATIC,
+	};
+
+enum SMDSAbs_ElementType {
+	SMDSAbs_All,
+	SMDSAbs_Node,
+	SMDSAbs_Edge,
+	SMDSAbs_Face,
+	SMDSAbs_Volume,
+	SMDSAbs_NbElementTypes,
+	};
+

@@ -19,7 +19,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <SMDSAbs_ElementType.hxx>
-%};
 
-%import SMDSAbs.i
+// Headers necessary to define wrapped classes.
+
+#include<SMDSAbs_ElementType.hxx>
+
+// Additional headers necessary for compilation.
+
+
+// Needed headers necessary for compilation.
+
+%}

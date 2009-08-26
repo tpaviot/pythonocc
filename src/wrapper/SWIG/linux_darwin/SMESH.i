@@ -834,35 +834,6 @@ class SMESH_subMeshEventListenerData {
 };
 
 
-%nodefaultctor SMESH_Octree;
-class SMESH_Octree {
-	public:
-		%feature("autodoc", "1");
-		virtual		bool const isLeaf();
-		%feature("autodoc", "1");
-		void Compute();
-		%feature("autodoc", "1");
-		void setMaxLevel(const int maxLevel);
-		%feature("autodoc", "1");
-		void setMinBoxSize(const double minBoxSize);
-		%feature("autodoc", "1");
-		void setBox(const Bnd_B3d *box);
-		%feature("autodoc", "1");
-		void getBox(Bnd_B3d & box);
-		%feature("autodoc", "1");
-		double maxSize(const Bnd_B3d *box);
-		%feature("autodoc", "1");
-		int level() const;
-
-};
-%extend SMESH_Octree {
-	~SMESH_Octree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Octree\n");}
-	}
-};
-
-
 %nodefaultctor SMESH_subMesh;
 class SMESH_subMesh {
 	public:
