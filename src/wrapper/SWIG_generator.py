@@ -143,7 +143,11 @@ class ModularBuilder(object):
         Directory of class hierarchy
         Ex: DERIVED = {"104":[Voiture],"106":[Voiture]}
         """
-        all_classes = self._mb.classes()
+        try:
+            all_classes = self._mb.classes()
+        except: #no class defined in the set of headers
+            print "No class defined in the set of headers"
+            return True
         classes_declarations = all_classes.declarations
         for class_declaration in classes_declarations:
             class_name = class_declaration.name
@@ -263,7 +267,7 @@ class ModularBuilder(object):
                            'basic','exception','MeshDimension','TSetOfInt',\
                            'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
                            'TElemOfElemListMap','TNodeNodeMap','EventListener',\
-                           'EventListenerData','SMDSAbs']:
+                           'EventListenerData']:
             return True
         if module_name=='GEOM':
             module_name='SGEOM'
@@ -385,7 +389,7 @@ class ModularBuilder(object):
         if hasattr(mem_fun,"return_type"):
             return_type = "%s"%mem_fun.return_type
         else:
-            print "NOTHING!!!"
+            print "No return type found for this method!!!"
             return False
         #
         # Check what headers to add for the return type
@@ -975,7 +979,11 @@ class ModularBuilder(object):
         """
         if self.MODULE_NAME== 'OSD':
             return # TODO: Problem with a typedef in OSD module
-        typedefs = self._mb.global_ns.typedefs()
+        try:
+            typedefs = self._mb.global_ns.typedefs()
+        except:
+            print "No typedef defined in the set of headers provided"
+            return True
         for elem in typedefs:
             if (elem.name.startswith('%s_'%self.MODULE_NAME)) and (not '::' in '%s'%elem.type) and not(elem.name=='MeshVS_SelectionModeFlags'):
                 # Careful:

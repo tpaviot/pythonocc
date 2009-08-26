@@ -560,7 +560,7 @@ SALOME_GEOM_MODULES = [
 #
 # SalomeSMESH modules
 #
-SALOME_SMESH_MODULES = [
+SALOME_SMESH_MODULES = [('SMDSAbs',[],[]),
                         ('SMDS',[],['SMDS_PolyhedralVolumeOfNodes','SMDS_IteratorOfElements'],\
                          {'SMDS_Mesh':['AddVolumeWithID','AddVolume','AddFaceWithID',\
                                        'AddFace','AddPolygonalFace','AddPolygonalFaceWithID',\
