@@ -1,4 +1,7 @@
 2009/08/26:
+	- SWIG_Generator.py is now able to handle internal class enums
+	- Added missing SMDSAbs module
+2009/08/25:
 	- added MeshVS module to Windows
 	- added experimental SMESH 5.1.2 support (Linux/Windows)
 2009/08/24:
@@ -197,7 +200,7 @@
 2008/11/21:
 	- New modules: LProp and LProp3d
 2008/11/20:
-	- Fixes for Linux compilation (thanks Björn Hein) (type setting)
+	- Fixes for Linux compilation (thanks Bjï¿½rn Hein) (type setting)
 2008/11/19:
 	- New modules: Prs, PrsMgr
 	- Added Draw3DText in Display3d.cpp
