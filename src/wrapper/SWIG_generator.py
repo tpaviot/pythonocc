@@ -657,12 +657,12 @@ class ModularBuilder(object):
         #
         self.fp.write("\n\n%nodefaultctor ")
         self.fp.write("%s;\n"%class_name)
-        # docstring for class
+        # Adding %docstring SWIG directive
         if self._generate_doc and not ('Handle' in class_name):
             self.fp.write('%feature("docstring") ')
             self.fp.write('%s '%class_name)
             self.fp.write('"%s";\n'%self.ClassDocstring)        
-        # On verifie si cette classe est derivee d'une autre
+        # Check if this class inherits from antoher one
         if not self.DERIVED.has_key(class_name):
             self.fp.write("class %s {\n"%class_name)
         else:
@@ -671,6 +671,46 @@ class ModularBuilder(object):
         if len(class_declaration.derived)>0:
             for other_classes in class_declaration.derived:
                 print "\t\t%s"%other_classes.related_class.name
+        # Processing class internal enums, or enums that are defined inside a C++ class
+        #
+        # For instance, in the file SMESH_Hypothesis.hxx:
+        #
+        #class SMESH_EXPORT SMESH_Hypothesis: public SMESHDS_Hypothesis
+        #{
+        #public:
+        #  enum Hypothesis_Status // in the order of severity
+        #  {
+        #    HYP_OK = 0,
+        #    HYP_MISSING,      // algo misses a hypothesis
+        #    HYP_CONCURENT,    // several applicable hypotheses
+        #    HYP_BAD_PARAMETER,// hy
+        # Aim of the following lines is to handle the Hypothesis_Status enum defined
+        # in the SMESH_Hypothesis class and add the corresponding code to the SWIG file.
+        
+        # protected_enums is a list of encountered protected defined enums.
+        # TODO: find a way to find automatically whether or not the enum is protected
+        protected_enums=['HypothesisType','VValue','IValueIndex','VValueIndex','SValueIndex','ValueIndex',\
+                         '' #AWfull Tweak to exclude a protected enum in SMESH_Block\
+                         ]
+        try:
+            class_declaration.enumerations() #if no internal enum, an exception is raised by pygccxml
+            HAVE_INTERNAL_ENUMS = True
+        except:
+            HAVE_INTERNAL_ENUMS = False
+        if HAVE_INTERNAL_ENUMS:
+            class_enums_tempdict = {} #a dict {} = [enum_name:enum_value]
+            for class_enum in class_declaration.enumerations():
+                if class_enum.name not in protected_enums:
+                    # TODO: better handle of privade enums
+                    class_enums_tempdict[class_enum.name]=class_enum.values                
+            # Then add the lines to write
+            for class_enum_name in class_enums_tempdict.keys():
+                self.fp.write("\t\tenum %s {\n"%class_enum_name)
+                for class_enum_values in class_enums_tempdict[class_enum_name]:
+                    self.fp.write("\t\t\t%s,\n"%class_enum_values[0])
+                self.fp.write("\t\t};\n")
+        # Processing methods for this class
+        # The implementation is a loop over the methods found by pygccxml      
         print "\t### Member functions for class %s ###"%class_declaration.name
         HAVE_HASHCODE = False
         for mem_fun in class_declaration.public_members:#member_functions():
@@ -687,6 +727,7 @@ class ModularBuilder(object):
             elif function_name not in self.MEMBER_FUNCTIONS_TO_EXCLUDE[class_name]:
                  self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
         self.fp.write("\n};")
+
         #
         # Adding a method GetObject() to Handle_* classes
         #
