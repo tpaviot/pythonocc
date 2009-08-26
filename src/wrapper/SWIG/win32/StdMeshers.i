@@ -118,6 +118,12 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 %nodefaultctor StdMeshers_NumberOfSegments;
 class StdMeshers_NumberOfSegments : public SMESH_Hypothesis {
 	public:
+		enum DistrType {
+			DT_Regular,
+			DT_Scale,
+			DT_TabFunc,
+			DT_ExprFunc,
+		};
 		%feature("autodoc", "1");
 		StdMeshers_NumberOfSegments(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");

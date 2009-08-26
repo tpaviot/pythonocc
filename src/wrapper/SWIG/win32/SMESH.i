@@ -129,6 +129,18 @@ class SMESH_HypoPredicate {
 %nodefaultctor SMESH_HypoFilter;
 class SMESH_HypoFilter : public SMESH_HypoPredicate {
 	public:
+		enum Comparison {
+			EQUAL,
+			NOT_EQUAL,
+			MORE,
+			LESS,
+		};
+		enum Logical {
+			AND,
+			AND_NOT,
+			OR,
+			OR_NOT,
+		};
 		%feature("autodoc", "1");
 		SMESH_HypoFilter();
 		%feature("autodoc", "1");
@@ -178,6 +190,11 @@ class SMESH_HypoFilter : public SMESH_HypoPredicate {
 %nodefaultctor SMESH_MesherHelper;
 class SMESH_MesherHelper {
 	public:
+		enum MType {
+			LINEAR,
+			QUADRATIC,
+			COMP,
+		};
 		%feature("autodoc", "1");
 		bool IsMedium(const SMDS_MeshNode *node, const SMDSAbs_ElementType typeToCheck=SMDSAbs_All);
 		%feature("autodoc", "1");
@@ -356,6 +373,36 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 %nodefaultctor SMESH_Block;
 class SMESH_Block : public math_FunctionSetWithDerivatives {
 	public:
+		enum TShapeID {
+			ID_NONE,
+			ID_V000,
+			ID_V100,
+			ID_V010,
+			ID_V110,
+			ID_V001,
+			ID_V101,
+			ID_V011,
+			ID_V111,
+			ID_Ex00,
+			ID_Ex10,
+			ID_Ex01,
+			ID_Ex11,
+			ID_E0y0,
+			ID_E1y0,
+			ID_E0y1,
+			ID_E1y1,
+			ID_E00z,
+			ID_E10z,
+			ID_E01z,
+			ID_E11z,
+			ID_Fxy0,
+			ID_Fxy1,
+			ID_Fx0z,
+			ID_Fx1z,
+			ID_F0yz,
+			ID_F1yz,
+			ID_Shell,
+		};
 		%feature("autodoc", "1");
 		int NbVertices();
 		%feature("autodoc", "1");
@@ -498,6 +545,22 @@ class SMESH_Exception : public exception {
 %nodefaultctor SMESH_Hypothesis;
 class SMESH_Hypothesis : public SMESHDS_Hypothesis {
 	public:
+		enum Hypothesis_Status {
+			HYP_OK,
+			HYP_MISSING,
+			HYP_CONCURENT,
+			HYP_BAD_PARAMETER,
+			HYP_HIDDEN_ALGO,
+			HYP_HIDING_ALGO,
+			HYP_UNKNOWN_FATAL,
+			HYP_INCOMPATIBLE,
+			HYP_NOTCONFORM,
+			HYP_ALREADY_EXIST,
+			HYP_BAD_DIM,
+			HYP_BAD_SUBSHAPE,
+			HYP_BAD_GEOMETRY,
+			HYP_NEED_SHAPE,
+		};
 		%feature("autodoc", "1");
 		bool IsStatusFatal(SMESH_Hypothesis::Hypothesis_Status );
 		%feature("autodoc", "1");
@@ -732,9 +795,45 @@ class SMESH_Mesh {
 	}
 };
 
+
 %nodefaultctor SMESH_subMesh;
 class SMESH_subMesh {
 	public:
+		enum compute_state {
+			NOT_READY,
+			READY_TO_COMPUTE,
+			COMPUTE_OK,
+			FAILED_TO_COMPUTE,
+		};
+		enum algo_state {
+			NO_ALGO,
+			MISSING_HYP,
+			HYP_OK,
+		};
+		enum event_type {
+			ALGO_EVENT,
+			COMPUTE_EVENT,
+		};
+		enum algo_event {
+			ADD_HYP,
+			ADD_ALGO,
+			REMOVE_HYP,
+			REMOVE_ALGO,
+			ADD_FATHER_HYP,
+			ADD_FATHER_ALGO,
+			REMOVE_FATHER_HYP,
+			REMOVE_FATHER_ALGO,
+			MODIF_HYP,
+		};
+		enum compute_event {
+			MODIF_ALGO_STATE,
+			COMPUTE,
+			CLEAN,
+			SUBMESH_COMPUTED,
+			SUBMESH_RESTORED,
+			MESH_ENTITY_REMOVED,
+			CHECK_COMPUTE_STATE,
+		};
 		%feature("autodoc", "1");
 		SMESH_subMesh(int , SMESH_Mesh* father, SMESHDS_Mesh* meshDS, const TopoDS_Shape &aSubShape);
 		%feature("autodoc", "1");
@@ -862,6 +961,35 @@ class SMESH_NodeSearcher {
 %nodefaultctor SMESH_Pattern;
 class SMESH_Pattern {
 	public:
+		enum ErrorCode {
+			ERR_OK,
+			ERR_READ_NB_POINTS,
+			ERR_READ_POINT_COORDS,
+			ERR_READ_TOO_FEW_POINTS,
+			ERR_READ_3D_COORD,
+			ERR_READ_NO_KEYPOINT,
+			ERR_READ_BAD_INDEX,
+			ERR_READ_ELEM_POINTS,
+			ERR_READ_NO_ELEMS,
+			ERR_READ_BAD_KEY_POINT,
+			ERR_SAVE_NOT_LOADED,
+			ERR_LOAD_EMPTY_SUBMESH,
+			ERR_LOADF_NARROW_FACE,
+			ERR_LOADF_CLOSED_FACE,
+			ERR_LOADF_CANT_PROJECT,
+			ERR_LOADV_BAD_SHAPE,
+			ERR_LOADV_COMPUTE_PARAMS,
+			ERR_APPL_NOT_COMPUTED,
+			ERR_APPL_NOT_LOADED,
+			ERR_APPL_BAD_DIMENTION,
+			ERR_APPL_BAD_NB_VERTICES,
+			ERR_APPLF_BAD_TOPOLOGY,
+			ERR_APPLF_BAD_VERTEX,
+			ERR_APPLF_INTERNAL_EEROR,
+			ERR_APPLV_BAD_SHAPE,
+			ERR_APPLF_BAD_FACE_GEOM,
+			ERR_MAKEM_NOT_COMPUTED,
+		};
 		%feature("autodoc", "1");
 		SMESH_Pattern();
 		%feature("autodoc", "1");

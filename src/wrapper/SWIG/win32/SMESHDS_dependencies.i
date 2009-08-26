@@ -19,6 +19,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
+#include <SMDSAbs_ElementType.hxx>
 #include <SMDS_EdgePosition.hxx>
 #include <SMDS_ElemIterator.hxx>
 #include <SMDS_FaceOfEdges.hxx>
@@ -52,5 +53,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <SMDS_VolumeTool.hxx>
 %};
 
+%import SMDSAbs.i
 %import SMDS.i
 %import TopAbs.i

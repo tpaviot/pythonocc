@@ -19,6 +19,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
+#include <SMDSAbs_ElementType.hxx>
 #include <SMESHDS_Command.hxx>
 #include <SMESHDS_Command.hxx>
 #include <SMESHDS_CommandType.hxx>
@@ -84,6 +85,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MeshVS.i
+%import SMDSAbs.i
 %import TopAbs.i
 %import Standard.i
 %import math.i
