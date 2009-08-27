@@ -144,7 +144,8 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   if (hypName == "LocalLength")
   {
     const StdMeshers_LocalLength * hyp =
-      dynamic_cast <const StdMeshers_LocalLength * >(theHyp);
+      //dynamic_cast <const StdMeshers_LocalLength * >(theHyp);
+	  (const StdMeshers_LocalLength *)(theHyp);
     ASSERT(hyp);
     _value[ BEG_LENGTH_IND ] = hyp->GetLength();
     _value[ PRECISION_IND ] = hyp->GetPrecision();
@@ -156,7 +157,8 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   else if (hypName == "MaxLength")
   {
     const StdMeshers_MaxLength * hyp =
-      dynamic_cast <const StdMeshers_MaxLength * >(theHyp);
+      //dynamic_cast <const StdMeshers_MaxLength * >(theHyp);
+	  (const StdMeshers_MaxLength *) (theHyp);
     ASSERT(hyp);
     _value[ BEG_LENGTH_IND ] = hyp->GetLength();
     if ( hyp->GetUsePreestimatedLength() ) {
@@ -171,7 +173,8 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   else if (hypName == "NumberOfSegments")
   {
     const StdMeshers_NumberOfSegments * hyp =
-      dynamic_cast <const StdMeshers_NumberOfSegments * >(theHyp);
+    //  dynamic_cast <const StdMeshers_NumberOfSegments * >(theHyp);
+		(const StdMeshers_NumberOfSegments *)(theHyp);
     ASSERT(hyp);
     _ivalue[ NB_SEGMENTS_IND  ] = hyp->GetNumberOfSegments();
     ASSERT( _ivalue[ NB_SEGMENTS_IND ] > 0 );
@@ -201,13 +204,20 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   }
 
   else if (hypName == "Arithmetic1D")
-  {
+  {MESSAGE( "In the Arithmetic1D ");
     const StdMeshers_Arithmetic1D * hyp =
-      dynamic_cast <const StdMeshers_Arithmetic1D * >(theHyp);
-    ASSERT(hyp);
+     //dynamic_cast <const StdMeshers_Arithmetic1D * >(theHyp);*/
+     (const StdMeshers_Arithmetic1D*) theHyp; 
+  	MESSAGE( "After the dynamic Cast"<<theHyp);
+    
+	ASSERT(hyp);
     _value[ BEG_LENGTH_IND ] = hyp->GetLength( true );
     _value[ END_LENGTH_IND ] = hyp->GetLength( false );
     ASSERT( _value[ BEG_LENGTH_IND ] > 0 && _value[ END_LENGTH_IND ] > 0 );
+	/*
+	_value[ BEG_LENGTH_IND ] = 50;
+    _value[ END_LENGTH_IND ] = 10;
+	*/
     _hypType = ARITHMETIC_1D;
     aStatus = SMESH_Hypothesis::HYP_OK;
   }
@@ -215,7 +225,8 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   else if (hypName == "StartEndLength")
   {
     const StdMeshers_StartEndLength * hyp =
-      dynamic_cast <const StdMeshers_StartEndLength * >(theHyp);
+      //dynamic_cast <const StdMeshers_StartEndLength * >(theHyp);
+	  (const StdMeshers_StartEndLength *) (theHyp);
     ASSERT(hyp);
     _value[ BEG_LENGTH_IND ] = hyp->GetLength( true );
     _value[ END_LENGTH_IND ] = hyp->GetLength( false );
@@ -227,7 +238,8 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   else if (hypName == "Deflection1D")
   {
     const StdMeshers_Deflection1D * hyp =
-      dynamic_cast <const StdMeshers_Deflection1D * >(theHyp);
+      //dynamic_cast <const StdMeshers_Deflection1D * >(theHyp);
+	  (const StdMeshers_Deflection1D *) (theHyp);
     ASSERT(hyp);
     _value[ DEFLECTION_IND ] = hyp->GetDeflection();
     ASSERT( _value[ DEFLECTION_IND ] > 0 );
@@ -237,8 +249,10 @@ bool StdMeshers_Regular_1D::CheckHypothesis
 
   else if (hypName == "AutomaticLength")
   {
-    StdMeshers_AutomaticLength * hyp = const_cast<StdMeshers_AutomaticLength *>
-      (dynamic_cast <const StdMeshers_AutomaticLength * >(theHyp));
+    //StdMeshers_AutomaticLength * hyp = const_cast<StdMeshers_AutomaticLength *>
+    //  (dynamic_cast <const StdMeshers_AutomaticLength * >(theHyp));
+	StdMeshers_AutomaticLength * hyp = (StdMeshers_AutomaticLength *)
+      ((const StdMeshers_AutomaticLength *) (theHyp));
     ASSERT(hyp);
     _value[ BEG_LENGTH_IND ] = _value[ END_LENGTH_IND ] = hyp->GetLength( &aMesh, aShape );
 //     _value[ BEG_LENGTH_IND ] = hyp->GetLength( &aMesh, aShape );
@@ -250,7 +264,7 @@ bool StdMeshers_Regular_1D::CheckHypothesis
   else
     aStatus = SMESH_Hypothesis::HYP_INCOMPATIBLE;
 
-  return ( _hypType != NONE );
+  return ( _hypType != NONE  );
 }
 
 static bool computeParamByFunc(Adaptor3d_Curve& C3d, double first, double last,
