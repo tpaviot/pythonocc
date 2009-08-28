@@ -378,6 +378,7 @@ class ModularBuilder(object):
         param_list = []
         param_names = [] # a list with all the names of parameters
         default_value = {}
+        FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
         arguments = mem_fun.arguments
         is_first = True
         for i in range(len(arguments)):
@@ -477,8 +478,8 @@ class ModularBuilder(object):
                     FUNCTION_MODIFIED = True
                 else:
                     to_write += "%s %s"%(argument_type,argument_name)
-            if 'Standard_CString' in to_write:
-                to_write = to_write.replace('Standard_CString','char *')
+            #if 'Standard_CString' in to_write:
+            #    to_write = to_write.replace('Standard_CString','char *')
             if argument_default_value!="None" and next_argument_default_value!="None":
                 # default value may be "1u"or "::AspectCentered" etc.
                 if argument_default_value=="1u":
@@ -490,16 +491,11 @@ class ModularBuilder(object):
                 to_write += "=%s"%argument_default_value
                 default_value[argument_name]=argument_default_value
             is_first = False
-#        if mem_fun.decl_string.endswith(" const"):
-#            to_write += ") const;\n"
-#        else:
-#            to_write += ");\n"
         if mem_fun.decl_string.endswith(" const"):
             END_WITH_CONST = True
         else:
             END_WITH_CONST = False
-        print to_write
-        return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names
+        return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names,FUNCTION_MODIFIED
     
     def write_function( self , mem_fun , parent_is_abstract):
         """
@@ -509,7 +505,7 @@ class ModularBuilder(object):
         is_exportable = mem_fun.exportable
         function_name = mem_fun.name
         class_parent_name = mem_fun.parent.name
-        FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
+        #FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
         param_list = [] # a dict that contain param names and their types (used for python docstring construction).
         return_list = []
         default_value={}
@@ -540,6 +536,11 @@ class ModularBuilder(object):
                     header_to_add = '%s.hxx'%return_type
                     if not (header_to_add in self.NEEDED_HXX):
                         self.NEEDED_HXX.append('%s.hxx'%return_type)
+#        #
+#        # Replace return type Standard_CString with char *
+#        #
+#        if return_type=='Standard_CString':
+#            retun_type = 'char *'
         #print return_type
         print "\t\t %s added."%function_name
         to_write = ''#
@@ -547,8 +548,7 @@ class ModularBuilder(object):
         #
         if (return_type=='Standard_Integer &' or return_type=='Standard_Real &') and not ('operator' in function_name):
             # First get the string for arguments declaration
-            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names = self.write_function_arguments(mem_fun)
-            print param_names
+            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
             # build param enum from params:
             # ['a','b','c']->'a,b,c'
             po = ''
@@ -557,14 +557,15 @@ class ModularBuilder(object):
                 po+=param_names[i]
                 if i<k-1:
                     po+=','           
-            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real
-            docstring = '\t\t%feature("autodoc","1");\n'
+            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real            
             # Create Get function_name
+            to_write += '\t\t%feature("autodoc","1");\n'
             to_write += '\t\t%extend {\n'
             to_write += '\t\t\t\t%s Get%s(%s) {\n'%(typ,function_name,str_args)
             to_write += '\t\t\t\treturn (%s) $self->%s(%s);\n'%(typ,function_name,po)
             to_write += '\t\t\t\t}\n\t\t};\n'
             # Create Set function_name
+            to_write += '\t\t%feature("autodoc","1");\n'
             to_write += '\t\t%extend {\n'
             if len(param_list)>0:
                 str_args2=str_args+","
@@ -605,7 +606,7 @@ class ModularBuilder(object):
         #
         # Write arguments of the method
         #
-        str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names = self.write_function_arguments(mem_fun)
+        str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
         to_write += str
         if END_WITH_CONST:
             to_write += ") const;\n"
@@ -727,6 +728,8 @@ class ModularBuilder(object):
 #            to_write += ") const;\n"
 #        else:
 #            to_write += ");\n"
+        if 'Standard_CString' in to_write:
+            to_write = to_write.replace('Standard_CString','char *')
         if to_write in self._CURRENT_CLASS_EXPOSED_METHODS: #to avoid writing twice constructors
             return True
         if "&arg0);" in to_write: #constructor
@@ -737,8 +740,8 @@ class ModularBuilder(object):
         #
         # Finally, process Standard_OStream and Standard_ISteam selected methods
         #
-        #if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
-        if len(arguments)>0:
+        if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
+        #if len(arguments)>0:
             if 'Standard_OStream &' in '%s'%arguments[0].type:#argument_type:
                 to_write ='\t\t%feature("autodoc", "1");\n'
                 to_write+='\t\t%extend{\n\t\t\tstd::string '
@@ -756,8 +759,8 @@ class ModularBuilder(object):
             self.AddFunctionTransformation("%s::%s\n"%(class_parent_name,function_name))
         # Write docstring to file
         if FUNCTION_MODIFIED: # The docstring has to be changed
-            for arg in mem_fun.arguments:
-                print arg
+            #for arg in mem_fun.arguments:
+            #    print arg
             meth_doc = "%s("%function_name
             index=1
             for param in param_list:
@@ -775,10 +778,11 @@ class ModularBuilder(object):
             if len(return_list)<=1:#just one value
                 docstring+='->%s'%return_list[0][0]
             else:
+                print docstring
                 docstring+='->['
                 index_2=1
                 for rt in return_list:
-                    docstring+='%s'%str(rt[0])
+                    docstring+='%s'%rt[0]
                     if index<len(return_list):
                         docstring+=", "
                     index+=1
