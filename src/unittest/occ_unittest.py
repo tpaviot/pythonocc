@@ -101,10 +101,25 @@ class Test(unittest.TestCase):
         shape = BRepPrimAPI_MakeBox(10.,10.,10.).Shape()
         self.assertEqual(shape.IsNull(), False)
         topo = Topo(shape)
-        
-        #vert = topo.vertices().next()
-        #print len(topo.vertices())
-        
+    
+    def testFT1(self):
+        '''
+        Checks the Standard_Integer & byreference pass parameter
+        '''
+        print 'Test: Standard_Integer & by reference transformator'
+        from OCC.gp import gp_Pnt
+        P = gp_Pnt(1,2,3.2)
+        self.assertEqual(P.Coord(),(1,2,3.2))
+          
+    def testFT2(self):
+        '''
+        Checks the Standard_Integer & byreference return parameter
+        '''
+        print 'Test: Standard_Integer & by reference transformator'
+        from OCC.ShapeFix import ShapeFix_Solid
+        sfs = ShapeFix_Solid()
+        sfs.SetFixShellMode(5)
+        self.assertEqual(sfs.GetFixShellMode(),5)
         
 
 if __name__ == "__main__":
