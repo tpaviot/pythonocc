@@ -196,10 +196,10 @@ class ModularBuilder(object):
         Create the modulename_renames.i file
         """
         renames_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_renames.i'%self.MODULE_NAME),"w")
-        # Currently, there is no renaming of classes/methods
-        renames_fp.write('/* Feature currently unavailable */\n')
-        renames_fp.close()
-        return True
+#        # Currently, there is no renaming of classes/methods
+#        renames_fp.write('/* Feature currently unavailable */\n')
+#        renames_fp.close()
+#        return True
         # But, in the fututre, use this:
         for pythonOCC_class_name in self.CLASS_TO_RENAME.keys():
             OCC_class_name = self.CLASS_TO_RENAME[pythonOCC_class_name]
@@ -410,7 +410,24 @@ class ModularBuilder(object):
                         self.NEEDED_HXX.append('%s.hxx'%return_type)
         #print return_type
         print "\t\t %s added."%function_name
-        to_write = ''
+        to_write = ''#
+        # Handle 'Standard_Integer &' and 'Standard_Real &' return types
+        #
+        if return_type=='Standard_Integer &' or return_type=='Standard_Real &':
+            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real
+            docstring = '\t\t%feature("autodoc","1");\n'
+            # Create Get function_name
+            to_write += '\t\t%extend {\n'
+            to_write += '\t\t\t\t%s Get%s() {\n'%(typ,function_name)
+            to_write += '\t\t\t\treturn (%s) $self->%s();\n'%(typ,function_name)
+            to_write += '\t\t\t\t}\n\t\t};\n'
+            # Create Set function_name
+            to_write += '\t\t%extend {\n'
+            to_write += '\t\t\t\tvoid Set%s(%s value) {\n'%(function_name,typ)
+            to_write += '\t\t\t\t$self->%s()=value;\n'%function_name
+            to_write += '\t\t\t\t}\n\t\t};\n'
+            self.fp.write(to_write)
+            return True      
         # FEATURE DOCSTRING
         # First try to find the key (necessary for overloaded functions
         # the key can be Coord, Coord_1 or Coord_2
