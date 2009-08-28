@@ -369,94 +369,16 @@ class ModularBuilder(object):
                 if not (header_to_add in self.NEEDED_HXX):
                     self.NEEDED_HXX.append('%s.hxx'%return_type)
     
-    def write_function( self , mem_fun , parent_is_abstract):
+    def write_function_arguments(self,mem_fun):
         """
-        Write member functions declarations
+        Write the function arguments, comma separated
         """
-        # Test if method already exposed
-        is_exportable = mem_fun.exportable
-        function_name = mem_fun.name
-        class_parent_name = mem_fun.parent.name
-        FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
-        param_list = [] # a dict that contain param names and their types (used for python docstring construction).
+        to_write = ''
         return_list = []
-        default_value={}
-        if (not is_exportable) and not(class_parent_name in function_name):#for constructors and destructor
-            print "\t\t %s method not exportable"%function_name
-            return True
-        if ("operator ::" in function_name): #Pb with SWIG
-            return True
-        if hasattr(mem_fun,"return_type"):
-            return_type = "%s"%mem_fun.return_type
-        else:
-            print "No return type found for this method!!!"
-            return False
-        #
-        # Check what headers to add for the return type
-        #
-        if return_type!='None' and not (' ' in return_type):
-            t = self.CheckParameterIsTypedef(return_type)
-            if t:
-                if (t!=self.MODULE_NAME):# and (t!='Standard'):
-                    if t.startswith('Handle'):
-                        t = t.split('_')[1]
-                    self.AddDependency(t)#print "Dependency with module %s"%t
-            else:#it's not a type def
-                if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
-                (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
-                (not return_type in ['void','int']) and (not '::' in return_type):#external dependency. Add header
-                    header_to_add = '%s.hxx'%return_type
-                    if not (header_to_add in self.NEEDED_HXX):
-                        self.NEEDED_HXX.append('%s.hxx'%return_type)
-        #print return_type
-        print "\t\t %s added."%function_name
-        to_write = ''#
-        # Handle 'Standard_Integer &' and 'Standard_Real &' return types
-        #
-        if return_type=='Standard_Integer &' or return_type=='Standard_Real &':
-            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real
-            docstring = '\t\t%feature("autodoc","1");\n'
-            # Create Get function_name
-            to_write += '\t\t%extend {\n'
-            to_write += '\t\t\t\t%s Get%s() {\n'%(typ,function_name)
-            to_write += '\t\t\t\treturn (%s) $self->%s();\n'%(typ,function_name)
-            to_write += '\t\t\t\t}\n\t\t};\n'
-            # Create Set function_name
-            to_write += '\t\t%extend {\n'
-            to_write += '\t\t\t\tvoid Set%s(%s value) {\n'%(function_name,typ)
-            to_write += '\t\t\t\t$self->%s()=value;\n'%function_name
-            to_write += '\t\t\t\t}\n\t\t};\n'
-            self.fp.write(to_write)
-            return True      
-        # FEATURE DOCSTRING
-        # First try to find the key (necessary for overloaded functions
-        # the key can be Coord, Coord_1 or Coord_2
-        if self.MemberfunctionDocStrings.has_key(function_name):
-            key = function_name
-        else:
-            key = None
-        if self._generate_doc and not ('Handle' in class_parent_name) and key!=None:#self.MemberfunctionDocStrings.has_key(function_name):
-            docstring = self.MemberfunctionDocStrings.pop(key)#
-            to_write += '\t\t%feature("docstring") '
-            to_write += '%s '%function_name
-            try:
-                to_write += '"""%s""";\n'%docstring
-            except UnicodeDecodeError:
-                to_write += '"UnicodeDecodeError while parsing docstring;"\n'
-                print "UnicodeDecodeError"
-        # Detect virtuality
-        if (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.PURE_VIRTUAL) or (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.VIRTUAL):
-            to_write+="\t\tvirtual"
-        # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
-        parts = return_type.split(" ")
-        if len(parts)==3:
-            return_type="%s %s %s"%(parts[1],parts[0],parts[2])
-        if return_type=="None":
-            to_write += "\t\t%s("%(function_name)
-        else:
-            to_write +="\t\t%s %s("%(return_type,function_name)
+        param_list = []
+        param_names = [] # a list with all the names of parameters
+        default_value = {}
         arguments = mem_fun.arguments
-
         is_first = True
         for i in range(len(arguments)):
             argument = arguments[i]
@@ -468,6 +390,7 @@ class ModularBuilder(object):
             if not is_first:
                 to_write += ", "
             argument_name = "%s"%argument.name
+            param_names.append(argument_name)
             argument_type = "%s"%argument.type
             argument_types=argument_type.split(" ")
             #
@@ -567,10 +490,243 @@ class ModularBuilder(object):
                 to_write += "=%s"%argument_default_value
                 default_value[argument_name]=argument_default_value
             is_first = False
+#        if mem_fun.decl_string.endswith(" const"):
+#            to_write += ") const;\n"
+#        else:
+#            to_write += ");\n"
         if mem_fun.decl_string.endswith(" const"):
+            END_WITH_CONST = True
+        else:
+            END_WITH_CONST = False
+        print to_write
+        return to_write, return_list, param_list, arguments, default_value, END_WITH_CONST, param_names
+    
+    def write_function( self , mem_fun , parent_is_abstract):
+        """
+        Write member functions declarations
+        """
+        # Test if method already exposed
+        is_exportable = mem_fun.exportable
+        function_name = mem_fun.name
+        class_parent_name = mem_fun.parent.name
+        FUNCTION_MODIFIED = False #is the function modified by any byref stuff?
+        param_list = [] # a dict that contain param names and their types (used for python docstring construction).
+        return_list = []
+        default_value={}
+        if (not is_exportable) and not(class_parent_name in function_name):#for constructors and destructor
+            print "\t\t %s method not exportable"%function_name
+            return True
+        if ("operator ::" in function_name): #Pb with SWIG
+            return True
+        if hasattr(mem_fun,"return_type"):
+            return_type = "%s"%mem_fun.return_type
+        else:
+            print "No return type found for this method!!!"
+            return False
+        #
+        # Check what headers to add for the return type
+        #
+        if return_type!='None' and not (' ' in return_type):
+            t = self.CheckParameterIsTypedef(return_type)
+            if t:
+                if (t!=self.MODULE_NAME):# and (t!='Standard'):
+                    if t.startswith('Handle'):
+                        t = t.split('_')[1]
+                    self.AddDependency(t)#print "Dependency with module %s"%t
+            else:#it's not a type def
+                if (not return_type.startswith('%s_'%self.MODULE_NAME)) and \
+                (not return_type.startswith('Handle_%s_'%self.MODULE_NAME)) and \
+                (not return_type in ['void','int']) and (not '::' in return_type):#external dependency. Add header
+                    header_to_add = '%s.hxx'%return_type
+                    if not (header_to_add in self.NEEDED_HXX):
+                        self.NEEDED_HXX.append('%s.hxx'%return_type)
+        #print return_type
+        print "\t\t %s added."%function_name
+        to_write = ''#
+        # Handle 'Standard_Integer &' and 'Standard_Real &' return types
+        #
+        if (return_type=='Standard_Integer &' or return_type=='Standard_Real &') and not ('operator' in function_name):
+            # First get the string for arguments declaration
+            str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names = self.write_function_arguments(mem_fun)
+            print param_names
+            # build param enum from params:
+            # ['a','b','c']->'a,b,c'
+            po = ''
+            k = len(param_names)
+            for i in range(k):
+                po+=param_names[i]
+                if i<k-1:
+                    po+=','           
+            typ = return_type.split(" ")[0] # -> Standard_Integer or Standard_Real
+            docstring = '\t\t%feature("autodoc","1");\n'
+            # Create Get function_name
+            to_write += '\t\t%extend {\n'
+            to_write += '\t\t\t\t%s Get%s(%s) {\n'%(typ,function_name,str_args)
+            to_write += '\t\t\t\treturn (%s) $self->%s(%s);\n'%(typ,function_name,po)
+            to_write += '\t\t\t\t}\n\t\t};\n'
+            # Create Set function_name
+            to_write += '\t\t%extend {\n'
+            if len(param_list)>0:
+                str_args2=str_args+","
+            else:
+                str_args2=str_args            
+            to_write += '\t\t\t\tvoid Set%s(%s %s value) {\n'%(function_name,str_args2,typ)
+            to_write += '\t\t\t\t$self->%s(%s)=value;\n'%(function_name,po)
+            to_write += '\t\t\t\t}\n\t\t};\n'
+            self.fp.write(to_write)
+            return True      
+        # FEATURE DOCSTRING
+        # First try to find the key (necessary for overloaded functions
+        # the key can be Coord, Coord_1 or Coord_2
+        if self.MemberfunctionDocStrings.has_key(function_name):
+            key = function_name
+        else:
+            key = None
+        if self._generate_doc and not ('Handle' in class_parent_name) and key!=None:#self.MemberfunctionDocStrings.has_key(function_name):
+            docstring = self.MemberfunctionDocStrings.pop(key)#
+            to_write += '\t\t%feature("docstring") '
+            to_write += '%s '%function_name
+            try:
+                to_write += '"""%s""";\n'%docstring
+            except UnicodeDecodeError:
+                to_write += '"UnicodeDecodeError while parsing docstring;"\n'
+                print "UnicodeDecodeError"
+        # Detect virtuality
+        if (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.PURE_VIRTUAL) or (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.VIRTUAL):
+            to_write+="\t\tvirtual"
+        # on teste le cas suivant pour return_type:gp_Pnt const &, qu'il faut transformer en const gp_Pnt &
+        parts = return_type.split(" ")
+        if len(parts)==3:
+            return_type="%s %s %s"%(parts[1],parts[0],parts[2])
+        if return_type=="None":
+            to_write += "\t\t%s("%(function_name)
+        else:
+            to_write +="\t\t%s %s("%(return_type,function_name)
+        #
+        # Write arguments of the method
+        #
+        str,return_list,param_list,arguments, default_value,END_WITH_CONST, param_names = self.write_function_arguments(mem_fun)
+        to_write += str
+        if END_WITH_CONST:
             to_write += ") const;\n"
         else:
             to_write += ");\n"
+        #arguments = mem_fun.arguments
+        #print len(arguments)
+#        is_first = True
+#        for i in range(len(arguments)):
+#            argument = arguments[i]
+#            if i<len(arguments)-1:
+#                next_argument = arguments[i+1]
+#                next_argument_default_value = "%s"%next_argument.default_value
+#            else:
+#                next_argument_default_value = "PP"
+#            if not is_first:
+#                to_write += ", "
+#            argument_name = "%s"%argument.name
+#            argument_type = "%s"%argument.type
+#            argument_types=argument_type.split(" ")
+#            #
+#            # Check if the parameter is a typedef defined in another OCC package
+#            #
+#            argument_type_name = argument_types[0]
+#            #
+#            # The argument type_name may be Standard_Real, gp_Pnt etc.
+#            # The associated header must be added to the swig .if file in order to 
+#            # properly compile. This is then the strategy:
+#            # Example: V3d package is parsed
+#            #    - if the argument_type_name startswith V3d_, it's defined in this module. Pass.
+#            #    - if the argument_type_name does'nt start with V3d, (for ex gp_), then add the header
+#            #    to the list of additionnal headers.
+#            # 
+#            #
+#            t = self.CheckParameterIsTypedef(argument_type_name)
+#            if t:
+#                if (t!=self.MODULE_NAME):# and (t!='Standard'):
+#                    self.AddDependency(t)#print "Dependency with module %s"%t
+#            else:#it's not a type def
+#                if (not argument_type_name.startswith('%s_'%self.MODULE_NAME)) and \
+#                (not argument_type_name.startswith('Handle_%s_'%self.MODULE_NAME)) and\
+#                (not '::' in argument_type_name) and \
+#                (not argument_type in ['int']):#external dependency. Add header
+#                    header_to_add = '%s.hxx'%argument_type_name
+#                    if not (header_to_add in self.NEEDED_HXX):
+#                        self.NEEDED_HXX.append('%s.hxx'%argument_type_name)
+#            #
+#            # Find argument default value
+#            #
+#            argument_default_value = "%s"%argument.default_value
+#            #print argument_types, len(argument_types)
+#            #print argument_default_value
+##            if argument_types[0]=='GEOM_Engine':
+##                print argument_types, argument_name
+##                sys.exit(0)
+#            if len(argument_types)==1:
+#                to_write += "%s "%argument_types[0]
+#            elif argument_types[0].startswith('std::list'):
+#                #We have something like:
+#                #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
+#                #
+#                #print argument_types
+#                tmp = argument_types[0]
+#                tmp = tmp.split('<')[1]
+#                tmp = tmp.split(',')[0]
+#                if tmp=='std::basic_string':
+#                    tmp='std::string'
+#                #if tmp=='std::basic_string':
+#                #    tmp='std::basic_string<char>'
+#                argument_types[0] = 'std::list'
+#                argument_types[1] = tmp               
+#                to_write += "%s<%s>"%(argument_types[0],argument_types[1])
+#                param_list.append(["String","aString"])
+#            elif argument_types[1]=='*' and len(argument_types)==2:
+#                #Case: GEOM_Engine* theEngine
+#                to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
+#                param_list.append([argument_types[0],argument_name])
+#            elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
+#                to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
+#                param_list.append([argument_types[1],argument_name])
+#            elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
+#                to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
+#                param_list.append([argument_types[0],argument_name])
+#            elif len(argument_types)==4:
+#                to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
+#                param_list.append([argument_types[1],argument_name])
+#            else:
+#                if ('Standard_Real &' in argument_type) or\
+#                 ('Quantity_Parameter &' in argument_type) or\
+#                 ('Quantity_Length &' in argument_type) or\
+#                 ('V3d_Coordinate &' in argument_type): # byref Standard_Float parameter
+#                    to_write += 'Standard_Real &OutValue'
+#                    return_list.append(['Standard_Real',argument_name])
+#                    FUNCTION_MODIFIED = True
+#                elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
+#                    to_write += 'Standard_Integer &OutValue'
+#                    return_list.append(['Standard_Integer',argument_name])
+#                    FUNCTION_MODIFIED = True
+#                elif 'FairCurve_AnalysisCode &' in argument_type:
+#                    to_write += 'FairCurve_AnalysisCode &OutValue'
+#                    return_list.append(['FairCurve_AnalysisCode',argument_name])
+#                    FUNCTION_MODIFIED = True
+#                else:
+#                    to_write += "%s %s"%(argument_type,argument_name)
+#            if 'Standard_CString' in to_write:
+#                to_write = to_write.replace('Standard_CString','char *')
+#            if argument_default_value!="None" and next_argument_default_value!="None":
+#                # default value may be "1u"or "::AspectCentered" etc.
+#                if argument_default_value=="1u":
+#                    argument_default_value = "1"
+#                elif argument_default_value=="0u":
+#                    argument_default_value = "0"
+#                elif argument_default_value.startswith('::'):
+#                    argument_default_value = argument_default_value[2:]
+#                to_write += "=%s"%argument_default_value
+#                default_value[argument_name]=argument_default_value
+#            is_first = False
+#        if mem_fun.decl_string.endswith(" const"):
+#            to_write += ") const;\n"
+#        else:
+#            to_write += ");\n"
         if to_write in self._CURRENT_CLASS_EXPOSED_METHODS: #to avoid writing twice constructors
             return True
         if "&arg0);" in to_write: #constructor
@@ -581,7 +737,8 @@ class ModularBuilder(object):
         #
         # Finally, process Standard_OStream and Standard_ISteam selected methods
         #
-        if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
+        #if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
+        if len(arguments)>0:
             if 'Standard_OStream &' in '%s'%arguments[0].type:#argument_type:
                 to_write ='\t\t%feature("autodoc", "1");\n'
                 to_write+='\t\t%extend{\n\t\t\tstd::string '
