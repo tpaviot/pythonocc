@@ -1,3 +1,6 @@
+2009/08/28:
+	- SWIG_Generator is now able to handle Standard_Integer & and Standard_Real & returned values
+	- updated unittest
 2009/08/26:
 	- SWIG_Generator.py is now able to handle internal class enums
 	- Added missing SMDSAbs module

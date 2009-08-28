@@ -14,14 +14,14 @@ Wrapping:
 
     *   SMESH wrapped ( Joachim Zettler joins in on this effort )
 
-    *   QT support via PyQT ( WX & QT backend for Display module )
+    *   QT support via PyQT ( WX & QT backend for Display module ) [X]
 
     *   Display module threaded, such that it remains interactive while the python interpreter is doing something else
         That should be a godsend while debugging ;')
 
     *   PAF framework refactored with descriptors ( easier to extend / inherit )
 
-    *   Fix Standard_Integer& returned values (for instance ShapeFix_Solid.FixShellMode())
+    *   Fix Standard_Integer& returned values (for instance ShapeFix_Solid.FixShellMode()) [X]
 
 0.5 release:
     target date: mid December
