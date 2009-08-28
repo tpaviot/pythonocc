@@ -147,8 +147,8 @@ MODULES = [
 ###########################
            ('Intf',[],[]),
            ('IntRes2d',[],[]),
-           ('IntCurve',[],[]), #LINUX TEST
-           ('IntCurvesFace',[],[]), #LINUX TEST
+           ('IntCurve',[],[]),
+           ('IntCurvesFace',[],[]),
            ('IntCurveSurface',[],['IntCurveSurface_ThePolyhedronOfHInter']),
            ('IntSurf',[],[]),
            ('IntImp',[],[]),
@@ -197,7 +197,7 @@ MODULES = [
            ('GeomLib',[],[]),
            ('GeomLProp',[],[]),
            ('AdvApp2Var',['gp'],['AdvApp2Var_Iso','AdvApp2Var_SysBase','AdvApp2Var_ApproxF2var','AdvApp2Var_MathBase']),
-           ('AdvApprox',[],[]), #LINUX TEST
+           ('AdvApprox',[],[]),
            ('Geom',['BRepFill','gp'],[]),
            ('GeomPlate',[],[]),
            ('GeomProjLib',[],[]),
@@ -235,7 +235,7 @@ MODULES = [
            ('BRepProj',[],[]),
            ('BRepSweep',[],[]),
            ('BRepToIGES',['gp'],[]),
-           ('BRepToIGESBRep',[],[]),#LINUX TEST
+           ('BRepToIGESBRep',[],[]),
            ('BRepTools',['TopoDS'],[]),
            ('BRepTopAdaptor',['math','ChFiDS'],[]),
            ('BRepFilletAPI',[],[]),
