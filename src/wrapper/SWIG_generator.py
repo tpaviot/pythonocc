@@ -571,9 +571,9 @@ class ModularBuilder(object):
                 str_args2=str_args+","
             else:
                 str_args2=str_args            
-            to_write += '\t\t\t\tvoid Set%s(%s %s value) {\n'%(function_name,str_args2,typ)
+            to_write += '\t\t\t\tvoid Set%s(%s value, %s) {\n'%(function_name,typ,str_args2)
             to_write += '\t\t\t\t$self->%s(%s)=value;\n'%(function_name,po)
-            to_write += '\t\t\t\t}\n\t\t};\n'
+            to_write += '\t\t\t\t}\n\t\t};\n'  
             self.fp.write(to_write)
             return True      
         # FEATURE DOCSTRING
