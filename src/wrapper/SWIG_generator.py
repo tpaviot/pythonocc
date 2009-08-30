@@ -568,7 +568,7 @@ class ModularBuilder(object):
             to_write += '\t\t%feature("autodoc","1");\n'
             to_write += '\t\t%extend {\n'
             if len(param_list)>0:
-                str_args2=str_args+","
+                str_args2="," + str_args
             else:
                 str_args2=str_args            
             to_write += '\t\t\t\tvoid Set%s(%s value, %s) {\n'%(function_name,typ,str_args2)
