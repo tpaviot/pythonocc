@@ -84,7 +84,17 @@ def which(executable, path_only=True):
         return l
     else:
         return os.path.split(l.strip())[0]
-    
+
+def get_32_or_64_bits_platform():
+    '''
+    Returns 32 or 64 according to the platform
+    '''
+    maxint = sys.maxint
+    if sys.maxint==pow(2,31)-1:
+        return 32
+    elif sys.maxint==pow(2,63)-1:
+        return 64
+
 #===============================================================================
 # Define paths
 #===============================================================================
@@ -147,83 +157,32 @@ elif sys.platform=='linux2':
     EXTRA_LIBS = ['m','stc++',lib_python]
     
 elif sys.platform=='darwin':
-    
-    # --- OSX
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
-    # Fill in this part with your own settings
-#     os.environ['CC'] = 'g++'
-#     os.environ['CPP'] = 'g++'
-# #    OCC_INC = '/usr/local/inc'
-# #    OCC_LIB = '/usr/local/lib'
-#     OCC_LIB = '/usr/local/lib/OCC'
-#     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-#     SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
-#     SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
-#     GCC_XML_PATH = '/usr/bin' 
-#     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
-#     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
-#                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-#                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
-
-
-
+    bits = get_32_or_64_bits_platform()
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-
-#     ECA = ['-O0','-march=%s'%platform.machine()]
-    #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
-    
-    # some how this variable is not being picked up
-    # returns '', not this...
-    # found more here: http://archives.free.net.ph/message/20081230.180055.3a24f2d2.ca.html
-    lib_python = '-L. -lpython2.5' 
-#     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
-
+    if bits==64:
+        SWIG_OPTS.append('-D_OCC64')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    OCC_LIB = '/usr/local/lib/OCC'
-    OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
+    OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
+    OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
     SALOME_GEOM_LIB = 'usr/local/lib/SalomeGeom'
-    #GCC_XML_PATH = which('gccxml')
-    GCC_XML_PATH = 'usr/bin'
-    
+    SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
+    SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
+    GCC_XML_PATH = which('gccxml')
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
-    
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
-#    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-#                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-#                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0']
-    ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
-    #EXTRA_LIBS = ['m','stc++',lib_python]
-    
-    '''
-        os.environ['CC'] = 'g++'
-        os.environ['CPP'] = 'g++'
-        OCC_LIB = '/usr/local/lib/OCC'
-        OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
-        SALOME_GEOM_INC = '/Volumes/DATA/Src/OCC/pythonocc/pythonocc_SVN/ThirdPart/SalomeGeometry/inc' # '/Volumes/OSX/usr/local/lib/SalomeGeom/include'
-        SALOME_GEOM_LIB = '/Volumes/OSX/usr/local/lib/SalomeGeom/lib'
-        GCC_XML_PATH = '/usr/bin' 
-        PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
-        DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
-                         ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                         ('__PYTHONOCC_MAXINT__',sys.maxint)]
-        SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                     '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-                     '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-        ECA = ['-O0']
-        #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-        #ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
-        ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
-    
-    '''    
-    
+    ECA = []
+    if bits==64:
+        DEFINE_MACROS.append(('_OCC64',None))
+        ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
+    ELA = []
 
 else:
     raise "Unsupported platform\nCurrently win32 / linux / osx are supported"
