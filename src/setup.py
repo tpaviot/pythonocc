@@ -91,9 +91,105 @@ from distutils import sysconfig
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
 ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
+
 #
-# Prompt
+# Customize compiler options
 #
+from distutils.command.build_ext import build_ext as _build_ext
+from types import *
+from distutils.dep_util import newer_group
+from distutils import log
+
+def customize_compiler(compiler):
+    '''Updates compiler settings for pythonOCC performances under Linux and MacOSX
+    '''
+    if sys.platform=='linux2' or sys.platform in 'darwin':
+        compiler_so = ['g++','-O0','-fPIC','-dynamic']
+        # And modify linker_so
+        linker_so = [compiler.linker_so[0],'-F.', '--no_undefined','-bundle','-dynamic_lookup']
+        #g++-4.2 -Wl,-F. -bundle -undefined dynamic_lookup -arch i386 -arch ppc -arch x86_64 build/temp.macosx-10.6-universal-2.6/Users/thomas/Devel/pythonocc/src/wra
+        if environment.get_32_or_64_bits_platform()==64:
+            compiler_so.append('-arch')
+            compiler_so.append('x86_64')
+            linker_so.append('-arch')
+            linker_so.append('x86_64')
+        linker_so.append('-L.')
+        linker_so.append('-lm')
+        linker_so.append('-lstdc++')
+        # Add the python library
+        python_version = sys.version
+        if python_version[0]=='2':
+            linker_so.append('-lpython2.%s'%python_version[2])
+        compiler.compiler_so = compiler_so
+        compiler.linker_so = linker_so
+    return compiler
+     
+class build_ext(_build_ext):
+    """Specialized Python source builder."""
+    # implement whatever needs to be different...
+    def build_extension(self, ext):
+        sources = ext.sources
+        if sources is None or type(sources) not in (ListType, TupleType):
+            raise DistutilsSetupError, \
+                  ("in 'ext_modules' option (extension '%s'), " +
+                   "'sources' must be present and must be " +
+                   "a list of source filenames") % ext.name
+        sources = list(sources)
+
+        fullname = self.get_ext_fullname(ext.name)
+        if self.inplace:
+            # ignore build-lib -- put the compiled extension into
+            # the source tree along with pure Python modules
+
+            modpath = string.split(fullname, '.')
+            package = string.join(modpath[0:-1], '.')
+            base = modpath[-1]
+
+            build_py = self.get_finalized_command('build_py')
+            package_dir = build_py.get_package_dir(package)
+            ext_filename = os.path.join(package_dir,
+                                        self.get_ext_filename(base))
+        else:
+            ext_filename = os.path.join(self.build_lib,
+                                        self.get_ext_filename(fullname))
+        depends = sources + ext.depends
+        if not (self.force or newer_group(depends, ext_filename, 'newer')):
+            log.debug("skipping '%s' extension (up-to-date)", ext.name)
+            return
+        else:
+            log.info("building '%s' extension", ext.name)
+        sources = self.swig_sources(sources, ext)
+        extra_args = ext.extra_compile_args or []
+        macros = ext.define_macros[:]
+        for undef in ext.undef_macros:
+            macros.append((undef,))
+        # Here are modified the compiler settings
+        self.compiler = customize_compiler(self.compiler)
+        objects = self.compiler.compile(sources,
+                                        output_dir=self.build_temp,
+                                        macros=macros,
+                                        include_dirs=ext.include_dirs,
+                                        debug=self.debug,
+                                        extra_postargs=extra_args,
+                                        depends=ext.depends)
+        self._built_objects = objects[:]
+        if ext.extra_objects:
+            objects.extend(ext.extra_objects)
+        extra_args = ext.extra_link_args or []
+
+        language = ext.language or self.compiler.detect_language(sources)
+
+        self.compiler.link_shared_object(
+            objects, ext_filename,
+            libraries=self.get_libraries(ext),
+            library_dirs=ext.library_dirs,
+            runtime_library_dirs=ext.runtime_library_dirs,
+            extra_postargs=extra_args,
+            export_symbols=self.get_export_symbols(ext),
+            debug=self.debug,
+            build_temp=self.build_temp,
+            target_lang=language)
+
 import SWIG_generator
 if GENERATE_SWIG and not SWIG_generator.HAVE_PYGCCXML:
     print "pygccxml/py++ 1.0 have to be installed. Please check http://www.language-binding.net/pyplusplus/pyplusplus.html"
@@ -316,7 +412,8 @@ if ALL_IN_ONE and sys.platform=='win32':
 else:
     package_name = "pythonOCC"
 
-setup(name = package_name,
+setup(cmdclass={'build_ext': build_ext},
+      name = package_name,
       license = "GPL V3",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
