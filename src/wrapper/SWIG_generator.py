@@ -568,10 +568,10 @@ class ModularBuilder(object):
             to_write += '\t\t%feature("autodoc","1");\n'
             to_write += '\t\t%extend {\n'
             if len(param_list)>0:
-                str_args2="," + str_args
+                str_args2=","+str_args
             else:
                 str_args2=str_args            
-            to_write += '\t\t\t\tvoid Set%s(%s value, %s) {\n'%(function_name,typ,str_args2)
+            to_write += '\t\t\t\tvoid Set%s(%s value %s) {\n'%(function_name,typ,str_args2)
             to_write += '\t\t\t\t$self->%s(%s)=value;\n'%(function_name,po)
             to_write += '\t\t\t\t}\n\t\t};\n'  
             self.fp.write(to_write)
