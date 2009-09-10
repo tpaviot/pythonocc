@@ -322,9 +322,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TDF_Transaction.hxx>
 %};
 
-%import MMgt.i
 %import TDF.i
 %import CDM.i
-%import CDF.i
+%import MMgt.i
 %import TCollection.i
+%import CDF.i
 %import Standard.i

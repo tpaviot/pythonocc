@@ -95,6 +95,36 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 };
 
 
+%nodefaultctor Handle_TPrsStd_DriverTable;
+class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_DriverTable {
+	TPrsStd_DriverTable* GetObject() {
+	return (TPrsStd_DriverTable*)$self->Access();
+	}
+};
+%extend Handle_TPrsStd_DriverTable {
+	~Handle_TPrsStd_DriverTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_DriverTable\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
 class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -125,32 +155,32 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 };
 
 
-%nodefaultctor Handle_TPrsStd_NamedShapeDriver;
-class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
+%nodefaultctor Handle_TPrsStd_AISPresentation;
+class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver();
+		Handle_TPrsStd_AISPresentation();
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		Handle_TPrsStd_AISPresentation(const Handle_TPrsStd_AISPresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver(const TPrsStd_NamedShapeDriver *anItem);
+		Handle_TPrsStd_AISPresentation(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver & operator=(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		Handle_TPrsStd_AISPresentation & operator=(const Handle_TPrsStd_AISPresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
+		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TPrsStd_AISPresentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TPrsStd_NamedShapeDriver {
-	TPrsStd_NamedShapeDriver* GetObject() {
-	return (TPrsStd_NamedShapeDriver*)$self->Access();
+%extend Handle_TPrsStd_AISPresentation {
+	TPrsStd_AISPresentation* GetObject() {
+	return (TPrsStd_AISPresentation*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_NamedShapeDriver {
-	~Handle_TPrsStd_NamedShapeDriver() {
+%extend Handle_TPrsStd_AISPresentation {
+	~Handle_TPrsStd_AISPresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_NamedShapeDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AISPresentation\n");}
 	}
 };
 
@@ -215,36 +245,6 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 };
 
 
-%nodefaultctor Handle_TPrsStd_DriverTable;
-class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable & operator=(const Handle_TPrsStd_DriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_DriverTable {
-	TPrsStd_DriverTable* GetObject() {
-	return (TPrsStd_DriverTable*)$self->Access();
-	}
-};
-%extend Handle_TPrsStd_DriverTable {
-	~Handle_TPrsStd_DriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_DriverTable\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TPrsStd_PointDriver;
 class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -305,36 +305,6 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_TPrsStd_AISPresentation;
-class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation(const Handle_TPrsStd_AISPresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation(const TPrsStd_AISPresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation & operator=(const Handle_TPrsStd_AISPresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_AISPresentation {
-	TPrsStd_AISPresentation* GetObject() {
-	return (TPrsStd_AISPresentation*)$self->Access();
-	}
-};
-%extend Handle_TPrsStd_AISPresentation {
-	~Handle_TPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AISPresentation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
 class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -361,6 +331,36 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	~Handle_TPrsStd_GeometryDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_GeometryDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TPrsStd_NamedShapeDriver;
+class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver(const TPrsStd_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_NamedShapeDriver {
+	TPrsStd_NamedShapeDriver* GetObject() {
+	return (TPrsStd_NamedShapeDriver*)$self->Access();
+	}
+};
+%extend Handle_TPrsStd_NamedShapeDriver {
+	~Handle_TPrsStd_NamedShapeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_NamedShapeDriver\n");}
 	}
 };
 
@@ -422,6 +422,258 @@ class TPrsStd_ConstraintTools {
 	~TPrsStd_ConstraintTools() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintTools\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_Driver;
+class TPrsStd_Driver : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_Driver {
+	Handle_TPrsStd_Driver GetHandle() {
+	return *(Handle_TPrsStd_Driver*) &$self;
+	}
+};
+%extend TPrsStd_Driver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_Driver {
+	~TPrsStd_Driver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_Driver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_NamedShapeDriver;
+class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_NamedShapeDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+
+};
+%extend TPrsStd_NamedShapeDriver {
+	Handle_TPrsStd_NamedShapeDriver GetHandle() {
+	return *(Handle_TPrsStd_NamedShapeDriver*) &$self;
+	}
+};
+%extend TPrsStd_NamedShapeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_NamedShapeDriver {
+	~TPrsStd_NamedShapeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_NamedShapeDriver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
+class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver();
+		%feature("autodoc", "1");
+		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver(const TPrsStd_DataMapOfGUIDDriver &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TPrsStd_DataMapOfGUIDDriver &aMap);
+		%feature("autodoc", "1");
+		const Standard_GUID & Key() const;
+		%feature("autodoc", "1");
+		const Handle_TPrsStd_Driver & Value() const;
+
+};
+%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
+	~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_PointDriver;
+class TPrsStd_PointDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_PointDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_PointDriver {
+	Handle_TPrsStd_PointDriver GetHandle() {
+	return *(Handle_TPrsStd_PointDriver*) &$self;
+	}
+};
+%extend TPrsStd_PointDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_PointDriver {
+	~TPrsStd_PointDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_PointDriver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_AxisDriver;
+class TPrsStd_AxisDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_AxisDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_AxisDriver {
+	Handle_TPrsStd_AxisDriver GetHandle() {
+	return *(Handle_TPrsStd_AxisDriver*) &$self;
+	}
+};
+%extend TPrsStd_AxisDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_AxisDriver {
+	~TPrsStd_AxisDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_AxisDriver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_AISViewer;
+class TPrsStd_AISViewer : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		Standard_Boolean Has(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
+		%feature("autodoc", "1");
+		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
+		%feature("autodoc", "1");
+		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
+		%feature("autodoc", "1");
+		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
+		%feature("autodoc", "1");
+		void Update(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		TPrsStd_AISViewer();
+		%feature("autodoc", "1");
+		void Update() const;
+		%feature("autodoc", "1");
+		void SetInteractiveContext(const Handle_AIS_InteractiveContext &ctx);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveContext GetInteractiveContext() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_AISViewer {
+	Handle_TPrsStd_AISViewer GetHandle() {
+	return *(Handle_TPrsStd_AISViewer*) &$self;
+	}
+};
+%extend TPrsStd_AISViewer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_AISViewer {
+	~TPrsStd_AISViewer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_AISViewer\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_ConstraintDriver;
+class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_ConstraintDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_ConstraintDriver {
+	Handle_TPrsStd_ConstraintDriver GetHandle() {
+	return *(Handle_TPrsStd_ConstraintDriver*) &$self;
+	}
+};
+%extend TPrsStd_ConstraintDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_ConstraintDriver {
+	~TPrsStd_ConstraintDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintDriver\n");}
+	}
+};
+
+
+%nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
+class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TPrsStd_Driver &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_GUID & Key() const;
+		%feature("autodoc", "1");
+		Handle_TPrsStd_Driver & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
+	return *(Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -547,143 +799,6 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 };
 
 
-%nodefaultctor TPrsStd_Driver;
-class TPrsStd_Driver : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_Driver {
-	Handle_TPrsStd_Driver GetHandle() {
-	return *(Handle_TPrsStd_Driver*) &$self;
-	}
-};
-%extend TPrsStd_Driver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_Driver {
-	~TPrsStd_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_Driver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_NamedShapeDriver;
-class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_NamedShapeDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_NamedShapeDriver {
-	Handle_TPrsStd_NamedShapeDriver GetHandle() {
-	return *(Handle_TPrsStd_NamedShapeDriver*) &$self;
-	}
-};
-%extend TPrsStd_NamedShapeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_NamedShapeDriver {
-	~TPrsStd_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_NamedShapeDriver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
-class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
-		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver(const TPrsStd_DataMapOfGUIDDriver &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TPrsStd_DataMapOfGUIDDriver &aMap);
-		%feature("autodoc", "1");
-		const Standard_GUID & Key() const;
-		%feature("autodoc", "1");
-		const Handle_TPrsStd_Driver & Value() const;
-
-};
-%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
-	~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_PointDriver;
-class TPrsStd_PointDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_PointDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_PointDriver {
-	Handle_TPrsStd_PointDriver GetHandle() {
-	return *(Handle_TPrsStd_PointDriver*) &$self;
-	}
-};
-%extend TPrsStd_PointDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_PointDriver {
-	~TPrsStd_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_PointDriver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_GeometryDriver;
-class TPrsStd_GeometryDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_GeometryDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_GeometryDriver {
-	Handle_TPrsStd_GeometryDriver GetHandle() {
-	return *(Handle_TPrsStd_GeometryDriver*) &$self;
-	}
-};
-%extend TPrsStd_GeometryDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_GeometryDriver {
-	~TPrsStd_GeometryDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_GeometryDriver\n");}
-	}
-};
-
-
 %nodefaultctor TPrsStd_PlaneDriver;
 class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 	public:
@@ -713,148 +828,31 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 };
 
 
-%nodefaultctor TPrsStd_AISViewer;
-class TPrsStd_AISViewer : public TDF_Attribute {
+%nodefaultctor TPrsStd_GeometryDriver;
+class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 	public:
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		Standard_Boolean Has(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
-		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
-		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
-		%feature("autodoc", "1");
-		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
-		%feature("autodoc", "1");
-		void Update(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		TPrsStd_AISViewer();
-		%feature("autodoc", "1");
-		void Update() const;
-		%feature("autodoc", "1");
-		void SetInteractiveContext(const Handle_AIS_InteractiveContext &ctx);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveContext GetInteractiveContext() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_AISViewer {
-	Handle_TPrsStd_AISViewer GetHandle() {
-	return *(Handle_TPrsStd_AISViewer*) &$self;
-	}
-};
-%extend TPrsStd_AISViewer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_AISViewer {
-	~TPrsStd_AISViewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AISViewer\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_AxisDriver;
-class TPrsStd_AxisDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_AxisDriver();
+		TPrsStd_GeometryDriver();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TPrsStd_AxisDriver {
-	Handle_TPrsStd_AxisDriver GetHandle() {
-	return *(Handle_TPrsStd_AxisDriver*) &$self;
+%extend TPrsStd_GeometryDriver {
+	Handle_TPrsStd_GeometryDriver GetHandle() {
+	return *(Handle_TPrsStd_GeometryDriver*) &$self;
 	}
 };
-%extend TPrsStd_AxisDriver {
+%extend TPrsStd_GeometryDriver {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_AxisDriver {
-	~TPrsStd_AxisDriver() {
+%extend TPrsStd_GeometryDriver {
+	~TPrsStd_GeometryDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AxisDriver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_ConstraintDriver;
-class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_ConstraintDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_ConstraintDriver {
-	Handle_TPrsStd_ConstraintDriver GetHandle() {
-	return *(Handle_TPrsStd_ConstraintDriver*) &$self;
-	}
-};
-%extend TPrsStd_ConstraintDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_ConstraintDriver {
-	~TPrsStd_ConstraintDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintDriver\n");}
-	}
-};
-
-
-%nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
-class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TPrsStd_Driver &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_GUID & Key() const;
-		%feature("autodoc", "1");
-		Handle_TPrsStd_Driver & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
-	return *(Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
-	}
-};
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of TPrsStd_GeometryDriver\n");}
 	}
 };
 

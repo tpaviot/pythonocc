@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_ProjLib_HCompProjectedCurve;
-class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
-	public:
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve();
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve(const Handle_ProjLib_HCompProjectedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve(const ProjLib_HCompProjectedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve & operator=(const Handle_ProjLib_HCompProjectedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ProjLib_HCompProjectedCurve {
-	ProjLib_HCompProjectedCurve* GetObject() {
-	return (ProjLib_HCompProjectedCurve*)$self->Access();
-	}
-};
-%extend Handle_ProjLib_HCompProjectedCurve {
-	~Handle_ProjLib_HCompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ProjLib_HProjectedCurve;
 class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
@@ -91,6 +61,36 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	~Handle_ProjLib_HProjectedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ProjLib_HCompProjectedCurve;
+class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve();
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve(const Handle_ProjLib_HCompProjectedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve(const ProjLib_HCompProjectedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve & operator=(const Handle_ProjLib_HCompProjectedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve & operator=(const ProjLib_HCompProjectedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HCompProjectedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ProjLib_HCompProjectedCurve {
+	ProjLib_HCompProjectedCurve* GetObject() {
+	return (ProjLib_HCompProjectedCurve*)$self->Access();
+	}
+};
+%extend Handle_ProjLib_HCompProjectedCurve {
+	~Handle_ProjLib_HCompProjectedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");}
 	}
 };
 
@@ -151,63 +151,6 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 	~Handle_ProjLib_HSequenceOfHSequenceOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor ProjLib_SequenceOfHSequenceOfPnt;
-class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_SequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void Append(ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void Prepend(ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend ProjLib_SequenceOfHSequenceOfPnt {
-	~ProjLib_SequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -275,6 +218,63 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 	~ProjLib_CompProjectedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ProjLib_CompProjectedCurve\n");}
+	}
+};
+
+
+%nodefaultctor ProjLib_SequenceOfHSequenceOfPnt;
+class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_SequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void Append(ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void Prepend(ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & First() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend ProjLib_SequenceOfHSequenceOfPnt {
+	~ProjLib_SequenceOfHSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -481,6 +481,72 @@ class ProjLib_Sphere : public ProjLib_Projector {
 };
 
 
+%nodefaultctor ProjLib_HProjectedCurve;
+class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_HProjectedCurve();
+		%feature("autodoc", "1");
+		ProjLib_HProjectedCurve(const ProjLib_ProjectedCurve &C);
+		%feature("autodoc", "1");
+		void Set(const ProjLib_ProjectedCurve &C);
+		%feature("autodoc", "1");
+		virtual		const Adaptor2d_Curve2d & Curve2d() const;
+		%feature("autodoc", "1");
+		ProjLib_ProjectedCurve & ChangeCurve2d();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ProjLib_HProjectedCurve {
+	Handle_ProjLib_HProjectedCurve GetHandle() {
+	return *(Handle_ProjLib_HProjectedCurve*) &$self;
+	}
+};
+%extend ProjLib_HProjectedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ProjLib_HProjectedCurve {
+	~ProjLib_HProjectedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
+	}
+};
+
+
+%nodefaultctor ProjLib_Torus;
+class ProjLib_Torus : public ProjLib_Projector {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_Torus();
+		%feature("autodoc", "1");
+		ProjLib_Torus(const gp_Torus &To);
+		%feature("autodoc", "1");
+		ProjLib_Torus(const gp_Torus &To, const gp_Circ &C);
+		%feature("autodoc", "1");
+		void Init(const gp_Torus &To);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Lin &L);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Circ &C);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Elips &E);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Parab &P);
+		%feature("autodoc", "1");
+		virtual		void Project(const gp_Hypr &H);
+
+};
+%extend ProjLib_Torus {
+	~ProjLib_Torus() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Torus\n");}
+	}
+};
+
+
 %nodefaultctor ProjLib;
 class ProjLib {
 	public:
@@ -590,37 +656,6 @@ class ProjLib_Plane : public ProjLib_Projector {
 };
 
 
-%nodefaultctor ProjLib_Torus;
-class ProjLib_Torus : public ProjLib_Projector {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_Torus();
-		%feature("autodoc", "1");
-		ProjLib_Torus(const gp_Torus &To);
-		%feature("autodoc", "1");
-		ProjLib_Torus(const gp_Torus &To, const gp_Circ &C);
-		%feature("autodoc", "1");
-		void Init(const gp_Torus &To);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Lin &L);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Circ &C);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Elips &E);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Parab &P);
-		%feature("autodoc", "1");
-		virtual		void Project(const gp_Hypr &H);
-
-};
-%extend ProjLib_Torus {
-	~ProjLib_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Torus\n");}
-	}
-};
-
-
 %nodefaultctor ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
 class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNode {
 	public:
@@ -650,23 +685,127 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 };
 
 
-%nodefaultctor ProjLib_ComputeApprox;
-class ProjLib_ComputeApprox {
+%nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
+class ProjLib_ComputeApproxOnPolarSurface {
 	public:
 		%feature("autodoc", "1");
-		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		ProjLib_ComputeApproxOnPolarSurface();
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor2d_HCurve2d &InitCurve2dBis, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Perform(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &InitCurve2d);
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve BSpline() const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier() const;
+		Handle_Geom2d_Curve Curve2d() const;
 		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
+		Standard_Boolean IsDone() const;
 
 };
-%extend ProjLib_ComputeApprox {
-	~ProjLib_ComputeApprox() {
+%extend ProjLib_ComputeApproxOnPolarSurface {
+	~ProjLib_ComputeApproxOnPolarSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
+	}
+};
+
+
+%nodefaultctor ProjLib_HSequenceOfHSequenceOfPnt;
+class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_HSequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_TColgp_HSequenceOfPnt &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColgp_HSequenceOfPnt &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & Sequence() const;
+		%feature("autodoc", "1");
+		ProjLib_SequenceOfHSequenceOfPnt & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_ProjLib_HSequenceOfHSequenceOfPnt ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ProjLib_HSequenceOfHSequenceOfPnt {
+	Handle_ProjLib_HSequenceOfHSequenceOfPnt GetHandle() {
+	return *(Handle_ProjLib_HSequenceOfHSequenceOfPnt*) &$self;
+	}
+};
+%extend ProjLib_HSequenceOfHSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ProjLib_HSequenceOfHSequenceOfPnt {
+	~ProjLib_HSequenceOfHSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");}
+	}
+};
+
+
+%nodefaultctor ProjLib_PrjResolve;
+class ProjLib_PrjResolve {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_PrjResolve(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer Fix);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d &Tol, const gp_Pnt2d &Inf, const gp_Pnt2d &Sup, const Standard_Real FTol=-0x000000001, const Standard_Boolean StrictInside=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Solution() const;
+
+};
+%extend ProjLib_PrjResolve {
+	~ProjLib_PrjResolve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
 	}
 };
 
@@ -754,60 +893,6 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 };
 
 
-%nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
-class ProjLib_ComputeApproxOnPolarSurface {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface();
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor2d_HCurve2d &InitCurve2dBis, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Perform(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d BuildInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve ProjectUsingInitialCurve2d(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &InitCurve2d);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2d() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend ProjLib_ComputeApproxOnPolarSurface {
-	~ProjLib_ComputeApproxOnPolarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
-	}
-};
-
-
-%nodefaultctor ProjLib_PrjResolve;
-class ProjLib_PrjResolve {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_PrjResolve(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer Fix);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d &Tol, const gp_Pnt2d &Inf, const gp_Pnt2d &Sup, const Standard_Real FTol=-0x000000001, const Standard_Boolean StrictInside=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Solution() const;
-
-};
-%extend ProjLib_PrjResolve {
-	~ProjLib_PrjResolve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
-	}
-};
-
-
 %nodefaultctor ProjLib_HCompProjectedCurve;
 class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	public:
@@ -870,108 +955,23 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 };
 
 
-%nodefaultctor ProjLib_HSequenceOfHSequenceOfPnt;
-class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
+%nodefaultctor ProjLib_ComputeApprox;
+class ProjLib_ComputeApprox {
 	public:
 		%feature("autodoc", "1");
-		ProjLib_HSequenceOfHSequenceOfPnt();
+		ProjLib_ComputeApprox(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Handle_Geom2d_BSplineCurve BSpline() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_Geom2d_BezierCurve Bezier() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ProjLib_HSequenceOfHSequenceOfPnt &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &anItem);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const ProjLib_SequenceOfHSequenceOfPnt & Sequence() const;
-		%feature("autodoc", "1");
-		ProjLib_SequenceOfHSequenceOfPnt & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_ProjLib_HSequenceOfHSequenceOfPnt ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Real Tolerance() const;
 
 };
-%extend ProjLib_HSequenceOfHSequenceOfPnt {
-	Handle_ProjLib_HSequenceOfHSequenceOfPnt GetHandle() {
-	return *(Handle_ProjLib_HSequenceOfHSequenceOfPnt*) &$self;
-	}
-};
-%extend ProjLib_HSequenceOfHSequenceOfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ProjLib_HSequenceOfHSequenceOfPnt {
-	~ProjLib_HSequenceOfHSequenceOfPnt() {
+%extend ProjLib_ComputeApprox {
+	~ProjLib_ComputeApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor ProjLib_HProjectedCurve;
-class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_HProjectedCurve();
-		%feature("autodoc", "1");
-		ProjLib_HProjectedCurve(const ProjLib_ProjectedCurve &C);
-		%feature("autodoc", "1");
-		void Set(const ProjLib_ProjectedCurve &C);
-		%feature("autodoc", "1");
-		virtual		const Adaptor2d_Curve2d & Curve2d() const;
-		%feature("autodoc", "1");
-		ProjLib_ProjectedCurve & ChangeCurve2d();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ProjLib_HProjectedCurve {
-	Handle_ProjLib_HProjectedCurve GetHandle() {
-	return *(Handle_ProjLib_HProjectedCurve*) &$self;
-	}
-};
-%extend ProjLib_HProjectedCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ProjLib_HProjectedCurve {
-	~ProjLib_HProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
 	}
 };
 

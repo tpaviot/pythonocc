@@ -65,66 +65,6 @@ class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_HArray1OfCirc2d;
-class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d(const Handle_PColgp_HArray1OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d(const PColgp_HArray1OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d & operator=(const Handle_PColgp_HArray1OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d & operator=(const PColgp_HArray1OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_HArray1OfCirc2d {
-	PColgp_HArray1OfCirc2d* GetObject() {
-	return (PColgp_HArray1OfCirc2d*)$self->Access();
-	}
-};
-%extend Handle_PColgp_HArray1OfCirc2d {
-	~Handle_PColgp_HArray1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfCirc2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
-	PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d*)$self->Access();
-	}
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PColgp_HArray1OfVec;
 class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	public:
@@ -151,6 +91,66 @@ class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	~Handle_PColgp_HArray1OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfVec\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColgp_HArray2OfXY;
+class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY();
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY(const Handle_PColgp_HArray2OfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY(const PColgp_HArray2OfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY & operator=(const Handle_PColgp_HArray2OfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY & operator=(const PColgp_HArray2OfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_HArray2OfXY {
+	PColgp_HArray2OfXY* GetObject() {
+	return (PColgp_HArray2OfXY*)$self->Access();
+	}
+};
+%extend Handle_PColgp_HArray2OfXY {
+	~Handle_PColgp_HArray2OfXY() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfXY\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const PColgp_VArrayNodeOfFieldOfHArray1OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	PColgp_VArrayNodeOfFieldOfHArray1OfLin2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray1OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d\n");}
 	}
 };
 
@@ -305,62 +305,62 @@ class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d();
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir();
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d(const PColgp_VArrayNodeOfFieldOfHArray1OfLin2d *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir(const PColgp_VArrayNodeOfFieldOfHArray2OfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfLin2d *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfDir *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
-	PColgp_VArrayNodeOfFieldOfHArray1OfLin2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray1OfLin2d*)$self->Access();
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	PColgp_VArrayNodeOfFieldOfHArray2OfDir* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray2OfDir*)$self->Access();
 	}
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d() {
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir\n");}
 	}
 };
 
 
-%nodefaultctor Handle_PColgp_HSequenceOfXYZ;
-class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ();
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d();
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ(const Handle_PColgp_HSequenceOfXYZ &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ(const PColgp_HSequenceOfXYZ *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ & operator=(const Handle_PColgp_HSequenceOfXYZ &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ & operator=(const PColgp_HSequenceOfXYZ *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HSequenceOfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_HSequenceOfXYZ {
-	PColgp_HSequenceOfXYZ* GetObject() {
-	return (PColgp_HSequenceOfXYZ*)$self->Access();
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d*)$self->Access();
 	}
 };
-%extend Handle_PColgp_HSequenceOfXYZ {
-	~Handle_PColgp_HSequenceOfXYZ() {
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HSequenceOfXYZ\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d\n");}
 	}
 };
 
@@ -395,32 +395,62 @@ class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 };
 
 
-%nodefaultctor Handle_PColgp_HArray2OfLin2d;
-class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColgp_HSequenceOfXYZ;
+class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d();
+		Handle_PColgp_HSequenceOfXYZ();
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d(const Handle_PColgp_HArray2OfLin2d &aHandle);
+		Handle_PColgp_HSequenceOfXYZ(const Handle_PColgp_HSequenceOfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d(const PColgp_HArray2OfLin2d *anItem);
+		Handle_PColgp_HSequenceOfXYZ(const PColgp_HSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d & operator=(const Handle_PColgp_HArray2OfLin2d &aHandle);
+		Handle_PColgp_HSequenceOfXYZ & operator=(const Handle_PColgp_HSequenceOfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d & operator=(const PColgp_HArray2OfLin2d *anItem);
+		Handle_PColgp_HSequenceOfXYZ & operator=(const PColgp_HSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_HSequenceOfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_HArray2OfLin2d {
-	PColgp_HArray2OfLin2d* GetObject() {
-	return (PColgp_HArray2OfLin2d*)$self->Access();
+%extend Handle_PColgp_HSequenceOfXYZ {
+	PColgp_HSequenceOfXYZ* GetObject() {
+	return (PColgp_HSequenceOfXYZ*)$self->Access();
 	}
 };
-%extend Handle_PColgp_HArray2OfLin2d {
-	~Handle_PColgp_HArray2OfLin2d() {
+%extend Handle_PColgp_HSequenceOfXYZ {
+	~Handle_PColgp_HSequenceOfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfLin2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HSequenceOfXYZ\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColgp_HArray1OfVec2d;
+class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d(const Handle_PColgp_HArray1OfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d(const PColgp_HArray1OfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d & operator=(const Handle_PColgp_HArray1OfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d & operator=(const PColgp_HArray1OfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_HArray1OfVec2d {
+	PColgp_HArray1OfVec2d* GetObject() {
+	return (PColgp_HArray1OfVec2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_HArray1OfVec2d {
+	~Handle_PColgp_HArray1OfVec2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfVec2d\n");}
 	}
 };
 
@@ -455,32 +485,32 @@ class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_HArray1OfVec2d;
-class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColgp_HArray1OfCirc2d;
+class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d();
+		Handle_PColgp_HArray1OfCirc2d();
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d(const Handle_PColgp_HArray1OfVec2d &aHandle);
+		Handle_PColgp_HArray1OfCirc2d(const Handle_PColgp_HArray1OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d(const PColgp_HArray1OfVec2d *anItem);
+		Handle_PColgp_HArray1OfCirc2d(const PColgp_HArray1OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d & operator=(const Handle_PColgp_HArray1OfVec2d &aHandle);
+		Handle_PColgp_HArray1OfCirc2d & operator=(const Handle_PColgp_HArray1OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d & operator=(const PColgp_HArray1OfVec2d *anItem);
+		Handle_PColgp_HArray1OfCirc2d & operator=(const PColgp_HArray1OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_HArray1OfVec2d {
-	PColgp_HArray1OfVec2d* GetObject() {
-	return (PColgp_HArray1OfVec2d*)$self->Access();
+%extend Handle_PColgp_HArray1OfCirc2d {
+	PColgp_HArray1OfCirc2d* GetObject() {
+	return (PColgp_HArray1OfCirc2d*)$self->Access();
 	}
 };
-%extend Handle_PColgp_HArray1OfVec2d {
-	~Handle_PColgp_HArray1OfVec2d() {
+%extend Handle_PColgp_HArray1OfCirc2d {
+	~Handle_PColgp_HArray1OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfVec2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfCirc2d\n");}
 	}
 };
 
@@ -545,6 +575,36 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_
 };
 
 
+%nodefaultctor Handle_PColgp_HArray1OfDir;
+class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir();
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir(const Handle_PColgp_HArray1OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir(const PColgp_HArray1OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir & operator=(const Handle_PColgp_HArray1OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir & operator=(const PColgp_HArray1OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_HArray1OfDir {
+	PColgp_HArray1OfDir* GetObject() {
+	return (PColgp_HArray1OfDir*)$self->Access();
+	}
+};
+%extend Handle_PColgp_HArray1OfDir {
+	~Handle_PColgp_HArray1OfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfDir\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PColgp_HSequenceOfVec;
 class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 	public:
@@ -601,36 +661,6 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_Ar
 	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const PColgp_VArrayNodeOfFieldOfHArray1OfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
-	PColgp_VArrayNodeOfFieldOfHArray1OfXYZ* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray1OfXYZ*)$self->Access();
-	}
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ\n");}
 	}
 };
 
@@ -785,126 +815,6 @@ class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
-	PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d*)$self->Access();
-	}
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_HArray1OfPnt2d;
-class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d(const Handle_PColgp_HArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d(const PColgp_HArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d & operator=(const Handle_PColgp_HArray1OfPnt2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d & operator=(const PColgp_HArray1OfPnt2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_HArray1OfPnt2d {
-	PColgp_HArray1OfPnt2d* GetObject() {
-	return (PColgp_HArray1OfPnt2d*)$self->Access();
-	}
-};
-%extend Handle_PColgp_HArray1OfPnt2d {
-	~Handle_PColgp_HArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfPnt2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir();
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir(const PColgp_VArrayNodeOfFieldOfHArray2OfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
-	PColgp_VArrayNodeOfFieldOfHArray2OfDir* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray2OfDir*)$self->Access();
-	}
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_HArray2OfXY;
-class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY();
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY(const Handle_PColgp_HArray2OfXY &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY(const PColgp_HArray2OfXY *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY & operator=(const Handle_PColgp_HArray2OfXY &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY & operator=(const PColgp_HArray2OfXY *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfXY const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_HArray2OfXY {
-	PColgp_HArray2OfXY* GetObject() {
-	return (PColgp_HArray2OfXY*)$self->Access();
-	}
-};
-%extend Handle_PColgp_HArray2OfXY {
-	~Handle_PColgp_HArray2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfXY\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfPnt;
 class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 	public:
@@ -965,32 +875,32 @@ class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_HArray1OfDir;
-class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir();
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ();
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir(const Handle_PColgp_HArray1OfDir &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir(const PColgp_HArray1OfDir *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ(const PColgp_VArrayNodeOfFieldOfHArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir & operator=(const Handle_PColgp_HArray1OfDir &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir & operator=(const PColgp_HArray1OfDir *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfDir const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_HArray1OfDir {
-	PColgp_HArray1OfDir* GetObject() {
-	return (PColgp_HArray1OfDir*)$self->Access();
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	PColgp_VArrayNodeOfFieldOfHArray1OfXYZ* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray1OfXYZ*)$self->Access();
 	}
 };
-%extend Handle_PColgp_HArray1OfDir {
-	~Handle_PColgp_HArray1OfDir() {
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfDir\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ\n");}
 	}
 };
 
@@ -1021,36 +931,6 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_Ar
 	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const PColgp_VArrayNodeOfFieldOfHArray2OfVec2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfVec2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
-	PColgp_VArrayNodeOfFieldOfHArray2OfVec2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray2OfVec2d*)$self->Access();
-	}
-};
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
 
@@ -1111,6 +991,36 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_
 	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d(const PColgp_VArrayNodeOfFieldOfHArray2OfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfVec2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	PColgp_VArrayNodeOfFieldOfHArray2OfVec2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray2OfVec2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
 
@@ -1205,32 +1115,32 @@ class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const PColgp_VArrayNodeOfFieldOfHArray2OfLin2d *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d(const PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d &aHandle);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfLin2d *anItem);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
-	PColgp_VArrayNodeOfFieldOfHArray2OfLin2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*)$self->Access();
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d*)$self->Access();
 	}
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d\n");}
 	}
 };
 
@@ -1295,6 +1205,36 @@ class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 };
 
 
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const PColgp_VArrayNodeOfFieldOfHArray2OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray2OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	PColgp_VArrayNodeOfFieldOfHArray2OfLin2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_ArrayNode {
 	public:
@@ -1325,32 +1265,32 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_Arr
 };
 
 
-%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
-class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PColgp_HArray1OfPnt2d;
+class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
+		Handle_PColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d &aHandle);
+		Handle_PColgp_HArray1OfPnt2d(const Handle_PColgp_HArray1OfPnt2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d *anItem);
+		Handle_PColgp_HArray1OfPnt2d(const PColgp_HArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d &aHandle);
+		Handle_PColgp_HArray1OfPnt2d & operator=(const Handle_PColgp_HArray1OfPnt2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d *anItem);
+		Handle_PColgp_HArray1OfPnt2d & operator=(const PColgp_HArray1OfPnt2d *anItem);
 		%feature("autodoc", "1");
-		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PColgp_HArray1OfPnt2d const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
-	PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d* GetObject() {
-	return (PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d*)$self->Access();
+%extend Handle_PColgp_HArray1OfPnt2d {
+	PColgp_HArray1OfPnt2d* GetObject() {
+	return (PColgp_HArray1OfPnt2d*)$self->Access();
 	}
 };
-%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
-	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d() {
+%extend Handle_PColgp_HArray1OfPnt2d {
+	~Handle_PColgp_HArray1OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfPnt2d\n");}
 	}
 };
 
@@ -1381,6 +1321,36 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_
 	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PColgp_HArray2OfLin2d;
+class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d(const Handle_PColgp_HArray2OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d(const PColgp_HArray2OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d & operator=(const Handle_PColgp_HArray2OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d & operator=(const PColgp_HArray2OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfLin2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_HArray2OfLin2d {
+	PColgp_HArray2OfLin2d* GetObject() {
+	return (PColgp_HArray2OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_HArray2OfLin2d {
+	~Handle_PColgp_HArray2OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfLin2d\n");}
 	}
 };
 
@@ -1445,6 +1415,36 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_Arr
 };
 
 
+%nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
+class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d(const PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d & operator=(const Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d & operator=(const PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d* GetObject() {
+	return (PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d*)$self->Access();
+	}
+};
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PColgp_HArray2OfVec2d;
 class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 	public:
@@ -1475,60 +1475,164 @@ class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d;
-class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
+%nodefaultctor PColgp_HArray1OfXY;
+class PColgp_HArray1OfXY : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d();
+		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up, const gp_XY &V);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
-class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
-	public:
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
+		void SetValue(const Standard_Integer Index, const gp_XY &Value);
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
+		gp_XY Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDir2dmyValue() const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColgp_HArray1OfXY();
+		%feature("autodoc", "1");
+		PColgp_HArray1OfXY(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfXYLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfXYUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray1OfXY & _CSFDB_GetPColgp_HArray1OfXYData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d*) &$self;
+%extend PColgp_HArray1OfXY {
+	Handle_PColgp_HArray1OfXY GetHandle() {
+	return *(Handle_PColgp_HArray1OfXY*) &$self;
 	}
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+%extend PColgp_HArray1OfXY {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
-	~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d() {
+%extend PColgp_HArray1OfXY {
+	~PColgp_HArray1OfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfDir2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfXY\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray2OfPnt;
+class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt(const PColgp_FieldOfHArray2OfPnt &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray2OfPnt &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray2OfPnt &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Pnt &Value);
+		%feature("autodoc", "1");
+		gp_Pnt & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray2OfPnt {
+	~PColgp_FieldOfHArray2OfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray1OfLin2d;
+class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfLin2d(const PColgp_FieldOfHArray1OfLin2d &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray1OfLin2d &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray1OfLin2d &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
+		%feature("autodoc", "1");
+		gp_Lin2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Lin2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray1OfLin2d {
+	~PColgp_FieldOfHArray1OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray2OfPnt2d;
+class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt2d();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt2d(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfPnt2d(const PColgp_FieldOfHArray2OfPnt2d &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray2OfPnt2d &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray2OfPnt2d &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Pnt2d &Value);
+		%feature("autodoc", "1");
+		gp_Pnt2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray2OfPnt2d {
+	~PColgp_FieldOfHArray2OfPnt2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt2d\n");}
 	}
 };
 
@@ -1694,63 +1798,6 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_SeqNodeOfHSequenceOfDir;
-class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheLast, const gp_Dir &TheItem);
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const gp_Dir &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheFirst);
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheNext, const gp_Dir &TheItem);
-		%feature("autodoc", "1");
-		gp_Dir Value() const;
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfDir Next() const;
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfDir Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const gp_Dir &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ANode);
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir();
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfDir(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
-		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyItem() const;
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColgp_SeqNodeOfHSequenceOfDir {
-	Handle_PColgp_SeqNodeOfHSequenceOfDir GetHandle() {
-	return *(Handle_PColgp_SeqNodeOfHSequenceOfDir*) &$self;
-	}
-};
-%extend PColgp_SeqNodeOfHSequenceOfDir {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_SeqNodeOfHSequenceOfDir {
-	~PColgp_SeqNodeOfHSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfDir\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 	public:
@@ -1789,6 +1836,120 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 	~PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_SeqExplorerOfHSequenceOfXYZ;
+class PColgp_SeqExplorerOfHSequenceOfXYZ {
+	public:
+		%feature("autodoc", "1");
+		PColgp_SeqExplorerOfHSequenceOfXYZ(const Handle_PColgp_HSequenceOfXYZ &S);
+		%feature("autodoc", "1");
+		gp_XYZ Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const gp_XYZ &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T);
+
+};
+%extend PColgp_SeqExplorerOfHSequenceOfXYZ {
+	~PColgp_SeqExplorerOfHSequenceOfXYZ() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfXYZ\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
+class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Lin2d &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfLin2dmyValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d;
+class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d();
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Dir2d &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray1OfVec;
+class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfVec();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfVec(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfVec(const PColgp_FieldOfHArray1OfVec &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray1OfVec &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray1OfVec &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		%feature("autodoc", "1");
+		gp_Vec & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Vec & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray1OfVec {
+	~PColgp_FieldOfHArray1OfVec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfVec\n");}
 	}
 };
 
@@ -1870,179 +2031,6 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_SeqExplorerOfHSequenceOfXYZ;
-class PColgp_SeqExplorerOfHSequenceOfXYZ {
-	public:
-		%feature("autodoc", "1");
-		PColgp_SeqExplorerOfHSequenceOfXYZ(const Handle_PColgp_HSequenceOfXYZ &S);
-		%feature("autodoc", "1");
-		gp_XYZ Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_XYZ &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_XYZ &T);
-
-};
-%extend PColgp_SeqExplorerOfHSequenceOfXYZ {
-	~PColgp_SeqExplorerOfHSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfXYZ\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray2OfXY;
-class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfXY();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfXY(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfXY(const PColgp_FieldOfHArray2OfXY &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray2OfXY &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray2OfXY &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
-		%feature("autodoc", "1");
-		gp_XY & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_XY & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray2OfXY {
-	~PColgp_FieldOfHArray2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfXY\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d;
-class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Dir2d &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray1OfVec;
-class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfVec();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfVec(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfVec(const PColgp_FieldOfHArray1OfVec &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfVec &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray1OfVec &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
-		%feature("autodoc", "1");
-		gp_Vec & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray1OfVec {
-	~PColgp_FieldOfHArray1OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfVec\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_HArray1OfXY;
-class PColgp_HArray1OfXY : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXY(const Standard_Integer Low, const Standard_Integer Up, const gp_XY &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		gp_XY Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXY();
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXY(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfXYLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfXYUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray1OfXY & _CSFDB_GetPColgp_HArray1OfXYData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColgp_HArray1OfXY {
-	Handle_PColgp_HArray1OfXY GetHandle() {
-	return *(Handle_PColgp_HArray1OfXY*) &$self;
-	}
-};
-%extend PColgp_HArray1OfXY {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_HArray1OfXY {
-	~PColgp_HArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfXY\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec;
 class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 	public:
@@ -2076,6 +2064,69 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray1OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfVec\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_HArray1OfDir;
+class PColgp_HArray1OfDir : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		gp_Dir Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColgp_HArray1OfDir();
+		%feature("autodoc", "1");
+		PColgp_HArray1OfDir(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfDirLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfDirLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfDirUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfDirUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray1OfDir & _CSFDB_GetPColgp_HArray1OfDirData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_HArray1OfDir {
+	Handle_PColgp_HArray1OfDir GetHandle() {
+	return *(Handle_PColgp_HArray1OfDir*) &$self;
+	}
+};
+%extend PColgp_HArray1OfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_HArray1OfDir {
+	~PColgp_HArray1OfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfDir\n");}
 	}
 };
 
@@ -2167,79 +2218,44 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 };
 
 
-%nodefaultctor PColgp_HArray2OfLin2d;
-class PColgp_HArray2OfLin2d : public Standard_Persistent {
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d;
+class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 	public:
 		%feature("autodoc", "1");
-		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Lin2d &V);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void SetValue(const gp_Lin2d &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Lin2d &Value);
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		gp_Lin2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColgp_HArray2OfLin2d();
-		%feature("autodoc", "1");
-		PColgp_HArray2OfLin2d(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyLowerRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfLin2dmyLowerRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyLowerCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfLin2dmyLowerCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyUpperRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfLin2dmyUpperRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyUpperCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfLin2dmyUpperCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray2OfLin2d & _CSFDB_GetPColgp_HArray2OfLin2dData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Value() const;
 
 };
-%extend PColgp_HArray2OfLin2d {
-	Handle_PColgp_HArray2OfLin2d GetHandle() {
-	return *(Handle_PColgp_HArray2OfLin2d*) &$self;
-	}
-};
-%extend PColgp_HArray2OfLin2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_HArray2OfLin2d {
-	~PColgp_HArray2OfLin2d() {
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfLin2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d;
+class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d();
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt2d &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d\n");}
 	}
 };
 
@@ -2354,23 +2370,29 @@ class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 };
 
 
-%nodefaultctor PColgp_HArray1OfDir;
-class PColgp_HArray1OfDir : public Standard_Persistent {
+%nodefaultctor PColgp_HArray2OfLin2d;
+class PColgp_HArray2OfLin2d : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up);
+		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir &V);
+		PColgp_HArray2OfLin2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Lin2d &V);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Standard_Integer LowerCol() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		Standard_Integer LowerRow() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		gp_Dir Value(const Standard_Integer Index) const;
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Lin2d &Value);
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		gp_Lin2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
@@ -2382,70 +2404,45 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir();
+		PColgp_HArray2OfLin2d();
 		%feature("autodoc", "1");
-		PColgp_HArray1OfDir(const Storage_stCONSTclCOM &a);
+		PColgp_HArray2OfLin2d(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfDirLowerBound() const;
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyLowerRow() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfDirLowerBound(const Standard_Integer p);
+		void _CSFDB_SetPColgp_HArray2OfLin2dmyLowerRow(const Standard_Integer p);
 		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfDirUpperBound() const;
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyLowerCol() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfDirUpperBound(const Standard_Integer p);
+		void _CSFDB_SetPColgp_HArray2OfLin2dmyLowerCol(const Standard_Integer p);
 		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray1OfDir & _CSFDB_GetPColgp_HArray1OfDirData() const;
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyUpperRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfLin2dmyUpperRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfLin2dmyUpperCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfLin2dmyUpperCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray2OfLin2d & _CSFDB_GetPColgp_HArray2OfLin2dData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PColgp_HArray1OfDir {
-	Handle_PColgp_HArray1OfDir GetHandle() {
-	return *(Handle_PColgp_HArray1OfDir*) &$self;
+%extend PColgp_HArray2OfLin2d {
+	Handle_PColgp_HArray2OfLin2d GetHandle() {
+	return *(Handle_PColgp_HArray2OfLin2d*) &$self;
 	}
 };
-%extend PColgp_HArray1OfDir {
+%extend PColgp_HArray2OfLin2d {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColgp_HArray1OfDir {
-	~PColgp_HArray1OfDir() {
+%extend PColgp_HArray2OfLin2d {
+	~PColgp_HArray2OfLin2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfDir\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray2OfPnt;
-class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt(const PColgp_FieldOfHArray2OfPnt &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray2OfPnt &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray2OfPnt &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt &Value);
-		%feature("autodoc", "1");
-		gp_Pnt & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray2OfPnt {
-	~PColgp_FieldOfHArray2OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfLin2d\n");}
 	}
 };
 
@@ -2467,60 +2464,6 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 	~PColgp_VArrayTNodeOfFieldOfHArray2OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d;
-class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d(const gp_Pnt2d &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt2d &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_FieldOfHArray2OfCirc2d;
-class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfCirc2d();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfCirc2d(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfCirc2d(const PColgp_FieldOfHArray2OfCirc2d &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray2OfCirc2d &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray2OfCirc2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
-		%feature("autodoc", "1");
-		gp_Circ2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Circ2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray2OfCirc2d {
-	~PColgp_FieldOfHArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfCirc2d\n");}
 	}
 };
 
@@ -2562,43 +2505,6 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 };
 
 
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec;
-class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfVec();
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const gp_Vec &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVecmyValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec*) &$self;
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
-	~PColgp_VArrayNodeOfFieldOfHArray2OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir;
 class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 	public:
@@ -2632,6 +2538,83 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray2OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfDir\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_HArray2OfPnt2d;
+class PColgp_HArray2OfPnt2d : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt2d &Value);
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColgp_HArray2OfPnt2d();
+		%feature("autodoc", "1");
+		PColgp_HArray2OfPnt2d(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyLowerRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfPnt2dmyLowerRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyLowerCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfPnt2dmyLowerCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyUpperRow() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfPnt2dmyUpperRow(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyUpperCol() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray2OfPnt2dmyUpperCol(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray2OfPnt2d & _CSFDB_GetPColgp_HArray2OfPnt2dData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_HArray2OfPnt2d {
+	Handle_PColgp_HArray2OfPnt2d GetHandle() {
+	return *(Handle_PColgp_HArray2OfPnt2d*) &$self;
+	}
+};
+%extend PColgp_HArray2OfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_HArray2OfPnt2d {
+	~PColgp_HArray2OfPnt2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfPnt2d\n");}
 	}
 };
 
@@ -2713,79 +2696,39 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_HArray2OfPnt2d;
-class PColgp_HArray2OfPnt2d : public Standard_Persistent {
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec;
+class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		PColgp_VArrayNodeOfFieldOfHArray2OfVec();
 		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt2d &V);
+		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const gp_Vec &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void SetValue(const gp_Vec &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		Standard_Address Value() const;
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		PColgp_VArrayNodeOfFieldOfHArray2OfVec(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt2d &Value);
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt2d();
-		%feature("autodoc", "1");
-		PColgp_HArray2OfPnt2d(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyLowerRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfPnt2dmyLowerRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyLowerCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfPnt2dmyLowerCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyUpperRow() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfPnt2dmyUpperRow(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray2OfPnt2dmyUpperCol() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray2OfPnt2dmyUpperCol(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray2OfPnt2d & _CSFDB_GetPColgp_HArray2OfPnt2dData() const;
+		const gp_Vec & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfVecmyValue() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PColgp_HArray2OfPnt2d {
-	Handle_PColgp_HArray2OfPnt2d GetHandle() {
-	return *(Handle_PColgp_HArray2OfPnt2d*) &$self;
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec*) &$self;
 	}
 };
-%extend PColgp_HArray2OfPnt2d {
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColgp_HArray2OfPnt2d {
-	~PColgp_HArray2OfPnt2d() {
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfPnt2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec\n");}
 	}
 };
 
@@ -2924,27 +2867,6 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray1OfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfXYZ\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXY;
-class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfXY();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfXY(const gp_XY &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
-	~PColgp_VArrayTNodeOfFieldOfHArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXY\n");}
 	}
 };
 
@@ -3148,6 +3070,39 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 	~PColgp_HArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfCirc2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray1OfCirc2d;
+class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfCirc2d();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfCirc2d(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfCirc2d(const PColgp_FieldOfHArray1OfCirc2d &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray1OfCirc2d &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray1OfCirc2d &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
+		%feature("autodoc", "1");
+		gp_Circ2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Circ2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray1OfCirc2d {
+	~PColgp_FieldOfHArray1OfCirc2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfCirc2d\n");}
 	}
 };
 
@@ -3443,39 +3398,6 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_FieldOfHArray1OfLin2d;
-class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfLin2d(const PColgp_FieldOfHArray1OfLin2d &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfLin2d &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray1OfLin2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin2d &Value);
-		%feature("autodoc", "1");
-		gp_Lin2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Lin2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray1OfLin2d {
-	~PColgp_FieldOfHArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 	public:
@@ -3493,27 +3415,6 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 	~PColgp_VArrayTNodeOfFieldOfHArray2OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfDir\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d;
-class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d(const gp_Lin2d &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d\n");}
 	}
 };
 
@@ -3818,39 +3719,35 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
-class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
+%nodefaultctor PColgp_FieldOfHArray2OfCirc2d;
+class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 	public:
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
+		PColgp_FieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const gp_Pnt &aValue);
+		PColgp_FieldOfHArray2OfCirc2d(const Standard_Integer Size);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt &aValue);
+		PColgp_FieldOfHArray2OfCirc2d(const PColgp_FieldOfHArray2OfCirc2d &Varray);
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
+		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const Storage_stCONSTclCOM &a);
+		void Assign(const PColgp_FieldOfHArray2OfCirc2d &Other);
 		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPntmyValue() const;
+		void operator=(const PColgp_FieldOfHArray2OfCirc2d &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
+		%feature("autodoc", "1");
+		gp_Circ2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Circ2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
 
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt*) &$self;
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
-	~PColgp_VArrayNodeOfFieldOfHArray1OfPnt() {
+%extend PColgp_FieldOfHArray2OfCirc2d {
+	~PColgp_FieldOfHArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfCirc2d\n");}
 	}
 };
 
@@ -3918,6 +3815,27 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 };
 
 
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d;
+class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d();
+		%feature("autodoc", "1");
+		PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Lin2d &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d\n");}
+	}
+};
+
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfVec;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 	public:
@@ -3935,27 +3853,6 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 	~PColgp_VArrayTNodeOfFieldOfHArray1OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfVec\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d;
-class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Vec2d &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
 
@@ -4037,39 +3934,102 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
-class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
+%nodefaultctor PColgp_HArray1OfXYZ;
+class PColgp_HArray1OfXYZ : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d();
+		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const gp_Lin2d &aValue);
+		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Lin2d &aValue);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Address Value() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfLin2d(const Storage_stCONSTclCOM &a);
+		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
 		%feature("autodoc", "1");
-		const gp_Lin2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfLin2dmyValue() const;
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		gp_XYZ Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColgp_HArray1OfXYZ();
+		%feature("autodoc", "1");
+		PColgp_HArray1OfXYZ(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYZLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfXYZLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYZUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_HArray1OfXYZUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColgp_FieldOfHArray1OfXYZ & _CSFDB_GetPColgp_HArray1OfXYZData() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d*) &$self;
+%extend PColgp_HArray1OfXYZ {
+	Handle_PColgp_HArray1OfXYZ GetHandle() {
+	return *(Handle_PColgp_HArray1OfXYZ*) &$self;
 	}
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+%extend PColgp_HArray1OfXYZ {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
-	~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d() {
+%extend PColgp_HArray1OfXYZ {
+	~PColgp_HArray1OfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfXYZ\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXY;
+class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXY();
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const gp_XY &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_XY &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYmyValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfXY() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXY\n");}
 	}
 };
 
@@ -4148,65 +4108,23 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 };
 
 
-%nodefaultctor PColgp_HArray1OfXYZ;
-class PColgp_HArray1OfXYZ : public Standard_Persistent {
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXY;
+class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 	public:
 		%feature("autodoc", "1");
-		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfXY();
 		%feature("autodoc", "1");
-		PColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
+		PColgp_VArrayTNodeOfFieldOfHArray1OfXY(const gp_XY &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetValue(const gp_XY &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		gp_XYZ Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXYZ();
-		%feature("autodoc", "1");
-		PColgp_HArray1OfXYZ(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYZLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfXYZLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColgp_HArray1OfXYZUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_HArray1OfXYZUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColgp_FieldOfHArray1OfXYZ & _CSFDB_GetPColgp_HArray1OfXYZData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Value() const;
 
 };
-%extend PColgp_HArray1OfXYZ {
-	Handle_PColgp_HArray1OfXYZ GetHandle() {
-	return *(Handle_PColgp_HArray1OfXYZ*) &$self;
-	}
-};
-%extend PColgp_HArray1OfXYZ {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_HArray1OfXYZ {
-	~PColgp_HArray1OfXYZ() {
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
+	~PColgp_VArrayTNodeOfFieldOfHArray1OfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfXYZ\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXY\n");}
 	}
 };
 
@@ -4251,6 +4169,43 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 	~PColgp_VArrayTNodeOfFieldOfHArray1OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
+class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d();
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const gp_Dir2d &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Dir2d &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfDir2d(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Dir2d & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfDir2dmyValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfDir2d\n");}
 	}
 };
 
@@ -4388,27 +4343,6 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d;
-class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d();
-		%feature("autodoc", "1");
-		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Circ2d &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
-	~PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 	public:
@@ -4430,35 +4364,23 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 };
 
 
-%nodefaultctor PColgp_FieldOfHArray2OfPnt2d;
-class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d;
+class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 	public:
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt2d();
+		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d();
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt2d(const Standard_Integer Size);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d(const gp_Circ2d &aValue);
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray2OfPnt2d(const PColgp_FieldOfHArray2OfPnt2d &Varray);
+		void SetValue(const gp_Circ2d &aValue);
 		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray2OfPnt2d &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray2OfPnt2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Pnt2d &Value);
-		%feature("autodoc", "1");
-		gp_Pnt2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Address Value() const;
 
 };
-%extend PColgp_FieldOfHArray2OfPnt2d {
-	~PColgp_FieldOfHArray2OfPnt2d() {
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d\n");}
 	}
 };
 
@@ -4496,35 +4418,172 @@ class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
 };
 
 
-%nodefaultctor PColgp_FieldOfHArray1OfDir;
-class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
+%nodefaultctor PColgp_SeqNodeOfHSequenceOfVec;
+class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 	public:
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir();
+		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheLast, const gp_Vec &TheItem);
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir(const Standard_Integer Size);
+		PColgp_SeqNodeOfHSequenceOfVec(const gp_Vec &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheFirst);
 		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir(const PColgp_FieldOfHArray1OfDir &Varray);
+		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheNext, const gp_Vec &TheItem);
+		%feature("autodoc", "1");
+		gp_Vec Value() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfVec Next() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfVec Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const gp_Vec &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ANode);
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfVec();
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfVec(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
+		%feature("autodoc", "1");
+		const gp_Vec & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyItem() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_SeqNodeOfHSequenceOfVec {
+	Handle_PColgp_SeqNodeOfHSequenceOfVec GetHandle() {
+	return *(Handle_PColgp_SeqNodeOfHSequenceOfVec*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfVec {
+	~PColgp_SeqNodeOfHSequenceOfVec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfVec\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_FieldOfHArray2OfXY;
+class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfXY();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfXY(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray2OfXY(const PColgp_FieldOfHArray2OfXY &Varray);
 		%feature("autodoc", "1");
 		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfDir &Other);
+		void Assign(const PColgp_FieldOfHArray2OfXY &Other);
 		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray1OfDir &Other);
+		void operator=(const PColgp_FieldOfHArray2OfXY &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		void SetValue(const Standard_Integer Index, const gp_XY &Value);
 		%feature("autodoc", "1");
-		gp_Dir & Value(const Standard_Integer Index) const;
+		gp_XY & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Index) const;
+		gp_XY & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
-%extend PColgp_FieldOfHArray1OfDir {
-	~PColgp_FieldOfHArray1OfDir() {
+%extend PColgp_FieldOfHArray2OfXY {
+	~PColgp_FieldOfHArray2OfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfDir\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfXY\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_SeqNodeOfHSequenceOfDir;
+class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheLast, const gp_Dir &TheItem);
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfDir(const gp_Dir &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheFirst);
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfDir(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfDir &TheNext, const gp_Dir &TheItem);
+		%feature("autodoc", "1");
+		gp_Dir Value() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfDir Next() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfDir Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const gp_Dir &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfDir &ANode);
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfDir();
+		%feature("autodoc", "1");
+		PColgp_SeqNodeOfHSequenceOfDir(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
+		%feature("autodoc", "1");
+		const gp_Dir & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyItem() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_SeqNodeOfHSequenceOfDir _CSFDB_GetPColgp_SeqNodeOfHSequenceOfDirMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfDirMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfDir &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_SeqNodeOfHSequenceOfDir {
+	Handle_PColgp_SeqNodeOfHSequenceOfDir GetHandle() {
+	return *(Handle_PColgp_SeqNodeOfHSequenceOfDir*) &$self;
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_SeqNodeOfHSequenceOfDir {
+	~PColgp_SeqNodeOfHSequenceOfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfDir\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_SeqExplorerOfHSequenceOfPnt;
+class PColgp_SeqExplorerOfHSequenceOfPnt {
+	public:
+		%feature("autodoc", "1");
+		PColgp_SeqExplorerOfHSequenceOfPnt(const Handle_PColgp_HSequenceOfPnt &S);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const gp_Pnt &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T);
+
+};
+%extend PColgp_SeqExplorerOfHSequenceOfPnt {
+	~PColgp_SeqExplorerOfHSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -4667,6 +4726,39 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 };
 
 
+%nodefaultctor PColgp_FieldOfHArray1OfDir;
+class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfDir();
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfDir(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColgp_FieldOfHArray1OfDir(const PColgp_FieldOfHArray1OfDir &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColgp_FieldOfHArray1OfDir &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColgp_FieldOfHArray1OfDir &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Dir &Value);
+		%feature("autodoc", "1");
+		gp_Dir & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Dir & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PColgp_FieldOfHArray1OfDir {
+	~PColgp_FieldOfHArray1OfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfDir\n");}
+	}
+};
+
+
 %nodefaultctor PColgp_HArray1OfDir2d;
 class PColgp_HArray1OfDir2d : public Standard_Persistent {
 	public:
@@ -4730,39 +4822,6 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_FieldOfHArray1OfCirc2d;
-class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfCirc2d();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfCirc2d(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfCirc2d(const PColgp_FieldOfHArray1OfCirc2d &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfCirc2d &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray1OfCirc2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ2d &Value);
-		%feature("autodoc", "1");
-		gp_Circ2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Circ2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray1OfCirc2d {
-	~PColgp_FieldOfHArray1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfCirc2d\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXY;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 	public:
@@ -4821,6 +4880,43 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 };
 
 
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
+class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const gp_XYZ &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_XYZ &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYZmyValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXYZ\n");}
+	}
+};
+
+
 %nodefaultctor PColgp_FieldOfHArray1OfXY;
 class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 	public:
@@ -4854,39 +4950,6 @@ class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 };
 
 
-%nodefaultctor PColgp_FieldOfHArray1OfDir2d;
-class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir2d();
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir2d(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PColgp_FieldOfHArray1OfDir2d(const PColgp_FieldOfHArray1OfDir2d &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColgp_FieldOfHArray1OfDir2d &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColgp_FieldOfHArray1OfDir2d &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
-		%feature("autodoc", "1");
-		gp_Dir2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Dir2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PColgp_FieldOfHArray1OfDir2d {
-	~PColgp_FieldOfHArray1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfDir2d\n");}
-	}
-};
-
-
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 	public:
@@ -4904,43 +4967,6 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 	~PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXY;
-class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXY();
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const gp_XY &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const gp_XY &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXY(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_XY & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYmyValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY*) &$self;
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
-	~PColgp_VArrayNodeOfFieldOfHArray2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXY\n");}
 	}
 };
 
@@ -5079,39 +5105,23 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 };
 
 
-%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
-class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
+%nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d;
+class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 	public:
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ();
+		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d();
 		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const gp_XYZ &aValue);
+		PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d(const gp_Vec2d &aValue);
 		%feature("autodoc", "1");
-		void SetValue(const gp_XYZ &aValue);
+		void SetValue(const gp_Vec2d &aValue);
 		%feature("autodoc", "1");
 		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColgp_VArrayNodeOfFieldOfHArray2OfXYZ(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_XYZ & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray2OfXYZmyValue() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
-	Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ GetHandle() {
-	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ*) &$self;
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
-	~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ() {
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
+	~PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfXYZ\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
 
@@ -5149,59 +5159,35 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 };
 
 
-%nodefaultctor PColgp_SeqNodeOfHSequenceOfVec;
-class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
+%nodefaultctor PColgp_FieldOfHArray1OfDir2d;
+class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 	public:
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheLast, const gp_Vec &TheItem);
+		PColgp_FieldOfHArray1OfDir2d();
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const gp_Vec &TheItem, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheFirst);
+		PColgp_FieldOfHArray1OfDir2d(const Standard_Integer Size);
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ThePrevious, const Handle_PColgp_SeqNodeOfHSequenceOfVec &TheNext, const gp_Vec &TheItem);
+		PColgp_FieldOfHArray1OfDir2d(const PColgp_FieldOfHArray1OfDir2d &Varray);
 		%feature("autodoc", "1");
-		gp_Vec Value() const;
+		void Resize(const Standard_Integer Size);
 		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfVec Next() const;
+		void Assign(const PColgp_FieldOfHArray1OfDir2d &Other);
 		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfVec Previous() const;
+		void operator=(const PColgp_FieldOfHArray1OfDir2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const gp_Vec &AnItem);
+		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
 		%feature("autodoc", "1");
-		void SetNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ANode);
+		gp_Dir2d & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void SetPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfVec &ANode);
+		gp_Dir2d & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec();
-		%feature("autodoc", "1");
-		PColgp_SeqNodeOfHSequenceOfVec(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyPrevious(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
-		%feature("autodoc", "1");
-		const gp_Vec & _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyItem() const;
-		%feature("autodoc", "1");
-		Handle_PColgp_SeqNodeOfHSequenceOfVec _CSFDB_GetPColgp_SeqNodeOfHSequenceOfVecMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColgp_SeqNodeOfHSequenceOfVecMyNext(const Handle_PColgp_SeqNodeOfHSequenceOfVec &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Destroy();
 
 };
-%extend PColgp_SeqNodeOfHSequenceOfVec {
-	Handle_PColgp_SeqNodeOfHSequenceOfVec GetHandle() {
-	return *(Handle_PColgp_SeqNodeOfHSequenceOfVec*) &$self;
-	}
-};
-%extend PColgp_SeqNodeOfHSequenceOfVec {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PColgp_SeqNodeOfHSequenceOfVec {
-	~PColgp_SeqNodeOfHSequenceOfVec() {
+%extend PColgp_FieldOfHArray1OfDir2d {
+	~PColgp_FieldOfHArray1OfDir2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_SeqNodeOfHSequenceOfVec\n");}
+	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfDir2d\n");}
 	}
 };
 
@@ -5239,29 +5225,6 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d\n");}
-	}
-};
-
-
-%nodefaultctor PColgp_SeqExplorerOfHSequenceOfPnt;
-class PColgp_SeqExplorerOfHSequenceOfPnt {
-	public:
-		%feature("autodoc", "1");
-		PColgp_SeqExplorerOfHSequenceOfPnt(const Handle_PColgp_HSequenceOfPnt &S);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const gp_Pnt &T);
-
-};
-%extend PColgp_SeqExplorerOfHSequenceOfPnt {
-	~PColgp_SeqExplorerOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -5415,5 +5378,42 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 	~PColgp_VArrayNodeOfFieldOfHArray2OfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");}
+	}
+};
+
+
+%nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
+class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfPnt();
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const gp_Pnt &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColgp_VArrayNodeOfFieldOfHArray1OfPnt(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Pnt & _CSFDB_GetPColgp_VArrayNodeOfFieldOfHArray1OfPntmyValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt GetHandle() {
+	return *(Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt*) &$self;
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	~PColgp_VArrayNodeOfFieldOfHArray1OfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");}
 	}
 };

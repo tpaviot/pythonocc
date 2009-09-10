@@ -230,6 +230,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import Standard.i
 %import BlendFunc.i
 %import GeomAbs.i
-%import AppBlend.i
 %import IntSurf.i
+%import AppBlend.i
 %import TopAbs.i

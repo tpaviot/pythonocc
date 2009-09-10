@@ -124,6 +124,25 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 };
 
 
+%nodefaultctor XmlDrivers;
+class XmlDrivers {
+	public:
+		%feature("autodoc", "1");
+		XmlDrivers();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+
+};
+%extend XmlDrivers {
+	~XmlDrivers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
+	}
+};
+
+
 %nodefaultctor XmlDrivers_DocumentRetrievalDriver;
 class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
 	public:
@@ -149,24 +168,5 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 	~XmlDrivers_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
-%nodefaultctor XmlDrivers;
-class XmlDrivers {
-	public:
-		%feature("autodoc", "1");
-		XmlDrivers();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-
-};
-%extend XmlDrivers {
-	~XmlDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
 	}
 };

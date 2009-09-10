@@ -9,11 +9,11 @@
 %rename(TransferBRep_BinderOfShape) TransferBRep_BinderOfShape;
 %rename(TransferBRep_SequenceOfTransferResultInfo) TransferBRep_SequenceOfTransferResultInfo;
 %rename(TransferBRep_ShapeInfo) TransferBRep_ShapeInfo;
-%rename(TransferBRep_OrientedShapeMapper) TransferBRep_OrientedShapeMapper;
+%rename(TransferBRep_Reader) TransferBRep_Reader;
 %rename(Handle_TransferBRep_TransferResultInfo) Handle_TransferBRep_TransferResultInfo;
 %rename(TransferBRep_TransferResultInfo) TransferBRep_TransferResultInfo;
 %rename(Handle_TransferBRep_BinderOfShape) Handle_TransferBRep_BinderOfShape;
-%rename(TransferBRep_Reader) TransferBRep_Reader;
+%rename(TransferBRep_OrientedShapeMapper) TransferBRep_OrientedShapeMapper;
 %rename(TransferBRep_ShapeListBinder) TransferBRep_ShapeListBinder;
 %rename(Handle_TransferBRep_ShapeMapper) Handle_TransferBRep_ShapeMapper;
 %rename(TransferBRep) TransferBRep;

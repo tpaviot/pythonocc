@@ -204,9 +204,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_IGESData_IGESReaderData.hxx>
 #include<IGESData_ParamReader.hxx>
 #include<IGESData_IGESWriter.hxx>
+#include<gp_XYZ.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_TColStd_HArray2OfReal.hxx>
+#include<Handle_TColgp_HArray2OfXYZ.hxx>
+#include<gp_XY.hxx>
+#include<gp_Pnt2d.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<IGESData_DirChecker.hxx>
 #include<Interface_ShareTool.hxx>
@@ -214,22 +222,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Interface_CopyTool.hxx>
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
-#include<Handle_IGESData_IGESEntity.hxx>
-#include<gp_XYZ.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_XY.hxx>
-#include<gp_Pnt2d.hxx>
-#include<Handle_IGESData_HArray1OfIGESEntity.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
-#include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_TColStd_HArray2OfReal.hxx>
-#include<Handle_TColgp_HArray2OfXYZ.hxx>
 #include<gp_Vec.hxx>
-#include<IGESGeom.hxx>
-#include<Handle_TColgp_HArray1OfXYZ.hxx>
-#include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
 #include<gp_Dir.hxx>
+#include<IGESGeom.hxx>
+#include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
+#include<Handle_TColgp_HArray1OfXYZ.hxx>
+#include<Handle_IGESData_HArray1OfIGESEntity.hxx>
 #include<gp_GTrsf.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
+#include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
 %}

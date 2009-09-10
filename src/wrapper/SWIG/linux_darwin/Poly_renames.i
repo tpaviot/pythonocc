@@ -2,13 +2,13 @@
 %rename(Handle_Poly_CoherentTriangulation) Handle_Poly_CoherentTriangulation;
 %rename(Poly_HArray1OfTriangle) Poly_HArray1OfTriangle;
 %rename(Poly_Polygon3D) Poly_Polygon3D;
-%rename(Poly_Triangle) Poly_Triangle;
+%rename(Poly_Triangulation) Poly_Triangulation;
 %rename(Poly_PolygonOnTriangulation) Poly_PolygonOnTriangulation;
 %rename(Handle_Poly_Triangulation) Handle_Poly_Triangulation;
 %rename(Poly) Poly;
 %rename(Poly_Array1OfTriangle) Poly_Array1OfTriangle;
 %rename(Handle_Poly_HArray1OfTriangle) Handle_Poly_HArray1OfTriangle;
-%rename(Poly_Triangulation) Poly_Triangulation;
+%rename(Poly_Triangle) Poly_Triangle;
 %rename(Poly_CoherentLink) Poly_CoherentLink;
 %rename(Poly_Polygon2D) Poly_Polygon2D;
 %rename(Handle_Poly_PolygonOnTriangulation) Handle_Poly_PolygonOnTriangulation;

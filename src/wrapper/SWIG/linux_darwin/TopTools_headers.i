@@ -100,10 +100,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<TopTools.hxx>
-#include<TColStd_ListOfInteger.hxx>
+#include<TopoDS_Shape.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<TColStd_ListOfInteger.hxx>
 %}

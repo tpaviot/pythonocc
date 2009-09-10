@@ -1,9 +1,8 @@
 %rename(Bnd_SequenceNodeOfSeqOfBox) Bnd_SequenceNodeOfSeqOfBox;
-%rename(Bnd_Array1OfBox2d) Bnd_Array1OfBox2d;
 %rename(Bnd_Array1OfBox) Bnd_Array1OfBox;
 %rename(Bnd_HArray1OfBox2d) Bnd_HArray1OfBox2d;
 %rename(Handle_Bnd_HArray1OfBox2d) Handle_Bnd_HArray1OfBox2d;
-%rename(Bnd_BoundSortBox) Bnd_BoundSortBox;
+%rename(Bnd_Array1OfBox2d) Bnd_Array1OfBox2d;
 %rename(Bnd_Box2d) Bnd_Box2d;
 %rename(Bnd_B2d) Bnd_B2d;
 %rename(Bnd_Box) Bnd_Box;
@@ -14,4 +13,5 @@
 %rename(Bnd_B3d) Bnd_B3d;
 %rename(Bnd_BoundSortBox2d) Bnd_BoundSortBox2d;
 %rename(Bnd_B3f) Bnd_B3f;
+%rename(Bnd_BoundSortBox) Bnd_BoundSortBox;
 %rename(Bnd_SeqOfBox) Bnd_SeqOfBox;

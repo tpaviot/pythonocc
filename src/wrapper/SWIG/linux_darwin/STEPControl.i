@@ -46,36 +46,6 @@ enum STEPControl_StepModelType {
 
 
 
-%nodefaultctor Handle_STEPControl_Controller;
-class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller();
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller(const Handle_STEPControl_Controller &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller(const STEPControl_Controller *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller & operator=(const Handle_STEPControl_Controller &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPControl_Controller {
-	STEPControl_Controller* GetObject() {
-	return (STEPControl_Controller*)$self->Access();
-	}
-};
-%extend Handle_STEPControl_Controller {
-	~Handle_STEPControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_Controller\n");}
-	}
-};
-
-
 %nodefaultctor Handle_STEPControl_ActorRead;
 class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
 	public:
@@ -102,6 +72,36 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 	~Handle_STEPControl_ActorRead() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorRead\n");}
+	}
+};
+
+
+%nodefaultctor Handle_STEPControl_Controller;
+class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller();
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller(const Handle_STEPControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller(const STEPControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller & operator=(const Handle_STEPControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller & operator=(const STEPControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPControl_Controller const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPControl_Controller {
+	STEPControl_Controller* GetObject() {
+	return (STEPControl_Controller*)$self->Access();
+	}
+};
+%extend Handle_STEPControl_Controller {
+	~Handle_STEPControl_Controller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_Controller\n");}
 	}
 };
 
@@ -155,6 +155,47 @@ class STEPControl_Reader : public XSControl_Reader {
 	~STEPControl_Reader() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of STEPControl_Reader\n");}
+	}
+};
+
+
+%nodefaultctor STEPControl_ActorRead;
+class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		STEPControl_ActorRead();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		void ResetUnits();
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeTransformation(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target, const Handle_StepRepr_Representation &OrigContext, const Handle_StepRepr_Representation &TargContext, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPControl_ActorRead {
+	Handle_STEPControl_ActorRead GetHandle() {
+	return *(Handle_STEPControl_ActorRead*) &$self;
+	}
+};
+%extend STEPControl_ActorRead {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend STEPControl_ActorRead {
+	~STEPControl_ActorRead() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
 	}
 };
 
@@ -241,47 +282,6 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	~STEPControl_ActorWrite() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorWrite\n");}
-	}
-};
-
-
-%nodefaultctor STEPControl_ActorRead;
-class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		STEPControl_ActorRead();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		void ResetUnits();
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeTransformation(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target, const Handle_StepRepr_Representation &OrigContext, const Handle_StepRepr_Representation &TargContext, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPControl_ActorRead {
-	Handle_STEPControl_ActorRead GetHandle() {
-	return *(Handle_STEPControl_ActorRead*) &$self;
-	}
-};
-%extend STEPControl_ActorRead {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend STEPControl_ActorRead {
-	~STEPControl_ActorRead() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
 	}
 };
 

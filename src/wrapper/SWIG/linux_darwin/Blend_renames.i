@@ -1,13 +1,13 @@
 %rename(Blend_DecrochBoth) Blend_DecrochBoth;
 %rename(Blend_StepTooSmall) Blend_StepTooSmall;
 %rename(Blend_DecrochRst1) Blend_DecrochRst1;
-%rename(Blend_OnRst12) Blend_OnRst12;
+%rename(Blend_DecrochRst2) Blend_DecrochRst2;
 %rename(Blend_SequenceNodeOfSequenceOfPoint) Blend_SequenceNodeOfSequenceOfPoint;
 %rename(Blend_StepTooLarge) Blend_StepTooLarge;
 %rename(Blend_SurfPointFuncInv) Blend_SurfPointFuncInv;
 %rename(Blend_Backward) Blend_Backward;
 %rename(Blend_SurfRstFunction) Blend_SurfRstFunction;
-%rename(Blend_DecrochRst2) Blend_DecrochRst2;
+%rename(Blend_OnRst12) Blend_OnRst12;
 %rename(Blend_Function) Blend_Function;
 %rename(Blend_CurvPointFuncInv) Blend_CurvPointFuncInv;
 %rename(Blend_Point) Blend_Point;

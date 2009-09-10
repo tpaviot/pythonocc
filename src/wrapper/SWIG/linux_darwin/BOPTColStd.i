@@ -35,66 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
-class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger* GetObject() {
-	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
-	}
-};
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
-class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger* GetObject() {
-	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
-	}
-};
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
@@ -125,6 +65,36 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 };
 
 
+%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
+class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger();
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger* GetObject() {
+	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
+	}
+};
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
 class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -151,6 +121,36 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 	~Handle_BOPTColStd_ListNodeOfListOfListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
+class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger* GetObject() {
+	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
+	}
+};
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
 	}
 };
 
@@ -262,72 +262,101 @@ class BOPTColStd_ShapeWithRankHasher {
 };
 
 
-%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
-class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCollection_MapNode {
+%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
+class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger(const Standard_Integer &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		BOPTColStd_IndexedDataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
+		BOPTColStd_IndexedDataMapOfIntegerInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
 		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		BOPTColStd_IndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const Standard_Integer &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Standard_Integer I) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const Standard_Integer &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const Standard_Integer &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger GetHandle() {
-	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*) &$self;
+%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");}
 	}
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+
+
+%nodefaultctor BOPTColStd_ShapeWithRank;
+class BOPTColStd_ShapeWithRank {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_ShapeWithRank();
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		void SetRank(const Standard_Integer aR);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		Standard_Integer Rank() const;
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
+
+};
+%extend BOPTColStd_ShapeWithRank {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+%extend BOPTColStd_ShapeWithRank {
+	~BOPTColStd_ShapeWithRank() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
-	}
-};
-
-
-%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
-class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_ShapeWithRank &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		BOPTColStd_ShapeWithRank & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger GetHandle() {
-	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*) &$self;
-	}
-};
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");}
 	}
 };
 
@@ -373,6 +402,71 @@ class BOPTColStd_CArray1OfPnt2d {
 };
 
 
+%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
+class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger(const Standard_Integer &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger GetHandle() {
+	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
+	}
+};
+
+
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
 class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 	public:
@@ -400,16 +494,36 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const BOPTColStd_ShapeWithRank &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromKey(const BOPTColStd_ShapeWithRank &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const BOPTColStd_ShapeWithRank &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const BOPTColStd_ShapeWithRank &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const BOPTColStd_ShapeWithRank &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
 %extend BOPTColStd_IndexedDataMapOfSWRInteger {
@@ -521,8 +635,18 @@ class BOPTColStd_CArray1OfInteger {
 		const Standard_Integer & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -568,13 +692,68 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 };
 
 
+%nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
+class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_ShapeWithRank &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		BOPTColStd_ShapeWithRank & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger GetHandle() {
+	return *(Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*) &$self;
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
+	}
+};
+
+
 %nodefaultctor BOPTColStd_Failure;
 class BOPTColStd_Failure {
 	public:
 		%feature("autodoc", "1");
 		BOPTColStd_Failure(const char * aMessage);
 		%feature("autodoc", "1");
-		Standard_CString Message() const;
+		char * Message() const;
 
 };
 %extend BOPTColStd_Failure {
@@ -590,10 +769,30 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	public:
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -616,85 +815,6 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor BOPTColStd_ShapeWithRank;
-class BOPTColStd_ShapeWithRank {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		void SetRank(const Standard_Integer aR);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		Standard_Integer Rank() const;
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
-
-};
-%extend BOPTColStd_ShapeWithRank {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BOPTColStd_ShapeWithRank {
-	~BOPTColStd_ShapeWithRank() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");}
-	}
-};
-
-
-%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
-class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const Standard_Integer &K);
-
-};
-%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");}
 	}
 };
 

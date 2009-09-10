@@ -245,6 +245,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import Standard.i
 %import TopAbs.i
+%import math.i
 %import GeomAbs.i
 %import ChFiDS.i
-%import math.i

@@ -137,6 +137,69 @@ class RWStepAP214_RWAppliedDateAssignment {
 };
 
 
+%nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
+class RWStepAP214_RWAutoDesignOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignOrganizationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAutoDesignOrganizationAssignment {
+	~RWStepAP214_RWAutoDesignOrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignOrganizationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
+class RWStepAP214_RWAutoDesignApprovalAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignApprovalAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignApprovalAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAutoDesignApprovalAssignment {
+	~RWStepAP214_RWAutoDesignApprovalAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignApprovalAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedPresentedItem;
+class RWStepAP214_RWAppliedPresentedItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedPresentedItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedPresentedItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAppliedPresentedItem {
+	~RWStepAP214_RWAppliedPresentedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPresentedItem\n");}
+	}
+};
+
+
 %nodefaultctor RWStepAP214_ReadWriteModule;
 class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 	public:
@@ -174,27 +237,6 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 	~RWStepAP214_ReadWriteModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_ReadWriteModule\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
-class RWStepAP214_RWAutoDesignNominalDateAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignNominalDateAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignNominalDateAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignNominalDateAssignment {
-	~RWStepAP214_RWAutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAssignment\n");}
 	}
 };
 
@@ -262,27 +304,6 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 };
 
 
-%nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
-class RWStepAP214_RWAutoDesignOrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignOrganizationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignOrganizationAssignment {
-	~RWStepAP214_RWAutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignOrganizationAssignment\n");}
-	}
-};
-
-
 %nodefaultctor RWStepAP214_RWClass;
 class RWStepAP214_RWClass {
 	public:
@@ -300,27 +321,6 @@ class RWStepAP214_RWClass {
 	~RWStepAP214_RWClass() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWClass\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment;
-class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
-	~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -364,23 +364,44 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedPresentedItem;
-class RWStepAP214_RWAppliedPresentedItem {
+%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment;
+class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedPresentedItem();
+		RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedPresentedItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP214_RWAppliedPresentedItem {
-	~RWStepAP214_RWAppliedPresentedItem() {
+%extend RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
+	~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPresentedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
+class RWStepAP214_RWAutoDesignNominalDateAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignNominalDateAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignNominalDateAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAutoDesignNominalDateAssignment {
+	~RWStepAP214_RWAutoDesignNominalDateAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAssignment\n");}
 	}
 };
 
@@ -448,27 +469,6 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
-class RWStepAP214_RWAppliedExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
-	~RWStepAP214_RWAppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedExternalIdentificationAssignment\n");}
-	}
-};
-
-
 %nodefaultctor RWStepAP214;
 class RWStepAP214 {
 	public:
@@ -507,6 +507,48 @@ class RWStepAP214_RWRepItemGroup {
 };
 
 
+%nodefaultctor RWStepAP214_RWAppliedSecurityClassificationAssignment;
+class RWStepAP214_RWAppliedSecurityClassificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedSecurityClassificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAppliedSecurityClassificationAssignment {
+	~RWStepAP214_RWAppliedSecurityClassificationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedSecurityClassificationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
+class RWStepAP214_RWAutoDesignActualDateAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignActualDateAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignActualDateAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAutoDesignActualDateAssignment {
+	~RWStepAP214_RWAutoDesignActualDateAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAssignment\n");}
+	}
+};
+
+
 %nodefaultctor RWStepAP214_RWAppliedDocumentReference;
 class RWStepAP214_RWAppliedDocumentReference {
 	public:
@@ -524,111 +566,6 @@ class RWStepAP214_RWAppliedDocumentReference {
 	~RWStepAP214_RWAppliedDocumentReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDocumentReference\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
-class RWStepAP214_RWExternallyDefinedGeneralProperty {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWExternallyDefinedGeneralProperty();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWExternallyDefinedGeneralProperty {
-	~RWStepAP214_RWExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedGeneralProperty\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
-class RWStepAP214_RWAutoDesignApprovalAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignApprovalAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignApprovalAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignApprovalAssignment {
-	~RWStepAP214_RWAutoDesignApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignApprovalAssignment\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
-class RWStepAP214_RWAppliedOrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedOrganizationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAppliedOrganizationAssignment {
-	~RWStepAP214_RWAppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedOrganizationAssignment\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
-class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
-	~RWStepAP214_RWAutoDesignSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignSecurityClassificationAssignment\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWExternallyDefinedClass;
-class RWStepAP214_RWExternallyDefinedClass {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWExternallyDefinedClass();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedClass &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWExternallyDefinedClass {
-	~RWStepAP214_RWExternallyDefinedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedClass\n");}
 	}
 };
 
@@ -654,23 +591,107 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedSecurityClassificationAssignment;
-class RWStepAP214_RWAppliedSecurityClassificationAssignment {
+%nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
+class RWStepAP214_RWExternallyDefinedGeneralProperty {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedSecurityClassificationAssignment();
+		RWStepAP214_RWExternallyDefinedGeneralProperty();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP214_RWAppliedSecurityClassificationAssignment {
-	~RWStepAP214_RWAppliedSecurityClassificationAssignment() {
+%extend RWStepAP214_RWExternallyDefinedGeneralProperty {
+	~RWStepAP214_RWExternallyDefinedGeneralProperty() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedSecurityClassificationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedGeneralProperty\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
+class RWStepAP214_RWAppliedExternalIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedExternalIdentificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
+	~RWStepAP214_RWAppliedExternalIdentificationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedExternalIdentificationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
+class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
+	~RWStepAP214_RWAutoDesignSecurityClassificationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignSecurityClassificationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
+class RWStepAP214_RWAppliedOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedOrganizationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWAppliedOrganizationAssignment {
+	~RWStepAP214_RWAppliedOrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedOrganizationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWExternallyDefinedClass;
+class RWStepAP214_RWExternallyDefinedClass {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWExternallyDefinedClass();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_ExternallyDefinedClass &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP214_RWExternallyDefinedClass {
+	~RWStepAP214_RWExternallyDefinedClass() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedClass\n");}
 	}
 };
 
@@ -692,27 +713,6 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	~RWStepAP214_RWAutoDesignDateAndPersonAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignDateAndPersonAssignment\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
-class RWStepAP214_RWAutoDesignActualDateAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignActualDateAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignActualDateAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP214_RWAutoDesignActualDateAssignment {
-	~RWStepAP214_RWAutoDesignActualDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAssignment\n");}
 	}
 };
 

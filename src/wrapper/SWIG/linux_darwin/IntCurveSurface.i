@@ -41,36 +41,6 @@ enum IntCurveSurface_TransitionOnCurve {
 
 
 
-%nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
-class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	IntCurveSurface_SequenceNodeOfSequenceOfPnt* GetObject() {
-	return (IntCurveSurface_SequenceNodeOfSequenceOfPnt*)$self->Access();
-	}
-};
-%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg;
 class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollection_SeqNode {
 	public:
@@ -97,6 +67,36 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
+class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	IntCurveSurface_SequenceNodeOfSequenceOfPnt* GetObject() {
+	return (IntCurveSurface_SequenceNodeOfSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -132,6 +132,31 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 	~IntCurveSurface_ThePolyhedronToolOfHInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolyhedronToolOfHInter\n");}
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_Intersection;
+class IntCurveSurface_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionSegment & Segment(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%extend IntCurveSurface_Intersection {
+	~IntCurveSurface_Intersection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_Intersection\n");}
 	}
 };
 
@@ -226,67 +251,58 @@ class IntCurveSurface_IntersectionPoint {
 };
 
 
-%nodefaultctor IntCurveSurface_TheHCurveTool;
-class IntCurveSurface_TheHCurveTool {
+%nodefaultctor IntCurveSurface_HInter;
+class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_TheHCurveTool();
+		IntCurveSurface_HInter();
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface);
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &Polygon, const Handle_Adaptor3d_HSurface &Surface);
 		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron, Bnd_BoundSortBox & BndBSB);
 		%feature("autodoc", "1");
-		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
-		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
-		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-		%feature("autodoc", "1");
-		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 
 };
-%extend IntCurveSurface_TheHCurveTool {
-	~IntCurveSurface_TheHCurveTool() {
+%extend IntCurveSurface_HInter {
+	~IntCurveSurface_HInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");}
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_HInter\n");}
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_IntersectionSegment;
+class IntCurveSurface_IntersectionSegment {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionSegment();
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
+		%feature("autodoc", "1");
+		void SetValues(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
+		%feature("autodoc", "1");
+		void Values(IntCurveSurface_IntersectionPoint & P1, IntCurveSurface_IntersectionPoint & P2) const;
+		%feature("autodoc", "1");
+		void FirstPoint(IntCurveSurface_IntersectionPoint & P1) const;
+		%feature("autodoc", "1");
+		void SecondPoint(IntCurveSurface_IntersectionPoint & P2) const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & FirstPoint() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & SecondPoint() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%extend IntCurveSurface_IntersectionSegment {
+	~IntCurveSurface_IntersectionSegment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");}
 	}
 };
 
@@ -444,56 +460,6 @@ class IntCurveSurface_TheExactHInter {
 };
 
 
-%nodefaultctor IntCurveSurface_Intersection;
-class IntCurveSurface_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionSegment & Segment(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend IntCurveSurface_Intersection {
-	~IntCurveSurface_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_Intersection\n");}
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_HInter;
-class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_HInter();
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &Polygon, const Handle_Adaptor3d_HSurface &Surface);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron, Bnd_BoundSortBox & BndBSB);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
-
-};
-%extend IntCurveSurface_HInter {
-	~IntCurveSurface_HInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_HInter\n");}
-	}
-};
-
-
 %nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
 	public:
@@ -511,35 +477,6 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 	~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");}
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
-class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt GetHandle() {
-	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt*) &$self;
-	}
-};
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	~IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -569,37 +506,6 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 	~IntCurveSurface_ThePolygonToolOfHInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");}
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_IntersectionSegment;
-class IntCurveSurface_IntersectionSegment {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionSegment();
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
-		%feature("autodoc", "1");
-		void SetValues(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
-		%feature("autodoc", "1");
-		void Values(IntCurveSurface_IntersectionPoint & P1, IntCurveSurface_IntersectionPoint & P2) const;
-		%feature("autodoc", "1");
-		void FirstPoint(IntCurveSurface_IntersectionPoint & P1) const;
-		%feature("autodoc", "1");
-		void SecondPoint(IntCurveSurface_IntersectionPoint & P2) const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & FirstPoint() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & SecondPoint() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend IntCurveSurface_IntersectionSegment {
-	~IntCurveSurface_IntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");}
 	}
 };
 
@@ -766,6 +672,71 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor IntCurveSurface_TheHCurveTool;
+class IntCurveSurface_TheHCurveTool {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_TheHCurveTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
+		%feature("autodoc", "1");
+		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
+		%feature("autodoc", "1");
+		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+
+};
+%extend IntCurveSurface_TheHCurveTool {
+	~IntCurveSurface_TheHCurveTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");}
+	}
+};
+
+
 %nodefaultctor IntCurveSurface_TheInterferenceOfHInter;
 class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	public:
@@ -805,5 +776,34 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	~IntCurveSurface_TheInterferenceOfHInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");}
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
+class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt GetHandle() {
+	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt*) &$self;
+	}
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	~IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };

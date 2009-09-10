@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_StdDrivers_DocumentRetrievalDriver;
-class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver(const StdDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const StdDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdDrivers_DocumentRetrievalDriver {
-	StdDrivers_DocumentRetrievalDriver* GetObject() {
-	return (StdDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%extend Handle_StdDrivers_DocumentRetrievalDriver {
-	~Handle_StdDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StdDrivers_DocumentStorageDriver;
 class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentStorageDriver {
 	public:
@@ -91,6 +61,36 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 	~Handle_StdDrivers_DocumentStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StdDrivers_DocumentRetrievalDriver;
+class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver(const StdDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const Handle_StdDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver & operator=(const StdDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StdDrivers_DocumentRetrievalDriver {
+	StdDrivers_DocumentRetrievalDriver* GetObject() {
+	return (StdDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%extend Handle_StdDrivers_DocumentRetrievalDriver {
+	~Handle_StdDrivers_DocumentRetrievalDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 

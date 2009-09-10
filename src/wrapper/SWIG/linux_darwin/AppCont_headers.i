@@ -35,12 +35,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<TColgp_Array1OfPnt2d.hxx>
-#include<TColgp_Array1OfVec2d.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColgp_Array1OfVec.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
+#include<TColgp_Array1OfPnt.hxx>
+#include<TColgp_Array1OfVec.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<TColgp_Array1OfVec2d.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 %}

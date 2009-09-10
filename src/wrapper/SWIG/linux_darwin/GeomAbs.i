@@ -33,18 +33,20 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include GeomAbs_headers.i
 
 
-enum GeomAbs_SurfaceType {
-	GeomAbs_Plane,
-	GeomAbs_Cylinder,
-	GeomAbs_Cone,
-	GeomAbs_Sphere,
-	GeomAbs_Torus,
-	GeomAbs_BezierSurface,
-	GeomAbs_BSplineSurface,
-	GeomAbs_SurfaceOfRevolution,
-	GeomAbs_SurfaceOfExtrusion,
-	GeomAbs_OffsetSurface,
-	GeomAbs_OtherSurface,
+enum GeomAbs_UVSense {
+	GeomAbs_SameUV,
+	GeomAbs_SameU,
+	GeomAbs_SameV,
+	GeomAbs_OppositeUV,
+	};
+
+enum GeomAbs_CurveForm {
+	GeomAbs_PolylineForm,
+	GeomAbs_CircularForm,
+	GeomAbs_EllipticForm,
+	GeomAbs_HyperbolicForm,
+	GeomAbs_ParabolicForm,
+	GeomAbs_OtherCurveForm,
 	};
 
 enum GeomAbs_JoinType {
@@ -63,15 +65,6 @@ enum GeomAbs_Shape {
 	GeomAbs_CN,
 	};
 
-enum GeomAbs_CurveForm {
-	GeomAbs_PolylineForm,
-	GeomAbs_CircularForm,
-	GeomAbs_EllipticForm,
-	GeomAbs_HyperbolicForm,
-	GeomAbs_ParabolicForm,
-	GeomAbs_OtherCurveForm,
-	};
-
 enum GeomAbs_IsoType {
 	GeomAbs_IsoU,
 	GeomAbs_IsoV,
@@ -85,13 +78,6 @@ enum GeomAbs_BSplKnotDistribution {
 	GeomAbs_PiecewiseBezier,
 	};
 
-enum GeomAbs_UVSense {
-	GeomAbs_SameUV,
-	GeomAbs_SameU,
-	GeomAbs_SameV,
-	GeomAbs_OppositeUV,
-	};
-
 enum GeomAbs_SurfaceForm {
 	GeomAbs_PlanarForm,
 	GeomAbs_ConicalForm,
@@ -102,6 +88,20 @@ enum GeomAbs_SurfaceForm {
 	GeomAbs_RuledForm,
 	GeomAbs_QuadricForm,
 	GeomAbs_OtherSurfaceForm,
+	};
+
+enum GeomAbs_SurfaceType {
+	GeomAbs_Plane,
+	GeomAbs_Cylinder,
+	GeomAbs_Cone,
+	GeomAbs_Sphere,
+	GeomAbs_Torus,
+	GeomAbs_BezierSurface,
+	GeomAbs_BSplineSurface,
+	GeomAbs_SurfaceOfRevolution,
+	GeomAbs_SurfaceOfExtrusion,
+	GeomAbs_OffsetSurface,
+	GeomAbs_OtherSurface,
 	};
 
 enum GeomAbs_CurveType {

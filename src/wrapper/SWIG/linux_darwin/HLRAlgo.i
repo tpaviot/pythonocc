@@ -65,6 +65,96 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_HLRAlgo_EdgesBlock;
+class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock(const Handle_HLRAlgo_EdgesBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock(const HLRAlgo_EdgesBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock & operator=(const Handle_HLRAlgo_EdgesBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock & operator=(const HLRAlgo_EdgesBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_EdgesBlock {
+	HLRAlgo_EdgesBlock* GetObject() {
+	return (HLRAlgo_EdgesBlock*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_EdgesBlock {
+	~Handle_HLRAlgo_EdgesBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");}
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
+class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_ListNodeOfInterferenceList *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const HLRAlgo_ListNodeOfInterferenceList *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	HLRAlgo_ListNodeOfInterferenceList* GetObject() {
+	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	~Handle_HLRAlgo_ListNodeOfInterferenceList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfInterferenceList\n");}
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
+class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod(const HLRAlgo_HArray1OfPINod *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod & operator=(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod & operator=(const HLRAlgo_HArray1OfPINod *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPINod const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	HLRAlgo_HArray1OfPINod* GetObject() {
+	return (HLRAlgo_HArray1OfPINod*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	~Handle_HLRAlgo_HArray1OfPINod() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPINod\n");}
+	}
+};
+
+
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
 class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	public:
@@ -121,36 +211,6 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 	~Handle_HLRAlgo_HArray1OfTData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfTData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
-class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg & operator=(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg & operator=(const HLRAlgo_HArray1OfPISeg *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfPISeg {
-	HLRAlgo_HArray1OfPISeg* GetObject() {
-	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
-	}
-};
-%extend Handle_HLRAlgo_HArray1OfPISeg {
-	~Handle_HLRAlgo_HArray1OfPISeg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPISeg\n");}
 	}
 };
 
@@ -245,96 +305,6 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
-class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_ListNodeOfInterferenceList *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const HLRAlgo_ListNodeOfInterferenceList *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
-	HLRAlgo_ListNodeOfInterferenceList* GetObject() {
-	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
-	}
-};
-%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
-	~Handle_HLRAlgo_ListNodeOfInterferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfInterferenceList\n");}
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
-class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod(const HLRAlgo_HArray1OfPINod *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod & operator=(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod & operator=(const HLRAlgo_HArray1OfPINod *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfPINod {
-	HLRAlgo_HArray1OfPINod* GetObject() {
-	return (HLRAlgo_HArray1OfPINod*)$self->Access();
-	}
-};
-%extend Handle_HLRAlgo_HArray1OfPINod {
-	~Handle_HLRAlgo_HArray1OfPINod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPINod\n");}
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_EdgesBlock;
-class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock(const Handle_HLRAlgo_EdgesBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock(const HLRAlgo_EdgesBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock & operator=(const Handle_HLRAlgo_EdgesBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock & operator=(const HLRAlgo_EdgesBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_EdgesBlock {
-	HLRAlgo_EdgesBlock* GetObject() {
-	return (HLRAlgo_EdgesBlock*)$self->Access();
-	}
-};
-%extend Handle_HLRAlgo_EdgesBlock {
-	~Handle_HLRAlgo_EdgesBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");}
-	}
-};
-
-
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
 class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	public:
@@ -391,6 +361,36 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	~Handle_HLRAlgo_PolyInternalNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");}
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
+class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg & operator=(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg & operator=(const HLRAlgo_HArray1OfPISeg *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	HLRAlgo_HArray1OfPISeg* GetObject() {
+	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
+	}
+};
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	~Handle_HLRAlgo_HArray1OfPISeg() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPISeg\n");}
 	}
 };
 
@@ -871,53 +871,6 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 
 
-%nodefaultctor HLRAlgo_HArray1OfPHDat;
-class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_PolyHidingData &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
-		%feature("autodoc", "1");
-		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPHDat & Array1() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRAlgo_HArray1OfPHDat {
-	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
-	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
-	}
-};
-%extend HLRAlgo_HArray1OfPHDat {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend HLRAlgo_HArray1OfPHDat {
-	~HLRAlgo_HArray1OfPHDat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfPHDat\n");}
-	}
-};
-
-
 %nodefaultctor HLRAlgo_Array1OfTData;
 class HLRAlgo_Array1OfTData {
 	public:
@@ -1275,6 +1228,53 @@ class HLRAlgo_Interference {
 	~HLRAlgo_Interference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Interference\n");}
+	}
+};
+
+
+%nodefaultctor HLRAlgo_HArray1OfPHDat;
+class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
+		%feature("autodoc", "1");
+		void Init(const HLRAlgo_PolyHidingData &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
+		%feature("autodoc", "1");
+		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPHDat & Array1() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPHDat & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
+	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	~HLRAlgo_HArray1OfPHDat() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfPHDat\n");}
 	}
 };
 

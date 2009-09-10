@@ -227,8 +227,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import TCollection.i
-%import Intf.i
-%import Standard.i
 %import math.i
+%import Standard.i
+%import Intf.i
 %import IntRes2d.i
 %import GeomAbs.i

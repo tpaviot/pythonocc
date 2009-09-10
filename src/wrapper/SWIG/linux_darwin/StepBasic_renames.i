@@ -112,7 +112,7 @@
 %rename(Handle_StepBasic_HArray1OfNamedUnit) Handle_StepBasic_HArray1OfNamedUnit;
 %rename(StepBasic_sunSecond) StepBasic_sunSecond;
 %rename(Handle_StepBasic_NameAssignment) Handle_StepBasic_NameAssignment;
-%rename(StepBasic_sunTesla) StepBasic_sunTesla;
+%rename(StepBasic_spPeta) StepBasic_spPeta;
 %rename(StepBasic_sunKelvin) StepBasic_sunKelvin;
 %rename(Handle_StepBasic_ProductRelatedProductCategory) Handle_StepBasic_ProductRelatedProductCategory;
 %rename(StepBasic_IdentificationAssignment) StepBasic_IdentificationAssignment;
@@ -120,7 +120,7 @@
 %rename(Handle_StepBasic_ProductDefinitionEffectivity) Handle_StepBasic_ProductDefinitionEffectivity;
 %rename(StepBasic_ActionMethod) StepBasic_ActionMethod;
 %rename(StepBasic_SizeSelect) StepBasic_SizeSelect;
-%rename(StepBasic_OrganizationalAddress) StepBasic_OrganizationalAddress;
+%rename(StepBasic_LengthMeasureWithUnit) StepBasic_LengthMeasureWithUnit;
 %rename(StepBasic_DigitalDocument) StepBasic_DigitalDocument;
 %rename(Handle_StepBasic_SiUnitAndSolidAngleUnit) Handle_StepBasic_SiUnitAndSolidAngleUnit;
 %rename(Handle_StepBasic_ProductConceptContext) Handle_StepBasic_ProductConceptContext;
@@ -153,7 +153,7 @@
 %rename(StepBasic_sBought) StepBasic_sBought;
 %rename(StepBasic_ExternalIdentificationAssignment) StepBasic_ExternalIdentificationAssignment;
 %rename(Handle_StepBasic_ApprovalPersonOrganization) Handle_StepBasic_ApprovalPersonOrganization;
-%rename(StepBasic_spMicro) StepBasic_spMicro;
+%rename(StepBasic_Array1OfPerson) StepBasic_Array1OfPerson;
 %rename(StepBasic_ProductDefinitionFormationWithSpecifiedSource) StepBasic_ProductDefinitionFormationWithSpecifiedSource;
 %rename(StepBasic_ConversionBasedUnitAndRatioUnit) StepBasic_ConversionBasedUnitAndRatioUnit;
 %rename(Handle_StepBasic_TimeMeasureWithUnit) Handle_StepBasic_TimeMeasureWithUnit;
@@ -176,7 +176,7 @@
 %rename(Handle_StepBasic_LengthMeasureWithUnit) Handle_StepBasic_LengthMeasureWithUnit;
 %rename(Handle_StepBasic_RoleAssociation) Handle_StepBasic_RoleAssociation;
 %rename(StepBasic_ConversionBasedUnitAndMassUnit) StepBasic_ConversionBasedUnitAndMassUnit;
-%rename(StepBasic_spPeta) StepBasic_spPeta;
+%rename(StepBasic_sunTesla) StepBasic_sunTesla;
 %rename(StepBasic_Unit) StepBasic_Unit;
 %rename(Handle_StepBasic_Action) Handle_StepBasic_Action;
 %rename(Handle_StepBasic_ApprovalStatus) Handle_StepBasic_ApprovalStatus;
@@ -309,7 +309,7 @@
 %rename(Handle_StepBasic_ExternallyDefinedItem) Handle_StepBasic_ExternallyDefinedItem;
 %rename(StepBasic_spHecto) StepBasic_spHecto;
 %rename(Handle_StepBasic_SiUnitAndLengthUnit) Handle_StepBasic_SiUnitAndLengthUnit;
-%rename(StepBasic_LengthMeasureWithUnit) StepBasic_LengthMeasureWithUnit;
+%rename(StepBasic_OrganizationalAddress) StepBasic_OrganizationalAddress;
 %rename(Handle_StepBasic_SiUnitAndMassUnit) Handle_StepBasic_SiUnitAndMassUnit;
 %rename(StepBasic_ProductType) StepBasic_ProductType;
 %rename(Handle_StepBasic_PersonAndOrganization) Handle_StepBasic_PersonAndOrganization;
@@ -330,7 +330,7 @@
 %rename(StepBasic_CoordinatedUniversalTimeOffset) StepBasic_CoordinatedUniversalTimeOffset;
 %rename(StepBasic_ConversionBasedUnitAndLengthUnit) StepBasic_ConversionBasedUnitAndLengthUnit;
 %rename(Handle_StepBasic_ProductContext) Handle_StepBasic_ProductContext;
-%rename(Handle_StepBasic_HArray1OfProductDefinition) Handle_StepBasic_HArray1OfProductDefinition;
+%rename(Handle_StepBasic_OrganizationRole) Handle_StepBasic_OrganizationRole;
 %rename(StepBasic_SizeMember) StepBasic_SizeMember;
 %rename(Handle_StepBasic_SiUnitAndVolumeUnit) Handle_StepBasic_SiUnitAndVolumeUnit;
 %rename(Handle_StepBasic_ApprovalRelationship) Handle_StepBasic_ApprovalRelationship;
@@ -340,12 +340,12 @@
 %rename(StepBasic_Person) StepBasic_Person;
 %rename(StepBasic_PersonAndOrganizationAssignment) StepBasic_PersonAndOrganizationAssignment;
 %rename(StepBasic_DocumentReference) StepBasic_DocumentReference;
-%rename(StepBasic_Array1OfPerson) StepBasic_Array1OfPerson;
+%rename(StepBasic_spMicro) StepBasic_spMicro;
 %rename(Handle_StepBasic_DateAssignment) Handle_StepBasic_DateAssignment;
 %rename(StepBasic_SolidAngleUnit) StepBasic_SolidAngleUnit;
 %rename(Handle_StepBasic_ActionRequestSolution) Handle_StepBasic_ActionRequestSolution;
 %rename(StepBasic_Contract) StepBasic_Contract;
-%rename(Handle_StepBasic_OrganizationRole) Handle_StepBasic_OrganizationRole;
+%rename(Handle_StepBasic_HArray1OfProductDefinition) Handle_StepBasic_HArray1OfProductDefinition;
 %rename(StepBasic_PersonAndOrganization) StepBasic_PersonAndOrganization;
 %rename(Handle_StepBasic_ConversionBasedUnitAndAreaUnit) Handle_StepBasic_ConversionBasedUnitAndAreaUnit;
 %rename(Handle_StepBasic_ProductCategoryRelationship) Handle_StepBasic_ProductCategoryRelationship;

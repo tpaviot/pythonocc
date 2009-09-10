@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
-class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger();
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
-	GraphTools_ListNodeOfListOfSequenceOfInteger* GetObject() {
-	return (GraphTools_ListNodeOfListOfSequenceOfInteger*)$self->Access();
-	}
-};
-%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
-	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GraphTools_SC;
 class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 	public:
@@ -121,6 +91,36 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 	~Handle_GraphTools_ListNodeOfSCList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
+class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger();
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const Handle_GraphTools_ListNodeOfListOfSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger & operator=(const GraphTools_ListNodeOfListOfSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_GraphTools_ListNodeOfListOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
+	GraphTools_ListNodeOfListOfSequenceOfInteger* GetObject() {
+	return (GraphTools_ListNodeOfListOfSequenceOfInteger*)$self->Access();
+	}
+};
+%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
+	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
 	}
 };
 
@@ -221,145 +221,6 @@ class GraphTools_SCList {
 };
 
 
-%nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
-class GraphTools_ListIteratorOfListOfSequenceOfInteger {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfListOfSequenceOfInteger();
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
-		%feature("autodoc", "1");
-		void Initialize(const GraphTools_ListOfSequenceOfInteger &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TColStd_SequenceOfInteger & Value() const;
-
-};
-%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
-	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor GraphTools_ListIteratorOfSCList;
-class GraphTools_ListIteratorOfSCList {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfSCList();
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfSCList(const GraphTools_SCList &L);
-		%feature("autodoc", "1");
-		void Initialize(const GraphTools_SCList &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC & Value() const;
-
-};
-%extend GraphTools_ListIteratorOfSCList {
-	~GraphTools_ListIteratorOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
-	}
-};
-
-
-%nodefaultctor GraphTools_TSNode;
-class GraphTools_TSNode {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_TSNode();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void IncreaseRef();
-		%feature("autodoc", "1");
-		void DecreaseRef();
-		%feature("autodoc", "1");
-		Standard_Integer NbRef() const;
-		%feature("autodoc", "1");
-		void AddSuccessor(const Standard_Integer s);
-		%feature("autodoc", "1");
-		Standard_Integer NbSuccessors() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetSuccessor(const Standard_Integer index) const;
-
-};
-%extend GraphTools_TSNode {
-	~GraphTools_TSNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_TSNode\n");}
-	}
-};
-
-
-%nodefaultctor GraphTools_ListNodeOfSCList;
-class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_ListNodeOfSCList(const Handle_GraphTools_SC &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GraphTools_ListNodeOfSCList {
-	Handle_GraphTools_ListNodeOfSCList GetHandle() {
-	return *(Handle_GraphTools_ListNodeOfSCList*) &$self;
-	}
-};
-%extend GraphTools_ListNodeOfSCList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GraphTools_ListNodeOfSCList {
-	~GraphTools_ListNodeOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");}
-	}
-};
-
-
-%nodefaultctor GraphTools_RGNode;
-class GraphTools_RGNode {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_RGNode();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void SetVisited(const Standard_Integer v);
-		%feature("autodoc", "1");
-		Standard_Integer GetVisited() const;
-		%feature("autodoc", "1");
-		void AddAdj(const Standard_Integer adj);
-		%feature("autodoc", "1");
-		Standard_Integer NbAdj() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetAdj(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		void SetSC(const Handle_GraphTools_SC &SC);
-		%feature("autodoc", "1");
-		Handle_GraphTools_SC GetSC() const;
-
-};
-%extend GraphTools_RGNode {
-	~GraphTools_RGNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
-	}
-};
-
-
 %nodefaultctor GraphTools_ListOfSequenceOfInteger;
 class GraphTools_ListOfSequenceOfInteger {
 	public:
@@ -409,6 +270,145 @@ class GraphTools_ListOfSequenceOfInteger {
 	~GraphTools_ListOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
+class GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfListOfSequenceOfInteger();
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
+		%feature("autodoc", "1");
+		void Initialize(const GraphTools_ListOfSequenceOfInteger &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TColStd_SequenceOfInteger & Value() const;
+
+};
+%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor GraphTools_TSNode;
+class GraphTools_TSNode {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_TSNode();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void IncreaseRef();
+		%feature("autodoc", "1");
+		void DecreaseRef();
+		%feature("autodoc", "1");
+		Standard_Integer NbRef() const;
+		%feature("autodoc", "1");
+		void AddSuccessor(const Standard_Integer s);
+		%feature("autodoc", "1");
+		Standard_Integer NbSuccessors() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetSuccessor(const Standard_Integer index) const;
+
+};
+%extend GraphTools_TSNode {
+	~GraphTools_TSNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_TSNode\n");}
+	}
+};
+
+
+%nodefaultctor GraphTools_RGNode;
+class GraphTools_RGNode {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_RGNode();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void SetVisited(const Standard_Integer v);
+		%feature("autodoc", "1");
+		Standard_Integer GetVisited() const;
+		%feature("autodoc", "1");
+		void AddAdj(const Standard_Integer adj);
+		%feature("autodoc", "1");
+		Standard_Integer NbAdj() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetAdj(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		void SetSC(const Handle_GraphTools_SC &SC);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC GetSC() const;
+
+};
+%extend GraphTools_RGNode {
+	~GraphTools_RGNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
+	}
+};
+
+
+%nodefaultctor GraphTools_ListIteratorOfSCList;
+class GraphTools_ListIteratorOfSCList {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfSCList();
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfSCList(const GraphTools_SCList &L);
+		%feature("autodoc", "1");
+		void Initialize(const GraphTools_SCList &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC & Value() const;
+
+};
+%extend GraphTools_ListIteratorOfSCList {
+	~GraphTools_ListIteratorOfSCList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
+	}
+};
+
+
+%nodefaultctor GraphTools_ListNodeOfSCList;
+class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_ListNodeOfSCList(const Handle_GraphTools_SC &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_GraphTools_SC & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GraphTools_ListNodeOfSCList {
+	Handle_GraphTools_ListNodeOfSCList GetHandle() {
+	return *(Handle_GraphTools_ListNodeOfSCList*) &$self;
+	}
+};
+%extend GraphTools_ListNodeOfSCList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GraphTools_ListNodeOfSCList {
+	~GraphTools_ListNodeOfSCList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");}
 	}
 };
 

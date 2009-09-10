@@ -91,7 +91,6 @@
 %rename(Handle_TDataStd_DeltaOnModificationOfExtStringArray) Handle_TDataStd_DeltaOnModificationOfExtStringArray;
 %rename(TDataStd_HArray1OfByte) TDataStd_HArray1OfByte;
 %rename(Handle_TDataStd_Constraint) Handle_TDataStd_Constraint;
-%rename(TDataStd_DataMapOfStringHArray1OfReal) TDataStd_DataMapOfStringHArray1OfReal;
 %rename(TDataStd_DeltaOnModificationOfRealArray) TDataStd_DeltaOnModificationOfRealArray;
 %rename(Handle_TDataStd_Variable) Handle_TDataStd_Variable;
 %rename(Handle_TDataStd_HDataMapOfStringReal) Handle_TDataStd_HDataMapOfStringReal;
@@ -109,6 +108,7 @@
 %rename(TDataStd_ListNodeOfListOfByte) TDataStd_ListNodeOfListOfByte;
 %rename(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal) Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
 %rename(Handle_TDataStd_NamedData) Handle_TDataStd_NamedData;
+%rename(TDataStd_Plane) TDataStd_Plane;
 %rename(Handle_TDataStd_RealArray) Handle_TDataStd_RealArray;
 %rename(Handle_TDataStd_Axis) Handle_TDataStd_Axis;
 %rename(TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger) TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
@@ -146,7 +146,7 @@
 %rename(TDataStd_MAJOR_RADIUS) TDataStd_MAJOR_RADIUS;
 %rename(TDataStd_Pattern) TDataStd_Pattern;
 %rename(TDataStd_EQUAL_DISTANCE) TDataStd_EQUAL_DISTANCE;
-%rename(TDataStd_Plane) TDataStd_Plane;
+%rename(TDataStd_DataMapOfStringHArray1OfReal) TDataStd_DataMapOfStringHArray1OfReal;
 %rename(TDataStd_MINOR_RADIUS) TDataStd_MINOR_RADIUS;
 %rename(Handle_TDataStd_ReferenceList) Handle_TDataStd_ReferenceList;
 %rename(TDataStd_EQUAL_RADIUS) TDataStd_EQUAL_RADIUS;

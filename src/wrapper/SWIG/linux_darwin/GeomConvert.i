@@ -35,37 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor GeomConvert_ApproxCurve;
-class GeomConvert_ApproxCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomConvert_ApproxCurve(const Handle_Geom_Curve &Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend GeomConvert_ApproxCurve {
-	~GeomConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
-	}
-};
-
-
 %nodefaultctor GeomConvert_BSplineSurfaceKnotSplitting;
 class GeomConvert_BSplineSurfaceKnotSplitting {
 	public:
@@ -87,6 +56,49 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 	~GeomConvert_BSplineSurfaceKnotSplitting() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");}
+	}
+};
+
+
+%nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
+class GeomConvert_CompBezierSurfacesToBSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers);
+		%feature("autodoc", "1");
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const Standard_Real Tolerance, const Standard_Boolean RemoveKnots=1);
+		%feature("autodoc", "1");
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		Standard_Integer NbUKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbUPoles() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVPoles() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HArray2OfPnt & Poles() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & UKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer UDegree() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & VKnots() const;
+		%feature("autodoc", "1");
+		Standard_Integer VDegree() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & UMultiplicities() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & VMultiplicities() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
+	~GeomConvert_CompBezierSurfacesToBSplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompBezierSurfacesToBSplineSurface\n");}
 	}
 };
 
@@ -155,13 +167,13 @@ class GeomConvert {
 };
 
 
-%nodefaultctor GeomConvert_ApproxSurface;
-class GeomConvert_ApproxSurface {
+%nodefaultctor GeomConvert_ApproxCurve;
+class GeomConvert_ApproxCurve {
 	public:
 		%feature("autodoc", "1");
-		GeomConvert_ApproxSurface(const Handle_Geom_Surface &Surf, const Standard_Real Tol3d, const GeomAbs_Shape UContinuity, const GeomAbs_Shape VContinuity, const Standard_Integer MaxDegU, const Standard_Integer MaxDegV, const Standard_Integer MaxSegments, const Standard_Integer PrecisCode);
+		GeomConvert_ApproxCurve(const Handle_Geom_Curve &Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface Surface() const;
+		Handle_Geom_BSplineCurve Curve() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -178,10 +190,10 @@ class GeomConvert_ApproxSurface {
 		};
 
 };
-%extend GeomConvert_ApproxSurface {
-	~GeomConvert_ApproxSurface() {
+%extend GeomConvert_ApproxCurve {
+	~GeomConvert_ApproxCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
 	}
 };
 
@@ -259,44 +271,32 @@ class GeomConvert_CompCurveToBSplineCurve {
 };
 
 
-%nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
-class GeomConvert_CompBezierSurfacesToBSplineSurface {
+%nodefaultctor GeomConvert_ApproxSurface;
+class GeomConvert_ApproxSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers);
+		GeomConvert_ApproxSurface(const Handle_Geom_Surface &Surf, const Standard_Real Tol3d, const GeomAbs_Shape UContinuity, const GeomAbs_Shape VContinuity, const Standard_Integer MaxDegU, const Standard_Integer MaxDegV, const Standard_Integer MaxSegments, const Standard_Integer PrecisCode);
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const Standard_Real Tolerance, const Standard_Boolean RemoveKnots=1);
-		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		Standard_Integer NbUKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbUPoles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVPoles() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HArray2OfPnt & Poles() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & UKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & VKnots() const;
-		%feature("autodoc", "1");
-		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & UMultiplicities() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & VMultiplicities() const;
+		Handle_Geom_BSplineSurface Surface() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
-%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
-	~GeomConvert_CompBezierSurfacesToBSplineSurface() {
+%extend GeomConvert_ApproxSurface {
+	~GeomConvert_ApproxSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompBezierSurfacesToBSplineSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
 	}
 };

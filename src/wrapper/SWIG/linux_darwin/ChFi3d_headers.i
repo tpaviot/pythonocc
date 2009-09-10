@@ -58,6 +58,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<ChFi3d.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<TopoDS_Edge.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<Handle_ChFiDS_Spine.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Shape.hxx>
@@ -73,7 +74,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<Handle_BRepAdaptor_HCurve2d.hxx>
 #include<math_Vector.hxx>
-#include<Handle_Geom_Curve.hxx>
 #include<Handle_Law_Function.hxx>
 #include<gp_XY.hxx>
 %}

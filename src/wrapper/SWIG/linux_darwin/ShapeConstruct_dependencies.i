@@ -188,7 +188,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import MMgt.i
 %import Standard.i
-%import GeomAbs.i
-%import TopAbs.i
 %import ShapeExtend.i
+%import GeomAbs.i
 %import BRepBuilderAPI.i
+%import TopAbs.i

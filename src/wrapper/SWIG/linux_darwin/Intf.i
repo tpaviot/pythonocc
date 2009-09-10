@@ -239,6 +239,63 @@ class Intf_SectionPoint {
 };
 
 
+%nodefaultctor Intf_SeqOfSectionPoint;
+class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Intf_SeqOfSectionPoint();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionPoint & operator=(const Intf_SeqOfSectionPoint &Other);
+		%feature("autodoc", "1");
+		void Append(const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void Append(Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void Prepend(const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void Prepend(Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & First() const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Intf_SectionPoint &I);
+		%feature("autodoc", "1");
+		Intf_SectionPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Intf_SectionPoint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Intf_SeqOfSectionPoint {
+	~Intf_SeqOfSectionPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionPoint\n");}
+	}
+};
+
+
 %nodefaultctor Intf_SeqOfTangentZone;
 class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 	public:
@@ -460,116 +517,6 @@ class Intf_Interference {
 };
 
 
-%nodefaultctor Intf_SeqOfSectionPoint;
-class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Intf_SeqOfSectionPoint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
-		%feature("autodoc", "1");
-		const Intf_SeqOfSectionPoint & operator=(const Intf_SeqOfSectionPoint &Other);
-		%feature("autodoc", "1");
-		void Append(const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void Append(Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void Prepend(const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void Prepend(Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & First() const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Intf_SectionPoint &I);
-		%feature("autodoc", "1");
-		Intf_SectionPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Intf_SectionPoint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Intf_SeqOfSectionPoint {
-	~Intf_SeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionPoint\n");}
-	}
-};
-
-
-%nodefaultctor Intf_TangentZone;
-class Intf_TangentZone {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfPoints() const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc","ParamOnFirst()->[Standard_Real, Standard_Real]");
-		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParamOnSecond()->[Standard_Real, Standard_Real]");
-		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
-		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
-		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasCommonRange(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Intf_TangentZone();
-		%feature("autodoc", "1");
-		Intf_TangentZone(const Intf_TangentZone &Other);
-		%feature("autodoc", "1");
-		void Append(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void Append(const Intf_TangentZone &Tzi);
-		%feature("autodoc", "1");
-		Standard_Boolean Insert(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void PolygonInsert(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Indent) const;
-
-};
-%extend Intf_TangentZone {
-	~Intf_TangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_TangentZone\n");}
-	}
-};
-
-
 %nodefaultctor Intf_SectionLine;
 class Intf_SectionLine {
 	public:
@@ -663,5 +610,58 @@ class Intf {
 	~Intf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Intf\n");}
+	}
+};
+
+
+%nodefaultctor Intf_TangentZone;
+class Intf_TangentZone {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfPoints() const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Intf_TangentZone &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
+		%feature("autodoc","ParamOnFirst()->[Standard_Real, Standard_Real]");
+		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ParamOnSecond()->[Standard_Real, Standard_Real]");
+		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasCommonRange(const Intf_TangentZone &Other) const;
+		%feature("autodoc", "1");
+		Intf_TangentZone();
+		%feature("autodoc", "1");
+		Intf_TangentZone(const Intf_TangentZone &Other);
+		%feature("autodoc", "1");
+		void Append(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void Append(const Intf_TangentZone &Tzi);
+		%feature("autodoc", "1");
+		Standard_Boolean Insert(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void PolygonInsert(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Indent) const;
+
+};
+%extend Intf_TangentZone {
+	~Intf_TangentZone() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_TangentZone\n");}
 	}
 };

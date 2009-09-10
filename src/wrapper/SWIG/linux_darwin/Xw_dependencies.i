@@ -421,8 +421,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_math.hxx>
 %};
 
+%import MMgt.i
 %import MFT.i
 %import Aspect.i
 %import Standard.i
-%import MMgt.i
 %import Quantity.i

@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_ShapeProcess_Context;
-class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context();
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context(const Handle_ShapeProcess_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context(const ShapeProcess_Context *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context & operator=(const Handle_ShapeProcess_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeProcess_Context {
-	ShapeProcess_Context* GetObject() {
-	return (ShapeProcess_Context*)$self->Access();
-	}
-};
-%extend Handle_ShapeProcess_Context {
-	~Handle_ShapeProcess_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeProcess_StackItemOfDictionaryOfOperator;
 class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
@@ -151,6 +121,36 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	~Handle_ShapeProcess_UOperator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeProcess_Context;
+class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context();
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context(const Handle_ShapeProcess_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context(const ShapeProcess_Context *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context & operator=(const Handle_ShapeProcess_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeProcess_Context {
+	ShapeProcess_Context* GetObject() {
+	return (ShapeProcess_Context*)$self->Access();
+	}
+};
+%extend Handle_ShapeProcess_Context {
+	~Handle_ShapeProcess_Context() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
 	}
 };
 
@@ -267,6 +267,25 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 
 
+%nodefaultctor ShapeProcess_OperLibrary;
+class ShapeProcess_OperLibrary {
+	public:
+		%feature("autodoc", "1");
+		ShapeProcess_OperLibrary();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
+
+};
+%extend ShapeProcess_OperLibrary {
+	~ShapeProcess_OperLibrary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeProcess_OperLibrary\n");}
+	}
+};
+
+
 %nodefaultctor ShapeProcess;
 class ShapeProcess {
 	public:
@@ -319,25 +338,6 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 	~ShapeProcess_StackItemOfDictionaryOfOperator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");}
-	}
-};
-
-
-%nodefaultctor ShapeProcess_OperLibrary;
-class ShapeProcess_OperLibrary {
-	public:
-		%feature("autodoc", "1");
-		ShapeProcess_OperLibrary();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
-
-};
-%extend ShapeProcess_OperLibrary {
-	~ShapeProcess_OperLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_OperLibrary\n");}
 	}
 };
 

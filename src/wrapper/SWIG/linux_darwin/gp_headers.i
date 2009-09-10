@@ -68,6 +68,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Standard_SStream.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<gp.hxx>
+#include<TColStd_Array1OfReal.hxx>
 %}

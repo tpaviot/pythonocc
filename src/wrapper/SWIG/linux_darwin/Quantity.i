@@ -32,82 +32,82 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %include Quantity_headers.i
 
-typedef double Quantity_PlaneAngle;
+typedef double Quantity_Constant;
 typedef double Quantity_Factor;
-typedef double Quantity_Illuminance;
-typedef double Quantity_AngularVelocity;
-typedef double Quantity_AmountOfSubstance;
-typedef double Quantity_Mass;
 typedef double Quantity_ElectricCharge;
 typedef double Quantity_Work;
 typedef double Quantity_Energy;
-typedef double Quantity_Acceleration;
-typedef double Quantity_Normality;
-typedef double Quantity_SpecificHeatCapacity;
-typedef double Quantity_Scalaire;
 typedef double Quantity_SurfaceTension;
-typedef double Quantity_KinematicViscosity;
-typedef double Quantity_Entropy;
+typedef double Quantity_Normality;
+typedef double Quantity_MomentOfAForce;
+typedef double Quantity_SpecificHeatCapacity;
+typedef double Quantity_PlaneAngle;
 typedef double Quantity_Content;
-typedef double Quantity_Rate;
-typedef double Quantity_Velocity;
+typedef double Quantity_MagneticFlux;
 typedef double Quantity_LuminousEfficacity;
 typedef double Quantity_MolarConcentration;
-typedef double Quantity_MagneticFieldStrength;
-typedef double Quantity_Capacitance;
+typedef double Quantity_ElectricFieldStrength;
 typedef double Quantity_Parameter;
 typedef double Quantity_ThermalConductivity;
-typedef double Quantity_MagneticFlux;
+typedef double Quantity_KinematicViscosity;
 typedef double Quantity_VolumeFlow;
+typedef double Quantity_ElectricCapacitance;
+typedef double Quantity_AngularVelocity;
 typedef double Quantity_KineticMoment;
 typedef double Quantity_Index;
-typedef double Quantity_Molarity;
+typedef double Quantity_DoseEquivalent;
 typedef double Quantity_MomentOfInertia;
-typedef double Quantity_Momentum;
-typedef double Quantity_MomentOfAForce;
-typedef double Quantity_ElectricFieldStrength;
+typedef double Quantity_Mass;
 typedef double Quantity_Pressure;
 typedef double Quantity_Power;
-typedef double Quantity_ElectricCurrent;
-typedef double Quantity_DoseEquivalent;
-typedef double Quantity_Density;
 typedef double Quantity_Ratio;
+typedef double Quantity_ElectricCurrent;
+typedef double Quantity_Density;
+typedef double Quantity_MagneticFieldStrength;
+typedef double Quantity_Rate;
 typedef double Quantity_MolarMass;
 typedef double Quantity_Conductivity;
 typedef double Quantity_Temperature;
-typedef double Quantity_Speed;
 typedef double Quantity_Consumption;
+typedef double Quantity_Capacitance;
+typedef double Quantity_Momentum;
+typedef double Quantity_Reluctance;
 typedef double Quantity_Concentration;
 typedef double Quantity_Length;
 typedef double Quantity_MolarVolume;
-typedef double Quantity_Constant;
-typedef double Quantity_Reluctance;
 typedef double Quantity_MagneticFluxDensity;
 typedef double Quantity_Quotient;
+typedef double Quantity_AmountOfSubstance;
+typedef double Quantity_Entropy;
 typedef double Quantity_Frequency;
-typedef double Quantity_Volume;
+typedef double Quantity_Scalaire;
 typedef double Quantity_AbsorbedDose;
-typedef double Quantity_MassFlow;
 typedef double Quantity_CoefficientOfExpansion;
 typedef double Quantity_Area;
 typedef double Quantity_Resistivity;
+typedef double Quantity_Acceleration;
 typedef double Quantity_Admittance;
+typedef double Quantity_Illuminance;
 typedef double Quantity_Torque;
+typedef double Quantity_Viscosity;
 typedef double Quantity_AcousticIntensity;
 typedef double Quantity_Activity;
-typedef double Quantity_ElectricCapacitance;
-typedef double Quantity_LuminousExposition;
 typedef double Quantity_Force;
 typedef double Quantity_LuminousFlux;
+typedef double Quantity_Velocity;
 typedef double Quantity_Enthalpy;
-typedef double Quantity_Viscosity;
+typedef double Quantity_Volume;
 typedef double Quantity_Luminance;
+typedef double Quantity_Molarity;
 typedef double Quantity_Coefficient;
 typedef double Quantity_Impedance;
 typedef double Quantity_SolidAngle;
-typedef double Quantity_Inductance;
+typedef double Quantity_Speed;
 typedef double Quantity_Weight;
+typedef double Quantity_MassFlow;
+typedef double Quantity_LuminousExposition;
 typedef double Quantity_LuminousIntensity;
+typedef double Quantity_Inductance;
 typedef double Quantity_Resistance;
 typedef double Quantity_ElectricPotential;
 typedef double Quantity_SoundIntensity;
@@ -920,41 +920,6 @@ class Quantity_Array1OfCoefficient {
 };
 
 
-%nodefaultctor Quantity_ColorDefinitionError;
-class Quantity_ColorDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Quantity_ColorDefinitionError {
-	Handle_Quantity_ColorDefinitionError GetHandle() {
-	return *(Handle_Quantity_ColorDefinitionError*) &$self;
-	}
-};
-%extend Quantity_ColorDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Quantity_ColorDefinitionError {
-	~Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
-	}
-};
-
-
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
 	public:
@@ -1014,73 +979,37 @@ class Quantity_Period {
 };
 
 
-%nodefaultctor Quantity_Date;
-class Quantity_Date {
+%nodefaultctor Quantity_ColorDefinitionError;
+class Quantity_ColorDefinitionError : public Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Quantity_Date();
+		Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
-		Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		Quantity_ColorDefinitionError(const char * AString);
 		%feature("autodoc", "1");
-		void SetValues(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		Quantity_Period Difference(const Quantity_Date &anOther);
+		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Quantity_Date Subtract(const Quantity_Period &aPeriod);
+		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
-		Quantity_Date operator-(const Quantity_Period &aPeriod);
-		%feature("autodoc", "1");
-		Quantity_Date Add(const Quantity_Period &aPeriod);
-		%feature("autodoc", "1");
-		Quantity_Date operator+(const Quantity_Period &aPeriod);
-		%feature("autodoc", "1");
-		Standard_Integer Year();
-		%feature("autodoc", "1");
-		Standard_Integer Month();
-		%feature("autodoc", "1");
-		Standard_Integer Day();
-		%feature("autodoc", "1");
-		Standard_Integer Hour();
-		%feature("autodoc", "1");
-		Standard_Integer Minute();
-		%feature("autodoc", "1");
-		Standard_Integer Second();
-		%feature("autodoc", "1");
-		Standard_Integer MilliSecond();
-		%feature("autodoc", "1");
-		Standard_Integer MicroSecond();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEarlier(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator<(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLater(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator>(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLeap(const Standard_Integer yy);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetQuantity_DatemySec() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_DatemySec(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetQuantity_DatemyUSec() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Quantity_Date {
-	~Quantity_Date() {
+%extend Quantity_ColorDefinitionError {
+	Handle_Quantity_ColorDefinitionError GetHandle() {
+	return *(Handle_Quantity_ColorDefinitionError*) &$self;
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	~Quantity_ColorDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Date\n");}
+	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
 	}
 };
 
@@ -1116,6 +1045,49 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	~Quantity_PeriodDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Quantity_Array1OfColor;
+class Quantity_Array1OfColor {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Array1OfColor(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Quantity_Array1OfColor(const Quantity_Color &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Quantity_Color &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
+		%feature("autodoc", "1");
+		const Quantity_Array1OfColor & operator=(const Quantity_Array1OfColor &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Quantity_Color &Value);
+		%feature("autodoc", "1");
+		const Quantity_Color & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Quantity_Color & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Color & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Quantity_Color & operator()(const Standard_Integer Index);
+
+};
+%extend Quantity_Array1OfColor {
+	~Quantity_Array1OfColor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
 	}
 };
 
@@ -1207,49 +1179,6 @@ class Quantity_Color {
 };
 
 
-%nodefaultctor Quantity_Array1OfColor;
-class Quantity_Array1OfColor {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Array1OfColor(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Quantity_Array1OfColor(const Quantity_Color &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Quantity_Color &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
-		%feature("autodoc", "1");
-		const Quantity_Array1OfColor & operator=(const Quantity_Array1OfColor &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Quantity_Color &Value);
-		%feature("autodoc", "1");
-		const Quantity_Color & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Quantity_Color & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Color & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Quantity_Color & operator()(const Standard_Integer Index);
-
-};
-%extend Quantity_Array1OfColor {
-	~Quantity_Array1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
-	}
-};
-
-
 %nodefaultctor Quantity_HArray1OfColor;
 class Quantity_HArray1OfColor : public MMgt_TShared {
 	public:
@@ -1293,6 +1222,77 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	~Quantity_HArray1OfColor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
+	}
+};
+
+
+%nodefaultctor Quantity_Date;
+class Quantity_Date {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Date();
+		%feature("autodoc", "1");
+		Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void SetValues(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		Quantity_Period Difference(const Quantity_Date &anOther);
+		%feature("autodoc", "1");
+		Quantity_Date Subtract(const Quantity_Period &aPeriod);
+		%feature("autodoc", "1");
+		Quantity_Date operator-(const Quantity_Period &aPeriod);
+		%feature("autodoc", "1");
+		Quantity_Date Add(const Quantity_Period &aPeriod);
+		%feature("autodoc", "1");
+		Quantity_Date operator+(const Quantity_Period &aPeriod);
+		%feature("autodoc", "1");
+		Standard_Integer Year();
+		%feature("autodoc", "1");
+		Standard_Integer Month();
+		%feature("autodoc", "1");
+		Standard_Integer Day();
+		%feature("autodoc", "1");
+		Standard_Integer Hour();
+		%feature("autodoc", "1");
+		Standard_Integer Minute();
+		%feature("autodoc", "1");
+		Standard_Integer Second();
+		%feature("autodoc", "1");
+		Standard_Integer MilliSecond();
+		%feature("autodoc", "1");
+		Standard_Integer MicroSecond();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEarlier(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator<(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLater(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator>(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLeap(const Standard_Integer yy);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetQuantity_DatemySec() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_DatemySec(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetQuantity_DatemyUSec() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
+
+};
+%extend Quantity_Date {
+	~Quantity_Date() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Quantity_Date\n");}
 	}
 };
 

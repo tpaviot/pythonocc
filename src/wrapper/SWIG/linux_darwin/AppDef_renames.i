@@ -11,7 +11,6 @@
 %rename(AppDef_TheFunction) AppDef_TheFunction;
 %rename(AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute) AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute;
 %rename(AppDef_MyGradientbisOfBSplineCompute) AppDef_MyGradientbisOfBSplineCompute;
-%rename(AppDef_BSplineCompute) AppDef_BSplineCompute;
 %rename(AppDef_ParLeastSquareOfTheGradient) AppDef_ParLeastSquareOfTheGradient;
 %rename(AppDef_TheResol) AppDef_TheResol;
 %rename(AppDef_ParLeastSquareOfMyGradientOfCompute) AppDef_ParLeastSquareOfMyGradientOfCompute;
@@ -25,6 +24,7 @@
 %rename(AppDef_HArray1OfMultiPointConstraint) AppDef_HArray1OfMultiPointConstraint;
 %rename(AppDef_TheVariational) AppDef_TheVariational;
 %rename(AppDef_MyGradientOfCompute) AppDef_MyGradientOfCompute;
+%rename(AppDef_BSplineCompute) AppDef_BSplineCompute;
 %rename(AppDef_ParFunctionOfTheGradient) AppDef_ParFunctionOfTheGradient;
 %rename(AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute) AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute;
 %rename(AppDef_Gradient_BFGSOfMyGradientOfCompute) AppDef_Gradient_BFGSOfMyGradientOfCompute;

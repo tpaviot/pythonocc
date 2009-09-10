@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_XmlMFunction_GraphNodeDriver;
-class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver(const XmlMFunction_GraphNodeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver & operator=(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver & operator=(const XmlMFunction_GraphNodeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMFunction_GraphNodeDriver {
-	XmlMFunction_GraphNodeDriver* GetObject() {
-	return (XmlMFunction_GraphNodeDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMFunction_GraphNodeDriver {
-	~Handle_XmlMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlMFunction_FunctionDriver;
 class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -91,6 +61,36 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMFunction_FunctionDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_FunctionDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XmlMFunction_GraphNodeDriver;
+class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver(const XmlMFunction_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver & operator=(const Handle_XmlMFunction_GraphNodeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver & operator=(const XmlMFunction_GraphNodeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMFunction_GraphNodeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMFunction_GraphNodeDriver {
+	XmlMFunction_GraphNodeDriver* GetObject() {
+	return (XmlMFunction_GraphNodeDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMFunction_GraphNodeDriver {
+	~Handle_XmlMFunction_GraphNodeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");}
 	}
 };
 

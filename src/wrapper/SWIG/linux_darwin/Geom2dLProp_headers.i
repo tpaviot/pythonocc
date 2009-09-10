@@ -35,8 +35,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Geom2d_Curve.hxx>
-#include<LProp_CurAndInf.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
+#include<LProp_CurAndInf.hxx>
 #include<gp_Dir2d.hxx>
 %}

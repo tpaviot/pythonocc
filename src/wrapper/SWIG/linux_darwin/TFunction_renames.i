@@ -20,10 +20,10 @@
 %rename(TFunction_Array1OfDataMapOfGUIDDriver) TFunction_Array1OfDataMapOfGUIDDriver;
 %rename(Handle_TFunction_GraphNode) Handle_TFunction_GraphNode;
 %rename(TFunction_Logbook) TFunction_Logbook;
-%rename(TFunction_DriverTable) TFunction_DriverTable;
+%rename(TFunction_DataMapOfLabelListOfLabel) TFunction_DataMapOfLabelListOfLabel;
 %rename(TFunction_DataMapNodeOfDataMapOfLabelListOfLabel) TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 %rename(TFunction_Scope) TFunction_Scope;
-%rename(TFunction_DataMapOfLabelListOfLabel) TFunction_DataMapOfLabelListOfLabel;
+%rename(TFunction_DriverTable) TFunction_DriverTable;
 %rename(TFunction_ES_Failed) TFunction_ES_Failed;
 %rename(Handle_TFunction_DriverTable) Handle_TFunction_DriverTable;
 %rename(TFunction_Function) TFunction_Function;

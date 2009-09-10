@@ -74,6 +74,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Standard_SStream.hxx>
 #include<CDF.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_CDM_Document.hxx>
@@ -82,5 +83,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_PCDM_Reader.hxx>
 #include<Handle_CDM_MetaData.hxx>
 #include<Handle_PCDM_ReferenceIterator.hxx>
-#include<Standard_SStream.hxx>
 %}

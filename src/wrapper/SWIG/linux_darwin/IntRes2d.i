@@ -171,6 +171,35 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
+class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntRes2d_IntersectionPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint GetHandle() {
+	return *(Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*) &$self;
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
+	}
+};
+
+
 %nodefaultctor IntRes2d_Transition;
 class IntRes2d_Transition {
 	public:
@@ -226,6 +255,63 @@ class IntRes2d_Transition {
 	~IntRes2d_Transition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_Transition\n");}
+	}
+};
+
+
+%nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
+class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IntRes2d_SequenceOfIntersectionPoint();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IntRes2d_SequenceOfIntersectionPoint & Assign(const IntRes2d_SequenceOfIntersectionPoint &Other);
+		%feature("autodoc", "1");
+		const IntRes2d_SequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceOfIntersectionPoint &Other);
+		%feature("autodoc", "1");
+		void Append(const IntRes2d_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void Append(IntRes2d_SequenceOfIntersectionPoint & S);
+		%feature("autodoc", "1");
+		void Prepend(const IntRes2d_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void Prepend(IntRes2d_SequenceOfIntersectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const IntRes2d_IntersectionPoint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const IntRes2d_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & First() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const IntRes2d_IntersectionPoint &I);
+		%feature("autodoc", "1");
+		IntRes2d_IntersectionPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		IntRes2d_IntersectionPoint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend IntRes2d_SequenceOfIntersectionPoint {
+	~IntRes2d_SequenceOfIntersectionPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
 	}
 };
 
@@ -320,6 +406,33 @@ class IntRes2d_IntersectionPoint {
 };
 
 
+%nodefaultctor IntRes2d_Intersection;
+class IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetReversedParameters(const Standard_Boolean flag);
+
+};
+%extend IntRes2d_Intersection {
+	~IntRes2d_Intersection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
+	}
+};
+
+
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
 class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_SeqNode {
 	public:
@@ -345,33 +458,6 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 	~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
-	}
-};
-
-
-%nodefaultctor IntRes2d_Intersection;
-class IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetReversedParameters(const Standard_Boolean flag);
-
-};
-%extend IntRes2d_Intersection {
-	~IntRes2d_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
 	}
 };
 
@@ -419,91 +505,5 @@ class IntRes2d_Domain {
 	~IntRes2d_Domain() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_Domain\n");}
-	}
-};
-
-
-%nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
-class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IntRes2d_SequenceOfIntersectionPoint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IntRes2d_SequenceOfIntersectionPoint & Assign(const IntRes2d_SequenceOfIntersectionPoint &Other);
-		%feature("autodoc", "1");
-		const IntRes2d_SequenceOfIntersectionPoint & operator=(const IntRes2d_SequenceOfIntersectionPoint &Other);
-		%feature("autodoc", "1");
-		void Append(const IntRes2d_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void Append(IntRes2d_SequenceOfIntersectionPoint & S);
-		%feature("autodoc", "1");
-		void Prepend(const IntRes2d_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void Prepend(IntRes2d_SequenceOfIntersectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const IntRes2d_IntersectionPoint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const IntRes2d_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & First() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IntRes2d_SequenceOfIntersectionPoint & S);
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const IntRes2d_IntersectionPoint &I);
-		%feature("autodoc", "1");
-		IntRes2d_IntersectionPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		IntRes2d_IntersectionPoint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend IntRes2d_SequenceOfIntersectionPoint {
-	~IntRes2d_SequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
-	}
-};
-
-
-%nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
-class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint(const IntRes2d_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntRes2d_IntersectionPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint GetHandle() {
-	return *(Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*) &$self;
-	}
-};
-%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
 	}
 };

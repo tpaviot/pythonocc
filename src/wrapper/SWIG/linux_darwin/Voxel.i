@@ -212,31 +212,6 @@ class Voxel_CollisionDetection {
 };
 
 
-%nodefaultctor Voxel_Selector;
-class Voxel_Selector {
-	public:
-		%feature("autodoc", "1");
-		Voxel_Selector();
-		%feature("autodoc", "1");
-		Voxel_Selector(const Handle_V3d_View &view);
-		%feature("autodoc", "1");
-		void Init(const Handle_V3d_View &view);
-		%feature("autodoc", "1");
-		void SetVoxels(const Voxel_BoolDS &voxels);
-		%feature("autodoc", "1");
-		void SetVoxels(const Voxel_ColorDS &voxels);
-		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy)->[Standard_IntegerStandard_IntegerStandard_Integer]");
-		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-};
-%extend Voxel_Selector {
-	~Voxel_Selector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_Selector\n");}
-	}
-};
-
-
 %nodefaultctor Voxel_Prs;
 class Voxel_Prs : public AIS_InteractiveObject {
 	public:
@@ -296,33 +271,6 @@ class Voxel_Prs : public AIS_InteractiveObject {
 };
 
 
-%nodefaultctor Voxel_BooleanOperation;
-class Voxel_BooleanOperation {
-	public:
-		%feature("autodoc", "1");
-		Voxel_BooleanOperation();
-		%feature("autodoc", "1");
-		Standard_Boolean Fuse(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Fuse(Voxel_ColorDS & theVoxels1, const Voxel_ColorDS &theVoxels2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Fuse(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Cut(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Cut(Voxel_ColorDS & theVoxels1, const Voxel_ColorDS &theVoxels2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Cut(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
-
-};
-%extend Voxel_BooleanOperation {
-	~Voxel_BooleanOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_BooleanOperation\n");}
-	}
-};
-
-
 %nodefaultctor Voxel_FastConverter;
 class Voxel_FastConverter {
 	public:
@@ -369,5 +317,57 @@ class Voxel_ColorDS : public Voxel_DS {
 	~Voxel_ColorDS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
+	}
+};
+
+
+%nodefaultctor Voxel_BooleanOperation;
+class Voxel_BooleanOperation {
+	public:
+		%feature("autodoc", "1");
+		Voxel_BooleanOperation();
+		%feature("autodoc", "1");
+		Standard_Boolean Fuse(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Fuse(Voxel_ColorDS & theVoxels1, const Voxel_ColorDS &theVoxels2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Fuse(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Cut(Voxel_BoolDS & theVoxels1, const Voxel_BoolDS &theVoxels2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Cut(Voxel_ColorDS & theVoxels1, const Voxel_ColorDS &theVoxels2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Cut(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
+
+};
+%extend Voxel_BooleanOperation {
+	~Voxel_BooleanOperation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Voxel_BooleanOperation\n");}
+	}
+};
+
+
+%nodefaultctor Voxel_Selector;
+class Voxel_Selector {
+	public:
+		%feature("autodoc", "1");
+		Voxel_Selector();
+		%feature("autodoc", "1");
+		Voxel_Selector(const Handle_V3d_View &view);
+		%feature("autodoc", "1");
+		void Init(const Handle_V3d_View &view);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_BoolDS &voxels);
+		%feature("autodoc", "1");
+		void SetVoxels(const Voxel_ColorDS &voxels);
+		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+
+};
+%extend Voxel_Selector {
+	~Voxel_Selector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Voxel_Selector\n");}
 	}
 };

@@ -99,14 +99,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
 #include<Handle_TDF_DataSet.hxx>
-#include<TColStd_IndexedDataMapOfTransientTransient.hxx>
 #include<TopTools_MapOfShape.hxx>
+#include<TColStd_IndexedDataMapOfTransientTransient.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
-#include<TDF_AttributeMap.hxx>
-#include<TopTools_ListOfShape.hxx>
 #include<TopLoc_Location.hxx>
+#include<TDF_AttributeMap.hxx>
 #include<Handle_TDF_DeltaOnModification.hxx>
 #include<Handle_TDF_DeltaOnRemoval.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<TDF_IDFilter.hxx>
 #include<TDF_AttributeIndexedMap.hxx>
 #include<TNaming.hxx>

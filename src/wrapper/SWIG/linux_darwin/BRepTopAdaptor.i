@@ -95,6 +95,36 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 };
 
 
+%nodefaultctor Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
+class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	BRepTopAdaptor_DataMapNodeOfMapOfShapeTool* GetObject() {
+	return (BRepTopAdaptor_DataMapNodeOfMapOfShapeTool*)$self->Access();
+	}
+};
+%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
 class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_SeqNode {
 	public:
@@ -125,32 +155,85 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 };
 
 
-%nodefaultctor Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
-class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollection_MapNode {
+%nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
+class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool();
+		BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
+		Standard_Address & Value() const;
 		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool & operator=(const BRepTopAdaptor_DataMapNodeOfMapOfShapeTool *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
-	BRepTopAdaptor_DataMapNodeOfMapOfShapeTool* GetObject() {
-	return (BRepTopAdaptor_DataMapNodeOfMapOfShapeTool*)$self->Access();
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
+	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
 	}
 };
-%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
-	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
+	}
+};
+
+
+%nodefaultctor BRepTopAdaptor_Tool;
+class BRepTopAdaptor_Tool {
+	public:
+		%feature("autodoc", "1");
+		BRepTopAdaptor_Tool();
+		%feature("autodoc", "1");
+		BRepTopAdaptor_Tool(const TopoDS_Face &F, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
+		%feature("autodoc", "1");
+		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface GetSurface();
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend BRepTopAdaptor_Tool {
+	~BRepTopAdaptor_Tool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_Tool\n");}
+	}
+};
+
+
+%nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
+class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
+		%feature("autodoc", "1");
+		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const BRepTopAdaptor_Tool & Value() const;
+
+};
+%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");}
 	}
 };
 
@@ -192,29 +275,6 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 	~BRepTopAdaptor_HVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_HVertex\n");}
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
-class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
-		%feature("autodoc", "1");
-		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepTopAdaptor_MapOfShapeTool &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const BRepTopAdaptor_Tool & Value() const;
-
-};
-%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
-	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");}
 	}
 };
 
@@ -325,37 +385,6 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 	~BRepTopAdaptor_TopolTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_TopolTool\n");}
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_Tool;
-class BRepTopAdaptor_Tool {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool();
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const TopoDS_Face &F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
-		%feature("autodoc", "1");
-		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface GetSurface();
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend BRepTopAdaptor_Tool {
-	~BRepTopAdaptor_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_Tool\n");}
 	}
 };
 
@@ -481,34 +510,5 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 	~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
-class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_SequenceNodeOfSeqOfPtr(const Standard_Address &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr GetHandle() {
-	return *(Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr*) &$self;
-	}
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };

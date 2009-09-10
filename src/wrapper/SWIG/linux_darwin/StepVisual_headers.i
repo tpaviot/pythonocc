@@ -471,11 +471,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_StepGeom_Axis2Placement3d.hxx>
-#include<Handle_StepRepr_RepresentationItem.hxx>
-#include<StepGeom_Axis2Placement.hxx>
 #include<StepBasic_SizeSelect.hxx>
+#include<Handle_StepRepr_RepresentationItem.hxx>
+#include<Handle_StepGeom_CartesianPoint.hxx>
+#include<StepGeom_Axis2Placement.hxx>
 #include<Handle_StepData_SelectMember.hxx>
 #include<Handle_StepRepr_Representation.hxx>
-#include<Handle_StepGeom_CartesianPoint.hxx>
+#include<Handle_StepGeom_Axis2Placement3d.hxx>
 %}

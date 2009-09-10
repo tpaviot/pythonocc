@@ -196,7 +196,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopAbs_State.hxx>
 %};
 
+%import BRepBuilderAPI.i
 %import Standard.i
 %import TopAbs.i
-%import BRepBuilderAPI.i
 %import LocOpe.i

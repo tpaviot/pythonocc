@@ -102,36 +102,6 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 };
 
 
-%nodefaultctor Handle_Draft_Modification;
-class Handle_Draft_Modification : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_Draft_Modification();
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Draft_Modification {
-	Draft_Modification* GetObject() {
-	return (Draft_Modification*)$self->Access();
-	}
-};
-%extend Handle_Draft_Modification {
-	~Handle_Draft_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Draft_Modification\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
 	public:
@@ -158,6 +128,36 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 	~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Draft_Modification;
+class Handle_Draft_Modification : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_Draft_Modification();
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Draft_Modification {
+	Draft_Modification* GetObject() {
+	return (Draft_Modification*)$self->Access();
+	}
+};
+%extend Handle_Draft_Modification {
+	~Handle_Draft_Modification() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Draft_Modification\n");}
 	}
 };
 
@@ -501,8 +501,18 @@ class Draft_VertexInfo {
 		Standard_Boolean MoreEdge() const;
 		%feature("autodoc", "1");
 		gp_Pnt & ChangeGeometry();
-		%feature("autodoc", "1");
-		Standard_Real & ChangeParameter(const TopoDS_Edge &E);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeParameter(const TopoDS_Edge &E) {
+				return (Standard_Real) $self->ChangeParameter(E);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeParameter(Standard_Real value ,const TopoDS_Edge &E) {
+				$self->ChangeParameter(E)=value;
+				}
+		};
 
 };
 %extend Draft_VertexInfo {

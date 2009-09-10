@@ -59,9 +59,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<TDF_Label.hxx>
-#include<Handle_TDF_Attribute.hxx>
-#include<Handle_TDF_RelocationTable.hxx>
 #include<TDF_LabelList.hxx>
 #include<Standard_GUID.hxx>
+#include<Handle_TDF_Attribute.hxx>
+#include<Handle_TDF_RelocationTable.hxx>
 #include<Handle_TDF_DataSet.hxx>
 %}

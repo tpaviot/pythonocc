@@ -1,5 +1,5 @@
-%rename(BRepPrim_GWedge) BRepPrim_GWedge;
 %rename(BRepPrim_Wedge) BRepPrim_Wedge;
+%rename(BRepPrim_GWedge) BRepPrim_GWedge;
 %rename(BRepPrim_Torus) BRepPrim_Torus;
 %rename(BRepPrim_Cylinder) BRepPrim_Cylinder;
 %rename(BRepPrim_Revolution) BRepPrim_Revolution;

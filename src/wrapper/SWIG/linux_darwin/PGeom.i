@@ -245,66 +245,6 @@ class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PGeom_Point;
-class Handle_PGeom_Point : public Handle_PGeom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Point();
-		%feature("autodoc", "1");
-		Handle_PGeom_Point(const Handle_PGeom_Point &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Point(const PGeom_Point *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Point & operator=(const Handle_PGeom_Point &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Point & operator=(const PGeom_Point *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Point const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Point {
-	PGeom_Point* GetObject() {
-	return (PGeom_Point*)$self->Access();
-	}
-};
-%extend Handle_PGeom_Point {
-	~Handle_PGeom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_Point\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_CartesianPoint;
-class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint();
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint(const Handle_PGeom_CartesianPoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint(const PGeom_CartesianPoint *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint & operator=(const Handle_PGeom_CartesianPoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint & operator=(const PGeom_CartesianPoint *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_CartesianPoint const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_CartesianPoint {
-	PGeom_CartesianPoint* GetObject() {
-	return (PGeom_CartesianPoint*)$self->Access();
-	}
-};
-%extend Handle_PGeom_CartesianPoint {
-	~Handle_PGeom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_CartesianPoint\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_ElementarySurface;
 class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 	public:
@@ -545,6 +485,96 @@ class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 };
 
 
+%nodefaultctor Handle_PGeom_Point;
+class Handle_PGeom_Point : public Handle_PGeom_Geometry {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Point();
+		%feature("autodoc", "1");
+		Handle_PGeom_Point(const Handle_PGeom_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Point(const PGeom_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Point & operator=(const Handle_PGeom_Point &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Point & operator=(const PGeom_Point *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Point const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Point {
+	PGeom_Point* GetObject() {
+	return (PGeom_Point*)$self->Access();
+	}
+};
+%extend Handle_PGeom_Point {
+	~Handle_PGeom_Point() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_Point\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_CartesianPoint;
+class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint();
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint(const Handle_PGeom_CartesianPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint(const PGeom_CartesianPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint & operator=(const Handle_PGeom_CartesianPoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint & operator=(const PGeom_CartesianPoint *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_CartesianPoint const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_CartesianPoint {
+	PGeom_CartesianPoint* GetObject() {
+	return (PGeom_CartesianPoint*)$self->Access();
+	}
+};
+%extend Handle_PGeom_CartesianPoint {
+	~Handle_PGeom_CartesianPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_CartesianPoint\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_SweptSurface;
+class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface(const Handle_PGeom_SweptSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface(const PGeom_SweptSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface & operator=(const Handle_PGeom_SweptSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface & operator=(const PGeom_SweptSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_SweptSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_SweptSurface {
+	PGeom_SweptSurface* GetObject() {
+	return (PGeom_SweptSurface*)$self->Access();
+	}
+};
+%extend Handle_PGeom_SweptSurface {
+	~Handle_PGeom_SweptSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_SweptSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PGeom_BSplineCurve;
 class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 	public:
@@ -571,6 +601,36 @@ class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 	~Handle_PGeom_BSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_Line;
+class Handle_PGeom_Line : public Handle_PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Line();
+		%feature("autodoc", "1");
+		Handle_PGeom_Line(const Handle_PGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line(const PGeom_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const Handle_PGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const PGeom_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Line {
+	PGeom_Line* GetObject() {
+	return (PGeom_Line*)$self->Access();
+	}
+};
+%extend Handle_PGeom_Line {
+	~Handle_PGeom_Line() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_Line\n");}
 	}
 };
 
@@ -665,36 +725,6 @@ class Handle_PGeom_Direction : public Handle_PGeom_Vector {
 };
 
 
-%nodefaultctor Handle_PGeom_OffsetCurve;
-class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve(const Handle_PGeom_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve(const PGeom_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve & operator=(const Handle_PGeom_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve & operator=(const PGeom_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_OffsetCurve {
-	PGeom_OffsetCurve* GetObject() {
-	return (PGeom_OffsetCurve*)$self->Access();
-	}
-};
-%extend Handle_PGeom_OffsetCurve {
-	~Handle_PGeom_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_OffsetCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_OffsetSurface;
 class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 	public:
@@ -721,36 +751,6 @@ class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 	~Handle_PGeom_OffsetSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_OffsetSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_SweptSurface;
-class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface(const Handle_PGeom_SweptSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface(const PGeom_SweptSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface & operator=(const Handle_PGeom_SweptSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface & operator=(const PGeom_SweptSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_SweptSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_SweptSurface {
-	PGeom_SweptSurface* GetObject() {
-	return (PGeom_SweptSurface*)$self->Access();
-	}
-};
-%extend Handle_PGeom_SweptSurface {
-	~Handle_PGeom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_SweptSurface\n");}
 	}
 };
 
@@ -785,36 +785,6 @@ class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
 };
 
 
-%nodefaultctor Handle_PGeom_VectorWithMagnitude;
-class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude();
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude(const Handle_PGeom_VectorWithMagnitude &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude(const PGeom_VectorWithMagnitude *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude & operator=(const Handle_PGeom_VectorWithMagnitude &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude & operator=(const PGeom_VectorWithMagnitude *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_VectorWithMagnitude const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_VectorWithMagnitude {
-	PGeom_VectorWithMagnitude* GetObject() {
-	return (PGeom_VectorWithMagnitude*)$self->Access();
-	}
-};
-%extend Handle_PGeom_VectorWithMagnitude {
-	~Handle_PGeom_VectorWithMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_VectorWithMagnitude\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_ToroidalSurface;
 class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 	public:
@@ -841,6 +811,36 @@ class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 	~Handle_PGeom_ToroidalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_ToroidalSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_OffsetCurve;
+class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve(const Handle_PGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve(const PGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const Handle_PGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const PGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_OffsetCurve {
+	PGeom_OffsetCurve* GetObject() {
+	return (PGeom_OffsetCurve*)$self->Access();
+	}
+};
+%extend Handle_PGeom_OffsetCurve {
+	~Handle_PGeom_OffsetCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_OffsetCurve\n");}
 	}
 };
 
@@ -901,6 +901,36 @@ class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 	~Handle_PGeom_Ellipse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_Ellipse\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_VectorWithMagnitude;
+class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude();
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude(const Handle_PGeom_VectorWithMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude(const PGeom_VectorWithMagnitude *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude & operator=(const Handle_PGeom_VectorWithMagnitude &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude & operator=(const PGeom_VectorWithMagnitude *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_VectorWithMagnitude const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_VectorWithMagnitude {
+	PGeom_VectorWithMagnitude* GetObject() {
+	return (PGeom_VectorWithMagnitude*)$self->Access();
+	}
+};
+%extend Handle_PGeom_VectorWithMagnitude {
+	~Handle_PGeom_VectorWithMagnitude() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_VectorWithMagnitude\n");}
 	}
 };
 
@@ -995,36 +1025,6 @@ class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 };
 
 
-%nodefaultctor Handle_PGeom_RectangularTrimmedSurface;
-class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface(const PGeom_RectangularTrimmedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface & operator=(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface & operator=(const PGeom_RectangularTrimmedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_RectangularTrimmedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_RectangularTrimmedSurface {
-	PGeom_RectangularTrimmedSurface* GetObject() {
-	return (PGeom_RectangularTrimmedSurface*)$self->Access();
-	}
-};
-%extend Handle_PGeom_RectangularTrimmedSurface {
-	~Handle_PGeom_RectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_RectangularTrimmedSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_ConicalSurface;
 class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 	public:
@@ -1055,36 +1055,6 @@ class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 };
 
 
-%nodefaultctor Handle_PGeom_Line;
-class Handle_PGeom_Line : public Handle_PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Line();
-		%feature("autodoc", "1");
-		Handle_PGeom_Line(const Handle_PGeom_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line(const PGeom_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line & operator=(const Handle_PGeom_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line & operator=(const PGeom_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Line {
-	PGeom_Line* GetObject() {
-	return (PGeom_Line*)$self->Access();
-	}
-};
-%extend Handle_PGeom_Line {
-	~Handle_PGeom_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_Line\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_BezierCurve;
 class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 	public:
@@ -1111,6 +1081,36 @@ class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 	~Handle_PGeom_BezierCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_BezierCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_RectangularTrimmedSurface;
+class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface(const PGeom_RectangularTrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface & operator=(const Handle_PGeom_RectangularTrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface & operator=(const PGeom_RectangularTrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_RectangularTrimmedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_RectangularTrimmedSurface {
+	PGeom_RectangularTrimmedSurface* GetObject() {
+	return (PGeom_RectangularTrimmedSurface*)$self->Access();
+	}
+};
+%extend Handle_PGeom_RectangularTrimmedSurface {
+	~Handle_PGeom_RectangularTrimmedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PGeom_RectangularTrimmedSurface\n");}
 	}
 };
 
@@ -1174,33 +1174,6 @@ class PGeom_Geometry : public Standard_Persistent {
 };
 
 
-%nodefaultctor PGeom_Curve;
-class PGeom_Curve : public PGeom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Curve(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		PGeom_Curve();
-
-};
-%extend PGeom_Curve {
-	Handle_PGeom_Curve GetHandle() {
-	return *(Handle_PGeom_Curve*) &$self;
-	}
-};
-%extend PGeom_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Curve {
-	~PGeom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Curve\n");}
-	}
-};
-
-
 %nodefaultctor PGeom_Surface;
 class PGeom_Surface : public PGeom_Geometry {
 	public:
@@ -1208,8 +1181,6 @@ class PGeom_Surface : public PGeom_Geometry {
 		PGeom_Surface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		PGeom_Surface();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_Surface {
@@ -1230,70 +1201,29 @@ class PGeom_Surface : public PGeom_Geometry {
 };
 
 
-%nodefaultctor PGeom_SweptSurface;
-class PGeom_SweptSurface : public PGeom_Surface {
+%nodefaultctor PGeom_BoundedSurface;
+class PGeom_BoundedSurface : public PGeom_Surface {
 	public:
 		%feature("autodoc", "1");
-		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
+		PGeom_BoundedSurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Handle_PGeom_Curve BasisCurve() const;
-		%feature("autodoc", "1");
-		void Direction(const gp_Dir &aDirection);
-		%feature("autodoc", "1");
-		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		PGeom_SweptSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve _CSFDB_GetPGeom_SweptSurfacebasisCurve() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_SweptSurfacebasisCurve(const Handle_PGeom_Curve &p);
-		%feature("autodoc", "1");
-		const gp_Dir & _CSFDB_GetPGeom_SweptSurfacedirection() const;
+		PGeom_BoundedSurface();
 
 };
-%extend PGeom_SweptSurface {
-	Handle_PGeom_SweptSurface GetHandle() {
-	return *(Handle_PGeom_SweptSurface*) &$self;
+%extend PGeom_BoundedSurface {
+	Handle_PGeom_BoundedSurface GetHandle() {
+	return *(Handle_PGeom_BoundedSurface*) &$self;
 	}
 };
-%extend PGeom_SweptSurface {
+%extend PGeom_BoundedSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_SweptSurface {
-	~PGeom_SweptSurface() {
+%extend PGeom_BoundedSurface {
+	~PGeom_BoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_SweptSurface\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_SurfaceOfLinearExtrusion;
-class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion();
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir &aDirection);
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
-
-};
-%extend PGeom_SurfaceOfLinearExtrusion {
-	Handle_PGeom_SurfaceOfLinearExtrusion GetHandle() {
-	return *(Handle_PGeom_SurfaceOfLinearExtrusion*) &$self;
-	}
-};
-%extend PGeom_SurfaceOfLinearExtrusion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_SurfaceOfLinearExtrusion {
-	~PGeom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_SurfaceOfLinearExtrusion\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_BoundedSurface\n");}
 	}
 };
 
@@ -1362,6 +1292,35 @@ class PGeom_CartesianPoint : public PGeom_Point {
 };
 
 
+%nodefaultctor PGeom_Curve;
+class PGeom_Curve : public PGeom_Geometry {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Curve(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		PGeom_Curve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Curve {
+	Handle_PGeom_Curve GetHandle() {
+	return *(Handle_PGeom_Curve*) &$self;
+	}
+};
+%extend PGeom_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Curve {
+	~PGeom_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Curve\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_BoundedCurve;
 class PGeom_BoundedCurve : public PGeom_Curve {
 	public:
@@ -1369,8 +1328,6 @@ class PGeom_BoundedCurve : public PGeom_Curve {
 		PGeom_BoundedCurve(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		PGeom_BoundedCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_BoundedCurve {
@@ -1472,35 +1429,6 @@ class PGeom_BSplineCurve : public PGeom_BoundedCurve {
 	~PGeom_BSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom_BSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_BoundedSurface;
-class PGeom_BoundedSurface : public PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_BoundedSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		PGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_BoundedSurface {
-	Handle_PGeom_BoundedSurface GetHandle() {
-	return *(Handle_PGeom_BoundedSurface*) &$self;
-	}
-};
-%extend PGeom_BoundedSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_BoundedSurface {
-	~PGeom_BoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_BoundedSurface\n");}
 	}
 };
 
@@ -1610,6 +1538,8 @@ class PGeom_BSplineSurface : public PGeom_BoundedSurface {
 		Handle_PColStd_HArray1OfInteger _CSFDB_GetPGeom_BSplineSurfacevMultiplicities() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_BSplineSurfacevMultiplicities(const Handle_PColStd_HArray1OfInteger &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_BSplineSurface {
@@ -1729,6 +1659,82 @@ class PGeom_Parabola : public PGeom_Conic {
 	~PGeom_Parabola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom_Parabola\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_Circle;
+class PGeom_Circle : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Circle();
+		%feature("autodoc", "1");
+		PGeom_Circle(const gp_Ax2 &aPosition, const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		void Radius(const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		PGeom_Circle(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_Circleradius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_Circleradius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Circle {
+	Handle_PGeom_Circle GetHandle() {
+	return *(Handle_PGeom_Circle*) &$self;
+	}
+};
+%extend PGeom_Circle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Circle {
+	~PGeom_Circle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Circle\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_Transformation;
+class PGeom_Transformation : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Transformation();
+		%feature("autodoc", "1");
+		PGeom_Transformation(const gp_Trsf &aTrsf);
+		%feature("autodoc", "1");
+		void Trsf(const gp_Trsf &aTrsf);
+		%feature("autodoc", "1");
+		gp_Trsf Trsf() const;
+		%feature("autodoc", "1");
+		PGeom_Transformation(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Trsf & _CSFDB_GetPGeom_Transformationtrsf() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Transformation {
+	Handle_PGeom_Transformation GetHandle() {
+	return *(Handle_PGeom_Transformation*) &$self;
+	}
+};
+%extend PGeom_Transformation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Transformation {
+	~PGeom_Transformation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Transformation\n");}
 	}
 };
 
@@ -1859,6 +1865,53 @@ class PGeom_RectangularTrimmedSurface : public PGeom_BoundedSurface {
 };
 
 
+%nodefaultctor PGeom_Ellipse;
+class PGeom_Ellipse : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Ellipse();
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Ellipse {
+	Handle_PGeom_Ellipse GetHandle() {
+	return *(Handle_PGeom_Ellipse*) &$self;
+	}
+};
+%extend PGeom_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Ellipse {
+	~PGeom_Ellipse() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Ellipse\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_ElementarySurface;
 class PGeom_ElementarySurface : public PGeom_Surface {
 	public:
@@ -1974,6 +2027,37 @@ class PGeom_Line : public PGeom_Curve {
 };
 
 
+%nodefaultctor PGeom_Direction;
+class PGeom_Direction : public PGeom_Vector {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Direction();
+		%feature("autodoc", "1");
+		PGeom_Direction(const gp_Vec &aVec);
+		%feature("autodoc", "1");
+		PGeom_Direction(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Direction {
+	Handle_PGeom_Direction GetHandle() {
+	return *(Handle_PGeom_Direction*) &$self;
+	}
+};
+%extend PGeom_Direction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_Direction {
+	~PGeom_Direction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_Direction\n");}
+	}
+};
+
+
 %nodefaultctor PGeom_AxisPlacement;
 class PGeom_AxisPlacement : public PGeom_Geometry {
 	public:
@@ -2070,45 +2154,6 @@ class PGeom_BezierSurface : public PGeom_BoundedSurface {
 };
 
 
-%nodefaultctor PGeom_SphericalSurface;
-class PGeom_SphericalSurface : public PGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_SphericalSurface();
-		%feature("autodoc", "1");
-		PGeom_SphericalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
-		%feature("autodoc", "1");
-		void Radius(const Standard_Real aRadius);
-		%feature("autodoc", "1");
-		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		PGeom_SphericalSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_SphericalSurfaceradius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_SphericalSurfaceradius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_SphericalSurface {
-	Handle_PGeom_SphericalSurface GetHandle() {
-	return *(Handle_PGeom_SphericalSurface*) &$self;
-	}
-};
-%extend PGeom_SphericalSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_SphericalSurface {
-	~PGeom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_SphericalSurface\n");}
-	}
-};
-
-
 %nodefaultctor PGeom_OffsetCurve;
 class PGeom_OffsetCurve : public PGeom_Curve {
 	public:
@@ -2162,49 +2207,41 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 };
 
 
-%nodefaultctor PGeom_Hyperbola;
-class PGeom_Hyperbola : public PGeom_Conic {
+%nodefaultctor PGeom_CylindricalSurface;
+class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
 	public:
 		%feature("autodoc", "1");
-		PGeom_Hyperbola();
+		PGeom_CylindricalSurface();
 		%feature("autodoc", "1");
-		PGeom_Hyperbola(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_CylindricalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
+		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
+		Standard_Real Radius() const;
 		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
+		PGeom_CylindricalSurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
+		Standard_Real _CSFDB_GetPGeom_CylindricalSurfaceradius() const;
 		%feature("autodoc", "1");
-		PGeom_Hyperbola(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_HyperbolamajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_HyperbolamajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_HyperbolaminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_HyperbolaminorRadius(const Standard_Real p);
+		void _CSFDB_SetPGeom_CylindricalSurfaceradius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_Hyperbola {
-	Handle_PGeom_Hyperbola GetHandle() {
-	return *(Handle_PGeom_Hyperbola*) &$self;
+%extend PGeom_CylindricalSurface {
+	Handle_PGeom_CylindricalSurface GetHandle() {
+	return *(Handle_PGeom_CylindricalSurface*) &$self;
 	}
 };
-%extend PGeom_Hyperbola {
+%extend PGeom_CylindricalSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_Hyperbola {
-	~PGeom_Hyperbola() {
+%extend PGeom_CylindricalSurface {
+	~PGeom_CylindricalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Hyperbola\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_CylindricalSurface\n");}
 	}
 };
 
@@ -2246,41 +2283,72 @@ class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 };
 
 
-%nodefaultctor PGeom_CylindricalSurface;
-class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
+%nodefaultctor PGeom_SweptSurface;
+class PGeom_SweptSurface : public PGeom_Surface {
 	public:
 		%feature("autodoc", "1");
-		PGeom_CylindricalSurface();
+		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
 		%feature("autodoc", "1");
-		PGeom_CylindricalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
+		Handle_PGeom_Curve BasisCurve() const;
 		%feature("autodoc", "1");
-		void Radius(const Standard_Real aRadius);
+		void Direction(const gp_Dir &aDirection);
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		gp_Dir Direction() const;
 		%feature("autodoc", "1");
-		PGeom_CylindricalSurface(const Storage_stCONSTclCOM &a);
+		PGeom_SweptSurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_CylindricalSurfaceradius() const;
+		Handle_PGeom_Curve _CSFDB_GetPGeom_SweptSurfacebasisCurve() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_CylindricalSurfaceradius(const Standard_Real p);
+		void _CSFDB_SetPGeom_SweptSurfacebasisCurve(const Handle_PGeom_Curve &p);
+		%feature("autodoc", "1");
+		const gp_Dir & _CSFDB_GetPGeom_SweptSurfacedirection() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_CylindricalSurface {
-	Handle_PGeom_CylindricalSurface GetHandle() {
-	return *(Handle_PGeom_CylindricalSurface*) &$self;
+%extend PGeom_SweptSurface {
+	Handle_PGeom_SweptSurface GetHandle() {
+	return *(Handle_PGeom_SweptSurface*) &$self;
 	}
 };
-%extend PGeom_CylindricalSurface {
+%extend PGeom_SweptSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_CylindricalSurface {
-	~PGeom_CylindricalSurface() {
+%extend PGeom_SweptSurface {
+	~PGeom_SweptSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_CylindricalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_SweptSurface\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_SurfaceOfLinearExtrusion;
+class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion();
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir &aDirection);
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
+
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	Handle_PGeom_SurfaceOfLinearExtrusion GetHandle() {
+	return *(Handle_PGeom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	~PGeom_SurfaceOfLinearExtrusion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_SurfaceOfLinearExtrusion\n");}
 	}
 };
 
@@ -2316,119 +2384,41 @@ class PGeom_Axis1Placement : public PGeom_AxisPlacement {
 };
 
 
-%nodefaultctor PGeom_Circle;
-class PGeom_Circle : public PGeom_Conic {
+%nodefaultctor PGeom_SphericalSurface;
+class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 	public:
 		%feature("autodoc", "1");
-		PGeom_Circle();
+		PGeom_SphericalSurface();
 		%feature("autodoc", "1");
-		PGeom_Circle(const gp_Ax2 &aPosition, const Standard_Real aRadius);
+		PGeom_SphericalSurface(const gp_Ax3 &aPosition, const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		void Radius(const Standard_Real aRadius);
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
-		PGeom_Circle(const Storage_stCONSTclCOM &a);
+		PGeom_SphericalSurface(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_Circleradius() const;
+		Standard_Real _CSFDB_GetPGeom_SphericalSurfaceradius() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_Circleradius(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Circle {
-	Handle_PGeom_Circle GetHandle() {
-	return *(Handle_PGeom_Circle*) &$self;
-	}
-};
-%extend PGeom_Circle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Circle {
-	~PGeom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Circle\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_OffsetSurface;
-class PGeom_OffsetSurface : public PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface();
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface(const Handle_PGeom_Surface &aBasisSurface, const Standard_Real aOffsetValue);
-		%feature("autodoc", "1");
-		void BasisSurface(const Handle_PGeom_Surface &aBasisSurface);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface BasisSurface() const;
-		%feature("autodoc", "1");
-		void OffsetValue(const Standard_Real aOffsetValue);
-		%feature("autodoc", "1");
-		Standard_Real OffsetValue() const;
-		%feature("autodoc", "1");
-		PGeom_OffsetSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface _CSFDB_GetPGeom_OffsetSurfacebasisSurface() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetSurfacebasisSurface(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_OffsetSurfaceoffsetValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_OffsetSurfaceoffsetValue(const Standard_Real p);
+		void _CSFDB_SetPGeom_SphericalSurfaceradius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_OffsetSurface {
-	Handle_PGeom_OffsetSurface GetHandle() {
-	return *(Handle_PGeom_OffsetSurface*) &$self;
+%extend PGeom_SphericalSurface {
+	Handle_PGeom_SphericalSurface GetHandle() {
+	return *(Handle_PGeom_SphericalSurface*) &$self;
 	}
 };
-%extend PGeom_OffsetSurface {
+%extend PGeom_SphericalSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_OffsetSurface {
-	~PGeom_OffsetSurface() {
+%extend PGeom_SphericalSurface {
+	~PGeom_SphericalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetSurface\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_Direction;
-class PGeom_Direction : public PGeom_Vector {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Direction();
-		%feature("autodoc", "1");
-		PGeom_Direction(const gp_Vec &aVec);
-		%feature("autodoc", "1");
-		PGeom_Direction(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Direction {
-	Handle_PGeom_Direction GetHandle() {
-	return *(Handle_PGeom_Direction*) &$self;
-	}
-};
-%extend PGeom_Direction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Direction {
-	~PGeom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Direction\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_SphericalSurface\n");}
 	}
 };
 
@@ -2488,13 +2478,60 @@ class PGeom_BezierCurve : public PGeom_BoundedCurve {
 };
 
 
-%nodefaultctor PGeom_Ellipse;
-class PGeom_Ellipse : public PGeom_Conic {
+%nodefaultctor PGeom_OffsetSurface;
+class PGeom_OffsetSurface : public PGeom_Surface {
 	public:
 		%feature("autodoc", "1");
-		PGeom_Ellipse();
+		PGeom_OffsetSurface();
 		%feature("autodoc", "1");
-		PGeom_Ellipse(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_OffsetSurface(const Handle_PGeom_Surface &aBasisSurface, const Standard_Real aOffsetValue);
+		%feature("autodoc", "1");
+		void BasisSurface(const Handle_PGeom_Surface &aBasisSurface);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface BasisSurface() const;
+		%feature("autodoc", "1");
+		void OffsetValue(const Standard_Real aOffsetValue);
+		%feature("autodoc", "1");
+		Standard_Real OffsetValue() const;
+		%feature("autodoc", "1");
+		PGeom_OffsetSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface _CSFDB_GetPGeom_OffsetSurfacebasisSurface() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetSurfacebasisSurface(const Handle_PGeom_Surface &p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_OffsetSurfaceoffsetValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_OffsetSurfaceoffsetValue(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_OffsetSurface {
+	Handle_PGeom_OffsetSurface GetHandle() {
+	return *(Handle_PGeom_OffsetSurface*) &$self;
+	}
+};
+%extend PGeom_OffsetSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PGeom_OffsetSurface {
+	~PGeom_OffsetSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PGeom_OffsetSurface\n");}
+	}
+};
+
+
+%nodefaultctor PGeom_Hyperbola;
+class PGeom_Hyperbola : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Hyperbola();
+		%feature("autodoc", "1");
+		PGeom_Hyperbola(const gp_Ax2 &aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
 		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
@@ -2504,33 +2541,33 @@ class PGeom_Ellipse : public PGeom_Conic {
 		%feature("autodoc", "1");
 		Standard_Real MinorRadius() const;
 		%feature("autodoc", "1");
-		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
+		PGeom_Hyperbola(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
+		Standard_Real _CSFDB_GetPGeom_HyperbolamajorRadius() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
+		void _CSFDB_SetPGeom_HyperbolamajorRadius(const Standard_Real p);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
+		Standard_Real _CSFDB_GetPGeom_HyperbolaminorRadius() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		void _CSFDB_SetPGeom_HyperbolaminorRadius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_Ellipse {
-	Handle_PGeom_Ellipse GetHandle() {
-	return *(Handle_PGeom_Ellipse*) &$self;
+%extend PGeom_Hyperbola {
+	Handle_PGeom_Hyperbola GetHandle() {
+	return *(Handle_PGeom_Hyperbola*) &$self;
 	}
 };
-%extend PGeom_Ellipse {
+%extend PGeom_Hyperbola {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PGeom_Ellipse {
-	~PGeom_Ellipse() {
+%extend PGeom_Hyperbola {
+	~PGeom_Hyperbola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Ellipse\n");}
+	if (__env){printf("## Call custom destructor for instance of PGeom_Hyperbola\n");}
 	}
 };
 
@@ -2615,43 +2652,6 @@ class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
 	~PGeom_SurfaceOfRevolution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PGeom_SurfaceOfRevolution\n");}
-	}
-};
-
-
-%nodefaultctor PGeom_Transformation;
-class PGeom_Transformation : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Transformation();
-		%feature("autodoc", "1");
-		PGeom_Transformation(const gp_Trsf &aTrsf);
-		%feature("autodoc", "1");
-		void Trsf(const gp_Trsf &aTrsf);
-		%feature("autodoc", "1");
-		gp_Trsf Trsf() const;
-		%feature("autodoc", "1");
-		PGeom_Transformation(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Trsf & _CSFDB_GetPGeom_Transformationtrsf() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_Transformation {
-	Handle_PGeom_Transformation GetHandle() {
-	return *(Handle_PGeom_Transformation*) &$self;
-	}
-};
-%extend PGeom_Transformation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PGeom_Transformation {
-	~PGeom_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PGeom_Transformation\n");}
 	}
 };
 

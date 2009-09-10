@@ -193,31 +193,6 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 };
 
 
-%nodefaultctor BRepPrimAPI_MakeCone;
-class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
-		%feature("autodoc", "1");
-		virtual		Standard_Address OneAxis();
-		%feature("autodoc", "1");
-		BRepPrim_Cone & Cone();
-
-};
-%extend BRepPrimAPI_MakeCone {
-	~BRepPrimAPI_MakeCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCone\n");}
-	}
-};
-
-
 %nodefaultctor BRepPrimAPI_MakeHalfSpace;
 class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 	public:
@@ -350,6 +325,31 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	~BRepPrimAPI_MakeRevol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");}
+	}
+};
+
+
+%nodefaultctor BRepPrimAPI_MakeCone;
+class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const gp_Ax2 &Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
+		%feature("autodoc", "1");
+		virtual		Standard_Address OneAxis();
+		%feature("autodoc", "1");
+		BRepPrim_Cone & Cone();
+
+};
+%extend BRepPrimAPI_MakeCone {
+	~BRepPrimAPI_MakeCone() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCone\n");}
 	}
 };
 

@@ -10,13 +10,13 @@
 %rename(Law_BSpline) Law_BSpline;
 %rename(Handle_Law_BSpFunc) Handle_Law_BSpFunc;
 %rename(Law_BSplineKnotSplitting) Law_BSplineKnotSplitting;
-%rename(Law_BSpFunc) Law_BSpFunc;
+%rename(Law) Law;
 %rename(Handle_Law_Composite) Handle_Law_Composite;
 %rename(Handle_Law_Linear) Handle_Law_Linear;
 %rename(Law_Linear) Law_Linear;
 %rename(Law_Constant) Law_Constant;
 %rename(Law_ListIteratorOfLaws) Law_ListIteratorOfLaws;
-%rename(Law) Law;
+%rename(Law_BSpFunc) Law_BSpFunc;
 %rename(Handle_Law_S) Handle_Law_S;
 %rename(Handle_Law_BSpline) Handle_Law_BSpline;
 %rename(Law_S) Law_S;

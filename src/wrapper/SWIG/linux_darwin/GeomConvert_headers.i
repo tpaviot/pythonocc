@@ -37,19 +37,19 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<TColGeom_Array2OfBezierSurface.hxx>
+#include<TColStd_Array1OfReal.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
 #include<GeomConvert.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TColGeom_Array1OfBSplineCurve.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColGeom_HArray1OfBSplineCurve.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<TColGeom_Array1OfBezierCurve.hxx>
 #include<Handle_Geom_BezierSurface.hxx>
-#include<TColGeom_Array2OfBezierSurface.hxx>
 #include<Handle_Geom_BoundedCurve.hxx>
 %}

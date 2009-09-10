@@ -161,10 +161,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Aspect_ColorMapEntry.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Quantity_Color.hxx>
+#include<Aspect_Background.hxx>
+#include<Handle_Aspect_Window.hxx>
 #include<Aspect_FontMapEntry.hxx>
 #include<Handle_Aspect_FontMap.hxx>
-#include<Handle_Aspect_Window.hxx>
-#include<Aspect_Background.hxx>
 #include<Aspect_TypeMapEntry.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Aspect_MarkMapEntry.hxx>

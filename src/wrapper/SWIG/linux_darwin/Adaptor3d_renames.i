@@ -8,7 +8,7 @@
 %rename(Adaptor3d_HOffsetCurve) Adaptor3d_HOffsetCurve;
 %rename(Handle_Adaptor3d_TopolTool) Handle_Adaptor3d_TopolTool;
 %rename(Adaptor3d_OffsetCurve) Adaptor3d_OffsetCurve;
-%rename(Adaptor3d_HCurveOnSurface) Adaptor3d_HCurveOnSurface;
+%rename(Adaptor3d_Curve) Adaptor3d_Curve;
 %rename(Handle_Adaptor3d_HSurface) Handle_Adaptor3d_HSurface;
 %rename(Adaptor3d_InterFunc) Adaptor3d_InterFunc;
 %rename(Adaptor3d_HSurfaceOfLinearExtrusion) Adaptor3d_HSurfaceOfLinearExtrusion;
@@ -22,5 +22,5 @@
 %rename(Adaptor3d_HCurve) Adaptor3d_HCurve;
 %rename(Handle_Adaptor3d_HCurve) Handle_Adaptor3d_HCurve;
 %rename(Adaptor3d_SurfaceOfLinearExtrusion) Adaptor3d_SurfaceOfLinearExtrusion;
-%rename(Adaptor3d_Curve) Adaptor3d_Curve;
+%rename(Adaptor3d_HCurveOnSurface) Adaptor3d_HCurveOnSurface;
 %rename(Adaptor3d_HSurfaceOfRevolution) Adaptor3d_HSurfaceOfRevolution;

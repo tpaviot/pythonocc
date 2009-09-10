@@ -34,42 +34,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
 typedef Standard_ShortReal * BinObjMgt_PShortReal;
+typedef Standard_Integer * BinObjMgt_PInteger;
 typedef Standard_Real * BinObjMgt_PReal;
 typedef Standard_Byte * BinObjMgt_PByte;
-typedef Standard_Integer * BinObjMgt_PInteger;
 typedef Standard_Character * BinObjMgt_PChar;
 typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 
-
-
-%nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
-class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
-		%feature("autodoc", "1");
-		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
-	BinObjMgt_SequenceNodeOfSequenceOfAddress* GetObject() {
-	return (BinObjMgt_SequenceNodeOfSequenceOfAddress*)$self->Access();
-	}
-};
-%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
-	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
-	}
-};
 
 
 %nodefaultctor Handle_BinObjMgt_DataMapNodeOfRRelocationTable;
@@ -102,59 +72,32 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 
 
-%nodefaultctor BinObjMgt_SequenceOfAddress;
-class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
+%nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
+class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BinObjMgt_SequenceOfAddress();
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress();
 		%feature("autodoc", "1");
-		void Clear();
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
 		%feature("autodoc", "1");
-		const BinObjMgt_SequenceOfAddress & Assign(const BinObjMgt_SequenceOfAddress &Other);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		const BinObjMgt_SequenceOfAddress & operator=(const BinObjMgt_SequenceOfAddress &Other);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress &aHandle);
 		%feature("autodoc", "1");
-		void Append(const Standard_Address &T);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress & operator=(const BinObjMgt_SequenceNodeOfSequenceOfAddress *anItem);
 		%feature("autodoc", "1");
-		void Append(BinObjMgt_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Prepend(BinObjMgt_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & First() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Address & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend BinObjMgt_SequenceOfAddress {
-	~BinObjMgt_SequenceOfAddress() {
+%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	BinObjMgt_SequenceNodeOfSequenceOfAddress* GetObject() {
+	return (BinObjMgt_SequenceNodeOfSequenceOfAddress*)$self->Access();
+	}
+};
+%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -285,6 +228,47 @@ class BinObjMgt_Persistent {
 };
 
 
+%nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
+class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BinObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	Handle_BinObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
+	return *(Handle_BinObjMgt_DataMapNodeOfRRelocationTable*) &$self;
+	}
+};
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	~BinObjMgt_DataMapNodeOfRRelocationTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
+	}
+};
+
+
 %nodefaultctor BinObjMgt_RRelocationTable;
 class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 	public:
@@ -322,33 +306,59 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
-class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
+%nodefaultctor BinObjMgt_SequenceOfAddress;
+class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		BinObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		BinObjMgt_SequenceOfAddress();
 		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
+		const BinObjMgt_SequenceOfAddress & Assign(const BinObjMgt_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const BinObjMgt_SequenceOfAddress & operator=(const BinObjMgt_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
+		void Append(const Standard_Address &T);
+		%feature("autodoc", "1");
+		void Append(BinObjMgt_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Address &T);
+		%feature("autodoc", "1");
+		void Prepend(BinObjMgt_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		const Standard_Address & First() const;
+		%feature("autodoc", "1");
+		const Standard_Address & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BinObjMgt_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		const Standard_Address & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Standard_Address & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Address &I);
+		%feature("autodoc", "1");
+		Standard_Address & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Address & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BinObjMgt_DataMapNodeOfRRelocationTable {
-	Handle_BinObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
-	return *(Handle_BinObjMgt_DataMapNodeOfRRelocationTable*) &$self;
-	}
-};
-%extend BinObjMgt_DataMapNodeOfRRelocationTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinObjMgt_DataMapNodeOfRRelocationTable {
-	~BinObjMgt_DataMapNodeOfRRelocationTable() {
+%extend BinObjMgt_SequenceOfAddress {
+	~BinObjMgt_SequenceOfAddress() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
 	}
 };
 

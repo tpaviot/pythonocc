@@ -1,8 +1,8 @@
 %rename(STEPControl_Hybrid) STEPControl_Hybrid;
 %rename(STEPControl_GeometricCurveSet) STEPControl_GeometricCurveSet;
-%rename(Handle_STEPControl_Controller) Handle_STEPControl_Controller;
-%rename(STEPControl_ActorRead) STEPControl_ActorRead;
+%rename(Handle_STEPControl_ActorRead) Handle_STEPControl_ActorRead;
 %rename(STEPControl_ActorWrite) STEPControl_ActorWrite;
+%rename(STEPControl_ActorRead) STEPControl_ActorRead;
 %rename(STEPControl_Writer) STEPControl_Writer;
 %rename(STEPControl_FacetedBrep) STEPControl_FacetedBrep;
 %rename(STEPControl_FacetedBrepAndBrepWithVoids) STEPControl_FacetedBrepAndBrepWithVoids;
@@ -10,7 +10,7 @@
 %rename(STEPControl_ManifoldSolidBrep) STEPControl_ManifoldSolidBrep;
 %rename(STEPControl_AsIs) STEPControl_AsIs;
 %rename(STEPControl_Controller) STEPControl_Controller;
-%rename(Handle_STEPControl_ActorRead) Handle_STEPControl_ActorRead;
+%rename(Handle_STEPControl_Controller) Handle_STEPControl_Controller;
 %rename(STEPControl_Reader) STEPControl_Reader;
 %rename(Handle_STEPControl_ActorWrite) Handle_STEPControl_ActorWrite;
 %rename(STEPControl_ShellBasedSurfaceModel) STEPControl_ShellBasedSurfaceModel;

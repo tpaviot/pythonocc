@@ -185,33 +185,6 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 };
 
 
-%nodefaultctor IGESControl_AlgoContainer;
-class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
-	public:
-		%feature("autodoc", "1");
-		IGESControl_AlgoContainer();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESControl_AlgoContainer {
-	Handle_IGESControl_AlgoContainer GetHandle() {
-	return *(Handle_IGESControl_AlgoContainer*) &$self;
-	}
-};
-%extend IGESControl_AlgoContainer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESControl_AlgoContainer {
-	~IGESControl_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
-	}
-};
-
-
 %nodefaultctor IGESControl_Reader;
 class IGESControl_Reader : public XSControl_Reader {
 	public:
@@ -295,6 +268,33 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	~IGESControl_ToolContainer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
+	}
+};
+
+
+%nodefaultctor IGESControl_AlgoContainer;
+class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
+	public:
+		%feature("autodoc", "1");
+		IGESControl_AlgoContainer();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESControl_AlgoContainer {
+	Handle_IGESControl_AlgoContainer GetHandle() {
+	return *(Handle_IGESControl_AlgoContainer*) &$self;
+	}
+};
+%extend IGESControl_AlgoContainer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESControl_AlgoContainer {
+	~IGESControl_AlgoContainer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
 	}
 };
 

@@ -20,7 +20,7 @@
 %rename(TColgp_HArray1OfCirc2d) TColgp_HArray1OfCirc2d;
 %rename(Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d) Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
 %rename(TColgp_HArray2OfPnt) TColgp_HArray2OfPnt;
-%rename(TColgp_HArray2OfDir) TColgp_HArray2OfDir;
+%rename(Handle_TColgp_HArray1OfPnt) Handle_TColgp_HArray1OfPnt;
 %rename(TColgp_Array2OfXYZ) TColgp_Array2OfXYZ;
 %rename(Handle_TColgp_HArray2OfXYZ) Handle_TColgp_HArray2OfXYZ;
 %rename(Handle_TColgp_HArray2OfVec2d) Handle_TColgp_HArray2OfVec2d;
@@ -36,15 +36,15 @@
 %rename(TColgp_SequenceNodeOfSequenceOfDir) TColgp_SequenceNodeOfSequenceOfDir;
 %rename(TColgp_Array1OfXYZ) TColgp_Array1OfXYZ;
 %rename(Handle_TColgp_HSequenceOfDir2d) Handle_TColgp_HSequenceOfDir2d;
-%rename(TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d) TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d;
+%rename(TColgp_HSequenceOfPnt2d) TColgp_HSequenceOfPnt2d;
 %rename(TColgp_HSequenceOfDir2d) TColgp_HSequenceOfDir2d;
 %rename(TColgp_SequenceOfDir2d) TColgp_SequenceOfDir2d;
 %rename(TColgp_Array2OfLin2d) TColgp_Array2OfLin2d;
 %rename(TColgp_DataMapNodeOfDataMapOfIntegerCirc2d) TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
 %rename(TColgp_Array1OfDir2d) TColgp_Array1OfDir2d;
 %rename(TColgp_Array1OfDir) TColgp_Array1OfDir;
-%rename(TColgp_HSequenceOfPnt2d) TColgp_HSequenceOfPnt2d;
-%rename(Handle_TColgp_HArray1OfPnt) Handle_TColgp_HArray1OfPnt;
+%rename(TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d) TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d;
+%rename(TColgp_HArray2OfDir) TColgp_HArray2OfDir;
 %rename(Handle_TColgp_HSequenceOfPnt2d) Handle_TColgp_HSequenceOfPnt2d;
 %rename(TColgp_SequenceOfXYZ) TColgp_SequenceOfXYZ;
 %rename(TColgp_Array1OfPnt) TColgp_Array1OfPnt;

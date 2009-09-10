@@ -1,5 +1,5 @@
 %rename(FEmTool_AssemblyTable) FEmTool_AssemblyTable;
-%rename(Handle_FEmTool_SparseMatrix) Handle_FEmTool_SparseMatrix;
+%rename(Handle_FEmTool_LinearJerk) Handle_FEmTool_LinearJerk;
 %rename(Handle_FEmTool_ElementaryCriterion) Handle_FEmTool_ElementaryCriterion;
 %rename(FEmTool_SparseMatrix) FEmTool_SparseMatrix;
 %rename(FEmTool_ListOfVectors) FEmTool_ListOfVectors;
@@ -10,7 +10,7 @@
 %rename(FEmTool_HAssemblyTable) FEmTool_HAssemblyTable;
 %rename(Handle_FEmTool_ListNodeOfListOfVectors) Handle_FEmTool_ListNodeOfListOfVectors;
 %rename(Handle_FEmTool_LinearFlexion) Handle_FEmTool_LinearFlexion;
-%rename(Handle_FEmTool_LinearJerk) Handle_FEmTool_LinearJerk;
+%rename(Handle_FEmTool_SparseMatrix) Handle_FEmTool_SparseMatrix;
 %rename(FEmTool_SequenceNodeOfSeqOfLinConstr) FEmTool_SequenceNodeOfSeqOfLinConstr;
 %rename(FEmTool_ProfileMatrix) FEmTool_ProfileMatrix;
 %rename(FEmTool_ListNodeOfListOfVectors) FEmTool_ListNodeOfListOfVectors;

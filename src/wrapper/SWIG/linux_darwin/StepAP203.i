@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_StepAP203_StartWork;
-class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork();
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork(const Handle_StepAP203_StartWork &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork(const StepAP203_StartWork *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork & operator=(const Handle_StepAP203_StartWork &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork & operator=(const StepAP203_StartWork *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_StartWork const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_StartWork {
-	StepAP203_StartWork* GetObject() {
-	return (StepAP203_StartWork*)$self->Access();
-	}
-};
-%extend Handle_StepAP203_StartWork {
-	~Handle_StepAP203_StartWork() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_StartWork\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepAP203_HArray1OfWorkItem;
 class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 	public:
@@ -155,6 +125,36 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 };
 
 
+%nodefaultctor Handle_StepAP203_HArray1OfClassifiedItem;
+class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem(const Handle_StepAP203_HArray1OfClassifiedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem(const StepAP203_HArray1OfClassifiedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem & operator=(const Handle_StepAP203_HArray1OfClassifiedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem & operator=(const StepAP203_HArray1OfClassifiedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfClassifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_HArray1OfClassifiedItem {
+	StepAP203_HArray1OfClassifiedItem* GetObject() {
+	return (StepAP203_HArray1OfClassifiedItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_HArray1OfClassifiedItem {
+	~Handle_StepAP203_HArray1OfClassifiedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfClassifiedItem\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP203_CcDesignSpecificationReference;
 class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_DocumentReference {
 	public:
@@ -181,6 +181,36 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 	~Handle_StepAP203_CcDesignSpecificationReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignSpecificationReference\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
+class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem();
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem(const Handle_StepAP203_HArray1OfPersonOrganizationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem(const StepAP203_HArray1OfPersonOrganizationItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem & operator=(const Handle_StepAP203_HArray1OfPersonOrganizationItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem & operator=(const StepAP203_HArray1OfPersonOrganizationItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfPersonOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
+	StepAP203_HArray1OfPersonOrganizationItem* GetObject() {
+	return (StepAP203_HArray1OfPersonOrganizationItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
+	~Handle_StepAP203_HArray1OfPersonOrganizationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");}
 	}
 };
 
@@ -275,36 +305,6 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 };
 
 
-%nodefaultctor Handle_StepAP203_CcDesignApproval;
-class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval();
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval(const Handle_StepAP203_CcDesignApproval &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval(const StepAP203_CcDesignApproval *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval & operator=(const Handle_StepAP203_CcDesignApproval &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval & operator=(const StepAP203_CcDesignApproval *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_CcDesignApproval const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_CcDesignApproval {
-	StepAP203_CcDesignApproval* GetObject() {
-	return (StepAP203_CcDesignApproval*)$self->Access();
-	}
-};
-%extend Handle_StepAP203_CcDesignApproval {
-	~Handle_StepAP203_CcDesignApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignApproval\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepAP203_HArray1OfChangeRequestItem;
 class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 	public:
@@ -335,6 +335,36 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepAP203_StartWork;
+class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork();
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork(const Handle_StepAP203_StartWork &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork(const StepAP203_StartWork *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork & operator=(const Handle_StepAP203_StartWork &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork & operator=(const StepAP203_StartWork *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_StartWork const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_StartWork {
+	StepAP203_StartWork* GetObject() {
+	return (StepAP203_StartWork*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_StartWork {
+	~Handle_StepAP203_StartWork() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_StartWork\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP203_HArray1OfStartRequestItem;
 class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	public:
@@ -361,36 +391,6 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	~Handle_StepAP203_HArray1OfStartRequestItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfStartRequestItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP203_HArray1OfCertifiedItem;
-class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem(const Handle_StepAP203_HArray1OfCertifiedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem(const StepAP203_HArray1OfCertifiedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem & operator=(const Handle_StepAP203_HArray1OfCertifiedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem & operator=(const StepAP203_HArray1OfCertifiedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_HArray1OfCertifiedItem {
-	StepAP203_HArray1OfCertifiedItem* GetObject() {
-	return (StepAP203_HArray1OfCertifiedItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP203_HArray1OfCertifiedItem {
-	~Handle_StepAP203_HArray1OfCertifiedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");}
 	}
 };
 
@@ -455,6 +455,36 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StepAP203_CcDesignApproval;
+class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval();
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval(const Handle_StepAP203_CcDesignApproval &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval(const StepAP203_CcDesignApproval *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval & operator=(const Handle_StepAP203_CcDesignApproval &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval & operator=(const StepAP203_CcDesignApproval *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_CcDesignApproval const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_CcDesignApproval {
+	StepAP203_CcDesignApproval* GetObject() {
+	return (StepAP203_CcDesignApproval*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_CcDesignApproval {
+	~Handle_StepAP203_CcDesignApproval() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignApproval\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP203_HArray1OfSpecifiedItem;
 class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 	public:
@@ -481,6 +511,36 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 	~Handle_StepAP203_HArray1OfSpecifiedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfSpecifiedItem\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP203_HArray1OfCertifiedItem;
+class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem(const Handle_StepAP203_HArray1OfCertifiedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem(const StepAP203_HArray1OfCertifiedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem & operator=(const Handle_StepAP203_HArray1OfCertifiedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem & operator=(const StepAP203_HArray1OfCertifiedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP203_HArray1OfCertifiedItem {
+	StepAP203_HArray1OfCertifiedItem* GetObject() {
+	return (StepAP203_HArray1OfCertifiedItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP203_HArray1OfCertifiedItem {
+	~Handle_StepAP203_HArray1OfCertifiedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");}
 	}
 };
 
@@ -575,66 +635,6 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 };
 
 
-%nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
-class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem();
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem(const Handle_StepAP203_HArray1OfPersonOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem(const StepAP203_HArray1OfPersonOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem & operator=(const Handle_StepAP203_HArray1OfPersonOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem & operator=(const StepAP203_HArray1OfPersonOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfPersonOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
-	StepAP203_HArray1OfPersonOrganizationItem* GetObject() {
-	return (StepAP203_HArray1OfPersonOrganizationItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
-	~Handle_StepAP203_HArray1OfPersonOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP203_HArray1OfClassifiedItem;
-class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem(const Handle_StepAP203_HArray1OfClassifiedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem(const StepAP203_HArray1OfClassifiedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem & operator=(const Handle_StepAP203_HArray1OfClassifiedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem & operator=(const StepAP203_HArray1OfClassifiedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfClassifiedItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP203_HArray1OfClassifiedItem {
-	StepAP203_HArray1OfClassifiedItem* GetObject() {
-	return (StepAP203_HArray1OfClassifiedItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP203_HArray1OfClassifiedItem {
-	~Handle_StepAP203_HArray1OfClassifiedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfClassifiedItem\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepAP203_HArray1OfContractedItem;
 class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 	public:
@@ -661,6 +661,136 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 	~Handle_StepAP203_HArray1OfContractedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfContractedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_HArray1OfSpecifiedItem;
+class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_HArray1OfSpecifiedItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP203_HArray1OfSpecifiedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_SpecifiedItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP203_SpecifiedItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP203_SpecifiedItem &Value);
+		%feature("autodoc", "1");
+		const StepAP203_SpecifiedItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP203_SpecifiedItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfSpecifiedItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP203_Array1OfSpecifiedItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP203_HArray1OfSpecifiedItem {
+	Handle_StepAP203_HArray1OfSpecifiedItem GetHandle() {
+	return *(Handle_StepAP203_HArray1OfSpecifiedItem*) &$self;
+	}
+};
+%extend StepAP203_HArray1OfSpecifiedItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP203_HArray1OfSpecifiedItem {
+	~StepAP203_HArray1OfSpecifiedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfSpecifiedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_Array1OfCertifiedItem;
+class StepAP203_Array1OfCertifiedItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_Array1OfCertifiedItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP203_Array1OfCertifiedItem(const StepAP203_CertifiedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP203_CertifiedItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfCertifiedItem & Assign(const StepAP203_Array1OfCertifiedItem &Other);
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfCertifiedItem & operator=(const StepAP203_Array1OfCertifiedItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP203_CertifiedItem &Value);
+		%feature("autodoc", "1");
+		const StepAP203_CertifiedItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP203_CertifiedItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP203_CertifiedItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP203_CertifiedItem & operator()(const Standard_Integer Index);
+
+};
+%extend StepAP203_Array1OfCertifiedItem {
+	~StepAP203_Array1OfCertifiedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_ChangeRequestItem;
+class StepAP203_ChangeRequestItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_ChangeRequestItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+
+};
+%extend StepAP203_ChangeRequestItem {
+	~StepAP203_ChangeRequestItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequestItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_ClassifiedItem;
+class StepAP203_ClassifiedItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_ClassifiedItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_AssemblyComponentUsage AssemblyComponentUsage() const;
+
+};
+%extend StepAP203_ClassifiedItem {
+	~StepAP203_ClassifiedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_ClassifiedItem\n");}
 	}
 };
 
@@ -723,6 +853,49 @@ class StepAP203_ContractedItem : public StepData_SelectType {
 	~StepAP203_ContractedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP203_ContractedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_Array1OfWorkItem;
+class StepAP203_Array1OfWorkItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_Array1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP203_Array1OfWorkItem(const StepAP203_WorkItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP203_WorkItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfWorkItem & Assign(const StepAP203_Array1OfWorkItem &Other);
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfWorkItem & operator=(const StepAP203_Array1OfWorkItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP203_WorkItem &Value);
+		%feature("autodoc", "1");
+		const StepAP203_WorkItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP203_WorkItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP203_WorkItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP203_WorkItem & operator()(const Standard_Integer Index);
+
+};
+%extend StepAP203_Array1OfWorkItem {
+	~StepAP203_Array1OfWorkItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");}
 	}
 };
 
@@ -840,92 +1013,21 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 };
 
 
-%nodefaultctor StepAP203_Array1OfWorkItem;
-class StepAP203_Array1OfWorkItem {
+%nodefaultctor StepAP203_CertifiedItem;
+class StepAP203_CertifiedItem : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_Array1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP203_CertifiedItem();
 		%feature("autodoc", "1");
-		StepAP203_Array1OfWorkItem(const StepAP203_WorkItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP203_WorkItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfWorkItem & Assign(const StepAP203_Array1OfWorkItem &Other);
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfWorkItem & operator=(const StepAP203_Array1OfWorkItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_WorkItem &Value);
-		%feature("autodoc", "1");
-		const StepAP203_WorkItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP203_WorkItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP203_WorkItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP203_WorkItem & operator()(const Standard_Integer Index);
+		Handle_StepRepr_SuppliedPartRelationship SuppliedPartRelationship() const;
 
 };
-%extend StepAP203_Array1OfWorkItem {
-	~StepAP203_Array1OfWorkItem() {
+%extend StepAP203_CertifiedItem {
+	~StepAP203_CertifiedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_HArray1OfContractedItem;
-class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_HArray1OfContractedItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP203_HArray1OfContractedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_ContractedItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP203_ContractedItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_ContractedItem &Value);
-		%feature("autodoc", "1");
-		const StepAP203_ContractedItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP203_ContractedItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfContractedItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP203_Array1OfContractedItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP203_HArray1OfContractedItem {
-	Handle_StepAP203_HArray1OfContractedItem GetHandle() {
-	return *(Handle_StepAP203_HArray1OfContractedItem*) &$self;
-	}
-};
-%extend StepAP203_HArray1OfContractedItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP203_HArray1OfContractedItem {
-	~StepAP203_HArray1OfContractedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfContractedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_CertifiedItem\n");}
 	}
 };
 
@@ -1074,15 +1176,48 @@ class StepAP203_Array1OfContractedItem {
 };
 
 
-%nodefaultctor StepAP203_HArray1OfSpecifiedItem;
-class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
+%nodefaultctor StepAP203_StartWork;
+class StepAP203_StartWork : public StepBasic_ActionAssignment {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfSpecifiedItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP203_StartWork();
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfSpecifiedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_SpecifiedItem &V);
+		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
 		%feature("autodoc", "1");
-		void Init(const StepAP203_SpecifiedItem &V);
+		Handle_StepAP203_HArray1OfWorkItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP203_StartWork {
+	Handle_StepAP203_StartWork GetHandle() {
+	return *(Handle_StepAP203_StartWork*) &$self;
+	}
+};
+%extend StepAP203_StartWork {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP203_StartWork {
+	~StepAP203_StartWork() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_StartWork\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_HArray1OfClassifiedItem;
+class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_HArray1OfClassifiedItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP203_HArray1OfClassifiedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_ClassifiedItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP203_ClassifiedItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1090,33 +1225,33 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_SpecifiedItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP203_ClassifiedItem &Value);
 		%feature("autodoc", "1");
-		const StepAP203_SpecifiedItem & Value(const Standard_Integer Index) const;
+		const StepAP203_ClassifiedItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP203_SpecifiedItem & ChangeValue(const Standard_Integer Index);
+		StepAP203_ClassifiedItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const StepAP203_Array1OfSpecifiedItem & Array1() const;
+		const StepAP203_Array1OfClassifiedItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP203_Array1OfSpecifiedItem & ChangeArray1();
+		StepAP203_Array1OfClassifiedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP203_HArray1OfSpecifiedItem {
-	Handle_StepAP203_HArray1OfSpecifiedItem GetHandle() {
-	return *(Handle_StepAP203_HArray1OfSpecifiedItem*) &$self;
+%extend StepAP203_HArray1OfClassifiedItem {
+	Handle_StepAP203_HArray1OfClassifiedItem GetHandle() {
+	return *(Handle_StepAP203_HArray1OfClassifiedItem*) &$self;
 	}
 };
-%extend StepAP203_HArray1OfSpecifiedItem {
+%extend StepAP203_HArray1OfClassifiedItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP203_HArray1OfSpecifiedItem {
-	~StepAP203_HArray1OfSpecifiedItem() {
+%extend StepAP203_HArray1OfClassifiedItem {
+	~StepAP203_HArray1OfClassifiedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfSpecifiedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfClassifiedItem\n");}
 	}
 };
 
@@ -1211,15 +1346,15 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP203_HArray1OfClassifiedItem;
-class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
+%nodefaultctor StepAP203_HArray1OfWorkItem;
+class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfClassifiedItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP203_HArray1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfClassifiedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_ClassifiedItem &V);
+		StepAP203_HArray1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_WorkItem &V);
 		%feature("autodoc", "1");
-		void Init(const StepAP203_ClassifiedItem &V);
+		void Init(const StepAP203_WorkItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1227,33 +1362,66 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_ClassifiedItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP203_WorkItem &Value);
 		%feature("autodoc", "1");
-		const StepAP203_ClassifiedItem & Value(const Standard_Integer Index) const;
+		const StepAP203_WorkItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP203_ClassifiedItem & ChangeValue(const Standard_Integer Index);
+		StepAP203_WorkItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const StepAP203_Array1OfClassifiedItem & Array1() const;
+		const StepAP203_Array1OfWorkItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP203_Array1OfClassifiedItem & ChangeArray1();
+		StepAP203_Array1OfWorkItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP203_HArray1OfClassifiedItem {
-	Handle_StepAP203_HArray1OfClassifiedItem GetHandle() {
-	return *(Handle_StepAP203_HArray1OfClassifiedItem*) &$self;
+%extend StepAP203_HArray1OfWorkItem {
+	Handle_StepAP203_HArray1OfWorkItem GetHandle() {
+	return *(Handle_StepAP203_HArray1OfWorkItem*) &$self;
 	}
 };
-%extend StepAP203_HArray1OfClassifiedItem {
+%extend StepAP203_HArray1OfWorkItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP203_HArray1OfClassifiedItem {
-	~StepAP203_HArray1OfClassifiedItem() {
+%extend StepAP203_HArray1OfWorkItem {
+	~StepAP203_HArray1OfWorkItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfClassifiedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfWorkItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_CcDesignCertification;
+class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_CcDesignCertification();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Certification &aCertificationAssignment_AssignedCertification, const Handle_StepAP203_HArray1OfCertifiedItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfCertifiedItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP203_HArray1OfCertifiedItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP203_CcDesignCertification {
+	Handle_StepAP203_CcDesignCertification GetHandle() {
+	return *(Handle_StepAP203_CcDesignCertification*) &$self;
+	}
+};
+%extend StepAP203_CcDesignCertification {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP203_CcDesignCertification {
+	~StepAP203_CcDesignCertification() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignCertification\n");}
 	}
 };
 
@@ -1333,68 +1501,49 @@ class StepAP203_WorkItem : public StepData_SelectType {
 };
 
 
-%nodefaultctor StepAP203_StartWork;
-class StepAP203_StartWork : public StepBasic_ActionAssignment {
+%nodefaultctor StepAP203_HArray1OfContractedItem;
+class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_StartWork();
+		StepAP203_HArray1OfContractedItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
+		StepAP203_HArray1OfContractedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_ContractedItem &V);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfWorkItem Items() const;
+		void Init(const StepAP203_ContractedItem &V);
 		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP203_ContractedItem &Value);
+		%feature("autodoc", "1");
+		const StepAP203_ContractedItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP203_ContractedItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfContractedItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP203_Array1OfContractedItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP203_StartWork {
-	Handle_StepAP203_StartWork GetHandle() {
-	return *(Handle_StepAP203_StartWork*) &$self;
+%extend StepAP203_HArray1OfContractedItem {
+	Handle_StepAP203_HArray1OfContractedItem GetHandle() {
+	return *(Handle_StepAP203_HArray1OfContractedItem*) &$self;
 	}
 };
-%extend StepAP203_StartWork {
+%extend StepAP203_HArray1OfContractedItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP203_StartWork {
-	~StepAP203_StartWork() {
+%extend StepAP203_HArray1OfContractedItem {
+	~StepAP203_HArray1OfContractedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_StartWork\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_CcDesignApproval;
-class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_CcDesignApproval();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Approval &aApprovalAssignment_AssignedApproval, const Handle_StepAP203_HArray1OfApprovedItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfApprovedItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfApprovedItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP203_CcDesignApproval {
-	Handle_StepAP203_CcDesignApproval GetHandle() {
-	return *(Handle_StepAP203_CcDesignApproval*) &$self;
-	}
-};
-%extend StepAP203_CcDesignApproval {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP203_CcDesignApproval {
-	~StepAP203_CcDesignApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignApproval\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfContractedItem\n");}
 	}
 };
 
@@ -1442,39 +1591,6 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 	~StepAP203_HArray1OfPersonOrganizationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfPersonOrganizationItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_CcDesignContract;
-class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_CcDesignContract();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Contract &aContractAssignment_AssignedContract, const Handle_StepAP203_HArray1OfContractedItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfContractedItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfContractedItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP203_CcDesignContract {
-	Handle_StepAP203_CcDesignContract GetHandle() {
-	return *(Handle_StepAP203_CcDesignContract*) &$self;
-	}
-};
-%extend StepAP203_CcDesignContract {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP203_CcDesignContract {
-	~StepAP203_CcDesignContract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignContract\n");}
 	}
 };
 
@@ -1555,36 +1671,23 @@ class StepAP203_Array1OfStartRequestItem {
 };
 
 
-%nodefaultctor StepAP203_ClassifiedItem;
-class StepAP203_ClassifiedItem : public StepData_SelectType {
+%nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
+class StepAP203_Array1OfPersonOrganizationItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_ClassifiedItem();
+		StepAP203_Array1OfPersonOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepAP203_Array1OfPersonOrganizationItem(const StepAP203_PersonOrganizationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+		void Init(const StepAP203_PersonOrganizationItem &V);
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage AssemblyComponentUsage() const;
-
-};
-%extend StepAP203_ClassifiedItem {
-	~StepAP203_ClassifiedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_ClassifiedItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_HArray1OfWorkItem;
-class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
-	public:
+		void Destroy();
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up);
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		StepAP203_HArray1OfWorkItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP203_WorkItem &V);
+		const StepAP203_Array1OfPersonOrganizationItem & Assign(const StepAP203_Array1OfPersonOrganizationItem &Other);
 		%feature("autodoc", "1");
-		void Init(const StepAP203_WorkItem &V);
+		const StepAP203_Array1OfPersonOrganizationItem & operator=(const StepAP203_Array1OfPersonOrganizationItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1592,33 +1695,54 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_WorkItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP203_PersonOrganizationItem &Value);
 		%feature("autodoc", "1");
-		const StepAP203_WorkItem & Value(const Standard_Integer Index) const;
+		const StepAP203_PersonOrganizationItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP203_WorkItem & ChangeValue(const Standard_Integer Index);
+		const StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP203_Array1OfWorkItem & Array1() const;
+		StepAP203_PersonOrganizationItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP203_Array1OfWorkItem & ChangeArray1();
+		StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index);
+
+};
+%extend StepAP203_Array1OfPersonOrganizationItem {
+	~StepAP203_Array1OfPersonOrganizationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP203_Change;
+class StepAP203_Change : public StepBasic_ActionAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_Change();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfWorkItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP203_HArray1OfWorkItem {
-	Handle_StepAP203_HArray1OfWorkItem GetHandle() {
-	return *(Handle_StepAP203_HArray1OfWorkItem*) &$self;
+%extend StepAP203_Change {
+	Handle_StepAP203_Change GetHandle() {
+	return *(Handle_StepAP203_Change*) &$self;
 	}
 };
-%extend StepAP203_HArray1OfWorkItem {
+%extend StepAP203_Change {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP203_HArray1OfWorkItem {
-	~StepAP203_HArray1OfWorkItem() {
+%extend StepAP203_Change {
+	~StepAP203_Change() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfWorkItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_Change\n");}
 	}
 };
 
@@ -1699,58 +1823,6 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 	~StepAP203_StartRequest() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP203_StartRequest\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_CertifiedItem;
-class StepAP203_CertifiedItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_CertifiedItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship SuppliedPartRelationship() const;
-
-};
-%extend StepAP203_CertifiedItem {
-	~StepAP203_CertifiedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_CertifiedItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_Change;
-class StepAP203_Change : public StepBasic_ActionAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_Change();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfWorkItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP203_Change {
-	Handle_StepAP203_Change GetHandle() {
-	return *(Handle_StepAP203_Change*) &$self;
-	}
-};
-%extend StepAP203_Change {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP203_Change {
-	~StepAP203_Change() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_Change\n");}
 	}
 };
 
@@ -1837,54 +1909,78 @@ class StepAP203_Array1OfSpecifiedItem {
 };
 
 
-%nodefaultctor StepAP203_CcDesignCertification;
-class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment {
+%nodefaultctor StepAP203_CcDesignApproval;
+class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_CcDesignCertification();
+		StepAP203_CcDesignApproval();
 		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Certification &aCertificationAssignment_AssignedCertification, const Handle_StepAP203_HArray1OfCertifiedItem &aItems);
+		void Init(const Handle_StepBasic_Approval &aApprovalAssignment_AssignedApproval, const Handle_StepAP203_HArray1OfApprovedItem &aItems);
 		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfCertifiedItem Items() const;
+		Handle_StepAP203_HArray1OfApprovedItem Items() const;
 		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfCertifiedItem &Items);
+		void SetItems(const Handle_StepAP203_HArray1OfApprovedItem &Items);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP203_CcDesignCertification {
-	Handle_StepAP203_CcDesignCertification GetHandle() {
-	return *(Handle_StepAP203_CcDesignCertification*) &$self;
+%extend StepAP203_CcDesignApproval {
+	Handle_StepAP203_CcDesignApproval GetHandle() {
+	return *(Handle_StepAP203_CcDesignApproval*) &$self;
 	}
 };
-%extend StepAP203_CcDesignCertification {
+%extend StepAP203_CcDesignApproval {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP203_CcDesignCertification {
-	~StepAP203_CcDesignCertification() {
+%extend StepAP203_CcDesignApproval {
+	~StepAP203_CcDesignApproval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignCertification\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignApproval\n");}
 	}
 };
 
 
-%nodefaultctor StepAP203_ChangeRequestItem;
-class StepAP203_ChangeRequestItem : public StepData_SelectType {
+%nodefaultctor StepAP203_Array1OfDateTimeItem;
+class StepAP203_Array1OfDateTimeItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP203_ChangeRequestItem();
+		StepAP203_Array1OfDateTimeItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepAP203_Array1OfDateTimeItem(const StepAP203_DateTimeItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+		void Init(const StepAP203_DateTimeItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfDateTimeItem & Assign(const StepAP203_Array1OfDateTimeItem &Other);
+		%feature("autodoc", "1");
+		const StepAP203_Array1OfDateTimeItem & operator=(const StepAP203_Array1OfDateTimeItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP203_DateTimeItem &Value);
+		%feature("autodoc", "1");
+		const StepAP203_DateTimeItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP203_DateTimeItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP203_DateTimeItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP203_DateTimeItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP203_ChangeRequestItem {
-	~StepAP203_ChangeRequestItem() {
+%extend StepAP203_Array1OfDateTimeItem {
+	~StepAP203_Array1OfDateTimeItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequestItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");}
 	}
 };
 
@@ -1965,6 +2061,39 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 };
 
 
+%nodefaultctor StepAP203_CcDesignContract;
+class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_CcDesignContract();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Contract &aContractAssignment_AssignedContract, const Handle_StepAP203_HArray1OfContractedItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfContractedItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP203_HArray1OfContractedItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP203_CcDesignContract {
+	Handle_StepAP203_CcDesignContract GetHandle() {
+	return *(Handle_StepAP203_CcDesignContract*) &$self;
+	}
+};
+%extend StepAP203_CcDesignContract {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP203_CcDesignContract {
+	~StepAP203_CcDesignContract() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignContract\n");}
+	}
+};
+
+
 %nodefaultctor StepAP203_HArray1OfDateTimeItem;
 class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 	public:
@@ -2012,49 +2141,6 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP203_Array1OfDateTimeItem;
-class StepAP203_Array1OfDateTimeItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_Array1OfDateTimeItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP203_Array1OfDateTimeItem(const StepAP203_DateTimeItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP203_DateTimeItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfDateTimeItem & Assign(const StepAP203_Array1OfDateTimeItem &Other);
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfDateTimeItem & operator=(const StepAP203_Array1OfDateTimeItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_DateTimeItem &Value);
-		%feature("autodoc", "1");
-		const StepAP203_DateTimeItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP203_DateTimeItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP203_DateTimeItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP203_DateTimeItem & operator()(const Standard_Integer Index);
-
-};
-%extend StepAP203_Array1OfDateTimeItem {
-	~StepAP203_Array1OfDateTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");}
-	}
-};
-
-
 %nodefaultctor StepAP203_DateTimeItem;
 class StepAP203_DateTimeItem : public StepData_SelectType {
 	public:
@@ -2086,91 +2172,5 @@ class StepAP203_DateTimeItem : public StepData_SelectType {
 	~StepAP203_DateTimeItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP203_DateTimeItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_Array1OfCertifiedItem;
-class StepAP203_Array1OfCertifiedItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_Array1OfCertifiedItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP203_Array1OfCertifiedItem(const StepAP203_CertifiedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP203_CertifiedItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfCertifiedItem & Assign(const StepAP203_Array1OfCertifiedItem &Other);
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfCertifiedItem & operator=(const StepAP203_Array1OfCertifiedItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_CertifiedItem &Value);
-		%feature("autodoc", "1");
-		const StepAP203_CertifiedItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP203_CertifiedItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP203_CertifiedItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP203_CertifiedItem & operator()(const Standard_Integer Index);
-
-};
-%extend StepAP203_Array1OfCertifiedItem {
-	~StepAP203_Array1OfCertifiedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
-class StepAP203_Array1OfPersonOrganizationItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_Array1OfPersonOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP203_Array1OfPersonOrganizationItem(const StepAP203_PersonOrganizationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP203_PersonOrganizationItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfPersonOrganizationItem & Assign(const StepAP203_Array1OfPersonOrganizationItem &Other);
-		%feature("autodoc", "1");
-		const StepAP203_Array1OfPersonOrganizationItem & operator=(const StepAP203_Array1OfPersonOrganizationItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP203_PersonOrganizationItem &Value);
-		%feature("autodoc", "1");
-		const StepAP203_PersonOrganizationItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP203_PersonOrganizationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP203_PersonOrganizationItem & operator()(const Standard_Integer Index);
-
-};
-%extend StepAP203_Array1OfPersonOrganizationItem {
-	~StepAP203_Array1OfPersonOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");}
 	}
 };

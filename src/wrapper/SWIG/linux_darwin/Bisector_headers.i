@@ -65,6 +65,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<IntRes2d_Domain.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
@@ -73,5 +74,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Geom2d_Point.hxx>
 #include<Handle_Geom2d_TrimmedCurve.hxx>
 #include<Bisector.hxx>
-#include<IntRes2d_Domain.hxx>
 %}

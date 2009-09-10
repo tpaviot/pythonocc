@@ -1,5 +1,5 @@
 %rename(Handle_math_SingularMatrix) Handle_math_SingularMatrix;
-%rename(math_FunctionSample) math_FunctionSample;
+%rename(math_DoubleTabOfReal) math_DoubleTabOfReal;
 %rename(math_Array1OfValueAndWeight) math_Array1OfValueAndWeight;
 %rename(math_BrentMinimum) math_BrentMinimum;
 %rename(math_SingleTabOfInteger) math_SingleTabOfInteger;
@@ -21,9 +21,10 @@
 %rename(math_ComputeKronrodPointsAndWeights) math_ComputeKronrodPointsAndWeights;
 %rename(math_DirectPolynomialRoots) math_DirectPolynomialRoots;
 %rename(math_NewtonFunctionRoot) math_NewtonFunctionRoot;
-%rename(math_ValueAndWeight) math_ValueAndWeight;
+%rename(math_MultipleVarFunction) math_MultipleVarFunction;
 %rename(math_FunctionError) math_FunctionError;
 %rename(math_BracketedRoot) math_BracketedRoot;
+%rename(math_FunctionSample) math_FunctionSample;
 %rename(math_FunctionAllRoots) math_FunctionAllRoots;
 %rename(math_FRPR) math_FRPR;
 %rename(math_GaussLeastSquare) math_GaussLeastSquare;
@@ -44,7 +45,7 @@
 %rename(math_IntegerRandom) math_IntegerRandom;
 %rename(math_OK) math_OK;
 %rename(math_IntegerVector) math_IntegerVector;
-%rename(math_MultipleVarFunction) math_MultipleVarFunction;
+%rename(math_ValueAndWeight) math_ValueAndWeight;
 %rename(math_SingularMatrix) math_SingularMatrix;
 %rename(math_CompareOfValueAndWeight) math_CompareOfValueAndWeight;
 %rename(math_QuickSortOfValueAndWeight) math_QuickSortOfValueAndWeight;
@@ -53,6 +54,5 @@
 %rename(math_FunctionRoots) math_FunctionRoots;
 %rename(math_GaussMultipleIntegration) math_GaussMultipleIntegration;
 %rename(math_Crout) math_Crout;
-%rename(math_DoubleTabOfReal) math_DoubleTabOfReal;
 %rename(math_Jacobi) math_Jacobi;
 %rename(math_Householder) math_Householder;

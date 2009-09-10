@@ -204,7 +204,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<TCollection_AsciiString.hxx>
 #include<Handle_TCollection_HExtendedString.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<TCollection_ExtendedString.hxx>
 %}

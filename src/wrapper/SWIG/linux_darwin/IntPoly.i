@@ -35,6 +35,36 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
+%nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
+class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt* GetObject() {
+	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
 class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollection_MapNode {
 	public:
@@ -121,36 +151,6 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
-class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt* GetObject() {
-	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
-	}
-};
-%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
 	}
 };
 
@@ -254,8 +254,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 		IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const gp_Pnt &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		gp_Pnt & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -319,25 +329,6 @@ class IntPoly_ShapeSection {
 	~IntPoly_ShapeSection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntPoly_ShapeSection\n");}
-	}
-};
-
-
-%nodefaultctor IntPoly_PntHasher;
-class IntPoly_PntHasher {
-	public:
-		%feature("autodoc", "1");
-		IntPoly_PntHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
-
-};
-%extend IntPoly_PntHasher {
-	~IntPoly_PntHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_PntHasher\n");}
 	}
 };
 
@@ -484,6 +475,25 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor IntPoly_PntHasher;
+class IntPoly_PntHasher {
+	public:
+		%feature("autodoc", "1");
+		IntPoly_PntHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const gp_Pnt &Point, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
+
+};
+%extend IntPoly_PntHasher {
+	~IntPoly_PntHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntPoly_PntHasher\n");}
+	}
+};
+
+
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 	public:
@@ -491,8 +501,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		gp_Pnt2d & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");

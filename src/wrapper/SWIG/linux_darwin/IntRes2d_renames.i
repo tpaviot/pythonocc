@@ -1,6 +1,6 @@
 %rename(IntRes2d_Outside) IntRes2d_Outside;
 %rename(IntRes2d_In) IntRes2d_In;
-%rename(IntRes2d_Intersection) IntRes2d_Intersection;
+%rename(IntRes2d_SequenceOfIntersectionPoint) IntRes2d_SequenceOfIntersectionPoint;
 %rename(IntRes2d_Out) IntRes2d_Out;
 %rename(IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint) IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
 %rename(IntRes2d_Transition) IntRes2d_Transition;
@@ -10,8 +10,8 @@
 %rename(IntRes2d_Undecided) IntRes2d_Undecided;
 %rename(IntRes2d_End) IntRes2d_End;
 %rename(Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment) Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
+%rename(IntRes2d_Intersection) IntRes2d_Intersection;
 %rename(IntRes2d_IntersectionSegment) IntRes2d_IntersectionSegment;
-%rename(IntRes2d_SequenceOfIntersectionPoint) IntRes2d_SequenceOfIntersectionPoint;
 %rename(IntRes2d_IntersectionPoint) IntRes2d_IntersectionPoint;
 %rename(IntRes2d_Touch) IntRes2d_Touch;
 %rename(IntRes2d_Domain) IntRes2d_Domain;

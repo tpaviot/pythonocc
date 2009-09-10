@@ -22,7 +22,7 @@
 %rename(gp_Torus) gp_Torus;
 %rename(gp_Ax3) gp_Ax3;
 %rename(gp_Ax2d) gp_Ax2d;
-%rename(gp_Hypr) gp_Hypr;
+%rename(gp_Parab) gp_Parab;
 %rename(gp_XYZ) gp_XYZ;
 %rename(gp_CompoundTrsf) gp_CompoundTrsf;
 %rename(gp_Trsf2d) gp_Trsf2d;
@@ -37,7 +37,7 @@
 %rename(gp_PntMirror) gp_PntMirror;
 %rename(gp_Hypr2d) gp_Hypr2d;
 %rename(gp_Lin2d) gp_Lin2d;
-%rename(gp_Parab) gp_Parab;
+%rename(gp_Hypr) gp_Hypr;
 %rename(gp_Identity) gp_Identity;
 %rename(gp_Sphere) gp_Sphere;
 %rename(gp_GTrsf) gp_GTrsf;

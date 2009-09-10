@@ -120,6 +120,63 @@ class Intrv_Intervals {
 };
 
 
+%nodefaultctor Intrv_SequenceOfInterval;
+class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Intrv_SequenceOfInterval();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Intrv_SequenceOfInterval & Assign(const Intrv_SequenceOfInterval &Other);
+		%feature("autodoc", "1");
+		const Intrv_SequenceOfInterval & operator=(const Intrv_SequenceOfInterval &Other);
+		%feature("autodoc", "1");
+		void Append(const Intrv_Interval &T);
+		%feature("autodoc", "1");
+		void Append(Intrv_SequenceOfInterval & S);
+		%feature("autodoc", "1");
+		void Prepend(const Intrv_Interval &T);
+		%feature("autodoc", "1");
+		void Prepend(Intrv_SequenceOfInterval & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Intrv_Interval &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Intrv_Interval &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
+		%feature("autodoc", "1");
+		const Intrv_Interval & First() const;
+		%feature("autodoc", "1");
+		const Intrv_Interval & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
+		%feature("autodoc", "1");
+		const Intrv_Interval & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Intrv_Interval & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Intrv_Interval &I);
+		%feature("autodoc", "1");
+		Intrv_Interval & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Intrv_Interval & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Intrv_SequenceOfInterval {
+	~Intrv_SequenceOfInterval() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
+	}
+};
+
+
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;
 class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 	public:
@@ -216,62 +273,5 @@ class Intrv_Interval {
 	~Intrv_Interval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Intrv_Interval\n");}
-	}
-};
-
-
-%nodefaultctor Intrv_SequenceOfInterval;
-class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Intrv_SequenceOfInterval();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Intrv_SequenceOfInterval & Assign(const Intrv_SequenceOfInterval &Other);
-		%feature("autodoc", "1");
-		const Intrv_SequenceOfInterval & operator=(const Intrv_SequenceOfInterval &Other);
-		%feature("autodoc", "1");
-		void Append(const Intrv_Interval &T);
-		%feature("autodoc", "1");
-		void Append(Intrv_SequenceOfInterval & S);
-		%feature("autodoc", "1");
-		void Prepend(const Intrv_Interval &T);
-		%feature("autodoc", "1");
-		void Prepend(Intrv_SequenceOfInterval & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Intrv_Interval &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Intrv_Interval &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
-		%feature("autodoc", "1");
-		const Intrv_Interval & First() const;
-		%feature("autodoc", "1");
-		const Intrv_Interval & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Intrv_SequenceOfInterval & S);
-		%feature("autodoc", "1");
-		const Intrv_Interval & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Intrv_Interval & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Intrv_Interval &I);
-		%feature("autodoc", "1");
-		Intrv_Interval & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Intrv_Interval & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Intrv_SequenceOfInterval {
-	~Intrv_SequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
 	}
 };

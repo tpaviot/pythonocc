@@ -10,9 +10,9 @@
 %rename(Handle_PrsMgr_PresentationManager3d) Handle_PrsMgr_PresentationManager3d;
 %rename(PrsMgr_Presentation3d) PrsMgr_Presentation3d;
 %rename(PrsMgr_Presentation) PrsMgr_Presentation;
+%rename(Handle_PrsMgr_Presentation2d) Handle_PrsMgr_Presentation2d;
 %rename(PrsMgr_PresentationManager2d) PrsMgr_PresentationManager2d;
 %rename(PrsMgr_PresentableObject) PrsMgr_PresentableObject;
-%rename(Handle_PrsMgr_Presentation2d) Handle_PrsMgr_Presentation2d;
 %rename(Handle_PrsMgr_PresentationManager) Handle_PrsMgr_PresentationManager;
 %rename(PrsMgr_PresentationManager) PrsMgr_PresentationManager;
 %rename(PrsMgr_KOP_2D) PrsMgr_KOP_2D;

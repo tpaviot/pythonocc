@@ -7,7 +7,7 @@
 %rename(VrmlConverter_LineAspect) VrmlConverter_LineAspect;
 %rename(VrmlConverter_ShadingAspect) VrmlConverter_ShadingAspect;
 %rename(VrmlConverter_NoLight) VrmlConverter_NoLight;
-%rename(VrmlConverter_Drawer) VrmlConverter_Drawer;
+%rename(VrmlConverter_PointAspect) VrmlConverter_PointAspect;
 %rename(VrmlConverter_PerspectiveCamera) VrmlConverter_PerspectiveCamera;
 %rename(VrmlConverter_PointLight) VrmlConverter_PointLight;
 %rename(VrmlConverter_Curve) VrmlConverter_Curve;
@@ -15,7 +15,7 @@
 %rename(VrmlConverter_DirectionLight) VrmlConverter_DirectionLight;
 %rename(VrmlConverter_NoCamera) VrmlConverter_NoCamera;
 %rename(VrmlConverter_DeflectionCurve) VrmlConverter_DeflectionCurve;
-%rename(VrmlConverter_PointAspect) VrmlConverter_PointAspect;
+%rename(VrmlConverter_Drawer) VrmlConverter_Drawer;
 %rename(VrmlConverter_WFRestrictedFace) VrmlConverter_WFRestrictedFace;
 %rename(Handle_VrmlConverter_PointAspect) Handle_VrmlConverter_PointAspect;
 %rename(Handle_VrmlConverter_Drawer) Handle_VrmlConverter_Drawer;

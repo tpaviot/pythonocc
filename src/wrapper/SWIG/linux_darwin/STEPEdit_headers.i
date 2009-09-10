@@ -121,13 +121,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TCollection_AsciiString.hxx>
-#include<Handle_IFSelect_EditForm.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_Interface_InterfaceModel.hxx>
 #include<STEPEdit.hxx>
 #include<Handle_Interface_Protocol.hxx>
 #include<Handle_StepData_StepModel.hxx>
 #include<Handle_IFSelect_Signature.hxx>
 #include<Handle_IFSelect_SelectSignature.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<Handle_IFSelect_EditForm.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_Interface_InterfaceModel.hxx>
 %}

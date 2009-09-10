@@ -79,14 +79,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Shape.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<TDF_LabelSequence.hxx>
-#include<Handle_TColStd_HSequenceOfExtendedString.hxx>
 #include<TopLoc_Location.hxx>
 #include<TColStd_SequenceOfHAsciiString.hxx>
 #include<TDF_AttributeSequence.hxx>
 #include<TopTools_SequenceOfShape.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<Handle_TColStd_HSequenceOfExtendedString.hxx>
 #include<Handle_TDF_DataSet.hxx>
-#include<gp_Pnt.hxx>
 #include<Quantity_Color.hxx>
+#include<gp_Pnt.hxx>
 %}

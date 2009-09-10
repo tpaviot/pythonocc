@@ -578,8 +578,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Viewer_Viewer.hxx>
 %};
 
-%import Standard.i
 %import MMgt.i
+%import Standard.i
 %import Aspect.i
 %import Viewer.i
 %import Quantity.i

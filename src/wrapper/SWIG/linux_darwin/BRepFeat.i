@@ -33,18 +33,18 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include BRepFeat_headers.i
 
 
+enum BRepFeat_Status {
+	BRepFeat_NoError,
+	BRepFeat_InvalidPlacement,
+	BRepFeat_HoleTooLong,
+	};
+
 enum BRepFeat_PerfSelection {
 	BRepFeat_NoSelection,
 	BRepFeat_SelectionFU,
 	BRepFeat_SelectionU,
 	BRepFeat_SelectionSh,
 	BRepFeat_SelectionShU,
-	};
-
-enum BRepFeat_Status {
-	BRepFeat_NoError,
-	BRepFeat_InvalidPlacement,
-	BRepFeat_HoleTooLong,
 	};
 
 enum BRepFeat_StatusError {
@@ -80,6 +80,62 @@ enum BRepFeat_StatusError {
 
 
 
+%nodefaultctor BRepFeat_Builder;
+class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S, const TopoDS_Shape &T);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
+
+};
+%extend BRepFeat_Builder {
+	~BRepFeat_Builder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFeat_Builder\n");}
+	}
+};
+
+
+%nodefaultctor BRepFeat_MakeCylindricalHole;
+class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
+	public:
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole();
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S, const gp_Ax1 &Axis);
+		%feature("autodoc", "1");
+		void Init(const gp_Ax1 &Axis);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S, const gp_Ax1 &Axis);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Radius);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		BRepFeat_Status Status() const;
+		%feature("autodoc", "1");
+		virtual		void Build();
+
+};
+%extend BRepFeat_MakeCylindricalHole {
+	~BRepFeat_MakeCylindricalHole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");}
+	}
+};
+
+
 %nodefaultctor BRepFeat;
 class BRepFeat {
 	public:
@@ -107,25 +163,6 @@ class BRepFeat {
 	~BRepFeat() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
-	}
-};
-
-
-%nodefaultctor BRepFeat_Builder;
-class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const TopoDS_Shape &T);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
-
-};
-%extend BRepFeat_Builder {
-	~BRepFeat_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_Builder\n");}
 	}
 };
 
@@ -472,43 +509,6 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 	~BRepFeat_Gluer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_Gluer\n");}
-	}
-};
-
-
-%nodefaultctor BRepFeat_MakeCylindricalHole;
-class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole();
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape &S, const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Init(const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const gp_Ax1 &Axis);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		BRepFeat_Status Status() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-
-};
-%extend BRepFeat_MakeCylindricalHole {
-	~BRepFeat_MakeCylindricalHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");}
 	}
 };
 

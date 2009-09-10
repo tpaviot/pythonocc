@@ -35,31 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Geom2dAPI_PointsToBSpline;
-class Geom2dAPI_PointsToBSpline {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline();
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		Geom2dAPI_PointsToBSpline(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		void Init(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BSplineCurve & Curve() const;
-
-};
-%extend Geom2dAPI_PointsToBSpline {
-	~Geom2dAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dAPI_InterCurveCurve;
 class Geom2dAPI_InterCurveCurve {
 	public:
@@ -95,60 +70,27 @@ class Geom2dAPI_InterCurveCurve {
 };
 
 
-%nodefaultctor Geom2dAPI_ExtremaCurveCurve;
-class Geom2dAPI_ExtremaCurveCurve {
+%nodefaultctor Geom2dAPI_PointsToBSpline;
+class Geom2dAPI_PointsToBSpline {
 	public:
 		%feature("autodoc", "1");
-		Geom2dAPI_ExtremaCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
+		Geom2dAPI_PointsToBSpline();
 		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
+		Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Geom2dAPI_PointsToBSpline(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
+		void Init(const TColgp_Array1OfPnt2d &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
-		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtCC2d & Extrema() const;
-
-};
-%extend Geom2dAPI_ExtremaCurveCurve {
-	~Geom2dAPI_ExtremaCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dAPI_Interpolate;
-class Geom2dAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
+		void Init(const TColStd_Array1OfReal &YValues, const Standard_Real X0, const Standard_Real DX, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol2D=9.99999999999999954748111825886258685613938723691e-7);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
 
 };
-%extend Geom2dAPI_Interpolate {
-	~Geom2dAPI_Interpolate() {
+%extend Geom2dAPI_PointsToBSpline {
+	~Geom2dAPI_PointsToBSpline() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
 	}
 };
 
@@ -190,5 +132,63 @@ class Geom2dAPI_ProjectPointOnCurve {
 	~Geom2dAPI_ProjectPointOnCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dAPI_Interpolate;
+class Geom2dAPI_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
+		%feature("autodoc", "1");
+		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend Geom2dAPI_Interpolate {
+	~Geom2dAPI_Interpolate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dAPI_ExtremaCurveCurve;
+class Geom2dAPI_ExtremaCurveCurve {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_ExtremaCurveCurve(const Handle_Geom2d_Curve &C1, const Handle_Geom2d_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void NearestPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
+		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtCC2d & Extrema() const;
+
+};
+%extend Geom2dAPI_ExtremaCurveCurve {
+	~Geom2dAPI_ExtremaCurveCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
 	}
 };

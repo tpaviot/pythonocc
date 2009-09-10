@@ -78,91 +78,6 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 };
 
 
-%nodefaultctor IntAna_ListIteratorOfListOfCurve;
-class IntAna_ListIteratorOfListOfCurve {
-	public:
-		%feature("autodoc", "1");
-		IntAna_ListIteratorOfListOfCurve();
-		%feature("autodoc", "1");
-		IntAna_ListIteratorOfListOfCurve(const IntAna_ListOfCurve &L);
-		%feature("autodoc", "1");
-		void Initialize(const IntAna_ListOfCurve &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		IntAna_Curve & Value() const;
-
-};
-%extend IntAna_ListIteratorOfListOfCurve {
-	~IntAna_ListIteratorOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor IntAna_Int3Pln;
-class IntAna_Int3Pln {
-	public:
-		%feature("autodoc", "1");
-		IntAna_Int3Pln();
-		%feature("autodoc", "1");
-		IntAna_Int3Pln(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
-
-};
-%extend IntAna_Int3Pln {
-	~IntAna_Int3Pln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
-	}
-};
-
-
-%nodefaultctor IntAna_Quadric;
-class IntAna_Quadric {
-	public:
-		%feature("autodoc", "1");
-		IntAna_Quadric();
-		%feature("autodoc", "1");
-		IntAna_Quadric(const gp_Pln &P);
-		%feature("autodoc", "1");
-		IntAna_Quadric(const gp_Sphere &Sph);
-		%feature("autodoc", "1");
-		IntAna_Quadric(const gp_Cylinder &Cyl);
-		%feature("autodoc", "1");
-		IntAna_Quadric(const gp_Cone &Cone);
-		%feature("autodoc", "1");
-		void SetQuadric(const gp_Pln &P);
-		%feature("autodoc", "1");
-		void SetQuadric(const gp_Sphere &Sph);
-		%feature("autodoc", "1");
-		void SetQuadric(const gp_Cone &Con);
-		%feature("autodoc", "1");
-		void SetQuadric(const gp_Cylinder &Cyl);
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","NewCoefficients(const Axis)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
-
-};
-%extend IntAna_Quadric {
-	~IntAna_Quadric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
-	}
-};
-
-
 %nodefaultctor IntAna_QuadQuadGeo;
 class IntAna_QuadQuadGeo {
 	public:
@@ -236,6 +151,138 @@ class IntAna_QuadQuadGeo {
 	~IntAna_QuadQuadGeo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IntAna_QuadQuadGeo\n");}
+	}
+};
+
+
+%nodefaultctor IntAna_ListOfCurve;
+class IntAna_ListOfCurve {
+	public:
+		%feature("autodoc", "1");
+		IntAna_ListOfCurve();
+		%feature("autodoc", "1");
+		void Assign(const IntAna_ListOfCurve &Other);
+		%feature("autodoc", "1");
+		void operator=(const IntAna_ListOfCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const IntAna_Curve &I);
+		%feature("autodoc", "1");
+		void Prepend(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & theIt);
+		%feature("autodoc", "1");
+		void Prepend(IntAna_ListOfCurve & Other);
+		%feature("autodoc", "1");
+		void Append(const IntAna_Curve &I);
+		%feature("autodoc", "1");
+		void Append(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & theIt);
+		%feature("autodoc", "1");
+		void Append(IntAna_ListOfCurve & Other);
+		%feature("autodoc", "1");
+		IntAna_Curve & First() const;
+		%feature("autodoc", "1");
+		IntAna_Curve & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(IntAna_ListIteratorOfListOfCurve & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & It);
+		%feature("autodoc", "1");
+		void InsertBefore(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & It);
+		%feature("autodoc", "1");
+		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
+
+};
+%extend IntAna_ListOfCurve {
+	~IntAna_ListOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor IntAna_Int3Pln;
+class IntAna_Int3Pln {
+	public:
+		%feature("autodoc", "1");
+		IntAna_Int3Pln();
+		%feature("autodoc", "1");
+		IntAna_Int3Pln(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pln &P1, const gp_Pln &P2, const gp_Pln &P3);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Value() const;
+
+};
+%extend IntAna_Int3Pln {
+	~IntAna_Int3Pln() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
+	}
+};
+
+
+%nodefaultctor IntAna_ListIteratorOfListOfCurve;
+class IntAna_ListIteratorOfListOfCurve {
+	public:
+		%feature("autodoc", "1");
+		IntAna_ListIteratorOfListOfCurve();
+		%feature("autodoc", "1");
+		IntAna_ListIteratorOfListOfCurve(const IntAna_ListOfCurve &L);
+		%feature("autodoc", "1");
+		void Initialize(const IntAna_ListOfCurve &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		IntAna_Curve & Value() const;
+
+};
+%extend IntAna_ListIteratorOfListOfCurve {
+	~IntAna_ListIteratorOfListOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor IntAna_ListNodeOfListOfCurve;
+class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntAna_ListNodeOfListOfCurve(const IntAna_Curve &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntAna_Curve & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntAna_ListNodeOfListOfCurve {
+	Handle_IntAna_ListNodeOfListOfCurve GetHandle() {
+	return *(Handle_IntAna_ListNodeOfListOfCurve*) &$self;
+	}
+};
+%extend IntAna_ListNodeOfListOfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IntAna_ListNodeOfListOfCurve {
+	~IntAna_ListNodeOfListOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
 	}
 };
 
@@ -395,84 +442,37 @@ class IntAna_IntConicQuad {
 };
 
 
-%nodefaultctor IntAna_ListOfCurve;
-class IntAna_ListOfCurve {
+%nodefaultctor IntAna_Quadric;
+class IntAna_Quadric {
 	public:
 		%feature("autodoc", "1");
-		IntAna_ListOfCurve();
+		IntAna_Quadric();
 		%feature("autodoc", "1");
-		void Assign(const IntAna_ListOfCurve &Other);
+		IntAna_Quadric(const gp_Pln &P);
 		%feature("autodoc", "1");
-		void operator=(const IntAna_ListOfCurve &Other);
+		IntAna_Quadric(const gp_Sphere &Sph);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		IntAna_Quadric(const gp_Cylinder &Cyl);
 		%feature("autodoc", "1");
-		void Clear();
+		IntAna_Quadric(const gp_Cone &Cone);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		void SetQuadric(const gp_Pln &P);
 		%feature("autodoc", "1");
-		void Prepend(const IntAna_Curve &I);
+		void SetQuadric(const gp_Sphere &Sph);
 		%feature("autodoc", "1");
-		void Prepend(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & theIt);
+		void SetQuadric(const gp_Cone &Con);
 		%feature("autodoc", "1");
-		void Prepend(IntAna_ListOfCurve & Other);
-		%feature("autodoc", "1");
-		void Append(const IntAna_Curve &I);
-		%feature("autodoc", "1");
-		void Append(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & theIt);
-		%feature("autodoc", "1");
-		void Append(IntAna_ListOfCurve & Other);
-		%feature("autodoc", "1");
-		IntAna_Curve & First() const;
-		%feature("autodoc", "1");
-		IntAna_Curve & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(IntAna_ListIteratorOfListOfCurve & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & It);
-		%feature("autodoc", "1");
-		void InsertBefore(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const IntAna_Curve &I, IntAna_ListIteratorOfListOfCurve & It);
-		%feature("autodoc", "1");
-		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
+		void SetQuadric(const gp_Cylinder &Cyl);
+		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","NewCoefficients(const Axis)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
-%extend IntAna_ListOfCurve {
-	~IntAna_ListOfCurve() {
+%extend IntAna_Quadric {
+	~IntAna_Quadric() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor IntAna_ListNodeOfListOfCurve;
-class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntAna_ListNodeOfListOfCurve(const IntAna_Curve &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		IntAna_Curve & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntAna_ListNodeOfListOfCurve {
-	Handle_IntAna_ListNodeOfListOfCurve GetHandle() {
-	return *(Handle_IntAna_ListNodeOfListOfCurve*) &$self;
-	}
-};
-%extend IntAna_ListNodeOfListOfCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IntAna_ListNodeOfListOfCurve {
-	~IntAna_ListNodeOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
+	if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
 	}
 };
 

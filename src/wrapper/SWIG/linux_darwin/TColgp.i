@@ -185,36 +185,6 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColgp_HArray2OfCirc2d;
-class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d(const Handle_TColgp_HArray2OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d(const TColgp_HArray2OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d & operator=(const Handle_TColgp_HArray2OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d & operator=(const TColgp_HArray2OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray2OfCirc2d {
-	TColgp_HArray2OfCirc2d* GetObject() {
-	return (TColgp_HArray2OfCirc2d*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HArray2OfCirc2d {
-	~Handle_TColgp_HArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfCirc2d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColgp_HArray2OfLin2d;
 class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 	public:
@@ -241,36 +211,6 @@ class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 	~Handle_TColgp_HArray2OfLin2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfLin2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColgp_HSequenceOfPnt;
-class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt(const Handle_TColgp_HSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt(const TColgp_HSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & operator=(const Handle_TColgp_HSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & operator=(const TColgp_HSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfPnt {
-	TColgp_HSequenceOfPnt* GetObject() {
-	return (TColgp_HSequenceOfPnt*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HSequenceOfPnt {
-	~Handle_TColgp_HSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt\n");}
 	}
 };
 
@@ -395,6 +335,36 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqN
 };
 
 
+%nodefaultctor Handle_TColgp_HSequenceOfPnt;
+class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt(const Handle_TColgp_HSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt(const TColgp_HSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & operator=(const Handle_TColgp_HSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & operator=(const TColgp_HSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfPnt {
+	TColgp_HSequenceOfPnt* GetObject() {
+	return (TColgp_HSequenceOfPnt*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfPnt {
+	~Handle_TColgp_HSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir2d;
 class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_SeqNode {
 	public:
@@ -425,6 +395,66 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_Se
 };
 
 
+%nodefaultctor Handle_TColgp_HArray1OfDir2d;
+class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d(const Handle_TColgp_HArray1OfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d(const TColgp_HArray1OfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d & operator=(const Handle_TColgp_HArray1OfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d & operator=(const TColgp_HArray1OfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfDir2d {
+	TColgp_HArray1OfDir2d* GetObject() {
+	return (TColgp_HArray1OfDir2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfDir2d {
+	~Handle_TColgp_HArray1OfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColgp_HArray1OfLin2d;
+class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d(const Handle_TColgp_HArray1OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d(const TColgp_HArray1OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d & operator=(const Handle_TColgp_HArray1OfLin2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d & operator=(const TColgp_HArray1OfLin2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfLin2d {
+	TColgp_HArray1OfLin2d* GetObject() {
+	return (TColgp_HArray1OfLin2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfLin2d {
+	~Handle_TColgp_HArray1OfLin2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColgp_HArray2OfVec;
 class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
 	public:
@@ -451,6 +481,36 @@ class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
 	~Handle_TColgp_HArray2OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfVec\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColgp_HArray1OfDir;
+class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir(const Handle_TColgp_HArray1OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir(const TColgp_HArray1OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir & operator=(const Handle_TColgp_HArray1OfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir & operator=(const TColgp_HArray1OfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfDir {
+	TColgp_HArray1OfDir* GetObject() {
+	return (TColgp_HArray1OfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfDir {
+	~Handle_TColgp_HArray1OfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");}
 	}
 };
 
@@ -605,32 +665,32 @@ class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColgp_HArray1OfDir;
-class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColgp_HArray2OfCirc2d;
+class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir();
+		Handle_TColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir(const Handle_TColgp_HArray1OfDir &aHandle);
+		Handle_TColgp_HArray2OfCirc2d(const Handle_TColgp_HArray2OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir(const TColgp_HArray1OfDir *anItem);
+		Handle_TColgp_HArray2OfCirc2d(const TColgp_HArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir & operator=(const Handle_TColgp_HArray1OfDir &aHandle);
+		Handle_TColgp_HArray2OfCirc2d & operator=(const Handle_TColgp_HArray2OfCirc2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir & operator=(const TColgp_HArray1OfDir *anItem);
+		Handle_TColgp_HArray2OfCirc2d & operator=(const TColgp_HArray2OfCirc2d *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColgp_HArray2OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColgp_HArray1OfDir {
-	TColgp_HArray1OfDir* GetObject() {
-	return (TColgp_HArray1OfDir*)$self->Access();
+%extend Handle_TColgp_HArray2OfCirc2d {
+	TColgp_HArray2OfCirc2d* GetObject() {
+	return (TColgp_HArray2OfCirc2d*)$self->Access();
 	}
 };
-%extend Handle_TColgp_HArray1OfDir {
-	~Handle_TColgp_HArray1OfDir() {
+%extend Handle_TColgp_HArray2OfCirc2d {
+	~Handle_TColgp_HArray2OfCirc2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfCirc2d\n");}
 	}
 };
 
@@ -665,36 +725,6 @@ class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColgp_HArray1OfDir2d;
-class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d(const Handle_TColgp_HArray1OfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d(const TColgp_HArray1OfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d & operator=(const Handle_TColgp_HArray1OfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d & operator=(const TColgp_HArray1OfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfDir2d {
-	TColgp_HArray1OfDir2d* GetObject() {
-	return (TColgp_HArray1OfDir2d*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HArray1OfDir2d {
-	~Handle_TColgp_HArray1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColgp_HArray2OfXY;
 class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 	public:
@@ -725,36 +755,6 @@ class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColgp_HArray1OfLin2d;
-class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d(const Handle_TColgp_HArray1OfLin2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d(const TColgp_HArray1OfLin2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d & operator=(const Handle_TColgp_HArray1OfLin2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d & operator=(const TColgp_HArray1OfLin2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfLin2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfLin2d {
-	TColgp_HArray1OfLin2d* GetObject() {
-	return (TColgp_HArray1OfLin2d*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HArray1OfLin2d {
-	~Handle_TColgp_HArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXY;
 class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNode {
 	public:
@@ -781,36 +781,6 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNo
 	~Handle_TColgp_SequenceNodeOfSequenceOfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXY\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColgp_HArray1OfCirc2d;
-class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d();
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d(const Handle_TColgp_HArray1OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d(const TColgp_HArray1OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d & operator=(const Handle_TColgp_HArray1OfCirc2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d & operator=(const TColgp_HArray1OfCirc2d *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HArray1OfCirc2d {
-	TColgp_HArray1OfCirc2d* GetObject() {
-	return (TColgp_HArray1OfCirc2d*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HArray1OfCirc2d {
-	~Handle_TColgp_HArray1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");}
 	}
 };
 
@@ -871,6 +841,96 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_Se
 	~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColgp_HArray1OfCirc2d;
+class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d(const Handle_TColgp_HArray1OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d(const TColgp_HArray1OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d & operator=(const Handle_TColgp_HArray1OfCirc2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d & operator=(const TColgp_HArray1OfCirc2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HArray1OfCirc2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HArray1OfCirc2d {
+	TColgp_HArray1OfCirc2d* GetObject() {
+	return (TColgp_HArray1OfCirc2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HArray1OfCirc2d {
+	~Handle_TColgp_HArray1OfCirc2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColgp_HSequenceOfDir2d;
+class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d(const Handle_TColgp_HSequenceOfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d(const TColgp_HSequenceOfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d & operator=(const Handle_TColgp_HSequenceOfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d & operator=(const TColgp_HSequenceOfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfDir2d {
+	TColgp_HSequenceOfDir2d* GetObject() {
+	return (TColgp_HSequenceOfDir2d*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfDir2d {
+	~Handle_TColgp_HSequenceOfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColgp_HSequenceOfDir;
+class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir & operator=(const Handle_TColgp_HSequenceOfDir &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir & operator=(const TColgp_HSequenceOfDir *anItem);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColgp_HSequenceOfDir {
+	TColgp_HSequenceOfDir* GetObject() {
+	return (TColgp_HSequenceOfDir*)$self->Access();
+	}
+};
+%extend Handle_TColgp_HSequenceOfDir {
+	~Handle_TColgp_HSequenceOfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir\n");}
 	}
 };
 
@@ -965,62 +1025,32 @@ class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColgp_HSequenceOfDir2d;
-class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXYZ;
+class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d();
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ();
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d(const Handle_TColgp_HSequenceOfDir2d &aHandle);
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d(const TColgp_HSequenceOfDir2d *anItem);
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d & operator=(const Handle_TColgp_HSequenceOfDir2d &aHandle);
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ & operator=(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d & operator=(const TColgp_HSequenceOfDir2d *anItem);
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ & operator=(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
 		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColgp_HSequenceOfDir2d {
-	TColgp_HSequenceOfDir2d* GetObject() {
-	return (TColgp_HSequenceOfDir2d*)$self->Access();
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
+	TColgp_SequenceNodeOfSequenceOfXYZ* GetObject() {
+	return (TColgp_SequenceNodeOfSequenceOfXYZ*)$self->Access();
 	}
 };
-%extend Handle_TColgp_HSequenceOfDir2d {
-	~Handle_TColgp_HSequenceOfDir2d() {
+%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
+	~Handle_TColgp_SequenceNodeOfSequenceOfXYZ() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColgp_HSequenceOfDir;
-class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const Handle_TColgp_HSequenceOfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir(const TColgp_HSequenceOfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir & operator=(const Handle_TColgp_HSequenceOfDir &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir & operator=(const TColgp_HSequenceOfDir *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_HSequenceOfDir {
-	TColgp_HSequenceOfDir* GetObject() {
-	return (TColgp_HSequenceOfDir*)$self->Access();
-	}
-};
-%extend Handle_TColgp_HSequenceOfDir {
-	~Handle_TColgp_HSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXYZ\n");}
 	}
 };
 
@@ -1081,36 +1111,6 @@ class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 	~Handle_TColgp_HArray1OfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXYZ;
-class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ();
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ & operator=(const Handle_TColgp_SequenceNodeOfSequenceOfXYZ &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ & operator=(const TColgp_SequenceNodeOfSequenceOfXYZ *anItem);
-		%feature("autodoc", "1");
-		Handle_TColgp_SequenceNodeOfSequenceOfXYZ const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
-	TColgp_SequenceNodeOfSequenceOfXYZ* GetObject() {
-	return (TColgp_SequenceNodeOfSequenceOfXYZ*)$self->Access();
-	}
-};
-%extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
-	~Handle_TColgp_SequenceNodeOfSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXYZ\n");}
 	}
 };
 
@@ -1330,53 +1330,6 @@ class TColgp_Array1OfDir2d {
 };
 
 
-%nodefaultctor TColgp_Array2OfDir;
-class TColgp_Array2OfDir {
-	public:
-		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const gp_Dir &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfDir & operator=(const TColgp_Array2OfDir &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
-		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TColgp_Array2OfDir {
-	~TColgp_Array2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir\n");}
-	}
-};
-
-
 %nodefaultctor TColgp_SequenceOfPnt2d;
 class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
 	public:
@@ -1587,35 +1540,6 @@ class TColgp_HArray2OfDir2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
-class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Vec & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_SequenceNodeOfSequenceOfVec {
-	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
-	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
-	}
-};
-%extend TColgp_SequenceNodeOfSequenceOfVec {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_SequenceNodeOfSequenceOfVec {
-	~TColgp_SequenceNodeOfSequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");}
-	}
-};
-
-
 %nodefaultctor TColgp_SequenceOfXY;
 class TColgp_SequenceOfXY : public TCollection_BaseSequence {
 	public:
@@ -1730,6 +1654,35 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
+class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceNodeOfSequenceOfVec(const gp_Vec &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Vec & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	Handle_TColgp_SequenceNodeOfSequenceOfVec GetHandle() {
+	return *(Handle_TColgp_SequenceNodeOfSequenceOfVec*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
+	~TColgp_SequenceNodeOfSequenceOfVec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");}
+	}
+};
+
+
 %nodefaultctor TColgp_HArray2OfLin2d;
 class TColgp_HArray2OfLin2d : public MMgt_TShared {
 	public:
@@ -1783,55 +1736,49 @@ class TColgp_HArray2OfLin2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_HArray2OfDir;
-class TColgp_HArray2OfDir : public MMgt_TShared {
+%nodefaultctor TColgp_HArray1OfVec;
+class TColgp_HArray1OfVec : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir &V);
+		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec &V);
 		%feature("autodoc", "1");
-		void Init(const gp_Dir &V);
+		void Init(const gp_Vec &V);
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
 		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
+		const gp_Vec & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
+		gp_Vec & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
+		const TColgp_Array1OfVec & Array1() const;
 		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfDir & Array2() const;
-		%feature("autodoc", "1");
-		TColgp_Array2OfDir & ChangeArray2();
+		TColgp_Array1OfVec & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColgp_HArray2OfDir {
-	Handle_TColgp_HArray2OfDir GetHandle() {
-	return *(Handle_TColgp_HArray2OfDir*) &$self;
+%extend TColgp_HArray1OfVec {
+	Handle_TColgp_HArray1OfVec GetHandle() {
+	return *(Handle_TColgp_HArray1OfVec*) &$self;
 	}
 };
-%extend TColgp_HArray2OfDir {
+%extend TColgp_HArray1OfVec {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColgp_HArray2OfDir {
-	~TColgp_HArray2OfDir() {
+%extend TColgp_HArray1OfVec {
+	~TColgp_HArray1OfVec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir\n");}
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec\n");}
 	}
 };
 
@@ -2198,49 +2145,6 @@ class TColgp_HArray2OfVec2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_Array1OfXY;
-class TColgp_Array1OfXY {
-	public:
-		%feature("autodoc", "1");
-		TColgp_Array1OfXY(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_Array1OfXY(const gp_XY &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const gp_XY &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TColgp_Array1OfXY & Assign(const TColgp_Array1OfXY &Other);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfXY & operator=(const TColgp_Array1OfXY &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XY &Value);
-		%feature("autodoc", "1");
-		const gp_XY & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_XY & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_XY & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_XY & operator()(const Standard_Integer Index);
-
-};
-%extend TColgp_Array1OfXY {
-	~TColgp_Array1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXY\n");}
-	}
-};
-
-
 %nodefaultctor TColgp_HArray1OfLin2d;
 class TColgp_HArray1OfLin2d : public MMgt_TShared {
 	public:
@@ -2284,6 +2188,153 @@ class TColgp_HArray1OfLin2d : public MMgt_TShared {
 	~TColgp_HArray1OfLin2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfLin2d\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_HArray1OfDir2d;
+class TColgp_HArray1OfDir2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void Init(const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
+		%feature("autodoc", "1");
+		const gp_Dir2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Dir2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfDir2d & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfDir2d & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray1OfDir2d {
+	Handle_TColgp_HArray1OfDir2d GetHandle() {
+	return *(Handle_TColgp_HArray1OfDir2d*) &$self;
+	}
+};
+%extend TColgp_HArray1OfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_HArray1OfDir2d {
+	~TColgp_HArray1OfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir2d\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_SequenceOfXYZ;
+class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceOfXYZ();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfXYZ & Assign(const TColgp_SequenceOfXYZ &Other);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfXYZ & operator=(const TColgp_SequenceOfXYZ &Other);
+		%feature("autodoc", "1");
+		void Append(const gp_XYZ &T);
+		%feature("autodoc", "1");
+		void Append(TColgp_SequenceOfXYZ & S);
+		%feature("autodoc", "1");
+		void Prepend(const gp_XYZ &T);
+		%feature("autodoc", "1");
+		void Prepend(TColgp_SequenceOfXYZ & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const gp_XYZ &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const gp_XYZ &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
+		%feature("autodoc", "1");
+		const gp_XYZ & First() const;
+		%feature("autodoc", "1");
+		const gp_XYZ & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
+		%feature("autodoc", "1");
+		const gp_XYZ & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_XYZ & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_XYZ &I);
+		%feature("autodoc", "1");
+		gp_XYZ & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_XYZ & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TColgp_SequenceOfXYZ {
+	~TColgp_SequenceOfXYZ() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXYZ\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_Array1OfXY;
+class TColgp_Array1OfXY {
+	public:
+		%feature("autodoc", "1");
+		TColgp_Array1OfXY(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_Array1OfXY(const gp_XY &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const gp_XY &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColgp_Array1OfXY & Assign(const TColgp_Array1OfXY &Other);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfXY & operator=(const TColgp_Array1OfXY &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_XY &Value);
+		%feature("autodoc", "1");
+		const gp_XY & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_XY & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_XY & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_XY & operator()(const Standard_Integer Index);
+
+};
+%extend TColgp_Array1OfXY {
+	~TColgp_Array1OfXY() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXY\n");}
 	}
 };
 
@@ -2335,49 +2386,49 @@ class TColgp_HArray1OfVec2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_HArray1OfDir2d;
-class TColgp_HArray1OfDir2d : public MMgt_TShared {
+%nodefaultctor TColgp_Array2OfVec2d;
+class TColgp_Array2OfVec2d {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up);
+		TColgp_Array2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		TColgp_HArray1OfDir2d(const Standard_Integer Low, const Standard_Integer Up, const gp_Dir2d &V);
+		TColgp_Array2OfVec2d(const gp_Vec2d &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const gp_Dir2d &V);
+		void Init(const gp_Vec2d &V);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		const TColgp_Array2OfVec2d & Assign(const TColgp_Array2OfVec2d &Other);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		const TColgp_Array2OfVec2d & operator=(const TColgp_Array2OfVec2d &Other);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir2d &Value);
+		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
-		const gp_Dir2d & Value(const Standard_Integer Index) const;
+		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		gp_Dir2d & ChangeValue(const Standard_Integer Index);
+		Standard_Integer LowerCol() const;
 		%feature("autodoc", "1");
-		const TColgp_Array1OfDir2d & Array1() const;
+		Standard_Integer LowerRow() const;
 		%feature("autodoc", "1");
-		TColgp_Array1OfDir2d & ChangeArray1();
+		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d &Value);
+		%feature("autodoc", "1");
+		const gp_Vec2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const gp_Vec2d & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		gp_Vec2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		gp_Vec2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColgp_HArray1OfDir2d {
-	Handle_TColgp_HArray1OfDir2d GetHandle() {
-	return *(Handle_TColgp_HArray1OfDir2d*) &$self;
-	}
-};
-%extend TColgp_HArray1OfDir2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_HArray1OfDir2d {
-	~TColgp_HArray1OfDir2d() {
+%extend TColgp_Array2OfVec2d {
+	~TColgp_Array2OfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir2d\n");}
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec2d\n");}
 	}
 };
 
@@ -2515,6 +2566,110 @@ class TColgp_HArray1OfPnt : public MMgt_TShared {
 };
 
 
+%nodefaultctor TColgp_Array2OfVec;
+class TColgp_Array2OfVec {
+	public:
+		%feature("autodoc", "1");
+		TColgp_Array2OfVec(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColgp_Array2OfVec(const gp_Vec &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const gp_Vec &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColgp_Array2OfVec & Assign(const TColgp_Array2OfVec &Other);
+		%feature("autodoc", "1");
+		const TColgp_Array2OfVec & operator=(const TColgp_Array2OfVec &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec &Value);
+		%feature("autodoc", "1");
+		const gp_Vec & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const gp_Vec & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		gp_Vec & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		gp_Vec & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TColgp_Array2OfVec {
+	~TColgp_Array2OfVec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_SequenceOfDir;
+class TColgp_SequenceOfDir : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceOfDir();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfDir & Assign(const TColgp_SequenceOfDir &Other);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfDir & operator=(const TColgp_SequenceOfDir &Other);
+		%feature("autodoc", "1");
+		void Append(const gp_Dir &T);
+		%feature("autodoc", "1");
+		void Append(TColgp_SequenceOfDir & S);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Dir &T);
+		%feature("autodoc", "1");
+		void Prepend(TColgp_SequenceOfDir & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const gp_Dir &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColgp_SequenceOfDir & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const gp_Dir &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColgp_SequenceOfDir & S);
+		%feature("autodoc", "1");
+		const gp_Dir & First() const;
+		%feature("autodoc", "1");
+		const gp_Dir & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColgp_SequenceOfDir & S);
+		%feature("autodoc", "1");
+		const gp_Dir & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Dir & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Dir &I);
+		%feature("autodoc", "1");
+		gp_Dir & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Dir & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TColgp_SequenceOfDir {
+	~TColgp_SequenceOfDir() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir\n");}
+	}
+};
+
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfDir;
 class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 	public:
@@ -2540,63 +2695,6 @@ class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 	~TColgp_SequenceNodeOfSequenceOfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_SequenceOfXYZ;
-class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceOfXYZ();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfXYZ & Assign(const TColgp_SequenceOfXYZ &Other);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfXYZ & operator=(const TColgp_SequenceOfXYZ &Other);
-		%feature("autodoc", "1");
-		void Append(const gp_XYZ &T);
-		%feature("autodoc", "1");
-		void Append(TColgp_SequenceOfXYZ & S);
-		%feature("autodoc", "1");
-		void Prepend(const gp_XYZ &T);
-		%feature("autodoc", "1");
-		void Prepend(TColgp_SequenceOfXYZ & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_XYZ &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_XYZ &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
-		%feature("autodoc", "1");
-		const gp_XYZ & First() const;
-		%feature("autodoc", "1");
-		const gp_XYZ & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColgp_SequenceOfXYZ & S);
-		%feature("autodoc", "1");
-		const gp_XYZ & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_XYZ & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &I);
-		%feature("autodoc", "1");
-		gp_XYZ & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_XYZ & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColgp_SequenceOfXYZ {
-	~TColgp_SequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXYZ\n");}
 	}
 };
 
@@ -2738,106 +2836,6 @@ class TColgp_HArray1OfCirc2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_HArray2OfPnt;
-class TColgp_HArray2OfPnt : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt &V);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt &Value);
-		%feature("autodoc", "1");
-		const gp_Pnt & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_Pnt & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfPnt & Array2() const;
-		%feature("autodoc", "1");
-		TColgp_Array2OfPnt & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_HArray2OfPnt {
-	Handle_TColgp_HArray2OfPnt GetHandle() {
-	return *(Handle_TColgp_HArray2OfPnt*) &$self;
-	}
-};
-%extend TColgp_HArray2OfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_HArray2OfPnt {
-	~TColgp_HArray2OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_HArray1OfXYZ;
-class TColgp_HArray1OfXYZ : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
-		%feature("autodoc", "1");
-		const gp_XYZ & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_XYZ & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfXYZ & Array1() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfXYZ & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_HArray1OfXYZ {
-	Handle_TColgp_HArray1OfXYZ GetHandle() {
-	return *(Handle_TColgp_HArray1OfXYZ*) &$self;
-	}
-};
-%extend TColgp_HArray1OfXYZ {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_HArray1OfXYZ {
-	~TColgp_HArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXYZ\n");}
-	}
-};
-
-
 %nodefaultctor TColgp_HArray2OfXY;
 class TColgp_HArray2OfXY : public MMgt_TShared {
 	public:
@@ -2891,6 +2889,59 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 };
 
 
+%nodefaultctor TColgp_HArray2OfPnt;
+class TColgp_HArray2OfPnt : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColgp_HArray2OfPnt(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Pnt &V);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Pnt &Value);
+		%feature("autodoc", "1");
+		const gp_Pnt & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		gp_Pnt & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const TColgp_Array2OfPnt & Array2() const;
+		%feature("autodoc", "1");
+		TColgp_Array2OfPnt & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray2OfPnt {
+	Handle_TColgp_HArray2OfPnt GetHandle() {
+	return *(Handle_TColgp_HArray2OfPnt*) &$self;
+	}
+};
+%extend TColgp_HArray2OfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_HArray2OfPnt {
+	~TColgp_HArray2OfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt\n");}
+	}
+};
+
+
 %nodefaultctor TColgp_Array1OfPnt2d;
 class TColgp_Array1OfPnt2d {
 	public:
@@ -2930,53 +2981,6 @@ class TColgp_Array1OfPnt2d {
 	~TColgp_Array1OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt2d\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_Array2OfVec;
-class TColgp_Array2OfVec {
-	public:
-		%feature("autodoc", "1");
-		TColgp_Array2OfVec(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColgp_Array2OfVec(const gp_Vec &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColgp_Array2OfVec & Assign(const TColgp_Array2OfVec &Other);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfVec & operator=(const TColgp_Array2OfVec &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec &Value);
-		%feature("autodoc", "1");
-		const gp_Vec & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const gp_Vec & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_Vec & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TColgp_Array2OfVec {
-	~TColgp_Array2OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec\n");}
 	}
 };
 
@@ -3024,6 +3028,35 @@ class TColgp_HArray1OfXY : public MMgt_TShared {
 	~TColgp_HArray1OfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXY\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_SequenceNodeOfSequenceOfDir2d;
+class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColgp_SequenceNodeOfSequenceOfDir2d(const gp_Dir2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Dir2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir2d {
+	Handle_TColgp_SequenceNodeOfSequenceOfDir2d GetHandle() {
+	return *(Handle_TColgp_SequenceNodeOfSequenceOfDir2d*) &$self;
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir2d {
+	~TColgp_SequenceNodeOfSequenceOfDir2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");}
 	}
 };
 
@@ -3086,8 +3119,18 @@ class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColgp_DataMapNodeOfDataMapOfIntegerCirc2d(const Standard_Integer &K, const gp_Circ2d &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		gp_Circ2d & Value() const;
 		%feature("autodoc", "1");
@@ -3155,77 +3198,6 @@ class TColgp_Array2OfDir2d {
 	~TColgp_Array2OfDir2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir2d\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_HSequenceOfDir;
-class TColgp_HSequenceOfDir : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HSequenceOfDir();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const gp_Dir &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfDir &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const gp_Dir &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfDir &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const gp_Dir &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfDir &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const gp_Dir &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfDir &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const gp_Dir &anItem);
-		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfDir & Sequence() const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfDir & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfDir ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_HSequenceOfDir {
-	Handle_TColgp_HSequenceOfDir GetHandle() {
-	return *(Handle_TColgp_HSequenceOfDir*) &$self;
-	}
-};
-%extend TColgp_HSequenceOfDir {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_HSequenceOfDir {
-	~TColgp_HSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir\n");}
 	}
 };
 
@@ -3301,92 +3273,6 @@ class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_SequenceNodeOfSequenceOfDir2d;
-class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceNodeOfSequenceOfDir2d(const gp_Dir2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Dir2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_SequenceNodeOfSequenceOfDir2d {
-	Handle_TColgp_SequenceNodeOfSequenceOfDir2d GetHandle() {
-	return *(Handle_TColgp_SequenceNodeOfSequenceOfDir2d*) &$self;
-	}
-};
-%extend TColgp_SequenceNodeOfSequenceOfDir2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColgp_SequenceNodeOfSequenceOfDir2d {
-	~TColgp_SequenceNodeOfSequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_SequenceOfDir;
-class TColgp_SequenceOfDir : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColgp_SequenceOfDir();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfDir & Assign(const TColgp_SequenceOfDir &Other);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfDir & operator=(const TColgp_SequenceOfDir &Other);
-		%feature("autodoc", "1");
-		void Append(const gp_Dir &T);
-		%feature("autodoc", "1");
-		void Append(TColgp_SequenceOfDir & S);
-		%feature("autodoc", "1");
-		void Prepend(const gp_Dir &T);
-		%feature("autodoc", "1");
-		void Prepend(TColgp_SequenceOfDir & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Dir &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColgp_SequenceOfDir & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Dir &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColgp_SequenceOfDir & S);
-		%feature("autodoc", "1");
-		const gp_Dir & First() const;
-		%feature("autodoc", "1");
-		const gp_Dir & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColgp_SequenceOfDir & S);
-		%feature("autodoc", "1");
-		const gp_Dir & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Dir & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Dir &I);
-		%feature("autodoc", "1");
-		gp_Dir & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Dir & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColgp_SequenceOfDir {
-	~TColgp_SequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir\n");}
-	}
-};
-
-
 %nodefaultctor TColgp_Array1OfPnt;
 class TColgp_Array1OfPnt {
 	public:
@@ -3426,6 +3312,53 @@ class TColgp_Array1OfPnt {
 	~TColgp_Array1OfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_Array2OfXY;
+class TColgp_Array2OfXY {
+	public:
+		%feature("autodoc", "1");
+		TColgp_Array2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColgp_Array2OfXY(const gp_XY &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const gp_XY &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColgp_Array2OfXY & Assign(const TColgp_Array2OfXY &Other);
+		%feature("autodoc", "1");
+		const TColgp_Array2OfXY & operator=(const TColgp_Array2OfXY &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
+		%feature("autodoc", "1");
+		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const gp_XY & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		gp_XY & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TColgp_Array2OfXY {
+	~TColgp_Array2OfXY() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXY\n");}
 	}
 };
 
@@ -3479,6 +3412,49 @@ class TColgp_HArray2OfPnt2d : public MMgt_TShared {
 	~TColgp_HArray2OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt2d\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_Array1OfVec;
+class TColgp_Array1OfVec {
+	public:
+		%feature("autodoc", "1");
+		TColgp_Array1OfVec(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_Array1OfVec(const gp_Vec &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const gp_Vec &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColgp_Array1OfVec & Assign(const TColgp_Array1OfVec &Other);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfVec & operator=(const TColgp_Array1OfVec &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		%feature("autodoc", "1");
+		const gp_Vec & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Vec & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Vec & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Vec & operator()(const Standard_Integer Index);
+
+};
+%extend TColgp_Array1OfVec {
+	~TColgp_Array1OfVec() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec\n");}
 	}
 };
 
@@ -3641,53 +3617,6 @@ class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 	~TColgp_SequenceNodeOfSequenceOfVec2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec2d\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_Array2OfXY;
-class TColgp_Array2OfXY {
-	public:
-		%feature("autodoc", "1");
-		TColgp_Array2OfXY(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColgp_Array2OfXY(const gp_XY &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const gp_XY &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColgp_Array2OfXY & Assign(const TColgp_Array2OfXY &Other);
-		%feature("autodoc", "1");
-		const TColgp_Array2OfXY & operator=(const TColgp_Array2OfXY &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_XY &Value);
-		%feature("autodoc", "1");
-		const gp_XY & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const gp_XY & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		gp_XY & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		gp_XY & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TColgp_Array2OfXY {
-	~TColgp_Array2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXY\n");}
 	}
 };
 
@@ -3952,49 +3881,144 @@ class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TColgp_HArray1OfVec;
-class TColgp_HArray1OfVec : public MMgt_TShared {
+%nodefaultctor TColgp_HSequenceOfDir;
+class TColgp_HSequenceOfDir : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up);
+		TColgp_HSequenceOfDir();
 		%feature("autodoc", "1");
-		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec &V);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec &V);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void Append(const gp_Dir &anItem);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
+		void Append(const Handle_TColgp_HSequenceOfDir &aSequence);
 		%feature("autodoc", "1");
-		const gp_Vec & Value(const Standard_Integer Index) const;
+		void Prepend(const gp_Dir &anItem);
 		%feature("autodoc", "1");
-		gp_Vec & ChangeValue(const Standard_Integer Index);
+		void Prepend(const Handle_TColgp_HSequenceOfDir &aSequence);
 		%feature("autodoc", "1");
-		const TColgp_Array1OfVec & Array1() const;
+		void Reverse();
 		%feature("autodoc", "1");
-		TColgp_Array1OfVec & ChangeArray1();
+		void InsertBefore(const Standard_Integer anIndex, const gp_Dir &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfDir &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const gp_Dir &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfDir &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const gp_Dir &anItem);
+		%feature("autodoc", "1");
+		const gp_Dir & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		gp_Dir & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfDir & Sequence() const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfDir & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfDir ShallowCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColgp_HArray1OfVec {
-	Handle_TColgp_HArray1OfVec GetHandle() {
-	return *(Handle_TColgp_HArray1OfVec*) &$self;
+%extend TColgp_HSequenceOfDir {
+	Handle_TColgp_HSequenceOfDir GetHandle() {
+	return *(Handle_TColgp_HSequenceOfDir*) &$self;
 	}
 };
-%extend TColgp_HArray1OfVec {
+%extend TColgp_HSequenceOfDir {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColgp_HArray1OfVec {
-	~TColgp_HArray1OfVec() {
+%extend TColgp_HSequenceOfDir {
+	~TColgp_HSequenceOfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec\n");}
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_HSequenceOfPnt;
+class TColgp_HSequenceOfPnt : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HSequenceOfPnt();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const gp_Pnt &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColgp_HSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Pnt &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColgp_HSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const gp_Pnt &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const gp_Pnt &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const gp_Pnt &anItem);
+		%feature("autodoc", "1");
+		const gp_Pnt & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		gp_Pnt & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt & Sequence() const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HSequenceOfPnt {
+	Handle_TColgp_HSequenceOfPnt GetHandle() {
+	return *(Handle_TColgp_HSequenceOfPnt*) &$self;
+	}
+};
+%extend TColgp_HSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_HSequenceOfPnt {
+	~TColgp_HSequenceOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt\n");}
 	}
 };
 
@@ -4188,116 +4212,55 @@ class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColgp_HSequenceOfPnt;
-class TColgp_HSequenceOfPnt : public MMgt_TShared {
+%nodefaultctor TColgp_HArray2OfDir;
+class TColgp_HArray2OfDir : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColgp_HSequenceOfPnt();
+		TColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		TColgp_HArray2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const gp_Dir &V);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Init(const gp_Dir &V);
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
-		void Append(const gp_Pnt &anItem);
+		Standard_Integer RowLength() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &aSequence);
+		Standard_Integer LowerCol() const;
 		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &anItem);
+		Standard_Integer LowerRow() const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &aSequence);
+		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
-		void Reverse();
+		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const gp_Pnt &anItem);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &aSequence);
+		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const gp_Pnt &anItem);
+		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColgp_HSequenceOfPnt &aSequence);
+		const TColgp_Array2OfDir & Array2() const;
 		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const gp_Pnt &anItem);
-		%feature("autodoc", "1");
-		const gp_Pnt & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		gp_Pnt & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt & Sequence() const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt ShallowCopy() const;
+		TColgp_Array2OfDir & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColgp_HSequenceOfPnt {
-	Handle_TColgp_HSequenceOfPnt GetHandle() {
-	return *(Handle_TColgp_HSequenceOfPnt*) &$self;
+%extend TColgp_HArray2OfDir {
+	Handle_TColgp_HArray2OfDir GetHandle() {
+	return *(Handle_TColgp_HArray2OfDir*) &$self;
 	}
 };
-%extend TColgp_HSequenceOfPnt {
+%extend TColgp_HArray2OfDir {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColgp_HSequenceOfPnt {
-	~TColgp_HSequenceOfPnt() {
+%extend TColgp_HArray2OfDir {
+	~TColgp_HArray2OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor TColgp_Array1OfVec;
-class TColgp_Array1OfVec {
-	public:
-		%feature("autodoc", "1");
-		TColgp_Array1OfVec(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_Array1OfVec(const gp_Vec &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TColgp_Array1OfVec & Assign(const TColgp_Array1OfVec &Other);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfVec & operator=(const TColgp_Array1OfVec &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec &Value);
-		%feature("autodoc", "1");
-		const gp_Vec & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Vec & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Vec & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Vec & operator()(const Standard_Integer Index);
-
-};
-%extend TColgp_Array1OfVec {
-	~TColgp_Array1OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec\n");}
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir\n");}
 	}
 };
 
@@ -4345,21 +4308,21 @@ class TColgp_Array1OfCirc2d {
 };
 
 
-%nodefaultctor TColgp_Array2OfVec2d;
-class TColgp_Array2OfVec2d {
+%nodefaultctor TColgp_Array2OfDir;
+class TColgp_Array2OfDir {
 	public:
 		%feature("autodoc", "1");
-		TColgp_Array2OfVec2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_Array2OfDir(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		TColgp_Array2OfVec2d(const gp_Vec2d &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColgp_Array2OfDir(const gp_Dir &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const gp_Vec2d &V);
+		void Init(const gp_Dir &V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		const TColgp_Array2OfVec2d & Assign(const TColgp_Array2OfVec2d &Other);
+		const TColgp_Array2OfDir & Assign(const TColgp_Array2OfDir &Other);
 		%feature("autodoc", "1");
-		const TColgp_Array2OfVec2d & operator=(const TColgp_Array2OfVec2d &Other);
+		const TColgp_Array2OfDir & operator=(const TColgp_Array2OfDir &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -4373,20 +4336,67 @@ class TColgp_Array2OfVec2d {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Vec2d &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const gp_Dir &Value);
 		%feature("autodoc", "1");
-		const gp_Vec2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_Dir & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const gp_Vec2d & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		const gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		gp_Vec2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		gp_Dir & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		gp_Vec2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		gp_Dir & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColgp_Array2OfVec2d {
-	~TColgp_Array2OfVec2d() {
+%extend TColgp_Array2OfDir {
+	~TColgp_Array2OfDir() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec2d\n");}
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir\n");}
+	}
+};
+
+
+%nodefaultctor TColgp_HArray1OfXYZ;
+class TColgp_HArray1OfXYZ : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_HArray1OfXYZ(const Standard_Integer Low, const Standard_Integer Up, const gp_XYZ &V);
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_XYZ &Value);
+		%feature("autodoc", "1");
+		const gp_XYZ & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_XYZ & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfXYZ & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfXYZ & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray1OfXYZ {
+	Handle_TColgp_HArray1OfXYZ GetHandle() {
+	return *(Handle_TColgp_HArray1OfXYZ*) &$self;
+	}
+};
+%extend TColgp_HArray1OfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColgp_HArray1OfXYZ {
+	~TColgp_HArray1OfXYZ() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXYZ\n");}
 	}
 };

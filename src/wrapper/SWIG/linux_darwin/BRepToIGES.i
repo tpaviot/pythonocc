@@ -113,6 +113,31 @@ class BRepToIGES_BRShell : public BRepToIGES_BREntity {
 };
 
 
+%nodefaultctor BRepToIGES_BRSolid;
+class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
+	public:
+		%feature("autodoc", "1");
+		BRepToIGES_BRSolid();
+		%feature("autodoc", "1");
+		BRepToIGES_BRSolid(const BRepToIGES_BREntity &BR);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Shape &start);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Solid &start);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCompSolid(const TopoDS_CompSolid &start);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound &start);
+
+};
+%extend BRepToIGES_BRSolid {
+	~BRepToIGES_BRSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRSolid\n");}
+	}
+};
+
+
 %nodefaultctor BRepToIGES_BRWire;
 class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 	public:
@@ -146,30 +171,5 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 	~BRepToIGES_BRWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRWire\n");}
-	}
-};
-
-
-%nodefaultctor BRepToIGES_BRSolid;
-class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
-	public:
-		%feature("autodoc", "1");
-		BRepToIGES_BRSolid();
-		%feature("autodoc", "1");
-		BRepToIGES_BRSolid(const BRepToIGES_BREntity &BR);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Shape &start);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSolid(const TopoDS_Solid &start);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCompSolid(const TopoDS_CompSolid &start);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound &start);
-
-};
-%extend BRepToIGES_BRSolid {
-	~BRepToIGES_BRSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRSolid\n");}
 	}
 };

@@ -4,12 +4,12 @@
 %rename(Transfer_DataMapOfTransientTransient) Transfer_DataMapOfTransientTransient;
 %rename(Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient) Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
 %rename(Handle_Transfer_ActorDispatch) Handle_Transfer_ActorDispatch;
-%rename(Transfer_StatusRun) Transfer_StatusRun;
+%rename(Transfer_StatusLoop) Transfer_StatusLoop;
 %rename(Transfer_SequenceOfFinder) Transfer_SequenceOfFinder;
 %rename(Handle_Transfer_SimpleBinderOfTransient) Handle_Transfer_SimpleBinderOfTransient;
 %rename(Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient) Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
 %rename(Handle_Transfer_ActorOfProcessForTransient) Handle_Transfer_ActorOfProcessForTransient;
-%rename(Transfer_StatusLoop) Transfer_StatusLoop;
+%rename(Transfer_StatusRun) Transfer_StatusRun;
 %rename(Transfer_Binder) Transfer_Binder;
 %rename(Transfer_TransientProcess) Transfer_TransientProcess;
 %rename(Transfer_ResultFromTransient) Transfer_ResultFromTransient;
@@ -28,7 +28,7 @@
 %rename(Transfer_ActorOfProcessForTransient) Transfer_ActorOfProcessForTransient;
 %rename(Handle_Transfer_ProcessForFinder) Handle_Transfer_ProcessForFinder;
 %rename(Handle_Transfer_TransientMapper) Handle_Transfer_TransientMapper;
-%rename(Transfer_StatusDefined) Transfer_StatusDefined;
+%rename(Handle_Transfer_DispatchControl) Handle_Transfer_DispatchControl;
 %rename(Transfer_ProcessForFinder) Transfer_ProcessForFinder;
 %rename(Transfer_TransferIterator) Transfer_TransferIterator;
 %rename(Transfer_ActorOfTransientProcess) Transfer_ActorOfTransientProcess;
@@ -47,7 +47,7 @@
 %rename(Transfer_UndefContent) Transfer_UndefContent;
 %rename(Handle_Transfer_MultipleBinder) Handle_Transfer_MultipleBinder;
 %rename(Transfer_SimpleBinderOfTransient) Transfer_SimpleBinderOfTransient;
-%rename(Handle_Transfer_DispatchControl) Handle_Transfer_DispatchControl;
+%rename(Transfer_StatusDefined) Transfer_StatusDefined;
 %rename(Transfer_SequenceNodeOfSequenceOfBinder) Transfer_SequenceNodeOfSequenceOfBinder;
 %rename(Transfer_TransferMapOfProcessForFinder) Transfer_TransferMapOfProcessForFinder;
 %rename(Transfer_MultipleBinder) Transfer_MultipleBinder;

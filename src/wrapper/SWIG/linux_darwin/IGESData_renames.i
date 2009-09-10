@@ -1,5 +1,5 @@
 %rename(IGESData_ErrorVal) IGESData_ErrorVal;
-%rename(Handle_IGESData_TransfEntity) Handle_IGESData_TransfEntity;
+%rename(Handle_IGESData_NodeOfSpecificLib) Handle_IGESData_NodeOfSpecificLib;
 %rename(IGESData_ErrorRef) IGESData_ErrorRef;
 %rename(IGESData_FileProtocol) IGESData_FileProtocol;
 %rename(IGESData_ReadAssocs) IGESData_ReadAssocs;
@@ -67,7 +67,7 @@
 %rename(Handle_IGESData_IGESReaderData) Handle_IGESData_IGESReaderData;
 %rename(IGESData_DirPart) IGESData_DirPart;
 %rename(IGESData_SpecificModule) IGESData_SpecificModule;
-%rename(Handle_IGESData_NodeOfSpecificLib) Handle_IGESData_NodeOfSpecificLib;
+%rename(Handle_IGESData_TransfEntity) Handle_IGESData_TransfEntity;
 %rename(IGESData_DefAny) IGESData_DefAny;
 %rename(Handle_IGESData_FileRecognizer) Handle_IGESData_FileRecognizer;
 %rename(IGESData_ParamCursor) IGESData_ParamCursor;

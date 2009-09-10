@@ -34,10 +34,10 @@
 %rename(XCAFDoc_GraphNodeSequence) XCAFDoc_GraphNodeSequence;
 %rename(Handle_XCAFDoc_Location) Handle_XCAFDoc_Location;
 %rename(XCAFDoc_ShapeTool) XCAFDoc_ShapeTool;
-%rename(XCAFDoc_MaterialTool) XCAFDoc_MaterialTool;
+%rename(XCAFDoc_ShapeMapTool) XCAFDoc_ShapeMapTool;
 %rename(XCAFDoc_Volume) XCAFDoc_Volume;
 %rename(XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel) XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
 %rename(XCAFDoc_SequenceNodeOfGraphNodeSequence) XCAFDoc_SequenceNodeOfGraphNodeSequence;
+%rename(XCAFDoc_MaterialTool) XCAFDoc_MaterialTool;
 %rename(XCAFDoc_Location) XCAFDoc_Location;
 %rename(XCAFDoc_Material) XCAFDoc_Material;
-%rename(XCAFDoc_ShapeMapTool) XCAFDoc_ShapeMapTool;

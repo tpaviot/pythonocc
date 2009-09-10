@@ -42,19 +42,14 @@ enum StepToTopoDS_GeometricToolError {
 	StepToTopoDS_GeometricToolOther,
 	};
 
-enum StepToTopoDS_TranslateFaceError {
-	StepToTopoDS_TranslateFaceDone,
-	StepToTopoDS_TranslateFaceOther,
+enum StepToTopoDS_TranslateEdgeError {
+	StepToTopoDS_TranslateEdgeDone,
+	StepToTopoDS_TranslateEdgeOther,
 	};
 
 enum StepToTopoDS_BuilderError {
 	StepToTopoDS_BuilderDone,
 	StepToTopoDS_BuilderOther,
-	};
-
-enum StepToTopoDS_TranslateEdgeError {
-	StepToTopoDS_TranslateEdgeDone,
-	StepToTopoDS_TranslateEdgeOther,
 	};
 
 enum StepToTopoDS_TranslateVertexError {
@@ -65,6 +60,11 @@ enum StepToTopoDS_TranslateVertexError {
 enum StepToTopoDS_TranslateEdgeLoopError {
 	StepToTopoDS_TranslateEdgeLoopDone,
 	StepToTopoDS_TranslateEdgeLoopOther,
+	};
+
+enum StepToTopoDS_TranslateFaceError {
+	StepToTopoDS_TranslateFaceDone,
+	StepToTopoDS_TranslateFaceOther,
 	};
 
 enum StepToTopoDS_TranslatePolyLoopError {
@@ -174,6 +174,29 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 };
 
 
+%nodefaultctor StepToTopoDS_GeometricTool;
+class StepToTopoDS_GeometricTool {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_GeometricTool();
+		%feature("autodoc", "1");
+		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci)->[Standard_RealStandard_Real]");
+		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
+
+};
+%extend StepToTopoDS_GeometricTool {
+	~StepToTopoDS_GeometricTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_GeometricTool\n");}
+	}
+};
+
+
 %nodefaultctor StepToTopoDS_Root;
 class StepToTopoDS_Root {
 	public:
@@ -193,29 +216,6 @@ class StepToTopoDS_Root {
 	~StepToTopoDS_Root() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_Root\n");}
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_TranslateShell;
-class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShell();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShellError Error() const;
-
-};
-%extend StepToTopoDS_TranslateShell {
-	~StepToTopoDS_TranslateShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateShell\n");}
 	}
 };
 
@@ -241,6 +241,52 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 	~StepToTopoDS_MakeTransformed() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_MakeTransformed\n");}
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
+class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		const StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge & Value() const;
+
+};
+%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
+	~StepToTopoDS_DataMapIteratorOfPointEdgeMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfPointEdgeMap\n");}
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_TranslateShell;
+class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShell();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShellError Error() const;
+
+};
+%extend StepToTopoDS_TranslateShell {
+	~StepToTopoDS_TranslateShell() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateShell\n");}
 	}
 };
 
@@ -343,29 +389,6 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 };
 
 
-%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
-class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoopError Error() const;
-
-};
-%extend StepToTopoDS_TranslateEdgeLoop {
-	~StepToTopoDS_TranslateEdgeLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
-	}
-};
-
-
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
 class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMapIterator {
 	public:
@@ -404,68 +427,6 @@ class StepToTopoDS_CartesianPointHasher {
 	~StepToTopoDS_CartesianPointHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_CartesianPointHasher\n");}
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
-class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		StepToTopoDS_PointPair & Key() const;
-		%feature("autodoc", "1");
-		TopoDS_Edge & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
-	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	~StepToTopoDS_DataMapNodeOfPointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointEdgeMap\n");}
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
-class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem & Key() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
-	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	~StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");}
 	}
 };
 
@@ -703,52 +664,6 @@ class StepToTopoDS_PointPair {
 };
 
 
-%nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
-class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const StepToTopoDS_PointEdgeMap &aMap);
-		%feature("autodoc", "1");
-		const StepToTopoDS_PointPair & Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Value() const;
-
-};
-%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
-	~StepToTopoDS_DataMapIteratorOfPointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfPointEdgeMap\n");}
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_GeometricTool;
-class StepToTopoDS_GeometricTool {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_GeometricTool();
-		%feature("autodoc", "1");
-		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
-		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci)->[Standard_RealStandard_Real]");
-		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
-
-};
-%extend StepToTopoDS_GeometricTool {
-	~StepToTopoDS_GeometricTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_GeometricTool\n");}
-	}
-};
-
-
 %nodefaultctor StepToTopoDS_PointEdgeMap;
 class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 	public:
@@ -782,6 +697,29 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 	~StepToTopoDS_PointEdgeMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointEdgeMap\n");}
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
+class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face &F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoopError Error() const;
+
+};
+%extend StepToTopoDS_TranslateEdgeLoop {
+	~StepToTopoDS_TranslateEdgeLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
 	}
 };
 
@@ -830,6 +768,37 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 };
 
 
+%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
+class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	~StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");}
+	}
+};
+
+
 %nodefaultctor StepToTopoDS;
 class StepToTopoDS {
 	public:
@@ -857,6 +826,37 @@ class StepToTopoDS {
 	~StepToTopoDS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS\n");}
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
+class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_PointPair &K, const TopoDS_Edge &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Edge & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	~StepToTopoDS_DataMapNodeOfPointEdgeMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointEdgeMap\n");}
 	}
 };
 

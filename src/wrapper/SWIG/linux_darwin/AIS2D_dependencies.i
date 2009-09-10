@@ -528,5 +528,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import MMgt.i
 %import Graphic2d.i
 %import Standard.i
-%import Aspect.i
 %import Quantity.i
+%import Aspect.i

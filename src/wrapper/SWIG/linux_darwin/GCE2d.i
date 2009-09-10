@@ -139,62 +139,6 @@ class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 };
 
 
-%nodefaultctor GCE2d_MakeArcOfHyperbola;
-class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Operator() const;
-
-};
-%extend GCE2d_MakeArcOfHyperbola {
-	~GCE2d_MakeArcOfHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");}
-	}
-};
-
-
-%nodefaultctor GCE2d_MakeCircle;
-class GCE2d_MakeCircle : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d &C);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Ax2d &A, const Standard_Real Radius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Ax22d &A, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d &Circ, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d &Circ, const gp_Pnt2d &Point);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d &P, const Standard_Real Radius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d &Center, const gp_Pnt2d &Point, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Circle & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Circle & Operator() const;
-
-};
-%extend GCE2d_MakeCircle {
-	~GCE2d_MakeCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeCircle\n");}
-	}
-};
-
-
 %nodefaultctor GCE2d_MakeScale;
 class GCE2d_MakeScale {
 	public:
@@ -210,6 +154,31 @@ class GCE2d_MakeScale {
 	~GCE2d_MakeScale() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeScale\n");}
+	}
+};
+
+
+%nodefaultctor GCE2d_MakeMirror;
+class GCE2d_MakeMirror {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeMirror(const gp_Pnt2d &Point);
+		%feature("autodoc", "1");
+		GCE2d_MakeMirror(const gp_Ax2d &Axis);
+		%feature("autodoc", "1");
+		GCE2d_MakeMirror(const gp_Lin2d &Line);
+		%feature("autodoc", "1");
+		GCE2d_MakeMirror(const gp_Pnt2d &Point, const gp_Dir2d &Direc);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Transformation & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Transformation & Operator() const;
+
+};
+%extend GCE2d_MakeMirror {
+	~GCE2d_MakeMirror() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeMirror\n");}
 	}
 };
 
@@ -291,6 +260,29 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 };
 
 
+%nodefaultctor GCE2d_MakeArcOfEllipse;
+class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Operator() const;
+
+};
+%extend GCE2d_MakeArcOfEllipse {
+	~GCE2d_MakeArcOfEllipse() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
+	}
+};
+
+
 %nodefaultctor GCE2d_MakeArcOfParabola;
 class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 	public:
@@ -314,6 +306,39 @@ class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 };
 
 
+%nodefaultctor GCE2d_MakeCircle;
+class GCE2d_MakeCircle : public GCE2d_Root {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d &C);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Ax2d &A, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Ax22d &A, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d &Circ, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d &Circ, const gp_Pnt2d &Point);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d &P, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d &Center, const gp_Pnt2d &Point, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Circle & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Circle & Operator() const;
+
+};
+%extend GCE2d_MakeCircle {
+	~GCE2d_MakeCircle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeCircle\n");}
+	}
+};
+
+
 %nodefaultctor GCE2d_MakeRotation;
 class GCE2d_MakeRotation {
 	public:
@@ -333,50 +358,25 @@ class GCE2d_MakeRotation {
 };
 
 
-%nodefaultctor GCE2d_MakeMirror;
-class GCE2d_MakeMirror {
+%nodefaultctor GCE2d_MakeArcOfHyperbola;
+class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		GCE2d_MakeMirror(const gp_Pnt2d &Point);
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		GCE2d_MakeMirror(const gp_Ax2d &Axis);
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		GCE2d_MakeMirror(const gp_Lin2d &Line);
-		%feature("autodoc", "1");
-		GCE2d_MakeMirror(const gp_Pnt2d &Point, const gp_Dir2d &Direc);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Transformation & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Transformation & Operator() const;
-
-};
-%extend GCE2d_MakeMirror {
-	~GCE2d_MakeMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeMirror\n");}
-	}
-};
-
-
-%nodefaultctor GCE2d_MakeArcOfEllipse;
-class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d &Elips, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d &Hypr, const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
 		const Handle_Geom2d_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
-%extend GCE2d_MakeArcOfEllipse {
-	~GCE2d_MakeArcOfEllipse() {
+%extend GCE2d_MakeArcOfHyperbola {
+	~GCE2d_MakeArcOfHyperbola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
+	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");}
 	}
 };
 

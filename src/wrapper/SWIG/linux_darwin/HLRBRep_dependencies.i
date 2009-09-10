@@ -261,5 +261,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import IntRes2d.i
 %import IntCurveSurface.i
 %import GeomAbs.i
-%import TopAbs.i
 %import math.i
+%import TopAbs.i

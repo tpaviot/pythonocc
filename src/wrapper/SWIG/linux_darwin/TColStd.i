@@ -65,6 +65,36 @@ class Handle_TColStd_SequenceNodeOfSequenceOfExtendedString : public Handle_TCol
 };
 
 
+%nodefaultctor Handle_TColStd_HSetOfInteger;
+class Handle_TColStd_HSetOfInteger : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger();
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger(const Handle_TColStd_HSetOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger(const TColStd_HSetOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger & operator=(const Handle_TColStd_HSetOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger & operator=(const TColStd_HSetOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HSetOfInteger {
+	TColStd_HSetOfInteger* GetObject() {
+	return (TColStd_HSetOfInteger*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HSetOfInteger {
+	~Handle_TColStd_HSetOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSetOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColStd_ListNodeOfListOfTransient;
 class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -95,32 +125,32 @@ class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNo
 };
 
 
-%nodefaultctor Handle_TColStd_StackNodeOfStackOfInteger;
-class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TColStd_HArray2OfBoolean;
+class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger();
+		Handle_TColStd_HArray2OfBoolean();
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger(const Handle_TColStd_StackNodeOfStackOfInteger &aHandle);
+		Handle_TColStd_HArray2OfBoolean(const Handle_TColStd_HArray2OfBoolean &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger(const TColStd_StackNodeOfStackOfInteger *anItem);
+		Handle_TColStd_HArray2OfBoolean(const TColStd_HArray2OfBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger & operator=(const Handle_TColStd_StackNodeOfStackOfInteger &aHandle);
+		Handle_TColStd_HArray2OfBoolean & operator=(const Handle_TColStd_HArray2OfBoolean &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger & operator=(const TColStd_StackNodeOfStackOfInteger *anItem);
+		Handle_TColStd_HArray2OfBoolean & operator=(const TColStd_HArray2OfBoolean *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HArray2OfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_StackNodeOfStackOfInteger {
-	TColStd_StackNodeOfStackOfInteger* GetObject() {
-	return (TColStd_StackNodeOfStackOfInteger*)$self->Access();
+%extend Handle_TColStd_HArray2OfBoolean {
+	TColStd_HArray2OfBoolean* GetObject() {
+	return (TColStd_HArray2OfBoolean*)$self->Access();
 	}
 };
-%extend Handle_TColStd_StackNodeOfStackOfInteger {
-	~Handle_TColStd_StackNodeOfStackOfInteger() {
+%extend Handle_TColStd_HArray2OfBoolean {
+	~Handle_TColStd_HArray2OfBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfBoolean\n");}
 	}
 };
 
@@ -185,36 +215,6 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public Handle_
 };
 
 
-%nodefaultctor Handle_TColStd_HSetOfInteger;
-class Handle_TColStd_HSetOfInteger : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger();
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger(const Handle_TColStd_HSetOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger(const TColStd_HSetOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger & operator=(const Handle_TColStd_HSetOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger & operator=(const TColStd_HSetOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HSetOfInteger {
-	TColStd_HSetOfInteger* GetObject() {
-	return (TColStd_HSetOfInteger*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HSetOfInteger {
-	~Handle_TColStd_HSetOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSetOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString;
 class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCollection_SeqNode {
 	public:
@@ -241,36 +241,6 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCo
 	~Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HArray1OfListOfInteger;
-class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger(const Handle_TColStd_HArray1OfListOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger(const TColStd_HArray1OfListOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger & operator=(const Handle_TColStd_HArray1OfListOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger & operator=(const TColStd_HArray1OfListOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray1OfListOfInteger {
-	TColStd_HArray1OfListOfInteger* GetObject() {
-	return (TColStd_HArray1OfListOfInteger*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray1OfListOfInteger {
-	~Handle_TColStd_HArray1OfListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfListOfInteger\n");}
 	}
 };
 
@@ -305,32 +275,32 @@ class Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : pu
 };
 
 
-%nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger;
-class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TColStd_HPackedMapOfInteger;
+class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger();
+		Handle_TColStd_HPackedMapOfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger(const Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger &aHandle);
+		Handle_TColStd_HPackedMapOfInteger(const Handle_TColStd_HPackedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger(const TColStd_IndexedMapNodeOfIndexedMapOfInteger *anItem);
+		Handle_TColStd_HPackedMapOfInteger(const TColStd_HPackedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger & operator=(const Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger &aHandle);
+		Handle_TColStd_HPackedMapOfInteger & operator=(const Handle_TColStd_HPackedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger & operator=(const TColStd_IndexedMapNodeOfIndexedMapOfInteger *anItem);
+		Handle_TColStd_HPackedMapOfInteger & operator=(const TColStd_HPackedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HPackedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
-	TColStd_IndexedMapNodeOfIndexedMapOfInteger* GetObject() {
-	return (TColStd_IndexedMapNodeOfIndexedMapOfInteger*)$self->Access();
+%extend Handle_TColStd_HPackedMapOfInteger {
+	TColStd_HPackedMapOfInteger* GetObject() {
+	return (TColStd_HPackedMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
-	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
+%extend Handle_TColStd_HPackedMapOfInteger {
+	~Handle_TColStd_HPackedMapOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HPackedMapOfInteger\n");}
 	}
 };
 
@@ -365,6 +335,36 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString : public Handle_TColle
 };
 
 
+%nodefaultctor Handle_TColStd_StdMapNodeOfMapOfInteger;
+class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger();
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger(const Handle_TColStd_StdMapNodeOfMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger(const TColStd_StdMapNodeOfMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger & operator=(const Handle_TColStd_StdMapNodeOfMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger & operator=(const TColStd_StdMapNodeOfMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_StdMapNodeOfMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_StdMapNodeOfMapOfInteger {
+	TColStd_StdMapNodeOfMapOfInteger* GetObject() {
+	return (TColStd_StdMapNodeOfMapOfInteger*)$self->Access();
+	}
+};
+%extend Handle_TColStd_StdMapNodeOfMapOfInteger {
+	~Handle_TColStd_StdMapNodeOfMapOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfInteger;
 class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -395,32 +395,32 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection
 };
 
 
-%nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfAsciiString;
-class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_TColStd_HArray1OfInteger;
+class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString();
+		Handle_TColStd_HArray1OfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString(const Handle_TColStd_SequenceNodeOfSequenceOfAsciiString &aHandle);
+		Handle_TColStd_HArray1OfInteger(const Handle_TColStd_HArray1OfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString(const TColStd_SequenceNodeOfSequenceOfAsciiString *anItem);
+		Handle_TColStd_HArray1OfInteger(const TColStd_HArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString & operator=(const Handle_TColStd_SequenceNodeOfSequenceOfAsciiString &aHandle);
+		Handle_TColStd_HArray1OfInteger & operator=(const Handle_TColStd_HArray1OfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString & operator=(const TColStd_SequenceNodeOfSequenceOfAsciiString *anItem);
+		Handle_TColStd_HArray1OfInteger & operator=(const TColStd_HArray1OfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_SequenceNodeOfSequenceOfAsciiString {
-	TColStd_SequenceNodeOfSequenceOfAsciiString* GetObject() {
-	return (TColStd_SequenceNodeOfSequenceOfAsciiString*)$self->Access();
+%extend Handle_TColStd_HArray1OfInteger {
+	TColStd_HArray1OfInteger* GetObject() {
+	return (TColStd_HArray1OfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_SequenceNodeOfSequenceOfAsciiString {
-	~Handle_TColStd_SequenceNodeOfSequenceOfAsciiString() {
+%extend Handle_TColStd_HArray1OfInteger {
+	~Handle_TColStd_HArray1OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfAsciiString\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfInteger\n");}
 	}
 };
 
@@ -455,32 +455,62 @@ class Handle_TColStd_HArray1OfTransient : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal;
-class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TColStd_HSequenceOfReal;
+class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal();
+		Handle_TColStd_HSequenceOfReal();
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal(const Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal &aHandle);
+		Handle_TColStd_HSequenceOfReal(const Handle_TColStd_HSequenceOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal(const TColStd_DataMapNodeOfDataMapOfIntegerReal *anItem);
+		Handle_TColStd_HSequenceOfReal(const TColStd_HSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal & operator=(const Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal &aHandle);
+		Handle_TColStd_HSequenceOfReal & operator=(const Handle_TColStd_HSequenceOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal & operator=(const TColStd_DataMapNodeOfDataMapOfIntegerReal *anItem);
+		Handle_TColStd_HSequenceOfReal & operator=(const TColStd_HSequenceOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal {
-	TColStd_DataMapNodeOfDataMapOfIntegerReal* GetObject() {
-	return (TColStd_DataMapNodeOfDataMapOfIntegerReal*)$self->Access();
+%extend Handle_TColStd_HSequenceOfReal {
+	TColStd_HSequenceOfReal* GetObject() {
+	return (TColStd_HSequenceOfReal*)$self->Access();
 	}
 };
-%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal {
-	~Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+%extend Handle_TColStd_HSequenceOfReal {
+	~Handle_TColStd_HSequenceOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfTransient;
+class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient();
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient(const Handle_TColStd_ListNodeOfSetListOfSetOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient(const TColStd_ListNodeOfSetListOfSetOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient & operator=(const Handle_TColStd_ListNodeOfSetListOfSetOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient & operator=(const TColStd_ListNodeOfSetListOfSetOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_ListNodeOfSetListOfSetOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_ListNodeOfSetListOfSetOfTransient {
+	TColStd_ListNodeOfSetListOfSetOfTransient* GetObject() {
+	return (TColStd_ListNodeOfSetListOfSetOfTransient*)$self->Access();
+	}
+};
+%extend Handle_TColStd_ListNodeOfSetListOfSetOfTransient {
+	~Handle_TColStd_ListNodeOfSetListOfSetOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfTransient\n");}
 	}
 };
 
@@ -515,32 +545,32 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal : public Handle_TCollectio
 };
 
 
-%nodefaultctor Handle_TColStd_HSequenceOfReal;
-class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_HSetOfReal;
+class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal();
+		Handle_TColStd_HSetOfReal();
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal(const Handle_TColStd_HSequenceOfReal &aHandle);
+		Handle_TColStd_HSetOfReal(const Handle_TColStd_HSetOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal(const TColStd_HSequenceOfReal *anItem);
+		Handle_TColStd_HSetOfReal(const TColStd_HSetOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal & operator=(const Handle_TColStd_HSequenceOfReal &aHandle);
+		Handle_TColStd_HSetOfReal & operator=(const Handle_TColStd_HSetOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal & operator=(const TColStd_HSequenceOfReal *anItem);
+		Handle_TColStd_HSetOfReal & operator=(const TColStd_HSetOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HSetOfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HSequenceOfReal {
-	TColStd_HSequenceOfReal* GetObject() {
-	return (TColStd_HSequenceOfReal*)$self->Access();
+%extend Handle_TColStd_HSetOfReal {
+	TColStd_HSetOfReal* GetObject() {
+	return (TColStd_HSetOfReal*)$self->Access();
 	}
 };
-%extend Handle_TColStd_HSequenceOfReal {
-	~Handle_TColStd_HSequenceOfReal() {
+%extend Handle_TColStd_HSetOfReal {
+	~Handle_TColStd_HSetOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSetOfReal\n");}
 	}
 };
 
@@ -601,6 +631,36 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient : public Handle_TColl
 	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_HArray1OfCharacter;
+class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter(const Handle_TColStd_HArray1OfCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter(const TColStd_HArray1OfCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter & operator=(const Handle_TColStd_HArray1OfCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter & operator=(const TColStd_HArray1OfCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfCharacter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HArray1OfCharacter {
+	TColStd_HArray1OfCharacter* GetObject() {
+	return (TColStd_HArray1OfCharacter*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HArray1OfCharacter {
+	~Handle_TColStd_HArray1OfCharacter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfCharacter\n");}
 	}
 };
 
@@ -695,32 +755,32 @@ class Handle_TColStd_HSequenceOfHAsciiString : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColStd_HArray2OfInteger;
-class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfInteger;
+class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger();
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger(const Handle_TColStd_HArray2OfInteger &aHandle);
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger(const Handle_TColStd_SequenceNodeOfSequenceOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger(const TColStd_HArray2OfInteger *anItem);
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger(const TColStd_SequenceNodeOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger & operator=(const Handle_TColStd_HArray2OfInteger &aHandle);
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger & operator=(const Handle_TColStd_SequenceNodeOfSequenceOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger & operator=(const TColStd_HArray2OfInteger *anItem);
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger & operator=(const TColStd_SequenceNodeOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_SequenceNodeOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HArray2OfInteger {
-	TColStd_HArray2OfInteger* GetObject() {
-	return (TColStd_HArray2OfInteger*)$self->Access();
+%extend Handle_TColStd_SequenceNodeOfSequenceOfInteger {
+	TColStd_SequenceNodeOfSequenceOfInteger* GetObject() {
+	return (TColStd_SequenceNodeOfSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_HArray2OfInteger {
-	~Handle_TColStd_HArray2OfInteger() {
+%extend Handle_TColStd_SequenceNodeOfSequenceOfInteger {
+	~Handle_TColStd_SequenceNodeOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfInteger\n");}
 	}
 };
 
@@ -785,36 +845,6 @@ class Handle_TColStd_QueueNodeOfQueueOfInteger : public Handle_TCollection_MapNo
 };
 
 
-%nodefaultctor Handle_TColStd_HArray2OfBoolean;
-class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean(const Handle_TColStd_HArray2OfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean(const TColStd_HArray2OfBoolean *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean & operator=(const Handle_TColStd_HArray2OfBoolean &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean & operator=(const TColStd_HArray2OfBoolean *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfBoolean const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray2OfBoolean {
-	TColStd_HArray2OfBoolean* GetObject() {
-	return (TColStd_HArray2OfBoolean*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray2OfBoolean {
-	~Handle_TColStd_HArray2OfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfBoolean\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfReal;
 class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -841,6 +871,126 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_Ma
 	~Handle_TColStd_ListNodeOfSetListOfSetOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_HSequenceOfAsciiString;
+class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString();
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString(const Handle_TColStd_HSequenceOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString(const TColStd_HSequenceOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString & operator=(const Handle_TColStd_HSequenceOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString & operator=(const TColStd_HSequenceOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HSequenceOfAsciiString {
+	TColStd_HSequenceOfAsciiString* GetObject() {
+	return (TColStd_HSequenceOfAsciiString*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HSequenceOfAsciiString {
+	~Handle_TColStd_HSequenceOfAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal;
+class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal();
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal(const Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal(const TColStd_DataMapNodeOfDataMapOfIntegerReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal & operator=(const Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal & operator=(const TColStd_DataMapNodeOfDataMapOfIntegerReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	TColStd_DataMapNodeOfDataMapOfIntegerReal* GetObject() {
+	return (TColStd_DataMapNodeOfDataMapOfIntegerReal*)$self->Access();
+	}
+};
+%extend Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	~Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_HArray1OfExtendedString;
+class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString(const Handle_TColStd_HArray1OfExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString(const TColStd_HArray1OfExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString & operator=(const Handle_TColStd_HArray1OfExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString & operator=(const TColStd_HArray1OfExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HArray1OfExtendedString {
+	TColStd_HArray1OfExtendedString* GetObject() {
+	return (TColStd_HArray1OfExtendedString*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HArray1OfExtendedString {
+	~Handle_TColStd_HArray1OfExtendedString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfExtendedString\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
+class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient();
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient(const TColStd_StackNodeOfStackOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const TColStd_StackNodeOfStackOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_StackNodeOfStackOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_StackNodeOfStackOfTransient {
+	TColStd_StackNodeOfStackOfTransient* GetObject() {
+	return (TColStd_StackNodeOfStackOfTransient*)$self->Access();
+	}
+};
+%extend Handle_TColStd_StackNodeOfStackOfTransient {
+	~Handle_TColStd_StackNodeOfStackOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfTransient\n");}
 	}
 };
 
@@ -905,6 +1055,36 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger : public Handle_TColle
 };
 
 
+%nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfAsciiString;
+class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString();
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString(const Handle_TColStd_SequenceNodeOfSequenceOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString(const TColStd_SequenceNodeOfSequenceOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString & operator=(const Handle_TColStd_SequenceNodeOfSequenceOfAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString & operator=(const TColStd_SequenceNodeOfSequenceOfAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_SequenceNodeOfSequenceOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_SequenceNodeOfSequenceOfAsciiString {
+	TColStd_SequenceNodeOfSequenceOfAsciiString* GetObject() {
+	return (TColStd_SequenceNodeOfSequenceOfAsciiString*)$self->Access();
+	}
+};
+%extend Handle_TColStd_SequenceNodeOfSequenceOfAsciiString {
+	~Handle_TColStd_SequenceNodeOfSequenceOfAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfAsciiString\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColStd_HSequenceOfInteger;
 class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -935,92 +1115,62 @@ class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColStd_HSequenceOfAsciiString;
-class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_HArray1OfReal;
+class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString();
+		Handle_TColStd_HArray1OfReal();
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString(const Handle_TColStd_HSequenceOfAsciiString &aHandle);
+		Handle_TColStd_HArray1OfReal(const Handle_TColStd_HArray1OfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString(const TColStd_HSequenceOfAsciiString *anItem);
+		Handle_TColStd_HArray1OfReal(const TColStd_HArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString & operator=(const Handle_TColStd_HSequenceOfAsciiString &aHandle);
+		Handle_TColStd_HArray1OfReal & operator=(const Handle_TColStd_HArray1OfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString & operator=(const TColStd_HSequenceOfAsciiString *anItem);
+		Handle_TColStd_HArray1OfReal & operator=(const TColStd_HArray1OfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HSequenceOfAsciiString {
-	TColStd_HSequenceOfAsciiString* GetObject() {
-	return (TColStd_HSequenceOfAsciiString*)$self->Access();
+%extend Handle_TColStd_HArray1OfReal {
+	TColStd_HArray1OfReal* GetObject() {
+	return (TColStd_HArray1OfReal*)$self->Access();
 	}
 };
-%extend Handle_TColStd_HSequenceOfAsciiString {
-	~Handle_TColStd_HSequenceOfAsciiString() {
+%extend Handle_TColStd_HArray1OfReal {
+	~Handle_TColStd_HArray1OfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfAsciiString\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfReal\n");}
 	}
 };
 
 
-%nodefaultctor Handle_TColStd_HPackedMapOfInteger;
-class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_HArray1OfListOfInteger;
+class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger();
+		Handle_TColStd_HArray1OfListOfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger(const Handle_TColStd_HPackedMapOfInteger &aHandle);
+		Handle_TColStd_HArray1OfListOfInteger(const Handle_TColStd_HArray1OfListOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger(const TColStd_HPackedMapOfInteger *anItem);
+		Handle_TColStd_HArray1OfListOfInteger(const TColStd_HArray1OfListOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger & operator=(const Handle_TColStd_HPackedMapOfInteger &aHandle);
+		Handle_TColStd_HArray1OfListOfInteger & operator=(const Handle_TColStd_HArray1OfListOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger & operator=(const TColStd_HPackedMapOfInteger *anItem);
+		Handle_TColStd_HArray1OfListOfInteger & operator=(const TColStd_HArray1OfListOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HPackedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_HArray1OfListOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HPackedMapOfInteger {
-	TColStd_HPackedMapOfInteger* GetObject() {
-	return (TColStd_HPackedMapOfInteger*)$self->Access();
+%extend Handle_TColStd_HArray1OfListOfInteger {
+	TColStd_HArray1OfListOfInteger* GetObject() {
+	return (TColStd_HArray1OfListOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_HPackedMapOfInteger {
-	~Handle_TColStd_HPackedMapOfInteger() {
+%extend Handle_TColStd_HArray1OfListOfInteger {
+	~Handle_TColStd_HArray1OfListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HPackedMapOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_StdMapNodeOfMapOfInteger;
-class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger();
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger(const Handle_TColStd_StdMapNodeOfMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger(const TColStd_StdMapNodeOfMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger & operator=(const Handle_TColStd_StdMapNodeOfMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger & operator=(const TColStd_StdMapNodeOfMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_StdMapNodeOfMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_StdMapNodeOfMapOfInteger {
-	TColStd_StdMapNodeOfMapOfInteger* GetObject() {
-	return (TColStd_StdMapNodeOfMapOfInteger*)$self->Access();
-	}
-};
-%extend Handle_TColStd_StdMapNodeOfMapOfInteger {
-	~Handle_TColStd_StdMapNodeOfMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfListOfInteger\n");}
 	}
 };
 
@@ -1055,6 +1205,66 @@ class Handle_TColStd_ListNodeOfListOfInteger : public Handle_TCollection_MapNode
 };
 
 
+%nodefaultctor Handle_TColStd_HArray2OfInteger;
+class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger(const Handle_TColStd_HArray2OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger(const TColStd_HArray2OfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger & operator=(const Handle_TColStd_HArray2OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger & operator=(const TColStd_HArray2OfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HArray2OfInteger {
+	TColStd_HArray2OfInteger* GetObject() {
+	return (TColStd_HArray2OfInteger*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HArray2OfInteger {
+	~Handle_TColStd_HArray2OfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfInteger\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_QueueNodeOfQueueOfReal;
+class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal();
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal(const Handle_TColStd_QueueNodeOfQueueOfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal(const TColStd_QueueNodeOfQueueOfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal & operator=(const Handle_TColStd_QueueNodeOfQueueOfReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal & operator=(const TColStd_QueueNodeOfQueueOfReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_QueueNodeOfQueueOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_QueueNodeOfQueueOfReal {
+	TColStd_QueueNodeOfQueueOfReal* GetObject() {
+	return (TColStd_QueueNodeOfQueueOfReal*)$self->Access();
+	}
+};
+%extend Handle_TColStd_QueueNodeOfQueueOfReal {
+	~Handle_TColStd_QueueNodeOfQueueOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfReal\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColStd_ListNodeOfListOfReal;
 class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -1081,6 +1291,36 @@ class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	~Handle_TColStd_ListNodeOfListOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfListOfReal\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_HArray2OfCharacter;
+class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter(const Handle_TColStd_HArray2OfCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter(const TColStd_HArray2OfCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter & operator=(const Handle_TColStd_HArray2OfCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter & operator=(const TColStd_HArray2OfCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray2OfCharacter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HArray2OfCharacter {
+	TColStd_HArray2OfCharacter* GetObject() {
+	return (TColStd_HArray2OfCharacter*)$self->Access();
+	}
+};
+%extend Handle_TColStd_HArray2OfCharacter {
+	~Handle_TColStd_HArray2OfCharacter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfCharacter\n");}
 	}
 };
 
@@ -1145,92 +1385,32 @@ class Handle_TColStd_HArray2OfReal : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColStd_QueueNodeOfQueueOfReal;
-class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TColStd_StackNodeOfStackOfInteger;
+class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal();
+		Handle_TColStd_StackNodeOfStackOfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal(const Handle_TColStd_QueueNodeOfQueueOfReal &aHandle);
+		Handle_TColStd_StackNodeOfStackOfInteger(const Handle_TColStd_StackNodeOfStackOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal(const TColStd_QueueNodeOfQueueOfReal *anItem);
+		Handle_TColStd_StackNodeOfStackOfInteger(const TColStd_StackNodeOfStackOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal & operator=(const Handle_TColStd_QueueNodeOfQueueOfReal &aHandle);
+		Handle_TColStd_StackNodeOfStackOfInteger & operator=(const Handle_TColStd_StackNodeOfStackOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal & operator=(const TColStd_QueueNodeOfQueueOfReal *anItem);
+		Handle_TColStd_StackNodeOfStackOfInteger & operator=(const TColStd_StackNodeOfStackOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_QueueNodeOfQueueOfReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_StackNodeOfStackOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_QueueNodeOfQueueOfReal {
-	TColStd_QueueNodeOfQueueOfReal* GetObject() {
-	return (TColStd_QueueNodeOfQueueOfReal*)$self->Access();
+%extend Handle_TColStd_StackNodeOfStackOfInteger {
+	TColStd_StackNodeOfStackOfInteger* GetObject() {
+	return (TColStd_StackNodeOfStackOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_QueueNodeOfQueueOfReal {
-	~Handle_TColStd_QueueNodeOfQueueOfReal() {
+%extend Handle_TColStd_StackNodeOfStackOfInteger {
+	~Handle_TColStd_StackNodeOfStackOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfReal\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HSetOfReal;
-class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal();
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal(const Handle_TColStd_HSetOfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal(const TColStd_HSetOfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal & operator=(const Handle_TColStd_HSetOfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal & operator=(const TColStd_HSetOfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HSetOfReal {
-	TColStd_HSetOfReal* GetObject() {
-	return (TColStd_HSetOfReal*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HSetOfReal {
-	~Handle_TColStd_HSetOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSetOfReal\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfInteger;
-class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger();
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger(const Handle_TColStd_SequenceNodeOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger(const TColStd_SequenceNodeOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger & operator=(const Handle_TColStd_SequenceNodeOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger & operator=(const TColStd_SequenceNodeOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_SequenceNodeOfSequenceOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_SequenceNodeOfSequenceOfInteger {
-	TColStd_SequenceNodeOfSequenceOfInteger* GetObject() {
-	return (TColStd_SequenceNodeOfSequenceOfInteger*)$self->Access();
-	}
-};
-%extend Handle_TColStd_SequenceNodeOfSequenceOfInteger {
-	~Handle_TColStd_SequenceNodeOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfInteger\n");}
 	}
 };
 
@@ -1265,66 +1445,6 @@ class Handle_TColStd_SequenceNodeOfSequenceOfReal : public Handle_TCollection_Se
 };
 
 
-%nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
-class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient();
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient(const TColStd_StackNodeOfStackOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const TColStd_StackNodeOfStackOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_StackNodeOfStackOfTransient {
-	TColStd_StackNodeOfStackOfTransient* GetObject() {
-	return (TColStd_StackNodeOfStackOfTransient*)$self->Access();
-	}
-};
-%extend Handle_TColStd_StackNodeOfStackOfTransient {
-	~Handle_TColStd_StackNodeOfStackOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StackNodeOfStackOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HArray1OfCharacter;
-class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter(const Handle_TColStd_HArray1OfCharacter &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter(const TColStd_HArray1OfCharacter *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter & operator=(const Handle_TColStd_HArray1OfCharacter &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter & operator=(const TColStd_HArray1OfCharacter *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfCharacter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray1OfCharacter {
-	TColStd_HArray1OfCharacter* GetObject() {
-	return (TColStd_HArray1OfCharacter*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray1OfCharacter {
-	~Handle_TColStd_HArray1OfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfCharacter\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfTransient;
 class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -1351,36 +1471,6 @@ class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapN
 	~Handle_TColStd_StdMapNodeOfMapOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HArray2OfCharacter;
-class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter(const Handle_TColStd_HArray2OfCharacter &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter(const TColStd_HArray2OfCharacter *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter & operator=(const Handle_TColStd_HArray2OfCharacter &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter & operator=(const TColStd_HArray2OfCharacter *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray2OfCharacter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray2OfCharacter {
-	TColStd_HArray2OfCharacter* GetObject() {
-	return (TColStd_HArray2OfCharacter*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray2OfCharacter {
-	~Handle_TColStd_HArray2OfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfCharacter\n");}
 	}
 };
 
@@ -1415,36 +1505,6 @@ class Handle_TColStd_SequenceNodeOfSequenceOfTransient : public Handle_TCollecti
 };
 
 
-%nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfTransient;
-class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient();
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient(const Handle_TColStd_ListNodeOfSetListOfSetOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient(const TColStd_ListNodeOfSetListOfSetOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient & operator=(const Handle_TColStd_ListNodeOfSetListOfSetOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient & operator=(const TColStd_ListNodeOfSetListOfSetOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_ListNodeOfSetListOfSetOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_ListNodeOfSetListOfSetOfTransient {
-	TColStd_ListNodeOfSetListOfSetOfTransient* GetObject() {
-	return (TColStd_ListNodeOfSetListOfSetOfTransient*)$self->Access();
-	}
-};
-%extend Handle_TColStd_ListNodeOfSetListOfSetOfTransient {
-	~Handle_TColStd_ListNodeOfSetListOfSetOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfTransient\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfReal;
 class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -1475,62 +1535,32 @@ class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 };
 
 
-%nodefaultctor Handle_TColStd_HArray1OfExtendedString;
-class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger;
+class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString();
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger();
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString(const Handle_TColStd_HArray1OfExtendedString &aHandle);
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger(const Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString(const TColStd_HArray1OfExtendedString *anItem);
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger(const TColStd_IndexedMapNodeOfIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString & operator=(const Handle_TColStd_HArray1OfExtendedString &aHandle);
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger & operator=(const Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString & operator=(const TColStd_HArray1OfExtendedString *anItem);
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger & operator=(const TColStd_IndexedMapNodeOfIndexedMapOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HArray1OfExtendedString {
-	TColStd_HArray1OfExtendedString* GetObject() {
-	return (TColStd_HArray1OfExtendedString*)$self->Access();
+%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	TColStd_IndexedMapNodeOfIndexedMapOfInteger* GetObject() {
+	return (TColStd_IndexedMapNodeOfIndexedMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TColStd_HArray1OfExtendedString {
-	~Handle_TColStd_HArray1OfExtendedString() {
+%extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	~Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HArray1OfInteger;
-class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger(const Handle_TColStd_HArray1OfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger(const TColStd_HArray1OfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & operator=(const Handle_TColStd_HArray1OfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & operator=(const TColStd_HArray1OfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray1OfInteger {
-	TColStd_HArray1OfInteger* GetObject() {
-	return (TColStd_HArray1OfInteger*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray1OfInteger {
-	~Handle_TColStd_HArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");}
 	}
 };
 
@@ -1561,36 +1591,6 @@ class Handle_TColStd_HArray1OfAsciiString : public Handle_MMgt_TShared {
 	~Handle_TColStd_HArray1OfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColStd_HArray1OfReal;
-class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal();
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal(const Handle_TColStd_HArray1OfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal(const TColStd_HArray1OfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator=(const Handle_TColStd_HArray1OfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator=(const TColStd_HArray1OfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_HArray1OfReal {
-	TColStd_HArray1OfReal* GetObject() {
-	return (TColStd_HArray1OfReal*)$self->Access();
-	}
-};
-%extend Handle_TColStd_HArray1OfReal {
-	~Handle_TColStd_HArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfReal\n");}
 	}
 };
 
@@ -1630,8 +1630,18 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_StdMapNodeOfMapOfInteger(const Standard_Integer &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1711,63 +1721,6 @@ class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor TColStd_SequenceOfTransient;
-class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceOfTransient();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfTransient & Assign(const TColStd_SequenceOfTransient &Other);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfTransient & operator=(const TColStd_SequenceOfTransient &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Transient &T);
-		%feature("autodoc", "1");
-		void Append(TColStd_SequenceOfTransient & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Standard_Transient &T);
-		%feature("autodoc", "1");
-		void Prepend(TColStd_SequenceOfTransient & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Standard_Transient &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & First() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColStd_SequenceOfTransient {
-	~TColStd_SequenceOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfTransient\n");}
-	}
-};
-
-
 %nodefaultctor TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient;
 class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TCollection_MapNode {
 	public:
@@ -1775,8 +1728,18 @@ class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TC
 		TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient(const Handle_Standard_Transient &K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1836,6 +1799,77 @@ class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 };
 
 
+%nodefaultctor TColStd_HSequenceOfHExtendedString;
+class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColStd_HSequenceOfHExtendedString();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_TCollection_HExtendedString &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TCollection_HExtendedString &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHExtendedString Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
+		%feature("autodoc", "1");
+		const Handle_TCollection_HExtendedString & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfHExtendedString & Sequence() const;
+		%feature("autodoc", "1");
+		TColStd_SequenceOfHExtendedString & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHExtendedString ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_HSequenceOfHExtendedString {
+	Handle_TColStd_HSequenceOfHExtendedString GetHandle() {
+	return *(Handle_TColStd_HSequenceOfHExtendedString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfHExtendedString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HSequenceOfHExtendedString {
+	~TColStd_HSequenceOfHExtendedString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfHExtendedString\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_DataMapOfIntegerInteger;
 class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 	public:
@@ -1859,8 +1893,18 @@ class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Standard_Integer &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Standard_Integer &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer &K);
 
@@ -1968,8 +2012,18 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const Standard_Integer &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const Standard_Integer &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer &K);
 
@@ -2006,8 +2060,18 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_StackNodeOfStackOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2026,59 +2090,6 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 	~TColStd_StackNodeOfStackOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackNodeOfStackOfReal\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_HArray2OfInteger;
-class TColStd_HArray2OfInteger : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HArray2OfInteger(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColStd_HArray2OfInteger(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Integer &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		const Standard_Integer & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColStd_Array2OfInteger & Array2() const;
-		%feature("autodoc", "1");
-		TColStd_Array2OfInteger & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HArray2OfInteger {
-	Handle_TColStd_HArray2OfInteger GetHandle() {
-	return *(Handle_TColStd_HArray2OfInteger*) &$self;
-	}
-};
-%extend TColStd_HArray2OfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HArray2OfInteger {
-	~TColStd_HArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HArray2OfInteger\n");}
 	}
 };
 
@@ -2108,82 +2119,120 @@ class TColStd_SetIteratorOfSetOfInteger {
 };
 
 
-%nodefaultctor TColStd_Array2OfBoolean;
-class TColStd_Array2OfBoolean {
+%nodefaultctor TColStd_HSequenceOfTransient;
+class TColStd_HSequenceOfTransient : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColStd_Array2OfBoolean(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColStd_HSequenceOfTransient();
 		%feature("autodoc", "1");
-		TColStd_Array2OfBoolean(const Standard_Boolean &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Init(const Standard_Boolean &V);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		void Clear();
 		%feature("autodoc", "1");
-		const TColStd_Array2OfBoolean & Assign(const TColStd_Array2OfBoolean &Other);
+		void Append(const Handle_Standard_Transient &anItem);
 		%feature("autodoc", "1");
-		const TColStd_Array2OfBoolean & operator=(const TColStd_Array2OfBoolean &Other);
+		void Append(const Handle_TColStd_HSequenceOfTransient &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void Prepend(const Handle_Standard_Transient &anItem);
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
+		void Prepend(const Handle_TColStd_HSequenceOfTransient &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		void Reverse();
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
 		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfTransient &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Boolean &Value);
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfTransient &aSequence);
 		%feature("autodoc", "1");
-		const Standard_Boolean & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
-		const Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		Handle_TColStd_HSequenceOfTransient Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		void SetValue(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		const Handle_Standard_Transient & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfTransient & Sequence() const;
+		%feature("autodoc", "1");
+		TColStd_SequenceOfTransient & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_Array2OfBoolean {
-	~TColStd_Array2OfBoolean() {
+%extend TColStd_HSequenceOfTransient {
+	Handle_TColStd_HSequenceOfTransient GetHandle() {
+	return *(Handle_TColStd_HSequenceOfTransient*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HSequenceOfTransient {
+	~TColStd_HSequenceOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_Array2OfBoolean\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfTransient\n");}
 	}
 };
 
 
-%nodefaultctor TColStd_StackOfTransient;
-class TColStd_StackOfTransient {
+%nodefaultctor TColStd_HArray1OfListOfInteger;
+class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColStd_StackOfTransient();
+		TColStd_HArray1OfListOfInteger(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		const TColStd_StackOfTransient & Assign(const TColStd_StackOfTransient &Other);
+		TColStd_HArray1OfListOfInteger(const Standard_Integer Low, const Standard_Integer Up, const TColStd_ListOfInteger &V);
 		%feature("autodoc", "1");
-		const TColStd_StackOfTransient & operator=(const TColStd_StackOfTransient &Other);
+		void Init(const TColStd_ListOfInteger &V);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Top() const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void Push(const Handle_Standard_Transient &I);
+		void SetValue(const Standard_Integer Index, const TColStd_ListOfInteger &Value);
 		%feature("autodoc", "1");
-		void Pop();
+		const TColStd_ListOfInteger & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Clear();
+		TColStd_ListOfInteger & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeTop();
+		const TColStd_Array1OfListOfInteger & Array1() const;
+		%feature("autodoc", "1");
+		TColStd_Array1OfListOfInteger & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_StackOfTransient {
-	~TColStd_StackOfTransient() {
+%extend TColStd_HArray1OfListOfInteger {
+	Handle_TColStd_HArray1OfListOfInteger GetHandle() {
+	return *(Handle_TColStd_HArray1OfListOfInteger*) &$self;
+	}
+};
+%extend TColStd_HArray1OfListOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HArray1OfListOfInteger {
+	~TColStd_HArray1OfListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_StackOfTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfListOfInteger\n");}
 	}
 };
 
@@ -2221,8 +2270,18 @@ class TColStd_Array2OfInteger {
 		const Standard_Integer & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Integer) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
@@ -2248,8 +2307,18 @@ class TColStd_ListIteratorOfSetListOfSetOfReal {
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 
 };
 %extend TColStd_ListIteratorOfSetListOfSetOfReal {
@@ -2260,13 +2329,192 @@ class TColStd_ListIteratorOfSetListOfSetOfReal {
 };
 
 
+%nodefaultctor TColStd_HArray2OfReal;
+class TColStd_HArray2OfReal : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Real &V);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real &Value);
+		%feature("autodoc", "1");
+		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		const TColStd_Array2OfReal & Array2() const;
+		%feature("autodoc", "1");
+		TColStd_Array2OfReal & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_HArray2OfReal {
+	Handle_TColStd_HArray2OfReal GetHandle() {
+	return *(Handle_TColStd_HArray2OfReal*) &$self;
+	}
+};
+%extend TColStd_HArray2OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HArray2OfReal {
+	~TColStd_HArray2OfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_HArray2OfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_HSetOfReal;
+class TColStd_HSetOfReal : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColStd_HSetOfReal();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Standard_Real &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Standard_Real &T);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfReal Union(const Handle_TColStd_HSetOfReal &B) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfReal Intersection(const Handle_TColStd_HSetOfReal &B) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfReal Difference(const Handle_TColStd_HSetOfReal &B) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Real &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const Handle_TColStd_HSetOfReal &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const Handle_TColStd_HSetOfReal &S) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSetOfReal ShallowCopy() const;
+		%feature("autodoc", "1");
+		const TColStd_SetOfReal & Set() const;
+		%feature("autodoc", "1");
+		TColStd_SetOfReal & ChangeSet();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_HSetOfReal {
+	Handle_TColStd_HSetOfReal GetHandle() {
+	return *(Handle_TColStd_HSetOfReal*) &$self;
+	}
+};
+%extend TColStd_HSetOfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HSetOfReal {
+	~TColStd_HSetOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_HSetOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerReal;
+class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_DataMapNodeOfDataMapOfIntegerReal(const Standard_Integer &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal GetHandle() {
+	return *(Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal*) &$self;
+	}
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
+	~TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerReal\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfReal;
 class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_SequenceNodeOfSequenceOfReal(const Standard_Real &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2285,6 +2533,45 @@ class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 	~TColStd_SequenceNodeOfSequenceOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
+class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_ListNodeOfSetListOfSetOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	Handle_TColStd_ListNodeOfSetListOfSetOfReal GetHandle() {
+	return *(Handle_TColStd_ListNodeOfSetListOfSetOfReal*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	~TColStd_ListNodeOfSetListOfSetOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfReal\n");}
 	}
 };
 
@@ -2332,6 +2619,39 @@ class TColStd_Array1OfCharacter {
 };
 
 
+%nodefaultctor TColStd_StackOfTransient;
+class TColStd_StackOfTransient {
+	public:
+		%feature("autodoc", "1");
+		TColStd_StackOfTransient();
+		%feature("autodoc", "1");
+		const TColStd_StackOfTransient & Assign(const TColStd_StackOfTransient &Other);
+		%feature("autodoc", "1");
+		const TColStd_StackOfTransient & operator=(const TColStd_StackOfTransient &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Top() const;
+		%feature("autodoc", "1");
+		void Push(const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeTop();
+
+};
+%extend TColStd_StackOfTransient {
+	~TColStd_StackOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_StackOfTransient\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_HSequenceOfInteger;
 class TColStd_HSequenceOfInteger : public MMgt_TShared {
 	public:
@@ -2369,8 +2689,18 @@ class TColStd_HSequenceOfInteger : public MMgt_TShared {
 		void SetValue(const Standard_Integer anIndex, const Standard_Integer &anItem);
 		%feature("autodoc", "1");
 		const Standard_Integer & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer anIndex) {
+				return (Standard_Integer) $self->ChangeValue(anIndex);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer anIndex) {
+				$self->ChangeValue(anIndex)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
@@ -2432,8 +2762,18 @@ class TColStd_Array1OfReal {
 		const Standard_Real & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index);
 
@@ -2451,8 +2791,18 @@ class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_ListNodeOfSetListOfSetOfInteger(const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2598,6 +2948,35 @@ class TColStd_HArray1OfAsciiString : public MMgt_TShared {
 };
 
 
+%nodefaultctor TColStd_MapOfReal;
+class TColStd_MapOfReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TColStd_MapOfReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TColStd_MapOfReal & Assign(const TColStd_MapOfReal &Other);
+		%feature("autodoc", "1");
+		TColStd_MapOfReal & operator=(const TColStd_MapOfReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Standard_Real &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Real &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Standard_Real &aKey);
+
+};
+%extend TColStd_MapOfReal {
+	~TColStd_MapOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfReal\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_SequenceOfReal;
 class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 	public:
@@ -2637,8 +3016,18 @@ class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 		const Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Real &I);
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -2655,82 +3044,59 @@ class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfInteger;
-class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
+%nodefaultctor TColStd_SequenceOfAsciiString;
+class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColStd_IndexedMapNodeOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TColStd_SequenceOfAsciiString();
 		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		const TColStd_SequenceOfAsciiString & Assign(const TColStd_SequenceOfAsciiString &Other);
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		const TColStd_SequenceOfAsciiString & operator=(const TColStd_SequenceOfAsciiString &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Append(const TCollection_AsciiString &T);
+		%feature("autodoc", "1");
+		void Append(TColStd_SequenceOfAsciiString & S);
+		%feature("autodoc", "1");
+		void Prepend(const TCollection_AsciiString &T);
+		%feature("autodoc", "1");
+		void Prepend(TColStd_SequenceOfAsciiString & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const TCollection_AsciiString &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & First() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
-	Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger GetHandle() {
-	return *(Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger*) &$self;
-	}
-};
-%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
-	~TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
+%extend TColStd_SequenceOfAsciiString {
+	~TColStd_SequenceOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_HArray1OfBoolean;
-class TColStd_HArray1OfBoolean : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HArray1OfBoolean(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColStd_HArray1OfBoolean(const Standard_Integer Low, const Standard_Integer Up, const Standard_Boolean &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_Boolean &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Boolean &Value);
-		%feature("autodoc", "1");
-		const Standard_Boolean & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColStd_Array1OfBoolean & Array1() const;
-		%feature("autodoc", "1");
-		TColStd_Array1OfBoolean & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HArray1OfBoolean {
-	Handle_TColStd_HArray1OfBoolean GetHandle() {
-	return *(Handle_TColStd_HArray1OfBoolean*) &$self;
-	}
-};
-%extend TColStd_HArray1OfBoolean {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HArray1OfBoolean {
-	~TColStd_HArray1OfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfBoolean\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfAsciiString\n");}
 	}
 };
 
@@ -2764,49 +3130,69 @@ class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNo
 };
 
 
-%nodefaultctor TColStd_HArray1OfListOfInteger;
-class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
+%nodefaultctor TColStd_SequenceOfInteger;
+class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColStd_HArray1OfListOfInteger(const Standard_Integer Low, const Standard_Integer Up);
+		TColStd_SequenceOfInteger();
 		%feature("autodoc", "1");
-		TColStd_HArray1OfListOfInteger(const Standard_Integer Low, const Standard_Integer Up, const TColStd_ListOfInteger &V);
+		void Clear();
 		%feature("autodoc", "1");
-		void Init(const TColStd_ListOfInteger &V);
+		const TColStd_SequenceOfInteger & Assign(const TColStd_SequenceOfInteger &Other);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		const TColStd_SequenceOfInteger & operator=(const TColStd_SequenceOfInteger &Other);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void Append(const Standard_Integer &T);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void Append(TColStd_SequenceOfInteger & S);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TColStd_ListOfInteger &Value);
+		void Prepend(const Standard_Integer &T);
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Value(const Standard_Integer Index) const;
+		void Prepend(TColStd_SequenceOfInteger & S);
 		%feature("autodoc", "1");
-		TColStd_ListOfInteger & ChangeValue(const Standard_Integer Index);
+		void InsertBefore(const Standard_Integer Index, const Standard_Integer &I);
 		%feature("autodoc", "1");
-		const TColStd_Array1OfListOfInteger & Array1() const;
+		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
 		%feature("autodoc", "1");
-		TColStd_Array1OfListOfInteger & ChangeArray1();
+		void InsertAfter(const Standard_Integer Index, const Standard_Integer &T);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
+		%feature("autodoc", "1");
+		const Standard_Integer & First() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
+		%feature("autodoc", "1");
+		const Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Integer &I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColStd_HArray1OfListOfInteger {
-	Handle_TColStd_HArray1OfListOfInteger GetHandle() {
-	return *(Handle_TColStd_HArray1OfListOfInteger*) &$self;
-	}
-};
-%extend TColStd_HArray1OfListOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HArray1OfListOfInteger {
-	~TColStd_HArray1OfListOfInteger() {
+%extend TColStd_SequenceOfInteger {
+	~TColStd_SequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfListOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfInteger\n");}
 	}
 };
 
@@ -2865,8 +3251,18 @@ class TColStd_Array1OfInteger {
 		const Standard_Integer & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 
@@ -2875,53 +3271,6 @@ class TColStd_Array1OfInteger {
 	~TColStd_Array1OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_Array1OfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_Array2OfCharacter;
-class TColStd_Array2OfCharacter {
-	public:
-		%feature("autodoc", "1");
-		TColStd_Array2OfCharacter(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColStd_Array2OfCharacter(const Standard_Character &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Standard_Character &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColStd_Array2OfCharacter & Assign(const TColStd_Array2OfCharacter &Other);
-		%feature("autodoc", "1");
-		const TColStd_Array2OfCharacter & operator=(const TColStd_Array2OfCharacter &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Character &Value);
-		%feature("autodoc", "1");
-		const Standard_Character & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Standard_Character & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Character & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Standard_Character & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend TColStd_Array2OfCharacter {
-	~TColStd_Array2OfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_Array2OfCharacter\n");}
 	}
 };
 
@@ -2963,8 +3312,18 @@ class TColStd_HSequenceOfReal : public MMgt_TShared {
 		void SetValue(const Standard_Integer anIndex, const Standard_Real &anItem);
 		%feature("autodoc", "1");
 		const Standard_Real & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer anIndex) {
+				return (Standard_Real) $self->ChangeValue(anIndex);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer anIndex) {
+				$self->ChangeValue(anIndex)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
@@ -3016,15 +3375,88 @@ class TColStd_MapIntegerHasher {
 };
 
 
+%nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfInteger;
+class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_IndexedMapNodeOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger GetHandle() {
+	return *(Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger*) &$self;
+	}
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	~TColStd_IndexedMapNodeOfIndexedMapOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerInteger;
 class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_DataMapNodeOfDataMapOfIntegerInteger(const Standard_Integer &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3152,6 +3584,35 @@ class TColStd_ListIteratorOfSetListOfSetOfTransient {
 };
 
 
+%nodefaultctor TColStd_MapOfTransient;
+class TColStd_MapOfTransient : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TColStd_MapOfTransient(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TColStd_MapOfTransient & Assign(const TColStd_MapOfTransient &Other);
+		%feature("autodoc", "1");
+		TColStd_MapOfTransient & operator=(const TColStd_MapOfTransient &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Standard_Transient &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Standard_Transient &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Standard_Transient &aKey);
+
+};
+%extend TColStd_MapOfTransient {
+	~TColStd_MapOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfTransient\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_HArray2OfBoolean;
 class TColStd_HArray2OfBoolean : public MMgt_TShared {
 	public:
@@ -3205,155 +3666,35 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColStd_StackIteratorOfStackOfInteger;
-class TColStd_StackIteratorOfStackOfInteger {
-	public:
-		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfInteger();
-		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfInteger(const TColStd_StackOfInteger &S);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_StackOfInteger &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%extend TColStd_StackIteratorOfStackOfInteger {
-	~TColStd_StackIteratorOfStackOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_MapOfTransient;
-class TColStd_MapOfTransient : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TColStd_MapOfTransient(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TColStd_MapOfTransient & Assign(const TColStd_MapOfTransient &Other);
-		%feature("autodoc", "1");
-		TColStd_MapOfTransient & operator=(const TColStd_MapOfTransient &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Standard_Transient &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Transient &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Transient &aKey);
-
-};
-%extend TColStd_MapOfTransient {
-	~TColStd_MapOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_StdMapNodeOfMapOfTransient;
-class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TColStd_StdMapNodeOfMapOfTransient(const Handle_Standard_Transient &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_StdMapNodeOfMapOfTransient {
-	Handle_TColStd_StdMapNodeOfMapOfTransient GetHandle() {
-	return *(Handle_TColStd_StdMapNodeOfMapOfTransient*) &$self;
-	}
-};
-%extend TColStd_StdMapNodeOfMapOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_StdMapNodeOfMapOfTransient {
-	~TColStd_StdMapNodeOfMapOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SequenceOfAsciiString;
-class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceOfAsciiString();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfAsciiString & Assign(const TColStd_SequenceOfAsciiString &Other);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfAsciiString & operator=(const TColStd_SequenceOfAsciiString &Other);
-		%feature("autodoc", "1");
-		void Append(const TCollection_AsciiString &T);
-		%feature("autodoc", "1");
-		void Append(TColStd_SequenceOfAsciiString & S);
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_AsciiString &T);
-		%feature("autodoc", "1");
-		void Prepend(TColStd_SequenceOfAsciiString & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const TCollection_AsciiString &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & First() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColStd_SequenceOfAsciiString & S);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColStd_SequenceOfAsciiString {
-	~TColStd_SequenceOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfAsciiString\n");}
-	}
-};
-
-
 %nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfReal;
 class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_IndexedMapNodeOfIndexedMapOfReal(const Standard_Real &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Real & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetKey1() {
+				return (Standard_Real) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Real value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -3378,155 +3719,45 @@ class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TColStd_ListIteratorOfListOfReal;
-class TColStd_ListIteratorOfListOfReal {
+%nodefaultctor TColStd_QueueOfInteger;
+class TColStd_QueueOfInteger {
 	public:
 		%feature("autodoc", "1");
-		TColStd_ListIteratorOfListOfReal();
+		TColStd_QueueOfInteger();
 		%feature("autodoc", "1");
-		TColStd_ListIteratorOfListOfReal(const TColStd_ListOfReal &L);
+		const TColStd_QueueOfInteger & Assign(const TColStd_QueueOfInteger &Other);
 		%feature("autodoc", "1");
-		void Initialize(const TColStd_ListOfReal &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
-
-};
-%extend TColStd_ListIteratorOfListOfReal {
-	~TColStd_ListIteratorOfListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfReal\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_HSequenceOfAsciiString;
-class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HSequenceOfAsciiString();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		const TColStd_QueueOfInteger & operator=(const TColStd_QueueOfInteger &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Append(const TCollection_AsciiString &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HSequenceOfAsciiString &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_AsciiString &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HSequenceOfAsciiString &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfAsciiString &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfAsciiString &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfAsciiString & Sequence() const;
-		%feature("autodoc", "1");
-		TColStd_SequenceOfAsciiString & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HSequenceOfAsciiString {
-	Handle_TColStd_HSequenceOfAsciiString GetHandle() {
-	return *(Handle_TColStd_HSequenceOfAsciiString*) &$self;
-	}
-};
-%extend TColStd_HSequenceOfAsciiString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HSequenceOfAsciiString {
-	~TColStd_HSequenceOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SequenceOfExtendedString;
-class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceOfExtendedString();
+		const Standard_Integer & Front() const;
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const TColStd_SequenceOfExtendedString & Assign(const TColStd_SequenceOfExtendedString &Other);
+		void Push(const Standard_Integer &T);
 		%feature("autodoc", "1");
-		const TColStd_SequenceOfExtendedString & operator=(const TColStd_SequenceOfExtendedString &Other);
-		%feature("autodoc", "1");
-		void Append(const TCollection_ExtendedString &T);
-		%feature("autodoc", "1");
-		void Append(TColStd_SequenceOfExtendedString & S);
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_ExtendedString &T);
-		%feature("autodoc", "1");
-		void Prepend(TColStd_SequenceOfExtendedString & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const TCollection_ExtendedString &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const TCollection_ExtendedString &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & First() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString &I);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		void Pop();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFront() {
+				return (Standard_Integer) $self->ChangeFront();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFront(Standard_Integer value ) {
+				$self->ChangeFront()=value;
+				}
+		};
 
 };
-%extend TColStd_SequenceOfExtendedString {
-	~TColStd_SequenceOfExtendedString() {
+%extend TColStd_QueueOfInteger {
+	~TColStd_QueueOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfExtendedString\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_QueueOfInteger\n");}
 	}
 };
 
@@ -3552,64 +3783,59 @@ class TColStd_MapIteratorOfPackedMapOfInteger : public TCollection_BasicMapItera
 };
 
 
-%nodefaultctor TColStd_StackIteratorOfStackOfTransient;
-class TColStd_StackIteratorOfStackOfTransient {
+%nodefaultctor TColStd_SequenceOfHExtendedString;
+class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfTransient();
-		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfTransient(const TColStd_StackOfTransient &S);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_StackOfTransient &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-%extend TColStd_StackIteratorOfStackOfTransient {
-	~TColStd_StackIteratorOfStackOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SetOfTransient;
-class TColStd_SetOfTransient {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SetOfTransient();
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		TColStd_SequenceOfHExtendedString();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Standard_Transient &T);
+		const TColStd_SequenceOfHExtendedString & Assign(const TColStd_SequenceOfHExtendedString &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Transient &T);
+		const TColStd_SequenceOfHExtendedString & operator=(const TColStd_SequenceOfHExtendedString &Other);
 		%feature("autodoc", "1");
-		void Union(const TColStd_SetOfTransient &B);
+		void Append(const Handle_TCollection_HExtendedString &T);
 		%feature("autodoc", "1");
-		void Intersection(const TColStd_SetOfTransient &B);
+		void Append(TColStd_SequenceOfHExtendedString & S);
 		%feature("autodoc", "1");
-		void Difference(const TColStd_SetOfTransient &B);
+		void Prepend(const Handle_TCollection_HExtendedString &T);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Transient &T) const;
+		void Prepend(TColStd_SequenceOfHExtendedString & S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const TColStd_SetOfTransient &S) const;
+		void InsertBefore(const Standard_Integer Index, const Handle_TCollection_HExtendedString &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const TColStd_SetOfTransient &S) const;
+		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TCollection_HExtendedString &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
+		%feature("autodoc", "1");
+		const Handle_TCollection_HExtendedString & First() const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HExtendedString & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
+		%feature("autodoc", "1");
+		const Handle_TCollection_HExtendedString & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HExtendedString & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TCollection_HExtendedString &I);
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColStd_SetOfTransient {
-	~TColStd_SetOfTransient() {
+%extend TColStd_SequenceOfHExtendedString {
+	~TColStd_SequenceOfHExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SetOfTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfHExtendedString\n");}
 	}
 };
 
@@ -3688,10 +3914,30 @@ class TColStd_SetListOfSetOfReal {
 		void Append(const Standard_Real &I, TColStd_ListIteratorOfSetListOfSetOfReal & theIt);
 		%feature("autodoc", "1");
 		void Append(TColStd_SetListOfSetOfReal & Other);
-		%feature("autodoc", "1");
-		Standard_Real & First() const;
-		%feature("autodoc", "1");
-		Standard_Real & Last() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetFirst() {
+				return (Standard_Real) $self->First();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFirst(Standard_Real value ) {
+				$self->First()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetLast() {
+				return (Standard_Real) $self->Last();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetLast(Standard_Real value ) {
+				$self->Last()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
@@ -3756,8 +4002,18 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_StackNodeOfStackOfInteger(const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3776,59 +4032,6 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 	~TColStd_StackNodeOfStackOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackNodeOfStackOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_HArray2OfReal;
-class TColStd_HArray2OfReal : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColStd_HArray2OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Real &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColStd_Array2OfReal & Array2() const;
-		%feature("autodoc", "1");
-		TColStd_Array2OfReal & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HArray2OfReal {
-	Handle_TColStd_HArray2OfReal GetHandle() {
-	return *(Handle_TColStd_HArray2OfReal*) &$self;
-	}
-};
-%extend TColStd_HArray2OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HArray2OfReal {
-	~TColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HArray2OfReal\n");}
 	}
 };
 
@@ -3958,8 +4161,18 @@ class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode
 		TColStd_IndexedMapNodeOfIndexedMapOfTransient(const Handle_Standard_Transient &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -4027,64 +4240,133 @@ class TColStd_Array1OfListOfInteger {
 };
 
 
-%nodefaultctor TColStd_QueueNodeOfQueueOfInteger;
-class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
+%nodefaultctor TColStd_HArray2OfInteger;
+class TColStd_HArray2OfInteger : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColStd_QueueNodeOfQueueOfInteger(const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		TColStd_HArray2OfInteger(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		TColStd_HArray2OfInteger(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Standard_Integer &V);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer &Value);
+		%feature("autodoc", "1");
+		const Standard_Integer & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Integer) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		const TColStd_Array2OfInteger & Array2() const;
+		%feature("autodoc", "1");
+		TColStd_Array2OfInteger & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_QueueNodeOfQueueOfInteger {
-	Handle_TColStd_QueueNodeOfQueueOfInteger GetHandle() {
-	return *(Handle_TColStd_QueueNodeOfQueueOfInteger*) &$self;
+%extend TColStd_HArray2OfInteger {
+	Handle_TColStd_HArray2OfInteger GetHandle() {
+	return *(Handle_TColStd_HArray2OfInteger*) &$self;
 	}
 };
-%extend TColStd_QueueNodeOfQueueOfInteger {
+%extend TColStd_HArray2OfInteger {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColStd_QueueNodeOfQueueOfInteger {
-	~TColStd_QueueNodeOfQueueOfInteger() {
+%extend TColStd_HArray2OfInteger {
+	~TColStd_HArray2OfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_QueueNodeOfQueueOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_HArray2OfInteger\n");}
 	}
 };
 
 
-%nodefaultctor TColStd_QueueOfInteger;
-class TColStd_QueueOfInteger {
+%nodefaultctor TColStd_MapIteratorOfMapOfReal;
+class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		TColStd_QueueOfInteger();
+		TColStd_MapIteratorOfMapOfReal();
 		%feature("autodoc", "1");
-		const TColStd_QueueOfInteger & Assign(const TColStd_QueueOfInteger &Other);
+		TColStd_MapIteratorOfMapOfReal(const TColStd_MapOfReal &aMap);
 		%feature("autodoc", "1");
-		const TColStd_QueueOfInteger & operator=(const TColStd_QueueOfInteger &Other);
+		void Initialize(const TColStd_MapOfReal &aMap);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Front() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Push(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFront();
+		const Standard_Real & Key() const;
 
 };
-%extend TColStd_QueueOfInteger {
-	~TColStd_QueueOfInteger() {
+%extend TColStd_MapIteratorOfMapOfReal {
+	~TColStd_MapIteratorOfMapOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_QueueOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_Array2OfCharacter;
+class TColStd_Array2OfCharacter {
+	public:
+		%feature("autodoc", "1");
+		TColStd_Array2OfCharacter(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColStd_Array2OfCharacter(const Standard_Character &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Standard_Character &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColStd_Array2OfCharacter & Assign(const TColStd_Array2OfCharacter &Other);
+		%feature("autodoc", "1");
+		const TColStd_Array2OfCharacter & operator=(const TColStd_Array2OfCharacter &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Character &Value);
+		%feature("autodoc", "1");
+		const Standard_Character & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Standard_Character & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Standard_Character & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Standard_Character & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TColStd_Array2OfCharacter {
+	~TColStd_Array2OfCharacter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_Array2OfCharacter\n");}
 	}
 };
 
@@ -4118,6 +4400,25 @@ class TColStd_MapOfInteger : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor TColStd_MapTransientHasher;
+class TColStd_MapTransientHasher {
+	public:
+		%feature("autodoc", "1");
+		TColStd_MapTransientHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Handle_Standard_Transient &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Handle_Standard_Transient &K1, const Handle_Standard_Transient &K2);
+
+};
+%extend TColStd_MapTransientHasher {
+	~TColStd_MapTransientHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_MapTransientHasher\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_StackOfInteger;
 class TColStd_StackOfInteger {
 	public:
@@ -4139,8 +4440,18 @@ class TColStd_StackOfInteger {
 		void Pop();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeTop();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeTop() {
+				return (Standard_Integer) $self->ChangeTop();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeTop(Standard_Integer value ) {
+				$self->ChangeTop()=value;
+				}
+		};
 
 };
 %extend TColStd_StackOfInteger {
@@ -4151,13 +4462,80 @@ class TColStd_StackOfInteger {
 };
 
 
+%nodefaultctor TColStd_SequenceOfExtendedString;
+class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TColStd_SequenceOfExtendedString();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfExtendedString & Assign(const TColStd_SequenceOfExtendedString &Other);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfExtendedString & operator=(const TColStd_SequenceOfExtendedString &Other);
+		%feature("autodoc", "1");
+		void Append(const TCollection_ExtendedString &T);
+		%feature("autodoc", "1");
+		void Append(TColStd_SequenceOfExtendedString & S);
+		%feature("autodoc", "1");
+		void Prepend(const TCollection_ExtendedString &T);
+		%feature("autodoc", "1");
+		void Prepend(TColStd_SequenceOfExtendedString & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const TCollection_ExtendedString &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const TCollection_ExtendedString &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & First() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColStd_SequenceOfExtendedString & S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString &I);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TColStd_SequenceOfExtendedString {
+	~TColStd_SequenceOfExtendedString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfExtendedString\n");}
+	}
+};
+
+
 %nodefaultctor TColStd_QueueNodeOfQueueOfReal;
 class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_QueueNodeOfQueueOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4199,8 +4577,18 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
 		%feature("autodoc", "1");
 		const Standard_Integer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const TColStd_Array1OfInteger & Array1() const;
 		%feature("autodoc", "1");
@@ -4227,31 +4615,84 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
-class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
+%nodefaultctor TColStd_Array2OfBoolean;
+class TColStd_Array2OfBoolean {
 	public:
 		%feature("autodoc", "1");
-		TColStd_ListNodeOfSetListOfSetOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
+		TColStd_Array2OfBoolean(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		TColStd_Array2OfBoolean(const Standard_Boolean &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Init(const Standard_Boolean &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColStd_Array2OfBoolean & Assign(const TColStd_Array2OfBoolean &Other);
+		%feature("autodoc", "1");
+		const TColStd_Array2OfBoolean & operator=(const TColStd_Array2OfBoolean &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Boolean &Value);
+		%feature("autodoc", "1");
+		const Standard_Boolean & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Standard_Boolean & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	Handle_TColStd_ListNodeOfSetListOfSetOfReal GetHandle() {
-	return *(Handle_TColStd_ListNodeOfSetListOfSetOfReal*) &$self;
-	}
-};
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	~TColStd_ListNodeOfSetListOfSetOfReal() {
+%extend TColStd_Array2OfBoolean {
+	~TColStd_Array2OfBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_Array2OfBoolean\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_ListIteratorOfListOfReal;
+class TColStd_ListIteratorOfListOfReal {
+	public:
+		%feature("autodoc", "1");
+		TColStd_ListIteratorOfListOfReal();
+		%feature("autodoc", "1");
+		TColStd_ListIteratorOfListOfReal(const TColStd_ListOfReal &L);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_ListOfReal &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+
+};
+%extend TColStd_ListIteratorOfListOfReal {
+	~TColStd_ListIteratorOfListOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfReal\n");}
 	}
 };
 
@@ -4293,131 +4734,187 @@ class TColStd_IndexedMapOfTransient : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TColStd_StdMapNodeOfMapOfReal;
-class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
+%nodefaultctor TColStd_ListIteratorOfListOfTransient;
+class TColStd_ListIteratorOfListOfTransient {
 	public:
 		%feature("autodoc", "1");
-		TColStd_StdMapNodeOfMapOfReal(const Standard_Real &K, const TCollection_MapNodePtr &n);
+		TColStd_ListIteratorOfListOfTransient();
 		%feature("autodoc", "1");
-		Standard_Real & Key() const;
+		TColStd_ListIteratorOfListOfTransient(const TColStd_ListOfTransient &L);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_ListOfTransient &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+
+};
+%extend TColStd_ListIteratorOfListOfTransient {
+	~TColStd_ListIteratorOfListOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfTransient\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_QueueNodeOfQueueOfInteger;
+class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_QueueNodeOfQueueOfInteger(const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_StdMapNodeOfMapOfReal {
-	Handle_TColStd_StdMapNodeOfMapOfReal GetHandle() {
-	return *(Handle_TColStd_StdMapNodeOfMapOfReal*) &$self;
+%extend TColStd_QueueNodeOfQueueOfInteger {
+	Handle_TColStd_QueueNodeOfQueueOfInteger GetHandle() {
+	return *(Handle_TColStd_QueueNodeOfQueueOfInteger*) &$self;
 	}
 };
-%extend TColStd_StdMapNodeOfMapOfReal {
+%extend TColStd_QueueNodeOfQueueOfInteger {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColStd_StdMapNodeOfMapOfReal {
-	~TColStd_StdMapNodeOfMapOfReal() {
+%extend TColStd_QueueNodeOfQueueOfInteger {
+	~TColStd_QueueNodeOfQueueOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_QueueNodeOfQueueOfInteger\n");}
 	}
 };
 
 
-%nodefaultctor TColStd_HSequenceOfHExtendedString;
-class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
+%nodefaultctor TColStd_ListNodeOfListOfReal;
+class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TColStd_HSequenceOfHExtendedString();
+		TColStd_ListNodeOfListOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_ListNodeOfListOfReal {
+	Handle_TColStd_ListNodeOfListOfReal GetHandle() {
+	return *(Handle_TColStd_ListNodeOfListOfReal*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfListOfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_ListNodeOfListOfReal {
+	~TColStd_ListNodeOfListOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfListOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_ListIteratorOfSetListOfSetOfInteger;
+class TColStd_ListIteratorOfSetListOfSetOfInteger {
+	public:
+		%feature("autodoc", "1");
+		TColStd_ListIteratorOfSetListOfSetOfInteger();
+		%feature("autodoc", "1");
+		TColStd_ListIteratorOfSetListOfSetOfInteger(const TColStd_SetListOfSetOfInteger &L);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_SetListOfSetOfInteger &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+
+};
+%extend TColStd_ListIteratorOfSetListOfSetOfInteger {
+	~TColStd_ListIteratorOfSetListOfSetOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_HArray1OfBoolean;
+class TColStd_HArray1OfBoolean : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColStd_HArray1OfBoolean(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColStd_HArray1OfBoolean(const Standard_Integer Low, const Standard_Integer Up, const Standard_Boolean &V);
+		%feature("autodoc", "1");
+		void Init(const Standard_Boolean &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_TCollection_HExtendedString &anItem);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		void SetValue(const Standard_Integer Index, const Standard_Boolean &Value);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TCollection_HExtendedString &anItem);
+		const Standard_Boolean & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
+		Standard_Boolean & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void Reverse();
+		const TColStd_Array1OfBoolean & Array1() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfHExtendedString &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHExtendedString Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_TCollection_HExtendedString &anItem);
-		%feature("autodoc", "1");
-		const Handle_TCollection_HExtendedString & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfHExtendedString & Sequence() const;
-		%feature("autodoc", "1");
-		TColStd_SequenceOfHExtendedString & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHExtendedString ShallowCopy() const;
+		TColStd_Array1OfBoolean & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_HSequenceOfHExtendedString {
-	Handle_TColStd_HSequenceOfHExtendedString GetHandle() {
-	return *(Handle_TColStd_HSequenceOfHExtendedString*) &$self;
+%extend TColStd_HArray1OfBoolean {
+	Handle_TColStd_HArray1OfBoolean GetHandle() {
+	return *(Handle_TColStd_HArray1OfBoolean*) &$self;
 	}
 };
-%extend TColStd_HSequenceOfHExtendedString {
+%extend TColStd_HArray1OfBoolean {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColStd_HSequenceOfHExtendedString {
-	~TColStd_HSequenceOfHExtendedString() {
+%extend TColStd_HArray1OfBoolean {
+	~TColStd_HArray1OfBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfHExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SequenceNodeOfSequenceOfTransient;
-class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceNodeOfSequenceOfTransient(const Handle_Standard_Transient &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_SequenceNodeOfSequenceOfTransient {
-	Handle_TColStd_SequenceNodeOfSequenceOfTransient GetHandle() {
-	return *(Handle_TColStd_SequenceNodeOfSequenceOfTransient*) &$self;
-	}
-};
-%extend TColStd_SequenceNodeOfSequenceOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_SequenceNodeOfSequenceOfTransient {
-	~TColStd_SequenceNodeOfSequenceOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfBoolean\n");}
 	}
 };
 
@@ -4449,10 +4946,30 @@ class TColStd_SetListOfSetOfInteger {
 		void Append(const Standard_Integer &I, TColStd_ListIteratorOfSetListOfSetOfInteger & theIt);
 		%feature("autodoc", "1");
 		void Append(TColStd_SetListOfSetOfInteger & Other);
-		%feature("autodoc", "1");
-		Standard_Integer & First() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Last() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFirst() {
+				return (Standard_Integer) $self->First();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFirst(Standard_Integer value ) {
+				$self->First()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetLast() {
+				return (Standard_Integer) $self->Last();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetLast(Standard_Integer value ) {
+				$self->Last()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
@@ -4494,8 +5011,18 @@ class TColStd_HArray1OfReal : public MMgt_TShared {
 		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
 		%feature("autodoc", "1");
 		const Standard_Real & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const TColStd_Array1OfReal & Array1() const;
 		%feature("autodoc", "1");
@@ -4527,8 +5054,18 @@ class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_ListNodeOfListOfInteger(const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4580,33 +5117,27 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerReal;
-class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
+%nodefaultctor TColStd_StackIteratorOfStackOfTransient;
+class TColStd_StackIteratorOfStackOfTransient {
 	public:
 		%feature("autodoc", "1");
-		TColStd_DataMapNodeOfDataMapOfIntegerReal(const Standard_Integer &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		TColStd_StackIteratorOfStackOfTransient();
 		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		TColStd_StackIteratorOfStackOfTransient(const TColStd_StackOfTransient &S);
 		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		void Initialize(const TColStd_StackOfTransient &S);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
 
 };
-%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
-	Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal GetHandle() {
-	return *(Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal*) &$self;
-	}
-};
-%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
-	~TColStd_DataMapNodeOfDataMapOfIntegerReal() {
+%extend TColStd_StackIteratorOfStackOfTransient {
+	~TColStd_StackIteratorOfStackOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerReal\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfTransient\n");}
 	}
 };
 
@@ -4809,31 +5340,6 @@ class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TColStd_ListIteratorOfListOfTransient;
-class TColStd_ListIteratorOfListOfTransient {
-	public:
-		%feature("autodoc", "1");
-		TColStd_ListIteratorOfListOfTransient();
-		%feature("autodoc", "1");
-		TColStd_ListIteratorOfListOfTransient(const TColStd_ListOfTransient &L);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_ListOfTransient &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-
-};
-%extend TColStd_ListIteratorOfListOfTransient {
-	~TColStd_ListIteratorOfListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfTransient\n");}
-	}
-};
-
-
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfAsciiString;
 class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 	public:
@@ -4876,94 +5382,24 @@ class TColStd_ListIteratorOfListOfInteger {
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 
 };
 %extend TColStd_ListIteratorOfListOfInteger {
 	~TColStd_ListIteratorOfListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SequenceOfInteger;
-class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceOfInteger();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfInteger & Assign(const TColStd_SequenceOfInteger &Other);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfInteger & operator=(const TColStd_SequenceOfInteger &Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void Append(TColStd_SequenceOfInteger & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void Prepend(TColStd_SequenceOfInteger & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
-		%feature("autodoc", "1");
-		const Standard_Integer & First() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColStd_SequenceOfInteger & S);
-		%feature("autodoc", "1");
-		const Standard_Integer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColStd_SequenceOfInteger {
-	~TColStd_SequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerInteger;
-class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TColStd_DataMapIteratorOfDataMapOfIntegerInteger();
-		%feature("autodoc", "1");
-		TColStd_DataMapIteratorOfDataMapOfIntegerInteger(const TColStd_DataMapOfIntegerInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_DataMapOfIntegerInteger &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%extend TColStd_DataMapIteratorOfDataMapOfIntegerInteger {
-	~TColStd_DataMapIteratorOfDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerInteger\n");}
 	}
 };
 
@@ -5097,10 +5533,30 @@ class TColStd_ListOfReal {
 		void Append(const Standard_Real &I, TColStd_ListIteratorOfListOfReal & theIt);
 		%feature("autodoc", "1");
 		void Append(TColStd_ListOfReal & Other);
-		%feature("autodoc", "1");
-		Standard_Real & First() const;
-		%feature("autodoc", "1");
-		Standard_Real & Last() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetFirst() {
+				return (Standard_Real) $self->First();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFirst(Standard_Real value ) {
+				$self->First()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetLast() {
+				return (Standard_Real) $self->Last();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetLast(Standard_Real value ) {
+				$self->Last()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
@@ -5119,6 +5575,31 @@ class TColStd_ListOfReal {
 	~TColStd_ListOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_StackIteratorOfStackOfInteger;
+class TColStd_StackIteratorOfStackOfInteger {
+	public:
+		%feature("autodoc", "1");
+		TColStd_StackIteratorOfStackOfInteger();
+		%feature("autodoc", "1");
+		TColStd_StackIteratorOfStackOfInteger(const TColStd_StackOfInteger &S);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_StackOfInteger &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%extend TColStd_StackIteratorOfStackOfInteger {
+	~TColStd_StackIteratorOfStackOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfInteger\n");}
 	}
 };
 
@@ -5148,35 +5629,6 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 	~TColStd_SequenceNodeOfSequenceOfExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_MapOfReal;
-class TColStd_MapOfReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TColStd_MapOfReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TColStd_MapOfReal & Assign(const TColStd_MapOfReal &Other);
-		%feature("autodoc", "1");
-		TColStd_MapOfReal & operator=(const TColStd_MapOfReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Standard_Real &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Real &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Standard_Real &aKey);
-
-};
-%extend TColStd_MapOfReal {
-	~TColStd_MapOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfReal\n");}
 	}
 };
 
@@ -5225,6 +5677,35 @@ class TColStd_StackIteratorOfStackOfReal {
 	~TColStd_StackIteratorOfStackOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_SequenceNodeOfSequenceOfTransient;
+class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_SequenceNodeOfSequenceOfTransient(const Handle_Standard_Transient &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_SequenceNodeOfSequenceOfTransient {
+	Handle_TColStd_SequenceNodeOfSequenceOfTransient GetHandle() {
+	return *(Handle_TColStd_SequenceNodeOfSequenceOfTransient*) &$self;
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_SequenceNodeOfSequenceOfTransient {
+	~TColStd_SequenceNodeOfSequenceOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfTransient\n");}
 	}
 };
 
@@ -5282,25 +5763,6 @@ class TColStd_ListOfTransient {
 };
 
 
-%nodefaultctor TColStd_MapTransientHasher;
-class TColStd_MapTransientHasher {
-	public:
-		%feature("autodoc", "1");
-		TColStd_MapTransientHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_Standard_Transient &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_Standard_Transient &K1, const Handle_Standard_Transient &K2);
-
-};
-%extend TColStd_MapTransientHasher {
-	~TColStd_MapTransientHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_MapTransientHasher\n");}
-	}
-};
-
-
 %nodefaultctor TColStd_MapIteratorOfMapOfInteger;
 class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -5318,134 +5780,6 @@ class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 	~TColStd_MapIteratorOfMapOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_SequenceOfHExtendedString;
-class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColStd_SequenceOfHExtendedString();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfHExtendedString & Assign(const TColStd_SequenceOfHExtendedString &Other);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfHExtendedString & operator=(const TColStd_SequenceOfHExtendedString &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TCollection_HExtendedString &T);
-		%feature("autodoc", "1");
-		void Append(TColStd_SequenceOfHExtendedString & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TCollection_HExtendedString &T);
-		%feature("autodoc", "1");
-		void Prepend(TColStd_SequenceOfHExtendedString & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TCollection_HExtendedString &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TCollection_HExtendedString &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
-		%feature("autodoc", "1");
-		const Handle_TCollection_HExtendedString & First() const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HExtendedString & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColStd_SequenceOfHExtendedString & S);
-		%feature("autodoc", "1");
-		const Handle_TCollection_HExtendedString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HExtendedString & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TCollection_HExtendedString &I);
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColStd_SequenceOfHExtendedString {
-	~TColStd_SequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfHExtendedString\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_HSequenceOfTransient;
-class TColStd_HSequenceOfTransient : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HSequenceOfTransient();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Transient &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HSequenceOfTransient &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Standard_Transient &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HSequenceOfTransient &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfTransient &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfTransient &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Standard_Transient &anItem);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfTransient & Sequence() const;
-		%feature("autodoc", "1");
-		TColStd_SequenceOfTransient & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HSequenceOfTransient {
-	Handle_TColStd_HSequenceOfTransient GetHandle() {
-	return *(Handle_TColStd_HSequenceOfTransient*) &$self;
-	}
-};
-%extend TColStd_HSequenceOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HSequenceOfTransient {
-	~TColStd_HSequenceOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfTransient\n");}
 	}
 };
 
@@ -5545,14 +5879,47 @@ class TColStd_StackOfReal {
 		void Pop();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		Standard_Real & ChangeTop();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeTop() {
+				return (Standard_Real) $self->ChangeTop();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeTop(Standard_Real value ) {
+				$self->ChangeTop()=value;
+				}
+		};
 
 };
 %extend TColStd_StackOfReal {
 	~TColStd_StackOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackOfReal\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerInteger;
+class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TColStd_DataMapIteratorOfDataMapOfIntegerInteger();
+		%feature("autodoc", "1");
+		TColStd_DataMapIteratorOfDataMapOfIntegerInteger(const TColStd_DataMapOfIntegerInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_DataMapOfIntegerInteger &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%extend TColStd_DataMapIteratorOfDataMapOfIntegerInteger {
+	~TColStd_DataMapIteratorOfDataMapOfIntegerInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerInteger\n");}
 	}
 };
 
@@ -5584,10 +5951,30 @@ class TColStd_ListOfInteger {
 		void Append(const Standard_Integer &I, TColStd_ListIteratorOfListOfInteger & theIt);
 		%feature("autodoc", "1");
 		void Append(TColStd_ListOfInteger & Other);
-		%feature("autodoc", "1");
-		Standard_Integer & First() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Last() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFirst() {
+				return (Standard_Integer) $self->First();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFirst(Standard_Integer value ) {
+				$self->First()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetLast() {
+				return (Standard_Integer) $self->Last();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetLast(Standard_Integer value ) {
+				$self->Last()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void RemoveFirst();
 		%feature("autodoc", "1");
@@ -5653,6 +6040,98 @@ class TColStd_Array2OfTransient {
 	~TColStd_Array2OfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_Array2OfTransient\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_MapIteratorOfMapOfTransient;
+class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TColStd_MapIteratorOfMapOfTransient();
+		%feature("autodoc", "1");
+		TColStd_MapIteratorOfMapOfTransient(const TColStd_MapOfTransient &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_MapOfTransient &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Key() const;
+
+};
+%extend TColStd_MapIteratorOfMapOfTransient {
+	~TColStd_MapIteratorOfMapOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfTransient\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_HSequenceOfAsciiString;
+class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColStd_HSequenceOfAsciiString();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const TCollection_AsciiString &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColStd_HSequenceOfAsciiString &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const TCollection_AsciiString &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColStd_HSequenceOfAsciiString &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfAsciiString &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColStd_HSequenceOfAsciiString &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const TCollection_AsciiString &anItem);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfAsciiString & Sequence() const;
+		%feature("autodoc", "1");
+		TColStd_SequenceOfAsciiString & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_HSequenceOfAsciiString {
+	Handle_TColStd_HSequenceOfAsciiString GetHandle() {
+	return *(Handle_TColStd_HSequenceOfAsciiString*) &$self;
+	}
+};
+%extend TColStd_HSequenceOfAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_HSequenceOfAsciiString {
+	~TColStd_HSequenceOfAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_HSequenceOfAsciiString\n");}
 	}
 };
 
@@ -5854,8 +6333,18 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 	public:
 		%feature("autodoc", "1");
 		TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger(const Standard_Integer &K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TColStd_ListOfInteger & Value() const;
 		%feature("autodoc", "1");
@@ -5880,27 +6369,41 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 };
 
 
-%nodefaultctor TColStd_ListIteratorOfSetListOfSetOfInteger;
-class TColStd_ListIteratorOfSetListOfSetOfInteger {
+%nodefaultctor TColStd_StdMapNodeOfMapOfReal;
+class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TColStd_ListIteratorOfSetListOfSetOfInteger();
+		TColStd_StdMapNodeOfMapOfReal(const Standard_Real &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetKey() {
+				return (Standard_Real) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Real value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		TColStd_ListIteratorOfSetListOfSetOfInteger(const TColStd_SetListOfSetOfInteger &L);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_SetListOfSetOfInteger &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_ListIteratorOfSetListOfSetOfInteger {
-	~TColStd_ListIteratorOfSetListOfSetOfInteger() {
+%extend TColStd_StdMapNodeOfMapOfReal {
+	Handle_TColStd_StdMapNodeOfMapOfReal GetHandle() {
+	return *(Handle_TColStd_StdMapNodeOfMapOfReal*) &$self;
+	}
+};
+%extend TColStd_StdMapNodeOfMapOfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColStd_StdMapNodeOfMapOfReal {
+	~TColStd_StdMapNodeOfMapOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfReal\n");}
 	}
 };
 
@@ -5910,8 +6413,18 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
 		TColStd_SequenceNodeOfSequenceOfInteger(const Standard_Integer &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5930,6 +6443,43 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 	~TColStd_SequenceNodeOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor TColStd_SetOfTransient;
+class TColStd_SetOfTransient {
+	public:
+		%feature("autodoc", "1");
+		TColStd_SetOfTransient();
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Standard_Transient &T);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Standard_Transient &T);
+		%feature("autodoc", "1");
+		void Union(const TColStd_SetOfTransient &B);
+		%feature("autodoc", "1");
+		void Intersection(const TColStd_SetOfTransient &B);
+		%feature("autodoc", "1");
+		void Difference(const TColStd_SetOfTransient &B);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Standard_Transient &T) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsASubset(const TColStd_SetOfTransient &S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAProperSubset(const TColStd_SetOfTransient &S) const;
+
+};
+%extend TColStd_SetOfTransient {
+	~TColStd_SetOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColStd_SetOfTransient\n");}
 	}
 };
 
@@ -5992,61 +6542,6 @@ class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 };
 
 
-%nodefaultctor TColStd_HSetOfReal;
-class TColStd_HSetOfReal : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColStd_HSetOfReal();
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Standard_Real &T);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Standard_Real &T);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal Union(const Handle_TColStd_HSetOfReal &B) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal Intersection(const Handle_TColStd_HSetOfReal &B) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal Difference(const Handle_TColStd_HSetOfReal &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Real &T) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsASubset(const Handle_TColStd_HSetOfReal &S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAProperSubset(const Handle_TColStd_HSetOfReal &S) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSetOfReal ShallowCopy() const;
-		%feature("autodoc", "1");
-		const TColStd_SetOfReal & Set() const;
-		%feature("autodoc", "1");
-		TColStd_SetOfReal & ChangeSet();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_HSetOfReal {
-	Handle_TColStd_HSetOfReal GetHandle() {
-	return *(Handle_TColStd_HSetOfReal*) &$self;
-	}
-};
-%extend TColStd_HSetOfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColStd_HSetOfReal {
-	~TColStd_HSetOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_HSetOfReal\n");}
-	}
-};
-
-
 %nodefaultctor TColStd_Array2OfReal;
 class TColStd_Array2OfReal {
 	public:
@@ -6080,8 +6575,18 @@ class TColStd_Array2OfReal {
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
@@ -6144,8 +6649,18 @@ class TColStd_QueueOfReal {
 		void Push(const Standard_Real &T);
 		%feature("autodoc", "1");
 		void Pop();
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFront();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFront() {
+				return (Standard_Real) $self->ChangeFront();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFront(Standard_Real value ) {
+				$self->ChangeFront()=value;
+				}
+		};
 
 };
 %extend TColStd_QueueOfReal {
@@ -6156,31 +6671,31 @@ class TColStd_QueueOfReal {
 };
 
 
-%nodefaultctor TColStd_ListNodeOfListOfReal;
-class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
+%nodefaultctor TColStd_StdMapNodeOfMapOfTransient;
+class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TColStd_ListNodeOfListOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
+		TColStd_StdMapNodeOfMapOfTransient(const Handle_Standard_Transient &K, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColStd_ListNodeOfListOfReal {
-	Handle_TColStd_ListNodeOfListOfReal GetHandle() {
-	return *(Handle_TColStd_ListNodeOfListOfReal*) &$self;
+%extend TColStd_StdMapNodeOfMapOfTransient {
+	Handle_TColStd_StdMapNodeOfMapOfTransient GetHandle() {
+	return *(Handle_TColStd_StdMapNodeOfMapOfTransient*) &$self;
 	}
 };
-%extend TColStd_ListNodeOfListOfReal {
+%extend TColStd_StdMapNodeOfMapOfTransient {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColStd_ListNodeOfListOfReal {
-	~TColStd_ListNodeOfListOfReal() {
+%extend TColStd_StdMapNodeOfMapOfTransient {
+	~TColStd_StdMapNodeOfMapOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfListOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfTransient\n");}
 	}
 };
 
@@ -6214,27 +6729,6 @@ class TColStd_QueueOfTransient {
 	~TColStd_QueueOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColStd_QueueOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor TColStd_MapIteratorOfMapOfTransient;
-class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TColStd_MapIteratorOfMapOfTransient();
-		%feature("autodoc", "1");
-		TColStd_MapIteratorOfMapOfTransient(const TColStd_MapOfTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_MapOfTransient &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-
-};
-%extend TColStd_MapIteratorOfMapOfTransient {
-	~TColStd_MapIteratorOfMapOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfTransient\n");}
 	}
 };
 
@@ -6294,23 +6788,59 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColStd_MapIteratorOfMapOfReal;
-class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
+%nodefaultctor TColStd_SequenceOfTransient;
+class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColStd_MapIteratorOfMapOfReal();
+		TColStd_SequenceOfTransient();
 		%feature("autodoc", "1");
-		TColStd_MapIteratorOfMapOfReal(const TColStd_MapOfReal &aMap);
+		void Clear();
 		%feature("autodoc", "1");
-		void Initialize(const TColStd_MapOfReal &aMap);
+		const TColStd_SequenceOfTransient & Assign(const TColStd_SequenceOfTransient &Other);
 		%feature("autodoc", "1");
-		const Standard_Real & Key() const;
+		const TColStd_SequenceOfTransient & operator=(const TColStd_SequenceOfTransient &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Standard_Transient &T);
+		%feature("autodoc", "1");
+		void Append(TColStd_SequenceOfTransient & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Standard_Transient &T);
+		%feature("autodoc", "1");
+		void Prepend(TColStd_SequenceOfTransient & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Standard_Transient &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & First() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColStd_SequenceOfTransient & S);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColStd_MapIteratorOfMapOfReal {
-	~TColStd_MapIteratorOfMapOfReal() {
+%extend TColStd_SequenceOfTransient {
+	~TColStd_SequenceOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfReal\n");}
+	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceOfTransient\n");}
 	}
 };
 

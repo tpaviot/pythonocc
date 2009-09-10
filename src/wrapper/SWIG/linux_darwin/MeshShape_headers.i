@@ -63,9 +63,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Pnt.hxx>
+#include<MeshShape.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TColStd_ListOfTransient.hxx>
-#include<MeshShape.hxx>
 #include<gp_XY.hxx>
 #include<gp_XYZ.hxx>
 %}

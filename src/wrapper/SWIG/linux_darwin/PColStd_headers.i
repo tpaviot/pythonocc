@@ -114,7 +114,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Persistent.hxx>
-#include<Handle_PCollection_HExtendedString.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<Handle_PCollection_HAsciiString.hxx>
+#include<Handle_PCollection_HExtendedString.hxx>
 %}

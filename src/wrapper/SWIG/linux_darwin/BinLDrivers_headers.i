@@ -117,8 +117,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_BinMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_PCDM_Document.hxx>
-#include<Handle_CDM_Application.hxx>
 #include<BinLDrivers.hxx>
 #include<Standard_GUID.hxx>
+#include<Handle_PCDM_Document.hxx>
+#include<Handle_CDM_Application.hxx>
 %}

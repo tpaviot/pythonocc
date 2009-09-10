@@ -92,62 +92,32 @@ enum CDF_TypeOfActivation {
 
 
 
-%nodefaultctor Handle_CDF_MetaDataDriverError;
-class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
+%nodefaultctor Handle_CDF_MetaDataDriver;
+class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError();
+		Handle_CDF_MetaDataDriver();
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError(const Handle_CDF_MetaDataDriverError &aHandle);
+		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError(const CDF_MetaDataDriverError *anItem);
+		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError & operator=(const Handle_CDF_MetaDataDriverError &aHandle);
+		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *anItem);
+		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_CDF_MetaDataDriverError {
-	CDF_MetaDataDriverError* GetObject() {
-	return (CDF_MetaDataDriverError*)$self->Access();
+%extend Handle_CDF_MetaDataDriver {
+	CDF_MetaDataDriver* GetObject() {
+	return (CDF_MetaDataDriver*)$self->Access();
 	}
 };
-%extend Handle_CDF_MetaDataDriverError {
-	~Handle_CDF_MetaDataDriverError() {
+%extend Handle_CDF_MetaDataDriver {
+	~Handle_CDF_MetaDataDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_CDF_Session;
-class Handle_CDF_Session : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDF_Session();
-		%feature("autodoc", "1");
-		Handle_CDF_Session(const Handle_CDF_Session &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_Session(const CDF_Session *anItem);
-		%feature("autodoc", "1");
-		Handle_CDF_Session & operator=(const Handle_CDF_Session &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_Session & operator=(const CDF_Session *anItem);
-		%feature("autodoc", "1");
-		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDF_Session {
-	CDF_Session* GetObject() {
-	return (CDF_Session*)$self->Access();
-	}
-};
-%extend Handle_CDF_Session {
-	~Handle_CDF_Session() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Session\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");}
 	}
 };
 
@@ -212,6 +182,36 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 };
 
 
+%nodefaultctor Handle_CDF_MetaDataDriverError;
+class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError();
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError(const Handle_CDF_MetaDataDriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError(const CDF_MetaDataDriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError & operator=(const Handle_CDF_MetaDataDriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError & operator=(const CDF_MetaDataDriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDF_MetaDataDriverError {
+	CDF_MetaDataDriverError* GetObject() {
+	return (CDF_MetaDataDriverError*)$self->Access();
+	}
+};
+%extend Handle_CDF_MetaDataDriverError {
+	~Handle_CDF_MetaDataDriverError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");}
+	}
+};
+
+
 %nodefaultctor Handle_CDF_Application;
 class Handle_CDF_Application : public Handle_CDM_Application {
 	public:
@@ -272,32 +272,67 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 };
 
 
-%nodefaultctor Handle_CDF_MetaDataDriver;
-class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
+%nodefaultctor Handle_CDF_Session;
+class Handle_CDF_Session : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver();
+		Handle_CDF_Session();
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
+		Handle_CDF_Session(const Handle_CDF_Session &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
+		Handle_CDF_Session(const CDF_Session *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
+		Handle_CDF_Session & operator=(const Handle_CDF_Session &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
+		Handle_CDF_Session & operator=(const CDF_Session *anItem);
 		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_CDF_Session const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_CDF_MetaDataDriver {
-	CDF_MetaDataDriver* GetObject() {
-	return (CDF_MetaDataDriver*)$self->Access();
+%extend Handle_CDF_Session {
+	CDF_Session* GetObject() {
+	return (CDF_Session*)$self->Access();
 	}
 };
-%extend Handle_CDF_MetaDataDriver {
-	~Handle_CDF_MetaDataDriver() {
+%extend Handle_CDF_Session {
+	~Handle_CDF_Session() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Session\n");}
+	}
+};
+
+
+%nodefaultctor CDF_MetaDataDriverError;
+class CDF_MetaDataDriverError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		CDF_MetaDataDriverError();
+		%feature("autodoc", "1");
+		CDF_MetaDataDriverError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDF_MetaDataDriverError {
+	Handle_CDF_MetaDataDriverError GetHandle() {
+	return *(Handle_CDF_MetaDataDriverError*) &$self;
+	}
+};
+%extend CDF_MetaDataDriverError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend CDF_MetaDataDriverError {
+	~CDF_MetaDataDriverError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverError\n");}
 	}
 };
 
@@ -456,41 +491,6 @@ class CDF_Timer {
 	~CDF_Timer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of CDF_Timer\n");}
-	}
-};
-
-
-%nodefaultctor CDF_MetaDataDriverError;
-class CDF_MetaDataDriverError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		CDF_MetaDataDriverError();
-		%feature("autodoc", "1");
-		CDF_MetaDataDriverError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriverError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDF_MetaDataDriverError {
-	Handle_CDF_MetaDataDriverError GetHandle() {
-	return *(Handle_CDF_MetaDataDriverError*) &$self;
-	}
-};
-%extend CDF_MetaDataDriverError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend CDF_MetaDataDriverError {
-	~CDF_MetaDataDriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverError\n");}
 	}
 };
 

@@ -155,5 +155,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import TCollection.i
 %import MMgt.i
 %import Standard.i
-%import BooleanOperations.i
 %import TopAbs.i
+%import BooleanOperations.i

@@ -35,37 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Sweep_NumShape;
-class Sweep_NumShape {
-	public:
-		%feature("autodoc", "1");
-		Sweep_NumShape();
-		%feature("autodoc", "1");
-		Sweep_NumShape(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed=0, const Standard_Boolean BegInf=0, const Standard_Boolean EndInf=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed=0, const Standard_Boolean BegInf=0, const Standard_Boolean EndInf=0);
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum Type() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean BegInfinite() const;
-		%feature("autodoc", "1");
-		Standard_Boolean EndInfinite() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-
-};
-%extend Sweep_NumShape {
-	~Sweep_NumShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sweep_NumShape\n");}
-	}
-};
-
-
 %nodefaultctor Sweep_NumShapeTool;
 class Sweep_NumShapeTool {
 	public:
@@ -95,6 +64,37 @@ class Sweep_NumShapeTool {
 	~Sweep_NumShapeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Sweep_NumShapeTool\n");}
+	}
+};
+
+
+%nodefaultctor Sweep_NumShape;
+class Sweep_NumShape {
+	public:
+		%feature("autodoc", "1");
+		Sweep_NumShape();
+		%feature("autodoc", "1");
+		Sweep_NumShape(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed=0, const Standard_Boolean BegInf=0, const Standard_Boolean EndInf=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed=0, const Standard_Boolean BegInf=0, const Standard_Boolean EndInf=0);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum Type() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean BegInfinite() const;
+		%feature("autodoc", "1");
+		Standard_Boolean EndInfinite() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+
+};
+%extend Sweep_NumShape {
+	~Sweep_NumShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Sweep_NumShape\n");}
 	}
 };
 

@@ -12,11 +12,11 @@
 %rename(IGESGraph_ToolLineFontPredefined) IGESGraph_ToolLineFontPredefined;
 %rename(Handle_IGESGraph_Protocol) Handle_IGESGraph_Protocol;
 %rename(Handle_IGESGraph_HighLight) Handle_IGESGraph_HighLight;
-%rename(IGESGraph_TextDisplayTemplate) IGESGraph_TextDisplayTemplate;
+%rename(IGESGraph_ToolDrawingSize) IGESGraph_ToolDrawingSize;
 %rename(Handle_IGESGraph_TextFontDef) Handle_IGESGraph_TextFontDef;
 %rename(Handle_IGESGraph_LineFontPredefined) Handle_IGESGraph_LineFontPredefined;
 %rename(Handle_IGESGraph_HArray1OfColor) Handle_IGESGraph_HArray1OfColor;
-%rename(IGESGraph_ToolDrawingSize) IGESGraph_ToolDrawingSize;
+%rename(IGESGraph_TextDisplayTemplate) IGESGraph_TextDisplayTemplate;
 %rename(IGESGraph_ToolDrawingUnits) IGESGraph_ToolDrawingUnits;
 %rename(IGESGraph) IGESGraph;
 %rename(Handle_IGESGraph_LineFontDefTemplate) Handle_IGESGraph_LineFontDefTemplate;
@@ -40,11 +40,11 @@
 %rename(Handle_IGESGraph_IntercharacterSpacing) Handle_IGESGraph_IntercharacterSpacing;
 %rename(IGESGraph_HArray1OfTextFontDef) IGESGraph_HArray1OfTextFontDef;
 %rename(Handle_IGESGraph_SpecificModule) Handle_IGESGraph_SpecificModule;
-%rename(Handle_IGESGraph_GeneralModule) Handle_IGESGraph_GeneralModule;
+%rename(Handle_IGESGraph_DrawingUnits) Handle_IGESGraph_DrawingUnits;
 %rename(IGESGraph_LineFontDefPattern) IGESGraph_LineFontDefPattern;
 %rename(IGESGraph_IntercharacterSpacing) IGESGraph_IntercharacterSpacing;
 %rename(Handle_IGESGraph_DrawingSize) Handle_IGESGraph_DrawingSize;
-%rename(Handle_IGESGraph_DrawingUnits) Handle_IGESGraph_DrawingUnits;
+%rename(Handle_IGESGraph_GeneralModule) Handle_IGESGraph_GeneralModule;
 %rename(IGESGraph_GeneralModule) IGESGraph_GeneralModule;
 %rename(IGESGraph_ToolTextFontDef) IGESGraph_ToolTextFontDef;
 %rename(IGESGraph_LineFontDefTemplate) IGESGraph_LineFontDefTemplate;

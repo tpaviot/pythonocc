@@ -85,6 +85,31 @@ class MeshAlgo {
 };
 
 
+%nodefaultctor MeshAlgo_Circ;
+class MeshAlgo_Circ {
+	public:
+		%feature("autodoc", "1");
+		MeshAlgo_Circ();
+		%feature("autodoc", "1");
+		MeshAlgo_Circ(const gp_XY &loc, const Standard_Real rad);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_XY &loc);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real rad);
+		%feature("autodoc", "1");
+		const gp_XY & Location() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Radius() const;
+
+};
+%extend MeshAlgo_Circ {
+	~MeshAlgo_Circ() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
+	}
+};
+
+
 %nodefaultctor MeshAlgo_DataMapOfIntegerCirc;
 class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 	public:
@@ -147,8 +172,18 @@ class MeshAlgo_CircleTool {
 		void Delete(const Standard_Integer theIndex);
 		%feature("autodoc", "1");
 		TColStd_ListOfInteger & Select(const gp_XY &thePnt);
-		%feature("autodoc", "1");
-		Standard_Integer & GetNbPoints();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetGetNbPoints() {
+				return (Standard_Integer) $self->GetNbPoints();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetGetNbPoints(Standard_Integer value ) {
+				$self->GetNbPoints()=value;
+				}
+		};
 
 };
 %extend MeshAlgo_CircleTool {
@@ -182,38 +217,23 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 };
 
 
-%nodefaultctor MeshAlgo_Circ;
-class MeshAlgo_Circ {
-	public:
-		%feature("autodoc", "1");
-		MeshAlgo_Circ();
-		%feature("autodoc", "1");
-		MeshAlgo_Circ(const gp_XY &loc, const Standard_Real rad);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_XY &loc);
-		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real rad);
-		%feature("autodoc", "1");
-		const gp_XY & Location() const;
-		%feature("autodoc", "1");
-		const Standard_Real & Radius() const;
-
-};
-%extend MeshAlgo_Circ {
-	~MeshAlgo_Circ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
-	}
-};
-
-
 %nodefaultctor MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc;
 class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const Standard_Integer &K, const MeshAlgo_Circ &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		MeshAlgo_Circ & Value() const;
 		%feature("autodoc", "1");

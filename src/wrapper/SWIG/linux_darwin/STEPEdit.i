@@ -95,6 +95,33 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 };
 
 
+%nodefaultctor STEPEdit;
+class STEPEdit {
+	public:
+		%feature("autodoc", "1");
+		STEPEdit();
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol Protocol();
+		%feature("autodoc", "1");
+		Handle_StepData_StepModel NewModel();
+		%feature("autodoc", "1");
+		Handle_IFSelect_Signature SignType();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature NewSelectSDR();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature NewSelectPlacedItem();
+		%feature("autodoc", "1");
+		Handle_IFSelect_SelectSignature NewSelectShapeRepr();
+
+};
+%extend STEPEdit {
+	~STEPEdit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPEdit\n");}
+	}
+};
+
+
 %nodefaultctor STEPEdit_EditContext;
 class STEPEdit_EditContext : public IFSelect_Editor {
 	public:
@@ -128,33 +155,6 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 	~STEPEdit_EditContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of STEPEdit_EditContext\n");}
-	}
-};
-
-
-%nodefaultctor STEPEdit;
-class STEPEdit {
-	public:
-		%feature("autodoc", "1");
-		STEPEdit();
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol Protocol();
-		%feature("autodoc", "1");
-		Handle_StepData_StepModel NewModel();
-		%feature("autodoc", "1");
-		Handle_IFSelect_Signature SignType();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectSDR();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectPlacedItem();
-		%feature("autodoc", "1");
-		Handle_IFSelect_SelectSignature NewSelectShapeRepr();
-
-};
-%extend STEPEdit {
-	~STEPEdit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPEdit\n");}
 	}
 };
 

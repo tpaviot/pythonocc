@@ -45,66 +45,6 @@ enum PCollection_AccessMode {
 
 
 
-%nodefaultctor Handle_PCollection_HAsciiString;
-class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString();
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PCollection_HAsciiString {
-	PCollection_HAsciiString* GetObject() {
-	return (PCollection_HAsciiString*)$self->Access();
-	}
-};
-%extend Handle_PCollection_HAsciiString {
-	~Handle_PCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PCollection_HExtendedString;
-class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString();
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PCollection_HExtendedString {
-	PCollection_HExtendedString* GetObject() {
-	return (PCollection_HExtendedString*)$self->Access();
-	}
-};
-%extend Handle_PCollection_HExtendedString {
-	~Handle_PCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PCollection_IsNotRoot;
 class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	public:
@@ -191,6 +131,66 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	~Handle_PCollection_IsNullTree() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNullTree\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCollection_HAsciiString;
+class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString();
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PCollection_HAsciiString {
+	PCollection_HAsciiString* GetObject() {
+	return (PCollection_HAsciiString*)$self->Access();
+	}
+};
+%extend Handle_PCollection_HAsciiString {
+	~Handle_PCollection_HAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCollection_HExtendedString;
+class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString();
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PCollection_HExtendedString {
+	PCollection_HExtendedString* GetObject() {
+	return (PCollection_HExtendedString*)$self->Access();
+	}
+};
+%extend Handle_PCollection_HExtendedString {
+	~Handle_PCollection_HExtendedString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
 	}
 };
 
@@ -481,42 +481,6 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 };
 
 
-%nodefaultctor PCollection_PrivCompareOfReal;
-class PCollection_PrivCompareOfReal {
-	public:
-		%feature("autodoc", "1");
-		PCollection_PrivCompareOfReal();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsGreater(const Standard_Real &Left, const Standard_Real &Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
-
-};
-%extend PCollection_PrivCompareOfReal {
-	~PCollection_PrivCompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
-	}
-};
-
-
-%nodefaultctor PCollection_CompareOfReal;
-class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
-	public:
-		%feature("autodoc", "1");
-		PCollection_CompareOfReal();
-
-};
-%extend PCollection_CompareOfReal {
-	~PCollection_CompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfReal\n");}
-	}
-};
-
-
 %nodefaultctor PCollection_HExtendedString;
 class PCollection_HExtendedString : public Standard_Persistent {
 	public:
@@ -634,5 +598,41 @@ class PCollection_HExtendedString : public Standard_Persistent {
 	~PCollection_HExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCollection_HExtendedString\n");}
+	}
+};
+
+
+%nodefaultctor PCollection_PrivCompareOfReal;
+class PCollection_PrivCompareOfReal {
+	public:
+		%feature("autodoc", "1");
+		PCollection_PrivCompareOfReal();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLower(const Standard_Real &Left, const Standard_Real &Right) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsGreater(const Standard_Real &Left, const Standard_Real &Right) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
+
+};
+%extend PCollection_PrivCompareOfReal {
+	~PCollection_PrivCompareOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
+	}
+};
+
+
+%nodefaultctor PCollection_CompareOfReal;
+class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
+	public:
+		%feature("autodoc", "1");
+		PCollection_CompareOfReal();
+
+};
+%extend PCollection_CompareOfReal {
+	~PCollection_CompareOfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfReal\n");}
 	}
 };

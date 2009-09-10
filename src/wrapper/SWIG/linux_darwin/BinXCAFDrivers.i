@@ -95,35 +95,6 @@ class Handle_BinXCAFDrivers_DocumentRetrievalDriver : public Handle_BinDrivers_D
 };
 
 
-%nodefaultctor BinXCAFDrivers_DocumentRetrievalDriver;
-class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		BinXCAFDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
-	Handle_BinXCAFDrivers_DocumentRetrievalDriver GetHandle() {
-	return *(Handle_BinXCAFDrivers_DocumentRetrievalDriver*) &$self;
-	}
-};
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
-	~BinXCAFDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
 %nodefaultctor BinXCAFDrivers;
 class BinXCAFDrivers {
 	public:
@@ -168,5 +139,34 @@ class BinXCAFDrivers_DocumentStorageDriver : public BinDrivers_DocumentStorageDr
 	~BinXCAFDrivers_DocumentStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers_DocumentStorageDriver\n");}
+	}
+};
+
+
+%nodefaultctor BinXCAFDrivers_DocumentRetrievalDriver;
+class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		BinXCAFDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	Handle_BinXCAFDrivers_DocumentRetrievalDriver GetHandle() {
+	return *(Handle_BinXCAFDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	~BinXCAFDrivers_DocumentRetrievalDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers_DocumentRetrievalDriver\n");}
 	}
 };

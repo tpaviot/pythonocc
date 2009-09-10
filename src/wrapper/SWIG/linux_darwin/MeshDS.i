@@ -107,8 +107,18 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 	public:
 		%feature("autodoc", "1");
 		MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Standard_Integer &K, const TColStd_MapOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & Value() const;
 		%feature("autodoc", "1");

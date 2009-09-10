@@ -106,12 +106,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Persistent.hxx>
 #include<Handle_PGeom_Surface.hxx>
-#include<Handle_PGeom_BoundedSurface.hxx>
 #include<Storage_stCONSTclCOM.hxx>
-#include<Handle_PGeom_BezierSurface.hxx>
+#include<Handle_PGeom_BoundedSurface.hxx>
 #include<Handle_PGeom_BSplineCurve.hxx>
 #include<Handle_PGeom_Curve.hxx>
 #include<Handle_PGeom_BezierCurve.hxx>
-#include<Handle_PGeom_BSplineSurface.hxx>
 #include<Handle_PGeom_BoundedCurve.hxx>
+#include<Handle_PGeom_BSplineSurface.hxx>
+#include<Handle_PGeom_BezierSurface.hxx>
 %}

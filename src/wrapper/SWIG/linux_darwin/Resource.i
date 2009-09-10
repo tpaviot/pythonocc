@@ -162,43 +162,6 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
-class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Resource_DataMapOfAsciiStringAsciiString(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Resource_DataMapOfAsciiStringAsciiString & Assign(const Resource_DataMapOfAsciiStringAsciiString &Other);
-		%feature("autodoc", "1");
-		Resource_DataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapOfAsciiStringAsciiString &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Find(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
-
-};
-%extend Resource_DataMapOfAsciiStringAsciiString {
-	~Resource_DataMapOfAsciiStringAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");}
-	}
-};
-
-
 %nodefaultctor Resource_Array1OfAsciiString;
 class Resource_Array1OfAsciiString {
 	public:
@@ -242,19 +205,39 @@ class Resource_Array1OfAsciiString {
 };
 
 
-%nodefaultctor Resource_QuickSortOfArray1;
-class Resource_QuickSortOfArray1 {
+%nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
+class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Resource_QuickSortOfArray1();
+		Resource_DataMapOfAsciiStringAsciiString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
+		Resource_DataMapOfAsciiStringAsciiString & Assign(const Resource_DataMapOfAsciiStringAsciiString &Other);
+		%feature("autodoc", "1");
+		Resource_DataMapOfAsciiStringAsciiString & operator=(const Resource_DataMapOfAsciiStringAsciiString &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_AsciiString &K, const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Find(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & operator()(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
 
 };
-%extend Resource_QuickSortOfArray1 {
-	~Resource_QuickSortOfArray1() {
+%extend Resource_DataMapOfAsciiStringAsciiString {
+	~Resource_DataMapOfAsciiStringAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
+	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");}
 	}
 };
 
@@ -313,6 +296,37 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 };
 
 
+%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
+class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const TCollection_AsciiString &K, const TCollection_ExtendedString &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString GetHandle() {
+	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
+	}
+};
+
+
 %nodefaultctor Resource_Manager;
 class Resource_Manager : public MMgt_TShared {
 	public:
@@ -362,74 +376,19 @@ class Resource_Manager : public MMgt_TShared {
 };
 
 
-%nodefaultctor Resource_Unicode;
-class Resource_Unicode {
+%nodefaultctor Resource_QuickSortOfArray1;
+class Resource_QuickSortOfArray1 {
 	public:
 		%feature("autodoc", "1");
-		Resource_Unicode();
+		Resource_QuickSortOfArray1();
 		%feature("autodoc", "1");
-		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		void SetFormat(const Resource_FormatType typecode);
-		%feature("autodoc", "1");
-		Resource_FormatType GetFormat();
-		%feature("autodoc", "1");
-		void ReadFormat();
-		%feature("autodoc", "1");
-		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
-%extend Resource_Unicode {
-	~Resource_Unicode() {
+%extend Resource_QuickSortOfArray1 {
+	~Resource_QuickSortOfArray1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_Unicode\n");}
-	}
-};
-
-
-%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
-class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString(const TCollection_AsciiString &K, const TCollection_ExtendedString &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
-	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString GetHandle() {
-	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*) &$self;
-	}
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
-	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
+	if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
 	}
 };
 
@@ -519,6 +478,47 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 	~Resource_DataMapOfAsciiStringExtendedString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");}
+	}
+};
+
+
+%nodefaultctor Resource_Unicode;
+class Resource_Unicode {
+	public:
+		%feature("autodoc", "1");
+		Resource_Unicode();
+		%feature("autodoc", "1");
+		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		void SetFormat(const Resource_FormatType typecode);
+		%feature("autodoc", "1");
+		Resource_FormatType GetFormat();
+		%feature("autodoc", "1");
+		void ReadFormat();
+		%feature("autodoc", "1");
+		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+
+};
+%extend Resource_Unicode {
+	~Resource_Unicode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Resource_Unicode\n");}
 	}
 };
 

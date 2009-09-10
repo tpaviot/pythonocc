@@ -1,6 +1,7 @@
 %rename(TColGeom_SequenceOfBoundedSurface) TColGeom_SequenceOfBoundedSurface;
 %rename(Handle_TColGeom_HArray1OfSurface) Handle_TColGeom_HArray1OfSurface;
 %rename(TColGeom_HArray1OfBezierCurve) TColGeom_HArray1OfBezierCurve;
+%rename(TColGeom_HArray1OfBoundedCurve) TColGeom_HArray1OfBoundedCurve;
 %rename(Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve) Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
 %rename(TColGeom_SequenceNodeOfSequenceOfCurve) TColGeom_SequenceNodeOfSequenceOfCurve;
 %rename(Handle_TColGeom_HSequenceOfSurface) Handle_TColGeom_HSequenceOfSurface;
@@ -20,7 +21,7 @@
 %rename(TColGeom_SequenceOfCurve) TColGeom_SequenceOfCurve;
 %rename(TColGeom_Array2OfBezierSurface) TColGeom_Array2OfBezierSurface;
 %rename(TColGeom_HArray1OfCurve) TColGeom_HArray1OfCurve;
-%rename(TColGeom_HArray1OfBoundedCurve) TColGeom_HArray1OfBoundedCurve;
+%rename(TColGeom_SequenceOfBoundedCurve) TColGeom_SequenceOfBoundedCurve;
 %rename(TColGeom_HSequenceOfSurface) TColGeom_HSequenceOfSurface;
 %rename(Handle_TColGeom_HArray1OfCurve) Handle_TColGeom_HArray1OfCurve;
 %rename(TColGeom_HArray2OfBSplineSurface) TColGeom_HArray2OfBSplineSurface;
@@ -44,7 +45,6 @@
 %rename(TColGeom_HSequenceOfBoundedCurve) TColGeom_HSequenceOfBoundedCurve;
 %rename(TColGeom_HArray2OfSurface) TColGeom_HArray2OfSurface;
 %rename(Handle_TColGeom_HArray1OfBoundedCurve) Handle_TColGeom_HArray1OfBoundedCurve;
-%rename(TColGeom_SequenceOfBoundedCurve) TColGeom_SequenceOfBoundedCurve;
 %rename(Handle_TColGeom_HArray1OfBoundedSurface) Handle_TColGeom_HArray1OfBoundedSurface;
 %rename(TColGeom_Array2OfSurface) TColGeom_Array2OfSurface;
 %rename(TColGeom_HArray2OfBoundedSurface) TColGeom_HArray2OfBoundedSurface;

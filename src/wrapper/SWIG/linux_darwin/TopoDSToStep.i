@@ -75,8 +75,18 @@ enum TopoDSToStep_FacetedError {
 %nodefaultctor TopoDSToStep_Root;
 class TopoDSToStep_Root {
 	public:
-		%feature("autodoc", "1");
-		Standard_Real & Tolerance();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetTolerance() {
+				return (Standard_Real) $self->Tolerance();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetTolerance(Standard_Real value ) {
+				$self->Tolerance()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 
@@ -85,52 +95,6 @@ class TopoDSToStep_Root {
 	~TopoDSToStep_Root() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_Root\n");}
-	}
-};
-
-
-%nodefaultctor TopoDSToStep_WireframeBuilder;
-class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_WireframeBuilder();
-		%feature("autodoc", "1");
-		TopoDSToStep_WireframeBuilder(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		TopoDSToStep_BuilderError Error() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HSequenceOfTransient & Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromEdge(const TopoDS_Edge &E, const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromFace(const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape &S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
-
-};
-%extend TopoDSToStep_WireframeBuilder {
-	~TopoDSToStep_WireframeBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_WireframeBuilder\n");}
-	}
-};
-
-
-%nodefaultctor TopoDSToStep_FacetedTool;
-class TopoDSToStep_FacetedTool {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_FacetedTool();
-		%feature("autodoc", "1");
-		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
-
-};
-%extend TopoDSToStep_FacetedTool {
-	~TopoDSToStep_FacetedTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_FacetedTool\n");}
 	}
 };
 
@@ -154,6 +118,48 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 	~TopoDSToStep_MakeStepVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepVertex\n");}
+	}
+};
+
+
+%nodefaultctor TopoDSToStep_MakeFacetedBrep;
+class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_FacetedBrep & Value() const;
+
+};
+%extend TopoDSToStep_MakeFacetedBrep {
+	~TopoDSToStep_MakeFacetedBrep() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrep\n");}
+	}
+};
+
+
+%nodefaultctor TopoDSToStep_MakeStepWire;
+class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepWire();
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepWire(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeWireError Error() const;
+
+};
+%extend TopoDSToStep_MakeStepWire {
+	~TopoDSToStep_MakeStepWire() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
 	}
 };
 
@@ -194,25 +200,6 @@ class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 };
 
 
-%nodefaultctor TopoDSToStep_MakeFacetedBrep;
-class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Shell &S, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeFacetedBrep(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		const Handle_StepShape_FacetedBrep & Value() const;
-
-};
-%extend TopoDSToStep_MakeFacetedBrep {
-	~TopoDSToStep_MakeFacetedBrep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrep\n");}
-	}
-};
-
-
 %nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
 class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	public:
@@ -230,6 +217,29 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	~TopoDSToStep_MakeShellBasedSurfaceModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeShellBasedSurfaceModel\n");}
+	}
+};
+
+
+%nodefaultctor TopoDSToStep_MakeStepEdge;
+class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepEdge();
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeStepEdge(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeEdgeError Error() const;
+
+};
+%extend TopoDSToStep_MakeStepEdge {
+	~TopoDSToStep_MakeStepEdge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepEdge\n");}
 	}
 };
 
@@ -291,25 +301,48 @@ class TopoDSToStep_Tool {
 };
 
 
-%nodefaultctor TopoDSToStep_MakeStepWire;
-class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
+%nodefaultctor TopoDSToStep_WireframeBuilder;
+class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepWire();
+		TopoDSToStep_WireframeBuilder();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepWire(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		TopoDSToStep_WireframeBuilder(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
+		void Init(const TopoDS_Shape &S, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
 		%feature("autodoc", "1");
-		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
+		TopoDSToStep_BuilderError Error() const;
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeWireError Error() const;
+		const Handle_TColStd_HSequenceOfTransient & Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetTrimmedCurveFromEdge(const TopoDS_Edge &E, const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetTrimmedCurveFromFace(const TopoDS_Face &F, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape &S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 
 };
-%extend TopoDSToStep_MakeStepWire {
-	~TopoDSToStep_MakeStepWire() {
+%extend TopoDSToStep_WireframeBuilder {
+	~TopoDSToStep_WireframeBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_WireframeBuilder\n");}
+	}
+};
+
+
+%nodefaultctor TopoDSToStep_MakeBrepWithVoids;
+class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		TopoDSToStep_MakeBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		const Handle_StepShape_BrepWithVoids & Value() const;
+
+};
+%extend TopoDSToStep_MakeBrepWithVoids {
+	~TopoDSToStep_MakeBrepWithVoids() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeBrepWithVoids\n");}
 	}
 };
 
@@ -366,23 +399,6 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 };
 
 
-%nodefaultctor TopoDSToStep_MakeBrepWithVoids;
-class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeBrepWithVoids(const TopoDS_Solid &S, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		const Handle_StepShape_BrepWithVoids & Value() const;
-
-};
-%extend TopoDSToStep_MakeBrepWithVoids {
-	~TopoDSToStep_MakeBrepWithVoids() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeBrepWithVoids\n");}
-	}
-};
-
-
 %nodefaultctor TopoDSToStep_MakeStepFace;
 class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 	public:
@@ -406,25 +422,19 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 };
 
 
-%nodefaultctor TopoDSToStep_MakeStepEdge;
-class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
+%nodefaultctor TopoDSToStep_FacetedTool;
+class TopoDSToStep_FacetedTool {
 	public:
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepEdge();
+		TopoDSToStep_FacetedTool();
 		%feature("autodoc", "1");
-		TopoDSToStep_MakeStepEdge(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge &E, TopoDSToStep_Tool & T, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
-		%feature("autodoc", "1");
-		TopoDSToStep_MakeEdgeError Error() const;
+		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
 };
-%extend TopoDSToStep_MakeStepEdge {
-	~TopoDSToStep_MakeStepEdge() {
+%extend TopoDSToStep_FacetedTool {
+	~TopoDSToStep_FacetedTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepEdge\n");}
+	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_FacetedTool\n");}
 	}
 };
 

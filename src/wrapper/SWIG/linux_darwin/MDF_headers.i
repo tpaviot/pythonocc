@@ -86,14 +86,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Standard_Type.hxx>
-#include<Handle_PDF_Attribute.hxx>
-#include<Handle_TDF_Attribute.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<Handle_CDM_MessageDriver.hxx>
-#include<Handle_Standard_Persistent.hxx>
 #include<MDF.hxx>
 #include<Handle_TDF_Data.hxx>
 #include<Handle_PDF_Data.hxx>
+#include<Handle_CDM_MessageDriver.hxx>
+#include<Handle_TDF_Attribute.hxx>
+#include<Handle_PDF_Attribute.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<Handle_Standard_Persistent.hxx>
 #include<TDF_Label.hxx>
 #include<Handle_PColStd_HArray1OfInteger.hxx>
 #include<Handle_PDF_HAttributeArray1.hxx>

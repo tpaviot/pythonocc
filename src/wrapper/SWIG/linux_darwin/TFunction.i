@@ -43,6 +43,36 @@ enum TFunction_ExecutionStatus {
 
 
 
+%nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
+class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+	TFunction_HArray1OfDataMapOfGUIDDriver* GetObject() {
+	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
+	}
+};
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+	~Handle_TFunction_HArray1OfDataMapOfGUIDDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_HArray1OfDataMapOfGUIDDriver\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TFunction_DriverTable;
 class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	public:
@@ -133,36 +163,6 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
-class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
-		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel* GetObject() {
-	return (TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*)$self->Access();
-	}
-};
-%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TFunction_Driver;
 class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 	public:
@@ -223,32 +223,32 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 };
 
 
-%nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
-class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
+class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
-	TFunction_HArray1OfDataMapOfGUIDDriver* GetObject() {
-	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel* GetObject() {
+	return (TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*)$self->Access();
 	}
 };
-%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
-	~Handle_TFunction_HArray1OfDataMapOfGUIDDriver() {
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_HArray1OfDataMapOfGUIDDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -313,75 +313,39 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 };
 
 
-%nodefaultctor TFunction_Scope;
-class TFunction_Scope : public TDF_Attribute {
+%nodefaultctor TFunction_DataMapOfLabelListOfLabel;
+class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_Scope Set(const TDF_Label &Access);
+		TFunction_DataMapOfLabelListOfLabel(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
+		TFunction_DataMapOfLabelListOfLabel & Assign(const TFunction_DataMapOfLabelListOfLabel &Other);
 		%feature("autodoc", "1");
-		TFunction_Scope();
+		TFunction_DataMapOfLabelListOfLabel & operator=(const TFunction_DataMapOfLabelListOfLabel &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean AddFunction(const TDF_Label &L);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveFunction(const TDF_Label &L);
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveFunction(const Standard_Integer ID);
+		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
 		%feature("autodoc", "1");
-		void RemoveAllFunctions();
+		Standard_Boolean IsBound(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasFunction(const Standard_Integer ID) const;
+		Standard_Boolean UnBind(const TDF_Label &K);
 		%feature("autodoc", "1");
-		Standard_Boolean HasFunction(const TDF_Label &L) const;
+		const TDF_LabelList & Find(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		Standard_Integer GetFunction(const TDF_Label &L) const;
+		const TDF_LabelList & operator()(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		const TDF_Label & GetFunction(const Standard_Integer ID) const;
+		TDF_LabelList & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
-		TFunction_Logbook & GetLogbook();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
-		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & ChangeFunctions();
-		%feature("autodoc", "1");
-		void SetFreeID(const Standard_Integer ID);
-		%feature("autodoc", "1");
-		Standard_Integer GetFreeID() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		TDF_LabelList & operator()(const TDF_Label &K);
 
 };
-%extend TFunction_Scope {
-	Handle_TFunction_Scope GetHandle() {
-	return *(Handle_TFunction_Scope*) &$self;
-	}
-};
-%extend TFunction_Scope {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TFunction_Scope {
-	~TFunction_Scope() {
+%extend TFunction_DataMapOfLabelListOfLabel {
+	~TFunction_DataMapOfLabelListOfLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TFunction_Scope\n");}
+	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");}
 	}
 };
 
@@ -429,6 +393,45 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 	~TFunction_HArray1OfDataMapOfGUIDDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TFunction_HArray1OfDataMapOfGUIDDriver\n");}
+	}
+};
+
+
+%nodefaultctor TFunction_DoubleMapOfIntegerLabel;
+class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DoubleMapOfIntegerLabel(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TFunction_DoubleMapOfIntegerLabel & Assign(const TFunction_DoubleMapOfIntegerLabel &Other);
+		%feature("autodoc", "1");
+		TFunction_DoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapOfIntegerLabel &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
+		%feature("autodoc", "1");
+		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound2(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		const TDF_Label & Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Find2(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind1(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind2(const TDF_Label &K);
+
+};
+%extend TFunction_DoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapOfIntegerLabel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -593,29 +596,6 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 };
 
 
-%nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
-class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
-		%feature("autodoc", "1");
-		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapOfIntegerLabel &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TFunction_DoubleMapOfIntegerLabel &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		const TDF_Label & Key2() const;
-
-};
-%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
-	~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");}
-	}
-};
-
-
 %nodefaultctor TFunction_IFunction;
 class TFunction_IFunction {
 	public:
@@ -739,6 +719,49 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 };
 
 
+%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
+class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TDF_Label & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
+	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
+	}
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
+	}
+};
+
+
 %nodefaultctor TFunction_DriverTable;
 class TFunction_DriverTable : public MMgt_TShared {
 	public:
@@ -829,39 +852,6 @@ class TFunction_Iterator {
 };
 
 
-%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
-class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		TDF_Label & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
-	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
-	}
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
-	}
-};
-
-
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapNode {
 	public:
@@ -940,41 +930,25 @@ class TFunction_Logbook {
 };
 
 
-%nodefaultctor TFunction_DoubleMapOfIntegerLabel;
-class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
+%nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
+class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel(const Standard_Integer NbBuckets=1);
+		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & Assign(const TFunction_DoubleMapOfIntegerLabel &Other);
+		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapOfIntegerLabel &aMap);
 		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapOfIntegerLabel &Other);
+		void Initialize(const TFunction_DoubleMapOfIntegerLabel &aMap);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		const Standard_Integer & Key1() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
-		%feature("autodoc", "1");
-		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound2(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_Label & Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Find2(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind1(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind2(const TDF_Label &K);
+		const TDF_Label & Key2() const;
 
 };
-%extend TFunction_DoubleMapOfIntegerLabel {
-	~TFunction_DoubleMapOfIntegerLabel() {
+%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
+	~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");}
+	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -1056,43 +1030,6 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 
 
-%nodefaultctor TFunction_DataMapOfLabelListOfLabel;
-class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel & Assign(const TFunction_DataMapOfLabelListOfLabel &Other);
-		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel & operator=(const TFunction_DataMapOfLabelListOfLabel &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		const TDF_LabelList & Find(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_LabelList & operator()(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		TDF_LabelList & ChangeFind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		TDF_LabelList & operator()(const TDF_Label &K);
-
-};
-%extend TFunction_DataMapOfLabelListOfLabel {
-	~TFunction_DataMapOfLabelListOfLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");}
-	}
-};
-
-
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_BasicMapIterator {
 	public:
@@ -1112,5 +1049,78 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 	~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");}
+	}
+};
+
+
+%nodefaultctor TFunction_Scope;
+class TFunction_Scope : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TFunction_Scope Set(const TDF_Label &Access);
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		TFunction_Scope();
+		%feature("autodoc", "1");
+		Standard_Boolean AddFunction(const TDF_Label &L);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveFunction(const TDF_Label &L);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveFunction(const Standard_Integer ID);
+		%feature("autodoc", "1");
+		void RemoveAllFunctions();
+		%feature("autodoc", "1");
+		Standard_Boolean HasFunction(const Standard_Integer ID) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasFunction(const TDF_Label &L) const;
+		%feature("autodoc", "1");
+		Standard_Integer GetFunction(const TDF_Label &L) const;
+		%feature("autodoc", "1");
+		const TDF_Label & GetFunction(const Standard_Integer ID) const;
+		%feature("autodoc", "1");
+		TFunction_Logbook & GetLogbook();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
+		%feature("autodoc", "1");
+		TFunction_DoubleMapOfIntegerLabel & ChangeFunctions();
+		%feature("autodoc", "1");
+		void SetFreeID(const Standard_Integer ID);
+		%feature("autodoc", "1");
+		Standard_Integer GetFreeID() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TFunction_Scope {
+	Handle_TFunction_Scope GetHandle() {
+	return *(Handle_TFunction_Scope*) &$self;
+	}
+};
+%extend TFunction_Scope {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TFunction_Scope {
+	~TFunction_Scope() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TFunction_Scope\n");}
 	}
 };

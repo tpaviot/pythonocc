@@ -65,36 +65,6 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 };
 
 
-%nodefaultctor Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
-class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	BRepMAT2d_SequenceNodeOfSequenceOfBasicElt* GetObject() {
-	return (BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*)$self->Access();
-	}
-};
-%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
 class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TCollection_MapNode {
 	public:
@@ -121,6 +91,36 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
+class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt();
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt & operator=(const BRepMAT2d_SequenceNodeOfSequenceOfBasicElt *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	BRepMAT2d_SequenceNodeOfSequenceOfBasicElt* GetObject() {
+	return (BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*)$self->Access();
+	}
+};
+%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -160,45 +160,31 @@ class BRepMAT2d_BisectingLocus {
 };
 
 
-%nodefaultctor BRepMAT2d_Explorer;
-class BRepMAT2d_Explorer {
+%nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
+class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_Explorer();
+		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		BRepMAT2d_Explorer(const TopoDS_Face &aFace);
+		Handle_MAT_BasicElt & Value() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Face &aFace);
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfContours() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfCurves(const Standard_Integer IndexContour) const;
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer IndexContour);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Value() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
-		%feature("autodoc", "1");
-		const TColGeom2d_SequenceOfCurve & Contour(const Standard_Integer IndexContour) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModified(const TopoDS_Shape &aShape) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedShape(const TopoDS_Shape &aShape) const;
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BRepMAT2d_Explorer {
-	~BRepMAT2d_Explorer() {
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt GetHandle() {
+	return *(Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*) &$self;
+	}
+};
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_Explorer\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -294,59 +280,68 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BRepMAT2d_SequenceOfBasicElt;
-class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
+%nodefaultctor BRepMAT2d_Explorer;
+class BRepMAT2d_Explorer {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_SequenceOfBasicElt();
+		BRepMAT2d_Explorer();
+		%feature("autodoc", "1");
+		BRepMAT2d_Explorer(const TopoDS_Face &aFace);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & Assign(const BRepMAT2d_SequenceOfBasicElt &Other);
+		void Perform(const TopoDS_Face &aFace);
 		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & operator=(const BRepMAT2d_SequenceOfBasicElt &Other);
+		Standard_Integer NumberOfContours() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_MAT_BasicElt &T);
+		Standard_Integer NumberOfCurves(const Standard_Integer IndexContour) const;
 		%feature("autodoc", "1");
-		void Append(BRepMAT2d_SequenceOfBasicElt & S);
+		void Init(const Standard_Integer IndexContour);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT_BasicElt &T);
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void Prepend(BRepMAT2d_SequenceOfBasicElt & S);
+		void Next();
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		Handle_Geom2d_Curve Value() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
+		TopoDS_Shape Shape() const;
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT_BasicElt &T);
+		const TColGeom2d_SequenceOfCurve & Contour(const Standard_Integer IndexContour) const;
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
+		Standard_Boolean IsModified(const TopoDS_Shape &aShape) const;
 		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & First() const;
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape &aShape) const;
 		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
 
 };
-%extend BRepMAT2d_SequenceOfBasicElt {
-	~BRepMAT2d_SequenceOfBasicElt() {
+%extend BRepMAT2d_Explorer {
+	~BRepMAT2d_Explorer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_Explorer\n");}
+	}
+};
+
+
+%nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
+class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape();
+		%feature("autodoc", "1");
+		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapOfBasicEltShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepMAT2d_DataMapOfBasicEltShape &aMap);
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+
+};
+%extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
+	~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");}
 	}
 };
 
@@ -448,53 +443,58 @@ class BRepMAT2d_LinkTopoBilo {
 };
 
 
-%nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
-class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
+%nodefaultctor BRepMAT2d_SequenceOfBasicElt;
+class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape();
+		BRepMAT2d_SequenceOfBasicElt();
 		%feature("autodoc", "1");
-		BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape(const BRepMAT2d_DataMapOfBasicEltShape &aMap);
+		void Clear();
 		%feature("autodoc", "1");
-		void Initialize(const BRepMAT2d_DataMapOfBasicEltShape &aMap);
+		const BRepMAT2d_SequenceOfBasicElt & Assign(const BRepMAT2d_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & Key() const;
+		const BRepMAT2d_SequenceOfBasicElt & operator=(const BRepMAT2d_SequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		void Append(const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void Append(BRepMAT2d_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void Prepend(BRepMAT2d_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & First() const;
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BRepMAT2d_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
-	~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape() {
+%extend BRepMAT2d_SequenceOfBasicElt {
+	~BRepMAT2d_SequenceOfBasicElt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");}
-	}
-};
-
-
-%nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
-class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt GetHandle() {
-	return *(Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*) &$self;
-	}
-};
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");}
 	}
 };

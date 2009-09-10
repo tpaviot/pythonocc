@@ -65,6 +65,36 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_StlMesh_Mesh;
+class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh();
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh(const Handle_StlMesh_Mesh &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh(const StlMesh_Mesh *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh & operator=(const Handle_StlMesh_Mesh &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StlMesh_Mesh {
+	StlMesh_Mesh* GetObject() {
+	return (StlMesh_Mesh*)$self->Access();
+	}
+};
+%extend Handle_StlMesh_Mesh {
+	~Handle_StlMesh_Mesh() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_Mesh\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StlMesh_MeshTriangle;
 class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	public:
@@ -95,32 +125,32 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StlMesh_Mesh;
-class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
+class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh();
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh(const Handle_StlMesh_Mesh &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh(const StlMesh_Mesh *anItem);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh & operator=(const Handle_StlMesh_Mesh &aHandle);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh & operator=(const StlMesh_Mesh *anItem);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
 		%feature("autodoc", "1");
-		Handle_StlMesh_Mesh const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StlMesh_Mesh {
-	StlMesh_Mesh* GetObject() {
-	return (StlMesh_Mesh*)$self->Access();
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	StlMesh_SequenceNodeOfSequenceOfMeshDomain* GetObject() {
+	return (StlMesh_SequenceNodeOfSequenceOfMeshDomain*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_Mesh {
-	~Handle_StlMesh_Mesh() {
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_Mesh\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
 	}
 };
 
@@ -185,36 +215,6 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 };
 
 
-%nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
-class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	StlMesh_SequenceNodeOfSequenceOfMeshDomain* GetObject() {
-	return (StlMesh_SequenceNodeOfSequenceOfMeshDomain*)$self->Access();
-	}
-};
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
-	}
-};
-
-
 %nodefaultctor StlMesh_MeshDomain;
 class StlMesh_MeshDomain : public MMgt_TShared {
 	public:
@@ -256,33 +256,6 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 	~StlMesh_MeshDomain() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshDomain\n");}
-	}
-};
-
-
-%nodefaultctor StlMesh_MeshExplorer;
-class StlMesh_MeshExplorer {
-	public:
-		%feature("autodoc", "1");
-		StlMesh_MeshExplorer(const Handle_StlMesh_Mesh &M);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void InitTriangle(const Standard_Integer DomainIndex=1);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreTriangle() const;
-		%feature("autodoc", "1");
-		void NextTriangle();
-		%feature("autodoc","TriangleVertices()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		void TriangleVertices(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","TriangleOrientation()->[Standard_Real, Standard_Real, Standard_Real]");
-		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend StlMesh_MeshExplorer {
-	~StlMesh_MeshExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshExplorer\n");}
 	}
 };
 
@@ -344,39 +317,58 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor StlMesh_MeshTriangle;
-class StlMesh_MeshTriangle : public MMgt_TShared {
+%nodefaultctor StlMesh_MeshExplorer;
+class StlMesh_MeshExplorer {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_MeshTriangle();
+		StlMesh_MeshExplorer(const Handle_StlMesh_Mesh &M);
 		%feature("autodoc", "1");
-		StlMesh_MeshTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
-		%feature("autodoc","GetVertexAndOrientation()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Real, Standard_Real, Standard_Real]");
-		void GetVertexAndOrientation(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
-		void SetVertexAndOrientation(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
-		%feature("autodoc","GetVertex()->[Standard_Integer, Standard_Integer, Standard_Integer]");
-		void GetVertex(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		void InitTriangle(const Standard_Integer DomainIndex=1);
 		%feature("autodoc", "1");
-		void SetVertex(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3);
+		Standard_Boolean MoreTriangle() const;
+		%feature("autodoc", "1");
+		void NextTriangle();
+		%feature("autodoc","TriangleVertices()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		void TriangleVertices(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","TriangleOrientation()->[Standard_Real, Standard_Real, Standard_Real]");
+		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend StlMesh_MeshExplorer {
+	~StlMesh_MeshExplorer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshExplorer\n");}
+	}
+};
+
+
+%nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshDomain;
+class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_MeshDomain &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_StlMesh_MeshDomain & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StlMesh_MeshTriangle {
-	Handle_StlMesh_MeshTriangle GetHandle() {
-	return *(Handle_StlMesh_MeshTriangle*) &$self;
+%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain GetHandle() {
+	return *(Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain*) &$self;
 	}
 };
-%extend StlMesh_MeshTriangle {
+%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_MeshTriangle {
-	~StlMesh_MeshTriangle() {
+%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	~StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshTriangle\n");}
+	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
 	}
 };
 
@@ -427,31 +419,61 @@ class StlMesh {
 };
 
 
-%nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshDomain;
-class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
+%nodefaultctor StlMesh_Mesh;
+class StlMesh_Mesh : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_MeshDomain &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		StlMesh_Mesh();
 		%feature("autodoc", "1");
-		Handle_StlMesh_MeshDomain & Value() const;
+		virtual		void AddDomain();
+		%feature("autodoc", "1");
+		virtual		void AddDomain(const Standard_Real Deflection);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer AddTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer AddOnlyNewVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		%feature("autodoc", "1");
+		virtual		void Bounds(gp_XYZ & XYZmax, gp_XYZ & XYZmin) const;
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		virtual		Standard_Real Deflection(const Standard_Integer DomainIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbDomains() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTriangles() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbTriangles(const Standard_Integer DomainIndex) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVertices() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVertices(const Standard_Integer DomainIndex) const;
+		%feature("autodoc", "1");
+		virtual		const StlMesh_SequenceOfMeshTriangle & Triangles(const Standard_Integer DomainIndex=1) const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_SequenceOfXYZ & Vertices(const Standard_Integer DomainIndex=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain GetHandle() {
-	return *(Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain*) &$self;
+%extend StlMesh_Mesh {
+	Handle_StlMesh_Mesh GetHandle() {
+	return *(Handle_StlMesh_Mesh*) &$self;
 	}
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+%extend StlMesh_Mesh {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	~StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
+%extend StlMesh_Mesh {
+	~StlMesh_Mesh() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
+	if (__env){printf("## Call custom destructor for instance of StlMesh_Mesh\n");}
 	}
 };
 
@@ -509,6 +531,43 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 	~StlMesh_SequenceOfMeshTriangle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshTriangle\n");}
+	}
+};
+
+
+%nodefaultctor StlMesh_MeshTriangle;
+class StlMesh_MeshTriangle : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StlMesh_MeshTriangle();
+		%feature("autodoc", "1");
+		StlMesh_MeshTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
+		%feature("autodoc","GetVertexAndOrientation()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Real, Standard_Real, Standard_Real]");
+		void GetVertexAndOrientation(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetVertexAndOrientation(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
+		%feature("autodoc","GetVertex()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		void GetVertex(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void SetVertex(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StlMesh_MeshTriangle {
+	Handle_StlMesh_MeshTriangle GetHandle() {
+	return *(Handle_StlMesh_MeshTriangle*) &$self;
+	}
+};
+%extend StlMesh_MeshTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StlMesh_MeshTriangle {
+	~StlMesh_MeshTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshTriangle\n");}
 	}
 };
 
@@ -595,64 +654,5 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 	~StlMesh_SequenceOfMesh() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMesh\n");}
-	}
-};
-
-
-%nodefaultctor StlMesh_Mesh;
-class StlMesh_Mesh : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StlMesh_Mesh();
-		%feature("autodoc", "1");
-		virtual		void AddDomain();
-		%feature("autodoc", "1");
-		virtual		void AddDomain(const Standard_Real Deflection);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer AddTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer AddOnlyNewVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-		%feature("autodoc", "1");
-		virtual		void Bounds(gp_XYZ & XYZmax, gp_XYZ & XYZmin) const;
-		%feature("autodoc", "1");
-		virtual		void Clear();
-		%feature("autodoc", "1");
-		virtual		Standard_Real Deflection(const Standard_Integer DomainIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbDomains() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTriangles() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbTriangles(const Standard_Integer DomainIndex) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVertices() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVertices(const Standard_Integer DomainIndex) const;
-		%feature("autodoc", "1");
-		virtual		const StlMesh_SequenceOfMeshTriangle & Triangles(const Standard_Integer DomainIndex=1) const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_SequenceOfXYZ & Vertices(const Standard_Integer DomainIndex=1) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StlMesh_Mesh {
-	Handle_StlMesh_Mesh GetHandle() {
-	return *(Handle_StlMesh_Mesh*) &$self;
-	}
-};
-%extend StlMesh_Mesh {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StlMesh_Mesh {
-	~StlMesh_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_Mesh\n");}
 	}
 };

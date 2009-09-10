@@ -250,6 +250,37 @@ class Plate_PlaneConstraint {
 };
 
 
+%nodefaultctor Plate_LinearScalarConstraint;
+class Plate_LinearScalarConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint();
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColgp_Array1OfXYZ &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColgp_Array2OfXYZ &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & GetPPC() const;
+		%feature("autodoc", "1");
+		const TColgp_Array2OfXYZ & Coeff() const;
+		%feature("autodoc", "1");
+		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ &Value);
+
+};
+%extend Plate_LinearScalarConstraint {
+	~Plate_LinearScalarConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_LinearScalarConstraint\n");}
+	}
+};
+
+
 %nodefaultctor Plate_SampledCurveConstraint;
 class Plate_SampledCurveConstraint {
 	public:
@@ -263,6 +294,35 @@ class Plate_SampledCurveConstraint {
 	~Plate_SampledCurveConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Plate_SampledCurveConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_LinearXYZConstraint;
+class Plate_LinearXYZConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint();
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColStd_Array1OfReal &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColStd_Array2OfReal &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & GetPPC() const;
+		%feature("autodoc", "1");
+		const TColStd_Array2OfReal & Coeff() const;
+		%feature("autodoc", "1");
+		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
+
+};
+%extend Plate_LinearXYZConstraint {
+	~Plate_LinearXYZConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_LinearXYZConstraint\n");}
 	}
 };
 
@@ -296,6 +356,82 @@ class Plate_GtoCConstraint {
 	~Plate_GtoCConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Plate_GtoCConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_HArray1OfPinpointConstraint;
+class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up, const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		void Init(const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & Array1() const;
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	Handle_Plate_HArray1OfPinpointConstraint GetHandle() {
+	return *(Handle_Plate_HArray1OfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	~Plate_HArray1OfPinpointConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_HArray1OfPinpointConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
+class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_PinpointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	~Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");}
 	}
 };
 
@@ -374,23 +510,6 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor Plate_D2;
-class Plate_D2 {
-	public:
-		%feature("autodoc", "1");
-		Plate_D2(const gp_XYZ &duu, const gp_XYZ &duv, const gp_XYZ &dvv);
-		%feature("autodoc", "1");
-		Plate_D2(const Plate_D2 &ref);
-
-};
-%extend Plate_D2 {
-	~Plate_D2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_D2\n");}
-	}
-};
-
-
 %nodefaultctor Plate_D1;
 class Plate_D1 {
 	public:
@@ -412,206 +531,19 @@ class Plate_D1 {
 };
 
 
-%nodefaultctor Plate_Array1OfPinpointConstraint;
-class Plate_Array1OfPinpointConstraint {
+%nodefaultctor Plate_D2;
+class Plate_D2 {
 	public:
 		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
+		Plate_D2(const gp_XYZ &duu, const gp_XYZ &duv, const gp_XYZ &dvv);
 		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint(const Plate_PinpointConstraint &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & Assign(const Plate_Array1OfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & operator=(const Plate_Array1OfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
+		Plate_D2(const Plate_D2 &ref);
 
 };
-%extend Plate_Array1OfPinpointConstraint {
-	~Plate_Array1OfPinpointConstraint() {
+%extend Plate_D2 {
+	~Plate_D2() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_Array1OfPinpointConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
-class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_LinearScalarConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_LinearScalarConstraint;
-class Plate_LinearScalarConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint();
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColgp_Array1OfXYZ &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColgp_Array2OfXYZ &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & GetPPC() const;
-		%feature("autodoc", "1");
-		const TColgp_Array2OfXYZ & Coeff() const;
-		%feature("autodoc", "1");
-		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ &Value);
-
-};
-%extend Plate_LinearScalarConstraint {
-	~Plate_LinearScalarConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_LinearScalarConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_HArray1OfPinpointConstraint;
-class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up, const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		void Init(const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & Array1() const;
-		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_HArray1OfPinpointConstraint {
-	Handle_Plate_HArray1OfPinpointConstraint GetHandle() {
-	return *(Handle_Plate_HArray1OfPinpointConstraint*) &$self;
-	}
-};
-%extend Plate_HArray1OfPinpointConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Plate_HArray1OfPinpointConstraint {
-	~Plate_HArray1OfPinpointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_HArray1OfPinpointConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_PinpointConstraint;
-class Plate_PinpointConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint();
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint(const gp_XY &point2d, const gp_XYZ &ImposedValue, const Standard_Integer iu=0, const Standard_Integer iv=0);
-		%feature("autodoc", "1");
-		const gp_XY & Pnt2d() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Idu() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Idv() const;
-		%feature("autodoc", "1");
-		const gp_XYZ & Value() const;
-
-};
-%extend Plate_PinpointConstraint {
-	~Plate_PinpointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_PinpointConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
-class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_LinearXYZConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");}
+	if (__env){printf("## Call custom destructor for instance of Plate_D2\n");}
 	}
 };
 
@@ -673,6 +605,132 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Plate_Array1OfPinpointConstraint;
+class Plate_Array1OfPinpointConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint(const Plate_PinpointConstraint &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & Assign(const Plate_Array1OfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & operator=(const Plate_Array1OfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
+
+};
+%extend Plate_Array1OfPinpointConstraint {
+	~Plate_Array1OfPinpointConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_Array1OfPinpointConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_PinpointConstraint;
+class Plate_PinpointConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint();
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint(const gp_XY &point2d, const gp_XYZ &ImposedValue, const Standard_Integer iu=0, const Standard_Integer iv=0);
+		%feature("autodoc", "1");
+		const gp_XY & Pnt2d() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Idu() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Idv() const;
+		%feature("autodoc", "1");
+		const gp_XYZ & Value() const;
+
+};
+%extend Plate_PinpointConstraint {
+	~Plate_PinpointConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_PinpointConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
+class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_LinearScalarConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
+class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_LinearXYZConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");}
+	}
+};
+
+
 %nodefaultctor Plate_FreeGtoCConstraint;
 class Plate_FreeGtoCConstraint {
 	public:
@@ -713,35 +771,6 @@ class Plate_LineConstraint {
 	~Plate_LineConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Plate_LineConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
-class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_PinpointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
-	~Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");}
 	}
 };
 
@@ -799,34 +828,5 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 	~Plate_SequenceOfLinearScalarConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Plate_SequenceOfLinearScalarConstraint\n");}
-	}
-};
-
-
-%nodefaultctor Plate_LinearXYZConstraint;
-class Plate_LinearXYZConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint();
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColStd_Array1OfReal &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &PPC, const TColStd_Array2OfReal &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & GetPPC() const;
-		%feature("autodoc", "1");
-		const TColStd_Array2OfReal & Coeff() const;
-		%feature("autodoc", "1");
-		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
-
-};
-%extend Plate_LinearXYZConstraint {
-	~Plate_LinearXYZConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plate_LinearXYZConstraint\n");}
 	}
 };

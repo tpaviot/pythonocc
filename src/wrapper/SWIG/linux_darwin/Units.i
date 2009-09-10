@@ -35,6 +35,66 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
+%nodefaultctor Handle_Units_Lexicon;
+class Handle_Units_Lexicon : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon();
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon(const Handle_Units_Lexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon(const Units_Lexicon *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon & operator=(const Handle_Units_Lexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon & operator=(const Units_Lexicon *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_Lexicon const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_Lexicon {
+	Units_Lexicon* GetObject() {
+	return (Units_Lexicon*)$self->Access();
+	}
+};
+%extend Handle_Units_Lexicon {
+	~Handle_Units_Lexicon() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_Lexicon\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Units_UnitsLexicon;
+class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon(const Handle_Units_UnitsLexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon(const Units_UnitsLexicon *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon & operator=(const Handle_Units_UnitsLexicon &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon & operator=(const Units_UnitsLexicon *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsLexicon const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_UnitsLexicon {
+	Units_UnitsLexicon* GetObject() {
+	return (Units_UnitsLexicon*)$self->Access();
+	}
+};
+%extend Handle_Units_UnitsLexicon {
+	~Handle_Units_UnitsLexicon() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsLexicon\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Units_Quantity;
 class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	public:
@@ -125,152 +185,32 @@ class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Units_Lexicon;
-class Handle_Units_Lexicon : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
+class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon();
+		Handle_Units_SequenceNodeOfQtsSequence();
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon(const Handle_Units_Lexicon &aHandle);
+		Handle_Units_SequenceNodeOfQtsSequence(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon(const Units_Lexicon *anItem);
+		Handle_Units_SequenceNodeOfQtsSequence(const Units_SequenceNodeOfQtsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon & operator=(const Handle_Units_Lexicon &aHandle);
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon & operator=(const Units_Lexicon *anItem);
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Units_SequenceNodeOfQtsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_Lexicon const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Units_SequenceNodeOfQtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Units_Lexicon {
-	Units_Lexicon* GetObject() {
-	return (Units_Lexicon*)$self->Access();
+%extend Handle_Units_SequenceNodeOfQtsSequence {
+	Units_SequenceNodeOfQtsSequence* GetObject() {
+	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
 	}
 };
-%extend Handle_Units_Lexicon {
-	~Handle_Units_Lexicon() {
+%extend Handle_Units_SequenceNodeOfQtsSequence {
+	~Handle_Units_SequenceNodeOfQtsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Lexicon\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Units_UnitsLexicon;
-class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon(const Handle_Units_UnitsLexicon &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon(const Units_UnitsLexicon *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon & operator=(const Handle_Units_UnitsLexicon &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon & operator=(const Units_UnitsLexicon *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsLexicon const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_UnitsLexicon {
-	Units_UnitsLexicon* GetObject() {
-	return (Units_UnitsLexicon*)$self->Access();
-	}
-};
-%extend Handle_Units_UnitsLexicon {
-	~Handle_Units_UnitsLexicon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsLexicon\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Units_TokensSequence;
-class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence();
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence(const Handle_Units_TokensSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence(const Units_TokensSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence & operator=(const Handle_Units_TokensSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence & operator=(const Units_TokensSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_TokensSequence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_TokensSequence {
-	Units_TokensSequence* GetObject() {
-	return (Units_TokensSequence*)$self->Access();
-	}
-};
-%extend Handle_Units_TokensSequence {
-	~Handle_Units_TokensSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_TokensSequence\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Units_UnitsDictionary;
-class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary(const Handle_Units_UnitsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary(const Units_UnitsDictionary *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary & operator=(const Handle_Units_UnitsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary & operator=(const Units_UnitsDictionary *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_UnitsDictionary {
-	Units_UnitsDictionary* GetObject() {
-	return (Units_UnitsDictionary*)$self->Access();
-	}
-};
-%extend Handle_Units_UnitsDictionary {
-	~Handle_Units_UnitsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsDictionary\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Units_SequenceNodeOfUtsSequence;
-class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence();
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence(const Units_SequenceNodeOfUtsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Units_SequenceNodeOfUtsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfUtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_SequenceNodeOfUtsSequence {
-	Units_SequenceNodeOfUtsSequence* GetObject() {
-	return (Units_SequenceNodeOfUtsSequence*)$self->Access();
-	}
-};
-%extend Handle_Units_SequenceNodeOfUtsSequence {
-	~Handle_Units_SequenceNodeOfUtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfUtsSequence\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfQtsSequence\n");}
 	}
 };
 
@@ -335,36 +275,6 @@ class Handle_Units_Unit : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Units_UnitsSequence;
-class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence(const Handle_Units_UnitsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence(const Units_UnitsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence & operator=(const Handle_Units_UnitsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence & operator=(const Units_UnitsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_UnitsSequence {
-	Units_UnitsSequence* GetObject() {
-	return (Units_UnitsSequence*)$self->Access();
-	}
-};
-%extend Handle_Units_UnitsSequence {
-	~Handle_Units_UnitsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsSequence\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Units_Token;
 class Handle_Units_Token : public Handle_MMgt_TShared {
 	public:
@@ -425,32 +335,32 @@ class Handle_Units_ShiftedToken : public Handle_Units_Token {
 };
 
 
-%nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
-class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_Units_SequenceNodeOfUtsSequence;
+class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence();
+		Handle_Units_SequenceNodeOfUtsSequence();
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
+		Handle_Units_SequenceNodeOfUtsSequence(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence(const Units_SequenceNodeOfQtsSequence *anItem);
+		Handle_Units_SequenceNodeOfUtsSequence(const Units_SequenceNodeOfUtsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
+		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Handle_Units_SequenceNodeOfUtsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Units_SequenceNodeOfQtsSequence *anItem);
+		Handle_Units_SequenceNodeOfUtsSequence & operator=(const Units_SequenceNodeOfUtsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Units_SequenceNodeOfUtsSequence const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Units_SequenceNodeOfQtsSequence {
-	Units_SequenceNodeOfQtsSequence* GetObject() {
-	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
+%extend Handle_Units_SequenceNodeOfUtsSequence {
+	Units_SequenceNodeOfUtsSequence* GetObject() {
+	return (Units_SequenceNodeOfUtsSequence*)$self->Access();
 	}
 };
-%extend Handle_Units_SequenceNodeOfQtsSequence {
-	~Handle_Units_SequenceNodeOfQtsSequence() {
+%extend Handle_Units_SequenceNodeOfUtsSequence {
+	~Handle_Units_SequenceNodeOfUtsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfQtsSequence\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfUtsSequence\n");}
 	}
 };
 
@@ -485,6 +395,66 @@ class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 };
 
 
+%nodefaultctor Handle_Units_UnitsSequence;
+class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence(const Handle_Units_UnitsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence(const Units_UnitsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence & operator=(const Handle_Units_UnitsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence & operator=(const Units_UnitsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_UnitsSequence {
+	Units_UnitsSequence* GetObject() {
+	return (Units_UnitsSequence*)$self->Access();
+	}
+};
+%extend Handle_Units_UnitsSequence {
+	~Handle_Units_UnitsSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsSequence\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Units_ShiftedUnit;
+class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit();
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit(const Handle_Units_ShiftedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit(const Units_ShiftedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit & operator=(const Handle_Units_ShiftedUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit & operator=(const Units_ShiftedUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_ShiftedUnit const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_ShiftedUnit {
+	Units_ShiftedUnit* GetObject() {
+	return (Units_ShiftedUnit*)$self->Access();
+	}
+};
+%extend Handle_Units_ShiftedUnit {
+	~Handle_Units_ShiftedUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_ShiftedUnit\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Units_Dimensions;
 class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	public:
@@ -511,6 +481,36 @@ class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	~Handle_Units_Dimensions() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_Dimensions\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Units_TokensSequence;
+class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence();
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence(const Handle_Units_TokensSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence(const Units_TokensSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Handle_Units_TokensSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Units_TokensSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_TokensSequence {
+	Units_TokensSequence* GetObject() {
+	return (Units_TokensSequence*)$self->Access();
+	}
+};
+%extend Handle_Units_TokensSequence {
+	~Handle_Units_TokensSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_TokensSequence\n");}
 	}
 };
 
@@ -575,32 +575,32 @@ class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Units_ShiftedUnit;
-class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
+%nodefaultctor Handle_Units_UnitsDictionary;
+class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit();
+		Handle_Units_UnitsDictionary();
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit(const Handle_Units_ShiftedUnit &aHandle);
+		Handle_Units_UnitsDictionary(const Handle_Units_UnitsDictionary &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit(const Units_ShiftedUnit *anItem);
+		Handle_Units_UnitsDictionary(const Units_UnitsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit & operator=(const Handle_Units_ShiftedUnit &aHandle);
+		Handle_Units_UnitsDictionary & operator=(const Handle_Units_UnitsDictionary &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit & operator=(const Units_ShiftedUnit *anItem);
+		Handle_Units_UnitsDictionary & operator=(const Units_UnitsDictionary *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_ShiftedUnit const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Units_UnitsDictionary const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Units_ShiftedUnit {
-	Units_ShiftedUnit* GetObject() {
-	return (Units_ShiftedUnit*)$self->Access();
+%extend Handle_Units_UnitsDictionary {
+	Units_UnitsDictionary* GetObject() {
+	return (Units_UnitsDictionary*)$self->Access();
 	}
 };
-%extend Handle_Units_ShiftedUnit {
-	~Handle_Units_ShiftedUnit() {
+%extend Handle_Units_UnitsDictionary {
+	~Handle_Units_UnitsDictionary() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_ShiftedUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsDictionary\n");}
 	}
 };
 
@@ -631,6 +631,35 @@ class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 	~Handle_Units_UnitsSystem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsSystem\n");}
+	}
+};
+
+
+%nodefaultctor Units_SequenceNodeOfUtsSequence;
+class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Units_SequenceNodeOfUtsSequence(const Handle_Units_Unit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Units_Unit & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	Handle_Units_SequenceNodeOfUtsSequence GetHandle() {
+	return *(Handle_Units_SequenceNodeOfUtsSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	~Units_SequenceNodeOfUtsSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfUtsSequence\n");}
 	}
 };
 
@@ -734,35 +763,6 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 	~Units_NoSuchType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_NoSuchType\n");}
-	}
-};
-
-
-%nodefaultctor Units_SequenceNodeOfTksSequence;
-class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Units_SequenceNodeOfTksSequence(const Handle_Units_Token &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Units_Token & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_SequenceNodeOfTksSequence {
-	Handle_Units_SequenceNodeOfTksSequence GetHandle() {
-	return *(Handle_Units_SequenceNodeOfTksSequence*) &$self;
-	}
-};
-%extend Units_SequenceNodeOfTksSequence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Units_SequenceNodeOfTksSequence {
-	~Units_SequenceNodeOfTksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfTksSequence\n");}
 	}
 };
 
@@ -880,6 +880,63 @@ class Units_StringsSequence : public MMgt_TShared {
 };
 
 
+%nodefaultctor Units_TksSequence;
+class Units_TksSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Units_TksSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Units_TksSequence & Assign(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		const Units_TksSequence & operator=(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Append(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Prepend(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & First() const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Units_Token & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Units_TksSequence {
+	~Units_TksSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_TksSequence\n");}
+	}
+};
+
+
 %nodefaultctor Units_Unit;
 class Units_Unit : public MMgt_TShared {
 	public:
@@ -931,6 +988,35 @@ class Units_Unit : public MMgt_TShared {
 };
 
 
+%nodefaultctor Units_SequenceNodeOfTksSequence;
+class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Units_SequenceNodeOfTksSequence(const Handle_Units_Token &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Units_Token & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_SequenceNodeOfTksSequence {
+	Handle_Units_SequenceNodeOfTksSequence GetHandle() {
+	return *(Handle_Units_SequenceNodeOfTksSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfTksSequence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Units_SequenceNodeOfTksSequence {
+	~Units_SequenceNodeOfTksSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfTksSequence\n");}
+	}
+};
+
+
 %nodefaultctor Units_ShiftedUnit;
 class Units_ShiftedUnit : public Units_Unit {
 	public:
@@ -966,77 +1052,6 @@ class Units_ShiftedUnit : public Units_Unit {
 	~Units_ShiftedUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_ShiftedUnit\n");}
-	}
-};
-
-
-%nodefaultctor Units_UnitsSequence;
-class Units_UnitsSequence : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Units_UnitsSequence();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		const Handle_Units_Unit & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Units_Unit & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Units_UtsSequence & Sequence() const;
-		%feature("autodoc", "1");
-		Units_UtsSequence & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_UnitsSequence {
-	Handle_Units_UnitsSequence GetHandle() {
-	return *(Handle_Units_UnitsSequence*) &$self;
-	}
-};
-%extend Units_UnitsSequence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Units_UnitsSequence {
-	~Units_UnitsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsSequence\n");}
 	}
 };
 
@@ -1096,63 +1111,6 @@ class Units_Measurement {
 	~Units_Measurement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_Measurement\n");}
-	}
-};
-
-
-%nodefaultctor Units_QtsSequence;
-class Units_QtsSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Units_QtsSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
-		%feature("autodoc", "1");
-		const Units_QtsSequence & operator=(const Units_QtsSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Quantity &T);
-		%feature("autodoc", "1");
-		void Append(Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Quantity &T);
-		%feature("autodoc", "1");
-		void Prepend(Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Units_Quantity &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Units_Quantity &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & First() const;
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Units_Quantity &I);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Units_QtsSequence {
-	~Units_QtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_QtsSequence\n");}
 	}
 };
 
@@ -1228,37 +1186,112 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 };
 
 
-%nodefaultctor Units_NoSuchUnit;
-class Units_NoSuchUnit : public Standard_NoSuchObject {
+%nodefaultctor Units_UnitsDictionary;
+class Units_UnitsDictionary : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Units_NoSuchUnit();
+		Units_UnitsDictionary();
 		%feature("autodoc", "1");
-		Units_NoSuchUnit(const char * AString);
+		void Creates(const char * afilename);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		Handle_Units_QuantitiesSequence Sequence() const;
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
+		Standard_Boolean UpToDate() const;
 		%feature("autodoc", "1");
-		Handle_Units_NoSuchUnit NewInstance(const char * aMessage);
+		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer alevel) const;
+		%feature("autodoc", "1");
+		void Dump(const Handle_Units_Dimensions &adimensions) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Units_NoSuchUnit {
-	Handle_Units_NoSuchUnit GetHandle() {
-	return *(Handle_Units_NoSuchUnit*) &$self;
+%extend Units_UnitsDictionary {
+	Handle_Units_UnitsDictionary GetHandle() {
+	return *(Handle_Units_UnitsDictionary*) &$self;
 	}
 };
-%extend Units_NoSuchUnit {
+%extend Units_UnitsDictionary {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Units_NoSuchUnit {
-	~Units_NoSuchUnit() {
+%extend Units_UnitsDictionary {
+	~Units_UnitsDictionary() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_NoSuchUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of Units_UnitsDictionary\n");}
+	}
+};
+
+
+%nodefaultctor Units_UnitsSequence;
+class Units_UnitsSequence : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Units_UnitsSequence();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		const Handle_Units_Unit & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Units_Unit & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Units_UtsSequence & Sequence() const;
+		%feature("autodoc", "1");
+		Units_UtsSequence & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_UnitsSequence {
+	Handle_Units_UnitsSequence GetHandle() {
+	return *(Handle_Units_UnitsSequence*) &$self;
+	}
+};
+%extend Units_UnitsSequence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Units_UnitsSequence {
+	~Units_UnitsSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_UnitsSequence\n");}
 	}
 };
 
@@ -1387,6 +1420,70 @@ class Units_ShiftedToken : public Units_Token {
 };
 
 
+%nodefaultctor Units_NoSuchUnit;
+class Units_NoSuchUnit : public Standard_NoSuchObject {
+	public:
+		%feature("autodoc", "1");
+		Units_NoSuchUnit();
+		%feature("autodoc", "1");
+		Units_NoSuchUnit(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Units_NoSuchUnit NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_NoSuchUnit {
+	Handle_Units_NoSuchUnit GetHandle() {
+	return *(Handle_Units_NoSuchUnit*) &$self;
+	}
+};
+%extend Units_NoSuchUnit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Units_NoSuchUnit {
+	~Units_NoSuchUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_NoSuchUnit\n");}
+	}
+};
+
+
+%nodefaultctor Units_SequenceNodeOfStrgSequence;
+class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Units_SequenceNodeOfStrgSequence(const Handle_TCollection_HAsciiString &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_SequenceNodeOfStrgSequence {
+	Handle_Units_SequenceNodeOfStrgSequence GetHandle() {
+	return *(Handle_Units_SequenceNodeOfStrgSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfStrgSequence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Units_SequenceNodeOfStrgSequence {
+	~Units_SequenceNodeOfStrgSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfStrgSequence\n");}
+	}
+};
+
+
 %nodefaultctor Units_UnitsSystem;
 class Units_UnitsSystem : public MMgt_TShared {
 	public:
@@ -1436,45 +1533,6 @@ class Units_UnitsSystem : public MMgt_TShared {
 	~Units_UnitsSystem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_UnitsSystem\n");}
-	}
-};
-
-
-%nodefaultctor Units_UnitsDictionary;
-class Units_UnitsDictionary : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Units_UnitsDictionary();
-		%feature("autodoc", "1");
-		void Creates(const char * afilename);
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence Sequence() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UpToDate() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer alevel) const;
-		%feature("autodoc", "1");
-		void Dump(const Handle_Units_Dimensions &adimensions) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_UnitsDictionary {
-	Handle_Units_UnitsDictionary GetHandle() {
-	return *(Handle_Units_UnitsDictionary*) &$self;
-	}
-};
-%extend Units_UnitsDictionary {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Units_UnitsDictionary {
-	~Units_UnitsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsDictionary\n");}
 	}
 };
 
@@ -1716,60 +1774,59 @@ class Units_UnitSentence : public Units_Sentence {
 };
 
 
-%nodefaultctor Units_SequenceNodeOfUtsSequence;
-class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
+%nodefaultctor Units_QtsSequence;
+class Units_QtsSequence : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Units_SequenceNodeOfUtsSequence(const Handle_Units_Unit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Units_QtsSequence();
 		%feature("autodoc", "1");
-		Handle_Units_Unit & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
+		%feature("autodoc", "1");
+		const Units_QtsSequence & operator=(const Units_QtsSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void Append(Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void Prepend(Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Units_Quantity &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & First() const;
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Units_Quantity &I);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Units_SequenceNodeOfUtsSequence {
-	Handle_Units_SequenceNodeOfUtsSequence GetHandle() {
-	return *(Handle_Units_SequenceNodeOfUtsSequence*) &$self;
-	}
-};
-%extend Units_SequenceNodeOfUtsSequence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Units_SequenceNodeOfUtsSequence {
-	~Units_SequenceNodeOfUtsSequence() {
+%extend Units_QtsSequence {
+	~Units_QtsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfUtsSequence\n");}
-	}
-};
-
-
-%nodefaultctor Units_SequenceNodeOfStrgSequence;
-class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Units_SequenceNodeOfStrgSequence(const Handle_TCollection_HAsciiString &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_SequenceNodeOfStrgSequence {
-	Handle_Units_SequenceNodeOfStrgSequence GetHandle() {
-	return *(Handle_Units_SequenceNodeOfStrgSequence*) &$self;
-	}
-};
-%extend Units_SequenceNodeOfStrgSequence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Units_SequenceNodeOfStrgSequence {
-	~Units_SequenceNodeOfStrgSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfStrgSequence\n");}
+	if (__env){printf("## Call custom destructor for instance of Units_QtsSequence\n");}
 	}
 };
 
@@ -1856,62 +1913,5 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 	~Units_StrgSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Units_StrgSequence\n");}
-	}
-};
-
-
-%nodefaultctor Units_TksSequence;
-class Units_TksSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Units_TksSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Units_TksSequence & Assign(const Units_TksSequence &Other);
-		%feature("autodoc", "1");
-		const Units_TksSequence & operator=(const Units_TksSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Append(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Prepend(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & First() const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Units_Token & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Units_TksSequence {
-	~Units_TksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_TksSequence\n");}
 	}
 };

@@ -218,17 +218,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Standard_SStream.hxx>
+#include<Handle_Graphic3d_Structure.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Graphic3d_Vertex.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
-#include<Handle_Aspect_Window.hxx>
 #include<Graphic3d_Vector.hxx>
-#include<Handle_Graphic3d_Structure.hxx>
-#include<TColStd_Array2OfReal.hxx>
-#include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<Quantity_Color.hxx>
 #include<Aspect_Background.hxx>
+#include<TColStd_Array2OfReal.hxx>
+#include<Handle_Aspect_Window.hxx>
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
@@ -237,4 +235,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<Handle_Graphic3d_AspectText3d.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
+#include<Handle_Aspect_GraphicDevice.hxx>
+#include<Handle_Graphic3d_DataStructureManager.hxx>
 %}

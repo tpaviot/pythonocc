@@ -43,7 +43,7 @@
 %rename(Handle_Standard_LicenseError) Handle_Standard_LicenseError;
 %rename(Standard_MMgrOpt) Standard_MMgrOpt;
 %rename(Handle_Standard_OutOfMemory) Handle_Standard_OutOfMemory;
-%rename(Standard_DivideByZero) Standard_DivideByZero;
+%rename(Handle_Standard_Type) Handle_Standard_Type;
 %rename(Standard_String) Standard_String;
 %rename(Standard_Void) Standard_Void;
 %rename(Standard_DimensionError) Standard_DimensionError;
@@ -68,7 +68,7 @@
 %rename(Standard_NotImplemented) Standard_NotImplemented;
 %rename(Handle_Standard_Overflow) Handle_Standard_Overflow;
 %rename(Standard_NegativeValue) Standard_NegativeValue;
-%rename(Handle_Standard_Type) Handle_Standard_Type;
+%rename(Standard_DivideByZero) Standard_DivideByZero;
 %rename(Handle_Standard_NoMoreObject) Handle_Standard_NoMoreObject;
 %rename(Standard_ImmutableObject) Standard_ImmutableObject;
 %rename(Standard_Type) Standard_Type;

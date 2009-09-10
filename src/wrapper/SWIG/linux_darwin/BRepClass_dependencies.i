@@ -160,7 +160,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopAbs_State.hxx>
 %};
 
+%import Geom2dInt.i
 %import Standard.i
 %import TopAbs.i
 %import IntRes2d.i
-%import Geom2dInt.i

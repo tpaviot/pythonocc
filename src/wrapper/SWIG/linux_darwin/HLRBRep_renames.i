@@ -1,8 +1,9 @@
+%rename(HLRBRep_FaceData) HLRBRep_FaceData;
 %rename(HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter) HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
 %rename(HLRBRep_PolyHLRToShape) HLRBRep_PolyHLRToShape;
 %rename(HLRBRep_BSurfaceTool) HLRBRep_BSurfaceTool;
 %rename(HLRBRep) HLRBRep;
-%rename(HLRBRep_FaceData) HLRBRep_FaceData;
+%rename(HLRBRep_ListOfBPoint) HLRBRep_ListOfBPoint;
 %rename(Handle_HLRBRep_InternalAlgo) Handle_HLRBRep_InternalAlgo;
 %rename(HLRBRep_TheInterferenceOfInterCSurf) HLRBRep_TheInterferenceOfInterCSurf;
 %rename(HLRBRep_TheCSFunctionOfInterCSurf) HLRBRep_TheCSFunctionOfInterCSurf;
@@ -60,7 +61,6 @@
 %rename(HLRBRep_AreaLimit) HLRBRep_AreaLimit;
 %rename(HLRBRep_Array1OfEData) HLRBRep_Array1OfEData;
 %rename(Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds) Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds;
-%rename(HLRBRep_ListOfBPoint) HLRBRep_ListOfBPoint;
 %rename(Handle_HLRBRep_Data) Handle_HLRBRep_Data;
 %rename(HLRBRep_TheExactInterCSurf) HLRBRep_TheExactInterCSurf;
 %rename(HLRBRep_CLPropsATool) HLRBRep_CLPropsATool;

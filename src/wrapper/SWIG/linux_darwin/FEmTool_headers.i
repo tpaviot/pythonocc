@@ -63,7 +63,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_PLib_Base.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<TColStd_Array2OfInteger.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
 %}

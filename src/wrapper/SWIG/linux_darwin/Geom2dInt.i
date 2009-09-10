@@ -65,6 +65,27 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 };
 
 
+%nodefaultctor Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
+class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
+		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
+	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
+	}
+};
+
+
 %nodefaultctor Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
 	public:
@@ -86,6 +107,47 @@ class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Int
 	~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dInt_GInter;
+class Geom2dInt_GInter : public IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_GInter();
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d &C1, const Standard_Real TolDomain) const;
+
+};
+%extend Geom2dInt_GInter {
+	~Geom2dInt_GInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dInt_GInter\n");}
 	}
 };
 
@@ -194,27 +256,6 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 };
 
 
-%nodefaultctor Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
-class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
-		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
-	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
 	public:
@@ -236,47 +277,6 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 	~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dInt_GInter;
-class Geom2dInt_GInter : public IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_GInter();
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d &C1, const Standard_Real TolDomain) const;
-
-};
-%extend Geom2dInt_GInter {
-	~Geom2dInt_GInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_GInter\n");}
 	}
 };
 

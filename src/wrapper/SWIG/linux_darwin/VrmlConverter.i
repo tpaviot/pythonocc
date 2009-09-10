@@ -33,17 +33,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include VrmlConverter_headers.i
 
 
+enum VrmlConverter_TypeOfCamera {
+	VrmlConverter_NoCamera,
+	VrmlConverter_PerspectiveCamera,
+	VrmlConverter_OrthographicCamera,
+	};
+
 enum VrmlConverter_TypeOfLight {
 	VrmlConverter_NoLight,
 	VrmlConverter_DirectionLight,
 	VrmlConverter_PointLight,
 	VrmlConverter_SpotLight,
-	};
-
-enum VrmlConverter_TypeOfCamera {
-	VrmlConverter_NoCamera,
-	VrmlConverter_PerspectiveCamera,
-	VrmlConverter_OrthographicCamera,
 	};
 
 
@@ -74,6 +74,36 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 	~Handle_VrmlConverter_ShadingAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_ShadingAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_VrmlConverter_Drawer;
+class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer();
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_VrmlConverter_Drawer {
+	VrmlConverter_Drawer* GetObject() {
+	return (VrmlConverter_Drawer*)$self->Access();
+	}
+};
+%extend Handle_VrmlConverter_Drawer {
+	~Handle_VrmlConverter_Drawer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");}
 	}
 };
 
@@ -138,36 +168,6 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_VrmlConverter_Projector;
-class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector();
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector(const Handle_VrmlConverter_Projector &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector(const VrmlConverter_Projector *anItem);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector & operator=(const Handle_VrmlConverter_Projector &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_VrmlConverter_Projector {
-	VrmlConverter_Projector* GetObject() {
-	return (VrmlConverter_Projector*)$self->Access();
-	}
-};
-%extend Handle_VrmlConverter_Projector {
-	~Handle_VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
-	}
-};
-
-
 %nodefaultctor Handle_VrmlConverter_IsoAspect;
 class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 	public:
@@ -198,49 +198,32 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 };
 
 
-%nodefaultctor Handle_VrmlConverter_Drawer;
-class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
+%nodefaultctor Handle_VrmlConverter_Projector;
+class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer();
+		Handle_VrmlConverter_Projector();
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
+		Handle_VrmlConverter_Projector(const Handle_VrmlConverter_Projector &aHandle);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
+		Handle_VrmlConverter_Projector(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
+		Handle_VrmlConverter_Projector & operator=(const Handle_VrmlConverter_Projector &aHandle);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
+		Handle_VrmlConverter_Projector & operator=(const VrmlConverter_Projector *anItem);
 		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_VrmlConverter_Projector const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_VrmlConverter_Drawer {
-	VrmlConverter_Drawer* GetObject() {
-	return (VrmlConverter_Drawer*)$self->Access();
+%extend Handle_VrmlConverter_Projector {
+	VrmlConverter_Projector* GetObject() {
+	return (VrmlConverter_Projector*)$self->Access();
 	}
 };
-%extend Handle_VrmlConverter_Drawer {
-	~Handle_VrmlConverter_Drawer() {
+%extend Handle_VrmlConverter_Projector {
+	~Handle_VrmlConverter_Projector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_WFShape;
-class VrmlConverter_WFShape {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_WFShape();
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
-
-};
-%extend VrmlConverter_WFShape {
-	~VrmlConverter_WFShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFShape\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
 	}
 };
 
@@ -258,206 +241,6 @@ class VrmlConverter_WFDeflectionShape {
 	~VrmlConverter_WFDeflectionShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_LineAspect;
-class VrmlConverter_LineAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_LineAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_LineAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material Material() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_LineAspect {
-	Handle_VrmlConverter_LineAspect GetHandle() {
-	return *(Handle_VrmlConverter_LineAspect*) &$self;
-	}
-};
-%extend VrmlConverter_LineAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend VrmlConverter_LineAspect {
-	~VrmlConverter_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_LineAspect\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_IsoAspect;
-class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		void SetNumber(const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_IsoAspect {
-	Handle_VrmlConverter_IsoAspect GetHandle() {
-	return *(Handle_VrmlConverter_IsoAspect*) &$self;
-	}
-};
-%extend VrmlConverter_IsoAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend VrmlConverter_IsoAspect {
-	~VrmlConverter_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_IsoAspect\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_WFRestrictedFace;
-class VrmlConverter_WFRestrictedFace {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_WFRestrictedFace();
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
-
-};
-%extend VrmlConverter_WFRestrictedFace {
-	~VrmlConverter_WFRestrictedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_ShadingAspect;
-class VrmlConverter_ShadingAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_ShadingAspect();
-		%feature("autodoc", "1");
-		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material FrontMaterial() const;
-		%feature("autodoc", "1");
-		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
-		%feature("autodoc", "1");
-		Vrml_ShapeHints ShapeHints() const;
-		%feature("autodoc", "1");
-		void SetHasNormals(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasNormals() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_ShadingAspect {
-	Handle_VrmlConverter_ShadingAspect GetHandle() {
-	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
-	}
-};
-%extend VrmlConverter_ShadingAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend VrmlConverter_ShadingAspect {
-	~VrmlConverter_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_ShadedShape;
-class VrmlConverter_ShadedShape {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_ShadedShape();
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
-
-};
-%extend VrmlConverter_ShadedShape {
-	~VrmlConverter_ShadedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_Projector;
-class VrmlConverter_Projector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_Projector(const TopTools_Array1OfShape &Shapes, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp, const VrmlConverter_TypeOfCamera Camera=VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light=VrmlConverter_NoLight);
-		%feature("autodoc", "1");
-		void SetCamera(const VrmlConverter_TypeOfCamera aCamera);
-		%feature("autodoc", "1");
-		VrmlConverter_TypeOfCamera Camera() const;
-		%feature("autodoc", "1");
-		void SetLight(const VrmlConverter_TypeOfLight aLight);
-		%feature("autodoc", "1");
-		VrmlConverter_TypeOfLight Light() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string AddToString() {
-			std::stringstream s;
-			self->Add(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		HLRAlgo_Projector Projector() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_Projector {
-	Handle_VrmlConverter_Projector GetHandle() {
-	return *(Handle_VrmlConverter_Projector*) &$self;
-	}
-};
-%extend VrmlConverter_Projector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend VrmlConverter_Projector {
-	~VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Projector\n");}
 	}
 };
 
@@ -485,60 +268,44 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 };
 
 
-%nodefaultctor VrmlConverter_Curve;
-class VrmlConverter_Curve {
+%nodefaultctor VrmlConverter_WFRestrictedFace;
+class VrmlConverter_WFRestrictedFace {
 	public:
 		%feature("autodoc", "1");
-		VrmlConverter_Curve();
+		VrmlConverter_WFRestrictedFace();
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		void AddUIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
-		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
+		void AddVIso(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
-%extend VrmlConverter_Curve {
-	~VrmlConverter_Curve() {
+%extend VrmlConverter_WFRestrictedFace {
+	~VrmlConverter_WFRestrictedFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");}
 	}
 };
 
 
-%nodefaultctor VrmlConverter_PointAspect;
-class VrmlConverter_PointAspect : public MMgt_TShared {
+%nodefaultctor VrmlConverter_ShadedShape;
+class VrmlConverter_ShadedShape {
 	public:
 		%feature("autodoc", "1");
-		VrmlConverter_PointAspect();
+		VrmlConverter_ShadedShape();
 		%feature("autodoc", "1");
-		VrmlConverter_PointAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material Material() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
 };
-%extend VrmlConverter_PointAspect {
-	Handle_VrmlConverter_PointAspect GetHandle() {
-	return *(Handle_VrmlConverter_PointAspect*) &$self;
-	}
-};
-%extend VrmlConverter_PointAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend VrmlConverter_PointAspect {
-	~VrmlConverter_PointAspect() {
+%extend VrmlConverter_ShadedShape {
+	~VrmlConverter_ShadedShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
 	}
 };
 
@@ -652,6 +419,254 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 };
 
 
+%nodefaultctor VrmlConverter_ShadingAspect;
+class VrmlConverter_ShadingAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_ShadingAspect();
+		%feature("autodoc", "1");
+		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material FrontMaterial() const;
+		%feature("autodoc", "1");
+		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
+		%feature("autodoc", "1");
+		Vrml_ShapeHints ShapeHints() const;
+		%feature("autodoc", "1");
+		void SetHasNormals(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_ShadingAspect {
+	Handle_VrmlConverter_ShadingAspect GetHandle() {
+	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
+	}
+};
+%extend VrmlConverter_ShadingAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend VrmlConverter_ShadingAspect {
+	~VrmlConverter_ShadingAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_LineAspect;
+class VrmlConverter_LineAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_LineAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_LineAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material Material() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_LineAspect {
+	Handle_VrmlConverter_LineAspect GetHandle() {
+	return *(Handle_VrmlConverter_LineAspect*) &$self;
+	}
+};
+%extend VrmlConverter_LineAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend VrmlConverter_LineAspect {
+	~VrmlConverter_LineAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_LineAspect\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_IsoAspect;
+class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		void SetNumber(const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+
+};
+%extend VrmlConverter_IsoAspect {
+	Handle_VrmlConverter_IsoAspect GetHandle() {
+	return *(Handle_VrmlConverter_IsoAspect*) &$self;
+	}
+};
+%extend VrmlConverter_IsoAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend VrmlConverter_IsoAspect {
+	~VrmlConverter_IsoAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_IsoAspect\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_Projector;
+class VrmlConverter_Projector : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_Projector(const TopTools_Array1OfShape &Shapes, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp, const VrmlConverter_TypeOfCamera Camera=VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light=VrmlConverter_NoLight);
+		%feature("autodoc", "1");
+		void SetCamera(const VrmlConverter_TypeOfCamera aCamera);
+		%feature("autodoc", "1");
+		VrmlConverter_TypeOfCamera Camera() const;
+		%feature("autodoc", "1");
+		void SetLight(const VrmlConverter_TypeOfLight aLight);
+		%feature("autodoc", "1");
+		VrmlConverter_TypeOfLight Light() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string AddToString() {
+			std::stringstream s;
+			self->Add(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		HLRAlgo_Projector Projector() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_Projector {
+	Handle_VrmlConverter_Projector GetHandle() {
+	return *(Handle_VrmlConverter_Projector*) &$self;
+	}
+};
+%extend VrmlConverter_Projector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend VrmlConverter_Projector {
+	~VrmlConverter_Projector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Projector\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_Curve;
+class VrmlConverter_Curve {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_Curve();
+		%feature("autodoc", "1");
+		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		%feature("autodoc", "1");
+		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		%feature("autodoc", "1");
+		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
+
+};
+%extend VrmlConverter_Curve {
+	~VrmlConverter_Curve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_HLRShape;
+class VrmlConverter_HLRShape {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_HLRShape();
+		%feature("autodoc", "1");
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
+
+};
+%extend VrmlConverter_HLRShape {
+	~VrmlConverter_HLRShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_HLRShape\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_PointAspect;
+class VrmlConverter_PointAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_PointAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_PointAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material Material() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_PointAspect {
+	Handle_VrmlConverter_PointAspect GetHandle() {
+	return *(Handle_VrmlConverter_PointAspect*) &$self;
+	}
+};
+%extend VrmlConverter_PointAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend VrmlConverter_PointAspect {
+	~VrmlConverter_PointAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
+	}
+};
+
+
+%nodefaultctor VrmlConverter_WFShape;
+class VrmlConverter_WFShape {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_WFShape();
+		%feature("autodoc", "1");
+		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
+
+};
+%extend VrmlConverter_WFShape {
+	~VrmlConverter_WFShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFShape\n");}
+	}
+};
+
+
 %nodefaultctor VrmlConverter_DeflectionCurve;
 class VrmlConverter_DeflectionCurve {
 	public:
@@ -673,22 +688,5 @@ class VrmlConverter_DeflectionCurve {
 	~VrmlConverter_DeflectionCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");}
-	}
-};
-
-
-%nodefaultctor VrmlConverter_HLRShape;
-class VrmlConverter_HLRShape {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_HLRShape();
-		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
-
-};
-%extend VrmlConverter_HLRShape {
-	~VrmlConverter_HLRShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_HLRShape\n");}
 	}
 };

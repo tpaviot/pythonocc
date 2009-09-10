@@ -185,6 +185,41 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 };
 
 
+%nodefaultctor StdFail_InfiniteSolutions;
+class StdFail_InfiniteSolutions : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		StdFail_InfiniteSolutions();
+		%feature("autodoc", "1");
+		StdFail_InfiniteSolutions(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StdFail_InfiniteSolutions {
+	Handle_StdFail_InfiniteSolutions GetHandle() {
+	return *(Handle_StdFail_InfiniteSolutions*) &$self;
+	}
+};
+%extend StdFail_InfiniteSolutions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StdFail_InfiniteSolutions {
+	~StdFail_InfiniteSolutions() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_InfiniteSolutions\n");}
+	}
+};
+
+
 %nodefaultctor StdFail_UndefinedDerivative;
 class StdFail_UndefinedDerivative : public Standard_DomainError {
 	public:
@@ -286,41 +321,6 @@ class StdFail_NotDone : public Standard_Failure {
 	~StdFail_NotDone() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StdFail_NotDone\n");}
-	}
-};
-
-
-%nodefaultctor StdFail_InfiniteSolutions;
-class StdFail_InfiniteSolutions : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		StdFail_InfiniteSolutions();
-		%feature("autodoc", "1");
-		StdFail_InfiniteSolutions(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_StdFail_InfiniteSolutions NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdFail_InfiniteSolutions {
-	Handle_StdFail_InfiniteSolutions GetHandle() {
-	return *(Handle_StdFail_InfiniteSolutions*) &$self;
-	}
-};
-%extend StdFail_InfiniteSolutions {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StdFail_InfiniteSolutions {
-	~StdFail_InfiniteSolutions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_InfiniteSolutions\n");}
 	}
 };
 

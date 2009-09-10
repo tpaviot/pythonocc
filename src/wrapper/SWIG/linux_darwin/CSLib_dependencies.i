@@ -182,5 +182,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <math_Vector.hxx>
 %};
 
-%import Standard.i
 %import math.i
+%import Standard.i

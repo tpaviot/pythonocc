@@ -81,12 +81,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColGeom2d_SequenceOfGeometry.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
-#include<gp_Pnt2d.hxx>
 #include<Bisector_Bisec.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
+#include<TColGeom2d_SequenceOfGeometry.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_MAT_Bisector.hxx>
 #include<TColGeom2d_SequenceOfCurve.hxx>
+#include<gp_Pnt2d.hxx>
 %}

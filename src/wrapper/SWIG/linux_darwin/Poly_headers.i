@@ -49,12 +49,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TColgp_Array1OfPnt.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<Handle_TShort_HArray1OfShortReal.hxx>
 #include<gp_XYZ.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<Handle_TShort_HArray1OfShortReal.hxx>
 #include<Poly.hxx>
 %}

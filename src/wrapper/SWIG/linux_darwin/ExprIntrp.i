@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
-class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
-	ExprIntrp_SequenceNodeOfSequenceOfNamedFunction* GetObject() {
-	return (ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*)$self->Access();
-	}
-};
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
-	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollection_MapNode {
 	public:
@@ -91,6 +61,36 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 	~Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
+class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	ExprIntrp_StackNodeOfStackOfGeneralExpression* GetObject() {
+	return (ExprIntrp_StackNodeOfStackOfGeneralExpression*)$self->Access();
+	}
+};
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
 	}
 };
 
@@ -185,32 +185,32 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 };
 
 
-%nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
-class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_ExprIntrp_GenRel;
+class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	public:
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
+		Handle_ExprIntrp_GenRel();
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		Handle_ExprIntrp_GenRel(const Handle_ExprIntrp_GenRel &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		Handle_ExprIntrp_GenRel(const ExprIntrp_GenRel *anItem);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		Handle_ExprIntrp_GenRel & operator=(const Handle_ExprIntrp_GenRel &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		Handle_ExprIntrp_GenRel & operator=(const ExprIntrp_GenRel *anItem);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ExprIntrp_GenRel const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	ExprIntrp_StackNodeOfStackOfGeneralExpression* GetObject() {
-	return (ExprIntrp_StackNodeOfStackOfGeneralExpression*)$self->Access();
+%extend Handle_ExprIntrp_GenRel {
+	ExprIntrp_GenRel* GetObject() {
+	return (ExprIntrp_GenRel*)$self->Access();
 	}
 };
-%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression() {
+%extend Handle_ExprIntrp_GenRel {
+	~Handle_ExprIntrp_GenRel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenRel\n");}
 	}
 };
 
@@ -305,6 +305,36 @@ class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 };
 
 
+%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
+class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	ExprIntrp_SequenceNodeOfSequenceOfNamedFunction* GetObject() {
+	return (ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*)$self->Access();
+	}
+};
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfNames;
 class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNode {
 	public:
@@ -331,36 +361,6 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 	~Handle_ExprIntrp_StackNodeOfStackOfNames() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfNames\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ExprIntrp_GenRel;
-class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
-	public:
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel();
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel(const Handle_ExprIntrp_GenRel &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel(const ExprIntrp_GenRel *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel & operator=(const Handle_ExprIntrp_GenRel &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel & operator=(const ExprIntrp_GenRel *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ExprIntrp_GenRel {
-	ExprIntrp_GenRel* GetObject() {
-	return (ExprIntrp_GenRel*)$self->Access();
-	}
-};
-%extend Handle_ExprIntrp_GenRel {
-	~Handle_ExprIntrp_GenRel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenRel\n");}
 	}
 };
 
@@ -495,35 +495,6 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 };
 
 
-%nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
-class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_Expr_NamedExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression GetHandle() {
-	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*) &$self;
-	}
-};
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
-	}
-};
-
-
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfNames;
 class ExprIntrp_StackIteratorOfStackOfNames {
 	public:
@@ -606,6 +577,83 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor ExprIntrp_StackOfNames;
+class ExprIntrp_StackOfNames {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_StackOfNames();
+		%feature("autodoc", "1");
+		const ExprIntrp_StackOfNames & Assign(const ExprIntrp_StackOfNames &Other);
+		%feature("autodoc", "1");
+		const ExprIntrp_StackOfNames & operator=(const ExprIntrp_StackOfNames &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Top() const;
+		%feature("autodoc", "1");
+		void Push(const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeTop();
+
+};
+%extend ExprIntrp_StackOfNames {
+	~ExprIntrp_StackOfNames() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfNames\n");}
+	}
+};
+
+
+%nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
+class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_Expr_NamedExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression GetHandle() {
+	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*) &$self;
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
+	}
+};
+
+
+%nodefaultctor ExprIntrp;
+class ExprIntrp {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp();
+
+};
+%extend ExprIntrp {
+	~ExprIntrp() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp\n");}
+	}
+};
+
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralExpression;
 class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	public:
@@ -627,21 +675,6 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	~ExprIntrp_StackIteratorOfStackOfGeneralExpression() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralExpression\n");}
-	}
-};
-
-
-%nodefaultctor ExprIntrp;
-class ExprIntrp {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp();
-
-};
-%extend ExprIntrp {
-	~ExprIntrp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ExprIntrp\n");}
 	}
 };
 
@@ -733,6 +766,31 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 };
 
 
+%nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralFunction;
+class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_StackIteratorOfStackOfGeneralFunction();
+		%feature("autodoc", "1");
+		ExprIntrp_StackIteratorOfStackOfGeneralFunction(const ExprIntrp_StackOfGeneralFunction &S);
+		%feature("autodoc", "1");
+		void Initialize(const ExprIntrp_StackOfGeneralFunction &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Expr_GeneralFunction & Value() const;
+
+};
+%extend ExprIntrp_StackIteratorOfStackOfGeneralFunction {
+	~ExprIntrp_StackIteratorOfStackOfGeneralFunction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");}
+	}
+};
+
+
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralRelation;
 class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 	public:
@@ -791,60 +849,6 @@ class ExprIntrp_StackOfGeneralRelation {
 	~ExprIntrp_StackOfGeneralRelation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralRelation\n");}
-	}
-};
-
-
-%nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
-class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression GetHandle() {
-	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression*) &$self;
-	}
-};
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	~ExprIntrp_StackNodeOfStackOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
-	}
-};
-
-
-%nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralFunction;
-class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_StackIteratorOfStackOfGeneralFunction();
-		%feature("autodoc", "1");
-		ExprIntrp_StackIteratorOfStackOfGeneralFunction(const ExprIntrp_StackOfGeneralFunction &S);
-		%feature("autodoc", "1");
-		void Initialize(const ExprIntrp_StackOfGeneralFunction &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Expr_GeneralFunction & Value() const;
-
-};
-%extend ExprIntrp_StackIteratorOfStackOfGeneralFunction {
-	~ExprIntrp_StackIteratorOfStackOfGeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");}
 	}
 };
 
@@ -1001,35 +1005,31 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 };
 
 
-%nodefaultctor ExprIntrp_StackOfNames;
-class ExprIntrp_StackOfNames {
+%nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
+class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		ExprIntrp_StackOfNames();
+		ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		const ExprIntrp_StackOfNames & Assign(const ExprIntrp_StackOfNames &Other);
+		Handle_Expr_GeneralExpression & Value() const;
 		%feature("autodoc", "1");
-		const ExprIntrp_StackOfNames & operator=(const ExprIntrp_StackOfNames &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Top() const;
-		%feature("autodoc", "1");
-		void Push(const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeTop();
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ExprIntrp_StackOfNames {
-	~ExprIntrp_StackOfNames() {
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression GetHandle() {
+	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	~ExprIntrp_StackNodeOfStackOfGeneralExpression() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfNames\n");}
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
 	}
 };
 

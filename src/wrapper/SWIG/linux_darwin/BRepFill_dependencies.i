@@ -295,9 +295,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import TCollection.i
-%import GeomPlate.i
 %import MMgt.i
+%import GeomPlate.i
 %import Standard.i
-%import AppParCurves.i
-%import GeomFill.i
 %import GeomAbs.i
+%import GeomFill.i
+%import AppParCurves.i

@@ -128,16 +128,16 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<IFSelect_ContextWrite.hxx>
+#include<StepData_StepWriter.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Interface_Protocol.hxx>
-#include<IFSelect_ContextWrite.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Interface_CopyTool.hxx>
 #include<Handle_Message_Messenger.hxx>
-#include<StepData_StepWriter.hxx>
+#include<Handle_IFSelect_SessionPilot.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<IFSelect_ContextModif.hxx>
 #include<Handle_StepData_StepModel.hxx>
 #include<Handle_StepData_Protocol.hxx>
-#include<Handle_IFSelect_SessionPilot.hxx>
 %}

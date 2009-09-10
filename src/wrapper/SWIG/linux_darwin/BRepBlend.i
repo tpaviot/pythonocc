@@ -65,36 +65,6 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 };
 
 
-%nodefaultctor Handle_BRepBlend_AppFunc;
-class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc();
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc(const Handle_BRepBlend_AppFunc &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc(const BRepBlend_AppFunc *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc & operator=(const Handle_BRepBlend_AppFunc &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc & operator=(const BRepBlend_AppFunc *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_AppFunc const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepBlend_AppFunc {
-	BRepBlend_AppFunc* GetObject() {
-	return (BRepBlend_AppFunc*)$self->Access();
-	}
-};
-%extend Handle_BRepBlend_AppFunc {
-	~Handle_BRepBlend_AppFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFunc\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BRepBlend_AppFuncRstRst;
 class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	public:
@@ -121,6 +91,36 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	~Handle_BRepBlend_AppFuncRstRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFuncRstRst\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfLine;
+class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine();
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
+	BRepBlend_SequenceNodeOfSequenceOfLine* GetObject() {
+	return (BRepBlend_SequenceNodeOfSequenceOfLine*)$self->Access();
+	}
+};
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
+	~Handle_BRepBlend_SequenceNodeOfSequenceOfLine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
 
@@ -185,32 +185,32 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfLine;
-class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_BRepBlend_AppFunc;
+class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine();
+		Handle_BRepBlend_AppFunc();
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_BRepBlend_AppFunc(const Handle_BRepBlend_AppFunc &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
+		Handle_BRepBlend_AppFunc(const BRepBlend_AppFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const Handle_BRepBlend_SequenceNodeOfSequenceOfLine &aHandle);
+		Handle_BRepBlend_AppFunc & operator=(const Handle_BRepBlend_AppFunc &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine & operator=(const BRepBlend_SequenceNodeOfSequenceOfLine *anItem);
+		Handle_BRepBlend_AppFunc & operator=(const BRepBlend_AppFunc *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepBlend_SequenceNodeOfSequenceOfLine const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepBlend_AppFunc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
-	BRepBlend_SequenceNodeOfSequenceOfLine* GetObject() {
-	return (BRepBlend_SequenceNodeOfSequenceOfLine*)$self->Access();
+%extend Handle_BRepBlend_AppFunc {
+	BRepBlend_AppFunc* GetObject() {
+	return (BRepBlend_AppFunc*)$self->Access();
 	}
 };
-%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
-	~Handle_BRepBlend_SequenceNodeOfSequenceOfLine() {
+%extend Handle_BRepBlend_AppFunc {
+	~Handle_BRepBlend_AppFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfLine\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFunc\n");}
 	}
 };
 
@@ -274,45 +274,6 @@ class BRepBlend_ChamfInv : public Blend_FuncInv {
 	~BRepBlend_ChamfInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChamfInv\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_Corde;
-class BRepBlend_Corde {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_Corde(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &CGuide);
-		%feature("autodoc", "1");
-		void SetParam(const Standard_Real Param);
-		%feature("autodoc", "1");
-		void SetDist(const Standard_Real Dist);
-		%feature("autodoc", "1");
-		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		const gp_Pnt & PointOnS() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & PointOnGuide() const;
-		%feature("autodoc", "1");
-		const gp_Vec & NPlan() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		const gp_Vec & TangentOnS() const;
-		%feature("autodoc", "1");
-		const gp_Vec2d & Tangent2dOnS() const;
-		%feature("autodoc", "1");
-		void DerFguide(const math_Vector &Sol, gp_Vec2d & DerF);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%extend BRepBlend_Corde {
-	~BRepBlend_Corde() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_Corde\n");}
 	}
 };
 
@@ -406,6 +367,69 @@ class BRepBlend_ConstRad : public Blend_Function {
 };
 
 
+%nodefaultctor BRepBlend_Line;
+class BRepBlend_Line : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_Line();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Blend_Point &P);
+		%feature("autodoc", "1");
+		void Prepend(const Blend_Point &P);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Blend_Point &P);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		void Set(const IntSurf_TypeTrans TranS1, const IntSurf_TypeTrans TranS2);
+		%feature("autodoc", "1");
+		void Set(const IntSurf_TypeTrans Trans);
+		%feature("autodoc", "1");
+		void SetStartPoints(const BRepBlend_Extremity &StartPtOnS1, const BRepBlend_Extremity &StartPtOnS2);
+		%feature("autodoc", "1");
+		void SetEndPoints(const BRepBlend_Extremity &EndPtOnS1, const BRepBlend_Extremity &EndPtOnS2);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const Blend_Point & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		IntSurf_TypeTrans TransitionOnS1() const;
+		%feature("autodoc", "1");
+		IntSurf_TypeTrans TransitionOnS2() const;
+		%feature("autodoc", "1");
+		const BRepBlend_Extremity & StartPointOnFirst() const;
+		%feature("autodoc", "1");
+		const BRepBlend_Extremity & StartPointOnSecond() const;
+		%feature("autodoc", "1");
+		const BRepBlend_Extremity & EndPointOnFirst() const;
+		%feature("autodoc", "1");
+		const BRepBlend_Extremity & EndPointOnSecond() const;
+		%feature("autodoc", "1");
+		IntSurf_TypeTrans TransitionOnS() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepBlend_Line {
+	Handle_BRepBlend_Line GetHandle() {
+	return *(Handle_BRepBlend_Line*) &$self;
+	}
+};
+%extend BRepBlend_Line {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepBlend_Line {
+	~BRepBlend_Line() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_Line\n");}
+	}
+};
+
+
 %nodefaultctor BRepBlend_SurfCurvEvolRadInv;
 class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 	public:
@@ -435,6 +459,156 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 	~BRepBlend_SurfCurvEvolRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvEvolRadInv\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_CSCircular;
+class BRepBlend_CSCircular : public Blend_CSFunction {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_CSCircular(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide, const Handle_Law_Function &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnC() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d & Pnt2d() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnC() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnS() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2d() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnC() const;
+		%feature("autodoc", "1");
+		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Radius, const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		void Set(const BlendFunc_SectionShape TypeSection);
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W)->[Standard_RealStandard_Real]");
+		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc", "1");
+		Standard_Boolean GetSection(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, TColgp_Array1OfPnt & tabP, TColgp_Array1OfVec & tabV);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetSectionSize() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend BRepBlend_CSCircular {
+	~BRepBlend_CSCircular() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSCircular\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_AppSurf;
+class BRepBlend_AppSurf : public AppBlend_Approx {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_AppSurf();
+		%feature("autodoc", "1");
+		BRepBlend_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Boolean SpApprox=0);
+		%feature("autodoc", "1");
+		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Integer NbMaxP);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer UDegree() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array2OfReal & SurfWeights() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbCurves2d() const;
+		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Curves2dDegree() const;
+		%feature("autodoc", "1");
+		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
+		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
+		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
+
+};
+%extend BRepBlend_AppSurf {
+	~BRepBlend_AppSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurf\n");}
 	}
 };
 
@@ -779,35 +953,6 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 };
 
 
-%nodefaultctor BRepBlend_SequenceNodeOfSequenceOfLine;
-class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepBlend_SequenceNodeOfSequenceOfLine {
-	Handle_BRepBlend_SequenceNodeOfSequenceOfLine GetHandle() {
-	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfLine*) &$self;
-	}
-};
-%extend BRepBlend_SequenceNodeOfSequenceOfLine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepBlend_SequenceNodeOfSequenceOfLine {
-	~BRepBlend_SequenceNodeOfSequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfLine\n");}
-	}
-};
-
-
 %nodefaultctor BRepBlend_EvolRadInv;
 class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	public:
@@ -837,6 +982,93 @@ class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	~BRepBlend_EvolRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_EvolRadInv\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_ChAsym;
+class BRepBlend_ChAsym : public Blend_Function {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_ChAsym(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMinimalDistance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeValues(const math_Vector &X, const Standard_Integer DegF, const Standard_Integer DegL);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnS2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnS2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnS2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TwistOnS1() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TwistOnS2() const;
+		%feature("autodoc", "1");
+		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2)->[Standard_RealStandard_Real]");
+		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetSectionSize() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
+
+};
+%extend BRepBlend_ChAsym {
+	~BRepBlend_ChAsym() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChAsym\n");}
 	}
 };
 
@@ -927,91 +1159,6 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 	~BRepBlend_AppSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurface\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_CSConstRad;
-class BRepBlend_CSConstRad : public Blend_CSFunction {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_CSConstRad(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnC() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d & Pnt2d() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnC() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnS() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2d() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnC() const;
-		%feature("autodoc", "1");
-		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Radius, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W)->[Standard_RealStandard_Real]");
-		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc", "1");
-		Standard_Boolean GetSection(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, TColgp_Array1OfPnt & tabP, TColgp_Array1OfVec & tabV);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
-		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend BRepBlend_CSConstRad {
-	~BRepBlend_CSConstRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSConstRad\n");}
 	}
 };
 
@@ -1152,13 +1299,13 @@ class BRepBlend_Chamfer : public Blend_Function {
 };
 
 
-%nodefaultctor BRepBlend_CurvPointRadInv;
-class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
+%nodefaultctor BRepBlend_SurfPointConstRadInv;
+class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CurvPointRadInv(const Handle_Adaptor3d_HCurve &C1, const Handle_Adaptor3d_HCurve &C2);
+		BRepBlend_SurfPointConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer Choix);
+		void Set(const Standard_Real R, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -1177,164 +1324,10 @@ class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
-%extend BRepBlend_CurvPointRadInv {
-	~BRepBlend_CurvPointRadInv() {
+%extend BRepBlend_SurfPointConstRadInv {
+	~BRepBlend_SurfPointConstRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_CurvPointRadInv\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_RstRstConstRad;
-class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_RstRstConstRad(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_HCurve &CGuide);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &SurfRef1, const Handle_Adaptor2d_HCurve2d &RstRef1, const Handle_Adaptor3d_HSurface &SurfRef2, const Handle_Adaptor2d_HCurve2d &RstRef2);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMinimalDistance() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d & Pnt2dOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d & Pnt2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Radius, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc", "1");
-		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt &PtRst1, const gp_Pnt &PtRst2, const gp_Vec &np, gp_Pnt & Center, gp_Vec & VdMed) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V)->[Standard_RealStandard_Real]");
-		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
-		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend BRepBlend_RstRstConstRad {
-	~BRepBlend_RstRstConstRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_RstRstConstRad\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_SequenceOfLine;
-class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SequenceOfLine();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BRepBlend_SequenceOfLine & Assign(const BRepBlend_SequenceOfLine &Other);
-		%feature("autodoc", "1");
-		const BRepBlend_SequenceOfLine & operator=(const BRepBlend_SequenceOfLine &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_BRepBlend_Line &T);
-		%feature("autodoc", "1");
-		void Append(BRepBlend_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_BRepBlend_Line &T);
-		%feature("autodoc", "1");
-		void Prepend(BRepBlend_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_BRepBlend_Line &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & First() const;
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend BRepBlend_SequenceOfLine {
-	~BRepBlend_SequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceOfLine\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfPointConstRadInv\n");}
 	}
 };
 
@@ -1372,13 +1365,146 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 };
 
 
-%nodefaultctor BRepBlend_CSCircular;
-class BRepBlend_CSCircular : public Blend_CSFunction {
+%nodefaultctor BRepBlend_Corde;
+class BRepBlend_Corde {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_CSCircular(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide, const Handle_Law_Function &L);
+		BRepBlend_Corde(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &CGuide);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		void SetParam(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void SetDist(const Standard_Real Dist);
+		%feature("autodoc", "1");
+		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		const gp_Pnt & PointOnS() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & PointOnGuide() const;
+		%feature("autodoc", "1");
+		const gp_Vec & NPlan() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		const gp_Vec & TangentOnS() const;
+		%feature("autodoc", "1");
+		const gp_Vec2d & Tangent2dOnS() const;
+		%feature("autodoc", "1");
+		void DerFguide(const math_Vector &Sol, gp_Vec2d & DerF);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%extend BRepBlend_Corde {
+	~BRepBlend_Corde() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_Corde\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_HCurve2dTool;
+class BRepBlend_HCurve2dTool {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_HCurve2dTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const Handle_Adaptor2d_HCurve2d &C, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		void Intervals(const Handle_Adaptor2d_HCurve2d &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Standard_Real Period(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D0(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P);
+		%feature("autodoc", "1");
+		void D1(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		%feature("autodoc", "1");
+		void D2(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		%feature("autodoc", "1");
+		void D3(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
+		%feature("autodoc", "1");
+		gp_Vec2d DN(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Lin2d Line(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Circ2d Circle(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Elips2d Ellipse(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Hypr2d Hyperbola(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		gp_Parab2d Parabola(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve Bezier(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSpline(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
+
+};
+%extend BRepBlend_HCurve2dTool {
+	~BRepBlend_HCurve2dTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_HCurve2dTool\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_CurvPointRadInv;
+class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_CurvPointRadInv(const Handle_Adaptor3d_HCurve &C1, const Handle_Adaptor3d_HCurve &C2);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%extend BRepBlend_CurvPointRadInv {
+	~BRepBlend_CurvPointRadInv() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_CurvPointRadInv\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_CSConstRad;
+class BRepBlend_CSConstRad : public Blend_CSFunction {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_CSConstRad(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &CGuide);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
@@ -1451,73 +1577,10 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend BRepBlend_CSCircular {
-	~BRepBlend_CSCircular() {
+%extend BRepBlend_CSConstRad {
+	~BRepBlend_CSConstRad() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSCircular\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_HCurve2dTool;
-class BRepBlend_HCurve2dTool {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_HCurve2dTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const Handle_Adaptor2d_HCurve2d &C, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		void Intervals(const Handle_Adaptor2d_HCurve2d &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Standard_Real Period(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D0(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P);
-		%feature("autodoc", "1");
-		void D1(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-		%feature("autodoc", "1");
-		void D2(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
-		%feature("autodoc", "1");
-		void D3(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
-		%feature("autodoc", "1");
-		gp_Vec2d DN(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U, const Standard_Integer N);
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Lin2d Line(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Circ2d Circle(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Elips2d Ellipse(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		gp_Parab2d Parabola(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSpline(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
-
-};
-%extend BRepBlend_HCurve2dTool {
-	~BRepBlend_HCurve2dTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_HCurve2dTool\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSConstRad\n");}
 	}
 };
 
@@ -1549,39 +1612,6 @@ class BRepBlend_RuledInv : public Blend_FuncInv {
 	~BRepBlend_RuledInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_RuledInv\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_SurfPointConstRadInv;
-class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfPointConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real R, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%extend BRepBlend_SurfPointConstRadInv {
-	~BRepBlend_SurfPointConstRadInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfPointConstRadInv\n");}
 	}
 };
 
@@ -1715,93 +1745,6 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 };
 
 
-%nodefaultctor BRepBlend_ChAsym;
-class BRepBlend_ChAsym : public Blend_Function {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_ChAsym(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMinimalDistance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeValues(const math_Vector &X, const Standard_Integer DegF, const Standard_Integer DegL);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt & PointOnS2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec & TangentOnS2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d & Tangent2dOnS2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TwistOnS1() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TwistOnS2() const;
-		%feature("autodoc", "1");
-		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2)->[Standard_RealStandard_Real]");
-		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
-		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-
-};
-%extend BRepBlend_ChAsym {
-	~BRepBlend_ChAsym() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChAsym\n");}
-	}
-};
-
-
 %nodefaultctor BRepBlend_SurfRstLineBuilder;
 class BRepBlend_SurfRstLineBuilder {
 	public:
@@ -1833,69 +1776,6 @@ class BRepBlend_SurfRstLineBuilder {
 };
 
 
-%nodefaultctor BRepBlend_AppSurf;
-class BRepBlend_AppSurf : public AppBlend_Approx {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_AppSurf();
-		%feature("autodoc", "1");
-		BRepBlend_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Boolean SpApprox=0);
-		%feature("autodoc", "1");
-		void Perform(const Handle_BRepBlend_Line &Lin, Blend_AppFunction & SecGen, const Standard_Integer NbMaxP);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer UDegree() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array2OfPnt & SurfPoles() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array2OfReal & SurfWeights() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfUKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & SurfVKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfUMults() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
-		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Curves2dDegree() const;
-		%feature("autodoc", "1");
-		virtual		const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
-		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
-
-};
-%extend BRepBlend_AppSurf {
-	~BRepBlend_AppSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurf\n");}
-	}
-};
-
-
 %nodefaultctor BRepBlend_AppFuncRstRst;
 class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 	public:
@@ -1923,69 +1803,6 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 	~BRepBlend_AppFuncRstRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFuncRstRst\n");}
-	}
-};
-
-
-%nodefaultctor BRepBlend_Line;
-class BRepBlend_Line : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_Line();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Blend_Point &P);
-		%feature("autodoc", "1");
-		void Prepend(const Blend_Point &P);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Blend_Point &P);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		void Set(const IntSurf_TypeTrans TranS1, const IntSurf_TypeTrans TranS2);
-		%feature("autodoc", "1");
-		void Set(const IntSurf_TypeTrans Trans);
-		%feature("autodoc", "1");
-		void SetStartPoints(const BRepBlend_Extremity &StartPtOnS1, const BRepBlend_Extremity &StartPtOnS2);
-		%feature("autodoc", "1");
-		void SetEndPoints(const BRepBlend_Extremity &EndPtOnS1, const BRepBlend_Extremity &EndPtOnS2);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const Blend_Point & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		IntSurf_TypeTrans TransitionOnS1() const;
-		%feature("autodoc", "1");
-		IntSurf_TypeTrans TransitionOnS2() const;
-		%feature("autodoc", "1");
-		const BRepBlend_Extremity & StartPointOnFirst() const;
-		%feature("autodoc", "1");
-		const BRepBlend_Extremity & StartPointOnSecond() const;
-		%feature("autodoc", "1");
-		const BRepBlend_Extremity & EndPointOnFirst() const;
-		%feature("autodoc", "1");
-		const BRepBlend_Extremity & EndPointOnSecond() const;
-		%feature("autodoc", "1");
-		IntSurf_TypeTrans TransitionOnS() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepBlend_Line {
-	Handle_BRepBlend_Line GetHandle() {
-	return *(Handle_BRepBlend_Line*) &$self;
-	}
-};
-%extend BRepBlend_Line {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepBlend_Line {
-	~BRepBlend_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_Line\n");}
 	}
 };
 
@@ -2221,29 +2038,31 @@ class BRepBlend_Ruled : public Blend_Function {
 };
 
 
-%nodefaultctor BRepBlend_PointOnRst;
-class BRepBlend_PointOnRst {
+%nodefaultctor BRepBlend_SequenceNodeOfSequenceOfLine;
+class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepBlend_PointOnRst();
+		BRepBlend_SequenceNodeOfSequenceOfLine(const Handle_BRepBlend_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		BRepBlend_PointOnRst(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		Handle_BRepBlend_Line & Value() const;
 		%feature("autodoc", "1");
-		void SetArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		const IntSurf_Transition & TransitionOnLine() const;
-		%feature("autodoc", "1");
-		const IntSurf_Transition & TransitionOnArc() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnArc() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BRepBlend_PointOnRst {
-	~BRepBlend_PointOnRst() {
+%extend BRepBlend_SequenceNodeOfSequenceOfLine {
+	Handle_BRepBlend_SequenceNodeOfSequenceOfLine GetHandle() {
+	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfLine*) &$self;
+	}
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfLine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfLine {
+	~BRepBlend_SequenceNodeOfSequenceOfLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBlend_PointOnRst\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
 
@@ -2277,6 +2096,33 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 	~BRepBlend_SurfCurvConstRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvConstRadInv\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_PointOnRst;
+class BRepBlend_PointOnRst {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_PointOnRst();
+		%feature("autodoc", "1");
+		BRepBlend_PointOnRst(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		%feature("autodoc", "1");
+		void SetArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
+		%feature("autodoc", "1");
+		const IntSurf_Transition & TransitionOnLine() const;
+		%feature("autodoc", "1");
+		const IntSurf_Transition & TransitionOnArc() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnArc() const;
+
+};
+%extend BRepBlend_PointOnRst {
+	~BRepBlend_PointOnRst() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_PointOnRst\n");}
 	}
 };
 
@@ -2324,6 +2170,63 @@ class BRepBlend_Walking {
 	~BRepBlend_Walking() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Walking\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_SequenceOfLine;
+class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SequenceOfLine();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const BRepBlend_SequenceOfLine & Assign(const BRepBlend_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		const BRepBlend_SequenceOfLine & operator=(const BRepBlend_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_BRepBlend_Line &T);
+		%feature("autodoc", "1");
+		void Append(BRepBlend_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_BRepBlend_Line &T);
+		%feature("autodoc", "1");
+		void Prepend(BRepBlend_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_BRepBlend_Line &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & First() const;
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, BRepBlend_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_BRepBlend_Line &I);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend BRepBlend_SequenceOfLine {
+	~BRepBlend_SequenceOfLine() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceOfLine\n");}
 	}
 };
 
@@ -2388,6 +2291,103 @@ class BRepBlend_RstRstLineBuilder {
 	~BRepBlend_RstRstLineBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_RstRstLineBuilder\n");}
+	}
+};
+
+
+%nodefaultctor BRepBlend_RstRstConstRad;
+class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_RstRstConstRad(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &Rst1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor2d_HCurve2d &Rst2, const Handle_Adaptor3d_HCurve &CGuide);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		void Set(const Handle_Adaptor3d_HSurface &SurfRef1, const Handle_Adaptor2d_HCurve2d &RstRef1, const Handle_Adaptor3d_HSurface &SurfRef2, const Handle_Adaptor2d_HCurve2d &RstRef2);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMinimalDistance() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt & PointOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d & Pnt2dOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d & Pnt2dOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec & TangentOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d & Tangent2dOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Radius, const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		void Set(const BlendFunc_SectionShape TypeSection);
+		%feature("autodoc", "1");
+		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt &PtRst1, const gp_Pnt &PtRst2, const gp_Vec &np, gp_Pnt & Center, gp_Vec & VdMed) const;
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V)->[Standard_RealStandard_Real]");
+		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetSectionSize() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend BRepBlend_RstRstConstRad {
+	~BRepBlend_RstRstConstRad() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepBlend_RstRstConstRad\n");}
 	}
 };
 

@@ -33,17 +33,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include GCPnts_headers.i
 
 
+enum GCPnts_AbscissaType {
+	GCPnts_LengthParametrized,
+	GCPnts_Parametrized,
+	GCPnts_AbsComposite,
+	};
+
 enum GCPnts_DeflectionType {
 	GCPnts_Linear,
 	GCPnts_Circular,
 	GCPnts_Curved,
 	GCPnts_DefComposite,
-	};
-
-enum GCPnts_AbscissaType {
-	GCPnts_LengthParametrized,
-	GCPnts_Parametrized,
-	GCPnts_AbsComposite,
 	};
 
 

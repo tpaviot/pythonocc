@@ -67,15 +67,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColStd_Array1OfInteger.hxx>
 #include<AppParCurves_MultiCurve.hxx>
 #include<math_MultipleVarFunctionWithGradient.hxx>
-#include<math_Matrix.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_IntSurf_LineOn2S.hxx>
 #include<IntSurf_PntOn2S.hxx>
 #include<BRepAdaptor_Surface.hxx>
-#include<IntSurf_Quadric.hxx>
-#include<AppParCurves_MultiBSpCurve.hxx>
 #include<math_FunctionSetRoot.hxx>
+#include<math_Matrix.hxx>
+#include<AppParCurves_MultiBSpCurve.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
@@ -95,4 +94,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
 #include<gp_Dir2d.hxx>
+#include<IntSurf_Quadric.hxx>
 %}

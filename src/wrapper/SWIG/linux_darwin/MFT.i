@@ -73,36 +73,6 @@ enum MFT_TypeOfCommand {
 
 
 
-%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontName;
-class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName();
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName(const MFT_SequenceNodeOfListOfFontName *anItem);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const MFT_SequenceNodeOfListOfFontName *anItem);
-		%feature("autodoc", "1");
-		Handle_MFT_SequenceNodeOfListOfFontName const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MFT_SequenceNodeOfListOfFontName {
-	MFT_SequenceNodeOfListOfFontName* GetObject() {
-	return (MFT_SequenceNodeOfListOfFontName*)$self->Access();
-	}
-};
-%extend Handle_MFT_SequenceNodeOfListOfFontName {
-	~Handle_MFT_SequenceNodeOfListOfFontName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
 class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
 	public:
@@ -129,6 +99,36 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MFT_SequenceNodeOfListOfFontName;
+class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName();
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName(const MFT_SequenceNodeOfListOfFontName *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const Handle_MFT_SequenceNodeOfListOfFontName &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName & operator=(const MFT_SequenceNodeOfListOfFontName *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_SequenceNodeOfListOfFontName const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MFT_SequenceNodeOfListOfFontName {
+	MFT_SequenceNodeOfListOfFontName* GetObject() {
+	return (MFT_SequenceNodeOfListOfFontName*)$self->Access();
+	}
+};
+%extend Handle_MFT_SequenceNodeOfListOfFontName {
+	~Handle_MFT_SequenceNodeOfListOfFontName() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");}
 	}
 };
 
@@ -333,6 +333,127 @@ class MFT {
 };
 
 
+%nodefaultctor MFT_FontManager;
+class MFT_FontManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MFT_FontManager(const char * anAliasName);
+		%feature("autodoc", "1");
+		MFT_FontManager(const Aspect_FontStyle &aFont, const OSD_OpenMode aFileMode=OSD_ReadOnly, const Standard_Boolean isComposite=0);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void SetFont(const Aspect_FontStyle &aFont);
+		%feature("autodoc", "1");
+		void SetChar(const Standard_Character aChar);
+		%feature("autodoc", "1");
+		void SetAccentChar(const Standard_Character aChar);
+		%feature("autodoc", "1");
+		void SetChar(const Standard_ExtCharacter aChar);
+		%feature("autodoc", "1");
+		void SetEncoding(const Standard_Integer aPosition, const char * anEncoding);
+		%feature("autodoc", "1");
+		void DelChar(const Standard_Character aChar);
+		%feature("autodoc", "1");
+		void DelChar(const Standard_ExtCharacter aChar);
+		%feature("autodoc", "1");
+		void AddCommand(const MFT_TypeOfCommand aCommand);
+		%feature("autodoc", "1");
+		void AddValue(const Standard_Integer aValue);
+		%feature("autodoc", "1");
+		void AddValue(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		void AddValue(const char * aValue);
+		%feature("autodoc", "1");
+		void SetBoundingBox(const Standard_Integer aMinX=0, const Standard_Integer aMinY=0, const Standard_Integer aMaxX=1000, const Standard_Integer aMaxY=1000);
+		%feature("autodoc", "1");
+		void SetFontMatrix(const Standard_Real M1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M2=0.0, const Standard_Real M3=0.0, const Standard_Real M4=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M5=0.0, const Standard_Real M6=0.0);
+		%feature("autodoc", "1");
+		void SetPaintType(const Standard_Integer aValue=0);
+		%feature("autodoc", "1");
+		void SetFixedPitch(const Standard_Boolean aFlag=0);
+		%feature("autodoc", "1");
+		void SetItalicAngle(const Quantity_PlaneAngle anAngle=0.0);
+		%feature("autodoc", "1");
+		void ComputeBoundingBox();
+		%feature("autodoc", "1");
+		void SetFontAttribs(const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aPrecision=2.00000000000000004163336342344337026588618755341e-2, const Standard_Boolean aCapsHeight=0);
+		%feature("autodoc", "1");
+		void DrawText(const Handle_MFT_TextManager &aTextManager, const char * aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
+		%feature("autodoc", "1");
+		void DrawText(const Handle_MFT_TextManager &aTextManager, const Standard_ExtString aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
+		%feature("autodoc","BoundingBox()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		void BoundingBox(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition)->[Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Integer PaintType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean FixedPitch() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle ItalicAngle() const;
+		%feature("autodoc","FontAttribs()->[Standard_Real, Standard_Real, Standard_Real]");
+		char * FontAttribs(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
+		%feature("autodoc","TextSize(Standard_CString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		void TextSize(const char * aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","TextSize(Standard_ExtString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		void TextSize(const Standard_ExtString aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","CharSize(Standard_Character aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		Standard_Boolean CharSize(const Standard_Character aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","CharSize(Standard_ExtCharacter aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Aspect_FontStyle Font() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsComposite() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKnown(const char * anAliasName);
+		%feature("autodoc", "1");
+		Aspect_FontStyle Font(const char * anAliasName);
+		%feature("autodoc", "1");
+		Standard_Integer FontNumber(const char * aFilter="*");
+		%feature("autodoc", "1");
+		Aspect_FontStyle Font(const Standard_Integer aRank);
+		%feature("autodoc", "1");
+		Standard_Integer MaxCommandValues();
+		%feature("autodoc", "1");
+		char * Encoding(const Standard_Integer aPosition);
+		%feature("autodoc", "1");
+		Standard_Integer Encoding(const char * anEncoding);
+		%feature("autodoc", "1");
+		void Dump();
+		%feature("autodoc", "1");
+		void Dump(const Standard_Character aChar);
+		%feature("autodoc", "1");
+		void Dump(const Standard_ExtCharacter aChar);
+		%feature("autodoc", "1");
+		Standard_Boolean Save();
+		%feature("autodoc", "1");
+		Standard_Boolean Restore(const char * anAliasName);
+		%feature("autodoc", "1");
+		Quantity_Length UnderlinePosition() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MFT_FontManager {
+	Handle_MFT_FontManager GetHandle() {
+	return *(Handle_MFT_FontManager*) &$self;
+	}
+};
+%extend MFT_FontManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MFT_FontManager {
+	~MFT_FontManager() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MFT_FontManager\n");}
+	}
+};
+
+
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
 class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	public:
@@ -515,8 +636,18 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -538,8 +669,18 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
 		MFT_SequenceNodeOfListOfFontReference(const Standard_Integer &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -634,127 +775,6 @@ class MFT_TextManager : public MMgt_TShared {
 	~MFT_TextManager() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MFT_TextManager\n");}
-	}
-};
-
-
-%nodefaultctor MFT_FontManager;
-class MFT_FontManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MFT_FontManager(const char * anAliasName);
-		%feature("autodoc", "1");
-		MFT_FontManager(const Aspect_FontStyle &aFont, const OSD_OpenMode aFileMode=OSD_ReadOnly, const Standard_Boolean isComposite=0);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void SetFont(const Aspect_FontStyle &aFont);
-		%feature("autodoc", "1");
-		void SetChar(const Standard_Character aChar);
-		%feature("autodoc", "1");
-		void SetAccentChar(const Standard_Character aChar);
-		%feature("autodoc", "1");
-		void SetChar(const Standard_ExtCharacter aChar);
-		%feature("autodoc", "1");
-		void SetEncoding(const Standard_Integer aPosition, const char * anEncoding);
-		%feature("autodoc", "1");
-		void DelChar(const Standard_Character aChar);
-		%feature("autodoc", "1");
-		void DelChar(const Standard_ExtCharacter aChar);
-		%feature("autodoc", "1");
-		void AddCommand(const MFT_TypeOfCommand aCommand);
-		%feature("autodoc", "1");
-		void AddValue(const Standard_Integer aValue);
-		%feature("autodoc", "1");
-		void AddValue(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		void AddValue(const char * aValue);
-		%feature("autodoc", "1");
-		void SetBoundingBox(const Standard_Integer aMinX=0, const Standard_Integer aMinY=0, const Standard_Integer aMaxX=1000, const Standard_Integer aMaxY=1000);
-		%feature("autodoc", "1");
-		void SetFontMatrix(const Standard_Real M1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M2=0.0, const Standard_Real M3=0.0, const Standard_Real M4=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M5=0.0, const Standard_Real M6=0.0);
-		%feature("autodoc", "1");
-		void SetPaintType(const Standard_Integer aValue=0);
-		%feature("autodoc", "1");
-		void SetFixedPitch(const Standard_Boolean aFlag=0);
-		%feature("autodoc", "1");
-		void SetItalicAngle(const Quantity_PlaneAngle anAngle=0.0);
-		%feature("autodoc", "1");
-		void ComputeBoundingBox();
-		%feature("autodoc", "1");
-		void SetFontAttribs(const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aPrecision=2.00000000000000004163336342344337026588618755341e-2, const Standard_Boolean aCapsHeight=0);
-		%feature("autodoc", "1");
-		void DrawText(const Handle_MFT_TextManager &aTextManager, const char * aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
-		%feature("autodoc", "1");
-		void DrawText(const Handle_MFT_TextManager &aTextManager, const Standard_ExtString aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
-		%feature("autodoc","BoundingBox()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-		void BoundingBox(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition)->[Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
-		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer PaintType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean FixedPitch() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle ItalicAngle() const;
-		%feature("autodoc","FontAttribs()->[Standard_Real, Standard_Real, Standard_Real]");
-		char * FontAttribs(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
-		%feature("autodoc","TextSize(Standard_CString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		void TextSize(const char * aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","TextSize(Standard_ExtString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		void TextSize(const Standard_ExtString aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_Character aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		Standard_Boolean CharSize(const Standard_Character aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_ExtCharacter aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Aspect_FontStyle Font() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsComposite() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKnown(const char * anAliasName);
-		%feature("autodoc", "1");
-		Aspect_FontStyle Font(const char * anAliasName);
-		%feature("autodoc", "1");
-		Standard_Integer FontNumber(const char * aFilter="*");
-		%feature("autodoc", "1");
-		Aspect_FontStyle Font(const Standard_Integer aRank);
-		%feature("autodoc", "1");
-		Standard_Integer MaxCommandValues();
-		%feature("autodoc", "1");
-		char * Encoding(const Standard_Integer aPosition);
-		%feature("autodoc", "1");
-		Standard_Integer Encoding(const char * anEncoding);
-		%feature("autodoc", "1");
-		void Dump();
-		%feature("autodoc", "1");
-		void Dump(const Standard_Character aChar);
-		%feature("autodoc", "1");
-		void Dump(const Standard_ExtCharacter aChar);
-		%feature("autodoc", "1");
-		Standard_Boolean Save();
-		%feature("autodoc", "1");
-		Standard_Boolean Restore(const char * anAliasName);
-		%feature("autodoc", "1");
-		Quantity_Length UnderlinePosition() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MFT_FontManager {
-	Handle_MFT_FontManager GetHandle() {
-	return *(Handle_MFT_FontManager*) &$self;
-	}
-};
-%extend MFT_FontManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MFT_FontManager {
-	~MFT_FontManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_FontManager\n");}
 	}
 };
 

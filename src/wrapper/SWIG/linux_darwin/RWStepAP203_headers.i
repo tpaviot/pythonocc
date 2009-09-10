@@ -292,17 +292,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_StepData_StepReaderData.hxx>
 #include<Handle_Interface_Check.hxx>
-#include<Handle_StepAP203_ChangeRequest.hxx>
+#include<Handle_StepAP203_CcDesignSecurityClassification.hxx>
 #include<StepData_StepWriter.hxx>
 #include<Interface_EntityIterator.hxx>
-#include<Handle_StepAP203_CcDesignSecurityClassification.hxx>
-#include<Handle_StepAP203_CcDesignDateAndTimeAssignment.hxx>
 #include<Handle_StepAP203_StartRequest.hxx>
-#include<Handle_StepAP203_CcDesignCertification.hxx>
-#include<Handle_StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
 #include<Handle_StepAP203_StartWork.hxx>
-#include<Handle_StepAP203_CcDesignSpecificationReference.hxx>
-#include<Handle_StepAP203_Change.hxx>
+#include<Handle_StepAP203_CcDesignPersonAndOrganizationAssignment.hxx>
 #include<Handle_StepAP203_CcDesignContract.hxx>
+#include<Handle_StepAP203_ChangeRequest.hxx>
+#include<Handle_StepAP203_CcDesignSpecificationReference.hxx>
+#include<Handle_StepAP203_CcDesignDateAndTimeAssignment.hxx>
+#include<Handle_StepAP203_CcDesignCertification.hxx>
 #include<Handle_StepAP203_CcDesignApproval.hxx>
+#include<Handle_StepAP203_Change.hxx>
 %}

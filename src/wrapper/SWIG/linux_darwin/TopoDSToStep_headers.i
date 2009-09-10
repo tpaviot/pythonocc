@@ -50,17 +50,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<TopoDS_Shape.hxx>
-#include<Handle_Transfer_FinderProcess.hxx>
-#include<TopoDS_Edge.hxx>
-#include<TopoDS_Face.hxx>
-#include<MoniTool_DataMapOfShapeTransient.hxx>
-#include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<TopoDS_Solid.hxx>
+#include<Handle_Transfer_FinderProcess.hxx>
 #include<TopoDS_Shell.hxx>
-#include<Handle_StepShape_TopologicalRepresentationItem.hxx>
+#include<TopoDS_Solid.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopoDS_Face.hxx>
+#include<TopoDS_Edge.hxx>
+#include<MoniTool_DataMapOfShapeTransient.hxx>
+#include<TopoDS_Shape.hxx>
+#include<Handle_StepShape_TopologicalRepresentationItem.hxx>
+#include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDSToStep.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_Standard_Transient.hxx>

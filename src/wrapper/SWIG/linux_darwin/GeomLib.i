@@ -43,6 +43,29 @@ enum GeomLib_InterpolationErrors {
 
 
 
+%nodefaultctor GeomLib_CheckBSplineCurve;
+class GeomLib_CheckBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+
+};
+%extend GeomLib_CheckBSplineCurve {
+	~GeomLib_CheckBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
+	}
+};
+
+
 %nodefaultctor GeomLib_DenominatorMultiplier;
 class GeomLib_DenominatorMultiplier {
 	public:
@@ -81,63 +104,6 @@ class GeomLib_Tool {
 };
 
 
-%nodefaultctor GeomLib_LogSample;
-class GeomLib_LogSample : public math_FunctionSample {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
-
-};
-%extend GeomLib_LogSample {
-	~GeomLib_LogSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_LogSample\n");}
-	}
-};
-
-
-%nodefaultctor GeomLib_Interpolate;
-class GeomLib_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		GeomLib_InterpolationErrors Error() const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve Curve() const;
-
-};
-%extend GeomLib_Interpolate {
-	~GeomLib_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Interpolate\n");}
-	}
-};
-
-
-%nodefaultctor GeomLib_IsPlanarSurface;
-class GeomLib_IsPlanarSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar() const;
-		%feature("autodoc", "1");
-		const gp_Pln & Plan() const;
-
-};
-%extend GeomLib_IsPlanarSurface {
-	~GeomLib_IsPlanarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
-	}
-};
-
-
 %nodefaultctor GeomLib_PolyFunc;
 class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 	public:
@@ -159,25 +125,19 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 };
 
 
-%nodefaultctor GeomLib_CheckBSplineCurve;
-class GeomLib_CheckBSplineCurve {
+%nodefaultctor GeomLib_LogSample;
+class GeomLib_LogSample : public math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
 };
-%extend GeomLib_CheckBSplineCurve {
-	~GeomLib_CheckBSplineCurve() {
+%extend GeomLib_LogSample {
+	~GeomLib_LogSample() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomLib_LogSample\n");}
 	}
 };
 
@@ -211,6 +171,69 @@ class GeomLib_MakeCurvefromApprox {
 	~GeomLib_MakeCurvefromApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");}
+	}
+};
+
+
+%nodefaultctor GeomLib_IsPlanarSurface;
+class GeomLib_IsPlanarSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlanar() const;
+		%feature("autodoc", "1");
+		const gp_Pln & Plan() const;
+
+};
+%extend GeomLib_IsPlanarSurface {
+	~GeomLib_IsPlanarSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomLib_Interpolate;
+class GeomLib_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		GeomLib_InterpolationErrors Error() const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve Curve() const;
+
+};
+%extend GeomLib_Interpolate {
+	~GeomLib_Interpolate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLib_Interpolate\n");}
+	}
+};
+
+
+%nodefaultctor GeomLib_Check2dBSplineCurve;
+class GeomLib_Check2dBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+
+};
+%extend GeomLib_Check2dBSplineCurve {
+	~GeomLib_Check2dBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");}
 	}
 };
 
@@ -301,28 +324,5 @@ class GeomLib {
 	~GeomLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomLib\n");}
-	}
-};
-
-
-%nodefaultctor GeomLib_Check2dBSplineCurve;
-class GeomLib_Check2dBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-};
-%extend GeomLib_Check2dBSplineCurve {
-	~GeomLib_Check2dBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");}
 	}
 };

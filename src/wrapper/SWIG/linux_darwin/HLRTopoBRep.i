@@ -186,6 +186,37 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 };
 
 
+%nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
+class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const TopoDS_Shape &K, const HLRTopoBRep_ListOfVData &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListOfVData & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData GetHandle() {
+	return *(Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*) &$self;
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
+	}
+};
+
+
 %nodefaultctor HLRTopoBRep_MapOfShapeListOfVData;
 class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 	public:
@@ -219,72 +250,6 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 	~HLRTopoBRep_MapOfShapeListOfVData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData;
-class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData();
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData(const HLRTopoBRep_DataMapOfShapeFaceData &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const HLRTopoBRep_DataMapOfShapeFaceData &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const HLRTopoBRep_FaceData & Value() const;
-
-};
-%extend HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData {
-	~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_OutLiner;
-class HLRTopoBRep_OutLiner : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner();
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriSh);
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriS, const TopoDS_Shape &OutS);
-		%feature("autodoc", "1");
-		void OriginalShape(const TopoDS_Shape &OriS);
-		%feature("autodoc", "1");
-		TopoDS_Shape & OriginalShape();
-		%feature("autodoc", "1");
-		void OutLinedShape(const TopoDS_Shape &OutS);
-		%feature("autodoc", "1");
-		TopoDS_Shape & OutLinedShape();
-		%feature("autodoc", "1");
-		HLRTopoBRep_Data & DataStructure();
-		%feature("autodoc", "1");
-		void Fill(const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRTopoBRep_OutLiner {
-	Handle_HLRTopoBRep_OutLiner GetHandle() {
-	return *(Handle_HLRTopoBRep_OutLiner*) &$self;
-	}
-};
-%extend HLRTopoBRep_OutLiner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend HLRTopoBRep_OutLiner {
-	~HLRTopoBRep_OutLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
 	}
 };
 
@@ -374,6 +339,29 @@ class HLRTopoBRep_Data {
 };
 
 
+%nodefaultctor HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData;
+class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData();
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData(const HLRTopoBRep_DataMapOfShapeFaceData &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const HLRTopoBRep_DataMapOfShapeFaceData &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const HLRTopoBRep_FaceData & Value() const;
+
+};
+%extend HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData {
+	~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
+	}
+};
+
+
 %nodefaultctor HLRTopoBRep_FaceData;
 class HLRTopoBRep_FaceData {
 	public:
@@ -401,35 +389,6 @@ class HLRTopoBRep_FaceData {
 };
 
 
-%nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
-class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_VData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	Handle_HLRTopoBRep_ListNodeOfListOfVData GetHandle() {
-	return *(Handle_HLRTopoBRep_ListNodeOfListOfVData*) &$self;
-	}
-};
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	~HLRTopoBRep_ListNodeOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");}
-	}
-};
-
-
 %nodefaultctor HLRTopoBRep_VData;
 class HLRTopoBRep_VData {
 	public:
@@ -447,27 +406,6 @@ class HLRTopoBRep_VData {
 	~HLRTopoBRep_VData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_VData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_FaceIsoLiner;
-class HLRTopoBRep_FaceIsoLiner {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_FaceIsoLiner();
-		%feature("autodoc", "1");
-		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
-		%feature("autodoc", "1");
-		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
-		%feature("autodoc", "1");
-		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
-
-};
-%extend HLRTopoBRep_FaceIsoLiner {
-	~HLRTopoBRep_FaceIsoLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
 	}
 };
 
@@ -516,74 +454,6 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 	~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_DataMapOfShapeFaceData;
-class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapOfShapeFaceData(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapOfShapeFaceData & Assign(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_FaceData &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const HLRTopoBRep_FaceData & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		HLRTopoBRep_FaceData & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K);
-
-};
-%extend HLRTopoBRep_DataMapOfShapeFaceData {
-	~HLRTopoBRep_DataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");}
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
-class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData(const TopoDS_Shape &K, const HLRTopoBRep_ListOfVData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListOfVData & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData GetHandle() {
-	return *(Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*) &$self;
-	}
-};
-%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
 	}
 };
 
@@ -637,6 +507,136 @@ class HLRTopoBRep_ListOfVData {
 	~HLRTopoBRep_ListOfVData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_FaceIsoLiner;
+class HLRTopoBRep_FaceIsoLiner {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_FaceIsoLiner();
+		%feature("autodoc", "1");
+		void Perform(const Standard_Integer FI, const TopoDS_Face &F, HLRTopoBRep_Data & DS, const Standard_Integer nbIsos);
+		%feature("autodoc", "1");
+		TopoDS_Vertex MakeVertex(const TopoDS_Edge &E, const gp_Pnt &P, const Standard_Real Par, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+		%feature("autodoc", "1");
+		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
+
+};
+%extend HLRTopoBRep_FaceIsoLiner {
+	~HLRTopoBRep_FaceIsoLiner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_OutLiner;
+class HLRTopoBRep_OutLiner : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner();
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriSh);
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner(const TopoDS_Shape &OriS, const TopoDS_Shape &OutS);
+		%feature("autodoc", "1");
+		void OriginalShape(const TopoDS_Shape &OriS);
+		%feature("autodoc", "1");
+		TopoDS_Shape & OriginalShape();
+		%feature("autodoc", "1");
+		void OutLinedShape(const TopoDS_Shape &OutS);
+		%feature("autodoc", "1");
+		TopoDS_Shape & OutLinedShape();
+		%feature("autodoc", "1");
+		HLRTopoBRep_Data & DataStructure();
+		%feature("autodoc", "1");
+		void Fill(const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRTopoBRep_OutLiner {
+	Handle_HLRTopoBRep_OutLiner GetHandle() {
+	return *(Handle_HLRTopoBRep_OutLiner*) &$self;
+	}
+};
+%extend HLRTopoBRep_OutLiner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend HLRTopoBRep_OutLiner {
+	~HLRTopoBRep_OutLiner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
+class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_VData &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRTopoBRep_ListNodeOfListOfVData {
+	Handle_HLRTopoBRep_ListNodeOfListOfVData GetHandle() {
+	return *(Handle_HLRTopoBRep_ListNodeOfListOfVData*) &$self;
+	}
+};
+%extend HLRTopoBRep_ListNodeOfListOfVData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend HLRTopoBRep_ListNodeOfListOfVData {
+	~HLRTopoBRep_ListNodeOfListOfVData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");}
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_DataMapOfShapeFaceData;
+class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapOfShapeFaceData(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapOfShapeFaceData & Assign(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapOfShapeFaceData & operator=(const HLRTopoBRep_DataMapOfShapeFaceData &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const HLRTopoBRep_FaceData &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const HLRTopoBRep_FaceData & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		HLRTopoBRep_FaceData & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K);
+
+};
+%extend HLRTopoBRep_DataMapOfShapeFaceData {
+	~HLRTopoBRep_DataMapOfShapeFaceData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");}
 	}
 };
 

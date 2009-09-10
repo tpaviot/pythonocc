@@ -2,7 +2,6 @@
 %rename(RWStepShape_RWSweptAreaSolid) RWStepShape_RWSweptAreaSolid;
 %rename(RWStepShape_RWFaceBasedSurfaceModel) RWStepShape_RWFaceBasedSurfaceModel;
 %rename(RWStepShape_RWShapeRepresentationWithParameters) RWStepShape_RWShapeRepresentationWithParameters;
-%rename(RWStepShape_RWTransitionalShapeRepresentation) RWStepShape_RWTransitionalShapeRepresentation;
 %rename(RWStepShape_RWFacetedBrep) RWStepShape_RWFacetedBrep;
 %rename(RWStepShape_RWEdgeBasedWireframeShapeRepresentation) RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
 %rename(RWStepShape_RWBoxedHalfSpace) RWStepShape_RWBoxedHalfSpace;
@@ -13,7 +12,7 @@
 %rename(RWStepShape_RWPlusMinusTolerance) RWStepShape_RWPlusMinusTolerance;
 %rename(RWStepShape_RWVertexPoint) RWStepShape_RWVertexPoint;
 %rename(RWStepShape_RWConnectedFaceSubSet) RWStepShape_RWConnectedFaceSubSet;
-%rename(RWStepShape_RWRevolvedFaceSolid) RWStepShape_RWRevolvedFaceSolid;
+%rename(RWStepShape_RWDimensionalCharacteristicRepresentation) RWStepShape_RWDimensionalCharacteristicRepresentation;
 %rename(RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation) RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation;
 %rename(RWStepShape_RWTopologicalRepresentationItem) RWStepShape_RWTopologicalRepresentationItem;
 %rename(RWStepShape_RWFacetedBrepAndBrepWithVoids) RWStepShape_RWFacetedBrepAndBrepWithVoids;
@@ -39,6 +38,7 @@
 %rename(RWStepShape_RWSolidModel) RWStepShape_RWSolidModel;
 %rename(RWStepShape_RWOpenShell) RWStepShape_RWOpenShell;
 %rename(RWStepShape_RWSubedge) RWStepShape_RWSubedge;
+%rename(RWStepShape_RWAdvancedFace) RWStepShape_RWAdvancedFace;
 %rename(RWStepShape_RWExtrudedFaceSolid) RWStepShape_RWExtrudedFaceSolid;
 %rename(RWStepShape_RWDimensionalLocationWithPath) RWStepShape_RWDimensionalLocationWithPath;
 %rename(RWStepShape_RWSubface) RWStepShape_RWSubface;
@@ -53,7 +53,7 @@
 %rename(RWStepShape_RWShapeDefinitionRepresentation) RWStepShape_RWShapeDefinitionRepresentation;
 %rename(RWStepShape_RWOrientedPath) RWStepShape_RWOrientedPath;
 %rename(RWStepShape_RWHalfSpaceSolid) RWStepShape_RWHalfSpaceSolid;
-%rename(RWStepShape_RWBooleanResult) RWStepShape_RWBooleanResult;
+%rename(RWStepShape_RWFaceOuterBound) RWStepShape_RWFaceOuterBound;
 %rename(RWStepShape_RWConnectedEdgeSet) RWStepShape_RWConnectedEdgeSet;
 %rename(RWStepShape_RWVertex) RWStepShape_RWVertex;
 %rename(RWStepShape_RWFaceSurface) RWStepShape_RWFaceSurface;
@@ -63,7 +63,7 @@
 %rename(RWStepShape_RWTorus) RWStepShape_RWTorus;
 %rename(RWStepShape_RWShellBasedSurfaceModel) RWStepShape_RWShellBasedSurfaceModel;
 %rename(RWStepShape_RWLoopAndPath) RWStepShape_RWLoopAndPath;
-%rename(RWStepShape_RWAdvancedFace) RWStepShape_RWAdvancedFace;
+%rename(RWStepShape_RWTransitionalShapeRepresentation) RWStepShape_RWTransitionalShapeRepresentation;
 %rename(RWStepShape_RWManifoldSolidBrep) RWStepShape_RWManifoldSolidBrep;
 %rename(RWStepShape_RWSweptFaceSolid) RWStepShape_RWSweptFaceSolid;
 %rename(RWStepShape_RWFacetedBrepShapeRepresentation) RWStepShape_RWFacetedBrepShapeRepresentation;
@@ -71,6 +71,7 @@
 %rename(RWStepShape_RWEdgeBasedWireframeModel) RWStepShape_RWEdgeBasedWireframeModel;
 %rename(RWStepShape_RWPolyLoop) RWStepShape_RWPolyLoop;
 %rename(RWStepShape_RWNonManifoldSurfaceShapeRepresentation) RWStepShape_RWNonManifoldSurfaceShapeRepresentation;
+%rename(RWStepShape_RWBooleanResult) RWStepShape_RWBooleanResult;
 %rename(RWStepShape_RWPrecisionQualifier) RWStepShape_RWPrecisionQualifier;
 %rename(RWStepShape_RWFace) RWStepShape_RWFace;
 %rename(RWStepShape_RWContextDependentShapeRepresentation) RWStepShape_RWContextDependentShapeRepresentation;
@@ -81,10 +82,9 @@
 %rename(RWStepShape_RWDimensionalSize) RWStepShape_RWDimensionalSize;
 %rename(RWStepShape_RWDimensionalLocation) RWStepShape_RWDimensionalLocation;
 %rename(RWStepShape_RWCsgSolid) RWStepShape_RWCsgSolid;
-%rename(RWStepShape_RWDimensionalCharacteristicRepresentation) RWStepShape_RWDimensionalCharacteristicRepresentation;
+%rename(RWStepShape_RWRevolvedFaceSolid) RWStepShape_RWRevolvedFaceSolid;
 %rename(RWStepShape_RWLoop) RWStepShape_RWLoop;
 %rename(RWStepShape_RWMeasureQualification) RWStepShape_RWMeasureQualification;
-%rename(RWStepShape_RWFaceOuterBound) RWStepShape_RWFaceOuterBound;
 %rename(RWStepShape_RWRevolvedAreaSolid) RWStepShape_RWRevolvedAreaSolid;
 %rename(RWStepShape_RWManifoldSurfaceShapeRepresentation) RWStepShape_RWManifoldSurfaceShapeRepresentation;
 %rename(RWStepShape_RWEdgeLoop) RWStepShape_RWEdgeLoop;

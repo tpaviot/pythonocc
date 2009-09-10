@@ -15,7 +15,7 @@
 %rename(Convert_ConicToBSplineCurve) Convert_ConicToBSplineCurve;
 %rename(Convert_ParabolaToBSplineCurve) Convert_ParabolaToBSplineCurve;
 %rename(Convert_Polynomial) Convert_Polynomial;
-%rename(Convert_SequenceOfArray1OfPoles2d) Convert_SequenceOfArray1OfPoles2d;
+%rename(Convert_ElementarySurfaceToBSplineSurface) Convert_ElementarySurfaceToBSplineSurface;
 %rename(Convert_SequenceNodeOfSequenceOfArray1OfPoles) Convert_SequenceNodeOfSequenceOfArray1OfPoles;
 %rename(Convert_QuasiAngular) Convert_QuasiAngular;
 %rename(Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d) Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
@@ -25,4 +25,4 @@
 %rename(Convert_CompBezierCurvesToBSplineCurve) Convert_CompBezierCurvesToBSplineCurve;
 %rename(Convert_TgtThetaOver2_4) Convert_TgtThetaOver2_4;
 %rename(Convert_HyperbolaToBSplineCurve) Convert_HyperbolaToBSplineCurve;
-%rename(Convert_ElementarySurfaceToBSplineSurface) Convert_ElementarySurfaceToBSplineSurface;
+%rename(Convert_SequenceOfArray1OfPoles2d) Convert_SequenceOfArray1OfPoles2d;

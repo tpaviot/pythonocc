@@ -46,10 +46,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Pln.hxx>
-#include<gp_Sphere.hxx>
 #include<gp_Cylinder.hxx>
+#include<gp_Sphere.hxx>
 #include<gp_Cone.hxx>
-#include<gp_Ax3.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
@@ -57,5 +56,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Parab.hxx>
 #include<gp_Hypr.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Ax3.hxx>
 #include<gp_Torus.hxx>
 %}

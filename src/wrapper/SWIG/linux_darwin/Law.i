@@ -35,96 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_Law_Function;
-class Handle_Law_Function : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Function();
-		%feature("autodoc", "1");
-		Handle_Law_Function(const Handle_Law_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Function(const Law_Function *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Function & operator=(const Handle_Law_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Function & operator=(const Law_Function *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Function {
-	Law_Function* GetObject() {
-	return (Law_Function*)$self->Access();
-	}
-};
-%extend Handle_Law_Function {
-	~Handle_Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Law_Linear;
-class Handle_Law_Linear : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Linear();
-		%feature("autodoc", "1");
-		Handle_Law_Linear(const Handle_Law_Linear &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Linear(const Law_Linear *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Linear & operator=(const Handle_Law_Linear &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Linear & operator=(const Law_Linear *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Linear {
-	Law_Linear* GetObject() {
-	return (Law_Linear*)$self->Access();
-	}
-};
-%extend Handle_Law_Linear {
-	~Handle_Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Law_Constant;
-class Handle_Law_Constant : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Constant();
-		%feature("autodoc", "1");
-		Handle_Law_Constant(const Handle_Law_Constant &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Constant(const Law_Constant *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Constant & operator=(const Handle_Law_Constant &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Constant & operator=(const Law_Constant *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Constant {
-	Law_Constant* GetObject() {
-	return (Law_Constant*)$self->Access();
-	}
-};
-%extend Handle_Law_Constant {
-	~Handle_Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Law_ListNodeOfLaws;
 class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	public:
@@ -155,6 +65,36 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 };
 
 
+%nodefaultctor Handle_Law_Function;
+class Handle_Law_Function : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Function();
+		%feature("autodoc", "1");
+		Handle_Law_Function(const Handle_Law_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Function(const Law_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Function & operator=(const Handle_Law_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Function & operator=(const Law_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Function const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Function {
+	Law_Function* GetObject() {
+	return (Law_Function*)$self->Access();
+	}
+};
+%extend Handle_Law_Function {
+	~Handle_Law_Function() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Law_BSpFunc;
 class Handle_Law_BSpFunc : public Handle_Law_Function {
 	public:
@@ -181,36 +121,6 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	~Handle_Law_BSpFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpFunc\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Law_Composite;
-class Handle_Law_Composite : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Composite();
-		%feature("autodoc", "1");
-		Handle_Law_Composite(const Handle_Law_Composite &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Composite(const Law_Composite *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Composite & operator=(const Handle_Law_Composite &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Composite & operator=(const Law_Composite *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Composite {
-	Law_Composite* GetObject() {
-	return (Law_Composite*)$self->Access();
-	}
-};
-%extend Handle_Law_Composite {
-	~Handle_Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
 	}
 };
 
@@ -305,6 +215,125 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 };
 
 
+%nodefaultctor Handle_Law_Linear;
+class Handle_Law_Linear : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Linear();
+		%feature("autodoc", "1");
+		Handle_Law_Linear(const Handle_Law_Linear &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Linear(const Law_Linear *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Linear & operator=(const Handle_Law_Linear &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Linear & operator=(const Law_Linear *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Linear const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Linear {
+	Law_Linear* GetObject() {
+	return (Law_Linear*)$self->Access();
+	}
+};
+%extend Handle_Law_Linear {
+	~Handle_Law_Linear() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Law_Constant;
+class Handle_Law_Constant : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Constant();
+		%feature("autodoc", "1");
+		Handle_Law_Constant(const Handle_Law_Constant &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Constant(const Law_Constant *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Constant & operator=(const Handle_Law_Constant &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Constant & operator=(const Law_Constant *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Constant const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Constant {
+	Law_Constant* GetObject() {
+	return (Law_Constant*)$self->Access();
+	}
+};
+%extend Handle_Law_Constant {
+	~Handle_Law_Constant() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Law_Composite;
+class Handle_Law_Composite : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Composite();
+		%feature("autodoc", "1");
+		Handle_Law_Composite(const Handle_Law_Composite &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Composite(const Law_Composite *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Composite & operator=(const Handle_Law_Composite &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Composite & operator=(const Law_Composite *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Composite const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Composite {
+	Law_Composite* GetObject() {
+	return (Law_Composite*)$self->Access();
+	}
+};
+%extend Handle_Law_Composite {
+	~Handle_Law_Composite() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
+	}
+};
+
+
+%nodefaultctor Law_ListNodeOfLaws;
+class Law_ListNodeOfLaws : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Law_ListNodeOfLaws(const Handle_Law_Function &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Law_Function & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_ListNodeOfLaws {
+	Handle_Law_ListNodeOfLaws GetHandle() {
+	return *(Handle_Law_ListNodeOfLaws*) &$self;
+	}
+};
+%extend Law_ListNodeOfLaws {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Law_ListNodeOfLaws {
+	~Law_ListNodeOfLaws() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
+	}
+};
+
+
 %nodefaultctor Law_Function;
 class Law_Function : public MMgt_TShared {
 	public:
@@ -377,35 +406,6 @@ class Law_BSpFunc : public Law_Function {
 };
 
 
-%nodefaultctor Law_ListNodeOfLaws;
-class Law_ListNodeOfLaws : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Law_ListNodeOfLaws(const Handle_Law_Function &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Law_Function & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_ListNodeOfLaws {
-	Handle_Law_ListNodeOfLaws GetHandle() {
-	return *(Handle_Law_ListNodeOfLaws*) &$self;
-	}
-};
-%extend Law_ListNodeOfLaws {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Law_ListNodeOfLaws {
-	~Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
-	}
-};
-
-
 %nodefaultctor Law_Interpol;
 class Law_Interpol : public Law_BSpFunc {
 	public:
@@ -466,6 +466,33 @@ class Law_ListIteratorOfLaws {
 };
 
 
+%nodefaultctor Law_Interpolate;
+class Law_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const Standard_Real InitialTangent, const Standard_Real FinalTangent);
+		%feature("autodoc", "1");
+		void Load(const TColStd_Array1OfReal &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Law_BSpline & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%extend Law_Interpolate {
+	~Law_Interpolate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
+	}
+};
+
+
 %nodefaultctor Law_Composite;
 class Law_Composite : public Law_Function {
 	public:
@@ -515,255 +542,6 @@ class Law_Composite : public Law_Function {
 	~Law_Composite() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Law_Composite\n");}
-	}
-};
-
-
-%nodefaultctor Law_BSplineKnotSplitting;
-class Law_BSplineKnotSplitting {
-	public:
-		%feature("autodoc", "1");
-		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
-		%feature("autodoc", "1");
-		Standard_Integer NbSplits() const;
-		%feature("autodoc", "1");
-		void Splitting(TColStd_Array1OfInteger & SplitValues) const;
-		%feature("autodoc", "1");
-		Standard_Integer SplitValue(const Standard_Integer Index) const;
-
-};
-%extend Law_BSplineKnotSplitting {
-	~Law_BSplineKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
-	}
-};
-
-
-%nodefaultctor Law_S;
-class Law_S : public Law_BSpFunc {
-	public:
-		%feature("autodoc", "1");
-		Law_S();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_S {
-	Handle_Law_S GetHandle() {
-	return *(Handle_Law_S*) &$self;
-	}
-};
-%extend Law_S {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Law_S {
-	~Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_S\n");}
-	}
-};
-
-
-%nodefaultctor Law_Linear;
-class Law_Linear : public Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Law_Linear();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
-		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
-		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_Linear {
-	Handle_Law_Linear GetHandle() {
-	return *(Handle_Law_Linear*) &$self;
-	}
-};
-%extend Law_Linear {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Law_Linear {
-	~Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
-	}
-};
-
-
-%nodefaultctor Law_Laws;
-class Law_Laws {
-	public:
-		%feature("autodoc", "1");
-		Law_Laws();
-		%feature("autodoc", "1");
-		void Assign(const Law_Laws &Other);
-		%feature("autodoc", "1");
-		void operator=(const Law_Laws &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
-		%feature("autodoc", "1");
-		void Prepend(Law_Laws & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
-		%feature("autodoc", "1");
-		void Append(Law_Laws & Other);
-		%feature("autodoc", "1");
-		Handle_Law_Function & First() const;
-		%feature("autodoc", "1");
-		Handle_Law_Function & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertBefore(Law_Laws & Other, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
-
-};
-%extend Law_Laws {
-	~Law_Laws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
-	}
-};
-
-
-%nodefaultctor Law;
-class Law {
-	public:
-		%feature("autodoc", "1");
-		Law();
-		%feature("autodoc", "1");
-		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
-		%feature("autodoc", "1");
-		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
-		%feature("autodoc", "1");
-		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
-
-};
-%extend Law {
-	~Law() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law\n");}
-	}
-};
-
-
-%nodefaultctor Law_Interpolate;
-class Law_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const Standard_Real InitialTangent, const Standard_Real FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColStd_Array1OfReal &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Law_BSpline & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend Law_Interpolate {
-	~Law_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
-	}
-};
-
-
-%nodefaultctor Law_Constant;
-class Law_Constant : public Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Law_Constant();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Radius, const Standard_Real PFirst, const Standard_Real PLast);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
-		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
-		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_Constant {
-	Handle_Law_Constant GetHandle() {
-	return *(Handle_Law_Constant*) &$self;
-	}
-};
-%extend Law_Constant {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Law_Constant {
-	~Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
 	}
 };
 
@@ -915,5 +693,227 @@ class Law_BSpline : public MMgt_TShared {
 	~Law_BSpline() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Law_BSpline\n");}
+	}
+};
+
+
+%nodefaultctor Law_BSplineKnotSplitting;
+class Law_BSplineKnotSplitting {
+	public:
+		%feature("autodoc", "1");
+		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
+		%feature("autodoc", "1");
+		Standard_Integer NbSplits() const;
+		%feature("autodoc", "1");
+		void Splitting(TColStd_Array1OfInteger & SplitValues) const;
+		%feature("autodoc", "1");
+		Standard_Integer SplitValue(const Standard_Integer Index) const;
+
+};
+%extend Law_BSplineKnotSplitting {
+	~Law_BSplineKnotSplitting() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
+	}
+};
+
+
+%nodefaultctor Law_S;
+class Law_S : public Law_BSpFunc {
+	public:
+		%feature("autodoc", "1");
+		Law_S();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_S {
+	Handle_Law_S GetHandle() {
+	return *(Handle_Law_S*) &$self;
+	}
+};
+%extend Law_S {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Law_S {
+	~Law_S() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_S\n");}
+	}
+};
+
+
+%nodefaultctor Law_Laws;
+class Law_Laws {
+	public:
+		%feature("autodoc", "1");
+		Law_Laws();
+		%feature("autodoc", "1");
+		void Assign(const Law_Laws &Other);
+		%feature("autodoc", "1");
+		void operator=(const Law_Laws &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Law_Function &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		%feature("autodoc", "1");
+		void Prepend(Law_Laws & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Law_Function &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		%feature("autodoc", "1");
+		void Append(Law_Laws & Other);
+		%feature("autodoc", "1");
+		Handle_Law_Function & First() const;
+		%feature("autodoc", "1");
+		Handle_Law_Function & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertBefore(Law_Laws & Other, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
+
+};
+%extend Law_Laws {
+	~Law_Laws() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
+	}
+};
+
+
+%nodefaultctor Law;
+class Law {
+	public:
+		%feature("autodoc", "1");
+		Law();
+		%feature("autodoc", "1");
+		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
+		%feature("autodoc", "1");
+		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+		%feature("autodoc", "1");
+		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+
+};
+%extend Law {
+	~Law() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law\n");}
+	}
+};
+
+
+%nodefaultctor Law_Linear;
+class Law_Linear : public Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Law_Linear();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Value(const Standard_Real X);
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_Linear {
+	Handle_Law_Linear GetHandle() {
+	return *(Handle_Law_Linear*) &$self;
+	}
+};
+%extend Law_Linear {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Law_Linear {
+	~Law_Linear() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
+	}
+};
+
+
+%nodefaultctor Law_Constant;
+class Law_Constant : public Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Law_Constant();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Radius, const Standard_Real PFirst, const Standard_Real PLast);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Value(const Standard_Real X);
+		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
+		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_Constant {
+	Handle_Law_Constant GetHandle() {
+	return *(Handle_Law_Constant*) &$self;
+	}
+};
+%extend Law_Constant {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Law_Constant {
+	~Law_Constant() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
 	}
 };

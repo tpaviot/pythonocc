@@ -32,9 +32,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Adaptor3d_HCurve.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
+#include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Dir.hxx>
 %}

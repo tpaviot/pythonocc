@@ -348,7 +348,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import TCollection.i
 %import MMgt.i
-%import Standard.i
-%import TopAbs.i
 %import TopOpeBRepTool.i
+%import Standard.i
 %import TopOpeBRepDS.i
+%import TopAbs.i

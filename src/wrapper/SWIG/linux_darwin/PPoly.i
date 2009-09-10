@@ -65,36 +65,6 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PPoly_Triangulation;
-class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation();
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation(const Handle_PPoly_Triangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation(const PPoly_Triangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation & operator=(const Handle_PPoly_Triangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PPoly_Triangulation {
-	PPoly_Triangulation* GetObject() {
-	return (PPoly_Triangulation*)$self->Access();
-	}
-};
-%extend Handle_PPoly_Triangulation {
-	~Handle_PPoly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PPoly_Polygon2D;
 class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	public:
@@ -155,6 +125,36 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 };
 
 
+%nodefaultctor Handle_PPoly_Triangulation;
+class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation();
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation(const Handle_PPoly_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation(const PPoly_Triangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation & operator=(const Handle_PPoly_Triangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation & operator=(const PPoly_Triangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PPoly_Triangulation {
+	PPoly_Triangulation* GetObject() {
+	return (PPoly_Triangulation*)$self->Access();
+	}
+};
+%extend Handle_PPoly_Triangulation {
+	~Handle_PPoly_Triangulation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandard_ArrayNode {
 	public:
@@ -211,69 +211,6 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	~Handle_PPoly_PolygonOnTriangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");}
-	}
-};
-
-
-%nodefaultctor PPoly_HArray1OfTriangle;
-class PPoly_HArray1OfTriangle : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		PPoly_Triangle Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle();
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PPoly_HArray1OfTriangle {
-	Handle_PPoly_HArray1OfTriangle GetHandle() {
-	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
-	}
-};
-%extend PPoly_HArray1OfTriangle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PPoly_HArray1OfTriangle {
-	~PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -404,6 +341,90 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 };
 
 
+%nodefaultctor PPoly_HArray1OfTriangle;
+class PPoly_HArray1OfTriangle : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		PPoly_Triangle Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle();
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PPoly_HArray1OfTriangle {
+	Handle_PPoly_HArray1OfTriangle GetHandle() {
+	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	~PPoly_HArray1OfTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
+	}
+};
+
+
+%nodefaultctor PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
+class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	public:
+		%feature("autodoc", "1");
+		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
+		%feature("autodoc", "1");
+		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const PPoly_Triangle &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
+	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
+	}
+};
+
+
 %nodefaultctor PPoly_Polygon3D;
 class PPoly_Polygon3D : public Standard_Persistent {
 	public:
@@ -461,50 +482,6 @@ class PPoly_Polygon3D : public Standard_Persistent {
 	~PPoly_Polygon3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon3D\n");}
-	}
-};
-
-
-%nodefaultctor PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
-class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
-	public:
-		%feature("autodoc", "1");
-		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle();
-		%feature("autodoc", "1");
-		PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle(const PPoly_Triangle &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const PPoly_Triangle &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
-	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
-	}
-};
-
-
-%nodefaultctor PPoly_Triangle;
-class PPoly_Triangle {
-	public:
-		%feature("autodoc", "1");
-		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc","Get()->[Standard_Integer, Standard_Integer, Standard_Integer]");
-		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		PPoly_Triangle();
-		%feature("autodoc", "1");
-		Standard_Integer & _CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1);
-
-};
-%extend PPoly_Triangle {
-	~PPoly_Triangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
 	}
 };
 
@@ -624,5 +601,38 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
+	}
+};
+
+
+%nodefaultctor PPoly_Triangle;
+class PPoly_Triangle {
+	public:
+		%feature("autodoc", "1");
+		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc","Get()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		PPoly_Triangle();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer Get_CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1) {
+				return (Standard_Integer) $self->_CSFDB_GetPPoly_TrianglemyNodes(i1);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_GetPPoly_TrianglemyNodes(Standard_Integer value ,const Standard_Integer i1) {
+				$self->_CSFDB_GetPPoly_TrianglemyNodes(i1)=value;
+				}
+		};
+
+};
+%extend PPoly_Triangle {
+	~PPoly_Triangle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
 	}
 };

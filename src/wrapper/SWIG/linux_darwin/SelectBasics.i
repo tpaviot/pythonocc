@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfOwner;
-class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
-	SelectBasics_SequenceNodeOfSequenceOfOwner* GetObject() {
-	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
-	}
-};
-%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
-	~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
-	}
-};
-
-
 %nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfAddress;
 class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
@@ -125,36 +95,6 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 };
 
 
-%nodefaultctor Handle_SelectBasics_SensitiveEntity;
-class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity(const Handle_SelectBasics_SensitiveEntity &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_SelectBasics_SensitiveEntity {
-	SelectBasics_SensitiveEntity* GetObject() {
-	return (SelectBasics_SensitiveEntity*)$self->Access();
-	}
-};
-%extend Handle_SelectBasics_SensitiveEntity {
-	~Handle_SelectBasics_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");}
-	}
-};
-
-
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfSensitive;
 class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_MapNode {
 	public:
@@ -181,6 +121,66 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 	~Handle_SelectBasics_ListNodeOfListOfSensitive() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");}
+	}
+};
+
+
+%nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfOwner;
+class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner();
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const Handle_SelectBasics_SequenceNodeOfSequenceOfOwner &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner & operator=(const SelectBasics_SequenceNodeOfSequenceOfOwner *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SequenceNodeOfSequenceOfOwner const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	SelectBasics_SequenceNodeOfSequenceOfOwner* GetObject() {
+	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
+	}
+};
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
+	}
+};
+
+
+%nodefaultctor Handle_SelectBasics_SensitiveEntity;
+class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity();
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity(const SelectBasics_SensitiveEntity *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & operator=(const Handle_SelectBasics_SensitiveEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & operator=(const SelectBasics_SensitiveEntity *anItem);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_SelectBasics_SensitiveEntity {
+	SelectBasics_SensitiveEntity* GetObject() {
+	return (SelectBasics_SensitiveEntity*)$self->Access();
+	}
+};
+%extend Handle_SelectBasics_SensitiveEntity {
+	~Handle_SelectBasics_SensitiveEntity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");}
 	}
 };
 
@@ -302,223 +302,59 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 };
 
 
-%nodefaultctor SelectBasics_SensitiveEntity;
-class SelectBasics_SensitiveEntity : public MMgt_TShared {
+%nodefaultctor SelectBasics_SequenceOfAddress;
+class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
-		%feature("autodoc", "1");
-		const Handle_SelectBasics_EntityOwner & OwnerId() const;
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NeedsConversion() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Is3D() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Depth() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer MaxBoxes() const;
-		%feature("autodoc", "1");
-		void SetSensitivityFactor(const Standard_ShortReal F);
-		%feature("autodoc", "1");
-		Standard_ShortReal SensitivityFactor() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectBasics_SensitiveEntity {
-	Handle_SelectBasics_SensitiveEntity GetHandle() {
-	return *(Handle_SelectBasics_SensitiveEntity*) &$self;
-	}
-};
-%extend SelectBasics_SensitiveEntity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend SelectBasics_SensitiveEntity {
-	~SelectBasics_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SensitiveEntity\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics_ListOfSensitive;
-class SelectBasics_ListOfSensitive {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_ListOfSensitive();
-		%feature("autodoc", "1");
-		void Assign(const SelectBasics_ListOfSensitive &Other);
-		%feature("autodoc", "1");
-		void operator=(const SelectBasics_ListOfSensitive &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		SelectBasics_SequenceOfAddress();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectBasics_SensitiveEntity &I);
+		const SelectBasics_SequenceOfAddress & operator=(const SelectBasics_SequenceOfAddress &Other);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		void Append(const Standard_Address &T);
 		%feature("autodoc", "1");
-		void Prepend(SelectBasics_ListOfSensitive & Other);
+		void Append(SelectBasics_SequenceOfAddress & S);
 		%feature("autodoc", "1");
-		void Append(const Handle_SelectBasics_SensitiveEntity &I);
+		void Prepend(const Standard_Address &T);
 		%feature("autodoc", "1");
-		void Append(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		void Prepend(SelectBasics_SequenceOfAddress & S);
 		%feature("autodoc", "1");
-		void Append(SelectBasics_ListOfSensitive & Other);
+		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & First() const;
+		void InsertBefore(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
 		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & Last() const;
+		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
 		%feature("autodoc", "1");
-		void RemoveFirst();
+		void InsertAfter(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
 		%feature("autodoc", "1");
-		void Remove(SelectBasics_ListIteratorOfListOfSensitive & It);
+		const Standard_Address & First() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		const Standard_Address & Last() const;
 		%feature("autodoc", "1");
-		void InsertBefore(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
+		void Split(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
 		%feature("autodoc", "1");
-		void InsertAfter(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		const Standard_Address & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void InsertAfter(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
+		const Standard_Address & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Address &I);
+		%feature("autodoc", "1");
+		Standard_Address & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Address & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend SelectBasics_ListOfSensitive {
-	~SelectBasics_ListOfSensitive() {
+%extend SelectBasics_SequenceOfAddress {
+	~SelectBasics_SequenceOfAddress() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfSensitive\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics_BasicTool;
-class SelectBasics_BasicTool {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_BasicTool();
-		%feature("autodoc", "1");
-		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
-		%feature("autodoc", "1");
-		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
-		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol)->[Standard_RealStandard_Integer]");
-		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
-
-};
-%extend SelectBasics_BasicTool {
-	~SelectBasics_BasicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_BasicTool\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics;
-class SelectBasics {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics();
-		%feature("autodoc", "1");
-		Standard_Integer MaxOwnerPriority();
-		%feature("autodoc", "1");
-		Standard_Integer MinOwnerPriority();
-
-};
-%extend SelectBasics {
-	~SelectBasics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
-class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_EntityOwner &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_SelectBasics_EntityOwner & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
-	Handle_SelectBasics_SequenceNodeOfSequenceOfOwner GetHandle() {
-	return *(Handle_SelectBasics_SequenceNodeOfSequenceOfOwner*) &$self;
-	}
-};
-%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
-	~SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
-class SelectBasics_ListIteratorOfListOfBox2d {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_ListIteratorOfListOfBox2d();
-		%feature("autodoc", "1");
-		SelectBasics_ListIteratorOfListOfBox2d(const SelectBasics_ListOfBox2d &L);
-		%feature("autodoc", "1");
-		void Initialize(const SelectBasics_ListOfBox2d &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Bnd_Box2d & Value() const;
-
-};
-%extend SelectBasics_ListIteratorOfListOfBox2d {
-	~SelectBasics_ListIteratorOfListOfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");}
-	}
-};
-
-
-%nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
-class SelectBasics_ListIteratorOfListOfSensitive {
-	public:
-		%feature("autodoc", "1");
-		SelectBasics_ListIteratorOfListOfSensitive();
-		%feature("autodoc", "1");
-		SelectBasics_ListIteratorOfListOfSensitive(const SelectBasics_ListOfSensitive &L);
-		%feature("autodoc", "1");
-		void Initialize(const SelectBasics_ListOfSensitive &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_SelectBasics_SensitiveEntity & Value() const;
-
-};
-%extend SelectBasics_ListIteratorOfListOfSensitive {
-	~SelectBasics_ListIteratorOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");}
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");}
 	}
 };
 
@@ -576,39 +412,116 @@ class SelectBasics_ListOfBox2d {
 };
 
 
-%nodefaultctor SelectBasics_EntityOwner;
-class SelectBasics_EntityOwner : public MMgt_TShared {
+%nodefaultctor SelectBasics_BasicTool;
+class SelectBasics_BasicTool {
 	public:
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer aPriority);
+		SelectBasics_BasicTool();
 		%feature("autodoc", "1");
-		Standard_Integer Priority() const;
+		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasLocation() const;
+		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
+		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol)->[Standard_RealStandard_Integer]");
+		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
+
+};
+%extend SelectBasics_BasicTool {
+	~SelectBasics_BasicTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_BasicTool\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics_SensitiveEntity;
+class SelectBasics_SensitiveEntity : public MMgt_TShared {
+	public:
 		%feature("autodoc", "1");
-		virtual		void SetLocation(const TopLoc_Location &aLoc);
+		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
 		%feature("autodoc", "1");
-		virtual		void ResetLocation();
+		const Handle_SelectBasics_EntityOwner & OwnerId() const;
 		%feature("autodoc", "1");
-		virtual		const TopLoc_Location & Location() const;
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NeedsConversion() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Is3D() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Depth() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer MaxBoxes() const;
+		%feature("autodoc", "1");
+		void SetSensitivityFactor(const Standard_ShortReal F);
+		%feature("autodoc", "1");
+		Standard_ShortReal SensitivityFactor() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend SelectBasics_EntityOwner {
-	Handle_SelectBasics_EntityOwner GetHandle() {
-	return *(Handle_SelectBasics_EntityOwner*) &$self;
+%extend SelectBasics_SensitiveEntity {
+	Handle_SelectBasics_SensitiveEntity GetHandle() {
+	return *(Handle_SelectBasics_SensitiveEntity*) &$self;
 	}
 };
-%extend SelectBasics_EntityOwner {
+%extend SelectBasics_SensitiveEntity {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend SelectBasics_EntityOwner {
-	~SelectBasics_EntityOwner() {
+%extend SelectBasics_SensitiveEntity {
+	~SelectBasics_SensitiveEntity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_EntityOwner\n");}
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_SensitiveEntity\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics;
+class SelectBasics {
+	public:
+		%feature("autodoc", "1");
+		SelectBasics();
+		%feature("autodoc", "1");
+		Standard_Integer MaxOwnerPriority();
+		%feature("autodoc", "1");
+		Standard_Integer MinOwnerPriority();
+
+};
+%extend SelectBasics {
+	~SelectBasics() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
+class SelectBasics_ListIteratorOfListOfBox2d {
+	public:
+		%feature("autodoc", "1");
+		SelectBasics_ListIteratorOfListOfBox2d();
+		%feature("autodoc", "1");
+		SelectBasics_ListIteratorOfListOfBox2d(const SelectBasics_ListOfBox2d &L);
+		%feature("autodoc", "1");
+		void Initialize(const SelectBasics_ListOfBox2d &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Bnd_Box2d & Value() const;
+
+};
+%extend SelectBasics_ListIteratorOfListOfBox2d {
+	~SelectBasics_ListIteratorOfListOfBox2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");}
 	}
 };
 
@@ -670,59 +583,93 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor SelectBasics_SequenceOfAddress;
-class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
+%nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
+class SelectBasics_ListIteratorOfListOfSensitive {
 	public:
 		%feature("autodoc", "1");
-		SelectBasics_SequenceOfAddress();
+		SelectBasics_ListIteratorOfListOfSensitive();
 		%feature("autodoc", "1");
-		void Clear();
+		SelectBasics_ListIteratorOfListOfSensitive(const SelectBasics_ListOfSensitive &L);
 		%feature("autodoc", "1");
-		const SelectBasics_SequenceOfAddress & Assign(const SelectBasics_SequenceOfAddress &Other);
+		void Initialize(const SelectBasics_ListOfSensitive &L);
 		%feature("autodoc", "1");
-		const SelectBasics_SequenceOfAddress & operator=(const SelectBasics_SequenceOfAddress &Other);
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void Append(const Standard_Address &T);
+		void Next();
 		%feature("autodoc", "1");
-		void Append(SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Prepend(SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & First() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, SelectBasics_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Address & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Handle_SelectBasics_SensitiveEntity & Value() const;
 
 };
-%extend SelectBasics_SequenceOfAddress {
-	~SelectBasics_SequenceOfAddress() {
+%extend SelectBasics_ListIteratorOfListOfSensitive {
+	~SelectBasics_ListIteratorOfListOfSensitive() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");}
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics_EntityOwner;
+class SelectBasics_EntityOwner : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer aPriority);
+		%feature("autodoc", "1");
+		Standard_Integer Priority() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasLocation() const;
+		%feature("autodoc", "1");
+		virtual		void SetLocation(const TopLoc_Location &aLoc);
+		%feature("autodoc", "1");
+		virtual		void ResetLocation();
+		%feature("autodoc", "1");
+		virtual		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectBasics_EntityOwner {
+	Handle_SelectBasics_EntityOwner GetHandle() {
+	return *(Handle_SelectBasics_EntityOwner*) &$self;
+	}
+};
+%extend SelectBasics_EntityOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend SelectBasics_EntityOwner {
+	~SelectBasics_EntityOwner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_EntityOwner\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
+class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		SelectBasics_SequenceNodeOfSequenceOfOwner(const Handle_SelectBasics_EntityOwner &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_EntityOwner & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
+	Handle_SelectBasics_SequenceNodeOfSequenceOfOwner GetHandle() {
+	return *(Handle_SelectBasics_SequenceNodeOfSequenceOfOwner*) &$self;
+	}
+};
+%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
+	~SelectBasics_SequenceNodeOfSequenceOfOwner() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
 
@@ -752,5 +699,58 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	~SelectBasics_ListNodeOfListOfSensitive() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListNodeOfListOfSensitive\n");}
+	}
+};
+
+
+%nodefaultctor SelectBasics_ListOfSensitive;
+class SelectBasics_ListOfSensitive {
+	public:
+		%feature("autodoc", "1");
+		SelectBasics_ListOfSensitive();
+		%feature("autodoc", "1");
+		void Assign(const SelectBasics_ListOfSensitive &Other);
+		%feature("autodoc", "1");
+		void operator=(const SelectBasics_ListOfSensitive &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_SelectBasics_SensitiveEntity &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		%feature("autodoc", "1");
+		void Prepend(SelectBasics_ListOfSensitive & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_SelectBasics_SensitiveEntity &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & theIt);
+		%feature("autodoc", "1");
+		void Append(SelectBasics_ListOfSensitive & Other);
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & First() const;
+		%feature("autodoc", "1");
+		Handle_SelectBasics_SensitiveEntity & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(SelectBasics_ListIteratorOfListOfSensitive & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		%feature("autodoc", "1");
+		void InsertBefore(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_SelectBasics_SensitiveEntity &I, SelectBasics_ListIteratorOfListOfSensitive & It);
+		%feature("autodoc", "1");
+		void InsertAfter(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
+
+};
+%extend SelectBasics_ListOfSensitive {
+	~SelectBasics_ListOfSensitive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfSensitive\n");}
 	}
 };

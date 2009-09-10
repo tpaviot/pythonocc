@@ -71,36 +71,6 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_XCAFDoc_GraphNode;
-class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode(const Handle_XCAFDoc_GraphNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode(const XCAFDoc_GraphNode *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & operator=(const Handle_XCAFDoc_GraphNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & operator=(const XCAFDoc_GraphNode *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_GraphNode {
-	XCAFDoc_GraphNode* GetObject() {
-	return (XCAFDoc_GraphNode*)$self->Access();
-	}
-};
-%extend Handle_XCAFDoc_GraphNode {
-	~Handle_XCAFDoc_GraphNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
 class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 	public:
@@ -247,36 +217,6 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 	~Handle_XCAFDoc_Centroid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Centroid\n");}
-	}
-};
-
-
-%nodefaultctor Handle_XCAFDoc_MaterialTool;
-class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool(const Handle_XCAFDoc_MaterialTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool(const XCAFDoc_MaterialTool *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool & operator=(const Handle_XCAFDoc_MaterialTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool & operator=(const XCAFDoc_MaterialTool *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_MaterialTool {
-	XCAFDoc_MaterialTool* GetObject() {
-	return (XCAFDoc_MaterialTool*)$self->Access();
-	}
-};
-%extend Handle_XCAFDoc_MaterialTool {
-	~Handle_XCAFDoc_MaterialTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_MaterialTool\n");}
 	}
 };
 
@@ -461,6 +401,66 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 };
 
 
+%nodefaultctor Handle_XCAFDoc_MaterialTool;
+class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool(const Handle_XCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool(const XCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool & operator=(const Handle_XCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool & operator=(const XCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_MaterialTool {
+	XCAFDoc_MaterialTool* GetObject() {
+	return (XCAFDoc_MaterialTool*)$self->Access();
+	}
+};
+%extend Handle_XCAFDoc_MaterialTool {
+	~Handle_XCAFDoc_MaterialTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_MaterialTool\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XCAFDoc_GraphNode;
+class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode(const Handle_XCAFDoc_GraphNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode(const XCAFDoc_GraphNode *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & operator=(const Handle_XCAFDoc_GraphNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & operator=(const XCAFDoc_GraphNode *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_GraphNode {
+	XCAFDoc_GraphNode* GetObject() {
+	return (XCAFDoc_GraphNode*)$self->Access();
+	}
+};
+%extend Handle_XCAFDoc_GraphNode {
+	~Handle_XCAFDoc_GraphNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
+	}
+};
+
+
 %nodefaultctor Handle_XCAFDoc_Location;
 class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 	public:
@@ -491,36 +491,6 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 };
 
 
-%nodefaultctor Handle_XCAFDoc_ShapeTool;
-class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool(const Handle_XCAFDoc_ShapeTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool(const XCAFDoc_ShapeTool *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool & operator=(const Handle_XCAFDoc_ShapeTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool & operator=(const XCAFDoc_ShapeTool *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_ShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_ShapeTool {
-	XCAFDoc_ShapeTool* GetObject() {
-	return (XCAFDoc_ShapeTool*)$self->Access();
-	}
-};
-%extend Handle_XCAFDoc_ShapeTool {
-	~Handle_XCAFDoc_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeTool\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XCAFDoc_Datum;
 class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 	public:
@@ -547,6 +517,36 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 	~Handle_XCAFDoc_Datum() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Datum\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XCAFDoc_ShapeTool;
+class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool(const Handle_XCAFDoc_ShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool(const XCAFDoc_ShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool & operator=(const Handle_XCAFDoc_ShapeTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool & operator=(const XCAFDoc_ShapeTool *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_ShapeTool const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_ShapeTool {
+	XCAFDoc_ShapeTool* GetObject() {
+	return (XCAFDoc_ShapeTool*)$self->Access();
+	}
+};
+%extend Handle_XCAFDoc_ShapeTool {
+	~Handle_XCAFDoc_ShapeTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeTool\n");}
 	}
 };
 
@@ -822,66 +822,13 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_Area;
-class XCAFDoc_Area : public TDF_Attribute {
+%nodefaultctor XCAFDoc_DimTolTool;
+class XCAFDoc_DimTolTool : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_Area();
+		XCAFDoc_DimTolTool();
 		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real vol);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area Set(const TDF_Label &label, const Standard_Real area);
-		%feature("autodoc", "1");
-		Standard_Real Get() const;
-		%feature("autodoc","Get(const label)->Standard_Real");
-		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_Area {
-	Handle_XCAFDoc_Area GetHandle() {
-	return *(Handle_XCAFDoc_Area*) &$self;
-	}
-};
-%extend XCAFDoc_Area {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XCAFDoc_Area {
-	~XCAFDoc_Area() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Area\n");}
-	}
-};
-
-
-%nodefaultctor XCAFDoc_LayerTool;
-class XCAFDoc_LayerTool : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_LayerTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_LayerTool Set(const TDF_Label &L);
+		Handle_XCAFDoc_DimTolTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
@@ -889,53 +836,39 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		const Handle_XCAFDoc_ShapeTool & ShapeTool();
 		%feature("autodoc", "1");
-		Standard_Boolean IsLayer(const TDF_Label &lab) const;
+		Standard_Boolean IsDimTol(const TDF_Label &lab) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetLayer(const TDF_Label &lab, TCollection_ExtendedString & aLayer) const;
+		void GetDimTolLabels(TDF_LabelSequence & Labels) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FindLayer(const TCollection_ExtendedString &aLayer, TDF_Label & lab) const;
+		Standard_Boolean FindDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, TDF_Label & lab) const;
 		%feature("autodoc", "1");
-		TDF_Label FindLayer(const TCollection_ExtendedString &aLayer) const;
+		TDF_Label FindDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
 		%feature("autodoc", "1");
-		TDF_Label AddLayer(const TCollection_ExtendedString &aLayer) const;
+		TDF_Label AddDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
 		%feature("autodoc", "1");
-		void RemoveLayer(const TDF_Label &lab) const;
+		void SetDimTol(const TDF_Label &L, const TDF_Label &DimTolL) const;
 		%feature("autodoc", "1");
-		void GetLayerLabels(TDF_LabelSequence & Labels) const;
+		TDF_Label SetDimTol(const TDF_Label &L, const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
 		%feature("autodoc", "1");
-		void SetLayer(const TDF_Label &L, const TDF_Label &LayerL, const Standard_Boolean shapeInOneLayer=0) const;
+		Standard_Boolean GetRefShapeLabel(const TDF_Label &DimTolL, TDF_Label & ShapeL) const;
 		%feature("autodoc", "1");
-		void SetLayer(const TDF_Label &L, const TCollection_ExtendedString &aLayer, const Standard_Boolean shapeInOneLayer=0) const;
+		Standard_Boolean GetRefDGTLabels(const TDF_Label &ShapeL, TDF_LabelSequence & DimTols) const;
+		%feature("autodoc","GetDimTol(const DimTolL)->Standard_Integer");
+		Standard_Boolean GetDimTol(const TDF_Label &DimTolL, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & aVal, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription) const;
 		%feature("autodoc", "1");
-		void UnSetLayers(const TDF_Label &L) const;
+		Standard_Boolean IsDatum(const TDF_Label &lab) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnSetOneLayer(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
+		void GetDatumLabels(TDF_LabelSequence & Labels) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSet(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
+		Standard_Boolean FindDatum(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification, TDF_Label & lab) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetLayers(const TDF_Label &L, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
+		TDF_Label AddDatum(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification) const;
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TDF_Label &L);
+		void SetDatum(const TDF_Label &L, const TDF_Label &DatumL) const;
 		%feature("autodoc", "1");
-		void GetShapesOfLayer(const TDF_Label &layerL, TDF_LabelSequence & ShLabels) const;
+		void SetDatum(const TDF_Label &L, const TDF_Label &TolerL, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsVisible(const TDF_Label &layerL) const;
-		%feature("autodoc", "1");
-		void SetVisibility(const TDF_Label &layerL, const Standard_Boolean isvisible=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetLayer(const TopoDS_Shape &Sh, const TDF_Label &LayerL, const Standard_Boolean shapeInOneLayer=0);
-		%feature("autodoc", "1");
-		Standard_Boolean SetLayer(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer, const Standard_Boolean shapeInOneLayer=0);
-		%feature("autodoc", "1");
-		Standard_Boolean UnSetLayers(const TopoDS_Shape &Sh);
-		%feature("autodoc", "1");
-		Standard_Boolean UnSetOneLayer(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSet(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer);
-		%feature("autodoc", "1");
-		Standard_Boolean GetLayers(const TopoDS_Shape &Sh, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TopoDS_Shape &Sh);
+		Standard_Boolean GetDatumTolerLabels(const TDF_Label &DimTolL, TDF_LabelSequence & Datums) const;
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -948,49 +881,20 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFDoc_LayerTool {
-	Handle_XCAFDoc_LayerTool GetHandle() {
-	return *(Handle_XCAFDoc_LayerTool*) &$self;
+%extend XCAFDoc_DimTolTool {
+	Handle_XCAFDoc_DimTolTool GetHandle() {
+	return *(Handle_XCAFDoc_DimTolTool*) &$self;
 	}
 };
-%extend XCAFDoc_LayerTool {
+%extend XCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_LayerTool {
-	~XCAFDoc_LayerTool() {
+%extend XCAFDoc_DimTolTool {
+	~XCAFDoc_DimTolTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_LayerTool\n");}
-	}
-};
-
-
-%nodefaultctor XCAFDoc_SequenceNodeOfGraphNodeSequence;
-class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_SequenceNodeOfGraphNodeSequence(const Handle_XCAFDoc_GraphNode &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence GetHandle() {
-	return *(Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence*) &$self;
-	}
-};
-%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	~XCAFDoc_SequenceNodeOfGraphNodeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DimTolTool\n");}
 	}
 };
 
@@ -1148,59 +1052,25 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_GraphNodeSequence;
-class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
+%nodefaultctor XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
+class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_GraphNodeSequence();
+		XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel();
 		%feature("autodoc", "1");
-		void Clear();
+		XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel(const XCAFDoc_DataMapOfShapeLabel &aMap);
 		%feature("autodoc", "1");
-		const XCAFDoc_GraphNodeSequence & Assign(const XCAFDoc_GraphNodeSequence &Other);
+		void Initialize(const XCAFDoc_DataMapOfShapeLabel &aMap);
 		%feature("autodoc", "1");
-		const XCAFDoc_GraphNodeSequence & operator=(const XCAFDoc_GraphNodeSequence &Other);
+		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void Append(XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void Prepend(XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & First() const;
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		const TDF_Label & Value() const;
 
 };
-%extend XCAFDoc_GraphNodeSequence {
-	~XCAFDoc_GraphNodeSequence() {
+%extend XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel {
+	~XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel\n");}
 	}
 };
 
@@ -1252,25 +1122,93 @@ class XCAFDoc_Datum : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
-class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMapIterator {
+%nodefaultctor XCAFDoc_LayerTool;
+class XCAFDoc_LayerTool : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel();
+		XCAFDoc_LayerTool();
 		%feature("autodoc", "1");
-		XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel(const XCAFDoc_DataMapOfShapeLabel &aMap);
+		Handle_XCAFDoc_LayerTool Set(const TDF_Label &L);
 		%feature("autodoc", "1");
-		void Initialize(const XCAFDoc_DataMapOfShapeLabel &aMap);
+		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		TDF_Label BaseLabel() const;
 		%feature("autodoc", "1");
-		const TDF_Label & Value() const;
+		const Handle_XCAFDoc_ShapeTool & ShapeTool();
+		%feature("autodoc", "1");
+		Standard_Boolean IsLayer(const TDF_Label &lab) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetLayer(const TDF_Label &lab, TCollection_ExtendedString & aLayer) const;
+		%feature("autodoc", "1");
+		Standard_Boolean FindLayer(const TCollection_ExtendedString &aLayer, TDF_Label & lab) const;
+		%feature("autodoc", "1");
+		TDF_Label FindLayer(const TCollection_ExtendedString &aLayer) const;
+		%feature("autodoc", "1");
+		TDF_Label AddLayer(const TCollection_ExtendedString &aLayer) const;
+		%feature("autodoc", "1");
+		void RemoveLayer(const TDF_Label &lab) const;
+		%feature("autodoc", "1");
+		void GetLayerLabels(TDF_LabelSequence & Labels) const;
+		%feature("autodoc", "1");
+		void SetLayer(const TDF_Label &L, const TDF_Label &LayerL, const Standard_Boolean shapeInOneLayer=0) const;
+		%feature("autodoc", "1");
+		void SetLayer(const TDF_Label &L, const TCollection_ExtendedString &aLayer, const Standard_Boolean shapeInOneLayer=0) const;
+		%feature("autodoc", "1");
+		void UnSetLayers(const TDF_Label &L) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnSetOneLayer(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSet(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetLayers(const TDF_Label &L, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void GetShapesOfLayer(const TDF_Label &layerL, TDF_LabelSequence & ShLabels) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVisible(const TDF_Label &layerL) const;
+		%feature("autodoc", "1");
+		void SetVisibility(const TDF_Label &layerL, const Standard_Boolean isvisible=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetLayer(const TopoDS_Shape &Sh, const TDF_Label &LayerL, const Standard_Boolean shapeInOneLayer=0);
+		%feature("autodoc", "1");
+		Standard_Boolean SetLayer(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer, const Standard_Boolean shapeInOneLayer=0);
+		%feature("autodoc", "1");
+		Standard_Boolean UnSetLayers(const TopoDS_Shape &Sh);
+		%feature("autodoc", "1");
+		Standard_Boolean UnSetOneLayer(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSet(const TopoDS_Shape &Sh, const TCollection_ExtendedString &aLayer);
+		%feature("autodoc", "1");
+		Standard_Boolean GetLayers(const TopoDS_Shape &Sh, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TopoDS_Shape &Sh);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel {
-	~XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel() {
+%extend XCAFDoc_LayerTool {
+	Handle_XCAFDoc_LayerTool GetHandle() {
+	return *(Handle_XCAFDoc_LayerTool*) &$self;
+	}
+};
+%extend XCAFDoc_LayerTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XCAFDoc_LayerTool {
+	~XCAFDoc_LayerTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_LayerTool\n");}
 	}
 };
 
@@ -1360,23 +1298,23 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_Centroid;
-class XCAFDoc_Centroid : public TDF_Attribute {
+%nodefaultctor XCAFDoc_Area;
+class XCAFDoc_Area : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_Centroid();
+		XCAFDoc_Area();
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		Handle_XCAFDoc_Centroid Set(const TDF_Label &label, const gp_Pnt &pnt);
-		%feature("autodoc", "1");
-		void Set(const gp_Pnt &pnt);
-		%feature("autodoc", "1");
-		gp_Pnt Get() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Get(const TDF_Label &label, gp_Pnt & pnt);
-		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real vol);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area Set(const TDF_Label &label, const Standard_Real area);
+		%feature("autodoc", "1");
+		Standard_Real Get() const;
+		%feature("autodoc","Get(const label)->Standard_Real");
+		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);
 		%feature("autodoc", "1");
@@ -1395,20 +1333,20 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFDoc_Centroid {
-	Handle_XCAFDoc_Centroid GetHandle() {
-	return *(Handle_XCAFDoc_Centroid*) &$self;
+%extend XCAFDoc_Area {
+	Handle_XCAFDoc_Area GetHandle() {
+	return *(Handle_XCAFDoc_Area*) &$self;
 	}
 };
-%extend XCAFDoc_Centroid {
+%extend XCAFDoc_Area {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Centroid {
-	~XCAFDoc_Centroid() {
+%extend XCAFDoc_Area {
+	~XCAFDoc_Area() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Centroid\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Area\n");}
 	}
 };
 
@@ -1511,63 +1449,6 @@ class XCAFDoc_Location : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_MaterialTool;
-class XCAFDoc_MaterialTool : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		XCAFDoc_MaterialTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_MaterialTool Set(const TDF_Label &L);
-		%feature("autodoc", "1");
-		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		TDF_Label BaseLabel() const;
-		%feature("autodoc", "1");
-		const Handle_XCAFDoc_ShapeTool & ShapeTool();
-		%feature("autodoc", "1");
-		Standard_Boolean IsMaterial(const TDF_Label &lab) const;
-		%feature("autodoc", "1");
-		void GetMaterialLabels(TDF_LabelSequence & Labels) const;
-		%feature("autodoc", "1");
-		TDF_Label AddMaterial(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType) const;
-		%feature("autodoc", "1");
-		void SetMaterial(const TDF_Label &L, const TDF_Label &MatL) const;
-		%feature("autodoc", "1");
-		void SetMaterial(const TDF_Label &L, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType) const;
-		%feature("autodoc","GetMaterial(const MatL)->Standard_Real");
-		Standard_Boolean GetMaterial(const TDF_Label &MatL, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription, Standard_Real &OutValue, Handle_TCollection_HAsciiString & aDensName, Handle_TCollection_HAsciiString & aDensValType) const;
-		%feature("autodoc", "1");
-		Standard_Real GetDensityForShape(const TDF_Label &ShapeL);
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDoc_MaterialTool {
-	Handle_XCAFDoc_MaterialTool GetHandle() {
-	return *(Handle_XCAFDoc_MaterialTool*) &$self;
-	}
-};
-%extend XCAFDoc_MaterialTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XCAFDoc_MaterialTool {
-	~XCAFDoc_MaterialTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_MaterialTool\n");}
-	}
-};
-
-
 %nodefaultctor XCAFDoc_Material;
 class XCAFDoc_Material : public TDF_Attribute {
 	public:
@@ -1615,6 +1496,63 @@ class XCAFDoc_Material : public TDF_Attribute {
 	~XCAFDoc_Material() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Material\n");}
+	}
+};
+
+
+%nodefaultctor XCAFDoc_GraphNodeSequence;
+class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_GraphNodeSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const XCAFDoc_GraphNodeSequence & Assign(const XCAFDoc_GraphNodeSequence &Other);
+		%feature("autodoc", "1");
+		const XCAFDoc_GraphNodeSequence & operator=(const XCAFDoc_GraphNodeSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void Append(XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void Prepend(XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & First() const;
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, XCAFDoc_GraphNodeSequence & S);
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_XCAFDoc_GraphNode &I);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend XCAFDoc_GraphNodeSequence {
+	~XCAFDoc_GraphNodeSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
 	}
 };
 
@@ -1695,79 +1633,55 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 };
 
 
-%nodefaultctor XCAFDoc_DimTolTool;
-class XCAFDoc_DimTolTool : public TDF_Attribute {
+%nodefaultctor XCAFDoc_Centroid;
+class XCAFDoc_Centroid : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		XCAFDoc_DimTolTool();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_DimTolTool Set(const TDF_Label &L);
+		XCAFDoc_Centroid();
 		%feature("autodoc", "1");
 		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TDF_Label BaseLabel() const;
+		Handle_XCAFDoc_Centroid Set(const TDF_Label &label, const gp_Pnt &pnt);
 		%feature("autodoc", "1");
-		const Handle_XCAFDoc_ShapeTool & ShapeTool();
+		void Set(const gp_Pnt &pnt);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDimTol(const TDF_Label &lab) const;
+		gp_Pnt Get() const;
 		%feature("autodoc", "1");
-		void GetDimTolLabels(TDF_LabelSequence & Labels) const;
-		%feature("autodoc", "1");
-		Standard_Boolean FindDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, TDF_Label & lab) const;
-		%feature("autodoc", "1");
-		TDF_Label FindDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
-		%feature("autodoc", "1");
-		TDF_Label AddDimTol(const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
-		%feature("autodoc", "1");
-		void SetDimTol(const TDF_Label &L, const TDF_Label &DimTolL) const;
-		%feature("autodoc", "1");
-		TDF_Label SetDimTol(const TDF_Label &L, const Standard_Integer kind, const Handle_TColStd_HArray1OfReal &aVal, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetRefShapeLabel(const TDF_Label &DimTolL, TDF_Label & ShapeL) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetRefDGTLabels(const TDF_Label &ShapeL, TDF_LabelSequence & DimTols) const;
-		%feature("autodoc","GetDimTol(const DimTolL)->Standard_Integer");
-		Standard_Boolean GetDimTol(const TDF_Label &DimTolL, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & aVal, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDatum(const TDF_Label &lab) const;
-		%feature("autodoc", "1");
-		void GetDatumLabels(TDF_LabelSequence & Labels) const;
-		%feature("autodoc", "1");
-		Standard_Boolean FindDatum(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification, TDF_Label & lab) const;
-		%feature("autodoc", "1");
-		TDF_Label AddDatum(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification) const;
-		%feature("autodoc", "1");
-		void SetDatum(const TDF_Label &L, const TDF_Label &DatumL) const;
-		%feature("autodoc", "1");
-		void SetDatum(const TDF_Label &L, const TDF_Label &TolerL, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &anIdentification) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDatumTolerLabels(const TDF_Label &DimTolL, TDF_LabelSequence & Datums) const;
+		Standard_Boolean Get(const TDF_Label &label, gp_Pnt & pnt);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
+		virtual		void Restore(const Handle_TDF_Attribute &With);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFDoc_DimTolTool {
-	Handle_XCAFDoc_DimTolTool GetHandle() {
-	return *(Handle_XCAFDoc_DimTolTool*) &$self;
+%extend XCAFDoc_Centroid {
+	Handle_XCAFDoc_Centroid GetHandle() {
+	return *(Handle_XCAFDoc_Centroid*) &$self;
 	}
 };
-%extend XCAFDoc_DimTolTool {
+%extend XCAFDoc_Centroid {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_DimTolTool {
-	~XCAFDoc_DimTolTool() {
+%extend XCAFDoc_Centroid {
+	~XCAFDoc_Centroid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DimTolTool\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Centroid\n");}
 	}
 };
 
@@ -1861,5 +1775,91 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 	~XCAFDoc_ColorTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_ColorTool\n");}
+	}
+};
+
+
+%nodefaultctor XCAFDoc_SequenceNodeOfGraphNodeSequence;
+class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_SequenceNodeOfGraphNodeSequence(const Handle_XCAFDoc_GraphNode &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_GraphNode & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
+	Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence GetHandle() {
+	return *(Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence*) &$self;
+	}
+};
+%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
+	~XCAFDoc_SequenceNodeOfGraphNodeSequence() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
+	}
+};
+
+
+%nodefaultctor XCAFDoc_MaterialTool;
+class XCAFDoc_MaterialTool : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		XCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_MaterialTool Set(const TDF_Label &L);
+		%feature("autodoc", "1");
+		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		TDF_Label BaseLabel() const;
+		%feature("autodoc", "1");
+		const Handle_XCAFDoc_ShapeTool & ShapeTool();
+		%feature("autodoc", "1");
+		Standard_Boolean IsMaterial(const TDF_Label &lab) const;
+		%feature("autodoc", "1");
+		void GetMaterialLabels(TDF_LabelSequence & Labels) const;
+		%feature("autodoc", "1");
+		TDF_Label AddMaterial(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType) const;
+		%feature("autodoc", "1");
+		void SetMaterial(const TDF_Label &L, const TDF_Label &MatL) const;
+		%feature("autodoc", "1");
+		void SetMaterial(const TDF_Label &L, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType) const;
+		%feature("autodoc","GetMaterial(const MatL)->Standard_Real");
+		Standard_Boolean GetMaterial(const TDF_Label &MatL, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription, Standard_Real &OutValue, Handle_TCollection_HAsciiString & aDensName, Handle_TCollection_HAsciiString & aDensValType) const;
+		%feature("autodoc", "1");
+		Standard_Real GetDensityForShape(const TDF_Label &ShapeL);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDoc_MaterialTool {
+	Handle_XCAFDoc_MaterialTool GetHandle() {
+	return *(Handle_XCAFDoc_MaterialTool*) &$self;
+	}
+};
+%extend XCAFDoc_MaterialTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XCAFDoc_MaterialTool {
+	~XCAFDoc_MaterialTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFDoc_MaterialTool\n");}
 	}
 };

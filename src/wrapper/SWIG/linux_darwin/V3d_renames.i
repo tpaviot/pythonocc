@@ -11,7 +11,7 @@
 %rename(Handle_V3d_Camera) Handle_V3d_Camera;
 %rename(V3d_POSITIONLIGHT) V3d_POSITIONLIGHT;
 %rename(Handle_V3d_OrthographicView) Handle_V3d_OrthographicView;
-%rename(V3d_YnegZneg) V3d_YnegZneg;
+%rename(V3d_YposZpos) V3d_YposZpos;
 %rename(V3d_Light) V3d_Light;
 %rename(V3d_BACK) V3d_BACK;
 %rename(V3d_XposZpos) V3d_XposZpos;
@@ -70,7 +70,7 @@
 %rename(Handle_V3d_PerspectiveView) Handle_V3d_PerspectiveView;
 %rename(V3d_TPM_SCREEN) V3d_TPM_SCREEN;
 %rename(V3d_YnegZpos) V3d_YnegZpos;
-%rename(V3d_YposZpos) V3d_YposZpos;
+%rename(V3d_YnegZneg) V3d_YnegZneg;
 %rename(V3d_XnegYnegZpos) V3d_XnegYnegZpos;
 %rename(V3d_XnegZneg) V3d_XnegZneg;
 %rename(V3d_MULTICOLOR) V3d_MULTICOLOR;
@@ -83,9 +83,9 @@
 %rename(V3d_XposYnegZpos) V3d_XposYnegZpos;
 %rename(V3d_Ypos) V3d_Ypos;
 %rename(V3d_SLICE) V3d_SLICE;
-%rename(V3d_PERSPECTIVE) V3d_PERSPECTIVE;
-%rename(V3d_DirectionalLight) V3d_DirectionalLight;
 %rename(V3d_COMPLETE) V3d_COMPLETE;
+%rename(V3d_DirectionalLight) V3d_DirectionalLight;
+%rename(V3d_PERSPECTIVE) V3d_PERSPECTIVE;
 %rename(Handle_V3d_Viewer) Handle_V3d_Viewer;
 %rename(V3d_NOTHING) V3d_NOTHING;
 %rename(V3d_ColorScale) V3d_ColorScale;

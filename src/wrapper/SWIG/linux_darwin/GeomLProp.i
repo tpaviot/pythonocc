@@ -35,31 +35,43 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor GeomLProp_CurveTool;
-class GeomLProp_CurveTool {
+%nodefaultctor GeomLProp_CLProps;
+class GeomLProp_CLProps {
 	public:
 		%feature("autodoc", "1");
-		GeomLProp_CurveTool();
+		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
-		void Value(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P);
+		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
-		void D1(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
 		%feature("autodoc", "1");
-		void D2(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		void SetParameter(const Standard_Real U);
 		%feature("autodoc", "1");
-		void D3(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		void SetCurve(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
-		Standard_Integer Continuity(const Handle_Geom_Curve &C);
+		const gp_Pnt & Value() const;
 		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_Geom_Curve &C);
+		const gp_Vec & D1();
 		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_Geom_Curve &C);
+		const gp_Vec & D2();
+		%feature("autodoc", "1");
+		const gp_Vec & D3();
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangentDefined();
+		%feature("autodoc", "1");
+		void Tangent(gp_Dir & D);
+		%feature("autodoc", "1");
+		Standard_Real Curvature();
+		%feature("autodoc", "1");
+		void Normal(gp_Dir & N);
+		%feature("autodoc", "1");
+		void CentreOfCurvature(gp_Pnt & P);
 
 };
-%extend GeomLProp_CurveTool {
-	~GeomLProp_CurveTool() {
+%extend GeomLProp_CLProps {
+	~GeomLProp_CLProps() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
 	}
 };
 
@@ -125,47 +137,6 @@ class GeomLProp_SLProps {
 };
 
 
-%nodefaultctor GeomLProp_CLProps;
-class GeomLProp_CLProps {
-	public:
-		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real U);
-		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
-		%feature("autodoc", "1");
-		const gp_Vec & D1();
-		%feature("autodoc", "1");
-		const gp_Vec & D2();
-		%feature("autodoc", "1");
-		const gp_Vec & D3();
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangentDefined();
-		%feature("autodoc", "1");
-		void Tangent(gp_Dir & D);
-		%feature("autodoc", "1");
-		Standard_Real Curvature();
-		%feature("autodoc", "1");
-		void Normal(gp_Dir & N);
-		%feature("autodoc", "1");
-		void CentreOfCurvature(gp_Pnt & P);
-
-};
-%extend GeomLProp_CLProps {
-	~GeomLProp_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
-	}
-};
-
-
 %nodefaultctor GeomLProp;
 class GeomLProp {
 	public:
@@ -208,5 +179,34 @@ class GeomLProp_SurfaceTool {
 	~GeomLProp_SurfaceTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
+	}
+};
+
+
+%nodefaultctor GeomLProp_CurveTool;
+class GeomLProp_CurveTool {
+	public:
+		%feature("autodoc", "1");
+		GeomLProp_CurveTool();
+		%feature("autodoc", "1");
+		void Value(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P);
+		%feature("autodoc", "1");
+		void D1(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		%feature("autodoc", "1");
+		void D2(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		%feature("autodoc", "1");
+		void D3(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		Standard_Integer Continuity(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Handle_Geom_Curve &C);
+
+};
+%extend GeomLProp_CurveTool {
+	~GeomLProp_CurveTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
 	}
 };

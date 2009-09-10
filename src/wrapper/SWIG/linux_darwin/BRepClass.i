@@ -60,6 +60,25 @@ class BRepClass_Edge {
 };
 
 
+%nodefaultctor BRepClass_Intersector;
+class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
+	public:
+		%feature("autodoc", "1");
+		BRepClass_Intersector();
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
+		%feature("autodoc","LocalGeometry(const E, Standard_Real U)->Standard_Real");
+		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
+
+};
+%extend BRepClass_Intersector {
+	~BRepClass_Intersector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
+	}
+};
+
+
 %nodefaultctor BRepClass_FClassifier;
 class BRepClass_FClassifier {
 	public:
@@ -87,25 +106,6 @@ class BRepClass_FClassifier {
 	~BRepClass_FClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FClassifier\n");}
-	}
-};
-
-
-%nodefaultctor BRepClass_Intersector;
-class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
-	public:
-		%feature("autodoc", "1");
-		BRepClass_Intersector();
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
-		%feature("autodoc","LocalGeometry(const E, Standard_Real U)->Standard_Real");
-		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
-
-};
-%extend BRepClass_Intersector {
-	~BRepClass_Intersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
 	}
 };
 

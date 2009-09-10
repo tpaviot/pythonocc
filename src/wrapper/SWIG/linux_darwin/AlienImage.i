@@ -74,66 +74,6 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_AlienImage_AlienImageData;
-class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData(const Handle_AlienImage_AlienImageData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData(const AlienImage_AlienImageData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData & operator=(const Handle_AlienImage_AlienImageData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData & operator=(const AlienImage_AlienImageData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImageData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_AlienImageData {
-	AlienImage_AlienImageData* GetObject() {
-	return (AlienImage_AlienImageData*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_AlienImageData {
-	~Handle_AlienImage_AlienImageData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienImageData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_X11XWDAlienData;
-class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageData {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData(const Handle_AlienImage_X11XWDAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData(const AlienImage_X11XWDAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData & operator=(const Handle_AlienImage_X11XWDAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData & operator=(const AlienImage_X11XWDAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_X11XWDAlienData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_X11XWDAlienData {
-	AlienImage_X11XWDAlienData* GetObject() {
-	return (AlienImage_X11XWDAlienData*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_X11XWDAlienData {
-	~Handle_AlienImage_X11XWDAlienData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_X11XWDAlienData\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AlienImage_AlienUserImage;
 class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 	public:
@@ -164,6 +104,36 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 };
 
 
+%nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
+class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage & operator=(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SGIRGBAlienImage {
+	AlienImage_SGIRGBAlienImage* GetObject() {
+	return (AlienImage_SGIRGBAlienImage*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_SGIRGBAlienImage {
+	~Handle_AlienImage_SGIRGBAlienImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienImage\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AlienImage_EuclidAlienImage;
 class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -190,6 +160,96 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 	~Handle_AlienImage_EuclidAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_EuclidAlienImage\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_AlienImageData;
+class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData(const Handle_AlienImage_AlienImageData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData(const AlienImage_AlienImageData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData & operator=(const Handle_AlienImage_AlienImageData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData & operator=(const AlienImage_AlienImageData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImageData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_AlienImageData {
+	AlienImage_AlienImageData* GetObject() {
+	return (AlienImage_AlienImageData*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_AlienImageData {
+	~Handle_AlienImage_AlienImageData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienImageData\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_AidaAlienImage;
+class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage(const Handle_AlienImage_AidaAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage & operator=(const Handle_AlienImage_AidaAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_AidaAlienImage {
+	AlienImage_AidaAlienImage* GetObject() {
+	return (AlienImage_AidaAlienImage*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_AidaAlienImage {
+	~Handle_AlienImage_AidaAlienImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienImage\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_SunRFAlienData;
+class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData(const Handle_AlienImage_SunRFAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData & operator=(const Handle_AlienImage_SunRFAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SunRFAlienData {
+	AlienImage_SunRFAlienData* GetObject() {
+	return (AlienImage_SunRFAlienData*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_SunRFAlienData {
+	~Handle_AlienImage_SunRFAlienData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SunRFAlienData\n");}
 	}
 };
 
@@ -254,62 +314,32 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 };
 
 
-%nodefaultctor Handle_AlienImage_SunRFAlienData;
-class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData {
+%nodefaultctor Handle_AlienImage_XAlienImage;
+class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData();
+		Handle_AlienImage_XAlienImage();
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData(const Handle_AlienImage_SunRFAlienData &aHandle);
+		Handle_AlienImage_XAlienImage(const Handle_AlienImage_XAlienImage &aHandle);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *anItem);
+		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData & operator=(const Handle_AlienImage_SunRFAlienData &aHandle);
+		Handle_AlienImage_XAlienImage & operator=(const Handle_AlienImage_XAlienImage &aHandle);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
+		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_XAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AlienImage_SunRFAlienData {
-	AlienImage_SunRFAlienData* GetObject() {
-	return (AlienImage_SunRFAlienData*)$self->Access();
+%extend Handle_AlienImage_XAlienImage {
+	AlienImage_XAlienImage* GetObject() {
+	return (AlienImage_XAlienImage*)$self->Access();
 	}
 };
-%extend Handle_AlienImage_SunRFAlienData {
-	~Handle_AlienImage_SunRFAlienData() {
+%extend Handle_AlienImage_XAlienImage {
+	~Handle_AlienImage_XAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SunRFAlienData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_BMPAlienImage;
-class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage(const Handle_AlienImage_BMPAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage(const AlienImage_BMPAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage & operator=(const Handle_AlienImage_BMPAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage & operator=(const AlienImage_BMPAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_BMPAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_BMPAlienImage {
-	AlienImage_BMPAlienImage* GetObject() {
-	return (AlienImage_BMPAlienImage*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_BMPAlienImage {
-	~Handle_AlienImage_BMPAlienImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_BMPAlienImage\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_XAlienImage\n");}
 	}
 };
 
@@ -344,32 +374,62 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 };
 
 
-%nodefaultctor Handle_AlienImage_XAlienImage;
-class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
+%nodefaultctor Handle_AlienImage_X11XWDAlienData;
+class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageData {
 	public:
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage();
+		Handle_AlienImage_X11XWDAlienData();
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage(const Handle_AlienImage_XAlienImage &aHandle);
+		Handle_AlienImage_X11XWDAlienData(const Handle_AlienImage_X11XWDAlienData &aHandle);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *anItem);
+		Handle_AlienImage_X11XWDAlienData(const AlienImage_X11XWDAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage & operator=(const Handle_AlienImage_XAlienImage &aHandle);
+		Handle_AlienImage_X11XWDAlienData & operator=(const Handle_AlienImage_X11XWDAlienData &aHandle);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
+		Handle_AlienImage_X11XWDAlienData & operator=(const AlienImage_X11XWDAlienData *anItem);
 		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AlienImage_X11XWDAlienData const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AlienImage_XAlienImage {
-	AlienImage_XAlienImage* GetObject() {
-	return (AlienImage_XAlienImage*)$self->Access();
+%extend Handle_AlienImage_X11XWDAlienData {
+	AlienImage_X11XWDAlienData* GetObject() {
+	return (AlienImage_X11XWDAlienData*)$self->Access();
 	}
 };
-%extend Handle_AlienImage_XAlienImage {
-	~Handle_AlienImage_XAlienImage() {
+%extend Handle_AlienImage_X11XWDAlienData {
+	~Handle_AlienImage_X11XWDAlienData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_XAlienImage\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_X11XWDAlienData\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_BMPAlienImage;
+class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage(const Handle_AlienImage_BMPAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage(const AlienImage_BMPAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage & operator=(const Handle_AlienImage_BMPAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage & operator=(const AlienImage_BMPAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_BMPAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_BMPAlienImage {
+	AlienImage_BMPAlienImage* GetObject() {
+	return (AlienImage_BMPAlienImage*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_BMPAlienImage {
+	~Handle_AlienImage_BMPAlienImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_BMPAlienImage\n");}
 	}
 };
 
@@ -404,66 +464,6 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
-class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage & operator=(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_SGIRGBAlienImage {
-	AlienImage_SGIRGBAlienImage* GetObject() {
-	return (AlienImage_SGIRGBAlienImage*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_SGIRGBAlienImage {
-	~Handle_AlienImage_SGIRGBAlienImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienImage\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_AidaAlienImage;
-class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage(const Handle_AlienImage_AidaAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage & operator=(const Handle_AlienImage_AidaAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_AidaAlienImage {
-	AlienImage_AidaAlienImage* GetObject() {
-	return (AlienImage_AidaAlienImage*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_AidaAlienImage {
-	~Handle_AlienImage_AidaAlienImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienImage\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AlienImage_GIFAlienData;
 class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 	public:
@@ -494,36 +494,6 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor Handle_AlienImage_AidaAlienData;
-class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData(const Handle_AlienImage_AidaAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData(const AlienImage_AidaAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData & operator=(const Handle_AlienImage_AidaAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData & operator=(const AlienImage_AidaAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienData const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_AidaAlienData {
-	AlienImage_AidaAlienData* GetObject() {
-	return (AlienImage_AidaAlienData*)$self->Access();
-	}
-};
-%extend Handle_AlienImage_AidaAlienData {
-	~Handle_AlienImage_AidaAlienData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienData\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AlienImage_SunRFAlienImage;
 class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -550,6 +520,36 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 	~Handle_AlienImage_SunRFAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SunRFAlienImage\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_AidaAlienData;
+class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData(const Handle_AlienImage_AidaAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData(const AlienImage_AidaAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData & operator=(const Handle_AlienImage_AidaAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData & operator=(const AlienImage_AidaAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienData const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_AidaAlienData {
+	AlienImage_AidaAlienData* GetObject() {
+	return (AlienImage_AidaAlienData*)$self->Access();
+	}
+};
+%extend Handle_AlienImage_AidaAlienData {
+	~Handle_AlienImage_AidaAlienData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienData\n");}
 	}
 };
 
@@ -641,36 +641,6 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor AlienImage_SGIRGBFileHeader;
-class AlienImage_SGIRGBFileHeader {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_SGIRGBFileHeader();
-
-};
-%extend AlienImage_SGIRGBFileHeader {
-	~AlienImage_SGIRGBFileHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");}
-	}
-};
-
-
-%nodefaultctor AlienImage_SUNRFFileHeader;
-class AlienImage_SUNRFFileHeader {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_SUNRFFileHeader();
-
-};
-%extend AlienImage_SUNRFFileHeader {
-	~AlienImage_SUNRFFileHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
-	}
-};
-
-
 %nodefaultctor AlienImage_AlienUserImage;
 class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 	public:
@@ -739,66 +709,6 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 };
 
 
-%nodefaultctor AlienImage_MemoryOperations;
-class AlienImage_MemoryOperations {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_MemoryOperations();
-		%feature("autodoc", "1");
-		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
-
-};
-%extend AlienImage_MemoryOperations {
-	~AlienImage_MemoryOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_MemoryOperations\n");}
-	}
-};
-
-
-%nodefaultctor AlienImage_SunRFAlienImage;
-class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_SunRFAlienImage();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		virtual		Handle_Image_Image ToImage() const;
-		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Read(OSD_File & afile);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Write(OSD_File & afile) const;
-		%feature("autodoc", "1");
-		void SetFormat(const AlienImage_SUNRFFormat aFormat);
-		%feature("autodoc", "1");
-		AlienImage_SUNRFFormat Format() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AlienImage_SunRFAlienImage {
-	Handle_AlienImage_SunRFAlienImage GetHandle() {
-	return *(Handle_AlienImage_SunRFAlienImage*) &$self;
-	}
-};
-%extend AlienImage_SunRFAlienImage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AlienImage_SunRFAlienImage {
-	~AlienImage_SunRFAlienImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_SunRFAlienImage\n");}
-	}
-};
-
-
 %nodefaultctor AlienImage_X11XWDAlienData;
 class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 	public:
@@ -840,17 +750,13 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 };
 
 
-%nodefaultctor AlienImage_XAlienImage;
-class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
+%nodefaultctor AlienImage_SunRFAlienImage;
+class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 	public:
 		%feature("autodoc", "1");
-		AlienImage_XAlienImage();
+		AlienImage_SunRFAlienImage();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Name() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Image_Image ToImage() const;
 		%feature("autodoc", "1");
@@ -860,23 +766,27 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Write(OSD_File & afile) const;
 		%feature("autodoc", "1");
+		void SetFormat(const AlienImage_SUNRFFormat aFormat);
+		%feature("autodoc", "1");
+		AlienImage_SUNRFFormat Format() const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AlienImage_XAlienImage {
-	Handle_AlienImage_XAlienImage GetHandle() {
-	return *(Handle_AlienImage_XAlienImage*) &$self;
+%extend AlienImage_SunRFAlienImage {
+	Handle_AlienImage_SunRFAlienImage GetHandle() {
+	return *(Handle_AlienImage_SunRFAlienImage*) &$self;
 	}
 };
-%extend AlienImage_XAlienImage {
+%extend AlienImage_SunRFAlienImage {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend AlienImage_XAlienImage {
-	~AlienImage_XAlienImage() {
+%extend AlienImage_SunRFAlienImage {
+	~AlienImage_SunRFAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_XAlienImage\n");}
+	if (__env){printf("## Call custom destructor for instance of AlienImage_SunRFAlienImage\n");}
 	}
 };
 
@@ -933,6 +843,62 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 
 
+%nodefaultctor AlienImage_SUNRFFileHeader;
+class AlienImage_SUNRFFileHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_SUNRFFileHeader();
+
+};
+%extend AlienImage_SUNRFFileHeader {
+	~AlienImage_SUNRFFileHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
+	}
+};
+
+
+%nodefaultctor AlienImage_GIFAlienImage;
+class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_GIFAlienImage();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Name() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Image_Image ToImage() const;
+		%feature("autodoc", "1");
+		virtual		void FromImage(const Handle_Image_Image &anImage);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Read(OSD_File & afile);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Write(OSD_File & afile) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AlienImage_GIFAlienImage {
+	Handle_AlienImage_GIFAlienImage GetHandle() {
+	return *(Handle_AlienImage_GIFAlienImage*) &$self;
+	}
+};
+%extend AlienImage_GIFAlienImage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AlienImage_GIFAlienImage {
+	~AlienImage_GIFAlienImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_GIFAlienImage\n");}
+	}
+};
+
+
 %nodefaultctor AlienImage;
 class AlienImage {
 	public:
@@ -952,6 +918,36 @@ class AlienImage {
 	~AlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AlienImage\n");}
+	}
+};
+
+
+%nodefaultctor AlienImage_BMPHeader;
+class AlienImage_BMPHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_BMPHeader();
+
+};
+%extend AlienImage_BMPHeader {
+	~AlienImage_BMPHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
+	}
+};
+
+
+%nodefaultctor AlienImage_SGIRGBFileHeader;
+class AlienImage_SGIRGBFileHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_SGIRGBFileHeader();
+
+};
+%extend AlienImage_SGIRGBFileHeader {
+	~AlienImage_SGIRGBFileHeader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");}
 	}
 };
 
@@ -1075,6 +1071,47 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 };
 
 
+%nodefaultctor AlienImage_XAlienImage;
+class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_XAlienImage();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Name() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Image_Image ToImage() const;
+		%feature("autodoc", "1");
+		virtual		void FromImage(const Handle_Image_Image &anImage);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Read(OSD_File & afile);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Write(OSD_File & afile) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AlienImage_XAlienImage {
+	Handle_AlienImage_XAlienImage GetHandle() {
+	return *(Handle_AlienImage_XAlienImage*) &$self;
+	}
+};
+%extend AlienImage_XAlienImage {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AlienImage_XAlienImage {
+	~AlienImage_XAlienImage() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AlienImage_XAlienImage\n");}
+	}
+};
+
+
 %nodefaultctor AlienImage_SunRFAlienData;
 class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 	public:
@@ -1163,17 +1200,21 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 };
 
 
-%nodefaultctor AlienImage_BMPHeader;
-class AlienImage_BMPHeader {
+%nodefaultctor AlienImage_MemoryOperations;
+class AlienImage_MemoryOperations {
 	public:
 		%feature("autodoc", "1");
-		AlienImage_BMPHeader();
+		AlienImage_MemoryOperations();
+		%feature("autodoc", "1");
+		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
 
 };
-%extend AlienImage_BMPHeader {
-	~AlienImage_BMPHeader() {
+%extend AlienImage_MemoryOperations {
+	~AlienImage_MemoryOperations() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
+	if (__env){printf("## Call custom destructor for instance of AlienImage_MemoryOperations\n");}
 	}
 };
 
@@ -1252,46 +1293,5 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 	~AlienImage_BMPAlienImage() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPAlienImage\n");}
-	}
-};
-
-
-%nodefaultctor AlienImage_GIFAlienImage;
-class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_GIFAlienImage();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Name() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Image_Image ToImage() const;
-		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Read(OSD_File & afile);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Write(OSD_File & afile) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AlienImage_GIFAlienImage {
-	Handle_AlienImage_GIFAlienImage GetHandle() {
-	return *(Handle_AlienImage_GIFAlienImage*) &$self;
-	}
-};
-%extend AlienImage_GIFAlienImage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AlienImage_GIFAlienImage {
-	~AlienImage_GIFAlienImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AlienImage_GIFAlienImage\n");}
 	}
 };

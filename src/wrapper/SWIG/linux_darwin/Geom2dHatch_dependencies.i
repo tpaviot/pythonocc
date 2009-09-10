@@ -183,6 +183,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import TCollection.i
 %import TopAbs.i
 %import Standard.i
+%import Geom2dInt.i
 %import HatchGen.i
 %import IntRes2d.i
-%import Geom2dInt.i

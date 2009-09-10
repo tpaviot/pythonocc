@@ -486,8 +486,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Edge.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TopoDS_Wire.hxx>
+#include<Handle_ShapeAnalysis_Wire.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>
-#include<ShapeAnalysis_WireVertex.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<ShapeAnalysis_WireOrder.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_Shell.hxx>
 #include<Bnd_Box2d.hxx>
@@ -495,10 +497,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
 #include<ShapeFix.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<ShapeAnalysis_WireVertex.hxx>
 #include<TopoDS_Compound.hxx>
-#include<Handle_ShapeAnalysis_Wire.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<ShapeAnalysis_WireOrder.hxx>
-#include<Handle_ShapeConstruct_ProjectCurveOnSurface.hxx>
 #include<Handle_ShapeAnalysis_Surface.hxx>
+#include<Handle_ShapeConstruct_ProjectCurveOnSurface.hxx>
 %}

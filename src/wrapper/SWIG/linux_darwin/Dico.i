@@ -35,6 +35,36 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
+%nodefaultctor Handle_Dico_DictionaryOfTransient;
+class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient();
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient(const Dico_DictionaryOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient & operator=(const Handle_Dico_DictionaryOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dico_DictionaryOfTransient {
+	Dico_DictionaryOfTransient* GetObject() {
+	return (Dico_DictionaryOfTransient*)$self->Access();
+	}
+};
+%extend Handle_Dico_DictionaryOfTransient {
+	~Handle_Dico_DictionaryOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfTransient;
 class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
@@ -95,36 +125,6 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Dico_DictionaryOfTransient;
-class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient();
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient(const Handle_Dico_DictionaryOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient(const Dico_DictionaryOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient & operator=(const Handle_Dico_DictionaryOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient & operator=(const Dico_DictionaryOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dico_DictionaryOfTransient {
-	Dico_DictionaryOfTransient* GetObject() {
-	return (Dico_DictionaryOfTransient*)$self->Access();
-	}
-};
-%extend Handle_Dico_DictionaryOfTransient {
-	~Handle_Dico_DictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
 class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -176,10 +176,30 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 		void SetItem(const char * name, const Standard_Integer &anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
 		void SetItem(const TCollection_AsciiString &name, const Standard_Integer &anitem, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Integer & NewItem(const char * name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
-		%feature("autodoc", "1");
-		Standard_Integer & NewItem(const TCollection_AsciiString &name, Standard_Boolean & isvalued, const Standard_Boolean exact=1);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetNewItem(const Standard_CString name, Standard_Boolean & isvalued, const Standard_Boolean exact=1) {
+				return (Standard_Integer) $self->NewItem(name,isvalued,exact);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetNewItem(Standard_Integer value ,const Standard_CString name, Standard_Boolean & isvalued, const Standard_Boolean exact=1) {
+				$self->NewItem(name,isvalued,exact)=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetNewItem(const TCollection_AsciiString &name, Standard_Boolean & isvalued, const Standard_Boolean exact=1) {
+				return (Standard_Integer) $self->NewItem(name,isvalued,exact);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetNewItem(Standard_Integer value ,const TCollection_AsciiString &name, Standard_Boolean & isvalued, const Standard_Boolean exact=1) {
+				$self->NewItem(name,isvalued,exact)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveItem(const char * name, const Standard_Boolean cln=1, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
@@ -241,41 +261,6 @@ class Dico_IteratorOfDictionaryOfTransient {
 	~Dico_IteratorOfDictionaryOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");}
-	}
-};
-
-
-%nodefaultctor Dico_StackItemOfDictionaryOfInteger;
-class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dico_StackItemOfDictionaryOfInteger();
-		%feature("autodoc", "1");
-		Dico_StackItemOfDictionaryOfInteger(const Handle_Dico_StackItemOfDictionaryOfInteger &previous);
-		%feature("autodoc", "1");
-		Handle_Dico_StackItemOfDictionaryOfInteger Previous() const;
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfInteger Value() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Dico_DictionaryOfInteger &cval);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dico_StackItemOfDictionaryOfInteger {
-	Handle_Dico_StackItemOfDictionaryOfInteger GetHandle() {
-	return *(Handle_Dico_StackItemOfDictionaryOfInteger*) &$self;
-	}
-};
-%extend Dico_StackItemOfDictionaryOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Dico_StackItemOfDictionaryOfInteger {
-	~Dico_StackItemOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");}
 	}
 };
 
@@ -401,5 +386,40 @@ class Dico_IteratorOfDictionaryOfInteger {
 	~Dico_IteratorOfDictionaryOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor Dico_StackItemOfDictionaryOfInteger;
+class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dico_StackItemOfDictionaryOfInteger();
+		%feature("autodoc", "1");
+		Dico_StackItemOfDictionaryOfInteger(const Handle_Dico_StackItemOfDictionaryOfInteger &previous);
+		%feature("autodoc", "1");
+		Handle_Dico_StackItemOfDictionaryOfInteger Previous() const;
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfInteger Value() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Dico_DictionaryOfInteger &cval);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
+	Handle_Dico_StackItemOfDictionaryOfInteger GetHandle() {
+	return *(Handle_Dico_StackItemOfDictionaryOfInteger*) &$self;
+	}
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
+	~Dico_StackItemOfDictionaryOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");}
 	}
 };

@@ -167,16 +167,16 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TopoDS_Face.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TColStd_MapOfInteger.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<gp_Pnt.hxx>
-#include<TopTools_ListOfShape.hxx>
 #include<TopOpeBRepTool_GeomTool.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<TopOpeBRepDS.hxx>
 %}

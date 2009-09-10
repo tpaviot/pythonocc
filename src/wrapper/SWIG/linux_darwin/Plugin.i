@@ -95,6 +95,33 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 };
 
 
+%nodefaultctor Plugin_MapOfFunctions;
+class Plugin_MapOfFunctions : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions & Assign(const Plugin_MapOfFunctions &Other);
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions & operator=(const Plugin_MapOfFunctions &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+
+};
+%extend Plugin_MapOfFunctions {
+	~Plugin_MapOfFunctions() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
+	}
+};
+
+
 %nodefaultctor Plugin_DataMapIteratorOfMapOfFunctions;
 class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterator {
 	public:
@@ -176,33 +203,6 @@ class Plugin_Failure : public Standard_Failure {
 	~Plugin_Failure() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Plugin_Failure\n");}
-	}
-};
-
-
-%nodefaultctor Plugin_MapOfFunctions;
-class Plugin_MapOfFunctions : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions & Assign(const Plugin_MapOfFunctions &Other);
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions & operator=(const Plugin_MapOfFunctions &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-
-};
-%extend Plugin_MapOfFunctions {
-	~Plugin_MapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
 	}
 };
 

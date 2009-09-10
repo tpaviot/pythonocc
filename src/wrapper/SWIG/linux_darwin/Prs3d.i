@@ -32,9 +32,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %include Prs3d_headers.i
 
-typedef NCollection_TListIterator<TColgp_SequenceOfPnt> Prs3d_NListIteratorOfListOfSequenceOfPnt;
 typedef NCollection_BaseCollection<TColgp_SequenceOfPnt> Prs3d_BaseCollListOfSequenceOfPnt;
 typedef NCollection_List<TColgp_SequenceOfPnt> Prs3d_NListOfSequenceOfPnt;
+typedef NCollection_TListIterator<TColgp_SequenceOfPnt> Prs3d_NListIteratorOfListOfSequenceOfPnt;
 
 enum Prs3d_TypeOfLinePicking {
 	Prs3d_TOLP_Point,
@@ -43,92 +43,32 @@ enum Prs3d_TypeOfLinePicking {
 
 
 
-%nodefaultctor Handle_Prs3d_InvalidAngle;
-class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
+%nodefaultctor Handle_Prs3d_Drawer;
+class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle();
+		Handle_Prs3d_Drawer();
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
+		Handle_Prs3d_Drawer(const Handle_Prs3d_Drawer &aHandle);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
+		Handle_Prs3d_Drawer(const Prs3d_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle & operator=(const Handle_Prs3d_InvalidAngle &aHandle);
+		Handle_Prs3d_Drawer & operator=(const Handle_Prs3d_Drawer &aHandle);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *anItem);
+		Handle_Prs3d_Drawer & operator=(const Prs3d_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Prs3d_InvalidAngle {
-	Prs3d_InvalidAngle* GetObject() {
-	return (Prs3d_InvalidAngle*)$self->Access();
+%extend Handle_Prs3d_Drawer {
+	Prs3d_Drawer* GetObject() {
+	return (Prs3d_Drawer*)$self->Access();
 	}
 };
-%extend Handle_Prs3d_InvalidAngle {
-	~Handle_Prs3d_InvalidAngle() {
+%extend Handle_Prs3d_Drawer {
+	~Handle_Prs3d_Drawer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_CompositeAspect;
-class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect(const Handle_Prs3d_CompositeAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect(const Prs3d_CompositeAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect & operator=(const Handle_Prs3d_CompositeAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect & operator=(const Prs3d_CompositeAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_CompositeAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_CompositeAspect {
-	Prs3d_CompositeAspect* GetObject() {
-	return (Prs3d_CompositeAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_CompositeAspect {
-	~Handle_Prs3d_CompositeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_AngleAspect;
-class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect(const Handle_Prs3d_AngleAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect(const Prs3d_AngleAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect & operator=(const Handle_Prs3d_AngleAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect & operator=(const Prs3d_AngleAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_AngleAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_AngleAspect {
-	Prs3d_AngleAspect* GetObject() {
-	return (Prs3d_AngleAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_AngleAspect {
-	~Handle_Prs3d_AngleAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Drawer\n");}
 	}
 };
 
@@ -163,126 +103,6 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Prs3d_LineAspect;
-class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect(const Handle_Prs3d_LineAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect(const Prs3d_LineAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect & operator=(const Handle_Prs3d_LineAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect & operator=(const Prs3d_LineAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_LineAspect {
-	Prs3d_LineAspect* GetObject() {
-	return (Prs3d_LineAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_LineAspect {
-	~Handle_Prs3d_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LineAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_PointAspect;
-class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect(const Handle_Prs3d_PointAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect(const Prs3d_PointAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect & operator=(const Handle_Prs3d_PointAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect & operator=(const Prs3d_PointAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_PointAspect {
-	Prs3d_PointAspect* GetObject() {
-	return (Prs3d_PointAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_PointAspect {
-	~Handle_Prs3d_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PointAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_TextAspect;
-class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect(const Handle_Prs3d_TextAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect(const Prs3d_TextAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect & operator=(const Handle_Prs3d_TextAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect & operator=(const Prs3d_TextAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_TextAspect {
-	Prs3d_TextAspect* GetObject() {
-	return (Prs3d_TextAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_TextAspect {
-	~Handle_Prs3d_TextAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_TextAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_Drawer;
-class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer();
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer(const Handle_Prs3d_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer(const Prs3d_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer & operator=(const Handle_Prs3d_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer & operator=(const Prs3d_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_Drawer {
-	Prs3d_Drawer* GetObject() {
-	return (Prs3d_Drawer*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_Drawer {
-	~Handle_Prs3d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Drawer\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Prs3d_PlaneSet;
 class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 	public:
@@ -309,6 +129,36 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 	~Handle_Prs3d_PlaneSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneSet\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_CompositeAspect;
+class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect(const Handle_Prs3d_CompositeAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect(const Prs3d_CompositeAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect & operator=(const Handle_Prs3d_CompositeAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect & operator=(const Prs3d_CompositeAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_CompositeAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_CompositeAspect {
+	Prs3d_CompositeAspect* GetObject() {
+	return (Prs3d_CompositeAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_CompositeAspect {
+	~Handle_Prs3d_CompositeAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");}
 	}
 };
 
@@ -343,152 +193,32 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 };
 
 
-%nodefaultctor Handle_Prs3d_ShadingAspect;
-class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
+%nodefaultctor Handle_Prs3d_LineAspect;
+class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 	public:
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect();
+		Handle_Prs3d_LineAspect();
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect(const Handle_Prs3d_ShadingAspect &aHandle);
+		Handle_Prs3d_LineAspect(const Handle_Prs3d_LineAspect &aHandle);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect(const Prs3d_ShadingAspect *anItem);
+		Handle_Prs3d_LineAspect(const Prs3d_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect & operator=(const Handle_Prs3d_ShadingAspect &aHandle);
+		Handle_Prs3d_LineAspect & operator=(const Handle_Prs3d_LineAspect &aHandle);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect & operator=(const Prs3d_ShadingAspect *anItem);
+		Handle_Prs3d_LineAspect & operator=(const Prs3d_LineAspect *anItem);
 		%feature("autodoc", "1");
-		Handle_Prs3d_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Prs3d_LineAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Prs3d_ShadingAspect {
-	Prs3d_ShadingAspect* GetObject() {
-	return (Prs3d_ShadingAspect*)$self->Access();
+%extend Handle_Prs3d_LineAspect {
+	Prs3d_LineAspect* GetObject() {
+	return (Prs3d_LineAspect*)$self->Access();
 	}
 };
-%extend Handle_Prs3d_ShadingAspect {
-	~Handle_Prs3d_ShadingAspect() {
+%extend Handle_Prs3d_LineAspect {
+	~Handle_Prs3d_LineAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_RadiusAspect;
-class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect(const Handle_Prs3d_RadiusAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect & operator=(const Handle_Prs3d_RadiusAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect & operator=(const Prs3d_RadiusAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_RadiusAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_RadiusAspect {
-	Prs3d_RadiusAspect* GetObject() {
-	return (Prs3d_RadiusAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_RadiusAspect {
-	~Handle_Prs3d_RadiusAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_ArrowAspect;
-class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect(const Handle_Prs3d_ArrowAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect(const Prs3d_ArrowAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect & operator=(const Handle_Prs3d_ArrowAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect & operator=(const Prs3d_ArrowAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_ArrowAspect {
-	Prs3d_ArrowAspect* GetObject() {
-	return (Prs3d_ArrowAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_ArrowAspect {
-	~Handle_Prs3d_ArrowAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_DatumAspect;
-class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect(const Handle_Prs3d_DatumAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect(const Prs3d_DatumAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect & operator=(const Handle_Prs3d_DatumAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect & operator=(const Prs3d_DatumAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_DatumAspect const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_DatumAspect {
-	Prs3d_DatumAspect* GetObject() {
-	return (Prs3d_DatumAspect*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_DatumAspect {
-	~Handle_Prs3d_DatumAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_Projector;
-class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector();
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector(const Handle_Prs3d_Projector &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector(const Prs3d_Projector *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector & operator=(const Handle_Prs3d_Projector &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector & operator=(const Prs3d_Projector *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_Projector const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_Projector {
-	Prs3d_Projector* GetObject() {
-	return (Prs3d_Projector*)$self->Access();
-	}
-};
-%extend Handle_Prs3d_Projector {
-	~Handle_Prs3d_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Projector\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LineAspect\n");}
 	}
 };
 
@@ -523,6 +253,216 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 };
 
 
+%nodefaultctor Handle_Prs3d_ShadingAspect;
+class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect(const Handle_Prs3d_ShadingAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect(const Prs3d_ShadingAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect & operator=(const Handle_Prs3d_ShadingAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect & operator=(const Prs3d_ShadingAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ShadingAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_ShadingAspect {
+	Prs3d_ShadingAspect* GetObject() {
+	return (Prs3d_ShadingAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_ShadingAspect {
+	~Handle_Prs3d_ShadingAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_PointAspect;
+class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect(const Handle_Prs3d_PointAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect(const Prs3d_PointAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect & operator=(const Handle_Prs3d_PointAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect & operator=(const Prs3d_PointAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PointAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_PointAspect {
+	Prs3d_PointAspect* GetObject() {
+	return (Prs3d_PointAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_PointAspect {
+	~Handle_Prs3d_PointAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PointAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_ArrowAspect;
+class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect(const Handle_Prs3d_ArrowAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect(const Prs3d_ArrowAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect & operator=(const Handle_Prs3d_ArrowAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect & operator=(const Prs3d_ArrowAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_ArrowAspect {
+	Prs3d_ArrowAspect* GetObject() {
+	return (Prs3d_ArrowAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_ArrowAspect {
+	~Handle_Prs3d_ArrowAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_Projector;
+class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector();
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector(const Handle_Prs3d_Projector &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector(const Prs3d_Projector *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector & operator=(const Handle_Prs3d_Projector &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector & operator=(const Prs3d_Projector *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_Projector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_Projector {
+	Prs3d_Projector* GetObject() {
+	return (Prs3d_Projector*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_Projector {
+	~Handle_Prs3d_Projector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Projector\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_RadiusAspect;
+class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect(const Handle_Prs3d_RadiusAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect(const Prs3d_RadiusAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect & operator=(const Handle_Prs3d_RadiusAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect & operator=(const Prs3d_RadiusAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_RadiusAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_RadiusAspect {
+	Prs3d_RadiusAspect* GetObject() {
+	return (Prs3d_RadiusAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_RadiusAspect {
+	~Handle_Prs3d_RadiusAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_InvalidAngle;
+class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle();
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle & operator=(const Handle_Prs3d_InvalidAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_InvalidAngle {
+	Prs3d_InvalidAngle* GetObject() {
+	return (Prs3d_InvalidAngle*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_InvalidAngle {
+	~Handle_Prs3d_InvalidAngle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_DatumAspect;
+class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect(const Handle_Prs3d_DatumAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect(const Prs3d_DatumAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect & operator=(const Handle_Prs3d_DatumAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect & operator=(const Prs3d_DatumAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_DatumAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_DatumAspect {
+	Prs3d_DatumAspect* GetObject() {
+	return (Prs3d_DatumAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_DatumAspect {
+	~Handle_Prs3d_DatumAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Prs3d_PlaneAspect;
 class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	public:
@@ -549,6 +489,36 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	~Handle_Prs3d_PlaneAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneAspect\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Prs3d_AngleAspect;
+class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect(const Handle_Prs3d_AngleAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect(const Prs3d_AngleAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect & operator=(const Handle_Prs3d_AngleAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect & operator=(const Prs3d_AngleAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_AngleAspect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_AngleAspect {
+	Prs3d_AngleAspect* GetObject() {
+	return (Prs3d_AngleAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_AngleAspect {
+	~Handle_Prs3d_AngleAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");}
 	}
 };
 
@@ -583,608 +553,32 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 };
 
 
-%nodefaultctor Prs3d_Root;
-class Prs3d_Root {
+%nodefaultctor Handle_Prs3d_TextAspect;
+class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 	public:
 		%feature("autodoc", "1");
-		Prs3d_Root();
+		Handle_Prs3d_TextAspect();
 		%feature("autodoc", "1");
-		Handle_Graphic3d_Group CurrentGroup(const Handle_Prs3d_Presentation &Prs3d);
+		Handle_Prs3d_TextAspect(const Handle_Prs3d_TextAspect &aHandle);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
+		Handle_Prs3d_TextAspect(const Prs3d_TextAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_TextAspect & operator=(const Handle_Prs3d_TextAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_TextAspect & operator=(const Prs3d_TextAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_TextAspect const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Prs3d_Root {
-	~Prs3d_Root() {
+%extend Handle_Prs3d_TextAspect {
+	Prs3d_TextAspect* GetObject() {
+	return (Prs3d_TextAspect*)$self->Access();
+	}
+};
+%extend Handle_Prs3d_TextAspect {
+	~Handle_Prs3d_TextAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Root\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_Text;
-class Prs3d_Text : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_Text();
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
-
-};
-%extend Prs3d_Text {
-	~Prs3d_Text() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Text\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_BasicAspect;
-class Prs3d_BasicAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_BasicAspect();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_BasicAspect {
-	Handle_Prs3d_BasicAspect GetHandle() {
-	return *(Handle_Prs3d_BasicAspect*) &$self;
-	}
-};
-%extend Prs3d_BasicAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_BasicAspect {
-	~Prs3d_BasicAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_BasicAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_LineAspect;
-class Prs3d_LineAspect : public Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_LineAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Prs3d_LineAspect(const Quantity_Color &aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		void SetTypeOfLine(const Aspect_TypeOfLine aType);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectLine3d Aspect() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Prs3d_LineAspect {
-	Handle_Prs3d_LineAspect GetHandle() {
-	return *(Handle_Prs3d_LineAspect*) &$self;
-	}
-};
-%extend Prs3d_LineAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_LineAspect {
-	~Prs3d_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LineAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_CompositeAspect;
-class Prs3d_CompositeAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_CompositeAspect();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_CompositeAspect {
-	Handle_Prs3d_CompositeAspect GetHandle() {
-	return *(Handle_Prs3d_CompositeAspect*) &$self;
-	}
-};
-%extend Prs3d_CompositeAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_CompositeAspect {
-	~Prs3d_CompositeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_CompositeAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_ArrowAspect;
-class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_ArrowAspect();
-		%feature("autodoc", "1");
-		Prs3d_ArrowAspect(const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle anAngle);
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		void SetLength(const Quantity_Length aLength);
-		%feature("autodoc", "1");
-		Quantity_Length Length() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectLine3d Aspect() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Prs3d_ArrowAspect {
-	Handle_Prs3d_ArrowAspect GetHandle() {
-	return *(Handle_Prs3d_ArrowAspect*) &$self;
-	}
-};
-%extend Prs3d_ArrowAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_ArrowAspect {
-	~Prs3d_ArrowAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_ArrowAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_AnglePresentation;
-class Prs3d_AnglePresentation : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_AnglePresentation();
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
-
-};
-%extend Prs3d_AnglePresentation {
-	~Prs3d_AnglePresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_AnglePresentation\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_DatumAspect;
-class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_DatumAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect FirstAxisAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect SecondAxisAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect ThirdAxisAspect() const;
-		%feature("autodoc", "1");
-		void SetDrawFirstAndSecondAxis(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawFirstAndSecondAxis() const;
-		%feature("autodoc", "1");
-		void SetDrawThirdAxis(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawThirdAxis() const;
-		%feature("autodoc", "1");
-		void SetAxisLength(const Standard_Real L1, const Standard_Real L2, const Standard_Real L3);
-		%feature("autodoc", "1");
-		Quantity_Length FirstAxisLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length SecondAxisLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length ThirdAxisLength() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_DatumAspect {
-	Handle_Prs3d_DatumAspect GetHandle() {
-	return *(Handle_Prs3d_DatumAspect*) &$self;
-	}
-};
-%extend Prs3d_DatumAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_DatumAspect {
-	~Prs3d_DatumAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_DatumAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_PlaneAspect;
-class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_PlaneAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect EdgesAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect IsoAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect ArrowAspect() const;
-		%feature("autodoc", "1");
-		void SetArrowsLength(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length ArrowsLength() const;
-		%feature("autodoc", "1");
-		void SetArrowsSize(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length ArrowsSize() const;
-		%feature("autodoc", "1");
-		void SetArrowsAngle(const Quantity_PlaneAngle ang);
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle ArrowsAngle() const;
-		%feature("autodoc", "1");
-		void SetDisplayCenterArrow(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayCenterArrow() const;
-		%feature("autodoc", "1");
-		void SetDisplayEdgesArrows(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayEdgesArrows() const;
-		%feature("autodoc", "1");
-		void SetDisplayEdges(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayEdges() const;
-		%feature("autodoc", "1");
-		void SetDisplayIso(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DisplayIso() const;
-		%feature("autodoc", "1");
-		void SetPlaneLength(const Quantity_Length LX, const Quantity_Length LY);
-		%feature("autodoc", "1");
-		Quantity_Length PlaneXLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length PlaneYLength() const;
-		%feature("autodoc", "1");
-		void SetIsoDistance(const Quantity_Length L);
-		%feature("autodoc", "1");
-		Quantity_Length IsoDistance() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_PlaneAspect {
-	Handle_Prs3d_PlaneAspect GetHandle() {
-	return *(Handle_Prs3d_PlaneAspect*) &$self;
-	}
-};
-%extend Prs3d_PlaneAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_PlaneAspect {
-	~Prs3d_PlaneAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_TextAspect;
-class Prs3d_TextAspect : public Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_TextAspect();
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		void SetFont(const Graphic3d_NameOfFont aFont);
-		%feature("autodoc", "1");
-		void SetHeightWidthRatio(const Standard_Real aRatio);
-		%feature("autodoc", "1");
-		void SetSpace(const Quantity_Length aSpace);
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHeight);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle anAngle);
-		%feature("autodoc", "1");
-		Standard_Real Height() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		void SetHorizontalJustification(const Graphic3d_HorizontalTextAlignment aJustification);
-		%feature("autodoc", "1");
-		void SetVerticalJustification(const Graphic3d_VerticalTextAlignment aJustification);
-		%feature("autodoc", "1");
-		void SetOrientation(const Graphic3d_TextPath anOrientation);
-		%feature("autodoc", "1");
-		Graphic3d_HorizontalTextAlignment HorizontalJustification() const;
-		%feature("autodoc", "1");
-		Graphic3d_VerticalTextAlignment VerticalJustification() const;
-		%feature("autodoc", "1");
-		Graphic3d_TextPath Orientation() const;
-		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectText3d Aspect() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_TextAspect {
-	Handle_Prs3d_TextAspect GetHandle() {
-	return *(Handle_Prs3d_TextAspect*) &$self;
-	}
-};
-%extend Prs3d_TextAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_TextAspect {
-	~Prs3d_TextAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_TextAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_ShadingAspect;
-class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_ShadingAspect();
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aColor, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetMaterial(const Graphic3d_MaterialAspect &aMaterial, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetMaterial(const Graphic3d_NameOfMaterial aMaterial, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Real aValue, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetAspect(const Handle_Graphic3d_AspectFillArea3d &Asp);
-		%feature("autodoc", "1");
-		Quantity_Color Color(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
-		%feature("autodoc", "1");
-		Graphic3d_MaterialAspect Material(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
-		%feature("autodoc", "1");
-		Standard_Real Transparency(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
-		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectFillArea3d Aspect() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_ShadingAspect {
-	Handle_Prs3d_ShadingAspect GetHandle() {
-	return *(Handle_Prs3d_ShadingAspect*) &$self;
-	}
-};
-%extend Prs3d_ShadingAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_ShadingAspect {
-	~Prs3d_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_ShadingAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_PlaneSet;
-class Prs3d_PlaneSet : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_PlaneSet(const Standard_Real Xdir, const Standard_Real Ydir, const Standard_Real Zdir, const Quantity_Length Xloc, const Quantity_Length Yloc, const Quantity_Length Zloc, const Quantity_Length anOffset);
-		%feature("autodoc", "1");
-		void SetDirection(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-		%feature("autodoc", "1");
-		void SetLocation(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
-		%feature("autodoc", "1");
-		void SetOffset(const Quantity_Length anOffset);
-		%feature("autodoc", "1");
-		gp_Pln Plane() const;
-		%feature("autodoc", "1");
-		Quantity_Length Offset() const;
-		%feature("autodoc","Location()->[Standard_Real, Standard_Real, Standard_Real]");
-		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
-		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_PlaneSet {
-	Handle_Prs3d_PlaneSet GetHandle() {
-	return *(Handle_Prs3d_PlaneSet*) &$self;
-	}
-};
-%extend Prs3d_PlaneSet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_PlaneSet {
-	~Prs3d_PlaneSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneSet\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_RadiusAspect;
-class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_RadiusAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_RadiusAspect {
-	Handle_Prs3d_RadiusAspect GetHandle() {
-	return *(Handle_Prs3d_RadiusAspect*) &$self;
-	}
-};
-%extend Prs3d_RadiusAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_RadiusAspect {
-	~Prs3d_RadiusAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_RadiusAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_LengthAspect;
-class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_LengthAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect LineAspect() const;
-		%feature("autodoc", "1");
-		void SetLineAspect(const Handle_Prs3d_LineAspect &anAspect);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect Arrow1Aspect() const;
-		%feature("autodoc", "1");
-		void SetArrow1Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
-		%feature("autodoc", "1");
-		Handle_Prs3d_ArrowAspect Arrow2Aspect() const;
-		%feature("autodoc", "1");
-		void SetArrow2Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
-		%feature("autodoc", "1");
-		Handle_Prs3d_TextAspect TextAspect() const;
-		%feature("autodoc", "1");
-		void SetTextAspect(const Handle_Prs3d_TextAspect &anAspect);
-		%feature("autodoc", "1");
-		void SetDrawFirstArrow(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawFirstArrow() const;
-		%feature("autodoc", "1");
-		void SetDrawSecondArrow(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawSecondArrow() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_LengthAspect {
-	Handle_Prs3d_LengthAspect GetHandle() {
-	return *(Handle_Prs3d_LengthAspect*) &$self;
-	}
-};
-%extend Prs3d_LengthAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Prs3d_LengthAspect {
-	~Prs3d_LengthAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthAspect\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d_LengthPresentation;
-class Prs3d_LengthPresentation : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_LengthPresentation();
-		%feature("autodoc", "1");
-		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
-
-};
-%extend Prs3d_LengthPresentation {
-	~Prs3d_LengthPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthPresentation\n");}
-	}
-};
-
-
-%nodefaultctor Prs3d;
-class Prs3d {
-	public:
-		%feature("autodoc", "1");
-		Prs3d();
-		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2)->Standard_Real");
-		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
-
-};
-%extend Prs3d {
-	~Prs3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_TextAspect\n");}
 	}
 };
 
@@ -1258,6 +652,69 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 };
 
 
+%nodefaultctor Prs3d_Root;
+class Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Root();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group CurrentGroup(const Handle_Prs3d_Presentation &Prs3d);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
+
+};
+%extend Prs3d_Root {
+	~Prs3d_Root() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_Root\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_AnglePresentation;
+class Prs3d_AnglePresentation : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_AnglePresentation();
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
+
+};
+%extend Prs3d_AnglePresentation {
+	~Prs3d_AnglePresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_AnglePresentation\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_CompositeAspect;
+class Prs3d_CompositeAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_CompositeAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_CompositeAspect {
+	Handle_Prs3d_CompositeAspect GetHandle() {
+	return *(Handle_Prs3d_CompositeAspect*) &$self;
+	}
+};
+%extend Prs3d_CompositeAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_CompositeAspect {
+	~Prs3d_CompositeAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_CompositeAspect\n");}
+	}
+};
+
+
 %nodefaultctor Prs3d_AngleAspect;
 class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 	public:
@@ -1283,8 +740,6 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 			self->Print(s);
 			return s.str();}
 		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Prs3d_AngleAspect {
@@ -1301,6 +756,107 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 	~Prs3d_AngleAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Prs3d_AngleAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_LengthPresentation;
+class Prs3d_LengthPresentation : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_LengthPresentation();
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
+
+};
+%extend Prs3d_LengthPresentation {
+	~Prs3d_LengthPresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthPresentation\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_DatumAspect;
+class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_DatumAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect FirstAxisAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect SecondAxisAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect ThirdAxisAspect() const;
+		%feature("autodoc", "1");
+		void SetDrawFirstAndSecondAxis(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawFirstAndSecondAxis() const;
+		%feature("autodoc", "1");
+		void SetDrawThirdAxis(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawThirdAxis() const;
+		%feature("autodoc", "1");
+		void SetAxisLength(const Standard_Real L1, const Standard_Real L2, const Standard_Real L3);
+		%feature("autodoc", "1");
+		Quantity_Length FirstAxisLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length SecondAxisLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length ThirdAxisLength() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_DatumAspect {
+	Handle_Prs3d_DatumAspect GetHandle() {
+	return *(Handle_Prs3d_DatumAspect*) &$self;
+	}
+};
+%extend Prs3d_DatumAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_DatumAspect {
+	~Prs3d_DatumAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_DatumAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_BasicAspect;
+class Prs3d_BasicAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_BasicAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_BasicAspect {
+	Handle_Prs3d_BasicAspect GetHandle() {
+	return *(Handle_Prs3d_BasicAspect*) &$self;
+	}
+};
+%extend Prs3d_BasicAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_BasicAspect {
+	~Prs3d_BasicAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_BasicAspect\n");}
 	}
 };
 
@@ -1336,8 +892,6 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Prs3d_PointAspect {
@@ -1354,6 +908,74 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 	~Prs3d_PointAspect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Prs3d_PointAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_ArrowAspect;
+class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_ArrowAspect();
+		%feature("autodoc", "1");
+		Prs3d_ArrowAspect(const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle anAngle);
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Angle() const;
+		%feature("autodoc", "1");
+		void SetLength(const Quantity_Length aLength);
+		%feature("autodoc", "1");
+		Quantity_Length Length() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectLine3d Aspect() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_ArrowAspect {
+	Handle_Prs3d_ArrowAspect GetHandle() {
+	return *(Handle_Prs3d_ArrowAspect*) &$self;
+	}
+};
+%extend Prs3d_ArrowAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_ArrowAspect {
+	~Prs3d_ArrowAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_ArrowAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d;
+class Prs3d {
+	public:
+		%feature("autodoc", "1");
+		Prs3d();
+		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2)->Standard_Real");
+		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
+
+};
+%extend Prs3d {
+	~Prs3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d\n");}
 	}
 };
 
@@ -1385,6 +1007,124 @@ class Prs3d_Projector : public MMgt_TShared {
 	~Prs3d_Projector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Prs3d_Projector\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_LineAspect;
+class Prs3d_LineAspect : public Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_LineAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Prs3d_LineAspect(const Quantity_Color &aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		void SetTypeOfLine(const Aspect_TypeOfLine aType);
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectLine3d Aspect() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_LineAspect {
+	Handle_Prs3d_LineAspect GetHandle() {
+	return *(Handle_Prs3d_LineAspect*) &$self;
+	}
+};
+%extend Prs3d_LineAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_LineAspect {
+	~Prs3d_LineAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_LineAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_PlaneAspect;
+class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_PlaneAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect EdgesAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect IsoAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect ArrowAspect() const;
+		%feature("autodoc", "1");
+		void SetArrowsLength(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length ArrowsLength() const;
+		%feature("autodoc", "1");
+		void SetArrowsSize(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length ArrowsSize() const;
+		%feature("autodoc", "1");
+		void SetArrowsAngle(const Quantity_PlaneAngle ang);
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle ArrowsAngle() const;
+		%feature("autodoc", "1");
+		void SetDisplayCenterArrow(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayCenterArrow() const;
+		%feature("autodoc", "1");
+		void SetDisplayEdgesArrows(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayEdgesArrows() const;
+		%feature("autodoc", "1");
+		void SetDisplayEdges(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayEdges() const;
+		%feature("autodoc", "1");
+		void SetDisplayIso(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DisplayIso() const;
+		%feature("autodoc", "1");
+		void SetPlaneLength(const Quantity_Length LX, const Quantity_Length LY);
+		%feature("autodoc", "1");
+		Quantity_Length PlaneXLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length PlaneYLength() const;
+		%feature("autodoc", "1");
+		void SetIsoDistance(const Quantity_Length L);
+		%feature("autodoc", "1");
+		Quantity_Length IsoDistance() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_PlaneAspect {
+	Handle_Prs3d_PlaneAspect GetHandle() {
+	return *(Handle_Prs3d_PlaneAspect*) &$self;
+	}
+};
+%extend Prs3d_PlaneAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_PlaneAspect {
+	~Prs3d_PlaneAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
 	}
 };
 
@@ -1621,6 +1361,73 @@ class Prs3d_ShapeTool {
 };
 
 
+%nodefaultctor Prs3d_TextAspect;
+class Prs3d_TextAspect : public Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_TextAspect();
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		void SetFont(const Graphic3d_NameOfFont aFont);
+		%feature("autodoc", "1");
+		void SetHeightWidthRatio(const Standard_Real aRatio);
+		%feature("autodoc", "1");
+		void SetSpace(const Quantity_Length aSpace);
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Real aHeight);
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle anAngle);
+		%feature("autodoc", "1");
+		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Angle() const;
+		%feature("autodoc", "1");
+		void SetHorizontalJustification(const Graphic3d_HorizontalTextAlignment aJustification);
+		%feature("autodoc", "1");
+		void SetVerticalJustification(const Graphic3d_VerticalTextAlignment aJustification);
+		%feature("autodoc", "1");
+		void SetOrientation(const Graphic3d_TextPath anOrientation);
+		%feature("autodoc", "1");
+		Graphic3d_HorizontalTextAlignment HorizontalJustification() const;
+		%feature("autodoc", "1");
+		Graphic3d_VerticalTextAlignment VerticalJustification() const;
+		%feature("autodoc", "1");
+		Graphic3d_TextPath Orientation() const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectText3d Aspect() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_TextAspect {
+	Handle_Prs3d_TextAspect GetHandle() {
+	return *(Handle_Prs3d_TextAspect*) &$self;
+	}
+};
+%extend Prs3d_TextAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_TextAspect {
+	~Prs3d_TextAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_TextAspect\n");}
+	}
+};
+
+
 %nodefaultctor Prs3d_IsoAspect;
 class Prs3d_IsoAspect : public Prs3d_LineAspect {
 	public:
@@ -1697,6 +1504,140 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 };
 
 
+%nodefaultctor Prs3d_PlaneSet;
+class Prs3d_PlaneSet : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_PlaneSet(const Standard_Real Xdir, const Standard_Real Ydir, const Standard_Real Zdir, const Quantity_Length Xloc, const Quantity_Length Yloc, const Quantity_Length Zloc, const Quantity_Length anOffset);
+		%feature("autodoc", "1");
+		void SetDirection(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		%feature("autodoc", "1");
+		void SetLocation(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
+		%feature("autodoc", "1");
+		void SetOffset(const Quantity_Length anOffset);
+		%feature("autodoc", "1");
+		gp_Pln Plane() const;
+		%feature("autodoc", "1");
+		Quantity_Length Offset() const;
+		%feature("autodoc","Location()->[Standard_Real, Standard_Real, Standard_Real]");
+		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_PlaneSet {
+	Handle_Prs3d_PlaneSet GetHandle() {
+	return *(Handle_Prs3d_PlaneSet*) &$self;
+	}
+};
+%extend Prs3d_PlaneSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_PlaneSet {
+	~Prs3d_PlaneSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneSet\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_Text;
+class Prs3d_Text : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Text();
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+		%feature("autodoc", "1");
+		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
+
+};
+%extend Prs3d_Text {
+	~Prs3d_Text() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_Text\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_RadiusAspect;
+class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_RadiusAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_RadiusAspect {
+	Handle_Prs3d_RadiusAspect GetHandle() {
+	return *(Handle_Prs3d_RadiusAspect*) &$self;
+	}
+};
+%extend Prs3d_RadiusAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_RadiusAspect {
+	~Prs3d_RadiusAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_RadiusAspect\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_ShadingAspect;
+class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_ShadingAspect();
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aColor, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetMaterial(const Graphic3d_MaterialAspect &aMaterial, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetMaterial(const Graphic3d_NameOfMaterial aMaterial, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetTransparency(const Standard_Real aValue, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetAspect(const Handle_Graphic3d_AspectFillArea3d &Asp);
+		%feature("autodoc", "1");
+		Quantity_Color Color(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
+		%feature("autodoc", "1");
+		Graphic3d_MaterialAspect Material(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
+		%feature("autodoc", "1");
+		Standard_Real Transparency(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectFillArea3d Aspect() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_ShadingAspect {
+	Handle_Prs3d_ShadingAspect GetHandle() {
+	return *(Handle_Prs3d_ShadingAspect*) &$self;
+	}
+};
+%extend Prs3d_ShadingAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_ShadingAspect {
+	~Prs3d_ShadingAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_ShadingAspect\n");}
+	}
+};
+
+
 %nodefaultctor Prs3d_Arrow;
 class Prs3d_Arrow : public Prs3d_Root {
 	public:
@@ -1712,5 +1653,64 @@ class Prs3d_Arrow : public Prs3d_Root {
 	~Prs3d_Arrow() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Prs3d_Arrow\n");}
+	}
+};
+
+
+%nodefaultctor Prs3d_LengthAspect;
+class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_LengthAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect LineAspect() const;
+		%feature("autodoc", "1");
+		void SetLineAspect(const Handle_Prs3d_LineAspect &anAspect);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect Arrow1Aspect() const;
+		%feature("autodoc", "1");
+		void SetArrow1Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		%feature("autodoc", "1");
+		Handle_Prs3d_ArrowAspect Arrow2Aspect() const;
+		%feature("autodoc", "1");
+		void SetArrow2Aspect(const Handle_Prs3d_ArrowAspect &anAspect);
+		%feature("autodoc", "1");
+		Handle_Prs3d_TextAspect TextAspect() const;
+		%feature("autodoc", "1");
+		void SetTextAspect(const Handle_Prs3d_TextAspect &anAspect);
+		%feature("autodoc", "1");
+		void SetDrawFirstArrow(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawFirstArrow() const;
+		%feature("autodoc", "1");
+		void SetDrawSecondArrow(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawSecondArrow() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_LengthAspect {
+	Handle_Prs3d_LengthAspect GetHandle() {
+	return *(Handle_Prs3d_LengthAspect*) &$self;
+	}
+};
+%extend Prs3d_LengthAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Prs3d_LengthAspect {
+	~Prs3d_LengthAspect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthAspect\n");}
 	}
 };

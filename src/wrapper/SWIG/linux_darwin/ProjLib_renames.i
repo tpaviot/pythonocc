@@ -12,11 +12,11 @@
 %rename(ProjLib_SequenceOfHSequenceOfPnt) ProjLib_SequenceOfHSequenceOfPnt;
 %rename(ProjLib_PrjResolve) ProjLib_PrjResolve;
 %rename(ProjLib_HCompProjectedCurve) ProjLib_HCompProjectedCurve;
-%rename(ProjLib_ComputeApprox) ProjLib_ComputeApprox;
+%rename(ProjLib_Torus) ProjLib_Torus;
 %rename(Handle_ProjLib_HCompProjectedCurve) Handle_ProjLib_HCompProjectedCurve;
 %rename(ProjLib_ProjectedCurve) ProjLib_ProjectedCurve;
 %rename(Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt) Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
-%rename(ProjLib_Torus) ProjLib_Torus;
+%rename(ProjLib_ComputeApprox) ProjLib_ComputeApprox;
 %rename(ProjLib) ProjLib;
 %rename(ProjLib_ProjectOnSurface) ProjLib_ProjectOnSurface;
 %rename(ProjLib_Sphere) ProjLib_Sphere;

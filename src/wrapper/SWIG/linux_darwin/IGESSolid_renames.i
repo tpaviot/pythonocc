@@ -11,12 +11,12 @@
 %rename(Handle_IGESSolid_SpecificModule) Handle_IGESSolid_SpecificModule;
 %rename(IGESSolid_SelectedComponent) IGESSolid_SelectedComponent;
 %rename(Handle_IGESSolid_ConicalSurface) Handle_IGESSolid_ConicalSurface;
-%rename(Handle_IGESSolid_Torus) Handle_IGESSolid_Torus;
-%rename(Handle_IGESSolid_ReadWriteModule) Handle_IGESSolid_ReadWriteModule;
+%rename(Handle_IGESSolid_SolidOfRevolution) Handle_IGESSolid_SolidOfRevolution;
+%rename(IGESSolid_ToolConicalSurface) IGESSolid_ToolConicalSurface;
 %rename(IGESSolid_PlaneSurface) IGESSolid_PlaneSurface;
 %rename(Handle_IGESSolid_ManifoldSolid) Handle_IGESSolid_ManifoldSolid;
 %rename(Handle_IGESSolid_ToroidalSurface) Handle_IGESSolid_ToroidalSurface;
-%rename(IGESSolid_ToolConicalSurface) IGESSolid_ToolConicalSurface;
+%rename(Handle_IGESSolid_ReadWriteModule) Handle_IGESSolid_ReadWriteModule;
 %rename(Handle_IGESSolid_EdgeList) Handle_IGESSolid_EdgeList;
 %rename(IGESSolid_BooleanTree) IGESSolid_BooleanTree;
 %rename(IGESSolid_HArray1OfShell) IGESSolid_HArray1OfShell;
@@ -34,7 +34,7 @@
 %rename(IGESSolid_ToolConeFrustum) IGESSolid_ToolConeFrustum;
 %rename(IGESSolid_Ellipsoid) IGESSolid_Ellipsoid;
 %rename(IGESSolid_CylindricalSurface) IGESSolid_CylindricalSurface;
-%rename(IGESSolid_SpecificModule) IGESSolid_SpecificModule;
+%rename(Handle_IGESSolid_VertexList) Handle_IGESSolid_VertexList;
 %rename(IGESSolid_ToolLoop) IGESSolid_ToolLoop;
 %rename(IGESSolid_HArray1OfVertexList) IGESSolid_HArray1OfVertexList;
 %rename(IGESSolid_ToolSolidAssembly) IGESSolid_ToolSolidAssembly;
@@ -59,7 +59,7 @@
 %rename(Handle_IGESSolid_SelectedComponent) Handle_IGESSolid_SelectedComponent;
 %rename(Handle_IGESSolid_Sphere) Handle_IGESSolid_Sphere;
 %rename(Handle_IGESSolid_Loop) Handle_IGESSolid_Loop;
-%rename(Handle_IGESSolid_VertexList) Handle_IGESSolid_VertexList;
+%rename(IGESSolid_SpecificModule) IGESSolid_SpecificModule;
 %rename(IGESSolid_ToolCylinder) IGESSolid_ToolCylinder;
 %rename(Handle_IGESSolid_CylindricalSurface) Handle_IGESSolid_CylindricalSurface;
 %rename(IGESSolid_ToolEllipsoid) IGESSolid_ToolEllipsoid;
@@ -79,7 +79,7 @@
 %rename(Handle_IGESSolid_GeneralModule) Handle_IGESSolid_GeneralModule;
 %rename(IGESSolid_ConicalSurface) IGESSolid_ConicalSurface;
 %rename(IGESSolid_Array1OfShell) IGESSolid_Array1OfShell;
-%rename(Handle_IGESSolid_SolidOfRevolution) Handle_IGESSolid_SolidOfRevolution;
+%rename(Handle_IGESSolid_Torus) Handle_IGESSolid_Torus;
 %rename(IGESSolid_ToolPlaneSurface) IGESSolid_ToolPlaneSurface;
 %rename(Handle_IGESSolid_RightAngularWedge) Handle_IGESSolid_RightAngularWedge;
 %rename(IGESSolid_Sphere) IGESSolid_Sphere;

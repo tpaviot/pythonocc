@@ -35,48 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor BinTools_Curve2dSet;
-class BinTools_Curve2dSet {
-	public:
-		%feature("autodoc", "1");
-		BinTools_Curve2dSet();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string WriteToString() {
-			std::stringstream s;
-			self->Write(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void ReadFromString(std::string src) {
-			std::stringstream s(src);
-			self->Read(s);}
-		};
-		%feature("autodoc", "1");
-		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
-		%feature("autodoc", "1");
-		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
-
-};
-%extend BinTools_Curve2dSet {
-	~BinTools_Curve2dSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_Curve2dSet\n");}
-	}
-};
-
-
 %nodefaultctor BinTools_LocationSet;
 class BinTools_LocationSet {
 	public:
@@ -350,5 +308,47 @@ class BinTools_CurveSet {
 	~BinTools_CurveSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinTools_CurveSet\n");}
+	}
+};
+
+
+%nodefaultctor BinTools_Curve2dSet;
+class BinTools_Curve2dSet {
+	public:
+		%feature("autodoc", "1");
+		BinTools_Curve2dSet();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
+		%feature("autodoc", "1");
+		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		%feature("autodoc", "1");
+		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
+
+};
+%extend BinTools_Curve2dSet {
+	~BinTools_Curve2dSet() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinTools_Curve2dSet\n");}
 	}
 };

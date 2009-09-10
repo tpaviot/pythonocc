@@ -47,19 +47,19 @@ enum DsgPrs_ArrowSide {
 
 
 
-%nodefaultctor DsgPrs_SymbPresentation;
-class DsgPrs_SymbPresentation {
+%nodefaultctor DsgPrs_ShadedPlanePresentation;
+class DsgPrs_ShadedPlanePresentation {
 	public:
 		%feature("autodoc", "1");
-		DsgPrs_SymbPresentation();
+		DsgPrs_ShadedPlanePresentation();
 		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &OffsetPoint);
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
 
 };
-%extend DsgPrs_SymbPresentation {
-	~DsgPrs_SymbPresentation() {
+%extend DsgPrs_ShadedPlanePresentation {
+	~DsgPrs_ShadedPlanePresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_SymbPresentation\n");}
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");}
 	}
 };
 
@@ -104,6 +104,25 @@ class DsgPrs_MidPointPresentation {
 };
 
 
+%nodefaultctor DsgPrs_XYZAxisPresentation;
+class DsgPrs_XYZAxisPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_XYZAxisPresentation();
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &anLineAspect, const gp_Dir &aDir, const Standard_Real aVal, const char * aText, const gp_Pnt &aPfirst, const gp_Pnt &aPlast);
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &aLineAspect, const Handle_Prs3d_ArrowAspect &anArrowAspect, const Handle_Prs3d_TextAspect &aTextAspect, const gp_Dir &aDir, const Standard_Real aVal, const char * aText, const gp_Pnt &aPfirst, const gp_Pnt &aPlast);
+
+};
+%extend DsgPrs_XYZAxisPresentation {
+	~DsgPrs_XYZAxisPresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZAxisPresentation\n");}
+	}
+};
+
+
 %nodefaultctor DsgPrs_ShapeDirPresentation;
 class DsgPrs_ShapeDirPresentation {
 	public:
@@ -117,6 +136,40 @@ class DsgPrs_ShapeDirPresentation {
 	~DsgPrs_ShapeDirPresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_ShapeDirPresentation\n");}
+	}
+};
+
+
+%nodefaultctor DsgPrs_EqualRadiusPresentation;
+class DsgPrs_EqualRadiusPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_EqualRadiusPresentation();
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &FirstCenter, const gp_Pnt &SecondCenter, const gp_Pnt &FirstPoint, const gp_Pnt &SecondPoint, const Handle_Geom_Plane &Plane);
+
+};
+%extend DsgPrs_EqualRadiusPresentation {
+	~DsgPrs_EqualRadiusPresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");}
+	}
+};
+
+
+%nodefaultctor DsgPrs_XYZPlanePresentation;
+class DsgPrs_XYZPlanePresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_XYZPlanePresentation();
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
+
+};
+%extend DsgPrs_XYZPlanePresentation {
+	~DsgPrs_XYZPlanePresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");}
 	}
 };
 
@@ -146,34 +199,19 @@ class DsgPrs_LengthPresentation {
 };
 
 
-%nodefaultctor DsgPrs_RadiusPresentation;
-class DsgPrs_RadiusPresentation {
+%nodefaultctor DsgPrs_SymbPresentation;
+class DsgPrs_SymbPresentation {
 	public:
 		%feature("autodoc", "1");
-		DsgPrs_RadiusPresentation();
-
-};
-%extend DsgPrs_RadiusPresentation {
-	~DsgPrs_RadiusPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_RadiusPresentation\n");}
-	}
-};
-
-
-%nodefaultctor DsgPrs_XYZPlanePresentation;
-class DsgPrs_XYZPlanePresentation {
-	public:
+		DsgPrs_SymbPresentation();
 		%feature("autodoc", "1");
-		DsgPrs_XYZPlanePresentation();
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &OffsetPoint);
 
 };
-%extend DsgPrs_XYZPlanePresentation {
-	~DsgPrs_XYZPlanePresentation() {
+%extend DsgPrs_SymbPresentation {
+	~DsgPrs_SymbPresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");}
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_SymbPresentation\n");}
 	}
 };
 
@@ -239,6 +277,38 @@ class DsgPrs_FixPresentation {
 };
 
 
+%nodefaultctor DsgPrs_RadiusPresentation;
+class DsgPrs_RadiusPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_RadiusPresentation();
+
+};
+%extend DsgPrs_RadiusPresentation {
+	~DsgPrs_RadiusPresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_RadiusPresentation\n");}
+	}
+};
+
+
+%nodefaultctor DsgPrs_DatumTool;
+class DsgPrs_DatumTool {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_DatumTool();
+		%feature("autodoc", "1");
+		gp_Ax2 Ax2(const gp_Ax2 &aDatum);
+
+};
+%extend DsgPrs_DatumTool {
+	~DsgPrs_DatumTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumTool\n");}
+	}
+};
+
+
 %nodefaultctor DsgPrs_EllipseRadiusPresentation;
 class DsgPrs_EllipseRadiusPresentation {
 	public:
@@ -256,27 +326,6 @@ class DsgPrs_EllipseRadiusPresentation {
 	~DsgPrs_EllipseRadiusPresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_EllipseRadiusPresentation\n");}
-	}
-};
-
-
-%nodefaultctor DsgPrs_EqualDistancePresentation;
-class DsgPrs_EqualDistancePresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_EqualDistancePresentation();
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &Point1, const gp_Pnt &Point2, const gp_Pnt &Point3, const gp_Pnt &Point4, const Handle_Geom_Plane &Plane);
-		%feature("autodoc", "1");
-		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPoint1, const gp_Pnt &aPoint2, const gp_Dir &aDir, const gp_Pnt &aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt & anExtremePnt1, gp_Pnt & anExtremePnt2);
-		%feature("autodoc", "1");
-		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ &aCircle1, const gp_Circ &aCircle2, const gp_Pnt &aPoint1, const gp_Pnt &aPoint2, const gp_Pnt &aPoint3, const gp_Pnt &aPoint4, const DsgPrs_ArrowSide anArrowSide);
-
-};
-%extend DsgPrs_EqualDistancePresentation {
-	~DsgPrs_EqualDistancePresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualDistancePresentation\n");}
 	}
 };
 
@@ -344,42 +393,6 @@ class DsgPrs_TangentPresentation {
 };
 
 
-%nodefaultctor DsgPrs_DatumTool;
-class DsgPrs_DatumTool {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_DatumTool();
-		%feature("autodoc", "1");
-		gp_Ax2 Ax2(const gp_Ax2 &aDatum);
-
-};
-%extend DsgPrs_DatumTool {
-	~DsgPrs_DatumTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumTool\n");}
-	}
-};
-
-
-%nodefaultctor DsgPrs_ParalPresentation;
-class DsgPrs_ParalPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_ParalPresentation();
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Pnt &OffsetPoint);
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Pnt &OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
-
-};
-%extend DsgPrs_ParalPresentation {
-	~DsgPrs_ParalPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_ParalPresentation\n");}
-	}
-};
-
-
 %nodefaultctor DsgPrs_Chamf2dPresentation;
 class DsgPrs_Chamf2dPresentation {
 	public:
@@ -399,19 +412,42 @@ class DsgPrs_Chamf2dPresentation {
 };
 
 
-%nodefaultctor DsgPrs_EqualRadiusPresentation;
-class DsgPrs_EqualRadiusPresentation {
+%nodefaultctor DsgPrs_EqualDistancePresentation;
+class DsgPrs_EqualDistancePresentation {
 	public:
 		%feature("autodoc", "1");
-		DsgPrs_EqualRadiusPresentation();
+		DsgPrs_EqualDistancePresentation();
 		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &FirstCenter, const gp_Pnt &SecondCenter, const gp_Pnt &FirstPoint, const gp_Pnt &SecondPoint, const Handle_Geom_Plane &Plane);
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &Point1, const gp_Pnt &Point2, const gp_Pnt &Point3, const gp_Pnt &Point4, const Handle_Geom_Plane &Plane);
+		%feature("autodoc", "1");
+		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPoint1, const gp_Pnt &aPoint2, const gp_Dir &aDir, const gp_Pnt &aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt & anExtremePnt1, gp_Pnt & anExtremePnt2);
+		%feature("autodoc", "1");
+		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ &aCircle1, const gp_Circ &aCircle2, const gp_Pnt &aPoint1, const gp_Pnt &aPoint2, const gp_Pnt &aPoint3, const gp_Pnt &aPoint4, const DsgPrs_ArrowSide anArrowSide);
 
 };
-%extend DsgPrs_EqualRadiusPresentation {
-	~DsgPrs_EqualRadiusPresentation() {
+%extend DsgPrs_EqualDistancePresentation {
+	~DsgPrs_EqualDistancePresentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");}
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualDistancePresentation\n");}
+	}
+};
+
+
+%nodefaultctor DsgPrs_ParalPresentation;
+class DsgPrs_ParalPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_ParalPresentation();
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Pnt &OffsetPoint);
+		%feature("autodoc", "1");
+		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Dir &aDirection, const gp_Pnt &OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
+
+};
+%extend DsgPrs_ParalPresentation {
+	~DsgPrs_ParalPresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DsgPrs_ParalPresentation\n");}
 	}
 };
 
@@ -479,42 +515,6 @@ class DsgPrs {
 	~DsgPrs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DsgPrs\n");}
-	}
-};
-
-
-%nodefaultctor DsgPrs_ShadedPlanePresentation;
-class DsgPrs_ShadedPlanePresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_ShadedPlanePresentation();
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt &aPt1, const gp_Pnt &aPt2, const gp_Pnt &aPt3);
-
-};
-%extend DsgPrs_ShadedPlanePresentation {
-	~DsgPrs_ShadedPlanePresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");}
-	}
-};
-
-
-%nodefaultctor DsgPrs_XYZAxisPresentation;
-class DsgPrs_XYZAxisPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_XYZAxisPresentation();
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &anLineAspect, const gp_Dir &aDir, const Standard_Real aVal, const char * aText, const gp_Pnt &aPfirst, const gp_Pnt &aPlast);
-		%feature("autodoc", "1");
-		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LineAspect &aLineAspect, const Handle_Prs3d_ArrowAspect &anArrowAspect, const Handle_Prs3d_TextAspect &aTextAspect, const gp_Dir &aDir, const Standard_Real aVal, const char * aText, const gp_Pnt &aPfirst, const gp_Pnt &aPlast);
-
-};
-%extend DsgPrs_XYZAxisPresentation {
-	~DsgPrs_XYZAxisPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZAxisPresentation\n");}
 	}
 };
 

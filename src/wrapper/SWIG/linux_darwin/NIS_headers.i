@@ -404,15 +404,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
-#include<Quantity_Color.hxx>
-#include<Handle_Standard_Type.hxx>
 #include<Handle_V3d_Viewer.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<gp_Ax1.hxx>
+#include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
+#include<Quantity_Color.hxx>
 #include<gp_Trsf.hxx>
 #include<Bnd_B3f.hxx>
 #include<TColStd_PackedMapOfInteger.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<TopoDS_Shape.hxx>
 %}

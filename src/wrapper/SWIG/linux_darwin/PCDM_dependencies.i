@@ -212,6 +212,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Storage_stCONSTclCOM.hxx>
 %};
 
-%import Standard.i
 %import TCollection.i
+%import Standard.i
 %import Storage.i

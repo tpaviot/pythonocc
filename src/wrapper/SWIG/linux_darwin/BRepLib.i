@@ -43,6 +43,15 @@ enum BRepLib_EdgeError {
 	BRepLib_LineThroughIdenticPoints,
 	};
 
+enum BRepLib_FaceError {
+	BRepLib_FaceDone,
+	BRepLib_NoFace,
+	BRepLib_NotPlanar,
+	BRepLib_CurveProjectionFailed,
+	BRepLib_ParametersOutOfRange,
+	BRepLib_SurfaceNotC2,
+	};
+
 enum BRepLib_ShellError {
 	BRepLib_ShellDone,
 	BRepLib_EmptyShell,
@@ -55,15 +64,6 @@ enum BRepLib_WireError {
 	BRepLib_EmptyWire,
 	BRepLib_DisconnectedWire,
 	BRepLib_NonManifoldWire,
-	};
-
-enum BRepLib_FaceError {
-	BRepLib_FaceDone,
-	BRepLib_NoFace,
-	BRepLib_NotPlanar,
-	BRepLib_CurveProjectionFailed,
-	BRepLib_ParametersOutOfRange,
-	BRepLib_SurfaceNotC2,
 	};
 
 enum BRepLib_ShapeModification {
@@ -454,6 +454,37 @@ class BRepLib {
 };
 
 
+%nodefaultctor BRepLib_FindSurface;
+class BRepLib_FindSurface {
+	public:
+		%feature("autodoc", "1");
+		BRepLib_FindSurface();
+		%feature("autodoc", "1");
+		BRepLib_FindSurface(const TopoDS_Shape &S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Found() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real ToleranceReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Existed() const;
+		%feature("autodoc", "1");
+		TopLoc_Location Location() const;
+
+};
+%extend BRepLib_FindSurface {
+	~BRepLib_FindSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLib_FindSurface\n");}
+	}
+};
+
+
 %nodefaultctor BRepLib_MakePolygon;
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	public:
@@ -595,37 +626,6 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 	~BRepLib_MakeSolid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
-	}
-};
-
-
-%nodefaultctor BRepLib_FindSurface;
-class BRepLib_FindSurface {
-	public:
-		%feature("autodoc", "1");
-		BRepLib_FindSurface();
-		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape &S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Found() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real ToleranceReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Existed() const;
-		%feature("autodoc", "1");
-		TopLoc_Location Location() const;
-
-};
-%extend BRepLib_FindSurface {
-	~BRepLib_FindSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_FindSurface\n");}
 	}
 };
 

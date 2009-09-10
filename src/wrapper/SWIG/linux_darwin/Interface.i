@@ -34,6 +34,16 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 typedef NCollection_Vector<Interface_FileParameter> Interface_VectorOfFileParameter;
 
+enum Interface_DataState {
+	Interface_StateOK,
+	Interface_LoadWarning,
+	Interface_LoadFail,
+	Interface_DataWarning,
+	Interface_DataFail,
+	Interface_StateUnloaded,
+	Interface_StateUnknown,
+	};
+
 enum Interface_ParamType {
 	Interface_ParamMisc,
 	Interface_ParamInteger,
@@ -46,16 +56,6 @@ enum Interface_ParamType {
 	Interface_ParamSub,
 	Interface_ParamHexa,
 	Interface_ParamBinary,
-	};
-
-enum Interface_DataState {
-	Interface_StateOK,
-	Interface_LoadWarning,
-	Interface_LoadFail,
-	Interface_DataWarning,
-	Interface_DataFail,
-	Interface_StateUnloaded,
-	Interface_StateUnknown,
 	};
 
 enum Interface_CheckStatus {
@@ -129,6 +129,96 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_Interface_NodeOfGeneralLib;
+class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib();
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib & operator=(const Handle_Interface_NodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_NodeOfGeneralLib {
+	Interface_NodeOfGeneralLib* GetObject() {
+	return (Interface_NodeOfGeneralLib*)$self->Access();
+	}
+};
+%extend Handle_Interface_NodeOfGeneralLib {
+	~Handle_Interface_NodeOfGeneralLib() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
+class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib();
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
+	Interface_GlobalNodeOfGeneralLib* GetObject() {
+	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
+	}
+};
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
+	~Handle_Interface_GlobalNodeOfGeneralLib() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Interface_InterfaceModel;
+class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel(const Handle_Interface_InterfaceModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel & operator=(const Handle_Interface_InterfaceModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel & operator=(const Interface_InterfaceModel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_InterfaceModel {
+	Interface_InterfaceModel* GetObject() {
+	return (Interface_InterfaceModel*)$self->Access();
+	}
+};
+%extend Handle_Interface_InterfaceModel {
+	~Handle_Interface_InterfaceModel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Interface_GlobalNodeOfReaderLib;
 class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient {
 	public:
@@ -185,36 +275,6 @@ class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 	~Handle_Interface_ParamSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamSet\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Interface_ParamList;
-class Handle_Interface_ParamList : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList();
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList(const Handle_Interface_ParamList &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList(const Interface_ParamList *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList & operator=(const Handle_Interface_ParamList &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList & operator=(const Interface_ParamList *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_ParamList {
-	Interface_ParamList* GetObject() {
-	return (Interface_ParamList*)$self->Access();
-	}
-};
-%extend Handle_Interface_ParamList {
-	~Handle_Interface_ParamList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamList\n");}
 	}
 };
 
@@ -369,6 +429,36 @@ class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 };
 
 
+%nodefaultctor Handle_Interface_SignLabel;
+class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel();
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel(const Handle_Interface_SignLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel(const Interface_SignLabel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel & operator=(const Handle_Interface_SignLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel & operator=(const Interface_SignLabel *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_SignLabel const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_SignLabel {
+	Interface_SignLabel* GetObject() {
+	return (Interface_SignLabel*)$self->Access();
+	}
+};
+%extend Handle_Interface_SignLabel {
+	~Handle_Interface_SignLabel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignLabel\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Interface_CopyControl;
 class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 	public:
@@ -395,6 +485,36 @@ class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 	~Handle_Interface_CopyControl() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyControl\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Interface_GeneralModule;
+class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule(const Handle_Interface_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule(const Interface_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule & operator=(const Handle_Interface_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule & operator=(const Interface_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GeneralModule {
+	Interface_GeneralModule* GetObject() {
+	return (Interface_GeneralModule*)$self->Access();
+	}
+};
+%extend Handle_Interface_GeneralModule {
+	~Handle_Interface_GeneralModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
 	}
 };
 
@@ -489,6 +609,36 @@ class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
 };
 
 
+%nodefaultctor Handle_Interface_ParamList;
+class Handle_Interface_ParamList : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList();
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList(const Handle_Interface_ParamList &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList(const Interface_ParamList *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList & operator=(const Handle_Interface_ParamList &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList & operator=(const Interface_ParamList *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_ParamList {
+	Interface_ParamList* GetObject() {
+	return (Interface_ParamList*)$self->Access();
+	}
+};
+%extend Handle_Interface_ParamList {
+	~Handle_Interface_ParamList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamList\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Interface_CopyMap;
 class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	public:
@@ -515,36 +665,6 @@ class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	~Handle_Interface_CopyMap() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyMap\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Interface_GeneralModule;
-class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule(const Handle_Interface_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule(const Interface_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule & operator=(const Handle_Interface_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule & operator=(const Interface_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GeneralModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GeneralModule {
-	Interface_GeneralModule* GetObject() {
-	return (Interface_GeneralModule*)$self->Access();
-	}
-};
-%extend Handle_Interface_GeneralModule {
-	~Handle_Interface_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
 	}
 };
 
@@ -609,66 +729,6 @@ class Handle_Interface_GTool : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Interface_InterfaceMismatch;
-class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch(const Handle_Interface_InterfaceMismatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch & operator=(const Handle_Interface_InterfaceMismatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch & operator=(const Interface_InterfaceMismatch *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceMismatch const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_InterfaceMismatch {
-	Interface_InterfaceMismatch* GetObject() {
-	return (Interface_InterfaceMismatch*)$self->Access();
-	}
-};
-%extend Handle_Interface_InterfaceMismatch {
-	~Handle_Interface_InterfaceMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Interface_InterfaceModel;
-class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel(const Handle_Interface_InterfaceModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel(const Interface_InterfaceModel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & operator=(const Handle_Interface_InterfaceModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel & operator=(const Interface_InterfaceModel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_InterfaceModel {
-	Interface_InterfaceModel* GetObject() {
-	return (Interface_InterfaceModel*)$self->Access();
-	}
-};
-%extend Handle_Interface_InterfaceModel {
-	~Handle_Interface_InterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Interface_SequenceNodeOfSequenceOfCheck;
 class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection_SeqNode {
 	public:
@@ -725,36 +785,6 @@ class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 	~Handle_Interface_HSequenceOfCheck() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Interface_NodeOfGeneralLib;
-class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib & operator=(const Handle_Interface_NodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_NodeOfGeneralLib {
-	Interface_NodeOfGeneralLib* GetObject() {
-	return (Interface_NodeOfGeneralLib*)$self->Access();
-	}
-};
-%extend Handle_Interface_NodeOfGeneralLib {
-	~Handle_Interface_NodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");}
 	}
 };
 
@@ -879,66 +909,6 @@ class Handle_Interface_Static : public Handle_Interface_TypedValue {
 };
 
 
-%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
-class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GlobalNodeOfGeneralLib {
-	Interface_GlobalNodeOfGeneralLib* GetObject() {
-	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
-	}
-};
-%extend Handle_Interface_GlobalNodeOfGeneralLib {
-	~Handle_Interface_GlobalNodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Interface_SignLabel;
-class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel();
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel(const Handle_Interface_SignLabel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel(const Interface_SignLabel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel & operator=(const Handle_Interface_SignLabel &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel & operator=(const Interface_SignLabel *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_SignLabel const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_SignLabel {
-	Interface_SignLabel* GetObject() {
-	return (Interface_SignLabel*)$self->Access();
-	}
-};
-%extend Handle_Interface_SignLabel {
-	~Handle_Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignLabel\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Interface_UndefinedContent;
 class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 	public:
@@ -965,6 +935,36 @@ class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 	~Handle_Interface_UndefinedContent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_UndefinedContent\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Interface_InterfaceMismatch;
+class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch(const Handle_Interface_InterfaceMismatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch(const Interface_InterfaceMismatch *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch & operator=(const Handle_Interface_InterfaceMismatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch & operator=(const Interface_InterfaceMismatch *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceMismatch const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_InterfaceMismatch {
+	Interface_InterfaceMismatch* GetObject() {
+	return (Interface_InterfaceMismatch*)$self->Access();
+	}
+};
+%extend Handle_Interface_InterfaceMismatch {
+	~Handle_Interface_InterfaceMismatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");}
 	}
 };
 
@@ -1059,37 +1059,113 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 };
 
 
-%nodefaultctor Interface_GlobalNodeOfReaderLib;
-class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
+%nodefaultctor Interface_IndexedMapOfAsciiString;
+class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Interface_GlobalNodeOfReaderLib();
+		Interface_IndexedMapOfAsciiString(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Add(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		Interface_IndexedMapOfAsciiString & Assign(const Interface_IndexedMapOfAsciiString &Other);
+		%feature("autodoc", "1");
+		Interface_IndexedMapOfAsciiString & operator=(const Interface_IndexedMapOfAsciiString &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
+
+};
+%extend Interface_IndexedMapOfAsciiString {
+	~Interface_IndexedMapOfAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Interface_ReaderLib;
+class Interface_ReaderLib {
+	public:
+		%feature("autodoc", "1");
+		void SetGlobal(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		%feature("autodoc", "1");
+		Interface_ReaderLib(const Handle_Interface_Protocol &aprotocol);
+		%feature("autodoc", "1");
+		Interface_ReaderLib();
+		%feature("autodoc", "1");
+		void AddProtocol(const Handle_Standard_Transient &aprotocol);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetComplete();
+		%feature("autodoc","Select(const obj)->Standard_Integer");
+		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Start();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
 		%feature("autodoc", "1");
 		const Handle_Interface_ReaderModule & Module() const;
 		%feature("autodoc", "1");
 		const Handle_Interface_Protocol & Protocol() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_GlobalNodeOfReaderLib & Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Interface_GlobalNodeOfReaderLib {
-	Handle_Interface_GlobalNodeOfReaderLib GetHandle() {
-	return *(Handle_Interface_GlobalNodeOfReaderLib*) &$self;
-	}
-};
-%extend Interface_GlobalNodeOfReaderLib {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_GlobalNodeOfReaderLib {
-	~Interface_GlobalNodeOfReaderLib() {
+%extend Interface_ReaderLib {
+	~Interface_ReaderLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_ReaderLib\n");}
+	}
+};
+
+
+%nodefaultctor Interface_DataMapOfIntegerTransient;
+class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Interface_DataMapOfIntegerTransient(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Interface_DataMapOfIntegerTransient & Assign(const Interface_DataMapOfIntegerTransient &Other);
+		%feature("autodoc", "1");
+		Interface_DataMapOfIntegerTransient & operator=(const Interface_DataMapOfIntegerTransient &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const Standard_Integer &K);
+
+};
+%extend Interface_DataMapOfIntegerTransient {
+	~Interface_DataMapOfIntegerTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
 	}
 };
 
@@ -1145,29 +1221,6 @@ class Interface_GeneralModule : public MMgt_TShared {
 	~Interface_GeneralModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_GeneralModule\n");}
-	}
-};
-
-
-%nodefaultctor Interface_DataMapIteratorOfDataMapOfTransientInteger;
-class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfTransientInteger();
-		%feature("autodoc", "1");
-		Interface_DataMapIteratorOfDataMapOfTransientInteger(const Interface_DataMapOfTransientInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Interface_DataMapOfTransientInteger &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
-	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
 	}
 };
 
@@ -1247,80 +1300,6 @@ class Interface_FileReaderData : public MMgt_TShared {
 };
 
 
-%nodefaultctor Interface_MSG;
-class Interface_MSG {
-	public:
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key);
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const Standard_Integer i1);
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const Standard_Integer i1, const Standard_Integer i2);
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const Standard_Real r1, const Standard_Integer intervals=-0x000000001);
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const char * str);
-		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const Standard_Integer ival, const char * str);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_CString Value() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void ReadFromString(std::string src) {
-			std::stringstream s(src);
-			self->Read(s);}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer Read(const char * file);
-		%feature("autodoc", "1");
-		Standard_Integer Write(Standard_OStream & S, const char * rootkey="");
-		%feature("autodoc", "1");
-		Standard_Boolean IsKey(const char * mess);
-		%feature("autodoc", "1");
-		char * Translated(const char * key);
-		%feature("autodoc", "1");
-		void Record(const char * key, const char * item);
-		%feature("autodoc", "1");
-		void SetTrace(const Standard_Boolean toprint, const Standard_Boolean torecord);
-		%feature("autodoc", "1");
-		void SetMode(const Standard_Boolean running, const Standard_Boolean raising);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintTraceToString() {
-			std::stringstream s;
-			self->PrintTrace(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
-		%feature("autodoc", "1");
-		void TDate(const char * text, const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const char * format="");
-		%feature("autodoc","NDate(Standard_CString text)->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
-		Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer CDate(const char * text1, const char * text2);
-		%feature("autodoc", "1");
-		char * Blanks(const Standard_Integer val, const Standard_Integer max);
-		%feature("autodoc", "1");
-		char * Blanks(const char * val, const Standard_Integer max);
-		%feature("autodoc", "1");
-		char * Blanks(const Standard_Integer count);
-		%feature("autodoc", "1");
-		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
-
-};
-%extend Interface_MSG {
-	~Interface_MSG() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
-	}
-};
-
-
 %nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
 class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_BasicMapIterator {
 	public:
@@ -1379,49 +1358,6 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 };
 
 
-%nodefaultctor Interface_Array1OfFileParameter;
-class Interface_Array1OfFileParameter {
-	public:
-		%feature("autodoc", "1");
-		Interface_Array1OfFileParameter(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Interface_Array1OfFileParameter(const Interface_FileParameter &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Interface_FileParameter &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Interface_Array1OfFileParameter & Assign(const Interface_Array1OfFileParameter &Other);
-		%feature("autodoc", "1");
-		const Interface_Array1OfFileParameter & operator=(const Interface_Array1OfFileParameter &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Interface_FileParameter &Value);
-		%feature("autodoc", "1");
-		const Interface_FileParameter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Interface_FileParameter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Interface_FileParameter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Interface_FileParameter & operator()(const Standard_Integer Index);
-
-};
-%extend Interface_Array1OfFileParameter {
-	~Interface_Array1OfFileParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfFileParameter\n");}
-	}
-};
-
-
 %nodefaultctor Interface_ShareFlags;
 class Interface_ShareFlags {
 	public:
@@ -1455,6 +1391,49 @@ class Interface_ShareFlags {
 };
 
 
+%nodefaultctor Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
+class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const TCollection_AsciiString &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString GetHandle() {
+	return *(Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString*) &$self;
+	}
+};
+%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	~Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
+	}
+};
+
+
 %nodefaultctor Interface_CopyControl;
 class Interface_CopyControl : public MMgt_TShared {
 	public:
@@ -1482,43 +1461,6 @@ class Interface_CopyControl : public MMgt_TShared {
 	~Interface_CopyControl() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_CopyControl\n");}
-	}
-};
-
-
-%nodefaultctor Interface_ReaderLib;
-class Interface_ReaderLib {
-	public:
-		%feature("autodoc", "1");
-		void SetGlobal(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
-		%feature("autodoc", "1");
-		Interface_ReaderLib(const Handle_Interface_Protocol &aprotocol);
-		%feature("autodoc", "1");
-		Interface_ReaderLib();
-		%feature("autodoc", "1");
-		void AddProtocol(const Handle_Standard_Transient &aprotocol);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void SetComplete();
-		%feature("autodoc","Select(const obj)->Standard_Integer");
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Start();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Interface_ReaderModule & Module() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Protocol & Protocol() const;
-
-};
-%extend Interface_ReaderLib {
-	~Interface_ReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ReaderLib\n");}
 	}
 };
 
@@ -1561,8 +1503,18 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 		Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Standard_Transient &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1581,113 +1533,6 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 	~Interface_DataMapNodeOfDataMapOfTransientInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
-	}
-};
-
-
-%nodefaultctor Interface_EntityList;
-class Interface_EntityList {
-	public:
-		%feature("autodoc", "1");
-		Interface_EntityList();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Add(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Remove(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEntities() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer num, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void FillIterator(Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTypedEntities(const Handle_Standard_Type &atype) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
-
-};
-%extend Interface_EntityList {
-	~Interface_EntityList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
-	}
-};
-
-
-%nodefaultctor Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
-class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const TCollection_AsciiString &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString GetHandle() {
-	return *(Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString*) &$self;
-	}
-};
-%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	~Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
-	}
-};
-
-
-%nodefaultctor Interface_CopyMap;
-class Interface_CopyMap : public Interface_CopyControl {
-	public:
-		%feature("autodoc", "1");
-		Interface_CopyMap(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		virtual		void Clear();
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		virtual		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_CopyMap {
-	Handle_Interface_CopyMap GetHandle() {
-	return *(Handle_Interface_CopyMap*) &$self;
-	}
-};
-%extend Interface_CopyMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_CopyMap {
-	~Interface_CopyMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CopyMap\n");}
 	}
 };
 
@@ -1743,39 +1588,228 @@ class Interface_CopyTool {
 };
 
 
-%nodefaultctor Interface_DataMapOfIntegerTransient;
-class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
+%nodefaultctor Interface_DataMapNodeOfDataMapOfIntegerTransient;
+class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Interface_DataMapOfIntegerTransient(const Standard_Integer NbBuckets=1);
+		Interface_DataMapNodeOfDataMapOfIntegerTransient(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		Interface_DataMapOfIntegerTransient & Assign(const Interface_DataMapOfIntegerTransient &Other);
+		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
-		Interface_DataMapOfIntegerTransient & operator=(const Interface_DataMapOfIntegerTransient &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Standard_Integer &K);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Interface_DataMapOfIntegerTransient {
-	~Interface_DataMapOfIntegerTransient() {
+%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient GetHandle() {
+	return *(Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient*) &$self;
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	~Interface_DataMapNodeOfDataMapOfIntegerTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	}
+};
+
+
+%nodefaultctor Interface_GlobalNodeOfReaderLib;
+class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Interface_GlobalNodeOfReaderLib();
+		%feature("autodoc", "1");
+		void Add(const Handle_Interface_ReaderModule &amodule, const Handle_Interface_Protocol &aprotocol);
+		%feature("autodoc", "1");
+		const Handle_Interface_ReaderModule & Module() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Protocol & Protocol() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_GlobalNodeOfReaderLib & Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_GlobalNodeOfReaderLib {
+	Handle_Interface_GlobalNodeOfReaderLib GetHandle() {
+	return *(Handle_Interface_GlobalNodeOfReaderLib*) &$self;
+	}
+};
+%extend Interface_GlobalNodeOfReaderLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_GlobalNodeOfReaderLib {
+	~Interface_GlobalNodeOfReaderLib() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
+	}
+};
+
+
+%nodefaultctor Interface_CopyMap;
+class Interface_CopyMap : public Interface_CopyControl {
+	public:
+		%feature("autodoc", "1");
+		Interface_CopyMap(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		virtual		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_CopyMap {
+	Handle_Interface_CopyMap GetHandle() {
+	return *(Handle_Interface_CopyMap*) &$self;
+	}
+};
+%extend Interface_CopyMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_CopyMap {
+	~Interface_CopyMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CopyMap\n");}
+	}
+};
+
+
+%nodefaultctor Interface_MapAsciiStringHasher;
+class Interface_MapAsciiStringHasher {
+	public:
+		%feature("autodoc", "1");
+		Interface_MapAsciiStringHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
+
+};
+%extend Interface_MapAsciiStringHasher {
+	~Interface_MapAsciiStringHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
+	}
+};
+
+
+%nodefaultctor Interface_BitMap;
+class Interface_BitMap {
+	public:
+		%feature("autodoc", "1");
+		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
+		%feature("autodoc", "1");
+		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
+		%feature("autodoc","Internals()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
+		%feature("autodoc", "1");
+		void Reservate(const Standard_Integer moreflags);
+		%feature("autodoc", "1");
+		void SetLength(const Standard_Integer nbitems);
+		%feature("autodoc", "1");
+		Standard_Integer AddFlag(const char * name="");
+		%feature("autodoc", "1");
+		Standard_Integer AddSomeFlags(const Standard_Integer more);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveFlag(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean SetFlagName(const Standard_Integer num, const char * name);
+		%feature("autodoc", "1");
+		Standard_Integer NbFlags() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		char * FlagName(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer FlagNumber(const char * name) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Value(const Standard_Integer item, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer item, const Standard_Boolean val, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		void SetTrue(const Standard_Integer item, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		void SetFalse(const Standard_Integer item, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CTrue(const Standard_Integer item, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CFalse(const Standard_Integer item, const Standard_Integer flag=0) const;
+		%feature("autodoc", "1");
+		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
+
+};
+%extend Interface_BitMap {
+	~Interface_BitMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
+	}
+};
+
+
+%nodefaultctor Interface_Array1OfFileParameter;
+class Interface_Array1OfFileParameter {
+	public:
+		%feature("autodoc", "1");
+		Interface_Array1OfFileParameter(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Interface_Array1OfFileParameter(const Interface_FileParameter &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Interface_FileParameter &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Interface_Array1OfFileParameter & Assign(const Interface_Array1OfFileParameter &Other);
+		%feature("autodoc", "1");
+		const Interface_Array1OfFileParameter & operator=(const Interface_Array1OfFileParameter &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Interface_FileParameter &Value);
+		%feature("autodoc", "1");
+		const Interface_FileParameter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Interface_FileParameter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Interface_FileParameter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Interface_FileParameter & operator()(const Standard_Integer Index);
+
+};
+%extend Interface_Array1OfFileParameter {
+	~Interface_Array1OfFileParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfFileParameter\n");}
 	}
 };
 
@@ -1858,6 +1892,121 @@ class Interface_ParamList : public MMgt_TShared {
 	~Interface_ParamList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_ParamList\n");}
+	}
+};
+
+
+%nodefaultctor Interface_Array1OfHAsciiString;
+class Interface_Array1OfHAsciiString {
+	public:
+		%feature("autodoc", "1");
+		Interface_Array1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Interface_Array1OfHAsciiString(const Handle_TCollection_HAsciiString &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Interface_Array1OfHAsciiString & Assign(const Interface_Array1OfHAsciiString &Other);
+		%feature("autodoc", "1");
+		const Interface_Array1OfHAsciiString & operator=(const Interface_Array1OfHAsciiString &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index);
+
+};
+%extend Interface_Array1OfHAsciiString {
+	~Interface_Array1OfHAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfHAsciiString\n");}
+	}
+};
+
+
+%nodefaultctor Interface_TypedValue;
+class Interface_TypedValue : public MoniTool_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Interface_TypedValue(const char * name, const Interface_ParamType type=Interface_ParamText, const char * init="");
+		%feature("autodoc", "1");
+		Interface_ParamType Type() const;
+		%feature("autodoc", "1");
+		MoniTool_ValueType ParamTypeToValueType(const Interface_ParamType typ);
+		%feature("autodoc", "1");
+		Interface_ParamType ValueTypeToParamType(const MoniTool_ValueType typ);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_TypedValue {
+	Handle_Interface_TypedValue GetHandle() {
+	return *(Handle_Interface_TypedValue*) &$self;
+	}
+};
+%extend Interface_TypedValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_TypedValue {
+	~Interface_TypedValue() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
+	}
+};
+
+
+%nodefaultctor Interface_EntityList;
+class Interface_EntityList {
+	public:
+		%feature("autodoc", "1");
+		Interface_EntityList();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Add(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Remove(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEntities() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer num, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void FillIterator(Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTypedEntities(const Handle_Standard_Type &atype) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
+
+};
+%extend Interface_EntityList {
+	~Interface_EntityList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
 	}
 };
 
@@ -1980,39 +2129,6 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 };
 
 
-%nodefaultctor Interface_TypedValue;
-class Interface_TypedValue : public MoniTool_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		Interface_TypedValue(const char * name, const Interface_ParamType type=Interface_ParamText, const char * init="");
-		%feature("autodoc", "1");
-		Interface_ParamType Type() const;
-		%feature("autodoc", "1");
-		MoniTool_ValueType ParamTypeToValueType(const Interface_ParamType typ);
-		%feature("autodoc", "1");
-		Interface_ParamType ValueTypeToParamType(const MoniTool_ValueType typ);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_TypedValue {
-	Handle_Interface_TypedValue GetHandle() {
-	return *(Handle_Interface_TypedValue*) &$self;
-	}
-};
-%extend Interface_TypedValue {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_TypedValue {
-	~Interface_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
-	}
-};
-
-
 %nodefaultctor Interface_Static;
 class Interface_Static : public Interface_TypedValue {
 	public:
@@ -2023,7 +2139,7 @@ class Interface_Static : public Interface_TypedValue {
 		%feature("autodoc", "1");
 		void PrintStatic(const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
-		Standard_CString Family() const;
+		char * Family() const;
 		%feature("autodoc", "1");
 		void SetWild(const Handle_Interface_Static &wildcard);
 		%feature("autodoc", "1");
@@ -2104,9 +2220,9 @@ class Interface_FloatWriter {
 		%feature("autodoc","Options()->[Standard_Real, Standard_Real]");
 		void Options(Standard_Boolean & zerosup, Standard_Boolean & range, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_CString MainFormat() const;
+		char * MainFormat() const;
 		%feature("autodoc", "1");
-		Standard_CString FormatForRange() const;
+		char * FormatForRange() const;
 		%feature("autodoc", "1");
 		Standard_Integer Write(const Standard_Real val, const char * text) const;
 		%feature("autodoc", "1");
@@ -2117,37 +2233,6 @@ class Interface_FloatWriter {
 	~Interface_FloatWriter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_FloatWriter\n");}
-	}
-};
-
-
-%nodefaultctor Interface_IntVal;
-class Interface_IntVal : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_IntVal();
-		%feature("autodoc", "1");
-		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer & CValue();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_IntVal {
-	Handle_Interface_IntVal GetHandle() {
-	return *(Handle_Interface_IntVal*) &$self;
-	}
-};
-%extend Interface_IntVal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_IntVal {
-	~Interface_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
 	}
 };
 
@@ -2183,6 +2268,35 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 	~Interface_NodeOfGeneralLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfGeneralLib\n");}
+	}
+};
+
+
+%nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
+class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_Check &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	Handle_Interface_SequenceNodeOfSequenceOfCheck GetHandle() {
+	return *(Handle_Interface_SequenceNodeOfSequenceOfCheck*) &$self;
+	}
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	~Interface_SequenceNodeOfSequenceOfCheck() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
 	}
 };
 
@@ -2332,88 +2446,6 @@ class Interface_IntList {
 };
 
 
-%nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
-class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_Check &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_SequenceNodeOfSequenceOfCheck {
-	Handle_Interface_SequenceNodeOfSequenceOfCheck GetHandle() {
-	return *(Handle_Interface_SequenceNodeOfSequenceOfCheck*) &$self;
-	}
-};
-%extend Interface_SequenceNodeOfSequenceOfCheck {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_SequenceNodeOfSequenceOfCheck {
-	~Interface_SequenceNodeOfSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
-	}
-};
-
-
-%nodefaultctor Interface_BitMap;
-class Interface_BitMap {
-	public:
-		%feature("autodoc", "1");
-		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
-		%feature("autodoc", "1");
-		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
-		%feature("autodoc","Internals()->[Standard_Integer, Standard_Integer, Standard_Integer]");
-		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
-		%feature("autodoc", "1");
-		void Reservate(const Standard_Integer moreflags);
-		%feature("autodoc", "1");
-		void SetLength(const Standard_Integer nbitems);
-		%feature("autodoc", "1");
-		Standard_Integer AddFlag(const char * name="");
-		%feature("autodoc", "1");
-		Standard_Integer AddSomeFlags(const Standard_Integer more);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveFlag(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Boolean SetFlagName(const Standard_Integer num, const char * name);
-		%feature("autodoc", "1");
-		Standard_Integer NbFlags() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		char * FlagName(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer FlagNumber(const char * name) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Value(const Standard_Integer item, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer item, const Standard_Boolean val, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		void SetTrue(const Standard_Integer item, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		void SetFalse(const Standard_Integer item, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CTrue(const Standard_Integer item, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CFalse(const Standard_Integer item, const Standard_Integer flag=0) const;
-		%feature("autodoc", "1");
-		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
-
-};
-%extend Interface_BitMap {
-	~Interface_BitMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
-	}
-};
-
-
 %nodefaultctor Interface_FileReaderTool;
 class Interface_FileReaderTool {
 	public:
@@ -2471,49 +2503,25 @@ class Interface_FileReaderTool {
 };
 
 
-%nodefaultctor Interface_HArray1OfHAsciiString;
-class Interface_HArray1OfHAsciiString : public MMgt_TShared {
+%nodefaultctor Interface_DataMapIteratorOfDataMapOfTransientInteger;
+class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
+		Interface_DataMapIteratorOfDataMapOfTransientInteger();
 		%feature("autodoc", "1");
-		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up, const Handle_TCollection_HAsciiString &V);
+		Interface_DataMapIteratorOfDataMapOfTransientInteger(const Interface_DataMapOfTransientInteger &aMap);
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &V);
+		void Initialize(const Interface_DataMapOfTransientInteger &aMap);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		const Handle_Standard_Transient & Key() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Interface_Array1OfHAsciiString & Array1() const;
-		%feature("autodoc", "1");
-		Interface_Array1OfHAsciiString & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Standard_Integer & Value() const;
 
 };
-%extend Interface_HArray1OfHAsciiString {
-	Handle_Interface_HArray1OfHAsciiString GetHandle() {
-	return *(Handle_Interface_HArray1OfHAsciiString*) &$self;
-	}
-};
-%extend Interface_HArray1OfHAsciiString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_HArray1OfHAsciiString {
-	~Interface_HArray1OfHAsciiString() {
+%extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
+	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
 	}
 };
 
@@ -2561,6 +2569,53 @@ class Interface_CheckTool {
 };
 
 
+%nodefaultctor Interface_HArray1OfHAsciiString;
+class Interface_HArray1OfHAsciiString : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Interface_HArray1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up, const Handle_TCollection_HAsciiString &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
+		%feature("autodoc", "1");
+		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Interface_Array1OfHAsciiString & Array1() const;
+		%feature("autodoc", "1");
+		Interface_Array1OfHAsciiString & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_HArray1OfHAsciiString {
+	Handle_Interface_HArray1OfHAsciiString GetHandle() {
+	return *(Handle_Interface_HArray1OfHAsciiString*) &$self;
+	}
+};
+%extend Interface_HArray1OfHAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_HArray1OfHAsciiString {
+	~Interface_HArray1OfHAsciiString() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");}
+	}
+};
+
+
 %nodefaultctor Interface_Graph;
 class Interface_Graph {
 	public:
@@ -2590,8 +2645,18 @@ class Interface_Graph {
 		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer & CStatus(const Standard_Integer num);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCStatus(const Standard_Integer num) {
+				return (Standard_Integer) $self->CStatus(num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCStatus(Standard_Integer value ,const Standard_Integer num) {
+				$self->CStatus(num)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void SetStatus(const Standard_Integer num, const Standard_Integer stat);
 		%feature("autodoc", "1");
@@ -2666,64 +2731,346 @@ class Interface_Graph {
 };
 
 
-%nodefaultctor Interface_SignType;
-class Interface_SignType : public MoniTool_SignText {
+%nodefaultctor Interface_MSG;
+class Interface_MSG {
 	public:
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key);
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key, const Standard_Integer i1);
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key, const Standard_Integer i1, const Standard_Integer i2);
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key, const Standard_Real r1, const Standard_Integer intervals=-0x000000001);
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key, const char * str);
+		%feature("autodoc", "1");
+		Interface_MSG(const char * key, const Standard_Integer ival, const char * str);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		char * Value() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer Read(const char * file);
+		%feature("autodoc", "1");
+		Standard_Integer Write(Standard_OStream & S, const char * rootkey="");
+		%feature("autodoc", "1");
+		Standard_Boolean IsKey(const char * mess);
+		%feature("autodoc", "1");
+		char * Translated(const char * key);
+		%feature("autodoc", "1");
+		void Record(const char * key, const char * item);
+		%feature("autodoc", "1");
+		void SetTrace(const Standard_Boolean toprint, const Standard_Boolean torecord);
+		%feature("autodoc", "1");
+		void SetMode(const Standard_Boolean running, const Standard_Boolean raising);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintTraceToString() {
+			std::stringstream s;
+			self->PrintTrace(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
+		%feature("autodoc", "1");
+		void TDate(const char * text, const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const char * format="");
+		%feature("autodoc","NDate(Standard_CString text)->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Integer CDate(const char * text1, const char * text2);
+		%feature("autodoc", "1");
+		char * Blanks(const Standard_Integer val, const Standard_Integer max);
+		%feature("autodoc", "1");
+		char * Blanks(const char * val, const Standard_Integer max);
+		%feature("autodoc", "1");
+		char * Blanks(const Standard_Integer count);
+		%feature("autodoc", "1");
+		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
+
+};
+%extend Interface_MSG {
+	~Interface_MSG() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
+	}
+};
+
+
+%nodefaultctor Interface_ReportEntity;
+class Interface_ReportEntity : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_ReportEntity(const Handle_Standard_Transient &unknown);
+		%feature("autodoc", "1");
+		Interface_ReportEntity(const Handle_Interface_Check &acheck, const Handle_Standard_Transient &concerned);
+		%feature("autodoc", "1");
+		void SetContent(const Handle_Standard_Transient &content);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Concerned() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasContent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasNewContent() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Content() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsError() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsUnknown() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_ReportEntity {
+	Handle_Interface_ReportEntity GetHandle() {
+	return *(Handle_Interface_ReportEntity*) &$self;
+	}
+};
+%extend Interface_ReportEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_ReportEntity {
+	~Interface_ReportEntity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ReportEntity\n");}
+	}
+};
+
+
+%nodefaultctor Interface_SignLabel;
+class Interface_SignLabel : public MoniTool_SignText {
+	public:
+		%feature("autodoc", "1");
+		Interface_SignLabel();
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
 		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		char * ClassName(const char * typnam);
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Interface_SignType {
-	Handle_Interface_SignType GetHandle() {
-	return *(Handle_Interface_SignType*) &$self;
+%extend Interface_SignLabel {
+	Handle_Interface_SignLabel GetHandle() {
+	return *(Handle_Interface_SignLabel*) &$self;
 	}
 };
-%extend Interface_SignType {
+%extend Interface_SignLabel {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Interface_SignType {
-	~Interface_SignType() {
+%extend Interface_SignLabel {
+	~Interface_SignLabel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SignType\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
 	}
 };
 
 
-%nodefaultctor Interface_DataMapNodeOfDataMapOfIntegerTransient;
-class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapNode {
+%nodefaultctor Interface_IntVal;
+class Interface_IntVal : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Interface_DataMapNodeOfDataMapOfIntegerTransient(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		Interface_IntVal();
 		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
+		Standard_Integer Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCValue() {
+				return (Standard_Integer) $self->CValue();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCValue(Standard_Integer value ) {
+				$self->CValue()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
-	Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient GetHandle() {
-	return *(Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient*) &$self;
+%extend Interface_IntVal {
+	Handle_Interface_IntVal GetHandle() {
+	return *(Handle_Interface_IntVal*) &$self;
 	}
 };
-%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+%extend Interface_IntVal {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
-	~Interface_DataMapNodeOfDataMapOfIntegerTransient() {
+%extend Interface_IntVal {
+	~Interface_IntVal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
+	}
+};
+
+
+%nodefaultctor Interface_HGraph;
+class Interface_HGraph : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_HGraph(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		%feature("autodoc", "1");
+		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		const Interface_Graph & Graph() const;
+		%feature("autodoc", "1");
+		Interface_Graph & CGraph();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_HGraph {
+	Handle_Interface_HGraph GetHandle() {
+	return *(Handle_Interface_HGraph*) &$self;
+	}
+};
+%extend Interface_HGraph {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_HGraph {
+	~Interface_HGraph() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
+	}
+};
+
+
+%nodefaultctor Interface_Protocol;
+class Interface_Protocol : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol Active();
+		%feature("autodoc", "1");
+		void SetActive(const Handle_Interface_Protocol &aprotocol);
+		%feature("autodoc", "1");
+		void ClearActive();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbResources() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Interface_Protocol Resource(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNumber(const Handle_Standard_Transient &obj) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDynamicType(const Handle_Standard_Transient &obj) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbTypes(const Handle_Standard_Transient &obj) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Type Type(const Handle_Standard_Transient &obj, const Standard_Integer nt=1) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer TypeNumber(const Handle_Standard_Type &atype) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean GlobalCheck(const Interface_Graph &G, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Interface_InterfaceModel NewModel() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSuitableModel(const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient UnknownEntity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsUnknownEntity(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_Protocol {
+	Handle_Interface_Protocol GetHandle() {
+	return *(Handle_Interface_Protocol*) &$self;
+	}
+};
+%extend Interface_Protocol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_Protocol {
+	~Interface_Protocol() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Protocol\n");}
+	}
+};
+
+
+%nodefaultctor Interface_SequenceOfCheck;
+class Interface_SequenceOfCheck : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Interface_SequenceOfCheck();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Interface_SequenceOfCheck & Assign(const Interface_SequenceOfCheck &Other);
+		%feature("autodoc", "1");
+		const Interface_SequenceOfCheck & operator=(const Interface_SequenceOfCheck &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Interface_Check &T);
+		%feature("autodoc", "1");
+		void Append(Interface_SequenceOfCheck & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Interface_Check &T);
+		%feature("autodoc", "1");
+		void Prepend(Interface_SequenceOfCheck & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Interface_Check &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Interface_SequenceOfCheck & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Interface_Check &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Interface_SequenceOfCheck & S);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & First() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Interface_SequenceOfCheck & S);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Interface_Check &I);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Interface_SequenceOfCheck {
+	~Interface_SequenceOfCheck() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
 	}
 };
 
@@ -2839,321 +3186,6 @@ class Interface_Check : public MMgt_TShared {
 };
 
 
-%nodefaultctor Interface_ReportEntity;
-class Interface_ReportEntity : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Standard_Transient &unknown);
-		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Interface_Check &acheck, const Handle_Standard_Transient &concerned);
-		%feature("autodoc", "1");
-		void SetContent(const Handle_Standard_Transient &content);
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Concerned() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasContent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasNewContent() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Content() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsError() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsUnknown() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_ReportEntity {
-	Handle_Interface_ReportEntity GetHandle() {
-	return *(Handle_Interface_ReportEntity*) &$self;
-	}
-};
-%extend Interface_ReportEntity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_ReportEntity {
-	~Interface_ReportEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ReportEntity\n");}
-	}
-};
-
-
-%nodefaultctor Interface_SignLabel;
-class Interface_SignLabel : public MoniTool_SignText {
-	public:
-		%feature("autodoc", "1");
-		Interface_SignLabel();
-		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_SignLabel {
-	Handle_Interface_SignLabel GetHandle() {
-	return *(Handle_Interface_SignLabel*) &$self;
-	}
-};
-%extend Interface_SignLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_SignLabel {
-	~Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
-	}
-};
-
-
-%nodefaultctor Interface_HGraph;
-class Interface_HGraph : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_HGraph(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
-		%feature("autodoc", "1");
-		Interface_HGraph(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		const Interface_Graph & Graph() const;
-		%feature("autodoc", "1");
-		Interface_Graph & CGraph();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_HGraph {
-	Handle_Interface_HGraph GetHandle() {
-	return *(Handle_Interface_HGraph*) &$self;
-	}
-};
-%extend Interface_HGraph {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_HGraph {
-	~Interface_HGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
-	}
-};
-
-
-%nodefaultctor Interface_CheckIterator;
-class Interface_CheckIterator {
-	public:
-		%feature("autodoc", "1");
-		Interface_CheckIterator();
-		%feature("autodoc", "1");
-		Interface_CheckIterator(const char * name);
-		%feature("autodoc", "1");
-		void SetName(const char * name);
-		%feature("autodoc", "1");
-		Standard_CString Name() const;
-		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Merge(Interface_CheckIterator & other);
-		%feature("autodoc", "1");
-		void Add(const Handle_Interface_Check &ach, const Standard_Integer num=0);
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty(const Standard_Boolean failsonly) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Complies(const Interface_CheckStatus status) const;
-		%feature("autodoc", "1");
-		Interface_CheckIterator Extract(const Interface_CheckStatus status) const;
-		%feature("autodoc", "1");
-		Interface_CheckIterator Extract(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient Checkeds(const Standard_Boolean failsonly, const Standard_Boolean global) const;
-		%feature("autodoc", "1");
-		void Start() const;
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
-		%feature("autodoc", "1");
-		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend Interface_CheckIterator {
-	~Interface_CheckIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CheckIterator\n");}
-	}
-};
-
-
-%nodefaultctor Interface_Protocol;
-class Interface_Protocol : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol Active();
-		%feature("autodoc", "1");
-		void SetActive(const Handle_Interface_Protocol &aprotocol);
-		%feature("autodoc", "1");
-		void ClearActive();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbResources() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Interface_Protocol Resource(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNumber(const Handle_Standard_Transient &obj) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDynamicType(const Handle_Standard_Transient &obj) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbTypes(const Handle_Standard_Transient &obj) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Type Type(const Handle_Standard_Transient &obj, const Standard_Integer nt=1) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer TypeNumber(const Handle_Standard_Type &atype) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean GlobalCheck(const Interface_Graph &G, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Interface_InterfaceModel NewModel() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSuitableModel(const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient UnknownEntity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsUnknownEntity(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_Protocol {
-	Handle_Interface_Protocol GetHandle() {
-	return *(Handle_Interface_Protocol*) &$self;
-	}
-};
-%extend Interface_Protocol {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Interface_Protocol {
-	~Interface_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Protocol\n");}
-	}
-};
-
-
-%nodefaultctor Interface_MapAsciiStringHasher;
-class Interface_MapAsciiStringHasher {
-	public:
-		%feature("autodoc", "1");
-		Interface_MapAsciiStringHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TCollection_AsciiString &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
-
-};
-%extend Interface_MapAsciiStringHasher {
-	~Interface_MapAsciiStringHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
-	}
-};
-
-
-%nodefaultctor Interface_SequenceOfCheck;
-class Interface_SequenceOfCheck : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Interface_SequenceOfCheck();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Interface_SequenceOfCheck & Assign(const Interface_SequenceOfCheck &Other);
-		%feature("autodoc", "1");
-		const Interface_SequenceOfCheck & operator=(const Interface_SequenceOfCheck &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Interface_Check &T);
-		%feature("autodoc", "1");
-		void Append(Interface_SequenceOfCheck & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Interface_Check &T);
-		%feature("autodoc", "1");
-		void Prepend(Interface_SequenceOfCheck & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Interface_Check &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Interface_SequenceOfCheck & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Interface_Check &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Interface_SequenceOfCheck & S);
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & First() const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Interface_SequenceOfCheck & S);
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Interface_Check &I);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Interface_SequenceOfCheck {
-	~Interface_SequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
-	}
-};
-
-
 %nodefaultctor Interface_GTool;
 class Interface_GTool : public MMgt_TShared {
 	public:
@@ -3168,7 +3200,7 @@ class Interface_GTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		char * SignValue(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		Standard_CString SignName() const;
+		char * SignName() const;
 		%feature("autodoc", "1");
 		void SetProtocol(const Handle_Interface_Protocol &proto, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
@@ -3316,39 +3348,33 @@ class Interface_GraphContent : public Interface_EntityIterator {
 };
 
 
-%nodefaultctor Interface_IndexedMapOfAsciiString;
-class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
+%nodefaultctor Interface_SignType;
+class Interface_SignType : public MoniTool_SignText {
 	public:
 		%feature("autodoc", "1");
-		Interface_IndexedMapOfAsciiString(const Standard_Integer NbBuckets=1);
+		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
 		%feature("autodoc", "1");
-		Interface_IndexedMapOfAsciiString & Assign(const Interface_IndexedMapOfAsciiString &Other);
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		Interface_IndexedMapOfAsciiString & operator=(const Interface_IndexedMapOfAsciiString &Other);
+		char * ClassName(const char * typnam);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Interface_IndexedMapOfAsciiString {
-	~Interface_IndexedMapOfAsciiString() {
+%extend Interface_SignType {
+	Handle_Interface_SignType GetHandle() {
+	return *(Handle_Interface_SignType*) &$self;
+	}
+};
+%extend Interface_SignType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Interface_SignType {
+	~Interface_SignType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");}
+	if (__env){printf("## Call custom destructor for instance of Interface_SignType\n");}
 	}
 };
 
@@ -3376,8 +3402,18 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const Handle_Standard_Transient &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const Handle_Standard_Transient &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Handle_Standard_Transient &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Handle_Standard_Transient &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_Standard_Transient &K);
 
@@ -3425,6 +3461,73 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 };
 
 
+%nodefaultctor Interface_CheckIterator;
+class Interface_CheckIterator {
+	public:
+		%feature("autodoc", "1");
+		Interface_CheckIterator();
+		%feature("autodoc", "1");
+		Interface_CheckIterator(const char * name);
+		%feature("autodoc", "1");
+		void SetName(const char * name);
+		%feature("autodoc", "1");
+		char * Name() const;
+		%feature("autodoc", "1");
+		void SetModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Merge(Interface_CheckIterator & other);
+		%feature("autodoc", "1");
+		void Add(const Handle_Interface_Check &ach, const Standard_Integer num=0);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty(const Standard_Boolean failsonly) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Complies(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator Extract(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const char * mess, const Standard_Integer incl, const Interface_CheckStatus status);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Checkeds(const Standard_Boolean failsonly, const Standard_Boolean global) const;
+		%feature("autodoc", "1");
+		void Start() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Print(const Handle_Message_Messenger &S, const Handle_Interface_InterfaceModel &model, const Standard_Boolean failsonly, const Standard_Integer final=0) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend Interface_CheckIterator {
+	~Interface_CheckIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CheckIterator\n");}
+	}
+};
+
+
 %nodefaultctor Interface_NodeOfReaderLib;
 class Interface_NodeOfReaderLib : public MMgt_TShared {
 	public:
@@ -3456,49 +3559,6 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 	~Interface_NodeOfReaderLib() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfReaderLib\n");}
-	}
-};
-
-
-%nodefaultctor Interface_Array1OfHAsciiString;
-class Interface_Array1OfHAsciiString {
-	public:
-		%feature("autodoc", "1");
-		Interface_Array1OfHAsciiString(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Interface_Array1OfHAsciiString(const Handle_TCollection_HAsciiString &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Interface_Array1OfHAsciiString & Assign(const Interface_Array1OfHAsciiString &Other);
-		%feature("autodoc", "1");
-		const Interface_Array1OfHAsciiString & operator=(const Interface_Array1OfHAsciiString &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TCollection_HAsciiString &Value);
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index);
-
-};
-%extend Interface_Array1OfHAsciiString {
-	~Interface_Array1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfHAsciiString\n");}
 	}
 };
 
@@ -3552,7 +3612,7 @@ class Interface_LineBuffer {
 		%feature("autodoc", "1");
 		Standard_Boolean CanGet(const Standard_Integer more);
 		%feature("autodoc", "1");
-		Standard_CString Content() const;
+		char * Content() const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3828,7 +3888,7 @@ class Interface_FileParameter {
 		%feature("autodoc", "1");
 		void Init(const char * val, const Interface_ParamType typ);
 		%feature("autodoc", "1");
-		Standard_CString CValue() const;
+		char * CValue() const;
 		%feature("autodoc", "1");
 		Interface_ParamType ParamType() const;
 		%feature("autodoc", "1");

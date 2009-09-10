@@ -250,7 +250,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import Geom2d.i
-%import math.i
-%import Standard.i
-%import GeomAbs.i
 %import IntRes2d.i
+%import Standard.i
+%import math.i
+%import GeomAbs.i

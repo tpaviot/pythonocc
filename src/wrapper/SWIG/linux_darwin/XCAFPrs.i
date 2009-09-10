@@ -185,29 +185,6 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 };
 
 
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
-class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape();
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape(const XCAFPrs_DataMapOfStyleShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfStyleShape &aMap);
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
-
-};
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleShape {
-	~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleShape\n");}
-	}
-};
-
-
 %nodefaultctor XCAFPrs_DataMapOfStyleShape;
 class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 	public:
@@ -245,6 +222,29 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 };
 
 
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
+class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient();
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+
+};
+%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient {
+	~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient\n");}
+	}
+};
+
+
 %nodefaultctor XCAFPrs_AISObject;
 class XCAFPrs_AISObject : public AIS_Shape {
 	public:
@@ -272,6 +272,43 @@ class XCAFPrs_AISObject : public AIS_Shape {
 };
 
 
+%nodefaultctor XCAFPrs_DataMapOfShapeStyle;
+class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfShapeStyle(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfShapeStyle & Assign(const XCAFPrs_DataMapOfShapeStyle &Other);
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapOfShapeStyle & operator=(const XCAFPrs_DataMapOfShapeStyle &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const XCAFPrs_Style &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		XCAFPrs_Style & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		XCAFPrs_Style & operator()(const TopoDS_Shape &K);
+
+};
+%extend XCAFPrs_DataMapOfShapeStyle {
+	~XCAFPrs_DataMapOfShapeStyle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapOfShapeStyle\n");}
+	}
+};
+
+
 %nodefaultctor XCAFPrs;
 class XCAFPrs {
 	public:
@@ -291,29 +328,6 @@ class XCAFPrs {
 	~XCAFPrs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs\n");}
-	}
-};
-
-
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
-class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle();
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle(const XCAFPrs_DataMapOfShapeStyle &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfShapeStyle &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & Value() const;
-
-};
-%extend XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle {
-	~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle\n");}
 	}
 };
 
@@ -345,37 +359,6 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode 
 	~XCAFPrs_DataMapNodeOfDataMapOfStyleTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfStyleTransient\n");}
-	}
-};
-
-
-%nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
-class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape &K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		XCAFPrs_Style & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle GetHandle() {
-	return *(Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle*) &$self;
-	}
-};
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfShapeStyle\n");}
 	}
 };
 
@@ -522,61 +505,78 @@ class XCAFPrs_Style {
 };
 
 
-%nodefaultctor XCAFPrs_DataMapOfShapeStyle;
-class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
+class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle(const Standard_Integer NbBuckets=1);
+		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle();
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle & Assign(const XCAFPrs_DataMapOfShapeStyle &Other);
+		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle(const XCAFPrs_DataMapOfShapeStyle &aMap);
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle & operator=(const XCAFPrs_DataMapOfShapeStyle &Other);
+		void Initialize(const XCAFPrs_DataMapOfShapeStyle &aMap);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		const TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const XCAFPrs_Style &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		XCAFPrs_Style & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		XCAFPrs_Style & operator()(const TopoDS_Shape &K);
+		const XCAFPrs_Style & Value() const;
 
 };
-%extend XCAFPrs_DataMapOfShapeStyle {
-	~XCAFPrs_DataMapOfShapeStyle() {
+%extend XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle {
+	~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapOfShapeStyle\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle\n");}
 	}
 };
 
 
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
-class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_BasicMapIterator {
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
+class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient();
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape();
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape(const XCAFPrs_DataMapOfStyleShape &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		void Initialize(const XCAFPrs_DataMapOfStyleShape &aMap);
 		%feature("autodoc", "1");
 		const XCAFPrs_Style & Key() const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
+		const TopoDS_Shape & Value() const;
 
 };
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient {
-	~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient() {
+%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleShape {
+	~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleShape\n");}
+	}
+};
+
+
+%nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
+class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape &K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		XCAFPrs_Style & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
+	Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle GetHandle() {
+	return *(Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle*) &$self;
+	}
+};
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
+	~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfShapeStyle\n");}
 	}
 };

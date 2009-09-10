@@ -465,43 +465,6 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor AdvApp2Var_Data;
-class AdvApp2Var_Data {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_Data();
-		%feature("autodoc", "1");
-		mdnombr_1_ & Getmdnombr();
-		%feature("autodoc", "1");
-		minombr_1_ & Getminombr();
-		%feature("autodoc", "1");
-		maovpar_1_ & Getmaovpar();
-		%feature("autodoc", "1");
-		maovpch_1_ & Getmaovpch();
-		%feature("autodoc", "1");
-		mlgdrtl_1_ & Getmlgdrtl();
-		%feature("autodoc", "1");
-		mmjcobi_1_ & Getmmjcobi();
-		%feature("autodoc", "1");
-		mmcmcnp_1_ & Getmmcmcnp();
-		%feature("autodoc", "1");
-		mmapgss_1_ & Getmmapgss();
-		%feature("autodoc", "1");
-		mmapgs0_1_ & Getmmapgs0();
-		%feature("autodoc", "1");
-		mmapgs1_1_ & Getmmapgs1();
-		%feature("autodoc", "1");
-		mmapgs2_1_ & Getmmapgs2();
-
-};
-%extend AdvApp2Var_Data {
-	~AdvApp2Var_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Data\n");}
-	}
-};
-
-
 %nodefaultctor AdvApp2Var_Context;
 class AdvApp2Var_Context {
 	public:
@@ -551,6 +514,43 @@ class AdvApp2Var_Context {
 	~AdvApp2Var_Context() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Context\n");}
+	}
+};
+
+
+%nodefaultctor AdvApp2Var_Data;
+class AdvApp2Var_Data {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_Data();
+		%feature("autodoc", "1");
+		mdnombr_1_ & Getmdnombr();
+		%feature("autodoc", "1");
+		minombr_1_ & Getminombr();
+		%feature("autodoc", "1");
+		maovpar_1_ & Getmaovpar();
+		%feature("autodoc", "1");
+		maovpch_1_ & Getmaovpch();
+		%feature("autodoc", "1");
+		mlgdrtl_1_ & Getmlgdrtl();
+		%feature("autodoc", "1");
+		mmjcobi_1_ & Getmmjcobi();
+		%feature("autodoc", "1");
+		mmcmcnp_1_ & Getmmcmcnp();
+		%feature("autodoc", "1");
+		mmapgss_1_ & Getmmapgss();
+		%feature("autodoc", "1");
+		mmapgs0_1_ & Getmmapgs0();
+		%feature("autodoc", "1");
+		mmapgs1_1_ & Getmmapgs1();
+		%feature("autodoc", "1");
+		mmapgs2_1_ & Getmmapgs2();
+
+};
+%extend AdvApp2Var_Data {
+	~AdvApp2Var_Data() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Data\n");}
 	}
 };
 

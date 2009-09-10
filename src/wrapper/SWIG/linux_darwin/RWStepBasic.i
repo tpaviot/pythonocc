@@ -56,6 +56,69 @@ class RWStepBasic_RWActionAssignment {
 };
 
 
+%nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
+class RWStepBasic_RWMassMeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWMassMeasureWithUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWMassMeasureWithUnit {
+	~RWStepBasic_RWMassMeasureWithUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWIdentificationRole;
+class RWStepBasic_RWIdentificationRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWIdentificationRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationRole &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWIdentificationRole {
+	~RWStepBasic_RWIdentificationRole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
+class RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWPlaneAngleMeasureWithUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	~RWStepBasic_RWPlaneAngleMeasureWithUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndLengthUnit;
 class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	public:
@@ -92,27 +155,6 @@ class RWStepBasic_RWSecurityClassificationLevel {
 	~RWStepBasic_RWSecurityClassificationLevel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
-class RWStepBasic_RWThermodynamicTemperatureUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWThermodynamicTemperatureUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWThermodynamicTemperatureUnit {
-	~RWStepBasic_RWThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -270,25 +312,6 @@ class RWStepBasic_RWDocumentType {
 };
 
 
-%nodefaultctor RWStepBasic_RWCalendarDate;
-class RWStepBasic_RWCalendarDate {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWCalendarDate();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CalendarDate &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
-
-};
-%extend RWStepBasic_RWCalendarDate {
-	~RWStepBasic_RWCalendarDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
 class RWStepBasic_RWProductCategoryRelationship {
 	public:
@@ -352,23 +375,23 @@ class RWStepBasic_RWNameAssignment {
 };
 
 
-%nodefaultctor RWStepBasic_RWGroup;
-class RWStepBasic_RWGroup {
+%nodefaultctor RWStepBasic_RWLengthUnit;
+class RWStepBasic_RWLengthUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWGroup();
+		RWStepBasic_RWLengthUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Group &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Group &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthUnit &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWGroup {
-	~RWStepBasic_RWGroup() {
+%extend RWStepBasic_RWLengthUnit {
+	~RWStepBasic_RWLengthUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroup\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");}
 	}
 };
 
@@ -394,42 +417,42 @@ class RWStepBasic_RWProductDefinition {
 };
 
 
-%nodefaultctor RWStepBasic_RWEffectivity;
-class RWStepBasic_RWEffectivity {
+%nodefaultctor RWStepBasic_RWApprovalStatus;
+class RWStepBasic_RWApprovalStatus {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWEffectivity();
+		RWStepBasic_RWApprovalStatus();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Effectivity &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalStatus &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Effectivity &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
 
 };
-%extend RWStepBasic_RWEffectivity {
-	~RWStepBasic_RWEffectivity() {
+%extend RWStepBasic_RWApprovalStatus {
+	~RWStepBasic_RWApprovalStatus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivity\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");}
 	}
 };
 
 
-%nodefaultctor RWStepBasic_RWDateRole;
-class RWStepBasic_RWDateRole {
+%nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
+class RWStepBasic_RWSolidAngleMeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWDateRole();
+		RWStepBasic_RWSolidAngleMeasureWithUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateRole &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SolidAngleMeasureWithUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SolidAngleMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_SolidAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWDateRole {
-	~RWStepBasic_RWDateRole() {
+%extend RWStepBasic_RWSolidAngleMeasureWithUnit {
+	~RWStepBasic_RWSolidAngleMeasureWithUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -474,21 +497,23 @@ class RWStepBasic_RWDimensionalExponents {
 };
 
 
-%nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
-class RWStepBasic_RWPersonAndOrganizationRole {
+%nodefaultctor RWStepBasic_RWContract;
+class RWStepBasic_RWContract {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWPersonAndOrganizationRole();
+		RWStepBasic_RWContract();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Contract &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Contract &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWPersonAndOrganizationRole {
-	~RWStepBasic_RWPersonAndOrganizationRole() {
+%extend RWStepBasic_RWContract {
+	~RWStepBasic_RWContract() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContract\n");}
 	}
 };
 
@@ -514,6 +539,46 @@ class RWStepBasic_RWDocumentProductAssociation {
 };
 
 
+%nodefaultctor RWStepBasic_RWCalendarDate;
+class RWStepBasic_RWCalendarDate {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWCalendarDate();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CalendarDate &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
+
+};
+%extend RWStepBasic_RWCalendarDate {
+	~RWStepBasic_RWCalendarDate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWVersionedActionRequest;
+class RWStepBasic_RWVersionedActionRequest {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWVersionedActionRequest();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_VersionedActionRequest &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_VersionedActionRequest &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWVersionedActionRequest {
+	~RWStepBasic_RWVersionedActionRequest() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
 class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	public:
@@ -531,27 +596,6 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
-class RWStepBasic_RWSolidAngleMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSolidAngleMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SolidAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SolidAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_SolidAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWSolidAngleMeasureWithUnit {
-	~RWStepBasic_RWSolidAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -577,23 +621,23 @@ class RWStepBasic_RWSolidAngleUnit {
 };
 
 
-%nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
-class RWStepBasic_RWProductDefinitionRelationship {
+%nodefaultctor RWStepBasic_RWContractAssignment;
+class RWStepBasic_RWContractAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionRelationship();
+		RWStepBasic_RWContractAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractAssignment &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ContractAssignment &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWProductDefinitionRelationship {
-	~RWStepBasic_RWProductDefinitionRelationship() {
+%extend RWStepBasic_RWContractAssignment {
+	~RWStepBasic_RWContractAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
 	}
 };
 
@@ -615,25 +659,6 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 	~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
-class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
-
-};
-%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
-	~RWStepBasic_RWSiUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -716,6 +741,25 @@ class RWStepBasic_RWEffectivityAssignment {
 	~RWStepBasic_RWEffectivityAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivityAssignment\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
+class RWStepBasic_RWSiUnitAndRatioUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndRatioUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+
+};
+%extend RWStepBasic_RWSiUnitAndRatioUnit {
+	~RWStepBasic_RWSiUnitAndRatioUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
 	}
 };
 
@@ -804,46 +848,6 @@ class RWStepBasic_RWActionRequestAssignment {
 };
 
 
-%nodefaultctor RWStepBasic_RWApprovalStatus;
-class RWStepBasic_RWApprovalStatus {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWApprovalStatus();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalStatus &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
-
-};
-%extend RWStepBasic_RWApprovalStatus {
-	~RWStepBasic_RWApprovalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
-class RWStepBasic_RWMassMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWMassMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWMassMeasureWithUnit {
-	~RWStepBasic_RWMassMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWConversionBasedUnit;
 class RWStepBasic_RWConversionBasedUnit {
 	public:
@@ -886,6 +890,27 @@ class RWStepBasic_RWObjectRole {
 };
 
 
+%nodefaultctor RWStepBasic_RWOrganizationalAddress;
+class RWStepBasic_RWOrganizationalAddress {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWOrganizationalAddress();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrganizationalAddress &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationalAddress &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWOrganizationalAddress {
+	~RWStepBasic_RWOrganizationalAddress() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationRelationship;
 class RWStepBasic_RWProductDefinitionFormationRelationship {
 	public:
@@ -903,6 +928,27 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 	~RWStepBasic_RWProductDefinitionFormationRelationship() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWIdentificationAssignment;
+class RWStepBasic_RWIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWIdentificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_IdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWIdentificationAssignment {
+	~RWStepBasic_RWIdentificationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");}
 	}
 };
 
@@ -926,23 +972,23 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 };
 
 
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
-class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
+%nodefaultctor RWStepBasic_RWGroup;
+class RWStepBasic_RWGroup {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndRatioUnit();
+		RWStepBasic_RWGroup();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Group &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Group &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
-	~RWStepBasic_RWConversionBasedUnitAndRatioUnit() {
+%extend RWStepBasic_RWGroup {
+	~RWStepBasic_RWGroup() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroup\n");}
 	}
 };
 
@@ -964,27 +1010,6 @@ class RWStepBasic_RWDocumentRelationship {
 	~RWStepBasic_RWDocumentRelationship() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRelationship\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWExternalSource;
-class RWStepBasic_RWExternalSource {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWExternalSource();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalSource &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalSource &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWExternalSource {
-	~RWStepBasic_RWExternalSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalSource\n");}
 	}
 };
 
@@ -1027,27 +1052,6 @@ class RWStepBasic_RWDateTimeRole {
 };
 
 
-%nodefaultctor RWStepBasic_RWDerivedUnit;
-class RWStepBasic_RWDerivedUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDerivedUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DerivedUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWDerivedUnit {
-	~RWStepBasic_RWDerivedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWApplicationContext;
 class RWStepBasic_RWApplicationContext {
 	public:
@@ -1067,63 +1071,42 @@ class RWStepBasic_RWApplicationContext {
 };
 
 
-%nodefaultctor RWStepBasic_RWIdentificationAssignment;
-class RWStepBasic_RWIdentificationAssignment {
+%nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
+class RWStepBasic_RWSiUnitAndAreaUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWIdentificationAssignment();
+		RWStepBasic_RWSiUnitAndAreaUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_IdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
 
 };
-%extend RWStepBasic_RWIdentificationAssignment {
-	~RWStepBasic_RWIdentificationAssignment() {
+%extend RWStepBasic_RWSiUnitAndAreaUnit {
+	~RWStepBasic_RWSiUnitAndAreaUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
 	}
 };
 
 
-%nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
-class RWStepBasic_RWSiUnitAndRatioUnit {
+%nodefaultctor RWStepBasic_RWPlaneAngleUnit;
+class RWStepBasic_RWPlaneAngleUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndRatioUnit();
+		RWStepBasic_RWPlaneAngleUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWSiUnitAndRatioUnit {
-	~RWStepBasic_RWSiUnitAndRatioUnit() {
+%extend RWStepBasic_RWPlaneAngleUnit {
+	~RWStepBasic_RWPlaneAngleUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWAction;
-class RWStepBasic_RWAction {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWAction();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Action &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Action &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWAction {
-	~RWStepBasic_RWAction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");}
 	}
 };
 
@@ -1187,23 +1170,42 @@ class RWStepBasic_RWExternallyDefinedItem {
 };
 
 
-%nodefaultctor RWStepBasic_RWVersionedActionRequest;
-class RWStepBasic_RWVersionedActionRequest {
+%nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
+class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWVersionedActionRequest();
+		RWStepBasic_RWSiUnitAndPlaneAngleUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_VersionedActionRequest &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_VersionedActionRequest &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
 
 };
-%extend RWStepBasic_RWVersionedActionRequest {
-	~RWStepBasic_RWVersionedActionRequest() {
+%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
+	~RWStepBasic_RWSiUnitAndPlaneAngleUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
+class RWStepBasic_RWProductDefinitionRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductDefinitionRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWProductDefinitionRelationship {
+	~RWStepBasic_RWProductDefinitionRelationship() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");}
 	}
 };
 
@@ -1229,6 +1231,27 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 };
 
 
+%nodefaultctor RWStepBasic_RWDateAndTime;
+class RWStepBasic_RWDateAndTime {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDateAndTime();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateAndTime &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateAndTime &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWDateAndTime {
+	~RWStepBasic_RWDateAndTime() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
 class RWStepBasic_RWSiUnitAndLengthUnit {
 	public:
@@ -1244,27 +1267,6 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 	~RWStepBasic_RWSiUnitAndLengthUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
-class RWStepBasic_RWLengthMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWLengthMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWLengthMeasureWithUnit {
-	~RWStepBasic_RWLengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");}
 	}
 };
 
@@ -1433,27 +1435,6 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 };
 
 
-%nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
-class RWStepBasic_RWPlaneAngleMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWPlaneAngleMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
-	~RWStepBasic_RWPlaneAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWGroupRelationship;
 class RWStepBasic_RWGroupRelationship {
 	public:
@@ -1511,6 +1492,27 @@ class RWStepBasic_RWOrdinalDate {
 	~RWStepBasic_RWOrdinalDate() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWExternalSource;
+class RWStepBasic_RWExternalSource {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWExternalSource();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalSource &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalSource &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWExternalSource {
+	~RWStepBasic_RWExternalSource() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalSource\n");}
 	}
 };
 
@@ -1639,27 +1641,6 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 };
 
 
-%nodefaultctor RWStepBasic_RWDateAndTime;
-class RWStepBasic_RWDateAndTime {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDateAndTime();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateAndTime &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateAndTime &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWDateAndTime {
-	~RWStepBasic_RWDateAndTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWGroupAssignment;
 class RWStepBasic_RWGroupAssignment {
 	public:
@@ -1721,6 +1702,27 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 };
 
 
+%nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
+class RWStepBasic_RWThermodynamicTemperatureUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWThermodynamicTemperatureUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWThermodynamicTemperatureUnit {
+	~RWStepBasic_RWThermodynamicTemperatureUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWOrganization;
 class RWStepBasic_RWOrganization {
 	public:
@@ -1761,6 +1763,27 @@ class RWStepBasic_RWSecurityClassification {
 };
 
 
+%nodefaultctor RWStepBasic_RWProductConceptContext;
+class RWStepBasic_RWProductConceptContext {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductConceptContext();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductConceptContext &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductConceptContext &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWProductConceptContext {
+	~RWStepBasic_RWProductConceptContext() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");}
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWUncertaintyMeasureWithUnit;
 class RWStepBasic_RWUncertaintyMeasureWithUnit {
 	public:
@@ -1782,48 +1805,6 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 };
 
 
-%nodefaultctor RWStepBasic_RWIdentificationRole;
-class RWStepBasic_RWIdentificationRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWIdentificationRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationRole &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWIdentificationRole {
-	~RWStepBasic_RWIdentificationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWContractAssignment;
-class RWStepBasic_RWContractAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWContractAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ContractAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWContractAssignment {
-	~RWStepBasic_RWContractAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWMeasureWithUnit;
 class RWStepBasic_RWMeasureWithUnit {
 	public:
@@ -1841,6 +1822,88 @@ class RWStepBasic_RWMeasureWithUnit {
 	~RWStepBasic_RWMeasureWithUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMeasureWithUnit\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
+class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWConversionBasedUnitAndAreaUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	~RWStepBasic_RWConversionBasedUnitAndAreaUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWEffectivity;
+class RWStepBasic_RWEffectivity {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWEffectivity();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Effectivity &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Effectivity &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWEffectivity {
+	~RWStepBasic_RWEffectivity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivity\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWAction;
+class RWStepBasic_RWAction {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWAction();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Action &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Action &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWAction {
+	~RWStepBasic_RWAction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
+class RWStepBasic_RWPersonAndOrganizationRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWPersonAndOrganizationRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+
+};
+%extend RWStepBasic_RWPersonAndOrganizationRole {
+	~RWStepBasic_RWPersonAndOrganizationRole() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
 	}
 };
 
@@ -1883,27 +1946,6 @@ class RWStepBasic_RWProductType {
 	~RWStepBasic_RWProductType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductType\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWOrganizationalAddress;
-class RWStepBasic_RWOrganizationalAddress {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWOrganizationalAddress();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrganizationalAddress &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationalAddress &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWOrganizationalAddress {
-	~RWStepBasic_RWOrganizationalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");}
 	}
 };
 
@@ -2114,23 +2156,23 @@ class RWStepBasic_RWProductRelatedProductCategory {
 };
 
 
-%nodefaultctor RWStepBasic_RWContract;
-class RWStepBasic_RWContract {
+%nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
+class RWStepBasic_RWLengthMeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWContract();
+		RWStepBasic_RWLengthMeasureWithUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Contract &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Contract &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWContract {
-	~RWStepBasic_RWContract() {
+%extend RWStepBasic_RWLengthMeasureWithUnit {
+	~RWStepBasic_RWLengthMeasureWithUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContract\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");}
 	}
 };
 
@@ -2156,44 +2198,63 @@ class RWStepBasic_RWEulerAngles {
 };
 
 
-%nodefaultctor RWStepBasic_RWProductConceptContext;
-class RWStepBasic_RWProductConceptContext {
+%nodefaultctor RWStepBasic_RWDateRole;
+class RWStepBasic_RWDateRole {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWProductConceptContext();
+		RWStepBasic_RWDateRole();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductConceptContext &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateRole &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductConceptContext &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
 
 };
-%extend RWStepBasic_RWProductConceptContext {
-	~RWStepBasic_RWProductConceptContext() {
+%extend RWStepBasic_RWDateRole {
+	~RWStepBasic_RWDateRole() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
 	}
 };
 
 
-%nodefaultctor RWStepBasic_RWPlaneAngleUnit;
-class RWStepBasic_RWPlaneAngleUnit {
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
+class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWPlaneAngleUnit();
+		RWStepBasic_RWConversionBasedUnitAndRatioUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepBasic_RWPlaneAngleUnit {
-	~RWStepBasic_RWPlaneAngleUnit() {
+%extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
+	~RWStepBasic_RWConversionBasedUnitAndRatioUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");}
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDerivedUnit;
+class RWStepBasic_RWDerivedUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDerivedUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DerivedUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepBasic_RWDerivedUnit {
+	~RWStepBasic_RWDerivedUnit() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");}
 	}
 };
 
@@ -2261,27 +2322,6 @@ class RWStepBasic_RWApplicationContextElement {
 };
 
 
-%nodefaultctor RWStepBasic_RWLengthUnit;
-class RWStepBasic_RWLengthUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWLengthUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWLengthUnit {
-	~RWStepBasic_RWLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");}
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWSiUnitAndTimeUnit;
 class RWStepBasic_RWSiUnitAndTimeUnit {
 	public:
@@ -2297,25 +2337,6 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 	~RWStepBasic_RWSiUnitAndTimeUnit() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndTimeUnit\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
-class RWStepBasic_RWSiUnitAndAreaUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndAreaUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
-
-};
-%extend RWStepBasic_RWSiUnitAndAreaUnit {
-	~RWStepBasic_RWSiUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
 	}
 };
 
@@ -2377,26 +2398,5 @@ class RWStepBasic_RWActionRequestSolution {
 	~RWStepBasic_RWActionRequestSolution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestSolution\n");}
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
-class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndAreaUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
-	~RWStepBasic_RWConversionBasedUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");}
 	}
 };

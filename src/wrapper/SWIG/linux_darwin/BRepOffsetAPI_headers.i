@@ -118,19 +118,19 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
-#include<TopTools_SequenceOfShape.hxx>
-#include<gp_Dir.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<TopoDS_Shell.hxx>
 #include<TopoDS_Face.hxx>
-#include<gp_Pln.hxx>
-#include<TColStd_SequenceOfReal.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt.hxx>
+#include<TopoDS_Shape.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Pln.hxx>
+#include<TColStd_SequenceOfReal.hxx>
 #include<TopoDS_Wire.hxx>
 #include<gp_Ax2.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<Handle_Law_Function.hxx>
 #include<TopTools_ListOfShape.hxx>
+#include<TopTools_SequenceOfShape.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<TopoDS_Shell.hxx>
 %}

@@ -65,66 +65,6 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_FEmTool_LinearFlexion;
-class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
-	public:
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion();
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion(const Handle_FEmTool_LinearFlexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion(const FEmTool_LinearFlexion *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion & operator=(const Handle_FEmTool_LinearFlexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion & operator=(const FEmTool_LinearFlexion *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_FEmTool_LinearFlexion {
-	FEmTool_LinearFlexion* GetObject() {
-	return (FEmTool_LinearFlexion*)$self->Access();
-	}
-};
-%extend Handle_FEmTool_LinearFlexion {
-	~Handle_FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
-	}
-};
-
-
-%nodefaultctor Handle_FEmTool_SequenceNodeOfSeqOfLinConstr;
-class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr();
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
-	FEmTool_SequenceNodeOfSeqOfLinConstr* GetObject() {
-	return (FEmTool_SequenceNodeOfSeqOfLinConstr*)$self->Access();
-	}
-};
-%extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
-	~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
-	}
-};
-
-
 %nodefaultctor Handle_FEmTool_LinearTension;
 class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -155,36 +95,6 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 };
 
 
-%nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
-class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors();
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors(const FEmTool_ListNodeOfListOfVectors *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_FEmTool_ListNodeOfListOfVectors {
-	FEmTool_ListNodeOfListOfVectors* GetObject() {
-	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
-	}
-};
-%extend Handle_FEmTool_ListNodeOfListOfVectors {
-	~Handle_FEmTool_ListNodeOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");}
-	}
-};
-
-
 %nodefaultctor Handle_FEmTool_LinearJerk;
 class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -211,6 +121,36 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	~Handle_FEmTool_LinearJerk() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");}
+	}
+};
+
+
+%nodefaultctor Handle_FEmTool_SequenceNodeOfSeqOfLinConstr;
+class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr();
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const Handle_FEmTool_SequenceNodeOfSeqOfLinConstr &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr & operator=(const FEmTool_SequenceNodeOfSeqOfLinConstr *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_SequenceNodeOfSeqOfLinConstr const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
+	FEmTool_SequenceNodeOfSeqOfLinConstr* GetObject() {
+	return (FEmTool_SequenceNodeOfSeqOfLinConstr*)$self->Access();
+	}
+};
+%extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
+	~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };
 
@@ -305,6 +245,36 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_FEmTool_LinearFlexion;
+class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
+	public:
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion();
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion(const Handle_FEmTool_LinearFlexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion(const FEmTool_LinearFlexion *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion & operator=(const Handle_FEmTool_LinearFlexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion & operator=(const FEmTool_LinearFlexion *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_LinearFlexion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_FEmTool_LinearFlexion {
+	FEmTool_LinearFlexion* GetObject() {
+	return (FEmTool_LinearFlexion*)$self->Access();
+	}
+};
+%extend Handle_FEmTool_LinearFlexion {
+	~Handle_FEmTool_LinearFlexion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
+	}
+};
+
+
 %nodefaultctor Handle_FEmTool_HAssemblyTable;
 class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 	public:
@@ -335,6 +305,36 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
+class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors();
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors(const FEmTool_ListNodeOfListOfVectors *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_FEmTool_ListNodeOfListOfVectors {
+	FEmTool_ListNodeOfListOfVectors* GetObject() {
+	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
+	}
+};
+%extend Handle_FEmTool_ListNodeOfListOfVectors {
+	~Handle_FEmTool_ListNodeOfListOfVectors() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");}
+	}
+};
+
+
 %nodefaultctor FEmTool_ListNodeOfListOfVectors;
 class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	public:
@@ -360,35 +360,6 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	~FEmTool_ListNodeOfListOfVectors() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FEmTool_ListNodeOfListOfVectors\n");}
-	}
-};
-
-
-%nodefaultctor FEmTool_SequenceNodeOfSeqOfLinConstr;
-class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_SequenceNodeOfSeqOfLinConstr(const FEmTool_ListOfVectors &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		FEmTool_ListOfVectors & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
-	Handle_FEmTool_SequenceNodeOfSeqOfLinConstr GetHandle() {
-	return *(Handle_FEmTool_SequenceNodeOfSeqOfLinConstr*) &$self;
-	}
-};
-%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
-	~FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };
 
@@ -430,31 +401,31 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 };
 
 
-%nodefaultctor FEmTool_LinearJerk;
-class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
+%nodefaultctor FEmTool_LinearFlexion;
+class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 	public:
 		%feature("autodoc", "1");
-		FEmTool_LinearJerk(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+		FEmTool_LinearFlexion(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
 		%feature("autodoc", "1");
 		virtual		void Hessian(const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
 		%feature("autodoc", "1");
 		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
 
 };
-%extend FEmTool_LinearJerk {
-	Handle_FEmTool_LinearJerk GetHandle() {
-	return *(Handle_FEmTool_LinearJerk*) &$self;
+%extend FEmTool_LinearFlexion {
+	Handle_FEmTool_LinearFlexion GetHandle() {
+	return *(Handle_FEmTool_LinearFlexion*) &$self;
 	}
 };
-%extend FEmTool_LinearJerk {
+%extend FEmTool_LinearFlexion {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend FEmTool_LinearJerk {
-	~FEmTool_LinearJerk() {
+%extend FEmTool_LinearFlexion {
+	~FEmTool_LinearFlexion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
+	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
 	}
 };
 
@@ -510,6 +481,88 @@ class FEmTool_Curve : public MMgt_TShared {
 	~FEmTool_Curve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
+	}
+};
+
+
+%nodefaultctor FEmTool_LinearJerk;
+class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_LinearJerk(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+		%feature("autodoc", "1");
+		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Value();
+		%feature("autodoc", "1");
+		virtual		void Hessian(const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
+		%feature("autodoc", "1");
+		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend FEmTool_LinearJerk {
+	Handle_FEmTool_LinearJerk GetHandle() {
+	return *(Handle_FEmTool_LinearJerk*) &$self;
+	}
+};
+%extend FEmTool_LinearJerk {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend FEmTool_LinearJerk {
+	~FEmTool_LinearJerk() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
+	}
+};
+
+
+%nodefaultctor FEmTool_AssemblyTable;
+class FEmTool_AssemblyTable {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_AssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		FEmTool_AssemblyTable(const Handle_TColStd_HArray1OfInteger &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfInteger &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const FEmTool_AssemblyTable & Assign(const FEmTool_AssemblyTable &Other);
+		%feature("autodoc", "1");
+		const FEmTool_AssemblyTable & operator=(const FEmTool_AssemblyTable &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfInteger &Value);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend FEmTool_AssemblyTable {
+	~FEmTool_AssemblyTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_AssemblyTable\n");}
 	}
 };
 
@@ -616,8 +669,18 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Init(const Standard_Real Value);
-		%feature("autodoc", "1");
-		virtual		Standard_Real & ChangeValue(const Standard_Integer I, const Standard_Integer J);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer I, const Standard_Integer J) {
+				return (Standard_Real) $self->ChangeValue(I,J);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer I, const Standard_Integer J) {
+				$self->ChangeValue(I,J)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Decompose();
 		%feature("autodoc", "1");
@@ -659,6 +722,18 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	public:
 		%feature("autodoc", "1");
 		FEmTool_ProfileMatrix(const TColStd_Array1OfInteger &FirstIndexes);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer I, const Standard_Integer J) {
+				return (Standard_Real) $self->ChangeValue(I,J);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer I, const Standard_Integer J) {
+				$self->ChangeValue(I,J)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsInProfile(const Standard_Integer i, const Standard_Integer j) const;
 		%feature("autodoc", "1");
@@ -791,49 +866,31 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 };
 
 
-%nodefaultctor FEmTool_AssemblyTable;
-class FEmTool_AssemblyTable {
+%nodefaultctor FEmTool_SequenceNodeOfSeqOfLinConstr;
+class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		FEmTool_AssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		FEmTool_SequenceNodeOfSeqOfLinConstr(const FEmTool_ListOfVectors &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		FEmTool_AssemblyTable(const Handle_TColStd_HArray1OfInteger &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		FEmTool_ListOfVectors & Value() const;
 		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfInteger &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const FEmTool_AssemblyTable & Assign(const FEmTool_AssemblyTable &Other);
-		%feature("autodoc", "1");
-		const FEmTool_AssemblyTable & operator=(const FEmTool_AssemblyTable &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfInteger &Value);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend FEmTool_AssemblyTable {
-	~FEmTool_AssemblyTable() {
+%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
+	Handle_FEmTool_SequenceNodeOfSeqOfLinConstr GetHandle() {
+	return *(Handle_FEmTool_SequenceNodeOfSeqOfLinConstr*) &$self;
+	}
+};
+%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
+	~FEmTool_SequenceNodeOfSeqOfLinConstr() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_AssemblyTable\n");}
+	if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };
 
@@ -855,41 +912,6 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 	~FEmTool_ElementsOfRefMatrix() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");}
-	}
-};
-
-
-%nodefaultctor FEmTool_LinearFlexion;
-class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_LinearFlexion(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
-		%feature("autodoc", "1");
-		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Value();
-		%feature("autodoc", "1");
-		virtual		void Hessian(const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
-		%feature("autodoc", "1");
-		virtual		void Gradient(const Standard_Integer Dimension, math_Vector & G);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend FEmTool_LinearFlexion {
-	Handle_FEmTool_LinearFlexion GetHandle() {
-	return *(Handle_FEmTool_LinearFlexion*) &$self;
-	}
-};
-%extend FEmTool_LinearFlexion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend FEmTool_LinearFlexion {
-	~FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
 	}
 };
 

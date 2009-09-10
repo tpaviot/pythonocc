@@ -95,6 +95,36 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 };
 
 
+%nodefaultctor Handle_Extrema_HArray1OfPOnCurv;
+class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv(const Extrema_HArray1OfPOnCurv *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv & operator=(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv & operator=(const Extrema_HArray1OfPOnCurv *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray1OfPOnCurv {
+	Extrema_HArray1OfPOnCurv* GetObject() {
+	return (Extrema_HArray1OfPOnCurv*)$self->Access();
+	}
+};
+%extend Handle_Extrema_HArray1OfPOnCurv {
+	~Handle_Extrema_HArray1OfPOnCurv() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -125,6 +155,66 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 };
 
 
+%nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
+class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf(const Extrema_HArray2OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray2OfPOnSurf {
+	Extrema_HArray2OfPOnSurf* GetObject() {
+	return (Extrema_HArray2OfPOnSurf*)$self->Access();
+	}
+};
+%extend Handle_Extrema_HArray2OfPOnSurf {
+	~Handle_Extrema_HArray2OfPOnSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
+class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC();
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC* GetObject() {
+	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC*)$self->Access();
+	}
+};
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -151,36 +241,6 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
-class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d* GetObject() {
-	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*)$self->Access();
-	}
-};
-%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -305,32 +365,32 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 };
 
 
-%nodefaultctor Handle_Extrema_HArray1OfPOnCurv;
-class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
+class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv();
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d();
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv(const Extrema_HArray1OfPOnCurv *anItem);
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv & operator=(const Handle_Extrema_HArray1OfPOnCurv &aHandle);
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv & operator=(const Extrema_HArray1OfPOnCurv *anItem);
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Extrema_HArray1OfPOnCurv {
-	Extrema_HArray1OfPOnCurv* GetObject() {
-	return (Extrema_HArray1OfPOnCurv*)$self->Access();
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d* GetObject() {
+	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*)$self->Access();
 	}
 };
-%extend Handle_Extrema_HArray1OfPOnCurv {
-	~Handle_Extrema_HArray1OfPOnCurv() {
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -395,36 +455,6 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 };
 
 
-%nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf;
-class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf();
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
-	Extrema_SequenceNodeOfSequenceOfPOnSurf* GetObject() {
-	return (Extrema_SequenceNodeOfSequenceOfPOnSurf*)$self->Access();
-	}
-};
-%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
-	~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollection_SeqNode {
 	public:
@@ -485,36 +515,6 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 };
 
 
-%nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
-class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d();
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d(const Extrema_HArray1OfPOnCurv2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_HArray1OfPOnCurv2d {
-	Extrema_HArray1OfPOnCurv2d* GetObject() {
-	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
-	}
-};
-%extend Handle_Extrema_HArray1OfPOnCurv2d {
-	~Handle_Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -541,36 +541,6 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
-class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC();
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
-	Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC* GetObject() {
-	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC*)$self->Access();
-	}
-};
-%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
 
@@ -605,32 +575,32 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
-class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
+class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf();
+		Handle_Extrema_HArray1OfPOnCurv2d();
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		Handle_Extrema_HArray1OfPOnCurv2d(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf(const Extrema_HArray2OfPOnSurf *anItem);
+		Handle_Extrema_HArray1OfPOnCurv2d(const Extrema_HArray1OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf & operator=(const Handle_Extrema_HArray2OfPOnSurf &aHandle);
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Handle_Extrema_HArray1OfPOnCurv2d &aHandle);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf & operator=(const Extrema_HArray2OfPOnSurf *anItem);
+		Handle_Extrema_HArray1OfPOnCurv2d & operator=(const Extrema_HArray1OfPOnCurv2d *anItem);
 		%feature("autodoc", "1");
-		Handle_Extrema_HArray2OfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Extrema_HArray1OfPOnCurv2d const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Extrema_HArray2OfPOnSurf {
-	Extrema_HArray2OfPOnSurf* GetObject() {
-	return (Extrema_HArray2OfPOnSurf*)$self->Access();
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	Extrema_HArray1OfPOnCurv2d* GetObject() {
+	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
 	}
 };
-%extend Handle_Extrema_HArray2OfPOnSurf {
-	~Handle_Extrema_HArray2OfPOnSurf() {
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	~Handle_Extrema_HArray1OfPOnCurv2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
 	}
 };
 
@@ -695,6 +665,36 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 };
 
 
+%nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf;
+class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf();
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf & operator=(const Extrema_SequenceNodeOfSequenceOfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	Extrema_SequenceNodeOfSequenceOfPOnSurf* GetObject() {
+	return (Extrema_SequenceNodeOfSequenceOfPOnSurf*)$self->Access();
+	}
+};
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_POnCurv2d;
 class Extrema_POnCurv2d {
 	public:
@@ -724,86 +724,33 @@ class Extrema_POnCurv2d {
 };
 
 
-%nodefaultctor Extrema_Array2OfPOnCurv2d;
-class Extrema_Array2OfPOnCurv2d {
+%nodefaultctor Extrema_POnSurf;
+class Extrema_POnSurf {
 	public:
 		%feature("autodoc", "1");
-		Extrema_Array2OfPOnCurv2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Extrema_POnSurf();
 		%feature("autodoc", "1");
-		Extrema_Array2OfPOnCurv2d(const Extrema_POnCurv2d &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt &P);
 		%feature("autodoc", "1");
-		void Init(const Extrema_POnCurv2d &V);
+		const gp_Pnt & Value() const;
+		%feature("autodoc","Parameter()->[Standard_Real, Standard_Real]");
+		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
 		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnCurv2d & Assign(const Extrema_Array2OfPOnCurv2d &Other);
+		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
 		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnCurv2d & operator=(const Extrema_Array2OfPOnCurv2d &Other);
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv2d &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		const gp_Pnt & _CSFDB_GetExtrema_POnSurfmyP() const;
 
 };
-%extend Extrema_Array2OfPOnCurv2d {
-	~Extrema_Array2OfPOnCurv2d() {
+%extend Extrema_POnSurf {
+	~Extrema_POnSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
-class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
-		Extrema_PCLocFOfLocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
-		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
-		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
-		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-
-};
-%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
-	~Extrema_PCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_POnSurf\n");}
 	}
 };
 
@@ -894,33 +841,6 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 };
 
 
-%nodefaultctor Extrema_GenLocateExtCS;
-class Extrema_GenLocateExtCS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_GenLocateExtCS();
-		%feature("autodoc", "1");
-		Extrema_GenLocateExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real T, const Standard_Real U, const Standard_Real V, const Standard_Real Tol1, const Standard_Real Tol2);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real T, const Standard_Real U, const Standard_Real V, const Standard_Real Tol1, const Standard_Real Tol2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & PointOnCurve() const;
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & PointOnSurface() const;
-
-};
-%extend Extrema_GenLocateExtCS {
-	~Extrema_GenLocateExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
-	}
-};
-
-
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequence {
 	public:
@@ -978,6 +898,78 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 };
 
 
+%nodefaultctor Extrema_EPCOfExtPC2d;
+class Extrema_EPCOfExtPC2d {
+	public:
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d();
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		Extrema_EPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void Initialize(const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_EPCOfExtPC2d {
+	~Extrema_EPCOfExtPC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_ExtSS;
+class Extrema_ExtSS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtSS();
+		%feature("autodoc", "1");
+		Extrema_ExtSS(const Adaptor3d_Surface &S1, const Adaptor3d_Surface &S2, const Standard_Real TolS1, const Standard_Real TolS2);
+		%feature("autodoc", "1");
+		Extrema_ExtSS(const Adaptor3d_Surface &S1, const Adaptor3d_Surface &S2, const Standard_Real Uinf1, const Standard_Real Usup1, const Standard_Real Vinf1, const Standard_Real Vsup1, const Standard_Real Uinf2, const Standard_Real Usup2, const Standard_Real Vinf2, const Standard_Real Vsup2, const Standard_Real TolS1, const Standard_Real TolS2);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S2, const Standard_Real Uinf2, const Standard_Real Usup2, const Standard_Real Vinf2, const Standard_Real Vsup2, const Standard_Real TolS1);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor3d_Surface &S1, const Standard_Real Uinf1, const Standard_Real Usup1, const Standard_Real Vinf1, const Standard_Real Vsup1, const Standard_Real TolS1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
+
+};
+%extend Extrema_ExtSS {
+	~Extrema_ExtSS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_CCFOfELCCOfLocateExtCC;
 class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
@@ -1011,6 +1003,53 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 };
 
 
+%nodefaultctor Extrema_HArray1OfPOnCurv2d;
+class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Extrema_HArray1OfPOnCurv2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Extrema_HArray1OfPOnCurv2d(const Standard_Integer Low, const Standard_Integer Up, const Extrema_POnCurv2d &V);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnCurv2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Extrema_Array1OfPOnCurv2d & Array1() const;
+		%feature("autodoc", "1");
+		Extrema_Array1OfPOnCurv2d & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_HArray1OfPOnCurv2d {
+	Handle_Extrema_HArray1OfPOnCurv2d GetHandle() {
+	return *(Handle_Extrema_HArray1OfPOnCurv2d*) &$self;
+	}
+};
+%extend Extrema_HArray1OfPOnCurv2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_HArray1OfPOnCurv2d {
+	~Extrema_HArray1OfPOnCurv2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_ECC2dOfExtCC2d;
 class Extrema_ECC2dOfExtCC2d {
 	public:
@@ -1038,184 +1077,45 @@ class Extrema_ECC2dOfExtCC2d {
 };
 
 
-%nodefaultctor Extrema_ExtCC2d;
-class Extrema_ExtCC2d {
+%nodefaultctor Extrema_Array1OfPOnSurf;
+class Extrema_Array1OfPOnSurf {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtCC2d();
+		Extrema_Array1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_Array1OfPOnSurf(const Extrema_POnSurf &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		void Init(const Extrema_POnSurf &V);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		void Destroy();
 		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real U1, const Standard_Real U2);
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		const Extrema_Array1OfPOnSurf & Assign(const Extrema_Array1OfPOnSurf &Other);
 		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
+		const Extrema_Array1OfPOnSurf & operator=(const Extrema_Array1OfPOnSurf &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsParallel() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnSurf &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnSurf & operator()(const Standard_Integer Index);
 
 };
-%extend Extrema_ExtCC2d {
-	~Extrema_ExtCC2d() {
+%extend Extrema_Array1OfPOnSurf {
+	~Extrema_Array1OfPOnSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
-class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_CurveTool;
-class Extrema_CurveTool {
-	public:
-		%feature("autodoc", "1");
-		Extrema_CurveTool();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(Adaptor3d_Curve & C, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void Intervals(Adaptor3d_Curve & C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Real Period(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Adaptor3d_Curve &C, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc", "1");
-		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
-		%feature("autodoc", "1");
-		gp_Lin Line(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		gp_Circ Circle(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		gp_Elips Ellipse(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		gp_Hypr Hyperbola(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		gp_Parab Parabola(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer Degree(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Boolean IsRational(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier(const Adaptor3d_Curve &C);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_Curve &C);
-
-};
-%extend Extrema_CurveTool {
-	~Extrema_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CurveTool\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
-class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
-		%feature("autodoc", "1");
-		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
-		%feature("autodoc", "1");
-		void Append(const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void Append(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void Prepend(const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void Prepend(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & First() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
-	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
 	}
 };
 
@@ -1369,117 +1269,29 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 };
 
 
-%nodefaultctor Extrema_POnSurf;
-class Extrema_POnSurf {
+%nodefaultctor Extrema_ELCC2dOfLocateExtCC2d;
+class Extrema_ELCC2dOfLocateExtCC2d {
 	public:
 		%feature("autodoc", "1");
-		Extrema_POnSurf();
+		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt &P);
+		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		const gp_Pnt & Value() const;
-		%feature("autodoc","Parameter()->[Standard_Real, Standard_Real]");
-		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
-		%feature("autodoc", "1");
-		const gp_Pnt & _CSFDB_GetExtrema_POnSurfmyP() const;
-
-};
-%extend Extrema_POnSurf {
-	~Extrema_POnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_POnSurf\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_PCFOfEPCOfExtPC2d;
-class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Extrema_PCFOfEPCOfExtPC2d();
-		%feature("autodoc", "1");
-		Extrema_PCFOfEPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
-		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
-		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
-		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
+		Standard_Real Value(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
-%extend Extrema_PCFOfEPCOfExtPC2d {
-	~Extrema_PCFOfEPCOfExtPC2d() {
+%extend Extrema_ELCC2dOfLocateExtCC2d {
+	~Extrema_ELCC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_HArray1OfPOnSurf;
-class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Extrema_HArray1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Extrema_HArray1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up, const Extrema_POnSurf &V);
-		%feature("autodoc", "1");
-		void Init(const Extrema_POnSurf &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnSurf &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Extrema_Array1OfPOnSurf & Array1() const;
-		%feature("autodoc", "1");
-		Extrema_Array1OfPOnSurf & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_HArray1OfPOnSurf {
-	Handle_Extrema_HArray1OfPOnSurf GetHandle() {
-	return *(Handle_Extrema_HArray1OfPOnSurf*) &$self;
-	}
-};
-%extend Extrema_HArray1OfPOnSurf {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_HArray1OfPOnSurf {
-	~Extrema_HArray1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -1522,6 +1334,41 @@ class Extrema_LocateExtCC {
 	~Extrema_LocateExtCC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_ExtCC2d;
+class Extrema_ExtCC2d {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtCC2d();
+		%feature("autodoc", "1");
+		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real U1, const Standard_Real U2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N=1) const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
+		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
+
+};
+%extend Extrema_ExtCC2d {
+	~Extrema_ExtCC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
 	}
 };
 
@@ -1571,39 +1418,6 @@ class Extrema_ExtElSS {
 	~Extrema_ExtElSS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElSS\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_ExtPS;
-class Extrema_ExtPS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ExtPS();
-		%feature("autodoc", "1");
-		Extrema_ExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_ExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
-
-};
-%extend Extrema_ExtPS {
-	~Extrema_ExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
 	}
 };
 
@@ -1663,59 +1477,33 @@ class Extrema_ExtElC2d {
 };
 
 
-%nodefaultctor Extrema_SequenceOfPOnCurv;
-class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
+%nodefaultctor Extrema_LocEPCOfLocateExtPC;
+class Extrema_LocEPCOfLocateExtPC {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceOfPOnCurv();
+		Extrema_LocEPCOfLocateExtPC();
 		%feature("autodoc", "1");
-		void Clear();
+		Extrema_LocEPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real U0, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		const Extrema_SequenceOfPOnCurv & Assign(const Extrema_SequenceOfPOnCurv &Other);
+		Extrema_LocEPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		const Extrema_SequenceOfPOnCurv & operator=(const Extrema_SequenceOfPOnCurv &Other);
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		void Append(const Extrema_POnCurv &T);
+		void Perform(const gp_Pnt &P, const Standard_Real U0);
 		%feature("autodoc", "1");
-		void Append(Extrema_SequenceOfPOnCurv & S);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Prepend(const Extrema_POnCurv &T);
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Prepend(Extrema_SequenceOfPOnCurv & S);
+		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & First() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv &I);
-		%feature("autodoc", "1");
-		Extrema_POnCurv & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnCurv & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Extrema_POnCurv Point() const;
 
 };
-%extend Extrema_SequenceOfPOnCurv {
-	~Extrema_SequenceOfPOnCurv() {
+%extend Extrema_LocEPCOfLocateExtPC {
+	~Extrema_LocEPCOfLocateExtPC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -1825,6 +1613,133 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 };
 
 
+%nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
+class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_CurveTool;
+class Extrema_CurveTool {
+	public:
+		%feature("autodoc", "1");
+		Extrema_CurveTool();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(Adaptor3d_Curve & C, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void Intervals(Adaptor3d_Curve & C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real Period(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Adaptor3d_Curve &C, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
+		%feature("autodoc", "1");
+		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		%feature("autodoc", "1");
+		gp_Lin Line(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		gp_Circ Circle(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		gp_Elips Ellipse(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		gp_Hypr Hyperbola(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		gp_Parab Parabola(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer Degree(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Boolean IsRational(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve Bezier(const Adaptor3d_Curve &C);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_Curve &C);
+
+};
+%extend Extrema_CurveTool {
+	~Extrema_CurveTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CurveTool\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_PCFOfEPCOfExtPC2d;
+class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Extrema_PCFOfEPCOfExtPC2d();
+		%feature("autodoc", "1");
+		Extrema_PCFOfEPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt2d &P);
+		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_PCFOfEPCOfExtPC2d {
+	~Extrema_PCFOfEPCOfExtPC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
@@ -1858,31 +1773,106 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 };
 
 
-%nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv;
-class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
+%nodefaultctor Extrema_Array2OfPOnCurv;
+class Extrema_Array2OfPOnCurv {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSequenceOfPOnCurv(const Extrema_POnCurv &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Extrema_Array2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Extrema_POnCurv & Value() const;
+		Extrema_Array2OfPOnCurv(const Extrema_POnCurv &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Init(const Extrema_POnCurv &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnCurv & Assign(const Extrema_Array2OfPOnCurv &Other);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnCurv & operator=(const Extrema_Array2OfPOnCurv &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
-	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
-	~Extrema_SequenceNodeOfSequenceOfPOnCurv() {
+%extend Extrema_Array2OfPOnCurv {
+	~Extrema_Array2OfPOnCurv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
+class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
+		%feature("autodoc", "1");
+		void Append(const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void Append(Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		%feature("autodoc", "1");
+		void Prepend(const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void Prepend(Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & First() const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv &I);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -1944,6 +1934,37 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Extrema_ExtPExtS;
+class Extrema_ExtPExtS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS();
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS(const gp_Pnt &P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Extrema_ExtPExtS(const gp_Pnt &P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_ExtPExtS {
+	~Extrema_ExtPExtS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPExtS\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_HArray2OfPOnSurf;
 class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 	public:
@@ -1997,103 +2018,6 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 };
 
 
-%nodefaultctor Extrema_CCLocFOfLocECCOfLocateExtCC;
-class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-
-};
-%extend Extrema_CCLocFOfLocECCOfLocateExtCC {
-	~Extrema_CCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_LocateExtCC2d;
-class Extrema_LocateExtCC2d {
-	public:
-		%feature("autodoc", "1");
-		Extrema_LocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U0, const Standard_Real V0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-
-};
-%extend Extrema_LocateExtCC2d {
-	~Extrema_LocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_Array1OfPOnSurf;
-class Extrema_Array1OfPOnSurf {
-	public:
-		%feature("autodoc", "1");
-		Extrema_Array1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Extrema_Array1OfPOnSurf(const Extrema_POnSurf &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Extrema_POnSurf &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Extrema_Array1OfPOnSurf & Assign(const Extrema_Array1OfPOnSurf &Other);
-		%feature("autodoc", "1");
-		const Extrema_Array1OfPOnSurf & operator=(const Extrema_Array1OfPOnSurf &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnSurf &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnSurf & operator()(const Standard_Integer Index);
-
-};
-%extend Extrema_Array1OfPOnSurf {
-	~Extrema_Array1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
-	}
-};
-
-
 %nodefaultctor Extrema_ExtCC;
 class Extrema_ExtCC {
 	public:
@@ -2129,39 +2053,39 @@ class Extrema_ExtCC {
 };
 
 
-%nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
-class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequence {
+%nodefaultctor Extrema_SeqPOnCOfCCFOfECCOfExtCC;
+class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC();
+		Extrema_SeqPOnCOfCCFOfECCOfExtCC();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & Assign(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
+		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & Assign(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
 		%feature("autodoc", "1");
-		const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & operator=(const Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC &Other);
+		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
 		%feature("autodoc", "1");
 		void Append(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
-		void Append(Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		void Append(Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
 		%feature("autodoc", "1");
 		void Prepend(const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
-		void Prepend(Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		void Prepend(Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
 		%feature("autodoc", "1");
 		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv &I);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		void InsertBefore(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
 		%feature("autodoc", "1");
 		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv &T);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		void InsertAfter(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & First() const;
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & Last() const;
 		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC & S);
+		void Split(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
 		%feature("autodoc", "1");
 		const Extrema_POnCurv & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -2178,10 +2102,10 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+%extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
+	~Extrema_SeqPOnCOfCCFOfECCOfExtCC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
 
@@ -2389,6 +2313,35 @@ class Extrema_LocateExtPC2d {
 };
 
 
+%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
+class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC(const Extrema_POnCurv &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_LocateExtPC;
 class Extrema_LocateExtPC {
 	public:
@@ -2420,121 +2373,29 @@ class Extrema_LocateExtPC {
 };
 
 
-%nodefaultctor Extrema_ExtPElC2d;
-class Extrema_ExtPElC2d {
+%nodefaultctor Extrema_GenLocateExtCS;
+class Extrema_GenLocateExtCS {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtPElC2d();
+		Extrema_GenLocateExtCS();
 		%feature("autodoc", "1");
-		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Lin2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		Extrema_GenLocateExtCS(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real T, const Standard_Real U, const Standard_Real V, const Standard_Real Tol1, const Standard_Real Tol2);
 		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const gp_Lin2d &L, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Circ2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const gp_Circ2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Elips2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const gp_Elips2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Hypr2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const gp_Hypr2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Parab2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const gp_Parab2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-
-};
-%extend Extrema_ExtPElC2d {
-	~Extrema_ExtPElC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_LocEPCOfLocateExtPC2d;
-class Extrema_LocEPCOfLocateExtPC2d {
-	public:
-		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC2d();
-		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
+		void Perform(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Real T, const Standard_Real U, const Standard_Real V, const Standard_Real Tol1, const Standard_Real Tol2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsMin() const;
+		const Extrema_POnCurv & PointOnCurve() const;
 		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point() const;
+		const Extrema_POnSurf & PointOnSurface() const;
 
 };
-%extend Extrema_LocEPCOfLocateExtPC2d {
-	~Extrema_LocEPCOfLocateExtPC2d() {
+%extend Extrema_GenLocateExtCS {
+	~Extrema_GenLocateExtCS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_ExtPElS;
-class Extrema_ExtPElS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ExtPElS();
-		%feature("autodoc", "1");
-		Extrema_ExtPElS(const gp_Pnt &P, const gp_Cylinder &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const gp_Cylinder &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Extrema_ExtPElS(const gp_Pnt &P, const gp_Pln &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const gp_Pln &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Extrema_ExtPElS(const gp_Pnt &P, const gp_Cone &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const gp_Cone &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Extrema_ExtPElS(const gp_Pnt &P, const gp_Torus &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const gp_Torus &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Extrema_ExtPElS(const gp_Pnt &P, const gp_Sphere &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const gp_Sphere &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-
-};
-%extend Extrema_ExtPElS {
-	~Extrema_ExtPElS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElS\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
 	}
 };
 
@@ -2564,61 +2425,6 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_ExtElC;
-class Extrema_ExtElC {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ExtElC();
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Lin &C1, const gp_Lin &C2, const Standard_Real AngTol);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Lin &C1, const gp_Circ &C2, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Lin &C1, const gp_Elips &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Lin &C1, const gp_Hypr &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Lin &C1, const gp_Parab &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Circ &C1, const gp_Circ &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Circ &C1, const gp_Elips &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Circ &C1, const gp_Hypr &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Circ &C1, const gp_Parab &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Elips &C1, const gp_Elips &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Elips &C1, const gp_Hypr &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Elips &C1, const gp_Parab &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Hypr &C1, const gp_Hypr &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Hypr &C1, const gp_Parab &C2);
-		%feature("autodoc", "1");
-		Extrema_ExtElC(const gp_Parab &C1, const gp_Parab &C2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-
-};
-%extend Extrema_ExtElC {
-	~Extrema_ExtElC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC\n");}
 	}
 };
 
@@ -2680,78 +2486,52 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor Extrema_SeqPOnCOfCCFOfECCOfExtCC;
-class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
+%nodefaultctor Extrema_LocEPCOfLocateExtPC2d;
+class Extrema_LocEPCOfLocateExtPC2d {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SeqPOnCOfCCFOfECCOfExtCC();
+		Extrema_LocEPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
-		void Clear();
+		Extrema_LocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & Assign(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
+		Extrema_LocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		const Extrema_SeqPOnCOfCCFOfECCOfExtCC & operator=(const Extrema_SeqPOnCOfCCFOfECCOfExtCC &Other);
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 		%feature("autodoc", "1");
-		void Append(const Extrema_POnCurv &T);
+		void Perform(const gp_Pnt2d &P, const Standard_Real U0);
 		%feature("autodoc", "1");
-		void Append(Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Prepend(const Extrema_POnCurv &T);
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Prepend(Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
+		Standard_Boolean IsMin() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & First() const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Extrema_SeqPOnCOfCCFOfECCOfExtCC & S);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv &I);
-		%feature("autodoc", "1");
-		Extrema_POnCurv & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Extrema_POnCurv & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Extrema_POnCurv2d Point() const;
 
 };
-%extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
-	~Extrema_SeqPOnCOfCCFOfECCOfExtCC() {
+%extend Extrema_LocEPCOfLocateExtPC2d {
+	~Extrema_LocEPCOfLocateExtPC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
 	}
 };
 
 
-%nodefaultctor Extrema_Array2OfPOnCurv;
-class Extrema_Array2OfPOnCurv {
+%nodefaultctor Extrema_Array2OfPOnCurv2d;
+class Extrema_Array2OfPOnCurv2d {
 	public:
 		%feature("autodoc", "1");
-		Extrema_Array2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Extrema_Array2OfPOnCurv2d(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Extrema_Array2OfPOnCurv(const Extrema_POnCurv &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Extrema_Array2OfPOnCurv2d(const Extrema_POnCurv2d &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		void Init(const Extrema_POnCurv &V);
+		void Init(const Extrema_POnCurv2d &V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnCurv & Assign(const Extrema_Array2OfPOnCurv &Other);
+		const Extrema_Array2OfPOnCurv2d & Assign(const Extrema_Array2OfPOnCurv2d &Other);
 		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnCurv & operator=(const Extrema_Array2OfPOnCurv &Other);
+		const Extrema_Array2OfPOnCurv2d & operator=(const Extrema_Array2OfPOnCurv2d &Other);
 		%feature("autodoc", "1");
 		Standard_Integer ColLength() const;
 		%feature("autodoc", "1");
@@ -2765,21 +2545,232 @@ class Extrema_Array2OfPOnCurv {
 		%feature("autodoc", "1");
 		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv &Value);
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv2d &Value);
 		%feature("autodoc", "1");
-		const Extrema_POnCurv & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		const Extrema_POnCurv2d & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		const Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		const Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
-		Extrema_POnCurv & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
-		Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Extrema_Array2OfPOnCurv {
-	~Extrema_Array2OfPOnCurv() {
+%extend Extrema_Array2OfPOnCurv2d {
+	~Extrema_Array2OfPOnCurv2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
+class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Extrema_PCLocFOfLocEPCOfLocateExtPC2d();
+		%feature("autodoc", "1");
+		Extrema_PCLocFOfLocEPCOfLocateExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt2d &P);
+		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
+	~Extrema_PCLocFOfLocEPCOfLocateExtPC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_Array2OfPOnSurf;
+class Extrema_Array2OfPOnSurf {
+	public:
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnSurf(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnSurf(const Extrema_POnSurf &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnSurf &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurf & Assign(const Extrema_Array2OfPOnSurf &Other);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurf & operator=(const Extrema_Array2OfPOnSurf &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnSurf &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend Extrema_Array2OfPOnSurf {
+	~Extrema_Array2OfPOnSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_ExtPElS;
+class Extrema_ExtPElS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPElS();
+		%feature("autodoc", "1");
+		Extrema_ExtPElS(const gp_Pnt &P, const gp_Cylinder &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P, const gp_Cylinder &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Extrema_ExtPElS(const gp_Pnt &P, const gp_Pln &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P, const gp_Pln &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Extrema_ExtPElS(const gp_Pnt &P, const gp_Cone &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P, const gp_Cone &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Extrema_ExtPElS(const gp_Pnt &P, const gp_Torus &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P, const gp_Torus &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Extrema_ExtPElS(const gp_Pnt &P, const gp_Sphere &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P, const gp_Sphere &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_ExtPElS {
+	~Extrema_ExtPElS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElS\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_ExtElC;
+class Extrema_ExtElC {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtElC();
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Lin &C1, const gp_Lin &C2, const Standard_Real AngTol);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Lin &C1, const gp_Circ &C2, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Lin &C1, const gp_Elips &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Lin &C1, const gp_Hypr &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Lin &C1, const gp_Parab &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Circ &C1, const gp_Circ &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Circ &C1, const gp_Elips &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Circ &C1, const gp_Hypr &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Circ &C1, const gp_Parab &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Elips &C1, const gp_Elips &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Elips &C1, const gp_Hypr &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Elips &C1, const gp_Parab &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Hypr &C1, const gp_Hypr &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Hypr &C1, const gp_Parab &C2);
+		%feature("autodoc", "1");
+		Extrema_ExtElC(const gp_Parab &C1, const gp_Parab &C2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N=1) const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
+
+};
+%extend Extrema_ExtElC {
+	~Extrema_ExtElC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv;
+class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSequenceOfPOnCurv(const Extrema_POnCurv &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	~Extrema_SequenceNodeOfSequenceOfPOnCurv() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
 	}
 };
 
@@ -2913,6 +2904,116 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
+class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & Assign(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & operator=(const Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d &Other);
+		%feature("autodoc", "1");
+		void Append(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Append(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void Prepend(const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void Prepend(Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv2d &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & First() const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &I);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_HArray2OfPOnCurv;
+class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Extrema_HArray2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		Extrema_HArray2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Extrema_POnCurv &V);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnCurv &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnCurv & Array2() const;
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnCurv & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_HArray2OfPOnCurv {
+	Handle_Extrema_HArray2OfPOnCurv GetHandle() {
+	return *(Handle_Extrema_HArray2OfPOnCurv*) &$self;
+	}
+};
+%extend Extrema_HArray2OfPOnCurv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_HArray2OfPOnCurv {
+	~Extrema_HArray2OfPOnCurv() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_PCFOfEPCOfExtPC;
 class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 	public:
@@ -2950,88 +3051,25 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 };
 
 
-%nodefaultctor Extrema_EPCOfExtPC2d;
-class Extrema_EPCOfExtPC2d {
+%nodefaultctor Extrema_GenLocateExtPS;
+class Extrema_GenLocateExtPS {
 	public:
 		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d();
+		Extrema_GenLocateExtPS();
 		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		Extrema_EPCOfExtPC2d(const gp_Pnt2d &P, const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Standard_Integer NbU, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU, const Standard_Real TolF);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt2d &P);
+		Extrema_GenLocateExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real U0, const Standard_Real V0, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+		Extrema_POnSurf Point() const;
 
 };
-%extend Extrema_EPCOfExtPC2d {
-	~Extrema_EPCOfExtPC2d() {
+%extend Extrema_GenLocateExtPS {
+	~Extrema_GenLocateExtPS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_Array2OfPOnSurf;
-class Extrema_Array2OfPOnSurf {
-	public:
-		%feature("autodoc", "1");
-		Extrema_Array2OfPOnSurf(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Extrema_Array2OfPOnSurf(const Extrema_POnSurf &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Extrema_POnSurf &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnSurf & Assign(const Extrema_Array2OfPOnSurf &Other);
-		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnSurf & operator=(const Extrema_Array2OfPOnSurf &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnSurf &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%extend Extrema_Array2OfPOnSurf {
-	~Extrema_Array2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
 	}
 };
 
@@ -3065,58 +3103,31 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 };
 
 
-%nodefaultctor Extrema_ExtSS;
-class Extrema_ExtSS {
+%nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
+class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtSS();
+		Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Extrema_ExtSS(const Adaptor3d_Surface &S1, const Adaptor3d_Surface &S2, const Standard_Real TolS1, const Standard_Real TolS2);
+		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
-		Extrema_ExtSS(const Adaptor3d_Surface &S1, const Adaptor3d_Surface &S2, const Standard_Real Uinf1, const Standard_Real Usup1, const Standard_Real Vinf1, const Standard_Real Vsup1, const Standard_Real Uinf2, const Standard_Real Usup2, const Standard_Real Vinf2, const Standard_Real Vsup2, const Standard_Real TolS1, const Standard_Real TolS2);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S2, const Standard_Real Uinf2, const Standard_Real Usup2, const Standard_Real Vinf2, const Standard_Real Vsup2, const Standard_Real TolS1);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor3d_Surface &S1, const Standard_Real Uinf1, const Standard_Real Usup1, const Standard_Real Vinf1, const Standard_Real Vsup1, const Standard_Real TolS1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Extrema_ExtSS {
-	~Extrema_ExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d*) &$self;
 	}
 };
-
-
-%nodefaultctor Extrema_GenLocateExtPS;
-class Extrema_GenLocateExtPS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_GenLocateExtPS();
-		%feature("autodoc", "1");
-		Extrema_GenLocateExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real U0, const Standard_Real V0, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point() const;
-
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
 };
-%extend Extrema_GenLocateExtPS {
-	~Extrema_GenLocateExtPS() {
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
 
@@ -3150,6 +3161,39 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 	~Extrema_CCFOfELCC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCC2dOfLocateExtCC2d\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_CCLocFOfLocECCOfLocateExtCC;
+class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Extrema_CCLocFOfLocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
+
+};
+%extend Extrema_CCLocFOfLocECCOfLocateExtCC {
+	~Extrema_CCLocFOfLocECCOfLocateExtCC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -3273,68 +3317,95 @@ class Extrema_GenExtCS {
 };
 
 
-%nodefaultctor Extrema_LocEPCOfLocateExtPC;
-class Extrema_LocEPCOfLocateExtPC {
+%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
+class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC();
+		Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real U0, const Standard_Real TolU);
+		Extrema_POnCurv2d & Value() const;
 		%feature("autodoc", "1");
-		Extrema_LocEPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P, const Standard_Real U0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin() const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv Point() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Extrema_LocEPCOfLocateExtPC {
-	~Extrema_LocEPCOfLocateExtPC() {
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
 
-%nodefaultctor Extrema_ELPCOfLocateExtPC;
-class Extrema_ELPCOfLocateExtPC {
+%nodefaultctor Extrema_ExtPRevS;
+class Extrema_ExtPRevS {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC();
+		Extrema_ExtPRevS();
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPRevS(const gp_Pnt &P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPRevS(const gp_Pnt &P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
 		%feature("autodoc", "1");
 		void Perform(const gp_Pnt &P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_ExtPRevS {
+	~Extrema_ExtPRevS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_GenExtPS;
+class Extrema_GenExtPS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_GenExtPS();
+		%feature("autodoc", "1");
+		Extrema_GenExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Extrema_GenExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
+		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
-		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
-%extend Extrema_ELPCOfLocateExtPC {
-	~Extrema_ELPCOfLocateExtPC() {
+%extend Extrema_GenExtPS {
+	~Extrema_GenExtPS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtPS\n");}
 	}
 };
 
@@ -3374,138 +3445,23 @@ class Extrema_ExtPC2d {
 };
 
 
-%nodefaultctor Extrema_ExtPExtS;
-class Extrema_ExtPExtS {
+%nodefaultctor Extrema_LocateExtCC2d;
+class Extrema_LocateExtCC2d {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtPExtS();
-		%feature("autodoc", "1");
-		Extrema_ExtPExtS(const gp_Pnt &P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_ExtPExtS(const gp_Pnt &P, const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_SurfaceOfLinearExtrusion &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
+		Extrema_LocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U0, const Standard_Real V0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
+		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
-%extend Extrema_ExtPExtS {
-	~Extrema_ExtPExtS() {
+%extend Extrema_LocateExtCC2d {
+	~Extrema_LocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPExtS\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_ExtPRevS;
-class Extrema_ExtPRevS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS();
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS(const gp_Pnt &P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_ExtPRevS(const gp_Pnt &P, const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_SurfaceOfRevolution &S, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-
-};
-%extend Extrema_ExtPRevS {
-	~Extrema_ExtPRevS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_FuncExtPS;
-class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Extrema_FuncExtPS();
-		%feature("autodoc", "1");
-		Extrema_FuncExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasDegIso() const;
-
-};
-%extend Extrema_FuncExtPS {
-	~Extrema_FuncExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtPS\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_GenExtPS;
-class Extrema_GenExtPS {
-	public:
-		%feature("autodoc", "1");
-		Extrema_GenExtPS();
-		%feature("autodoc", "1");
-		Extrema_GenExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_GenExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Surface &S, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnSurf Point(const Standard_Integer N) const;
-
-};
-%extend Extrema_GenExtPS {
-	~Extrema_GenExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtPS\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
 	}
 };
 
@@ -3680,6 +3636,39 @@ class Extrema_ECCOfExtCC {
 };
 
 
+%nodefaultctor Extrema_ExtPS;
+class Extrema_ExtPS {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPS();
+		%feature("autodoc", "1");
+		Extrema_ExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		Extrema_ExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Real TolU, const Standard_Real TolV);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
+
+};
+%extend Extrema_ExtPS {
+	~Extrema_ExtPS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode {
 	public:
@@ -3705,6 +3694,47 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
+	}
+};
+
+
+%nodefaultctor Extrema_FuncExtPS;
+class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Extrema_FuncExtPS();
+		%feature("autodoc", "1");
+		Extrema_FuncExtPS(const gp_Pnt &P, const Adaptor3d_Surface &S);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Surface &S);
+		%feature("autodoc", "1");
+		void SetPoint(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &UV, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &UV, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &UV, math_Vector & F, math_Matrix & DF);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasDegIso() const;
+
+};
+%extend Extrema_FuncExtPS {
+	~Extrema_FuncExtPS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtPS\n");}
 	}
 };
 
@@ -3742,53 +3772,6 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 	~Extrema_PCLocFOfLocEPCOfLocateExtPC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_HArray1OfPOnCurv2d;
-class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Extrema_HArray1OfPOnCurv2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Extrema_HArray1OfPOnCurv2d(const Standard_Integer Low, const Standard_Integer Up, const Extrema_POnCurv2d &V);
-		%feature("autodoc", "1");
-		void Init(const Extrema_POnCurv2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Extrema_POnCurv2d &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Extrema_Array1OfPOnCurv2d & Array1() const;
-		%feature("autodoc", "1");
-		Extrema_Array1OfPOnCurv2d & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_HArray1OfPOnCurv2d {
-	Handle_Extrema_HArray1OfPOnCurv2d GetHandle() {
-	return *(Handle_Extrema_HArray1OfPOnCurv2d*) &$self;
-	}
-};
-%extend Extrema_HArray1OfPOnCurv2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_HArray1OfPOnCurv2d {
-	~Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");}
 	}
 };
 
@@ -3964,6 +3947,41 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor Extrema_ELPCOfLocateExtPC;
+class Extrema_ELPCOfLocateExtPC {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ELPCOfLocateExtPC();
+		%feature("autodoc", "1");
+		Extrema_ELPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		Extrema_ELPCOfLocateExtPC(const gp_Pnt &P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv Point(const Standard_Integer N) const;
+		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+
+};
+%extend Extrema_ELPCOfLocateExtPC {
+	~Extrema_ELPCOfLocateExtPC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_ExtPElC;
 class Extrema_ExtPElC {
 	public:
@@ -4065,58 +4083,49 @@ class Extrema_ELCCOfLocateExtCC {
 };
 
 
-%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
-class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_SeqNode {
+%nodefaultctor Extrema_HArray1OfPOnSurf;
+class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Extrema_HArray1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
+		Extrema_HArray1OfPOnSurf(const Standard_Integer Low, const Standard_Integer Up, const Extrema_POnSurf &V);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnSurf &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnSurf &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnSurf & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurf & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Extrema_Array1OfPOnSurf & Array1() const;
+		%feature("autodoc", "1");
+		Extrema_Array1OfPOnSurf & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
-	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d*) &$self;
+%extend Extrema_HArray1OfPOnSurf {
+	Handle_Extrema_HArray1OfPOnSurf GetHandle() {
+	return *(Handle_Extrema_HArray1OfPOnSurf*) &$self;
 	}
 };
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+%extend Extrema_HArray1OfPOnSurf {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
+%extend Extrema_HArray1OfPOnSurf {
+	~Extrema_HArray1OfPOnSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_ELCC2dOfLocateExtCC2d;
-class Extrema_ELCC2dOfLocateExtCC2d {
-	public:
-		%feature("autodoc", "1");
-		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Extrema_ELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real Vinf, const Standard_Real Vsup, const Standard_Integer NbU, const Standard_Integer NbV, const Standard_Real TolU, const Standard_Real TolV);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer N=1) const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-
-};
-%extend Extrema_ELCC2dOfLocateExtCC2d {
-	~Extrema_ELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");}
 	}
 };
 
@@ -4321,6 +4330,51 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 };
 
 
+%nodefaultctor Extrema_ExtPElC2d;
+class Extrema_ExtPElC2d {
+	public:
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d();
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Lin2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const gp_Lin2d &L, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Circ2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const gp_Circ2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Elips2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const gp_Elips2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Hypr2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const gp_Hypr2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		Extrema_ExtPElC2d(const gp_Pnt2d &P, const gp_Parab2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt2d &P, const gp_Parab2d &C, const Standard_Real Tol, const Standard_Real Uinf, const Standard_Real Usup);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
+
+};
+%extend Extrema_ExtPElC2d {
+	~Extrema_ExtPElC2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC2d\n");}
+	}
+};
+
+
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC2d;
 class Extrema_EPCOfELPCOfLocateExtPC2d {
 	public:
@@ -4428,59 +4482,6 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 };
 
 
-%nodefaultctor Extrema_HArray2OfPOnCurv;
-class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Extrema_HArray2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Extrema_HArray2OfPOnCurv(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Extrema_POnCurv &V);
-		%feature("autodoc", "1");
-		void Init(const Extrema_POnCurv &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnCurv &Value);
-		%feature("autodoc", "1");
-		const Extrema_POnCurv & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const Extrema_Array2OfPOnCurv & Array2() const;
-		%feature("autodoc", "1");
-		Extrema_Array2OfPOnCurv & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_HArray2OfPOnCurv {
-	Handle_Extrema_HArray2OfPOnCurv GetHandle() {
-	return *(Handle_Extrema_HArray2OfPOnCurv*) &$self;
-	}
-};
-%extend Extrema_HArray2OfPOnCurv {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_HArray2OfPOnCurv {
-	~Extrema_HArray2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");}
-	}
-};
-
-
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
 class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 	public:
@@ -4563,35 +4564,6 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 	~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
-	}
-};
-
-
-%nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
-class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC(const Extrema_POnCurv &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Extrema_POnCurv & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -4725,31 +4697,59 @@ class Extrema_ExtCS {
 };
 
 
-%nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
-class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNode {
+%nodefaultctor Extrema_SequenceOfPOnCurv;
+class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Extrema_SequenceOfPOnCurv();
 		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Extrema_SequenceOfPOnCurv & Assign(const Extrema_SequenceOfPOnCurv &Other);
+		%feature("autodoc", "1");
+		const Extrema_SequenceOfPOnCurv & operator=(const Extrema_SequenceOfPOnCurv &Other);
+		%feature("autodoc", "1");
+		void Append(const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void Append(Extrema_SequenceOfPOnCurv & S);
+		%feature("autodoc", "1");
+		void Prepend(const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void Prepend(Extrema_SequenceOfPOnCurv & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Extrema_POnCurv &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Extrema_POnCurv &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & First() const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Extrema_SequenceOfPOnCurv & S);
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Extrema_POnCurv & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Extrema_POnCurv &I);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Extrema_POnCurv & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
-	Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d*) &$self;
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
+%extend Extrema_SequenceOfPOnCurv {
+	~Extrema_SequenceOfPOnCurv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");}
 	}
 };
 

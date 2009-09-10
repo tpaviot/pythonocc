@@ -11,7 +11,7 @@
 %rename(ShapeFix_SequenceOfWireSegment) ShapeFix_SequenceOfWireSegment;
 %rename(ShapeFix_SplitCommonVertex) ShapeFix_SplitCommonVertex;
 %rename(ShapeFix_IntersectionTool) ShapeFix_IntersectionTool;
-%rename(ShapeFix_DataMapOfShapeBox2d) ShapeFix_DataMapOfShapeBox2d;
+%rename(ShapeFix_ShapeTolerance) ShapeFix_ShapeTolerance;
 %rename(ShapeFix_Solid) ShapeFix_Solid;
 %rename(ShapeFix_Wire) ShapeFix_Wire;
 %rename(Handle_ShapeFix_SplitCommonVertex) Handle_ShapeFix_SplitCommonVertex;
@@ -24,7 +24,7 @@
 %rename(Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment) Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
 %rename(ShapeFix_Wireframe) ShapeFix_Wireframe;
 %rename(Handle_ShapeFix_EdgeProjAux) Handle_ShapeFix_EdgeProjAux;
-%rename(ShapeFix_ShapeTolerance) ShapeFix_ShapeTolerance;
+%rename(ShapeFix_DataMapOfShapeBox2d) ShapeFix_DataMapOfShapeBox2d;
 %rename(Handle_ShapeFix_ComposeShell) Handle_ShapeFix_ComposeShell;
 %rename(Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d) Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
 %rename(ShapeFix_FixSmallFace) ShapeFix_FixSmallFace;

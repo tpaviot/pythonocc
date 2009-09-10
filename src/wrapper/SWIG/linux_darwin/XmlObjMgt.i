@@ -69,6 +69,29 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 
 
+%nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
+class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XmlObjMgt_DataMapIteratorOfRRelocationTable();
+		%feature("autodoc", "1");
+		XmlObjMgt_DataMapIteratorOfRRelocationTable(const XmlObjMgt_RRelocationTable &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XmlObjMgt_RRelocationTable &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+
+};
+%extend XmlObjMgt_DataMapIteratorOfRRelocationTable {
+	~XmlObjMgt_DataMapIteratorOfRRelocationTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
+	}
+};
+
+
 %nodefaultctor XmlObjMgt;
 class XmlObjMgt {
 	public:
@@ -108,6 +131,47 @@ class XmlObjMgt {
 };
 
 
+%nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
+class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		XmlObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	Handle_XmlObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
+	return *(Handle_XmlObjMgt_DataMapNodeOfRRelocationTable*) &$self;
+	}
+};
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	~XmlObjMgt_DataMapNodeOfRRelocationTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
+	}
+};
+
+
 %nodefaultctor XmlObjMgt_GP;
 class XmlObjMgt_GP {
 	public:
@@ -131,60 +195,6 @@ class XmlObjMgt_GP {
 	~XmlObjMgt_GP() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_GP\n");}
-	}
-};
-
-
-%nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
-class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XmlObjMgt_DataMapIteratorOfRRelocationTable();
-		%feature("autodoc", "1");
-		XmlObjMgt_DataMapIteratorOfRRelocationTable(const XmlObjMgt_RRelocationTable &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XmlObjMgt_RRelocationTable &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-%extend XmlObjMgt_DataMapIteratorOfRRelocationTable {
-	~XmlObjMgt_DataMapIteratorOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
-	}
-};
-
-
-%nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
-class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		XmlObjMgt_DataMapNodeOfRRelocationTable(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
-	Handle_XmlObjMgt_DataMapNodeOfRRelocationTable GetHandle() {
-	return *(Handle_XmlObjMgt_DataMapNodeOfRRelocationTable*) &$self;
-	}
-};
-%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
-	~XmlObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
 

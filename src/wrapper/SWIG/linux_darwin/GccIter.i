@@ -33,15 +33,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include GccIter_headers.i
 
 
-enum GccIter_Type1 {
-	GccIter_CuCuCu,
-	GccIter_CiCuCu,
-	GccIter_CiCiCu,
-	GccIter_CiLiCu,
-	GccIter_LiLiCu,
-	GccIter_LiCuCu,
-	};
-
 enum GccIter_Type2 {
 	GccIter_CuCuOnCu,
 	GccIter_CiCuOnCu,
@@ -55,6 +46,15 @@ enum GccIter_Type2 {
 	GccIter_CiCuOnCi,
 	GccIter_LiCuOnCi,
 	GccIter_CuPtOnCi,
+	};
+
+enum GccIter_Type1 {
+	GccIter_CuCuCu,
+	GccIter_CiCuCu,
+	GccIter_CiCiCu,
+	GccIter_CiLiCu,
+	GccIter_LiLiCu,
+	GccIter_LiCuCu,
 	};
 
 enum GccIter_Type3 {

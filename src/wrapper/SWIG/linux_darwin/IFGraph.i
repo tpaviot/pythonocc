@@ -70,29 +70,6 @@ class IFGraph_Compare : public Interface_GraphContent {
 };
 
 
-%nodefaultctor IFGraph_AllConnected;
-class IFGraph_AllConnected : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%extend IFGraph_AllConnected {
-	~IFGraph_AllConnected() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
-	}
-};
-
-
 %nodefaultctor IFGraph_SubPartsIterator;
 class IFGraph_SubPartsIterator {
 	public:
@@ -173,6 +150,25 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 };
 
 
+%nodefaultctor IFGraph_SCRoots;
+class IFGraph_SCRoots : public IFGraph_StrongComponants {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
+
+};
+%extend IFGraph_SCRoots {
+	~IFGraph_SCRoots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
+	}
+};
+
+
 %nodefaultctor IFGraph_ConnectedComponants;
 class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	public:
@@ -188,6 +184,29 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	~IFGraph_ConnectedComponants() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFGraph_ConnectedComponants\n");}
+	}
+};
+
+
+%nodefaultctor IFGraph_AllConnected;
+class IFGraph_AllConnected : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%extend IFGraph_AllConnected {
+	~IFGraph_AllConnected() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
 	}
 };
 
@@ -217,29 +236,6 @@ class IFGraph_AllShared : public Interface_GraphContent {
 };
 
 
-%nodefaultctor IFGraph_Articulations;
-class IFGraph_Articulations : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromIter(const Interface_EntityIterator &iter);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%extend IFGraph_Articulations {
-	~IFGraph_Articulations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Articulations\n");}
-	}
-};
-
-
 %nodefaultctor IFGraph_ExternalSources;
 class IFGraph_ExternalSources : public Interface_GraphContent {
 	public:
@@ -261,6 +257,29 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 	~IFGraph_ExternalSources() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFGraph_ExternalSources\n");}
+	}
+};
+
+
+%nodefaultctor IFGraph_Articulations;
+class IFGraph_Articulations : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromIter(const Interface_EntityIterator &iter);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%extend IFGraph_Articulations {
+	~IFGraph_Articulations() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFGraph_Articulations\n");}
 	}
 };
 
@@ -294,27 +313,6 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 	~IFGraph_Cumulate() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IFGraph_Cumulate\n");}
-	}
-};
-
-
-%nodefaultctor IFGraph_SCRoots;
-class IFGraph_SCRoots : public IFGraph_StrongComponants {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%extend IFGraph_SCRoots {
-	~IFGraph_SCRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
 	}
 };
 

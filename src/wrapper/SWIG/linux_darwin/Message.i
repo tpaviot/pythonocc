@@ -497,6 +497,57 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 
 
+%nodefaultctor Message_ProgressScale;
+class Message_ProgressScale {
+	public:
+		%feature("autodoc", "1");
+		Message_ProgressScale();
+		%feature("autodoc", "1");
+		void SetName(const char * theName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &theName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		void SetMin(const Standard_Real theMin);
+		%feature("autodoc", "1");
+		Standard_Real GetMin() const;
+		%feature("autodoc", "1");
+		void SetMax(const Standard_Real theMax);
+		%feature("autodoc", "1");
+		Standard_Real GetMax() const;
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
+		%feature("autodoc", "1");
+		void SetStep(const Standard_Real theStep);
+		%feature("autodoc", "1");
+		Standard_Real GetStep() const;
+		%feature("autodoc", "1");
+		void SetInfinite(const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		Standard_Boolean GetInfinite() const;
+		%feature("autodoc", "1");
+		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
+		%feature("autodoc", "1");
+		Standard_Real GetFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real GetLast() const;
+		%feature("autodoc", "1");
+		Standard_Real LocalToBase(const Standard_Real val) const;
+		%feature("autodoc", "1");
+		Standard_Real BaseToLocal(const Standard_Real val) const;
+
+};
+%extend Message_ProgressScale {
+	~Message_ProgressScale() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
+	}
+};
+
+
 %nodefaultctor Message_Messenger;
 class Message_Messenger : public MMgt_TShared {
 	public:
@@ -538,6 +589,82 @@ class Message_Messenger : public MMgt_TShared {
 	~Message_Messenger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Message_Messenger\n");}
+	}
+};
+
+
+%nodefaultctor Message;
+class Message {
+	public:
+		%feature("autodoc", "1");
+		Message();
+		%feature("autodoc", "1");
+		const Handle_Message_Messenger & DefaultMessenger();
+		%feature("autodoc", "1");
+		TCollection_AsciiString FillTime(const Standard_Integer Hour, const Standard_Integer Minute, const Standard_Real Second);
+
+};
+%extend Message {
+	~Message() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Message\n");}
+	}
+};
+
+
+%nodefaultctor Message_SequenceOfPrinters;
+class Message_SequenceOfPrinters : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Message_SequenceOfPrinters();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Message_SequenceOfPrinters & Assign(const Message_SequenceOfPrinters &Other);
+		%feature("autodoc", "1");
+		const Message_SequenceOfPrinters & operator=(const Message_SequenceOfPrinters &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Message_Printer &T);
+		%feature("autodoc", "1");
+		void Append(Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Message_Printer &T);
+		%feature("autodoc", "1");
+		void Prepend(Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Message_Printer &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Message_Printer &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & First() const;
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Message_Printer &I);
+		%feature("autodoc", "1");
+		Handle_Message_Printer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Message_Printer & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Message_SequenceOfPrinters {
+	~Message_SequenceOfPrinters() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Message_SequenceOfPrinters\n");}
 	}
 };
 
@@ -657,86 +784,6 @@ class Message_ProgressSentry {
 };
 
 
-%nodefaultctor Message_ListNodeOfListOfMsg;
-class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Message_ListNodeOfListOfMsg(const Message_Msg &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Message_Msg & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_ListNodeOfListOfMsg {
-	Handle_Message_ListNodeOfListOfMsg GetHandle() {
-	return *(Handle_Message_ListNodeOfListOfMsg*) &$self;
-	}
-};
-%extend Message_ListNodeOfListOfMsg {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Message_ListNodeOfListOfMsg {
-	~Message_ListNodeOfListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");}
-	}
-};
-
-
-%nodefaultctor Message_ProgressScale;
-class Message_ProgressScale {
-	public:
-		%feature("autodoc", "1");
-		Message_ProgressScale();
-		%feature("autodoc", "1");
-		void SetName(const char * theName);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &theName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString GetName() const;
-		%feature("autodoc", "1");
-		void SetMin(const Standard_Real theMin);
-		%feature("autodoc", "1");
-		Standard_Real GetMin() const;
-		%feature("autodoc", "1");
-		void SetMax(const Standard_Real theMax);
-		%feature("autodoc", "1");
-		Standard_Real GetMax() const;
-		%feature("autodoc", "1");
-		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
-		%feature("autodoc", "1");
-		void SetStep(const Standard_Real theStep);
-		%feature("autodoc", "1");
-		Standard_Real GetStep() const;
-		%feature("autodoc", "1");
-		void SetInfinite(const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		Standard_Boolean GetInfinite() const;
-		%feature("autodoc", "1");
-		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
-		%feature("autodoc", "1");
-		Standard_Real GetFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real GetLast() const;
-		%feature("autodoc", "1");
-		Standard_Real LocalToBase(const Standard_Real val) const;
-		%feature("autodoc", "1");
-		Standard_Real BaseToLocal(const Standard_Real val) const;
-
-};
-%extend Message_ProgressScale {
-	~Message_ProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
-	}
-};
-
-
 %nodefaultctor Message_ListOfMsg;
 class Message_ListOfMsg {
 	public:
@@ -790,78 +837,87 @@ class Message_ListOfMsg {
 };
 
 
-%nodefaultctor Message;
-class Message {
+%nodefaultctor Message_MsgFile;
+class Message_MsgFile {
 	public:
 		%feature("autodoc", "1");
-		Message();
+		Message_MsgFile();
 		%feature("autodoc", "1");
-		const Handle_Message_Messenger & DefaultMessenger();
+		Standard_Boolean Load(const char * theDirName, const char * theFileName);
 		%feature("autodoc", "1");
-		TCollection_AsciiString FillTime(const Standard_Integer Hour, const Standard_Integer Minute, const Standard_Real Second);
+		Standard_Boolean LoadFile(const char * theFName);
+		%feature("autodoc", "1");
+		void LoadFromEnv(const char * envname, const char * filename, const char * ext="");
+		%feature("autodoc", "1");
+		Standard_Boolean AddMsg(const TCollection_AsciiString &key, const TCollection_ExtendedString &text);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Msg(const char * key);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
 
 };
-%extend Message {
-	~Message() {
+%extend Message_MsgFile {
+	~Message_MsgFile() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message\n");}
+	if (__env){printf("## Call custom destructor for instance of Message_MsgFile\n");}
 	}
 };
 
 
-%nodefaultctor Message_SequenceOfPrinters;
-class Message_SequenceOfPrinters : public TCollection_BaseSequence {
+%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
+class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Message_SequenceOfPrinters();
+		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		void Clear();
+		Message_ProgressScale & Value() const;
 		%feature("autodoc", "1");
-		const Message_SequenceOfPrinters & Assign(const Message_SequenceOfPrinters &Other);
-		%feature("autodoc", "1");
-		const Message_SequenceOfPrinters & operator=(const Message_SequenceOfPrinters &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void Append(Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void Prepend(Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Message_Printer &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & First() const;
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Message_Printer &I);
-		%feature("autodoc", "1");
-		Handle_Message_Printer & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Message_Printer & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Message_SequenceOfPrinters {
-	~Message_SequenceOfPrinters() {
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
+	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	~Message_SequenceNodeOfSequenceOfProgressScale() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceOfPrinters\n");}
+	if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");}
+	}
+};
+
+
+%nodefaultctor Message_ListNodeOfListOfMsg;
+class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Message_ListNodeOfListOfMsg(const Message_Msg &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Message_Msg & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Message_ListNodeOfListOfMsg {
+	Handle_Message_ListNodeOfListOfMsg GetHandle() {
+	return *(Handle_Message_ListNodeOfListOfMsg*) &$self;
+	}
+};
+%extend Message_ListNodeOfListOfMsg {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Message_ListNodeOfListOfMsg {
+	~Message_ListNodeOfListOfMsg() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");}
 	}
 };
 
@@ -940,62 +996,6 @@ class Message_PrinterOStream : public Message_Printer {
 	~Message_PrinterOStream() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Message_PrinterOStream\n");}
-	}
-};
-
-
-%nodefaultctor Message_MsgFile;
-class Message_MsgFile {
-	public:
-		%feature("autodoc", "1");
-		Message_MsgFile();
-		%feature("autodoc", "1");
-		Standard_Boolean Load(const char * theDirName, const char * theFileName);
-		%feature("autodoc", "1");
-		Standard_Boolean LoadFile(const char * theFName);
-		%feature("autodoc", "1");
-		void LoadFromEnv(const char * envname, const char * filename, const char * ext="");
-		%feature("autodoc", "1");
-		Standard_Boolean AddMsg(const TCollection_AsciiString &key, const TCollection_ExtendedString &text);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Msg(const char * key);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
-
-};
-%extend Message_MsgFile {
-	~Message_MsgFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_MsgFile\n");}
-	}
-};
-
-
-%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
-class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Message_ProgressScale & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
-	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
-	}
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	~Message_SequenceNodeOfSequenceOfProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");}
 	}
 };
 

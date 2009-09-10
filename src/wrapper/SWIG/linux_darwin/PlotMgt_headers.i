@@ -135,13 +135,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TCollection_AsciiString.hxx>
 #include<OSD_File.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
+#include<TShort_Array1OfShortReal.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Handle_Aspect_WidthMap.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Handle_Aspect_FontMap.hxx>
-#include<TShort_Array1OfShortReal.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<Handle_MFT_FontManager.hxx>
 #include<PlotMgt.hxx>
 %}

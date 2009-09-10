@@ -33,6 +33,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include Blend_headers.i
 
 
+enum Blend_DecrochStatus {
+	Blend_NoDecroch,
+	Blend_DecrochRst1,
+	Blend_DecrochRst2,
+	Blend_DecrochBoth,
+	};
+
 enum Blend_Status {
 	Blend_StepTooLarge,
 	Blend_StepTooSmall,
@@ -42,13 +49,6 @@ enum Blend_Status {
 	Blend_OnRst2,
 	Blend_OnRst12,
 	Blend_OK,
-	};
-
-enum Blend_DecrochStatus {
-	Blend_NoDecroch,
-	Blend_DecrochRst1,
-	Blend_DecrochRst2,
-	Blend_DecrochBoth,
 	};
 
 

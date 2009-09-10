@@ -56,44 +56,44 @@ class RWStepDimTol_RWDatumFeature {
 };
 
 
-%nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
-class RWStepDimTol_RWGeometricToleranceWithDatumReference {
+%nodefaultctor RWStepDimTol_RWDatumReference;
+class RWStepDimTol_RWDatumReference {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWGeometricToleranceWithDatumReference();
+		RWStepDimTol_RWDatumReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumReference &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
-	~RWStepDimTol_RWGeometricToleranceWithDatumReference() {
+%extend RWStepDimTol_RWDatumReference {
+	~RWStepDimTol_RWDatumReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
 	}
 };
 
 
-%nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
-class RWStepDimTol_RWPlacedDatumTargetFeature {
+%nodefaultctor RWStepDimTol_RWParallelismTolerance;
+class RWStepDimTol_RWParallelismTolerance {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWPlacedDatumTargetFeature();
+		RWStepDimTol_RWParallelismTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ParallelismTolerance &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_ParallelismTolerance &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_ParallelismTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepDimTol_RWPlacedDatumTargetFeature {
-	~RWStepDimTol_RWPlacedDatumTargetFeature() {
+%extend RWStepDimTol_RWParallelismTolerance {
+	~RWStepDimTol_RWParallelismTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPlacedDatumTargetFeature\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");}
 	}
 };
 
@@ -136,6 +136,69 @@ class RWStepDimTol_RWAngularityTolerance {
 	~RWStepDimTol_RWAngularityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWAngularityTolerance\n");}
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
+class RWStepDimTol_RWSurfaceProfileTolerance {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWSurfaceProfileTolerance();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepDimTol_RWSurfaceProfileTolerance {
+	~RWStepDimTol_RWSurfaceProfileTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");}
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWCommonDatum;
+class RWStepDimTol_RWCommonDatum {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWCommonDatum();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CommonDatum &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CommonDatum &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_CommonDatum &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepDimTol_RWCommonDatum {
+	~RWStepDimTol_RWCommonDatum() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCommonDatum\n");}
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
+class RWStepDimTol_RWPlacedDatumTargetFeature {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWPlacedDatumTargetFeature();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepDimTol_RWPlacedDatumTargetFeature {
+	~RWStepDimTol_RWPlacedDatumTargetFeature() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPlacedDatumTargetFeature\n");}
 	}
 };
 
@@ -203,44 +266,23 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 };
 
 
-%nodefaultctor RWStepDimTol_RWParallelismTolerance;
-class RWStepDimTol_RWParallelismTolerance {
+%nodefaultctor RWStepDimTol_RWPositionTolerance;
+class RWStepDimTol_RWPositionTolerance {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWParallelismTolerance();
+		RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_ParallelismTolerance &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_ParallelismTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_ParallelismTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepDimTol_RWParallelismTolerance {
-	~RWStepDimTol_RWParallelismTolerance() {
+%extend RWStepDimTol_RWPositionTolerance {
+	~RWStepDimTol_RWPositionTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");}
-	}
-};
-
-
-%nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
-class RWStepDimTol_RWSurfaceProfileTolerance {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWSurfaceProfileTolerance();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepDimTol_RWSurfaceProfileTolerance {
-	~RWStepDimTol_RWSurfaceProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
 	}
 };
 
@@ -304,27 +346,6 @@ class RWStepDimTol_RWFlatnessTolerance {
 	~RWStepDimTol_RWFlatnessTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWFlatnessTolerance\n");}
-	}
-};
-
-
-%nodefaultctor RWStepDimTol_RWPositionTolerance;
-class RWStepDimTol_RWPositionTolerance {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWPositionTolerance();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepDimTol_RWPositionTolerance {
-	~RWStepDimTol_RWPositionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
 	}
 };
 
@@ -409,27 +430,6 @@ class RWStepDimTol_RWCylindricityTolerance {
 	~RWStepDimTol_RWCylindricityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCylindricityTolerance\n");}
-	}
-};
-
-
-%nodefaultctor RWStepDimTol_RWDatumReference;
-class RWStepDimTol_RWDatumReference {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWDatumReference();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_DatumReference &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_DatumReference &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_DatumReference &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepDimTol_RWDatumReference {
-	~RWStepDimTol_RWDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
 	}
 };
 
@@ -560,22 +560,22 @@ class RWStepDimTol_RWDatum {
 };
 
 
-%nodefaultctor RWStepDimTol_RWCommonDatum;
-class RWStepDimTol_RWCommonDatum {
+%nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
+class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWCommonDatum();
+		RWStepDimTol_RWGeometricToleranceWithDatumReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_CommonDatum &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_CommonDatum &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_CommonDatum &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepDimTol_RWCommonDatum {
-	~RWStepDimTol_RWCommonDatum() {
+%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
+	~RWStepDimTol_RWGeometricToleranceWithDatumReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCommonDatum\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");}
 	}
 };

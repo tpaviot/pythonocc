@@ -1,5 +1,5 @@
 %rename(Handle_PGeom_Line) Handle_PGeom_Line;
-%rename(PGeom_SurfaceOfRevolution) PGeom_SurfaceOfRevolution;
+%rename(PGeom_VectorWithMagnitude) PGeom_VectorWithMagnitude;
 %rename(Handle_PGeom_BSplineSurface) Handle_PGeom_BSplineSurface;
 %rename(Handle_PGeom_OffsetCurve) Handle_PGeom_OffsetCurve;
 %rename(Handle_PGeom_ConicalSurface) Handle_PGeom_ConicalSurface;
@@ -13,9 +13,10 @@
 %rename(Handle_PGeom_BoundedSurface) Handle_PGeom_BoundedSurface;
 %rename(Handle_PGeom_Transformation) Handle_PGeom_Transformation;
 %rename(PGeom_Axis1Placement) PGeom_Axis1Placement;
-%rename(PGeom_Parabola) PGeom_Parabola;
-%rename(PGeom_Hyperbola) PGeom_Hyperbola;
 %rename(PGeom_Curve) PGeom_Curve;
+%rename(PGeom_Hyperbola) PGeom_Hyperbola;
+%rename(PGeom_SphericalSurface) PGeom_SphericalSurface;
+%rename(PGeom_CartesianPoint) PGeom_CartesianPoint;
 %rename(Handle_PGeom_CartesianPoint) Handle_PGeom_CartesianPoint;
 %rename(Handle_PGeom_Plane) Handle_PGeom_Plane;
 %rename(PGeom_ToroidalSurface) PGeom_ToroidalSurface;
@@ -23,13 +24,13 @@
 %rename(PGeom_Conic) PGeom_Conic;
 %rename(PGeom_Point) PGeom_Point;
 %rename(Handle_PGeom_SphericalSurface) Handle_PGeom_SphericalSurface;
-%rename(PGeom_SphericalSurface) PGeom_SphericalSurface;
+%rename(PGeom_Parabola) PGeom_Parabola;
 %rename(PGeom_Geometry) PGeom_Geometry;
 %rename(PGeom_ElementarySurface) PGeom_ElementarySurface;
 %rename(Handle_PGeom_Axis2Placement) Handle_PGeom_Axis2Placement;
 %rename(Handle_PGeom_Conic) Handle_PGeom_Conic;
 %rename(Handle_PGeom_BezierSurface) Handle_PGeom_BezierSurface;
-%rename(PGeom_SweptSurface) PGeom_SweptSurface;
+%rename(PGeom_Line) PGeom_Line;
 %rename(PGeom_OffsetSurface) PGeom_OffsetSurface;
 %rename(PGeom_BezierCurve) PGeom_BezierCurve;
 %rename(PGeom_TrimmedCurve) PGeom_TrimmedCurve;
@@ -38,6 +39,7 @@
 %rename(PGeom_Axis2Placement) PGeom_Axis2Placement;
 %rename(PGeom_SurfaceOfLinearExtrusion) PGeom_SurfaceOfLinearExtrusion;
 %rename(PGeom_OffsetCurve) PGeom_OffsetCurve;
+%rename(PGeom_SweptSurface) PGeom_SweptSurface;
 %rename(Handle_PGeom_BSplineCurve) Handle_PGeom_BSplineCurve;
 %rename(Handle_PGeom_Direction) Handle_PGeom_Direction;
 %rename(PGeom_BezierSurface) PGeom_BezierSurface;
@@ -62,12 +64,10 @@
 %rename(PGeom_Vector) PGeom_Vector;
 %rename(Handle_PGeom_ToroidalSurface) Handle_PGeom_ToroidalSurface;
 %rename(PGeom_BSplineSurface) PGeom_BSplineSurface;
-%rename(PGeom_CartesianPoint) PGeom_CartesianPoint;
-%rename(PGeom_Line) PGeom_Line;
+%rename(PGeom_SurfaceOfRevolution) PGeom_SurfaceOfRevolution;
 %rename(Handle_PGeom_OffsetSurface) Handle_PGeom_OffsetSurface;
 %rename(Handle_PGeom_ElementarySurface) Handle_PGeom_ElementarySurface;
 %rename(Handle_PGeom_AxisPlacement) Handle_PGeom_AxisPlacement;
-%rename(PGeom_VectorWithMagnitude) PGeom_VectorWithMagnitude;
 %rename(Handle_PGeom_TrimmedCurve) Handle_PGeom_TrimmedCurve;
 %rename(Handle_PGeom_Parabola) Handle_PGeom_Parabola;
 %rename(Handle_PGeom_Point) Handle_PGeom_Point;

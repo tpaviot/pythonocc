@@ -75,7 +75,7 @@ class AppStd_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		void Formats(TColStd_SequenceOfExtendedString & theFormats);
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResourcesName();
+		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

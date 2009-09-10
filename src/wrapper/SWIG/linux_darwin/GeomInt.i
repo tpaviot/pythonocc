@@ -65,35 +65,6 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 };
 
 
-%nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
-class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_ParameterAndOrientation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		GeomInt_ParameterAndOrientation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation GetHandle() {
-	return *(Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*) &$self;
-	}
-};
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
-	}
-};
-
-
 %nodefaultctor GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
@@ -121,66 +92,31 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 };
 
 
-%nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
-class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_BFGS {
+%nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
+class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
+		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-
-};
-%extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
-	~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
-	}
-};
-
-
-%nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
-class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
-	public:
+		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
 		%feature("autodoc", "1");
-		GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
-		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
+		AppParCurves_MultiBSpCurve Value() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
-		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
-		%feature("autodoc", "1");
-		const math_Vector & NewParameters() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiBSpCurve CurveValue();
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer IPoint, const Standard_Integer CurveIndex);
+		Standard_Real Error(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real MaxError3d() const;
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d() const;
 		%feature("autodoc", "1");
-		const math_Matrix & FunctionMatrix() const;
-		%feature("autodoc", "1");
-		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc", "1");
-		const math_IntegerVector & Index() const;
-		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
-		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-		%feature("autodoc", "1");
-		void SetFirstLambda(const Standard_Real l1);
-		%feature("autodoc", "1");
-		void SetLastLambda(const Standard_Real l2);
+		Standard_Real AverageError() const;
 
 };
-%extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox() {
+%extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -232,6 +168,80 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 	~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox\n");}
+	}
+};
+
+
+%nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
+class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc","Value(const X)->Standard_Real");
+		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
+		%feature("autodoc","Values(const X)->Standard_Real");
+		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
+		%feature("autodoc", "1");
+		const math_Vector & NewParameters() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiBSpCurve CurveValue();
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer IPoint, const Standard_Integer CurveIndex);
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		const math_Matrix & FunctionMatrix() const;
+		%feature("autodoc", "1");
+		const math_Matrix & DerivativeFunctionMatrix() const;
+		%feature("autodoc", "1");
+		const math_IntegerVector & Index() const;
+		%feature("autodoc", "1");
+		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		%feature("autodoc", "1");
+		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+		%feature("autodoc", "1");
+		void SetFirstLambda(const Standard_Real l1);
+		%feature("autodoc", "1");
+		void SetLastLambda(const Standard_Real l2);
+
+};
+%extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
+	}
+};
+
+
+%nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
+class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		Standard_Real AverageError() const;
+
+};
+%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+	~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -330,6 +340,35 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 };
 
 
+%nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
+class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_ParameterAndOrientation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		GeomInt_ParameterAndOrientation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation GetHandle() {
+	return *(Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*) &$self;
+	}
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
+	}
+};
+
+
 %nodefaultctor GeomInt_TheMultiLineOfWLApprox;
 class GeomInt_TheMultiLineOfWLApprox {
 	public:
@@ -384,35 +423,6 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 	~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
-
-
-%nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
-class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=1);
-		%feature("autodoc", "1");
-		GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiBSpCurve Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
-
-};
-%extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -683,81 +693,6 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 };
 
 
-%nodefaultctor GeomInt_LineTool;
-class GeomInt_LineTool {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_LineTool();
-		%feature("autodoc", "1");
-		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
-		%feature("autodoc", "1");
-		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const Handle_IntPatch_Line &L);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
-
-};
-%extend GeomInt_LineTool {
-	~GeomInt_LineTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_LineTool\n");}
-	}
-};
-
-
-%nodefaultctor GeomInt_LineConstructor;
-class GeomInt_LineConstructor {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_LineConstructor();
-		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_TopolTool &D2, const Handle_GeomAdaptor_HSurface &S1, const Handle_GeomAdaptor_HSurface &S2);
-		%feature("autodoc", "1");
-		void Perform(const Handle_IntPatch_Line &L);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbParts() const;
-		%feature("autodoc","Part(Standard_Integer I)->[Standard_RealStandard_Real]");
-		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend GeomInt_LineConstructor {
-	~GeomInt_LineConstructor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_LineConstructor\n");}
-	}
-};
-
-
-%nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
-class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
-
-};
-%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
-	~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
-
-
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 	public:
@@ -813,6 +748,46 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 };
 
 
+%nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
+class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_BFGS {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
+
+};
+%extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
+	}
+};
+
+
+%nodefaultctor GeomInt_LineTool;
+class GeomInt_LineTool {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_LineTool();
+		%feature("autodoc", "1");
+		Standard_Integer NbVertex(const Handle_IntPatch_Line &L);
+		%feature("autodoc", "1");
+		const IntPatch_ThePointOfIntersection & Vertex(const Handle_IntPatch_Line &L, const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const Handle_IntPatch_Line &L);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
+
+};
+%extend GeomInt_LineTool {
+	~GeomInt_LineTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_LineTool\n");}
+	}
+};
+
+
 %nodefaultctor GeomInt_TheComputeLineOfWLApprox;
 class GeomInt_TheComputeLineOfWLApprox {
 	public:
@@ -862,33 +837,6 @@ class GeomInt_TheComputeLineOfWLApprox {
 	~GeomInt_TheComputeLineOfWLApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomInt_TheComputeLineOfWLApprox\n");}
-	}
-};
-
-
-%nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
-class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
-		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
-		%feature("autodoc","Compute()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-		%feature("autodoc", "1");
-		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-
-};
-%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
-	~GeomInt_TheImpPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");}
 	}
 };
 
@@ -982,6 +930,31 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 };
 
 
+%nodefaultctor GeomInt_LineConstructor;
+class GeomInt_LineConstructor {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_LineConstructor();
+		%feature("autodoc", "1");
+		void Load(const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_TopolTool &D2, const Handle_GeomAdaptor_HSurface &S1, const Handle_GeomAdaptor_HSurface &S2);
+		%feature("autodoc", "1");
+		void Perform(const Handle_IntPatch_Line &L);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbParts() const;
+		%feature("autodoc","Part(Standard_Integer I)->[Standard_RealStandard_Real]");
+		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend GeomInt_LineConstructor {
+	~GeomInt_LineConstructor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_LineConstructor\n");}
+	}
+};
+
+
 %nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	public:
@@ -1017,5 +990,32 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
+	}
+};
+
+
+%nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
+class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
+		%feature("autodoc", "1");
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
+		%feature("autodoc","Compute()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		%feature("autodoc", "1");
+		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
+
+};
+%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
+	~GeomInt_TheImpPrmSvSurfacesOfWLApprox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");}
 	}
 };

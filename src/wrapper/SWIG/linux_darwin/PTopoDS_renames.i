@@ -13,11 +13,12 @@
 %rename(Handle_PTopoDS_CompSolid) Handle_PTopoDS_CompSolid;
 %rename(PTopoDS_Shape1) PTopoDS_Shape1;
 %rename(Handle_PTopoDS_TFace) Handle_PTopoDS_TFace;
-%rename(Handle_PTopoDS_TShape1) Handle_PTopoDS_TShape1;
+%rename(Handle_PTopoDS_Shell) Handle_PTopoDS_Shell;
 %rename(PTopoDS_TFace1) PTopoDS_TFace1;
 %rename(PTopoDS_CompSolid) PTopoDS_CompSolid;
 %rename(Handle_PTopoDS_HArray1OfShape1) Handle_PTopoDS_HArray1OfShape1;
 %rename(PTopoDS_TShell1) PTopoDS_TShell1;
+%rename(Handle_PTopoDS_TShape1) Handle_PTopoDS_TShape1;
 %rename(PTopoDS_Vertex) PTopoDS_Vertex;
 %rename(PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1) PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1;
 %rename(Handle_PTopoDS_Solid) Handle_PTopoDS_Solid;
@@ -40,7 +41,6 @@
 %rename(PTopoDS_HShape) PTopoDS_HShape;
 %rename(PTopoDS_TSolid) PTopoDS_TSolid;
 %rename(Handle_PTopoDS_TFace1) Handle_PTopoDS_TFace1;
-%rename(PTopoDS_HArray1OfHShape) PTopoDS_HArray1OfHShape;
 %rename(PTopoDS_TCompSolid) PTopoDS_TCompSolid;
 %rename(Handle_PTopoDS_Wire) Handle_PTopoDS_Wire;
 %rename(PTopoDS_TEdge) PTopoDS_TEdge;
@@ -51,7 +51,7 @@
 %rename(Handle_PTopoDS_TWire) Handle_PTopoDS_TWire;
 %rename(Handle_PTopoDS_Vertex) Handle_PTopoDS_Vertex;
 %rename(PTopoDS_TVertex1) PTopoDS_TVertex1;
-%rename(Handle_PTopoDS_TEdge1) Handle_PTopoDS_TEdge1;
+%rename(Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1) Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
 %rename(PTopoDS_Edge) PTopoDS_Edge;
 %rename(Handle_PTopoDS_TSolid) Handle_PTopoDS_TSolid;
 %rename(PTopoDS_TWire) PTopoDS_TWire;
@@ -59,7 +59,7 @@
 %rename(Handle_PTopoDS_TVertex1) Handle_PTopoDS_TVertex1;
 %rename(Handle_PTopoDS_TCompSolid) Handle_PTopoDS_TCompSolid;
 %rename(Handle_PTopoDS_Edge) Handle_PTopoDS_Edge;
-%rename(Handle_PTopoDS_Shell) Handle_PTopoDS_Shell;
+%rename(PTopoDS_HArray1OfHShape) PTopoDS_HArray1OfHShape;
 %rename(PTopoDS_TCompSolid1) PTopoDS_TCompSolid1;
-%rename(Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1) Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
+%rename(Handle_PTopoDS_TEdge1) Handle_PTopoDS_TEdge1;
 %rename(PTopoDS_Compound) PTopoDS_Compound;

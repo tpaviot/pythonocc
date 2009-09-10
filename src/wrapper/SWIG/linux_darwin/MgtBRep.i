@@ -173,6 +173,29 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 
 
+%nodefaultctor MgtBRep;
+class MgtBRep {
+	public:
+		%feature("autodoc", "1");
+		MgtBRep();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+		%feature("autodoc", "1");
+		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
+
+};
+%extend MgtBRep {
+	~MgtBRep() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MgtBRep\n");}
+	}
+};
+
+
 %nodefaultctor MgtBRep_TranslateTool;
 class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 	public:
@@ -242,28 +265,5 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 	~MgtBRep_TranslateTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MgtBRep_TranslateTool\n");}
-	}
-};
-
-
-%nodefaultctor MgtBRep;
-class MgtBRep {
-	public:
-		%feature("autodoc", "1");
-		MgtBRep();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_HShape Translate(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		void Translate1(const TopoDS_Shape &aShape, PTColStd_TransientPersistentMap & aMap, PTopoDS_Shape1 & aResult, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		void Translate(const Handle_PTopoDS_HShape &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
-		%feature("autodoc", "1");
-		void Translate1(const PTopoDS_Shape1 &aShape, PTColStd_PersistentTransientMap & aMap, TopoDS_Shape & aResult, const MgtBRep_TriangleMode aTriMode);
-
-};
-%extend MgtBRep {
-	~MgtBRep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MgtBRep\n");}
 	}
 };

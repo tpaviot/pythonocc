@@ -33,6 +33,15 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include Xw_headers.i
 
 
+enum Xw_WindowQuality {
+	Xw_WQ_3DQUALITY,
+	Xw_WQ_PICTUREQUALITY,
+	Xw_WQ_DRAWINGQUALITY,
+	Xw_WQ_SAMEQUALITY,
+	Xw_WQ_TRANSPARENT,
+	Xw_WQ_OVERLAY,
+	};
+
 enum Xw_TypeOfVisual {
 	Xw_TOV_STATICGRAY,
 	Xw_TOV_GRAYSCALE,
@@ -47,15 +56,6 @@ enum Xw_TypeOfVisual {
 	Xw_TOV_OVERLAY,
 	};
 
-enum Xw_WindowQuality {
-	Xw_WQ_3DQUALITY,
-	Xw_WQ_PICTUREQUALITY,
-	Xw_WQ_DRAWINGQUALITY,
-	Xw_WQ_SAMEQUALITY,
-	Xw_WQ_TRANSPARENT,
-	Xw_WQ_OVERLAY,
-	};
-
 enum Xw_TypeOfMapping {
 	Xw_TOM_HARDRAMP,
 	Xw_TOM_SIMPLERAMP,
@@ -64,6 +64,66 @@ enum Xw_TypeOfMapping {
 	Xw_TOM_READONLY,
 	};
 
+
+
+%nodefaultctor Handle_Xw_HListOfMFTFonts;
+class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts();
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts & operator=(const Handle_Xw_HListOfMFTFonts &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts & operator=(const Xw_HListOfMFTFonts *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_HListOfMFTFonts {
+	Xw_HListOfMFTFonts* GetObject() {
+	return (Xw_HListOfMFTFonts*)$self->Access();
+	}
+};
+%extend Handle_Xw_HListOfMFTFonts {
+	~Handle_Xw_HListOfMFTFonts() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Xw_ColorMap;
+class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap();
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap(const Handle_Xw_ColorMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap(const Xw_ColorMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap & operator=(const Handle_Xw_ColorMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap & operator=(const Xw_ColorMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_ColorMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_ColorMap {
+	Xw_ColorMap* GetObject() {
+	return (Xw_ColorMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_ColorMap {
+	~Handle_Xw_ColorMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_ColorMap\n");}
+	}
+};
 
 
 %nodefaultctor Handle_Xw_TextManager;
@@ -156,92 +216,32 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 };
 
 
-%nodefaultctor Handle_Xw_Window;
-class Handle_Xw_Window : public Handle_Aspect_Window {
+%nodefaultctor Handle_Xw_HListOfMFTSizes;
+class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Xw_Window();
+		Handle_Xw_HListOfMFTSizes();
 		%feature("autodoc", "1");
-		Handle_Xw_Window(const Handle_Xw_Window &aHandle);
+		Handle_Xw_HListOfMFTSizes(const Handle_Xw_HListOfMFTSizes &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_Window(const Xw_Window *anItem);
+		Handle_Xw_HListOfMFTSizes(const Xw_HListOfMFTSizes *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_Window & operator=(const Handle_Xw_Window &aHandle);
+		Handle_Xw_HListOfMFTSizes & operator=(const Handle_Xw_HListOfMFTSizes &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_Window & operator=(const Xw_Window *anItem);
+		Handle_Xw_HListOfMFTSizes & operator=(const Xw_HListOfMFTSizes *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_Window const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Xw_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Xw_Window {
-	Xw_Window* GetObject() {
-	return (Xw_Window*)$self->Access();
+%extend Handle_Xw_HListOfMFTSizes {
+	Xw_HListOfMFTSizes* GetObject() {
+	return (Xw_HListOfMFTSizes*)$self->Access();
 	}
 };
-%extend Handle_Xw_Window {
-	~Handle_Xw_Window() {
+%extend Handle_Xw_HListOfMFTSizes {
+	~Handle_Xw_HListOfMFTSizes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Window\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Xw_ColorMap;
-class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap();
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap(const Handle_Xw_ColorMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap(const Xw_ColorMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap & operator=(const Handle_Xw_ColorMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap & operator=(const Xw_ColorMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_ColorMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_ColorMap {
-	Xw_ColorMap* GetObject() {
-	return (Xw_ColorMap*)$self->Access();
-	}
-};
-%extend Handle_Xw_ColorMap {
-	~Handle_Xw_ColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_ColorMap\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Xw_HListOfMFTFonts;
-class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts();
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts & operator=(const Handle_Xw_HListOfMFTFonts &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts & operator=(const Xw_HListOfMFTFonts *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_HListOfMFTFonts {
-	Xw_HListOfMFTFonts* GetObject() {
-	return (Xw_HListOfMFTFonts*)$self->Access();
-	}
-};
-%extend Handle_Xw_HListOfMFTFonts {
-	~Handle_Xw_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
 	}
 };
 
@@ -276,36 +276,6 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 };
 
 
-%nodefaultctor Handle_Xw_HListOfMFTSizes;
-class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes();
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes(const Handle_Xw_HListOfMFTSizes &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes(const Xw_HListOfMFTSizes *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes & operator=(const Handle_Xw_HListOfMFTSizes &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes & operator=(const Xw_HListOfMFTSizes *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTSizes const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_HListOfMFTSizes {
-	Xw_HListOfMFTSizes* GetObject() {
-	return (Xw_HListOfMFTSizes*)$self->Access();
-	}
-};
-%extend Handle_Xw_HListOfMFTSizes {
-	~Handle_Xw_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Xw_FontMap;
 class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	public:
@@ -336,6 +306,36 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 };
 
 
+%nodefaultctor Handle_Xw_MarkMap;
+class Handle_Xw_MarkMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap();
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap & operator=(const Handle_Xw_MarkMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap & operator=(const Xw_MarkMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_MarkMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_MarkMap {
+	Xw_MarkMap* GetObject() {
+	return (Xw_MarkMap*)$self->Access();
+	}
+};
+%extend Handle_Xw_MarkMap {
+	~Handle_Xw_MarkMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Xw_HListOfIndexs;
 class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +362,36 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	~Handle_Xw_HListOfIndexs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Xw_Window;
+class Handle_Xw_Window : public Handle_Aspect_Window {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_Window();
+		%feature("autodoc", "1");
+		Handle_Xw_Window(const Handle_Xw_Window &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Window(const Xw_Window *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Handle_Xw_Window &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Xw_Window *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Window const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_Window {
+	Xw_Window* GetObject() {
+	return (Xw_Window*)$self->Access();
+	}
+};
+%extend Handle_Xw_Window {
+	~Handle_Xw_Window() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Window\n");}
 	}
 };
 
@@ -456,36 +486,6 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 };
 
 
-%nodefaultctor Handle_Xw_MarkMap;
-class Handle_Xw_MarkMap : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap();
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap & operator=(const Handle_Xw_MarkMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap & operator=(const Xw_MarkMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_MarkMap {
-	Xw_MarkMap* GetObject() {
-	return (Xw_MarkMap*)$self->Access();
-	}
-};
-%extend Handle_Xw_MarkMap {
-	~Handle_Xw_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
-	}
-};
-
-
 %nodefaultctor Xw_GraphicDevice;
 class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	public:
@@ -514,7 +514,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 		%feature("autodoc", "1");
 		Handle_Xw_MarkMap MarkMap() const;
 		%feature("autodoc", "1");
-		Standard_CString Display() const;
+		char * Display() const;
 		%feature("autodoc", "1");
 		Standard_Address XDisplay() const;
 		%feature("autodoc","DisplaySize()->[Standard_Integer, Standard_Integer]");
@@ -543,49 +543,6 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	~Xw_GraphicDevice() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
-	}
-};
-
-
-%nodefaultctor Xw_ListOfMFTFonts;
-class Xw_ListOfMFTFonts {
-	public:
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & operator=(const Xw_ListOfMFTFonts &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
-
-};
-%extend Xw_ListOfMFTFonts {
-	~Xw_ListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
 	}
 };
 
@@ -912,50 +869,62 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 
 
-%nodefaultctor Xw_FontMap;
-class Xw_FontMap : public Standard_Transient {
+%nodefaultctor Xw_TextManager;
+class Xw_TextManager : public MFT_TextManager {
 	public:
 		%feature("autodoc", "1");
-		Xw_FontMap(const char * Connexion);
+		Xw_TextManager(const Standard_Address aDrawable, const Standard_Address aWidthMap);
 		%feature("autodoc", "1");
-		virtual		void SetEntry(const Aspect_FontMapEntry &Entry);
+		virtual		void BeginString(const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anOrientation, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant, const Standard_Integer aPaintType);
 		%feature("autodoc", "1");
-		virtual		void SetEntries(const Handle_Aspect_FontMap &Fontmap);
+		virtual		Standard_Boolean BeginChar(const Standard_Integer aCharCode, const Quantity_Length X, const Quantity_Length Y);
 		%feature("autodoc", "1");
-		virtual		void Destroy();
+		virtual		Standard_Boolean SetCharBoundingBox(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
 		%feature("autodoc", "1");
-		Standard_Integer FreeFonts() const;
+		virtual		Standard_Boolean SetCharEncoding(const char * anEncoding);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Moveto(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Lineto(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Curveto(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
+		%feature("autodoc", "1");
+		virtual		void ClosePath();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean EndChar(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		void EndString();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_FontMap {
-	Handle_Xw_FontMap GetHandle() {
-	return *(Handle_Xw_FontMap*) &$self;
+%extend Xw_TextManager {
+	Handle_Xw_TextManager GetHandle() {
+	return *(Handle_Xw_TextManager*) &$self;
 	}
 };
-%extend Xw_FontMap {
+%extend Xw_TextManager {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_FontMap {
-	~Xw_FontMap() {
+%extend Xw_TextManager {
+	~Xw_TextManager() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_FontMap\n");}
+	if (__env){printf("## Call custom destructor for instance of Xw_TextManager\n");}
 	}
 };
 
 
-%nodefaultctor Xw_HListOfIndexs;
-class Xw_HListOfIndexs : public MMgt_TShared {
+%nodefaultctor Xw_HListOfMFTSizes;
+class Xw_HListOfMFTSizes : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Xw_HListOfIndexs(const Standard_Integer Low, const Standard_Integer Up);
+		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Xw_HListOfIndexs(const Standard_Integer Low, const Standard_Integer Up, const Standard_Integer &V);
+		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer &V);
+		void Init(const Standard_ShortReal &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -963,66 +932,33 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
+		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
 		%feature("autodoc", "1");
-		const Standard_Integer & Value(const Standard_Integer Index) const;
+		const Standard_ShortReal & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const Xw_ListOfIndexs & Array1() const;
+		const Xw_ListOfMFTSizes & Array1() const;
 		%feature("autodoc", "1");
-		Xw_ListOfIndexs & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_HListOfIndexs {
-	Handle_Xw_HListOfIndexs GetHandle() {
-	return *(Handle_Xw_HListOfIndexs*) &$self;
-	}
-};
-%extend Xw_HListOfIndexs {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Xw_HListOfIndexs {
-	~Xw_HListOfIndexs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfIndexs\n");}
-	}
-};
-
-
-%nodefaultctor Xw_PixMap;
-class Xw_PixMap : public Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Xw_PixMap(const Handle_Aspect_Window &aWindow, const Standard_Integer aWidth, const Standard_Integer anHeight, const Standard_Integer aDepth=0);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
+		Xw_ListOfMFTSizes & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_PixMap {
-	Handle_Xw_PixMap GetHandle() {
-	return *(Handle_Xw_PixMap*) &$self;
+%extend Xw_HListOfMFTSizes {
+	Handle_Xw_HListOfMFTSizes GetHandle() {
+	return *(Handle_Xw_HListOfMFTSizes*) &$self;
 	}
 };
-%extend Xw_PixMap {
+%extend Xw_HListOfMFTSizes {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_PixMap {
-	~Xw_PixMap() {
+%extend Xw_HListOfMFTSizes {
+	~Xw_HListOfMFTSizes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_PixMap\n");}
+	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
 	}
 };
 
@@ -1213,62 +1149,15 @@ class Xw_IconBox : public Xw_Window {
 };
 
 
-%nodefaultctor Xw_TextManager;
-class Xw_TextManager : public MFT_TextManager {
+%nodefaultctor Xw_HListOfIndexs;
+class Xw_HListOfIndexs : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Xw_TextManager(const Standard_Address aDrawable, const Standard_Address aWidthMap);
+		Xw_HListOfIndexs(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void BeginString(const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anOrientation, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant, const Standard_Integer aPaintType);
+		Xw_HListOfIndexs(const Standard_Integer Low, const Standard_Integer Up, const Standard_Integer &V);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean BeginChar(const Standard_Integer aCharCode, const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetCharBoundingBox(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetCharEncoding(const char * anEncoding);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Moveto(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Lineto(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Curveto(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
-		%feature("autodoc", "1");
-		virtual		void ClosePath();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean EndChar(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		void EndString();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_TextManager {
-	Handle_Xw_TextManager GetHandle() {
-	return *(Handle_Xw_TextManager*) &$self;
-	}
-};
-%extend Xw_TextManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Xw_TextManager {
-	~Xw_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_TextManager\n");}
-	}
-};
-
-
-%nodefaultctor Xw_HListOfMFTSizes;
-class Xw_HListOfMFTSizes : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_ShortReal &V);
+		void Init(const Standard_Integer &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1276,33 +1165,154 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
+		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
 		%feature("autodoc", "1");
-		const Standard_ShortReal & Value(const Standard_Integer Index) const;
+		const Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
-		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
+		const Xw_ListOfIndexs & Array1() const;
 		%feature("autodoc", "1");
-		const Xw_ListOfMFTSizes & Array1() const;
-		%feature("autodoc", "1");
-		Xw_ListOfMFTSizes & ChangeArray1();
+		Xw_ListOfIndexs & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_HListOfMFTSizes {
-	Handle_Xw_HListOfMFTSizes GetHandle() {
-	return *(Handle_Xw_HListOfMFTSizes*) &$self;
+%extend Xw_HListOfIndexs {
+	Handle_Xw_HListOfIndexs GetHandle() {
+	return *(Handle_Xw_HListOfIndexs*) &$self;
 	}
 };
-%extend Xw_HListOfMFTSizes {
+%extend Xw_HListOfIndexs {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_HListOfMFTSizes {
-	~Xw_HListOfMFTSizes() {
+%extend Xw_HListOfIndexs {
+	~Xw_HListOfIndexs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
+	if (__env){printf("## Call custom destructor for instance of Xw_HListOfIndexs\n");}
+	}
+};
+
+
+%nodefaultctor Xw_PixMap;
+class Xw_PixMap : public Aspect_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Xw_PixMap(const Handle_Aspect_Window &aWindow, const Standard_Integer aWidth, const Standard_Integer anHeight, const Standard_Integer aDepth=0);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		Aspect_Handle PixmapID() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_PixMap {
+	Handle_Xw_PixMap GetHandle() {
+	return *(Handle_Xw_PixMap*) &$self;
+	}
+};
+%extend Xw_PixMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Xw_PixMap {
+	~Xw_PixMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_PixMap\n");}
+	}
+};
+
+
+%nodefaultctor Xw_FontMap;
+class Xw_FontMap : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Xw_FontMap(const char * Connexion);
+		%feature("autodoc", "1");
+		virtual		void SetEntry(const Aspect_FontMapEntry &Entry);
+		%feature("autodoc", "1");
+		virtual		void SetEntries(const Handle_Aspect_FontMap &Fontmap);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer FreeFonts() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_FontMap {
+	Handle_Xw_FontMap GetHandle() {
+	return *(Handle_Xw_FontMap*) &$self;
+	}
+};
+%extend Xw_FontMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Xw_FontMap {
+	~Xw_FontMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_FontMap\n");}
+	}
+};
+
+
+%nodefaultctor Xw_ListOfMFTFonts;
+class Xw_ListOfMFTFonts {
+	public:
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_MFT_FontManager &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & operator=(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
+
+};
+%extend Xw_ListOfMFTFonts {
+	~Xw_ListOfMFTFonts() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
 	}
 };
 
@@ -1371,8 +1381,18 @@ class Xw_ListOfIndexs {
 		const Standard_Integer & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 

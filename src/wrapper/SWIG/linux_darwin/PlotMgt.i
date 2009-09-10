@@ -55,6 +55,14 @@ enum PlotMgt_TypeOfQuality {
 	PlotMgt_TOQ_BEST,
 	};
 
+enum PlotMgt_TypeOfOrigin {
+	PlotMgt_TOO_CENTER,
+	PlotMgt_TOO_BOTTOMLEFT,
+	PlotMgt_TOO_BOTTOMRIGHT,
+	PlotMgt_TOO_TOPLEFT,
+	PlotMgt_TOO_TOPRIGHT,
+	};
+
 enum PlotMgt_PaperFormat {
 	PlotMgt_PF_USERDEFINED,
 	PlotMgt_PF_A0,
@@ -71,14 +79,6 @@ enum PlotMgt_PaperFormat {
 	PlotMgt_PF_QUARTO,
 	PlotMgt_PF_ENVELOPE,
 	PlotMgt_PF_MONARCH,
-	};
-
-enum PlotMgt_TypeOfOrigin {
-	PlotMgt_TOO_CENTER,
-	PlotMgt_TOO_BOTTOMLEFT,
-	PlotMgt_TOO_BOTTOMRIGHT,
-	PlotMgt_TOO_TOPLEFT,
-	PlotMgt_TOO_TOPRIGHT,
 	};
 
 enum PlotMgt_ImageFormat {
@@ -271,6 +271,36 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 };
 
 
+%nodefaultctor Handle_PlotMgt_HListOfPlotterParameter;
+class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter();
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter(const PlotMgt_HListOfPlotterParameter *anItem);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter & operator=(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter & operator=(const PlotMgt_HListOfPlotterParameter *anItem);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_HListOfPlotterParameter const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PlotMgt_HListOfPlotterParameter {
+	PlotMgt_HListOfPlotterParameter* GetObject() {
+	return (PlotMgt_HListOfPlotterParameter*)$self->Access();
+	}
+};
+%extend Handle_PlotMgt_HListOfPlotterParameter {
+	~Handle_PlotMgt_HListOfPlotterParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter;
 class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TCollection_SeqNode {
 	public:
@@ -357,36 +387,6 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 	~Handle_PlotMgt_TextManager() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_TextManager\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PlotMgt_HListOfPlotterParameter;
-class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter();
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter(const PlotMgt_HListOfPlotterParameter *anItem);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter & operator=(const Handle_PlotMgt_HListOfPlotterParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter & operator=(const PlotMgt_HListOfPlotterParameter *anItem);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_HListOfPlotterParameter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PlotMgt_HListOfPlotterParameter {
-	PlotMgt_HListOfPlotterParameter* GetObject() {
-	return (PlotMgt_HListOfPlotterParameter*)$self->Access();
-	}
-};
-%extend Handle_PlotMgt_HListOfPlotterParameter {
-	~Handle_PlotMgt_HListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");}
 	}
 };
 
@@ -536,6 +536,53 @@ class PlotMgt_ListOfMFTSizes {
 	~PlotMgt_ListOfMFTSizes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");}
+	}
+};
+
+
+%nodefaultctor PlotMgt_HListOfMFTSizes;
+class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		PlotMgt_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PlotMgt_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
+		%feature("autodoc", "1");
+		void Init(const Standard_ShortReal &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
+		%feature("autodoc", "1");
+		const Standard_ShortReal & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const PlotMgt_ListOfMFTSizes & Array1() const;
+		%feature("autodoc", "1");
+		PlotMgt_ListOfMFTSizes & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PlotMgt_HListOfMFTSizes {
+	Handle_PlotMgt_HListOfMFTSizes GetHandle() {
+	return *(Handle_PlotMgt_HListOfMFTSizes*) &$self;
+	}
+};
+%extend PlotMgt_HListOfMFTSizes {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PlotMgt_HListOfMFTSizes {
+	~PlotMgt_HListOfMFTSizes() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");}
 	}
 };
 
@@ -693,6 +740,127 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 	~PlotMgt_PlotterParameter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterParameter\n");}
+	}
+};
+
+
+%nodefaultctor PlotMgt_PlotterDriver;
+class PlotMgt_PlotterDriver : public Aspect_Driver {
+	public:
+		%feature("autodoc", "1");
+		virtual		void BeginDraw();
+		%feature("autodoc", "1");
+		virtual		void Close();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Spool(const Aspect_PlotMode aPlotMode=Aspect_PM_FILEONLY, const char * aReserved1=0, const Standard_Boolean aReserved2=0);
+		%feature("autodoc", "1");
+		virtual		void SetLineAttrib(const Standard_Integer ColorIndex, const Standard_Integer TypeIndex, const Standard_Integer WidthIndex);
+		%feature("autodoc", "1");
+		virtual		void SetTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FontIndex);
+		%feature("autodoc", "1");
+		virtual		void SetTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FontIndex, const Quantity_PlaneAngle aSlant, const Quantity_Factor aHScale, const Quantity_Factor aWScale, const Standard_Boolean isUnderlined=0);
+		%feature("autodoc", "1");
+		virtual		void SetPolyAttrib(const Standard_Integer ColorIndex, const Standard_Integer TileIndex, const Standard_Boolean DrawEdge=0);
+		%feature("autodoc", "1");
+		virtual		void SetMarkerAttrib(const Standard_Integer ColorIndex, const Standard_Integer WidthIndex, const Standard_Boolean FillMarker=0);
+		%feature("autodoc", "1");
+		void SetPixelSize(const Standard_Real aSize);
+		%feature("autodoc", "1");
+		virtual		void BeginPolyline(const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		virtual		void BeginPolygon(const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		virtual		void BeginSegments();
+		%feature("autodoc", "1");
+		virtual		void BeginArcs();
+		%feature("autodoc", "1");
+		virtual		void BeginPolyArcs();
+		%feature("autodoc", "1");
+		virtual		void BeginMarkers();
+		%feature("autodoc", "1");
+		virtual		void BeginPoints();
+		%feature("autodoc", "1");
+		virtual		void ClosePrimitive();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
+		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
+		%feature("autodoc", "1");
+		virtual		void ClearImageFile(const char * anImageFile);
+		%feature("autodoc", "1");
+		virtual		void DrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY);
+		%feature("autodoc", "1");
+		virtual		void DrawImageFile(const char * anImageFile, const Standard_ShortReal aX, const Standard_ShortReal aY, const Quantity_Factor aScale=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
+		%feature("autodoc", "1");
+		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer anIndexOfLine, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
+		%feature("autodoc", "1");
+		virtual		void DrawPoint(const Standard_ShortReal X, const Standard_ShortReal Y);
+		%feature("autodoc", "1");
+		virtual		void DrawSegment(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal X2, const Standard_ShortReal Y2);
+		%feature("autodoc", "1");
+		void DrawRectangle(const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_ShortReal aDX, const Standard_ShortReal aDY);
+		%feature("autodoc", "1");
+		virtual		void DrawPolyline(const TShort_Array1OfShortReal &aListX, const TShort_Array1OfShortReal &aListY);
+		%feature("autodoc", "1");
+		virtual		void DrawPolygon(const TShort_Array1OfShortReal &aListX, const TShort_Array1OfShortReal &aListY);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
+		%feature("autodoc", "1");
+		virtual		void DrawMarker(const Standard_Integer aMarker, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal Width, const Standard_ShortReal Height, const Standard_ShortReal Angle=0.0);
+		%feature("autodoc", "1");
+		virtual		void DrawText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		%feature("autodoc", "1");
+		void DrawText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		%feature("autodoc", "1");
+		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		%feature("autodoc", "1");
+		void DrawPolyText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		%feature("autodoc", "1");
+		Handle_PlotMgt_Plotter Plotter() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString PlotFileName() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString DrawingName() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString SpoolDirectory() const;
+		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
+		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
+		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
+		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LineAttrib()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","PolyAttrib()->[Standard_Integer, Standard_Integer]");
+		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PlotMgt_PlotterDriver {
+	Handle_PlotMgt_PlotterDriver GetHandle() {
+	return *(Handle_PlotMgt_PlotterDriver*) &$self;
+	}
+};
+%extend PlotMgt_PlotterDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PlotMgt_PlotterDriver {
+	~PlotMgt_PlotterDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDriver\n");}
 	}
 };
 
@@ -1050,127 +1218,6 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 
 
-%nodefaultctor PlotMgt_PlotterDriver;
-class PlotMgt_PlotterDriver : public Aspect_Driver {
-	public:
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		virtual		void Close();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Spool(const Aspect_PlotMode aPlotMode=Aspect_PM_FILEONLY, const char * aReserved1=0, const Standard_Boolean aReserved2=0);
-		%feature("autodoc", "1");
-		virtual		void SetLineAttrib(const Standard_Integer ColorIndex, const Standard_Integer TypeIndex, const Standard_Integer WidthIndex);
-		%feature("autodoc", "1");
-		virtual		void SetTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FontIndex);
-		%feature("autodoc", "1");
-		virtual		void SetTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FontIndex, const Quantity_PlaneAngle aSlant, const Quantity_Factor aHScale, const Quantity_Factor aWScale, const Standard_Boolean isUnderlined=0);
-		%feature("autodoc", "1");
-		virtual		void SetPolyAttrib(const Standard_Integer ColorIndex, const Standard_Integer TileIndex, const Standard_Boolean DrawEdge=0);
-		%feature("autodoc", "1");
-		virtual		void SetMarkerAttrib(const Standard_Integer ColorIndex, const Standard_Integer WidthIndex, const Standard_Boolean FillMarker=0);
-		%feature("autodoc", "1");
-		void SetPixelSize(const Standard_Real aSize);
-		%feature("autodoc", "1");
-		virtual		void BeginPolyline(const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		virtual		void BeginPolygon(const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		virtual		void BeginSegments();
-		%feature("autodoc", "1");
-		virtual		void BeginArcs();
-		%feature("autodoc", "1");
-		virtual		void BeginPolyArcs();
-		%feature("autodoc", "1");
-		virtual		void BeginMarkers();
-		%feature("autodoc", "1");
-		virtual		void BeginPoints();
-		%feature("autodoc", "1");
-		virtual		void ClosePrimitive();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
-		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
-		%feature("autodoc", "1");
-		virtual		void ClearImageFile(const char * anImageFile);
-		%feature("autodoc", "1");
-		virtual		void DrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY);
-		%feature("autodoc", "1");
-		virtual		void DrawImageFile(const char * anImageFile, const Standard_ShortReal aX, const Standard_ShortReal aY, const Quantity_Factor aScale=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
-		%feature("autodoc", "1");
-		virtual		void FillAndDrawImage(const Handle_Standard_Transient &anImageId, const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_Integer anIndexOfLine, const Standard_Integer aWidth, const Standard_Integer aHeight, const Standard_Address anArrayOfPixels);
-		%feature("autodoc", "1");
-		virtual		void DrawPoint(const Standard_ShortReal X, const Standard_ShortReal Y);
-		%feature("autodoc", "1");
-		virtual		void DrawSegment(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal X2, const Standard_ShortReal Y2);
-		%feature("autodoc", "1");
-		void DrawRectangle(const Standard_ShortReal aX, const Standard_ShortReal aY, const Standard_ShortReal aDX, const Standard_ShortReal aDY);
-		%feature("autodoc", "1");
-		virtual		void DrawPolyline(const TShort_Array1OfShortReal &aListX, const TShort_Array1OfShortReal &aListY);
-		%feature("autodoc", "1");
-		virtual		void DrawPolygon(const TShort_Array1OfShortReal &aListX, const TShort_Array1OfShortReal &aListY);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
-		%feature("autodoc", "1");
-		virtual		void DrawMarker(const Standard_Integer aMarker, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal Width, const Standard_ShortReal Height, const Standard_ShortReal Angle=0.0);
-		%feature("autodoc", "1");
-		virtual		void DrawText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
-		%feature("autodoc", "1");
-		void DrawText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
-		%feature("autodoc", "1");
-		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
-		%feature("autodoc", "1");
-		void DrawPolyText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
-		%feature("autodoc", "1");
-		Handle_PlotMgt_Plotter Plotter() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString PlotFileName() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString DrawingName() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString SpoolDirectory() const;
-		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
-		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
-		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LineAttrib()->[Standard_Integer, Standard_Integer, Standard_Integer]");
-		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","PolyAttrib()->[Standard_Integer, Standard_Integer]");
-		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PlotMgt_PlotterDriver {
-	Handle_PlotMgt_PlotterDriver GetHandle() {
-	return *(Handle_PlotMgt_PlotterDriver*) &$self;
-	}
-};
-%extend PlotMgt_PlotterDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PlotMgt_PlotterDriver {
-	~PlotMgt_PlotterDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDriver\n");}
-	}
-};
-
-
 %nodefaultctor PlotMgt_HListOfMFTFonts;
 class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 	public:
@@ -1292,53 +1339,6 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 	~PlotMgt_PlotterDefinitionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");}
-	}
-};
-
-
-%nodefaultctor PlotMgt_HListOfMFTSizes;
-class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		PlotMgt_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		PlotMgt_HListOfMFTSizes(const Standard_Integer Low, const Standard_Integer Up, const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		void Init(const Standard_ShortReal &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
-		%feature("autodoc", "1");
-		const Standard_ShortReal & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_ShortReal & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const PlotMgt_ListOfMFTSizes & Array1() const;
-		%feature("autodoc", "1");
-		PlotMgt_ListOfMFTSizes & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PlotMgt_HListOfMFTSizes {
-	Handle_PlotMgt_HListOfMFTSizes GetHandle() {
-	return *(Handle_PlotMgt_HListOfMFTSizes*) &$self;
-	}
-};
-%extend PlotMgt_HListOfMFTSizes {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PlotMgt_HListOfMFTSizes {
-	~PlotMgt_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");}
 	}
 };
 

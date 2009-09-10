@@ -144,5 +144,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import MMgt.i
 %import TCollection.i
-%import XmlObjMgt.i
 %import Standard.i
+%import XmlObjMgt.i

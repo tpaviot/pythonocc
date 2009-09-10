@@ -181,8 +181,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopoDS_Wire.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import TopoDS.i
 %import Standard.i
 %import GeomAbs.i

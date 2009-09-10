@@ -33,6 +33,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include BRepOffset_headers.i
 
 
+enum BRepOffset_Mode {
+	BRepOffset_Skin,
+	BRepOffset_Pipe,
+	BRepOffset_RectoVerso,
+	};
+
 enum BRepOffset_Error {
 	BRepOffset_NoError,
 	BRepOffset_OffsetSurfaceFailed,
@@ -42,10 +48,12 @@ enum BRepOffset_Error {
 	BRepOffset_UnknownError,
 	};
 
-enum BRepOffset_Mode {
-	BRepOffset_Skin,
-	BRepOffset_Pipe,
-	BRepOffset_RectoVerso,
+enum BRepOffset_Type {
+	BRepOffset_Concave,
+	BRepOffset_Convex,
+	BRepOffset_Tangent,
+	BRepOffset_FreeBoundary,
+	BRepOffset_Other,
 	};
 
 enum BRepOffset_Status {
@@ -53,14 +61,6 @@ enum BRepOffset_Status {
 	BRepOffset_Reversed,
 	BRepOffset_Degenerated,
 	BRepOffset_Unknown,
-	};
-
-enum BRepOffset_Type {
-	BRepOffset_Concave,
-	BRepOffset_Convex,
-	BRepOffset_Tangent,
-	BRepOffset_FreeBoundary,
-	BRepOffset_Other,
 	};
 
 
@@ -343,52 +343,6 @@ class BRepOffset_ListIteratorOfListOfInterval {
 };
 
 
-%nodefaultctor BRepOffset;
-class BRepOffset {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset();
-		%feature("autodoc", "1");
-		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
-
-};
-%extend BRepOffset {
-	~BRepOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset\n");}
-	}
-};
-
-
-%nodefaultctor BRepOffset_Interval;
-class BRepOffset_Interval {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_Interval();
-		%feature("autodoc", "1");
-		BRepOffset_Interval(const Standard_Real U1, const Standard_Real U2, const BRepOffset_Type Type);
-		%feature("autodoc", "1");
-		void First(const Standard_Real U);
-		%feature("autodoc", "1");
-		void Last(const Standard_Real U);
-		%feature("autodoc", "1");
-		void Type(const BRepOffset_Type T);
-		%feature("autodoc", "1");
-		Standard_Real First() const;
-		%feature("autodoc", "1");
-		Standard_Real Last() const;
-		%feature("autodoc", "1");
-		BRepOffset_Type Type() const;
-
-};
-%extend BRepOffset_Interval {
-	~BRepOffset_Interval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_Interval\n");}
-	}
-};
-
-
 %nodefaultctor BRepOffset_MakeOffset;
 class BRepOffset_MakeOffset {
 	public:
@@ -485,95 +439,19 @@ class BRepOffset_ListOfInterval {
 };
 
 
-%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeReal;
-class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
+%nodefaultctor BRepOffset;
+class BRepOffset {
 	public:
 		%feature("autodoc", "1");
-		BRepOffset_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		BRepOffset();
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_Geom_Surface Surface(const Handle_Geom_Surface &Surface, const Standard_Real Offset, BRepOffset_Status & Status);
 
 };
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
-	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal*) &$self;
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
-	~BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+%extend BRepOffset {
+	~BRepOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");}
-	}
-};
-
-
-%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
-class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapNodeOfDataMapOfShapeOffset(const TopoDS_Shape &K, const BRepOffset_Offset &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		BRepOffset_Offset & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
-	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset GetHandle() {
-	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset*) &$self;
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
-	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
-	}
-};
-
-
-%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
-class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const TopoDS_Shape &K, const TopTools_MapOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
-	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepOffset\n");}
 	}
 };
 
@@ -611,6 +489,25 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 	~BRepOffset_DataMapOfShapeListOfInterval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeListOfInterval\n");}
+	}
+};
+
+
+%nodefaultctor BRepOffset_Inter2d;
+class BRepOffset_Inter2d {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_Inter2d();
+		%feature("autodoc", "1");
+		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
+
+};
+%extend BRepOffset_Inter2d {
+	~BRepOffset_Inter2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter2d\n");}
 	}
 };
 
@@ -706,6 +603,35 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 };
 
 
+%nodefaultctor BRepOffset_Interval;
+class BRepOffset_Interval {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_Interval();
+		%feature("autodoc", "1");
+		BRepOffset_Interval(const Standard_Real U1, const Standard_Real U2, const BRepOffset_Type Type);
+		%feature("autodoc", "1");
+		void First(const Standard_Real U);
+		%feature("autodoc", "1");
+		void Last(const Standard_Real U);
+		%feature("autodoc", "1");
+		void Type(const BRepOffset_Type T);
+		%feature("autodoc", "1");
+		Standard_Real First() const;
+		%feature("autodoc", "1");
+		Standard_Real Last() const;
+		%feature("autodoc", "1");
+		BRepOffset_Type Type() const;
+
+};
+%extend BRepOffset_Interval {
+	~BRepOffset_Interval() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_Interval\n");}
+	}
+};
+
+
 %nodefaultctor BRepOffset_ListNodeOfListOfInterval;
 class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 	public:
@@ -735,29 +661,6 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 };
 
 
-%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
-class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape();
-		%feature("autodoc", "1");
-		BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapOfShapeMapOfShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepOffset_DataMapOfShapeMapOfShape &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & Value() const;
-
-};
-%extend BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape {
-	~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");}
-	}
-};
-
-
 %nodefaultctor BRepOffset_MakeLoops;
 class BRepOffset_MakeLoops {
 	public:
@@ -775,6 +678,47 @@ class BRepOffset_MakeLoops {
 	~BRepOffset_MakeLoops() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeLoops\n");}
+	}
+};
+
+
+%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeReal;
+class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal GetHandle() {
+	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -802,21 +746,56 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 };
 
 
-%nodefaultctor BRepOffset_Inter2d;
-class BRepOffset_Inter2d {
+%nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
+class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		BRepOffset_Inter2d();
+		BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape();
 		%feature("autodoc", "1");
-		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
+		BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape(const BRepOffset_DataMapOfShapeMapOfShape &aMap);
 		%feature("autodoc", "1");
-		void ConnexIntByInt(const TopoDS_Face &FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
+		void Initialize(const BRepOffset_DataMapOfShapeMapOfShape &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & Value() const;
 
 };
-%extend BRepOffset_Inter2d {
-	~BRepOffset_Inter2d() {
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter2d\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");}
+	}
+};
+
+
+%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
+class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapNodeOfDataMapOfShapeOffset(const TopoDS_Shape &K, const BRepOffset_Offset &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		BRepOffset_Offset & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset GetHandle() {
+	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
 	}
 };
 
@@ -893,8 +872,18 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
@@ -948,6 +937,37 @@ class BRepOffset_Offset {
 	~BRepOffset_Offset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_Offset\n");}
+	}
+};
+
+
+%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
+class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const TopoDS_Shape &K, const TopTools_MapOfShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
+	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
 	}
 };
 

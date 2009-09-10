@@ -39,19 +39,19 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<gp_Pnt.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<Handle_Geom_Curve.hxx>
 #include<Handle_TColgp_HArray1OfPnt.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<gp_Vec.hxx>
 #include<TColgp_Array1OfVec.hxx>
 #include<Handle_TColStd_HArray1OfBoolean.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_Geom_Curve.hxx>
+#include<GeomAPI.hxx>
+#include<Handle_Geom2d_Curve.hxx>
+#include<gp_Pln.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array2OfReal.hxx>
-#include<GeomAPI.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<gp_Pln.hxx>
 %}

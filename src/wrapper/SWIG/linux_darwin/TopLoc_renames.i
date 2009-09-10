@@ -8,7 +8,7 @@
 %rename(Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation) Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
 %rename(TopLoc_SListOfItemLocation) TopLoc_SListOfItemLocation;
 %rename(TopLoc_StdMapNodeOfMapOfLocation) TopLoc_StdMapNodeOfMapOfLocation;
-%rename(TopLoc_IndexedMapOfLocation) TopLoc_IndexedMapOfLocation;
-%rename(Handle_TopLoc_SListNodeOfSListOfItemLocation) Handle_TopLoc_SListNodeOfSListOfItemLocation;
 %rename(TopLoc_Location) TopLoc_Location;
+%rename(Handle_TopLoc_SListNodeOfSListOfItemLocation) Handle_TopLoc_SListNodeOfSListOfItemLocation;
+%rename(TopLoc_IndexedMapOfLocation) TopLoc_IndexedMapOfLocation;
 %rename(Handle_TopLoc_StdMapNodeOfMapOfLocation) Handle_TopLoc_StdMapNodeOfMapOfLocation;

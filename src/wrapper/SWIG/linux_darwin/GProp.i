@@ -283,37 +283,6 @@ class GProp_CelGProps : public GProp_GProps {
 };
 
 
-%nodefaultctor GProp_PEquation;
-class GProp_PEquation {
-	public:
-		%feature("autodoc", "1");
-		GProp_PEquation(const TColgp_Array1OfPnt &Pnts, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSpace() const;
-		%feature("autodoc", "1");
-		gp_Pln Plane() const;
-		%feature("autodoc", "1");
-		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-
-};
-%extend GProp_PEquation {
-	~GProp_PEquation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_PEquation\n");}
-	}
-};
-
-
 %nodefaultctor GProp_VelGProps;
 class GProp_VelGProps : public GProp_GProps {
 	public:
@@ -360,5 +329,36 @@ class GProp {
 	~GProp() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GProp\n");}
+	}
+};
+
+
+%nodefaultctor GProp_PEquation;
+class GProp_PEquation {
+	public:
+		%feature("autodoc", "1");
+		GProp_PEquation(const TColgp_Array1OfPnt &Pnts, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlanar() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSpace() const;
+		%feature("autodoc", "1");
+		gp_Pln Plane() const;
+		%feature("autodoc", "1");
+		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+		%feature("autodoc", "1");
+		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+
+};
+%extend GProp_PEquation {
+	~GProp_PEquation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GProp_PEquation\n");}
 	}
 };

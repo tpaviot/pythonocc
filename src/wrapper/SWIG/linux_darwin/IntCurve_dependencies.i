@@ -205,7 +205,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <math_Vector.hxx>
 %};
 
-%import math.i
 %import Standard.i
-%import IntRes2d.i
 %import GeomAbs.i
+%import math.i
+%import IntRes2d.i

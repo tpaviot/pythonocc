@@ -152,36 +152,6 @@ class Handle_TopOpeBRepDS_SurfaceCurveInterference : public Handle_TopOpeBRepDS_
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState;
-class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
-	TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState* GetObject() {
-	return (TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
-	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape;
 class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape : public Handle_TCollection_MapNode {
 	public:
@@ -302,6 +272,36 @@ class Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public H
 };
 
 
+%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus;
+class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus(const TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
+	TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus* GetObject() {
+	return (TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
+	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface;
 class Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface : public Handle_TCollection_MapNode {
 	public:
@@ -328,6 +328,36 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface : public Handle_TCollection_
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState;
+class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState* GetObject() {
+	return (TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -392,6 +422,36 @@ class Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface : public Handle_TCollection_
 };
 
 
+%nodefaultctor Handle_TopOpeBRepDS_HDataStructure;
+class Handle_TopOpeBRepDS_HDataStructure : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure(const Handle_TopOpeBRepDS_HDataStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure(const TopOpeBRepDS_HDataStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure & operator=(const Handle_TopOpeBRepDS_HDataStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure & operator=(const TopOpeBRepDS_HDataStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_HDataStructure {
+	TopOpeBRepDS_HDataStructure* GetObject() {
+	return (TopOpeBRepDS_HDataStructure*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepDS_HDataStructure {
+	~Handle_TopOpeBRepDS_HDataStructure() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HDataStructure\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint;
 class Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint : public Handle_TCollection_MapNode {
 	public:
@@ -422,36 +482,6 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint : public Handle_TCollection_Ma
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_Check;
-class Handle_TopOpeBRepDS_Check : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check(const Handle_TopOpeBRepDS_Check &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check(const TopOpeBRepDS_Check *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check & operator=(const Handle_TopOpeBRepDS_Check &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check & operator=(const TopOpeBRepDS_Check *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Check const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_Check {
-	TopOpeBRepDS_Check* GetObject() {
-	return (TopOpeBRepDS_Check*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepDS_Check {
-	~Handle_TopOpeBRepDS_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Check\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData;
 class Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public Handle_TCollection_MapNode {
 	public:
@@ -478,36 +508,6 @@ class Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public Handle_TCo
 	~Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve;
-class Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve(const Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve(const TopOpeBRepDS_DataMapNodeOfMapOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve & operator=(const TopOpeBRepDS_DataMapNodeOfMapOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve {
-	TopOpeBRepDS_DataMapNodeOfMapOfCurve* GetObject() {
-	return (TopOpeBRepDS_DataMapNodeOfMapOfCurve*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve {
-	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
 	}
 };
 
@@ -572,36 +572,6 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State : publi
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_HDataStructure;
-class Handle_TopOpeBRepDS_HDataStructure : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure(const Handle_TopOpeBRepDS_HDataStructure &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure(const TopOpeBRepDS_HDataStructure *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure & operator=(const Handle_TopOpeBRepDS_HDataStructure &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure & operator=(const TopOpeBRepDS_HDataStructure *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_HDataStructure {
-	TopOpeBRepDS_HDataStructure* GetObject() {
-	return (TopOpeBRepDS_HDataStructure*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepDS_HDataStructure {
-	~Handle_TopOpeBRepDS_HDataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HDataStructure\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape;
 class Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape : public Handle_TCollection_MapNode {
 	public:
@@ -662,32 +632,32 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : publ
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus;
-class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TopOpeBRepDS_SolidSurfaceInterference;
+class Handle_TopOpeBRepDS_SolidSurfaceInterference : public Handle_TopOpeBRepDS_Interference {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus();
+		Handle_TopOpeBRepDS_SolidSurfaceInterference();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus &aHandle);
+		Handle_TopOpeBRepDS_SolidSurfaceInterference(const Handle_TopOpeBRepDS_SolidSurfaceInterference &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus(const TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus *anItem);
+		Handle_TopOpeBRepDS_SolidSurfaceInterference(const TopOpeBRepDS_SolidSurfaceInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus &aHandle);
+		Handle_TopOpeBRepDS_SolidSurfaceInterference & operator=(const Handle_TopOpeBRepDS_SolidSurfaceInterference &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus *anItem);
+		Handle_TopOpeBRepDS_SolidSurfaceInterference & operator=(const TopOpeBRepDS_SolidSurfaceInterference *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepDS_SolidSurfaceInterference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
-	TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus* GetObject() {
-	return (TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus*)$self->Access();
+%extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
+	TopOpeBRepDS_SolidSurfaceInterference* GetObject() {
+	return (TopOpeBRepDS_SolidSurfaceInterference*)$self->Access();
 	}
 };
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
-	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus() {
+%extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
+	~Handle_TopOpeBRepDS_SolidSurfaceInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SolidSurfaceInterference\n");}
 	}
 };
 
@@ -722,32 +692,32 @@ class Handle_TopOpeBRepDS_ListNodeOfListOfInterference : public Handle_TCollecti
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_SolidSurfaceInterference;
-class Handle_TopOpeBRepDS_SolidSurfaceInterference : public Handle_TopOpeBRepDS_Interference {
+%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve;
+class Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference();
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference(const Handle_TopOpeBRepDS_SolidSurfaceInterference &aHandle);
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve(const Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference(const TopOpeBRepDS_SolidSurfaceInterference *anItem);
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve(const TopOpeBRepDS_DataMapNodeOfMapOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference & operator=(const Handle_TopOpeBRepDS_SolidSurfaceInterference &aHandle);
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference & operator=(const TopOpeBRepDS_SolidSurfaceInterference *anItem);
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve & operator=(const TopOpeBRepDS_DataMapNodeOfMapOfCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_SolidSurfaceInterference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
-	TopOpeBRepDS_SolidSurfaceInterference* GetObject() {
-	return (TopOpeBRepDS_SolidSurfaceInterference*)$self->Access();
+%extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve {
+	TopOpeBRepDS_DataMapNodeOfMapOfCurve* GetObject() {
+	return (TopOpeBRepDS_DataMapNodeOfMapOfCurve*)$self->Access();
 	}
 };
-%extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
-	~Handle_TopOpeBRepDS_SolidSurfaceInterference() {
+%extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve {
+	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SolidSurfaceInterference\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
 	}
 };
 
@@ -778,6 +748,66 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData : public Handle_TCo
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TopOpeBRepDS_Check;
+class Handle_TopOpeBRepDS_Check : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check(const Handle_TopOpeBRepDS_Check &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check(const TopOpeBRepDS_Check *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check & operator=(const Handle_TopOpeBRepDS_Check &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check & operator=(const TopOpeBRepDS_Check *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Check const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_Check {
+	TopOpeBRepDS_Check* GetObject() {
+	return (TopOpeBRepDS_Check*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepDS_Check {
+	~Handle_TopOpeBRepDS_Check() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Check\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TopOpeBRepDS_FaceEdgeInterference;
+class Handle_TopOpeBRepDS_FaceEdgeInterference : public Handle_TopOpeBRepDS_ShapeShapeInterference {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference(const Handle_TopOpeBRepDS_FaceEdgeInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference(const TopOpeBRepDS_FaceEdgeInterference *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference & operator=(const Handle_TopOpeBRepDS_FaceEdgeInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference & operator=(const TopOpeBRepDS_FaceEdgeInterference *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_FaceEdgeInterference const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_FaceEdgeInterference {
+	TopOpeBRepDS_FaceEdgeInterference* GetObject() {
+	return (TopOpeBRepDS_FaceEdgeInterference*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepDS_FaceEdgeInterference {
+	~Handle_TopOpeBRepDS_FaceEdgeInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_FaceEdgeInterference\n");}
 	}
 };
 
@@ -872,36 +902,6 @@ class Handle_TopOpeBRepDS_EdgeVertexInterference : public Handle_TopOpeBRepDS_Sh
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_FaceEdgeInterference;
-class Handle_TopOpeBRepDS_FaceEdgeInterference : public Handle_TopOpeBRepDS_ShapeShapeInterference {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference(const Handle_TopOpeBRepDS_FaceEdgeInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference(const TopOpeBRepDS_FaceEdgeInterference *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference & operator=(const Handle_TopOpeBRepDS_FaceEdgeInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference & operator=(const TopOpeBRepDS_FaceEdgeInterference *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_FaceEdgeInterference const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_FaceEdgeInterference {
-	TopOpeBRepDS_FaceEdgeInterference* GetObject() {
-	return (TopOpeBRepDS_FaceEdgeInterference*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepDS_FaceEdgeInterference {
-	~Handle_TopOpeBRepDS_FaceEdgeInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_FaceEdgeInterference\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepDS_CurvePointInterference;
 class Handle_TopOpeBRepDS_CurvePointInterference : public Handle_TopOpeBRepDS_Interference {
 	public:
@@ -990,37 +990,27 @@ class TopOpeBRepDS_InterferenceTool {
 };
 
 
-%nodefaultctor TopOpeBRepDS_SurfaceExplorer;
-class TopOpeBRepDS_SurfaceExplorer {
+%nodefaultctor TopOpeBRepDS_TOOL;
+class TopOpeBRepDS_TOOL {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceExplorer();
+		TopOpeBRepDS_TOOL();
 		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceExplorer(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		Standard_Integer EShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Edge &E, TopTools_ListOfShape & lEsd);
 		%feature("autodoc", "1");
-		void Init(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		Standard_Boolean ShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Integer is1, const Standard_Integer is2);
+		%feature("autodoc","GetEsd(const HDS, const S, Standard_Integer ie)->Standard_Integer");
+		Standard_Boolean GetEsd(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Shape &S, const Standard_Integer ie, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_Surface & Surface() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSurface(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSurfaceKeep(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_Surface & Surface(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSurface();
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
+		Standard_Boolean ShareSplitON(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MspON, const Standard_Integer i1, const Standard_Integer i2, TopoDS_Shape & spON);
+		%feature("autodoc","GetConfig(const HDS, const MEspON, Standard_Integer ie, Standard_Integer iesd)->Standard_Integer");
+		Standard_Boolean GetConfig(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MEspON, const Standard_Integer ie, const Standard_Integer iesd, Standard_Integer &OutValue);
 
 };
-%extend TopOpeBRepDS_SurfaceExplorer {
-	~TopOpeBRepDS_SurfaceExplorer() {
+%extend TopOpeBRepDS_TOOL {
+	~TopOpeBRepDS_TOOL() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceExplorer\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TOOL\n");}
 	}
 };
 
@@ -1085,21 +1075,51 @@ class TopOpeBRepDS_CurveIterator : public TopOpeBRepDS_InterferenceIterator {
 };
 
 
-%nodefaultctor TopOpeBRepDS_Reducer;
-class TopOpeBRepDS_Reducer {
+%nodefaultctor TopOpeBRepDS_GapTool;
+class TopOpeBRepDS_GapTool : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_Reducer(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		TopOpeBRepDS_GapTool();
 		%feature("autodoc", "1");
-		void ProcessFaceInterferences(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &M);
+		TopOpeBRepDS_GapTool(const Handle_TopOpeBRepDS_HDataStructure &HDS);
 		%feature("autodoc", "1");
-		void ProcessEdgeInterferences();
+		void Init(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_ListOfInterference & Interferences(const Standard_Integer IndexPoint) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_ListOfInterference & SameInterferences(const Handle_TopOpeBRepDS_Interference &I) const;
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ListOfInterference & ChangeSameInterferences(const Handle_TopOpeBRepDS_Interference &I);
+		%feature("autodoc", "1");
+		Standard_Boolean Curve(const Handle_TopOpeBRepDS_Interference &I, TopOpeBRepDS_Curve & C) const;
+		%feature("autodoc", "1");
+		Standard_Boolean EdgeSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & E) const;
+		%feature("autodoc", "1");
+		Standard_Boolean FacesSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & F1, TopoDS_Shape & F2) const;
+		%feature("autodoc","ParameterOnEdge(const I, const E)->Standard_Real");
+		Standard_Boolean ParameterOnEdge(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &E, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetPoint(const Handle_TopOpeBRepDS_Interference &I, const Standard_Integer IndexPoint);
+		%feature("autodoc", "1");
+		void SetParameterOnEdge(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &E, const Standard_Real U);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_Reducer {
-	~TopOpeBRepDS_Reducer() {
+%extend TopOpeBRepDS_GapTool {
+	Handle_TopOpeBRepDS_GapTool GetHandle() {
+	return *(Handle_TopOpeBRepDS_GapTool*) &$self;
+	}
+};
+%extend TopOpeBRepDS_GapTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_GapTool {
+	~TopOpeBRepDS_GapTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Reducer\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapTool\n");}
 	}
 };
 
@@ -1119,6 +1139,35 @@ class TopOpeBRepDS_FIR {
 	~TopOpeBRepDS_FIR() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FIR\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_ShapeWithState;
+class TopOpeBRepDS_ShapeWithState {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ShapeWithState();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Part(const TopAbs_State aState) const;
+		%feature("autodoc", "1");
+		void AddPart(const TopoDS_Shape &aShape, const TopAbs_State aState);
+		%feature("autodoc", "1");
+		void AddParts(const TopTools_ListOfShape &aListOfShape, const TopAbs_State aState);
+		%feature("autodoc", "1");
+		void SetState(const TopAbs_State aState);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		void SetIsSplitted(const Standard_Boolean anIsSplitted);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplitted() const;
+
+};
+%extend TopOpeBRepDS_ShapeWithState {
+	~TopOpeBRepDS_ShapeWithState() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeWithState\n");}
 	}
 };
 
@@ -1212,35 +1261,6 @@ class TopOpeBRepDS_Transition {
 };
 
 
-%nodefaultctor TopOpeBRepDS_ListNodeOfListOfInterference;
-class TopOpeBRepDS_ListNodeOfListOfInterference : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_ListNodeOfListOfInterference(const Handle_TopOpeBRepDS_Interference &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepDS_ListNodeOfListOfInterference {
-	Handle_TopOpeBRepDS_ListNodeOfListOfInterference GetHandle() {
-	return *(Handle_TopOpeBRepDS_ListNodeOfListOfInterference*) &$self;
-	}
-};
-%extend TopOpeBRepDS_ListNodeOfListOfInterference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_ListNodeOfListOfInterference {
-	~TopOpeBRepDS_ListNodeOfListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListNodeOfListOfInterference\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_GeometryData;
 class TopOpeBRepDS_GeometryData {
 	public:
@@ -1291,13 +1311,42 @@ class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollecti
 };
 
 
+%nodefaultctor TopOpeBRepDS_Reducer;
+class TopOpeBRepDS_Reducer {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_Reducer(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		void ProcessFaceInterferences(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &M);
+		%feature("autodoc", "1");
+		void ProcessEdgeInterferences();
+
+};
+%extend TopOpeBRepDS_Reducer {
+	~TopOpeBRepDS_Reducer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Reducer\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfSurface;
 class TopOpeBRepDS_DataMapNodeOfMapOfSurface : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapNodeOfMapOfSurface(const Standard_Integer &K, const TopOpeBRepDS_SurfaceData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopOpeBRepDS_SurfaceData & Value() const;
 		%feature("autodoc", "1");
@@ -1322,13 +1371,116 @@ class TopOpeBRepDS_DataMapNodeOfMapOfSurface : public TCollection_MapNode {
 };
 
 
+%nodefaultctor TopOpeBRepDS_ListNodeOfListOfInterference;
+class TopOpeBRepDS_ListNodeOfListOfInterference : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ListNodeOfListOfInterference(const Handle_TopOpeBRepDS_Interference &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Interference & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRepDS_ListNodeOfListOfInterference {
+	Handle_TopOpeBRepDS_ListNodeOfListOfInterference GetHandle() {
+	return *(Handle_TopOpeBRepDS_ListNodeOfListOfInterference*) &$self;
+	}
+};
+%extend TopOpeBRepDS_ListNodeOfListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_ListNodeOfListOfInterference {
+	~TopOpeBRepDS_ListNodeOfListOfInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListNodeOfListOfInterference\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfPoint;
+class TopOpeBRepDS_DataMapNodeOfMapOfPoint : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapNodeOfMapOfPoint(const Standard_Integer &K, const TopOpeBRepDS_PointData &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TopOpeBRepDS_PointData & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
+	Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint GetHandle() {
+	return *(Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint*) &$self;
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
+	~TopOpeBRepDS_DataMapNodeOfMapOfPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape;
+class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape(const TopOpeBRepDS_DataMapOfInterferenceShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopOpeBRepDS_DataMapOfInterferenceShape &aMap);
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_Interference & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Value() const;
+
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape;
 class TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape(const Standard_Integer &K1, const TopoDS_Shape &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key2() const;
 		%feature("autodoc", "1");
@@ -1648,45 +1800,6 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfSurface : public TCollection_BasicMapIt
 };
 
 
-%nodefaultctor TopOpeBRepDS_DoubleMapOfIntegerShape;
-class TopOpeBRepDS_DoubleMapOfIntegerShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DoubleMapOfIntegerShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DoubleMapOfIntegerShape & Assign(const TopOpeBRepDS_DoubleMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DoubleMapOfIntegerShape & operator=(const TopOpeBRepDS_DoubleMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Bind(const Standard_Integer &K1, const TopoDS_Shape &K2);
-		%feature("autodoc", "1");
-		Standard_Boolean AreBound(const Standard_Integer &K1, const TopoDS_Shape &K2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound2(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Find2(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind1(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind2(const TopoDS_Shape &K);
-
-};
-%extend TopOpeBRepDS_DoubleMapOfIntegerShape {
-	~TopOpeBRepDS_DoubleMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapOfIntegerShape\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_SolidSurfaceInterference;
 class TopOpeBRepDS_SolidSurfaceInterference : public TopOpeBRepDS_Interference {
 	public:
@@ -1718,37 +1831,6 @@ class TopOpeBRepDS_SolidSurfaceInterference : public TopOpeBRepDS_Interference {
 	~TopOpeBRepDS_SolidSurfaceInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SolidSurfaceInterference\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_DataMapNodeOfShapeSurface;
-class TopOpeBRepDS_DataMapNodeOfShapeSurface : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapNodeOfShapeSurface(const TopoDS_Shape &K, const Handle_Geom_Surface &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
-	Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface GetHandle() {
-	return *(Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface*) &$self;
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
-	~TopOpeBRepDS_DataMapNodeOfShapeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
 	}
 };
 
@@ -1869,39 +1951,56 @@ class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TopOpeBRepDS_Marker;
-class TopOpeBRepDS_Marker : public MMgt_TShared {
+%nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape;
+class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_Marker();
+		TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape(const Handle_TopOpeBRepDS_Interference &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		void Reset();
+		Handle_TopOpeBRepDS_Interference & Key() const;
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer i, const Standard_Boolean b);
-		%feature("autodoc", "1");
-		void Set(const Standard_Boolean b, const Standard_Integer n, const Standard_Address a);
-		%feature("autodoc", "1");
-		Standard_Boolean GetI(const Standard_Integer i) const;
-		%feature("autodoc", "1");
-		void Allocate(const Standard_Integer n);
+		TopoDS_Shape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_Marker {
-	Handle_TopOpeBRepDS_Marker GetHandle() {
-	return *(Handle_TopOpeBRepDS_Marker*) &$self;
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
+	Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape GetHandle() {
+	return *(Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape*) &$self;
 	}
 };
-%extend TopOpeBRepDS_Marker {
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopOpeBRepDS_Marker {
-	~TopOpeBRepDS_Marker() {
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
+	~TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Marker\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState;
+class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState(const TopOpeBRepDS_DataMapOfShapeState &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopOpeBRepDS_DataMapOfShapeState &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const TopAbs_State & Value() const;
+
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -1986,37 +2085,6 @@ class TopOpeBRepDS_EdgeVertexInterference : public TopOpeBRepDS_ShapeShapeInterf
 };
 
 
-%nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState;
-class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const TopoDS_Shape &K, const TopAbs_State &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		TopAbs_State & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
-	Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState GetHandle() {
-	return *(Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState*) &$self;
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
-	~TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_DataMapOfInterferenceShape;
 class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 	public:
@@ -2054,61 +2122,37 @@ class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TopOpeBRepDS_Check;
-class TopOpeBRepDS_Check : public MMgt_TShared {
+%nodefaultctor TopOpeBRepDS_Explorer;
+class TopOpeBRepDS_Explorer {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_Check();
+		TopOpeBRepDS_Explorer();
 		%feature("autodoc", "1");
-		TopOpeBRepDS_Check(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		TopOpeBRepDS_Explorer(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopAbs_ShapeEnum T=TopAbs_SHAPE, const Standard_Boolean findkeep=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ChkIntg();
+		void Init(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopAbs_ShapeEnum T=TopAbs_SHAPE, const Standard_Boolean findkeep=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ChkIntgInterf(const TopOpeBRepDS_ListOfInterference &LI);
+		TopAbs_ShapeEnum Type() const;
 		%feature("autodoc", "1");
-		Standard_Boolean CheckDS(const Standard_Integer i, const TopOpeBRepDS_Kind K);
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		Standard_Boolean ChkIntgSamDom();
+		void Next();
 		%feature("autodoc", "1");
-		Standard_Boolean CheckShapes(const TopTools_ListOfShape &LS) const;
+		const TopoDS_Shape & Current() const;
 		%feature("autodoc", "1");
-		Standard_Boolean OneVertexOnPnt();
+		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_HDataStructure & HDS() const;
+		const TopoDS_Face & Face() const;
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure & ChangeHDS();
+		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintIntgToString() {
-			std::stringstream s;
-			self->PrintIntg(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		Standard_OStream & Print(const TopOpeBRepDS_CheckStatus stat, Standard_OStream & S);
-		%feature("autodoc", "1");
-		Standard_OStream & PrintShape(const TopAbs_ShapeEnum SE, Standard_OStream & S);
-		%feature("autodoc", "1");
-		Standard_OStream & PrintShape(const Standard_Integer index, Standard_OStream & S);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const TopoDS_Vertex & Vertex() const;
 
 };
-%extend TopOpeBRepDS_Check {
-	Handle_TopOpeBRepDS_Check GetHandle() {
-	return *(Handle_TopOpeBRepDS_Check*) &$self;
-	}
-};
-%extend TopOpeBRepDS_Check {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_Check {
-	~TopOpeBRepDS_Check() {
+%extend TopOpeBRepDS_Explorer {
+	~TopOpeBRepDS_Explorer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Check\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Explorer\n");}
 	}
 };
 
@@ -2309,6 +2353,41 @@ class TopOpeBRepDS_Filter {
 	~TopOpeBRepDS_Filter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Filter\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_FaceEdgeInterference;
+class TopOpeBRepDS_FaceEdgeInterference : public TopOpeBRepDS_ShapeShapeInterference {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_FaceEdgeInterference(const TopOpeBRepDS_Transition &T, const Standard_Integer S, const Standard_Integer G, const Standard_Boolean GIsBound, const TopOpeBRepDS_Config C);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRepDS_FaceEdgeInterference {
+	Handle_TopOpeBRepDS_FaceEdgeInterference GetHandle() {
+	return *(Handle_TopOpeBRepDS_FaceEdgeInterference*) &$self;
+	}
+};
+%extend TopOpeBRepDS_FaceEdgeInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_FaceEdgeInterference {
+	~TopOpeBRepDS_FaceEdgeInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceEdgeInterference\n");}
 	}
 };
 
@@ -2520,37 +2599,6 @@ class TopOpeBRepDS_DataStructure {
 };
 
 
-%nodefaultctor TopOpeBRepDS_DataMapNodeOfMapOfPoint;
-class TopOpeBRepDS_DataMapNodeOfMapOfPoint : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapNodeOfMapOfPoint(const Standard_Integer &K, const TopOpeBRepDS_PointData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_PointData & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
-	Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint GetHandle() {
-	return *(Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint*) &$self;
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
-	~TopOpeBRepDS_DataMapNodeOfMapOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS;
 class TopOpeBRepDS {
 	public:
@@ -2598,6 +2646,65 @@ class TopOpeBRepDS {
 };
 
 
+%nodefaultctor TopOpeBRepDS_Check;
+class TopOpeBRepDS_Check : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_Check();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_Check(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		Standard_Boolean ChkIntg();
+		%feature("autodoc", "1");
+		Standard_Boolean ChkIntgInterf(const TopOpeBRepDS_ListOfInterference &LI);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckDS(const Standard_Integer i, const TopOpeBRepDS_Kind K);
+		%feature("autodoc", "1");
+		Standard_Boolean ChkIntgSamDom();
+		%feature("autodoc", "1");
+		Standard_Boolean CheckShapes(const TopTools_ListOfShape &LS) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OneVertexOnPnt();
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_HDataStructure & HDS() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure & ChangeHDS();
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintIntgToString() {
+			std::stringstream s;
+			self->PrintIntg(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		Standard_OStream & Print(const TopOpeBRepDS_CheckStatus stat, Standard_OStream & S);
+		%feature("autodoc", "1");
+		Standard_OStream & PrintShape(const TopAbs_ShapeEnum SE, Standard_OStream & S);
+		%feature("autodoc", "1");
+		Standard_OStream & PrintShape(const Standard_Integer index, Standard_OStream & S);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRepDS_Check {
+	Handle_TopOpeBRepDS_Check GetHandle() {
+	return *(Handle_TopOpeBRepDS_Check*) &$self;
+	}
+};
+%extend TopOpeBRepDS_Check {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_Check {
+	~TopOpeBRepDS_Check() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Check\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_Association;
 class TopOpeBRepDS_Association : public MMgt_TShared {
 	public:
@@ -2635,23 +2742,6 @@ class TopOpeBRepDS_Association : public MMgt_TShared {
 };
 
 
-%nodefaultctor TopOpeBRepDS_SurfaceData;
-class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceData();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
-
-};
-%extend TopOpeBRepDS_SurfaceData {
-	~TopOpeBRepDS_SurfaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceData\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference;
 class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public TCollection_MapNode {
 	public:
@@ -2679,6 +2769,23 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_SurfaceData;
+class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceData();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
+
+};
+%extend TopOpeBRepDS_SurfaceData {
+	~TopOpeBRepDS_SurfaceData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceData\n");}
 	}
 };
 
@@ -2753,25 +2860,56 @@ class TopOpeBRepDS_IndexedDataMapOfShapeWithState : public TCollection_BasicMap 
 };
 
 
-%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape;
-class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape : public TCollection_BasicMapIterator {
+%nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState;
+class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape();
+		TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState(const TopoDS_Shape &K, const TopAbs_State &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape(const TopOpeBRepDS_DataMapOfInterferenceShape &aMap);
+		TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepDS_DataMapOfInterferenceShape &aMap);
+		TopAbs_State & Value() const;
 		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape {
-	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape() {
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState GetHandle() {
+	return *(Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState*) &$self;
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	~TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
+class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_ListOfShapeOn1State & Value() const;
+
+};
+%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State {
+	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State\n");}
 	}
 };
 
@@ -2948,8 +3086,18 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus : public TCollection_MapNod
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus(const Standard_Integer &K, const TopOpeBRepDS_CheckStatus &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CheckStatus & Value() const;
 		%feature("autodoc", "1");
@@ -2979,8 +3127,18 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : public TCol
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference(const Standard_Integer &K, const TopOpeBRepDS_ListOfInterference &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ListOfInterference & Value() const;
 		%feature("autodoc", "1");
@@ -3001,29 +3159,6 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : public TCol
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState;
-class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState(const TopOpeBRepDS_DataMapOfShapeState &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepDS_DataMapOfShapeState &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const TopAbs_State & Value() const;
-
-};
-%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState {
-	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -3165,37 +3300,35 @@ class TopOpeBRepDS_ListOfInterference {
 };
 
 
-%nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
-class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TCollection_MapNode {
+%nodefaultctor TopOpeBRepDS_Surface;
+class TopOpeBRepDS_Surface {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepDS_ShapeWithState &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TopOpeBRepDS_Surface();
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopOpeBRepDS_Surface(const Handle_Geom_Surface &P, const Standard_Real T);
 		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		TopOpeBRepDS_Surface(const TopOpeBRepDS_Surface &Other);
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		void Assign(const TopOpeBRepDS_Surface &Other);
 		%feature("autodoc", "1");
-		TopOpeBRepDS_ShapeWithState & Value() const;
+		void operator=(const TopOpeBRepDS_Surface &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real tol);
+		%feature("autodoc", "1");
+		Standard_Boolean Keep() const;
+		%feature("autodoc", "1");
+		void ChangeKeep(const Standard_Boolean B);
 
 };
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState GetHandle() {
-	return *(Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*) &$self;
-	}
-};
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
-	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
+%extend TopOpeBRepDS_Surface {
+	~TopOpeBRepDS_Surface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Surface\n");}
 	}
 };
 
@@ -3235,31 +3368,6 @@ class TopOpeBRepDS_PointExplorer {
 };
 
 
-%nodefaultctor TopOpeBRepDS_TOOL;
-class TopOpeBRepDS_TOOL {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_TOOL();
-		%feature("autodoc", "1");
-		Standard_Integer EShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Edge &E, TopTools_ListOfShape & lEsd);
-		%feature("autodoc", "1");
-		Standard_Boolean ShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Integer is1, const Standard_Integer is2);
-		%feature("autodoc","GetEsd(const HDS, const S, Standard_Integer ie)->Standard_Integer");
-		Standard_Boolean GetEsd(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Shape &S, const Standard_Integer ie, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean ShareSplitON(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MspON, const Standard_Integer i1, const Standard_Integer i2, TopoDS_Shape & spON);
-		%feature("autodoc","GetConfig(const HDS, const MEspON, Standard_Integer ie, Standard_Integer iesd)->Standard_Integer");
-		Standard_Boolean GetConfig(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MEspON, const Standard_Integer ie, const Standard_Integer iesd, Standard_Integer &OutValue);
-
-};
-%extend TopOpeBRepDS_TOOL {
-	~TopOpeBRepDS_TOOL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TOOL\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData;
 class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNode {
 	public:
@@ -3267,8 +3375,18 @@ class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNo
 		TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepDS_ShapeData &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -3291,6 +3409,41 @@ class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNo
 	~TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_CurveExplorer;
+class TopOpeBRepDS_CurveExplorer {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_CurveExplorer();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_CurveExplorer(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		%feature("autodoc", "1");
+		void Init(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Curve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCurve(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCurveKeep(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Curve & Curve(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCurve();
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+
+};
+%extend TopOpeBRepDS_CurveExplorer {
+	~TopOpeBRepDS_CurveExplorer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveExplorer\n");}
 	}
 };
 
@@ -3340,68 +3493,60 @@ class TopOpeBRepDS_SurfaceCurveInterference : public TopOpeBRepDS_Interference {
 };
 
 
-%nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape;
-class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape : public TCollection_MapNode {
+%nodefaultctor TopOpeBRepDS_SurfaceIterator;
+class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape(const Handle_TopOpeBRepDS_Interference &K, const TopoDS_Shape &I, const TCollection_MapNodePtr &n);
+		TopOpeBRepDS_SurfaceIterator(const TopOpeBRepDS_ListOfInterference &L);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & Key() const;
+		Standard_Integer Current() const;
 		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		TopAbs_Orientation Orientation(const TopAbs_State S) const;
 
 };
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
-	Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape GetHandle() {
-	return *(Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape*) &$self;
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
-	~TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape() {
+%extend TopOpeBRepDS_SurfaceIterator {
+	~TopOpeBRepDS_SurfaceIterator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceIterator\n");}
 	}
 };
 
 
-%nodefaultctor TopOpeBRepDS_CurveExplorer;
-class TopOpeBRepDS_CurveExplorer {
+%nodefaultctor TopOpeBRepDS_DoubleMapOfIntegerShape;
+class TopOpeBRepDS_DoubleMapOfIntegerShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_CurveExplorer();
+		TopOpeBRepDS_DoubleMapOfIntegerShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TopOpeBRepDS_CurveExplorer(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		TopOpeBRepDS_DoubleMapOfIntegerShape & Assign(const TopOpeBRepDS_DoubleMapOfIntegerShape &Other);
 		%feature("autodoc", "1");
-		void Init(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		TopOpeBRepDS_DoubleMapOfIntegerShape & operator=(const TopOpeBRepDS_DoubleMapOfIntegerShape &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		void Next();
+		void Clear();
 		%feature("autodoc", "1");
-		const TopOpeBRepDS_Curve & Curve() const;
+		void Bind(const Standard_Integer &K1, const TopoDS_Shape &K2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCurve(const Standard_Integer I) const;
+		Standard_Boolean AreBound(const Standard_Integer &K1, const TopoDS_Shape &K2) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsCurveKeep(const Standard_Integer I) const;
+		Standard_Boolean IsBound1(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		const TopOpeBRepDS_Curve & Curve(const Standard_Integer I) const;
+		Standard_Boolean IsBound2(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbCurve();
+		const TopoDS_Shape & Find1(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		Standard_Integer Index() const;
+		const Standard_Integer & Find2(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind1(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind2(const TopoDS_Shape &K);
 
 };
-%extend TopOpeBRepDS_CurveExplorer {
-	~TopOpeBRepDS_CurveExplorer() {
+%extend TopOpeBRepDS_DoubleMapOfIntegerShape {
+	~TopOpeBRepDS_DoubleMapOfIntegerShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveExplorer\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapOfIntegerShape\n");}
 	}
 };
 
@@ -3411,8 +3556,18 @@ class TopOpeBRepDS_DataMapNodeOfMapOfCurve : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapNodeOfMapOfCurve(const Standard_Integer &K, const TopOpeBRepDS_CurveData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopOpeBRepDS_CurveData & Value() const;
 		%feature("autodoc", "1");
@@ -3460,25 +3615,6 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIter
 };
 
 
-%nodefaultctor TopOpeBRepDS_EIR;
-class TopOpeBRepDS_EIR {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_EIR(const Handle_TopOpeBRepDS_HDataStructure &HDS);
-		%feature("autodoc", "1");
-		void ProcessEdgeInterferences();
-		%feature("autodoc", "1");
-		void ProcessEdgeInterferences(const Standard_Integer I);
-
-};
-%extend TopOpeBRepDS_EIR {
-	~TopOpeBRepDS_EIR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EIR\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference;
 class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference : public TCollection_BasicMapIterator {
 	public:
@@ -3507,8 +3643,18 @@ class TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData : public TCollection_MapNo
 	public:
 		%feature("autodoc", "1");
 		TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData(const Standard_Integer &K, const TopOpeBRepDS_ShapeData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopOpeBRepDS_ShapeData & Value() const;
 		%feature("autodoc", "1");
@@ -3533,37 +3679,66 @@ class TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData : public TCollection_MapNo
 };
 
 
-%nodefaultctor TopOpeBRepDS_FaceEdgeInterference;
-class TopOpeBRepDS_FaceEdgeInterference : public TopOpeBRepDS_ShapeShapeInterference {
+%nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
+class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_FaceEdgeInterference(const TopOpeBRepDS_Transition &T, const Standard_Integer S, const Standard_Integer G, const Standard_Boolean GIsBound, const TopOpeBRepDS_Config C);
+		TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepDS_ShapeWithState &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
 		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ShapeWithState & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_FaceEdgeInterference {
-	Handle_TopOpeBRepDS_FaceEdgeInterference GetHandle() {
-	return *(Handle_TopOpeBRepDS_FaceEdgeInterference*) &$self;
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState GetHandle() {
+	return *(Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState*) &$self;
 	}
 };
-%extend TopOpeBRepDS_FaceEdgeInterference {
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopOpeBRepDS_FaceEdgeInterference {
-	~TopOpeBRepDS_FaceEdgeInterference() {
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceEdgeInterference\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_EIR;
+class TopOpeBRepDS_EIR {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_EIR(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		%feature("autodoc", "1");
+		void ProcessEdgeInterferences();
+		%feature("autodoc", "1");
+		void ProcessEdgeInterferences(const Standard_Integer I);
+
+};
+%extend TopOpeBRepDS_EIR {
+	~TopOpeBRepDS_EIR() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EIR\n");}
 	}
 };
 
@@ -3647,41 +3822,6 @@ class TopOpeBRepDS_Curve {
 };
 
 
-%nodefaultctor TopOpeBRepDS_Explorer;
-class TopOpeBRepDS_Explorer {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Explorer();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Explorer(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopAbs_ShapeEnum T=TopAbs_SHAPE, const Standard_Boolean findkeep=1);
-		%feature("autodoc", "1");
-		void Init(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopAbs_ShapeEnum T=TopAbs_SHAPE, const Standard_Boolean findkeep=1);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum Type() const;
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Current() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex & Vertex() const;
-
-};
-%extend TopOpeBRepDS_Explorer {
-	~TopOpeBRepDS_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Explorer\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_MapOfCurve;
 class TopOpeBRepDS_MapOfCurve : public TCollection_BasicMap {
 	public:
@@ -3742,39 +3882,6 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference : public 
 };
 
 
-%nodefaultctor TopOpeBRepDS_Surface;
-class TopOpeBRepDS_Surface {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Surface();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Surface(const Handle_Geom_Surface &P, const Standard_Real T);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Surface(const TopOpeBRepDS_Surface &Other);
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepDS_Surface &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepDS_Surface &Other);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real tol);
-		%feature("autodoc", "1");
-		Standard_Boolean Keep() const;
-		%feature("autodoc", "1");
-		void ChangeKeep(const Standard_Boolean B);
-
-};
-%extend TopOpeBRepDS_Surface {
-	~TopOpeBRepDS_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Surface\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_CurveData;
 class TopOpeBRepDS_CurveData : public TopOpeBRepDS_GeometryData {
 	public:
@@ -3829,6 +3936,41 @@ class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_
 };
 
 
+%nodefaultctor TopOpeBRepDS_SurfaceExplorer;
+class TopOpeBRepDS_SurfaceExplorer {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceExplorer();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceExplorer(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		%feature("autodoc", "1");
+		void Init(const TopOpeBRepDS_DataStructure &DS, const Standard_Boolean FindOnlyKeep=1);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Surface & Surface() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSurface(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSurfaceKeep(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_Surface & Surface(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSurface();
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+
+};
+%extend TopOpeBRepDS_SurfaceExplorer {
+	~TopOpeBRepDS_SurfaceExplorer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceExplorer\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference;
 class TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public MMgt_TShared {
 	public:
@@ -3876,51 +4018,47 @@ class TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public MMgt_TSh
 };
 
 
-%nodefaultctor TopOpeBRepDS_GapTool;
-class TopOpeBRepDS_GapTool : public MMgt_TShared {
+%nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint;
+class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_GapTool();
+		TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepDS_Point &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopOpeBRepDS_GapTool(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		void Init(const Handle_TopOpeBRepDS_HDataStructure &HDS);
+		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		const TopOpeBRepDS_ListOfInterference & Interferences(const Standard_Integer IndexPoint) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_ListOfInterference & SameInterferences(const Handle_TopOpeBRepDS_Interference &I) const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_ListOfInterference & ChangeSameInterferences(const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc", "1");
-		Standard_Boolean Curve(const Handle_TopOpeBRepDS_Interference &I, TopOpeBRepDS_Curve & C) const;
-		%feature("autodoc", "1");
-		Standard_Boolean EdgeSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & E) const;
-		%feature("autodoc", "1");
-		Standard_Boolean FacesSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & F1, TopoDS_Shape & F2) const;
-		%feature("autodoc","ParameterOnEdge(const I, const E)->Standard_Real");
-		Standard_Boolean ParameterOnEdge(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &E, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetPoint(const Handle_TopOpeBRepDS_Interference &I, const Standard_Integer IndexPoint);
-		%feature("autodoc", "1");
-		void SetParameterOnEdge(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &E, const Standard_Real U);
+		TopOpeBRepDS_Point & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_GapTool {
-	Handle_TopOpeBRepDS_GapTool GetHandle() {
-	return *(Handle_TopOpeBRepDS_GapTool*) &$self;
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
+	Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint GetHandle() {
+	return *(Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint*) &$self;
 	}
 };
-%extend TopOpeBRepDS_GapTool {
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopOpeBRepDS_GapTool {
-	~TopOpeBRepDS_GapTool() {
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
+	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapTool\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
 	}
 };
 
@@ -3946,6 +4084,43 @@ class TopOpeBRepDS_ListOfShapeOn1State {
 	~TopOpeBRepDS_ListOfShapeOn1State() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListOfShapeOn1State\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_Marker;
+class TopOpeBRepDS_Marker : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_Marker();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer i, const Standard_Boolean b);
+		%feature("autodoc", "1");
+		void Set(const Standard_Boolean b, const Standard_Integer n, const Standard_Address a);
+		%feature("autodoc", "1");
+		Standard_Boolean GetI(const Standard_Integer i) const;
+		%feature("autodoc", "1");
+		void Allocate(const Standard_Integer n);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRepDS_Marker {
+	Handle_TopOpeBRepDS_Marker GetHandle() {
+	return *(Handle_TopOpeBRepDS_Marker*) &$self;
+	}
+};
+%extend TopOpeBRepDS_Marker {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopOpeBRepDS_Marker {
+	~TopOpeBRepDS_Marker() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Marker\n");}
 	}
 };
 
@@ -4003,85 +4178,6 @@ class TopOpeBRepDS_TKI {
 };
 
 
-%nodefaultctor TopOpeBRepDS_DataMapOfIntegerListOfInterference;
-class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapOfIntegerListOfInterference(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapOfIntegerListOfInterference & Assign(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &Other);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapOfIntegerListOfInterference & operator=(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_ListOfInterference &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_ListOfInterference & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_ListOfInterference & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_ListOfInterference & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		TopOpeBRepDS_ListOfInterference & operator()(const Standard_Integer &K);
-
-};
-%extend TopOpeBRepDS_DataMapOfIntegerListOfInterference {
-	~TopOpeBRepDS_DataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfIntegerListOfInterference\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
-class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_ListOfShapeOn1State & Value() const;
-
-};
-%extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State {
-	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_SurfaceIterator;
-class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceIterator(const TopOpeBRepDS_ListOfInterference &L);
-		%feature("autodoc", "1");
-		Standard_Integer Current() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation(const TopAbs_State S) const;
-
-};
-%extend TopOpeBRepDS_SurfaceIterator {
-	~TopOpeBRepDS_SurfaceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceIterator\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepDS_Edge3dInterferenceTool;
 class TopOpeBRepDS_Edge3dInterferenceTool {
 	public:
@@ -4101,35 +4197,6 @@ class TopOpeBRepDS_Edge3dInterferenceTool {
 	~TopOpeBRepDS_Edge3dInterferenceTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Edge3dInterferenceTool\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_ShapeWithState;
-class TopOpeBRepDS_ShapeWithState {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_ShapeWithState();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Part(const TopAbs_State aState) const;
-		%feature("autodoc", "1");
-		void AddPart(const TopoDS_Shape &aShape, const TopAbs_State aState);
-		%feature("autodoc", "1");
-		void AddParts(const TopTools_ListOfShape &aListOfShape, const TopAbs_State aState);
-		%feature("autodoc", "1");
-		void SetState(const TopAbs_State aState);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		void SetIsSplitted(const Standard_Boolean anIsSplitted);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplitted() const;
-
-};
-%extend TopOpeBRepDS_ShapeWithState {
-	~TopOpeBRepDS_ShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeWithState\n");}
 	}
 };
 
@@ -4229,37 +4296,70 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus : public TCollection_Ba
 };
 
 
-%nodefaultctor TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint;
-class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint : public TCollection_MapNode {
+%nodefaultctor TopOpeBRepDS_DataMapNodeOfShapeSurface;
+class TopOpeBRepDS_DataMapNodeOfShapeSurface : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepDS_Point &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TopOpeBRepDS_DataMapNodeOfShapeSurface(const TopoDS_Shape &K, const Handle_Geom_Surface &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
+		TopoDS_Shape & Key() const;
 		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopOpeBRepDS_Point & Value() const;
+		Handle_Geom_Surface & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
-	Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint GetHandle() {
-	return *(Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint*) &$self;
+%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
+	Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface GetHandle() {
+	return *(Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface*) &$self;
 	}
 };
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
+%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
-	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint() {
+%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
+	~TopOpeBRepDS_DataMapNodeOfShapeSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepDS_DataMapOfIntegerListOfInterference;
+class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapOfIntegerListOfInterference(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapOfIntegerListOfInterference & Assign(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &Other);
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapOfIntegerListOfInterference & operator=(const TopOpeBRepDS_DataMapOfIntegerListOfInterference &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const TopOpeBRepDS_ListOfInterference &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_ListOfInterference & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_ListOfInterference & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ListOfInterference & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		TopOpeBRepDS_ListOfInterference & operator()(const Standard_Integer &K);
+
+};
+%extend TopOpeBRepDS_DataMapOfIntegerListOfInterference {
+	~TopOpeBRepDS_DataMapOfIntegerListOfInterference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfIntegerListOfInterference\n");}
 	}
 };
 

@@ -108,13 +108,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_MDF_SRelocationTable.hxx>
 #include<Standard_GUID.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_Standard_Persistent.hxx>
 #include<Handle_PCDM_Document.hxx>
 #include<Handle_TDocStd_Document.hxx>
 #include<Handle_PDocStd_Document.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_MDF_ASDriverTable.hxx>
+#include<Handle_Standard_Persistent.hxx>
 #include<Handle_MDF_RRelocationTable.hxx>
 #include<Handle_MDF_ARDriverTable.hxx>
 #include<Handle_Standard_Type.hxx>

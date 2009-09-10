@@ -35,6 +35,47 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
+%nodefaultctor IntCurve_PConic;
+class IntCurve_PConic {
+	public:
+		%feature("autodoc", "1");
+		IntCurve_PConic(const IntCurve_PConic &PC);
+		%feature("autodoc", "1");
+		IntCurve_PConic(const gp_Elips2d &E);
+		%feature("autodoc", "1");
+		IntCurve_PConic(const gp_Circ2d &C);
+		%feature("autodoc", "1");
+		IntCurve_PConic(const gp_Parab2d &P);
+		%feature("autodoc", "1");
+		IntCurve_PConic(const gp_Hypr2d &H);
+		%feature("autodoc", "1");
+		IntCurve_PConic(const gp_Lin2d &L);
+		%feature("autodoc", "1");
+		void SetEpsX(const Standard_Real EpsDist);
+		%feature("autodoc", "1");
+		void SetAccuracy(const Standard_Integer Nb);
+		%feature("autodoc", "1");
+		Standard_Integer Accuracy() const;
+		%feature("autodoc", "1");
+		Standard_Real EpsX() const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType TypeCurve() const;
+		%feature("autodoc", "1");
+		const gp_Ax22d & Axis2() const;
+		%feature("autodoc", "1");
+		Standard_Real Param1() const;
+		%feature("autodoc", "1");
+		Standard_Real Param2() const;
+
+};
+%extend IntCurve_PConic {
+	~IntCurve_PConic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_PConic\n");}
+	}
+};
+
+
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
 class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDerivative {
 	public:
@@ -156,29 +197,21 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 };
 
 
-%nodefaultctor IntCurve_PConicTool;
-class IntCurve_PConicTool {
+%nodefaultctor IntCurve_ProjectOnPConicTool;
+class IntCurve_ProjectOnPConicTool {
 	public:
 		%feature("autodoc", "1");
-		IntCurve_PConicTool();
+		IntCurve_ProjectOnPConicTool();
 		%feature("autodoc", "1");
-		Standard_Real EpsX(const IntCurve_PConic &C);
+		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
-		%feature("autodoc", "1");
-		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-		%feature("autodoc", "1");
-		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
-%extend IntCurve_PConicTool {
-	~IntCurve_PConicTool() {
+%extend IntCurve_ProjectOnPConicTool {
+	~IntCurve_ProjectOnPConicTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
+	if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
 	}
 };
 
@@ -222,61 +255,28 @@ class IntCurve_IConicTool {
 };
 
 
-%nodefaultctor IntCurve_ProjectOnPConicTool;
-class IntCurve_ProjectOnPConicTool {
+%nodefaultctor IntCurve_PConicTool;
+class IntCurve_PConicTool {
 	public:
 		%feature("autodoc", "1");
-		IntCurve_ProjectOnPConicTool();
+		IntCurve_PConicTool();
 		%feature("autodoc", "1");
-		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real Tol);
+		Standard_Real EpsX(const IntCurve_PConic &C);
 		%feature("autodoc", "1");
-		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+		Standard_Integer NbSamples(const IntCurve_PConic &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
+		%feature("autodoc", "1");
+		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		%feature("autodoc", "1");
+		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 };
-%extend IntCurve_ProjectOnPConicTool {
-	~IntCurve_ProjectOnPConicTool() {
+%extend IntCurve_PConicTool {
+	~IntCurve_PConicTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
-	}
-};
-
-
-%nodefaultctor IntCurve_PConic;
-class IntCurve_PConic {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_PConic(const IntCurve_PConic &PC);
-		%feature("autodoc", "1");
-		IntCurve_PConic(const gp_Elips2d &E);
-		%feature("autodoc", "1");
-		IntCurve_PConic(const gp_Circ2d &C);
-		%feature("autodoc", "1");
-		IntCurve_PConic(const gp_Parab2d &P);
-		%feature("autodoc", "1");
-		IntCurve_PConic(const gp_Hypr2d &H);
-		%feature("autodoc", "1");
-		IntCurve_PConic(const gp_Lin2d &L);
-		%feature("autodoc", "1");
-		void SetEpsX(const Standard_Real EpsDist);
-		%feature("autodoc", "1");
-		void SetAccuracy(const Standard_Integer Nb);
-		%feature("autodoc", "1");
-		Standard_Integer Accuracy() const;
-		%feature("autodoc", "1");
-		Standard_Real EpsX() const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType TypeCurve() const;
-		%feature("autodoc", "1");
-		const gp_Ax22d & Axis2() const;
-		%feature("autodoc", "1");
-		Standard_Real Param1() const;
-		%feature("autodoc", "1");
-		Standard_Real Param2() const;
-
-};
-%extend IntCurve_PConic {
-	~IntCurve_PConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_PConic\n");}
+	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
 	}
 };

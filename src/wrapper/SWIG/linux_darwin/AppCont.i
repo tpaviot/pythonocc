@@ -56,41 +56,6 @@ class AppCont_FitFunction {
 };
 
 
-%nodefaultctor AppCont_FunctionTool2d;
-class AppCont_FunctionTool2d {
-	public:
-		%feature("autodoc", "1");
-		AppCont_FunctionTool2d();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		Standard_Real LastParameter(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbP2d(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		Standard_Integer NbP3d(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt);
-		%feature("autodoc", "1");
-		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec2d & tabV);
-		%feature("autodoc", "1");
-		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt2d);
-		%feature("autodoc", "1");
-		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
-		%feature("autodoc", "1");
-		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV2d);
-		%feature("autodoc", "1");
-		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
-
-};
-%extend AppCont_FunctionTool2d {
-	~AppCont_FunctionTool2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool2d\n");}
-	}
-};
-
-
 %nodefaultctor AppCont_Function;
 class AppCont_Function {
 	public:
@@ -168,6 +133,41 @@ class AppCont_Function2d {
 	~AppCont_Function2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppCont_Function2d\n");}
+	}
+};
+
+
+%nodefaultctor AppCont_FunctionTool2d;
+class AppCont_FunctionTool2d {
+	public:
+		%feature("autodoc", "1");
+		AppCont_FunctionTool2d();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		Standard_Real LastParameter(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbP2d(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		Standard_Integer NbP3d(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt);
+		%feature("autodoc", "1");
+		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec2d & tabV);
+		%feature("autodoc", "1");
+		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt2d);
+		%feature("autodoc", "1");
+		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
+		%feature("autodoc", "1");
+		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV2d);
+		%feature("autodoc", "1");
+		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
+
+};
+%extend AppCont_FunctionTool2d {
+	~AppCont_FunctionTool2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool2d\n");}
 	}
 };
 

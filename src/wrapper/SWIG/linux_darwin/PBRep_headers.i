@@ -101,8 +101,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_PGeom2d_Curve.hxx>
 #include<Handle_PGeom_Surface.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Handle_PGeom_Curve.hxx>
 #include<gp_Pnt.hxx>
+#include<Handle_PGeom_Curve.hxx>
 #include<Handle_PPoly_Polygon2D.hxx>
 #include<Handle_PPoly_Polygon3D.hxx>
 %}

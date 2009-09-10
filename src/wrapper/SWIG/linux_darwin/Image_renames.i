@@ -2,7 +2,7 @@
 %rename(Image_BalancedPixelInterpolation) Image_BalancedPixelInterpolation;
 %rename(Handle_Image_DataMapNodeOfColorPixelDataMap) Handle_Image_DataMapNodeOfColorPixelDataMap;
 %rename(Image_PixelFieldOfDColorImage) Image_PixelFieldOfDColorImage;
-%rename(Handle_Image_DColorImage) Handle_Image_DColorImage;
+%rename(Handle_Image_DIndexedImage) Handle_Image_DIndexedImage;
 %rename(Image_Image) Image_Image;
 %rename(Image_DataMapNodeOfColorPixelDataMap) Image_DataMapNodeOfColorPixelDataMap;
 %rename(Image_FT_CENTER) Image_FT_CENTER;
@@ -11,7 +11,7 @@
 %rename(Image_FT_180) Image_FT_180;
 %rename(Image_PixelRowOfDColorImage) Image_PixelRowOfDColorImage;
 %rename(Image_LookupTable) Image_LookupTable;
-%rename(Handle_Image_DIndexedImage) Handle_Image_DIndexedImage;
+%rename(Handle_Image_DColorImage) Handle_Image_DColorImage;
 %rename(Image_ColorPixelDataMap) Image_ColorPixelDataMap;
 %rename(Image_Convertor) Image_Convertor;
 %rename(Image_PixelRowOfDIndexedImage) Image_PixelRowOfDIndexedImage;

@@ -17,9 +17,10 @@
 %rename(BRepFill_ComputeCLine) BRepFill_ComputeCLine;
 %rename(Handle_BRepFill_LocationLaw) Handle_BRepFill_LocationLaw;
 %rename(BRepFill_Round) BRepFill_Round;
-%rename(Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder) Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
+%rename(BRepFill) BRepFill;
 %rename(Handle_BRepFill_DraftLaw) Handle_BRepFill_DraftLaw;
 %rename(BRepFill_ListIteratorOfListOfOffsetWire) BRepFill_ListIteratorOfListOfOffsetWire;
+%rename(Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder) Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 %rename(BRepFill_PipeShell) BRepFill_PipeShell;
 %rename(BRepFill_DataMapOfShapeSequenceOfShape) BRepFill_DataMapOfShapeSequenceOfShape;
 %rename(BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape) BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape;
@@ -29,8 +30,7 @@
 %rename(BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape) BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
 %rename(Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape) Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
 %rename(BRepFill_ApproxSeewing) BRepFill_ApproxSeewing;
-%rename(BRepFill_DataMapOfShapeSequenceOfReal) BRepFill_DataMapOfShapeSequenceOfReal;
-%rename(Handle_BRepFill_SectionLaw) Handle_BRepFill_SectionLaw;
+%rename(BRepFill_SectionPlacement) BRepFill_SectionPlacement;
 %rename(BRepFill_MultiLine) BRepFill_MultiLine;
 %rename(BRepFill_DataMapNodeOfDataMapOfNodeShape) BRepFill_DataMapNodeOfDataMapOfNodeShape;
 %rename(BRepFill_SequenceOfSection) BRepFill_SequenceOfSection;
@@ -50,14 +50,14 @@
 %rename(Handle_BRepFill_NSections) Handle_BRepFill_NSections;
 %rename(BRepFill_FaceAndOrder) BRepFill_FaceAndOrder;
 %rename(BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt) BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
-%rename(BRepFill_SectionPlacement) BRepFill_SectionPlacement;
+%rename(BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape) BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 %rename(Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape) Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape;
 %rename(BRepFill_DataMapOfNodeDataMapOfShapeShape) BRepFill_DataMapOfNodeDataMapOfShapeShape;
 %rename(BRepFill_Evolved) BRepFill_Evolved;
 %rename(BRepFill_ACRLaw) BRepFill_ACRLaw;
 %rename(BRepFill_Modified) BRepFill_Modified;
 %rename(BRepFill_OffsetAncestors) BRepFill_OffsetAncestors;
-%rename(BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape) BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape;
+%rename(BRepFill_DataMapOfShapeSequenceOfReal) BRepFill_DataMapOfShapeSequenceOfReal;
 %rename(BRepFill_LocationLaw) BRepFill_LocationLaw;
 %rename(BRepFill_TrimShellCorner) BRepFill_TrimShellCorner;
 %rename(BRepFill_ShapeLaw) BRepFill_ShapeLaw;
@@ -72,10 +72,10 @@
 %rename(BRepFill_Generator) BRepFill_Generator;
 %rename(BRepFill_DraftLaw) BRepFill_DraftLaw;
 %rename(BRepFill_Pipe) BRepFill_Pipe;
-%rename(BRepFill) BRepFill;
 %rename(BRepFill_SequenceNodeOfSequenceOfSection) BRepFill_SequenceNodeOfSequenceOfSection;
 %rename(BRepFill_CompatibleWires) BRepFill_CompatibleWires;
 %rename(BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape) BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape;
+%rename(BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt) BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 %rename(BRepFill_EdgeFaceAndOrder) BRepFill_EdgeFaceAndOrder;
 %rename(BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape) BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
 %rename(Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt) Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
@@ -83,4 +83,4 @@
 %rename(BRepFill_Filling) BRepFill_Filling;
 %rename(BRepFill_ListOfOffsetWire) BRepFill_ListOfOffsetWire;
 %rename(Handle_BRepFill_SequenceNodeOfSequenceOfSection) Handle_BRepFill_SequenceNodeOfSequenceOfSection;
-%rename(BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt) BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
+%rename(Handle_BRepFill_SectionLaw) Handle_BRepFill_SectionLaw;

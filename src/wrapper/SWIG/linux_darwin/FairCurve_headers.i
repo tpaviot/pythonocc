@@ -40,11 +40,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
-#include<math_Vector.hxx>
 #include<math_MultipleVarFunctionWithHessian.hxx>
+#include<math_Vector.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<math_Matrix.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_TColgp_HArray1OfPnt2d.hxx>
 %}

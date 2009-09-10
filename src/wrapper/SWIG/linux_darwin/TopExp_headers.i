@@ -36,12 +36,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopExp.hxx>
+#include<TopoDS_Iterator.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopExp.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Wire.hxx>
-#include<TopoDS_Iterator.hxx>
 %}

@@ -71,7 +71,7 @@ class XCAFApp_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResourcesName();
+		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
 		virtual		void InitDocument(const Handle_TDocStd_Document &aDoc) const;
 		%feature("autodoc", "1");

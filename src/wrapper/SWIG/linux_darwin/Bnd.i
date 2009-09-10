@@ -243,33 +243,6 @@ class Bnd_B2f {
 };
 
 
-%nodefaultctor Bnd_BoundSortBox2d;
-class Bnd_BoundSortBox2d {
-	public:
-		%feature("autodoc", "1");
-		Bnd_BoundSortBox2d();
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend Bnd_BoundSortBox2d {
-	~Bnd_BoundSortBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
-	}
-};
-
-
 %nodefaultctor Bnd_SequenceNodeOfSeqOfBox;
 class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 	public:
@@ -299,15 +272,72 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor Bnd_HArray1OfBox2d;
-class Bnd_HArray1OfBox2d : public MMgt_TShared {
+%nodefaultctor Bnd_SeqOfBox;
+class Bnd_SeqOfBox : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
+		Bnd_SeqOfBox();
 		%feature("autodoc", "1");
-		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box2d &V);
+		void Clear();
 		%feature("autodoc", "1");
-		void Init(const Bnd_Box2d &V);
+		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
+		%feature("autodoc", "1");
+		const Bnd_SeqOfBox & operator=(const Bnd_SeqOfBox &Other);
+		%feature("autodoc", "1");
+		void Append(const Bnd_Box &T);
+		%feature("autodoc", "1");
+		void Append(Bnd_SeqOfBox & S);
+		%feature("autodoc", "1");
+		void Prepend(const Bnd_Box &T);
+		%feature("autodoc", "1");
+		void Prepend(Bnd_SeqOfBox & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Bnd_SeqOfBox & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Bnd_Box &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Bnd_SeqOfBox & S);
+		%feature("autodoc", "1");
+		const Bnd_Box & First() const;
+		%feature("autodoc", "1");
+		const Bnd_Box & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Bnd_SeqOfBox & S);
+		%feature("autodoc", "1");
+		const Bnd_Box & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Bnd_Box & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Bnd_SeqOfBox {
+	~Bnd_SeqOfBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_SeqOfBox\n");}
+	}
+};
+
+
+%nodefaultctor Bnd_HArray1OfBox;
+class Bnd_HArray1OfBox : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Box &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -315,33 +345,33 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
+		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & Value(const Standard_Integer Index) const;
+		const Bnd_Box & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
+		Bnd_Box & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const Bnd_Array1OfBox2d & Array1() const;
+		const Bnd_Array1OfBox & Array1() const;
 		%feature("autodoc", "1");
-		Bnd_Array1OfBox2d & ChangeArray1();
+		Bnd_Array1OfBox & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Bnd_HArray1OfBox2d {
-	Handle_Bnd_HArray1OfBox2d GetHandle() {
-	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
+%extend Bnd_HArray1OfBox {
+	Handle_Bnd_HArray1OfBox GetHandle() {
+	return *(Handle_Bnd_HArray1OfBox*) &$self;
 	}
 };
-%extend Bnd_HArray1OfBox2d {
+%extend Bnd_HArray1OfBox {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Bnd_HArray1OfBox2d {
-	~Bnd_HArray1OfBox2d() {
+%extend Bnd_HArray1OfBox {
+	~Bnd_HArray1OfBox() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
 	}
 };
 
@@ -447,59 +477,29 @@ class Bnd_Box {
 };
 
 
-%nodefaultctor Bnd_SeqOfBox;
-class Bnd_SeqOfBox : public TCollection_BaseSequence {
+%nodefaultctor Bnd_BoundSortBox2d;
+class Bnd_BoundSortBox2d {
 	public:
 		%feature("autodoc", "1");
-		Bnd_SeqOfBox();
+		Bnd_BoundSortBox2d();
 		%feature("autodoc", "1");
-		void Clear();
+		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
 		%feature("autodoc", "1");
-		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
+		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
 		%feature("autodoc", "1");
-		const Bnd_SeqOfBox & operator=(const Bnd_SeqOfBox &Other);
+		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
 		%feature("autodoc", "1");
-		void Append(const Bnd_Box &T);
+		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
 		%feature("autodoc", "1");
-		void Append(Bnd_SeqOfBox & S);
+		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
 		%feature("autodoc", "1");
-		void Prepend(const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void Prepend(Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		const Bnd_Box & First() const;
-		%feature("autodoc", "1");
-		const Bnd_Box & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		const Bnd_Box & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Bnd_Box & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		void Dump() const;
 
 };
-%extend Bnd_SeqOfBox {
-	~Bnd_SeqOfBox() {
+%extend Bnd_BoundSortBox2d {
+	~Bnd_BoundSortBox2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_SeqOfBox\n");}
+	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
 	}
 };
 
@@ -563,53 +563,6 @@ class Bnd_B3d {
 };
 
 
-%nodefaultctor Bnd_HArray1OfBox;
-class Bnd_HArray1OfBox : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Box &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
-		%feature("autodoc", "1");
-		const Bnd_Box & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox & Array1() const;
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Bnd_HArray1OfBox {
-	Handle_Bnd_HArray1OfBox GetHandle() {
-	return *(Handle_Bnd_HArray1OfBox*) &$self;
-	}
-};
-%extend Bnd_HArray1OfBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Bnd_HArray1OfBox {
-	~Bnd_HArray1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
-	}
-};
-
-
 %nodefaultctor Bnd_B3f;
 class Bnd_B3f {
 	public:
@@ -669,33 +622,49 @@ class Bnd_B3f {
 };
 
 
-%nodefaultctor Bnd_BoundSortBox;
-class Bnd_BoundSortBox {
+%nodefaultctor Bnd_HArray1OfBox2d;
+class Bnd_HArray1OfBox2d : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Bnd_BoundSortBox();
+		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box &CompleteBox, const Handle_Bnd_HArray1OfBox &SetOfBox);
+		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box2d &V);
 		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox &SetOfBox);
+		void Init(const Bnd_Box2d &V);
 		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box &CompleteBox, const Standard_Integer nbComponents);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Add(const Bnd_Box &theBox, const Standard_Integer boxIndex);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const Bnd_Box &theBox);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const gp_Pln &P);
+		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
 		%feature("autodoc", "1");
-		void Dump() const;
+		const Bnd_Box2d & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Destroy();
+		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox2d & Array1() const;
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox2d & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Bnd_BoundSortBox {
-	~Bnd_BoundSortBox() {
+%extend Bnd_HArray1OfBox2d {
+	Handle_Bnd_HArray1OfBox2d GetHandle() {
+	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Bnd_HArray1OfBox2d {
+	~Bnd_HArray1OfBox2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
+	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
 	}
 };
 
@@ -739,6 +708,37 @@ class Bnd_Array1OfBox2d {
 	~Bnd_Array1OfBox2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox2d\n");}
+	}
+};
+
+
+%nodefaultctor Bnd_BoundSortBox;
+class Bnd_BoundSortBox {
+	public:
+		%feature("autodoc", "1");
+		Bnd_BoundSortBox();
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box &CompleteBox, const Handle_Bnd_HArray1OfBox &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_Bnd_HArray1OfBox &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box &CompleteBox, const Standard_Integer nbComponents);
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box &theBox, const Standard_Integer boxIndex);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const Bnd_Box &theBox);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const gp_Pln &P);
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend Bnd_BoundSortBox {
+	~Bnd_BoundSortBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
 	}
 };
 

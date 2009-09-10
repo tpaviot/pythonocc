@@ -95,36 +95,6 @@ class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Do
 };
 
 
-%nodefaultctor Handle_XmlTObjDrivers_DocumentRetrievalDriver;
-class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver(const Handle_XmlTObjDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver(const XmlTObjDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlTObjDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver & operator=(const XmlTObjDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
-	XmlTObjDrivers_DocumentRetrievalDriver* GetObject() {
-	return (XmlTObjDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
-	~Handle_XmlTObjDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlTObjDrivers_ObjectDriver;
 class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -151,6 +121,36 @@ class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlTObjDrivers_ObjectDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_ObjectDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XmlTObjDrivers_IntSparseArrayDriver;
+class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver();
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver(const Handle_XmlTObjDrivers_IntSparseArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver(const XmlTObjDrivers_IntSparseArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver & operator=(const Handle_XmlTObjDrivers_IntSparseArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver & operator=(const XmlTObjDrivers_IntSparseArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlTObjDrivers_IntSparseArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
+	XmlTObjDrivers_IntSparseArrayDriver* GetObject() {
+	return (XmlTObjDrivers_IntSparseArrayDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
+	~Handle_XmlTObjDrivers_IntSparseArrayDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
 
@@ -185,32 +185,32 @@ class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 };
 
 
-%nodefaultctor Handle_XmlTObjDrivers_IntSparseArrayDriver;
-class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlTObjDrivers_DocumentRetrievalDriver;
+class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver();
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver(const Handle_XmlTObjDrivers_IntSparseArrayDriver &aHandle);
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver(const Handle_XmlTObjDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver(const XmlTObjDrivers_IntSparseArrayDriver *anItem);
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver(const XmlTObjDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver & operator=(const Handle_XmlTObjDrivers_IntSparseArrayDriver &aHandle);
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlTObjDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver & operator=(const XmlTObjDrivers_IntSparseArrayDriver *anItem);
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver & operator=(const XmlTObjDrivers_DocumentRetrievalDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlTObjDrivers_IntSparseArrayDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_XmlTObjDrivers_DocumentRetrievalDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
-	XmlTObjDrivers_IntSparseArrayDriver* GetObject() {
-	return (XmlTObjDrivers_IntSparseArrayDriver*)$self->Access();
+%extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
+	XmlTObjDrivers_DocumentRetrievalDriver* GetObject() {
+	return (XmlTObjDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
-	~Handle_XmlTObjDrivers_IntSparseArrayDriver() {
+%extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
+	~Handle_XmlTObjDrivers_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_IntSparseArrayDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -278,6 +278,39 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 };
 
 
+%nodefaultctor XmlTObjDrivers_ReferenceDriver;
+class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	Handle_XmlTObjDrivers_ReferenceDriver GetHandle() {
+	return *(Handle_XmlTObjDrivers_ReferenceDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	~XmlTObjDrivers_ReferenceDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ReferenceDriver\n");}
+	}
+};
+
+
 %nodefaultctor XmlTObjDrivers_DocumentRetrievalDriver;
 class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
 	public:
@@ -340,35 +373,21 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 };
 
 
-%nodefaultctor XmlTObjDrivers_ReferenceDriver;
-class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlTObjDrivers;
+class XmlTObjDrivers {
 	public:
 		%feature("autodoc", "1");
-		XmlTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlTObjDrivers();
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
+		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 
 };
-%extend XmlTObjDrivers_ReferenceDriver {
-	Handle_XmlTObjDrivers_ReferenceDriver GetHandle() {
-	return *(Handle_XmlTObjDrivers_ReferenceDriver*) &$self;
-	}
-};
-%extend XmlTObjDrivers_ReferenceDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend XmlTObjDrivers_ReferenceDriver {
-	~XmlTObjDrivers_ReferenceDriver() {
+%extend XmlTObjDrivers {
+	~XmlTObjDrivers() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ReferenceDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers\n");}
 	}
 };
 
@@ -464,24 +483,5 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 	~XmlTObjDrivers_ObjectDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ObjectDriver\n");}
-	}
-};
-
-
-%nodefaultctor XmlTObjDrivers;
-class XmlTObjDrivers {
-	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
-		%feature("autodoc", "1");
-		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
-
-};
-%extend XmlTObjDrivers {
-	~XmlTObjDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers\n");}
 	}
 };

@@ -51,6 +51,36 @@ enum BRepMesh_Status {
 
 
 
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY();
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY & operator=(const BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY*)$self->Access();
+	}
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
 	public:
@@ -81,122 +111,92 @@ class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : pub
 };
 
 
-%nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex;
-class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepMesh_HArray1OfVertexOfDelaun;
+class Handle_BRepMesh_HArray1OfVertexOfDelaun : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex();
+		Handle_BRepMesh_HArray1OfVertexOfDelaun();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex(const Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex &aHandle);
+		Handle_BRepMesh_HArray1OfVertexOfDelaun(const Handle_BRepMesh_HArray1OfVertexOfDelaun &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex(const BRepMesh_IndexedMapNodeOfIndexedMapOfVertex *anItem);
+		Handle_BRepMesh_HArray1OfVertexOfDelaun(const BRepMesh_HArray1OfVertexOfDelaun *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex & operator=(const Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex &aHandle);
+		Handle_BRepMesh_HArray1OfVertexOfDelaun & operator=(const Handle_BRepMesh_HArray1OfVertexOfDelaun &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex & operator=(const BRepMesh_IndexedMapNodeOfIndexedMapOfVertex *anItem);
+		Handle_BRepMesh_HArray1OfVertexOfDelaun & operator=(const BRepMesh_HArray1OfVertexOfDelaun *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_HArray1OfVertexOfDelaun const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
-	BRepMesh_IndexedMapNodeOfIndexedMapOfVertex* GetObject() {
-	return (BRepMesh_IndexedMapNodeOfIndexedMapOfVertex*)$self->Access();
+%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
+	BRepMesh_HArray1OfVertexOfDelaun* GetObject() {
+	return (BRepMesh_HArray1OfVertexOfDelaun*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
-	~Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
+%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
+	~Handle_BRepMesh_HArray1OfVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_HArray1OfVertexOfDelaun\n");}
 	}
 };
 
 
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid();
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger(const Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger(const BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid & operator=(const BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger & operator=(const BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
-	BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid*)$self->Access();
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
-	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid() {
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");}
 	}
 };
 
 
-%nodefaultctor Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun;
-class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepMesh_EdgeDiscret;
+class Handle_BRepMesh_EdgeDiscret : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun();
+		Handle_BRepMesh_EdgeDiscret();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun &aHandle);
+		Handle_BRepMesh_EdgeDiscret(const Handle_BRepMesh_EdgeDiscret &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun *anItem);
+		Handle_BRepMesh_EdgeDiscret(const BRepMesh_EdgeDiscret *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun & operator=(const Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun &aHandle);
+		Handle_BRepMesh_EdgeDiscret & operator=(const Handle_BRepMesh_EdgeDiscret &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun & operator=(const BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun *anItem);
+		Handle_BRepMesh_EdgeDiscret & operator=(const BRepMesh_EdgeDiscret *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_EdgeDiscret const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
-	BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun* GetObject() {
-	return (BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun*)$self->Access();
+%extend Handle_BRepMesh_EdgeDiscret {
+	BRepMesh_EdgeDiscret* GetObject() {
+	return (BRepMesh_EdgeDiscret*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
-	~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun() {
+%extend Handle_BRepMesh_EdgeDiscret {
+	~Handle_BRepMesh_EdgeDiscret() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRepMesh_SurfaceGrid;
-class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid();
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid(const Handle_BRepMesh_SurfaceGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid(const BRepMesh_SurfaceGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid & operator=(const Handle_BRepMesh_SurfaceGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid & operator=(const BRepMesh_SurfaceGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_SurfaceGrid const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMesh_SurfaceGrid {
-	BRepMesh_SurfaceGrid* GetObject() {
-	return (BRepMesh_SurfaceGrid*)$self->Access();
-	}
-};
-%extend Handle_BRepMesh_SurfaceGrid {
-	~Handle_BRepMesh_SurfaceGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_SurfaceGrid\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_EdgeDiscret\n");}
 	}
 };
 
@@ -291,62 +291,32 @@ class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY();
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid(const BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY & operator=(const BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid & operator=(const BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
-	BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY*)$self->Access();
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
-	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY() {
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger();
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger(const Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger(const BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger & operator=(const BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
-	BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger*)$self->Access();
-	}
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
-	~Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid\n");}
 	}
 };
 
@@ -411,6 +381,36 @@ class Handle_BRepMesh_ListNodeOfListOfSurfaceGrid : public Handle_TCollection_Ma
 };
 
 
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt();
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const BRepMesh_DataMapNodeOfDataMapOfCouplePnt *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt & operator=(const BRepMesh_DataMapNodeOfDataMapOfCouplePnt *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	BRepMesh_DataMapNodeOfDataMapOfCouplePnt* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfCouplePnt*)$self->Access();
+	}
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRepMesh_ListNodeOfListOfVertex;
 class Handle_BRepMesh_ListNodeOfListOfVertex : public Handle_TCollection_MapNode {
 	public:
@@ -441,62 +441,92 @@ class Handle_BRepMesh_ListNodeOfListOfVertex : public Handle_TCollection_MapNode
 };
 
 
-%nodefaultctor Handle_BRepMesh_EdgeDiscret;
-class Handle_BRepMesh_EdgeDiscret : public Handle_MMgt_TShared {
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret();
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret(const Handle_BRepMesh_EdgeDiscret &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret(const BRepMesh_EdgeDiscret *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const BRepMesh_DataMapNodeOfDataMapOfIntegerFace *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret & operator=(const Handle_BRepMesh_EdgeDiscret &aHandle);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret & operator=(const BRepMesh_EdgeDiscret *anItem);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace & operator=(const BRepMesh_DataMapNodeOfDataMapOfIntegerFace *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_EdgeDiscret const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_EdgeDiscret {
-	BRepMesh_EdgeDiscret* GetObject() {
-	return (BRepMesh_EdgeDiscret*)$self->Access();
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	BRepMesh_DataMapNodeOfDataMapOfIntegerFace* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfIntegerFace*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_EdgeDiscret {
-	~Handle_BRepMesh_EdgeDiscret() {
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_EdgeDiscret\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");}
 	}
 };
 
 
-%nodefaultctor Handle_BRepMesh_HArray1OfVertexOfDelaun;
-class Handle_BRepMesh_HArray1OfVertexOfDelaun : public Handle_MMgt_TShared {
+%nodefaultctor Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun;
+class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun();
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun(const Handle_BRepMesh_HArray1OfVertexOfDelaun &aHandle);
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun(const BRepMesh_HArray1OfVertexOfDelaun *anItem);
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun & operator=(const Handle_BRepMesh_HArray1OfVertexOfDelaun &aHandle);
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun & operator=(const Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun & operator=(const BRepMesh_HArray1OfVertexOfDelaun *anItem);
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun & operator=(const BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_HArray1OfVertexOfDelaun const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
-	BRepMesh_HArray1OfVertexOfDelaun* GetObject() {
-	return (BRepMesh_HArray1OfVertexOfDelaun*)$self->Access();
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun* GetObject() {
+	return (BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
-	~Handle_BRepMesh_HArray1OfVertexOfDelaun() {
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	~Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_HArray1OfVertexOfDelaun\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex;
+class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex();
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex(const Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex(const BRepMesh_IndexedMapNodeOfIndexedMapOfVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex & operator=(const Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex & operator=(const BRepMesh_IndexedMapNodeOfIndexedMapOfVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	BRepMesh_IndexedMapNodeOfIndexedMapOfVertex* GetObject() {
+	return (BRepMesh_IndexedMapNodeOfIndexedMapOfVertex*)$self->Access();
+	}
+};
+%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	~Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");}
 	}
 };
 
@@ -531,32 +561,32 @@ class Handle_BRepMesh_ListNodeOfListOfXY : public Handle_TCollection_MapNode {
 };
 
 
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_BRepMesh_SurfaceGrid;
+class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt();
+		Handle_BRepMesh_SurfaceGrid();
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt &aHandle);
+		Handle_BRepMesh_SurfaceGrid(const Handle_BRepMesh_SurfaceGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const BRepMesh_DataMapNodeOfDataMapOfCouplePnt *anItem);
+		Handle_BRepMesh_SurfaceGrid(const BRepMesh_SurfaceGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt &aHandle);
+		Handle_BRepMesh_SurfaceGrid & operator=(const Handle_BRepMesh_SurfaceGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt & operator=(const BRepMesh_DataMapNodeOfDataMapOfCouplePnt *anItem);
+		Handle_BRepMesh_SurfaceGrid & operator=(const BRepMesh_SurfaceGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_BRepMesh_SurfaceGrid const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
-	BRepMesh_DataMapNodeOfDataMapOfCouplePnt* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfCouplePnt*)$self->Access();
+%extend Handle_BRepMesh_SurfaceGrid {
+	BRepMesh_SurfaceGrid* GetObject() {
+	return (BRepMesh_SurfaceGrid*)$self->Access();
 	}
 };
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
-	~Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
+%extend Handle_BRepMesh_SurfaceGrid {
+	~Handle_BRepMesh_SurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_SurfaceGrid\n");}
 	}
 };
 
@@ -587,36 +617,6 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public Handle_TCo
 	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace();
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const BRepMesh_DataMapNodeOfDataMapOfIntegerFace *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace & operator=(const BRepMesh_DataMapNodeOfDataMapOfIntegerFace *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
-	BRepMesh_DataMapNodeOfDataMapOfIntegerFace* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfIntegerFace*)$self->Access();
-	}
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
-	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");}
 	}
 };
 
@@ -1210,8 +1210,18 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNod
 	public:
 		%feature("autodoc", "1");
 		BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY(const Standard_Integer &K, const BRepMesh_ListOfXY &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		BRepMesh_ListOfXY & Value() const;
 		%feature("autodoc", "1");
@@ -1399,6 +1409,47 @@ class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
 };
 
 
+%nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeReal;
+class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal GetHandle() {
+	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	~BRepMesh_DataMapNodeOfDataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeReal\n");}
+	}
+};
+
+
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeReal;
 class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
@@ -1490,6 +1541,48 @@ class BRepMesh_DiscretRoot {
 	~BRepMesh_DiscretRoot() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DiscretRoot\n");}
+	}
+};
+
+
+%nodefaultctor BRepMesh_Vertex;
+class BRepMesh_Vertex {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_Vertex();
+		%feature("autodoc", "1");
+		BRepMesh_Vertex(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		%feature("autodoc", "1");
+		BRepMesh_Vertex(const Standard_Real U, const Standard_Real V, const Standard_Integer Dom, const MeshDS_DegreeOfFreedom Move);
+		%feature("autodoc", "1");
+		void Initialize(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
+		%feature("autodoc", "1");
+		const gp_XY & Coord() const;
+		%feature("autodoc", "1");
+		Standard_Integer Location3d() const;
+		%feature("autodoc", "1");
+		Standard_Integer Domain() const;
+		%feature("autodoc", "1");
+		MeshDS_DegreeOfFreedom Movability() const;
+		%feature("autodoc", "1");
+		void SetMovability(const MeshDS_DegreeOfFreedom Move);
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BRepMesh_Vertex &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const BRepMesh_Vertex &Other) const;
+
+};
+%extend BRepMesh_Vertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepMesh_Vertex {
+	~BRepMesh_Vertex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_Vertex\n");}
 	}
 };
 
@@ -1682,8 +1775,18 @@ class BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public TCollection_MapNode {
 		BRepMesh_IndexedMapNodeOfIndexedMapOfVertex(const BRepMesh_Vertex &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Vertex & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1704,6 +1807,37 @@ class BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public TCollection_MapNode {
 	~BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");}
+	}
+};
+
+
+%nodefaultctor BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
+class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const MeshShape_Couple &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		MeshShape_Couple & Key() const;
+		%feature("autodoc", "1");
+		gp_Pnt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt GetHandle() {
+	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt*) &$self;
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	~BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");}
 	}
 };
 
@@ -1738,8 +1872,18 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public T
 		BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun(const BRepMesh_Edge &K1, const Standard_Integer K2, const MeshDS_ListOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Edge & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1950,13 +2094,52 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 };
 
 
+%nodefaultctor BRepMesh_GeomTool;
+class BRepMesh_GeomTool {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_GeomTool(BRepAdaptor_Curve & C, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
+		%feature("autodoc", "1");
+		BRepMesh_GeomTool(const Handle_BRepAdaptor_HSurface &S, const Standard_Real ParamIso, const GeomAbs_IsoType Type, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index)->Standard_Real");
+		void Value(const Standard_Real IsoParam, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
+		%feature("autodoc","Value(const C, const S, Standard_Integer Index)->Standard_Real");
+		void Value(const BRepAdaptor_Curve &C, const Handle_BRepAdaptor_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
+		%feature("autodoc", "1");
+		void D0(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		Standard_Boolean Normal(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Dir & Nor);
+		%feature("autodoc", "1");
+		MeshShape_CurvatureType CurvatureComplexity(const Handle_BRepAdaptor_HSurface &SF);
+
+};
+%extend BRepMesh_GeomTool {
+	~BRepMesh_GeomTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_GeomTool\n");}
+	}
+};
+
+
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
 class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		BRepMesh_DataMapNodeOfDataMapOfIntegerFace(const Standard_Integer &K, const TopoDS_Face &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Face & Value() const;
 		%feature("autodoc", "1");
@@ -2004,8 +2187,18 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TopoDS_Vertex &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TopoDS_Vertex &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TopoDS_Vertex &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TopoDS_Vertex &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Vertex &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TopoDS_Vertex &K);
 
@@ -2014,6 +2207,29 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 	~BRepMesh_DataMapOfVertexInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapOfVertexInteger\n");}
+	}
+};
+
+
+%nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret;
+class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret();
+		%feature("autodoc", "1");
+		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Handle_BRepMesh_EdgeDiscret & Value() const;
+
+};
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret {
+	~BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret\n");}
 	}
 };
 
@@ -2086,8 +2302,18 @@ class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
@@ -2160,8 +2386,18 @@ class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCo
 		BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun(const BRepMesh_Triangle &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Triangle & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2223,37 +2459,6 @@ class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeReal;
-class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
-	Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal*) &$self;
-	}
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
-	~BRepMesh_DataMapNodeOfDataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeReal\n");}
-	}
-};
-
-
 %nodefaultctor BRepMesh_DataMapOfMeshVertexInteger;
 class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 	public:
@@ -2277,8 +2482,18 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const BRepMesh_Vertex &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const BRepMesh_Vertex &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const BRepMesh_Vertex &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const BRepMesh_Vertex &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const BRepMesh_Vertex &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const BRepMesh_Vertex &K);
 
@@ -2304,29 +2519,6 @@ class BRepMesh_HeapSortVertexOfDelaun {
 	~BRepMesh_HeapSortVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_HeapSortVertexOfDelaun\n");}
-	}
-};
-
-
-%nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret;
-class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret();
-		%feature("autodoc", "1");
-		BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepMesh_DataMapOfShapeEdgeDiscret &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Handle_BRepMesh_EdgeDiscret & Value() const;
-
-};
-%extend BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret {
-	~BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret\n");}
 	}
 };
 
@@ -2386,8 +2578,18 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 		BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun(const BRepMesh_Vertex &K1, const Standard_Integer K2, const MeshDS_ListOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BRepMesh_Vertex & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2410,67 +2612,6 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 	~BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun\n");}
-	}
-};
-
-
-%nodefaultctor BRepMesh_Vertex;
-class BRepMesh_Vertex {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_Vertex();
-		%feature("autodoc", "1");
-		BRepMesh_Vertex(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
-		%feature("autodoc", "1");
-		BRepMesh_Vertex(const Standard_Real U, const Standard_Real V, const Standard_Integer Dom, const MeshDS_DegreeOfFreedom Move);
-		%feature("autodoc", "1");
-		void Initialize(const gp_XY &UV, const Standard_Integer Dom, const Standard_Integer Locat3d, const MeshDS_DegreeOfFreedom Move);
-		%feature("autodoc", "1");
-		const gp_XY & Coord() const;
-		%feature("autodoc", "1");
-		Standard_Integer Location3d() const;
-		%feature("autodoc", "1");
-		Standard_Integer Domain() const;
-		%feature("autodoc", "1");
-		MeshDS_DegreeOfFreedom Movability() const;
-		%feature("autodoc", "1");
-		void SetMovability(const MeshDS_DegreeOfFreedom Move);
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BRepMesh_Vertex &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const BRepMesh_Vertex &Other) const;
-
-};
-%extend BRepMesh_Vertex {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepMesh_Vertex {
-	~BRepMesh_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_Vertex\n");}
-	}
-};
-
-
-%nodefaultctor BRepMesh_LinkHasherOfDataStructureOfDelaun;
-class BRepMesh_LinkHasherOfDataStructureOfDelaun {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_LinkHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const BRepMesh_Edge &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BRepMesh_Edge &K1, const BRepMesh_Edge &K2);
-
-};
-%extend BRepMesh_LinkHasherOfDataStructureOfDelaun {
-	~BRepMesh_LinkHasherOfDataStructureOfDelaun() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_LinkHasherOfDataStructureOfDelaun\n");}
 	}
 };
 
@@ -2625,6 +2766,25 @@ class BRepMesh_VertexHasher {
 };
 
 
+%nodefaultctor BRepMesh_LinkHasherOfDataStructureOfDelaun;
+class BRepMesh_LinkHasherOfDataStructureOfDelaun {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_LinkHasherOfDataStructureOfDelaun();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const BRepMesh_Edge &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BRepMesh_Edge &K1, const BRepMesh_Edge &K2);
+
+};
+%extend BRepMesh_LinkHasherOfDataStructureOfDelaun {
+	~BRepMesh_LinkHasherOfDataStructureOfDelaun() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_LinkHasherOfDataStructureOfDelaun\n");}
+	}
+};
+
+
 %nodefaultctor BRepMesh_NodeHasherOfDataStructureOfDelaun;
 class BRepMesh_NodeHasherOfDataStructureOfDelaun {
 	public:
@@ -2740,8 +2900,18 @@ class BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public TCollection_MapN
 		BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger(const BRepMesh_Vertex &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		BRepMesh_Vertex & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2821,35 +2991,6 @@ class BRepMesh_Delaun {
 };
 
 
-%nodefaultctor BRepMesh_GeomTool;
-class BRepMesh_GeomTool {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_GeomTool(BRepAdaptor_Curve & C, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
-		%feature("autodoc", "1");
-		BRepMesh_GeomTool(const Handle_BRepAdaptor_HSurface &S, const Standard_Real ParamIso, const GeomAbs_IsoType Type, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index)->Standard_Real");
-		void Value(const Standard_Real IsoParam, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
-		%feature("autodoc","Value(const C, const S, Standard_Integer Index)->Standard_Real");
-		void Value(const BRepAdaptor_Curve &C, const Handle_BRepAdaptor_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
-		%feature("autodoc", "1");
-		void D0(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		Standard_Boolean Normal(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Dir & Nor);
-		%feature("autodoc", "1");
-		MeshShape_CurvatureType CurvatureComplexity(const Handle_BRepAdaptor_HSurface &SF);
-
-};
-%extend BRepMesh_GeomTool {
-	~BRepMesh_GeomTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_GeomTool\n");}
-	}
-};
-
-
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfIntegerFace;
 class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicMapIterator {
 	public:
@@ -2894,37 +3035,6 @@ class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 };
 
 
-%nodefaultctor BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
-class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_DataMapNodeOfDataMapOfCouplePnt(const MeshShape_Couple &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		MeshShape_Couple & Key() const;
-		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
-	Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt GetHandle() {
-	return *(Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt*) &$self;
-	}
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
-	~BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");}
-	}
-};
-
-
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfVertexInteger;
 class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode {
 	public:
@@ -2932,8 +3042,18 @@ class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode 
 		BRepMesh_DataMapNodeOfDataMapOfVertexInteger(const TopoDS_Vertex &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Vertex & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3061,25 +3181,6 @@ class BRepMesh_Triangle {
 };
 
 
-%nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
-class BRepMesh_ElemHasherOfDataStructureOfDelaun {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_ElemHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BRepMesh_Triangle &K1, const BRepMesh_Triangle &K2);
-
-};
-%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
-	~BRepMesh_ElemHasherOfDataStructureOfDelaun() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMesh_ElemHasherOfDataStructureOfDelaun\n");}
-	}
-};
-
-
 %nodefaultctor BRepMesh_ListIteratorOfListOfVertex;
 class BRepMesh_ListIteratorOfListOfVertex {
 	public:
@@ -3101,5 +3202,24 @@ class BRepMesh_ListIteratorOfListOfVertex {
 	~BRepMesh_ListIteratorOfListOfVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ListIteratorOfListOfVertex\n");}
+	}
+};
+
+
+%nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
+class BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_ElemHasherOfDataStructureOfDelaun();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BRepMesh_Triangle &K1, const BRepMesh_Triangle &K2);
+
+};
+%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	~BRepMesh_ElemHasherOfDataStructureOfDelaun() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepMesh_ElemHasherOfDataStructureOfDelaun\n");}
 	}
 };

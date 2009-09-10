@@ -627,8 +627,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Bnd_Box.hxx>
-#include<Handle_V3d_View.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<Quantity_Color.hxx>
 #include<Handle_Quantity_HArray1OfColor.hxx>
+#include<Handle_V3d_View.hxx>
 %}

@@ -1,10 +1,10 @@
 %rename(IntSurf_Unknown) IntSurf_Unknown;
-%rename(IntSurf_SequenceOfPathPoint) IntSurf_SequenceOfPathPoint;
+%rename(IntSurf_PathPointTool) IntSurf_PathPointTool;
 %rename(IntSurf) IntSurf;
 %rename(IntSurf_SequenceNodeOfSequenceOfPathPoint) IntSurf_SequenceNodeOfSequenceOfPathPoint;
 %rename(IntSurf_SequenceOfInteriorPoint) IntSurf_SequenceOfInteriorPoint;
 %rename(IntSurf_Transition) IntSurf_Transition;
-%rename(IntSurf_PathPointTool) IntSurf_PathPointTool;
+%rename(IntSurf_SequenceOfPathPoint) IntSurf_SequenceOfPathPoint;
 %rename(IntSurf_Out) IntSurf_Out;
 %rename(Handle_IntSurf_SequenceNodeOfSequenceOfCouple) Handle_IntSurf_SequenceNodeOfSequenceOfCouple;
 %rename(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S) Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S;

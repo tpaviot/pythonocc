@@ -155,6 +155,25 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 };
 
 
+%nodefaultctor Bisector_Inter;
+class Bisector_Inter : public IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Bisector_Inter();
+		%feature("autodoc", "1");
+		Bisector_Inter(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+		%feature("autodoc", "1");
+		void Perform(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+
+};
+%extend Bisector_Inter {
+	~Bisector_Inter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bisector_Inter\n");}
+	}
+};
+
+
 %nodefaultctor Bisector_FunctionInter;
 class Bisector_FunctionInter : public math_FunctionWithDerivative {
 	public:
@@ -474,6 +493,37 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 
 
+%nodefaultctor Bisector_PolyBis;
+class Bisector_PolyBis {
+	public:
+		%feature("autodoc", "1");
+		Bisector_PolyBis();
+		%feature("autodoc", "1");
+		void Append(const Bisector_PointOnBis &Point);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		const Bisector_PointOnBis & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Bisector_PointOnBis & First() const;
+		%feature("autodoc", "1");
+		const Bisector_PointOnBis & Last() const;
+		%feature("autodoc", "1");
+		Standard_Integer Interval(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf2d &T);
+
+};
+%extend Bisector_PolyBis {
+	~Bisector_PolyBis() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bisector_PolyBis\n");}
+	}
+};
+
+
 %nodefaultctor Bisector_PointOnBis;
 class Bisector_PointOnBis {
 	public:
@@ -517,33 +567,6 @@ class Bisector_PointOnBis {
 };
 
 
-%nodefaultctor Bisector_Bisec;
-class Bisector_Bisec {
-	public:
-		%feature("autodoc", "1");
-		Bisector_Bisec();
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & ChangeValue();
-
-};
-%extend Bisector_Bisec {
-	~Bisector_Bisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bisector_Bisec\n");}
-	}
-};
-
-
 %nodefaultctor Bisector;
 class Bisector {
 	public:
@@ -582,51 +605,28 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 };
 
 
-%nodefaultctor Bisector_Inter;
-class Bisector_Inter : public IntRes2d_Intersection {
+%nodefaultctor Bisector_Bisec;
+class Bisector_Bisec {
 	public:
 		%feature("autodoc", "1");
-		Bisector_Inter();
+		Bisector_Bisec();
 		%feature("autodoc", "1");
-		Bisector_Inter(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
 		%feature("autodoc", "1");
-		void Perform(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d &P, const gp_Vec2d &V1, const gp_Vec2d &V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & ChangeValue();
 
 };
-%extend Bisector_Inter {
-	~Bisector_Inter() {
+%extend Bisector_Bisec {
+	~Bisector_Bisec() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bisector_Inter\n");}
-	}
-};
-
-
-%nodefaultctor Bisector_PolyBis;
-class Bisector_PolyBis {
-	public:
-		%feature("autodoc", "1");
-		Bisector_PolyBis();
-		%feature("autodoc", "1");
-		void Append(const Bisector_PointOnBis &Point);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const Bisector_PointOnBis & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Bisector_PointOnBis & First() const;
-		%feature("autodoc", "1");
-		const Bisector_PointOnBis & Last() const;
-		%feature("autodoc", "1");
-		Standard_Integer Interval(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf2d &T);
-
-};
-%extend Bisector_PolyBis {
-	~Bisector_PolyBis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bisector_PolyBis\n");}
+	if (__env){printf("## Call custom destructor for instance of Bisector_Bisec\n");}
 	}
 };

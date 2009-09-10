@@ -32,22 +32,22 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %include Standard_headers.i
 
-typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef unsigned char Standard_Byte;
 typedef jmp_buf Standard_JmpBuf;
 typedef Standard_Persistent * Standard_OId;
+typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef double Standard_Real;
 typedef char const * Standard_CString;
 typedef short int const * Standard_ExtString;
-typedef GUID Standard_UUID;
 typedef char Standard_Character;
 typedef unsigned int Standard_Boolean;
 typedef float Standard_ShortReal;
 typedef int Standard_Integer;
-typedef Standard_Character * Standard_PCharacter;
 typedef short int Standard_ExtCharacter;
 typedef size_t Standard_Size;
+typedef GUID Standard_UUID;
 typedef Standard_ExtCharacter * Standard_PExtCharacter;
+typedef Standard_Character * Standard_PCharacter;
 typedef void * Standard_Address;
 typedef pthread_t Standard_ThreadId;
 
@@ -267,6 +267,66 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 };
 
 
+%nodefaultctor Handle_Standard_LicenseError;
+class Handle_Standard_LicenseError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError();
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError(const Handle_Standard_LicenseError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError(const Standard_LicenseError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError & operator=(const Handle_Standard_LicenseError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError & operator=(const Standard_LicenseError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_LicenseError {
+	Standard_LicenseError* GetObject() {
+	return (Standard_LicenseError*)$self->Access();
+	}
+};
+%extend Handle_Standard_LicenseError {
+	~Handle_Standard_LicenseError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Standard_LicenseNotFound;
+class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound();
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound(const Handle_Standard_LicenseNotFound &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound(const Standard_LicenseNotFound *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound & operator=(const Handle_Standard_LicenseNotFound &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound & operator=(const Standard_LicenseNotFound *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseNotFound const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_LicenseNotFound {
+	Standard_LicenseNotFound* GetObject() {
+	return (Standard_LicenseNotFound*)$self->Access();
+	}
+};
+%extend Handle_Standard_LicenseNotFound {
+	~Handle_Standard_LicenseNotFound() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseNotFound\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Standard_TypeMismatch;
 class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	public:
@@ -293,58 +353,6 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	~Handle_Standard_TypeMismatch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_TypeMismatch\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Standard_Persistent;
-class Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent();
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent(const Handle_Standard_Persistent &aTid);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent(const Standard_Persistent *anItem);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator==(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		void Nullify();
-		%feature("autodoc", "1");
-		Standard_Boolean IsNull() const;
-		%feature("autodoc", "1");
-		Standard_Persistent * Access() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator=(const Handle_Standard_Persistent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_Standard_Persistent {
-	Standard_Persistent* GetObject() {
-	return (Standard_Persistent*)$self->Access();
-	}
-};
-%extend Handle_Standard_Persistent {
-	~Handle_Standard_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Persistent\n");}
 	}
 };
 
@@ -405,36 +413,6 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	~Handle_Standard_NumericError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NumericError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Standard_DivideByZero;
-class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero();
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero(const Handle_Standard_DivideByZero &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero(const Standard_DivideByZero *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero & operator=(const Handle_Standard_DivideByZero &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero & operator=(const Standard_DivideByZero *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_DivideByZero {
-	Standard_DivideByZero* GetObject() {
-	return (Standard_DivideByZero*)$self->Access();
-	}
-};
-%extend Handle_Standard_DivideByZero {
-	~Handle_Standard_DivideByZero() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DivideByZero\n");}
 	}
 };
 
@@ -559,6 +537,58 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 };
 
 
+%nodefaultctor Handle_Standard_Persistent;
+class Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent();
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent(const Handle_Standard_Persistent &aTid);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent(const Standard_Persistent *anItem);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		int operator==(const Handle_Standard_Persistent &right) const;
+		%feature("autodoc", "1");
+		int operator==(const Standard_Persistent *right) const;
+		%feature("autodoc", "1");
+		int operator!=(const Handle_Standard_Persistent &right) const;
+		%feature("autodoc", "1");
+		int operator!=(const Standard_Persistent *right) const;
+		%feature("autodoc", "1");
+		void Nullify();
+		%feature("autodoc", "1");
+		Standard_Boolean IsNull() const;
+		%feature("autodoc", "1");
+		Standard_Persistent * Access() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator=(const Handle_Standard_Persistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_Standard_Persistent {
+	Standard_Persistent* GetObject() {
+	return (Standard_Persistent*)$self->Access();
+	}
+};
+%extend Handle_Standard_Persistent {
+	~Handle_Standard_Persistent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Persistent\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Standard_AbortiveTransaction;
 class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	public:
@@ -619,32 +649,32 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 };
 
 
-%nodefaultctor Handle_Standard_LicenseError;
-class Handle_Standard_LicenseError : public Handle_Standard_Failure {
+%nodefaultctor Handle_Standard_DivideByZero;
+class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	public:
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError();
+		Handle_Standard_DivideByZero();
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError(const Handle_Standard_LicenseError &aHandle);
+		Handle_Standard_DivideByZero(const Handle_Standard_DivideByZero &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError(const Standard_LicenseError *anItem);
+		Handle_Standard_DivideByZero(const Standard_DivideByZero *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError & operator=(const Handle_Standard_LicenseError &aHandle);
+		Handle_Standard_DivideByZero & operator=(const Handle_Standard_DivideByZero &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError & operator=(const Standard_LicenseError *anItem);
+		Handle_Standard_DivideByZero & operator=(const Standard_DivideByZero *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_LicenseError const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Standard_DivideByZero const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Standard_LicenseError {
-	Standard_LicenseError* GetObject() {
-	return (Standard_LicenseError*)$self->Access();
+%extend Handle_Standard_DivideByZero {
+	Standard_DivideByZero* GetObject() {
+	return (Standard_DivideByZero*)$self->Access();
 	}
 };
-%extend Handle_Standard_LicenseError {
-	~Handle_Standard_LicenseError() {
+%extend Handle_Standard_DivideByZero {
+	~Handle_Standard_DivideByZero() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseError\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DivideByZero\n");}
 	}
 };
 
@@ -675,6 +705,36 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	~Handle_Standard_NoSuchObject() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NoSuchObject\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Standard_ConstructionError;
+class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError();
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError(const Handle_Standard_ConstructionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError(const Standard_ConstructionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError & operator=(const Handle_Standard_ConstructionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError & operator=(const Standard_ConstructionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_ConstructionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_ConstructionError {
+	Standard_ConstructionError* GetObject() {
+	return (Standard_ConstructionError*)$self->Access();
+	}
+};
+%extend Handle_Standard_ConstructionError {
+	~Handle_Standard_ConstructionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ConstructionError\n");}
 	}
 };
 
@@ -889,66 +949,6 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 };
 
 
-%nodefaultctor Handle_Standard_ConstructionError;
-class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError();
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError(const Handle_Standard_ConstructionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError(const Standard_ConstructionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError & operator=(const Handle_Standard_ConstructionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError & operator=(const Standard_ConstructionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_ConstructionError {
-	Standard_ConstructionError* GetObject() {
-	return (Standard_ConstructionError*)$self->Access();
-	}
-};
-%extend Handle_Standard_ConstructionError {
-	~Handle_Standard_ConstructionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ConstructionError\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Standard_LicenseNotFound;
-class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound();
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound(const Handle_Standard_LicenseNotFound &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound(const Standard_LicenseNotFound *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound & operator=(const Handle_Standard_LicenseNotFound &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound & operator=(const Standard_LicenseNotFound *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseNotFound const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_LicenseNotFound {
-	Standard_LicenseNotFound* GetObject() {
-	return (Standard_LicenseNotFound*)$self->Access();
-	}
-};
-%extend Handle_Standard_LicenseNotFound {
-	~Handle_Standard_LicenseNotFound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseNotFound\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Standard_MultiplyDefined;
 class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	public:
@@ -1080,7 +1080,7 @@ class Standard_Failure : public Standard_Transient {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		Standard_CString GetMessageString() const;
+		char * GetMessageString() const;
 		%feature("autodoc", "1");
 		void SetMessageString(const char * aMessage);
 		%feature("autodoc", "1");
@@ -1117,35 +1117,6 @@ class Standard_Failure : public Standard_Transient {
 };
 
 
-%nodefaultctor Standard_LicenseError;
-class Standard_LicenseError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Standard_LicenseError();
-		%feature("autodoc", "1");
-		Standard_LicenseError(const char * AString);
-		%feature("autodoc", "1");
-		Handle_Standard_LicenseError NewInstance(const char * aMessage);
-
-};
-%extend Standard_LicenseError {
-	Handle_Standard_LicenseError GetHandle() {
-	return *(Handle_Standard_LicenseError*) &$self;
-	}
-};
-%extend Standard_LicenseError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_LicenseError {
-	~Standard_LicenseError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_LicenseError\n");}
-	}
-};
-
-
 %nodefaultctor Standard_DomainError;
 class Standard_DomainError : public Standard_Failure {
 	public:
@@ -1154,13 +1125,7 @@ class Standard_DomainError : public Standard_Failure {
 		%feature("autodoc", "1");
 		Standard_DomainError(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
 		Handle_Standard_DomainError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Standard_DomainError {
@@ -1270,41 +1235,6 @@ class Standard_NullValue : public Standard_RangeError {
 	~Standard_NullValue() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_NullValue\n");}
-	}
-};
-
-
-%nodefaultctor Standard_ConstructionError;
-class Standard_ConstructionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_ConstructionError();
-		%feature("autodoc", "1");
-		Standard_ConstructionError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_ConstructionError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_ConstructionError {
-	Handle_Standard_ConstructionError GetHandle() {
-	return *(Handle_Standard_ConstructionError*) &$self;
-	}
-};
-%extend Standard_ConstructionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_ConstructionError {
-	~Standard_ConstructionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ConstructionError\n");}
 	}
 };
 
@@ -1487,62 +1417,37 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 
 
-%nodefaultctor Standard_DimensionError;
-class Standard_DimensionError : public Standard_DomainError {
+%nodefaultctor Standard_ConstructionError;
+class Standard_ConstructionError : public Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Standard_DimensionError();
+		Standard_ConstructionError();
 		%feature("autodoc", "1");
-		Standard_DimensionError(const char * AString);
+		Standard_ConstructionError(const char * AString);
 		%feature("autodoc", "1");
 		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Standard_DimensionError NewInstance(const char * aMessage);
+		Handle_Standard_ConstructionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Standard_DimensionError {
-	Handle_Standard_DimensionError GetHandle() {
-	return *(Handle_Standard_DimensionError*) &$self;
+%extend Standard_ConstructionError {
+	Handle_Standard_ConstructionError GetHandle() {
+	return *(Handle_Standard_ConstructionError*) &$self;
 	}
 };
-%extend Standard_DimensionError {
+%extend Standard_ConstructionError {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Standard_DimensionError {
-	~Standard_DimensionError() {
+%extend Standard_ConstructionError {
+	~Standard_ConstructionError() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DimensionError\n");}
-	}
-};
-
-
-%nodefaultctor Standard_MMgrOpt;
-class Standard_MMgrOpt : public Standard_MMgrRoot {
-	public:
-		%feature("autodoc", "1");
-		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Allocate(const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		void Free(Standard_Address & aPtr);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Purge(Standard_Boolean );
-		%feature("autodoc", "1");
-		virtual		void SetReentrant(Standard_Boolean );
-
-};
-%extend Standard_MMgrOpt {
-	~Standard_MMgrOpt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_MMgrOpt\n");}
+	if (__env){printf("## Call custom destructor for instance of Standard_ConstructionError\n");}
 	}
 };
 
@@ -1578,6 +1483,31 @@ class Standard_TypeMismatch : public Standard_DomainError {
 	~Standard_TypeMismatch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_TypeMismatch\n");}
+	}
+};
+
+
+%nodefaultctor Standard_MMgrOpt;
+class Standard_MMgrOpt : public Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & aPtr);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Purge(Standard_Boolean );
+		%feature("autodoc", "1");
+		virtual		void SetReentrant(Standard_Boolean );
+
+};
+%extend Standard_MMgrOpt {
+	~Standard_MMgrOpt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_MMgrOpt\n");}
 	}
 };
 
@@ -1620,6 +1550,41 @@ class Standard_Storable {
 };
 
 
+%nodefaultctor Standard_DimensionError;
+class Standard_DimensionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_DimensionError();
+		%feature("autodoc", "1");
+		Standard_DimensionError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_DimensionError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_DimensionError {
+	Handle_Standard_DimensionError GetHandle() {
+	return *(Handle_Standard_DimensionError*) &$self;
+	}
+};
+%extend Standard_DimensionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_DimensionError {
+	~Standard_DimensionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_DimensionError\n");}
+	}
+};
+
+
 %nodefaultctor Standard_DimensionMismatch;
 class Standard_DimensionMismatch : public Standard_DimensionError {
 	public:
@@ -1628,13 +1593,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 		%feature("autodoc", "1");
 		Standard_DimensionMismatch(const char * AString);
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
 		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Standard_DimensionMismatch {
@@ -1659,7 +1618,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 class Standard_Type : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		Standard_Integer Size() const;
 		%feature("autodoc", "1");
@@ -1780,37 +1739,23 @@ class Standard_NegativeValue : public Standard_RangeError {
 };
 
 
-%nodefaultctor Standard_DivideByZero;
-class Standard_DivideByZero : public Standard_NumericError {
+%nodefaultctor Standard_Mutex;
+class Standard_Mutex : public Standard_ErrorHandlerCallback {
 	public:
 		%feature("autodoc", "1");
-		Standard_DivideByZero();
+		Standard_Mutex();
 		%feature("autodoc", "1");
-		Standard_DivideByZero(const char * AString);
+		void Lock();
 		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
+		Standard_Boolean TryLock();
 		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_DivideByZero NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Unlock();
 
 };
-%extend Standard_DivideByZero {
-	Handle_Standard_DivideByZero GetHandle() {
-	return *(Handle_Standard_DivideByZero*) &$self;
-	}
-};
-%extend Standard_DivideByZero {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_DivideByZero {
-	~Standard_DivideByZero() {
+%extend Standard_Mutex {
+	~Standard_Mutex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DivideByZero\n");}
+	if (__env){printf("## Call custom destructor for instance of Standard_Mutex\n");}
 	}
 };
 
@@ -1914,41 +1859,6 @@ class Standard_AncestorIterator {
 };
 
 
-%nodefaultctor Standard_OutOfMemory;
-class Standard_OutOfMemory : public Standard_ProgramError {
-	public:
-		%feature("autodoc", "1");
-		Standard_OutOfMemory();
-		%feature("autodoc", "1");
-		Standard_OutOfMemory(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_OutOfMemory {
-	Handle_Standard_OutOfMemory GetHandle() {
-	return *(Handle_Standard_OutOfMemory*) &$self;
-	}
-};
-%extend Standard_OutOfMemory {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_OutOfMemory {
-	~Standard_OutOfMemory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_OutOfMemory\n");}
-	}
-};
-
-
 %nodefaultctor Standard_MultiplyDefined;
 class Standard_MultiplyDefined : public Standard_DomainError {
 	public:
@@ -1980,6 +1890,70 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 	~Standard_MultiplyDefined() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_MultiplyDefined\n");}
+	}
+};
+
+
+%nodefaultctor Standard_LicenseError;
+class Standard_LicenseError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Standard_LicenseError();
+		%feature("autodoc", "1");
+		Standard_LicenseError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_LicenseError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_LicenseError {
+	Handle_Standard_LicenseError GetHandle() {
+	return *(Handle_Standard_LicenseError*) &$self;
+	}
+};
+%extend Standard_LicenseError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_LicenseError {
+	~Standard_LicenseError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_LicenseError\n");}
+	}
+};
+
+
+%nodefaultctor Standard_TooManyUsers;
+class Standard_TooManyUsers : public Standard_LicenseError {
+	public:
+		%feature("autodoc", "1");
+		Standard_TooManyUsers();
+		%feature("autodoc", "1");
+		Standard_TooManyUsers(const char * AString);
+		%feature("autodoc", "1");
+		Handle_Standard_TooManyUsers NewInstance(const char * aMessage);
+
+};
+%extend Standard_TooManyUsers {
+	Handle_Standard_TooManyUsers GetHandle() {
+	return *(Handle_Standard_TooManyUsers*) &$self;
+	}
+};
+%extend Standard_TooManyUsers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_TooManyUsers {
+	~Standard_TooManyUsers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_TooManyUsers\n");}
 	}
 };
 
@@ -2112,41 +2086,6 @@ class Standard_Overflow : public Standard_NumericError {
 	~Standard_Overflow() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_Overflow\n");}
-	}
-};
-
-
-%nodefaultctor Standard_TooManyUsers;
-class Standard_TooManyUsers : public Standard_LicenseError {
-	public:
-		%feature("autodoc", "1");
-		Standard_TooManyUsers();
-		%feature("autodoc", "1");
-		Standard_TooManyUsers(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Standard_TooManyUsers NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_TooManyUsers {
-	Handle_Standard_TooManyUsers GetHandle() {
-	return *(Handle_Standard_TooManyUsers*) &$self;
-	}
-};
-%extend Standard_TooManyUsers {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Standard_TooManyUsers {
-	~Standard_TooManyUsers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_TooManyUsers\n");}
 	}
 };
 
@@ -2325,27 +2264,6 @@ class Standard_ErrorHandler {
 };
 
 
-%nodefaultctor Standard_Mutex;
-class Standard_Mutex : public Standard_ErrorHandlerCallback {
-	public:
-		%feature("autodoc", "1");
-		Standard_Mutex();
-		%feature("autodoc", "1");
-		void Lock();
-		%feature("autodoc", "1");
-		Standard_Boolean TryLock();
-		%feature("autodoc", "1");
-		void Unlock();
-
-};
-%extend Standard_Mutex {
-	~Standard_Mutex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Mutex\n");}
-	}
-};
-
-
 %nodefaultctor Standard_Persistent;
 class Standard_Persistent {
 	public:
@@ -2424,5 +2342,75 @@ class Standard_OutOfRange : public Standard_RangeError {
 	~Standard_OutOfRange() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_OutOfRange\n");}
+	}
+};
+
+
+%nodefaultctor Standard_DivideByZero;
+class Standard_DivideByZero : public Standard_NumericError {
+	public:
+		%feature("autodoc", "1");
+		Standard_DivideByZero();
+		%feature("autodoc", "1");
+		Standard_DivideByZero(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_DivideByZero NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_DivideByZero {
+	Handle_Standard_DivideByZero GetHandle() {
+	return *(Handle_Standard_DivideByZero*) &$self;
+	}
+};
+%extend Standard_DivideByZero {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_DivideByZero {
+	~Standard_DivideByZero() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_DivideByZero\n");}
+	}
+};
+
+
+%nodefaultctor Standard_OutOfMemory;
+class Standard_OutOfMemory : public Standard_ProgramError {
+	public:
+		%feature("autodoc", "1");
+		Standard_OutOfMemory();
+		%feature("autodoc", "1");
+		Standard_OutOfMemory(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Standard_OutOfMemory NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_OutOfMemory {
+	Handle_Standard_OutOfMemory GetHandle() {
+	return *(Handle_Standard_OutOfMemory*) &$self;
+	}
+};
+%extend Standard_OutOfMemory {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Standard_OutOfMemory {
+	~Standard_OutOfMemory() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Standard_OutOfMemory\n");}
 	}
 };

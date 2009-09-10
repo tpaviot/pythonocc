@@ -125,6 +125,36 @@ class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
 };
 
 
+%nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
+class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint();
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	NLPlate_SequenceNodeOfSequenceOfHGPPConstraint* GetObject() {
+	return (NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*)$self->Access();
+	}
+};
+%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
+	}
+};
+
+
 %nodefaultctor Handle_NLPlate_HPG0G2Constraint;
 class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
 	public:
@@ -305,32 +335,59 @@ class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode
 };
 
 
-%nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
-class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCollection_SeqNode {
+%nodefaultctor NLPlate_SequenceOfHGPPConstraint;
+class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint();
+		NLPlate_SequenceOfHGPPConstraint();
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		void Clear();
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		const NLPlate_SequenceOfHGPPConstraint & Assign(const NLPlate_SequenceOfHGPPConstraint &Other);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		const NLPlate_SequenceOfHGPPConstraint & operator=(const NLPlate_SequenceOfHGPPConstraint &Other);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		void Append(const Handle_NLPlate_HGPPConstraint &T);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint const DownCast(const Handle_Standard_Transient &AnObject);
+		void Append(NLPlate_SequenceOfHGPPConstraint & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_NLPlate_HGPPConstraint &T);
+		%feature("autodoc", "1");
+		void Prepend(NLPlate_SequenceOfHGPPConstraint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
+		%feature("autodoc", "1");
+		const Handle_NLPlate_HGPPConstraint & First() const;
+		%feature("autodoc", "1");
+		const Handle_NLPlate_HGPPConstraint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
+		%feature("autodoc", "1");
+		const Handle_NLPlate_HGPPConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_NLPlate_HGPPConstraint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &I);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HGPPConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HGPPConstraint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	NLPlate_SequenceNodeOfSequenceOfHGPPConstraint* GetObject() {
-	return (NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*)$self->Access();
-	}
-};
-%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
+%extend NLPlate_SequenceOfHGPPConstraint {
+	~NLPlate_SequenceOfHGPPConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
+	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
 	}
 };
 
@@ -406,159 +463,11 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 };
 
 
-%nodefaultctor NLPlate_HPG1Constraint;
-class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG1Constraint(const gp_XY &UV, const Plate_D1 &D1T);
-
-};
-%extend NLPlate_HPG1Constraint {
-	Handle_NLPlate_HPG1Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG1Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG1Constraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NLPlate_HPG1Constraint {
-	~NLPlate_HPG1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG1Constraint\n");}
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG2Constraint;
-class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG2Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
-
-};
-%extend NLPlate_HPG2Constraint {
-	Handle_NLPlate_HPG2Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG2Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG2Constraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NLPlate_HPG2Constraint {
-	~NLPlate_HPG2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG3Constraint;
-class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG3Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
-
-};
-%extend NLPlate_HPG3Constraint {
-	Handle_NLPlate_HPG3Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG3Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG3Constraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NLPlate_HPG3Constraint {
-	~NLPlate_HPG3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG3Constraint\n");}
-	}
-};
-
-
-%nodefaultctor NLPlate_SequenceOfHGPPConstraint;
-class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_SequenceOfHGPPConstraint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const NLPlate_SequenceOfHGPPConstraint & Assign(const NLPlate_SequenceOfHGPPConstraint &Other);
-		%feature("autodoc", "1");
-		const NLPlate_SequenceOfHGPPConstraint & operator=(const NLPlate_SequenceOfHGPPConstraint &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_NLPlate_HGPPConstraint &T);
-		%feature("autodoc", "1");
-		void Append(NLPlate_SequenceOfHGPPConstraint & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_NLPlate_HGPPConstraint &T);
-		%feature("autodoc", "1");
-		void Prepend(NLPlate_SequenceOfHGPPConstraint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
-		%feature("autodoc", "1");
-		const Handle_NLPlate_HGPPConstraint & First() const;
-		%feature("autodoc", "1");
-		const Handle_NLPlate_HGPPConstraint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, NLPlate_SequenceOfHGPPConstraint & S);
-		%feature("autodoc", "1");
-		const Handle_NLPlate_HGPPConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_NLPlate_HGPPConstraint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_NLPlate_HGPPConstraint &I);
-		%feature("autodoc", "1");
-		Handle_NLPlate_HGPPConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_NLPlate_HGPPConstraint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend NLPlate_SequenceOfHGPPConstraint {
-	~NLPlate_SequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
-	}
-};
-
-
 %nodefaultctor NLPlate_HPG0Constraint;
 class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	public:
 		%feature("autodoc", "1");
 		NLPlate_HPG0Constraint(const gp_XY &UV, const gp_XYZ &Value);
-		%feature("autodoc", "1");
-		virtual		void SetUVFreeSliding(const Standard_Boolean UVFree);
-		%feature("autodoc", "1");
-		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean UVFreeSliding() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IncrementalLoadAllowed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer ActiveOrder() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsG0() const;
-		%feature("autodoc", "1");
-		virtual		const gp_XYZ & G0Target() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend NLPlate_HPG0Constraint {
@@ -584,12 +493,6 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	public:
 		%feature("autodoc", "1");
 		NLPlate_HPG0G1Constraint(const gp_XY &UV, const gp_XYZ &Value, const Plate_D1 &D1T);
-		%feature("autodoc", "1");
-		virtual		void SetOrientation(const Standard_Integer Orient=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Orientation();
-		%feature("autodoc", "1");
-		virtual		const Plate_D1 & G1Target() const;
 
 };
 %extend NLPlate_HPG0G1Constraint {
@@ -615,8 +518,6 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
 		%feature("autodoc", "1");
 		NLPlate_HPG0G2Constraint(const gp_XY &UV, const gp_XYZ &Value, const Plate_D1 &D1T, const Plate_D2 &D2T);
-		%feature("autodoc", "1");
-		virtual		const Plate_D2 & G2Target() const;
 
 };
 %extend NLPlate_HPG0G2Constraint {
@@ -633,6 +534,177 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	~NLPlate_HPG0G2Constraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G2Constraint\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_StackOfPlate;
+class NLPlate_StackOfPlate {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_StackOfPlate();
+		%feature("autodoc", "1");
+		const NLPlate_StackOfPlate & Assign(const NLPlate_StackOfPlate &Other);
+		%feature("autodoc", "1");
+		const NLPlate_StackOfPlate & operator=(const NLPlate_StackOfPlate &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const Plate_Plate & Top() const;
+		%feature("autodoc", "1");
+		void Push(const Plate_Plate &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Plate_Plate & ChangeTop();
+
+};
+%extend NLPlate_StackOfPlate {
+	~NLPlate_StackOfPlate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_StackOfPlate\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_NLPlate;
+class NLPlate_NLPlate {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_NLPlate(const Handle_Geom_Surface &InitialSurface);
+		%feature("autodoc", "1");
+		void Load(const Handle_NLPlate_HGPPConstraint &GConst);
+		%feature("autodoc", "1");
+		void Solve(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1);
+		%feature("autodoc", "1");
+		void Solve2(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1);
+		%feature("autodoc", "1");
+		void IncrementalSolve(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1, const Standard_Integer NbIncrements=4, const Standard_Boolean UVSliding=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void destroy();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		gp_XYZ Evaluate(const gp_XY &point2d) const;
+		%feature("autodoc", "1");
+		gp_XYZ EvaluateDerivative(const gp_XY &point2d, const Standard_Integer iu, const Standard_Integer iv) const;
+		%feature("autodoc", "1");
+		Standard_Integer Continuity() const;
+		%feature("autodoc", "1");
+		void ConstraintsSliding(const Standard_Integer NbIterations=3);
+		%feature("autodoc", "1");
+		Standard_Integer MaxActiveConstraintOrder() const;
+
+};
+%extend NLPlate_NLPlate {
+	~NLPlate_NLPlate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG1Constraint;
+class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG1Constraint(const gp_XY &UV, const Plate_D1 &D1T);
+		%feature("autodoc", "1");
+		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
+		%feature("autodoc", "1");
+		virtual		void SetOrientation(const Standard_Integer Orient=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IncrementalLoadAllowed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer ActiveOrder() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsG0() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Orientation();
+		%feature("autodoc", "1");
+		virtual		const Plate_D1 & G1Target() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_HPG1Constraint {
+	Handle_NLPlate_HPG1Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG1Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG1Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NLPlate_HPG1Constraint {
+	~NLPlate_HPG1Constraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG1Constraint\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG2Constraint;
+class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG2Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
+		%feature("autodoc", "1");
+		virtual		const Plate_D2 & G2Target() const;
+
+};
+%extend NLPlate_HPG2Constraint {
+	Handle_NLPlate_HPG2Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG2Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG2Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NLPlate_HPG2Constraint {
+	~NLPlate_HPG2Constraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG3Constraint;
+class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG3Constraint(const gp_XY &UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer ActiveOrder() const;
+		%feature("autodoc", "1");
+		virtual		const Plate_D3 & G3Target() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_HPG3Constraint {
+	Handle_NLPlate_HPG3Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG3Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG3Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NLPlate_HPG3Constraint {
+	~NLPlate_HPG3Constraint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG3Constraint\n");}
 	}
 };
 
@@ -697,45 +769,6 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 };
 
 
-%nodefaultctor NLPlate_NLPlate;
-class NLPlate_NLPlate {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_NLPlate(const Handle_Geom_Surface &InitialSurface);
-		%feature("autodoc", "1");
-		void Load(const Handle_NLPlate_HGPPConstraint &GConst);
-		%feature("autodoc", "1");
-		void Solve(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1);
-		%feature("autodoc", "1");
-		void Solve2(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1);
-		%feature("autodoc", "1");
-		void IncrementalSolve(const Standard_Integer ord=2, const Standard_Integer InitialConsraintOrder=1, const Standard_Integer NbIncrements=4, const Standard_Boolean UVSliding=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void destroy();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		gp_XYZ Evaluate(const gp_XY &point2d) const;
-		%feature("autodoc", "1");
-		gp_XYZ EvaluateDerivative(const gp_XY &point2d, const Standard_Integer iu, const Standard_Integer iv) const;
-		%feature("autodoc", "1");
-		Standard_Integer Continuity() const;
-		%feature("autodoc", "1");
-		void ConstraintsSliding(const Standard_Integer NbIterations=3);
-		%feature("autodoc", "1");
-		Standard_Integer MaxActiveConstraintOrder() const;
-
-};
-%extend NLPlate_NLPlate {
-	~NLPlate_NLPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
-	}
-};
-
-
 %nodefaultctor NLPlate_StackNodeOfStackOfPlate;
 class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	public:
@@ -761,39 +794,6 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	~NLPlate_StackNodeOfStackOfPlate() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
-	}
-};
-
-
-%nodefaultctor NLPlate_StackOfPlate;
-class NLPlate_StackOfPlate {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_StackOfPlate();
-		%feature("autodoc", "1");
-		const NLPlate_StackOfPlate & Assign(const NLPlate_StackOfPlate &Other);
-		%feature("autodoc", "1");
-		const NLPlate_StackOfPlate & operator=(const NLPlate_StackOfPlate &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		const Plate_Plate & Top() const;
-		%feature("autodoc", "1");
-		void Push(const Plate_Plate &I);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Plate_Plate & ChangeTop();
-
-};
-%extend NLPlate_StackOfPlate {
-	~NLPlate_StackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_StackOfPlate\n");}
 	}
 };
 

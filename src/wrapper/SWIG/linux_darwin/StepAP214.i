@@ -95,66 +95,6 @@ class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDatedItem;
-class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
-	StepAP214_HArray1OfAutoDesignDatedItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment;
-class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	StepAP214_AutoDesignNominalDateAndTimeAssignment* GetObject() {
-	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepAP214_AutoDesignApprovalAssignment;
 class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_ApprovalAssignment {
 	public:
@@ -185,32 +125,32 @@ class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_Ap
 };
 
 
-%nodefaultctor Handle_StepAP214_AutoDesignActualDateAssignment;
-class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_DateAssignment {
+%nodefaultctor Handle_StepAP214_AppliedSecurityClassificationAssignment;
+class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_StepBasic_SecurityClassificationAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment();
+		Handle_StepAP214_AppliedSecurityClassificationAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment(const Handle_StepAP214_AutoDesignActualDateAssignment &aHandle);
+		Handle_StepAP214_AppliedSecurityClassificationAssignment(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment(const StepAP214_AutoDesignActualDateAssignment *anItem);
+		Handle_StepAP214_AppliedSecurityClassificationAssignment(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const Handle_StepAP214_AutoDesignActualDateAssignment &aHandle);
+		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const StepAP214_AutoDesignActualDateAssignment *anItem);
+		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignActualDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_AppliedSecurityClassificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AutoDesignActualDateAssignment {
-	StepAP214_AutoDesignActualDateAssignment* GetObject() {
-	return (StepAP214_AutoDesignActualDateAssignment*)$self->Access();
+%extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
+	StepAP214_AppliedSecurityClassificationAssignment* GetObject() {
+	return (StepAP214_AppliedSecurityClassificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignActualDateAssignment {
-	~Handle_StepAP214_AutoDesignActualDateAssignment() {
+%extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
+	~Handle_StepAP214_AppliedSecurityClassificationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -241,6 +181,36 @@ class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_Presen
 	~Handle_StepAP214_AutoDesignPresentedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPresentedItem\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_ExternallyDefinedClass;
+class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass();
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass(const Handle_StepAP214_ExternallyDefinedClass &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass(const StepAP214_ExternallyDefinedClass *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass & operator=(const Handle_StepAP214_ExternallyDefinedClass &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass & operator=(const StepAP214_ExternallyDefinedClass *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_ExternallyDefinedClass {
+	StepAP214_ExternallyDefinedClass* GetObject() {
+	return (StepAP214_ExternallyDefinedClass*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_ExternallyDefinedClass {
+	~Handle_StepAP214_ExternallyDefinedClass() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");}
 	}
 };
 
@@ -335,6 +305,36 @@ class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_St
 };
 
 
+%nodefaultctor Handle_StepAP214_AppliedGroupAssignment;
+class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment(const Handle_StepAP214_AppliedGroupAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment(const StepAP214_AppliedGroupAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment & operator=(const Handle_StepAP214_AppliedGroupAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment & operator=(const StepAP214_AppliedGroupAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedGroupAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AppliedGroupAssignment {
+	StepAP214_AppliedGroupAssignment* GetObject() {
+	return (StepAP214_AppliedGroupAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_AppliedGroupAssignment {
+	~Handle_StepAP214_AppliedGroupAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_AutoDesignNominalDateAssignment;
 class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic_DateAssignment {
 	public:
@@ -365,6 +365,36 @@ class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic
 };
 
 
+%nodefaultctor Handle_StepAP214_Protocol;
+class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol();
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol(const Handle_StepAP214_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol(const StepAP214_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol & operator=(const Handle_StepAP214_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol & operator=(const StepAP214_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_Protocol {
+	StepAP214_Protocol* GetObject() {
+	return (StepAP214_Protocol*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_Protocol {
+	~Handle_StepAP214_Protocol() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Protocol\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_HArray1OfDateAndTimeItem;
 class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 	public:
@@ -391,6 +421,36 @@ class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 	~Handle_StepAP214_HArray1OfDateAndTimeItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateAndTimeItem\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_AppliedDateAndTimeAssignment;
+class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment(const StepAP214_AppliedDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const StepAP214_AppliedDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AppliedDateAndTimeAssignment {
+	StepAP214_AppliedDateAndTimeAssignment* GetObject() {
+	return (StepAP214_AppliedDateAndTimeAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_AppliedDateAndTimeAssignment {
+	~Handle_StepAP214_AppliedDateAndTimeAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");}
 	}
 };
 
@@ -455,6 +515,36 @@ class Handle_StepAP214_HArray1OfDocumentReferenceItem : public Handle_MMgt_TShar
 };
 
 
+%nodefaultctor Handle_StepAP214_HArray1OfPresentedItemSelect;
+class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect(const Handle_StepAP214_HArray1OfPresentedItemSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect(const StepAP214_HArray1OfPresentedItemSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfPresentedItemSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const StepAP214_HArray1OfPresentedItemSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfPresentedItemSelect {
+	StepAP214_HArray1OfPresentedItemSelect* GetObject() {
+	return (StepAP214_HArray1OfPresentedItemSelect*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_HArray1OfPresentedItemSelect {
+	~Handle_StepAP214_HArray1OfPresentedItemSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_AppliedDocumentReference;
 class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_DocumentReference {
 	public:
@@ -511,36 +601,6 @@ class Handle_StepAP214_HArray1OfGroupItem : public Handle_MMgt_TShared {
 	~Handle_StepAP214_HArray1OfGroupItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfGroupItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignReferencingItem;
-class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
-	StepAP214_HArray1OfAutoDesignReferencingItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
-	~Handle_StepAP214_HArray1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");}
 	}
 };
 
@@ -605,92 +665,62 @@ class Handle_StepAP214_AutoDesignActualDateAndTimeAssignment : public Handle_Ste
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedSecurityClassificationAssignment;
-class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_StepBasic_SecurityClassificationAssignment {
+%nodefaultctor Handle_StepAP214_AppliedExternalIdentificationAssignment;
+class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_StepBasic_ExternalIdentificationAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment();
+		Handle_StepAP214_AppliedExternalIdentificationAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
+		Handle_StepAP214_AppliedExternalIdentificationAssignment(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
+		Handle_StepAP214_AppliedExternalIdentificationAssignment(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const Handle_StepAP214_AppliedSecurityClassificationAssignment &aHandle);
+		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment & operator=(const StepAP214_AppliedSecurityClassificationAssignment *anItem);
+		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedSecurityClassificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_AppliedExternalIdentificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
-	StepAP214_AppliedSecurityClassificationAssignment* GetObject() {
-	return (StepAP214_AppliedSecurityClassificationAssignment*)$self->Access();
+%extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
+	StepAP214_AppliedExternalIdentificationAssignment* GetObject() {
+	return (StepAP214_AppliedExternalIdentificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
-	~Handle_StepAP214_AppliedSecurityClassificationAssignment() {
+%extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
+	~Handle_StepAP214_AppliedExternalIdentificationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedDateAssignment;
-class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssignment {
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignReferencingItem;
+class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment();
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment(const Handle_StepAP214_AppliedDateAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment(const StepAP214_AppliedDateAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment & operator=(const Handle_StepAP214_AppliedDateAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment & operator=(const StepAP214_AppliedDateAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedDateAssignment {
-	StepAP214_AppliedDateAssignment* GetObject() {
-	return (StepAP214_AppliedDateAssignment*)$self->Access();
+%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
+	StepAP214_HArray1OfAutoDesignReferencingItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedDateAssignment {
-	~Handle_StepAP214_AppliedDateAssignment() {
+%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
+	~Handle_StepAP214_HArray1OfAutoDesignReferencingItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AutoDesignOrganizationAssignment;
-class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment(const StepAP214_AutoDesignOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const StepAP214_AutoDesignOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
-	StepAP214_AutoDesignOrganizationAssignment* GetObject() {
-	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
-	~Handle_StepAP214_AutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");}
 	}
 };
 
@@ -725,6 +755,36 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 };
 
 
+%nodefaultctor Handle_StepAP214_AutoDesignActualDateAssignment;
+class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_DateAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment(const Handle_StepAP214_AutoDesignActualDateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment(const StepAP214_AutoDesignActualDateAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const Handle_StepAP214_AutoDesignActualDateAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment & operator=(const StepAP214_AutoDesignActualDateAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignActualDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AutoDesignActualDateAssignment {
+	StepAP214_AutoDesignActualDateAssignment* GetObject() {
+	return (StepAP214_AutoDesignActualDateAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_AutoDesignActualDateAssignment {
+	~Handle_StepAP214_AutoDesignActualDateAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem;
 class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TShared {
 	public:
@@ -751,6 +811,36 @@ class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TS
 	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem;
+class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	StepAP214_HArray1OfAutoDesignDateAndTimeItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -785,32 +875,32 @@ class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle
 };
 
 
-%nodefaultctor Handle_StepAP214_ExternallyDefinedClass;
-class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDatedItem;
+class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass();
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass(const Handle_StepAP214_ExternallyDefinedClass &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass(const StepAP214_ExternallyDefinedClass *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass & operator=(const Handle_StepAP214_ExternallyDefinedClass &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass & operator=(const StepAP214_ExternallyDefinedClass *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_ExternallyDefinedClass {
-	StepAP214_ExternallyDefinedClass* GetObject() {
-	return (StepAP214_ExternallyDefinedClass*)$self->Access();
+%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
+	StepAP214_HArray1OfAutoDesignDatedItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_ExternallyDefinedClass {
-	~Handle_StepAP214_ExternallyDefinedClass() {
+%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
+	~Handle_StepAP214_HArray1OfAutoDesignDatedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");}
 	}
 };
 
@@ -845,92 +935,32 @@ class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasi
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedGroupAssignment;
-class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAssignment {
+%nodefaultctor Handle_StepAP214_AppliedDateAssignment;
+class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment();
+		Handle_StepAP214_AppliedDateAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment(const Handle_StepAP214_AppliedGroupAssignment &aHandle);
+		Handle_StepAP214_AppliedDateAssignment(const Handle_StepAP214_AppliedDateAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment(const StepAP214_AppliedGroupAssignment *anItem);
+		Handle_StepAP214_AppliedDateAssignment(const StepAP214_AppliedDateAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment & operator=(const Handle_StepAP214_AppliedGroupAssignment &aHandle);
+		Handle_StepAP214_AppliedDateAssignment & operator=(const Handle_StepAP214_AppliedDateAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment & operator=(const StepAP214_AppliedGroupAssignment *anItem);
+		Handle_StepAP214_AppliedDateAssignment & operator=(const StepAP214_AppliedDateAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedGroupAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_AppliedDateAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedGroupAssignment {
-	StepAP214_AppliedGroupAssignment* GetObject() {
-	return (StepAP214_AppliedGroupAssignment*)$self->Access();
+%extend Handle_StepAP214_AppliedDateAssignment {
+	StepAP214_AppliedDateAssignment* GetObject() {
+	return (StepAP214_AppliedDateAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedGroupAssignment {
-	~Handle_StepAP214_AppliedGroupAssignment() {
+%extend Handle_StepAP214_AppliedDateAssignment {
+	~Handle_StepAP214_AppliedDateAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AppliedDateAndTimeAssignment;
-class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment(const StepAP214_AppliedDateAndTimeAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const Handle_StepAP214_AppliedDateAndTimeAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment & operator=(const StepAP214_AppliedDateAndTimeAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AppliedDateAndTimeAssignment {
-	StepAP214_AppliedDateAndTimeAssignment* GetObject() {
-	return (StepAP214_AppliedDateAndTimeAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_AppliedDateAndTimeAssignment {
-	~Handle_StepAP214_AppliedDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AppliedExternalIdentificationAssignment;
-class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_StepBasic_ExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const Handle_StepAP214_AppliedExternalIdentificationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment & operator=(const StepAP214_AppliedExternalIdentificationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedExternalIdentificationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
-	StepAP214_AppliedExternalIdentificationAssignment* GetObject() {
-	return (StepAP214_AppliedExternalIdentificationAssignment*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
-	~Handle_StepAP214_AppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");}
 	}
 };
 
@@ -961,6 +991,36 @@ class Handle_StepAP214_AutoDesignSecurityClassificationAssignment : public Handl
 	~Handle_StepAP214_AutoDesignSecurityClassificationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignSecurityClassificationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_AppliedOrganizationAssignment;
+class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment(const StepAP214_AppliedOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const StepAP214_AppliedOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AppliedOrganizationAssignment {
+	StepAP214_AppliedOrganizationAssignment* GetObject() {
+	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_AppliedOrganizationAssignment {
+	~Handle_StepAP214_AppliedOrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");}
 	}
 };
 
@@ -1115,6 +1175,36 @@ class Handle_StepAP214_AutoDesignGroupAssignment : public Handle_StepBasic_Group
 };
 
 
+%nodefaultctor Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment;
+class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	StepAP214_AutoDesignNominalDateAndTimeAssignment* GetObject() {
+	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
+	}
+};
+%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_HArray1OfExternalIdentificationItem;
 class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_TShared {
 	public:
@@ -1141,36 +1231,6 @@ class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_
 	~Handle_StepAP214_HArray1OfExternalIdentificationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfExternalIdentificationItem\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfPersonAndOrganizationItem;
-class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	StepAP214_HArray1OfPersonAndOrganizationItem* GetObject() {
-	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	~Handle_StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");}
 	}
 };
 
@@ -1235,122 +1295,101 @@ class Handle_StepAP214_AppliedApprovalAssignment : public Handle_StepBasic_Appro
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedOrganizationAssignment;
-class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
+%nodefaultctor Handle_StepAP214_AutoDesignOrganizationAssignment;
+class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment();
+		Handle_StepAP214_AutoDesignOrganizationAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		Handle_StepAP214_AutoDesignOrganizationAssignment(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment(const StepAP214_AppliedOrganizationAssignment *anItem);
+		Handle_StepAP214_AutoDesignOrganizationAssignment(const StepAP214_AutoDesignOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const StepAP214_AppliedOrganizationAssignment *anItem);
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const StepAP214_AutoDesignOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_AutoDesignOrganizationAssignment const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedOrganizationAssignment {
-	StepAP214_AppliedOrganizationAssignment* GetObject() {
-	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
+%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
+	StepAP214_AutoDesignOrganizationAssignment* GetObject() {
+	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedOrganizationAssignment {
-	~Handle_StepAP214_AppliedOrganizationAssignment() {
+%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
+	~Handle_StepAP214_AutoDesignOrganizationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem;
-class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepAP214_HArray1OfPersonAndOrganizationItem;
+class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem();
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	StepAP214_HArray1OfAutoDesignDateAndTimeItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
+%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
+	StepAP214_HArray1OfPersonAndOrganizationItem* GetObject() {
+	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
+%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
+	~Handle_StepAP214_HArray1OfPersonAndOrganizationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfPresentedItemSelect;
-class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared {
+%nodefaultctor StepAP214_AppliedOrganizationAssignment;
+class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect();
+		StepAP214_AppliedOrganizationAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect(const Handle_StepAP214_HArray1OfPresentedItemSelect &aHandle);
+		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect(const StepAP214_HArray1OfPresentedItemSelect *anItem);
+		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole, const Handle_StepAP214_HArray1OfOrganizationItem &aItems);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfPresentedItemSelect &aHandle);
+		void SetItems(const Handle_StepAP214_HArray1OfOrganizationItem &aItems);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect & operator=(const StepAP214_HArray1OfPresentedItemSelect *anItem);
+		Handle_StepAP214_HArray1OfOrganizationItem Items() const;
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect const DownCast(const Handle_Standard_Transient &AnObject);
+		StepAP214_OrganizationItem ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_StepAP214_HArray1OfPresentedItemSelect {
-	StepAP214_HArray1OfPresentedItemSelect* GetObject() {
-	return (StepAP214_HArray1OfPresentedItemSelect*)$self->Access();
+%extend StepAP214_AppliedOrganizationAssignment {
+	Handle_StepAP214_AppliedOrganizationAssignment GetHandle() {
+	return *(Handle_StepAP214_AppliedOrganizationAssignment*) &$self;
 	}
 };
-%extend Handle_StepAP214_HArray1OfPresentedItemSelect {
-	~Handle_StepAP214_HArray1OfPresentedItemSelect() {
+%extend StepAP214_AppliedOrganizationAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AppliedOrganizationAssignment {
+	~StepAP214_AppliedOrganizationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_Protocol;
-class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol();
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol(const Handle_StepAP214_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol(const StepAP214_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol & operator=(const Handle_StepAP214_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol & operator=(const StepAP214_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Protocol const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_Protocol {
-	StepAP214_Protocol* GetObject() {
-	return (StepAP214_Protocol*)$self->Access();
-	}
-};
-%extend Handle_StepAP214_Protocol {
-	~Handle_StepAP214_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Protocol\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");}
 	}
 };
 
@@ -1413,64 +1452,6 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 };
 
 
-%nodefaultctor StepAP214_ApprovalItem;
-class StepAP214_ApprovalItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_ApprovalItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepRepr_AssemblyComponentUsageSubstitute AssemblyComponentUsageSubstitute() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_DocumentFile DocumentFile() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation MechanicalDesignGeometricPresentationRepresentation() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepVisual_PresentationArea PresentationArea() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_Product Product() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepBasic_SecurityClassification SecurityClassification() const;
-
-};
-%extend StepAP214_ApprovalItem {
-	~StepAP214_ApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ApprovalItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_PersonAndOrganizationItem;
-class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_PersonAndOrganizationItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
-
-};
-%extend StepAP214_PersonAndOrganizationItem {
-	~StepAP214_PersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_GroupItem;
 class StepAP214_GroupItem : public StepData_SelectType {
 	public:
@@ -1486,6 +1467,39 @@ class StepAP214_GroupItem : public StepData_SelectType {
 	~StepAP214_GroupItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_GroupItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_ExternallyDefinedGeneralProperty;
+class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralProperty {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_ExternallyDefinedGeneralProperty();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGeneralProperty_Id, const Handle_TCollection_HAsciiString &aGeneralProperty_Name, const Standard_Boolean hasGeneralProperty_Description, const Handle_TCollection_HAsciiString &aGeneralProperty_Description, const StepBasic_SourceItem &aExternallyDefinedItem_ItemId, const Handle_StepBasic_ExternalSource &aExternallyDefinedItem_Source);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternallyDefinedItem ExternallyDefinedItem() const;
+		%feature("autodoc", "1");
+		void SetExternallyDefinedItem(const Handle_StepBasic_ExternallyDefinedItem &ExternallyDefinedItem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_ExternallyDefinedGeneralProperty {
+	Handle_StepAP214_ExternallyDefinedGeneralProperty GetHandle() {
+	return *(Handle_StepAP214_ExternallyDefinedGeneralProperty*) &$self;
+	}
+};
+%extend StepAP214_ExternallyDefinedGeneralProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_ExternallyDefinedGeneralProperty {
+	~StepAP214_ExternallyDefinedGeneralProperty() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");}
 	}
 };
 
@@ -1533,39 +1547,6 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 	~StepAP214_HArray1OfExternalIdentificationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfExternalIdentificationItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_ExternallyDefinedGeneralProperty;
-class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralProperty {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_ExternallyDefinedGeneralProperty();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGeneralProperty_Id, const Handle_TCollection_HAsciiString &aGeneralProperty_Name, const Standard_Boolean hasGeneralProperty_Description, const Handle_TCollection_HAsciiString &aGeneralProperty_Description, const StepBasic_SourceItem &aExternallyDefinedItem_ItemId, const Handle_StepBasic_ExternalSource &aExternallyDefinedItem_Source);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ExternallyDefinedItem ExternallyDefinedItem() const;
-		%feature("autodoc", "1");
-		void SetExternallyDefinedItem(const Handle_StepBasic_ExternallyDefinedItem &ExternallyDefinedItem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_ExternallyDefinedGeneralProperty {
-	Handle_StepAP214_ExternallyDefinedGeneralProperty GetHandle() {
-	return *(Handle_StepAP214_ExternallyDefinedGeneralProperty*) &$self;
-	}
-};
-%extend StepAP214_ExternallyDefinedGeneralProperty {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_ExternallyDefinedGeneralProperty {
-	~StepAP214_ExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");}
 	}
 };
 
@@ -1689,43 +1670,6 @@ class StepAP214_Array1OfDateItem {
 };
 
 
-%nodefaultctor StepAP214_AppliedPresentedItem;
-class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AppliedPresentedItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepAP214_HArray1OfPresentedItemSelect &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfPresentedItemSelect &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPresentedItemSelect Items() const;
-		%feature("autodoc", "1");
-		StepAP214_PresentedItemSelect ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AppliedPresentedItem {
-	Handle_StepAP214_AppliedPresentedItem GetHandle() {
-	return *(Handle_StepAP214_AppliedPresentedItem*) &$self;
-	}
-};
-%extend StepAP214_AppliedPresentedItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AppliedPresentedItem {
-	~StepAP214_AppliedPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_AppliedApprovalAssignment;
 class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment {
 	public:
@@ -1761,117 +1705,6 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 	~StepAP214_AppliedApprovalAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedApprovalAssignment\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AppliedOrganizationAssignment;
-class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AppliedOrganizationAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Organization &aAssignedOrganization, const Handle_StepBasic_OrganizationRole &aRole, const Handle_StepAP214_HArray1OfOrganizationItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfOrganizationItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfOrganizationItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_OrganizationItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AppliedOrganizationAssignment {
-	Handle_StepAP214_AppliedOrganizationAssignment GetHandle() {
-	return *(Handle_StepAP214_AppliedOrganizationAssignment*) &$self;
-	}
-};
-%extend StepAP214_AppliedOrganizationAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AppliedOrganizationAssignment {
-	~StepAP214_AppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_RepItemGroup;
-class StepAP214_RepItemGroup : public StepBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_RepItemGroup();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Standard_Boolean hasGroup_Description, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_TCollection_HAsciiString &aRepresentationItem_Name);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem RepresentationItem() const;
-		%feature("autodoc", "1");
-		void SetRepresentationItem(const Handle_StepRepr_RepresentationItem &RepresentationItem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_RepItemGroup {
-	Handle_StepAP214_RepItemGroup GetHandle() {
-	return *(Handle_StepAP214_RepItemGroup*) &$self;
-	}
-};
-%extend StepAP214_RepItemGroup {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_RepItemGroup {
-	~StepAP214_RepItemGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_RepItemGroup\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AutoDesignNominalDateAndTimeAssignment;
-class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignNominalDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment GetHandle() {
-	return *(Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment*) &$self;
-	}
-};
-%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -1923,86 +1756,41 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP214_AppliedDocumentReference;
-class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
+%nodefaultctor StepAP214_AutoDesignNominalDateAndTimeAssignment;
+class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AppliedDocumentReference();
+		StepAP214_AutoDesignNominalDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Document &aAssignedDocument, const Handle_TCollection_HAsciiString &aSource, const Handle_StepAP214_HArray1OfDocumentReferenceItem &aItems);
+		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDocumentReferenceItem Items() const;
+		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
 		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfDocumentReferenceItem &aItems);
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
 		%feature("autodoc", "1");
-		StepAP214_DocumentReferenceItem ItemsValue(const Standard_Integer num) const;
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem Items() const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_AppliedDocumentReference {
-	Handle_StepAP214_AppliedDocumentReference GetHandle() {
-	return *(Handle_StepAP214_AppliedDocumentReference*) &$self;
+%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment GetHandle() {
+	return *(Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment*) &$self;
 	}
 };
-%extend StepAP214_AppliedDocumentReference {
+%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedDocumentReference {
-	~StepAP214_AppliedDocumentReference() {
+%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	~StepAP214_AutoDesignNominalDateAndTimeAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_HArray1OfApprovalItem;
-class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_ApprovalItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_ApprovalItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_ApprovalItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_ApprovalItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_ApprovalItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfApprovalItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfApprovalItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_HArray1OfApprovalItem {
-	Handle_StepAP214_HArray1OfApprovalItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfApprovalItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfApprovalItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfApprovalItem {
-	~StepAP214_HArray1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -2046,15 +1834,23 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 };
 
 
-%nodefaultctor StepAP214_HArray1OfPresentedItemSelect;
-class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
+%nodefaultctor StepAP214_Array1OfAutoDesignDatedItem;
+class StepAP214_Array1OfAutoDesignDatedItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_Array1OfAutoDesignDatedItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_PresentedItemSelect &V);
+		StepAP214_Array1OfAutoDesignDatedItem(const StepAP214_AutoDesignDatedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_PresentedItemSelect &V);
+		void Init(const StepAP214_AutoDesignDatedItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDatedItem & Assign(const StepAP214_Array1OfAutoDesignDatedItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDatedItem & operator=(const StepAP214_Array1OfAutoDesignDatedItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2062,72 +1858,21 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_PresentedItemSelect &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDatedItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_PresentedItemSelect & Value(const Standard_Integer Index) const;
+		const StepAP214_AutoDesignDatedItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP214_PresentedItemSelect & ChangeValue(const Standard_Integer Index);
+		const StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfPresentedItemSelect & Array1() const;
+		StepAP214_AutoDesignDatedItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP214_Array1OfPresentedItemSelect & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_HArray1OfPresentedItemSelect {
-	Handle_StepAP214_HArray1OfPresentedItemSelect GetHandle() {
-	return *(Handle_StepAP214_HArray1OfPresentedItemSelect*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfPresentedItemSelect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfPresentedItemSelect {
-	~StepAP214_HArray1OfPresentedItemSelect() {
+%extend StepAP214_Array1OfAutoDesignDatedItem {
+	~StepAP214_Array1OfAutoDesignDatedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AutoDesignPersonAndOrganizationAssignment;
-class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignPersonAndOrganizationAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGeneralOrgItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment GetHandle() {
-	return *(Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment*) &$self;
-	}
-};
-%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	~StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");}
 	}
 };
 
@@ -2171,45 +1916,6 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 };
 
 
-%nodefaultctor StepAP214_AutoDesignGroupedItem;
-class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGroupedItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation AdvancedBrepShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_CsgShapeRepresentation CsgShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_FacetedBrepShapeRepresentation FacetedBrepShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation GeometricallyBoundedSurfaceShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation GeometricallyBoundedWireframeShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSurfaceShapeRepresentation ManifoldSurfaceShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem RepresentationItem() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_TemplateInstance TemplateInstance() const;
-
-};
-%extend StepAP214_AutoDesignGroupedItem {
-	~StepAP214_AutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_AppliedDateAssignment;
 class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	public:
@@ -2245,6 +1951,47 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	~StepAP214_AppliedDateAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAssignment\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_ApprovalItem;
+class StepAP214_ApprovalItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_ApprovalItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepRepr_AssemblyComponentUsageSubstitute AssemblyComponentUsageSubstitute() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_DocumentFile DocumentFile() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation MechanicalDesignGeometricPresentationRepresentation() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepVisual_PresentationArea PresentationArea() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_Product Product() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_ProductDefinition ProductDefinition() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepBasic_SecurityClassification SecurityClassification() const;
+
+};
+%extend StepAP214_ApprovalItem {
+	~StepAP214_ApprovalItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_ApprovalItem\n");}
 	}
 };
 
@@ -2296,27 +2043,6 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP214_PresentedItemSelect;
-class StepAP214_PresentedItemSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_PresentedItemSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-
-};
-%extend StepAP214_PresentedItemSelect {
-	~StepAP214_PresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PresentedItemSelect\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_DateItem;
 class StepAP214_DateItem : public StepAP214_ApprovalItem {
 	public:
@@ -2342,17 +2068,88 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 };
 
 
-%nodefaultctor StepAP214_SecurityClassificationItem;
-class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
+%nodefaultctor StepAP214_HArray1OfApprovalItem;
+class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_SecurityClassificationItem();
+		StepAP214_HArray1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_ApprovalItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_ApprovalItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_ApprovalItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_ApprovalItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_ApprovalItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfApprovalItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfApprovalItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_SecurityClassificationItem {
-	~StepAP214_SecurityClassificationItem() {
+%extend StepAP214_HArray1OfApprovalItem {
+	Handle_StepAP214_HArray1OfApprovalItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfApprovalItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfApprovalItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfApprovalItem {
+	~StepAP214_HArray1OfApprovalItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AppliedPersonAndOrganizationAssignment;
+class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AppliedPersonAndOrganizationAssignment();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole, const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aItems);
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem Items() const;
+		%feature("autodoc", "1");
+		StepAP214_PersonAndOrganizationItem ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AppliedPersonAndOrganizationAssignment {
+	Handle_StepAP214_AppliedPersonAndOrganizationAssignment GetHandle() {
+	return *(Handle_StepAP214_AppliedPersonAndOrganizationAssignment*) &$self;
+	}
+};
+%extend StepAP214_AppliedPersonAndOrganizationAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AppliedPersonAndOrganizationAssignment {
+	~StepAP214_AppliedPersonAndOrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -2404,15 +2201,60 @@ class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndTimeItem;
-class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
+%nodefaultctor StepAP214_AppliedDocumentReference;
+class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_AppliedDocumentReference();
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndTimeItem &V);
+		void Init(const Handle_StepBasic_Document &aAssignedDocument, const Handle_TCollection_HAsciiString &aSource, const Handle_StepAP214_HArray1OfDocumentReferenceItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDocumentReferenceItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfDocumentReferenceItem &aItems);
+		%feature("autodoc", "1");
+		StepAP214_DocumentReferenceItem ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AppliedDocumentReference {
+	Handle_StepAP214_AppliedDocumentReference GetHandle() {
+	return *(Handle_StepAP214_AppliedDocumentReference*) &$self;
+	}
+};
+%extend StepAP214_AppliedDocumentReference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AppliedDocumentReference {
+	~StepAP214_AppliedDocumentReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_Array1OfAutoDesignDateAndTimeItem;
+class StepAP214_Array1OfAutoDesignDateAndTimeItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignDateAndTimeItem(const StepAP214_AutoDesignDateAndTimeItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
 		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Assign(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2424,29 +2266,17 @@ class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const StepAP214_AutoDesignDateAndTimeItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
+		const StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
 		StepAP214_AutoDesignDateAndTimeItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndTimeItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
+%extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
+	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -2494,15 +2324,15 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 };
 
 
-%nodefaultctor StepAP214_HArray1OfDateItem;
-class StepAP214_HArray1OfDateItem : public MMgt_TShared {
+%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndPersonItem;
+class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfDateItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfDateItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_DateItem &V);
+		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndPersonItem &V);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_DateItem &V);
+		void Init(const StepAP214_AutoDesignDateAndPersonItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2510,33 +2340,58 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_DateItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndPersonItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_DateItem & Value(const Standard_Integer Index) const;
+		const StepAP214_AutoDesignDateAndPersonItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP214_DateItem & ChangeValue(const Standard_Integer Index);
+		StepAP214_AutoDesignDateAndPersonItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfDateItem & Array1() const;
+		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP214_Array1OfDateItem & ChangeArray1();
+		StepAP214_Array1OfAutoDesignDateAndPersonItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_HArray1OfDateItem {
-	Handle_StepAP214_HArray1OfDateItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfDateItem*) &$self;
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+	Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem*) &$self;
 	}
 };
-%extend StepAP214_HArray1OfDateItem {
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfDateItem {
-	~StepAP214_HArray1OfDateItem() {
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+	~StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_ExternalIdentificationItem;
+class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_ExternalIdentificationItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_DocumentFile DocumentFile() const;
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedClass ExternallyDefinedClass() const;
+		%feature("autodoc", "1");
+		Handle_StepAP214_ExternallyDefinedGeneralProperty ExternallyDefinedGeneralProperty() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinition ProductDefinition() const;
+
+};
+%extend StepAP214_ExternalIdentificationItem {
+	~StepAP214_ExternalIdentificationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");}
 	}
 };
 
@@ -2554,6 +2409,43 @@ class StepAP214 {
 	~StepAP214() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AppliedPresentedItem;
+class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AppliedPresentedItem();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepAP214_HArray1OfPresentedItemSelect &aItems);
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfPresentedItemSelect &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfPresentedItemSelect Items() const;
+		%feature("autodoc", "1");
+		StepAP214_PresentedItemSelect ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AppliedPresentedItem {
+	Handle_StepAP214_AppliedPresentedItem GetHandle() {
+	return *(Handle_StepAP214_AppliedPresentedItem*) &$self;
+	}
+};
+%extend StepAP214_AppliedPresentedItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AppliedPresentedItem {
+	~StepAP214_AppliedPresentedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");}
 	}
 };
 
@@ -2720,45 +2612,41 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 };
 
 
-%nodefaultctor StepAP214_Array1OfOrganizationItem;
-class StepAP214_Array1OfOrganizationItem {
+%nodefaultctor StepAP214_AutoDesignGroupedItem;
+class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_Array1OfOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_AutoDesignGroupedItem();
 		%feature("autodoc", "1");
-		StepAP214_Array1OfOrganizationItem(const StepAP214_OrganizationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP214_OrganizationItem &V);
+		Handle_StepShape_AdvancedBrepShapeRepresentation AdvancedBrepShapeRepresentation() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_StepShape_CsgShapeRepresentation CsgShapeRepresentation() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_StepShape_FacetedBrepShapeRepresentation FacetedBrepShapeRepresentation() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfOrganizationItem & Assign(const StepAP214_Array1OfOrganizationItem &Other);
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation GeometricallyBoundedSurfaceShapeRepresentation() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfOrganizationItem & operator=(const StepAP214_Array1OfOrganizationItem &Other);
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation GeometricallyBoundedWireframeShapeRepresentation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_StepShape_ManifoldSurfaceShapeRepresentation ManifoldSurfaceShapeRepresentation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_StepRepr_Representation Representation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		Handle_StepRepr_RepresentationItem RepresentationItem() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_OrganizationItem &Value);
+		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
-		const StepAP214_OrganizationItem & Value(const Standard_Integer Index) const;
+		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
 		%feature("autodoc", "1");
-		const StepAP214_OrganizationItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_OrganizationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_OrganizationItem & operator()(const Standard_Integer Index);
+		Handle_StepVisual_TemplateInstance TemplateInstance() const;
 
 };
-%extend StepAP214_Array1OfOrganizationItem {
-	~StepAP214_Array1OfOrganizationItem() {
+%extend StepAP214_AutoDesignGroupedItem {
+	~StepAP214_AutoDesignGroupedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");}
 	}
 };
 
@@ -2806,15 +2694,23 @@ class StepAP214_Array1OfApprovalItem {
 };
 
 
-%nodefaultctor StepAP214_HArray1OfSecurityClassificationItem;
-class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
+%nodefaultctor StepAP214_Array1OfOrganizationItem;
+class StepAP214_Array1OfOrganizationItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfSecurityClassificationItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_Array1OfOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfSecurityClassificationItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_SecurityClassificationItem &V);
+		StepAP214_Array1OfOrganizationItem(const StepAP214_OrganizationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_SecurityClassificationItem &V);
+		void Init(const StepAP214_OrganizationItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfOrganizationItem & Assign(const StepAP214_Array1OfOrganizationItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfOrganizationItem & operator=(const StepAP214_Array1OfOrganizationItem &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2822,54 +2718,21 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_SecurityClassificationItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_OrganizationItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_SecurityClassificationItem & Value(const Standard_Integer Index) const;
+		const StepAP214_OrganizationItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP214_SecurityClassificationItem & ChangeValue(const Standard_Integer Index);
+		const StepAP214_OrganizationItem & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfSecurityClassificationItem & Array1() const;
+		StepAP214_OrganizationItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP214_Array1OfSecurityClassificationItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		StepAP214_OrganizationItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_HArray1OfSecurityClassificationItem {
-	Handle_StepAP214_HArray1OfSecurityClassificationItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfSecurityClassificationItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfSecurityClassificationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfSecurityClassificationItem {
-	~StepAP214_HArray1OfSecurityClassificationItem() {
+%extend StepAP214_Array1OfOrganizationItem {
+	~StepAP214_Array1OfOrganizationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AutoDesignOrganizationItem;
-class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralOrgItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignOrganizationItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document Document() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_PhysicallyModeledProductDefinition PhysicallyModeledProductDefinition() const;
-
-};
-%extend StepAP214_AutoDesignOrganizationItem {
-	~StepAP214_AutoDesignOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");}
 	}
 };
 
@@ -2913,23 +2776,45 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 };
 
 
-%nodefaultctor StepAP214_OrganizationItem;
-class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
+%nodefaultctor StepAP214_Array1OfAutoDesignGroupedItem;
+class StepAP214_Array1OfAutoDesignGroupedItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_OrganizationItem();
+		StepAP214_Array1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepAP214_Array1OfAutoDesignGroupedItem(const StepAP214_AutoDesignGroupedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
+		void Init(const StepAP214_AutoDesignGroupedItem &V);
 		%feature("autodoc", "1");
-		Handle_StepBasic_Approval Approval() const;
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGroupedItem & Assign(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGroupedItem & operator=(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGroupedItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignGroupedItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGroupedItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_OrganizationItem {
-	~StepAP214_OrganizationItem() {
+%extend StepAP214_Array1OfAutoDesignGroupedItem {
+	~StepAP214_Array1OfAutoDesignGroupedItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_OrganizationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");}
 	}
 };
 
@@ -2977,88 +2862,6 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 	~StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_DocumentReferenceItem;
-class StepAP214_DocumentReferenceItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_DocumentReferenceItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Approval Approval() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_DescriptiveRepresentationItem DescriptiveRepresentationItem() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-
-};
-%extend StepAP214_DocumentReferenceItem {
-	~StepAP214_DocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_HArray1OfPersonAndOrganizationItem;
-class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfPersonAndOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfPersonAndOrganizationItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_PersonAndOrganizationItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_PersonAndOrganizationItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_PersonAndOrganizationItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_PersonAndOrganizationItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_PersonAndOrganizationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfPersonAndOrganizationItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfPersonAndOrganizationItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_HArray1OfPersonAndOrganizationItem {
-	Handle_StepAP214_HArray1OfPersonAndOrganizationItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfPersonAndOrganizationItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfPersonAndOrganizationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfPersonAndOrganizationItem {
-	~StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");}
 	}
 };
 
@@ -3176,6 +2979,174 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 };
 
 
+%nodefaultctor StepAP214_DocumentReferenceItem;
+class StepAP214_DocumentReferenceItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_DocumentReferenceItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval Approval() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_DescriptiveRepresentationItem DescriptiveRepresentationItem() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinition ProductDefinition() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_Representation Representation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect ShapeAspect() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
+
+};
+%extend StepAP214_DocumentReferenceItem {
+	~StepAP214_DocumentReferenceItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfPersonAndOrganizationItem;
+class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfPersonAndOrganizationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfPersonAndOrganizationItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_PersonAndOrganizationItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_PersonAndOrganizationItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_PersonAndOrganizationItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_PersonAndOrganizationItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_PersonAndOrganizationItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfPersonAndOrganizationItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfPersonAndOrganizationItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfPersonAndOrganizationItem {
+	Handle_StepAP214_HArray1OfPersonAndOrganizationItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfPersonAndOrganizationItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfPersonAndOrganizationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfPersonAndOrganizationItem {
+	~StepAP214_HArray1OfPersonAndOrganizationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfPresentedItemSelect;
+class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_PresentedItemSelect &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_PresentedItemSelect &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_PresentedItemSelect &Value);
+		%feature("autodoc", "1");
+		const StepAP214_PresentedItemSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_PresentedItemSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfPresentedItemSelect & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfPresentedItemSelect & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfPresentedItemSelect {
+	Handle_StepAP214_HArray1OfPresentedItemSelect GetHandle() {
+	return *(Handle_StepAP214_HArray1OfPresentedItemSelect*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfPresentedItemSelect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfPresentedItemSelect {
+	~StepAP214_HArray1OfPresentedItemSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignPersonAndOrganizationAssignment;
+class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignPersonAndOrganizationAssignment();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aItems);
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem Items() const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGeneralOrgItem ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
+	Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment GetHandle() {
+	return *(Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment*) &$self;
+	}
+};
+%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
+	~StepAP214_AutoDesignPersonAndOrganizationAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
+	}
+};
+
+
 %nodefaultctor StepAP214_Array1OfGroupItem;
 class StepAP214_Array1OfGroupItem {
 	public:
@@ -3215,6 +3186,74 @@ class StepAP214_Array1OfGroupItem {
 	~StepAP214_Array1OfGroupItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfAutoDesignGroupedItem;
+class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignGroupedItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_AutoDesignGroupedItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGroupedItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignGroupedItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGroupedItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGroupedItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignGroupedItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfAutoDesignGroupedItem {
+	Handle_StepAP214_HArray1OfAutoDesignGroupedItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignGroupedItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignGroupedItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignGroupedItem {
+	~StepAP214_HArray1OfAutoDesignGroupedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignOrganizationItem;
+class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralOrgItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignOrganizationItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document Document() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_PhysicallyModeledProductDefinition PhysicallyModeledProductDefinition() const;
+
+};
+%extend StepAP214_AutoDesignOrganizationItem {
+	~StepAP214_AutoDesignOrganizationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");}
 	}
 };
 
@@ -3283,6 +3322,49 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 };
 
 
+%nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
+class StepAP214_Array1OfExternalIdentificationItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_Array1OfExternalIdentificationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_Array1OfExternalIdentificationItem(const StepAP214_ExternalIdentificationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_ExternalIdentificationItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfExternalIdentificationItem & Assign(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfExternalIdentificationItem & operator=(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_ExternalIdentificationItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_ExternalIdentificationItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_ExternalIdentificationItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
+
+};
+%extend StepAP214_Array1OfExternalIdentificationItem {
+	~StepAP214_Array1OfExternalIdentificationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");}
+	}
+};
+
+
 %nodefaultctor StepAP214_AutoDesignOrganizationAssignment;
 class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_OrganizationAssignment {
 	public:
@@ -3318,6 +3400,29 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 	~StepAP214_AutoDesignOrganizationAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationAssignment\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignDateAndTimeItem;
+class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignDateAndTimeItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalPersonOrganization ApprovalPersonOrganization() const;
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignDateAndPersonAssignment AutoDesignDateAndPersonAssignment() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
+
+};
+%extend StepAP214_AutoDesignDateAndTimeItem {
+	~StepAP214_AutoDesignDateAndTimeItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -3365,88 +3470,76 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 };
 
 
-%nodefaultctor StepAP214_Array1OfAutoDesignGroupedItem;
-class StepAP214_Array1OfAutoDesignGroupedItem {
+%nodefaultctor StepAP214_AutoDesignNominalDateAssignment;
+class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignment {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_AutoDesignNominalDateAssignment();
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignGroupedItem(const StepAP214_AutoDesignGroupedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		void Init(const Handle_StepBasic_Date &aAssignedDate, const Handle_StepBasic_DateRole &aRole);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignGroupedItem &V);
+		virtual		void Init(const Handle_StepBasic_Date &aAssignedDate, const Handle_StepBasic_DateRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aItems);
 		%feature("autodoc", "1");
-		void Destroy();
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aItems);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem Items() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignGroupedItem & Assign(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
+		StepAP214_AutoDesignDatedItem ItemsValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignGroupedItem & operator=(const StepAP214_Array1OfAutoDesignGroupedItem &Other);
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGroupedItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignGroupedItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGroupedItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_Array1OfAutoDesignGroupedItem {
-	~StepAP214_Array1OfAutoDesignGroupedItem() {
+%extend StepAP214_AutoDesignNominalDateAssignment {
+	Handle_StepAP214_AutoDesignNominalDateAssignment GetHandle() {
+	return *(Handle_StepAP214_AutoDesignNominalDateAssignment*) &$self;
+	}
+};
+%extend StepAP214_AutoDesignNominalDateAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AutoDesignNominalDateAssignment {
+	~StepAP214_AutoDesignNominalDateAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");}
 	}
 };
 
 
-%nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
-class StepAP214_Array1OfExternalIdentificationItem {
+%nodefaultctor StepAP214_AutoDesignDateAndPersonItem;
+class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_Array1OfExternalIdentificationItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_AutoDesignDateAndPersonItem();
 		%feature("autodoc", "1");
-		StepAP214_Array1OfExternalIdentificationItem(const StepAP214_ExternalIdentificationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP214_ExternalIdentificationItem &V);
+		Handle_StepAP214_AutoDesignOrganizationAssignment AutoDesignOrganizationAssignment() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_StepBasic_Product Product() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfExternalIdentificationItem & Assign(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfExternalIdentificationItem & operator=(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		Handle_StepRepr_Representation Representation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_StepAP214_AutoDesignDocumentReference AutoDesignDocumentReference() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_StepRepr_ExternallyDefinedRepresentation ExternallyDefinedRepresentation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_ExternalIdentificationItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_ExternalIdentificationItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_ExternalIdentificationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
+		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments ProductDefinitionWithAssociatedDocuments() const;
 
 };
-%extend StepAP214_Array1OfExternalIdentificationItem {
-	~StepAP214_Array1OfExternalIdentificationItem() {
+%extend StepAP214_AutoDesignDateAndPersonItem {
+	~StepAP214_AutoDesignDateAndPersonItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");}
 	}
 };
 
@@ -3545,92 +3638,6 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignGroupedItem;
-class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignGroupedItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignGroupedItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignGroupedItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGroupedItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignGroupedItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGroupedItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignGroupedItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignGroupedItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_HArray1OfAutoDesignGroupedItem {
-	Handle_StepAP214_HArray1OfAutoDesignGroupedItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignGroupedItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignGroupedItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignGroupedItem {
-	~StepAP214_HArray1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AutoDesignActualDateAndTimeAssignment;
-class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignActualDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
-	Handle_StepAP214_AutoDesignActualDateAndTimeAssignment GetHandle() {
-	return *(Handle_StepAP214_AutoDesignActualDateAndTimeAssignment*) &$self;
-	}
-};
-%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
-	~StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_AppliedGroupAssignment;
 class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 	public:
@@ -3660,6 +3667,39 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 	~StepAP214_AppliedGroupAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedGroupAssignment\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_RepItemGroup;
+class StepAP214_RepItemGroup : public StepBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_RepItemGroup();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Standard_Boolean hasGroup_Description, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_TCollection_HAsciiString &aRepresentationItem_Name);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem RepresentationItem() const;
+		%feature("autodoc", "1");
+		void SetRepresentationItem(const Handle_StepRepr_RepresentationItem &RepresentationItem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_RepItemGroup {
+	Handle_StepAP214_RepItemGroup GetHandle() {
+	return *(Handle_StepAP214_RepItemGroup*) &$self;
+	}
+};
+%extend StepAP214_RepItemGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_RepItemGroup {
+	~StepAP214_RepItemGroup() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_RepItemGroup\n");}
 	}
 };
 
@@ -3711,29 +3751,6 @@ class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepAP214_AutoDesignDateAndTimeItem;
-class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization ApprovalPersonOrganization() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignDateAndPersonAssignment AutoDesignDateAndPersonAssignment() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
-
-};
-%extend StepAP214_AutoDesignDateAndTimeItem {
-	~StepAP214_AutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");}
-	}
-};
-
-
 %nodefaultctor StepAP214_Array1OfDocumentReferenceItem;
 class StepAP214_Array1OfDocumentReferenceItem {
 	public:
@@ -3777,39 +3794,42 @@ class StepAP214_Array1OfDocumentReferenceItem {
 };
 
 
-%nodefaultctor StepAP214_AutoDesignPresentedItem;
-class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
+%nodefaultctor StepAP214_PersonAndOrganizationItem;
+class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItem();
+		StepAP214_PersonAndOrganizationItem();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect Items() const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItemSelect ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 
 };
-%extend StepAP214_AutoDesignPresentedItem {
-	Handle_StepAP214_AutoDesignPresentedItem GetHandle() {
-	return *(Handle_StepAP214_AutoDesignPresentedItem*) &$self;
-	}
-};
-%extend StepAP214_AutoDesignPresentedItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AutoDesignPresentedItem {
-	~StepAP214_AutoDesignPresentedItem() {
+%extend StepAP214_PersonAndOrganizationItem {
+	~StepAP214_PersonAndOrganizationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_OrganizationItem;
+class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_OrganizationItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Approval Approval() const;
+
+};
+%extend StepAP214_OrganizationItem {
+	~StepAP214_OrganizationItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_OrganizationItem\n");}
 	}
 };
 
@@ -3952,23 +3972,52 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 };
 
 
-%nodefaultctor StepAP214_Array1OfAutoDesignDatedItem;
-class StepAP214_Array1OfAutoDesignDatedItem {
+%nodefaultctor StepAP214_AutoDesignPresentedItem;
+class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDatedItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_AutoDesignPresentedItem();
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDatedItem(const StepAP214_AutoDesignDatedItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		virtual		void Init(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignDatedItem &V);
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect Items() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		StepAP214_AutoDesignPresentedItemSelect ItemsValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDatedItem & Assign(const StepAP214_Array1OfAutoDesignDatedItem &Other);
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDatedItem & operator=(const StepAP214_Array1OfAutoDesignDatedItem &Other);
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AutoDesignPresentedItem {
+	Handle_StepAP214_AutoDesignPresentedItem GetHandle() {
+	return *(Handle_StepAP214_AutoDesignPresentedItem*) &$self;
+	}
+};
+%extend StepAP214_AutoDesignPresentedItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AutoDesignPresentedItem {
+	~StepAP214_AutoDesignPresentedItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfSecurityClassificationItem;
+class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfSecurityClassificationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfSecurityClassificationItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_SecurityClassificationItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_SecurityClassificationItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3976,46 +4025,93 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDatedItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_SecurityClassificationItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDatedItem & Value(const Standard_Integer Index) const;
+		const StepAP214_SecurityClassificationItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index) const;
+		StepAP214_SecurityClassificationItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDatedItem & ChangeValue(const Standard_Integer Index);
+		const StepAP214_Array1OfSecurityClassificationItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index);
+		StepAP214_Array1OfSecurityClassificationItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_Array1OfAutoDesignDatedItem {
-	~StepAP214_Array1OfAutoDesignDatedItem() {
+%extend StepAP214_HArray1OfSecurityClassificationItem {
+	Handle_StepAP214_HArray1OfSecurityClassificationItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfSecurityClassificationItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfSecurityClassificationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfSecurityClassificationItem {
+	~StepAP214_HArray1OfSecurityClassificationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");}
 	}
 };
 
 
-%nodefaultctor StepAP214_ExternalIdentificationItem;
-class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
+%nodefaultctor StepAP214_PresentedItemSelect;
+class StepAP214_PresentedItemSelect : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_ExternalIdentificationItem();
+		StepAP214_PresentedItemSelect();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_DocumentFile DocumentFile() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedClass ExternallyDefinedClass() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_ExternallyDefinedGeneralProperty ExternallyDefinedGeneralProperty() const;
+		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
-%extend StepAP214_ExternalIdentificationItem {
-	~StepAP214_ExternalIdentificationItem() {
+%extend StepAP214_PresentedItemSelect {
+	~StepAP214_PresentedItemSelect() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_PresentedItemSelect\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignActualDateAndTimeAssignment;
+class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignActualDateAndTimeAssignment();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_DateAndTime &aAssignedDateAndTime, const Handle_StepBasic_DateTimeRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem Items() const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
+	Handle_StepAP214_AutoDesignActualDateAndTimeAssignment GetHandle() {
+	return *(Handle_StepAP214_AutoDesignActualDateAndTimeAssignment*) &$self;
+	}
+};
+%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
+	~StepAP214_AutoDesignActualDateAndTimeAssignment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
 	}
 };
 
@@ -4063,89 +4159,30 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 };
 
 
-%nodefaultctor StepAP214_AutoDesignDateAndPersonItem;
-class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
+%nodefaultctor StepAP214_SecurityClassificationItem;
+class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndPersonItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment AutoDesignOrganizationAssignment() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Product Product() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignDocumentReference AutoDesignDocumentReference() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ExternallyDefinedRepresentation ExternallyDefinedRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments ProductDefinitionWithAssociatedDocuments() const;
+		StepAP214_SecurityClassificationItem();
 
 };
-%extend StepAP214_AutoDesignDateAndPersonItem {
-	~StepAP214_AutoDesignDateAndPersonItem() {
+%extend StepAP214_SecurityClassificationItem {
+	~StepAP214_SecurityClassificationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");}
 	}
 };
 
 
-%nodefaultctor StepAP214_AppliedPersonAndOrganizationAssignment;
-class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
+%nodefaultctor StepAP214_HArray1OfDateItem;
+class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AppliedPersonAndOrganizationAssignment();
+		StepAP214_HArray1OfDateItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
+		StepAP214_HArray1OfDateItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_DateItem &V);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole, const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_PersonAndOrganizationItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AppliedPersonAndOrganizationAssignment {
-	Handle_StepAP214_AppliedPersonAndOrganizationAssignment GetHandle() {
-	return *(Handle_StepAP214_AppliedPersonAndOrganizationAssignment*) &$self;
-	}
-};
-%extend StepAP214_AppliedPersonAndOrganizationAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AppliedPersonAndOrganizationAssignment {
-	~StepAP214_AppliedPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndPersonItem;
-class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndPersonItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignDateAndPersonItem &V);
+		void Init(const StepAP214_DateItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4153,33 +4190,80 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndPersonItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_DateItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDateAndPersonItem & Value(const Standard_Integer Index) const;
+		const StepAP214_DateItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndPersonItem & ChangeValue(const Standard_Integer Index);
+		StepAP214_DateItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Array1() const;
+		const StepAP214_Array1OfDateItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndPersonItem & ChangeArray1();
+		StepAP214_Array1OfDateItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem*) &$self;
+%extend StepAP214_HArray1OfDateItem {
+	Handle_StepAP214_HArray1OfDateItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfDateItem*) &$self;
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+%extend StepAP214_HArray1OfDateItem {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	~StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
+%extend StepAP214_HArray1OfDateItem {
+	~StepAP214_HArray1OfDateItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");}
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndTimeItem;
+class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndTimeItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndTimeItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignDateAndTimeItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignDateAndTimeItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignDateAndTimeItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	~StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -4223,88 +4307,6 @@ class StepAP214_Array1OfSecurityClassificationItem {
 	~StepAP214_Array1OfSecurityClassificationItem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_Array1OfAutoDesignDateAndTimeItem;
-class StepAP214_Array1OfAutoDesignDateAndTimeItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndTimeItem(const StepAP214_AutoDesignDateAndTimeItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Assign(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_Array1OfAutoDesignDateAndTimeItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndTimeItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDateAndTimeItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index);
-
-};
-%extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
-	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");}
-	}
-};
-
-
-%nodefaultctor StepAP214_AutoDesignNominalDateAssignment;
-class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignNominalDateAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Date &aAssignedDate, const Handle_StepBasic_DateRole &aRole);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_Date &aAssignedDate, const Handle_StepBasic_DateRole &aRole, const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aItems);
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem Items() const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignDatedItem ItemsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AutoDesignNominalDateAssignment {
-	Handle_StepAP214_AutoDesignNominalDateAssignment GetHandle() {
-	return *(Handle_StepAP214_AutoDesignNominalDateAssignment*) &$self;
-	}
-};
-%extend StepAP214_AutoDesignNominalDateAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepAP214_AutoDesignNominalDateAssignment {
-	~StepAP214_AutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");}
 	}
 };
 

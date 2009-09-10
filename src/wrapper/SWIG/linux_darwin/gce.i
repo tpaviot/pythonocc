@@ -98,6 +98,25 @@ class gce_MakeParab2d : public gce_Root {
 };
 
 
+%nodefaultctor gce_MakeScale2d;
+class gce_MakeScale2d {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeScale2d(const gp_Pnt2d &Point, const Standard_Real Scale);
+		%feature("autodoc", "1");
+		const gp_Trsf2d & Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf2d & Operator() const;
+
+};
+%extend gce_MakeScale2d {
+	~gce_MakeScale2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeScale2d\n");}
+	}
+};
+
+
 %nodefaultctor gce_MakeLin2d;
 class gce_MakeLin2d : public gce_Root {
 	public:
@@ -171,37 +190,6 @@ class gce_MakeRotation {
 	~gce_MakeRotation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
-	}
-};
-
-
-%nodefaultctor gce_MakeCirc2d;
-class gce_MakeCirc2d : public gce_Root {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Ax2d &XAxis, const Standard_Real Radius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Ax22d &Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Circ2d &Circ, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Circ2d &Circ, const gp_Pnt2d &Point);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Pnt2d &Center, const Standard_Real Radius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		gce_MakeCirc2d(const gp_Pnt2d &Center, const gp_Pnt2d &Point, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const gp_Circ2d & Value() const;
-		%feature("autodoc", "1");
-		const gp_Circ2d & Operator() const;
-
-};
-%extend gce_MakeCirc2d {
-	~gce_MakeCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc2d\n");}
 	}
 };
 
@@ -348,31 +336,52 @@ class gce_MakeHypr : public gce_Root {
 };
 
 
-%nodefaultctor gce_MakeCylinder;
-class gce_MakeCylinder : public gce_Root {
+%nodefaultctor gce_MakeScale;
+class gce_MakeScale {
 	public:
 		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Ax2 &A2, const Standard_Real Radius);
+		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
 		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Cylinder &Cyl, const gp_Pnt &Point);
+		const gp_Trsf & Value() const;
 		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Cylinder &Cyl, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Ax1 &Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Circ &Circ);
-		%feature("autodoc", "1");
-		const gp_Cylinder & Value() const;
-		%feature("autodoc", "1");
-		const gp_Cylinder & Operator() const;
+		const gp_Trsf & Operator() const;
 
 };
-%extend gce_MakeCylinder {
-	~gce_MakeCylinder() {
+%extend gce_MakeScale {
+	~gce_MakeScale() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCylinder\n");}
+	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
+	}
+};
+
+
+%nodefaultctor gce_MakeCirc2d;
+class gce_MakeCirc2d : public gce_Root {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Ax2d &XAxis, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Ax22d &Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Circ2d &Circ, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Circ2d &Circ, const gp_Pnt2d &Point);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Pnt2d &Center, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		gce_MakeCirc2d(const gp_Pnt2d &Center, const gp_Pnt2d &Point, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const gp_Circ2d & Value() const;
+		%feature("autodoc", "1");
+		const gp_Circ2d & Operator() const;
+
+};
+%extend gce_MakeCirc2d {
+	~gce_MakeCirc2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc2d\n");}
 	}
 };
 
@@ -488,25 +497,6 @@ class gce_MakeElips : public gce_Root {
 };
 
 
-%nodefaultctor gce_MakeScale2d;
-class gce_MakeScale2d {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeScale2d(const gp_Pnt2d &Point, const Standard_Real Scale);
-		%feature("autodoc", "1");
-		const gp_Trsf2d & Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf2d & Operator() const;
-
-};
-%extend gce_MakeScale2d {
-	~gce_MakeScale2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeScale2d\n");}
-	}
-};
-
-
 %nodefaultctor gce_MakeMirror;
 class gce_MakeMirror {
 	public:
@@ -594,21 +584,31 @@ class gce_MakeLin : public gce_Root {
 };
 
 
-%nodefaultctor gce_MakeScale;
-class gce_MakeScale {
+%nodefaultctor gce_MakeCylinder;
+class gce_MakeCylinder : public gce_Root {
 	public:
 		%feature("autodoc", "1");
-		gce_MakeScale(const gp_Pnt &Point, const Standard_Real Scale);
+		gce_MakeCylinder(const gp_Ax2 &A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		const gp_Trsf & Value() const;
+		gce_MakeCylinder(const gp_Cylinder &Cyl, const gp_Pnt &Point);
 		%feature("autodoc", "1");
-		const gp_Trsf & Operator() const;
+		gce_MakeCylinder(const gp_Cylinder &Cyl, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Ax1 &Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Circ &Circ);
+		%feature("autodoc", "1");
+		const gp_Cylinder & Value() const;
+		%feature("autodoc", "1");
+		const gp_Cylinder & Operator() const;
 
 };
-%extend gce_MakeScale {
-	~gce_MakeScale() {
+%extend gce_MakeCylinder {
+	~gce_MakeCylinder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCylinder\n");}
 	}
 };
 

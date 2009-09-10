@@ -65,36 +65,6 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 };
 
 
-%nodefaultctor Handle_Materials_MaterialDefinition;
-class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
-	public:
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition();
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition(const Handle_Materials_MaterialDefinition &aHandle);
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition(const Materials_MaterialDefinition *anItem);
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition & operator=(const Handle_Materials_MaterialDefinition &aHandle);
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition & operator=(const Materials_MaterialDefinition *anItem);
-		%feature("autodoc", "1");
-		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Materials_MaterialDefinition {
-	Materials_MaterialDefinition* GetObject() {
-	return (Materials_MaterialDefinition*)$self->Access();
-	}
-};
-%extend Handle_Materials_MaterialDefinition {
-	~Handle_Materials_MaterialDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Materials_FuzzyInstance;
 class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	public:
@@ -121,6 +91,36 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	~Handle_Materials_FuzzyInstance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Materials_MaterialDefinition;
+class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
+	public:
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition();
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition(const Handle_Materials_MaterialDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition(const Materials_MaterialDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition & operator=(const Handle_Materials_MaterialDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition & operator=(const Materials_MaterialDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_MaterialDefinition const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Materials_MaterialDefinition {
+	Materials_MaterialDefinition* GetObject() {
+	return (Materials_MaterialDefinition*)$self->Access();
+	}
+};
+%extend Handle_Materials_MaterialDefinition {
+	~Handle_Materials_MaterialDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");}
 	}
 };
 
@@ -300,7 +300,7 @@ class Materials {
 		%feature("autodoc", "1");
 		void MaterialsFile(const char * afile);
 		%feature("autodoc", "1");
-		Standard_CString MaterialsFile();
+		char * MaterialsFile();
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
 		%feature("autodoc", "1");
@@ -382,41 +382,6 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 
 
-%nodefaultctor Materials_Material;
-class Materials_Material : public Materials_FuzzyInstance {
-	public:
-		%feature("autodoc", "1");
-		Materials_Material(const char * amaterial);
-		%feature("autodoc", "1");
-		TCollection_AsciiString Name() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend Materials_Material {
-	Handle_Materials_Material GetHandle() {
-	return *(Handle_Materials_Material*) &$self;
-	}
-};
-%extend Materials_Material {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Materials_Material {
-	~Materials_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_Material\n");}
-	}
-};
-
-
 %nodefaultctor Materials_SequenceNodeOfMtsSequence;
 class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 	public:
@@ -471,6 +436,84 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	~Materials_MaterialDefinition() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
+	}
+};
+
+
+%nodefaultctor Materials_Material;
+class Materials_Material : public Materials_FuzzyInstance {
+	public:
+		%feature("autodoc", "1");
+		Materials_Material(const char * amaterial);
+		%feature("autodoc", "1");
+		TCollection_AsciiString Name() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Materials_Material {
+	Handle_Materials_Material GetHandle() {
+	return *(Handle_Materials_Material*) &$self;
+	}
+};
+%extend Materials_Material {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Materials_Material {
+	~Materials_Material() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Materials_Material\n");}
+	}
+};
+
+
+%nodefaultctor Materials_Color;
+class Materials_Color : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Materials_Color();
+		%feature("autodoc", "1");
+		Materials_Color(const Quantity_Color &acolor);
+		%feature("autodoc", "1");
+		void Color(const Quantity_Color &acolor);
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
+		%feature("autodoc", "1");
+		void SetColor255(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Materials_Color {
+	Handle_Materials_Color GetHandle() {
+	return *(Handle_Materials_Color*) &$self;
+	}
+};
+%extend Materials_Color {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Materials_Color {
+	~Materials_Color() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Materials_Color\n");}
 	}
 };
 
@@ -599,46 +642,5 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 	~Materials_MaterialsSequence() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Materials_MaterialsSequence\n");}
-	}
-};
-
-
-%nodefaultctor Materials_Color;
-class Materials_Color : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Materials_Color();
-		%feature("autodoc", "1");
-		Materials_Color(const Quantity_Color &acolor);
-		%feature("autodoc", "1");
-		void Color(const Quantity_Color &acolor);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
-		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
-		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
-		%feature("autodoc", "1");
-		void SetColor255(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Materials_Color {
-	Handle_Materials_Color GetHandle() {
-	return *(Handle_Materials_Color*) &$self;
-	}
-};
-%extend Materials_Color {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Materials_Color {
-	~Materials_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_Color\n");}
 	}
 };

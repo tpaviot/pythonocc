@@ -156,6 +156,49 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 };
 
 
+%nodefaultctor TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
+class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_Location &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopLoc_Location & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation GetHandle() {
+	return *(Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation*) &$self;
+	}
+};
+%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	~TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
+	}
+};
+
+
 %nodefaultctor TopLoc_MapOfLocation;
 class TopLoc_MapOfLocation : public TCollection_BasicMap {
 	public:
@@ -185,43 +228,6 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor TopLoc_IndexedMapOfLocation;
-class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_IndexedMapOfLocation(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopLoc_IndexedMapOfLocation & Assign(const TopLoc_IndexedMapOfLocation &Other);
-		%feature("autodoc", "1");
-		TopLoc_IndexedMapOfLocation & operator=(const TopLoc_IndexedMapOfLocation &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopLoc_Location &K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopLoc_Location &K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopLoc_Location &K) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopLoc_Location &K) const;
-
-};
-%extend TopLoc_IndexedMapOfLocation {
-	~TopLoc_IndexedMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");}
-	}
-};
-
-
 %nodefaultctor TopLoc_StdMapNodeOfMapOfLocation;
 class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	public:
@@ -247,113 +253,6 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	~TopLoc_StdMapNodeOfMapOfLocation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");}
-	}
-};
-
-
-%nodefaultctor TopLoc_ItemLocation;
-class TopLoc_ItemLocation {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation(const Handle_TopLoc_Datum3D &D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation(const TopLoc_ItemLocation &anOther);
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation & operator=(const TopLoc_ItemLocation &anOther);
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend TopLoc_ItemLocation {
-	~TopLoc_ItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
-	}
-};
-
-
-%nodefaultctor TopLoc_SListOfItemLocation;
-class TopLoc_SListOfItemLocation {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation();
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation(const TopLoc_ItemLocation &anItem, const TopLoc_SListOfItemLocation &aTail);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation &Other);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation &Other);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation & operator=(const TopLoc_SListOfItemLocation &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TopLoc_ItemLocation & Value() const;
-		%feature("autodoc", "1");
-		TopLoc_ItemLocation & ChangeValue();
-		%feature("autodoc", "1");
-		void SetValue(const TopLoc_ItemLocation &anItem);
-		%feature("autodoc", "1");
-		const TopLoc_SListOfItemLocation & Tail() const;
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation & ChangeTail();
-		%feature("autodoc", "1");
-		void SetTail(const TopLoc_SListOfItemLocation &aList);
-		%feature("autodoc", "1");
-		void Construct(const TopLoc_ItemLocation &anItem);
-		%feature("autodoc", "1");
-		TopLoc_SListOfItemLocation Constructed(const TopLoc_ItemLocation &anItem) const;
-		%feature("autodoc", "1");
-		void ToTail();
-		%feature("autodoc", "1");
-		void Initialize(const TopLoc_SListOfItemLocation &aList);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-
-};
-%extend TopLoc_SListOfItemLocation {
-	~TopLoc_SListOfItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
-	}
-};
-
-
-%nodefaultctor TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
-class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_Location &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopLoc_Location & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation GetHandle() {
-	return *(Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation*) &$self;
-	}
-};
-%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	~TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
 	}
 };
 
@@ -447,21 +346,90 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 };
 
 
-%nodefaultctor TopLoc_MapLocationHasher;
-class TopLoc_MapLocationHasher {
+%nodefaultctor TopLoc_IndexedMapOfLocation;
+class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TopLoc_MapLocationHasher();
+		TopLoc_IndexedMapOfLocation(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
+		TopLoc_IndexedMapOfLocation & Assign(const TopLoc_IndexedMapOfLocation &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
+		TopLoc_IndexedMapOfLocation & operator=(const TopLoc_IndexedMapOfLocation &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopLoc_Location &K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopLoc_Location &K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopLoc_Location &K) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopLoc_Location &K) const;
 
 };
-%extend TopLoc_MapLocationHasher {
-	~TopLoc_MapLocationHasher() {
+%extend TopLoc_IndexedMapOfLocation {
+	~TopLoc_IndexedMapOfLocation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
+	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");}
+	}
+};
+
+
+%nodefaultctor TopLoc_SListOfItemLocation;
+class TopLoc_SListOfItemLocation {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation();
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation(const TopLoc_ItemLocation &anItem, const TopLoc_SListOfItemLocation &aTail);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & operator=(const TopLoc_SListOfItemLocation &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TopLoc_ItemLocation & Value() const;
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation & ChangeValue();
+		%feature("autodoc", "1");
+		void SetValue(const TopLoc_ItemLocation &anItem);
+		%feature("autodoc", "1");
+		const TopLoc_SListOfItemLocation & Tail() const;
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation & ChangeTail();
+		%feature("autodoc", "1");
+		void SetTail(const TopLoc_SListOfItemLocation &aList);
+		%feature("autodoc", "1");
+		void Construct(const TopLoc_ItemLocation &anItem);
+		%feature("autodoc", "1");
+		TopLoc_SListOfItemLocation Constructed(const TopLoc_ItemLocation &anItem) const;
+		%feature("autodoc", "1");
+		void ToTail();
+		%feature("autodoc", "1");
+		void Initialize(const TopLoc_SListOfItemLocation &aList);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+
+};
+%extend TopLoc_SListOfItemLocation {
+	~TopLoc_SListOfItemLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
 	}
 };
 
@@ -501,5 +469,47 @@ class TopLoc_Datum3D : public MMgt_TShared {
 	~TopLoc_Datum3D() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopLoc_Datum3D\n");}
+	}
+};
+
+
+%nodefaultctor TopLoc_MapLocationHasher;
+class TopLoc_MapLocationHasher {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_MapLocationHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
+
+};
+%extend TopLoc_MapLocationHasher {
+	~TopLoc_MapLocationHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
+	}
+};
+
+
+%nodefaultctor TopLoc_ItemLocation;
+class TopLoc_ItemLocation {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation(const Handle_TopLoc_Datum3D &D, const Standard_Integer P, const Standard_Boolean fromTrsf=0);
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation & Assign(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
+		TopLoc_ItemLocation & operator=(const TopLoc_ItemLocation &anOther);
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend TopLoc_ItemLocation {
+	~TopLoc_ItemLocation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
 	}
 };

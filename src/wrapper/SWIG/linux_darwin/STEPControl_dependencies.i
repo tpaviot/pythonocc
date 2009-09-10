@@ -393,7 +393,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <XSControl_Writer.hxx>
 %};
 
-%import XSControl.i
 %import Transfer.i
+%import XSControl.i
 %import Standard.i
 %import IFSelect.i

@@ -120,7 +120,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
 #include<math_Vector.hxx>
 #include<AppParCurves_MultiCurve.hxx>
-#include<math_MultipleVarFunctionWithGradient.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<AppParCurves_MultiBSpCurve.hxx>
@@ -132,6 +131,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
+#include<math_MultipleVarFunctionWithGradient.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Dir2d.hxx>

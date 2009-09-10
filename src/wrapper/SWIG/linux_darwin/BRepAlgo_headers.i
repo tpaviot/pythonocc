@@ -68,22 +68,22 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Face.hxx>
-#include<TopoDS_Edge.hxx>
-#include<TopTools_ListOfShape.hxx>
-#include<TopTools_DataMapOfShapeShape.hxx>
 #include<TopoDS_Shape.hxx>
-#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
-#include<Handle_TopOpeBRepDS_Interference.hxx>
-#include<BRepAlgo.hxx>
-#include<TopoDS_Wire.hxx>
-#include<TColStd_SequenceOfInteger.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TColStd_ListOfInteger.hxx>
+#include<BRepAlgo.hxx>
+#include<TopoDS_Wire.hxx>
+#include<TopTools_ListOfShape.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
+#include<TopoDS_Face.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TopTools_DataMapOfShapeShape.hxx>
+#include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
 %}

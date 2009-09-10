@@ -77,39 +77,6 @@ class GC_MakeEllipse : public GC_Root {
 };
 
 
-%nodefaultctor GC_MakeConicalSurface;
-class GC_MakeConicalSurface : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &C);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &Cone, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone &Cone, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax1 &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Lin &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
-		%feature("autodoc", "1");
-		const Handle_Geom_ConicalSurface & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_ConicalSurface & Operator() const;
-
-};
-%extend GC_MakeConicalSurface {
-	~GC_MakeConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeConicalSurface\n");}
-	}
-};
-
-
 %nodefaultctor GC_MakeArcOfCircle;
 class GC_MakeArcOfCircle : public GC_Root {
 	public:
@@ -133,29 +100,6 @@ class GC_MakeArcOfCircle : public GC_Root {
 	~GC_MakeArcOfCircle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfCircle\n");}
-	}
-};
-
-
-%nodefaultctor GC_MakeHyperbola;
-class GC_MakeHyperbola : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Hypr &H);
-		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
-		%feature("autodoc", "1");
-		const Handle_Geom_Hyperbola & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Hyperbola & Operator() const;
-
-};
-%extend GC_MakeHyperbola {
-	~GC_MakeHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeHyperbola\n");}
 	}
 };
 
@@ -187,31 +131,23 @@ class GC_MakeLine : public GC_Root {
 };
 
 
-%nodefaultctor GC_MakeMirror;
-class GC_MakeMirror {
+%nodefaultctor GC_MakeTrimmedCone;
+class GC_MakeTrimmedCone : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt &Point);
+		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax1 &Axis);
+		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Lin &Line);
+		const Handle_Geom_RectangularTrimmedSurface & Value() const;
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt &Point, const gp_Dir &Direc);
-		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pln &Plane);
-		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax2 &Plane);
-		%feature("autodoc", "1");
-		const Handle_Geom_Transformation & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Transformation & Operator() const;
+		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
 };
-%extend GC_MakeMirror {
-	~GC_MakeMirror() {
+%extend GC_MakeTrimmedCone {
+	~GC_MakeTrimmedCone() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeMirror\n");}
+	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCone\n");}
 	}
 };
 
@@ -291,23 +227,31 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 };
 
 
-%nodefaultctor GC_MakeTrimmedCone;
-class GC_MakeTrimmedCone : public GC_Root {
+%nodefaultctor GC_MakeMirror;
+class GC_MakeMirror {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
+		GC_MakeMirror(const gp_Pnt &Point);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
+		GC_MakeMirror(const gp_Ax1 &Axis);
 		%feature("autodoc", "1");
-		const Handle_Geom_RectangularTrimmedSurface & Value() const;
+		GC_MakeMirror(const gp_Lin &Line);
 		%feature("autodoc", "1");
-		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
+		GC_MakeMirror(const gp_Pnt &Point, const gp_Dir &Direc);
+		%feature("autodoc", "1");
+		GC_MakeMirror(const gp_Pln &Plane);
+		%feature("autodoc", "1");
+		GC_MakeMirror(const gp_Ax2 &Plane);
+		%feature("autodoc", "1");
+		const Handle_Geom_Transformation & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Transformation & Operator() const;
 
 };
-%extend GC_MakeTrimmedCone {
-	~GC_MakeTrimmedCone() {
+%extend GC_MakeMirror {
+	~GC_MakeMirror() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCone\n");}
+	if (__env){printf("## Call custom destructor for instance of GC_MakeMirror\n");}
 	}
 };
 
@@ -341,54 +285,6 @@ class GC_MakePlane : public GC_Root {
 	~GC_MakePlane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GC_MakePlane\n");}
-	}
-};
-
-
-%nodefaultctor GC_MakeArcOfEllipse;
-class GC_MakeArcOfEllipse : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
-		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
-		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Operator() const;
-
-};
-%extend GC_MakeArcOfEllipse {
-	~GC_MakeArcOfEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfEllipse\n");}
-	}
-};
-
-
-%nodefaultctor GC_MakeSegment;
-class GC_MakeSegment : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Pnt &P1, const gp_Pnt &P2);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const Standard_Real U1, const Standard_Real U2);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &Point, const Standard_Real Ulast);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &P1, const gp_Pnt &P2);
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Operator() const;
-
-};
-%extend GC_MakeSegment {
-	~GC_MakeSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeSegment\n");}
 	}
 };
 
@@ -433,6 +329,37 @@ class GC_MakeRotation {
 	~GC_MakeRotation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GC_MakeRotation\n");}
+	}
+};
+
+
+%nodefaultctor GC_MakeCylindricalSurface;
+class GC_MakeCylindricalSurface : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &C);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Ax1 &Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Circ &Circ);
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Operator() const;
+
+};
+%extend GC_MakeCylindricalSurface {
+	~GC_MakeCylindricalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
 	}
 };
 
@@ -487,32 +414,105 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 };
 
 
-%nodefaultctor GC_MakeCylindricalSurface;
-class GC_MakeCylindricalSurface : public GC_Root {
+%nodefaultctor GC_MakeArcOfEllipse;
+class GC_MakeArcOfEllipse : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax2 &A2, const Standard_Real Radius);
+		GC_MakeArcOfEllipse(const gp_Elips &Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &C);
+		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const gp_Pnt &Point);
+		GC_MakeArcOfEllipse(const gp_Elips &Elips, const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder &Cyl, const Standard_Real Dist);
+		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax1 &Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Circ &Circ);
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Operator() const;
+		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
-%extend GC_MakeCylindricalSurface {
-	~GC_MakeCylindricalSurface() {
+%extend GC_MakeArcOfEllipse {
+	~GC_MakeArcOfEllipse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfEllipse\n");}
+	}
+};
+
+
+%nodefaultctor GC_MakeHyperbola;
+class GC_MakeHyperbola : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Hypr &H);
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Ax2 &A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &Center);
+		%feature("autodoc", "1");
+		const Handle_Geom_Hyperbola & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Hyperbola & Operator() const;
+
+};
+%extend GC_MakeHyperbola {
+	~GC_MakeHyperbola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GC_MakeHyperbola\n");}
+	}
+};
+
+
+%nodefaultctor GC_MakeSegment;
+class GC_MakeSegment : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Pnt &P1, const gp_Pnt &P2);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin &Line, const Standard_Real U1, const Standard_Real U2);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &Point, const Standard_Real Ulast);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin &Line, const gp_Pnt &P1, const gp_Pnt &P2);
+		%feature("autodoc", "1");
+		const Handle_Geom_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_TrimmedCurve & Operator() const;
+
+};
+%extend GC_MakeSegment {
+	~GC_MakeSegment() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GC_MakeSegment\n");}
+	}
+};
+
+
+%nodefaultctor GC_MakeConicalSurface;
+class GC_MakeConicalSurface : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Ax2 &A2, const Standard_Real Ang, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone &C);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone &Cone, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone &Cone, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &P4);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Ax1 &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Lin &Axis, const gp_Pnt &P1, const gp_Pnt &P2);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Pnt &P1, const gp_Pnt &P2, const Standard_Real R1, const Standard_Real R2);
+		%feature("autodoc", "1");
+		const Handle_Geom_ConicalSurface & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_ConicalSurface & Operator() const;
+
+};
+%extend GC_MakeConicalSurface {
+	~GC_MakeConicalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GC_MakeConicalSurface\n");}
 	}
 };

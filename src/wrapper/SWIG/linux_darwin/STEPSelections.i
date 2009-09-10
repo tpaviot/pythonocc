@@ -125,66 +125,6 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 };
 
 
-%nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
-class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
-	STEPSelections_HSequenceOfAssemblyLink* GetObject() {
-	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
-	}
-};
-%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
-	~Handle_STEPSelections_HSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
-	}
-};
-
-
-%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
-class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent* GetObject() {
-	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
-	}
-};
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
-	}
-};
-
-
 %nodefaultctor Handle_STEPSelections_SelectDerived;
 class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	public:
@@ -275,32 +215,32 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 };
 
 
-%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
-class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
+class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
+		Handle_STEPSelections_HSequenceOfAssemblyLink();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_HSequenceOfAssemblyLink(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
+		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
+		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_STEPSelections_HSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	STEPSelections_SequenceNodeOfSequenceOfAssemblyLink* GetObject() {
-	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*)$self->Access();
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	STEPSelections_HSequenceOfAssemblyLink* GetObject() {
+	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	~Handle_STEPSelections_HSequenceOfAssemblyLink() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -335,6 +275,36 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
+class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyLink *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	STEPSelections_SequenceNodeOfSequenceOfAssemblyLink* GetObject() {
+	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*)$self->Access();
+	}
+};
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
+	}
+};
+
+
 %nodefaultctor Handle_STEPSelections_SelectFaces;
 class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	public:
@@ -361,6 +331,93 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	~Handle_STEPSelections_SelectFaces() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectFaces\n");}
+	}
+};
+
+
+%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
+class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent* GetObject() {
+	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
+	}
+};
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
+	}
+};
+
+
+%nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
+class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SequenceOfAssemblyComponent();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const STEPSelections_SequenceOfAssemblyComponent & Assign(const STEPSelections_SequenceOfAssemblyComponent &Other);
+		%feature("autodoc", "1");
+		const STEPSelections_SequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceOfAssemblyComponent &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void Append(STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void Prepend(STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & First() const;
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend STEPSelections_SequenceOfAssemblyComponent {
+	~STEPSelections_SequenceOfAssemblyComponent() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -437,33 +494,31 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 };
 
 
-%nodefaultctor STEPSelections_SelectGSCurves;
-class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
+%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
+class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		STEPSelections_SelectGSCurves();
+		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_AssemblyComponent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
+		Handle_STEPSelections_AssemblyComponent & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend STEPSelections_SelectGSCurves {
-	Handle_STEPSelections_SelectGSCurves GetHandle() {
-	return *(Handle_STEPSelections_SelectGSCurves*) &$self;
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent GetHandle() {
+	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*) &$self;
 	}
 };
-%extend STEPSelections_SelectGSCurves {
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectGSCurves {
-	~STEPSelections_SelectGSCurves() {
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -493,35 +548,6 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 	~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
-	}
-};
-
-
-%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
-class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_AssemblyComponent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent GetHandle() {
-	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*) &$self;
-	}
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -598,6 +624,66 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 };
 
 
+%nodefaultctor STEPSelections_SelectDerived;
+class STEPSelections_SelectDerived : public StepSelect_StepType {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectDerived();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectDerived {
+	Handle_STEPSelections_SelectDerived GetHandle() {
+	return *(Handle_STEPSelections_SelectDerived*) &$self;
+	}
+};
+%extend STEPSelections_SelectDerived {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend STEPSelections_SelectDerived {
+	~STEPSelections_SelectDerived() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
+	}
+};
+
+
+%nodefaultctor STEPSelections_SelectForTransfer;
+class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectForTransfer();
+		%feature("autodoc", "1");
+		STEPSelections_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectForTransfer {
+	Handle_STEPSelections_SelectForTransfer GetHandle() {
+	return *(Handle_STEPSelections_SelectForTransfer*) &$self;
+	}
+};
+%extend STEPSelections_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend STEPSelections_SelectForTransfer {
+	~STEPSelections_SelectForTransfer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectForTransfer\n");}
+	}
+};
+
+
 %nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
 class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 	public:
@@ -669,88 +755,33 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 };
 
 
-%nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
-class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequence {
+%nodefaultctor STEPSelections_SelectGSCurves;
+class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	public:
 		%feature("autodoc", "1");
-		STEPSelections_SequenceOfAssemblyComponent();
+		STEPSelections_SelectGSCurves();
 		%feature("autodoc", "1");
-		void Clear();
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
 		%feature("autodoc", "1");
-		const STEPSelections_SequenceOfAssemblyComponent & Assign(const STEPSelections_SequenceOfAssemblyComponent &Other);
-		%feature("autodoc", "1");
-		const STEPSelections_SequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceOfAssemblyComponent &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void Append(STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void Prepend(STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & First() const;
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend STEPSelections_SequenceOfAssemblyComponent {
-	~STEPSelections_SequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyComponent\n");}
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectDerived;
-class STEPSelections_SelectDerived : public StepSelect_StepType {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectDerived();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		virtual		TCollection_AsciiString ExploreLabel() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend STEPSelections_SelectDerived {
-	Handle_STEPSelections_SelectDerived GetHandle() {
-	return *(Handle_STEPSelections_SelectDerived*) &$self;
+%extend STEPSelections_SelectGSCurves {
+	Handle_STEPSelections_SelectGSCurves GetHandle() {
+	return *(Handle_STEPSelections_SelectGSCurves*) &$self;
 	}
 };
-%extend STEPSelections_SelectDerived {
+%extend STEPSelections_SelectGSCurves {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectDerived {
-	~STEPSelections_SelectDerived() {
+%extend STEPSelections_SelectGSCurves {
+	~STEPSelections_SelectGSCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
 	}
 };
 
@@ -839,37 +870,6 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	~STEPSelections_SelectAssembly() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectAssembly\n");}
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectForTransfer;
-class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectForTransfer();
-		%feature("autodoc", "1");
-		STEPSelections_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SelectForTransfer {
-	Handle_STEPSelections_SelectForTransfer GetHandle() {
-	return *(Handle_STEPSelections_SelectForTransfer*) &$self;
-	}
-};
-%extend STEPSelections_SelectForTransfer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend STEPSelections_SelectForTransfer {
-	~STEPSelections_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectForTransfer\n");}
 	}
 };
 

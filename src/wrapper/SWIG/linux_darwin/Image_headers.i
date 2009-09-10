@@ -72,12 +72,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Aspect_IndexPixel.hxx>
 #include<Handle_Quantity_HArray1OfColor.hxx>
 #include<Quantity_Array1OfColor.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Aspect_Pixel.hxx>
 #include<Aspect_ColorPixel.hxx>
-#include<Aspect_IndexPixel.hxx>
 #include<gp_GTrsf2d.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Aspect_GenericColorMap.hxx>

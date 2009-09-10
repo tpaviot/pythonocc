@@ -230,7 +230,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import TCollection.i
 %import MMgt.i
-%import math.i
 %import Standard.i
-%import GeomAbs.i
 %import IntSurf.i
+%import math.i
+%import GeomAbs.i

@@ -293,42 +293,11 @@ class GccInt_Bisec : public MMgt_TShared {
 };
 
 
-%nodefaultctor GccInt_BHyper;
-class GccInt_BHyper : public GccInt_Bisec {
-	public:
-		%feature("autodoc", "1");
-		GccInt_BHyper(const gp_Hypr2d &Hyper);
-
-};
-%extend GccInt_BHyper {
-	Handle_GccInt_BHyper GetHandle() {
-	return *(Handle_GccInt_BHyper*) &$self;
-	}
-};
-%extend GccInt_BHyper {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GccInt_BHyper {
-	~GccInt_BHyper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
-	}
-};
-
-
 %nodefaultctor GccInt_BParab;
 class GccInt_BParab : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
 		GccInt_BParab(const gp_Parab2d &Parab);
-		%feature("autodoc", "1");
-		virtual		gp_Parab2d Parabola() const;
-		%feature("autodoc", "1");
-		virtual		GccInt_IType ArcType() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend GccInt_BParab {
@@ -469,5 +438,36 @@ class GccInt_BLine : public GccInt_Bisec {
 	~GccInt_BLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GccInt_BLine\n");}
+	}
+};
+
+
+%nodefaultctor GccInt_BHyper;
+class GccInt_BHyper : public GccInt_Bisec {
+	public:
+		%feature("autodoc", "1");
+		GccInt_BHyper(const gp_Hypr2d &Hyper);
+		%feature("autodoc", "1");
+		virtual		gp_Hypr2d Hyperbola() const;
+		%feature("autodoc", "1");
+		virtual		GccInt_IType ArcType() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GccInt_BHyper {
+	Handle_GccInt_BHyper GetHandle() {
+	return *(Handle_GccInt_BHyper*) &$self;
+	}
+};
+%extend GccInt_BHyper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GccInt_BHyper {
+	~GccInt_BHyper() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
 	}
 };

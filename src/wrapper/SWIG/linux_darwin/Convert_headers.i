@@ -52,25 +52,25 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_TColStd_HArray2OfReal.hxx>
-#include<TColStd_Array1OfInteger.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<TColStd_Array2OfReal.hxx>
-#include<Handle_TColgp_HArray1OfPnt.hxx>
 #include<gp_Pnt2d.hxx>
-#include<TColgp_Array1OfPnt.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<gp_Circ2d.hxx>
-#include<Handle_TColStd_HArray2OfInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Cone.hxx>
 #include<gp_Torus.hxx>
-#include<Handle_TColgp_HArray1OfPnt2d.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<TColStd_Array1OfReal.hxx>
+#include<TColStd_Array1OfInteger.hxx>
 #include<gp_Hypr2d.hxx>
+#include<Handle_TColStd_HArray2OfInteger.hxx>
+#include<gp_Parab2d.hxx>
+#include<TColgp_Array1OfPnt.hxx>
 #include<gp_Elips2d.hxx>
 #include<gp_Cylinder.hxx>
-#include<gp_Parab2d.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
+#include<Handle_TColgp_HArray1OfPnt.hxx>
+#include<Handle_TColStd_HArray2OfReal.hxx>
+#include<TColStd_Array2OfReal.hxx>
+#include<Handle_TColgp_HArray1OfPnt2d.hxx>
 #include<gp_Sphere.hxx>
 %}

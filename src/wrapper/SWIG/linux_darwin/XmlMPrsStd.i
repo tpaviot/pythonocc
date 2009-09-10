@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
-class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMPrsStd_AISPresentationDriver {
-	XmlMPrsStd_AISPresentationDriver* GetObject() {
-	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
-	}
-};
-%extend Handle_XmlMPrsStd_AISPresentationDriver {
-	~Handle_XmlMPrsStd_AISPresentationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_XmlMPrsStd_PositionDriver;
 class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -91,6 +61,36 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	~Handle_XmlMPrsStd_PositionDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_PositionDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
+class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
+	XmlMPrsStd_AISPresentationDriver* GetObject() {
+	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
+	}
+};
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
+	~Handle_XmlMPrsStd_AISPresentationDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");}
 	}
 };
 

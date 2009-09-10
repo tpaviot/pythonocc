@@ -36,6 +36,36 @@ typedef void * DBC_DBVArray;
 
 
 
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
+class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger();
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
+	}
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
 class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_ArrayNode {
 	public:
@@ -62,36 +92,6 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 	~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
-	}
-};
-
-
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
-class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal();
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
-		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
-	DBC_VArrayNodeOfVArrayOfReal* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
-	}
-};
-%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
-	~Handle_DBC_VArrayNodeOfVArrayOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfReal\n");}
 	}
 };
 
@@ -126,71 +126,32 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
-class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
+class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger();
+		Handle_DBC_VArrayNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const Handle_DBC_VArrayNodeOfVArrayOfInteger &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger & operator=(const DBC_VArrayNodeOfVArrayOfInteger *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfInteger const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_DBC_VArrayNodeOfVArrayOfReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	DBC_VArrayNodeOfVArrayOfInteger* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+	DBC_VArrayNodeOfVArrayOfReal* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+	~Handle_DBC_VArrayNodeOfVArrayOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
-class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfExtCharacter();
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfExtCharacter(const Standard_ExtCharacter &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_ExtCharacter &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfExtCharacter(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_ExtCharacter _CSFDB_GetDBC_VArrayNodeOfVArrayOfExtCharactermyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfExtCharactermyValue(const Standard_ExtCharacter p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
-	Handle_DBC_VArrayNodeOfVArrayOfExtCharacter GetHandle() {
-	return *(Handle_DBC_VArrayNodeOfVArrayOfExtCharacter*) &$self;
-	}
-};
-%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
-	~DBC_VArrayNodeOfVArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfReal\n");}
 	}
 };
 
@@ -261,6 +222,27 @@ class DBC_BaseArray {
 };
 
 
+%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
+class DBC_VArrayTNodeOfVArrayOfInteger {
+	public:
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger();
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%extend DBC_VArrayTNodeOfVArrayOfInteger {
+	~DBC_VArrayTNodeOfVArrayOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");}
+	}
+};
+
+
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
 class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	public:
@@ -299,8 +281,18 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 		void operator=(const DBC_VArrayOfReal &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -404,8 +396,18 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 		void operator=(const DBC_VArrayOfInteger &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -480,27 +482,6 @@ class DBC_VArrayTNodeOfVArrayOfReal {
 };
 
 
-%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
-class DBC_VArrayTNodeOfVArrayOfInteger {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend DBC_VArrayTNodeOfVArrayOfInteger {
-	~DBC_VArrayTNodeOfVArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");}
-	}
-};
-
-
 %nodefaultctor DBC_VArrayOfExtCharacter;
 class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 	public:
@@ -569,5 +550,44 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 	~DBC_VArrayNodeOfVArrayOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
+class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		DBC_VArrayNodeOfVArrayOfExtCharacter();
+		%feature("autodoc", "1");
+		DBC_VArrayNodeOfVArrayOfExtCharacter(const Standard_ExtCharacter &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_ExtCharacter &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		DBC_VArrayNodeOfVArrayOfExtCharacter(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_ExtCharacter _CSFDB_GetDBC_VArrayNodeOfVArrayOfExtCharactermyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfExtCharactermyValue(const Standard_ExtCharacter p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
+	Handle_DBC_VArrayNodeOfVArrayOfExtCharacter GetHandle() {
+	return *(Handle_DBC_VArrayNodeOfVArrayOfExtCharacter*) &$self;
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
+	~DBC_VArrayNodeOfVArrayOfExtCharacter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
 	}
 };

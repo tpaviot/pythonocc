@@ -71,32 +71,32 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_LocOpe_WiresOnShape;
-class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
+%nodefaultctor Handle_LocOpe_HBuilder;
+class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 	public:
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape();
+		Handle_LocOpe_HBuilder();
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape(const Handle_LocOpe_WiresOnShape &aHandle);
+		Handle_LocOpe_HBuilder(const Handle_LocOpe_HBuilder &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape(const LocOpe_WiresOnShape *anItem);
+		Handle_LocOpe_HBuilder(const LocOpe_HBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape & operator=(const Handle_LocOpe_WiresOnShape &aHandle);
+		Handle_LocOpe_HBuilder & operator=(const Handle_LocOpe_HBuilder &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape & operator=(const LocOpe_WiresOnShape *anItem);
+		Handle_LocOpe_HBuilder & operator=(const LocOpe_HBuilder *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_WiresOnShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_LocOpe_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_LocOpe_WiresOnShape {
-	LocOpe_WiresOnShape* GetObject() {
-	return (LocOpe_WiresOnShape*)$self->Access();
+%extend Handle_LocOpe_HBuilder {
+	LocOpe_HBuilder* GetObject() {
+	return (LocOpe_HBuilder*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_WiresOnShape {
-	~Handle_LocOpe_WiresOnShape() {
+%extend Handle_LocOpe_HBuilder {
+	~Handle_LocOpe_HBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_WiresOnShape\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_HBuilder\n");}
 	}
 };
 
@@ -131,32 +131,32 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 };
 
 
-%nodefaultctor Handle_LocOpe_HBuilder;
-class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
+%nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
+class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder();
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace();
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder(const Handle_LocOpe_HBuilder &aHandle);
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace(const Handle_LocOpe_SequenceNodeOfSequenceOfPntFace &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder(const LocOpe_HBuilder *anItem);
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_SequenceNodeOfSequenceOfPntFace *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder & operator=(const Handle_LocOpe_HBuilder &aHandle);
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace & operator=(const Handle_LocOpe_SequenceNodeOfSequenceOfPntFace &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder & operator=(const LocOpe_HBuilder *anItem);
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace & operator=(const LocOpe_SequenceNodeOfSequenceOfPntFace *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_HBuilder const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_LocOpe_HBuilder {
-	LocOpe_HBuilder* GetObject() {
-	return (LocOpe_HBuilder*)$self->Access();
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
+	LocOpe_SequenceNodeOfSequenceOfPntFace* GetObject() {
+	return (LocOpe_SequenceNodeOfSequenceOfPntFace*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_HBuilder {
-	~Handle_LocOpe_HBuilder() {
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
+	~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_HBuilder\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
 	}
 };
 
@@ -251,32 +251,32 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 };
 
 
-%nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
-class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_LocOpe_WiresOnShape;
+class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	public:
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace();
+		Handle_LocOpe_WiresOnShape();
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace(const Handle_LocOpe_SequenceNodeOfSequenceOfPntFace &aHandle);
+		Handle_LocOpe_WiresOnShape(const Handle_LocOpe_WiresOnShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_SequenceNodeOfSequenceOfPntFace *anItem);
+		Handle_LocOpe_WiresOnShape(const LocOpe_WiresOnShape *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace & operator=(const Handle_LocOpe_SequenceNodeOfSequenceOfPntFace &aHandle);
+		Handle_LocOpe_WiresOnShape & operator=(const Handle_LocOpe_WiresOnShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace & operator=(const LocOpe_SequenceNodeOfSequenceOfPntFace *anItem);
+		Handle_LocOpe_WiresOnShape & operator=(const LocOpe_WiresOnShape *anItem);
 		%feature("autodoc", "1");
-		Handle_LocOpe_SequenceNodeOfSequenceOfPntFace const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_LocOpe_WiresOnShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
-	LocOpe_SequenceNodeOfSequenceOfPntFace* GetObject() {
-	return (LocOpe_SequenceNodeOfSequenceOfPntFace*)$self->Access();
+%extend Handle_LocOpe_WiresOnShape {
+	LocOpe_WiresOnShape* GetObject() {
+	return (LocOpe_WiresOnShape*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
-	~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace() {
+%extend Handle_LocOpe_WiresOnShape {
+	~Handle_LocOpe_WiresOnShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_WiresOnShape\n");}
 	}
 };
 
@@ -311,59 +311,29 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 };
 
 
-%nodefaultctor LocOpe_SequenceOfCirc;
-class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
+%nodefaultctor LocOpe_FindEdgesInFace;
+class LocOpe_FindEdgesInFace {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_SequenceOfCirc();
+		LocOpe_FindEdgesInFace();
 		%feature("autodoc", "1");
-		void Clear();
+		LocOpe_FindEdgesInFace(const TopoDS_Shape &S, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		const LocOpe_SequenceOfCirc & Assign(const LocOpe_SequenceOfCirc &Other);
+		void Set(const TopoDS_Shape &S, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		const LocOpe_SequenceOfCirc & operator=(const LocOpe_SequenceOfCirc &Other);
+		void Init();
 		%feature("autodoc", "1");
-		void Append(const gp_Circ &T);
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void Append(LocOpe_SequenceOfCirc & S);
+		const TopoDS_Edge & Edge() const;
 		%feature("autodoc", "1");
-		void Prepend(const gp_Circ &T);
-		%feature("autodoc", "1");
-		void Prepend(LocOpe_SequenceOfCirc & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const gp_Circ &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const gp_Circ &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
-		%feature("autodoc", "1");
-		const gp_Circ & First() const;
-		%feature("autodoc", "1");
-		const gp_Circ & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
-		%feature("autodoc", "1");
-		const gp_Circ & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Circ & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Circ &I);
-		%feature("autodoc", "1");
-		gp_Circ & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Circ & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		void Next();
 
 };
-%extend LocOpe_SequenceOfCirc {
-	~LocOpe_SequenceOfCirc() {
+%extend LocOpe_FindEdgesInFace {
+	~LocOpe_FindEdgesInFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceOfCirc\n");}
+	if (__env){printf("## Call custom destructor for instance of LocOpe_FindEdgesInFace\n");}
 	}
 };
 
@@ -395,6 +365,74 @@ class LocOpe_Pipe {
 	~LocOpe_Pipe() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LocOpe_Pipe\n");}
+	}
+};
+
+
+%nodefaultctor LocOpe_SplitShape;
+class LocOpe_SplitShape {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_SplitShape();
+		%feature("autodoc", "1");
+		LocOpe_SplitShape(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Boolean CanSplit(const TopoDS_Edge &E) const;
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Vertex &V, const Standard_Real P, const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Wire &W, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & LeftOf(const TopoDS_Wire &W, const TopoDS_Face &F);
+
+};
+%extend LocOpe_SplitShape {
+	~LocOpe_SplitShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_SplitShape\n");}
+	}
+};
+
+
+%nodefaultctor LocOpe_CurveShapeIntersector;
+class LocOpe_CurveShapeIntersector {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_CurveShapeIntersector();
+		%feature("autodoc", "1");
+		LocOpe_CurveShapeIntersector(const gp_Ax1 &Axis, const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		LocOpe_CurveShapeIntersector(const gp_Circ &C, const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const gp_Ax1 &Axis, const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void Init(const gp_Circ &C, const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const LocOpe_PntFace & Point(const Standard_Integer I) const;
+		%feature("autodoc","LocalizeAfter(Standard_Real From)->[Standard_IntegerStandard_Integer]");
+		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeBefore(Standard_Real From)->[Standard_IntegerStandard_Integer]");
+		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
+		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
+		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+
+};
+%extend LocOpe_CurveShapeIntersector {
+	~LocOpe_CurveShapeIntersector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_CurveShapeIntersector\n");}
 	}
 };
 
@@ -494,84 +532,6 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 
 
-%nodefaultctor LocOpe_ProjectedWires;
-class LocOpe_ProjectedWires : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void InitEdgeIterator();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MoreEdge();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Edge Edge();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Face OnFace();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OnEdge(TopoDS_Edge & E);
-		%feature("autodoc", "1");
-		virtual		void NextEdge();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
-		%feature("autodoc","OnEdge(const V)->Standard_Real");
-		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_ProjectedWires {
-	Handle_LocOpe_ProjectedWires GetHandle() {
-	return *(Handle_LocOpe_ProjectedWires*) &$self;
-	}
-};
-%extend LocOpe_ProjectedWires {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend LocOpe_ProjectedWires {
-	~LocOpe_ProjectedWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_ProjectedWires\n");}
-	}
-};
-
-
-%nodefaultctor LocOpe_WiresOnShape;
-class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_WiresOnShape(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Wire &W, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Edge &E, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Edge &EfromW, const TopoDS_Edge &EonFace);
-		%feature("autodoc", "1");
-		void BindAll();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend LocOpe_WiresOnShape {
-	Handle_LocOpe_WiresOnShape GetHandle() {
-	return *(Handle_LocOpe_WiresOnShape*) &$self;
-	}
-};
-%extend LocOpe_WiresOnShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend LocOpe_WiresOnShape {
-	~LocOpe_WiresOnShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_WiresOnShape\n");}
-	}
-};
-
-
 %nodefaultctor LocOpe_DPrism;
 class LocOpe_DPrism {
 	public:
@@ -636,33 +596,98 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor LocOpe_SplitShape;
-class LocOpe_SplitShape {
+%nodefaultctor LocOpe_ProjectedWires;
+class LocOpe_ProjectedWires : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_SplitShape();
+		virtual		void InitEdgeIterator();
 		%feature("autodoc", "1");
-		LocOpe_SplitShape(const TopoDS_Shape &S);
+		virtual		Standard_Boolean MoreEdge();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Edge Edge();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Face OnFace();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OnEdge(TopoDS_Edge & E);
+		%feature("autodoc", "1");
+		virtual		void NextEdge();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
+		%feature("autodoc","OnEdge(const V)->Standard_Real");
+		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend LocOpe_ProjectedWires {
+	Handle_LocOpe_ProjectedWires GetHandle() {
+	return *(Handle_LocOpe_ProjectedWires*) &$self;
+	}
+};
+%extend LocOpe_ProjectedWires {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend LocOpe_ProjectedWires {
+	~LocOpe_ProjectedWires() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_ProjectedWires\n");}
+	}
+};
+
+
+%nodefaultctor LocOpe_WiresOnShape;
+class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_WiresOnShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		Standard_Boolean CanSplit(const TopoDS_Edge &E) const;
+		void Bind(const TopoDS_Wire &W, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Vertex &V, const Standard_Real P, const TopoDS_Edge &E);
+		void Bind(const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Wire &W, const TopoDS_Face &F);
+		void Bind(const TopoDS_Edge &EfromW, const TopoDS_Edge &EonFace);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
+		void BindAll();
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & LeftOf(const TopoDS_Wire &W, const TopoDS_Face &F);
+		virtual		void InitEdgeIterator();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MoreEdge();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Edge Edge();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Face OnFace();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OnEdge(TopoDS_Edge & E);
+		%feature("autodoc", "1");
+		virtual		void NextEdge();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
+		%feature("autodoc","OnEdge(const V)->Standard_Real");
+		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend LocOpe_SplitShape {
-	~LocOpe_SplitShape() {
+%extend LocOpe_WiresOnShape {
+	Handle_LocOpe_WiresOnShape GetHandle() {
+	return *(Handle_LocOpe_WiresOnShape*) &$self;
+	}
+};
+%extend LocOpe_WiresOnShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend LocOpe_WiresOnShape {
+	~LocOpe_WiresOnShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SplitShape\n");}
+	if (__env){printf("## Call custom destructor for instance of LocOpe_WiresOnShape\n");}
 	}
 };
 
@@ -778,39 +803,88 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor LocOpe_CurveShapeIntersector;
-class LocOpe_CurveShapeIntersector {
+%nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
+class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector();
+		LocOpe_SequenceNodeOfSequenceOfLin(const gp_Lin &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector(const gp_Ax1 &Axis, const TopoDS_Shape &S);
+		gp_Lin & Value() const;
 		%feature("autodoc", "1");
-		LocOpe_CurveShapeIntersector(const gp_Circ &C, const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const gp_Ax1 &Axis, const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const gp_Circ &C, const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const LocOpe_PntFace & Point(const Standard_Integer I) const;
-		%feature("autodoc","LocalizeAfter(Standard_Real From)->[Standard_IntegerStandard_Integer]");
-		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Real From)->[Standard_IntegerStandard_Integer]");
-		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
-		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
-		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend LocOpe_CurveShapeIntersector {
-	~LocOpe_CurveShapeIntersector() {
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	Handle_LocOpe_SequenceNodeOfSequenceOfLin GetHandle() {
+	return *(Handle_LocOpe_SequenceNodeOfSequenceOfLin*) &$self;
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	~LocOpe_SequenceNodeOfSequenceOfLin() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_CurveShapeIntersector\n");}
+	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfLin\n");}
+	}
+};
+
+
+%nodefaultctor LocOpe_SequenceOfCirc;
+class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_SequenceOfCirc();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const LocOpe_SequenceOfCirc & Assign(const LocOpe_SequenceOfCirc &Other);
+		%feature("autodoc", "1");
+		const LocOpe_SequenceOfCirc & operator=(const LocOpe_SequenceOfCirc &Other);
+		%feature("autodoc", "1");
+		void Append(const gp_Circ &T);
+		%feature("autodoc", "1");
+		void Append(LocOpe_SequenceOfCirc & S);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Circ &T);
+		%feature("autodoc", "1");
+		void Prepend(LocOpe_SequenceOfCirc & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const gp_Circ &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const gp_Circ &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
+		%feature("autodoc", "1");
+		const gp_Circ & First() const;
+		%feature("autodoc", "1");
+		const gp_Circ & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, LocOpe_SequenceOfCirc & S);
+		%feature("autodoc", "1");
+		const gp_Circ & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Circ & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Circ &I);
+		%feature("autodoc", "1");
+		gp_Circ & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Circ & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend LocOpe_SequenceOfCirc {
+	~LocOpe_SequenceOfCirc() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceOfCirc\n");}
 	}
 };
 
@@ -980,35 +1054,6 @@ class LocOpe_Prism {
 };
 
 
-%nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
-class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_SequenceNodeOfSequenceOfLin(const gp_Lin &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Lin & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_SequenceNodeOfSequenceOfLin {
-	Handle_LocOpe_SequenceNodeOfSequenceOfLin GetHandle() {
-	return *(Handle_LocOpe_SequenceNodeOfSequenceOfLin*) &$self;
-	}
-};
-%extend LocOpe_SequenceNodeOfSequenceOfLin {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend LocOpe_SequenceNodeOfSequenceOfLin {
-	~LocOpe_SequenceNodeOfSequenceOfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfLin\n");}
-	}
-};
-
-
 %nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
 class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIterator {
 	public:
@@ -1028,6 +1073,37 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 	~LocOpe_DataMapIteratorOfDataMapOfShapePnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapIteratorOfDataMapOfShapePnt\n");}
+	}
+};
+
+
+%nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
+class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		LocOpe_DataMapNodeOfDataMapOfShapePnt(const TopoDS_Shape &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		gp_Pnt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt GetHandle() {
+	return *(Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt*) &$self;
+	}
+};
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	~LocOpe_DataMapNodeOfDataMapOfShapePnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
 	}
 };
 
@@ -1073,58 +1149,35 @@ class LocOpe_CSIntersector {
 };
 
 
-%nodefaultctor LocOpe_FindEdgesInFace;
-class LocOpe_FindEdgesInFace {
+%nodefaultctor LocOpe_Spliter;
+class LocOpe_Spliter {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_FindEdgesInFace();
+		LocOpe_Spliter();
 		%feature("autodoc", "1");
-		LocOpe_FindEdgesInFace(const TopoDS_Shape &S, const TopoDS_Face &F);
+		LocOpe_Spliter(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape &S, const TopoDS_Face &F);
+		void Init(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		void Init();
+		void Perform(const Handle_LocOpe_ProjectedWires &PW);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const TopoDS_Edge & Edge() const;
+		const TopoDS_Shape & ResultingShape() const;
 		%feature("autodoc", "1");
-		void Next();
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & DirectLeft() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Left() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
 
 };
-%extend LocOpe_FindEdgesInFace {
-	~LocOpe_FindEdgesInFace() {
+%extend LocOpe_Spliter {
+	~LocOpe_Spliter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_FindEdgesInFace\n");}
-	}
-};
-
-
-%nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
-class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_PntFace &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		LocOpe_PntFace & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	Handle_LocOpe_SequenceNodeOfSequenceOfPntFace GetHandle() {
-	return *(Handle_LocOpe_SequenceNodeOfSequenceOfPntFace*) &$self;
-	}
-};
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	~LocOpe_SequenceNodeOfSequenceOfPntFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
+	if (__env){printf("## Call custom destructor for instance of LocOpe_Spliter\n");}
 	}
 };
 
@@ -1363,65 +1416,30 @@ class LocOpe_LinearForm {
 };
 
 
-%nodefaultctor LocOpe_Spliter;
-class LocOpe_Spliter {
+%nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
+class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		LocOpe_Spliter();
+		LocOpe_SequenceNodeOfSequenceOfPntFace(const LocOpe_PntFace &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		LocOpe_Spliter(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void Perform(const Handle_LocOpe_ProjectedWires &PW);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & ResultingShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & DirectLeft() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Left() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
-
-};
-%extend LocOpe_Spliter {
-	~LocOpe_Spliter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Spliter\n");}
-	}
-};
-
-
-%nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
-class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_DataMapNodeOfDataMapOfShapePnt(const TopoDS_Shape &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
+		LocOpe_PntFace & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt GetHandle() {
-	return *(Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt*) &$self;
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	Handle_LocOpe_SequenceNodeOfSequenceOfPntFace GetHandle() {
+	return *(Handle_LocOpe_SequenceNodeOfSequenceOfPntFace*) &$self;
 	}
 };
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	~LocOpe_DataMapNodeOfDataMapOfShapePnt() {
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	~LocOpe_SequenceNodeOfSequenceOfPntFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
+	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
 	}
 };

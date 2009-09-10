@@ -335,62 +335,32 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 };
 
 
-%nodefaultctor Handle_TColGeom_HSequenceOfBoundedSurface;
-class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
+class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface();
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve();
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface(const Handle_TColGeom_HSequenceOfBoundedSurface &aHandle);
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve(const Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface(const TColGeom_HSequenceOfBoundedSurface *anItem);
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve(const TColGeom_SequenceNodeOfSequenceOfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface & operator=(const Handle_TColGeom_HSequenceOfBoundedSurface &aHandle);
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve & operator=(const Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface & operator=(const TColGeom_HSequenceOfBoundedSurface *anItem);
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve & operator=(const TColGeom_SequenceNodeOfSequenceOfBoundedCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColGeom_HSequenceOfBoundedSurface {
-	TColGeom_HSequenceOfBoundedSurface* GetObject() {
-	return (TColGeom_HSequenceOfBoundedSurface*)$self->Access();
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
+	TColGeom_SequenceNodeOfSequenceOfBoundedCurve* GetObject() {
+	return (TColGeom_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HSequenceOfBoundedSurface {
-	~Handle_TColGeom_HSequenceOfBoundedSurface() {
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
+	~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom_HArray2OfBezierSurface;
-class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface();
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface(const Handle_TColGeom_HArray2OfBezierSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface(const TColGeom_HArray2OfBezierSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface & operator=(const Handle_TColGeom_HArray2OfBezierSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface & operator=(const TColGeom_HArray2OfBezierSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom_HArray2OfBezierSurface {
-	TColGeom_HArray2OfBezierSurface* GetObject() {
-	return (TColGeom_HArray2OfBezierSurface*)$self->Access();
-	}
-};
-%extend Handle_TColGeom_HArray2OfBezierSurface {
-	~Handle_TColGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBezierSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -455,62 +425,32 @@ class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
-class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_TColGeom_HArray2OfBezierSurface;
+class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve();
+		Handle_TColGeom_HArray2OfBezierSurface();
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve(const Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
+		Handle_TColGeom_HArray2OfBezierSurface(const Handle_TColGeom_HArray2OfBezierSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve(const TColGeom_SequenceNodeOfSequenceOfBoundedCurve *anItem);
+		Handle_TColGeom_HArray2OfBezierSurface(const TColGeom_HArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve & operator=(const Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve &aHandle);
+		Handle_TColGeom_HArray2OfBezierSurface & operator=(const Handle_TColGeom_HArray2OfBezierSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve & operator=(const TColGeom_SequenceNodeOfSequenceOfBoundedCurve *anItem);
+		Handle_TColGeom_HArray2OfBezierSurface & operator=(const TColGeom_HArray2OfBezierSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TColGeom_HArray2OfBezierSurface const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
-	TColGeom_SequenceNodeOfSequenceOfBoundedCurve* GetObject() {
-	return (TColGeom_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
+%extend Handle_TColGeom_HArray2OfBezierSurface {
+	TColGeom_HArray2OfBezierSurface* GetObject() {
+	return (TColGeom_HArray2OfBezierSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
-	~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve() {
+%extend Handle_TColGeom_HArray2OfBezierSurface {
+	~Handle_TColGeom_HArray2OfBezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom_HArray2OfSurface;
-class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface();
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface(const Handle_TColGeom_HArray2OfSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface(const TColGeom_HArray2OfSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface & operator=(const Handle_TColGeom_HArray2OfSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface & operator=(const TColGeom_HArray2OfSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HArray2OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom_HArray2OfSurface {
-	TColGeom_HArray2OfSurface* GetObject() {
-	return (TColGeom_HArray2OfSurface*)$self->Access();
-	}
-};
-%extend Handle_TColGeom_HArray2OfSurface {
-	~Handle_TColGeom_HArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBezierSurface\n");}
 	}
 };
 
@@ -545,6 +485,66 @@ class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_TColGeom_HArray2OfSurface;
+class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface();
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface(const Handle_TColGeom_HArray2OfSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface(const TColGeom_HArray2OfSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface & operator=(const Handle_TColGeom_HArray2OfSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface & operator=(const TColGeom_HArray2OfSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HArray2OfSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom_HArray2OfSurface {
+	TColGeom_HArray2OfSurface* GetObject() {
+	return (TColGeom_HArray2OfSurface*)$self->Access();
+	}
+};
+%extend Handle_TColGeom_HArray2OfSurface {
+	~Handle_TColGeom_HArray2OfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_TColGeom_HSequenceOfBoundedSurface;
+class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface();
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface(const Handle_TColGeom_HSequenceOfBoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface(const TColGeom_HSequenceOfBoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface & operator=(const Handle_TColGeom_HSequenceOfBoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface & operator=(const TColGeom_HSequenceOfBoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfBoundedSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom_HSequenceOfBoundedSurface {
+	TColGeom_HSequenceOfBoundedSurface* GetObject() {
+	return (TColGeom_HSequenceOfBoundedSurface*)$self->Access();
+	}
+};
+%extend Handle_TColGeom_HSequenceOfBoundedSurface {
+	~Handle_TColGeom_HSequenceOfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedCurve;
 class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	public:
@@ -571,53 +571,6 @@ class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	~Handle_TColGeom_HSequenceOfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_HArray1OfSurface;
-class TColGeom_HArray1OfSurface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfSurface(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_Surface &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColGeom_Array1OfSurface & Array1() const;
-		%feature("autodoc", "1");
-		TColGeom_Array1OfSurface & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_HArray1OfSurface {
-	Handle_TColGeom_HArray1OfSurface GetHandle() {
-	return *(Handle_TColGeom_HArray1OfSurface*) &$self;
-	}
-};
-%extend TColGeom_HArray1OfSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_HArray1OfSurface {
-	~TColGeom_HArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfSurface\n");}
 	}
 };
 
@@ -708,49 +661,120 @@ class TColGeom_Array1OfCurve {
 };
 
 
-%nodefaultctor TColGeom_Array2OfSurface;
-class TColGeom_Array2OfSurface {
+%nodefaultctor TColGeom_HSequenceOfCurve;
+class TColGeom_HSequenceOfCurve : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColGeom_Array2OfSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		TColGeom_HSequenceOfCurve();
 		%feature("autodoc", "1");
-		TColGeom_Array2OfSurface(const Handle_Geom_Surface &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom_Curve &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColGeom_HSequenceOfCurve &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom_Curve &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColGeom_HSequenceOfCurve &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColGeom_HSequenceOfCurve &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColGeom_HSequenceOfCurve &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfCurve Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TColGeom_SequenceOfCurve & Sequence() const;
+		%feature("autodoc", "1");
+		TColGeom_SequenceOfCurve & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TColGeom_HSequenceOfCurve ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom_HSequenceOfCurve {
+	Handle_TColGeom_HSequenceOfCurve GetHandle() {
+	return *(Handle_TColGeom_HSequenceOfCurve*) &$self;
+	}
+};
+%extend TColGeom_HSequenceOfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_HSequenceOfCurve {
+	~TColGeom_HSequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_HArray1OfSurface;
+class TColGeom_HArray1OfSurface : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfSurface(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_Surface &V);
 		%feature("autodoc", "1");
 		void Init(const Handle_Geom_Surface &V);
 		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		const TColGeom_Array2OfSurface & Assign(const TColGeom_Array2OfSurface &Other);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		const TColGeom_Array2OfSurface & operator=(const TColGeom_Array2OfSurface &Other);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &Value);
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
+		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		const TColGeom_Array1OfSurface & Array1() const;
 		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
+		TColGeom_Array1OfSurface & ChangeArray1();
 		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_Geom_Surface &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TColGeom_Array2OfSurface {
-	~TColGeom_Array2OfSurface() {
+%extend TColGeom_HArray1OfSurface {
+	Handle_TColGeom_HArray1OfSurface GetHandle() {
+	return *(Handle_TColGeom_HArray1OfSurface*) &$self;
+	}
+};
+%extend TColGeom_HArray1OfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_HArray1OfSurface {
+	~TColGeom_HArray1OfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfSurface\n");}
 	}
 };
 
@@ -860,6 +884,53 @@ class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 
 
+%nodefaultctor TColGeom_Array2OfSurface;
+class TColGeom_Array2OfSurface {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_Array2OfSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColGeom_Array2OfSurface(const Handle_Geom_Surface &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColGeom_Array2OfSurface & Assign(const TColGeom_Array2OfSurface &Other);
+		%feature("autodoc", "1");
+		const TColGeom_Array2OfSurface & operator=(const TColGeom_Array2OfSurface &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_Geom_Surface &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%extend TColGeom_Array2OfSurface {
+	~TColGeom_Array2OfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfSurface\n");}
+	}
+};
+
+
 %nodefaultctor TColGeom_Array2OfBezierSurface;
 class TColGeom_Array2OfBezierSurface {
 	public:
@@ -903,130 +974,6 @@ class TColGeom_Array2OfBezierSurface {
 	~TColGeom_Array2OfBezierSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBezierSurface\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_HSequenceOfCurve;
-class TColGeom_HSequenceOfCurve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_HSequenceOfCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Curve &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColGeom_HSequenceOfCurve &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Curve &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColGeom_HSequenceOfCurve &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColGeom_HSequenceOfCurve &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColGeom_HSequenceOfCurve &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfCurve Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Geom_Curve &anItem);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColGeom_SequenceOfCurve & Sequence() const;
-		%feature("autodoc", "1");
-		TColGeom_SequenceOfCurve & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColGeom_HSequenceOfCurve ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_HSequenceOfCurve {
-	Handle_TColGeom_HSequenceOfCurve GetHandle() {
-	return *(Handle_TColGeom_HSequenceOfCurve*) &$self;
-	}
-};
-%extend TColGeom_HSequenceOfCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_HSequenceOfCurve {
-	~TColGeom_HSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfCurve\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_HArray2OfBezierSurface;
-class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_HArray2OfBezierSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColGeom_HArray2OfBezierSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_Geom_BezierSurface &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BezierSurface &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_Geom_BezierSurface &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_BezierSurface & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BezierSurface & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TColGeom_Array2OfBezierSurface & Array2() const;
-		%feature("autodoc", "1");
-		TColGeom_Array2OfBezierSurface & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_HArray2OfBezierSurface {
-	Handle_TColGeom_HArray2OfBezierSurface GetHandle() {
-	return *(Handle_TColGeom_HArray2OfBezierSurface*) &$self;
-	}
-};
-%extend TColGeom_HArray2OfBezierSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_HArray2OfBezierSurface {
-	~TColGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfBezierSurface\n");}
 	}
 };
 
@@ -1102,6 +1049,249 @@ class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
 };
 
 
+%nodefaultctor TColGeom_HArray1OfBSplineCurve;
+class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_BSplineCurve &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BSplineCurve &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_BSplineCurve &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfBSplineCurve & Array1() const;
+		%feature("autodoc", "1");
+		TColGeom_Array1OfBSplineCurve & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom_HArray1OfBSplineCurve {
+	Handle_TColGeom_HArray1OfBSplineCurve GetHandle() {
+	return *(Handle_TColGeom_HArray1OfBSplineCurve*) &$self;
+	}
+};
+%extend TColGeom_HArray1OfBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_HArray1OfBSplineCurve {
+	~TColGeom_HArray1OfBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_SequenceOfCurve;
+class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_SequenceOfCurve();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TColGeom_SequenceOfCurve & Assign(const TColGeom_SequenceOfCurve &Other);
+		%feature("autodoc", "1");
+		const TColGeom_SequenceOfCurve & operator=(const TColGeom_SequenceOfCurve &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void Append(TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void Prepend(TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Curve &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Curve &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & First() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Curve &I);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend TColGeom_SequenceOfCurve {
+	~TColGeom_SequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfCurve\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_Array1OfBoundedSurface;
+class TColGeom_Array1OfBoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_Array1OfBoundedSurface(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom_Array1OfBoundedSurface(const Handle_Geom_BoundedSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BoundedSurface &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfBoundedSurface & Assign(const TColGeom_Array1OfBoundedSurface &Other);
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfBoundedSurface & operator=(const TColGeom_Array1OfBoundedSurface &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_BoundedSurface &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_BoundedSurface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index);
+
+};
+%extend TColGeom_Array1OfBoundedSurface {
+	~TColGeom_Array1OfBoundedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBoundedSurface\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_Array1OfSurface;
+class TColGeom_Array1OfSurface {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_Array1OfSurface(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom_Array1OfSurface(const Handle_Geom_Surface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfSurface & Assign(const TColGeom_Array1OfSurface &Other);
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfSurface & operator=(const TColGeom_Array1OfSurface &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & operator()(const Standard_Integer Index);
+
+};
+%extend TColGeom_Array1OfSurface {
+	~TColGeom_Array1OfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfSurface\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_HArray2OfBezierSurface;
+class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_HArray2OfBezierSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColGeom_HArray2OfBezierSurface(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_Geom_BezierSurface &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BezierSurface &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_Geom_BezierSurface &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_BezierSurface & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BezierSurface & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const TColGeom_Array2OfBezierSurface & Array2() const;
+		%feature("autodoc", "1");
+		TColGeom_Array2OfBezierSurface & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom_HArray2OfBezierSurface {
+	Handle_TColGeom_HArray2OfBezierSurface GetHandle() {
+	return *(Handle_TColGeom_HArray2OfBezierSurface*) &$self;
+	}
+};
+%extend TColGeom_HArray2OfBezierSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_HArray2OfBezierSurface {
+	~TColGeom_HArray2OfBezierSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfBezierSurface\n");}
+	}
+};
+
+
 %nodefaultctor TColGeom_SequenceOfBoundedSurface;
 class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 	public:
@@ -1155,53 +1345,6 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 	~TColGeom_SequenceOfBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_HArray1OfBSplineCurve;
-class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfBSplineCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_BSplineCurve &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BSplineCurve &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_BSplineCurve &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColGeom_Array1OfBSplineCurve & Array1() const;
-		%feature("autodoc", "1");
-		TColGeom_Array1OfBSplineCurve & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_HArray1OfBSplineCurve {
-	Handle_TColGeom_HArray1OfBSplineCurve GetHandle() {
-	return *(Handle_TColGeom_HArray1OfBSplineCurve*) &$self;
-	}
-};
-%extend TColGeom_HArray1OfBSplineCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_HArray1OfBSplineCurve {
-	~TColGeom_HArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -1459,45 +1602,59 @@ class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColGeom_Array1OfBoundedSurface;
-class TColGeom_Array1OfBoundedSurface {
+%nodefaultctor TColGeom_SequenceOfBoundedCurve;
+class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColGeom_Array1OfBoundedSurface(const Standard_Integer Low, const Standard_Integer Up);
+		TColGeom_SequenceOfBoundedCurve();
 		%feature("autodoc", "1");
-		TColGeom_Array1OfBoundedSurface(const Handle_Geom_BoundedSurface &Item, const Standard_Integer Low, const Standard_Integer Up);
+		void Clear();
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BoundedSurface &V);
+		const TColGeom_SequenceOfBoundedCurve & Assign(const TColGeom_SequenceOfBoundedCurve &Other);
 		%feature("autodoc", "1");
-		void Destroy();
+		const TColGeom_SequenceOfBoundedCurve & operator=(const TColGeom_SequenceOfBoundedCurve &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		void Append(const Handle_Geom_BoundedCurve &T);
 		%feature("autodoc", "1");
-		const TColGeom_Array1OfBoundedSurface & Assign(const TColGeom_Array1OfBoundedSurface &Other);
+		void Append(TColGeom_SequenceOfBoundedCurve & S);
 		%feature("autodoc", "1");
-		const TColGeom_Array1OfBoundedSurface & operator=(const TColGeom_Array1OfBoundedSurface &Other);
+		void Prepend(const Handle_Geom_BoundedCurve &T);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Prepend(TColGeom_SequenceOfBoundedCurve & S);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom_BoundedCurve &I);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void InsertBefore(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_BoundedSurface &Value);
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom_BoundedCurve &T);
 		%feature("autodoc", "1");
-		const Handle_Geom_BoundedSurface & Value(const Standard_Integer Index) const;
+		void InsertAfter(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
 		%feature("autodoc", "1");
-		const Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index) const;
+		const Handle_Geom_BoundedCurve & First() const;
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface & ChangeValue(const Standard_Integer Index);
+		const Handle_Geom_BoundedCurve & Last() const;
 		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index);
+		void Split(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom_BoundedCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_BoundedCurve &I);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom_Array1OfBoundedSurface {
-	~TColGeom_Array1OfBoundedSurface() {
+%extend TColGeom_SequenceOfBoundedCurve {
+	~TColGeom_SequenceOfBoundedCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBoundedSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -1612,35 +1769,6 @@ class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;
-class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_SequenceNodeOfSequenceOfSurface(const Handle_Geom_Surface &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_SequenceNodeOfSequenceOfSurface {
-	Handle_TColGeom_SequenceNodeOfSequenceOfSurface GetHandle() {
-	return *(Handle_TColGeom_SequenceNodeOfSequenceOfSurface*) &$self;
-	}
-};
-%extend TColGeom_SequenceNodeOfSequenceOfSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_SequenceNodeOfSequenceOfSurface {
-	~TColGeom_SequenceNodeOfSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
-
-
 %nodefaultctor TColGeom_Array2OfBoundedSurface;
 class TColGeom_Array2OfBoundedSurface {
 	public:
@@ -1684,6 +1812,53 @@ class TColGeom_Array2OfBoundedSurface {
 	~TColGeom_Array2OfBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBoundedSurface\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_HArray1OfBezierCurve;
+class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_BezierCurve &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_BezierCurve &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom_BezierCurve &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom_BezierCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColGeom_Array1OfBezierCurve & Array1() const;
+		%feature("autodoc", "1");
+		TColGeom_Array1OfBezierCurve & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom_HArray1OfBezierCurve {
+	Handle_TColGeom_HArray1OfBezierCurve GetHandle() {
+	return *(Handle_TColGeom_HArray1OfBezierCurve*) &$self;
+	}
+};
+%extend TColGeom_HArray1OfBezierCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_HArray1OfBezierCurve {
+	~TColGeom_HArray1OfBezierCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -1821,63 +1996,6 @@ class TColGeom_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 
 
-%nodefaultctor TColGeom_SequenceOfBoundedCurve;
-class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_SequenceOfBoundedCurve();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColGeom_SequenceOfBoundedCurve & Assign(const TColGeom_SequenceOfBoundedCurve &Other);
-		%feature("autodoc", "1");
-		const TColGeom_SequenceOfBoundedCurve & operator=(const TColGeom_SequenceOfBoundedCurve &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_BoundedCurve &T);
-		%feature("autodoc", "1");
-		void Append(TColGeom_SequenceOfBoundedCurve & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_BoundedCurve &T);
-		%feature("autodoc", "1");
-		void Prepend(TColGeom_SequenceOfBoundedCurve & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_BoundedCurve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_BoundedCurve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_BoundedCurve & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_BoundedCurve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColGeom_SequenceOfBoundedCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_BoundedCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_BoundedCurve &I);
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColGeom_SequenceOfBoundedCurve {
-	~TColGeom_SequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfBoundedCurve\n");}
-	}
-};
-
-
 %nodefaultctor TColGeom_Array2OfBSplineSurface;
 class TColGeom_Array2OfBSplineSurface {
 	public:
@@ -1921,153 +2039,6 @@ class TColGeom_Array2OfBSplineSurface {
 	~TColGeom_Array2OfBSplineSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBSplineSurface\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_Array1OfSurface;
-class TColGeom_Array1OfSurface {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_Array1OfSurface(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom_Array1OfSurface(const Handle_Geom_Surface &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TColGeom_Array1OfSurface & Assign(const TColGeom_Array1OfSurface &Other);
-		%feature("autodoc", "1");
-		const TColGeom_Array1OfSurface & operator=(const TColGeom_Array1OfSurface &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Surface &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface & operator()(const Standard_Integer Index);
-
-};
-%extend TColGeom_Array1OfSurface {
-	~TColGeom_Array1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfSurface\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_HArray1OfBezierCurve;
-class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom_BezierCurve &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_BezierCurve &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_BezierCurve &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom_BezierCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColGeom_Array1OfBezierCurve & Array1() const;
-		%feature("autodoc", "1");
-		TColGeom_Array1OfBezierCurve & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom_HArray1OfBezierCurve {
-	Handle_TColGeom_HArray1OfBezierCurve GetHandle() {
-	return *(Handle_TColGeom_HArray1OfBezierCurve*) &$self;
-	}
-};
-%extend TColGeom_HArray1OfBezierCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend TColGeom_HArray1OfBezierCurve {
-	~TColGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBezierCurve\n");}
-	}
-};
-
-
-%nodefaultctor TColGeom_SequenceOfCurve;
-class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TColGeom_SequenceOfCurve();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TColGeom_SequenceOfCurve & Assign(const TColGeom_SequenceOfCurve &Other);
-		%feature("autodoc", "1");
-		const TColGeom_SequenceOfCurve & operator=(const TColGeom_SequenceOfCurve &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void Append(TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void Prepend(TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom_Curve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom_Curve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & First() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom_Curve &I);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend TColGeom_SequenceOfCurve {
-	~TColGeom_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfCurve\n");}
 	}
 };
 
@@ -2139,5 +2110,34 @@ class TColGeom_HSequenceOfSurface : public MMgt_TShared {
 	~TColGeom_HSequenceOfSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfSurface\n");}
+	}
+};
+
+
+%nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;
+class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColGeom_SequenceNodeOfSequenceOfSurface(const Handle_Geom_Surface &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom_SequenceNodeOfSequenceOfSurface {
+	Handle_TColGeom_SequenceNodeOfSequenceOfSurface GetHandle() {
+	return *(Handle_TColGeom_SequenceNodeOfSequenceOfSurface*) &$self;
+	}
+};
+%extend TColGeom_SequenceNodeOfSequenceOfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend TColGeom_SequenceNodeOfSequenceOfSurface {
+	~TColGeom_SequenceNodeOfSequenceOfSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfSurface\n");}
 	}
 };

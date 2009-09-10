@@ -283,6 +283,27 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 
 
+%nodefaultctor XmlLDrivers_NamespaceDef;
+class XmlLDrivers_NamespaceDef {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef();
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef(const TCollection_AsciiString &thePrefix, const TCollection_AsciiString &theURI);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Prefix() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & URI() const;
+
+};
+%extend XmlLDrivers_NamespaceDef {
+	~XmlLDrivers_NamespaceDef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");}
+	}
+};
+
+
 %nodefaultctor XmlLDrivers;
 class XmlLDrivers {
 	public:
@@ -302,26 +323,5 @@ class XmlLDrivers {
 	~XmlLDrivers() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of XmlLDrivers\n");}
-	}
-};
-
-
-%nodefaultctor XmlLDrivers_NamespaceDef;
-class XmlLDrivers_NamespaceDef {
-	public:
-		%feature("autodoc", "1");
-		XmlLDrivers_NamespaceDef();
-		%feature("autodoc", "1");
-		XmlLDrivers_NamespaceDef(const TCollection_AsciiString &thePrefix, const TCollection_AsciiString &theURI);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Prefix() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & URI() const;
-
-};
-%extend XmlLDrivers_NamespaceDef {
-	~XmlLDrivers_NamespaceDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");}
 	}
 };

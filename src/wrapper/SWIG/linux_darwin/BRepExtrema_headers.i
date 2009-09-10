@@ -48,7 +48,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Pnt.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
-#include<Bnd_Box.hxx>
 #include<TopoDS_Edge.hxx>
+#include<Bnd_Box.hxx>
 #include<Standard_SStream.hxx>
 %}

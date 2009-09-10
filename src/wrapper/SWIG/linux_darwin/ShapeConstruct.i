@@ -65,33 +65,6 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor ShapeConstruct;
-class ShapeConstruct {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct();
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve ConvertCurveToBSpline(const Handle_Geom2d_Curve &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol2d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face &theFace, TopoDS_Edge & theEdge);
-		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
-		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
-		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
-		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
-
-};
-%extend ShapeConstruct {
-	~ShapeConstruct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
-	}
-};
-
-
 %nodefaultctor ShapeConstruct_ProjectCurveOnSurface;
 class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	public:
@@ -109,8 +82,18 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
 		Standard_Boolean & BuildCurveMode();
-		%feature("autodoc", "1");
-		Standard_Integer & AdjustOverDegenMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetAdjustOverDegenMode() {
+				return (Standard_Integer) $self->AdjustOverDegenMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetAdjustOverDegenMode(Standard_Integer value ) {
+				$self->AdjustOverDegenMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status Status) const;
 		%feature("autodoc", "1");
@@ -245,5 +228,32 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 	~ShapeConstruct_MakeTriangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
+	}
+};
+
+
+%nodefaultctor ShapeConstruct;
+class ShapeConstruct {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct();
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve ConvertCurveToBSpline(const Handle_Geom2d_Curve &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol2d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
+		%feature("autodoc", "1");
+		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face &theFace, TopoDS_Edge & theEdge);
+		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
+		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
+
+};
+%extend ShapeConstruct {
+	~ShapeConstruct() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
 	}
 };

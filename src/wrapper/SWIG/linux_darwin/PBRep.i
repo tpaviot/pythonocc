@@ -35,96 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_PBRep_PointRepresentation;
-class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation();
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation(const Handle_PBRep_PointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation(const PBRep_PointRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation & operator=(const Handle_PBRep_PointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation & operator=(const PBRep_PointRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PointRepresentation {
-	PBRep_PointRepresentation* GetObject() {
-	return (PBRep_PointRepresentation*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PointRepresentation {
-	~Handle_PBRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PBRep_PointsOnSurface;
-class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface();
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface(const Handle_PBRep_PointsOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface(const PBRep_PointsOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface & operator=(const Handle_PBRep_PointsOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface & operator=(const PBRep_PointsOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointsOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PointsOnSurface {
-	PBRep_PointsOnSurface* GetObject() {
-	return (PBRep_PointsOnSurface*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PointsOnSurface {
-	~Handle_PBRep_PointsOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PBRep_PointOnCurveOnSurface;
-class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface();
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface(const Handle_PBRep_PointOnCurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface(const PBRep_PointOnCurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface & operator=(const Handle_PBRep_PointOnCurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface & operator=(const PBRep_PointOnCurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PointOnCurveOnSurface {
-	PBRep_PointOnCurveOnSurface* GetObject() {
-	return (PBRep_PointOnCurveOnSurface*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PointOnCurveOnSurface {
-	~Handle_PBRep_PointOnCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PBRep_CurveRepresentation;
 class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	public:
@@ -245,6 +155,126 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 };
 
 
+%nodefaultctor Handle_PBRep_PointRepresentation;
+class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation();
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation(const Handle_PBRep_PointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation(const PBRep_PointRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation & operator=(const Handle_PBRep_PointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation & operator=(const PBRep_PointRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointRepresentation const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_PointRepresentation {
+	PBRep_PointRepresentation* GetObject() {
+	return (PBRep_PointRepresentation*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PointRepresentation {
+	~Handle_PBRep_PointRepresentation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_PointsOnSurface;
+class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface();
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface(const Handle_PBRep_PointsOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface(const PBRep_PointsOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface & operator=(const Handle_PBRep_PointsOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface & operator=(const PBRep_PointsOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointsOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_PointsOnSurface {
+	PBRep_PointsOnSurface* GetObject() {
+	return (PBRep_PointsOnSurface*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PointsOnSurface {
+	~Handle_PBRep_PointsOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_PointOnCurveOnSurface;
+class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface();
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface(const Handle_PBRep_PointOnCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface(const PBRep_PointOnCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface & operator=(const Handle_PBRep_PointOnCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface & operator=(const PBRep_PointOnCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnCurveOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_PointOnCurveOnSurface {
+	PBRep_PointOnCurveOnSurface* GetObject() {
+	return (PBRep_PointOnCurveOnSurface*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PointOnCurveOnSurface {
+	~Handle_PBRep_PointOnCurveOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_TVertex1;
+class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1();
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1(const Handle_PBRep_TVertex1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1(const PBRep_TVertex1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1 & operator=(const Handle_PBRep_TVertex1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1 & operator=(const PBRep_TVertex1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_TVertex1 {
+	PBRep_TVertex1* GetObject() {
+	return (PBRep_TVertex1*)$self->Access();
+	}
+};
+%extend Handle_PBRep_TVertex1 {
+	~Handle_PBRep_TVertex1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex1\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PBRep_TFace;
 class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	public:
@@ -271,36 +301,6 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	~Handle_PBRep_TFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TFace\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PBRep_PolygonOnTriangulation;
-class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation();
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation(const Handle_PBRep_PolygonOnTriangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation(const PBRep_PolygonOnTriangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation & operator=(const Handle_PBRep_PolygonOnTriangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation & operator=(const PBRep_PolygonOnTriangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PolygonOnTriangulation {
-	PBRep_PolygonOnTriangulation* GetObject() {
-	return (PBRep_PolygonOnTriangulation*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PolygonOnTriangulation {
-	~Handle_PBRep_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -365,32 +365,122 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 };
 
 
-%nodefaultctor Handle_PBRep_TVertex1;
-class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
+%nodefaultctor Handle_PBRep_PolygonOnClosedSurface;
+class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface {
 	public:
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1();
+		Handle_PBRep_PolygonOnClosedSurface();
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1(const Handle_PBRep_TVertex1 &aHandle);
+		Handle_PBRep_PolygonOnClosedSurface(const Handle_PBRep_PolygonOnClosedSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1(const PBRep_TVertex1 *anItem);
+		Handle_PBRep_PolygonOnClosedSurface(const PBRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1 & operator=(const Handle_PBRep_TVertex1 &aHandle);
+		Handle_PBRep_PolygonOnClosedSurface & operator=(const Handle_PBRep_PolygonOnClosedSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1 & operator=(const PBRep_TVertex1 *anItem);
+		Handle_PBRep_PolygonOnClosedSurface & operator=(const PBRep_PolygonOnClosedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_PBRep_TVertex1 const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PBRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PBRep_TVertex1 {
-	PBRep_TVertex1* GetObject() {
-	return (PBRep_TVertex1*)$self->Access();
+%extend Handle_PBRep_PolygonOnClosedSurface {
+	PBRep_PolygonOnClosedSurface* GetObject() {
+	return (PBRep_PolygonOnClosedSurface*)$self->Access();
 	}
 };
-%extend Handle_PBRep_TVertex1 {
-	~Handle_PBRep_TVertex1() {
+%extend Handle_PBRep_PolygonOnClosedSurface {
+	~Handle_PBRep_PolygonOnClosedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex1\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_PointOnSurface;
+class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface();
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface(const Handle_PBRep_PointOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface(const PBRep_PointOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface & operator=(const Handle_PBRep_PointOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface & operator=(const PBRep_PointOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PointOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_PointOnSurface {
+	PBRep_PointOnSurface* GetObject() {
+	return (PBRep_PointOnSurface*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PointOnSurface {
+	~Handle_PBRep_PointOnSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_PolygonOnTriangulation;
+class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation();
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation(const Handle_PBRep_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation(const PBRep_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation & operator=(const Handle_PBRep_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation & operator=(const PBRep_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_PolygonOnTriangulation const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_PolygonOnTriangulation {
+	PBRep_PolygonOnTriangulation* GetObject() {
+	return (PBRep_PolygonOnTriangulation*)$self->Access();
+	}
+};
+%extend Handle_PBRep_PolygonOnTriangulation {
+	~Handle_PBRep_PolygonOnTriangulation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PBRep_CurveOn2Surfaces;
+class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces();
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces(const Handle_PBRep_CurveOn2Surfaces &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces(const PBRep_CurveOn2Surfaces *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces & operator=(const Handle_PBRep_CurveOn2Surfaces &aHandle);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces & operator=(const PBRep_CurveOn2Surfaces *anItem);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PBRep_CurveOn2Surfaces {
+	PBRep_CurveOn2Surfaces* GetObject() {
+	return (PBRep_CurveOn2Surfaces*)$self->Access();
+	}
+};
+%extend Handle_PBRep_CurveOn2Surfaces {
+	~Handle_PBRep_CurveOn2Surfaces() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");}
 	}
 };
 
@@ -455,36 +545,6 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 };
 
 
-%nodefaultctor Handle_PBRep_CurveOn2Surfaces;
-class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces();
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces(const Handle_PBRep_CurveOn2Surfaces &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces(const PBRep_CurveOn2Surfaces *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces & operator=(const Handle_PBRep_CurveOn2Surfaces &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces & operator=(const PBRep_CurveOn2Surfaces *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveOn2Surfaces const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_CurveOn2Surfaces {
-	PBRep_CurveOn2Surfaces* GetObject() {
-	return (PBRep_CurveOn2Surfaces*)$self->Access();
-	}
-};
-%extend Handle_PBRep_CurveOn2Surfaces {
-	~Handle_PBRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PBRep_PointOnCurve;
 class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	public:
@@ -511,36 +571,6 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	~Handle_PBRep_PointOnCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PBRep_PolygonOnClosedSurface;
-class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface();
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface(const Handle_PBRep_PolygonOnClosedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface(const PBRep_PolygonOnClosedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface & operator=(const Handle_PBRep_PolygonOnClosedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface & operator=(const PBRep_PolygonOnClosedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PolygonOnClosedSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PolygonOnClosedSurface {
-	PBRep_PolygonOnClosedSurface* GetObject() {
-	return (PBRep_PolygonOnClosedSurface*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PolygonOnClosedSurface {
-	~Handle_PBRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -605,36 +635,6 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 };
 
 
-%nodefaultctor Handle_PBRep_PointOnSurface;
-class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface();
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface(const Handle_PBRep_PointOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface(const PBRep_PointOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface & operator=(const Handle_PBRep_PointOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface & operator=(const PBRep_PointOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PBRep_PointOnSurface const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PBRep_PointOnSurface {
-	PBRep_PointOnSurface* GetObject() {
-	return (PBRep_PointOnSurface*)$self->Access();
-	}
-};
-%extend Handle_PBRep_PointOnSurface {
-	~Handle_PBRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PBRep_TFace1;
 class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	public:
@@ -695,11 +695,11 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 };
 
 
-%nodefaultctor PBRep_TEdge;
-class PBRep_TEdge : public PTopoDS_TEdge {
+%nodefaultctor PBRep_TEdge1;
+class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 	public:
 		%feature("autodoc", "1");
-		PBRep_TEdge();
+		PBRep_TEdge1();
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
 		%feature("autodoc", "1");
@@ -721,37 +721,37 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 		%feature("autodoc", "1");
 		void Curves(const Handle_PBRep_CurveRepresentation &C);
 		%feature("autodoc", "1");
-		PBRep_TEdge(const Storage_stCONSTclCOM &a);
+		PBRep_TEdge1(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPBRep_TEdgemyTolerance() const;
+		Standard_Real _CSFDB_GetPBRep_TEdge1myTolerance() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdgemyTolerance(const Standard_Real p);
+		void _CSFDB_SetPBRep_TEdge1myTolerance(const Standard_Real p);
 		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPBRep_TEdgemyFlags() const;
+		Standard_Integer _CSFDB_GetPBRep_TEdge1myFlags() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdgemyFlags(const Standard_Integer p);
+		void _CSFDB_SetPBRep_TEdge1myFlags(const Standard_Integer p);
 		%feature("autodoc", "1");
-		Handle_PBRep_CurveRepresentation _CSFDB_GetPBRep_TEdgemyCurves() const;
+		Handle_PBRep_CurveRepresentation _CSFDB_GetPBRep_TEdge1myCurves() const;
 		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdgemyCurves(const Handle_PBRep_CurveRepresentation &p);
+		void _CSFDB_SetPBRep_TEdge1myCurves(const Handle_PBRep_CurveRepresentation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PBRep_TEdge {
-	Handle_PBRep_TEdge GetHandle() {
-	return *(Handle_PBRep_TEdge*) &$self;
+%extend PBRep_TEdge1 {
+	Handle_PBRep_TEdge1 GetHandle() {
+	return *(Handle_PBRep_TEdge1*) &$self;
 	}
 };
-%extend PBRep_TEdge {
+%extend PBRep_TEdge1 {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PBRep_TEdge {
-	~PBRep_TEdge() {
+%extend PBRep_TEdge1 {
+	~PBRep_TEdge1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge\n");}
+	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge1\n");}
 	}
 };
 
@@ -858,102 +858,6 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 };
 
 
-%nodefaultctor PBRep_PolygonOnClosedTriangulation;
-class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
-	public:
-		%feature("autodoc", "1");
-		PBRep_PolygonOnClosedTriangulation(const Handle_PPoly_PolygonOnTriangulation &P1, const Handle_PPoly_PolygonOnTriangulation &P2, const Handle_PPoly_Triangulation &S, const PTopLoc_Location &L);
-		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation PolygonOnTriangulation2() const;
-		%feature("autodoc", "1");
-		PBRep_PolygonOnClosedTriangulation();
-		%feature("autodoc", "1");
-		PBRep_PolygonOnClosedTriangulation(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation _CSFDB_GetPBRep_PolygonOnClosedTriangulationmyPolygon2() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_PolygonOnClosedTriangulationmyPolygon2(const Handle_PPoly_PolygonOnTriangulation &p);
-
-};
-%extend PBRep_PolygonOnClosedTriangulation {
-	Handle_PBRep_PolygonOnClosedTriangulation GetHandle() {
-	return *(Handle_PBRep_PolygonOnClosedTriangulation*) &$self;
-	}
-};
-%extend PBRep_PolygonOnClosedTriangulation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PBRep_PolygonOnClosedTriangulation {
-	~PBRep_PolygonOnClosedTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");}
-	}
-};
-
-
-%nodefaultctor PBRep_TEdge1;
-class PBRep_TEdge1 : public PTopoDS_TEdge1 {
-	public:
-		%feature("autodoc", "1");
-		PBRep_TEdge1();
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real T);
-		%feature("autodoc", "1");
-		Standard_Boolean SameParameter() const;
-		%feature("autodoc", "1");
-		void SameParameter(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		Standard_Boolean SameRange() const;
-		%feature("autodoc", "1");
-		void SameRange(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		Standard_Boolean Degenerated() const;
-		%feature("autodoc", "1");
-		void Degenerated(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveRepresentation Curves() const;
-		%feature("autodoc", "1");
-		void Curves(const Handle_PBRep_CurveRepresentation &C);
-		%feature("autodoc", "1");
-		PBRep_TEdge1(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPBRep_TEdge1myTolerance() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdge1myTolerance(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPBRep_TEdge1myFlags() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdge1myFlags(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Handle_PBRep_CurveRepresentation _CSFDB_GetPBRep_TEdge1myCurves() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TEdge1myCurves(const Handle_PBRep_CurveRepresentation &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PBRep_TEdge1 {
-	Handle_PBRep_TEdge1 GetHandle() {
-	return *(Handle_PBRep_TEdge1*) &$self;
-	}
-};
-%extend PBRep_TEdge1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PBRep_TEdge1 {
-	~PBRep_TEdge1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge1\n");}
-	}
-};
-
-
 %nodefaultctor PBRep_GCurve;
 class PBRep_GCurve : public PBRep_CurveRepresentation {
 	public:
@@ -1054,6 +958,67 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 };
 
 
+%nodefaultctor PBRep_TEdge;
+class PBRep_TEdge : public PTopoDS_TEdge {
+	public:
+		%feature("autodoc", "1");
+		PBRep_TEdge();
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Boolean SameParameter() const;
+		%feature("autodoc", "1");
+		void SameParameter(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		Standard_Boolean SameRange() const;
+		%feature("autodoc", "1");
+		void SameRange(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		Standard_Boolean Degenerated() const;
+		%feature("autodoc", "1");
+		void Degenerated(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveRepresentation Curves() const;
+		%feature("autodoc", "1");
+		void Curves(const Handle_PBRep_CurveRepresentation &C);
+		%feature("autodoc", "1");
+		PBRep_TEdge(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPBRep_TEdgemyTolerance() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TEdgemyTolerance(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPBRep_TEdgemyFlags() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TEdgemyFlags(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Handle_PBRep_CurveRepresentation _CSFDB_GetPBRep_TEdgemyCurves() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TEdgemyCurves(const Handle_PBRep_CurveRepresentation &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PBRep_TEdge {
+	Handle_PBRep_TEdge GetHandle() {
+	return *(Handle_PBRep_TEdge*) &$self;
+	}
+};
+%extend PBRep_TEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PBRep_TEdge {
+	~PBRep_TEdge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge\n");}
+	}
+};
+
+
 %nodefaultctor PBRep_PointRepresentation;
 class PBRep_PointRepresentation : public Standard_Persistent {
 	public:
@@ -1142,124 +1107,41 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 };
 
 
-%nodefaultctor PBRep_TFace;
-class PBRep_TFace : public PTopoDS_TFace {
+%nodefaultctor PBRep_PolygonOnClosedTriangulation;
+class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 	public:
 		%feature("autodoc", "1");
-		PBRep_TFace();
+		PBRep_PolygonOnClosedTriangulation(const Handle_PPoly_PolygonOnTriangulation &P1, const Handle_PPoly_PolygonOnTriangulation &P2, const Handle_PPoly_Triangulation &S, const PTopLoc_Location &L);
 		%feature("autodoc", "1");
-		Handle_PGeom_Surface Surface() const;
+		virtual		Standard_Boolean IsPolygonOnClosedTriangulation() const;
 		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation Triangulation() const;
+		Handle_PPoly_PolygonOnTriangulation PolygonOnTriangulation2() const;
 		%feature("autodoc", "1");
-		PTopLoc_Location Location() const;
+		PBRep_PolygonOnClosedTriangulation();
 		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
+		PBRep_PolygonOnClosedTriangulation(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		void Surface(const Handle_PGeom_Surface &S);
+		Handle_PPoly_PolygonOnTriangulation _CSFDB_GetPBRep_PolygonOnClosedTriangulationmyPolygon2() const;
 		%feature("autodoc", "1");
-		void Triangulation(const Handle_PPoly_Triangulation &T);
-		%feature("autodoc", "1");
-		void Location(const PTopLoc_Location &L);
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real T);
-		%feature("autodoc", "1");
-		Standard_Boolean NaturalRestriction() const;
-		%feature("autodoc", "1");
-		void NaturalRestriction(const Standard_Boolean N);
-		%feature("autodoc", "1");
-		PBRep_TFace(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface _CSFDB_GetPBRep_TFacemySurface() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TFacemySurface(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		Handle_PPoly_Triangulation _CSFDB_GetPBRep_TFacemyTriangulation() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TFacemyTriangulation(const Handle_PPoly_Triangulation &p);
-		%feature("autodoc", "1");
-		const PTopLoc_Location & _CSFDB_GetPBRep_TFacemyLocation() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPBRep_TFacemyTolerance() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TFacemyTolerance(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Boolean _CSFDB_GetPBRep_TFacemyNaturalRestriction() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_TFacemyNaturalRestriction(const Standard_Boolean p);
+		void _CSFDB_SetPBRep_PolygonOnClosedTriangulationmyPolygon2(const Handle_PPoly_PolygonOnTriangulation &p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PBRep_TFace {
-	Handle_PBRep_TFace GetHandle() {
-	return *(Handle_PBRep_TFace*) &$self;
+%extend PBRep_PolygonOnClosedTriangulation {
+	Handle_PBRep_PolygonOnClosedTriangulation GetHandle() {
+	return *(Handle_PBRep_PolygonOnClosedTriangulation*) &$self;
 	}
 };
-%extend PBRep_TFace {
+%extend PBRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PBRep_TFace {
-	~PBRep_TFace() {
+%extend PBRep_PolygonOnClosedTriangulation {
+	~PBRep_PolygonOnClosedTriangulation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TFace\n");}
-	}
-};
-
-
-%nodefaultctor PBRep_CurveOn2Surfaces;
-class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		PBRep_CurveOn2Surfaces(const Handle_PGeom_Surface &S1, const Handle_PGeom_Surface &S2, const PTopLoc_Location &L1, const PTopLoc_Location &L2, const GeomAbs_Shape C);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface Surface() const;
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface Surface2() const;
-		%feature("autodoc", "1");
-		PTopLoc_Location Location2() const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRegularity() const;
-		%feature("autodoc", "1");
-		PBRep_CurveOn2Surfaces();
-		%feature("autodoc", "1");
-		PBRep_CurveOn2Surfaces(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface _CSFDB_GetPBRep_CurveOn2SurfacesmySurface() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_CurveOn2SurfacesmySurface(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface _CSFDB_GetPBRep_CurveOn2SurfacesmySurface2() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_CurveOn2SurfacesmySurface2(const Handle_PGeom_Surface &p);
-		%feature("autodoc", "1");
-		const PTopLoc_Location & _CSFDB_GetPBRep_CurveOn2SurfacesmyLocation2() const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape _CSFDB_GetPBRep_CurveOn2SurfacesmyContinuity() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_CurveOn2SurfacesmyContinuity(const GeomAbs_Shape p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PBRep_CurveOn2Surfaces {
-	Handle_PBRep_CurveOn2Surfaces GetHandle() {
-	return *(Handle_PBRep_CurveOn2Surfaces*) &$self;
-	}
-};
-%extend PBRep_CurveOn2Surfaces {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PBRep_CurveOn2Surfaces {
-	~PBRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");}
+	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");}
 	}
 };
 
@@ -1360,45 +1242,6 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 };
 
 
-%nodefaultctor PBRep_Curve3D;
-class PBRep_Curve3D : public PBRep_GCurve {
-	public:
-		%feature("autodoc", "1");
-		PBRep_Curve3D(const Handle_PGeom_Curve &C, const Standard_Real CF, const Standard_Real CL, const PTopLoc_Location &L);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve Curve3D() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCurve3D() const;
-		%feature("autodoc", "1");
-		PBRep_Curve3D();
-		%feature("autodoc", "1");
-		PBRep_Curve3D(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve _CSFDB_GetPBRep_Curve3DmyCurve3D() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPBRep_Curve3DmyCurve3D(const Handle_PGeom_Curve &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PBRep_Curve3D {
-	Handle_PBRep_Curve3D GetHandle() {
-	return *(Handle_PBRep_Curve3D*) &$self;
-	}
-};
-%extend PBRep_Curve3D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PBRep_Curve3D {
-	~PBRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_Curve3D\n");}
-	}
-};
-
-
 %nodefaultctor PBRep_TVertex;
 class PBRep_TVertex : public PTopoDS_TVertex {
 	public:
@@ -1446,6 +1289,112 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 	~PBRep_TVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PBRep_TVertex\n");}
+	}
+};
+
+
+%nodefaultctor PBRep_TFace;
+class PBRep_TFace : public PTopoDS_TFace {
+	public:
+		%feature("autodoc", "1");
+		PBRep_TFace();
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation Triangulation() const;
+		%feature("autodoc", "1");
+		PTopLoc_Location Location() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void Surface(const Handle_PGeom_Surface &S);
+		%feature("autodoc", "1");
+		void Triangulation(const Handle_PPoly_Triangulation &T);
+		%feature("autodoc", "1");
+		void Location(const PTopLoc_Location &L);
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Boolean NaturalRestriction() const;
+		%feature("autodoc", "1");
+		void NaturalRestriction(const Standard_Boolean N);
+		%feature("autodoc", "1");
+		PBRep_TFace(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface _CSFDB_GetPBRep_TFacemySurface() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TFacemySurface(const Handle_PGeom_Surface &p);
+		%feature("autodoc", "1");
+		Handle_PPoly_Triangulation _CSFDB_GetPBRep_TFacemyTriangulation() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TFacemyTriangulation(const Handle_PPoly_Triangulation &p);
+		%feature("autodoc", "1");
+		const PTopLoc_Location & _CSFDB_GetPBRep_TFacemyLocation() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPBRep_TFacemyTolerance() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TFacemyTolerance(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Boolean _CSFDB_GetPBRep_TFacemyNaturalRestriction() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_TFacemyNaturalRestriction(const Standard_Boolean p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PBRep_TFace {
+	Handle_PBRep_TFace GetHandle() {
+	return *(Handle_PBRep_TFace*) &$self;
+	}
+};
+%extend PBRep_TFace {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PBRep_TFace {
+	~PBRep_TFace() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PBRep_TFace\n");}
+	}
+};
+
+
+%nodefaultctor PBRep_Curve3D;
+class PBRep_Curve3D : public PBRep_GCurve {
+	public:
+		%feature("autodoc", "1");
+		PBRep_Curve3D(const Handle_PGeom_Curve &C, const Standard_Real CF, const Standard_Real CL, const PTopLoc_Location &L);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve Curve3D() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCurve3D() const;
+		%feature("autodoc", "1");
+		PBRep_Curve3D();
+		%feature("autodoc", "1");
+		PBRep_Curve3D(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve _CSFDB_GetPBRep_Curve3DmyCurve3D() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_Curve3DmyCurve3D(const Handle_PGeom_Curve &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PBRep_Curve3D {
+	Handle_PBRep_Curve3D GetHandle() {
+	return *(Handle_PBRep_Curve3D*) &$self;
+	}
+};
+%extend PBRep_Curve3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PBRep_Curve3D {
+	~PBRep_Curve3D() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PBRep_Curve3D\n");}
 	}
 };
 
@@ -1763,5 +1712,60 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 	~PBRep_TVertex1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PBRep_TVertex1\n");}
+	}
+};
+
+
+%nodefaultctor PBRep_CurveOn2Surfaces;
+class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		PBRep_CurveOn2Surfaces(const Handle_PGeom_Surface &S1, const Handle_PGeom_Surface &S2, const PTopLoc_Location &L1, const PTopLoc_Location &L2, const GeomAbs_Shape C);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface Surface() const;
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface Surface2() const;
+		%feature("autodoc", "1");
+		PTopLoc_Location Location2() const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRegularity() const;
+		%feature("autodoc", "1");
+		PBRep_CurveOn2Surfaces();
+		%feature("autodoc", "1");
+		PBRep_CurveOn2Surfaces(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface _CSFDB_GetPBRep_CurveOn2SurfacesmySurface() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_CurveOn2SurfacesmySurface(const Handle_PGeom_Surface &p);
+		%feature("autodoc", "1");
+		Handle_PGeom_Surface _CSFDB_GetPBRep_CurveOn2SurfacesmySurface2() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_CurveOn2SurfacesmySurface2(const Handle_PGeom_Surface &p);
+		%feature("autodoc", "1");
+		const PTopLoc_Location & _CSFDB_GetPBRep_CurveOn2SurfacesmyLocation2() const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape _CSFDB_GetPBRep_CurveOn2SurfacesmyContinuity() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPBRep_CurveOn2SurfacesmyContinuity(const GeomAbs_Shape p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PBRep_CurveOn2Surfaces {
+	Handle_PBRep_CurveOn2Surfaces GetHandle() {
+	return *(Handle_PBRep_CurveOn2Surfaces*) &$self;
+	}
+};
+%extend PBRep_CurveOn2Surfaces {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PBRep_CurveOn2Surfaces {
+	~PBRep_CurveOn2Surfaces() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");}
 	}
 };

@@ -5,6 +5,7 @@
 %rename(TopoDSToStep) TopoDSToStep;
 %rename(TopoDSToStep_NoWireMapped) TopoDSToStep_NoWireMapped;
 %rename(TopoDSToStep_PCurveNotLinear) TopoDSToStep_PCurveNotLinear;
+%rename(TopoDSToStep_FacetedTool) TopoDSToStep_FacetedTool;
 %rename(TopoDSToStep_MakeFacetedBrepAndBrepWithVoids) TopoDSToStep_MakeFacetedBrepAndBrepWithVoids;
 %rename(TopoDSToStep_BuilderDone) TopoDSToStep_BuilderDone;
 %rename(TopoDSToStep_MakeStepEdge) TopoDSToStep_MakeStepEdge;
@@ -17,7 +18,7 @@
 %rename(TopoDSToStep_NonManifoldWire) TopoDSToStep_NonManifoldWire;
 %rename(TopoDSToStep_FaceDone) TopoDSToStep_FaceDone;
 %rename(TopoDSToStep_Root) TopoDSToStep_Root;
-%rename(TopoDSToStep_FacetedTool) TopoDSToStep_FacetedTool;
+%rename(TopoDSToStep_MakeShellBasedSurfaceModel) TopoDSToStep_MakeShellBasedSurfaceModel;
 %rename(TopoDSToStep_BuilderOther) TopoDSToStep_BuilderOther;
 %rename(TopoDSToStep_MakeStepFace) TopoDSToStep_MakeStepFace;
 %rename(TopoDSToStep_NoFaceMapped) TopoDSToStep_NoFaceMapped;
@@ -26,7 +27,6 @@
 %rename(TopoDSToStep_NonManifoldFace) TopoDSToStep_NonManifoldFace;
 %rename(TopoDSToStep_FaceOther) TopoDSToStep_FaceOther;
 %rename(TopoDSToStep_VertexOther) TopoDSToStep_VertexOther;
-%rename(TopoDSToStep_MakeShellBasedSurfaceModel) TopoDSToStep_MakeShellBasedSurfaceModel;
 %rename(TopoDSToStep_EdgeOther) TopoDSToStep_EdgeOther;
 %rename(TopoDSToStep_MakeStepWire) TopoDSToStep_MakeStepWire;
 %rename(TopoDSToStep_FacetedDone) TopoDSToStep_FacetedDone;

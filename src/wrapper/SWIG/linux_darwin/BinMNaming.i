@@ -112,6 +112,39 @@ class BinMNaming {
 };
 
 
+%nodefaultctor BinMNaming_NamingDriver;
+class BinMNaming_NamingDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMNaming_NamingDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMNaming_NamingDriver {
+	Handle_BinMNaming_NamingDriver GetHandle() {
+	return *(Handle_BinMNaming_NamingDriver*) &$self;
+	}
+};
+%extend BinMNaming_NamingDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BinMNaming_NamingDriver {
+	~BinMNaming_NamingDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
+	}
+};
+
+
 %nodefaultctor BinMNaming_NamedShapeDriver;
 class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	public:
@@ -162,38 +195,5 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	~BinMNaming_NamedShapeDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");}
-	}
-};
-
-
-%nodefaultctor BinMNaming_NamingDriver;
-class BinMNaming_NamingDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMNaming_NamingDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMNaming_NamingDriver {
-	Handle_BinMNaming_NamingDriver GetHandle() {
-	return *(Handle_BinMNaming_NamingDriver*) &$self;
-	}
-};
-%extend BinMNaming_NamingDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BinMNaming_NamingDriver {
-	~BinMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
 	}
 };

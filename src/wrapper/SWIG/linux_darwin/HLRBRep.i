@@ -676,6 +676,23 @@ class HLRBRep_LineTool {
 };
 
 
+%nodefaultctor HLRBRep_ShapeToHLR;
+class HLRBRep_ShapeToHLR {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ShapeToHLR();
+		%feature("autodoc", "1");
+		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
+
+};
+%extend HLRBRep_ShapeToHLR {
+	~HLRBRep_ShapeToHLR() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeToHLR\n");}
+	}
+};
+
+
 %nodefaultctor HLRBRep_ThePolygonToolOfInterCSurf;
 class HLRBRep_ThePolygonToolOfInterCSurf {
 	public:
@@ -701,93 +718,6 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 	~HLRBRep_ThePolygonToolOfInterCSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygonToolOfInterCSurf\n");}
-	}
-};
-
-
-%nodefaultctor HLRBRep_FaceData;
-class HLRBRep_FaceData {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_FaceData();
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
-		%feature("autodoc", "1");
-		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
-		%feature("autodoc", "1");
-		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
-		%feature("autodoc", "1");
-		Standard_Boolean Selected() const;
-		%feature("autodoc", "1");
-		void Selected(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Back() const;
-		%feature("autodoc", "1");
-		void Back(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Side() const;
-		%feature("autodoc", "1");
-		void Side(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
-		%feature("autodoc", "1");
-		void Closed(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Hiding() const;
-		%feature("autodoc", "1");
-		void Hiding(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Simple() const;
-		%feature("autodoc", "1");
-		void Simple(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cut() const;
-		%feature("autodoc", "1");
-		void Cut(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean WithOutL() const;
-		%feature("autodoc", "1");
-		void WithOutL(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Plane() const;
-		%feature("autodoc", "1");
-		void Plane(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cylinder() const;
-		%feature("autodoc", "1");
-		void Cylinder(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cone() const;
-		%feature("autodoc", "1");
-		void Cone(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Sphere() const;
-		%feature("autodoc", "1");
-		void Sphere(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Torus() const;
-		%feature("autodoc", "1");
-		void Torus(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Real Size() const;
-		%feature("autodoc", "1");
-		void Size(const Standard_Real S);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_WiresBlock & Wires();
-		%feature("autodoc", "1");
-		HLRBRep_Surface & Geometry();
-		%feature("autodoc", "1");
-		Standard_ShortReal Tolerance() const;
-
-};
-%extend HLRBRep_FaceData {
-	~HLRBRep_FaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_FaceData\n");}
 	}
 };
 
@@ -1290,6 +1220,41 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 };
 
 
+%nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
+class HLRBRep_ThePolyhedronToolOfInterCSurf {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ThePolyhedronToolOfInterCSurf();
+		%feature("autodoc", "1");
+		const Bnd_Box & Bounding(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		%feature("autodoc", "1");
+		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		%feature("autodoc", "1");
+		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		%feature("autodoc", "1");
+		Standard_Integer NbTriangles(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		const gp_Pnt & Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
+		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge)->[Standard_IntegerStandard_Integer]");
+		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOnBound(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
+		%feature("autodoc", "1");
+		Standard_Real GetBorderDeflection(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+		%feature("autodoc", "1");
+		void Dump(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
+
+};
+%extend HLRBRep_ThePolyhedronToolOfInterCSurf {
+	~HLRBRep_ThePolyhedronToolOfInterCSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolyhedronToolOfInterCSurf\n");}
+	}
+};
+
+
 %nodefaultctor HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter;
 class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 	public:
@@ -1448,23 +1413,6 @@ class HLRBRep_BiPoint {
 	~HLRBRep_BiPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_BiPoint\n");}
-	}
-};
-
-
-%nodefaultctor HLRBRep_ShapeToHLR;
-class HLRBRep_ShapeToHLR {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ShapeToHLR();
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
-
-};
-%extend HLRBRep_ShapeToHLR {
-	~HLRBRep_ShapeToHLR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeToHLR\n");}
 	}
 };
 
@@ -1703,6 +1651,57 @@ class HLRBRep_EdgeData {
 	~HLRBRep_EdgeData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeData\n");}
+	}
+};
+
+
+%nodefaultctor HLRBRep_EdgeBuilder;
+class HLRBRep_EdgeBuilder {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
+		%feature("autodoc", "1");
+		void InitAreas();
+		%feature("autodoc", "1");
+		void NextArea();
+		%feature("autodoc", "1");
+		void PreviousArea();
+		%feature("autodoc", "1");
+		Standard_Boolean HasArea() const;
+		%feature("autodoc", "1");
+		TopAbs_State AreaState() const;
+		%feature("autodoc", "1");
+		TopAbs_State AreaEdgeState() const;
+		%feature("autodoc", "1");
+		Handle_HLRBRep_AreaLimit LeftLimit() const;
+		%feature("autodoc", "1");
+		Handle_HLRBRep_AreaLimit RightLimit() const;
+		%feature("autodoc", "1");
+		void Builds(const TopAbs_State ToBuild);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreEdges() const;
+		%feature("autodoc", "1");
+		void NextEdge();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreVertices() const;
+		%feature("autodoc", "1");
+		void NextVertex();
+		%feature("autodoc", "1");
+		const HLRAlgo_Intersection & Current() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBoundary() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInterference() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend HLRBRep_EdgeBuilder {
+	~HLRBRep_EdgeBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeBuilder\n");}
 	}
 };
 
@@ -2376,41 +2375,6 @@ class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 };
 
 
-%nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
-class HLRBRep_ThePolyhedronToolOfInterCSurf {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ThePolyhedronToolOfInterCSurf();
-		%feature("autodoc", "1");
-		const Bnd_Box & Bounding(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc", "1");
-		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc", "1");
-		Standard_Integer NbTriangles(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index)->[Standard_IntegerStandard_IntegerStandard_Integer]");
-		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		const gp_Pnt & Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
-		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge)->[Standard_IntegerStandard_Integer]");
-		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOnBound(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
-		%feature("autodoc", "1");
-		Standard_Real GetBorderDeflection(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-		%feature("autodoc", "1");
-		void Dump(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
-
-};
-%extend HLRBRep_ThePolyhedronToolOfInterCSurf {
-	~HLRBRep_ThePolyhedronToolOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolyhedronToolOfInterCSurf\n");}
-	}
-};
-
-
 %nodefaultctor HLRBRep_CLProps;
 class HLRBRep_CLProps {
 	public:
@@ -2605,6 +2569,93 @@ class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 	~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter\n");}
+	}
+};
+
+
+%nodefaultctor HLRBRep_FaceData;
+class HLRBRep_FaceData {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_FaceData();
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Face &FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
+		%feature("autodoc", "1");
+		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
+		%feature("autodoc", "1");
+		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
+		%feature("autodoc", "1");
+		Standard_Boolean Selected() const;
+		%feature("autodoc", "1");
+		void Selected(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Back() const;
+		%feature("autodoc", "1");
+		void Back(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Side() const;
+		%feature("autodoc", "1");
+		void Side(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		void Closed(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Hiding() const;
+		%feature("autodoc", "1");
+		void Hiding(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Simple() const;
+		%feature("autodoc", "1");
+		void Simple(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cut() const;
+		%feature("autodoc", "1");
+		void Cut(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean WithOutL() const;
+		%feature("autodoc", "1");
+		void WithOutL(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Plane() const;
+		%feature("autodoc", "1");
+		void Plane(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cylinder() const;
+		%feature("autodoc", "1");
+		void Cylinder(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cone() const;
+		%feature("autodoc", "1");
+		void Cone(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Sphere() const;
+		%feature("autodoc", "1");
+		void Sphere(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Torus() const;
+		%feature("autodoc", "1");
+		void Torus(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Real Size() const;
+		%feature("autodoc", "1");
+		void Size(const Standard_Real S);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_WiresBlock & Wires();
+		%feature("autodoc", "1");
+		HLRBRep_Surface & Geometry();
+		%feature("autodoc", "1");
+		Standard_ShortReal Tolerance() const;
+
+};
+%extend HLRBRep_FaceData {
+	~HLRBRep_FaceData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRBRep_FaceData\n");}
 	}
 };
 
@@ -3212,57 +3263,6 @@ class HLRBRep_Intersector {
 	~HLRBRep_Intersector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_Intersector\n");}
-	}
-};
-
-
-%nodefaultctor HLRBRep_EdgeBuilder;
-class HLRBRep_EdgeBuilder {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
-		%feature("autodoc", "1");
-		void InitAreas();
-		%feature("autodoc", "1");
-		void NextArea();
-		%feature("autodoc", "1");
-		void PreviousArea();
-		%feature("autodoc", "1");
-		Standard_Boolean HasArea() const;
-		%feature("autodoc", "1");
-		TopAbs_State AreaState() const;
-		%feature("autodoc", "1");
-		TopAbs_State AreaEdgeState() const;
-		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit LeftLimit() const;
-		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit RightLimit() const;
-		%feature("autodoc", "1");
-		void Builds(const TopAbs_State ToBuild);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreEdges() const;
-		%feature("autodoc", "1");
-		void NextEdge();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreVertices() const;
-		%feature("autodoc", "1");
-		void NextVertex();
-		%feature("autodoc", "1");
-		const HLRAlgo_Intersection & Current() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBoundary() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInterference() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend HLRBRep_EdgeBuilder {
-	~HLRBRep_EdgeBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeBuilder\n");}
 	}
 };
 

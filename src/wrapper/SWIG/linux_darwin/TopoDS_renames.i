@@ -8,7 +8,6 @@
 %rename(TopoDS_Shell) TopoDS_Shell;
 %rename(Handle_TopoDS_FrozenShape) Handle_TopoDS_FrozenShape;
 %rename(TopoDS_FrozenShape) TopoDS_FrozenShape;
-%rename(TopoDS_ListNodeOfListOfShape) TopoDS_ListNodeOfListOfShape;
 %rename(TopoDS_TSolid) TopoDS_TSolid;
 %rename(Handle_TopoDS_TCompound) Handle_TopoDS_TCompound;
 %rename(TopoDS_Builder) TopoDS_Builder;
@@ -19,7 +18,7 @@
 %rename(Handle_TopoDS_TCompSolid) Handle_TopoDS_TCompSolid;
 %rename(TopoDS_Edge) TopoDS_Edge;
 %rename(Handle_TopoDS_TWire) Handle_TopoDS_TWire;
-%rename(TopoDS_Iterator) TopoDS_Iterator;
+%rename(TopoDS_ListNodeOfListOfShape) TopoDS_ListNodeOfListOfShape;
 %rename(TopoDS_Builder3D) TopoDS_Builder3D;
 %rename(Handle_TopoDS_TVertex) Handle_TopoDS_TVertex;
 %rename(Handle_TopoDS_TShell) Handle_TopoDS_TShell;
@@ -38,4 +37,5 @@
 %rename(Handle_TopoDS_TShape) Handle_TopoDS_TShape;
 %rename(TopoDS_TCompSolid) TopoDS_TCompSolid;
 %rename(TopoDS_CompSolid) TopoDS_CompSolid;
+%rename(TopoDS_Iterator) TopoDS_Iterator;
 %rename(TopoDS_TFace) TopoDS_TFace;

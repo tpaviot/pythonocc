@@ -162,6 +162,36 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 };
 
 
+%nodefaultctor Handle_BRepCheck_Face;
+class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face(const Handle_BRepCheck_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face(const BRepCheck_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face & operator=(const Handle_BRepCheck_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Face const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_Face {
+	BRepCheck_Face* GetObject() {
+	return (BRepCheck_Face*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_Face {
+	~Handle_BRepCheck_Face() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Face\n");}
+	}
+};
+
+
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
 class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_TCollection_MapNode {
 	public:
@@ -188,6 +218,36 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRepCheck_Wire;
+class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire(const Handle_BRepCheck_Wire &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_Wire const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_Wire {
+	BRepCheck_Wire* GetObject() {
+	return (BRepCheck_Wire*)$self->Access();
+	}
+};
+%extend Handle_BRepCheck_Wire {
+	~Handle_BRepCheck_Wire() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Wire\n");}
 	}
 };
 
@@ -252,66 +312,6 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 };
 
 
-%nodefaultctor Handle_BRepCheck_Wire;
-class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire(const Handle_BRepCheck_Wire &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_Wire {
-	BRepCheck_Wire* GetObject() {
-	return (BRepCheck_Wire*)$self->Access();
-	}
-};
-%extend Handle_BRepCheck_Wire {
-	~Handle_BRepCheck_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Wire\n");}
-	}
-};
-
-
-%nodefaultctor Handle_BRepCheck_Face;
-class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face(const Handle_BRepCheck_Face &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face(const BRepCheck_Face *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face & operator=(const Handle_BRepCheck_Face &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face & operator=(const BRepCheck_Face *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Face const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_Face {
-	BRepCheck_Face* GetObject() {
-	return (BRepCheck_Face*)$self->Access();
-	}
-};
-%extend Handle_BRepCheck_Face {
-	~Handle_BRepCheck_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Face\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
 class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
 	public:
@@ -367,29 +367,6 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 	~BRepCheck_ListNodeOfListOfStatus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");}
-	}
-};
-
-
-%nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
-class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_DataMapIteratorOfDataMapOfShapeResult();
-		%feature("autodoc", "1");
-		BRepCheck_DataMapIteratorOfDataMapOfShapeResult(const BRepCheck_DataMapOfShapeResult &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepCheck_DataMapOfShapeResult &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & Value() const;
-
-};
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
-	~BRepCheck_DataMapIteratorOfDataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");}
 	}
 };
 
@@ -453,6 +430,12 @@ class BRepCheck_Shell : public BRepCheck_Result {
 		%feature("autodoc", "1");
 		BRepCheck_Shell(const TopoDS_Shell &S);
 		%feature("autodoc", "1");
+		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		%feature("autodoc", "1");
+		virtual		void Minimum();
+		%feature("autodoc", "1");
+		virtual		void Blind();
+		%feature("autodoc", "1");
 		BRepCheck_Status Closed(const Standard_Boolean Update=0);
 		%feature("autodoc", "1");
 		BRepCheck_Status Orientation(const Standard_Boolean Update=0);
@@ -462,6 +445,8 @@ class BRepCheck_Shell : public BRepCheck_Result {
 		Standard_Boolean IsUnorientable() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbConnectedSet(TopTools_ListOfShape & theSets);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend BRepCheck_Shell {
@@ -482,39 +467,62 @@ class BRepCheck_Shell : public BRepCheck_Result {
 };
 
 
-%nodefaultctor BRepCheck_DataMapOfShapeListOfStatus;
-class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
+%nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
+class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeListOfStatus(const Standard_Integer NbBuckets=1);
+		BRepCheck_DataMapIteratorOfDataMapOfShapeResult();
 		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeListOfStatus & Assign(const BRepCheck_DataMapOfShapeListOfStatus &Other);
+		BRepCheck_DataMapIteratorOfDataMapOfShapeResult(const BRepCheck_DataMapOfShapeResult &aMap);
 		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapOfShapeListOfStatus &Other);
+		void Initialize(const BRepCheck_DataMapOfShapeResult &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Handle_BRepCheck_Result & Value() const;
+
+};
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
+	~BRepCheck_DataMapIteratorOfDataMapOfShapeResult() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");}
+	}
+};
+
+
+%nodefaultctor BRepCheck_DataMapOfShapeResult;
+class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeResult(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeResult & Assign(const BRepCheck_DataMapOfShapeResult &Other);
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeResult & operator=(const BRepCheck_DataMapOfShapeResult &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepCheck_ListOfStatus &I);
+		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I);
 		%feature("autodoc", "1");
 		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UnBind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & Find(const TopoDS_Shape &K) const;
+		const Handle_BRepCheck_Result & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		const BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K) const;
+		const Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
-		BRepCheck_ListOfStatus & ChangeFind(const TopoDS_Shape &K);
+		Handle_BRepCheck_Result & ChangeFind(const TopoDS_Shape &K);
 		%feature("autodoc", "1");
-		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
+		Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K);
 
 };
-%extend BRepCheck_DataMapOfShapeListOfStatus {
-	~BRepCheck_DataMapOfShapeListOfStatus() {
+%extend BRepCheck_DataMapOfShapeResult {
+	~BRepCheck_DataMapOfShapeResult() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");}
+	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");}
 	}
 };
 
@@ -566,43 +574,6 @@ class BRepCheck_Face : public BRepCheck_Result {
 };
 
 
-%nodefaultctor BRepCheck_DataMapOfShapeResult;
-class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeResult(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeResult & Assign(const BRepCheck_DataMapOfShapeResult &Other);
-		%feature("autodoc", "1");
-		BRepCheck_DataMapOfShapeResult & operator=(const BRepCheck_DataMapOfShapeResult &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Handle_BRepCheck_Result &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Result & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K);
-
-};
-%extend BRepCheck_DataMapOfShapeResult {
-	~BRepCheck_DataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");}
-	}
-};
-
-
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeResult;
 class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	public:
@@ -630,6 +601,41 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	~BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");}
+	}
+};
+
+
+%nodefaultctor BRepCheck_Vertex;
+class BRepCheck_Vertex : public BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_Vertex(const TopoDS_Vertex &V);
+		%feature("autodoc", "1");
+		virtual		void InContext(const TopoDS_Shape &ContextShape);
+		%feature("autodoc", "1");
+		virtual		void Minimum();
+		%feature("autodoc", "1");
+		virtual		void Blind();
+		%feature("autodoc", "1");
+		Standard_Real Tolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepCheck_Vertex {
+	Handle_BRepCheck_Vertex GetHandle() {
+	return *(Handle_BRepCheck_Vertex*) &$self;
+	}
+};
+%extend BRepCheck_Vertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BRepCheck_Vertex {
+	~BRepCheck_Vertex() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepCheck_Vertex\n");}
 	}
 };
 
@@ -696,6 +702,43 @@ class BRepCheck_Wire : public BRepCheck_Result {
 	~BRepCheck_Wire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_Wire\n");}
+	}
+};
+
+
+%nodefaultctor BRepCheck_DataMapOfShapeListOfStatus;
+class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeListOfStatus(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeListOfStatus & Assign(const BRepCheck_DataMapOfShapeListOfStatus &Other);
+		%feature("autodoc", "1");
+		BRepCheck_DataMapOfShapeListOfStatus & operator=(const BRepCheck_DataMapOfShapeListOfStatus &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const BRepCheck_ListOfStatus &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const BRepCheck_ListOfStatus & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		BRepCheck_ListOfStatus & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
+
+};
+%extend BRepCheck_DataMapOfShapeListOfStatus {
+	~BRepCheck_DataMapOfShapeListOfStatus() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");}
 	}
 };
 
@@ -890,40 +933,5 @@ class BRepCheck_Analyzer {
 	~BRepCheck_Analyzer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_Analyzer\n");}
-	}
-};
-
-
-%nodefaultctor BRepCheck_Vertex;
-class BRepCheck_Vertex : public BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_Vertex(const TopoDS_Vertex &V);
-		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape &ContextShape);
-		%feature("autodoc", "1");
-		virtual		void Minimum();
-		%feature("autodoc", "1");
-		virtual		void Blind();
-		%feature("autodoc", "1");
-		Standard_Real Tolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepCheck_Vertex {
-	Handle_BRepCheck_Vertex GetHandle() {
-	return *(Handle_BRepCheck_Vertex*) &$self;
-	}
-};
-%extend BRepCheck_Vertex {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BRepCheck_Vertex {
-	~BRepCheck_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Vertex\n");}
 	}
 };

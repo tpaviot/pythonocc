@@ -191,12 +191,32 @@ class TopBas_TestInterference {
 		void BoundaryTransition(const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
 		const Standard_Real & Intersection() const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeIntersection();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeIntersection() {
+				return (Standard_Real) $self->ChangeIntersection();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeIntersection(Standard_Real value ) {
+				$self->ChangeIntersection()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const Standard_Integer & Boundary() const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeBoundary();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeBoundary() {
+				return (Standard_Integer) $self->ChangeBoundary();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeBoundary(Standard_Integer value ) {
+				$self->ChangeBoundary()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 		%feature("autodoc", "1");

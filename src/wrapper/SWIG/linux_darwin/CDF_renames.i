@@ -1,4 +1,5 @@
 %rename(CDF_SSNS_OpenDocument) CDF_SSNS_OpenDocument;
+%rename(CDF_StoreList) CDF_StoreList;
 %rename(CDF_RS_DriverFailure) CDF_RS_DriverFailure;
 %rename(CDF_SSNS_ReplacingAnExistentDocument) CDF_SSNS_ReplacingAnExistentDocument;
 %rename(CDF_TS_NoDriver) CDF_TS_NoDriver;
@@ -8,11 +9,11 @@
 %rename(CDF_RS_OpenError) CDF_RS_OpenError;
 %rename(CDF_SS_DriverFailure) CDF_SS_DriverFailure;
 %rename(CDF_RS_NoVersion) CDF_RS_NoVersion;
-%rename(Handle_CDF_StoreList) Handle_CDF_StoreList;
+%rename(Handle_CDF_MetaDataDriver) Handle_CDF_MetaDataDriver;
 %rename(Handle_CDF_MetaDataDriverFactory) Handle_CDF_MetaDataDriverFactory;
 %rename(CDF_SS_Failure) CDF_SS_Failure;
 %rename(Handle_CDF_MetaDataDriverError) Handle_CDF_MetaDataDriverError;
-%rename(CDF_StoreList) CDF_StoreList;
+%rename(Handle_CDF_StoreList) Handle_CDF_StoreList;
 %rename(CDF_RS_UnrecognizedFileFormat) CDF_RS_UnrecognizedFileFormat;
 %rename(CDF_TOA_Modified) CDF_TOA_Modified;
 %rename(CDF_SS_WriteFailure) CDF_SS_WriteFailure;
@@ -23,7 +24,6 @@
 %rename(CDF_TOA_New) CDF_TOA_New;
 %rename(CDF_SCS_Unconsistent) CDF_SCS_Unconsistent;
 %rename(CDF_Store) CDF_Store;
-%rename(Handle_CDF_MetaDataDriver) Handle_CDF_MetaDataDriver;
 %rename(CDF_SCS_Stored) CDF_SCS_Stored;
 %rename(Handle_CDF_Session) Handle_CDF_Session;
 %rename(CDF_RS_TypeNotFoundInSchema) CDF_RS_TypeNotFoundInSchema;

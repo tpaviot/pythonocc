@@ -155,32 +155,32 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_Centroid;
-class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
+%nodefaultctor Handle_PXCAFDoc_DocumentTool;
+class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid();
+		Handle_PXCAFDoc_DocumentTool();
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid(const Handle_PXCAFDoc_Centroid &aHandle);
+		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid(const PXCAFDoc_Centroid *anItem);
+		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid & operator=(const Handle_PXCAFDoc_Centroid &aHandle);
+		Handle_PXCAFDoc_DocumentTool & operator=(const Handle_PXCAFDoc_DocumentTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid & operator=(const PXCAFDoc_Centroid *anItem);
+		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Centroid const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PXCAFDoc_Centroid {
-	PXCAFDoc_Centroid* GetObject() {
-	return (PXCAFDoc_Centroid*)$self->Access();
+%extend Handle_PXCAFDoc_DocumentTool {
+	PXCAFDoc_DocumentTool* GetObject() {
+	return (PXCAFDoc_DocumentTool*)$self->Access();
 	}
 };
-%extend Handle_PXCAFDoc_Centroid {
-	~Handle_PXCAFDoc_Centroid() {
+%extend Handle_PXCAFDoc_DocumentTool {
+	~Handle_PXCAFDoc_DocumentTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_DocumentTool\n");}
 	}
 };
 
@@ -305,32 +305,32 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_DocumentTool;
-class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
+%nodefaultctor Handle_PXCAFDoc_ColorTool;
+class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool();
+		Handle_PXCAFDoc_ColorTool();
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
+		Handle_PXCAFDoc_ColorTool(const Handle_PXCAFDoc_ColorTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
+		Handle_PXCAFDoc_ColorTool(const PXCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool & operator=(const Handle_PXCAFDoc_DocumentTool &aHandle);
+		Handle_PXCAFDoc_ColorTool & operator=(const Handle_PXCAFDoc_ColorTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
+		Handle_PXCAFDoc_ColorTool & operator=(const PXCAFDoc_ColorTool *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PXCAFDoc_ColorTool const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PXCAFDoc_DocumentTool {
-	PXCAFDoc_DocumentTool* GetObject() {
-	return (PXCAFDoc_DocumentTool*)$self->Access();
+%extend Handle_PXCAFDoc_ColorTool {
+	PXCAFDoc_ColorTool* GetObject() {
+	return (PXCAFDoc_ColorTool*)$self->Access();
 	}
 };
-%extend Handle_PXCAFDoc_DocumentTool {
-	~Handle_PXCAFDoc_DocumentTool() {
+%extend Handle_PXCAFDoc_ColorTool {
+	~Handle_PXCAFDoc_ColorTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_DocumentTool\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");}
 	}
 };
 
@@ -365,32 +365,32 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_ColorTool;
-class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
+%nodefaultctor Handle_PXCAFDoc_Centroid;
+class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool();
+		Handle_PXCAFDoc_Centroid();
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool(const Handle_PXCAFDoc_ColorTool &aHandle);
+		Handle_PXCAFDoc_Centroid(const Handle_PXCAFDoc_Centroid &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool(const PXCAFDoc_ColorTool *anItem);
+		Handle_PXCAFDoc_Centroid(const PXCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool & operator=(const Handle_PXCAFDoc_ColorTool &aHandle);
+		Handle_PXCAFDoc_Centroid & operator=(const Handle_PXCAFDoc_Centroid &aHandle);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool & operator=(const PXCAFDoc_ColorTool *anItem);
+		Handle_PXCAFDoc_Centroid & operator=(const PXCAFDoc_Centroid *anItem);
 		%feature("autodoc", "1");
-		Handle_PXCAFDoc_ColorTool const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PXCAFDoc_Centroid const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PXCAFDoc_ColorTool {
-	PXCAFDoc_ColorTool* GetObject() {
-	return (PXCAFDoc_ColorTool*)$self->Access();
+%extend Handle_PXCAFDoc_Centroid {
+	PXCAFDoc_Centroid* GetObject() {
+	return (PXCAFDoc_Centroid*)$self->Access();
 	}
 };
-%extend Handle_PXCAFDoc_ColorTool {
-	~Handle_PXCAFDoc_ColorTool() {
+%extend Handle_PXCAFDoc_Centroid {
+	~Handle_PXCAFDoc_Centroid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");}
 	}
 };
 
@@ -654,35 +654,6 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 
 
-%nodefaultctor PXCAFDoc_ShapeTool;
-class PXCAFDoc_ShapeTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_ShapeTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_ShapeTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_ShapeTool {
-	Handle_PXCAFDoc_ShapeTool GetHandle() {
-	return *(Handle_PXCAFDoc_ShapeTool*) &$self;
-	}
-};
-%extend PXCAFDoc_ShapeTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PXCAFDoc_ShapeTool {
-	~PXCAFDoc_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ShapeTool\n");}
-	}
-};
-
-
 %nodefaultctor PXCAFDoc_GraphNode;
 class PXCAFDoc_GraphNode : public PDF_Attribute {
 	public:
@@ -738,6 +709,35 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 	~PXCAFDoc_GraphNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_GraphNode\n");}
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_ShapeTool;
+class PXCAFDoc_ShapeTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_ShapeTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_ShapeTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_ShapeTool {
+	Handle_PXCAFDoc_ShapeTool GetHandle() {
+	return *(Handle_PXCAFDoc_ShapeTool*) &$self;
+	}
+};
+%extend PXCAFDoc_ShapeTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PXCAFDoc_ShapeTool {
+	~PXCAFDoc_ShapeTool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ShapeTool\n");}
 	}
 };
 

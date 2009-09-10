@@ -35,27 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
-class RWStepElement_RWSurface3dElementDescriptor {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurface3dElementDescriptor();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepElement_RWSurface3dElementDescriptor {
-	~RWStepElement_RWSurface3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
-	}
-};
-
-
 %nodefaultctor RWStepElement_RWAnalysisItemWithinRepresentation;
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
@@ -94,27 +73,6 @@ class RWStepElement_RWSurfaceSectionField {
 	~RWStepElement_RWSurfaceSectionField() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionField\n");}
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
-class RWStepElement_RWCurveElementSectionDefinition {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWCurveElementSectionDefinition();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_CurveElementSectionDefinition &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepElement_RWCurveElementSectionDefinition {
-	~RWStepElement_RWCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");}
 	}
 };
 
@@ -161,6 +119,27 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 };
 
 
+%nodefaultctor RWStepElement_RWSurfaceSection;
+class RWStepElement_RWSurfaceSection {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWSurfaceSection();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSection &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSection &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_SurfaceSection &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepElement_RWSurfaceSection {
+	~RWStepElement_RWSurfaceSection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSection\n");}
+	}
+};
+
+
 %nodefaultctor RWStepElement_RWElementDescriptor;
 class RWStepElement_RWElementDescriptor {
 	public:
@@ -199,6 +178,27 @@ class RWStepElement_RWElementMaterial {
 	~RWStepElement_RWElementMaterial() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWElementMaterial\n");}
+	}
+};
+
+
+%nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
+class RWStepElement_RWCurveElementSectionDefinition {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWCurveElementSectionDefinition();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_CurveElementSectionDefinition &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepElement_RWCurveElementSectionDefinition {
+	~RWStepElement_RWCurveElementSectionDefinition() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");}
 	}
 };
 
@@ -266,6 +266,27 @@ class RWStepElement_RWUniformSurfaceSection {
 };
 
 
+%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
+class RWStepElement_RWSurface3dElementDescriptor {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWSurface3dElementDescriptor();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepElement_RWSurface3dElementDescriptor {
+	~RWStepElement_RWSurface3dElementDescriptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
+	}
+};
+
+
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldConstant;
 class RWStepElement_RWSurfaceSectionFieldConstant {
 	public:
@@ -325,26 +346,5 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 	~RWStepElement_RWCurveElementEndReleasePacket() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementEndReleasePacket\n");}
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWSurfaceSection;
-class RWStepElement_RWSurfaceSection {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurfaceSection();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSection &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSection &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_SurfaceSection &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepElement_RWSurfaceSection {
-	~RWStepElement_RWSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSection\n");}
 	}
 };

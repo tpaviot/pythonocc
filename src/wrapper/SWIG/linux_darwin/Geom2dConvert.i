@@ -35,25 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
-class Geom2dConvert_CompCurveToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		Geom2dConvert_CompCurveToBSplineCurve(const Handle_Geom2d_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Geom2d_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSplineCurve() const;
-
-};
-%extend Geom2dConvert_CompCurveToBSplineCurve {
-	~Geom2dConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dConvert;
 class Geom2dConvert {
 	public:
@@ -83,6 +64,25 @@ class Geom2dConvert {
 	~Geom2dConvert() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
+class Geom2dConvert_CompCurveToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		Geom2dConvert_CompCurveToBSplineCurve(const Handle_Geom2d_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Geom2d_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSplineCurve() const;
+
+};
+%extend Geom2dConvert_CompCurveToBSplineCurve {
+	~Geom2dConvert_CompCurveToBSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
 	}
 };
 

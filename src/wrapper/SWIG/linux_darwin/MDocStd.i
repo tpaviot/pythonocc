@@ -35,32 +35,32 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_MDocStd_ListNodeOfDocEntryList;
-class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
+class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList();
+		Handle_MDocStd_DocumentStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
+		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList(const MDocStd_ListNodeOfDocEntryList *anItem);
+		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
+		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *anItem);
+		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MDocStd_ListNodeOfDocEntryList {
-	MDocStd_ListNodeOfDocEntryList* GetObject() {
-	return (MDocStd_ListNodeOfDocEntryList*)$self->Access();
+%extend Handle_MDocStd_DocumentStorageDriver {
+	MDocStd_DocumentStorageDriver* GetObject() {
+	return (MDocStd_DocumentStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_ListNodeOfDocEntryList {
-	~Handle_MDocStd_ListNodeOfDocEntryList() {
+%extend Handle_MDocStd_DocumentStorageDriver {
+	~Handle_MDocStd_DocumentStorageDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_ListNodeOfDocEntryList\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");}
 	}
 };
 
@@ -125,36 +125,6 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 };
 
 
-%nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
-class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap();
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap(const MDocStd_StdMapNodeOfPersistentMap *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
-	MDocStd_StdMapNodeOfPersistentMap* GetObject() {
-	return (MDocStd_StdMapNodeOfPersistentMap*)$self->Access();
-	}
-};
-%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
-	~Handle_MDocStd_StdMapNodeOfPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_StdMapNodeOfPersistentMap\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
 class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -185,32 +155,62 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 };
 
 
-%nodefaultctor Handle_MDocStd_DocumentStorageDriver;
-class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
+%nodefaultctor Handle_MDocStd_ListNodeOfDocEntryList;
+class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver();
+		Handle_MDocStd_ListNodeOfDocEntryList();
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		Handle_MDocStd_ListNodeOfDocEntryList(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver(const MDocStd_DocumentStorageDriver *anItem);
+		Handle_MDocStd_ListNodeOfDocEntryList(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver & operator=(const Handle_MDocStd_DocumentStorageDriver &aHandle);
+		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const Handle_MDocStd_ListNodeOfDocEntryList &aHandle);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver & operator=(const MDocStd_DocumentStorageDriver *anItem);
+		Handle_MDocStd_ListNodeOfDocEntryList & operator=(const MDocStd_ListNodeOfDocEntryList *anItem);
 		%feature("autodoc", "1");
-		Handle_MDocStd_DocumentStorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MDocStd_ListNodeOfDocEntryList const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MDocStd_DocumentStorageDriver {
-	MDocStd_DocumentStorageDriver* GetObject() {
-	return (MDocStd_DocumentStorageDriver*)$self->Access();
+%extend Handle_MDocStd_ListNodeOfDocEntryList {
+	MDocStd_ListNodeOfDocEntryList* GetObject() {
+	return (MDocStd_ListNodeOfDocEntryList*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_DocumentStorageDriver {
-	~Handle_MDocStd_DocumentStorageDriver() {
+%extend Handle_MDocStd_ListNodeOfDocEntryList {
+	~Handle_MDocStd_ListNodeOfDocEntryList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_ListNodeOfDocEntryList\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
+class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap();
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap(const MDocStd_StdMapNodeOfPersistentMap *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const Handle_MDocStd_StdMapNodeOfPersistentMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap & operator=(const MDocStd_StdMapNodeOfPersistentMap *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_StdMapNodeOfPersistentMap const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
+	MDocStd_StdMapNodeOfPersistentMap* GetObject() {
+	return (MDocStd_StdMapNodeOfPersistentMap*)$self->Access();
+	}
+};
+%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
+	~Handle_MDocStd_StdMapNodeOfPersistentMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_StdMapNodeOfPersistentMap\n");}
 	}
 };
 
@@ -267,35 +267,6 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 };
 
 
-%nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
-class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MDocStd_StdMapNodeOfPersistentMap(const Handle_Standard_Persistent &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MDocStd_StdMapNodeOfPersistentMap {
-	Handle_MDocStd_StdMapNodeOfPersistentMap GetHandle() {
-	return *(Handle_MDocStd_StdMapNodeOfPersistentMap*) &$self;
-	}
-};
-%extend MDocStd_StdMapNodeOfPersistentMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MDocStd_StdMapNodeOfPersistentMap {
-	~MDocStd_StdMapNodeOfPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");}
-	}
-};
-
-
 %nodefaultctor MDocStd_DocumentStorageDriver;
 class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 	public:
@@ -333,6 +304,35 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 
 
+%nodefaultctor MDocStd_PersistentMap;
+class MDocStd_PersistentMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap & Assign(const MDocStd_PersistentMap &Other);
+		%feature("autodoc", "1");
+		MDocStd_PersistentMap & operator=(const MDocStd_PersistentMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
+
+};
+%extend MDocStd_PersistentMap {
+	~MDocStd_PersistentMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDocStd_PersistentMap\n");}
+	}
+};
+
+
 %nodefaultctor MDocStd_DocumentRetrievalDriver;
 class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
@@ -366,31 +366,6 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	~MDocStd_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDocStd_DocumentRetrievalDriver\n");}
-	}
-};
-
-
-%nodefaultctor MDocStd_ListIteratorOfDocEntryList;
-class MDocStd_ListIteratorOfDocEntryList {
-	public:
-		%feature("autodoc", "1");
-		MDocStd_ListIteratorOfDocEntryList();
-		%feature("autodoc", "1");
-		MDocStd_ListIteratorOfDocEntryList(const MDocStd_DocEntryList &L);
-		%feature("autodoc", "1");
-		void Initialize(const MDocStd_DocEntryList &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Value() const;
-
-};
-%extend MDocStd_ListIteratorOfDocEntryList {
-	~MDocStd_ListIteratorOfDocEntryList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");}
 	}
 };
 
@@ -486,31 +461,27 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 };
 
 
-%nodefaultctor MDocStd_PersistentMap;
-class MDocStd_PersistentMap : public TCollection_BasicMap {
+%nodefaultctor MDocStd_ListIteratorOfDocEntryList;
+class MDocStd_ListIteratorOfDocEntryList {
 	public:
 		%feature("autodoc", "1");
-		MDocStd_PersistentMap(const Standard_Integer NbBuckets=1);
+		MDocStd_ListIteratorOfDocEntryList();
 		%feature("autodoc", "1");
-		MDocStd_PersistentMap & Assign(const MDocStd_PersistentMap &Other);
+		MDocStd_ListIteratorOfDocEntryList(const MDocStd_DocEntryList &L);
 		%feature("autodoc", "1");
-		MDocStd_PersistentMap & operator=(const MDocStd_PersistentMap &Other);
+		void Initialize(const MDocStd_DocEntryList &L);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void Clear();
+		void Next();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Standard_Persistent &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Persistent &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
+		TCollection_AsciiString & Value() const;
 
 };
-%extend MDocStd_PersistentMap {
-	~MDocStd_PersistentMap() {
+%extend MDocStd_ListIteratorOfDocEntryList {
+	~MDocStd_ListIteratorOfDocEntryList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_PersistentMap\n");}
+	if (__env){printf("## Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");}
 	}
 };
 
@@ -564,5 +535,34 @@ class MDocStd_DocEntryList {
 	~MDocStd_DocEntryList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MDocStd_DocEntryList\n");}
+	}
+};
+
+
+%nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
+class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MDocStd_StdMapNodeOfPersistentMap(const Handle_Standard_Persistent &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MDocStd_StdMapNodeOfPersistentMap {
+	Handle_MDocStd_StdMapNodeOfPersistentMap GetHandle() {
+	return *(Handle_MDocStd_StdMapNodeOfPersistentMap*) &$self;
+	}
+};
+%extend MDocStd_StdMapNodeOfPersistentMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MDocStd_StdMapNodeOfPersistentMap {
+	~MDocStd_StdMapNodeOfPersistentMap() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");}
 	}
 };

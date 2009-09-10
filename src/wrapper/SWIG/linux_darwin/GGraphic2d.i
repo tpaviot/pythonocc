@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
-class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError();
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError(const GGraphic2d_CurveDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError & operator=(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GGraphic2d_CurveDefinitionError {
-	GGraphic2d_CurveDefinitionError* GetObject() {
-	return (GGraphic2d_CurveDefinitionError*)$self->Access();
-	}
-};
-%extend Handle_GGraphic2d_CurveDefinitionError {
-	~Handle_GGraphic2d_CurveDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GGraphic2d_Curve;
 class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	public:
@@ -95,36 +65,6 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 };
 
 
-%nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
-class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	GGraphic2d_SequenceNodeOfSequenceOfCurve* GetObject() {
-	return (GGraphic2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
-	}
-};
-%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
-	~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
 class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	public:
@@ -151,6 +91,66 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	~Handle_GGraphic2d_SetOfCurves() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
+class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError();
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError(const GGraphic2d_CurveDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	GGraphic2d_CurveDefinitionError* GetObject() {
+	return (GGraphic2d_CurveDefinitionError*)$self->Access();
+	}
+};
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	~Handle_GGraphic2d_CurveDefinitionError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
+class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve();
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve & operator=(const GGraphic2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	GGraphic2d_SequenceNodeOfSequenceOfCurve* GetObject() {
+	return (GGraphic2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
+	}
+};
+%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 

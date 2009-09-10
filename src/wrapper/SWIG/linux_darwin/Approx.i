@@ -256,88 +256,6 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 };
 
 
-%nodefaultctor Approx_SequenceOfHArray1OfReal;
-class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceOfHArray1OfReal();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void Append(Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void Prepend(Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Approx_SequenceOfHArray1OfReal {
-	~Approx_SequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");}
-	}
-};
-
-
-%nodefaultctor Approx_Curve2d;
-class Approx_Curve2d {
-	public:
-		%feature("autodoc", "1");
-		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2dU() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2dV() const;
-
-};
-%extend Approx_Curve2d {
-	~Approx_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Curve2d\n");}
-	}
-};
-
-
 %nodefaultctor Approx_Curve3d;
 class Approx_Curve3d {
 	public:
@@ -369,33 +287,6 @@ class Approx_Curve3d {
 };
 
 
-%nodefaultctor Approx_SameParameter;
-class Approx_SameParameter {
-	public:
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real TolReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameParameter() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve2d() const;
-
-};
-%extend Approx_SameParameter {
-	~Approx_SameParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
-	}
-};
-
-
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide2d;
 class Approx_MyLeastSquareOfFitAndDivide2d {
 	public:
@@ -413,123 +304,6 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 	~Approx_MyLeastSquareOfFitAndDivide2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");}
-	}
-};
-
-
-%nodefaultctor Approx_HArray1OfAdHSurface;
-class Approx_HArray1OfAdHSurface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HSurface &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Approx_Array1OfAdHSurface & Array1() const;
-		%feature("autodoc", "1");
-		Approx_Array1OfAdHSurface & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Approx_HArray1OfAdHSurface {
-	Handle_Approx_HArray1OfAdHSurface GetHandle() {
-	return *(Handle_Approx_HArray1OfAdHSurface*) &$self;
-	}
-};
-%extend Approx_HArray1OfAdHSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Approx_HArray1OfAdHSurface {
-	~Approx_HArray1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
-	}
-};
-
-
-%nodefaultctor Approx_MCurvesToBSpCurve;
-class Approx_MCurvesToBSpCurve {
-	public:
-		%feature("autodoc", "1");
-		Approx_MCurvesToBSpCurve();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void Append(const AppParCurves_MultiCurve &MC);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		void Perform(const AppParCurves_SequenceOfMultiCurve &TheSeq);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & Value() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & ChangeValue();
-
-};
-%extend Approx_MCurvesToBSpCurve {
-	~Approx_MCurvesToBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
-	}
-};
-
-
-%nodefaultctor Approx_Array1OfGTrsf2d;
-class Approx_Array1OfGTrsf2d {
-	public:
-		%feature("autodoc", "1");
-		Approx_Array1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Approx_Array1OfGTrsf2d(const gp_GTrsf2d &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const gp_GTrsf2d &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Approx_Array1OfGTrsf2d & Assign(const Approx_Array1OfGTrsf2d &Other);
-		%feature("autodoc", "1");
-		const Approx_Array1OfGTrsf2d & operator=(const Approx_Array1OfGTrsf2d &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_GTrsf2d &Value);
-		%feature("autodoc", "1");
-		const gp_GTrsf2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_GTrsf2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_GTrsf2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_GTrsf2d & operator()(const Standard_Integer Index);
-
-};
-%extend Approx_Array1OfGTrsf2d {
-	~Approx_Array1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
 	}
 };
 
@@ -589,6 +363,220 @@ class Approx_SweepFunction : public MMgt_TShared {
 	~Approx_SweepFunction() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Approx_SweepFunction\n");}
+	}
+};
+
+
+%nodefaultctor Approx_CurvilinearParameter;
+class Approx_CurvilinearParameter {
+	public:
+		%feature("autodoc", "1");
+		Approx_CurvilinearParameter(const Handle_Adaptor3d_HCurve &C3D, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		%feature("autodoc", "1");
+		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		%feature("autodoc", "1");
+		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &Surf2, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve Curve3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve2d1() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d1() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve2d2() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d2() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend Approx_CurvilinearParameter {
+	~Approx_CurvilinearParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_CurvilinearParameter\n");}
+	}
+};
+
+
+%nodefaultctor Approx_MCurvesToBSpCurve;
+class Approx_MCurvesToBSpCurve {
+	public:
+		%feature("autodoc", "1");
+		Approx_MCurvesToBSpCurve();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void Append(const AppParCurves_MultiCurve &MC);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		void Perform(const AppParCurves_SequenceOfMultiCurve &TheSeq);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & Value() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & ChangeValue();
+
+};
+%extend Approx_MCurvesToBSpCurve {
+	~Approx_MCurvesToBSpCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
+	}
+};
+
+
+%nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
+class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_TColStd_HArray1OfReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal GetHandle() {
+	return *(Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal*) &$self;
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	~Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
+	}
+};
+
+
+%nodefaultctor Approx_Array1OfGTrsf2d;
+class Approx_Array1OfGTrsf2d {
+	public:
+		%feature("autodoc", "1");
+		Approx_Array1OfGTrsf2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Approx_Array1OfGTrsf2d(const gp_GTrsf2d &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const gp_GTrsf2d &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Approx_Array1OfGTrsf2d & Assign(const Approx_Array1OfGTrsf2d &Other);
+		%feature("autodoc", "1");
+		const Approx_Array1OfGTrsf2d & operator=(const Approx_Array1OfGTrsf2d &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_GTrsf2d &Value);
+		%feature("autodoc", "1");
+		const gp_GTrsf2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_GTrsf2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_GTrsf2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_GTrsf2d & operator()(const Standard_Integer Index);
+
+};
+%extend Approx_Array1OfGTrsf2d {
+	~Approx_Array1OfGTrsf2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
+	}
+};
+
+
+%nodefaultctor Approx_HArray1OfAdHSurface;
+class Approx_HArray1OfAdHSurface : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HSurface &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Adaptor3d_HSurface &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Approx_Array1OfAdHSurface & Array1() const;
+		%feature("autodoc", "1");
+		Approx_Array1OfAdHSurface & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Approx_HArray1OfAdHSurface {
+	Handle_Approx_HArray1OfAdHSurface GetHandle() {
+	return *(Handle_Approx_HArray1OfAdHSurface*) &$self;
+	}
+};
+%extend Approx_HArray1OfAdHSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Approx_HArray1OfAdHSurface {
+	~Approx_HArray1OfAdHSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
+	}
+};
+
+
+%nodefaultctor Approx_Curve2d;
+class Approx_Curve2d {
+	public:
+		%feature("autodoc", "1");
+		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2dU() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2dV() const;
+
+};
+%extend Approx_Curve2d {
+	~Approx_Curve2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Curve2d\n");}
 	}
 };
 
@@ -673,78 +661,6 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 	~Approx_HArray1OfGTrsf2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfGTrsf2d\n");}
-	}
-};
-
-
-%nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
-class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_TColStd_HArray1OfReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal GetHandle() {
-	return *(Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal*) &$self;
-	}
-};
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	~Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
-	}
-};
-
-
-%nodefaultctor Approx_CurvilinearParameter;
-class Approx_CurvilinearParameter {
-	public:
-		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor3d_HCurve &C3D, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
-		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
-		%feature("autodoc", "1");
-		Approx_CurvilinearParameter(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &Surf2, const Standard_Real Tol, const GeomAbs_Shape Order, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve Curve3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve2d1() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d1() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve2d2() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d2() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend Approx_CurvilinearParameter {
-	~Approx_CurvilinearParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_CurvilinearParameter\n");}
 	}
 };
 
@@ -991,6 +907,90 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 	~Approx_SequenceOfArray1OfPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");}
+	}
+};
+
+
+%nodefaultctor Approx_SameParameter;
+class Approx_SameParameter {
+	public:
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real TolReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSameParameter() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve2d() const;
+
+};
+%extend Approx_SameParameter {
+	~Approx_SameParameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
+	}
+};
+
+
+%nodefaultctor Approx_SequenceOfHArray1OfReal;
+class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Approx_SequenceOfHArray1OfReal();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void Append(Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void Prepend(Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & First() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Approx_SequenceOfHArray1OfReal {
+	~Approx_SequenceOfHArray1OfReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");}
 	}
 };
 

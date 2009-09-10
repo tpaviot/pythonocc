@@ -159,114 +159,31 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 };
 
 
-%nodefaultctor Geom2dHatch_Hatcher;
-class Geom2dHatch_Hatcher {
+%nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
+class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	public:
 		%feature("autodoc", "1");
-		Geom2dHatch_Hatcher(const Geom2dHatch_Intersector &Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt=0, const Standard_Boolean KeepSeg=0);
+		Geom2dHatch_FClass2dOfClassifierOfHatcher();
 		%feature("autodoc", "1");
-		void Intersector(const Geom2dHatch_Intersector &Intersector);
+		void Reset(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		const Geom2dHatch_Intersector & Intersector();
+		void Compare(const Geom2dAdaptor_Curve &E, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
-		Geom2dHatch_Intersector & ChangeIntersector();
+		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
-		void Confusion2d(const Standard_Real Confusion);
+		Geom2dHatch_Intersector & Intersector();
 		%feature("autodoc", "1");
-		Standard_Real Confusion2d() const;
-		%feature("autodoc", "1");
-		void Confusion3d(const Standard_Real Confusion);
-		%feature("autodoc", "1");
-		Standard_Real Confusion3d() const;
-		%feature("autodoc", "1");
-		void KeepPoints(const Standard_Boolean Keep);
-		%feature("autodoc", "1");
-		Standard_Boolean KeepPoints() const;
-		%feature("autodoc", "1");
-		void KeepSegments(const Standard_Boolean Keep);
-		%feature("autodoc", "1");
-		Standard_Boolean KeepSegments() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & ElementCurve(const Standard_Integer IndE) const;
-		%feature("autodoc", "1");
-		Standard_Integer AddElement(const Geom2dAdaptor_Curve &Curve, const TopAbs_Orientation Orientation=TopAbs_FORWARD);
-		%feature("autodoc", "1");
-		void RemElement(const Standard_Integer IndE);
-		%feature("autodoc", "1");
-		void ClrElements();
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & HatchingCurve(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		Standard_Integer AddHatching(const Geom2dAdaptor_Curve &Curve);
-		%feature("autodoc", "1");
-		void RemHatching(const Standard_Integer IndH);
-		%feature("autodoc", "1");
-		void ClrHatchings();
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnHatching & Point(const Standard_Integer IndH, const Standard_Integer IndP) const;
-		%feature("autodoc", "1");
-		void Trim();
-		%feature("autodoc", "1");
-		Standard_Integer Trim(const Geom2dAdaptor_Curve &Curve);
-		%feature("autodoc", "1");
-		void Trim(const Standard_Integer IndH);
-		%feature("autodoc", "1");
-		void ComputeDomains();
-		%feature("autodoc", "1");
-		void ComputeDomains(const Standard_Integer IndH);
-		%feature("autodoc", "1");
-		Standard_Boolean TrimDone(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		Standard_Boolean TrimFailed(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		HatchGen_ErrorStatus Status(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDomains(const Standard_Integer IndH) const;
-		%feature("autodoc", "1");
-		const HatchGen_Domain & Domain(const Standard_Integer IndH, const Standard_Integer IDom) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend Geom2dHatch_Hatcher {
-	~Geom2dHatch_Hatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Hatcher\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_ClassifierOfHatcher;
-class Geom2dHatch_ClassifierOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_ClassifierOfHatcher();
-		%feature("autodoc", "1");
-		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		Standard_Integer ClosestIntersection() const;
 		%feature("autodoc", "1");
 		TopAbs_State State() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Rejected() const;
-		%feature("autodoc", "1");
-		Standard_Boolean NoWires() const;
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & Edge() const;
-		%feature("autodoc", "1");
-		Standard_Real EdgeParameter() const;
-		%feature("autodoc", "1");
-		IntRes2d_Position Position() const;
+		Standard_Boolean IsHeadOrEnd() const;
 
 };
-%extend Geom2dHatch_ClassifierOfHatcher {
-	~Geom2dHatch_ClassifierOfHatcher() {
+%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
+	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");}
+	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
 	}
 };
 
@@ -276,8 +193,18 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Geom2dHatch_HatchingOfHatcher & Value() const;
 		%feature("autodoc", "1");
@@ -370,35 +297,6 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
-class Geom2dHatch_FClass2dOfClassifierOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_FClass2dOfClassifierOfHatcher();
-		%feature("autodoc", "1");
-		void Reset(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Compare(const Geom2dAdaptor_Curve &E, const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		Geom2dHatch_Intersector & Intersector();
-		%feature("autodoc", "1");
-		Standard_Integer ClosestIntersection() const;
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHeadOrEnd() const;
-
-};
-%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
-	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dHatch_HatchingOfHatcher;
 class Geom2dHatch_HatchingOfHatcher {
 	public:
@@ -465,8 +363,18 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 	public:
 		%feature("autodoc", "1");
 		Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher & Value() const;
 		%feature("autodoc", "1");
@@ -544,6 +452,118 @@ class Geom2dHatch_ElementsOfHatcher {
 	~Geom2dHatch_ElementsOfHatcher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementsOfHatcher\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_ClassifierOfHatcher;
+class Geom2dHatch_ClassifierOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_ClassifierOfHatcher();
+		%feature("autodoc", "1");
+		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d &P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Rejected() const;
+		%feature("autodoc", "1");
+		Standard_Boolean NoWires() const;
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & Edge() const;
+		%feature("autodoc", "1");
+		Standard_Real EdgeParameter() const;
+		%feature("autodoc", "1");
+		IntRes2d_Position Position() const;
+
+};
+%extend Geom2dHatch_ClassifierOfHatcher {
+	~Geom2dHatch_ClassifierOfHatcher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_Hatcher;
+class Geom2dHatch_Hatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_Hatcher(const Geom2dHatch_Intersector &Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt=0, const Standard_Boolean KeepSeg=0);
+		%feature("autodoc", "1");
+		void Intersector(const Geom2dHatch_Intersector &Intersector);
+		%feature("autodoc", "1");
+		const Geom2dHatch_Intersector & Intersector();
+		%feature("autodoc", "1");
+		Geom2dHatch_Intersector & ChangeIntersector();
+		%feature("autodoc", "1");
+		void Confusion2d(const Standard_Real Confusion);
+		%feature("autodoc", "1");
+		Standard_Real Confusion2d() const;
+		%feature("autodoc", "1");
+		void Confusion3d(const Standard_Real Confusion);
+		%feature("autodoc", "1");
+		Standard_Real Confusion3d() const;
+		%feature("autodoc", "1");
+		void KeepPoints(const Standard_Boolean Keep);
+		%feature("autodoc", "1");
+		Standard_Boolean KeepPoints() const;
+		%feature("autodoc", "1");
+		void KeepSegments(const Standard_Boolean Keep);
+		%feature("autodoc", "1");
+		Standard_Boolean KeepSegments() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & ElementCurve(const Standard_Integer IndE) const;
+		%feature("autodoc", "1");
+		Standard_Integer AddElement(const Geom2dAdaptor_Curve &Curve, const TopAbs_Orientation Orientation=TopAbs_FORWARD);
+		%feature("autodoc", "1");
+		void RemElement(const Standard_Integer IndE);
+		%feature("autodoc", "1");
+		void ClrElements();
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & HatchingCurve(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		Standard_Integer AddHatching(const Geom2dAdaptor_Curve &Curve);
+		%feature("autodoc", "1");
+		void RemHatching(const Standard_Integer IndH);
+		%feature("autodoc", "1");
+		void ClrHatchings();
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnHatching & Point(const Standard_Integer IndH, const Standard_Integer IndP) const;
+		%feature("autodoc", "1");
+		void Trim();
+		%feature("autodoc", "1");
+		Standard_Integer Trim(const Geom2dAdaptor_Curve &Curve);
+		%feature("autodoc", "1");
+		void Trim(const Standard_Integer IndH);
+		%feature("autodoc", "1");
+		void ComputeDomains();
+		%feature("autodoc", "1");
+		void ComputeDomains(const Standard_Integer IndH);
+		%feature("autodoc", "1");
+		Standard_Boolean TrimDone(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		Standard_Boolean TrimFailed(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		HatchGen_ErrorStatus Status(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDomains(const Standard_Integer IndH) const;
+		%feature("autodoc", "1");
+		const HatchGen_Domain & Domain(const Standard_Integer IndH, const Standard_Integer IDom) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%extend Geom2dHatch_Hatcher {
+	~Geom2dHatch_Hatcher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Hatcher\n");}
 	}
 };
 

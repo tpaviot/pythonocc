@@ -95,23 +95,6 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 };
 
 
-%nodefaultctor Geom2dAdaptor;
-class Geom2dAdaptor {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAdaptor();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
-
-};
-%extend Geom2dAdaptor {
-	~Geom2dAdaptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dAdaptor_Curve;
 class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 	public:
@@ -189,6 +172,23 @@ class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 	~Geom2dAdaptor_Curve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor_Curve\n");}
+	}
+};
+
+
+%nodefaultctor Geom2dAdaptor;
+class Geom2dAdaptor {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAdaptor();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
+
+};
+%extend Geom2dAdaptor {
+	~Geom2dAdaptor() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor\n");}
 	}
 };
 

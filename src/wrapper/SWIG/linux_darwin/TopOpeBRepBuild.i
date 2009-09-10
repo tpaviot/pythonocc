@@ -74,6 +74,36 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_
 };
 
 
+%nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
+class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
+	TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal* GetObject() {
+	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
+	}
+};
+%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
+	~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TopOpeBRepBuild_Loop;
 class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 	public:
@@ -164,36 +194,6 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 };
 
 
-%nodefaultctor Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
-class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
-	TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo* GetObject() {
-	return (TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo*)$self->Access();
-	}
-};
-%extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
-	~Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo\n");}
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -254,32 +254,32 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 };
 
 
-%nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
-class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
+class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal();
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo();
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal & operator=(const TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal *anItem);
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo & operator=(const TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal* GetObject() {
-	return (TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
+%extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
+	TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo* GetObject() {
+	return (TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo*)$self->Access();
 	}
 };
-%extend Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
-	~Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal() {
+%extend Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
+	~Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo\n");}
 	}
 };
 
@@ -1001,59 +1001,6 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 };
 
 
-%nodefaultctor TopOpeBRepBuild_ListOfLoop;
-class TopOpeBRepBuild_ListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfLoop();
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Append(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & First() const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-
-};
-%extend TopOpeBRepBuild_ListOfLoop {
-	~TopOpeBRepBuild_ListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListOfLoop\n");}
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_Area2dBuilder;
 class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1431,8 +1378,18 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 		TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepBuild_VertexInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1455,6 +1412,59 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 	~TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo\n");}
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_ListOfLoop;
+class TopOpeBRepBuild_ListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfLoop();
+		%feature("autodoc", "1");
+		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Append(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & First() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+
+};
+%extend TopOpeBRepBuild_ListOfLoop {
+	~TopOpeBRepBuild_ListOfLoop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListOfLoop\n");}
 	}
 };
 
@@ -1564,59 +1574,6 @@ class TopOpeBRepBuild_GIter {
 	~TopOpeBRepBuild_GIter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_GIter\n");}
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_ListOfShapeListOfShape;
-class TopOpeBRepBuild_ListOfShapeListOfShape {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape();
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const TopOpeBRepBuild_ShapeListOfShape &I);
-		%feature("autodoc", "1");
-		void Prepend(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TopOpeBRepBuild_ListOfShapeListOfShape & Other);
-		%feature("autodoc", "1");
-		void Append(const TopOpeBRepBuild_ShapeListOfShape &I);
-		%feature("autodoc", "1");
-		void Append(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & theIt);
-		%feature("autodoc", "1");
-		void Append(TopOpeBRepBuild_ListOfShapeListOfShape & Other);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ShapeListOfShape & First() const;
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ShapeListOfShape & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopOpeBRepBuild_ListOfShapeListOfShape & Other, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopOpeBRepBuild_ListOfShapeListOfShape & Other, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
-
-};
-%extend TopOpeBRepBuild_ListOfShapeListOfShape {
-	~TopOpeBRepBuild_ListOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListOfShapeListOfShape\n");}
 	}
 };
 
@@ -1888,6 +1845,59 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 };
 
 
+%nodefaultctor TopOpeBRepBuild_ListOfShapeListOfShape;
+class TopOpeBRepBuild_ListOfShapeListOfShape {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape();
+		%feature("autodoc", "1");
+		void Assign(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const TopOpeBRepBuild_ShapeListOfShape &I);
+		%feature("autodoc", "1");
+		void Prepend(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopOpeBRepBuild_ListOfShapeListOfShape & Other);
+		%feature("autodoc", "1");
+		void Append(const TopOpeBRepBuild_ShapeListOfShape &I);
+		%feature("autodoc", "1");
+		void Append(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & theIt);
+		%feature("autodoc", "1");
+		void Append(TopOpeBRepBuild_ListOfShapeListOfShape & Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ShapeListOfShape & First() const;
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ShapeListOfShape & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopOpeBRepBuild_ListOfShapeListOfShape & Other, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TopOpeBRepBuild_ShapeListOfShape &I, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopOpeBRepBuild_ListOfShapeListOfShape & Other, TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape & It);
+
+};
+%extend TopOpeBRepBuild_ListOfShapeListOfShape {
+	~TopOpeBRepBuild_ListOfShapeListOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListOfShapeListOfShape\n");}
+	}
+};
+
+
 %nodefaultctor TopOpeBRepBuild_FuseFace;
 class TopOpeBRepBuild_FuseFace {
 	public:
@@ -2059,8 +2069,18 @@ class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
@@ -2466,8 +2486,18 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
@@ -2611,8 +2641,18 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNo
 		TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2826,8 +2866,18 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 		TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger(const TopoDS_Shape &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

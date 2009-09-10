@@ -3,14 +3,14 @@
 %rename(PlotMgt_PlotterDefinitionError) PlotMgt_PlotterDefinitionError;
 %rename(PlotMgt_IF_ENABLE) PlotMgt_IF_ENABLE;
 %rename(PlotMgt) PlotMgt;
-%rename(PlotMgt_TOO_TOPLEFT) PlotMgt_TOO_TOPLEFT;
+%rename(PlotMgt_PF_A5) PlotMgt_PF_A5;
 %rename(PlotMgt_PF_STATEMENT) PlotMgt_PF_STATEMENT;
 %rename(PlotMgt_PlotterDriver) PlotMgt_PlotterDriver;
 %rename(PlotMgt_PlotterAccessError) PlotMgt_PlotterAccessError;
 %rename(PlotMgt_ListOfMFTFonts) PlotMgt_ListOfMFTFonts;
 %rename(PlotMgt_TOPP_Integer) PlotMgt_TOPP_Integer;
 %rename(Handle_PlotMgt_Plotter) Handle_PlotMgt_Plotter;
-%rename(PlotMgt_PF_A5) PlotMgt_PF_A5;
+%rename(PlotMgt_TOO_TOPLEFT) PlotMgt_TOO_TOPLEFT;
 %rename(PlotMgt_PF_A4) PlotMgt_PF_A4;
 %rename(Handle_PlotMgt_HListOfPlotterParameter) Handle_PlotMgt_HListOfPlotterParameter;
 %rename(PlotMgt_PF_A1) PlotMgt_PF_A1;

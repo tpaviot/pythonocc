@@ -77,66 +77,6 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 };
 
 
-%nodefaultctor Handle_PrsMgr_Presentation;
-class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation();
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation(const Handle_PrsMgr_Presentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation(const PrsMgr_Presentation *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation & operator=(const Handle_PrsMgr_Presentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation & operator=(const PrsMgr_Presentation *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PrsMgr_Presentation {
-	PrsMgr_Presentation* GetObject() {
-	return (PrsMgr_Presentation*)$self->Access();
-	}
-};
-%extend Handle_PrsMgr_Presentation {
-	~Handle_PrsMgr_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PrsMgr_Presentation3d;
-class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d();
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d(const Handle_PrsMgr_Presentation3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d(const PrsMgr_Presentation3d *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d & operator=(const Handle_PrsMgr_Presentation3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d & operator=(const PrsMgr_Presentation3d *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PrsMgr_Presentation3d {
-	PrsMgr_Presentation3d* GetObject() {
-	return (PrsMgr_Presentation3d*)$self->Access();
-	}
-};
-%extend Handle_PrsMgr_Presentation3d {
-	~Handle_PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PrsMgr_PresentationManager;
 class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	public:
@@ -197,32 +137,32 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 };
 
 
-%nodefaultctor Handle_PrsMgr_PresentationManager2d;
-class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationManager {
+%nodefaultctor Handle_PrsMgr_Presentation;
+class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d();
+		Handle_PrsMgr_Presentation();
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d(const Handle_PrsMgr_PresentationManager2d &aHandle);
+		Handle_PrsMgr_Presentation(const Handle_PrsMgr_Presentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d(const PrsMgr_PresentationManager2d *anItem);
+		Handle_PrsMgr_Presentation(const PrsMgr_Presentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d & operator=(const Handle_PrsMgr_PresentationManager2d &aHandle);
+		Handle_PrsMgr_Presentation & operator=(const Handle_PrsMgr_Presentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d & operator=(const PrsMgr_PresentationManager2d *anItem);
+		Handle_PrsMgr_Presentation & operator=(const PrsMgr_Presentation *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager2d const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_PrsMgr_Presentation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PrsMgr_PresentationManager2d {
-	PrsMgr_PresentationManager2d* GetObject() {
-	return (PrsMgr_PresentationManager2d*)$self->Access();
+%extend Handle_PrsMgr_Presentation {
+	PrsMgr_Presentation* GetObject() {
+	return (PrsMgr_Presentation*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_PresentationManager2d {
-	~Handle_PrsMgr_PresentationManager2d() {
+%extend Handle_PrsMgr_Presentation {
+	~Handle_PrsMgr_Presentation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
 	}
 };
 
@@ -287,6 +227,36 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_PrsMgr_PresentationManager2d;
+class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d();
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d(const Handle_PrsMgr_PresentationManager2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d(const PrsMgr_PresentationManager2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d & operator=(const Handle_PrsMgr_PresentationManager2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d & operator=(const PrsMgr_PresentationManager2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PrsMgr_PresentationManager2d {
+	PrsMgr_PresentationManager2d* GetObject() {
+	return (PrsMgr_PresentationManager2d*)$self->Access();
+	}
+};
+%extend Handle_PrsMgr_PresentationManager2d {
+	~Handle_PrsMgr_PresentationManager2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PrsMgr_SequenceNodeOfPresentations;
 class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqNode {
 	public:
@@ -313,6 +283,36 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 	~Handle_PrsMgr_SequenceNodeOfPresentations() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PrsMgr_Presentation3d;
+class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d();
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d(const Handle_PrsMgr_Presentation3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d(const PrsMgr_Presentation3d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d & operator=(const Handle_PrsMgr_Presentation3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d & operator=(const PrsMgr_Presentation3d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PrsMgr_Presentation3d {
+	PrsMgr_Presentation3d* GetObject() {
+	return (PrsMgr_Presentation3d*)$self->Access();
+	}
+};
+%extend Handle_PrsMgr_Presentation3d {
+	~Handle_PrsMgr_Presentation3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");}
 	}
 };
 
@@ -371,118 +371,33 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 
 
-%nodefaultctor PrsMgr_PresentableObject;
-class PrsMgr_PresentableObject : public MMgt_TShared {
+%nodefaultctor PrsMgr_Presentation2d;
+class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 	public:
 		%feature("autodoc", "1");
-		PrsMgr_TypeOfPresentation3d TypeOfPresentation3d() const;
+		virtual		void Clear();
 		%feature("autodoc", "1");
-		virtual		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag, const gp_Pnt &APoint);
+		void SetOffset(const Standard_Integer anOffset);
 		%feature("autodoc", "1");
-		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag);
+		Standard_Integer Offset() const;
 		%feature("autodoc", "1");
-		Graphic3d_TransModeFlags GetTransformPersistenceMode() const;
-		%feature("autodoc", "1");
-		gp_Pnt GetTransformPersistencePoint() const;
-		%feature("autodoc", "1");
-		void SetTypeOfPresentation(const PrsMgr_TypeOfPresentation3d aType);
-		%feature("autodoc", "1");
-		void SetToUpdate(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void SetToUpdate();
-		%feature("autodoc", "1");
-		void ToBeUpdated(TColStd_ListOfInteger & ListOfMode) const;
-		%feature("autodoc", "1");
-		virtual		void SetLocation(const TopLoc_Location &aLoc);
-		%feature("autodoc", "1");
-		Standard_Boolean HasLocation() const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & Location() const;
-		%feature("autodoc", "1");
-		virtual		void ResetLocation();
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation();
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation(const Handle_Prs3d_Presentation &P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_Graphic2d_GraphicObject Presentation() const;
 
 };
-%extend PrsMgr_PresentableObject {
-	Handle_PrsMgr_PresentableObject GetHandle() {
-	return *(Handle_PrsMgr_PresentableObject*) &$self;
+%extend PrsMgr_Presentation2d {
+	Handle_PrsMgr_Presentation2d GetHandle() {
+	return *(Handle_PrsMgr_Presentation2d*) &$self;
 	}
 };
-%extend PrsMgr_PresentableObject {
+%extend PrsMgr_Presentation2d {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_PresentableObject {
-	~PrsMgr_PresentableObject() {
+%extend PrsMgr_Presentation2d {
+	~PrsMgr_Presentation2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentableObject\n");}
-	}
-};
-
-
-%nodefaultctor PrsMgr_PresentationManager;
-class PrsMgr_PresentationManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Is3D() const;
-		%feature("autodoc", "1");
-		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
-		%feature("autodoc", "1");
-		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsImmediateModeOn() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_PresentationManager {
-	Handle_PrsMgr_PresentationManager GetHandle() {
-	return *(Handle_PrsMgr_PresentationManager*) &$self;
-	}
-};
-%extend PrsMgr_PresentationManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PrsMgr_PresentationManager {
-	~PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
 	}
 };
 
@@ -518,35 +433,6 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 	~PrsMgr_Prs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_Prs\n");}
-	}
-};
-
-
-%nodefaultctor PrsMgr_Presentation3d;
-class PrsMgr_Presentation3d : public PrsMgr_Presentation {
-	public:
-		%feature("autodoc", "1");
-		virtual		PrsMgr_KindOfPrs KindOfPresentation() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_Presentation Presentation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_Presentation3d {
-	Handle_PrsMgr_Presentation3d GetHandle() {
-	return *(Handle_PrsMgr_Presentation3d*) &$self;
-	}
-};
-%extend PrsMgr_Presentation3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PrsMgr_Presentation3d {
-	~PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
 	}
 };
 
@@ -637,37 +523,147 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor PrsMgr_Presentation2d;
-class PrsMgr_Presentation2d : public PrsMgr_Presentation {
+%nodefaultctor PrsMgr_PresentableObject;
+class PrsMgr_PresentableObject : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		PrsMgr_KindOfPrs KindOfPresentation() const;
+		PrsMgr_TypeOfPresentation3d TypeOfPresentation3d() const;
 		%feature("autodoc", "1");
-		virtual		void Clear();
+		virtual		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag, const gp_Pnt &APoint);
 		%feature("autodoc", "1");
-		void SetOffset(const Standard_Integer anOffset);
+		void SetTransformPersistence(const Graphic3d_TransModeFlags &aFlag);
 		%feature("autodoc", "1");
-		Standard_Integer Offset() const;
+		Graphic3d_TransModeFlags GetTransformPersistenceMode() const;
 		%feature("autodoc", "1");
-		Handle_Graphic2d_GraphicObject Presentation() const;
+		gp_Pnt GetTransformPersistencePoint() const;
+		%feature("autodoc", "1");
+		void SetTypeOfPresentation(const PrsMgr_TypeOfPresentation3d aType);
+		%feature("autodoc", "1");
+		void SetToUpdate(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void SetToUpdate();
+		%feature("autodoc", "1");
+		void ToBeUpdated(TColStd_ListOfInteger & ListOfMode) const;
+		%feature("autodoc", "1");
+		virtual		void SetLocation(const TopLoc_Location &aLoc);
+		%feature("autodoc", "1");
+		Standard_Boolean HasLocation() const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		virtual		void ResetLocation();
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation();
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation(const Handle_Prs3d_Presentation &P);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PrsMgr_Presentation2d {
-	Handle_PrsMgr_Presentation2d GetHandle() {
-	return *(Handle_PrsMgr_Presentation2d*) &$self;
+%extend PrsMgr_PresentableObject {
+	Handle_PrsMgr_PresentableObject GetHandle() {
+	return *(Handle_PrsMgr_PresentableObject*) &$self;
 	}
 };
-%extend PrsMgr_Presentation2d {
+%extend PrsMgr_PresentableObject {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_Presentation2d {
-	~PrsMgr_Presentation2d() {
+%extend PrsMgr_PresentableObject {
+	~PrsMgr_PresentableObject() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentableObject\n");}
+	}
+};
+
+
+%nodefaultctor PrsMgr_Presentation3d;
+class PrsMgr_Presentation3d : public PrsMgr_Presentation {
+	public:
+		%feature("autodoc", "1");
+		virtual		PrsMgr_KindOfPrs KindOfPresentation() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_Presentation Presentation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PrsMgr_Presentation3d {
+	Handle_PrsMgr_Presentation3d GetHandle() {
+	return *(Handle_PrsMgr_Presentation3d*) &$self;
+	}
+};
+%extend PrsMgr_Presentation3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PrsMgr_Presentation3d {
+	~PrsMgr_Presentation3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
+	}
+};
+
+
+%nodefaultctor PrsMgr_PresentationManager;
+class PrsMgr_PresentationManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Is3D() const;
+		%feature("autodoc", "1");
+		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
+		%feature("autodoc", "1");
+		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		void BeginDraw();
+		%feature("autodoc", "1");
+		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsImmediateModeOn() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PrsMgr_PresentationManager {
+	Handle_PrsMgr_PresentationManager GetHandle() {
+	return *(Handle_PrsMgr_PresentationManager*) &$self;
+	}
+};
+%extend PrsMgr_PresentationManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PrsMgr_PresentationManager {
+	~PrsMgr_PresentationManager() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
 	}
 };
 

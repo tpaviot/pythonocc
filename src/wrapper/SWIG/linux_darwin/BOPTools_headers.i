@@ -147,21 +147,22 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
 #include<gp_Pnt.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<IntTools_Curve.hxx>
 #include<IntTools_Context.hxx>
+#include<TopoDS_Shape.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<IntTools_Range.hxx>
-#include<TColStd_ListOfInteger.hxx>
-#include<TColStd_SetOfInteger.hxx>
-#include<TColStd_IndexedMapOfInteger.hxx>
-#include<Handle_Geom_Geometry.hxx>
 #include<IntTools_CommonPrt.hxx>
+#include<TColStd_ListOfInteger.hxx>
+#include<TColStd_IndexedMapOfInteger.hxx>
+#include<TColStd_SetOfInteger.hxx>
 #include<IntTools_ShrunkRange.hxx>
+#include<IntTools_SequenceOfCurves.hxx>
+#include<IntTools_SequenceOfPntOn2Faces.hxx>
 #include<BooleanOperations_ShapesDataStructure.hxx>
 #include<gp_Vec.hxx>
 #include<Handle_Geom2d_Curve.hxx>
@@ -174,6 +175,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<gp_Pln.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TopoDS_Solid.hxx>
-#include<IntTools_SequenceOfCurves.hxx>
-#include<IntTools_SequenceOfPntOn2Faces.hxx>
+#include<Handle_Geom_Geometry.hxx>
 %}

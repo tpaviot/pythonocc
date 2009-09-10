@@ -13,7 +13,7 @@
 %rename(TColStd_ListIteratorOfListOfInteger) TColStd_ListIteratorOfListOfInteger;
 %rename(Handle_TColStd_QueueNodeOfQueueOfInteger) Handle_TColStd_QueueNodeOfQueueOfInteger;
 %rename(Handle_TColStd_HArray1OfTransient) Handle_TColStd_HArray1OfTransient;
-%rename(TColStd_SequenceOfExtendedString) TColStd_SequenceOfExtendedString;
+%rename(TColStd_SequenceOfInteger) TColStd_SequenceOfInteger;
 %rename(Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger) Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
 %rename(TColStd_MapRealHasher) TColStd_MapRealHasher;
 %rename(TColStd_HSequenceOfHExtendedString) TColStd_HSequenceOfHExtendedString;
@@ -26,7 +26,6 @@
 %rename(TColStd_ListIteratorOfListOfTransient) TColStd_ListIteratorOfListOfTransient;
 %rename(TColStd_StackIteratorOfStackOfTransient) TColStd_StackIteratorOfStackOfTransient;
 %rename(TColStd_SequenceNodeOfSequenceOfAsciiString) TColStd_SequenceNodeOfSequenceOfAsciiString;
-%rename(TColStd_SetListOfSetOfTransient) TColStd_SetListOfSetOfTransient;
 %rename(TColStd_ListOfTransient) TColStd_ListOfTransient;
 %rename(TColStd_ListIteratorOfSetListOfSetOfTransient) TColStd_ListIteratorOfSetListOfSetOfTransient;
 %rename(TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger) TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
@@ -35,7 +34,7 @@
 %rename(TColStd_HPackedMapOfInteger) TColStd_HPackedMapOfInteger;
 %rename(Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger) Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger;
 %rename(Handle_TColStd_HSetOfInteger) Handle_TColStd_HSetOfInteger;
-%rename(TColStd_SetIteratorOfSetOfInteger) TColStd_SetIteratorOfSetOfInteger;
+%rename(TColStd_SetListOfSetOfTransient) TColStd_SetListOfSetOfTransient;
 %rename(Handle_TColStd_ListNodeOfSetListOfSetOfTransient) Handle_TColStd_ListNodeOfSetListOfSetOfTransient;
 %rename(TColStd_IndexedMapOfInteger) TColStd_IndexedMapOfInteger;
 %rename(TColStd_Array1OfCharacter) TColStd_Array1OfCharacter;
@@ -84,6 +83,7 @@
 %rename(TColStd_Array1OfReal) TColStd_Array1OfReal;
 %rename(TColStd_SequenceNodeOfSequenceOfHAsciiString) TColStd_SequenceNodeOfSequenceOfHAsciiString;
 %rename(TColStd_SetListOfSetOfReal) TColStd_SetListOfSetOfReal;
+%rename(TColStd_SequenceOfExtendedString) TColStd_SequenceOfExtendedString;
 %rename(Handle_TColStd_HArray2OfTransient) Handle_TColStd_HArray2OfTransient;
 %rename(Handle_TColStd_HSequenceOfInteger) Handle_TColStd_HSequenceOfInteger;
 %rename(Handle_TColStd_SequenceNodeOfSequenceOfAsciiString) Handle_TColStd_SequenceNodeOfSequenceOfAsciiString;
@@ -170,5 +170,5 @@
 %rename(TColStd_Array1OfAsciiString) TColStd_Array1OfAsciiString;
 %rename(Handle_TColStd_HSequenceOfTransient) Handle_TColStd_HSequenceOfTransient;
 %rename(TColStd_MapOfReal) TColStd_MapOfReal;
-%rename(TColStd_SequenceOfInteger) TColStd_SequenceOfInteger;
+%rename(TColStd_SetIteratorOfSetOfInteger) TColStd_SetIteratorOfSetOfInteger;
 %rename(TColStd_QueueNodeOfQueueOfInteger) TColStd_QueueNodeOfQueueOfInteger;

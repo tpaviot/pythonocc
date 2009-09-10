@@ -485,57 +485,6 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 
 
-%nodefaultctor AppParCurves_MultiPoint;
-class AppParCurves_MultiPoint {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint();
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint(const Standard_Integer NbPoints, const Standard_Integer NbPoints2d);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint(const TColgp_Array1OfPnt &tabP);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint(const TColgp_Array1OfPnt2d &tabP2d);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint(const TColgp_Array1OfPnt &tabP, const TColgp_Array1OfPnt2d &tabP2d);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void SetPoint(const Standard_Integer Index, const gp_Pnt &Point);
-		%feature("autodoc", "1");
-		const gp_Pnt & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetPoint2d(const Standard_Integer Index, const gp_Pnt2d &Point);
-		%feature("autodoc", "1");
-		const gp_Pnt2d & Point2d(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Dimension(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints2d() const;
-		%feature("autodoc", "1");
-		void Transform(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy, const Standard_Real z, const Standard_Real dz);
-		%feature("autodoc", "1");
-		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%extend AppParCurves_MultiPoint {
-	~AppParCurves_MultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiPoint\n");}
-	}
-};
-
-
 %nodefaultctor AppParCurves_ConstraintCouple;
 class AppParCurves_ConstraintCouple {
 	public:
@@ -619,8 +568,18 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 		virtual		void GetCurve(Handle_FEmTool_Curve & C) const;
 		%feature("autodoc", "1");
 		virtual		void SetEstimation(const Standard_Real E1, const Standard_Real E2, const Standard_Real E3);
-		%feature("autodoc", "1");
-		virtual		Standard_Real & EstLength();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetEstLength() {
+				return (Standard_Real) $self->EstLength();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetEstLength(Standard_Real value ) {
+				$self->EstLength()=value;
+				}
+		};
 		%feature("autodoc","GetEstimation()->[Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void GetEstimation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -661,6 +620,57 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 	~AppParCurves_SmoothCriterion() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_SmoothCriterion\n");}
+	}
+};
+
+
+%nodefaultctor AppParCurves_MultiPoint;
+class AppParCurves_MultiPoint {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint();
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint(const Standard_Integer NbPoints, const Standard_Integer NbPoints2d);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint(const TColgp_Array1OfPnt &tabP);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint(const TColgp_Array1OfPnt2d &tabP2d);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint(const TColgp_Array1OfPnt &tabP, const TColgp_Array1OfPnt2d &tabP2d);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void SetPoint(const Standard_Integer Index, const gp_Pnt &Point);
+		%feature("autodoc", "1");
+		const gp_Pnt & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetPoint2d(const Standard_Integer Index, const gp_Pnt2d &Point);
+		%feature("autodoc", "1");
+		const gp_Pnt2d & Point2d(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Dimension(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints2d() const;
+		%feature("autodoc", "1");
+		void Transform(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy, const Standard_Real z, const Standard_Real dz);
+		%feature("autodoc", "1");
+		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%extend AppParCurves_MultiPoint {
+	~AppParCurves_MultiPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiPoint\n");}
 	}
 };
 
@@ -837,6 +847,49 @@ class AppParCurves_Array1OfMultiBSpCurve {
 };
 
 
+%nodefaultctor AppParCurves_Array1OfMultiPoint;
+class AppParCurves_Array1OfMultiPoint {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const AppParCurves_MultiPoint &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & operator=(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
+
+};
+%extend AppParCurves_Array1OfMultiPoint {
+	~AppParCurves_Array1OfMultiPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");}
+	}
+};
+
+
 %nodefaultctor AppParCurves_HArray1OfConstraintCouple;
 class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 	public:
@@ -997,48 +1050,5 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 	~AppParCurves_HArray1OfMultiBSpCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");}
-	}
-};
-
-
-%nodefaultctor AppParCurves_Array1OfMultiPoint;
-class AppParCurves_Array1OfMultiPoint {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const AppParCurves_MultiPoint &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiPoint & operator=(const AppParCurves_Array1OfMultiPoint &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
-
-};
-%extend AppParCurves_Array1OfMultiPoint {
-	~AppParCurves_Array1OfMultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");}
 	}
 };

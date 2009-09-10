@@ -35,57 +35,68 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor GeomAPI_ProjectPointOnSurf;
-class GeomAPI_ProjectPointOnSurf {
+%nodefaultctor GeomAPI_Interpolate;
+class GeomAPI_Interpolate {
 	public:
 		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf();
+		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface);
+		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Standard_Real Tolerance);
+		void Load(const gp_Vec &InitialTangent, const gp_Vec &FinalTangent, const Standard_Boolean Scale=1);
 		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
+		void Load(const TColgp_Array1OfVec &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags, const Standard_Boolean Scale=1);
 		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
+		void Perform();
 		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
-		%feature("autodoc", "1");
-		void Perform(const gp_Pnt &P);
+		const Handle_Geom_BSplineCurve & Curve() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
+
+};
+%extend GeomAPI_Interpolate {
+	~GeomAPI_Interpolate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_Interpolate\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
+class GeomAPI_ExtremaSurfaceSurface {
+	public:
 		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
+		GeomAPI_ExtremaSurfaceSurface();
 		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer Index) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		gp_Pnt NearestPoint() const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
-		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length LowerDistance() const;
 		%feature("autodoc", "1");
-		const Extrema_ExtPS & Extrema() const;
+		const Extrema_ExtSS & Extrema() const;
 
 };
-%extend GeomAPI_ProjectPointOnSurf {
-	~GeomAPI_ProjectPointOnSurf() {
+%extend GeomAPI_ExtremaSurfaceSurface {
+	~GeomAPI_ExtremaSurfaceSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");}
 	}
 };
 
@@ -135,126 +146,6 @@ class GeomAPI_ProjectPointOnCurve {
 };
 
 
-%nodefaultctor GeomAPI_Interpolate;
-class GeomAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		GeomAPI_Interpolate(const Handle_TColgp_HArray1OfPnt &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec &InitialTangent, const gp_Vec &FinalTangent, const Standard_Boolean Scale=1);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags, const Standard_Boolean Scale=1);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend GeomAPI_Interpolate {
-	~GeomAPI_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_Interpolate\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_PointsToBSpline;
-class GeomAPI_PointsToBSpline {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSpline();
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineCurve & Curve() const;
-
-};
-%extend GeomAPI_PointsToBSpline {
-	~GeomAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSpline\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_ExtremaSurfaceSurface;
-class GeomAPI_ExtremaSurfaceSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaSurfaceSurface(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
-		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtSS & Extrema() const;
-
-};
-%extend GeomAPI_ExtremaSurfaceSurface {
-	~GeomAPI_ExtremaSurfaceSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_PointsToBSplineSurface;
-class GeomAPI_PointsToBSplineSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSplineSurface();
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSplineSurface(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		GeomAPI_PointsToBSplineSurface(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		void Interpolate(const TColgp_Array2OfPnt &Points);
-		%feature("autodoc", "1");
-		void Init(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
-		%feature("autodoc", "1");
-		void Interpolate(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY);
-		%feature("autodoc", "1");
-		const Handle_Geom_BSplineSurface & Surface() const;
-
-};
-%extend GeomAPI_PointsToBSplineSurface {
-	~GeomAPI_PointsToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");}
-	}
-};
-
-
 %nodefaultctor GeomAPI;
 class GeomAPI {
 	public:
@@ -270,84 +161,6 @@ class GeomAPI {
 	~GeomAPI() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomAPI\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_ExtremaCurveCurve;
-class GeomAPI_ExtremaCurveCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveCurve();
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
-		%feature("autodoc", "1");
-		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
-		%feature("autodoc", "1");
-		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
-		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtCC & Extrema() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TotalNearestPoints(gp_Pnt & P1, gp_Pnt & P2);
-		%feature("autodoc","TotalLowerDistanceParameters()->[Standard_Real, Standard_Real]");
-		Standard_Boolean TotalLowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Quantity_Length TotalLowerDistance();
-
-};
-%extend GeomAPI_ExtremaCurveCurve {
-	~GeomAPI_ExtremaCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomAPI_IntCS;
-class GeomAPI_IntCS {
-	public:
-		%feature("autodoc", "1");
-		GeomAPI_IntCS();
-		%feature("autodoc", "1");
-		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const gp_Pnt & Point(const Standard_Integer Index) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%extend GeomAPI_IntCS {
-	~GeomAPI_IntCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
 	}
 };
 
@@ -412,5 +225,192 @@ class GeomAPI_ExtremaCurveSurface {
 	~GeomAPI_ExtremaCurveSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_IntCS;
+class GeomAPI_IntCS {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_IntCS();
+		%feature("autodoc", "1");
+		GeomAPI_IntCS(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom_Curve &C, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const gp_Pnt & Point(const Standard_Integer Index) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Curve Segment(const Standard_Integer Index) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%extend GeomAPI_IntCS {
+	~GeomAPI_IntCS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_PointsToBSpline;
+class GeomAPI_PointsToBSpline {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSpline();
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineCurve & Curve() const;
+
+};
+%extend GeomAPI_PointsToBSpline {
+	~GeomAPI_PointsToBSpline() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSpline\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_PointsToBSplineSurface;
+class GeomAPI_PointsToBSplineSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSplineSurface();
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSplineSurface(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		GeomAPI_PointsToBSplineSurface(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array2OfPnt &Points, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Interpolate(const TColgp_Array2OfPnt &Points);
+		%feature("autodoc", "1");
+		void Init(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY, const Standard_Integer DegMin=3, const Standard_Integer DegMax=8, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Real Tol3D=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		void Interpolate(const TColStd_Array2OfReal &ZPoints, const Standard_Real X0, const Standard_Real dX, const Standard_Real Y0, const Standard_Real dY);
+		%feature("autodoc", "1");
+		const Handle_Geom_BSplineSurface & Surface() const;
+
+};
+%extend GeomAPI_PointsToBSplineSurface {
+	~GeomAPI_PointsToBSplineSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_ExtremaCurveCurve;
+class GeomAPI_ExtremaCurveCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveCurve();
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
+		%feature("autodoc", "1");
+		GeomAPI_ExtremaCurveCurve(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
+		%feature("autodoc", "1");
+		Standard_Integer NbExtrema() const;
+		%feature("autodoc", "1");
+		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtCC & Extrema() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TotalNearestPoints(gp_Pnt & P1, gp_Pnt & P2);
+		%feature("autodoc","TotalLowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		Standard_Boolean TotalLowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Quantity_Length TotalLowerDistance();
+
+};
+%extend GeomAPI_ExtremaCurveCurve {
+	~GeomAPI_ExtremaCurveCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");}
+	}
+};
+
+
+%nodefaultctor GeomAPI_ProjectPointOnSurf;
+class GeomAPI_ProjectPointOnSurf {
+	public:
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnSurf();
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface);
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		GeomAPI_ProjectPointOnSurf(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt &P, const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &Surface, const Quantity_Parameter Umin, const Quantity_Parameter Usup, const Quantity_Parameter Vmin, const Quantity_Parameter Vsup);
+		%feature("autodoc", "1");
+		void Perform(const gp_Pnt &P);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer Index) const;
+		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt NearestPoint() const;
+		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtPS & Extrema() const;
+
+};
+%extend GeomAPI_ProjectPointOnSurf {
+	~GeomAPI_ProjectPointOnSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");}
 	}
 };

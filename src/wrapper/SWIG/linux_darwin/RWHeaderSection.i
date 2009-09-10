@@ -95,25 +95,6 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 };
 
 
-%nodefaultctor RWHeaderSection_RWFileSchema;
-class RWHeaderSection_RWFileSchema {
-	public:
-		%feature("autodoc", "1");
-		RWHeaderSection_RWFileSchema();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
-
-};
-%extend RWHeaderSection_RWFileSchema {
-	~RWHeaderSection_RWFileSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileSchema\n");}
-	}
-};
-
-
 %nodefaultctor RWHeaderSection_RWFileDescription;
 class RWHeaderSection_RWFileDescription {
 	public:
@@ -172,6 +153,23 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 };
 
 
+%nodefaultctor RWHeaderSection;
+class RWHeaderSection {
+	public:
+		%feature("autodoc", "1");
+		RWHeaderSection();
+		%feature("autodoc", "1");
+		void Init();
+
+};
+%extend RWHeaderSection {
+	~RWHeaderSection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection\n");}
+	}
+};
+
+
 %nodefaultctor RWHeaderSection_RWFileName;
 class RWHeaderSection_RWFileName {
 	public:
@@ -191,19 +189,21 @@ class RWHeaderSection_RWFileName {
 };
 
 
-%nodefaultctor RWHeaderSection;
-class RWHeaderSection {
+%nodefaultctor RWHeaderSection_RWFileSchema;
+class RWHeaderSection_RWFileSchema {
 	public:
 		%feature("autodoc", "1");
-		RWHeaderSection();
+		RWHeaderSection_RWFileSchema();
 		%feature("autodoc", "1");
-		void Init();
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
 
 };
-%extend RWHeaderSection {
-	~RWHeaderSection() {
+%extend RWHeaderSection_RWFileSchema {
+	~RWHeaderSection_RWFileSchema() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWHeaderSection\n");}
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileSchema\n");}
 	}
 };
 

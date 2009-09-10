@@ -35,27 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor RWStepAP203_RWChangeRequest;
-class RWStepAP203_RWChangeRequest {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWChangeRequest();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_ChangeRequest &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP203_RWChangeRequest {
-	~RWStepAP203_RWChangeRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");}
-	}
-};
-
-
 %nodefaultctor RWStepAP203_RWCcDesignSecurityClassification;
 class RWStepAP203_RWCcDesignSecurityClassification {
 	public:
@@ -73,27 +52,6 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 	~RWStepAP203_RWCcDesignSecurityClassification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");}
-	}
-};
-
-
-%nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
-class RWStepAP203_RWCcDesignDateAndTimeAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWCcDesignDateAndTimeAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
-	~RWStepAP203_RWCcDesignDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");}
 	}
 };
 
@@ -119,23 +77,23 @@ class RWStepAP203_RWStartRequest {
 };
 
 
-%nodefaultctor RWStepAP203_RWCcDesignCertification;
-class RWStepAP203_RWCcDesignCertification {
+%nodefaultctor RWStepAP203_RWStartWork;
+class RWStepAP203_RWStartWork {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP203_RWCcDesignCertification();
+		RWStepAP203_RWStartWork();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartWork &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartWork &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP203_RWCcDesignCertification {
-	~RWStepAP203_RWCcDesignCertification() {
+%extend RWStepAP203_RWStartWork {
+	~RWStepAP203_RWStartWork() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
 	}
 };
 
@@ -161,23 +119,44 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 };
 
 
-%nodefaultctor RWStepAP203_RWStartWork;
-class RWStepAP203_RWStartWork {
+%nodefaultctor RWStepAP203_RWCcDesignContract;
+class RWStepAP203_RWCcDesignContract {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP203_RWStartWork();
+		RWStepAP203_RWCcDesignContract();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartWork &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignContract &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartWork &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignContract &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP203_RWStartWork {
-	~RWStepAP203_RWStartWork() {
+%extend RWStepAP203_RWCcDesignContract {
+	~RWStepAP203_RWCcDesignContract() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP203_RWChangeRequest;
+class RWStepAP203_RWChangeRequest {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWChangeRequest();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_ChangeRequest &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP203_RWChangeRequest {
+	~RWStepAP203_RWChangeRequest() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");}
 	}
 };
 
@@ -203,44 +182,44 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 };
 
 
-%nodefaultctor RWStepAP203_RWChange;
-class RWStepAP203_RWChange {
+%nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
+class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP203_RWChange();
+		RWStepAP203_RWCcDesignDateAndTimeAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_Change &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_Change &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP203_RWChange {
-	~RWStepAP203_RWChange() {
+%extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
+	~RWStepAP203_RWCcDesignDateAndTimeAssignment() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");}
 	}
 };
 
 
-%nodefaultctor RWStepAP203_RWCcDesignContract;
-class RWStepAP203_RWCcDesignContract {
+%nodefaultctor RWStepAP203_RWCcDesignCertification;
+class RWStepAP203_RWCcDesignCertification {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP203_RWCcDesignContract();
+		RWStepAP203_RWCcDesignCertification();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignContract &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignContract &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignCertification &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP203_RWCcDesignContract {
-	~RWStepAP203_RWCcDesignContract() {
+%extend RWStepAP203_RWCcDesignCertification {
+	~RWStepAP203_RWCcDesignCertification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");}
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");}
 	}
 };
 
@@ -262,5 +241,26 @@ class RWStepAP203_RWCcDesignApproval {
 	~RWStepAP203_RWCcDesignApproval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");}
+	}
+};
+
+
+%nodefaultctor RWStepAP203_RWChange;
+class RWStepAP203_RWChange {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWChange();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_Change &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_Change &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
+
+};
+%extend RWStepAP203_RWChange {
+	~RWStepAP203_RWChange() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
 	}
 };

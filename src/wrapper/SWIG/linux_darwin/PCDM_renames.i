@@ -16,7 +16,7 @@
 %rename(PCDM_SequenceNodeOfSequenceOfDocument) PCDM_SequenceNodeOfSequenceOfDocument;
 %rename(PCDM_RS_NoDriver) PCDM_RS_NoDriver;
 %rename(PCDM_TOFD_CmpFile) PCDM_TOFD_CmpFile;
-%rename(Handle_PCDM_ReadWriter_1) Handle_PCDM_ReadWriter_1;
+%rename(PCDM_RS_NoSchema) PCDM_RS_NoSchema;
 %rename(PCDM_Document) PCDM_Document;
 %rename(PCDM_RS_MakeFailure) PCDM_RS_MakeFailure;
 %rename(PCDM_DriverError) PCDM_DriverError;
@@ -40,5 +40,5 @@
 %rename(PCDM_RS_UnknownFileDriver) PCDM_RS_UnknownFileDriver;
 %rename(PCDM_RS_ExtensionFailure) PCDM_RS_ExtensionFailure;
 %rename(Handle_PCDM_Document) Handle_PCDM_Document;
-%rename(PCDM_RS_NoSchema) PCDM_RS_NoSchema;
+%rename(Handle_PCDM_ReadWriter_1) Handle_PCDM_ReadWriter_1;
 %rename(PCDM_RS_UnrecognizedFileFormat) PCDM_RS_UnrecognizedFileFormat;

@@ -35,8 +35,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<Handle_ChFiDS_SecHArray1.hxx>
-#include<TopoDS_Face.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopoDS_Face.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
 #include<Handle_Law_Function.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>

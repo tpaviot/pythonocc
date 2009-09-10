@@ -65,6 +65,36 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 
 
+%nodefaultctor Handle_IGESSolid_EdgeList;
+class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList(const Handle_IGESSolid_EdgeList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList(const IGESSolid_EdgeList *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList & operator=(const Handle_IGESSolid_EdgeList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList & operator=(const IGESSolid_EdgeList *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_EdgeList {
+	IGESSolid_EdgeList* GetObject() {
+	return (IGESSolid_EdgeList*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_EdgeList {
+	~Handle_IGESSolid_EdgeList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_Block;
 class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	public:
@@ -95,6 +125,36 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESSolid_ToroidalSurface;
+class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface(const IGESSolid_ToroidalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface & operator=(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface & operator=(const IGESSolid_ToroidalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_ToroidalSurface {
+	IGESSolid_ToroidalSurface* GetObject() {
+	return (IGESSolid_ToroidalSurface*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_ToroidalSurface {
+	~Handle_IGESSolid_ToroidalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_ConeFrustum;
 class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	public:
@@ -121,36 +181,6 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	~Handle_IGESSolid_ConeFrustum() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_BooleanTree;
-class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree(const Handle_IGESSolid_BooleanTree &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree(const IGESSolid_BooleanTree *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree & operator=(const Handle_IGESSolid_BooleanTree &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree & operator=(const IGESSolid_BooleanTree *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_BooleanTree const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_BooleanTree {
-	IGESSolid_BooleanTree* GetObject() {
-	return (IGESSolid_BooleanTree*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_BooleanTree {
-	~Handle_IGESSolid_BooleanTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");}
 	}
 };
 
@@ -215,6 +245,36 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESSolid_CylindricalSurface;
+class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface(const Handle_IGESSolid_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface(const IGESSolid_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface & operator=(const Handle_IGESSolid_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface & operator=(const IGESSolid_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_CylindricalSurface {
+	IGESSolid_CylindricalSurface* GetObject() {
+	return (IGESSolid_CylindricalSurface*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_CylindricalSurface {
+	~Handle_IGESSolid_CylindricalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_HArray1OfLoop;
 class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	public:
@@ -241,36 +301,6 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	~Handle_IGESSolid_HArray1OfLoop() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_EdgeList;
-class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList(const Handle_IGESSolid_EdgeList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList(const IGESSolid_EdgeList *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList & operator=(const Handle_IGESSolid_EdgeList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList & operator=(const IGESSolid_EdgeList *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_EdgeList {
-	IGESSolid_EdgeList* GetObject() {
-	return (IGESSolid_EdgeList*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_EdgeList {
-	~Handle_IGESSolid_EdgeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");}
 	}
 };
 
@@ -365,66 +395,6 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESSolid_CylindricalSurface;
-class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface(const Handle_IGESSolid_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface(const IGESSolid_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface & operator=(const Handle_IGESSolid_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface & operator=(const IGESSolid_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_CylindricalSurface {
-	IGESSolid_CylindricalSurface* GetObject() {
-	return (IGESSolid_CylindricalSurface*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_CylindricalSurface {
-	~Handle_IGESSolid_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_SolidOfRevolution;
-class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution(const Handle_IGESSolid_SolidOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution(const IGESSolid_SolidOfRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution & operator=(const Handle_IGESSolid_SolidOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution & operator=(const IGESSolid_SolidOfRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_SolidOfRevolution {
-	IGESSolid_SolidOfRevolution* GetObject() {
-	return (IGESSolid_SolidOfRevolution*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_SolidOfRevolution {
-	~Handle_IGESSolid_SolidOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESSolid_ConicalSurface;
 class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -455,32 +425,32 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESSolid_Face;
-class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_SolidAssembly;
+class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face();
+		Handle_IGESSolid_SolidAssembly();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face(const Handle_IGESSolid_Face &aHandle);
+		Handle_IGESSolid_SolidAssembly(const Handle_IGESSolid_SolidAssembly &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face(const IGESSolid_Face *anItem);
+		Handle_IGESSolid_SolidAssembly(const IGESSolid_SolidAssembly *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & operator=(const Handle_IGESSolid_Face &aHandle);
+		Handle_IGESSolid_SolidAssembly & operator=(const Handle_IGESSolid_SolidAssembly &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & operator=(const IGESSolid_Face *anItem);
+		Handle_IGESSolid_SolidAssembly & operator=(const IGESSolid_SolidAssembly *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESSolid_SolidAssembly const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_Face {
-	IGESSolid_Face* GetObject() {
-	return (IGESSolid_Face*)$self->Access();
+%extend Handle_IGESSolid_SolidAssembly {
+	IGESSolid_SolidAssembly* GetObject() {
+	return (IGESSolid_SolidAssembly*)$self->Access();
 	}
 };
-%extend Handle_IGESSolid_Face {
-	~Handle_IGESSolid_Face() {
+%extend Handle_IGESSolid_SolidAssembly {
+	~Handle_IGESSolid_SolidAssembly() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Face\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");}
 	}
 };
 
@@ -545,6 +515,36 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 };
 
 
+%nodefaultctor Handle_IGESSolid_Cylinder;
+class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder(const Handle_IGESSolid_Cylinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder(const IGESSolid_Cylinder *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder & operator=(const Handle_IGESSolid_Cylinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder & operator=(const IGESSolid_Cylinder *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Cylinder {
+	IGESSolid_Cylinder* GetObject() {
+	return (IGESSolid_Cylinder*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_Cylinder {
+	~Handle_IGESSolid_Cylinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_GeneralModule;
 class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -605,6 +605,36 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
+class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	IGESSolid_SolidOfLinearExtrusion* GetObject() {
+	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	~Handle_IGESSolid_SolidOfLinearExtrusion() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_Torus;
 class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	public:
@@ -635,32 +665,32 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESSolid_Cylinder;
-class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_BooleanTree;
+class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder();
+		Handle_IGESSolid_BooleanTree();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder(const Handle_IGESSolid_Cylinder &aHandle);
+		Handle_IGESSolid_BooleanTree(const Handle_IGESSolid_BooleanTree &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder(const IGESSolid_Cylinder *anItem);
+		Handle_IGESSolid_BooleanTree(const IGESSolid_BooleanTree *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder & operator=(const Handle_IGESSolid_Cylinder &aHandle);
+		Handle_IGESSolid_BooleanTree & operator=(const Handle_IGESSolid_BooleanTree &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder & operator=(const IGESSolid_Cylinder *anItem);
+		Handle_IGESSolid_BooleanTree & operator=(const IGESSolid_BooleanTree *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESSolid_BooleanTree const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_Cylinder {
-	IGESSolid_Cylinder* GetObject() {
-	return (IGESSolid_Cylinder*)$self->Access();
+%extend Handle_IGESSolid_BooleanTree {
+	IGESSolid_BooleanTree* GetObject() {
+	return (IGESSolid_BooleanTree*)$self->Access();
 	}
 };
-%extend Handle_IGESSolid_Cylinder {
-	~Handle_IGESSolid_Cylinder() {
+%extend Handle_IGESSolid_BooleanTree {
+	~Handle_IGESSolid_BooleanTree() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");}
 	}
 };
 
@@ -695,36 +725,6 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESSolid_SolidAssembly;
-class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly(const Handle_IGESSolid_SolidAssembly &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly(const IGESSolid_SolidAssembly *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly & operator=(const Handle_IGESSolid_SolidAssembly &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly & operator=(const IGESSolid_SolidAssembly *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidAssembly const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_SolidAssembly {
-	IGESSolid_SolidAssembly* GetObject() {
-	return (IGESSolid_SolidAssembly*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_SolidAssembly {
-	~Handle_IGESSolid_SolidAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESSolid_Sphere;
 class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	public:
@@ -755,6 +755,36 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 };
 
 
+%nodefaultctor Handle_IGESSolid_Loop;
+class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop & operator=(const Handle_IGESSolid_Loop &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop & operator=(const IGESSolid_Loop *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Loop {
+	IGESSolid_Loop* GetObject() {
+	return (IGESSolid_Loop*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_Loop {
+	~Handle_IGESSolid_Loop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Loop\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
 class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	public:
@@ -781,66 +811,6 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	~Handle_IGESSolid_HArray1OfVertexList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfVertexList\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
-class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion(const IGESSolid_SolidOfLinearExtrusion *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const IGESSolid_SolidOfLinearExtrusion *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_SolidOfLinearExtrusion {
-	IGESSolid_SolidOfLinearExtrusion* GetObject() {
-	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_SolidOfLinearExtrusion {
-	~Handle_IGESSolid_SolidOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_ReadWriteModule;
-class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule(const Handle_IGESSolid_ReadWriteModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule(const IGESSolid_ReadWriteModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule & operator=(const Handle_IGESSolid_ReadWriteModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule & operator=(const IGESSolid_ReadWriteModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_ReadWriteModule {
-	IGESSolid_ReadWriteModule* GetObject() {
-	return (IGESSolid_ReadWriteModule*)$self->Access();
-	}
-};
-%extend Handle_IGESSolid_ReadWriteModule {
-	~Handle_IGESSolid_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");}
 	}
 };
 
@@ -905,62 +875,92 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_IGESSolid_ToroidalSurface;
-class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_SolidOfRevolution;
+class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface();
+		Handle_IGESSolid_SolidOfRevolution();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		Handle_IGESSolid_SolidOfRevolution(const Handle_IGESSolid_SolidOfRevolution &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface(const IGESSolid_ToroidalSurface *anItem);
+		Handle_IGESSolid_SolidOfRevolution(const IGESSolid_SolidOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface & operator=(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		Handle_IGESSolid_SolidOfRevolution & operator=(const Handle_IGESSolid_SolidOfRevolution &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface & operator=(const IGESSolid_ToroidalSurface *anItem);
+		Handle_IGESSolid_SolidOfRevolution & operator=(const IGESSolid_SolidOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESSolid_SolidOfRevolution const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_ToroidalSurface {
-	IGESSolid_ToroidalSurface* GetObject() {
-	return (IGESSolid_ToroidalSurface*)$self->Access();
+%extend Handle_IGESSolid_SolidOfRevolution {
+	IGESSolid_SolidOfRevolution* GetObject() {
+	return (IGESSolid_SolidOfRevolution*)$self->Access();
 	}
 };
-%extend Handle_IGESSolid_ToroidalSurface {
-	~Handle_IGESSolid_ToroidalSurface() {
+%extend Handle_IGESSolid_SolidOfRevolution {
+	~Handle_IGESSolid_SolidOfRevolution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");}
 	}
 };
 
 
-%nodefaultctor Handle_IGESSolid_Loop;
-class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_ReadWriteModule;
+class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop();
+		Handle_IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
+		Handle_IGESSolid_ReadWriteModule(const Handle_IGESSolid_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
+		Handle_IGESSolid_ReadWriteModule(const IGESSolid_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator=(const Handle_IGESSolid_Loop &aHandle);
+		Handle_IGESSolid_ReadWriteModule & operator=(const Handle_IGESSolid_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator=(const IGESSolid_Loop *anItem);
+		Handle_IGESSolid_ReadWriteModule & operator=(const IGESSolid_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_IGESSolid_ReadWriteModule const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_Loop {
-	IGESSolid_Loop* GetObject() {
-	return (IGESSolid_Loop*)$self->Access();
+%extend Handle_IGESSolid_ReadWriteModule {
+	IGESSolid_ReadWriteModule* GetObject() {
+	return (IGESSolid_ReadWriteModule*)$self->Access();
 	}
 };
-%extend Handle_IGESSolid_Loop {
-	~Handle_IGESSolid_Loop() {
+%extend Handle_IGESSolid_ReadWriteModule {
+	~Handle_IGESSolid_ReadWriteModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Loop\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_Face;
+class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face(const Handle_IGESSolid_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face(const IGESSolid_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & operator=(const Handle_IGESSolid_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & operator=(const IGESSolid_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Face {
+	IGESSolid_Face* GetObject() {
+	return (IGESSolid_Face*)$self->Access();
+	}
+};
+%extend Handle_IGESSolid_Face {
+	~Handle_IGESSolid_Face() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Face\n");}
 	}
 };
 
@@ -1087,35 +1087,6 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 
 
-%nodefaultctor IGESSolid_ToolSolidInstance;
-class IGESSolid_ToolSolidInstance {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolSolidInstance();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SolidInstance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SolidInstance &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SolidInstance &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidInstance &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SolidInstance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SolidInstance &entfrom, const Handle_IGESSolid_SolidInstance &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolSolidInstance {
-	~IGESSolid_ToolSolidInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");}
-	}
-};
-
-
 %nodefaultctor IGESSolid_ToolSphere;
 class IGESSolid_ToolSphere {
 	public:
@@ -1141,6 +1112,59 @@ class IGESSolid_ToolSphere {
 	~IGESSolid_ToolSphere() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphere\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_Ellipsoid;
+class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Ellipsoid();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ &aSize, const gp_XYZ &aCenter, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
+		%feature("autodoc", "1");
+		gp_XYZ Size() const;
+		%feature("autodoc", "1");
+		Standard_Real XLength() const;
+		%feature("autodoc", "1");
+		Standard_Real YLength() const;
+		%feature("autodoc", "1");
+		Standard_Real ZLength() const;
+		%feature("autodoc", "1");
+		gp_Pnt Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		gp_Dir XAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedXAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir YAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedYAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir ZAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedZAxis() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_Ellipsoid {
+	Handle_IGESSolid_Ellipsoid GetHandle() {
+	return *(Handle_IGESSolid_Ellipsoid*) &$self;
+	}
+};
+%extend IGESSolid_Ellipsoid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_Ellipsoid {
+	~IGESSolid_Ellipsoid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_Ellipsoid\n");}
 	}
 };
 
@@ -1254,72 +1278,6 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_BooleanTree;
-class IGESSolid_BooleanTree : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_BooleanTree();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &operands, const Handle_TColStd_HArray1OfInteger &operations);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOperand(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Operand(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Operation(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_BooleanTree {
-	Handle_IGESSolid_BooleanTree GetHandle() {
-	return *(Handle_IGESSolid_BooleanTree*) &$self;
-	}
-};
-%extend IGESSolid_BooleanTree {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_BooleanTree {
-	~IGESSolid_BooleanTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_BooleanTree\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolSolidOfRevolution;
-class IGESSolid_ToolSolidOfRevolution {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolSolidOfRevolution();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SolidOfRevolution &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SolidOfRevolution &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SolidOfRevolution &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidOfRevolution &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SolidOfRevolution &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SolidOfRevolution &entfrom, const Handle_IGESSolid_SolidOfRevolution &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SolidOfRevolution &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolSolidOfRevolution {
-	~IGESSolid_ToolSolidOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");}
-	}
-};
-
-
 %nodefaultctor IGESSolid_Array1OfShell;
 class IGESSolid_Array1OfShell {
 	public:
@@ -1363,31 +1321,84 @@ class IGESSolid_Array1OfShell {
 };
 
 
-%nodefaultctor IGESSolid_ToolSphericalSurface;
-class IGESSolid_ToolSphericalSurface {
+%nodefaultctor IGESSolid_SolidAssembly;
+class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolSphericalSurface();
+		IGESSolid_SolidAssembly();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &allItems, const Handle_IGESGeom_HArray1OfTransformationMatrix &allMatrices);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SphericalSurface &ent, IGESData_IGESWriter & IW) const;
+		Standard_Boolean HasBrep() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SphericalSurface &ent, Interface_EntityIterator & iter) const;
+		void SetBrep(const Standard_Boolean hasbrep);
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SphericalSurface &ent) const;
+		Standard_Integer NbItems() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SphericalSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Handle_IGESData_IGESEntity Item(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SphericalSurface &entfrom, const Handle_IGESSolid_SphericalSurface &entto, Interface_CopyTool & TC) const;
+		Handle_IGESGeom_TransformationMatrix TransfMatrix(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_ToolSphericalSurface {
-	~IGESSolid_ToolSphericalSurface() {
+%extend IGESSolid_SolidAssembly {
+	Handle_IGESSolid_SolidAssembly GetHandle() {
+	return *(Handle_IGESSolid_SolidAssembly*) &$self;
+	}
+};
+%extend IGESSolid_SolidAssembly {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_SolidAssembly {
+	~IGESSolid_SolidAssembly() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidAssembly\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_Array1OfVertexList;
+class IGESSolid_Array1OfVertexList {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Array1OfVertexList(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESSolid_Array1OfVertexList(const Handle_IGESSolid_VertexList &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESSolid_VertexList &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const IGESSolid_Array1OfVertexList & Assign(const IGESSolid_Array1OfVertexList &Other);
+		%feature("autodoc", "1");
+		const IGESSolid_Array1OfVertexList & operator=(const IGESSolid_Array1OfVertexList &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_VertexList &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_VertexList & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_VertexList & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_VertexList & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_VertexList & operator()(const Standard_Integer Index);
+
+};
+%extend IGESSolid_Array1OfVertexList {
+	~IGESSolid_Array1OfVertexList() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");}
 	}
 };
 
@@ -1431,151 +1442,31 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_Ellipsoid;
-class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_ToolSolidOfRevolution;
+class IGESSolid_ToolSolidOfRevolution {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_Ellipsoid();
+		IGESSolid_ToolSolidOfRevolution();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aSize, const gp_XYZ &aCenter, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
+		void ReadOwnParams(const Handle_IGESSolid_SolidOfRevolution &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		gp_XYZ Size() const;
+		void WriteOwnParams(const Handle_IGESSolid_SolidOfRevolution &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Real XLength() const;
+		void OwnShared(const Handle_IGESSolid_SolidOfRevolution &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Real YLength() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidOfRevolution &ent) const;
 		%feature("autodoc", "1");
-		Standard_Real ZLength() const;
+		void OwnCheck(const Handle_IGESSolid_SolidOfRevolution &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		gp_Pnt Center() const;
+		void OwnCopy(const Handle_IGESSolid_SolidOfRevolution &entfrom, const Handle_IGESSolid_SolidOfRevolution &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
-		%feature("autodoc", "1");
-		gp_Dir XAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedXAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir YAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedYAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir ZAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedZAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnDump(const Handle_IGESSolid_SolidOfRevolution &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESSolid_Ellipsoid {
-	Handle_IGESSolid_Ellipsoid GetHandle() {
-	return *(Handle_IGESSolid_Ellipsoid*) &$self;
-	}
-};
-%extend IGESSolid_Ellipsoid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_Ellipsoid {
-	~IGESSolid_Ellipsoid() {
+%extend IGESSolid_ToolSolidOfRevolution {
+	~IGESSolid_ToolSolidOfRevolution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Ellipsoid\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_Torus;
-class IGESSolid_Torus : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_Torus();
-		%feature("autodoc", "1");
-		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ &aPoint, const gp_XYZ &anAxisdir);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real DiscRadius() const;
-		%feature("autodoc", "1");
-		gp_Pnt AxisPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedAxisPoint() const;
-		%feature("autodoc", "1");
-		gp_Dir Axis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_Torus {
-	Handle_IGESSolid_Torus GetHandle() {
-	return *(Handle_IGESSolid_Torus*) &$self;
-	}
-};
-%extend IGESSolid_Torus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_Torus {
-	~IGESSolid_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Torus\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_RightAngularWedge;
-class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_RightAngularWedge();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ &aSize, const Standard_Real lowX, const gp_XYZ &aCorner, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
-		%feature("autodoc", "1");
-		gp_XYZ Size() const;
-		%feature("autodoc", "1");
-		Standard_Real XBigLength() const;
-		%feature("autodoc", "1");
-		Standard_Real XSmallLength() const;
-		%feature("autodoc", "1");
-		Standard_Real YLength() const;
-		%feature("autodoc", "1");
-		Standard_Real ZLength() const;
-		%feature("autodoc", "1");
-		gp_Pnt Corner() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCorner() const;
-		%feature("autodoc", "1");
-		gp_Dir XAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedXAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir YAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedYAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir ZAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedZAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_RightAngularWedge {
-	Handle_IGESSolid_RightAngularWedge GetHandle() {
-	return *(Handle_IGESSolid_RightAngularWedge*) &$self;
-	}
-};
-%extend IGESSolid_RightAngularWedge {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_RightAngularWedge {
-	~IGESSolid_RightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_RightAngularWedge\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");}
 	}
 };
 
@@ -1615,31 +1506,39 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_ToolTorus;
-class IGESSolid_ToolTorus {
+%nodefaultctor IGESSolid_BooleanTree;
+class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolTorus();
+		IGESSolid_BooleanTree();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &operands, const Handle_TColStd_HArray1OfInteger &operations);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
+		Standard_Boolean IsOperand(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
+		Handle_IGESData_IGESEntity Operand(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Standard_Integer Operation(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_ToolTorus {
-	~IGESSolid_ToolTorus() {
+%extend IGESSolid_BooleanTree {
+	Handle_IGESSolid_BooleanTree GetHandle() {
+	return *(Handle_IGESSolid_BooleanTree*) &$self;
+	}
+};
+%extend IGESSolid_BooleanTree {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_BooleanTree {
+	~IGESSolid_BooleanTree() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolTorus\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_BooleanTree\n");}
 	}
 };
 
@@ -1691,45 +1590,31 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 
 
-%nodefaultctor IGESSolid_Array1OfLoop;
-class IGESSolid_Array1OfLoop {
+%nodefaultctor IGESSolid_ToolConeFrustum;
+class IGESSolid_ToolConeFrustum {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_Array1OfLoop(const Standard_Integer Low, const Standard_Integer Up);
+		IGESSolid_ToolConeFrustum();
 		%feature("autodoc", "1");
-		IGESSolid_Array1OfLoop(const Handle_IGESSolid_Loop &Item, const Standard_Integer Low, const Standard_Integer Up);
+		void ReadOwnParams(const Handle_IGESSolid_ConeFrustum &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_Loop &V);
+		void WriteOwnParams(const Handle_IGESSolid_ConeFrustum &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void Destroy();
+		void OwnShared(const Handle_IGESSolid_ConeFrustum &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ConeFrustum &ent) const;
 		%feature("autodoc", "1");
-		const IGESSolid_Array1OfLoop & Assign(const IGESSolid_Array1OfLoop &Other);
+		void OwnCheck(const Handle_IGESSolid_ConeFrustum &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		const IGESSolid_Array1OfLoop & operator=(const IGESSolid_Array1OfLoop &Other);
+		void OwnCopy(const Handle_IGESSolid_ConeFrustum &entfrom, const Handle_IGESSolid_ConeFrustum &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Loop &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Loop & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Loop & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator()(const Standard_Integer Index);
+		void OwnDump(const Handle_IGESSolid_ConeFrustum &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESSolid_Array1OfLoop {
-	~IGESSolid_Array1OfLoop() {
+%extend IGESSolid_ToolConeFrustum {
+	~IGESSolid_ToolConeFrustum() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfLoop\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");}
 	}
 };
 
@@ -1759,64 +1644,6 @@ class IGESSolid_ToolEdgeList {
 	~IGESSolid_ToolEdgeList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEdgeList\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolRightAngularWedge;
-class IGESSolid_ToolRightAngularWedge {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolRightAngularWedge();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_RightAngularWedge &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_RightAngularWedge &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_RightAngularWedge &entfrom, const Handle_IGESSolid_RightAngularWedge &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolRightAngularWedge {
-	~IGESSolid_ToolRightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolConeFrustum;
-class IGESSolid_ToolConeFrustum {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolConeFrustum();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_ConeFrustum &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_ConeFrustum &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_ConeFrustum &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ConeFrustum &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_ConeFrustum &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_ConeFrustum &entfrom, const Handle_IGESSolid_ConeFrustum &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_ConeFrustum &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolConeFrustum {
-	~IGESSolid_ToolConeFrustum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");}
 	}
 };
 
@@ -1932,35 +1759,6 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_ToolFace;
-class IGESSolid_ToolFace {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolFace();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Face &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Face &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Face &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Face &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Face &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Face &entfrom, const Handle_IGESSolid_Face &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Face &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolFace {
-	~IGESSolid_ToolFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolFace\n");}
-	}
-};
-
-
 %nodefaultctor IGESSolid_SolidInstance;
 class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	public:
@@ -1992,6 +1790,105 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	~IGESSolid_SolidInstance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidInstance\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolFace;
+class IGESSolid_ToolFace {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolFace();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Face &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Face &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Face &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Face &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Face &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Face &entfrom, const Handle_IGESSolid_Face &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Face &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolFace {
+	~IGESSolid_ToolFace() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolFace\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_SphericalSurface;
+class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SphericalSurface();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Axis() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction ReferenceDir() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParametrised() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SphericalSurface {
+	Handle_IGESSolid_SphericalSurface GetHandle() {
+	return *(Handle_IGESSolid_SphericalSurface*) &$self;
+	}
+};
+%extend IGESSolid_SphericalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_SphericalSurface {
+	~IGESSolid_SphericalSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_SphericalSurface\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_SpecificModule;
+class IGESSolid_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SpecificModule {
+	Handle_IGESSolid_SpecificModule GetHandle() {
+	return *(Handle_IGESSolid_SpecificModule*) &$self;
+	}
+};
+%extend IGESSolid_SpecificModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_SpecificModule {
+	~IGESSolid_SpecificModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
 	}
 };
 
@@ -2097,6 +1994,41 @@ class IGESSolid_Array1OfFace {
 };
 
 
+%nodefaultctor IGESSolid_Sphere;
+class IGESSolid_Sphere : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Sphere();
+		%feature("autodoc", "1");
+		void Init(const Standard_Real aRadius, const gp_XYZ &aCenter);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		gp_Pnt Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_Sphere {
+	Handle_IGESSolid_Sphere GetHandle() {
+	return *(Handle_IGESSolid_Sphere*) &$self;
+	}
+};
+%extend IGESSolid_Sphere {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_Sphere {
+	~IGESSolid_Sphere() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_Sphere\n");}
+	}
+};
+
+
 %nodefaultctor IGESSolid_ToolBlock;
 class IGESSolid_ToolBlock {
 	public:
@@ -2167,65 +2099,60 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_TopoBuilder;
-class IGESSolid_TopoBuilder {
+%nodefaultctor IGESSolid_ToolSphericalSurface;
+class IGESSolid_ToolSphericalSurface {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_TopoBuilder();
+		IGESSolid_ToolSphericalSurface();
 		%feature("autodoc", "1");
-		void Clear();
+		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void AddVertex(const gp_XYZ &val);
+		void WriteOwnParams(const Handle_IGESSolid_SphericalSurface &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbVertices() const;
+		void OwnShared(const Handle_IGESSolid_SphericalSurface &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		const gp_XYZ & Vertex(const Standard_Integer num) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SphericalSurface &ent) const;
 		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList VertexList() const;
+		void OwnCheck(const Handle_IGESSolid_SphericalSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
+		void OwnCopy(const Handle_IGESSolid_SphericalSurface &entfrom, const Handle_IGESSolid_SphericalSurface &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc","Edge(Standard_Integer num)->[Standard_IntegerStandard_Integer]");
-		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList EdgeList() const;
-		%feature("autodoc", "1");
-		void MakeLoop();
-		%feature("autodoc", "1");
-		void MakeEdge(const Standard_Integer edgetype, const Standard_Integer edge3d, const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void AddCurveUV(const Handle_IGESData_IGESEntity &curve, const Standard_Integer iso);
-		%feature("autodoc", "1");
-		void EndEdge();
-		%feature("autodoc", "1");
-		void MakeFace(const Handle_IGESData_IGESEntity &surface);
-		%feature("autodoc", "1");
-		void SetOuter();
-		%feature("autodoc", "1");
-		void AddInner();
-		%feature("autodoc", "1");
-		void EndFace(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void MakeShell();
-		%feature("autodoc", "1");
-		void EndSimpleShell();
-		%feature("autodoc", "1");
-		void SetMainShell(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void AddVoidShell(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void EndSolid();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Shell Shell() const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid Solid() const;
+		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESSolid_TopoBuilder {
-	~IGESSolid_TopoBuilder() {
+%extend IGESSolid_ToolSphericalSurface {
+	~IGESSolid_ToolSphericalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_TopoBuilder\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolTorus;
+class IGESSolid_ToolTorus {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolTorus();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolTorus {
+	~IGESSolid_ToolTorus() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolTorus\n");}
 	}
 };
 
@@ -2259,66 +2186,90 @@ class IGESSolid_ToolBooleanTree {
 };
 
 
-%nodefaultctor IGESSolid_Sphere;
-class IGESSolid_Sphere : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_RightAngularWedge;
+class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_Sphere();
+		IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aRadius, const gp_XYZ &aCenter);
+		void Init(const gp_XYZ &aSize, const Standard_Real lowX, const gp_XYZ &aCorner, const gp_XYZ &anXAxis, const gp_XYZ &anZAxis);
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		gp_XYZ Size() const;
 		%feature("autodoc", "1");
-		gp_Pnt Center() const;
+		Standard_Real XBigLength() const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
+		Standard_Real XSmallLength() const;
+		%feature("autodoc", "1");
+		Standard_Real YLength() const;
+		%feature("autodoc", "1");
+		Standard_Real ZLength() const;
+		%feature("autodoc", "1");
+		gp_Pnt Corner() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCorner() const;
+		%feature("autodoc", "1");
+		gp_Dir XAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedXAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir YAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedYAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir ZAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedZAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_Sphere {
-	Handle_IGESSolid_Sphere GetHandle() {
-	return *(Handle_IGESSolid_Sphere*) &$self;
+%extend IGESSolid_RightAngularWedge {
+	Handle_IGESSolid_RightAngularWedge GetHandle() {
+	return *(Handle_IGESSolid_RightAngularWedge*) &$self;
 	}
 };
-%extend IGESSolid_Sphere {
+%extend IGESSolid_RightAngularWedge {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESSolid_Sphere {
-	~IGESSolid_Sphere() {
+%extend IGESSolid_RightAngularWedge {
+	~IGESSolid_RightAngularWedge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Sphere\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_RightAngularWedge\n");}
 	}
 };
 
 
-%nodefaultctor IGESSolid_ToolManifoldSolid;
-class IGESSolid_ToolManifoldSolid {
+%nodefaultctor IGESSolid_ReadWriteModule;
+class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolManifoldSolid();
+		IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, IGESData_IGESWriter & IW) const;
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_ManifoldSolid &ent, Interface_EntityIterator & iter) const;
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ManifoldSolid &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_ManifoldSolid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_ManifoldSolid &entfrom, const Handle_IGESSolid_ManifoldSolid &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_ToolManifoldSolid {
-	~IGESSolid_ToolManifoldSolid() {
+%extend IGESSolid_ReadWriteModule {
+	Handle_IGESSolid_ReadWriteModule GetHandle() {
+	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESSolid_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESSolid_ReadWriteModule {
+	~IGESSolid_ReadWriteModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ReadWriteModule\n");}
 	}
 };
 
@@ -2385,6 +2336,35 @@ class IGESSolid_ToolConicalSurface {
 };
 
 
+%nodefaultctor IGESSolid_ToolManifoldSolid;
+class IGESSolid_ToolManifoldSolid {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolManifoldSolid();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_ManifoldSolid &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ManifoldSolid &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_ManifoldSolid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_ManifoldSolid &entfrom, const Handle_IGESSolid_ManifoldSolid &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolManifoldSolid {
+	~IGESSolid_ToolManifoldSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");}
+	}
+};
+
+
 %nodefaultctor IGESSolid_HArray1OfFace;
 class IGESSolid_HArray1OfFace : public MMgt_TShared {
 	public:
@@ -2428,6 +2408,35 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 	~IGESSolid_HArray1OfFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfFace\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolShell;
+class IGESSolid_ToolShell {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolShell();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolShell {
+	~IGESSolid_ToolShell() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolShell\n");}
 	}
 };
 
@@ -2488,23 +2497,23 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_Array1OfVertexList;
-class IGESSolid_Array1OfVertexList {
+%nodefaultctor IGESSolid_Array1OfLoop;
+class IGESSolid_Array1OfLoop {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_Array1OfVertexList(const Standard_Integer Low, const Standard_Integer Up);
+		IGESSolid_Array1OfLoop(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		IGESSolid_Array1OfVertexList(const Handle_IGESSolid_VertexList &Item, const Standard_Integer Low, const Standard_Integer Up);
+		IGESSolid_Array1OfLoop(const Handle_IGESSolid_Loop &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_VertexList &V);
+		void Init(const Handle_IGESSolid_Loop &V);
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		const IGESSolid_Array1OfVertexList & Assign(const IGESSolid_Array1OfVertexList &Other);
+		const IGESSolid_Array1OfLoop & Assign(const IGESSolid_Array1OfLoop &Other);
 		%feature("autodoc", "1");
-		const IGESSolid_Array1OfVertexList & operator=(const IGESSolid_Array1OfVertexList &Other);
+		const IGESSolid_Array1OfLoop & operator=(const IGESSolid_Array1OfLoop &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2512,62 +2521,62 @@ class IGESSolid_Array1OfVertexList {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_VertexList &Value);
+		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Loop &Value);
 		%feature("autodoc", "1");
-		const Handle_IGESSolid_VertexList & Value(const Standard_Integer Index) const;
+		const Handle_IGESSolid_Loop & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const Handle_IGESSolid_VertexList & operator()(const Standard_Integer Index) const;
+		const Handle_IGESSolid_Loop & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList & ChangeValue(const Standard_Integer Index);
+		Handle_IGESSolid_Loop & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList & operator()(const Standard_Integer Index);
+		Handle_IGESSolid_Loop & operator()(const Standard_Integer Index);
 
 };
-%extend IGESSolid_Array1OfVertexList {
-	~IGESSolid_Array1OfVertexList() {
+%extend IGESSolid_Array1OfLoop {
+	~IGESSolid_Array1OfLoop() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfLoop\n");}
 	}
 };
 
 
-%nodefaultctor IGESSolid_SphericalSurface;
-class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_Torus;
+class IGESSolid_Torus : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_SphericalSurface();
+		IGESSolid_Torus();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
+		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ &aPoint, const gp_XYZ &anAxisdir);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Point Center() const;
+		Standard_Real MajorRadius() const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
+		Standard_Real DiscRadius() const;
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		gp_Pnt AxisPoint() const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Axis() const;
+		gp_Pnt TransformedAxisPoint() const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction ReferenceDir() const;
+		gp_Dir Axis() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsParametrised() const;
+		gp_Dir TransformedAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_SphericalSurface {
-	Handle_IGESSolid_SphericalSurface GetHandle() {
-	return *(Handle_IGESSolid_SphericalSurface*) &$self;
+%extend IGESSolid_Torus {
+	Handle_IGESSolid_Torus GetHandle() {
+	return *(Handle_IGESSolid_Torus*) &$self;
 	}
 };
-%extend IGESSolid_SphericalSurface {
+%extend IGESSolid_Torus {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESSolid_SphericalSurface {
-	~IGESSolid_SphericalSurface() {
+%extend IGESSolid_Torus {
+	~IGESSolid_Torus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SphericalSurface\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_Torus\n");}
 	}
 };
 
@@ -2605,6 +2614,35 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 	~IGESSolid_Face() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_Face\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolRightAngularWedge;
+class IGESSolid_ToolRightAngularWedge {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolRightAngularWedge();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_RightAngularWedge &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_RightAngularWedge &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_RightAngularWedge &entfrom, const Handle_IGESSolid_RightAngularWedge &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolRightAngularWedge {
+	~IGESSolid_ToolRightAngularWedge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");}
 	}
 };
 
@@ -2775,6 +2813,35 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 
 
+%nodefaultctor IGESSolid_ToolSolidInstance;
+class IGESSolid_ToolSolidInstance {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolSolidInstance();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_SolidInstance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_SolidInstance &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_SolidInstance &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidInstance &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_SolidInstance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_SolidInstance &entfrom, const Handle_IGESSolid_SolidInstance &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESSolid_ToolSolidInstance {
+	~IGESSolid_ToolSolidInstance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");}
+	}
+};
+
+
 %nodefaultctor IGESSolid_ManifoldSolid;
 class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 	public:
@@ -2814,60 +2881,31 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESSolid_ToolShell;
-class IGESSolid_ToolShell {
+%nodefaultctor IGESSolid_ToolPlaneSurface;
+class IGESSolid_ToolPlaneSurface {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolShell();
+		IGESSolid_ToolPlaneSurface();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESSolid_PlaneSurface &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESSolid_PlaneSurface &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_PlaneSurface &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESSolid_PlaneSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESSolid_PlaneSurface &entfrom, const Handle_IGESSolid_PlaneSurface &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESSolid_ToolShell {
-	~IGESSolid_ToolShell() {
+%extend IGESSolid_ToolPlaneSurface {
+	~IGESSolid_ToolPlaneSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolShell\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_SpecificModule;
-class IGESSolid_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_SpecificModule {
-	Handle_IGESSolid_SpecificModule GetHandle() {
-	return *(Handle_IGESSolid_SpecificModule*) &$self;
-	}
-};
-%extend IGESSolid_SpecificModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_SpecificModule {
-	~IGESSolid_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");}
 	}
 };
 
@@ -2926,35 +2964,6 @@ class IGESSolid_ToolVertexList {
 	~IGESSolid_ToolVertexList() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolVertexList\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolPlaneSurface;
-class IGESSolid_ToolPlaneSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolPlaneSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_PlaneSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_PlaneSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_PlaneSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_PlaneSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_PlaneSurface &entfrom, const Handle_IGESSolid_PlaneSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESSolid_ToolPlaneSurface {
-	~IGESSolid_ToolPlaneSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");}
 	}
 };
 
@@ -3058,78 +3067,6 @@ class IGESSolid_ToolCylinder {
 };
 
 
-%nodefaultctor IGESSolid_ReadWriteModule;
-class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_ReadWriteModule {
-	Handle_IGESSolid_ReadWriteModule GetHandle() {
-	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
-	}
-};
-%extend IGESSolid_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_ReadWriteModule {
-	~IGESSolid_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ReadWriteModule\n");}
-	}
-};
-
-
-%nodefaultctor IGESSolid_SolidAssembly;
-class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SolidAssembly();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &allItems, const Handle_IGESGeom_HArray1OfTransformationMatrix &allMatrices);
-		%feature("autodoc", "1");
-		Standard_Boolean HasBrep() const;
-		%feature("autodoc", "1");
-		void SetBrep(const Standard_Boolean hasbrep);
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Item(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_TransformationMatrix TransfMatrix(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_SolidAssembly {
-	Handle_IGESSolid_SolidAssembly GetHandle() {
-	return *(Handle_IGESSolid_SolidAssembly*) &$self;
-	}
-};
-%extend IGESSolid_SolidAssembly {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESSolid_SolidAssembly {
-	~IGESSolid_SolidAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidAssembly\n");}
-	}
-};
-
-
 %nodefaultctor IGESSolid_GeneralModule;
 class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 	public:
@@ -3218,5 +3155,68 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 	~IGESSolid_Block() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_Block\n");}
+	}
+};
+
+
+%nodefaultctor IGESSolid_TopoBuilder;
+class IGESSolid_TopoBuilder {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_TopoBuilder();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void AddVertex(const gp_XYZ &val);
+		%feature("autodoc", "1");
+		Standard_Integer NbVertices() const;
+		%feature("autodoc", "1");
+		const gp_XYZ & Vertex(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_VertexList VertexList() const;
+		%feature("autodoc", "1");
+		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc","Edge(Standard_Integer num)->[Standard_IntegerStandard_Integer]");
+		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList EdgeList() const;
+		%feature("autodoc", "1");
+		void MakeLoop();
+		%feature("autodoc", "1");
+		void MakeEdge(const Standard_Integer edgetype, const Standard_Integer edge3d, const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void AddCurveUV(const Handle_IGESData_IGESEntity &curve, const Standard_Integer iso);
+		%feature("autodoc", "1");
+		void EndEdge();
+		%feature("autodoc", "1");
+		void MakeFace(const Handle_IGESData_IGESEntity &surface);
+		%feature("autodoc", "1");
+		void SetOuter();
+		%feature("autodoc", "1");
+		void AddInner();
+		%feature("autodoc", "1");
+		void EndFace(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void MakeShell();
+		%feature("autodoc", "1");
+		void EndSimpleShell();
+		%feature("autodoc", "1");
+		void SetMainShell(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void AddVoidShell(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void EndSolid();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Shell Shell() const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_ManifoldSolid Solid() const;
+
+};
+%extend IGESSolid_TopoBuilder {
+	~IGESSolid_TopoBuilder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSolid_TopoBuilder\n");}
 	}
 };

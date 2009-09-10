@@ -24,6 +24,7 @@
 %rename(StepGeom_HArray1OfBoundaryCurve) StepGeom_HArray1OfBoundaryCurve;
 %rename(StepGeom_RectangularCompositeSurface) StepGeom_RectangularCompositeSurface;
 %rename(StepGeom_PointOnSurface) StepGeom_PointOnSurface;
+%rename(Handle_StepGeom_EvaluatedDegeneratePcurve) Handle_StepGeom_EvaluatedDegeneratePcurve;
 %rename(Handle_StepGeom_ReparametrisedCompositeCurveSegment) Handle_StepGeom_ReparametrisedCompositeCurveSegment;
 %rename(StepGeom_bssfGeneralisedCone) StepGeom_bssfGeneralisedCone;
 %rename(Handle_StepGeom_Polyline) Handle_StepGeom_Polyline;
@@ -76,7 +77,6 @@
 %rename(StepGeom_SurfaceOfRevolution) StepGeom_SurfaceOfRevolution;
 %rename(StepGeom_RationalBSplineSurface) StepGeom_RationalBSplineSurface;
 %rename(StepGeom_BoundaryCurve) StepGeom_BoundaryCurve;
-%rename(StepGeom_Axis1Placement) StepGeom_Axis1Placement;
 %rename(StepGeom_BezierCurve) StepGeom_BezierCurve;
 %rename(StepGeom_DegenerateToroidalSurface) StepGeom_DegenerateToroidalSurface;
 %rename(StepGeom_CompositeCurveSegment) StepGeom_CompositeCurveSegment;
@@ -89,7 +89,7 @@
 %rename(Handle_StepGeom_CartesianTransformationOperator2d) Handle_StepGeom_CartesianTransformationOperator2d;
 %rename(StepGeom_Plane) StepGeom_Plane;
 %rename(Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext) Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
-%rename(StepGeom_QuasiUniformCurve) StepGeom_QuasiUniformCurve;
+%rename(StepGeom_Array1OfBoundaryCurve) StepGeom_Array1OfBoundaryCurve;
 %rename(Handle_StepGeom_ConicalSurface) Handle_StepGeom_ConicalSurface;
 %rename(Handle_StepGeom_CurveReplica) Handle_StepGeom_CurveReplica;
 %rename(StepGeom_tpParameter) StepGeom_tpParameter;
@@ -116,7 +116,7 @@
 %rename(Handle_StepGeom_Placement) Handle_StepGeom_Placement;
 %rename(StepGeom_CurveReplica) StepGeom_CurveReplica;
 %rename(StepGeom_SurfaceBoundary) StepGeom_SurfaceBoundary;
-%rename(StepGeom_Array1OfBoundaryCurve) StepGeom_Array1OfBoundaryCurve;
+%rename(StepGeom_Axis1Placement) StepGeom_Axis1Placement;
 %rename(Handle_StepGeom_Direction) Handle_StepGeom_Direction;
 %rename(Handle_StepGeom_GeometricRepresentationItem) Handle_StepGeom_GeometricRepresentationItem;
 %rename(StepGeom_BSplineCurveWithKnots) StepGeom_BSplineCurveWithKnots;
@@ -130,9 +130,9 @@
 %rename(Handle_StepGeom_OffsetCurve3d) Handle_StepGeom_OffsetCurve3d;
 %rename(StepGeom_tcDiscontinuous) StepGeom_tcDiscontinuous;
 %rename(Handle_StepGeom_PointOnSurface) Handle_StepGeom_PointOnSurface;
-%rename(StepGeom_UniformCurve) StepGeom_UniformCurve;
+%rename(StepGeom_QuasiUniformCurve) StepGeom_QuasiUniformCurve;
 %rename(StepGeom_BoundedCurve) StepGeom_BoundedCurve;
-%rename(Handle_StepGeom_EvaluatedDegeneratePcurve) Handle_StepGeom_EvaluatedDegeneratePcurve;
+%rename(Handle_StepGeom_Plane) Handle_StepGeom_Plane;
 %rename(Handle_StepGeom_SurfaceCurve) Handle_StepGeom_SurfaceCurve;
 %rename(StepGeom_bscfParabolicArc) StepGeom_bscfParabolicArc;
 %rename(StepGeom_ElementarySurface) StepGeom_ElementarySurface;
@@ -146,7 +146,7 @@
 %rename(Handle_StepGeom_BSplineCurveWithKnots) Handle_StepGeom_BSplineCurveWithKnots;
 %rename(Handle_StepGeom_CartesianPoint) Handle_StepGeom_CartesianPoint;
 %rename(Handle_StepGeom_HArray1OfPcurveOrSurface) Handle_StepGeom_HArray1OfPcurveOrSurface;
-%rename(StepGeom_BSplineCurve) StepGeom_BSplineCurve;
+%rename(StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface) StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
 %rename(Handle_StepGeom_Parabola) Handle_StepGeom_Parabola;
 %rename(StepGeom_QuasiUniformCurveAndRationalBSplineCurve) StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
 %rename(StepGeom_SeamCurve) StepGeom_SeamCurve;
@@ -189,7 +189,7 @@
 %rename(Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext) Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
 %rename(Handle_StepGeom_Axis1Placement) Handle_StepGeom_Axis1Placement;
 %rename(StepGeom_bssfSphericalSurf) StepGeom_bssfSphericalSurf;
-%rename(StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface) StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
+%rename(StepGeom_BSplineCurve) StepGeom_BSplineCurve;
 %rename(Handle_StepGeom_OrientedSurface) Handle_StepGeom_OrientedSurface;
 %rename(StepGeom_SurfaceReplica) StepGeom_SurfaceReplica;
 %rename(StepGeom_UniformSurfaceAndRationalBSplineSurface) StepGeom_UniformSurfaceAndRationalBSplineSurface;
@@ -213,7 +213,7 @@
 %rename(StepGeom_CompositeCurveOnSurface) StepGeom_CompositeCurveOnSurface;
 %rename(Handle_StepGeom_CartesianTransformationOperator) Handle_StepGeom_CartesianTransformationOperator;
 %rename(StepGeom_HArray2OfCartesianPoint) StepGeom_HArray2OfCartesianPoint;
-%rename(Handle_StepGeom_Plane) Handle_StepGeom_Plane;
+%rename(StepGeom_UniformCurve) StepGeom_UniformCurve;
 %rename(StepGeom_Circle) StepGeom_Circle;
 %rename(StepGeom_Hyperbola) StepGeom_Hyperbola;
 %rename(StepGeom_HArray1OfSurfaceBoundary) StepGeom_HArray1OfSurfaceBoundary;

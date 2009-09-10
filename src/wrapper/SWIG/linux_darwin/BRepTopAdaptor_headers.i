@@ -134,13 +134,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Face.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<Handle_BRepAdaptor_HCurve2d.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<Handle_Adaptor3d_HVertex.hxx>
-#include<TopoDS_Face.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<TopoDS_Shape.hxx>
 %}

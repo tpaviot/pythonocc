@@ -3,9 +3,9 @@
 %rename(BOPTools_Array1OfPave) BOPTools_Array1OfPave;
 %rename(BOPTools_ListIteratorOfListOfCoupleOfInteger) BOPTools_ListIteratorOfListOfCoupleOfInteger;
 %rename(BOPTools_SSInterference) BOPTools_SSInterference;
-%rename(BOPTools_SplitShapesPool) BOPTools_SplitShapesPool;
+%rename(BOPTools_Pave) BOPTools_Pave;
 %rename(BOPTools_IndexedDataMapOfIntegerDEInfo) BOPTools_IndexedDataMapOfIntegerDEInfo;
-%rename(BOPTools_SolidStateFiller) BOPTools_SolidStateFiller;
+%rename(BOPTools_PaveBlockIterator) BOPTools_PaveBlockIterator;
 %rename(BOPTools_IndexedMapOfCoupleOfInteger) BOPTools_IndexedMapOfCoupleOfInteger;
 %rename(BOPTools_ShapeShapeInterference) BOPTools_ShapeShapeInterference;
 %rename(BOPTools_SequenceOfCurves) BOPTools_SequenceOfCurves;
@@ -29,6 +29,7 @@
 %rename(BOPTools_SSIntersectionAttribute) BOPTools_SSIntersectionAttribute;
 %rename(BOPTools_ListNodeOfListOfShapeEnum) BOPTools_ListNodeOfListOfShapeEnum;
 %rename(BOPTools_SequenceNodeOfSequenceOfPaveBlock) BOPTools_SequenceNodeOfSequenceOfPaveBlock;
+%rename(BOPTools_SplitShapesPool) BOPTools_SplitShapesPool;
 %rename(BOPTools_DEProcessor) BOPTools_DEProcessor;
 %rename(BOPTools_Tools) BOPTools_Tools;
 %rename(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
@@ -54,7 +55,7 @@
 %rename(Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger) Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger;
 %rename(BOPTools_PCurveMaker) BOPTools_PCurveMaker;
 %rename(BOPTools_CArray1OfPave) BOPTools_CArray1OfPave;
-%rename(BOPTools_Interference) BOPTools_Interference;
+%rename(BOPTools_EDGEEDGE) BOPTools_EDGEEDGE;
 %rename(BOPTools_ESInterference) BOPTools_ESInterference;
 %rename(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 %rename(Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock) Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock;
@@ -66,18 +67,17 @@
 %rename(BOPTools_BADSHRANKRANGE) BOPTools_BADSHRANKRANGE;
 %rename(BOPTools_CheckResult) BOPTools_CheckResult;
 %rename(BOPTools_InterferencePool) BOPTools_InterferencePool;
-%rename(Handle_BOPTools_ListNodeOfListOfPaveBlock) Handle_BOPTools_ListNodeOfListOfPaveBlock;
+%rename(BOPTools_QuickSortPave) BOPTools_QuickSortPave;
 %rename(BOPTools_HArray2OfIntersectionStatus) BOPTools_HArray2OfIntersectionStatus;
 %rename(BOPTools_IndexedDataMapOfIntegerPaveSet) BOPTools_IndexedDataMapOfIntegerPaveSet;
 %rename(BOPTools_CArray1OfVSInterference) BOPTools_CArray1OfVSInterference;
 %rename(BOPTools_ListNodeOfListOfPave) BOPTools_ListNodeOfListOfPave;
 %rename(BOPTools_ListOfPave) BOPTools_ListOfPave;
 %rename(BOPTools_CArray1OfSSInterference) BOPTools_CArray1OfSSInterference;
-%rename(BOPTools_Pave) BOPTools_Pave;
 %rename(BOPTools_IMapOfPaveBlock) BOPTools_IMapOfPaveBlock;
 %rename(BOPTools_FACEFACE) BOPTools_FACEFACE;
 %rename(BOPTools_Tools3D) BOPTools_Tools3D;
-%rename(BOPTools_QuickSortPave) BOPTools_QuickSortPave;
+%rename(Handle_BOPTools_ListNodeOfListOfPaveBlock) Handle_BOPTools_ListNodeOfListOfPaveBlock;
 %rename(BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock) BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock;
 %rename(BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo) BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 %rename(BOPTools_ListIteratorOfListOfShapeEnum) BOPTools_ListIteratorOfListOfShapeEnum;
@@ -89,7 +89,7 @@
 %rename(BOPTools_ListOfCheckResults) BOPTools_ListOfCheckResults;
 %rename(BOPTools_UNKNOWN) BOPTools_UNKNOWN;
 %rename(BOPTools_SequenceOfPaveBlock) BOPTools_SequenceOfPaveBlock;
-%rename(BOPTools_EDGEEDGE) BOPTools_EDGEEDGE;
+%rename(BOPTools_Interference) BOPTools_Interference;
 %rename(BOPTools_CoupleOfIntegerMapHasher) BOPTools_CoupleOfIntegerMapHasher;
 %rename(BOPTools_DSFiller) BOPTools_DSFiller;
 %rename(BOPTools_Array2OfIntersectionStatus) BOPTools_Array2OfIntersectionStatus;
@@ -112,7 +112,7 @@
 %rename(Handle_BOPTools_ListNodeOfListOfCheckResults) Handle_BOPTools_ListNodeOfListOfCheckResults;
 %rename(BOPTools_RoughShapeIntersector) BOPTools_RoughShapeIntersector;
 %rename(BOPTools_CArray1OfVEInterference) BOPTools_CArray1OfVEInterference;
-%rename(BOPTools_PaveBlockIterator) BOPTools_PaveBlockIterator;
+%rename(BOPTools_SolidStateFiller) BOPTools_SolidStateFiller;
 %rename(BOPTools_BOUNDINGBOXOFSUBSHAPESINTERSECTED) BOPTools_BOUNDINGBOXOFSUBSHAPESINTERSECTED;
 %rename(BOPTools_DEInfo) BOPTools_DEInfo;
 %rename(BOPTools_NULLSRANKRANGE) BOPTools_NULLSRANKRANGE;

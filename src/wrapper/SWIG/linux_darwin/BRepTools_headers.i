@@ -99,6 +99,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Shape.hxx>
+#include<BRep_Builder.hxx>
+#include<TColgp_SequenceOfPnt2d.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopLoc_Location.hxx>
@@ -107,9 +110,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDS_Vertex.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<TopoDS_Shape.hxx>
 #include<gp_Trsf.hxx>
-#include<BRep_Builder.hxx>
 #include<BRepTools.hxx>
 #include<TopoDS_Wire.hxx>
 #include<Bnd_Box2d.hxx>
@@ -120,6 +121,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<gp_GTrsf.hxx>
-#include<TColgp_SequenceOfPnt2d.hxx>
 #include<TopTools_ListOfShape.hxx>
 %}

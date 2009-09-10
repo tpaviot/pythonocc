@@ -41,36 +41,6 @@ enum BRepExtrema_SupportType {
 
 
 
-%nodefaultctor Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
-class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
-	BRepExtrema_SequenceNodeOfSeqOfSolution* GetObject() {
-	return (BRepExtrema_SequenceNodeOfSeqOfSolution*)$self->Access();
-	}
-};
-%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
-	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BRepExtrema_UnCompatibleShape;
 class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError {
 	public:
@@ -97,6 +67,36 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 	~Handle_BRepExtrema_UnCompatibleShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
+class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution();
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const Handle_BRepExtrema_SequenceNodeOfSeqOfSolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution & operator=(const BRepExtrema_SequenceNodeOfSeqOfSolution *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepExtrema_SequenceNodeOfSeqOfSolution const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
+	BRepExtrema_SequenceNodeOfSeqOfSolution* GetObject() {
+	return (BRepExtrema_SequenceNodeOfSeqOfSolution*)$self->Access();
+	}
+};
+%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
+	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
 	}
 };
 
@@ -235,31 +235,6 @@ class BRepExtrema_ExtPF {
 };
 
 
-%nodefaultctor BRepExtrema_DistanceSS;
-class BRepExtrema_DistanceSS {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef);
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real DistValue() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq1Value() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq2Value() const;
-
-};
-%extend BRepExtrema_DistanceSS {
-	~BRepExtrema_DistanceSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
-	}
-};
-
-
 %nodefaultctor BRepExtrema_ExtCC;
 class BRepExtrema_ExtCC {
 	public:
@@ -295,6 +270,31 @@ class BRepExtrema_ExtCC {
 	~BRepExtrema_ExtCC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCC\n");}
+	}
+};
+
+
+%nodefaultctor BRepExtrema_DistanceSS;
+class BRepExtrema_DistanceSS {
+	public:
+		%feature("autodoc", "1");
+		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef);
+		%feature("autodoc", "1");
+		BRepExtrema_DistanceSS(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real DistValue() const;
+		%feature("autodoc", "1");
+		const BRepExtrema_SeqOfSolution & Seq1Value() const;
+		%feature("autodoc", "1");
+		const BRepExtrema_SeqOfSolution & Seq2Value() const;
+
+};
+%extend BRepExtrema_DistanceSS {
+	~BRepExtrema_DistanceSS() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
 	}
 };
 

@@ -59,13 +59,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<MNaming.hxx>
+#include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
+#include<Handle_MDF_ARDriverHSequence.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_PDF_Attribute.hxx>
 #include<Handle_MDF_RRelocationTable.hxx>
-#include<MNaming.hxx>
-#include<Handle_MDF_ASDriverHSequence.hxx>
-#include<Handle_MDF_ARDriverHSequence.hxx>
 #include<Handle_MDF_SRelocationTable.hxx>
 %}

@@ -229,7 +229,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import TCollection.i
 %import BRepBuilderAPI.i
 %import Standard.i
-%import BRepOffset.i
 %import GeomAbs.i
 %import Draft.i
 %import BRepPrimAPI.i
+%import BRepOffset.i

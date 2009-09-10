@@ -168,7 +168,7 @@ class Viewer_Viewer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_ExtString NextName() const;
 		%feature("autodoc", "1");
-		Standard_CString Domain() const;
+		char * Domain() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

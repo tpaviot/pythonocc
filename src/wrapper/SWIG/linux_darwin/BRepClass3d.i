@@ -167,6 +167,29 @@ class BRepClass3d_SolidExplorer {
 };
 
 
+%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
+class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter();
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Address & Value() const;
+
+};
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	~BRepClass3d_DataMapIteratorOfMapOfInter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
+	}
+};
+
+
 %nodefaultctor BRepClass3d_Intersector3d;
 class BRepClass3d_Intersector3d {
 	public:
@@ -198,29 +221,6 @@ class BRepClass3d_Intersector3d {
 	~BRepClass3d_Intersector3d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
-	}
-};
-
-
-%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
-class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter();
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Value() const;
-
-};
-%extend BRepClass3d_DataMapIteratorOfMapOfInter {
-	~BRepClass3d_DataMapIteratorOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
 	}
 };
 

@@ -290,13 +290,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_StepData_StepReaderData.hxx>
 #include<Handle_Interface_Check.hxx>
-#include<Handle_HeaderSection_FileSchema.hxx>
-#include<StepData_StepWriter.hxx>
 #include<Handle_HeaderSection_FileDescription.hxx>
+#include<StepData_StepWriter.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
-#include<Handle_HeaderSection_FileName.hxx>
 #include<RWHeaderSection.hxx>
+#include<Handle_HeaderSection_FileName.hxx>
+#include<Handle_HeaderSection_FileSchema.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<Interface_ShareTool.hxx>
 #include<Interface_CopyTool.hxx>

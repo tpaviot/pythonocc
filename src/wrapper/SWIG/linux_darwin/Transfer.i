@@ -33,6 +33,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include Transfer_headers.i
 
 
+enum Transfer_StatusResult {
+	Transfer_StatusVoid,
+	Transfer_StatusDefined,
+	Transfer_StatusUsed,
+	};
+
 enum Transfer_StatusExec {
 	Transfer_StatusInitial,
 	Transfer_StatusRun,
@@ -46,12 +52,6 @@ enum Transfer_UndefMode {
 	Transfer_UndefFailure,
 	Transfer_UndefContent,
 	Transfer_UndefUser,
-	};
-
-enum Transfer_StatusResult {
-	Transfer_StatusVoid,
-	Transfer_StatusDefined,
-	Transfer_StatusUsed,
 	};
 
 
@@ -146,66 +146,6 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Transfer_Binder;
-class Handle_Transfer_Binder : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder();
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder(const Handle_Transfer_Binder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder(const Transfer_Binder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder & operator=(const Handle_Transfer_Binder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder & operator=(const Transfer_Binder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_Binder {
-	Transfer_Binder* GetObject() {
-	return (Transfer_Binder*)$self->Access();
-	}
-};
-%extend Handle_Transfer_Binder {
-	~Handle_Transfer_Binder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Binder\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_VoidBinder;
-class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder(const Handle_Transfer_VoidBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder(const Transfer_VoidBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder & operator=(const Handle_Transfer_VoidBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder & operator=(const Transfer_VoidBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_VoidBinder {
-	Transfer_VoidBinder* GetObject() {
-	return (Transfer_VoidBinder*)$self->Access();
-	}
-};
-%extend Handle_Transfer_VoidBinder {
-	~Handle_Transfer_VoidBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_VoidBinder\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Transfer_Finder;
 class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	public:
@@ -236,62 +176,62 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_Transfer_ResultFromTransient;
-class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
+class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient();
+		Handle_Transfer_ActorOfProcessForTransient();
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient(const Handle_Transfer_ResultFromTransient &aHandle);
+		Handle_Transfer_ActorOfProcessForTransient(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient(const Transfer_ResultFromTransient *anItem);
+		Handle_Transfer_ActorOfProcessForTransient(const Transfer_ActorOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient & operator=(const Handle_Transfer_ResultFromTransient &aHandle);
+		Handle_Transfer_ActorOfProcessForTransient & operator=(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient & operator=(const Transfer_ResultFromTransient *anItem);
+		Handle_Transfer_ActorOfProcessForTransient & operator=(const Transfer_ActorOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_ActorOfProcessForTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_ResultFromTransient {
-	Transfer_ResultFromTransient* GetObject() {
-	return (Transfer_ResultFromTransient*)$self->Access();
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	Transfer_ActorOfProcessForTransient* GetObject() {
+	return (Transfer_ActorOfProcessForTransient*)$self->Access();
 	}
 };
-%extend Handle_Transfer_ResultFromTransient {
-	~Handle_Transfer_ResultFromTransient() {
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	~Handle_Transfer_ActorOfProcessForTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");}
 	}
 };
 
 
-%nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
-class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
+%nodefaultctor Handle_Transfer_DispatchControl;
+class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient();
+		Handle_Transfer_DispatchControl();
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
+		Handle_Transfer_DispatchControl(const Handle_Transfer_DispatchControl &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient(const Transfer_SimpleBinderOfTransient *anItem);
+		Handle_Transfer_DispatchControl(const Transfer_DispatchControl *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient & operator=(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
+		Handle_Transfer_DispatchControl & operator=(const Handle_Transfer_DispatchControl &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient & operator=(const Transfer_SimpleBinderOfTransient *anItem);
+		Handle_Transfer_DispatchControl & operator=(const Transfer_DispatchControl *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_DispatchControl const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_SimpleBinderOfTransient {
-	Transfer_SimpleBinderOfTransient* GetObject() {
-	return (Transfer_SimpleBinderOfTransient*)$self->Access();
+%extend Handle_Transfer_DispatchControl {
+	Transfer_DispatchControl* GetObject() {
+	return (Transfer_DispatchControl*)$self->Access();
 	}
 };
-%extend Handle_Transfer_SimpleBinderOfTransient {
-	~Handle_Transfer_SimpleBinderOfTransient() {
+%extend Handle_Transfer_DispatchControl {
+	~Handle_Transfer_DispatchControl() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DispatchControl\n");}
 	}
 };
 
@@ -416,62 +356,62 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 };
 
 
-%nodefaultctor Handle_Transfer_TransferFailure;
-class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
+%nodefaultctor Handle_Transfer_Binder;
+class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure();
+		Handle_Transfer_Binder();
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure(const Handle_Transfer_TransferFailure &aHandle);
+		Handle_Transfer_Binder(const Handle_Transfer_Binder &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure(const Transfer_TransferFailure *anItem);
+		Handle_Transfer_Binder(const Transfer_Binder *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure & operator=(const Handle_Transfer_TransferFailure &aHandle);
+		Handle_Transfer_Binder & operator=(const Handle_Transfer_Binder &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure & operator=(const Transfer_TransferFailure *anItem);
+		Handle_Transfer_Binder & operator=(const Transfer_Binder *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_Binder const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_TransferFailure {
-	Transfer_TransferFailure* GetObject() {
-	return (Transfer_TransferFailure*)$self->Access();
+%extend Handle_Transfer_Binder {
+	Transfer_Binder* GetObject() {
+	return (Transfer_Binder*)$self->Access();
 	}
 };
-%extend Handle_Transfer_TransferFailure {
-	~Handle_Transfer_TransferFailure() {
+%extend Handle_Transfer_Binder {
+	~Handle_Transfer_Binder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferFailure\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Binder\n");}
 	}
 };
 
 
-%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
-class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
+class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder();
+		Handle_Transfer_SimpleBinderOfTransient();
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		Handle_Transfer_SimpleBinderOfTransient(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		Handle_Transfer_SimpleBinderOfTransient(const Transfer_SimpleBinderOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		Handle_Transfer_SimpleBinderOfTransient & operator=(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		Handle_Transfer_SimpleBinderOfTransient & operator=(const Transfer_SimpleBinderOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_SimpleBinderOfTransient const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
-	Transfer_SequenceNodeOfSequenceOfBinder* GetObject() {
-	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	Transfer_SimpleBinderOfTransient* GetObject() {
+	return (Transfer_SimpleBinderOfTransient*)$self->Access();
 	}
 };
-%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
-	~Handle_Transfer_SequenceNodeOfSequenceOfBinder() {
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	~Handle_Transfer_SimpleBinderOfTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");}
 	}
 };
 
@@ -536,32 +476,92 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 };
 
 
-%nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
-class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Transfer_TransferFailure;
+class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient();
+		Handle_Transfer_TransferFailure();
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
+		Handle_Transfer_TransferFailure(const Handle_Transfer_TransferFailure &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient(const Transfer_ActorOfProcessForTransient *anItem);
+		Handle_Transfer_TransferFailure(const Transfer_TransferFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient & operator=(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
+		Handle_Transfer_TransferFailure & operator=(const Handle_Transfer_TransferFailure &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient & operator=(const Transfer_ActorOfProcessForTransient *anItem);
+		Handle_Transfer_TransferFailure & operator=(const Transfer_TransferFailure *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_TransferFailure const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_ActorOfProcessForTransient {
-	Transfer_ActorOfProcessForTransient* GetObject() {
-	return (Transfer_ActorOfProcessForTransient*)$self->Access();
+%extend Handle_Transfer_TransferFailure {
+	Transfer_TransferFailure* GetObject() {
+	return (Transfer_TransferFailure*)$self->Access();
 	}
 };
-%extend Handle_Transfer_ActorOfProcessForTransient {
-	~Handle_Transfer_ActorOfProcessForTransient() {
+%extend Handle_Transfer_TransferFailure {
+	~Handle_Transfer_TransferFailure() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferFailure\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
+class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	Transfer_SequenceNodeOfSequenceOfBinder* GetObject() {
+	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
+	}
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	~Handle_Transfer_SequenceNodeOfSequenceOfBinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
+class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	Transfer_SequenceNodeOfSequenceOfFinder* GetObject() {
+	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
+	}
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	~Handle_Transfer_SequenceNodeOfSequenceOfFinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
 
@@ -686,32 +686,32 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 };
 
 
-%nodefaultctor Handle_Transfer_DispatchControl;
-class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
+%nodefaultctor Handle_Transfer_ActorDispatch;
+class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl();
+		Handle_Transfer_ActorDispatch();
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl(const Handle_Transfer_DispatchControl &aHandle);
+		Handle_Transfer_ActorDispatch(const Handle_Transfer_ActorDispatch &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl(const Transfer_DispatchControl *anItem);
+		Handle_Transfer_ActorDispatch(const Transfer_ActorDispatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl & operator=(const Handle_Transfer_DispatchControl &aHandle);
+		Handle_Transfer_ActorDispatch & operator=(const Handle_Transfer_ActorDispatch &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl & operator=(const Transfer_DispatchControl *anItem);
+		Handle_Transfer_ActorDispatch & operator=(const Transfer_ActorDispatch *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_ActorDispatch const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_DispatchControl {
-	Transfer_DispatchControl* GetObject() {
-	return (Transfer_DispatchControl*)$self->Access();
+%extend Handle_Transfer_ActorDispatch {
+	Transfer_ActorDispatch* GetObject() {
+	return (Transfer_ActorDispatch*)$self->Access();
 	}
 };
-%extend Handle_Transfer_DispatchControl {
-	~Handle_Transfer_DispatchControl() {
+%extend Handle_Transfer_ActorDispatch {
+	~Handle_Transfer_ActorDispatch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DispatchControl\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");}
 	}
 };
 
@@ -776,32 +776,92 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 };
 
 
-%nodefaultctor Handle_Transfer_ActorDispatch;
-class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
+%nodefaultctor Handle_Transfer_MapContainer;
+class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch();
+		Handle_Transfer_MapContainer();
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch(const Handle_Transfer_ActorDispatch &aHandle);
+		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch(const Transfer_ActorDispatch *anItem);
+		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch & operator=(const Handle_Transfer_ActorDispatch &aHandle);
+		Handle_Transfer_MapContainer & operator=(const Handle_Transfer_MapContainer &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch & operator=(const Transfer_ActorDispatch *anItem);
+		Handle_Transfer_MapContainer & operator=(const Transfer_MapContainer *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Transfer_MapContainer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_ActorDispatch {
-	Transfer_ActorDispatch* GetObject() {
-	return (Transfer_ActorDispatch*)$self->Access();
+%extend Handle_Transfer_MapContainer {
+	Transfer_MapContainer* GetObject() {
+	return (Transfer_MapContainer*)$self->Access();
 	}
 };
-%extend Handle_Transfer_ActorDispatch {
-	~Handle_Transfer_ActorDispatch() {
+%extend Handle_Transfer_MapContainer {
+	~Handle_Transfer_MapContainer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MapContainer\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_VoidBinder;
+class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder(const Handle_Transfer_VoidBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder(const Transfer_VoidBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder & operator=(const Handle_Transfer_VoidBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder & operator=(const Transfer_VoidBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_VoidBinder {
+	Transfer_VoidBinder* GetObject() {
+	return (Transfer_VoidBinder*)$self->Access();
+	}
+};
+%extend Handle_Transfer_VoidBinder {
+	~Handle_Transfer_VoidBinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_VoidBinder\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ResultFromTransient;
+class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient(const Handle_Transfer_ResultFromTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient(const Transfer_ResultFromTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient & operator=(const Handle_Transfer_ResultFromTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient & operator=(const Transfer_ResultFromTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ResultFromTransient {
+	Transfer_ResultFromTransient* GetObject() {
+	return (Transfer_ResultFromTransient*)$self->Access();
+	}
+};
+%extend Handle_Transfer_ResultFromTransient {
+	~Handle_Transfer_ResultFromTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");}
 	}
 };
 
@@ -832,36 +892,6 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	~Handle_Transfer_ResultFromModel() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_MapContainer;
-class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer();
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer & operator=(const Handle_Transfer_MapContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer & operator=(const Transfer_MapContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_MapContainer {
-	Transfer_MapContainer* GetObject() {
-	return (Transfer_MapContainer*)$self->Access();
-	}
-};
-%extend Handle_Transfer_MapContainer {
-	~Handle_Transfer_MapContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MapContainer\n");}
 	}
 };
 
@@ -922,36 +952,6 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 	~Handle_Transfer_TransferDeadLoop() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
-class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
-	Transfer_SequenceNodeOfSequenceOfFinder* GetObject() {
-	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
-	}
-};
-%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
-	~Handle_Transfer_SequenceNodeOfSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
 
@@ -1120,424 +1120,6 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 	~Transfer_ResultFromTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromTransient\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_Binder;
-class Transfer_Binder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		void Merge(const Handle_Transfer_Binder &other);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMultiple() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		void AddResult(const Handle_Transfer_Binder &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NextResult() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		void SetAlreadyUsed();
-		%feature("autodoc", "1");
-		Transfer_StatusResult Status() const;
-		%feature("autodoc", "1");
-		Transfer_StatusExec StatusExec() const;
-		%feature("autodoc", "1");
-		void SetStatusExec(const Transfer_StatusExec stat);
-		%feature("autodoc", "1");
-		void AddFail(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddWarning(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		Handle_Interface_Check const Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check CCheck();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_Binder {
-	Handle_Transfer_Binder GetHandle() {
-	return *(Handle_Transfer_Binder*) &$self;
-	}
-};
-%extend Transfer_Binder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_Binder {
-	~Transfer_Binder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_Binder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfProcessForFinder;
-class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfProcessForFinder();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NullResult() const;
-		%feature("autodoc", "1");
-		void SetLast(const Standard_Boolean mode=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLast() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_Transfer_ActorOfProcessForFinder &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfProcessForFinder {
-	Handle_Transfer_ActorOfProcessForFinder GetHandle() {
-	return *(Handle_Transfer_ActorOfProcessForFinder*) &$self;
-	}
-};
-%extend Transfer_ActorOfProcessForFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ActorOfProcessForFinder {
-	~Transfer_ActorOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfFinderProcess;
-class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfFinderProcess();
-		%feature("autodoc", "1");
-		Standard_Integer & ModeTrans();
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &TP);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_FinderProcess &TP);
-
-};
-%extend Transfer_ActorOfFinderProcess {
-	Handle_Transfer_ActorOfFinderProcess GetHandle() {
-	return *(Handle_Transfer_ActorOfFinderProcess*) &$self;
-	}
-};
-%extend Transfer_ActorOfFinderProcess {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ActorOfFinderProcess {
-	~Transfer_ActorOfFinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_TransferIterator;
-class Transfer_TransferIterator {
-	public:
-		%feature("autodoc", "1");
-		Transfer_TransferIterator();
-		%feature("autodoc", "1");
-		void AddItem(const Handle_Transfer_Binder &atr);
-		%feature("autodoc", "1");
-		void SelectBinder(const Handle_Standard_Type &atype, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectResult(const Handle_Standard_Type &atype, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectUnique(const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectItem(const Standard_Integer num, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-		%feature("autodoc", "1");
-		void Start();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Transfer_Binder & Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasUniqueResult() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasTransientResult() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & TransientResult() const;
-		%feature("autodoc", "1");
-		Transfer_StatusExec Status() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFails() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasWarnings() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check const Check() const;
-
-};
-%extend Transfer_TransferIterator {
-	~Transfer_TransferIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferIterator\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfProcessForTransient;
-class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfProcessForTransient();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NullResult() const;
-		%feature("autodoc", "1");
-		void SetLast(const Standard_Boolean mode=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLast() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_Transfer_ActorOfProcessForTransient &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfProcessForTransient {
-	Handle_Transfer_ActorOfProcessForTransient GetHandle() {
-	return *(Handle_Transfer_ActorOfProcessForTransient*) &$self;
-	}
-};
-%extend Transfer_ActorOfProcessForTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ActorOfProcessForTransient {
-	~Transfer_ActorOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_HSequenceOfFinder;
-class Transfer_HSequenceOfFinder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_HSequenceOfFinder();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & Sequence() const;
-		%feature("autodoc", "1");
-		Transfer_SequenceOfFinder & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_HSequenceOfFinder {
-	Handle_Transfer_HSequenceOfFinder GetHandle() {
-	return *(Handle_Transfer_HSequenceOfFinder*) &$self;
-	}
-};
-%extend Transfer_HSequenceOfFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_HSequenceOfFinder {
-	~Transfer_HSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfFinder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_Finder;
-class Transfer_Finder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer GetHashCode() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Equates(const Handle_Transfer_Finder &other) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ValueType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
-		%feature("autodoc", "1");
-		void SetAttribute(const char * name, const Handle_Standard_Transient &val);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveAttribute(const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean GetAttribute(const char * name, const Handle_Standard_Type &type, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Attribute(const char * name) const;
-		%feature("autodoc", "1");
-		Interface_ParamType AttributeType(const char * name) const;
-		%feature("autodoc", "1");
-		void SetIntegerAttribute(const char * name, const Standard_Integer val);
-		%feature("autodoc","GetIntegerAttribute(Standard_CString name)->Standard_Integer");
-		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer IntegerAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		void SetRealAttribute(const char * name, const Standard_Real val);
-		%feature("autodoc","GetRealAttribute(Standard_CString name)->Standard_Real");
-		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real RealAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		void SetStringAttribute(const char * name, const char * val);
-		%feature("autodoc", "1");
-		char * StringAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient AttrList() const;
-		%feature("autodoc", "1");
-		void SameAttributes(const Handle_Transfer_Finder &other);
-		%feature("autodoc", "1");
-		void GetAttributes(const Handle_Transfer_Finder &other, const char * fromname="", const Standard_Boolean copied=1);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_Finder {
-	Handle_Transfer_Finder GetHandle() {
-	return *(Handle_Transfer_Finder*) &$self;
-	}
-};
-%extend Transfer_Finder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_Finder {
-	~Transfer_Finder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_Finder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_SequenceOfFinder;
-class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SequenceOfFinder();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & Assign(const Transfer_SequenceOfFinder &Other);
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & operator=(const Transfer_SequenceOfFinder &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void Append(Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void Prepend(Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Transfer_Finder &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & First() const;
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Transfer_Finder &I);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%extend Transfer_SequenceOfFinder {
-	~Transfer_SequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfFinder\n");}
 	}
 };
 
@@ -1732,39 +1314,605 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 };
 
 
-%nodefaultctor Transfer_DataMapOfTransientTransient;
-class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
+%nodefaultctor Transfer_Binder;
+class Transfer_Binder : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient(const Standard_Integer NbBuckets=1);
+		void Merge(const Handle_Transfer_Binder &other);
 		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & Assign(const Transfer_DataMapOfTransientTransient &Other);
+		virtual		Standard_Boolean IsMultiple() const;
 		%feature("autodoc", "1");
-		Transfer_DataMapOfTransientTransient & operator=(const Transfer_DataMapOfTransientTransient &Other);
+		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		void AddResult(const Handle_Transfer_Binder &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NextResult() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		void SetAlreadyUsed();
+		%feature("autodoc", "1");
+		Transfer_StatusResult Status() const;
+		%feature("autodoc", "1");
+		Transfer_StatusExec StatusExec() const;
+		%feature("autodoc", "1");
+		void SetStatusExec(const Transfer_StatusExec stat);
+		%feature("autodoc", "1");
+		void AddFail(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddWarning(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		Handle_Interface_Check const Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check CCheck();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_Binder {
+	Handle_Transfer_Binder GetHandle() {
+	return *(Handle_Transfer_Binder*) &$self;
+	}
+};
+%extend Transfer_Binder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_Binder {
+	~Transfer_Binder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_Binder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_SimpleBinderOfTransient;
+class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_SimpleBinderOfTransient();
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		void SetResult(const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Result() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetTypedResult(const Handle_Transfer_Binder &bnd, const Handle_Standard_Type &atype, Handle_Standard_Transient & res);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_SimpleBinderOfTransient {
+	Handle_Transfer_SimpleBinderOfTransient GetHandle() {
+	return *(Handle_Transfer_SimpleBinderOfTransient*) &$self;
+	}
+};
+%extend Transfer_SimpleBinderOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_SimpleBinderOfTransient {
+	~Transfer_SimpleBinderOfTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_TransferIterator;
+class Transfer_TransferIterator {
+	public:
+		%feature("autodoc", "1");
+		Transfer_TransferIterator();
+		%feature("autodoc", "1");
+		void AddItem(const Handle_Transfer_Binder &atr);
+		%feature("autodoc", "1");
+		void SelectBinder(const Handle_Standard_Type &atype, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectResult(const Handle_Standard_Type &atype, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectUnique(const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectItem(const Standard_Integer num, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		void Start();
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Transfer_Binder & Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasUniqueResult() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasTransientResult() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & TransientResult() const;
+		%feature("autodoc", "1");
+		Transfer_StatusExec Status() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasFails() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasWarnings() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check const Check() const;
+
+};
+%extend Transfer_TransferIterator {
+	~Transfer_TransferIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_TransferIterator\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfProcessForFinder;
+class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfProcessForFinder();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NullResult() const;
+		%feature("autodoc", "1");
+		void SetLast(const Standard_Boolean mode=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLast() const;
+		%feature("autodoc", "1");
+		void SetNext(const Handle_Transfer_ActorOfProcessForFinder &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfProcessForFinder {
+	Handle_Transfer_ActorOfProcessForFinder GetHandle() {
+	return *(Handle_Transfer_ActorOfProcessForFinder*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForFinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ActorOfProcessForFinder {
+	~Transfer_ActorOfProcessForFinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfProcessForTransient;
+class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfProcessForTransient();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NullResult() const;
+		%feature("autodoc", "1");
+		void SetLast(const Standard_Boolean mode=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLast() const;
+		%feature("autodoc", "1");
+		void SetNext(const Handle_Transfer_ActorOfProcessForTransient &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForTransient Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfProcessForTransient {
+	Handle_Transfer_ActorOfProcessForTransient GetHandle() {
+	return *(Handle_Transfer_ActorOfProcessForTransient*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ActorOfProcessForTransient {
+	~Transfer_ActorOfProcessForTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_HSequenceOfFinder;
+class Transfer_HSequenceOfFinder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_HSequenceOfFinder();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
+		void Append(const Handle_Transfer_Finder &anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		void Append(const Handle_Transfer_HSequenceOfFinder &aSequence);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		void Prepend(const Handle_Transfer_Finder &anItem);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Transient &K) const;
+		void Prepend(const Handle_Transfer_HSequenceOfFinder &aSequence);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K) const;
+		void Reverse();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfFinder Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Transfer_SequenceOfFinder & Sequence() const;
+		%feature("autodoc", "1");
+		Transfer_SequenceOfFinder & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfFinder ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Transfer_DataMapOfTransientTransient {
-	~Transfer_DataMapOfTransientTransient() {
+%extend Transfer_HSequenceOfFinder {
+	Handle_Transfer_HSequenceOfFinder GetHandle() {
+	return *(Handle_Transfer_HSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_HSequenceOfFinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_HSequenceOfFinder {
+	~Transfer_HSequenceOfFinder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfFinder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_Finder;
+class Transfer_Finder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer GetHashCode() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Equates(const Handle_Transfer_Finder &other) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ValueType() const;
+		%feature("autodoc", "1");
+		virtual		char * ValueTypeName() const;
+		%feature("autodoc", "1");
+		void SetAttribute(const char * name, const Handle_Standard_Transient &val);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveAttribute(const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean GetAttribute(const char * name, const Handle_Standard_Type &type, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Attribute(const char * name) const;
+		%feature("autodoc", "1");
+		Interface_ParamType AttributeType(const char * name) const;
+		%feature("autodoc", "1");
+		void SetIntegerAttribute(const char * name, const Standard_Integer val);
+		%feature("autodoc","GetIntegerAttribute(Standard_CString name)->Standard_Integer");
+		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer IntegerAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		void SetRealAttribute(const char * name, const Standard_Real val);
+		%feature("autodoc","GetRealAttribute(Standard_CString name)->Standard_Real");
+		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real RealAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		void SetStringAttribute(const char * name, const char * val);
+		%feature("autodoc", "1");
+		char * StringAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient AttrList() const;
+		%feature("autodoc", "1");
+		void SameAttributes(const Handle_Transfer_Finder &other);
+		%feature("autodoc", "1");
+		void GetAttributes(const Handle_Transfer_Finder &other, const char * fromname="", const Standard_Boolean copied=1);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_Finder {
+	Handle_Transfer_Finder GetHandle() {
+	return *(Handle_Transfer_Finder*) &$self;
+	}
+};
+%extend Transfer_Finder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_Finder {
+	~Transfer_Finder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_Finder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_SequenceOfFinder;
+class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Transfer_SequenceOfFinder();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Transfer_SequenceOfFinder & Assign(const Transfer_SequenceOfFinder &Other);
+		%feature("autodoc", "1");
+		const Transfer_SequenceOfFinder & operator=(const Transfer_SequenceOfFinder &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void Append(Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void Prepend(Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Transfer_Finder &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & First() const;
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Transfer_Finder &I);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%extend Transfer_SequenceOfFinder {
+	~Transfer_SequenceOfFinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfFinder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
+class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_Finder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	Handle_Transfer_SequenceNodeOfSequenceOfFinder GetHandle() {
+	return *(Handle_Transfer_SequenceNodeOfSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	~Transfer_SequenceNodeOfSequenceOfFinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_FindHasher;
+class Transfer_FindHasher {
+	public:
+		%feature("autodoc", "1");
+		Transfer_FindHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
+
+};
+%extend Transfer_FindHasher {
+	~Transfer_FindHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_FindHasher\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_ResultFromModel;
+class Transfer_ResultFromModel : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ResultFromModel();
+		%feature("autodoc", "1");
+		void SetModel(const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void SetFileName(const char * filename);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		char * FileName() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Fill(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Strip(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		void FillBack(const Handle_Transfer_TransientProcess &TP) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient MainResult() const;
+		%feature("autodoc", "1");
+		void SetMainResult(const Handle_Transfer_ResultFromTransient &amain);
+		%feature("autodoc", "1");
+		char * MainLabel() const;
+		%feature("autodoc", "1");
+		Standard_Integer MainNumber() const;
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient ResultFromKey(const Handle_Standard_Transient &start) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient Results(const Standard_Integer level) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient TransferredList(const Standard_Integer level=2) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient CheckedList(const Interface_CheckStatus check, const Standard_Boolean result) const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator CheckList(const Standard_Boolean erronly, const Standard_Integer level=2) const;
+		%feature("autodoc", "1");
+		Interface_CheckStatus CheckStatus() const;
+		%feature("autodoc", "1");
+		Interface_CheckStatus ComputeCheckStatus(const Standard_Boolean enforce);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ResultFromModel {
+	Handle_Transfer_ResultFromModel GetHandle() {
+	return *(Handle_Transfer_ResultFromModel*) &$self;
+	}
+};
+%extend Transfer_ResultFromModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ResultFromModel {
+	~Transfer_ResultFromModel() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromModel\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfTransientProcess;
+class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransient {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfTransientProcess();
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfTransientProcess {
+	Handle_Transfer_ActorOfTransientProcess GetHandle() {
+	return *(Handle_Transfer_ActorOfTransientProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfTransientProcess {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ActorOfTransientProcess {
+	~Transfer_ActorOfTransientProcess() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_ActorDispatch;
+class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		void AddActor(const Handle_Transfer_ActorOfTransientProcess &actor);
+		%feature("autodoc", "1");
+		Transfer_TransferDispatch & TransferDispatch();
+
+};
+%extend Transfer_ActorDispatch {
+	Handle_Transfer_ActorDispatch GetHandle() {
+	return *(Handle_Transfer_ActorDispatch*) &$self;
+	}
+};
+%extend Transfer_ActorDispatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ActorDispatch {
+	~Transfer_ActorDispatch() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ActorDispatch\n");}
 	}
 };
 
@@ -1924,44 +2072,39 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 };
 
 
-%nodefaultctor Transfer_TransferDispatch;
-class Transfer_TransferDispatch : public Interface_CopyTool {
+%nodefaultctor Transfer_DataMapOfTransientTransient;
+class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Transfer_DataMapOfTransientTransient(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		Transfer_DataMapOfTransientTransient & Assign(const Transfer_DataMapOfTransientTransient &Other);
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel);
+		Transfer_DataMapOfTransientTransient & operator=(const Transfer_DataMapOfTransientTransient &Other);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess TransientProcess() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Find(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
 
 };
-%extend Transfer_TransferDispatch {
-	~Transfer_TransferDispatch() {
+%extend Transfer_DataMapOfTransientTransient {
+	~Transfer_DataMapOfTransientTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDispatch\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_FindHasher;
-class Transfer_FindHasher {
-	public:
-		%feature("autodoc", "1");
-		Transfer_FindHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
-
-};
-%extend Transfer_FindHasher {
-	~Transfer_FindHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_FindHasher\n");}
+	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");}
 	}
 };
 
@@ -2030,66 +2173,6 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 };
 
 
-%nodefaultctor Transfer_VoidBinder;
-class Transfer_VoidBinder : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_VoidBinder {
-	Handle_Transfer_VoidBinder GetHandle() {
-	return *(Handle_Transfer_VoidBinder*) &$self;
-	}
-};
-%extend Transfer_VoidBinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_VoidBinder {
-	~Transfer_VoidBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_VoidBinder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
-class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_Finder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	Handle_Transfer_SequenceNodeOfSequenceOfFinder GetHandle() {
-	return *(Handle_Transfer_SequenceNodeOfSequenceOfFinder*) &$self;
-	}
-};
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	~Transfer_SequenceNodeOfSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");}
-	}
-};
-
-
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
 class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TCollection_MapNode {
 	public:
@@ -2097,8 +2180,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 		Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Handle_Transfer_Finder &K1, const Standard_Integer K2, const Handle_Transfer_Binder &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Transfer_Finder & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2121,137 +2214,6 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfTransientProcess;
-class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransient {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfTransientProcess();
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfTransientProcess {
-	Handle_Transfer_ActorOfTransientProcess GetHandle() {
-	return *(Handle_Transfer_ActorOfTransientProcess*) &$self;
-	}
-};
-%extend Transfer_ActorOfTransientProcess {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ActorOfTransientProcess {
-	~Transfer_ActorOfTransientProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ActorDispatch;
-class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		void AddActor(const Handle_Transfer_ActorOfTransientProcess &actor);
-		%feature("autodoc", "1");
-		Transfer_TransferDispatch & TransferDispatch();
-
-};
-%extend Transfer_ActorDispatch {
-	Handle_Transfer_ActorDispatch GetHandle() {
-	return *(Handle_Transfer_ActorDispatch*) &$self;
-	}
-};
-%extend Transfer_ActorDispatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ActorDispatch {
-	~Transfer_ActorDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorDispatch\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_ResultFromModel;
-class Transfer_ResultFromModel : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ResultFromModel();
-		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void SetFileName(const char * filename);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		Standard_CString FileName() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Fill(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Strip(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		void FillBack(const Handle_Transfer_TransientProcess &TP) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient MainResult() const;
-		%feature("autodoc", "1");
-		void SetMainResult(const Handle_Transfer_ResultFromTransient &amain);
-		%feature("autodoc", "1");
-		Standard_CString MainLabel() const;
-		%feature("autodoc", "1");
-		Standard_Integer MainNumber() const;
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient ResultFromKey(const Handle_Standard_Transient &start) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient Results(const Standard_Integer level) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient TransferredList(const Standard_Integer level=2) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient CheckedList(const Interface_CheckStatus check, const Standard_Boolean result) const;
-		%feature("autodoc", "1");
-		Interface_CheckIterator CheckList(const Standard_Boolean erronly, const Standard_Integer level=2) const;
-		%feature("autodoc", "1");
-		Interface_CheckStatus CheckStatus() const;
-		%feature("autodoc", "1");
-		Interface_CheckStatus ComputeCheckStatus(const Standard_Boolean enforce);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ResultFromModel {
-	Handle_Transfer_ResultFromModel GetHandle() {
-	return *(Handle_Transfer_ResultFromModel*) &$self;
-	}
-};
-%extend Transfer_ResultFromModel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_ResultFromModel {
-	~Transfer_ResultFromModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromModel\n");}
 	}
 };
 
@@ -2327,7 +2289,7 @@ class Transfer_TransientMapper : public Transfer_Finder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ValueType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
+		virtual		char * ValueTypeName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2346,43 +2308,6 @@ class Transfer_TransientMapper : public Transfer_Finder {
 	~Transfer_TransientMapper() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransientMapper\n");}
-	}
-};
-
-
-%nodefaultctor Transfer_SimpleBinderOfTransient;
-class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SimpleBinderOfTransient();
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
-		%feature("autodoc", "1");
-		void SetResult(const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Result() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetTypedResult(const Handle_Transfer_Binder &bnd, const Handle_Standard_Type &atype, Handle_Standard_Transient & res);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_SimpleBinderOfTransient {
-	Handle_Transfer_SimpleBinderOfTransient GetHandle() {
-	return *(Handle_Transfer_SimpleBinderOfTransient*) &$self;
-	}
-};
-%extend Transfer_SimpleBinderOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Transfer_SimpleBinderOfTransient {
-	~Transfer_SimpleBinderOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");}
 	}
 };
 
@@ -2412,27 +2337,25 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 };
 
 
-%nodefaultctor Transfer_IteratorOfProcessForTransient;
-class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
+%nodefaultctor Transfer_TransferDispatch;
+class Transfer_TransferDispatch : public Interface_CopyTool {
 	public:
 		%feature("autodoc", "1");
-		Transfer_IteratorOfProcessForTransient(const Standard_Boolean withstarts);
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		void Add(const Handle_Transfer_Binder &binder);
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
 		%feature("autodoc", "1");
-		void Add(const Handle_Transfer_Binder &binder, const Handle_Standard_Transient &start);
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel);
 		%feature("autodoc", "1");
-		void Filter(const Handle_TColStd_HSequenceOfTransient &list, const Standard_Boolean keep=1);
+		Handle_Transfer_TransientProcess TransientProcess() const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasStarting() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Starting() const;
+		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
 
 };
-%extend Transfer_IteratorOfProcessForTransient {
-	~Transfer_IteratorOfProcessForTransient() {
+%extend Transfer_TransferDispatch {
+	~Transfer_TransferDispatch() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");}
+	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDispatch\n");}
 	}
 };
 
@@ -2468,6 +2391,51 @@ class Transfer_MapContainer : public MMgt_TShared {
 };
 
 
+%nodefaultctor Transfer_ActorOfFinderProcess;
+class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfFinderProcess();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetModeTrans() {
+				return (Standard_Integer) $self->ModeTrans();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeTrans(Standard_Integer value ) {
+				$self->ModeTrans()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_FinderProcess &TP);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfFinderProcess {
+	Handle_Transfer_ActorOfFinderProcess GetHandle() {
+	return *(Handle_Transfer_ActorOfFinderProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfFinderProcess {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_ActorOfFinderProcess {
+	~Transfer_ActorOfFinderProcess() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");}
+	}
+};
+
+
 %nodefaultctor Transfer_DataMapNodeOfDataMapOfTransientTransient;
 class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
 	public:
@@ -2495,6 +2463,37 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 	~Transfer_DataMapNodeOfDataMapOfTransientTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_VoidBinder;
+class Transfer_VoidBinder : public Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_VoidBinder();
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_VoidBinder {
+	Handle_Transfer_VoidBinder GetHandle() {
+	return *(Handle_Transfer_VoidBinder*) &$self;
+	}
+};
+%extend Transfer_VoidBinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Transfer_VoidBinder {
+	~Transfer_VoidBinder() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_VoidBinder\n");}
 	}
 };
 
@@ -2566,7 +2565,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void AddResult(const Handle_Standard_Transient &res);
 		%feature("autodoc", "1");
@@ -2691,7 +2690,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void AddResult(const Handle_Standard_Transient &res);
 		%feature("autodoc", "1");
@@ -2881,8 +2880,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 		Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Handle_Standard_Transient &K1, const Standard_Integer K2, const Handle_Transfer_Binder &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2928,5 +2937,30 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 	~Transfer_DataMapIteratorOfDataMapOfTransientTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");}
+	}
+};
+
+
+%nodefaultctor Transfer_IteratorOfProcessForTransient;
+class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
+	public:
+		%feature("autodoc", "1");
+		Transfer_IteratorOfProcessForTransient(const Standard_Boolean withstarts);
+		%feature("autodoc", "1");
+		void Add(const Handle_Transfer_Binder &binder);
+		%feature("autodoc", "1");
+		void Add(const Handle_Transfer_Binder &binder, const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		void Filter(const Handle_TColStd_HSequenceOfTransient &list, const Standard_Boolean keep=1);
+		%feature("autodoc", "1");
+		Standard_Boolean HasStarting() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Starting() const;
+
+};
+%extend Transfer_IteratorOfProcessForTransient {
+	~Transfer_IteratorOfProcessForTransient() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");}
 	}
 };

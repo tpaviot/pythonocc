@@ -61,6 +61,126 @@ enum PCDM_TypeOfFileDriver {
 
 
 
+%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfReference;
+class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference();
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
+	PCDM_SequenceNodeOfSequenceOfReference* GetObject() {
+	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
+	}
+};
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
+	~Handle_PCDM_SequenceNodeOfSequenceOfReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCDM_Document;
+class Handle_PCDM_Document : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_Document();
+		%feature("autodoc", "1");
+		Handle_PCDM_Document(const Handle_PCDM_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document(const PCDM_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document & operator=(const Handle_PCDM_Document &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document & operator=(const PCDM_Document *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_Document const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PCDM_Document {
+	PCDM_Document* GetObject() {
+	return (PCDM_Document*)$self->Access();
+	}
+};
+%extend Handle_PCDM_Document {
+	~Handle_PCDM_Document() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Document\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
+class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument();
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
+	PCDM_SequenceNodeOfSequenceOfDocument* GetObject() {
+	return (PCDM_SequenceNodeOfSequenceOfDocument*)$self->Access();
+	}
+};
+%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
+	~Handle_PCDM_SequenceNodeOfSequenceOfDocument() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCDM_DriverError;
+class Handle_PCDM_DriverError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError();
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PCDM_DriverError {
+	PCDM_DriverError* GetObject() {
+	return (PCDM_DriverError*)$self->Access();
+	}
+};
+%extend Handle_PCDM_DriverError {
+	~Handle_PCDM_DriverError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_DriverError\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PCDM_ReadWriter;
 class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	public:
@@ -117,126 +237,6 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	~Handle_PCDM_ReadWriter_1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfReference;
-class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference();
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfReference &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference & operator=(const PCDM_SequenceNodeOfSequenceOfReference *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfReference const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
-	PCDM_SequenceNodeOfSequenceOfReference* GetObject() {
-	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
-	}
-};
-%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
-	~Handle_PCDM_SequenceNodeOfSequenceOfReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
-class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument();
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const Handle_PCDM_SequenceNodeOfSequenceOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument & operator=(const PCDM_SequenceNodeOfSequenceOfDocument *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_SequenceNodeOfSequenceOfDocument const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
-	PCDM_SequenceNodeOfSequenceOfDocument* GetObject() {
-	return (PCDM_SequenceNodeOfSequenceOfDocument*)$self->Access();
-	}
-};
-%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
-	~Handle_PCDM_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PCDM_Writer;
-class Handle_PCDM_Writer : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer();
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer(const Handle_PCDM_Writer &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer(const PCDM_Writer *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer & operator=(const Handle_PCDM_Writer &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer & operator=(const PCDM_Writer *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_Writer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_Writer {
-	PCDM_Writer* GetObject() {
-	return (PCDM_Writer*)$self->Access();
-	}
-};
-%extend Handle_PCDM_Writer {
-	~Handle_PCDM_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Writer\n");}
-	}
-};
-
-
-%nodefaultctor Handle_PCDM_StorageDriver;
-class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver();
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver(const Handle_PCDM_StorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver(const PCDM_StorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver & operator=(const Handle_PCDM_StorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_StorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_StorageDriver {
-	PCDM_StorageDriver* GetObject() {
-	return (PCDM_StorageDriver*)$self->Access();
-	}
-};
-%extend Handle_PCDM_StorageDriver {
-	~Handle_PCDM_StorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_StorageDriver\n");}
 	}
 };
 
@@ -301,32 +301,62 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 };
 
 
-%nodefaultctor Handle_PCDM_Document;
-class Handle_PCDM_Document : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PCDM_Writer;
+class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_PCDM_Document();
+		Handle_PCDM_Writer();
 		%feature("autodoc", "1");
-		Handle_PCDM_Document(const Handle_PCDM_Document &aHandle);
+		Handle_PCDM_Writer(const Handle_PCDM_Writer &aHandle);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document(const PCDM_Document *anItem);
+		Handle_PCDM_Writer(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document & operator=(const Handle_PCDM_Document &aHandle);
+		Handle_PCDM_Writer & operator=(const Handle_PCDM_Writer &aHandle);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document & operator=(const PCDM_Document *anItem);
+		Handle_PCDM_Writer & operator=(const PCDM_Writer *anItem);
 		%feature("autodoc", "1");
-		Handle_PCDM_Document const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PCDM_Writer const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PCDM_Document {
-	PCDM_Document* GetObject() {
-	return (PCDM_Document*)$self->Access();
+%extend Handle_PCDM_Writer {
+	PCDM_Writer* GetObject() {
+	return (PCDM_Writer*)$self->Access();
 	}
 };
-%extend Handle_PCDM_Document {
-	~Handle_PCDM_Document() {
+%extend Handle_PCDM_Writer {
+	~Handle_PCDM_Writer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Document\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Writer\n");}
+	}
+};
+
+
+%nodefaultctor Handle_PCDM_StorageDriver;
+class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver();
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver(const Handle_PCDM_StorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver(const PCDM_StorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver & operator=(const Handle_PCDM_StorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver & operator=(const PCDM_StorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_PCDM_StorageDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PCDM_StorageDriver {
+	PCDM_StorageDriver* GetObject() {
+	return (PCDM_StorageDriver*)$self->Access();
+	}
+};
+%extend Handle_PCDM_StorageDriver {
+	~Handle_PCDM_StorageDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_StorageDriver\n");}
 	}
 };
 
@@ -361,36 +391,6 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 };
 
 
-%nodefaultctor Handle_PCDM_DriverError;
-class Handle_PCDM_DriverError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError();
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError(const Handle_PCDM_DriverError &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError(const PCDM_DriverError *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError & operator=(const Handle_PCDM_DriverError &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError & operator=(const PCDM_DriverError *anItem);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PCDM_DriverError {
-	PCDM_DriverError* GetObject() {
-	return (PCDM_DriverError*)$self->Access();
-	}
-};
-%extend Handle_PCDM_DriverError {
-	~Handle_PCDM_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_DriverError\n");}
-	}
-};
-
-
 %nodefaultctor PCDM_Writer;
 class PCDM_Writer : public Standard_Transient {
 	public:
@@ -414,6 +414,142 @@ class PCDM_Writer : public Standard_Transient {
 	~PCDM_Writer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCDM_Writer\n");}
+	}
+};
+
+
+%nodefaultctor PCDM_DriverError;
+class PCDM_DriverError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		PCDM_DriverError();
+		%feature("autodoc", "1");
+		PCDM_DriverError(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_PCDM_DriverError NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_DriverError {
+	Handle_PCDM_DriverError GetHandle() {
+	return *(Handle_PCDM_DriverError*) &$self;
+	}
+};
+%extend PCDM_DriverError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PCDM_DriverError {
+	~PCDM_DriverError() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCDM_DriverError\n");}
+	}
+};
+
+
+%nodefaultctor PCDM_Reader;
+class PCDM_Reader : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		virtual		Handle_CDM_Document CreateDocument();
+		%feature("autodoc", "1");
+		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
+		%feature("autodoc", "1");
+		PCDM_ReaderStatus GetStatus() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_Reader {
+	Handle_PCDM_Reader GetHandle() {
+	return *(Handle_PCDM_Reader*) &$self;
+	}
+};
+%extend PCDM_Reader {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PCDM_Reader {
+	~PCDM_Reader() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCDM_Reader\n");}
+	}
+};
+
+
+%nodefaultctor PCDM_RetrievalDriver;
+class PCDM_RetrievalDriver : public PCDM_Reader {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
+		%feature("autodoc", "1");
+		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		void SetFormat(const TCollection_ExtendedString &aformat);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString GetFormat() const;
+
+};
+%extend PCDM_RetrievalDriver {
+	Handle_PCDM_RetrievalDriver GetHandle() {
+	return *(Handle_PCDM_RetrievalDriver*) &$self;
+	}
+};
+%extend PCDM_RetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PCDM_RetrievalDriver {
+	~PCDM_RetrievalDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
+	}
+};
+
+
+%nodefaultctor PCDM_ReferenceIterator;
+class PCDM_ReferenceIterator : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		PCDM_ReferenceIterator(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		void LoadReferences(const Handle_CDM_Document &aDocument, const Handle_CDM_MetaData &aMetaData, const Handle_CDM_Application &anApplication, const Standard_Boolean UseStorageConfiguration);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_CDM_MetaData &aMetaData);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PCDM_ReferenceIterator {
+	Handle_PCDM_ReferenceIterator GetHandle() {
+	return *(Handle_PCDM_ReferenceIterator*) &$self;
+	}
+};
+%extend PCDM_ReferenceIterator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PCDM_ReferenceIterator {
+	~PCDM_ReferenceIterator() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCDM_ReferenceIterator\n");}
 	}
 };
 
@@ -523,37 +659,6 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 	~PCDM_ReadWriter_1() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter_1\n");}
-	}
-};
-
-
-%nodefaultctor PCDM_Reader;
-class PCDM_Reader : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		virtual		Handle_CDM_Document CreateDocument();
-		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
-		%feature("autodoc", "1");
-		PCDM_ReaderStatus GetStatus() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCDM_Reader {
-	Handle_PCDM_Reader GetHandle() {
-	return *(Handle_PCDM_Reader*) &$self;
-	}
-};
-%extend PCDM_Reader {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PCDM_Reader {
-	~PCDM_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_Reader\n");}
 	}
 };
 
@@ -714,111 +819,31 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor PCDM_ReferenceIterator;
-class PCDM_ReferenceIterator : public Standard_Transient {
+%nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
+class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		PCDM_ReferenceIterator(const Handle_CDM_MessageDriver &theMessageDriver);
+		PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		void LoadReferences(const Handle_CDM_Document &aDocument, const Handle_CDM_MetaData &aMetaData, const Handle_CDM_Application &anApplication, const Standard_Boolean UseStorageConfiguration);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_CDM_MetaData &aMetaData);
+		Handle_PCDM_Document & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PCDM_ReferenceIterator {
-	Handle_PCDM_ReferenceIterator GetHandle() {
-	return *(Handle_PCDM_ReferenceIterator*) &$self;
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	Handle_PCDM_SequenceNodeOfSequenceOfDocument GetHandle() {
+	return *(Handle_PCDM_SequenceNodeOfSequenceOfDocument*) &$self;
 	}
 };
-%extend PCDM_ReferenceIterator {
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_ReferenceIterator {
-	~PCDM_ReferenceIterator() {
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	~PCDM_SequenceNodeOfSequenceOfDocument() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_ReferenceIterator\n");}
-	}
-};
-
-
-%nodefaultctor PCDM_DriverError;
-class PCDM_DriverError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		PCDM_DriverError();
-		%feature("autodoc", "1");
-		PCDM_DriverError(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_PCDM_DriverError NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCDM_DriverError {
-	Handle_PCDM_DriverError GetHandle() {
-	return *(Handle_PCDM_DriverError*) &$self;
-	}
-};
-%extend PCDM_DriverError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PCDM_DriverError {
-	~PCDM_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_DriverError\n");}
-	}
-};
-
-
-%nodefaultctor PCDM_RetrievalDriver;
-class PCDM_RetrievalDriver : public PCDM_Reader {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Read(const TCollection_ExtendedString &aFileName, const Handle_CDM_Document &aNewDocument, const Handle_CDM_Application &anApplication);
-		%feature("autodoc", "1");
-		virtual		void Make(const Handle_PCDM_Document &aPCDM, const Handle_CDM_Document &aNewDocument);
-		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SchemaName() const;
-		%feature("autodoc", "1");
-		virtual		void LoadExtensions(const Handle_Storage_Schema &aSchema, const TColStd_SequenceOfExtendedString &Extensions, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		void RaiseIfUnknownTypes(const Handle_Storage_Schema &aSchema, const TCollection_ExtendedString &aFileName);
-		%feature("autodoc", "1");
-		Standard_Integer DocumentVersion(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		Standard_Integer ReferenceCounter(const TCollection_ExtendedString &aFileName, const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		void SetFormat(const TCollection_ExtendedString &aformat);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString GetFormat() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCDM_RetrievalDriver {
-	Handle_PCDM_RetrievalDriver GetHandle() {
-	return *(Handle_PCDM_RetrievalDriver*) &$self;
-	}
-};
-%extend PCDM_RetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PCDM_RetrievalDriver {
-	~PCDM_RetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
+	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
 
@@ -848,34 +873,5 @@ class PCDM_Document : public Standard_Persistent {
 	~PCDM_Document() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PCDM_Document\n");}
-	}
-};
-
-
-%nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
-class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		PCDM_SequenceNodeOfSequenceOfDocument(const Handle_PCDM_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_PCDM_Document & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
-	Handle_PCDM_SequenceNodeOfSequenceOfDocument GetHandle() {
-	return *(Handle_PCDM_SequenceNodeOfSequenceOfDocument*) &$self;
-	}
-};
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
-	~PCDM_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };

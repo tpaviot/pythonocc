@@ -1,11 +1,13 @@
-%rename(TNaming_DeltaOnModification) TNaming_DeltaOnModification;
+%rename(TNaming_ListNodeOfListOfNamedShape) TNaming_ListNodeOfListOfNamedShape;
 %rename(TNaming_DataMapOfShapeShapesSet) TNaming_DataMapOfShapeShapesSet;
 %rename(TNaming_Name) TNaming_Name;
 %rename(Handle_TNaming_UsedShapes) Handle_TNaming_UsedShapes;
 %rename(TNaming_Localizer) TNaming_Localizer;
+%rename(TNaming_Scope) TNaming_Scope;
 %rename(TNaming_ListNodeOfListOfMapOfShape) TNaming_ListNodeOfListOfMapOfShape;
-%rename(TNaming_SameShapeIterator) TNaming_SameShapeIterator;
+%rename(TNaming_NamingTool) TNaming_NamingTool;
 %rename(TNaming_DeltaOnRemoval) TNaming_DeltaOnRemoval;
+%rename(TNaming_DeltaOnModification) TNaming_DeltaOnModification;
 %rename(TNaming_MapIteratorOfMapOfNamedShape) TNaming_MapIteratorOfMapOfNamedShape;
 %rename(TNaming_ListIteratorOfListOfNamedShape) TNaming_ListIteratorOfListOfNamedShape;
 %rename(TNaming) TNaming;
@@ -31,7 +33,7 @@
 %rename(TNaming_ShapesSet) TNaming_ShapesSet;
 %rename(TNaming_StdMapNodeOfMapOfNamedShape) TNaming_StdMapNodeOfMapOfNamedShape;
 %rename(Handle_TNaming_TranslateTool) Handle_TNaming_TranslateTool;
-%rename(TNaming_NamingTool) TNaming_NamingTool;
+%rename(TNaming_SameShapeIterator) TNaming_SameShapeIterator;
 %rename(TNaming_UNKNOWN) TNaming_UNKNOWN;
 %rename(TNaming_ListOfNamedShape) TNaming_ListOfNamedShape;
 %rename(TNaming_Builder) TNaming_Builder;
@@ -42,9 +44,7 @@
 %rename(TNaming_DataMapNodeOfDataMapOfShapePtrRefShape) TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
 %rename(TNaming_IteratorOnShapesSet) TNaming_IteratorOnShapesSet;
 %rename(Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape) Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
-%rename(TNaming_ListNodeOfListOfNamedShape) TNaming_ListNodeOfListOfNamedShape;
 %rename(Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape) Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
-%rename(TNaming_Scope) TNaming_Scope;
 %rename(TNaming_UNION) TNaming_UNION;
 %rename(TNaming_PRIMITIVE) TNaming_PRIMITIVE;
 %rename(TNaming_ListOfMapOfShape) TNaming_ListOfMapOfShape;

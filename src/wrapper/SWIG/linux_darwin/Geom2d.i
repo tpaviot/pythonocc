@@ -125,32 +125,62 @@ class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
 };
 
 
-%nodefaultctor Handle_Geom2d_Transformation;
-class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Geom2d_OffsetCurve;
+class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation();
+		Handle_Geom2d_OffsetCurve();
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation(const Handle_Geom2d_Transformation &aHandle);
+		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation(const Geom2d_Transformation *anItem);
+		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation & operator=(const Handle_Geom2d_Transformation &aHandle);
+		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation & operator=(const Geom2d_Transformation *anItem);
+		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2d_OffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom2d_Transformation {
-	Geom2d_Transformation* GetObject() {
-	return (Geom2d_Transformation*)$self->Access();
+%extend Handle_Geom2d_OffsetCurve {
+	Geom2d_OffsetCurve* GetObject() {
+	return (Geom2d_OffsetCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom2d_Transformation {
-	~Handle_Geom2d_Transformation() {
+%extend Handle_Geom2d_OffsetCurve {
+	~Handle_Geom2d_OffsetCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Transformation\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_OffsetCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom2d_Circle;
+class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle(const Handle_Geom2d_Circle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle(const Geom2d_Circle *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle & operator=(const Handle_Geom2d_Circle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle & operator=(const Geom2d_Circle *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Circle const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_Circle {
+	Geom2d_Circle* GetObject() {
+	return (Geom2d_Circle*)$self->Access();
+	}
+};
+%extend Handle_Geom2d_Circle {
+	~Handle_Geom2d_Circle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Circle\n");}
 	}
 };
 
@@ -215,66 +245,6 @@ class Handle_Geom2d_BoundedCurve : public Handle_Geom2d_Curve {
 };
 
 
-%nodefaultctor Handle_Geom2d_BSplineCurve;
-class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve();
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve(const Handle_Geom2d_BSplineCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve(const Geom2d_BSplineCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve & operator=(const Handle_Geom2d_BSplineCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve & operator=(const Geom2d_BSplineCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_BSplineCurve {
-	Geom2d_BSplineCurve* GetObject() {
-	return (Geom2d_BSplineCurve*)$self->Access();
-	}
-};
-%extend Handle_Geom2d_BSplineCurve {
-	~Handle_Geom2d_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_BSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom2d_Circle;
-class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle(const Handle_Geom2d_Circle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle(const Geom2d_Circle *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle & operator=(const Handle_Geom2d_Circle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle & operator=(const Geom2d_Circle *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Circle const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_Circle {
-	Geom2d_Circle* GetObject() {
-	return (Geom2d_Circle*)$self->Access();
-	}
-};
-%extend Handle_Geom2d_Circle {
-	~Handle_Geom2d_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Circle\n");}
-	}
-};
-
-
 %nodefaultctor Handle_Geom2d_Parabola;
 class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 	public:
@@ -305,32 +275,32 @@ class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 };
 
 
-%nodefaultctor Handle_Geom2d_OffsetCurve;
-class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
+%nodefaultctor Handle_Geom2d_Transformation;
+class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve();
+		Handle_Geom2d_Transformation();
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
+		Handle_Geom2d_Transformation(const Handle_Geom2d_Transformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
+		Handle_Geom2d_Transformation(const Geom2d_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
+		Handle_Geom2d_Transformation & operator=(const Handle_Geom2d_Transformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
+		Handle_Geom2d_Transformation & operator=(const Geom2d_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_Geom2d_Transformation const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom2d_OffsetCurve {
-	Geom2d_OffsetCurve* GetObject() {
-	return (Geom2d_OffsetCurve*)$self->Access();
+%extend Handle_Geom2d_Transformation {
+	Geom2d_Transformation* GetObject() {
+	return (Geom2d_Transformation*)$self->Access();
 	}
 };
-%extend Handle_Geom2d_OffsetCurve {
-	~Handle_Geom2d_OffsetCurve() {
+%extend Handle_Geom2d_Transformation {
+	~Handle_Geom2d_Transformation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_OffsetCurve\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Transformation\n");}
 	}
 };
 
@@ -361,36 +331,6 @@ class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 	~Handle_Geom2d_UndefinedDerivative() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_UndefinedDerivative\n");}
-	}
-};
-
-
-%nodefaultctor Handle_Geom2d_Direction;
-class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction(const Handle_Geom2d_Direction &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction(const Geom2d_Direction *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction & operator=(const Handle_Geom2d_Direction &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction & operator=(const Geom2d_Direction *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Direction const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_Direction {
-	Geom2d_Direction* GetObject() {
-	return (Geom2d_Direction*)$self->Access();
-	}
-};
-%extend Handle_Geom2d_Direction {
-	~Handle_Geom2d_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Direction\n");}
 	}
 };
 
@@ -635,6 +575,66 @@ class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
 };
 
 
+%nodefaultctor Handle_Geom2d_BSplineCurve;
+class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve();
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve(const Handle_Geom2d_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve(const Geom2d_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve & operator=(const Handle_Geom2d_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve & operator=(const Geom2d_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_BSplineCurve {
+	Geom2d_BSplineCurve* GetObject() {
+	return (Geom2d_BSplineCurve*)$self->Access();
+	}
+};
+%extend Handle_Geom2d_BSplineCurve {
+	~Handle_Geom2d_BSplineCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_BSplineCurve\n");}
+	}
+};
+
+
+%nodefaultctor Handle_Geom2d_Direction;
+class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction(const Handle_Geom2d_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction(const Geom2d_Direction *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction & operator=(const Handle_Geom2d_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction & operator=(const Geom2d_Direction *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Direction const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_Direction {
+	Geom2d_Direction* GetObject() {
+	return (Geom2d_Direction*)$self->Access();
+	}
+};
+%extend Handle_Geom2d_Direction {
+	~Handle_Geom2d_Direction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Geom2d_Direction\n");}
+	}
+};
+
+
 %nodefaultctor Handle_Geom2d_CartesianPoint;
 class Handle_Geom2d_CartesianPoint : public Handle_Geom2d_Point {
 	public:
@@ -750,6 +750,86 @@ class Geom2d_Geometry : public MMgt_TShared {
 };
 
 
+%nodefaultctor Geom2d_AxisPlacement;
+class Geom2d_AxisPlacement : public Geom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_AxisPlacement(const gp_Ax2d &A);
+		%feature("autodoc", "1");
+		Geom2d_AxisPlacement(const gp_Pnt2d &P, const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		Handle_Geom2d_AxisPlacement Reversed() const;
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax2d &A);
+		%feature("autodoc", "1");
+		void SetDirection(const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		Standard_Real Angle(const Handle_Geom2d_AxisPlacement &Other) const;
+		%feature("autodoc", "1");
+		gp_Ax2d Ax2d() const;
+		%feature("autodoc", "1");
+		gp_Dir2d Direction() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Location() const;
+
+};
+%extend Geom2d_AxisPlacement {
+	Handle_Geom2d_AxisPlacement GetHandle() {
+	return *(Handle_Geom2d_AxisPlacement*) &$self;
+	}
+};
+%extend Geom2d_AxisPlacement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_AxisPlacement {
+	~Geom2d_AxisPlacement() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_AxisPlacement\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_UndefinedValue;
+class Geom2d_UndefinedValue : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_UndefinedValue();
+		%feature("autodoc", "1");
+		Geom2d_UndefinedValue(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_UndefinedValue {
+	Handle_Geom2d_UndefinedValue GetHandle() {
+	return *(Handle_Geom2d_UndefinedValue*) &$self;
+	}
+};
+%extend Geom2d_UndefinedValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_UndefinedValue {
+	~Geom2d_UndefinedValue() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_UndefinedValue\n");}
+	}
+};
+
+
 %nodefaultctor Geom2d_Curve;
 class Geom2d_Curve : public Geom2d_Geometry {
 	public:
@@ -789,6 +869,8 @@ class Geom2d_Curve : public Geom2d_Geometry {
 		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Geom2d_Curve {
@@ -805,92 +887,6 @@ class Geom2d_Curve : public Geom2d_Geometry {
 	~Geom2d_Curve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2d_Curve\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_Conic;
-class Geom2d_Conic : public Geom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax22d &A);
-		%feature("autodoc", "1");
-		void SetXAxis(const gp_Ax2d &A);
-		%feature("autodoc", "1");
-		void SetYAxis(const gp_Ax2d &A);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		gp_Ax2d XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d YAxis() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Eccentricity() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Location() const;
-		%feature("autodoc", "1");
-		const gp_Ax22d & Position() const;
-
-};
-%extend Geom2d_Conic {
-	Handle_Geom2d_Conic GetHandle() {
-	return *(Handle_Geom2d_Conic*) &$self;
-	}
-};
-%extend Geom2d_Conic {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_Conic {
-	~Geom2d_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_Conic\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_Parabola;
-class Geom2d_Parabola : public Geom2d_Conic {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Parab2d &Prb);
-		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax2d &MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax22d &Axis, const Standard_Real Focal);
-		%feature("autodoc", "1");
-		Geom2d_Parabola(const gp_Ax2d &D, const gp_Pnt2d &F);
-		%feature("autodoc", "1");
-		void SetFocal(const Standard_Real Focal);
-		%feature("autodoc", "1");
-		void SetParab2d(const gp_Parab2d &Prb);
-		%feature("autodoc", "1");
-		gp_Parab2d Parab2d() const;
-		%feature("autodoc", "1");
-		gp_Ax2d Directrix() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Focus() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-
-};
-%extend Geom2d_Parabola {
-	Handle_Geom2d_Parabola GetHandle() {
-	return *(Handle_Geom2d_Parabola*) &$self;
-	}
-};
-%extend Geom2d_Parabola {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_Parabola {
-	~Geom2d_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_Parabola\n");}
 	}
 };
 
@@ -921,43 +917,11 @@ class Geom2d_Line : public Geom2d_Curve {
 		%feature("autodoc", "1");
 		gp_Lin2d Lin2d() const;
 		%feature("autodoc", "1");
-		virtual		void Reverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
 		Standard_Real Distance(const gp_Pnt2d &P) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf2d &T);
 		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Geom2d_Line {
@@ -1015,6 +979,242 @@ class Geom2d_Point : public Geom2d_Geometry {
 };
 
 
+%nodefaultctor Geom2d_Conic;
+class Geom2d_Conic : public Geom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax22d &A);
+		%feature("autodoc", "1");
+		void SetXAxis(const gp_Ax2d &A);
+		%feature("autodoc", "1");
+		void SetYAxis(const gp_Ax2d &A);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		gp_Ax2d XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d YAxis() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Location() const;
+		%feature("autodoc", "1");
+		const gp_Ax22d & Position() const;
+		%feature("autodoc", "1");
+		virtual		void Reverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_Conic {
+	Handle_Geom2d_Conic GetHandle() {
+	return *(Handle_Geom2d_Conic*) &$self;
+	}
+};
+%extend Geom2d_Conic {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_Conic {
+	~Geom2d_Conic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_Conic\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_Parabola;
+class Geom2d_Parabola : public Geom2d_Conic {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_Parabola(const gp_Parab2d &Prb);
+		%feature("autodoc", "1");
+		Geom2d_Parabola(const gp_Ax2d &MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		Geom2d_Parabola(const gp_Ax22d &Axis, const Standard_Real Focal);
+		%feature("autodoc", "1");
+		Geom2d_Parabola(const gp_Ax2d &D, const gp_Pnt2d &F);
+		%feature("autodoc", "1");
+		void SetFocal(const Standard_Real Focal);
+		%feature("autodoc", "1");
+		void SetParab2d(const gp_Parab2d &Prb);
+		%feature("autodoc", "1");
+		gp_Parab2d Parab2d() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		gp_Ax2d Directrix() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Focus() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+
+};
+%extend Geom2d_Parabola {
+	Handle_Geom2d_Parabola GetHandle() {
+	return *(Handle_Geom2d_Parabola*) &$self;
+	}
+};
+%extend Geom2d_Parabola {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_Parabola {
+	~Geom2d_Parabola() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_Parabola\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_UndefinedDerivative;
+class Geom2d_UndefinedDerivative : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_UndefinedDerivative();
+		%feature("autodoc", "1");
+		Geom2d_UndefinedDerivative(const char * AString);
+		%feature("autodoc", "1");
+		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedDerivative NewInstance(const char * aMessage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_UndefinedDerivative {
+	Handle_Geom2d_UndefinedDerivative GetHandle() {
+	return *(Handle_Geom2d_UndefinedDerivative*) &$self;
+	}
+};
+%extend Geom2d_UndefinedDerivative {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_UndefinedDerivative {
+	~Geom2d_UndefinedDerivative() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_UndefinedDerivative\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_Transformation;
+class Geom2d_Transformation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_Transformation();
+		%feature("autodoc", "1");
+		Geom2d_Transformation(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		void SetMirror(const gp_Pnt2d &P);
+		%feature("autodoc", "1");
+		void SetMirror(const gp_Ax2d &A);
+		%feature("autodoc", "1");
+		void SetRotation(const gp_Pnt2d &P, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void SetScale(const gp_Pnt2d &P, const Standard_Real S);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Ax2d &FromSystem1, const gp_Ax2d &ToSystem2);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Ax2d &ToSystem);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
+		%feature("autodoc", "1");
+		void SetTrsf2d(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		Standard_Boolean IsNegative() const;
+		%feature("autodoc", "1");
+		gp_TrsfForm Form() const;
+		%feature("autodoc", "1");
+		Standard_Real ScaleFactor() const;
+		%feature("autodoc", "1");
+		gp_Trsf2d Trsf2d() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Transformation Inverted() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Transformation Multiplied(const Handle_Geom2d_Transformation &Other) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Transformation operator*(const Handle_Geom2d_Transformation &Other) const;
+		%feature("autodoc", "1");
+		void Multiply(const Handle_Geom2d_Transformation &Other);
+		%feature("autodoc", "1");
+		void operator*=(const Handle_Geom2d_Transformation &Other);
+		%feature("autodoc", "1");
+		void Power(const Standard_Integer N);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Transformation Powered(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void PreMultiply(const Handle_Geom2d_Transformation &Other);
+		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
+		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Transformation Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_Transformation {
+	Handle_Geom2d_Transformation GetHandle() {
+	return *(Handle_Geom2d_Transformation*) &$self;
+	}
+};
+%extend Geom2d_Transformation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_Transformation {
+	~Geom2d_Transformation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_Transformation\n");}
+	}
+};
+
+
 %nodefaultctor Geom2d_CartesianPoint;
 class Geom2d_CartesianPoint : public Geom2d_Point {
 	public:
@@ -1030,10 +1230,20 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 		void SetX(const Standard_Real X);
 		%feature("autodoc", "1");
 		void SetY(const Standard_Real Y);
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt2d Pnt2d() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real X() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Y() const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf2d &T);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Geom2d_CartesianPoint {
@@ -1050,130 +1260,6 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 	~Geom2d_CartesianPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2d_CartesianPoint\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_Vector;
-class Geom2d_Vector : public Geom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Vector Reversed() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
-		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Magnitude() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real SquareMagnitude() const;
-		%feature("autodoc", "1");
-		Standard_Real X() const;
-		%feature("autodoc", "1");
-		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Crossed(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real Dot(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		gp_Vec2d Vec2d() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_Vector {
-	Handle_Geom2d_Vector GetHandle() {
-	return *(Handle_Geom2d_Vector*) &$self;
-	}
-};
-%extend Geom2d_Vector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_Vector {
-	~Geom2d_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_Vector\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_VectorWithMagnitude;
-class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_VectorWithMagnitude(const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		Geom2d_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		Geom2d_VectorWithMagnitude(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		void SetVec2d(const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		void SetX(const Standard_Real X);
-		%feature("autodoc", "1");
-		void SetY(const Standard_Real Y);
-		%feature("autodoc", "1");
-		void Add(const Handle_Geom2d_Vector &Other);
-		%feature("autodoc", "1");
-		void operator+=(const Handle_Geom2d_Vector &Other);
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude Added(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude operator+(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real operator^(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		void Divide(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void operator/=(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude Divided(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude operator/(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude Multiplied(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void Normalize();
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude Normalized() const;
-		%feature("autodoc", "1");
-		void Subtract(const Handle_Geom2d_Vector &Other);
-		%feature("autodoc", "1");
-		void operator-=(const Handle_Geom2d_Vector &Other);
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude Subtracted(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_VectorWithMagnitude operator-(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-
-};
-%extend Geom2d_VectorWithMagnitude {
-	Handle_Geom2d_VectorWithMagnitude GetHandle() {
-	return *(Handle_Geom2d_VectorWithMagnitude*) &$self;
-	}
-};
-%extend Geom2d_VectorWithMagnitude {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_VectorWithMagnitude {
-	~Geom2d_VectorWithMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_VectorWithMagnitude\n");}
 	}
 };
 
@@ -1360,6 +1446,130 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 };
 
 
+%nodefaultctor Geom2d_Vector;
+class Geom2d_Vector : public Geom2d_Geometry {
+	public:
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Vector Reversed() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Magnitude() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real SquareMagnitude() const;
+		%feature("autodoc", "1");
+		Standard_Real X() const;
+		%feature("autodoc", "1");
+		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Crossed(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real Dot(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		gp_Vec2d Vec2d() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_Vector {
+	Handle_Geom2d_Vector GetHandle() {
+	return *(Handle_Geom2d_Vector*) &$self;
+	}
+};
+%extend Geom2d_Vector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_Vector {
+	~Geom2d_Vector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_Vector\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_VectorWithMagnitude;
+class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_VectorWithMagnitude(const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		Geom2d_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		Geom2d_VectorWithMagnitude(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		void SetVec2d(const gp_Vec2d &V);
+		%feature("autodoc", "1");
+		void SetX(const Standard_Real X);
+		%feature("autodoc", "1");
+		void SetY(const Standard_Real Y);
+		%feature("autodoc", "1");
+		void Add(const Handle_Geom2d_Vector &Other);
+		%feature("autodoc", "1");
+		void operator+=(const Handle_Geom2d_Vector &Other);
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude Added(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude operator+(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real operator^(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		void Divide(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void operator/=(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude Divided(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude operator/(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude Multiplied(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void Normalize();
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude Normalized() const;
+		%feature("autodoc", "1");
+		void Subtract(const Handle_Geom2d_Vector &Other);
+		%feature("autodoc", "1");
+		void operator-=(const Handle_Geom2d_Vector &Other);
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude Subtracted(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_VectorWithMagnitude operator-(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+
+};
+%extend Geom2d_VectorWithMagnitude {
+	Handle_Geom2d_VectorWithMagnitude GetHandle() {
+	return *(Handle_Geom2d_VectorWithMagnitude*) &$self;
+	}
+};
+%extend Geom2d_VectorWithMagnitude {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_VectorWithMagnitude {
+	~Geom2d_VectorWithMagnitude() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_VectorWithMagnitude\n");}
+	}
+};
+
+
 %nodefaultctor Geom2d_Hyperbola;
 class Geom2d_Hyperbola : public Geom2d_Conic {
 	public:
@@ -1447,136 +1657,6 @@ class Geom2d_Hyperbola : public Geom2d_Conic {
 	~Geom2d_Hyperbola() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2d_Hyperbola\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_Transformation;
-class Geom2d_Transformation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_Transformation();
-		%feature("autodoc", "1");
-		Geom2d_Transformation(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		void SetMirror(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		void SetMirror(const gp_Ax2d &A);
-		%feature("autodoc", "1");
-		void SetRotation(const gp_Pnt2d &P, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void SetScale(const gp_Pnt2d &P, const Standard_Real S);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax2d &FromSystem1, const gp_Ax2d &ToSystem2);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax2d &ToSystem);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec2d &V);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Pnt2d &P1, const gp_Pnt2d &P2);
-		%feature("autodoc", "1");
-		void SetTrsf2d(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		Standard_Boolean IsNegative() const;
-		%feature("autodoc", "1");
-		gp_TrsfForm Form() const;
-		%feature("autodoc", "1");
-		Standard_Real ScaleFactor() const;
-		%feature("autodoc", "1");
-		gp_Trsf2d Trsf2d() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation Inverted() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation Multiplied(const Handle_Geom2d_Transformation &Other) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation operator*(const Handle_Geom2d_Transformation &Other) const;
-		%feature("autodoc", "1");
-		void Multiply(const Handle_Geom2d_Transformation &Other);
-		%feature("autodoc", "1");
-		void operator*=(const Handle_Geom2d_Transformation &Other);
-		%feature("autodoc", "1");
-		void Power(const Standard_Integer N);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation Powered(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void PreMultiply(const Handle_Geom2d_Transformation &Other);
-		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
-		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Transformation Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_Transformation {
-	Handle_Geom2d_Transformation GetHandle() {
-	return *(Handle_Geom2d_Transformation*) &$self;
-	}
-};
-%extend Geom2d_Transformation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_Transformation {
-	~Geom2d_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_Transformation\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_Direction;
-class Geom2d_Direction : public Geom2d_Vector {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_Direction(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		Geom2d_Direction(const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		void SetDir2d(const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		void SetX(const Standard_Real X);
-		%feature("autodoc", "1");
-		void SetY(const Standard_Real Y);
-		%feature("autodoc", "1");
-		gp_Dir2d Dir2d() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Magnitude() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real SquareMagnitude() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Crossed(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real operator^(const Handle_Geom2d_Vector &Other) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_Direction {
-	Handle_Geom2d_Direction GetHandle() {
-	return *(Handle_Geom2d_Direction*) &$self;
-	}
-};
-%extend Geom2d_Direction {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_Direction {
-	~Geom2d_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_Direction\n");}
 	}
 };
 
@@ -1678,6 +1758,134 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 };
 
 
+%nodefaultctor Geom2d_Direction;
+class Geom2d_Direction : public Geom2d_Vector {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_Direction(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		Geom2d_Direction(const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		void SetDir2d(const gp_Dir2d &V);
+		%feature("autodoc", "1");
+		void SetX(const Standard_Real X);
+		%feature("autodoc", "1");
+		void SetY(const Standard_Real Y);
+		%feature("autodoc", "1");
+		gp_Dir2d Dir2d() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Magnitude() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real SquareMagnitude() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Crossed(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real operator^(const Handle_Geom2d_Vector &Other) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_Direction {
+	Handle_Geom2d_Direction GetHandle() {
+	return *(Handle_Geom2d_Direction*) &$self;
+	}
+};
+%extend Geom2d_Direction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_Direction {
+	~Geom2d_Direction() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_Direction\n");}
+	}
+};
+
+
+%nodefaultctor Geom2d_OffsetCurve;
+class Geom2d_OffsetCurve : public Geom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_OffsetCurve(const Handle_Geom2d_Curve &C, const Standard_Real Offset);
+		%feature("autodoc", "1");
+		virtual		void Reverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		void SetBasisCurve(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		void SetOffsetValue(const Standard_Real D);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve BasisCurve() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Value(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1basis) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1, gp_Vec2d & V1basis, gp_Vec2d & V2basis) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V1basis, gp_Vec2d & V2basis, gp_Vec2d & V3basis) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real Offset() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d &T);
+		%feature("autodoc", "1");
+		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_OffsetCurve {
+	Handle_Geom2d_OffsetCurve GetHandle() {
+	return *(Handle_Geom2d_OffsetCurve*) &$self;
+	}
+};
+%extend Geom2d_OffsetCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend Geom2d_OffsetCurve {
+	~Geom2d_OffsetCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2d_OffsetCurve\n");}
+	}
+};
+
+
 %nodefaultctor Geom2d_Ellipse;
 class Geom2d_Ellipse : public Geom2d_Conic {
 	public:
@@ -1759,41 +1967,6 @@ class Geom2d_Ellipse : public Geom2d_Conic {
 };
 
 
-%nodefaultctor Geom2d_UndefinedDerivative;
-class Geom2d_UndefinedDerivative : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_UndefinedDerivative();
-		%feature("autodoc", "1");
-		Geom2d_UndefinedDerivative(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedDerivative NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_UndefinedDerivative {
-	Handle_Geom2d_UndefinedDerivative GetHandle() {
-	return *(Handle_Geom2d_UndefinedDerivative*) &$self;
-	}
-};
-%extend Geom2d_UndefinedDerivative {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_UndefinedDerivative {
-	~Geom2d_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_UndefinedDerivative\n");}
-	}
-};
-
-
 %nodefaultctor Geom2d_Circle;
 class Geom2d_Circle : public Geom2d_Conic {
 	public:
@@ -1855,169 +2028,6 @@ class Geom2d_Circle : public Geom2d_Conic {
 	~Geom2d_Circle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Geom2d_Circle\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_AxisPlacement;
-class Geom2d_AxisPlacement : public Geom2d_Geometry {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_AxisPlacement(const gp_Ax2d &A);
-		%feature("autodoc", "1");
-		Geom2d_AxisPlacement(const gp_Pnt2d &P, const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		Handle_Geom2d_AxisPlacement Reversed() const;
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax2d &A);
-		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir2d &V);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d &P);
-		%feature("autodoc", "1");
-		Standard_Real Angle(const Handle_Geom2d_AxisPlacement &Other) const;
-		%feature("autodoc", "1");
-		gp_Ax2d Ax2d() const;
-		%feature("autodoc", "1");
-		gp_Dir2d Direction() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Location() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_AxisPlacement {
-	Handle_Geom2d_AxisPlacement GetHandle() {
-	return *(Handle_Geom2d_AxisPlacement*) &$self;
-	}
-};
-%extend Geom2d_AxisPlacement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_AxisPlacement {
-	~Geom2d_AxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_AxisPlacement\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_UndefinedValue;
-class Geom2d_UndefinedValue : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_UndefinedValue();
-		%feature("autodoc", "1");
-		Geom2d_UndefinedValue(const char * AString);
-		%feature("autodoc", "1");
-		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue NewInstance(const char * aMessage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_UndefinedValue {
-	Handle_Geom2d_UndefinedValue GetHandle() {
-	return *(Handle_Geom2d_UndefinedValue*) &$self;
-	}
-};
-%extend Geom2d_UndefinedValue {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_UndefinedValue {
-	~Geom2d_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_UndefinedValue\n");}
-	}
-};
-
-
-%nodefaultctor Geom2d_OffsetCurve;
-class Geom2d_OffsetCurve : public Geom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_OffsetCurve(const Handle_Geom2d_Curve &C, const Standard_Real Offset);
-		%feature("autodoc", "1");
-		virtual		void Reverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void SetBasisCurve(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		void SetOffsetValue(const Standard_Real D);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve BasisCurve() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Value(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1basis) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1, gp_Vec2d & V1basis, gp_Vec2d & V2basis) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Pnt2d & Pbasis, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V1basis, gp_Vec2d & V2basis, gp_Vec2d & V3basis) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real Offset() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d &T);
-		%feature("autodoc", "1");
-		virtual		Standard_Real TransformedParameter(const Standard_Real U, const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParametricTransformation(const gp_Trsf2d &T) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_OffsetCurve {
-	Handle_Geom2d_OffsetCurve GetHandle() {
-	return *(Handle_Geom2d_OffsetCurve*) &$self;
-	}
-};
-%extend Geom2d_OffsetCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend Geom2d_OffsetCurve {
-	~Geom2d_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2d_OffsetCurve\n");}
 	}
 };
 

@@ -66,7 +66,7 @@
 %rename(Handle_BRepMesh_ListNodeOfListOfVertex) Handle_BRepMesh_ListNodeOfListOfVertex;
 %rename(BRepMesh_DiscretRoot) BRepMesh_DiscretRoot;
 %rename(Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun) Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun;
-%rename(BRepMesh_ShapeTool) BRepMesh_ShapeTool;
+%rename(BRepMesh_DataMapOfShapeSurfaceGrid) BRepMesh_DataMapOfShapeSurfaceGrid;
 %rename(BRepMesh_GeomTool) BRepMesh_GeomTool;
 %rename(Handle_BRepMesh_ListNodeOfListOfXY) Handle_BRepMesh_ListNodeOfListOfXY;
 %rename(BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY) BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY;
@@ -93,7 +93,7 @@
 %rename(BRepMesh_FE_CANNOTCREATEALGO) BRepMesh_FE_CANNOTCREATEALGO;
 %rename(BRepMesh_HArray1OfVertexOfDelaun) BRepMesh_HArray1OfVertexOfDelaun;
 %rename(BRepMesh_Edge) BRepMesh_Edge;
-%rename(BRepMesh_DataMapOfShapeSurfaceGrid) BRepMesh_DataMapOfShapeSurfaceGrid;
+%rename(BRepMesh_ShapeTool) BRepMesh_ShapeTool;
 %rename(BRepMesh_DataMapOfVertexInteger) BRepMesh_DataMapOfVertexInteger;
 %rename(BRepMesh_Classifier) BRepMesh_Classifier;
 %rename(BRepMesh_DataMapOfIntegerListOfXY) BRepMesh_DataMapOfIntegerListOfXY;

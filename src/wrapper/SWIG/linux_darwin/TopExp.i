@@ -66,37 +66,6 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 };
 
 
-%nodefaultctor TopExp;
-class TopExp {
-	public:
-		%feature("autodoc", "1");
-		TopExp();
-		%feature("autodoc", "1");
-		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
-		%feature("autodoc", "1");
-		void MapShapes(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
-		%feature("autodoc", "1");
-		void MapShapesAndAncestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
-		%feature("autodoc", "1");
-		TopoDS_Vertex FirstVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		TopoDS_Vertex LastVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		void Vertices(const TopoDS_Edge &E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		void Vertices(const TopoDS_Wire &W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
-		%feature("autodoc", "1");
-		Standard_Boolean CommonVertex(const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopoDS_Vertex & V);
-
-};
-%extend TopExp {
-	~TopExp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopExp\n");}
-	}
-};
-
-
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
 class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	public:
@@ -213,5 +182,36 @@ class TopExp_Explorer {
 	~TopExp_Explorer() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of TopExp_Explorer\n");}
+	}
+};
+
+
+%nodefaultctor TopExp;
+class TopExp {
+	public:
+		%feature("autodoc", "1");
+		TopExp();
+		%feature("autodoc", "1");
+		void MapShapes(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
+		%feature("autodoc", "1");
+		void MapShapes(const TopoDS_Shape &S, TopTools_IndexedMapOfShape & M);
+		%feature("autodoc", "1");
+		void MapShapesAndAncestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
+		%feature("autodoc", "1");
+		TopoDS_Vertex FirstVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
+		%feature("autodoc", "1");
+		TopoDS_Vertex LastVertex(const TopoDS_Edge &E, const Standard_Boolean CumOri=0);
+		%feature("autodoc", "1");
+		void Vertices(const TopoDS_Edge &E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
+		%feature("autodoc", "1");
+		void Vertices(const TopoDS_Wire &W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
+		%feature("autodoc", "1");
+		Standard_Boolean CommonVertex(const TopoDS_Edge &E1, const TopoDS_Edge &E2, TopoDS_Vertex & V);
+
+};
+%extend TopExp {
+	~TopExp() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopExp\n");}
 	}
 };

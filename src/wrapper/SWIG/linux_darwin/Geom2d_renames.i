@@ -1,4 +1,4 @@
-%rename(Geom2d_Hyperbola) Geom2d_Hyperbola;
+%rename(Geom2d_UndefinedDerivative) Geom2d_UndefinedDerivative;
 %rename(Handle_Geom2d_BSplineCurve) Handle_Geom2d_BSplineCurve;
 %rename(Geom2d_CartesianPoint) Geom2d_CartesianPoint;
 %rename(Handle_Geom2d_Point) Handle_Geom2d_Point;
@@ -11,9 +11,9 @@
 %rename(Handle_Geom2d_Transformation) Handle_Geom2d_Transformation;
 %rename(Handle_Geom2d_UndefinedDerivative) Handle_Geom2d_UndefinedDerivative;
 %rename(Geom2d_TrimmedCurve) Geom2d_TrimmedCurve;
+%rename(Geom2d_Hyperbola) Geom2d_Hyperbola;
 %rename(Geom2d_BoundedCurve) Geom2d_BoundedCurve;
 %rename(Geom2d_Direction) Geom2d_Direction;
-%rename(Geom2d_UndefinedDerivative) Geom2d_UndefinedDerivative;
 %rename(Geom2d_BezierCurve) Geom2d_BezierCurve;
 %rename(Geom2d_Transformation) Geom2d_Transformation;
 %rename(Handle_Geom2d_Conic) Handle_Geom2d_Conic;

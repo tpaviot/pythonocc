@@ -44,36 +44,6 @@ enum BiTgte_ContactType {
 
 
 
-%nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
-class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	BiTgte_DataMapNodeOfDataMapOfShapeBox* GetObject() {
-	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
-	}
-};
-%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BiTgte_HCurveOnEdge;
 class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	public:
@@ -130,6 +100,36 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	~Handle_BiTgte_HCurveOnVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnVertex\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
+class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	BiTgte_DataMapNodeOfDataMapOfShapeBox* GetObject() {
+	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
+	}
+};
+%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
 	}
 };
 
@@ -209,37 +209,6 @@ class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
 };
 
 
-%nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
-class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BiTgte_DataMapNodeOfDataMapOfShapeBox(const TopoDS_Shape &K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Bnd_Box & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox GetHandle() {
-	return *(Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox*) &$self;
-	}
-};
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	~BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
-	}
-};
-
-
 %nodefaultctor BiTgte_HCurveOnEdge;
 class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	public:
@@ -314,6 +283,37 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 };
 
 
+%nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
+class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BiTgte_DataMapNodeOfDataMapOfShapeBox(const TopoDS_Shape &K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		Bnd_Box & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox GetHandle() {
+	return *(Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox*) &$self;
+	}
+};
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	~BiTgte_DataMapNodeOfDataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
+	}
+};
+
+
 %nodefaultctor BiTgte_Blend;
 class BiTgte_Blend {
 	public:
@@ -379,6 +379,43 @@ class BiTgte_Blend {
 	~BiTgte_Blend() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BiTgte_Blend\n");}
+	}
+};
+
+
+%nodefaultctor BiTgte_DataMapOfShapeBox;
+class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BiTgte_DataMapOfShapeBox(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BiTgte_DataMapOfShapeBox & Assign(const BiTgte_DataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		BiTgte_DataMapOfShapeBox & operator=(const BiTgte_DataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const Bnd_Box & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		Bnd_Box & operator()(const TopoDS_Shape &K);
+
+};
+%extend BiTgte_DataMapOfShapeBox {
+	~BiTgte_DataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");}
 	}
 };
 
@@ -477,42 +514,5 @@ class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
 	~BiTgte_CurveOnEdge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnEdge\n");}
-	}
-};
-
-
-%nodefaultctor BiTgte_DataMapOfShapeBox;
-class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BiTgte_DataMapOfShapeBox(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BiTgte_DataMapOfShapeBox & Assign(const BiTgte_DataMapOfShapeBox &Other);
-		%feature("autodoc", "1");
-		BiTgte_DataMapOfShapeBox & operator=(const BiTgte_DataMapOfShapeBox &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const Bnd_Box & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		Bnd_Box & operator()(const TopoDS_Shape &K);
-
-};
-%extend BiTgte_DataMapOfShapeBox {
-	~BiTgte_DataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");}
 	}
 };

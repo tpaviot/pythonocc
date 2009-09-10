@@ -27,7 +27,7 @@
 %rename(Handle_Interface_ReaderModule) Handle_Interface_ReaderModule;
 %rename(Interface_ShareFlags) Interface_ShareFlags;
 %rename(Interface_MapAsciiStringHasher) Interface_MapAsciiStringHasher;
-%rename(Interface_HSequenceOfCheck) Interface_HSequenceOfCheck;
+%rename(Interface_LoadFail) Interface_LoadFail;
 %rename(Handle_Interface_SignType) Handle_Interface_SignType;
 %rename(Interface_ShareTool) Interface_ShareTool;
 %rename(Interface_ParamBinary) Interface_ParamBinary;
@@ -51,7 +51,7 @@
 %rename(Interface_FloatWriter) Interface_FloatWriter;
 %rename(Interface_IndexedMapNodeOfIndexedMapOfAsciiString) Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
 %rename(Interface_StateUnloaded) Interface_StateUnloaded;
-%rename(Interface_LoadFail) Interface_LoadFail;
+%rename(Interface_HSequenceOfCheck) Interface_HSequenceOfCheck;
 %rename(Interface_DataMapOfIntegerTransient) Interface_DataMapOfIntegerTransient;
 %rename(Handle_Interface_SignLabel) Handle_Interface_SignLabel;
 %rename(Interface_SignType) Interface_SignType;
@@ -73,7 +73,7 @@
 %rename(Interface_Category) Interface_Category;
 %rename(Handle_Interface_CopyControl) Handle_Interface_CopyControl;
 %rename(Handle_Interface_ParamList) Handle_Interface_ParamList;
-%rename(Interface_CheckMessage) Interface_CheckMessage;
+%rename(Interface_ReaderModule) Interface_ReaderModule;
 %rename(Interface_CheckTool) Interface_CheckTool;
 %rename(Handle_Interface_CheckFailure) Handle_Interface_CheckFailure;
 %rename(Interface_IntVal) Interface_IntVal;
@@ -81,7 +81,7 @@
 %rename(Interface_CheckFail) Interface_CheckFail;
 %rename(Interface_SequenceOfCheck) Interface_SequenceOfCheck;
 %rename(Interface_GTool) Interface_GTool;
-%rename(Interface_Array1OfHAsciiString) Interface_Array1OfHAsciiString;
+%rename(Interface_EntityIterator) Interface_EntityIterator;
 %rename(Interface_ReaderLib) Interface_ReaderLib;
 %rename(Interface_DataMapNodeOfDataMapOfIntegerTransient) Interface_DataMapNodeOfDataMapOfIntegerTransient;
 %rename(Interface_DataMapIteratorOfDataMapOfTransientInteger) Interface_DataMapIteratorOfDataMapOfTransientInteger;
@@ -91,7 +91,7 @@
 %rename(Interface_DataFail) Interface_DataFail;
 %rename(Interface_Graph) Interface_Graph;
 %rename(Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient) Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient;
-%rename(Interface_EntityIterator) Interface_EntityIterator;
+%rename(Interface_Array1OfHAsciiString) Interface_Array1OfHAsciiString;
 %rename(Interface_NodeOfReaderLib) Interface_NodeOfReaderLib;
 %rename(Handle_Interface_SequenceNodeOfSequenceOfCheck) Handle_Interface_SequenceNodeOfSequenceOfCheck;
 %rename(Interface_IndexedMapOfAsciiString) Interface_IndexedMapOfAsciiString;
@@ -106,7 +106,7 @@
 %rename(Handle_Interface_ParamSet) Handle_Interface_ParamSet;
 %rename(Interface_FileReaderTool) Interface_FileReaderTool;
 %rename(Handle_Interface_EntityCluster) Handle_Interface_EntityCluster;
-%rename(Interface_ReaderModule) Interface_ReaderModule;
+%rename(Interface_CheckMessage) Interface_CheckMessage;
 %rename(Handle_Interface_Protocol) Handle_Interface_Protocol;
 %rename(Interface_StateUnknown) Interface_StateUnknown;
 %rename(Interface_ParamSet) Interface_ParamSet;

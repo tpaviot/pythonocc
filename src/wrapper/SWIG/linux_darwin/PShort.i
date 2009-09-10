@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
-class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
-		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
-	PShort_VArrayNodeOfFieldOfHArray2OfShortReal* GetObject() {
-	return (PShort_VArrayNodeOfFieldOfHArray2OfShortReal*)$self->Access();
-	}
-};
-%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
-	~Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal\n");}
-	}
-};
-
-
 %nodefaultctor Handle_PShort_HArray2OfShortReal;
 class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 	public:
@@ -125,32 +95,32 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 };
 
 
-%nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
-class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
+class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray2OfShortReal *anItem);
 		%feature("autodoc", "1");
-		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+		Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
-	PShort_VArrayNodeOfFieldOfHArray1OfShortReal* GetObject() {
-	return (PShort_VArrayNodeOfFieldOfHArray1OfShortReal*)$self->Access();
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	PShort_VArrayNodeOfFieldOfHArray2OfShortReal* GetObject() {
+	return (PShort_VArrayNodeOfFieldOfHArray2OfShortReal*)$self->Access();
 	}
 };
-%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
-	~Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal() {
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	~Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal\n");}
 	}
 };
 
@@ -185,6 +155,36 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 };
 
 
+%nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
+class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal();
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal & operator=(const PShort_VArrayNodeOfFieldOfHArray1OfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal const DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	PShort_VArrayNodeOfFieldOfHArray1OfShortReal* GetObject() {
+	return (PShort_VArrayNodeOfFieldOfHArray1OfShortReal*)$self->Access();
+	}
+};
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	~Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal\n");}
+	}
+};
+
+
 %nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
 class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged {
 	public:
@@ -211,27 +211,6 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 	~Handle_PShort_SeqNodeOfHSequenceOfShortReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_PShort_SeqNodeOfHSequenceOfShortReal\n");}
-	}
-};
-
-
-%nodefaultctor PShort_VArrayTNodeOfFieldOfHArray2OfShortReal;
-class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
-	public:
-		%feature("autodoc", "1");
-		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
-		%feature("autodoc", "1");
-		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal(const Standard_ShortReal &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_ShortReal &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%extend PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
-	~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray2OfShortReal\n");}
 	}
 };
 
@@ -304,6 +283,140 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 	~PShort_FieldOfHArray1OfShortReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of PShort_FieldOfHArray1OfShortReal\n");}
+	}
+};
+
+
+%nodefaultctor PShort_HSequenceOfShortReal;
+class PShort_HSequenceOfShortReal : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PShort_HSequenceOfShortReal();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal First() const;
+		%feature("autodoc", "1");
+		Standard_ShortReal Last() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		void Append(const Handle_PShort_HSequenceOfShortReal &S);
+		%feature("autodoc", "1");
+		void Prepend(const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_PShort_HSequenceOfShortReal &S);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer I, const Standard_Integer J);
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal SubSequence(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		Handle_PShort_HSequenceOfShortReal Split(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ShortReal &T);
+		%feature("autodoc", "1");
+		Standard_ShortReal Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_ShortReal &T) const;
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T) const;
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		PShort_HSequenceOfShortReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealFirstItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_HSequenceOfShortRealFirstItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		%feature("autodoc", "1");
+		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealLastItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_HSequenceOfShortRealLastItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPShort_HSequenceOfShortRealSize() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPShort_HSequenceOfShortRealSize(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PShort_HSequenceOfShortReal {
+	Handle_PShort_HSequenceOfShortReal GetHandle() {
+	return *(Handle_PShort_HSequenceOfShortReal*) &$self;
+	}
+};
+%extend PShort_HSequenceOfShortReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend PShort_HSequenceOfShortReal {
+	~PShort_HSequenceOfShortReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PShort_HSequenceOfShortReal\n");}
+	}
+};
+
+
+%nodefaultctor PShort_FieldOfHArray2OfShortReal;
+class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PShort_FieldOfHArray2OfShortReal();
+		%feature("autodoc", "1");
+		PShort_FieldOfHArray2OfShortReal(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PShort_FieldOfHArray2OfShortReal(const PShort_FieldOfHArray2OfShortReal &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PShort_FieldOfHArray2OfShortReal &Other);
+		%feature("autodoc", "1");
+		void operator=(const PShort_FieldOfHArray2OfShortReal &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
+		%feature("autodoc", "1");
+		Standard_ShortReal & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_ShortReal & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%extend PShort_FieldOfHArray2OfShortReal {
+	~PShort_FieldOfHArray2OfShortReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PShort_FieldOfHArray2OfShortReal\n");}
 	}
 };
 
@@ -527,39 +640,6 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 };
 
 
-%nodefaultctor PShort_FieldOfHArray2OfShortReal;
-class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PShort_FieldOfHArray2OfShortReal();
-		%feature("autodoc", "1");
-		PShort_FieldOfHArray2OfShortReal(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PShort_FieldOfHArray2OfShortReal(const PShort_FieldOfHArray2OfShortReal &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PShort_FieldOfHArray2OfShortReal &Other);
-		%feature("autodoc", "1");
-		void operator=(const PShort_FieldOfHArray2OfShortReal &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ShortReal &Value);
-		%feature("autodoc", "1");
-		Standard_ShortReal & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_ShortReal & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%extend PShort_FieldOfHArray2OfShortReal {
-	~PShort_FieldOfHArray2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PShort_FieldOfHArray2OfShortReal\n");}
-	}
-};
-
-
 %nodefaultctor PShort_HArray1OfShortReal;
 class PShort_HArray1OfShortReal : public Standard_Persistent {
 	public:
@@ -623,102 +703,22 @@ class PShort_HArray1OfShortReal : public Standard_Persistent {
 };
 
 
-%nodefaultctor PShort_HSequenceOfShortReal;
-class PShort_HSequenceOfShortReal : public Standard_Persistent {
+%nodefaultctor PShort_VArrayTNodeOfFieldOfHArray2OfShortReal;
+class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	public:
 		%feature("autodoc", "1");
-		PShort_HSequenceOfShortReal();
+		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		PShort_VArrayTNodeOfFieldOfHArray2OfShortReal(const Standard_ShortReal &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetValue(const Standard_ShortReal &aValue);
 		%feature("autodoc", "1");
-		Standard_ShortReal First() const;
-		%feature("autodoc", "1");
-		Standard_ShortReal Last() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void Append(const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_PShort_HSequenceOfShortReal &S);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer I, const Standard_Integer J);
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal SubSequence(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Handle_PShort_HSequenceOfShortReal Split(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_ShortReal &T);
-		%feature("autodoc", "1");
-		Standard_ShortReal Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_ShortReal &T) const;
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Standard_ShortReal &T) const;
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		PShort_HSequenceOfShortReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealFirstItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_HSequenceOfShortRealFirstItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
-		%feature("autodoc", "1");
-		Handle_PShort_SeqNodeOfHSequenceOfShortReal _CSFDB_GetPShort_HSequenceOfShortRealLastItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_HSequenceOfShortRealLastItem(const Handle_PShort_SeqNodeOfHSequenceOfShortReal &p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPShort_HSequenceOfShortRealSize() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPShort_HSequenceOfShortRealSize(const Standard_Integer p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Value() const;
 
 };
-%extend PShort_HSequenceOfShortReal {
-	Handle_PShort_HSequenceOfShortReal GetHandle() {
-	return *(Handle_PShort_HSequenceOfShortReal*) &$self;
-	}
-};
-%extend PShort_HSequenceOfShortReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend PShort_HSequenceOfShortReal {
-	~PShort_HSequenceOfShortReal() {
+%extend PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
+	~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PShort_HSequenceOfShortReal\n");}
+	if (__env){printf("## Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray2OfShortReal\n");}
 	}
 };

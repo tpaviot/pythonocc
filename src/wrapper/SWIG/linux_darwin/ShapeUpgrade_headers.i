@@ -488,13 +488,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Shape.hxx>
-#include<Handle_ShapeBuild_ReShape.hxx>
-#include<TopoDS_Face.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<Handle_TColStd_HSequenceOfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<TopoDS_Shape.hxx>
+#include<Handle_ShapeBuild_ReShape.hxx>
+#include<TopTools_SequenceOfShape.hxx>
 #include<TopoDS_Edge.hxx>
+#include<TopoDS_Face.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<ShapeUpgrade.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
@@ -505,5 +506,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopLoc_Location.hxx>
 #include<Handle_ShapeAnalysis_TransferParameters.hxx>
 #include<Handle_ShapeExtend_CompositeSurface.hxx>
-#include<TopTools_SequenceOfShape.hxx>
 %}

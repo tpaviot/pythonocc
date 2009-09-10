@@ -179,6 +179,27 @@ class BinLDrivers_DocumentSection {
 };
 
 
+%nodefaultctor BinLDrivers;
+class BinLDrivers {
+	public:
+		%feature("autodoc", "1");
+		BinLDrivers();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		%feature("autodoc", "1");
+		TCollection_AsciiString StorageVersion();
+
+};
+%extend BinLDrivers {
+	~BinLDrivers() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinLDrivers\n");}
+	}
+};
+
+
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;
 class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
@@ -212,26 +233,5 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	~BinLDrivers_DocumentRetrievalDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentRetrievalDriver\n");}
-	}
-};
-
-
-%nodefaultctor BinLDrivers;
-class BinLDrivers {
-	public:
-		%feature("autodoc", "1");
-		BinLDrivers();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
-		%feature("autodoc", "1");
-		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
-		%feature("autodoc", "1");
-		TCollection_AsciiString StorageVersion();
-
-};
-%extend BinLDrivers {
-	~BinLDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinLDrivers\n");}
 	}
 };

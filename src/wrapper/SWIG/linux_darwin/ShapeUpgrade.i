@@ -65,122 +65,62 @@ class Handle_ShapeUpgrade_Tool : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_FixSmallCurves;
-class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
+%nodefaultctor Handle_ShapeUpgrade_FaceDivide;
+class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves();
+		Handle_ShapeUpgrade_FaceDivide();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		Handle_ShapeUpgrade_FaceDivide(const Handle_ShapeUpgrade_FaceDivide &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves(const ShapeUpgrade_FixSmallCurves *anItem);
+		Handle_ShapeUpgrade_FaceDivide(const ShapeUpgrade_FaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves & operator=(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		Handle_ShapeUpgrade_FaceDivide & operator=(const Handle_ShapeUpgrade_FaceDivide &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves & operator=(const ShapeUpgrade_FixSmallCurves *anItem);
+		Handle_ShapeUpgrade_FaceDivide & operator=(const ShapeUpgrade_FaceDivide *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FaceDivide const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeUpgrade_FixSmallCurves {
-	ShapeUpgrade_FixSmallCurves* GetObject() {
-	return (ShapeUpgrade_FixSmallCurves*)$self->Access();
+%extend Handle_ShapeUpgrade_FaceDivide {
+	ShapeUpgrade_FaceDivide* GetObject() {
+	return (ShapeUpgrade_FaceDivide*)$self->Access();
 	}
 };
-%extend Handle_ShapeUpgrade_FixSmallCurves {
-	~Handle_ShapeUpgrade_FixSmallCurves() {
+%extend Handle_ShapeUpgrade_FaceDivide {
+	~Handle_ShapeUpgrade_FaceDivide() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallCurves\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivide\n");}
 	}
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_FixSmallBezierCurves;
-class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixSmallCurves {
+%nodefaultctor Handle_ShapeUpgrade_FaceDivideArea;
+class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves();
+		Handle_ShapeUpgrade_FaceDivideArea();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		Handle_ShapeUpgrade_FaceDivideArea(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves(const ShapeUpgrade_FixSmallBezierCurves *anItem);
+		Handle_ShapeUpgrade_FaceDivideArea(const ShapeUpgrade_FaceDivideArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		Handle_ShapeUpgrade_FaceDivideArea & operator=(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const ShapeUpgrade_FixSmallBezierCurves *anItem);
+		Handle_ShapeUpgrade_FaceDivideArea & operator=(const ShapeUpgrade_FaceDivideArea *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallBezierCurves const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_FaceDivideArea const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeUpgrade_FixSmallBezierCurves {
-	ShapeUpgrade_FixSmallBezierCurves* GetObject() {
-	return (ShapeUpgrade_FixSmallBezierCurves*)$self->Access();
+%extend Handle_ShapeUpgrade_FaceDivideArea {
+	ShapeUpgrade_FaceDivideArea* GetObject() {
+	return (ShapeUpgrade_FaceDivideArea*)$self->Access();
 	}
 };
-%extend Handle_ShapeUpgrade_FixSmallBezierCurves {
-	~Handle_ShapeUpgrade_FixSmallBezierCurves() {
+%extend Handle_ShapeUpgrade_FaceDivideArea {
+	~Handle_ShapeUpgrade_FaceDivideArea() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallBezierCurves\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_EdgeDivide;
-class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide(const ShapeUpgrade_EdgeDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide & operator=(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide & operator=(const ShapeUpgrade_EdgeDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_EdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_EdgeDivide {
-	ShapeUpgrade_EdgeDivide* GetObject() {
-	return (ShapeUpgrade_EdgeDivide*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_EdgeDivide {
-	~Handle_ShapeUpgrade_EdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_EdgeDivide\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_ClosedEdgeDivide;
-class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivide {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide(const ShapeUpgrade_ClosedEdgeDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const ShapeUpgrade_ClosedEdgeDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedEdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_ClosedEdgeDivide {
-	ShapeUpgrade_ClosedEdgeDivide* GetObject() {
-	return (ShapeUpgrade_ClosedEdgeDivide*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_ClosedEdgeDivide {
-	~Handle_ShapeUpgrade_ClosedEdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedEdgeDivide\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
 
@@ -245,6 +185,66 @@ class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSu
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_EdgeDivide;
+class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide(const ShapeUpgrade_EdgeDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide & operator=(const Handle_ShapeUpgrade_EdgeDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide & operator=(const ShapeUpgrade_EdgeDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_EdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_EdgeDivide {
+	ShapeUpgrade_EdgeDivide* GetObject() {
+	return (ShapeUpgrade_EdgeDivide*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_EdgeDivide {
+	~Handle_ShapeUpgrade_EdgeDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_EdgeDivide\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_ClosedEdgeDivide;
+class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivide {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide(const ShapeUpgrade_ClosedEdgeDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const Handle_ShapeUpgrade_ClosedEdgeDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide & operator=(const ShapeUpgrade_ClosedEdgeDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedEdgeDivide const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_ClosedEdgeDivide {
+	ShapeUpgrade_ClosedEdgeDivide* GetObject() {
+	return (ShapeUpgrade_ClosedEdgeDivide*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_ClosedEdgeDivide {
+	~Handle_ShapeUpgrade_ClosedEdgeDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedEdgeDivide\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis;
 class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgrade_SplitSurface {
 	public:
@@ -305,32 +305,152 @@ class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_FaceDivide;
-class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
+%nodefaultctor Handle_ShapeUpgrade_RemoveInternalWires;
+class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide();
+		Handle_ShapeUpgrade_RemoveInternalWires();
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide(const Handle_ShapeUpgrade_FaceDivide &aHandle);
+		Handle_ShapeUpgrade_RemoveInternalWires(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide(const ShapeUpgrade_FaceDivide *anItem);
+		Handle_ShapeUpgrade_RemoveInternalWires(const ShapeUpgrade_RemoveInternalWires *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide & operator=(const Handle_ShapeUpgrade_FaceDivide &aHandle);
+		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide & operator=(const ShapeUpgrade_FaceDivide *anItem);
+		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const ShapeUpgrade_RemoveInternalWires *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivide const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_ShapeUpgrade_RemoveInternalWires const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeUpgrade_FaceDivide {
-	ShapeUpgrade_FaceDivide* GetObject() {
-	return (ShapeUpgrade_FaceDivide*)$self->Access();
+%extend Handle_ShapeUpgrade_RemoveInternalWires {
+	ShapeUpgrade_RemoveInternalWires* GetObject() {
+	return (ShapeUpgrade_RemoveInternalWires*)$self->Access();
 	}
 };
-%extend Handle_ShapeUpgrade_FaceDivide {
-	~Handle_ShapeUpgrade_FaceDivide() {
+%extend Handle_ShapeUpgrade_RemoveInternalWires {
+	~Handle_ShapeUpgrade_RemoveInternalWires() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivide\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveInternalWires\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
+class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceArea {
+	ShapeUpgrade_SplitSurfaceArea* GetObject() {
+	return (ShapeUpgrade_SplitSurfaceArea*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceArea {
+	~Handle_ShapeUpgrade_SplitSurfaceArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceArea\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_FixSmallCurves;
+class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves(const ShapeUpgrade_FixSmallCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves & operator=(const Handle_ShapeUpgrade_FixSmallCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves & operator=(const ShapeUpgrade_FixSmallCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_FixSmallCurves {
+	ShapeUpgrade_FixSmallCurves* GetObject() {
+	return (ShapeUpgrade_FixSmallCurves*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_FixSmallCurves {
+	~Handle_ShapeUpgrade_FixSmallCurves() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallCurves\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_FixSmallBezierCurves;
+class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixSmallCurves {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves(const ShapeUpgrade_FixSmallBezierCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const Handle_ShapeUpgrade_FixSmallBezierCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves & operator=(const ShapeUpgrade_FixSmallBezierCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallBezierCurves const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_FixSmallBezierCurves {
+	ShapeUpgrade_FixSmallBezierCurves* GetObject() {
+	return (ShapeUpgrade_FixSmallBezierCurves*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_FixSmallBezierCurves {
+	~Handle_ShapeUpgrade_FixSmallBezierCurves() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallBezierCurves\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
+class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
+	ShapeUpgrade_SplitSurfaceContinuity* GetObject() {
+	return (ShapeUpgrade_SplitSurfaceContinuity*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
+	~Handle_ShapeUpgrade_SplitSurfaceContinuity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceContinuity\n");}
 	}
 };
 
@@ -425,96 +545,6 @@ class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_Sp
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
-class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceArea {
-	ShapeUpgrade_SplitSurfaceArea* GetObject() {
-	return (ShapeUpgrade_SplitSurfaceArea*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceArea {
-	~Handle_ShapeUpgrade_SplitSurfaceArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceArea\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_FaceDivideArea;
-class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea(const ShapeUpgrade_FaceDivideArea *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea & operator=(const Handle_ShapeUpgrade_FaceDivideArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea & operator=(const ShapeUpgrade_FaceDivideArea *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FaceDivideArea const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_FaceDivideArea {
-	ShapeUpgrade_FaceDivideArea* GetObject() {
-	return (ShapeUpgrade_FaceDivideArea*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_FaceDivideArea {
-	~Handle_ShapeUpgrade_FaceDivideArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivideArea\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_ConvertCurve2dToBezier;
-class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_SplitCurve2d {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve2dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
-	ShapeUpgrade_ConvertCurve2dToBezier* GetObject() {
-	return (ShapeUpgrade_ConvertCurve2dToBezier*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
-	~Handle_ShapeUpgrade_ConvertCurve2dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve2dToBezier\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
 class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 	public:
@@ -541,66 +571,6 @@ class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 	~Handle_ShapeUpgrade_SplitCurve3d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve3d\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
-class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_SplitCurve3d {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
-	ShapeUpgrade_ConvertCurve3dToBezier* GetObject() {
-	return (ShapeUpgrade_ConvertCurve3dToBezier*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
-	~Handle_ShapeUpgrade_ConvertCurve3dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve3dToBezier\n");}
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_RemoveInternalWires;
-class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires(const ShapeUpgrade_RemoveInternalWires *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const Handle_ShapeUpgrade_RemoveInternalWires &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires & operator=(const ShapeUpgrade_RemoveInternalWires *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_RemoveInternalWires const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_RemoveInternalWires {
-	ShapeUpgrade_RemoveInternalWires* GetObject() {
-	return (ShapeUpgrade_RemoveInternalWires*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_RemoveInternalWires {
-	~Handle_ShapeUpgrade_RemoveInternalWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveInternalWires\n");}
 	}
 };
 
@@ -635,6 +605,66 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_ConvertCurve2dToBezier;
+class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_SplitCurve2d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve2dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier & operator=(const ShapeUpgrade_ConvertCurve2dToBezier *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve2dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
+	ShapeUpgrade_ConvertCurve2dToBezier* GetObject() {
+	return (ShapeUpgrade_ConvertCurve2dToBezier*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
+	~Handle_ShapeUpgrade_ConvertCurve2dToBezier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve2dToBezier\n");}
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
+class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_SplitCurve3d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
+	ShapeUpgrade_ConvertCurve3dToBezier* GetObject() {
+	return (ShapeUpgrade_ConvertCurve3dToBezier*)$self->Access();
+	}
+};
+%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
+	~Handle_ShapeUpgrade_ConvertCurve3dToBezier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve3dToBezier\n");}
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_WireDivide;
 class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -665,36 +695,6 @@ class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
-class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
-	ShapeUpgrade_SplitSurfaceContinuity* GetObject() {
-	return (ShapeUpgrade_SplitSurfaceContinuity*)$self->Access();
-	}
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
-	~Handle_ShapeUpgrade_SplitSurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceContinuity\n");}
-	}
-};
-
-
 %nodefaultctor Handle_ShapeUpgrade_ClosedFaceDivide;
 class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivide {
 	public:
@@ -721,186 +721,6 @@ class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivi
 	~Handle_ShapeUpgrade_ClosedFaceDivide() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedFaceDivide\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_RemoveLocations;
-class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_RemoveLocations();
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopoDS_Shape &theShape);
-		%feature("autodoc", "1");
-		TopoDS_Shape GetResult() const;
-		%feature("autodoc", "1");
-		void SetRemoveLevel(const TopAbs_ShapeEnum theLevel);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum RemoveLevel() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedShape(const TopoDS_Shape &theInitShape) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_RemoveLocations {
-	Handle_ShapeUpgrade_RemoveLocations GetHandle() {
-	return *(Handle_ShapeUpgrade_RemoveLocations*) &$self;
-	}
-};
-%extend ShapeUpgrade_RemoveLocations {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_RemoveLocations {
-	~ShapeUpgrade_RemoveLocations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveLocations\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_Tool;
-class ShapeUpgrade_Tool : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_Tool();
-		%feature("autodoc", "1");
-		void Set(const Handle_ShapeUpgrade_Tool &tool);
-		%feature("autodoc", "1");
-		void SetContext(const Handle_ShapeBuild_ReShape &context);
-		%feature("autodoc", "1");
-		Handle_ShapeBuild_ReShape Context() const;
-		%feature("autodoc", "1");
-		void SetPrecision(const Standard_Real preci);
-		%feature("autodoc", "1");
-		Standard_Real Precision() const;
-		%feature("autodoc", "1");
-		void SetMinTolerance(const Standard_Real mintol);
-		%feature("autodoc", "1");
-		Standard_Real MinTolerance() const;
-		%feature("autodoc", "1");
-		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Real MaxTolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real LimitTolerance(const Standard_Real toler) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_Tool {
-	Handle_ShapeUpgrade_Tool GetHandle() {
-	return *(Handle_ShapeUpgrade_Tool*) &$self;
-	}
-};
-%extend ShapeUpgrade_Tool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_Tool {
-	~ShapeUpgrade_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_Tool\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_FaceDivide;
-class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide();
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitSurface();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitCurves();
-		%feature("autodoc", "1");
-		TopoDS_Shape Result() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
-		%feature("autodoc", "1");
-		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
-
-};
-%extend ShapeUpgrade_FaceDivide {
-	Handle_ShapeUpgrade_FaceDivide GetHandle() {
-	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
-	}
-};
-%extend ShapeUpgrade_FaceDivide {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_FaceDivide {
-	~ShapeUpgrade_FaceDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivide\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_SplitSurface;
-class ShapeUpgrade_SplitSurface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurface();
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
-		%feature("autodoc", "1");
-		void SetUSplitValues(const Handle_TColStd_HSequenceOfReal &UValues);
-		%feature("autodoc", "1");
-		void SetVSplitValues(const Handle_TColStd_HSequenceOfReal &VValues);
-		%feature("autodoc", "1");
-		virtual		void Build(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment=1);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Boolean Segment=1);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HSequenceOfReal & USplitValues() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HSequenceOfReal & VSplitValues() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_CompositeSurface & ResSurfaces() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurface {
-	Handle_ShapeUpgrade_SplitSurface GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurface*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_SplitSurface {
-	~ShapeUpgrade_SplitSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurface\n");}
 	}
 };
 
@@ -1016,72 +836,51 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 
 
-%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
-class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
+%nodefaultctor ShapeUpgrade_SplitSurface;
+class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
+		ShapeUpgrade_SplitSurface();
 		%feature("autodoc", "1");
-		void SetMaxAngle(const Standard_Real MaxAngle);
+		void Init(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
-		Standard_Real MaxAngle() const;
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
+		void SetUSplitValues(const Handle_TColStd_HSequenceOfReal &UValues);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	~ShapeUpgrade_SplitSurfaceAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_FixSmallCurves;
-class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
-	public:
+		void SetVSplitValues(const Handle_TColStd_HSequenceOfReal &VValues);
 		%feature("autodoc", "1");
-		ShapeUpgrade_FixSmallCurves();
+		virtual		void Build(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace);
-		%feature("autodoc","Approx()->[Standard_Real, Standard_Real]");
-		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		void Compute(const Standard_Boolean Segment=1);
 		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		void Perform(const Standard_Boolean Segment=1);
 		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		const Handle_TColStd_HSequenceOfReal & USplitValues() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HSequenceOfReal & VSplitValues() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
+		const Handle_ShapeExtend_CompositeSurface & ResSurfaces() const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_FixSmallCurves {
-	Handle_ShapeUpgrade_FixSmallCurves GetHandle() {
-	return *(Handle_ShapeUpgrade_FixSmallCurves*) &$self;
+%extend ShapeUpgrade_SplitSurface {
+	Handle_ShapeUpgrade_SplitSurface GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurface*) &$self;
 	}
 };
-%extend ShapeUpgrade_FixSmallCurves {
+%extend ShapeUpgrade_SplitSurface {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeUpgrade_FixSmallCurves {
-	~ShapeUpgrade_FixSmallCurves() {
+%extend ShapeUpgrade_SplitSurface {
+	~ShapeUpgrade_SplitSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurface\n");}
 	}
 };
 
@@ -1125,6 +924,207 @@ class ShapeUpgrade_ShapeDivide {
 	~ShapeUpgrade_ShapeDivide() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivide\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ShapeDivideArea;
+class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideArea();
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape &S);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetMaxArea() {
+				return (Standard_Real) $self->MaxArea();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMaxArea(Standard_Real value ) {
+				$self->MaxArea()=value;
+				}
+		};
+
+};
+%extend ShapeUpgrade_ShapeDivideArea {
+	~ShapeUpgrade_ShapeDivideArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
+class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
+		%feature("autodoc", "1");
+		void SetMaxAngle(const Standard_Real MaxAngle);
+		%feature("autodoc", "1");
+		Standard_Real MaxAngle() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	~ShapeUpgrade_SplitSurfaceAngle() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_Tool;
+class ShapeUpgrade_Tool : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_Tool();
+		%feature("autodoc", "1");
+		void Set(const Handle_ShapeUpgrade_Tool &tool);
+		%feature("autodoc", "1");
+		void SetContext(const Handle_ShapeBuild_ReShape &context);
+		%feature("autodoc", "1");
+		Handle_ShapeBuild_ReShape Context() const;
+		%feature("autodoc", "1");
+		void SetPrecision(const Standard_Real preci);
+		%feature("autodoc", "1");
+		Standard_Real Precision() const;
+		%feature("autodoc", "1");
+		void SetMinTolerance(const Standard_Real mintol);
+		%feature("autodoc", "1");
+		Standard_Real MinTolerance() const;
+		%feature("autodoc", "1");
+		void SetMaxTolerance(const Standard_Real maxtol);
+		%feature("autodoc", "1");
+		Standard_Real MaxTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real LimitTolerance(const Standard_Real toler) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_Tool {
+	Handle_ShapeUpgrade_Tool GetHandle() {
+	return *(Handle_ShapeUpgrade_Tool*) &$self;
+	}
+};
+%extend ShapeUpgrade_Tool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_Tool {
+	~ShapeUpgrade_Tool() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_Tool\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_RemoveInternalWires;
+class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_RemoveInternalWires();
+		%feature("autodoc", "1");
+		ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape &theShape);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape &theShape);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean Perform(const TopTools_SequenceOfShape &theSeqShapes);
+		%feature("autodoc", "1");
+		TopoDS_Shape GetResult() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetMinArea() {
+				return (Standard_Real) $self->MinArea();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMinArea(Standard_Real value ) {
+				$self->MinArea()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Boolean & RemoveFaceMode();
+		%feature("autodoc", "1");
+		const TopTools_SequenceOfShape & RemovedFaces() const;
+		%feature("autodoc", "1");
+		const TopTools_SequenceOfShape & RemovedWires() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status theStatus) const;
+
+};
+%extend ShapeUpgrade_RemoveInternalWires {
+	Handle_ShapeUpgrade_RemoveInternalWires GetHandle() {
+	return *(Handle_ShapeUpgrade_RemoveInternalWires*) &$self;
+	}
+};
+%extend ShapeUpgrade_RemoveInternalWires {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_RemoveInternalWires {
+	~ShapeUpgrade_RemoveInternalWires() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveInternalWires\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_FixSmallCurves;
+class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FixSmallCurves();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace);
+		%feature("autodoc","Approx()->[Standard_Real, Standard_Real]");
+		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		%feature("autodoc", "1");
+		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_FixSmallCurves {
+	Handle_ShapeUpgrade_FixSmallCurves GetHandle() {
+	return *(Handle_ShapeUpgrade_FixSmallCurves*) &$self;
+	}
+};
+%extend ShapeUpgrade_FixSmallCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_FixSmallCurves {
+	~ShapeUpgrade_FixSmallCurves() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
 	}
 };
 
@@ -1258,39 +1258,6 @@ class ShapeUpgrade_ShellSewing {
 };
 
 
-%nodefaultctor ShapeUpgrade_FaceDivideArea;
-class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivideArea();
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivideArea(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		Standard_Real & MaxArea();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_FaceDivideArea {
-	Handle_ShapeUpgrade_FaceDivideArea GetHandle() {
-	return *(Handle_ShapeUpgrade_FaceDivideArea*) &$self;
-	}
-};
-%extend ShapeUpgrade_FaceDivideArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_FaceDivideArea {
-	~ShapeUpgrade_FaceDivideArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivideArea\n");}
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_ShapeDivideContinuity;
 class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1314,6 +1281,39 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 	~ShapeUpgrade_ShapeDivideContinuity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
+class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitSurfaceContinuity();
+		%feature("autodoc", "1");
+		void SetCriterion(const GeomAbs_Shape Criterion);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	Handle_ShapeUpgrade_SplitSurfaceContinuity GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurfaceContinuity*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	~ShapeUpgrade_SplitSurfaceContinuity() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceContinuity\n");}
 	}
 };
 
@@ -1347,78 +1347,23 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 };
 
 
-%nodefaultctor ShapeUpgrade_WireDivide;
-class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_WireDivide();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire &W, const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Wire &W);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		void SetFace(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void SetSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		const TopoDS_Wire & Wire() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
-		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
-		%feature("autodoc", "1");
-		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
-		%feature("autodoc", "1");
-		void SetEdgeDivideTool(const Handle_ShapeUpgrade_EdgeDivide &edgeDivideTool);
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeUpgrade_EdgeDivide GetEdgeDivideTool() const;
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool();
-		%feature("autodoc", "1");
-		void SetEdgeMode(const Standard_Integer EdgeMode);
-		%feature("autodoc", "1");
-		void SetFixSmallCurveTool(const Handle_ShapeUpgrade_FixSmallCurves &FixSmallCurvesTool);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_FixSmallCurves GetFixSmallCurveTool() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_WireDivide {
-	Handle_ShapeUpgrade_WireDivide GetHandle() {
-	return *(Handle_ShapeUpgrade_WireDivide*) &$self;
-	}
-};
-%extend ShapeUpgrade_WireDivide {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_WireDivide {
-	~ShapeUpgrade_WireDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_WireDivide\n");}
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_SplitSurfaceArea;
 class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 	public:
 		%feature("autodoc", "1");
 		ShapeUpgrade_SplitSurfaceArea();
-		%feature("autodoc", "1");
-		Standard_Integer & NbParts();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetNbParts() {
+				return (Standard_Integer) $self->NbParts();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetNbParts(Standard_Integer value ) {
+				$self->NbParts()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		void Compute(const Standard_Boolean Segment=1);
 		%feature("autodoc", "1");
@@ -1478,21 +1423,90 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 };
 
 
-%nodefaultctor ShapeUpgrade_ShapeDivideArea;
-class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
+%nodefaultctor ShapeUpgrade_FaceDivide;
+class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideArea();
+		ShapeUpgrade_FaceDivide();
 		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape &S);
+		ShapeUpgrade_FaceDivide(const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		Standard_Real & MaxArea();
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitSurface();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitCurves();
+		%feature("autodoc", "1");
+		TopoDS_Shape Result() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
+		%feature("autodoc", "1");
+		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
+		%feature("autodoc", "1");
+		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_ShapeDivideArea {
-	~ShapeUpgrade_ShapeDivideArea() {
+%extend ShapeUpgrade_FaceDivide {
+	Handle_ShapeUpgrade_FaceDivide GetHandle() {
+	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
+	}
+};
+%extend ShapeUpgrade_FaceDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_FaceDivide {
+	~ShapeUpgrade_FaceDivide() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");}
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivide\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_FaceDivideArea;
+class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivideArea();
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivideArea(const TopoDS_Face &F);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetMaxArea() {
+				return (Standard_Real) $self->MaxArea();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMaxArea(Standard_Real value ) {
+				$self->MaxArea()=value;
+				}
+		};
+
+};
+%extend ShapeUpgrade_FaceDivideArea {
+	Handle_ShapeUpgrade_FaceDivideArea GetHandle() {
+	return *(Handle_ShapeUpgrade_FaceDivideArea*) &$self;
+	}
+};
+%extend ShapeUpgrade_FaceDivideArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_FaceDivideArea {
+	~ShapeUpgrade_FaceDivideArea() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
 
@@ -1591,39 +1605,6 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 };
 
 
-%nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
-class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurfaceContinuity();
-		%feature("autodoc", "1");
-		void SetCriterion(const GeomAbs_Shape Criterion);
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	Handle_ShapeUpgrade_SplitSurfaceContinuity GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurfaceContinuity*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	~ShapeUpgrade_SplitSurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceContinuity\n");}
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_SplitCurve3dContinuity;
 class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	public:
@@ -1655,6 +1636,71 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	~ShapeUpgrade_SplitCurve3dContinuity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3dContinuity\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_WireDivide;
+class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_WireDivide();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &W, const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire &W, const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Wire &W);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		void SetFace(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void SetSurface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void SetSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		const TopoDS_Wire & Wire() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		%feature("autodoc", "1");
+		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		%feature("autodoc", "1");
+		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
+		%feature("autodoc", "1");
+		void SetEdgeDivideTool(const Handle_ShapeUpgrade_EdgeDivide &edgeDivideTool);
+		%feature("autodoc", "1");
+		virtual		Handle_ShapeUpgrade_EdgeDivide GetEdgeDivideTool() const;
+		%feature("autodoc", "1");
+		virtual		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool();
+		%feature("autodoc", "1");
+		void SetEdgeMode(const Standard_Integer EdgeMode);
+		%feature("autodoc", "1");
+		void SetFixSmallCurveTool(const Handle_ShapeUpgrade_FixSmallCurves &FixSmallCurvesTool);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_FixSmallCurves GetFixSmallCurveTool() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_WireDivide {
+	Handle_ShapeUpgrade_WireDivide GetHandle() {
+	return *(Handle_ShapeUpgrade_WireDivide*) &$self;
+	}
+};
+%extend ShapeUpgrade_WireDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_WireDivide {
+	~ShapeUpgrade_WireDivide() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_WireDivide\n");}
 	}
 };
 
@@ -1781,53 +1827,6 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 };
 
 
-%nodefaultctor ShapeUpgrade_RemoveInternalWires;
-class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_RemoveInternalWires();
-		%feature("autodoc", "1");
-		ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape &theShape);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape &theShape);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopTools_SequenceOfShape &theSeqShapes);
-		%feature("autodoc", "1");
-		TopoDS_Shape GetResult() const;
-		%feature("autodoc", "1");
-		Standard_Real & MinArea();
-		%feature("autodoc", "1");
-		Standard_Boolean & RemoveFaceMode();
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & RemovedFaces() const;
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & RemovedWires() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status theStatus) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_RemoveInternalWires {
-	Handle_ShapeUpgrade_RemoveInternalWires GetHandle() {
-	return *(Handle_ShapeUpgrade_RemoveInternalWires*) &$self;
-	}
-};
-%extend ShapeUpgrade_RemoveInternalWires {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend ShapeUpgrade_RemoveInternalWires {
-	~ShapeUpgrade_RemoveInternalWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveInternalWires\n");}
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
 class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	public:
@@ -1857,5 +1856,42 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	~ShapeUpgrade_ConvertCurve2dToBezier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve2dToBezier\n");}
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_RemoveLocations;
+class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_RemoveLocations();
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const TopoDS_Shape &theShape);
+		%feature("autodoc", "1");
+		TopoDS_Shape GetResult() const;
+		%feature("autodoc", "1");
+		void SetRemoveLevel(const TopAbs_ShapeEnum theLevel);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum RemoveLevel() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape &theInitShape) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_RemoveLocations {
+	Handle_ShapeUpgrade_RemoveLocations GetHandle() {
+	return *(Handle_ShapeUpgrade_RemoveLocations*) &$self;
+	}
+};
+%extend ShapeUpgrade_RemoveLocations {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend ShapeUpgrade_RemoveLocations {
+	~ShapeUpgrade_RemoveLocations() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveLocations\n");}
 	}
 };

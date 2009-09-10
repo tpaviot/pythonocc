@@ -101,32 +101,62 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 };
 
 
-%nodefaultctor Handle_StepDimTol_PerpendicularityTolerance;
-class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
+%nodefaultctor Handle_StepDimTol_CoaxialityTolerance;
+class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance();
+		Handle_StepDimTol_CoaxialityTolerance();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance(const Handle_StepDimTol_PerpendicularityTolerance &aHandle);
+		Handle_StepDimTol_CoaxialityTolerance(const Handle_StepDimTol_CoaxialityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance(const StepDimTol_PerpendicularityTolerance *anItem);
+		Handle_StepDimTol_CoaxialityTolerance(const StepDimTol_CoaxialityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance & operator=(const Handle_StepDimTol_PerpendicularityTolerance &aHandle);
+		Handle_StepDimTol_CoaxialityTolerance & operator=(const Handle_StepDimTol_CoaxialityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance & operator=(const StepDimTol_PerpendicularityTolerance *anItem);
+		Handle_StepDimTol_CoaxialityTolerance & operator=(const StepDimTol_CoaxialityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PerpendicularityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_CoaxialityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_PerpendicularityTolerance {
-	StepDimTol_PerpendicularityTolerance* GetObject() {
-	return (StepDimTol_PerpendicularityTolerance*)$self->Access();
+%extend Handle_StepDimTol_CoaxialityTolerance {
+	StepDimTol_CoaxialityTolerance* GetObject() {
+	return (StepDimTol_CoaxialityTolerance*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_PerpendicularityTolerance {
-	~Handle_StepDimTol_PerpendicularityTolerance() {
+%extend Handle_StepDimTol_CoaxialityTolerance {
+	~Handle_StepDimTol_CoaxialityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PerpendicularityTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CoaxialityTolerance\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepDimTol_Datum;
+class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum(const Handle_StepDimTol_Datum &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum(const StepDimTol_Datum *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum & operator=(const Handle_StepDimTol_Datum &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum & operator=(const StepDimTol_Datum *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepDimTol_Datum {
+	StepDimTol_Datum* GetObject() {
+	return (StepDimTol_Datum*)$self->Access();
+	}
+};
+%extend Handle_StepDimTol_Datum {
+	~Handle_StepDimTol_Datum() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_Datum\n");}
 	}
 };
 
@@ -191,32 +221,32 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 };
 
 
-%nodefaultctor Handle_StepDimTol_Datum;
-class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
+%nodefaultctor Handle_StepDimTol_HArray1OfDatumReference;
+class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum();
+		Handle_StepDimTol_HArray1OfDatumReference();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum(const Handle_StepDimTol_Datum &aHandle);
+		Handle_StepDimTol_HArray1OfDatumReference(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum(const StepDimTol_Datum *anItem);
+		Handle_StepDimTol_HArray1OfDatumReference(const StepDimTol_HArray1OfDatumReference *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum & operator=(const Handle_StepDimTol_Datum &aHandle);
+		Handle_StepDimTol_HArray1OfDatumReference & operator=(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum & operator=(const StepDimTol_Datum *anItem);
+		Handle_StepDimTol_HArray1OfDatumReference & operator=(const StepDimTol_HArray1OfDatumReference *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_HArray1OfDatumReference const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_Datum {
-	StepDimTol_Datum* GetObject() {
-	return (StepDimTol_Datum*)$self->Access();
+%extend Handle_StepDimTol_HArray1OfDatumReference {
+	StepDimTol_HArray1OfDatumReference* GetObject() {
+	return (StepDimTol_HArray1OfDatumReference*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_Datum {
-	~Handle_StepDimTol_Datum() {
+%extend Handle_StepDimTol_HArray1OfDatumReference {
+	~Handle_StepDimTol_HArray1OfDatumReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_Datum\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_HArray1OfDatumReference\n");}
 	}
 };
 
@@ -251,122 +281,92 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 };
 
 
-%nodefaultctor Handle_StepDimTol_HArray1OfDatumReference;
-class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepDimTol_GeometricToleranceRelationship;
+class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference();
+		Handle_StepDimTol_GeometricToleranceRelationship();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
+		Handle_StepDimTol_GeometricToleranceRelationship(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference(const StepDimTol_HArray1OfDatumReference *anItem);
+		Handle_StepDimTol_GeometricToleranceRelationship(const StepDimTol_GeometricToleranceRelationship *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference & operator=(const Handle_StepDimTol_HArray1OfDatumReference &aHandle);
+		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference & operator=(const StepDimTol_HArray1OfDatumReference *anItem);
+		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const StepDimTol_GeometricToleranceRelationship *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_GeometricToleranceRelationship const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_HArray1OfDatumReference {
-	StepDimTol_HArray1OfDatumReference* GetObject() {
-	return (StepDimTol_HArray1OfDatumReference*)$self->Access();
+%extend Handle_StepDimTol_GeometricToleranceRelationship {
+	StepDimTol_GeometricToleranceRelationship* GetObject() {
+	return (StepDimTol_GeometricToleranceRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_HArray1OfDatumReference {
-	~Handle_StepDimTol_HArray1OfDatumReference() {
+%extend Handle_StepDimTol_GeometricToleranceRelationship {
+	~Handle_StepDimTol_GeometricToleranceRelationship() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_HArray1OfDatumReference\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceRelationship\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepDimTol_StraightnessTolerance;
-class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
+%nodefaultctor Handle_StepDimTol_PositionTolerance;
+class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance();
+		Handle_StepDimTol_PositionTolerance();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance(const Handle_StepDimTol_StraightnessTolerance &aHandle);
+		Handle_StepDimTol_PositionTolerance(const Handle_StepDimTol_PositionTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance(const StepDimTol_StraightnessTolerance *anItem);
+		Handle_StepDimTol_PositionTolerance(const StepDimTol_PositionTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance & operator=(const Handle_StepDimTol_StraightnessTolerance &aHandle);
+		Handle_StepDimTol_PositionTolerance & operator=(const Handle_StepDimTol_PositionTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance & operator=(const StepDimTol_StraightnessTolerance *anItem);
+		Handle_StepDimTol_PositionTolerance & operator=(const StepDimTol_PositionTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_PositionTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_StraightnessTolerance {
-	StepDimTol_StraightnessTolerance* GetObject() {
-	return (StepDimTol_StraightnessTolerance*)$self->Access();
+%extend Handle_StepDimTol_PositionTolerance {
+	StepDimTol_PositionTolerance* GetObject() {
+	return (StepDimTol_PositionTolerance*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_StraightnessTolerance {
-	~Handle_StepDimTol_StraightnessTolerance() {
+%extend Handle_StepDimTol_PositionTolerance {
+	~Handle_StepDimTol_PositionTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_StraightnessTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PositionTolerance\n");}
 	}
 };
 
 
-%nodefaultctor Handle_StepDimTol_ConcentricityTolerance;
-class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
+%nodefaultctor Handle_StepDimTol_PerpendicularityTolerance;
+class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance();
+		Handle_StepDimTol_PerpendicularityTolerance();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance(const Handle_StepDimTol_ConcentricityTolerance &aHandle);
+		Handle_StepDimTol_PerpendicularityTolerance(const Handle_StepDimTol_PerpendicularityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance(const StepDimTol_ConcentricityTolerance *anItem);
+		Handle_StepDimTol_PerpendicularityTolerance(const StepDimTol_PerpendicularityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance & operator=(const Handle_StepDimTol_ConcentricityTolerance &aHandle);
+		Handle_StepDimTol_PerpendicularityTolerance & operator=(const Handle_StepDimTol_PerpendicularityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance & operator=(const StepDimTol_ConcentricityTolerance *anItem);
+		Handle_StepDimTol_PerpendicularityTolerance & operator=(const StepDimTol_PerpendicularityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_ConcentricityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_PerpendicularityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_ConcentricityTolerance {
-	StepDimTol_ConcentricityTolerance* GetObject() {
-	return (StepDimTol_ConcentricityTolerance*)$self->Access();
+%extend Handle_StepDimTol_PerpendicularityTolerance {
+	StepDimTol_PerpendicularityTolerance* GetObject() {
+	return (StepDimTol_PerpendicularityTolerance*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_ConcentricityTolerance {
-	~Handle_StepDimTol_ConcentricityTolerance() {
+%extend Handle_StepDimTol_PerpendicularityTolerance {
+	~Handle_StepDimTol_PerpendicularityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ConcentricityTolerance\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepDimTol_RoundnessTolerance;
-class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricTolerance {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance(const Handle_StepDimTol_RoundnessTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance(const StepDimTol_RoundnessTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance & operator=(const Handle_StepDimTol_RoundnessTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance & operator=(const StepDimTol_RoundnessTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_RoundnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepDimTol_RoundnessTolerance {
-	StepDimTol_RoundnessTolerance* GetObject() {
-	return (StepDimTol_RoundnessTolerance*)$self->Access();
-	}
-};
-%extend Handle_StepDimTol_RoundnessTolerance {
-	~Handle_StepDimTol_RoundnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_RoundnessTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PerpendicularityTolerance\n");}
 	}
 };
 
@@ -401,66 +401,6 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 };
 
 
-%nodefaultctor Handle_StepDimTol_CircularRunoutTolerance;
-class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance(const Handle_StepDimTol_CircularRunoutTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance(const StepDimTol_CircularRunoutTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance & operator=(const Handle_StepDimTol_CircularRunoutTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance & operator=(const StepDimTol_CircularRunoutTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CircularRunoutTolerance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepDimTol_CircularRunoutTolerance {
-	StepDimTol_CircularRunoutTolerance* GetObject() {
-	return (StepDimTol_CircularRunoutTolerance*)$self->Access();
-	}
-};
-%extend Handle_StepDimTol_CircularRunoutTolerance {
-	~Handle_StepDimTol_CircularRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CircularRunoutTolerance\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StepDimTol_CoaxialityTolerance;
-class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance(const Handle_StepDimTol_CoaxialityTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance(const StepDimTol_CoaxialityTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance & operator=(const Handle_StepDimTol_CoaxialityTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance & operator=(const StepDimTol_CoaxialityTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_CoaxialityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepDimTol_CoaxialityTolerance {
-	StepDimTol_CoaxialityTolerance* GetObject() {
-	return (StepDimTol_CoaxialityTolerance*)$self->Access();
-	}
-};
-%extend Handle_StepDimTol_CoaxialityTolerance {
-	~Handle_StepDimTol_CoaxialityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CoaxialityTolerance\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepDimTol_TotalRunoutTolerance;
 class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -491,32 +431,32 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 };
 
 
-%nodefaultctor Handle_StepDimTol_GeometricToleranceRelationship;
-class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepDimTol_ConcentricityTolerance;
+class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship();
+		Handle_StepDimTol_ConcentricityTolerance();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
+		Handle_StepDimTol_ConcentricityTolerance(const Handle_StepDimTol_ConcentricityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship(const StepDimTol_GeometricToleranceRelationship *anItem);
+		Handle_StepDimTol_ConcentricityTolerance(const StepDimTol_ConcentricityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const Handle_StepDimTol_GeometricToleranceRelationship &aHandle);
+		Handle_StepDimTol_ConcentricityTolerance & operator=(const Handle_StepDimTol_ConcentricityTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship & operator=(const StepDimTol_GeometricToleranceRelationship *anItem);
+		Handle_StepDimTol_ConcentricityTolerance & operator=(const StepDimTol_ConcentricityTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricToleranceRelationship const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_ConcentricityTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_GeometricToleranceRelationship {
-	StepDimTol_GeometricToleranceRelationship* GetObject() {
-	return (StepDimTol_GeometricToleranceRelationship*)$self->Access();
+%extend Handle_StepDimTol_ConcentricityTolerance {
+	StepDimTol_ConcentricityTolerance* GetObject() {
+	return (StepDimTol_ConcentricityTolerance*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_GeometricToleranceRelationship {
-	~Handle_StepDimTol_GeometricToleranceRelationship() {
+%extend Handle_StepDimTol_ConcentricityTolerance {
+	~Handle_StepDimTol_ConcentricityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceRelationship\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ConcentricityTolerance\n");}
 	}
 };
 
@@ -551,32 +491,32 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 };
 
 
-%nodefaultctor Handle_StepDimTol_PositionTolerance;
-class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTolerance {
+%nodefaultctor Handle_StepDimTol_StraightnessTolerance;
+class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance();
+		Handle_StepDimTol_StraightnessTolerance();
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance(const Handle_StepDimTol_PositionTolerance &aHandle);
+		Handle_StepDimTol_StraightnessTolerance(const Handle_StepDimTol_StraightnessTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance(const StepDimTol_PositionTolerance *anItem);
+		Handle_StepDimTol_StraightnessTolerance(const StepDimTol_StraightnessTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance & operator=(const Handle_StepDimTol_PositionTolerance &aHandle);
+		Handle_StepDimTol_StraightnessTolerance & operator=(const Handle_StepDimTol_StraightnessTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance & operator=(const StepDimTol_PositionTolerance *anItem);
+		Handle_StepDimTol_StraightnessTolerance & operator=(const StepDimTol_StraightnessTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_StepDimTol_PositionTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepDimTol_StraightnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepDimTol_PositionTolerance {
-	StepDimTol_PositionTolerance* GetObject() {
-	return (StepDimTol_PositionTolerance*)$self->Access();
+%extend Handle_StepDimTol_StraightnessTolerance {
+	StepDimTol_StraightnessTolerance* GetObject() {
+	return (StepDimTol_StraightnessTolerance*)$self->Access();
 	}
 };
-%extend Handle_StepDimTol_PositionTolerance {
-	~Handle_StepDimTol_PositionTolerance() {
+%extend Handle_StepDimTol_StraightnessTolerance {
+	~Handle_StepDimTol_StraightnessTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PositionTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_StraightnessTolerance\n");}
 	}
 };
 
@@ -667,6 +607,36 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	~Handle_StepDimTol_DatumFeature() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_DatumFeature\n");}
+	}
+};
+
+
+%nodefaultctor Handle_StepDimTol_CircularRunoutTolerance;
+class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance(const Handle_StepDimTol_CircularRunoutTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance(const StepDimTol_CircularRunoutTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance & operator=(const Handle_StepDimTol_CircularRunoutTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance & operator=(const StepDimTol_CircularRunoutTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_CircularRunoutTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepDimTol_CircularRunoutTolerance {
+	StepDimTol_CircularRunoutTolerance* GetObject() {
+	return (StepDimTol_CircularRunoutTolerance*)$self->Access();
+	}
+};
+%extend Handle_StepDimTol_CircularRunoutTolerance {
+	~Handle_StepDimTol_CircularRunoutTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CircularRunoutTolerance\n");}
 	}
 };
 
@@ -821,6 +791,36 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 };
 
 
+%nodefaultctor Handle_StepDimTol_RoundnessTolerance;
+class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance(const Handle_StepDimTol_RoundnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance(const StepDimTol_RoundnessTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance & operator=(const Handle_StepDimTol_RoundnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance & operator=(const StepDimTol_RoundnessTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_RoundnessTolerance const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepDimTol_RoundnessTolerance {
+	StepDimTol_RoundnessTolerance* GetObject() {
+	return (StepDimTol_RoundnessTolerance*)$self->Access();
+	}
+};
+%extend Handle_StepDimTol_RoundnessTolerance {
+	~Handle_StepDimTol_RoundnessTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_RoundnessTolerance\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -896,69 +896,11 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
-class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_GeometricToleranceWithDatumReference();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGeometricTolerance_Name, const Handle_TCollection_HAsciiString &aGeometricTolerance_Description, const Handle_StepBasic_MeasureWithUnit &aGeometricTolerance_Magnitude, const Handle_StepRepr_ShapeAspect &aGeometricTolerance_TolerancedShapeAspect, const Handle_StepDimTol_HArray1OfDatumReference &aDatumSystem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_HArray1OfDatumReference DatumSystem() const;
-		%feature("autodoc", "1");
-		void SetDatumSystem(const Handle_StepDimTol_HArray1OfDatumReference &DatumSystem);
-
-};
-%extend StepDimTol_GeometricToleranceWithDatumReference {
-	Handle_StepDimTol_GeometricToleranceWithDatumReference GetHandle() {
-	return *(Handle_StepDimTol_GeometricToleranceWithDatumReference*) &$self;
-	}
-};
-%extend StepDimTol_GeometricToleranceWithDatumReference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_GeometricToleranceWithDatumReference {
-	~StepDimTol_GeometricToleranceWithDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceWithDatumReference\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_ParallelismTolerance;
-class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_ParallelismTolerance();
-
-};
-%extend StepDimTol_ParallelismTolerance {
-	Handle_StepDimTol_ParallelismTolerance GetHandle() {
-	return *(Handle_StepDimTol_ParallelismTolerance*) &$self;
-	}
-};
-%extend StepDimTol_ParallelismTolerance {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_ParallelismTolerance {
-	~StepDimTol_ParallelismTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ParallelismTolerance\n");}
-	}
-};
-
-
 %nodefaultctor StepDimTol_StraightnessTolerance;
 class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_StraightnessTolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepDimTol_StraightnessTolerance {
@@ -1002,6 +944,33 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 	~StepDimTol_LineProfileTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_LineProfileTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_SurfaceProfileTolerance;
+class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_SurfaceProfileTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_SurfaceProfileTolerance {
+	Handle_StepDimTol_SurfaceProfileTolerance GetHandle() {
+	return *(Handle_StepDimTol_SurfaceProfileTolerance*) &$self;
+	}
+};
+%extend StepDimTol_SurfaceProfileTolerance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_SurfaceProfileTolerance {
+	~StepDimTol_SurfaceProfileTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_SurfaceProfileTolerance\n");}
 	}
 };
 
@@ -1060,13 +1029,44 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 };
 
 
+%nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
+class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_GeometricToleranceWithDatumReference();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGeometricTolerance_Name, const Handle_TCollection_HAsciiString &aGeometricTolerance_Description, const Handle_StepBasic_MeasureWithUnit &aGeometricTolerance_Magnitude, const Handle_StepRepr_ShapeAspect &aGeometricTolerance_TolerancedShapeAspect, const Handle_StepDimTol_HArray1OfDatumReference &aDatumSystem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_HArray1OfDatumReference DatumSystem() const;
+		%feature("autodoc", "1");
+		void SetDatumSystem(const Handle_StepDimTol_HArray1OfDatumReference &DatumSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	Handle_StepDimTol_GeometricToleranceWithDatumReference GetHandle() {
+	return *(Handle_StepDimTol_GeometricToleranceWithDatumReference*) &$self;
+	}
+};
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	~StepDimTol_GeometricToleranceWithDatumReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceWithDatumReference\n");}
+	}
+};
+
+
 %nodefaultctor StepDimTol_TotalRunoutTolerance;
 class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
 		%feature("autodoc", "1");
 		StepDimTol_TotalRunoutTolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepDimTol_TotalRunoutTolerance {
@@ -1087,29 +1087,78 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 };
 
 
-%nodefaultctor StepDimTol_ConcentricityTolerance;
-class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
+%nodefaultctor StepDimTol_Array1OfDatumReference;
+class StepDimTol_Array1OfDatumReference {
 	public:
 		%feature("autodoc", "1");
-		StepDimTol_ConcentricityTolerance();
+		StepDimTol_Array1OfDatumReference(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepDimTol_Array1OfDatumReference(const Handle_StepDimTol_DatumReference &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepDimTol_DatumReference &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepDimTol_Array1OfDatumReference & Assign(const StepDimTol_Array1OfDatumReference &Other);
+		%feature("autodoc", "1");
+		const StepDimTol_Array1OfDatumReference & operator=(const StepDimTol_Array1OfDatumReference &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepDimTol_DatumReference &Value);
+		%feature("autodoc", "1");
+		const Handle_StepDimTol_DatumReference & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepDimTol_DatumReference & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumReference & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_DatumReference & operator()(const Standard_Integer Index);
+
+};
+%extend StepDimTol_Array1OfDatumReference {
+	~StepDimTol_Array1OfDatumReference() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_Array1OfDatumReference\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_DatumTarget;
+class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_DatumTarget();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aShapeAspect_Name, const Handle_TCollection_HAsciiString &aShapeAspect_Description, const Handle_StepRepr_ProductDefinitionShape &aShapeAspect_OfShape, const StepData_Logical aShapeAspect_ProductDefinitional, const Handle_TCollection_HAsciiString &aTargetId);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString TargetId() const;
+		%feature("autodoc", "1");
+		void SetTargetId(const Handle_TCollection_HAsciiString &TargetId);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepDimTol_ConcentricityTolerance {
-	Handle_StepDimTol_ConcentricityTolerance GetHandle() {
-	return *(Handle_StepDimTol_ConcentricityTolerance*) &$self;
+%extend StepDimTol_DatumTarget {
+	Handle_StepDimTol_DatumTarget GetHandle() {
+	return *(Handle_StepDimTol_DatumTarget*) &$self;
 	}
 };
-%extend StepDimTol_ConcentricityTolerance {
+%extend StepDimTol_DatumTarget {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepDimTol_ConcentricityTolerance {
-	~StepDimTol_ConcentricityTolerance() {
+%extend StepDimTol_DatumTarget {
+	~StepDimTol_DatumTarget() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ConcentricityTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumTarget\n");}
 	}
 };
 
@@ -1137,6 +1186,33 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 	~StepDimTol_AngularityTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_AngularityTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_ConcentricityTolerance;
+class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_ConcentricityTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_ConcentricityTolerance {
+	Handle_StepDimTol_ConcentricityTolerance GetHandle() {
+	return *(Handle_StepDimTol_ConcentricityTolerance*) &$self;
+	}
+};
+%extend StepDimTol_ConcentricityTolerance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_ConcentricityTolerance {
+	~StepDimTol_ConcentricityTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_ConcentricityTolerance\n");}
 	}
 };
 
@@ -1188,29 +1264,174 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 };
 
 
-%nodefaultctor StepDimTol_SurfaceProfileTolerance;
-class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance {
+%nodefaultctor StepDimTol_DatumReference;
+class StepDimTol_DatumReference : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepDimTol_SurfaceProfileTolerance();
+		StepDimTol_DatumReference();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aPrecedence, const Handle_StepDimTol_Datum &aReferencedDatum);
+		%feature("autodoc", "1");
+		Standard_Integer Precedence() const;
+		%feature("autodoc", "1");
+		void SetPrecedence(const Standard_Integer Precedence);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum ReferencedDatum() const;
+		%feature("autodoc", "1");
+		void SetReferencedDatum(const Handle_StepDimTol_Datum &ReferencedDatum);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepDimTol_SurfaceProfileTolerance {
-	Handle_StepDimTol_SurfaceProfileTolerance GetHandle() {
-	return *(Handle_StepDimTol_SurfaceProfileTolerance*) &$self;
+%extend StepDimTol_DatumReference {
+	Handle_StepDimTol_DatumReference GetHandle() {
+	return *(Handle_StepDimTol_DatumReference*) &$self;
 	}
 };
-%extend StepDimTol_SurfaceProfileTolerance {
+%extend StepDimTol_DatumReference {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepDimTol_SurfaceProfileTolerance {
-	~StepDimTol_SurfaceProfileTolerance() {
+%extend StepDimTol_DatumReference {
+	~StepDimTol_DatumReference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_SurfaceProfileTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumReference\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_ShapeToleranceSelect;
+class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_ShapeToleranceSelect();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepDimTol_GeometricTolerance GeometricTolerance() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_PlusMinusTolerance PlusMinusTolerance() const;
+
+};
+%extend StepDimTol_ShapeToleranceSelect {
+	~StepDimTol_ShapeToleranceSelect() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_ShapeToleranceSelect\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_SymmetryTolerance;
+class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_SymmetryTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_SymmetryTolerance {
+	Handle_StepDimTol_SymmetryTolerance GetHandle() {
+	return *(Handle_StepDimTol_SymmetryTolerance*) &$self;
+	}
+};
+%extend StepDimTol_SymmetryTolerance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_SymmetryTolerance {
+	~StepDimTol_SymmetryTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_FlatnessTolerance;
+class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_FlatnessTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_FlatnessTolerance {
+	Handle_StepDimTol_FlatnessTolerance GetHandle() {
+	return *(Handle_StepDimTol_FlatnessTolerance*) &$self;
+	}
+};
+%extend StepDimTol_FlatnessTolerance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_FlatnessTolerance {
+	~StepDimTol_FlatnessTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_FlatnessTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_ParallelismTolerance;
+class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_ParallelismTolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_ParallelismTolerance {
+	Handle_StepDimTol_ParallelismTolerance GetHandle() {
+	return *(Handle_StepDimTol_ParallelismTolerance*) &$self;
+	}
+};
+%extend StepDimTol_ParallelismTolerance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_ParallelismTolerance {
+	~StepDimTol_ParallelismTolerance() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_ParallelismTolerance\n");}
+	}
+};
+
+
+%nodefaultctor StepDimTol_CommonDatum;
+class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		StepDimTol_CommonDatum();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aShapeAspect_Name, const Handle_TCollection_HAsciiString &aShapeAspect_Description, const Handle_StepRepr_ProductDefinitionShape &aShapeAspect_OfShape, const StepData_Logical aShapeAspect_ProductDefinitional, const Handle_TCollection_HAsciiString &aDatum_Name, const Handle_TCollection_HAsciiString &aDatum_Description, const Handle_StepRepr_ProductDefinitionShape &aDatum_OfShape, const StepData_Logical aDatum_ProductDefinitional, const Handle_TCollection_HAsciiString &aDatum_Identification);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_Datum Datum() const;
+		%feature("autodoc", "1");
+		void SetDatum(const Handle_StepDimTol_Datum &Datum);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepDimTol_CommonDatum {
+	Handle_StepDimTol_CommonDatum GetHandle() {
+	return *(Handle_StepDimTol_CommonDatum*) &$self;
+	}
+};
+%extend StepDimTol_CommonDatum {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_CommonDatum {
+	~StepDimTol_CommonDatum() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_CommonDatum\n");}
 	}
 };
 
@@ -1256,39 +1477,6 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 };
 
 
-%nodefaultctor StepDimTol_CommonDatum;
-class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_CommonDatum();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aShapeAspect_Name, const Handle_TCollection_HAsciiString &aShapeAspect_Description, const Handle_StepRepr_ProductDefinitionShape &aShapeAspect_OfShape, const StepData_Logical aShapeAspect_ProductDefinitional, const Handle_TCollection_HAsciiString &aDatum_Name, const Handle_TCollection_HAsciiString &aDatum_Description, const Handle_StepRepr_ProductDefinitionShape &aDatum_OfShape, const StepData_Logical aDatum_ProductDefinitional, const Handle_TCollection_HAsciiString &aDatum_Identification);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum Datum() const;
-		%feature("autodoc", "1");
-		void SetDatum(const Handle_StepDimTol_Datum &Datum);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_CommonDatum {
-	Handle_StepDimTol_CommonDatum GetHandle() {
-	return *(Handle_StepDimTol_CommonDatum*) &$self;
-	}
-};
-%extend StepDimTol_CommonDatum {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_CommonDatum {
-	~StepDimTol_CommonDatum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_CommonDatum\n");}
-	}
-};
-
-
 %nodefaultctor StepDimTol_ModifiedGeometricTolerance;
 class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -1318,51 +1506,6 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 	~StepDimTol_ModifiedGeometricTolerance() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_ModifiedGeometricTolerance\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_GeometricToleranceRelationship;
-class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_GeometricToleranceRelationship();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepDimTol_GeometricTolerance &aRelatingGeometricTolerance, const Handle_StepDimTol_GeometricTolerance &aRelatedGeometricTolerance);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricTolerance RelatingGeometricTolerance() const;
-		%feature("autodoc", "1");
-		void SetRelatingGeometricTolerance(const Handle_StepDimTol_GeometricTolerance &RelatingGeometricTolerance);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricTolerance RelatedGeometricTolerance() const;
-		%feature("autodoc", "1");
-		void SetRelatedGeometricTolerance(const Handle_StepDimTol_GeometricTolerance &RelatedGeometricTolerance);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_GeometricToleranceRelationship {
-	Handle_StepDimTol_GeometricToleranceRelationship GetHandle() {
-	return *(Handle_StepDimTol_GeometricToleranceRelationship*) &$self;
-	}
-};
-%extend StepDimTol_GeometricToleranceRelationship {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_GeometricToleranceRelationship {
-	~StepDimTol_GeometricToleranceRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceRelationship\n");}
 	}
 };
 
@@ -1421,85 +1564,6 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 
 
-%nodefaultctor StepDimTol_ShapeToleranceSelect;
-class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_ShapeToleranceSelect();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepDimTol_GeometricTolerance GeometricTolerance() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_PlusMinusTolerance PlusMinusTolerance() const;
-
-};
-%extend StepDimTol_ShapeToleranceSelect {
-	~StepDimTol_ShapeToleranceSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ShapeToleranceSelect\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_DatumTarget;
-class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_DatumTarget();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aShapeAspect_Name, const Handle_TCollection_HAsciiString &aShapeAspect_Description, const Handle_StepRepr_ProductDefinitionShape &aShapeAspect_OfShape, const StepData_Logical aShapeAspect_ProductDefinitional, const Handle_TCollection_HAsciiString &aTargetId);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString TargetId() const;
-		%feature("autodoc", "1");
-		void SetTargetId(const Handle_TCollection_HAsciiString &TargetId);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_DatumTarget {
-	Handle_StepDimTol_DatumTarget GetHandle() {
-	return *(Handle_StepDimTol_DatumTarget*) &$self;
-	}
-};
-%extend StepDimTol_DatumTarget {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_DatumTarget {
-	~StepDimTol_DatumTarget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumTarget\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_PlacedDatumTargetFeature;
-class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_PlacedDatumTargetFeature();
-
-};
-%extend StepDimTol_PlacedDatumTargetFeature {
-	Handle_StepDimTol_PlacedDatumTargetFeature GetHandle() {
-	return *(Handle_StepDimTol_PlacedDatumTargetFeature*) &$self;
-	}
-};
-%extend StepDimTol_PlacedDatumTargetFeature {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_PlacedDatumTargetFeature {
-	~StepDimTol_PlacedDatumTargetFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_PlacedDatumTargetFeature\n");}
-	}
-};
-
-
 %nodefaultctor StepDimTol_DatumFeature;
 class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 	public:
@@ -1523,70 +1587,6 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 	~StepDimTol_DatumFeature() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumFeature\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_SymmetryTolerance;
-class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_SymmetryTolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_SymmetryTolerance {
-	Handle_StepDimTol_SymmetryTolerance GetHandle() {
-	return *(Handle_StepDimTol_SymmetryTolerance*) &$self;
-	}
-};
-%extend StepDimTol_SymmetryTolerance {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_SymmetryTolerance {
-	~StepDimTol_SymmetryTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");}
-	}
-};
-
-
-%nodefaultctor StepDimTol_DatumReference;
-class StepDimTol_DatumReference : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepDimTol_DatumReference();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aPrecedence, const Handle_StepDimTol_Datum &aReferencedDatum);
-		%feature("autodoc", "1");
-		Standard_Integer Precedence() const;
-		%feature("autodoc", "1");
-		void SetPrecedence(const Standard_Integer Precedence);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_Datum ReferencedDatum() const;
-		%feature("autodoc", "1");
-		void SetReferencedDatum(const Handle_StepDimTol_Datum &ReferencedDatum);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepDimTol_DatumReference {
-	Handle_StepDimTol_DatumReference GetHandle() {
-	return *(Handle_StepDimTol_DatumReference*) &$self;
-	}
-};
-%extend StepDimTol_DatumReference {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepDimTol_DatumReference {
-	~StepDimTol_DatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumReference\n");}
 	}
 };
 
@@ -1678,71 +1678,73 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 };
 
 
-%nodefaultctor StepDimTol_FlatnessTolerance;
-class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
+%nodefaultctor StepDimTol_PlacedDatumTargetFeature;
+class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 	public:
 		%feature("autodoc", "1");
-		StepDimTol_FlatnessTolerance();
+		StepDimTol_PlacedDatumTargetFeature();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepDimTol_FlatnessTolerance {
-	Handle_StepDimTol_FlatnessTolerance GetHandle() {
-	return *(Handle_StepDimTol_FlatnessTolerance*) &$self;
+%extend StepDimTol_PlacedDatumTargetFeature {
+	Handle_StepDimTol_PlacedDatumTargetFeature GetHandle() {
+	return *(Handle_StepDimTol_PlacedDatumTargetFeature*) &$self;
 	}
 };
-%extend StepDimTol_FlatnessTolerance {
+%extend StepDimTol_PlacedDatumTargetFeature {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepDimTol_FlatnessTolerance {
-	~StepDimTol_FlatnessTolerance() {
+%extend StepDimTol_PlacedDatumTargetFeature {
+	~StepDimTol_PlacedDatumTargetFeature() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_FlatnessTolerance\n");}
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_PlacedDatumTargetFeature\n");}
 	}
 };
 
 
-%nodefaultctor StepDimTol_Array1OfDatumReference;
-class StepDimTol_Array1OfDatumReference {
+%nodefaultctor StepDimTol_GeometricToleranceRelationship;
+class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepDimTol_Array1OfDatumReference(const Standard_Integer Low, const Standard_Integer Up);
+		StepDimTol_GeometricToleranceRelationship();
 		%feature("autodoc", "1");
-		StepDimTol_Array1OfDatumReference(const Handle_StepDimTol_DatumReference &Item, const Standard_Integer Low, const Standard_Integer Up);
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepDimTol_GeometricTolerance &aRelatingGeometricTolerance, const Handle_StepDimTol_GeometricTolerance &aRelatedGeometricTolerance);
 		%feature("autodoc", "1");
-		void Init(const Handle_StepDimTol_DatumReference &V);
+		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		void SetName(const Handle_TCollection_HAsciiString &Name);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_TCollection_HAsciiString Description() const;
 		%feature("autodoc", "1");
-		const StepDimTol_Array1OfDatumReference & Assign(const StepDimTol_Array1OfDatumReference &Other);
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
 		%feature("autodoc", "1");
-		const StepDimTol_Array1OfDatumReference & operator=(const StepDimTol_Array1OfDatumReference &Other);
+		Handle_StepDimTol_GeometricTolerance RelatingGeometricTolerance() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetRelatingGeometricTolerance(const Handle_StepDimTol_GeometricTolerance &RelatingGeometricTolerance);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_StepDimTol_GeometricTolerance RelatedGeometricTolerance() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void SetRelatedGeometricTolerance(const Handle_StepDimTol_GeometricTolerance &RelatedGeometricTolerance);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepDimTol_DatumReference &Value);
-		%feature("autodoc", "1");
-		const Handle_StepDimTol_DatumReference & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepDimTol_DatumReference & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepDimTol_DatumReference & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_DatumReference & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepDimTol_Array1OfDatumReference {
-	~StepDimTol_Array1OfDatumReference() {
+%extend StepDimTol_GeometricToleranceRelationship {
+	Handle_StepDimTol_GeometricToleranceRelationship GetHandle() {
+	return *(Handle_StepDimTol_GeometricToleranceRelationship*) &$self;
+	}
+};
+%extend StepDimTol_GeometricToleranceRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepDimTol_GeometricToleranceRelationship {
+	~StepDimTol_GeometricToleranceRelationship() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_Array1OfDatumReference\n");}
+	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceRelationship\n");}
 	}
 };

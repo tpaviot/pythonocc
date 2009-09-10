@@ -434,23 +434,19 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Graphic3d_Group.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<gp_Pnt.hxx>
-#include<Quantity_Color.hxx>
-#include<Handle_Graphic3d_AspectLine3d.hxx>
-#include<Handle_Graphic3d_AspectText3d.hxx>
-#include<Graphic3d_MaterialAspect.hxx>
-#include<Handle_Graphic3d_AspectFillArea3d.hxx>
-#include<gp_Pln.hxx>
-#include<Prs3d.hxx>
 #include<Handle_Graphic3d_StructureManager.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_Geom_Transformation.hxx>
+#include<Handle_Graphic3d_Group.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<gp_Pnt.hxx>
+#include<Quantity_Color.hxx>
 #include<Handle_Graphic3d_HArray1OfBytes.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
+#include<Handle_Graphic3d_AspectLine3d.hxx>
+#include<Prs3d.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Bnd_Box.hxx>
@@ -459,6 +455,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopLoc_Location.hxx>
 #include<Handle_Poly_PolygonOnTriangulation.hxx>
 #include<Handle_Poly_Polygon3D.hxx>
+#include<Handle_Graphic3d_AspectText3d.hxx>
 #include<Standard_SStream.hxx>
+#include<gp_Pln.hxx>
+#include<Graphic3d_MaterialAspect.hxx>
+#include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<gp_Dir.hxx>
 %}

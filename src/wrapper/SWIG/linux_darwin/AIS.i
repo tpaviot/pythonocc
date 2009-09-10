@@ -32,9 +32,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %include AIS_headers.i
 
+typedef NCollection_List<Handle_Standard_Transient> AIS_NListTransient;
 typedef NCollection_TListIterator<Handle_Standard_Transient> AIS_NListIteratorOfListTransient;
 typedef NCollection_DataMap<Handle_Standard_Transient, NCollection_TListIterator<Handle_Standard_Transient> > AIS_NDataMapOfTransientIteratorOfListTransient;
-typedef NCollection_List<Handle_Standard_Transient> AIS_NListTransient;
 typedef AIS_InteractiveContext * AIS_PToContext;
 typedef NCollection_BaseCollection<NCollection_TListIterator<Handle_Standard_Transient> > AIS_BaseCollItListTransient;
 
@@ -57,6 +57,23 @@ enum AIS_StatusOfPick {
 	AIS_SOP_SeveralSelected,
 	};
 
+enum AIS_KindOfDimension {
+	AIS_KOD_NONE,
+	AIS_KOD_LENGTH,
+	AIS_KOD_PLANEANGLE,
+	AIS_KOD_SOLIDANGLE,
+	AIS_KOD_AREA,
+	AIS_KOD_VOLUME,
+	AIS_KOD_MASS,
+	AIS_KOD_TIME,
+	AIS_KOD_RADIUS,
+	AIS_KOD_DIAMETER,
+	AIS_KOD_CHAMF2D,
+	AIS_KOD_CHAMF3D,
+	AIS_KOD_OFFSET,
+	AIS_KOD_ELLIPSERADIUS,
+	};
+
 enum AIS_TypeOfAxis {
 	AIS_TOAX_Unknown,
 	AIS_TOAX_XAxis,
@@ -75,6 +92,17 @@ enum AIS_SelectStatus {
 	AIS_SS_Added,
 	AIS_SS_Removed,
 	AIS_SS_NotDone,
+	};
+
+enum AIS_KindOfSurface {
+	AIS_KOS_Plane,
+	AIS_KOS_Cylinder,
+	AIS_KOS_Cone,
+	AIS_KOS_Sphere,
+	AIS_KOS_Torus,
+	AIS_KOS_Revolution,
+	AIS_KOS_Extrusion,
+	AIS_KOS_OtherSurface,
 	};
 
 enum AIS_KindOfInteractive {
@@ -126,17 +154,6 @@ enum AIS_TypeOfIso {
 	AIS_TOI_Both,
 	};
 
-enum AIS_KindOfSurface {
-	AIS_KOS_Plane,
-	AIS_KOS_Cylinder,
-	AIS_KOS_Cone,
-	AIS_KOS_Sphere,
-	AIS_KOS_Torus,
-	AIS_KOS_Revolution,
-	AIS_KOS_Extrusion,
-	AIS_KOS_OtherSurface,
-	};
-
 enum AIS_TypeOfDist {
 	AIS_TOD_Unknown,
 	AIS_TOD_Horizontal,
@@ -149,23 +166,6 @@ enum AIS_DisplayStatus {
 	AIS_DS_FullErased,
 	AIS_DS_Temporary,
 	AIS_DS_None,
-	};
-
-enum AIS_KindOfDimension {
-	AIS_KOD_NONE,
-	AIS_KOD_LENGTH,
-	AIS_KOD_PLANEANGLE,
-	AIS_KOD_SOLIDANGLE,
-	AIS_KOD_AREA,
-	AIS_KOD_VOLUME,
-	AIS_KOD_MASS,
-	AIS_KOD_TIME,
-	AIS_KOD_RADIUS,
-	AIS_KOD_DIAMETER,
-	AIS_KOD_CHAMF2D,
-	AIS_KOD_CHAMF3D,
-	AIS_KOD_OFFSET,
-	AIS_KOD_ELLIPSERADIUS,
 	};
 
 enum AIS_TypeOfPlane {
@@ -256,36 +256,6 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 };
 
 
-%nodefaultctor Handle_AIS_EllipseRadiusDimension;
-class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension();
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension(const Handle_AIS_EllipseRadiusDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension & operator=(const Handle_AIS_EllipseRadiusDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_EllipseRadiusDimension {
-	AIS_EllipseRadiusDimension* GetObject() {
-	return (AIS_EllipseRadiusDimension*)$self->Access();
-	}
-};
-%extend Handle_AIS_EllipseRadiusDimension {
-	~Handle_AIS_EllipseRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AIS_MidPointRelation;
 class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	public:
@@ -342,36 +312,6 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 	~Handle_AIS_DiameterDimension() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DiameterDimension\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
-class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive();
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	AIS_DataMapNodeOfDataMapofIntegerListOfinteractive* GetObject() {
-	return (AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*)$self->Access();
-	}
-};
-%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -496,6 +436,36 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 };
 
 
+%nodefaultctor Handle_AIS_TangentRelation;
+class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation(const Handle_AIS_TangentRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_TangentRelation {
+	AIS_TangentRelation* GetObject() {
+	return (AIS_TangentRelation*)$self->Access();
+	}
+};
+%extend Handle_AIS_TangentRelation {
+	~Handle_AIS_TangentRelation() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_TangentRelation\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_ConnectedInteractive;
 class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 	public:
@@ -616,36 +586,6 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 };
 
 
-%nodefaultctor Handle_AIS_AngleDimension;
-class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension();
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension(const Handle_AIS_AngleDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_AngleDimension {
-	AIS_AngleDimension* GetObject() {
-	return (AIS_AngleDimension*)$self->Access();
-	}
-};
-%extend Handle_AIS_AngleDimension {
-	~Handle_AIS_AngleDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AngleDimension\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AIS_Point;
 class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 	public:
@@ -706,66 +646,6 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 };
 
 
-%nodefaultctor Handle_AIS_Line;
-class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_Line();
-		%feature("autodoc", "1");
-		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Line(const AIS_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Line & operator=(const AIS_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Line const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_Line {
-	AIS_Line* GetObject() {
-	return (AIS_Line*)$self->Access();
-	}
-};
-%extend Handle_AIS_Line {
-	~Handle_AIS_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Line\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_TangentRelation;
-class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation(const Handle_AIS_TangentRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_TangentRelation {
-	AIS_TangentRelation* GetObject() {
-	return (AIS_TangentRelation*)$self->Access();
-	}
-};
-%extend Handle_AIS_TangentRelation {
-	~Handle_AIS_TangentRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_TangentRelation\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AIS_MultipleConnectedShape;
 class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInteractive {
 	public:
@@ -792,36 +672,6 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 	~Handle_AIS_MultipleConnectedShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedShape\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
-class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC();
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
-	AIS_DataMapNodeOfDataMapOfILC* GetObject() {
-	return (AIS_DataMapNodeOfDataMapOfILC*)$self->Access();
-	}
-};
-%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
-	~Handle_AIS_DataMapNodeOfDataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfILC\n");}
 	}
 };
 
@@ -916,6 +766,36 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 };
 
 
+%nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
+class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC();
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapOfILC const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
+	AIS_DataMapNodeOfDataMapOfILC* GetObject() {
+	return (AIS_DataMapNodeOfDataMapOfILC*)$self->Access();
+	}
+};
+%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
+	~Handle_AIS_DataMapNodeOfDataMapOfILC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfILC\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_AttributeFilter;
 class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -942,6 +822,36 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 	~Handle_AIS_AttributeFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AttributeFilter\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
+class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
+	AIS_SequenceNodeOfSequenceOfDimension* GetObject() {
+	return (AIS_SequenceNodeOfSequenceOfDimension*)$self->Access();
+	}
+};
+%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
+	~Handle_AIS_SequenceNodeOfSequenceOfDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfDimension\n");}
 	}
 };
 
@@ -1006,6 +916,36 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_AIS_Line;
+class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_Line();
+		%feature("autodoc", "1");
+		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Line(const AIS_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const AIS_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Line const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_Line {
+	AIS_Line* GetObject() {
+	return (AIS_Line*)$self->Access();
+	}
+};
+%extend Handle_AIS_Line {
+	~Handle_AIS_Line() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Line\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_DimensionOwner;
 class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 	public:
@@ -1032,36 +972,6 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 	~Handle_AIS_DimensionOwner() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DimensionOwner\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_BadEdgeFilter;
-class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter();
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter(const Handle_AIS_BadEdgeFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_BadEdgeFilter {
-	AIS_BadEdgeFilter* GetObject() {
-	return (AIS_BadEdgeFilter*)$self->Access();
-	}
-};
-%extend Handle_AIS_BadEdgeFilter {
-	~Handle_AIS_BadEdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_BadEdgeFilter\n");}
 	}
 };
 
@@ -1216,6 +1126,36 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 };
 
 
+%nodefaultctor Handle_AIS_EllipseRadiusDimension;
+class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension(const AIS_EllipseRadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension & operator=(const Handle_AIS_EllipseRadiusDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension & operator=(const AIS_EllipseRadiusDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_EllipseRadiusDimension const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_EllipseRadiusDimension {
+	AIS_EllipseRadiusDimension* GetObject() {
+	return (AIS_EllipseRadiusDimension*)$self->Access();
+	}
+};
+%extend Handle_AIS_EllipseRadiusDimension {
+	~Handle_AIS_EllipseRadiusDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_Axis;
 class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 	public:
@@ -1302,6 +1242,36 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 	~Handle_AIS_C0RegularityFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_C0RegularityFilter\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
+class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	AIS_DataMapNodeOfDataMapofIntegerListOfinteractive* GetObject() {
+	return (AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*)$self->Access();
+	}
+};
+%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -1396,36 +1366,6 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_AIS_Drawer;
-class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer();
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_Drawer {
-	AIS_Drawer* GetObject() {
-	return (AIS_Drawer*)$self->Access();
-	}
-};
-%extend Handle_AIS_Drawer {
-	~Handle_AIS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Drawer\n");}
-	}
-};
-
-
 %nodefaultctor Handle_AIS_LocalContext;
 class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 	public:
@@ -1456,62 +1396,32 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
-class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_AIS_BadEdgeFilter;
+class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive();
+		Handle_AIS_BadEdgeFilter();
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		Handle_AIS_BadEdgeFilter(const Handle_AIS_BadEdgeFilter &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_AIS_BadEdgeFilter const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
-	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
-	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
+%extend Handle_AIS_BadEdgeFilter {
+	AIS_BadEdgeFilter* GetObject() {
+	return (AIS_BadEdgeFilter*)$self->Access();
 	}
 };
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
-	~Handle_AIS_StdMapNodeOfMapOfInteractive() {
+%extend Handle_AIS_BadEdgeFilter {
+	~Handle_AIS_BadEdgeFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_StdMapNodeOfMapOfInteractive\n");}
-	}
-};
-
-
-%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
-class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension();
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
-	AIS_SequenceNodeOfSequenceOfDimension* GetObject() {
-	return (AIS_SequenceNodeOfSequenceOfDimension*)$self->Access();
-	}
-};
-%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
-	~Handle_AIS_SequenceNodeOfSequenceOfDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfDimension\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_BadEdgeFilter\n");}
 	}
 };
 
@@ -1542,6 +1452,36 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 	~Handle_AIS_Circle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Circle\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
+class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
+	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
+	}
+};
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	~Handle_AIS_StdMapNodeOfMapOfInteractive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_StdMapNodeOfMapOfInteractive\n");}
 	}
 };
 
@@ -1846,6 +1786,36 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 };
 
 
+%nodefaultctor Handle_AIS_Drawer;
+class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer();
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer(const AIS_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Drawer const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_Drawer {
+	AIS_Drawer* GetObject() {
+	return (AIS_Drawer*)$self->Access();
+	}
+};
+%extend Handle_AIS_Drawer {
+	~Handle_AIS_Drawer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Drawer\n");}
+	}
+};
+
+
 %nodefaultctor Handle_AIS_ListNodeOfListOfInteractive;
 class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode {
 	public:
@@ -1872,6 +1842,36 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 	~Handle_AIS_ListNodeOfListOfInteractive() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ListNodeOfListOfInteractive\n");}
+	}
+};
+
+
+%nodefaultctor Handle_AIS_AngleDimension;
+class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension(const Handle_AIS_AngleDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_AngleDimension {
+	AIS_AngleDimension* GetObject() {
+	return (AIS_AngleDimension*)$self->Access();
+	}
+};
+%extend Handle_AIS_AngleDimension {
+	~Handle_AIS_AngleDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AngleDimension\n");}
 	}
 };
 
@@ -2607,8 +2607,18 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 		AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const Handle_SelectMgr_EntityOwner &K1, const Standard_Integer K2, const Handle_Prs3d_Presentation &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_SelectMgr_EntityOwner & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2631,6 +2641,268 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 	~AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	}
+};
+
+
+%nodefaultctor AIS_ConnectedInteractive;
+class AIS_ConnectedInteractive : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConnection() const;
+		%feature("autodoc", "1");
+		const Handle_AIS_InteractiveObject & ConnectedTo() const;
+		%feature("autodoc", "1");
+		void Disconnect();
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation();
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_ConnectedInteractive {
+	Handle_AIS_ConnectedInteractive GetHandle() {
+	return *(Handle_AIS_ConnectedInteractive*) &$self;
+	}
+};
+%extend AIS_ConnectedInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_ConnectedInteractive {
+	~AIS_ConnectedInteractive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedInteractive\n");}
+	}
+};
+
+
+%nodefaultctor AIS_ConnectedShape;
+class AIS_ConnectedShape : public AIS_ConnectedInteractive {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_PrsMgr_PresentationManager3d &aPresentationManager, const Handle_Prs3d_Presentation &aPresentation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape();
+
+};
+%extend AIS_ConnectedShape {
+	Handle_AIS_ConnectedShape GetHandle() {
+	return *(Handle_AIS_ConnectedShape*) &$self;
+	}
+};
+%extend AIS_ConnectedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_ConnectedShape {
+	~AIS_ConnectedShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedShape\n");}
+	}
+};
+
+
+%nodefaultctor AIS_Shape;
+class AIS_Shape : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Shape(const TopoDS_Shape &shap);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Shape &ashap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationAngle();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationAngle();
+		%feature("autodoc", "1");
+		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real UserAngle() const;
+		%feature("autodoc", "1");
+		void SetOwnDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc","OwnDeviationCoefficient()->[Standard_Real, Standard_Real]");
+		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationCoefficient()->[Standard_Real, Standard_Real]");
+		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnDeviationAngle()->[Standard_Real, Standard_Real]");
+		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationAngle()->[Standard_Real, Standard_Real]");
+		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		const Bnd_Box & BoundingBox();
+		%feature("autodoc", "1");
+		virtual		Quantity_NameOfColor Color() const;
+		%feature("autodoc", "1");
+		virtual		void Color(Quantity_Color & aColor) const;
+		%feature("autodoc", "1");
+		virtual		Graphic3d_NameOfMaterial Material() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Transparency() const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
+		%feature("autodoc", "1");
+		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
+		%feature("autodoc", "1");
+		Standard_Real GetDeflection(const TopoDS_Shape &aShape, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Shape {
+	Handle_AIS_Shape GetHandle() {
+	return *(Handle_AIS_Shape*) &$self;
+	}
+};
+%extend AIS_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_Shape {
+	~AIS_Shape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Shape\n");}
+	}
+};
+
+
+%nodefaultctor AIS_TexturedShape;
+class AIS_TexturedShape : public AIS_Shape {
+	public:
+		%feature("autodoc", "1");
+		AIS_TexturedShape(const TopoDS_Shape &shap);
+		%feature("autodoc", "1");
+		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
+		%feature("autodoc", "1");
+		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
+		%feature("autodoc", "1");
+		void SetTextureMapOn();
+		%feature("autodoc", "1");
+		void SetTextureMapOff();
+		%feature("autodoc", "1");
+		void EnableTextureModulate();
+		%feature("autodoc", "1");
+		void DisableTextureModulate();
+		%feature("autodoc", "1");
+		void UpdateAttributes();
+		%feature("autodoc", "1");
+		Standard_Boolean TextureMapState() const;
+		%feature("autodoc", "1");
+		Standard_Real URepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		char * TextureFile() const;
+		%feature("autodoc", "1");
+		Standard_Real VRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ShowTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureUOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureVOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleU() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleV() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureScale() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureModulate() const;
+
+};
+%extend AIS_TexturedShape {
+	Handle_AIS_TexturedShape GetHandle() {
+	return *(Handle_AIS_TexturedShape*) &$self;
+	}
+};
+%extend AIS_TexturedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_TexturedShape {
+	~AIS_TexturedShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_TexturedShape\n");}
 	}
 };
 
@@ -2688,61 +2960,6 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 	~AIS_SequenceOfInteractive() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_SequenceOfInteractive\n");}
-	}
-};
-
-
-%nodefaultctor AIS_Circle;
-class AIS_Circle : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle);
-		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Circle & Circle() const;
-		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetCircle(const Handle_Geom_Circle &C);
-		%feature("autodoc", "1");
-		void SetFirstParam(const Standard_Real U);
-		%feature("autodoc", "1");
-		void SetLastParam(const Standard_Real U);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Circle {
-	Handle_AIS_Circle GetHandle() {
-	return *(Handle_AIS_Circle*) &$self;
-	}
-};
-%extend AIS_Circle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_Circle {
-	~AIS_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_Circle\n");}
 	}
 };
 
@@ -2845,59 +3062,6 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 };
 
 
-%nodefaultctor AIS_ConnectedInteractive;
-class AIS_ConnectedInteractive : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConnection() const;
-		%feature("autodoc", "1");
-		const Handle_AIS_InteractiveObject & ConnectedTo() const;
-		%feature("autodoc", "1");
-		void Disconnect();
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation();
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConnectedInteractive {
-	Handle_AIS_ConnectedInteractive GetHandle() {
-	return *(Handle_AIS_ConnectedInteractive*) &$self;
-	}
-};
-%extend AIS_ConnectedInteractive {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_ConnectedInteractive {
-	~AIS_ConnectedInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedInteractive\n");}
-	}
-};
-
-
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfILC;
 class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 	public:
@@ -2985,43 +3149,6 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 	~AIS_BadEdgeFilter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_BadEdgeFilter\n");}
-	}
-};
-
-
-%nodefaultctor AIS_DataMapOfIOStatus;
-class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus & Assign(const AIS_DataMapOfIOStatus &Other);
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus & operator=(const AIS_DataMapOfIOStatus &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS_InteractiveObject &K);
-		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & Find(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
-		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
-
-};
-%extend AIS_DataMapOfIOStatus {
-	~AIS_DataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfIOStatus\n");}
 	}
 };
 
@@ -3568,105 +3695,37 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 };
 
 
-%nodefaultctor AIS_Shape;
-class AIS_Shape : public AIS_InteractiveObject {
+%nodefaultctor AIS_MidPointRelation;
+class AIS_MidPointRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_Shape(const TopoDS_Shape &shap);
+		AIS_MidPointRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
+		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
+		void SetTool(const TopoDS_Shape &aMidPointTool);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		const TopoDS_Shape & GetTool() const;
 		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape &ashap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationAngle();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationAngle();
-		%feature("autodoc", "1");
-		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real UserAngle() const;
-		%feature("autodoc", "1");
-		void SetOwnDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc","OwnDeviationCoefficient()->[Standard_Real, Standard_Real]");
-		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationCoefficient()->[Standard_Real, Standard_Real]");
-		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnDeviationAngle()->[Standard_Real, Standard_Real]");
-		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationAngle()->[Standard_Real, Standard_Real]");
-		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
-		%feature("autodoc", "1");
-		virtual		void UnsetMaterial();
-		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
-		%feature("autodoc", "1");
-		virtual		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box & BoundingBox();
-		%feature("autodoc", "1");
-		virtual		Quantity_NameOfColor Color() const;
-		%feature("autodoc", "1");
-		virtual		void Color(Quantity_Color & aColor) const;
-		%feature("autodoc", "1");
-		virtual		Graphic3d_NameOfMaterial Material() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Transparency() const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
-		%feature("autodoc", "1");
-		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
-		%feature("autodoc", "1");
-		Standard_Real GetDeflection(const TopoDS_Shape &aShape, const Handle_Prs3d_Drawer &aDrawer);
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_Shape {
-	Handle_AIS_Shape GetHandle() {
-	return *(Handle_AIS_Shape*) &$self;
+%extend AIS_MidPointRelation {
+	Handle_AIS_MidPointRelation GetHandle() {
+	return *(Handle_AIS_MidPointRelation*) &$self;
 	}
 };
-%extend AIS_Shape {
+%extend AIS_MidPointRelation {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend AIS_Shape {
-	~AIS_Shape() {
+%extend AIS_MidPointRelation {
+	~AIS_MidPointRelation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_Shape\n");}
+	if (__env){printf("## Call custom destructor for instance of AIS_MidPointRelation\n");}
 	}
 };
 
@@ -3794,77 +3853,39 @@ class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterat
 };
 
 
-%nodefaultctor AIS_TexturedShape;
-class AIS_TexturedShape : public AIS_Shape {
+%nodefaultctor AIS_DataMapOfIOStatus;
+class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		AIS_TexturedShape(const TopoDS_Shape &shap);
+		AIS_DataMapOfIOStatus(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
+		AIS_DataMapOfIOStatus & Assign(const AIS_DataMapOfIOStatus &Other);
 		%feature("autodoc", "1");
-		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
+		AIS_DataMapOfIOStatus & operator=(const AIS_DataMapOfIOStatus &Other);
 		%feature("autodoc", "1");
-		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
+		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
 		%feature("autodoc", "1");
-		void SetTextureMapOn();
+		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		void SetTextureMapOff();
+		Standard_Boolean UnBind(const Handle_AIS_InteractiveObject &K);
 		%feature("autodoc", "1");
-		void EnableTextureModulate();
+		const Handle_AIS_GlobalStatus & Find(const Handle_AIS_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		void DisableTextureModulate();
+		const Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		void UpdateAttributes();
+		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
 		%feature("autodoc", "1");
-		Standard_Boolean TextureMapState() const;
-		%feature("autodoc", "1");
-		Standard_Real URepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		Standard_CString TextureFile() const;
-		%feature("autodoc", "1");
-		Standard_Real VRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ShowTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureUOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureVOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleU() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleV() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureScale() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureModulate() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
 
 };
-%extend AIS_TexturedShape {
-	Handle_AIS_TexturedShape GetHandle() {
-	return *(Handle_AIS_TexturedShape*) &$self;
-	}
-};
-%extend AIS_TexturedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_TexturedShape {
-	~AIS_TexturedShape() {
+%extend AIS_DataMapOfIOStatus {
+	~AIS_DataMapOfIOStatus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_TexturedShape\n");}
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfIOStatus\n");}
 	}
 };
 
@@ -3957,6 +3978,37 @@ class AIS_ParallelRelation : public AIS_Relation {
 	~AIS_ParallelRelation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_ParallelRelation\n");}
+	}
+};
+
+
+%nodefaultctor AIS_MaxRadiusDimension;
+class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
+	public:
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MaxRadiusDimension {
+	Handle_AIS_MaxRadiusDimension GetHandle() {
+	return *(Handle_AIS_MaxRadiusDimension*) &$self;
+	}
+};
+%extend AIS_MaxRadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_MaxRadiusDimension {
+	~AIS_MaxRadiusDimension() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MaxRadiusDimension\n");}
 	}
 };
 
@@ -4079,158 +4131,6 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 	~AIS_DimensionOwner() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_DimensionOwner\n");}
-	}
-};
-
-
-%nodefaultctor AIS_PlaneTrihedron;
-class AIS_PlaneTrihedron : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		Handle_Geom_Plane Component();
-		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		Handle_AIS_Line XAxis() const;
-		%feature("autodoc", "1");
-		Handle_AIS_Line YAxis() const;
-		%feature("autodoc", "1");
-		Handle_AIS_Point Position() const;
-		%feature("autodoc", "1");
-		void SetLength(const Standard_Real theLength);
-		%feature("autodoc", "1");
-		Standard_Real GetLength() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetXLabel(const TCollection_AsciiString &aLabel);
-		%feature("autodoc", "1");
-		void SetYLabel(const TCollection_AsciiString &aLabel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_PlaneTrihedron {
-	Handle_AIS_PlaneTrihedron GetHandle() {
-	return *(Handle_AIS_PlaneTrihedron*) &$self;
-	}
-};
-%extend AIS_PlaneTrihedron {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_PlaneTrihedron {
-	~AIS_PlaneTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_PlaneTrihedron\n");}
-	}
-};
-
-
-%nodefaultctor AIS_MidPointRelation;
-class AIS_MidPointRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_MidPointRelation(const TopoDS_Shape &aSymmTool, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		void SetTool(const TopoDS_Shape &aMidPointTool);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & GetTool() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MidPointRelation {
-	Handle_AIS_MidPointRelation GetHandle() {
-	return *(Handle_AIS_MidPointRelation*) &$self;
-	}
-};
-%extend AIS_MidPointRelation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_MidPointRelation {
-	~AIS_MidPointRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_MidPointRelation\n");}
-	}
-};
-
-
-%nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
-class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const Handle_AIS_LocalContext &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		Handle_AIS_LocalContext & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	Handle_AIS_DataMapNodeOfDataMapOfILC GetHandle() {
-	return *(Handle_AIS_DataMapNodeOfDataMapOfILC*) &$self;
-	}
-};
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	~AIS_DataMapNodeOfDataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfILC\n");}
-	}
-};
-
-
-%nodefaultctor AIS_MapOfInteractive;
-class AIS_MapOfInteractive : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive & Assign(const AIS_MapOfInteractive &Other);
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive & operator=(const AIS_MapOfInteractive &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
-
-};
-%extend AIS_MapOfInteractive {
-	~AIS_MapOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_MapOfInteractive\n");}
 	}
 };
 
@@ -4454,6 +4354,161 @@ class AIS_LocalContext : public MMgt_TShared {
 };
 
 
+%nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
+class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const Handle_AIS_LocalContext &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	Handle_AIS_DataMapNodeOfDataMapOfILC GetHandle() {
+	return *(Handle_AIS_DataMapNodeOfDataMapOfILC*) &$self;
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	~AIS_DataMapNodeOfDataMapOfILC() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfILC\n");}
+	}
+};
+
+
+%nodefaultctor AIS_MapOfInteractive;
+class AIS_MapOfInteractive : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive & Assign(const AIS_MapOfInteractive &Other);
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive & operator=(const AIS_MapOfInteractive &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
+
+};
+%extend AIS_MapOfInteractive {
+	~AIS_MapOfInteractive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MapOfInteractive\n");}
+	}
+};
+
+
+%nodefaultctor AIS_Plane;
+class AIS_Plane : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		void SetSize(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		void SetSize(const Standard_Real Xval, const Standard_Real YVal);
+		%feature("autodoc", "1");
+		void UnsetSize();
+		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
+		Standard_Boolean Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasOwnSize() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Plane & Component();
+		%feature("autodoc", "1");
+		void SetComponent(const Handle_Geom_Plane &aComponent);
+		%feature("autodoc", "1");
+		Standard_Boolean PlaneAttributes(Handle_Geom_Plane & aComponent, gp_Pnt & aCenter, gp_Pnt & aPmin, gp_Pnt & aPmax);
+		%feature("autodoc", "1");
+		void SetPlaneAttributes(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax);
+		%feature("autodoc", "1");
+		const gp_Pnt & Center() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Pnt &aCenter);
+		%feature("autodoc", "1");
+		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType);
+		%feature("autodoc", "1");
+		Handle_Geom_Axis2Placement Axis2Placement();
+		%feature("autodoc", "1");
+		AIS_TypeOfPlane TypeOfPlane();
+		%feature("autodoc", "1");
+		Standard_Boolean IsXYZPlane();
+		%feature("autodoc", "1");
+		Standard_Boolean CurrentMode();
+		%feature("autodoc", "1");
+		void SetCurrentMode(const Standard_Boolean aCurrentMode);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void ComputeSelection(const Handle_SelectMgr_Selection &aSelection, const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Plane {
+	Handle_AIS_Plane GetHandle() {
+	return *(Handle_AIS_Plane*) &$self;
+	}
+};
+%extend AIS_Plane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_Plane {
+	~AIS_Plane() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Plane\n");}
+	}
+};
+
+
 %nodefaultctor AIS_ListIteratorOfListOfInteractive;
 class AIS_ListIteratorOfListOfInteractive {
 	public:
@@ -4606,91 +4661,6 @@ class AIS_Selection : public MMgt_TShared {
 };
 
 
-%nodefaultctor AIS_Plane;
-class AIS_Plane : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		void SetSize(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		void SetSize(const Standard_Real Xval, const Standard_Real YVal);
-		%feature("autodoc", "1");
-		void UnsetSize();
-		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
-		Standard_Boolean Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasOwnSize() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Plane & Component();
-		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aComponent);
-		%feature("autodoc", "1");
-		Standard_Boolean PlaneAttributes(Handle_Geom_Plane & aComponent, gp_Pnt & aCenter, gp_Pnt & aPmin, gp_Pnt & aPmax);
-		%feature("autodoc", "1");
-		void SetPlaneAttributes(const Handle_Geom_Plane &aComponent, const gp_Pnt &aCenter, const gp_Pnt &aPmin, const gp_Pnt &aPmax);
-		%feature("autodoc", "1");
-		const gp_Pnt & Center() const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_Pnt &aCenter);
-		%feature("autodoc", "1");
-		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType);
-		%feature("autodoc", "1");
-		Handle_Geom_Axis2Placement Axis2Placement();
-		%feature("autodoc", "1");
-		AIS_TypeOfPlane TypeOfPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean IsXYZPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean CurrentMode();
-		%feature("autodoc", "1");
-		void SetCurrentMode(const Standard_Boolean aCurrentMode);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void ComputeSelection(const Handle_SelectMgr_Selection &aSelection, const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Plane {
-	Handle_AIS_Plane GetHandle() {
-	return *(Handle_AIS_Plane*) &$self;
-	}
-};
-%extend AIS_Plane {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_Plane {
-	~AIS_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_Plane\n");}
-	}
-};
-
-
 %nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
 class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 	public:
@@ -4749,39 +4719,57 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor AIS_DataMapofIntegerListOfinteractive;
-class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
+%nodefaultctor AIS_Circle;
+class AIS_Circle : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive(const Standard_Integer NbBuckets=1);
+		AIS_Circle(const Handle_Geom_Circle &aCircle);
 		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive & Assign(const AIS_DataMapofIntegerListOfinteractive &Other);
+		AIS_Circle(const Handle_Geom_Circle &aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
 		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive & operator=(const AIS_DataMapofIntegerListOfinteractive &Other);
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
-		void Clear();
+		virtual		AIS_KindOfInteractive Type() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
+		const Handle_Geom_Circle & Circle() const;
+		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		void SetCircle(const Handle_Geom_Circle &C);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
+		void SetFirstParam(const Standard_Real U);
 		%feature("autodoc", "1");
-		const AIS_ListOfInteractive & Find(const Standard_Integer &K) const;
+		void SetLastParam(const Standard_Real U);
 		%feature("autodoc", "1");
-		const AIS_ListOfInteractive & operator()(const Standard_Integer &K) const;
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
 		%feature("autodoc", "1");
-		AIS_ListOfInteractive & ChangeFind(const Standard_Integer &K);
+		virtual		void SetColor(const Quantity_Color &aColor);
 		%feature("autodoc", "1");
-		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_DataMapofIntegerListOfinteractive {
-	~AIS_DataMapofIntegerListOfinteractive() {
+%extend AIS_Circle {
+	Handle_AIS_Circle GetHandle() {
+	return *(Handle_AIS_Circle*) &$self;
+	}
+};
+%extend AIS_Circle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_Circle {
+	~AIS_Circle() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");}
+	if (__env){printf("## Call custom destructor for instance of AIS_Circle\n");}
 	}
 };
 
@@ -5400,9 +5388,9 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & SelectionName() const;
 		%feature("autodoc", "1");
-		Standard_CString DomainOfMainViewer() const;
+		char * DomainOfMainViewer() const;
 		%feature("autodoc", "1");
-		Standard_CString DomainOfCollector() const;
+		char * DomainOfCollector() const;
 		%feature("autodoc", "1");
 		const Handle_SelectMgr_SelectionManager & SelectionManager() const;
 		%feature("autodoc", "1");
@@ -5451,6 +5439,100 @@ class AIS_InteractiveContext : public MMgt_TShared {
 	~AIS_InteractiveContext() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_InteractiveContext\n");}
+	}
+};
+
+
+%nodefaultctor AIS_PlaneTrihedron;
+class AIS_PlaneTrihedron : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane Component();
+		%feature("autodoc", "1");
+		void SetComponent(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_AIS_Line XAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Line YAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Point Position() const;
+		%feature("autodoc", "1");
+		void SetLength(const Standard_Real theLength);
+		%feature("autodoc", "1");
+		Standard_Real GetLength() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetXLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		void SetYLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_PlaneTrihedron {
+	Handle_AIS_PlaneTrihedron GetHandle() {
+	return *(Handle_AIS_PlaneTrihedron*) &$self;
+	}
+};
+%extend AIS_PlaneTrihedron {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend AIS_PlaneTrihedron {
+	~AIS_PlaneTrihedron() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_PlaneTrihedron\n");}
+	}
+};
+
+
+%nodefaultctor AIS_DataMapofIntegerListOfinteractive;
+class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive & Assign(const AIS_DataMapofIntegerListOfinteractive &Other);
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive & operator=(const AIS_DataMapofIntegerListOfinteractive &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const AIS_ListOfInteractive & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const AIS_ListOfInteractive & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		AIS_ListOfInteractive & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
+
+};
+%extend AIS_DataMapofIntegerListOfinteractive {
+	~AIS_DataMapofIntegerListOfinteractive() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -5530,8 +5612,18 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 	public:
 		%feature("autodoc", "1");
 		AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Standard_Integer &K, const AIS_ListOfInteractive &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		AIS_ListOfInteractive & Value() const;
 		%feature("autodoc", "1");
@@ -5850,84 +5942,6 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 	~AIS_EqualDistanceRelation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of AIS_EqualDistanceRelation\n");}
-	}
-};
-
-
-%nodefaultctor AIS_ConnectedShape;
-class AIS_ConnectedShape : public AIS_ConnectedInteractive {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager3d &aPresentationManager, const Handle_Prs3d_Presentation &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConnectedShape {
-	Handle_AIS_ConnectedShape GetHandle() {
-	return *(Handle_AIS_ConnectedShape*) &$self;
-	}
-};
-%extend AIS_ConnectedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_ConnectedShape {
-	~AIS_ConnectedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedShape\n");}
-	}
-};
-
-
-%nodefaultctor AIS_MaxRadiusDimension;
-class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
-	public:
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape &aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt &aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MaxRadiusDimension {
-	Handle_AIS_MaxRadiusDimension GetHandle() {
-	return *(Handle_AIS_MaxRadiusDimension*) &$self;
-	}
-};
-%extend AIS_MaxRadiusDimension {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend AIS_MaxRadiusDimension {
-	~AIS_MaxRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AIS_MaxRadiusDimension\n");}
 	}
 };
 

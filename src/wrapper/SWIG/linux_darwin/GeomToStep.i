@@ -75,6 +75,23 @@ class GeomToStep_MakeLine : public GeomToStep_Root {
 };
 
 
+%nodefaultctor GeomToStep_MakeSurface;
+class GeomToStep_MakeSurface : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeSurface(const Handle_Geom_Surface &C);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Surface & Value() const;
+
+};
+%extend GeomToStep_MakeSurface {
+	~GeomToStep_MakeSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurface\n");}
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
 class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
 	public:
@@ -111,6 +128,25 @@ class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 	~GeomToStep_MakeAxis1Placement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis1Placement\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeAxis2Placement2d;
+class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 &A);
+		%feature("autodoc", "1");
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d &A);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Axis2Placement2d & Value() const;
+
+};
+%extend GeomToStep_MakeAxis2Placement2d {
+	~GeomToStep_MakeAxis2Placement2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis2Placement2d\n");}
 	}
 };
 
@@ -168,6 +204,29 @@ class GeomToStep_MakeParabola : public GeomToStep_Root {
 };
 
 
+%nodefaultctor GeomToStep_MakeDirection;
+class GeomToStep_MakeDirection : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const gp_Dir &D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const gp_Dir2d &D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
+		%feature("autodoc", "1");
+		GeomToStep_MakeDirection(const Handle_Geom2d_Direction &D);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Direction & Value() const;
+
+};
+%extend GeomToStep_MakeDirection {
+	~GeomToStep_MakeDirection() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeDirection\n");}
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeSweptSurface;
 class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 	public:
@@ -181,6 +240,23 @@ class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 	~GeomToStep_MakeSweptSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSweptSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeSurfaceOfRevolution;
+class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeSurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &RevSurf);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfaceOfRevolution & Value() const;
+
+};
+%extend GeomToStep_MakeSurfaceOfRevolution {
+	~GeomToStep_MakeSurfaceOfRevolution() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfRevolution\n");}
 	}
 };
 
@@ -221,23 +297,6 @@ class GeomToStep_MakeConicalSurface : public GeomToStep_Root {
 };
 
 
-%nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
-class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeRectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &RTSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
-
-};
-%extend GeomToStep_MakeRectangularTrimmedSurface {
-	~GeomToStep_MakeRectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeRectangularTrimmedSurface\n");}
-	}
-};
-
-
 %nodefaultctor GeomToStep_MakeToroidalSurface;
 class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
 	public:
@@ -270,25 +329,6 @@ class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomT
 	~GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeAxis2Placement2d;
-class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 &A);
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d &A);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Axis2Placement2d & Value() const;
-
-};
-%extend GeomToStep_MakeAxis2Placement2d {
-	~GeomToStep_MakeAxis2Placement2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis2Placement2d\n");}
 	}
 };
 
@@ -337,6 +377,23 @@ class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 };
 
 
+%nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
+class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeRectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &RTSurf);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
+
+};
+%extend GeomToStep_MakeRectangularTrimmedSurface {
+	~GeomToStep_MakeRectangularTrimmedSurface() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeRectangularTrimmedSurface\n");}
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
 class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	public:
@@ -350,6 +407,25 @@ class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	~GeomToStep_MakeBSplineSurfaceWithKnots() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineSurfaceWithKnots\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakePolyline;
+class GeomToStep_MakePolyline : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
+		%feature("autodoc", "1");
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Polyline & Value() const;
+
+};
+%extend GeomToStep_MakePolyline {
+	~GeomToStep_MakePolyline() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakePolyline\n");}
 	}
 };
 
@@ -415,23 +491,6 @@ class GeomToStep_MakeSphericalSurface : public GeomToStep_Root {
 };
 
 
-%nodefaultctor GeomToStep_MakeSurfaceOfRevolution;
-class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeSurfaceOfRevolution(const Handle_Geom_SurfaceOfRevolution &RevSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfaceOfRevolution & Value() const;
-
-};
-%extend GeomToStep_MakeSurfaceOfRevolution {
-	~GeomToStep_MakeSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfRevolution\n");}
-	}
-};
-
-
 %nodefaultctor GeomToStep_MakeBoundedSurface;
 class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	public:
@@ -445,97 +504,6 @@ class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	~GeomToStep_MakeBoundedSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedSurface\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeConic;
-class GeomToStep_MakeConic : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeConic(const Handle_Geom_Conic &C);
-		%feature("autodoc", "1");
-		GeomToStep_MakeConic(const Handle_Geom2d_Conic &C);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Conic & Value() const;
-
-};
-%extend GeomToStep_MakeConic {
-	~GeomToStep_MakeConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConic\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeBoundedCurve;
-class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeBoundedCurve(const Handle_Geom_BoundedCurve &C);
-		%feature("autodoc", "1");
-		GeomToStep_MakeBoundedCurve(const Handle_Geom2d_BoundedCurve &C);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_BoundedCurve & Value() const;
-
-};
-%extend GeomToStep_MakeBoundedCurve {
-	~GeomToStep_MakeBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeCylindricalSurface;
-class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeCylindricalSurface(const Handle_Geom_CylindricalSurface &CSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_CylindricalSurface & Value() const;
-
-};
-%extend GeomToStep_MakeCylindricalSurface {
-	~GeomToStep_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCylindricalSurface\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
-class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom_BSplineCurve &Bsplin);
-		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom2d_BSplineCurve &Bsplin);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
-
-};
-%extend GeomToStep_MakeBSplineCurveWithKnots {
-	~GeomToStep_MakeBSplineCurveWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineCurveWithKnots\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeSurface;
-class GeomToStep_MakeSurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeSurface(const Handle_Geom_Surface &C);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Surface & Value() const;
-
-};
-%extend GeomToStep_MakeSurface {
-	~GeomToStep_MakeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurface\n");}
 	}
 };
 
@@ -561,25 +529,76 @@ class GeomToStep_MakeCircle : public GeomToStep_Root {
 };
 
 
-%nodefaultctor GeomToStep_MakeDirection;
-class GeomToStep_MakeDirection : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeCylindricalSurface;
+class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir &D);
+		GeomToStep_MakeCylindricalSurface(const Handle_Geom_CylindricalSurface &CSurf);
 		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const gp_Dir2d &D);
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom_Direction &D);
-		%feature("autodoc", "1");
-		GeomToStep_MakeDirection(const Handle_Geom2d_Direction &D);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Direction & Value() const;
+		const Handle_StepGeom_CylindricalSurface & Value() const;
 
 };
-%extend GeomToStep_MakeDirection {
-	~GeomToStep_MakeDirection() {
+%extend GeomToStep_MakeCylindricalSurface {
+	~GeomToStep_MakeCylindricalSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeDirection\n");}
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCylindricalSurface\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeBoundedCurve;
+class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeBoundedCurve(const Handle_Geom_BoundedCurve &C);
+		%feature("autodoc", "1");
+		GeomToStep_MakeBoundedCurve(const Handle_Geom2d_BoundedCurve &C);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_BoundedCurve & Value() const;
+
+};
+%extend GeomToStep_MakeBoundedCurve {
+	~GeomToStep_MakeBoundedCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedCurve\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
+class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom_BSplineCurve &Bsplin);
+		%feature("autodoc", "1");
+		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom2d_BSplineCurve &Bsplin);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
+
+};
+%extend GeomToStep_MakeBSplineCurveWithKnots {
+	~GeomToStep_MakeBSplineCurveWithKnots() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineCurveWithKnots\n");}
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeConic;
+class GeomToStep_MakeConic : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeConic(const Handle_Geom_Conic &C);
+		%feature("autodoc", "1");
+		GeomToStep_MakeConic(const Handle_Geom2d_Conic &C);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Conic & Value() const;
+
+};
+%extend GeomToStep_MakeConic {
+	~GeomToStep_MakeConic() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConic\n");}
 	}
 };
 
@@ -599,25 +618,6 @@ class GeomToStep_MakeCurve : public GeomToStep_Root {
 	~GeomToStep_MakeCurve() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakePolyline;
-class GeomToStep_MakePolyline : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
-		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Polyline & Value() const;
-
-};
-%extend GeomToStep_MakePolyline {
-	~GeomToStep_MakePolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakePolyline\n");}
 	}
 };
 

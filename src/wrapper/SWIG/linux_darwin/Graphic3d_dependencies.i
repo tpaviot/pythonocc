@@ -437,9 +437,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Xw_WindowQuality.hxx>
 %};
 
-%import MMgt.i
 %import Aspect.i
 %import Standard.i
+%import MMgt.i
 %import TCollection.i
 %import Xw.i
 %import Quantity.i

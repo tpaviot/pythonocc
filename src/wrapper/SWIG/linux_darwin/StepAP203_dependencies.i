@@ -502,7 +502,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <StepData_WriterLib.hxx>
 %};
 
-%import StepBasic.i
 %import MMgt.i
+%import StepBasic.i
 %import Standard.i
 %import StepData.i

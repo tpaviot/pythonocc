@@ -71,7 +71,7 @@
 %rename(Geom_UndefinedValue) Geom_UndefinedValue;
 %rename(Handle_Geom_Axis2Placement) Handle_Geom_Axis2Placement;
 %rename(Geom_Conic) Geom_Conic;
-%rename(Geom_Plane) Geom_Plane;
+%rename(Geom_Hyperbola) Geom_Hyperbola;
 %rename(Geom_HSequenceOfBSplineSurface) Geom_HSequenceOfBSplineSurface;
 %rename(Handle_Geom_OffsetCurve) Handle_Geom_OffsetCurve;
 %rename(Handle_Geom_SweptSurface) Handle_Geom_SweptSurface;
@@ -82,7 +82,7 @@
 %rename(Geom_Direction) Geom_Direction;
 %rename(Handle_Geom_VectorWithMagnitude) Handle_Geom_VectorWithMagnitude;
 %rename(Handle_Geom_Plane) Handle_Geom_Plane;
-%rename(Geom_Hyperbola) Geom_Hyperbola;
+%rename(Geom_Plane) Geom_Plane;
 %rename(Geom_Transformation) Geom_Transformation;
 %rename(Handle_Geom_BoundedCurve) Handle_Geom_BoundedCurve;
 %rename(Geom_Geometry) Geom_Geometry;

@@ -64,6 +64,27 @@ class ChFi3d {
 };
 
 
+%nodefaultctor ChFi3d_SearchSing;
+class ChFi3d_SearchSing : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
+		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%extend ChFi3d_SearchSing {
+	~ChFi3d_SearchSing() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFi3d_SearchSing\n");}
+	}
+};
+
+
 %nodefaultctor ChFi3d_Builder;
 class ChFi3d_Builder {
 	public:
@@ -198,27 +219,6 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	~ChFi3d_ChBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of ChFi3d_ChBuilder\n");}
-	}
-};
-
-
-%nodefaultctor ChFi3d_SearchSing;
-class ChFi3d_SearchSing : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%extend ChFi3d_SearchSing {
-	~ChFi3d_SearchSing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d_SearchSing\n");}
 	}
 };
 

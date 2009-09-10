@@ -62,9 +62,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Adaptor3d_HCurveOnSurface.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<gp_Pnt2d.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Law_Function.hxx>
-#include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_SequenceOfReal.hxx>
@@ -72,7 +74,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColgp_SequenceOfVec.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<Handle_Geom_Line.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<Plate_Plate.hxx>
 #include<gp_Trsf.hxx>
 #include<gp_GTrsf2d.hxx>
@@ -84,7 +85,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<AdvApp2Var_Context.hxx>
 #include<AdvApp2Var_Criterion.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
-#include<gp_Pnt2d.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColGeom2d_HArray1OfCurve.hxx>
 %}

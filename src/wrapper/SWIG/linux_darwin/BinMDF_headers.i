@@ -55,9 +55,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BinObjMgt_RRelocationTable.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_Standard_Type.hxx>
+#include<BinMDF.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TColStd_IndexedMapOfTransient.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
-#include<BinMDF.hxx>
 %}

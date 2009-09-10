@@ -60,6 +60,68 @@ class GeomToIGES_GeomEntity {
 };
 
 
+%nodefaultctor GeomToIGES_GeomCurve;
+class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
+	public:
+		%feature("autodoc", "1");
+		GeomToIGES_GeomCurve();
+		%feature("autodoc", "1");
+		GeomToIGES_GeomCurve(const GeomToIGES_GeomEntity &GE);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Curve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BoundedCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BSplineCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BezierCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_TrimmedCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Conic &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Circle &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Ellipse &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Hyperbola &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Line &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Parabola &start, const Standard_Real Udeb, const Standard_Real Ufin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_OffsetCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
+
+};
+%extend GeomToIGES_GeomCurve {
+	~GeomToIGES_GeomCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomCurve\n");}
+	}
+};
+
+
+%nodefaultctor GeomToIGES_GeomPoint;
+class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
+	public:
+		%feature("autodoc", "1");
+		GeomToIGES_GeomPoint();
+		%feature("autodoc", "1");
+		GeomToIGES_GeomPoint(const GeomToIGES_GeomEntity &GE);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point TransferPoint(const Handle_Geom_Point &start);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Point TransferPoint(const Handle_Geom_CartesianPoint &start);
+
+};
+%extend GeomToIGES_GeomPoint {
+	~GeomToIGES_GeomPoint() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
+	}
+};
+
+
 %nodefaultctor GeomToIGES_GeomSurface;
 class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 	public:
@@ -123,68 +185,6 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 	~GeomToIGES_GeomSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomSurface\n");}
-	}
-};
-
-
-%nodefaultctor GeomToIGES_GeomCurve;
-class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
-	public:
-		%feature("autodoc", "1");
-		GeomToIGES_GeomCurve();
-		%feature("autodoc", "1");
-		GeomToIGES_GeomCurve(const GeomToIGES_GeomEntity &GE);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Curve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BoundedCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BSplineCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_BezierCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_TrimmedCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Conic &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Circle &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Ellipse &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Hyperbola &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Line &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_Parabola &start, const Standard_Real Udeb, const Standard_Real Ufin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_OffsetCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
-
-};
-%extend GeomToIGES_GeomCurve {
-	~GeomToIGES_GeomCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomCurve\n");}
-	}
-};
-
-
-%nodefaultctor GeomToIGES_GeomPoint;
-class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
-	public:
-		%feature("autodoc", "1");
-		GeomToIGES_GeomPoint();
-		%feature("autodoc", "1");
-		GeomToIGES_GeomPoint(const GeomToIGES_GeomEntity &GE);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Point TransferPoint(const Handle_Geom_Point &start);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Point TransferPoint(const Handle_Geom_CartesianPoint &start);
-
-};
-%extend GeomToIGES_GeomPoint {
-	~GeomToIGES_GeomPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
 	}
 };
 

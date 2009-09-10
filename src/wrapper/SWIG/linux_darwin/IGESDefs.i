@@ -65,6 +65,36 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 };
 
 
+%nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
+class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
+	IGESDefs_HArray1OfHArray1OfTextDisplayTemplate* GetObject() {
+	return (IGESDefs_HArray1OfHArray1OfTextDisplayTemplate*)$self->Access();
+	}
+};
+%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
+	~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
+	}
+};
+
+
 %nodefaultctor Handle_IGESDefs_GeneralModule;
 class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -151,6 +181,36 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 	~Handle_IGESDefs_HArray1OfTabularData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfTabularData\n");}
+	}
+};
+
+
+%nodefaultctor Handle_IGESDefs_AttributeTable;
+class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable(const Handle_IGESDefs_AttributeTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable(const IGESDefs_AttributeTable *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable & operator=(const Handle_IGESDefs_AttributeTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable & operator=(const IGESDefs_AttributeTable *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_AttributeTable const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDefs_AttributeTable {
+	IGESDefs_AttributeTable* GetObject() {
+	return (IGESDefs_AttributeTable*)$self->Access();
+	}
+};
+%extend Handle_IGESDefs_AttributeTable {
+	~Handle_IGESDefs_AttributeTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeTable\n");}
 	}
 };
 
@@ -245,36 +305,6 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor Handle_IGESDefs_AttributeTable;
-class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable(const Handle_IGESDefs_AttributeTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable(const IGESDefs_AttributeTable *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable & operator=(const Handle_IGESDefs_AttributeTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable & operator=(const IGESDefs_AttributeTable *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeTable const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDefs_AttributeTable {
-	IGESDefs_AttributeTable* GetObject() {
-	return (IGESDefs_AttributeTable*)$self->Access();
-	}
-};
-%extend Handle_IGESDefs_AttributeTable {
-	~Handle_IGESDefs_AttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeTable\n");}
-	}
-};
-
-
 %nodefaultctor Handle_IGESDefs_AttributeDef;
 class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 	public:
@@ -331,36 +361,6 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 	~Handle_IGESDefs_UnitsData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_UnitsData\n");}
-	}
-};
-
-
-%nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
-class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate & operator=(const IGESDefs_HArray1OfHArray1OfTextDisplayTemplate *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
-	IGESDefs_HArray1OfHArray1OfTextDisplayTemplate* GetObject() {
-	return (IGESDefs_HArray1OfHArray1OfTextDisplayTemplate*)$self->Access();
-	}
-};
-%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
-	~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -425,117 +425,31 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESDefs_ToolAssociativityDef;
-class IGESDefs_ToolAssociativityDef {
+%nodefaultctor IGESDefs_ToolAttributeDef;
+class IGESDefs_ToolAttributeDef {
 	public:
 		%feature("autodoc", "1");
-		IGESDefs_ToolAssociativityDef();
+		IGESDefs_ToolAttributeDef();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_AssociativityDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESDefs_AttributeDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_AssociativityDef &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESDefs_AttributeDef &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_AssociativityDef &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESDefs_AttributeDef &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AssociativityDef &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AttributeDef &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_AssociativityDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESDefs_AttributeDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_AssociativityDef &entfrom, const Handle_IGESDefs_AssociativityDef &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESDefs_AttributeDef &entfrom, const Handle_IGESDefs_AttributeDef &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_AssociativityDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESDefs_AttributeDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolAssociativityDef {
-	~IGESDefs_ToolAssociativityDef() {
+%extend IGESDefs_ToolAttributeDef {
+	~IGESDefs_ToolAttributeDef() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_ReadWriteModule;
-class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDefs_ReadWriteModule {
-	Handle_IGESDefs_ReadWriteModule GetHandle() {
-	return *(Handle_IGESDefs_ReadWriteModule*) &$self;
-	}
-};
-%extend IGESDefs_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESDefs_ReadWriteModule {
-	~IGESDefs_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ReadWriteModule\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_AttributeTable;
-class IGESDefs_AttributeTable : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_AttributeTable();
-		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray2OfTransient &attributes);
-		%feature("autodoc", "1");
-		void SetDefinition(const Handle_IGESDefs_AttributeDef &def);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_AttributeDef Definition() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbRows() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbAttributes() const;
-		%feature("autodoc", "1");
-		Standard_Integer DataType(const Standard_Integer Atnum) const;
-		%feature("autodoc", "1");
-		Standard_Integer ValueCount(const Standard_Integer Atnum) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient AttributeList(const Standard_Integer Attribnum, const Standard_Integer Rownum) const;
-		%feature("autodoc", "1");
-		Standard_Integer AttributeAsInteger(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
-		%feature("autodoc", "1");
-		Standard_Real AttributeAsReal(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString AttributeAsString(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity AttributeAsEntity(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
-		%feature("autodoc", "1");
-		Standard_Boolean AttributeAsLogical(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDefs_AttributeTable {
-	Handle_IGESDefs_AttributeTable GetHandle() {
-	return *(Handle_IGESDefs_AttributeTable*) &$self;
-	}
-};
-%extend IGESDefs_AttributeTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESDefs_AttributeTable {
-	~IGESDefs_AttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeTable\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");}
 	}
 };
 
@@ -589,161 +503,6 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 };
 
 
-%nodefaultctor IGESDefs_ToolAttributeDef;
-class IGESDefs_ToolAttributeDef {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ToolAttributeDef();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_AttributeDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_AttributeDef &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_AttributeDef &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AttributeDef &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_AttributeDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_AttributeDef &entfrom, const Handle_IGESDefs_AttributeDef &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_AttributeDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDefs_ToolAttributeDef {
-	~IGESDefs_ToolAttributeDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_ToolUnitsData;
-class IGESDefs_ToolUnitsData {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ToolUnitsData();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_UnitsData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_UnitsData &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_UnitsData &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_UnitsData &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_UnitsData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_UnitsData &entfrom, const Handle_IGESDefs_UnitsData &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDefs_ToolUnitsData {
-	~IGESDefs_ToolUnitsData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolUnitsData\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_ToolGenericData;
-class IGESDefs_ToolGenericData {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ToolGenericData();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_GenericData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_GenericData &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_GenericData &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_GenericData &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_GenericData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_GenericData &entfrom, const Handle_IGESDefs_GenericData &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_GenericData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDefs_ToolGenericData {
-	~IGESDefs_ToolGenericData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolGenericData\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_GeneralModule;
-class IGESDefs_GeneralModule : public IGESData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_GeneralModule();
-		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
-		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDefs_GeneralModule {
-	Handle_IGESDefs_GeneralModule GetHandle() {
-	return *(Handle_IGESDefs_GeneralModule*) &$self;
-	}
-};
-%extend IGESDefs_GeneralModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend IGESDefs_GeneralModule {
-	~IGESDefs_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_GeneralModule\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_ToolTabularData;
-class IGESDefs_ToolTabularData {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ToolTabularData();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_TabularData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_TabularData &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_TabularData &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_TabularData &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_TabularData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_TabularData &entfrom, const Handle_IGESDefs_TabularData &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_TabularData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDefs_ToolTabularData {
-	~IGESDefs_ToolTabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolTabularData\n");}
-	}
-};
-
-
 %nodefaultctor IGESDefs_HArray1OfTabularData;
 class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 	public:
@@ -791,50 +550,41 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 };
 
 
-%nodefaultctor IGESDefs_ToolAttributeTable;
-class IGESDefs_ToolAttributeTable {
+%nodefaultctor IGESDefs_GeneralModule;
+class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		IGESDefs_ToolAttributeTable();
+		IGESDefs_GeneralModule();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_AttributeTable &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_AttributeTable &ent, IGESData_IGESWriter & IW) const;
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_AttributeTable &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AttributeTable &ent) const;
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_AttributeTable &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_AttributeTable &entfrom, const Handle_IGESDefs_AttributeTable &entto, Interface_CopyTool & TC) const;
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_AttributeTable &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESDefs_ToolAttributeTable {
-	~IGESDefs_ToolAttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");}
+%extend IGESDefs_GeneralModule {
+	Handle_IGESDefs_GeneralModule GetHandle() {
+	return *(Handle_IGESDefs_GeneralModule*) &$self;
 	}
 };
-
-
-%nodefaultctor IGESDefs;
-class IGESDefs {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol Protocol();
-
+%extend IGESDefs_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
 };
-%extend IGESDefs {
-	~IGESDefs() {
+%extend IGESDefs_GeneralModule {
+	~IGESDefs_GeneralModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_GeneralModule\n");}
 	}
 };
 
@@ -864,6 +614,277 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 	~IGESDefs_SpecificModule() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_SpecificModule\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolAssociativityDef;
+class IGESDefs_ToolAssociativityDef {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolAssociativityDef();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_AssociativityDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_AssociativityDef &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_AssociativityDef &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AssociativityDef &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_AssociativityDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_AssociativityDef &entfrom, const Handle_IGESDefs_AssociativityDef &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_AssociativityDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolAssociativityDef {
+	~IGESDefs_ToolAssociativityDef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolUnitsData;
+class IGESDefs_ToolUnitsData {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolUnitsData();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_UnitsData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_UnitsData &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_UnitsData &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_UnitsData &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_UnitsData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_UnitsData &entfrom, const Handle_IGESDefs_UnitsData &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolUnitsData {
+	~IGESDefs_ToolUnitsData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolUnitsData\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ReadWriteModule;
+class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ReadWriteModule();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
+		%feature("autodoc", "1");
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDefs_ReadWriteModule {
+	Handle_IGESDefs_ReadWriteModule GetHandle() {
+	return *(Handle_IGESDefs_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESDefs_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESDefs_ReadWriteModule {
+	~IGESDefs_ReadWriteModule() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ReadWriteModule\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_AssociativityDef;
+class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_AssociativityDef();
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfInteger &requirements, const Handle_TColStd_HArray1OfInteger &orders, const Handle_TColStd_HArray1OfInteger &numItems, const Handle_IGESBasic_HArray1OfHArray1OfInteger &items);
+		%feature("autodoc", "1");
+		void SetFormNumber(const Standard_Integer form);
+		%feature("autodoc", "1");
+		Standard_Integer NbClassDefs() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBackPointerReq(const Standard_Integer ClassNum) const;
+		%feature("autodoc", "1");
+		Standard_Integer BackPointerReq(const Standard_Integer ClassNum) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOrdered(const Standard_Integer ClassNum) const;
+		%feature("autodoc", "1");
+		Standard_Integer ClassOrder(const Standard_Integer ClassNum) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItemsPerClass(const Standard_Integer ClassNum) const;
+		%feature("autodoc", "1");
+		Standard_Integer Item(const Standard_Integer ClassNum, const Standard_Integer ItemNum) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDefs_AssociativityDef {
+	Handle_IGESDefs_AssociativityDef GetHandle() {
+	return *(Handle_IGESDefs_AssociativityDef*) &$self;
+	}
+};
+%extend IGESDefs_AssociativityDef {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend IGESDefs_AssociativityDef {
+	~IGESDefs_AssociativityDef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_AssociativityDef\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs;
+class IGESDefs {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol Protocol();
+
+};
+%extend IGESDefs {
+	~IGESDefs() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolGenericData;
+class IGESDefs_ToolGenericData {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolGenericData();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_GenericData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_GenericData &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_GenericData &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_GenericData &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_GenericData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_GenericData &entfrom, const Handle_IGESDefs_GenericData &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_GenericData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolGenericData {
+	~IGESDefs_ToolGenericData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolGenericData\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolTabularData;
+class IGESDefs_ToolTabularData {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolTabularData();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_TabularData &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_TabularData &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_TabularData &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_TabularData &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_TabularData &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_TabularData &entfrom, const Handle_IGESDefs_TabularData &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_TabularData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolTabularData {
+	~IGESDefs_ToolTabularData() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolTabularData\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolMacroDef;
+class IGESDefs_ToolMacroDef {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolMacroDef();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_MacroDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_MacroDef &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_MacroDef &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_MacroDef &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_MacroDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_MacroDef &entfrom, const Handle_IGESDefs_MacroDef &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_MacroDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolMacroDef {
+	~IGESDefs_ToolMacroDef() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
+	}
+};
+
+
+%nodefaultctor IGESDefs_ToolAttributeTable;
+class IGESDefs_ToolAttributeTable {
+	public:
+		%feature("autodoc", "1");
+		IGESDefs_ToolAttributeTable();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDefs_AttributeTable &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDefs_AttributeTable &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDefs_AttributeTable &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDefs_AttributeTable &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDefs_AttributeTable &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDefs_AttributeTable &entfrom, const Handle_IGESDefs_AttributeTable &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDefs_AttributeTable &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%extend IGESDefs_ToolAttributeTable {
+	~IGESDefs_ToolAttributeTable() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");}
 	}
 };
 
@@ -940,35 +961,6 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 	~IGESDefs_UnitsData() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_UnitsData\n");}
-	}
-};
-
-
-%nodefaultctor IGESDefs_ToolMacroDef;
-class IGESDefs_ToolMacroDef {
-	public:
-		%feature("autodoc", "1");
-		IGESDefs_ToolMacroDef();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDefs_MacroDef &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDefs_MacroDef &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDefs_MacroDef &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDefs_MacroDef &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDefs_MacroDef &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDefs_MacroDef &entfrom, const Handle_IGESDefs_MacroDef &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDefs_MacroDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%extend IGESDefs_ToolMacroDef {
-	~IGESDefs_ToolMacroDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
 	}
 };
 
@@ -1165,46 +1157,54 @@ class IGESDefs_Array1OfTabularData {
 };
 
 
-%nodefaultctor IGESDefs_AssociativityDef;
-class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
+%nodefaultctor IGESDefs_AttributeTable;
+class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESDefs_AssociativityDef();
+		IGESDefs_AttributeTable();
 		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfInteger &requirements, const Handle_TColStd_HArray1OfInteger &orders, const Handle_TColStd_HArray1OfInteger &numItems, const Handle_IGESBasic_HArray1OfHArray1OfInteger &items);
+		void Init(const Handle_TColStd_HArray2OfTransient &attributes);
 		%feature("autodoc", "1");
-		void SetFormNumber(const Standard_Integer form);
+		void SetDefinition(const Handle_IGESDefs_AttributeDef &def);
 		%feature("autodoc", "1");
-		Standard_Integer NbClassDefs() const;
+		Handle_IGESDefs_AttributeDef Definition() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBackPointerReq(const Standard_Integer ClassNum) const;
+		Standard_Integer NbRows() const;
 		%feature("autodoc", "1");
-		Standard_Integer BackPointerReq(const Standard_Integer ClassNum) const;
+		Standard_Integer NbAttributes() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOrdered(const Standard_Integer ClassNum) const;
+		Standard_Integer DataType(const Standard_Integer Atnum) const;
 		%feature("autodoc", "1");
-		Standard_Integer ClassOrder(const Standard_Integer ClassNum) const;
+		Standard_Integer ValueCount(const Standard_Integer Atnum) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbItemsPerClass(const Standard_Integer ClassNum) const;
+		Handle_Standard_Transient AttributeList(const Standard_Integer Attribnum, const Standard_Integer Rownum) const;
 		%feature("autodoc", "1");
-		Standard_Integer Item(const Standard_Integer ClassNum, const Standard_Integer ItemNum) const;
+		Standard_Integer AttributeAsInteger(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
+		%feature("autodoc", "1");
+		Standard_Real AttributeAsReal(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString AttributeAsString(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity AttributeAsEntity(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
+		%feature("autodoc", "1");
+		Standard_Boolean AttributeAsLogical(const Standard_Integer AtNum, const Standard_Integer Rownum, const Standard_Integer ValNum) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESDefs_AssociativityDef {
-	Handle_IGESDefs_AssociativityDef GetHandle() {
-	return *(Handle_IGESDefs_AssociativityDef*) &$self;
+%extend IGESDefs_AttributeTable {
+	Handle_IGESDefs_AttributeTable GetHandle() {
+	return *(Handle_IGESDefs_AttributeTable*) &$self;
 	}
 };
-%extend IGESDefs_AssociativityDef {
+%extend IGESDefs_AttributeTable {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_AssociativityDef {
-	~IGESDefs_AssociativityDef() {
+%extend IGESDefs_AttributeTable {
+	~IGESDefs_AttributeTable() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AssociativityDef\n");}
+	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeTable\n");}
 	}
 };

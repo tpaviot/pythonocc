@@ -64,18 +64,18 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<Handle_Standard_Transient.hxx>
 #include<TDF_Label.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<Handle_TDF_Data.hxx>
-#include<TCollection_AsciiString.hxx>
-#include<Handle_CDM_Document.hxx>
-#include<Handle_TDF_Attribute.hxx>
+#include<Handle_TDF_DataSet.hxx>
 #include<Handle_TDF_RelocationTable.hxx>
-#include<TDocStd.hxx>
-#include<TDF_IDList.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<TColStd_SequenceOfExtendedString.hxx>
+#include<Handle_TDF_Data.hxx>
+#include<Handle_TDF_Attribute.hxx>
+#include<TDocStd.hxx>
+#include<TDF_IDList.hxx>
 #include<TDF_IDMap.hxx>
-#include<Handle_TDF_DataSet.hxx>
+#include<TCollection_AsciiString.hxx>
+#include<Handle_CDM_Document.hxx>
 #include<Handle_TDF_Reference.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
 %}

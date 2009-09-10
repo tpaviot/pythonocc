@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_StepSelect_StepType;
-class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType();
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType(const Handle_StepSelect_StepType &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType(const StepSelect_StepType *anItem);
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType & operator=(const Handle_StepSelect_StepType &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
-		%feature("autodoc", "1");
-		Handle_StepSelect_StepType const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepSelect_StepType {
-	StepSelect_StepType* GetObject() {
-	return (StepSelect_StepType*)$self->Access();
-	}
-};
-%extend Handle_StepSelect_StepType {
-	~Handle_StepSelect_StepType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_StepType\n");}
-	}
-};
-
-
 %nodefaultctor Handle_StepSelect_ModelModifier;
 class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	public:
@@ -155,6 +125,36 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 };
 
 
+%nodefaultctor Handle_StepSelect_WorkLibrary;
+class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary();
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary & operator=(const Handle_StepSelect_WorkLibrary &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
+		%feature("autodoc", "1");
+		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepSelect_WorkLibrary {
+	StepSelect_WorkLibrary* GetObject() {
+	return (StepSelect_WorkLibrary*)$self->Access();
+	}
+};
+%extend Handle_StepSelect_WorkLibrary {
+	~Handle_StepSelect_WorkLibrary() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
+	}
+};
+
+
 %nodefaultctor Handle_StepSelect_Activator;
 class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	public:
@@ -185,32 +185,59 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 };
 
 
-%nodefaultctor Handle_StepSelect_WorkLibrary;
-class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
+%nodefaultctor Handle_StepSelect_StepType;
+class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary();
+		Handle_StepSelect_StepType();
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_StepType(const Handle_StepSelect_StepType &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
+		Handle_StepSelect_StepType(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary & operator=(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_StepType & operator=(const Handle_StepSelect_StepType &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
+		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_StepSelect_StepType const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepSelect_WorkLibrary {
-	StepSelect_WorkLibrary* GetObject() {
-	return (StepSelect_WorkLibrary*)$self->Access();
+%extend Handle_StepSelect_StepType {
+	StepSelect_StepType* GetObject() {
+	return (StepSelect_StepType*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_WorkLibrary {
-	~Handle_StepSelect_WorkLibrary() {
+%extend Handle_StepSelect_StepType {
+	~Handle_StepSelect_StepType() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_StepType\n");}
+	}
+};
+
+
+%nodefaultctor StepSelect_FileModifier;
+class StepSelect_FileModifier : public IFSelect_GeneralModifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepSelect_FileModifier {
+	Handle_StepSelect_FileModifier GetHandle() {
+	return *(Handle_StepSelect_FileModifier*) &$self;
+	}
+};
+%extend StepSelect_FileModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend StepSelect_FileModifier {
+	~StepSelect_FileModifier() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
 	}
 };
 
@@ -252,29 +279,33 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 
 
-%nodefaultctor StepSelect_FileModifier;
-class StepSelect_FileModifier : public IFSelect_GeneralModifier {
+%nodefaultctor StepSelect_Activator;
+class StepSelect_Activator : public IFSelect_Activator {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
+		StepSelect_Activator();
+		%feature("autodoc", "1");
+		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
+		%feature("autodoc", "1");
+		virtual		char * Help(const Standard_Integer number) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepSelect_FileModifier {
-	Handle_StepSelect_FileModifier GetHandle() {
-	return *(Handle_StepSelect_FileModifier*) &$self;
+%extend StepSelect_Activator {
+	Handle_StepSelect_Activator GetHandle() {
+	return *(Handle_StepSelect_Activator*) &$self;
 	}
 };
-%extend StepSelect_FileModifier {
+%extend StepSelect_Activator {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_FileModifier {
-	~StepSelect_FileModifier() {
+%extend StepSelect_Activator {
+	~StepSelect_Activator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
+	if (__env){printf("## Call custom destructor for instance of StepSelect_Activator\n");}
 	}
 };
 
@@ -378,36 +409,5 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 	~StepSelect_ModelModifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of StepSelect_ModelModifier\n");}
-	}
-};
-
-
-%nodefaultctor StepSelect_Activator;
-class StepSelect_Activator : public IFSelect_Activator {
-	public:
-		%feature("autodoc", "1");
-		StepSelect_Activator();
-		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
-		%feature("autodoc", "1");
-		virtual		char * Help(const Standard_Integer number) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepSelect_Activator {
-	Handle_StepSelect_Activator GetHandle() {
-	return *(Handle_StepSelect_Activator*) &$self;
-	}
-};
-%extend StepSelect_Activator {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend StepSelect_Activator {
-	~StepSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_Activator\n");}
 	}
 };

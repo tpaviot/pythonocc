@@ -581,7 +581,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 %import TCollection.i
 %import Standard.i
-%import Graphic3d.i
 %import MMgt.i
+%import Graphic3d.i
 %import Aspect.i
 %import Quantity.i

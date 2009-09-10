@@ -140,6 +140,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepAdaptor_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Poly_Triangulation.hxx>
+#include<MeshShape_Couple.hxx>
 #include<MeshShape_DataMapOfShapeListOfTransient.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
 #include<Handle_Geom2d_Curve.hxx>
@@ -147,6 +148,5 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<MeshShape_SurfacePoint.hxx>
 #include<MeshShape_ListOfSurfacePoint.hxx>
 #include<gp_Dir.hxx>
-#include<MeshShape_Couple.hxx>
 #include<Bnd_Box2d.hxx>
 %}

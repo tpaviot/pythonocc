@@ -1,6 +1,6 @@
 %rename(Voxel_FastConverter) Voxel_FastConverter;
 %rename(Voxel_Prs) Voxel_Prs;
-%rename(Voxel_Selector) Voxel_Selector;
+%rename(Voxel_ColorDS) Voxel_ColorDS;
 %rename(Voxel_BooleanOperation) Voxel_BooleanOperation;
 %rename(Voxel_BoolDS) Voxel_BoolDS;
 %rename(Voxel_DS) Voxel_DS;
@@ -9,6 +9,6 @@
 %rename(Voxel_VDM_NEARESTPOINTS) Voxel_VDM_NEARESTPOINTS;
 %rename(Voxel_FloatDS) Voxel_FloatDS;
 %rename(Voxel_VDM_NEARESTBOXES) Voxel_VDM_NEARESTBOXES;
-%rename(Voxel_ColorDS) Voxel_ColorDS;
+%rename(Voxel_Selector) Voxel_Selector;
 %rename(Voxel_CollisionDetection) Voxel_CollisionDetection;
 %rename(Handle_Voxel_Prs) Handle_Voxel_Prs;

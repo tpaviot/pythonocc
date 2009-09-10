@@ -130,32 +130,32 @@ class Handle_MAT_SequenceNodeOfSequenceOfArc : public Handle_TCollection_SeqNode
 };
 
 
-%nodefaultctor Handle_MAT_Edge;
-class Handle_MAT_Edge : public Handle_MMgt_TShared {
+%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerArc;
+class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_MAT_Edge();
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc();
 		%feature("autodoc", "1");
-		Handle_MAT_Edge(const Handle_MAT_Edge &aHandle);
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc(const Handle_MAT_DataMapNodeOfDataMapOfIntegerArc &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT_Edge(const MAT_Edge *anItem);
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc(const MAT_DataMapNodeOfDataMapOfIntegerArc *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Edge & operator=(const Handle_MAT_Edge &aHandle);
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerArc &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT_Edge & operator=(const MAT_Edge *anItem);
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc & operator=(const MAT_DataMapNodeOfDataMapOfIntegerArc *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MAT_Edge {
-	MAT_Edge* GetObject() {
-	return (MAT_Edge*)$self->Access();
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
+	MAT_DataMapNodeOfDataMapOfIntegerArc* GetObject() {
+	return (MAT_DataMapNodeOfDataMapOfIntegerArc*)$self->Access();
 	}
 };
-%extend Handle_MAT_Edge {
-	~Handle_MAT_Edge() {
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
+	~Handle_MAT_DataMapNodeOfDataMapOfIntegerArc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Edge\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -190,6 +190,36 @@ class Handle_MAT_BasicElt : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_MAT_Bisector;
+class Handle_MAT_Bisector : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector();
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector(const Handle_MAT_Bisector &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector(const MAT_Bisector *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector & operator=(const Handle_MAT_Bisector &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector & operator=(const MAT_Bisector *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_Bisector {
+	MAT_Bisector* GetObject() {
+	return (MAT_Bisector*)$self->Access();
+	}
+};
+%extend Handle_MAT_Bisector {
+	~Handle_MAT_Bisector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Bisector\n");}
+	}
+};
+
+
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector;
 class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollection_MapNode {
 	public:
@@ -216,6 +246,36 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollecti
 	~Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerNode;
+class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode();
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
+	MAT_DataMapNodeOfDataMapOfIntegerNode* GetObject() {
+	return (MAT_DataMapNodeOfDataMapOfIntegerNode*)$self->Access();
+	}
+};
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
+	~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
 	}
 };
 
@@ -250,6 +310,36 @@ class Handle_MAT_Zone : public Handle_MMgt_TShared {
 };
 
 
+%nodefaultctor Handle_MAT_Graph;
+class Handle_MAT_Graph : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_Graph();
+		%feature("autodoc", "1");
+		Handle_MAT_Graph(const Handle_MAT_Graph &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Graph(const MAT_Graph *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Graph & operator=(const Handle_MAT_Graph &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Graph & operator=(const MAT_Graph *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Graph const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_Graph {
+	MAT_Graph* GetObject() {
+	return (MAT_Graph*)$self->Access();
+	}
+};
+%extend Handle_MAT_Graph {
+	~Handle_MAT_Graph() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Graph\n");}
+	}
+};
+
+
 %nodefaultctor Handle_MAT_TListNodeOfListOfBisector;
 class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
 	public:
@@ -276,36 +366,6 @@ class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
 	~Handle_MAT_TListNodeOfListOfBisector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfBisector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_MAT_TListNodeOfListOfEdge;
-class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge();
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge(const MAT_TListNodeOfListOfEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge & operator=(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge & operator=(const MAT_TListNodeOfListOfEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_TListNodeOfListOfEdge {
-	MAT_TListNodeOfListOfEdge* GetObject() {
-	return (MAT_TListNodeOfListOfEdge*)$self->Access();
-	}
-};
-%extend Handle_MAT_TListNodeOfListOfEdge {
-	~Handle_MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfEdge\n");}
 	}
 };
 
@@ -370,66 +430,6 @@ class Handle_MAT_ListOfEdge : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_MAT_Bisector;
-class Handle_MAT_Bisector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector();
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector(const Handle_MAT_Bisector &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector(const MAT_Bisector *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector & operator=(const Handle_MAT_Bisector &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector & operator=(const MAT_Bisector *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_Bisector {
-	MAT_Bisector* GetObject() {
-	return (MAT_Bisector*)$self->Access();
-	}
-};
-%extend Handle_MAT_Bisector {
-	~Handle_MAT_Bisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Bisector\n");}
-	}
-};
-
-
-%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerNode;
-class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode();
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
-	MAT_DataMapNodeOfDataMapOfIntegerNode* GetObject() {
-	return (MAT_DataMapNodeOfDataMapOfIntegerNode*)$self->Access();
-	}
-};
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
-	}
-};
-
-
 %nodefaultctor Handle_MAT_Arc;
 class Handle_MAT_Arc : public Handle_MMgt_TShared {
 	public:
@@ -460,32 +460,62 @@ class Handle_MAT_Arc : public Handle_MMgt_TShared {
 };
 
 
-%nodefaultctor Handle_MAT_Graph;
-class Handle_MAT_Graph : public Handle_MMgt_TShared {
+%nodefaultctor Handle_MAT_TListNodeOfListOfEdge;
+class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_MAT_Graph();
+		Handle_MAT_TListNodeOfListOfEdge();
 		%feature("autodoc", "1");
-		Handle_MAT_Graph(const Handle_MAT_Graph &aHandle);
+		Handle_MAT_TListNodeOfListOfEdge(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT_Graph(const MAT_Graph *anItem);
+		Handle_MAT_TListNodeOfListOfEdge(const MAT_TListNodeOfListOfEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Graph & operator=(const Handle_MAT_Graph &aHandle);
+		Handle_MAT_TListNodeOfListOfEdge & operator=(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT_Graph & operator=(const MAT_Graph *anItem);
+		Handle_MAT_TListNodeOfListOfEdge & operator=(const MAT_TListNodeOfListOfEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT_Graph const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_MAT_TListNodeOfListOfEdge const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MAT_Graph {
-	MAT_Graph* GetObject() {
-	return (MAT_Graph*)$self->Access();
+%extend Handle_MAT_TListNodeOfListOfEdge {
+	MAT_TListNodeOfListOfEdge* GetObject() {
+	return (MAT_TListNodeOfListOfEdge*)$self->Access();
 	}
 };
-%extend Handle_MAT_Graph {
-	~Handle_MAT_Graph() {
+%extend Handle_MAT_TListNodeOfListOfEdge {
+	~Handle_MAT_TListNodeOfListOfEdge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Graph\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfEdge\n");}
+	}
+};
+
+
+%nodefaultctor Handle_MAT_Edge;
+class Handle_MAT_Edge : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_Edge();
+		%feature("autodoc", "1");
+		Handle_MAT_Edge(const Handle_MAT_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Edge(const MAT_Edge *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Edge & operator=(const Handle_MAT_Edge &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_Edge & operator=(const MAT_Edge *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_Edge const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_Edge {
+	MAT_Edge* GetObject() {
+	return (MAT_Edge*)$self->Access();
+	}
+};
+%extend Handle_MAT_Edge {
+	~Handle_MAT_Edge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Edge\n");}
 	}
 };
 
@@ -516,36 +546,6 @@ class Handle_MAT_Node : public Handle_MMgt_TShared {
 	~Handle_MAT_Node() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
-	}
-};
-
-
-%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerArc;
-class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc();
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc(const Handle_MAT_DataMapNodeOfDataMapOfIntegerArc &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc(const MAT_DataMapNodeOfDataMapOfIntegerArc *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerArc &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc & operator=(const MAT_DataMapNodeOfDataMapOfIntegerArc *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerArc const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
-	MAT_DataMapNodeOfDataMapOfIntegerArc* GetObject() {
-	return (MAT_DataMapNodeOfDataMapOfIntegerArc*)$self->Access();
-	}
-};
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -616,33 +616,25 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 };
 
 
-%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerArc;
-class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
+%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerArc;
+class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		MAT_DataMapNodeOfDataMapOfIntegerArc(const Standard_Integer &K, const Handle_MAT_Arc &I, const TCollection_MapNodePtr &n);
+		MAT_DataMapIteratorOfDataMapOfIntegerArc();
 		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		MAT_DataMapIteratorOfDataMapOfIntegerArc(const MAT_DataMapOfIntegerArc &aMap);
 		%feature("autodoc", "1");
-		Handle_MAT_Arc & Value() const;
+		void Initialize(const MAT_DataMapOfIntegerArc &aMap);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_MAT_Arc & Value() const;
 
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	Handle_MAT_DataMapNodeOfDataMapOfIntegerArc GetHandle() {
-	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerArc*) &$self;
-	}
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	~MAT_DataMapNodeOfDataMapOfIntegerArc() {
+%extend MAT_DataMapIteratorOfDataMapOfIntegerArc {
+	~MAT_DataMapIteratorOfDataMapOfIntegerArc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -689,8 +681,18 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MAT_DataMapNodeOfDataMapOfIntegerNode(const Standard_Integer &K, const Handle_MAT_Node &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Handle_MAT_Node & Value() const;
 		%feature("autodoc", "1");
@@ -778,13 +780,72 @@ class MAT_Arc : public MMgt_TShared {
 };
 
 
+%nodefaultctor MAT_Edge;
+class MAT_Edge : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT_Edge();
+		%feature("autodoc", "1");
+		void EdgeNumber(const Standard_Integer anumber);
+		%feature("autodoc", "1");
+		void FirstBisector(const Handle_MAT_Bisector &abisector);
+		%feature("autodoc", "1");
+		void SecondBisector(const Handle_MAT_Bisector &abisector);
+		%feature("autodoc", "1");
+		void Distance(const Standard_Real adistance);
+		%feature("autodoc", "1");
+		void IntersectionPoint(const Standard_Integer apoint);
+		%feature("autodoc", "1");
+		Standard_Integer EdgeNumber() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector FirstBisector() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector SecondBisector() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		Standard_Integer IntersectionPoint() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_Edge {
+	Handle_MAT_Edge GetHandle() {
+	return *(Handle_MAT_Edge*) &$self;
+	}
+};
+%extend MAT_Edge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT_Edge {
+	~MAT_Edge() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Edge\n");}
+	}
+};
+
+
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBisector;
 class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MAT_DataMapNodeOfDataMapOfIntegerBisector(const Standard_Integer &K, const Handle_MAT_Bisector &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Handle_MAT_Bisector & Value() const;
 		%feature("autodoc", "1");
@@ -805,49 +866,6 @@ class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 	~MAT_DataMapNodeOfDataMapOfIntegerBisector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
-	}
-};
-
-
-%nodefaultctor MAT_TListNodeOfListOfEdge;
-class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_TListNodeOfListOfEdge();
-		%feature("autodoc", "1");
-		MAT_TListNodeOfListOfEdge(const Handle_MAT_Edge &anitem);
-		%feature("autodoc", "1");
-		Handle_MAT_Edge GetItem() const;
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge Next() const;
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge Previous() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_MAT_Edge &anitem);
-		%feature("autodoc", "1");
-		void Next(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
-		%feature("autodoc", "1");
-		void Previous(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
-		%feature("autodoc", "1");
-		void Dummy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_TListNodeOfListOfEdge {
-	Handle_MAT_TListNodeOfListOfEdge GetHandle() {
-	return *(Handle_MAT_TListNodeOfListOfEdge*) &$self;
-	}
-};
-%extend MAT_TListNodeOfListOfEdge {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT_TListNodeOfListOfEdge {
-	~MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfEdge\n");}
 	}
 };
 
@@ -909,6 +927,59 @@ class MAT_SequenceOfArc : public TCollection_BaseSequence {
 };
 
 
+%nodefaultctor MAT_Graph;
+class MAT_Graph : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT_Graph();
+		%feature("autodoc", "1");
+		void Perform(const Standard_Boolean SemiInfinite, const Handle_MAT_ListOfBisector &TheRoots, const Standard_Integer NbBasicElts, const Standard_Integer NbArcs);
+		%feature("autodoc", "1");
+		Handle_MAT_Arc Arc(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt BasicElt(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node Node(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfArcs() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfNodes() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfBasicElts() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfInfiniteNodes() const;
+		%feature("autodoc","FusionOfBasicElts(Standard_Integer IndexElt1, Standard_Integer IndexElt2)->[Standard_Integer, Standard_IntegerStandard_IntegerStandard_Integer]");
+		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean & MergeArc1, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & MergeArc2, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		void CompactArcs();
+		%feature("autodoc", "1");
+		void CompactNodes();
+		%feature("autodoc", "1");
+		void ChangeBasicElts(const MAT_DataMapOfIntegerBasicElt &NewMap);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt ChangeBasicElt(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_Graph {
+	Handle_MAT_Graph GetHandle() {
+	return *(Handle_MAT_Graph*) &$self;
+	}
+};
+%extend MAT_Graph {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT_Graph {
+	~MAT_Graph() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Graph\n");}
+	}
+};
+
+
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerBisector;
 class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMapIterator {
 	public:
@@ -928,55 +999,6 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMa
 	~MAT_DataMapIteratorOfDataMapOfIntegerBisector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBisector\n");}
-	}
-};
-
-
-%nodefaultctor MAT_Edge;
-class MAT_Edge : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_Edge();
-		%feature("autodoc", "1");
-		void EdgeNumber(const Standard_Integer anumber);
-		%feature("autodoc", "1");
-		void FirstBisector(const Handle_MAT_Bisector &abisector);
-		%feature("autodoc", "1");
-		void SecondBisector(const Handle_MAT_Bisector &abisector);
-		%feature("autodoc", "1");
-		void Distance(const Standard_Real adistance);
-		%feature("autodoc", "1");
-		void IntersectionPoint(const Standard_Integer apoint);
-		%feature("autodoc", "1");
-		Standard_Integer EdgeNumber() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector FirstBisector() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector SecondBisector() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		Standard_Integer IntersectionPoint() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_Edge {
-	Handle_MAT_Edge GetHandle() {
-	return *(Handle_MAT_Edge*) &$self;
-	}
-};
-%extend MAT_Edge {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT_Edge {
-	~MAT_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Edge\n");}
 	}
 };
 
@@ -1063,8 +1085,18 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MAT_DataMapNodeOfDataMapOfIntegerBasicElt(const Standard_Integer &K, const Handle_MAT_BasicElt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Handle_MAT_BasicElt & Value() const;
 		%feature("autodoc", "1");
@@ -1236,25 +1268,43 @@ class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
 };
 
 
-%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerNode;
-class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIterator {
+%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerArc;
+class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerNode();
+		MAT_DataMapNodeOfDataMapOfIntegerArc(const Standard_Integer &K, const Handle_MAT_Arc &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerNode(const MAT_DataMapOfIntegerNode &aMap);
+		Handle_MAT_Arc & Value() const;
 		%feature("autodoc", "1");
-		void Initialize(const MAT_DataMapOfIntegerNode &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Handle_MAT_Node & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
-	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	Handle_MAT_DataMapNodeOfDataMapOfIntegerArc GetHandle() {
+	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerArc*) &$self;
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	~MAT_DataMapNodeOfDataMapOfIntegerArc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -1430,25 +1480,45 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBasicElt : public TCollection_BasicMa
 };
 
 
-%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerArc;
-class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIterator {
+%nodefaultctor MAT_TListNodeOfListOfEdge;
+class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerArc();
+		MAT_TListNodeOfListOfEdge();
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerArc(const MAT_DataMapOfIntegerArc &aMap);
+		MAT_TListNodeOfListOfEdge(const Handle_MAT_Edge &anitem);
 		%feature("autodoc", "1");
-		void Initialize(const MAT_DataMapOfIntegerArc &aMap);
+		Handle_MAT_Edge GetItem() const;
 		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
+		Handle_MAT_TListNodeOfListOfEdge Next() const;
 		%feature("autodoc", "1");
-		const Handle_MAT_Arc & Value() const;
+		Handle_MAT_TListNodeOfListOfEdge Previous() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_MAT_Edge &anitem);
+		%feature("autodoc", "1");
+		void Next(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
+		%feature("autodoc", "1");
+		void Previous(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
+		%feature("autodoc", "1");
+		void Dummy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerArc {
-	~MAT_DataMapIteratorOfDataMapOfIntegerArc() {
+%extend MAT_TListNodeOfListOfEdge {
+	Handle_MAT_TListNodeOfListOfEdge GetHandle() {
+	return *(Handle_MAT_TListNodeOfListOfEdge*) &$self;
+	}
+};
+%extend MAT_TListNodeOfListOfEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend MAT_TListNodeOfListOfEdge {
+	~MAT_TListNodeOfListOfEdge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");}
+	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfEdge\n");}
 	}
 };
 
@@ -1652,54 +1722,24 @@ class MAT_Bisector : public MMgt_TShared {
 };
 
 
-%nodefaultctor MAT_Graph;
-class MAT_Graph : public MMgt_TShared {
+%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerNode;
+class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		MAT_Graph();
+		MAT_DataMapIteratorOfDataMapOfIntegerNode();
 		%feature("autodoc", "1");
-		void Perform(const Standard_Boolean SemiInfinite, const Handle_MAT_ListOfBisector &TheRoots, const Standard_Integer NbBasicElts, const Standard_Integer NbArcs);
+		MAT_DataMapIteratorOfDataMapOfIntegerNode(const MAT_DataMapOfIntegerNode &aMap);
 		%feature("autodoc", "1");
-		Handle_MAT_Arc Arc(const Standard_Integer Index) const;
+		void Initialize(const MAT_DataMapOfIntegerNode &aMap);
 		%feature("autodoc", "1");
-		Handle_MAT_BasicElt BasicElt(const Standard_Integer Index) const;
+		const Standard_Integer & Key() const;
 		%feature("autodoc", "1");
-		Handle_MAT_Node Node(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfArcs() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfNodes() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfBasicElts() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfInfiniteNodes() const;
-		%feature("autodoc","FusionOfBasicElts(Standard_Integer IndexElt1, Standard_Integer IndexElt2)->[Standard_Integer, Standard_IntegerStandard_IntegerStandard_Integer]");
-		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean & MergeArc1, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & MergeArc2, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		void CompactArcs();
-		%feature("autodoc", "1");
-		void CompactNodes();
-		%feature("autodoc", "1");
-		void ChangeBasicElts(const MAT_DataMapOfIntegerBasicElt &NewMap);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt ChangeBasicElt(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Handle_MAT_Node & Value() const;
 
 };
-%extend MAT_Graph {
-	Handle_MAT_Graph GetHandle() {
-	return *(Handle_MAT_Graph*) &$self;
-	}
-};
-%extend MAT_Graph {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend MAT_Graph {
-	~MAT_Graph() {
+%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
+	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Graph\n");}
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
 	}
 };

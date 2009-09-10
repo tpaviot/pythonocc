@@ -59,13 +59,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
+#include<gp_Elips2d.hxx>
+#include<gp_Circ2d.hxx>
+#include<gp_Parab2d.hxx>
+#include<gp_Hypr2d.hxx>
+#include<gp_Lin2d.hxx>
 #include<IntRes2d_Domain.hxx>
 #include<gp_Pnt2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<gp_Lin2d.hxx>
-#include<gp_Circ2d.hxx>
-#include<gp_Elips2d.hxx>
-#include<gp_Parab2d.hxx>
-#include<gp_Hypr2d.hxx>
 #include<gp_Vec2d.hxx>
 %}

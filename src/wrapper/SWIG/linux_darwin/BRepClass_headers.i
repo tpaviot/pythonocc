@@ -45,8 +45,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Dir2d.hxx>
+#include<gp_Pnt2d.hxx>
 #include<gp_Pnt.hxx>
 %}

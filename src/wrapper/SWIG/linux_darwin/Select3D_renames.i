@@ -2,15 +2,15 @@
 %rename(Select3D_ListIteratorOfListOfSensitiveTriangle) Select3D_ListIteratorOfListOfSensitiveTriangle;
 %rename(Select3D_TOS_BOUNDARY) Select3D_TOS_BOUNDARY;
 %rename(Select3D_SensitivePoly) Select3D_SensitivePoly;
-%rename(Select3D_ListNodeOfListOfSensitive) Select3D_ListNodeOfListOfSensitive;
+%rename(Select3D_SensitiveCurve) Select3D_SensitiveCurve;
 %rename(Select3D_SensitiveEntity) Select3D_SensitiveEntity;
 %rename(Handle_Select3D_ListNodeOfListOfSensitiveTriangle) Handle_Select3D_ListNodeOfListOfSensitiveTriangle;
 %rename(Select3D_Pnt) Select3D_Pnt;
 %rename(Handle_Select3D_SensitiveEntity) Handle_Select3D_SensitiveEntity;
-%rename(Select3D_SensitiveFace) Select3D_SensitiveFace;
+%rename(Select3D_SensitiveGroup) Select3D_SensitiveGroup;
 %rename(Handle_Select3D_SensitiveTriangle) Handle_Select3D_SensitiveTriangle;
 %rename(Select3D_Pnt2d) Select3D_Pnt2d;
-%rename(Select3D_SensitiveCurve) Select3D_SensitiveCurve;
+%rename(Select3D_ListNodeOfListOfSensitive) Select3D_ListNodeOfListOfSensitive;
 %rename(Select3D_ListOfSensitive) Select3D_ListOfSensitive;
 %rename(Handle_Select3D_SequenceNodeOfSensitiveEntitySequence) Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
 %rename(Handle_Select3D_SensitiveCurve) Handle_Select3D_SensitiveCurve;
@@ -19,7 +19,6 @@
 %rename(Handle_Select3D_SensitivePoint) Handle_Select3D_SensitivePoint;
 %rename(Handle_Select3D_ListNodeOfListOfSensitive) Handle_Select3D_ListNodeOfListOfSensitive;
 %rename(Select3D_SensitiveEntitySequence) Select3D_SensitiveEntitySequence;
-%rename(Select3D_SensitiveGroup) Select3D_SensitiveGroup;
 %rename(Select3D_TOS_EXTERIOR) Select3D_TOS_EXTERIOR;
 %rename(Handle_Select3D_SensitiveCircle) Handle_Select3D_SensitiveCircle;
 %rename(Select3D_ListNodeOfListOfSensitiveTriangle) Select3D_ListNodeOfListOfSensitiveTriangle;
@@ -40,3 +39,4 @@
 %rename(Select3D_SensitiveSegment) Select3D_SensitiveSegment;
 %rename(Select3D_Box2d) Select3D_Box2d;
 %rename(Select3D_Projector) Select3D_Projector;
+%rename(Select3D_SensitiveFace) Select3D_SensitiveFace;

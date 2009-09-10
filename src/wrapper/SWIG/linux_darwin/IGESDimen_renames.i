@@ -11,7 +11,7 @@
 %rename(IGESDimen_OrdinateDimension) IGESDimen_OrdinateDimension;
 %rename(Handle_IGESDimen_AngularDimension) Handle_IGESDimen_AngularDimension;
 %rename(Handle_IGESDimen_DimensionedGeometry) Handle_IGESDimen_DimensionedGeometry;
-%rename(Handle_IGESDimen_CurveDimension) Handle_IGESDimen_CurveDimension;
+%rename(Handle_IGESDimen_HArray1OfGeneralNote) Handle_IGESDimen_HArray1OfGeneralNote;
 %rename(IGESDimen_ToolDimensionUnits) IGESDimen_ToolDimensionUnits;
 %rename(IGESDimen_ToolPointDimension) IGESDimen_ToolPointDimension;
 %rename(IGESDimen_ToolDimensionedGeometry) IGESDimen_ToolDimensionedGeometry;
@@ -28,7 +28,7 @@
 %rename(IGESDimen_ToolBasicDimension) IGESDimen_ToolBasicDimension;
 %rename(IGESDimen_SpecificModule) IGESDimen_SpecificModule;
 %rename(IGESDimen_ReadWriteModule) IGESDimen_ReadWriteModule;
-%rename(IGESDimen_ToolOrdinateDimension) IGESDimen_ToolOrdinateDimension;
+%rename(IGESDimen_ToolGeneralSymbol) IGESDimen_ToolGeneralSymbol;
 %rename(IGESDimen_NewGeneralNote) IGESDimen_NewGeneralNote;
 %rename(IGESDimen_GeneralSymbol) IGESDimen_GeneralSymbol;
 %rename(Handle_IGESDimen_CenterLine) Handle_IGESDimen_CenterLine;
@@ -44,7 +44,7 @@
 %rename(IGESDimen_CurveDimension) IGESDimen_CurveDimension;
 %rename(IGESDimen_DimensionedGeometry) IGESDimen_DimensionedGeometry;
 %rename(Handle_IGESDimen_DiameterDimension) Handle_IGESDimen_DiameterDimension;
-%rename(Handle_IGESDimen_HArray1OfGeneralNote) Handle_IGESDimen_HArray1OfGeneralNote;
+%rename(Handle_IGESDimen_CurveDimension) Handle_IGESDimen_CurveDimension;
 %rename(IGESDimen_Array1OfGeneralNote) IGESDimen_Array1OfGeneralNote;
 %rename(Handle_IGESDimen_OrdinateDimension) Handle_IGESDimen_OrdinateDimension;
 %rename(Handle_IGESDimen_FlagNote) Handle_IGESDimen_FlagNote;
@@ -75,8 +75,8 @@
 %rename(IGESDimen_ToolCenterLine) IGESDimen_ToolCenterLine;
 %rename(IGESDimen_ToolSectionedArea) IGESDimen_ToolSectionedArea;
 %rename(IGESDimen_DimensionUnits) IGESDimen_DimensionUnits;
-%rename(IGESDimen_ToolGeneralSymbol) IGESDimen_ToolGeneralSymbol;
 %rename(Handle_IGESDimen_GeneralModule) Handle_IGESDimen_GeneralModule;
+%rename(IGESDimen_ToolOrdinateDimension) IGESDimen_ToolOrdinateDimension;
 %rename(IGESDimen_ToolNewDimensionedGeometry) IGESDimen_ToolNewDimensionedGeometry;
 %rename(IGESDimen_Array1OfLeaderArrow) IGESDimen_Array1OfLeaderArrow;
 %rename(Handle_IGESDimen_HArray1OfLeaderArrow) Handle_IGESDimen_HArray1OfLeaderArrow;

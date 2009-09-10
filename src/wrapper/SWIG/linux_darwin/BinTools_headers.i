@@ -34,10 +34,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Geom2d_Curve.hxx>
 #include<TopLoc_Location.hxx>
 #include<BinTools.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 %}

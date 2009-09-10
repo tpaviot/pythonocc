@@ -35,36 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-%nodefaultctor Handle_BinMFunction_ScopeDriver;
-class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver();
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver(const BinMFunction_ScopeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver & operator=(const Handle_BinMFunction_ScopeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMFunction_ScopeDriver {
-	BinMFunction_ScopeDriver* GetObject() {
-	return (BinMFunction_ScopeDriver*)$self->Access();
-	}
-};
-%extend Handle_BinMFunction_ScopeDriver {
-	~Handle_BinMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");}
-	}
-};
-
-
 %nodefaultctor Handle_BinMFunction_GraphNodeDriver;
 class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -121,6 +91,36 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 	~Handle_BinMFunction_FunctionDriver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");}
+	}
+};
+
+
+%nodefaultctor Handle_BinMFunction_ScopeDriver;
+class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver();
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver(const BinMFunction_ScopeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const Handle_BinMFunction_ScopeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMFunction_ScopeDriver {
+	BinMFunction_ScopeDriver* GetObject() {
+	return (BinMFunction_ScopeDriver*)$self->Access();
+	}
+};
+%extend Handle_BinMFunction_ScopeDriver {
+	~Handle_BinMFunction_ScopeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");}
 	}
 };
 

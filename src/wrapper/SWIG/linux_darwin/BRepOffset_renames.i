@@ -2,7 +2,7 @@
 %rename(BRepOffset_DataMapIteratorOfDataMapOfShapeReal) BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
 %rename(BRepOffset_MakeLoops) BRepOffset_MakeLoops;
 %rename(BRepOffset_Pipe) BRepOffset_Pipe;
-%rename(BRepOffset_Interval) BRepOffset_Interval;
+%rename(BRepOffset_Inter2d) BRepOffset_Inter2d;
 %rename(BRepOffset_UnknownError) BRepOffset_UnknownError;
 %rename(BRepOffset_Offset) BRepOffset_Offset;
 %rename(BRepOffset_RadiusEqualOffset) BRepOffset_RadiusEqualOffset;
@@ -25,7 +25,7 @@
 %rename(BRepOffset_ListIteratorOfListOfInterval) BRepOffset_ListIteratorOfListOfInterval;
 %rename(BRepOffset_DataMapIteratorOfDataMapOfShapeOffset) BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
 %rename(BRepOffset_RectoVerso) BRepOffset_RectoVerso;
-%rename(BRepOffset_Inter2d) BRepOffset_Inter2d;
+%rename(BRepOffset_Interval) BRepOffset_Interval;
 %rename(BRepOffset_ListOfInterval) BRepOffset_ListOfInterval;
 %rename(BRepOffset_Analyse) BRepOffset_Analyse;
 %rename(BRepOffset_Inter3d) BRepOffset_Inter3d;
