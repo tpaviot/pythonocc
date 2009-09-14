@@ -776,10 +776,10 @@ class ModularBuilder(object):
             docstring+='"%s)'%meth_doc
             # Add return
             if len(return_list)<=1:#just one value
-                docstring+='->%s'%return_list[0][0]
+                docstring+=' -> %s'%return_list[0][0]
             else:
                 print docstring
-                docstring+='->['
+                docstring+=' -> ['
                 index_2=1
                 for rt in return_list:
                     docstring+='%s'%rt[0]
