@@ -110,6 +110,10 @@ except:
     OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
     
+#
+# Define HASHCODE_MAXINT. Even on 64 bits systems, HashCode method require a 32 bits Standard_Integer
+#
+HASHCODE_MAXINT = pow(2,31)-1
 
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
@@ -121,7 +125,7 @@ if sys.platform=='win32':
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\
-                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
+                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
     if sys.version_info[:3] >= (2,6,0):
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
     ECA = ['/GL','/link']
@@ -147,7 +151,7 @@ elif sys.platform=='linux2':
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
-                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
+                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
     SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
@@ -168,8 +172,8 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
     OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
-    SALOME_GEOM_LIB = 'usr/local/lib/SalomeGeom'
-    SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
+    SALOME_GEOM_LIB = '/Library/salomegeometry/lib'
+    SALOME_GEOM_INC = '/Library/salomegeometry/include'
     SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
     GCC_XML_PATH = which('gccxml')
     if GCC_XML_PATH == '':
@@ -177,7 +181,7 @@ elif sys.platform=='darwin':
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
+                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
     ECA = []
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
