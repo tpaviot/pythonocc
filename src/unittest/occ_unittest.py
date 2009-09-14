@@ -50,7 +50,7 @@ class Test(unittest.TestCase):
         s = Standard_Transient()
         id_s = id(s)
         hash1_s = s.__hash__()
-        hash2_s = s.HashCode(sys.maxint)
+        hash2_s = s.HashCode(pow(2,31)-1)
         self.assertNotEqual(id_s, hash1_s)
         self.assertEqual(hash1_s,hash2_s)
 
@@ -98,9 +98,13 @@ class Test(unittest.TestCase):
         Checks the Topology.py utility script.
         '''
         print 'Test: Topology'
-        shape = BRepPrimAPI_MakeBox(10.,10.,10.).Shape()
-        self.assertEqual(shape.IsNull(), False)
-        topo = Topo(shape)
+        def get_shape():
+            shape = BRepPrimAPI_MakeBox(10.,10.,10.).Shape()
+            self.assertEqual(shape.IsNull(), False)
+            topo = Topo(shape)
+            return shape
+        returned_shape = get_shape()
+        self.assertEqual(returned_shape.IsNull(),False)
     
     def testFT1(self):
         '''
