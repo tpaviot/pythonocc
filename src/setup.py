@@ -103,8 +103,10 @@ from distutils import log
 def customize_compiler(compiler):
     '''Updates compiler settings for pythonOCC performances under Linux and MacOSX
     '''
-    if sys.platform=='linux2' or sys.platform in 'darwin':
-        compiler_so = ['g++','-O0','-fPIC','-dynamic']
+    #print compiler.compiler_so
+    #print compiler.linker_so
+    if sys.platform=='darwin':
+        compiler_so = ['g++','-O0','-fPIC','-dynamic','-pipe']
         # And modify linker_so
         linker_so = [compiler.linker_so[0],'-F.', '--no_undefined','-bundle','-dynamic_lookup']
         #g++-4.2 -Wl,-F. -bundle -undefined dynamic_lookup -arch i386 -arch ppc -arch x86_64 build/temp.macosx-10.6-universal-2.6/Users/thomas/Devel/pythonocc/src/wra
@@ -113,6 +115,17 @@ def customize_compiler(compiler):
             compiler_so.append('x86_64')
             linker_so.append('-arch')
             linker_so.append('x86_64')
+        else:
+            compiler_so.append('-arch')
+            compiler_so.append('i386')
+            compiler_so.append('-m32')
+            #compiler_so.append('-arch')
+            #compiler_so.append('ppc')
+            linker_so.append('-arch')
+            linker_so.append('i386')
+            linker_so.append('-m32')
+            #compiler_so.append('-arch')
+            #compiler_so.append('ppc')
         linker_so.append('-L.')
         linker_so.append('-lm')
         linker_so.append('-lstdc++')
@@ -122,11 +135,12 @@ def customize_compiler(compiler):
             linker_so.append('-lpython2.%s'%python_version[2])
         compiler.compiler_so = compiler_so
         compiler.linker_so = linker_so
+    #lk
     return compiler
      
 class build_ext(_build_ext):
     """Specialized Python source builder."""
-    # implement whatever needs to be different...
+    # implement whatever needs to be different...    
     def build_extension(self, ext):
         sources = ext.sources
         if sources is None or type(sources) not in (ListType, TupleType):
