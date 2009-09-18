@@ -94,7 +94,7 @@ def get_32_or_64_bits_platform():
         return 32
     elif sys.maxint==pow(2,63)-1:
         return 64
-
+bits = get_32_or_64_bits_platform()
 #===============================================================================
 # Define paths
 #===============================================================================
@@ -151,18 +151,25 @@ elif sys.platform=='linux2':
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
-                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
+                     ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
     SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0','-march=%s'%platform.machine()]
+    ECA = ['-O0']
+    if bits==64:
+        DEFINE_MACROS.append(('_OCC64',None))
+        SWIG_OPTS.append('-D_OCC64')
+        ECA.append('-m64')
+    else:
+        ECA.append('-march=%s -m32'%platform.machine())
+    
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
     EXTRA_LIBS = ['m','stc++',lib_python]
     
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
-    bits = get_32_or_64_bits_platform()
+    #bits = get_32_or_64_bits_platform()
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
