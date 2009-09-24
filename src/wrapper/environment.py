@@ -128,7 +128,7 @@ if sys.platform=='win32':
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]
     if sys.version_info[:3] >= (2,6,0):
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
-    ECA = ['EHsc','/GL','/link']
+    ECA = ['/EHsc','/GL','/link']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
                  '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = ['/LTCG']
