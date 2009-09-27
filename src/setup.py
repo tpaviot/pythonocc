@@ -113,8 +113,10 @@ def customize_compiler(compiler):
         if environment.get_32_or_64_bits_platform()==64:
             compiler_so.append('-arch')
             compiler_so.append('x86_64')
+            compiler_so.append('-m64')
             linker_so.append('-arch')
             linker_so.append('x86_64')
+            linker_so.append('-m64')
         else:
             compiler_so.append('-arch')
             compiler_so.append('i386')
