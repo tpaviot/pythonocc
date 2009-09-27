@@ -868,7 +868,7 @@ class ModularBuilder(object):
         # protected_enums is a list of encountered protected defined enums.
         # TODO: find a way to find automatically whether or not the enum is protected
         protected_enums=['HypothesisType','VValue','IValueIndex','VValueIndex','SValueIndex','ValueIndex',\
-                         '' #AWfull Tweak to exclude a protected enum in SMESH_Block\
+                         'ParameterType','' #AWfull Tweak to exclude a protected enum in SMESH_Block\
                          ]
         try:
             class_declaration.enumerations() #if no internal enum, an exception is raised by pygccxml
