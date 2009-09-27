@@ -64,6 +64,87 @@ class Partition_Spliter {
 };
 
 
+%nodefaultctor Partition_Loop2d;
+class Partition_Loop2d {
+	public:
+		%feature("autodoc", "1");
+		Partition_Loop2d();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void AddConstEdge(const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		void AddSectionEdge(const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewWires() const;
+		%feature("autodoc", "1");
+		void WiresToFaces(const BRepAlgo_Image &EdgeImage);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces() const;
+
+};
+%extend Partition_Loop2d {
+	~Partition_Loop2d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Partition_Loop2d\n");}
+	}
+};
+
+
+%nodefaultctor Partition_Loop3d;
+class Partition_Loop3d {
+	public:
+		%feature("autodoc", "1");
+		Partition_Loop3d();
+		%feature("autodoc", "1");
+		void AddConstFaces(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		void AddSectionFaces(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
+		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot) -> Standard_Real");
+		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
+		%feature("autodoc", "1");
+		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
+
+};
+%extend Partition_Loop3d {
+	~Partition_Loop3d() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Partition_Loop3d\n");}
+	}
+};
+
+
+%nodefaultctor Partition_Loop;
+class Partition_Loop {
+	public:
+		%feature("autodoc", "1");
+		Partition_Loop();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face &F);
+		%feature("autodoc", "1");
+		void AddConstEdge(const TopoDS_Edge &E);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewWires() const;
+		%feature("autodoc", "1");
+		void WiresToFaces();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces() const;
+
+};
+%extend Partition_Loop {
+	~Partition_Loop() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Partition_Loop\n");}
+	}
+};
+
+
 %nodefaultctor Partition_Inter3d;
 class Partition_Inter3d {
 	public:
@@ -111,62 +192,6 @@ class Partition_Inter3d {
 };
 
 
-%nodefaultctor Partition_Loop;
-class Partition_Loop {
-	public:
-		%feature("autodoc", "1");
-		Partition_Loop();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewWires() const;
-		%feature("autodoc", "1");
-		void WiresToFaces();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces() const;
-
-};
-%extend Partition_Loop {
-	~Partition_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop\n");}
-	}
-};
-
-
-%nodefaultctor Partition_Loop2d;
-class Partition_Loop2d {
-	public:
-		%feature("autodoc", "1");
-		Partition_Loop2d();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face &F);
-		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		void AddSectionEdge(const TopoDS_Edge &E);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewWires() const;
-		%feature("autodoc", "1");
-		void WiresToFaces(const BRepAlgo_Image &EdgeImage);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces() const;
-
-};
-%extend Partition_Loop2d {
-	~Partition_Loop2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop2d\n");}
-	}
-};
-
-
 %nodefaultctor Partition_Inter2d;
 class Partition_Inter2d {
 	public:
@@ -174,7 +199,7 @@ class Partition_Inter2d {
 		Partition_Inter2d();
 		%feature("autodoc", "1");
 		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
-		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E)->Standard_Real");
+		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E) -> Standard_Real");
 		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);
@@ -186,30 +211,5 @@ class Partition_Inter2d {
 	~Partition_Inter2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Partition_Inter2d\n");}
-	}
-};
-
-
-%nodefaultctor Partition_Loop3d;
-class Partition_Loop3d {
-	public:
-		%feature("autodoc", "1");
-		Partition_Loop3d();
-		%feature("autodoc", "1");
-		void AddConstFaces(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		void AddSectionFaces(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
-		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot)->Standard_Real");
-		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
-		%feature("autodoc", "1");
-		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
-
-};
-%extend Partition_Loop3d {
-	~Partition_Loop3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop3d\n");}
 	}
 };

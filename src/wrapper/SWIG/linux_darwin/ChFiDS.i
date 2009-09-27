@@ -513,9 +513,9 @@ class ChFiDS_CircSection {
 		void Set(const gp_Circ &C, const Standard_Real F, const Standard_Real L);
 		%feature("autodoc", "1");
 		void Set(const gp_Lin &C, const Standard_Real F, const Standard_Real L);
-		%feature("autodoc","Get()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Get() -> [Standard_Real, Standard_Real]");
 		void Get(gp_Circ & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Get()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Get() -> [Standard_Real, Standard_Real]");
 		void Get(gp_Lin & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -641,9 +641,9 @@ class ChFiDS_Spine : public MMgt_TShared {
 		Standard_Real Absc(const Standard_Real U);
 		%feature("autodoc", "1");
 		Standard_Real Absc(const Standard_Real U, const Standard_Integer I);
-		%feature("autodoc","Parameter(Standard_Real AbsC, Standard_Boolean Oriented=1)->Standard_Real");
+		%feature("autodoc","Parameter(Standard_Real AbsC, Standard_Boolean Oriented=1) -> Standard_Real");
 		void Parameter(const Standard_Real AbsC, Standard_Real &OutValue, const Standard_Boolean Oriented=1);
-		%feature("autodoc","Parameter(Standard_Integer Index, Standard_Real AbsC, Standard_Boolean Oriented=1)->Standard_Real");
+		%feature("autodoc","Parameter(Standard_Integer Index, Standard_Real AbsC, Standard_Boolean Oriented=1) -> Standard_Real");
 		void Parameter(const Standard_Integer Index, const Standard_Real AbsC, Standard_Real &OutValue, const Standard_Boolean Oriented=1);
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real AbsC);
@@ -895,13 +895,13 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 		ChFiDS_ChamfSpine(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void SetDist(const Standard_Real Dis);
-		%feature("autodoc","GetDist()->Standard_Real");
+		%feature("autodoc","GetDist() -> Standard_Real");
 		void GetDist(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2);
-		%feature("autodoc","Dists()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Dists() -> [Standard_Real, Standard_Real]");
 		void Dists(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDistAngle()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDistAngle() -> [Standard_Real, Standard_Real]");
 		void GetDistAngle(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnF1) const;
 		%feature("autodoc", "1");
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Boolean DisOnF1);
@@ -1881,9 +1881,9 @@ class ChFiDS_Stripe : public MMgt_TShared {
 		void OrientationOnFace2(const TopAbs_Orientation Or2);
 		%feature("autodoc", "1");
 		void Choix(const Standard_Integer C);
-		%feature("autodoc","FirstParameters()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","FirstParameters() -> [Standard_Real, Standard_Real]");
 		void FirstParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","LastParameters()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","LastParameters() -> [Standard_Real, Standard_Real]");
 		void LastParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ChangeFirstParameters(const Standard_Real Pdeb, const Standard_Real Pfin);
@@ -1929,7 +1929,7 @@ class ChFiDS_Stripe : public MMgt_TShared {
 		void ChangeIndexLastPointOnS1(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		void ChangeIndexLastPointOnS2(const Standard_Integer Index);
-		%feature("autodoc","Parameters(Standard_Boolean First)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Boolean First) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Boolean First, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetParameters(const Standard_Boolean First, const Standard_Real Pdeb, const Standard_Real Pfin);

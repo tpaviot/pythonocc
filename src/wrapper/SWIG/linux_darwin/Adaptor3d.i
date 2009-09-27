@@ -810,11 +810,11 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		Adaptor3d_InterFunc(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real FixVal, const Standard_Integer Fix);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

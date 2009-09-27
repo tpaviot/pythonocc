@@ -50,7 +50,7 @@ class BRepLProp_SurfaceTool {
 		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
 		%feature("autodoc", "1");
 		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
-		%feature("autodoc","Bounds(const S)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

@@ -102,7 +102,7 @@ class GProp_GProps {
 		gp_Pnt CentreOfMass() const;
 		%feature("autodoc", "1");
 		gp_Mat MatrixOfInertia() const;
-		%feature("autodoc","StaticMoments()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","StaticMoments() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void StaticMoments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real MomentOfInertia(const gp_Ax1 &A) const;
@@ -141,9 +141,9 @@ class GProp_PGProps : public GProp_GProps {
 		gp_Pnt Barycentre(const TColgp_Array1OfPnt &Pnts);
 		%feature("autodoc", "1");
 		gp_Pnt Barycentre(const TColgp_Array2OfPnt &Pnts);
-		%feature("autodoc","Barycentre(const Pnts, const Density)->Standard_Real");
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
-		%feature("autodoc","Barycentre(const Pnts, const Density)->Standard_Real");
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
 
 };
@@ -168,7 +168,7 @@ class GProp_PrincipalProps {
 		Standard_Boolean HasSymmetryPoint() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasSymmetryPoint(const Standard_Real aTol) const;
-		%feature("autodoc","Moments()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Moments() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Moments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Vec & FirstAxisOfInertia() const;
@@ -176,7 +176,7 @@ class GProp_PrincipalProps {
 		const gp_Vec & SecondAxisOfInertia() const;
 		%feature("autodoc", "1");
 		const gp_Vec & ThirdAxisOfInertia() const;
-		%feature("autodoc","RadiusOfGyration()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RadiusOfGyration() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void RadiusOfGyration(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

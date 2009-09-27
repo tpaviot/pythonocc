@@ -229,7 +229,7 @@ class AdvApp2Var_Network {
 		AdvApp2Var_Network();
 		%feature("autodoc", "1");
 		AdvApp2Var_Network(const AdvApp2Var_SequenceOfPatch &Net, const TColStd_SequenceOfReal &TheU, const TColStd_SequenceOfReal &TheV);
-		%feature("autodoc","FirstNotApprox()->Standard_Integer");
+		%feature("autodoc","FirstNotApprox() -> Standard_Integer");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		AdvApp2Var_Patch & ChangePatch(const Standard_Integer Index);
@@ -239,7 +239,7 @@ class AdvApp2Var_Network {
 		void UpdateInU(const Standard_Real CuttingValue);
 		%feature("autodoc", "1");
 		void UpdateInV(const Standard_Real CuttingValue);
-		%feature("autodoc","SameDegree(Standard_Integer iu, Standard_Integer iv)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","SameDegree(Standard_Integer iu, Standard_Integer iv) -> [Standard_IntegerStandard_Integer]");
 		void SameDegree(const Standard_Integer iu, const Standard_Integer iv, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbPatch() const;
@@ -301,7 +301,7 @@ class AdvApp2Var_Framework {
 		AdvApp2Var_Framework();
 		%feature("autodoc", "1");
 		AdvApp2Var_Framework(const AdvApp2Var_SequenceOfNode &Frame, const AdvApp2Var_SequenceOfStrip &UFrontier, const AdvApp2Var_SequenceOfStrip &VFrontier);
-		%feature("autodoc","FirstNotApprox()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","FirstNotApprox() -> [Standard_Integer, Standard_Integer]");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue, Standard_Integer &OutValue, AdvApp2Var_Iso & anIso) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode(const GeomAbs_IsoType Type, const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;

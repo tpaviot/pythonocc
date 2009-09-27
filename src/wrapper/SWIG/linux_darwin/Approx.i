@@ -296,7 +296,7 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -319,7 +319,7 @@ class Approx_SweepFunction : public MMgt_TShared {
 		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -333,7 +333,7 @@ class Approx_SweepFunction : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -600,13 +600,13 @@ class Approx_FitAndDivide {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
 		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -684,13 +684,13 @@ class Approx_FitAndDivide2d {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
 		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -799,7 +799,7 @@ class Approx_MyLeastSquareOfFitAndDivide {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1002,11 +1002,11 @@ class Approx_SweepApproximation {
 		Approx_SweepApproximation(const Handle_Approx_SweepFunction &Func);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real BoundTol, const Standard_Real Tol2d, const Standard_Real TolAngular, const GeomAbs_Shape Continuity=GeomAbs_C0, const Standard_Integer Degmax=11, const Standard_Integer Segmax=50);
-		%feature("autodoc","Eval(Standard_Real Parameter, Standard_Integer DerivativeRequest, Standard_Real First, Standard_Real Last)->Standard_Real");
+		%feature("autodoc","Eval(Standard_Real Parameter, Standard_Integer DerivativeRequest, Standard_Real First, Standard_Real Last) -> Standard_Real");
 		Standard_Integer Eval(const Standard_Real Parameter, const Standard_Integer DerivativeRequest, const Standard_Real First, const Standard_Real Last, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -1032,7 +1032,7 @@ class Approx_SweepApproximation {
 		Standard_Real AverageErrorOnSurf() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbCurves2d() const;
-		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;

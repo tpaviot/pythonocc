@@ -1,1 +1,17 @@
-/* Feature currently unavailable */
+%rename(Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient) Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
+%rename(GEOM_Solver) GEOM_Solver;
+%rename(GEOM_SubShapeDriver) GEOM_SubShapeDriver;
+%rename(GEOM_Function) GEOM_Function;
+%rename(GEOM_Parameter) GEOM_Parameter;
+%rename(GEOM_ISubShape) GEOM_ISubShape;
+%rename(Handle_GEOM_SubShapeDriver) Handle_GEOM_SubShapeDriver;
+%rename(Handle_GEOM_Object) Handle_GEOM_Object;
+%rename(GEOM_Object) GEOM_Object;
+%rename(GEOM_Application) GEOM_Application;
+%rename(Handle_GEOM_Application) Handle_GEOM_Application;
+%rename(GEOM_IOperations) GEOM_IOperations;
+%rename(Handle_GEOM_Function) Handle_GEOM_Function;
+%rename(GEOM_Engine) GEOM_Engine;
+%rename(GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient) GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
+%rename(GEOM_DataMapNodeOfDataMapOfAsciiStringTransient) GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
+%rename(GEOM_DataMapOfAsciiStringTransient) GEOM_DataMapOfAsciiStringTransient;

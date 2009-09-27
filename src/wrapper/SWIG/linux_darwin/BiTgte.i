@@ -369,7 +369,7 @@ class BiTgte_Blend {
 		Handle_Geom2d_Curve PCurve2OnFillet(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbBranches();
-		%feature("autodoc","IndicesOfBranche(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","IndicesOfBranche(Standard_Integer Index) -> [Standard_IntegerStandard_Integer]");
 		void IndicesOfBranche(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void ComputeCenters();

@@ -95,47 +95,6 @@ class Geom2dAPI_PointsToBSpline {
 };
 
 
-%nodefaultctor Geom2dAPI_ProjectPointOnCurve;
-class Geom2dAPI_ProjectPointOnCurve {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve();
-		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
-		%feature("autodoc", "1");
-		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
-		%feature("autodoc", "1");
-		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Parameter(const Standard_Integer Index) const;
-		%feature("autodoc","Parameter(Standard_Integer Index)->Standard_Real");
-		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt2d NearestPoint() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter LowerDistanceParameter() const;
-		%feature("autodoc", "1");
-		Quantity_Length LowerDistance() const;
-		%feature("autodoc", "1");
-		const Extrema_ExtPC2d & Extrema() const;
-
-};
-%extend Geom2dAPI_ProjectPointOnCurve {
-	~Geom2dAPI_ProjectPointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
-	}
-};
-
-
 %nodefaultctor Geom2dAPI_Interpolate;
 class Geom2dAPI_Interpolate {
 	public:
@@ -163,6 +122,47 @@ class Geom2dAPI_Interpolate {
 };
 
 
+%nodefaultctor Geom2dAPI_ProjectPointOnCurve;
+class Geom2dAPI_ProjectPointOnCurve {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_ProjectPointOnCurve();
+		%feature("autodoc", "1");
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		%feature("autodoc", "1");
+		Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve);
+		%feature("autodoc", "1");
+		void Init(const gp_Pnt2d &P, const Handle_Geom2d_Curve &Curve, const Quantity_Parameter Umin, const Quantity_Parameter Usup);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Parameter(const Standard_Integer Index) const;
+		%feature("autodoc","Parameter(Standard_Integer Index) -> Standard_Real");
+		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Quantity_Length Distance(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt2d NearestPoint() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter LowerDistanceParameter() const;
+		%feature("autodoc", "1");
+		Quantity_Length LowerDistance() const;
+		%feature("autodoc", "1");
+		const Extrema_ExtPC2d & Extrema() const;
+
+};
+%extend Geom2dAPI_ProjectPointOnCurve {
+	~Geom2dAPI_ProjectPointOnCurve() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
+	}
+};
+
+
 %nodefaultctor Geom2dAPI_ExtremaCurveCurve;
 class Geom2dAPI_ExtremaCurveCurve {
 	public:
@@ -172,13 +172,13 @@ class Geom2dAPI_ExtremaCurveCurve {
 		Standard_Integer NbExtrema() const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer Index, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void NearestPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real]");
 		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length LowerDistance() const;

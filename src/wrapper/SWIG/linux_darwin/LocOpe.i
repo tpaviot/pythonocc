@@ -419,13 +419,13 @@ class LocOpe_CurveShapeIntersector {
 		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		const LocOpe_PntFace & Point(const Standard_Integer I) const;
-		%feature("autodoc","LocalizeAfter(Standard_Real From)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeAfter(Standard_Real From) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Real From)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeBefore(Standard_Real From) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Real From, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeAfter(Standard_Integer FromInd) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeBefore(Standard_Integer FromInd) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
@@ -613,7 +613,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 		virtual		void NextEdge();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
-		%feature("autodoc","OnEdge(const V)->Standard_Real");
+		%feature("autodoc","OnEdge(const V) -> Standard_Real");
 		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -668,7 +668,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 		virtual		void NextEdge();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean OnVertex(const TopoDS_Vertex &Vwire, TopoDS_Vertex & Vshape);
-		%feature("autodoc","OnEdge(const V)->Standard_Real");
+		%feature("autodoc","OnEdge(const V) -> Standard_Real");
 		virtual		Standard_Boolean OnEdge(const TopoDS_Vertex &V, TopoDS_Edge & E, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1129,13 +1129,13 @@ class LocOpe_CSIntersector {
 		Standard_Integer NbPoints(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const LocOpe_PntFace & Point(const Standard_Integer I, const Standard_Integer Index) const;
-		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Real From, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Real From, Standard_Real Tol) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer I, const Standard_Real From, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Real From, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Real From, Standard_Real Tol) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer I, const Standard_Real From, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeAfter(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeAfter(const Standard_Integer I, const Standard_Integer FromInd, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocalizeBefore(Standard_Integer I, Standard_Integer FromInd, Standard_Real Tol) -> [Standard_IntegerStandard_Integer]");
 		Standard_Boolean LocalizeBefore(const Standard_Integer I, const Standard_Integer FromInd, const Standard_Real Tol, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Destroy();

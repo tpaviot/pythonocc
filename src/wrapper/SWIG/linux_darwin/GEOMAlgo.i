@@ -34,16 +34,18 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 typedef GEOMAlgo_WireEdgeSet * GEOMAlgo_PWireEdgeSet;
 
-enum GEOMAlgo_KindOfBounds {
-	GEOMAlgo_KB_UNKNOWN,
-	GEOMAlgo_KB_TRIMMED,
-	GEOMAlgo_KB_INFINITE,
-	};
-
-enum GEOMAlgo_KindOfClosed {
-	GEOMAlgo_KC_UNKNOWN,
-	GEOMAlgo_KC_CLOSED,
-	GEOMAlgo_KC_NOTCLOSED,
+enum GEOMAlgo_KindOfShape {
+	GEOMAlgo_KS_UNKNOWN,
+	GEOMAlgo_KS_SPHERE,
+	GEOMAlgo_KS_CYLINDER,
+	GEOMAlgo_KS_BOX,
+	GEOMAlgo_KS_TORUS,
+	GEOMAlgo_KS_CONE,
+	GEOMAlgo_KS_ELLIPSE,
+	GEOMAlgo_KS_PLANE,
+	GEOMAlgo_KS_CIRCLE,
+	GEOMAlgo_KS_LINE,
+	GEOMAlgo_KS_DEGENERATED,
 	};
 
 enum GEOMAlgo_State {
@@ -54,6 +56,18 @@ enum GEOMAlgo_State {
 	GEOMAlgo_ST_ONIN,
 	GEOMAlgo_ST_ONOUT,
 	GEOMAlgo_ST_INOUT,
+	};
+
+enum GEOMAlgo_KindOfBounds {
+	GEOMAlgo_KB_UNKNOWN,
+	GEOMAlgo_KB_TRIMMED,
+	GEOMAlgo_KB_INFINITE,
+	};
+
+enum GEOMAlgo_KindOfClosed {
+	GEOMAlgo_KC_UNKNOWN,
+	GEOMAlgo_KC_CLOSED,
+	GEOMAlgo_KC_NOTCLOSED,
 	};
 
 enum GEOMAlgo_KindOfName {
@@ -79,20 +93,96 @@ enum GEOMAlgo_KindOfName {
 	GEOMAlgo_KN_ARCELLIPSE,
 	};
 
-enum GEOMAlgo_KindOfShape {
-	GEOMAlgo_KS_UNKNOWN,
-	GEOMAlgo_KS_SPHERE,
-	GEOMAlgo_KS_CYLINDER,
-	GEOMAlgo_KS_BOX,
-	GEOMAlgo_KS_TORUS,
-	GEOMAlgo_KS_CONE,
-	GEOMAlgo_KS_ELLIPSE,
-	GEOMAlgo_KS_PLANE,
-	GEOMAlgo_KS_CIRCLE,
-	GEOMAlgo_KS_LINE,
-	GEOMAlgo_KS_DEGENERATED,
-	};
 
+
+%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape;
+class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape();
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
+	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape* GetObject() {
+	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape*)$self->Access();
+	}
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
+	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
+class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox* GetObject() {
+	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
+	}
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
+	}
+};
+
+
+%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
+class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo();
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
+	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo* GetObject() {
+	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo*)$self->Access();
+	}
+};
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
+	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo\n");}
+	}
+};
 
 
 %nodefaultctor Handle_GEOMAlgo_HAlgo;
@@ -215,32 +305,32 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollectio
 };
 
 
-%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
-class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape;
+class Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape();
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape(const Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape(const GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape & operator=(const Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox* GetObject() {
-	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
+%extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
+	GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape* GetObject() {
+	return (GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape*)$self->Access();
 	}
 };
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
+%extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
+	~Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape\n");}
 	}
 };
 
@@ -305,92 +395,32 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public Handle_TColle
 };
 
 
-%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape;
-class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape;
+class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape();
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape();
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape &aHandle);
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape *anItem);
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape &aHandle);
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape *anItem);
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
-	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape* GetObject() {
-	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape*)$self->Access();
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
+	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape* GetObject() {
+	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape*)$self->Access();
 	}
 };
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape {
-	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape() {
+%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
+	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GEOMAlgo_ClsfSurf;
-class Handle_GEOMAlgo_ClsfSurf : public Handle_GEOMAlgo_Clsf {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf();
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf(const Handle_GEOMAlgo_ClsfSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf(const GEOMAlgo_ClsfSurf *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf & operator=(const Handle_GEOMAlgo_ClsfSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf & operator=(const GEOMAlgo_ClsfSurf *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_ClsfSurf const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMAlgo_ClsfSurf {
-	GEOMAlgo_ClsfSurf* GetObject() {
-	return (GEOMAlgo_ClsfSurf*)$self->Access();
-	}
-};
-%extend Handle_GEOMAlgo_ClsfSurf {
-	~Handle_GEOMAlgo_ClsfSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_ClsfSurf\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape;
-class Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape();
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape(const Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape(const GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape & operator=(const Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape & operator=(const GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
-	GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape* GetObject() {
-	return (GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape*)$self->Access();
-	}
-};
-%extend Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape {
-	~Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape\n");}
 	}
 };
 
@@ -425,6 +455,36 @@ class Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public Handle_TColl
 };
 
 
+%nodefaultctor Handle_GEOMAlgo_ClsfSurf;
+class Handle_GEOMAlgo_ClsfSurf : public Handle_GEOMAlgo_Clsf {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf();
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf(const Handle_GEOMAlgo_ClsfSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf(const GEOMAlgo_ClsfSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf & operator=(const Handle_GEOMAlgo_ClsfSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf & operator=(const GEOMAlgo_ClsfSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMAlgo_ClsfSurf const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMAlgo_ClsfSurf {
+	GEOMAlgo_ClsfSurf* GetObject() {
+	return (GEOMAlgo_ClsfSurf*)$self->Access();
+	}
+};
+%extend Handle_GEOMAlgo_ClsfSurf {
+	~Handle_GEOMAlgo_ClsfSurf() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_ClsfSurf\n");}
+	}
+};
+
+
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public Handle_TCollection_MapNode {
 	public:
@@ -451,36 +511,6 @@ class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public Ha
 	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState\n");}
-	}
-};
-
-
-%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape;
-class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape();
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
-	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape* GetObject() {
-	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape*)$self->Access();
-	}
-};
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape {
-	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape\n");}
 	}
 };
 
@@ -575,36 +605,6 @@ class Handle_GEOMAlgo_ClsfSolid : public Handle_GEOMAlgo_Clsf {
 };
 
 
-%nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
-class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo();
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo & operator=(const Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo & operator=(const GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
-	GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo* GetObject() {
-	return (GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo*)$self->Access();
-	}
-};
-%extend Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
-	~Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GEOMAlgo_ListNodeOfListOfPnt;
 class Handle_GEOMAlgo_ListNodeOfListOfPnt : public Handle_TCollection_MapNode {
 	public:
@@ -631,6 +631,25 @@ class Handle_GEOMAlgo_ListNodeOfListOfPnt : public Handle_TCollection_MapNode {
 	~Handle_GEOMAlgo_ListNodeOfListOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMAlgo_ListNodeOfListOfPnt\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_PassKeyShapeMapHasher;
+class GEOMAlgo_PassKeyShapeMapHasher {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_PassKeyShapeMapHasher();
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const GEOMAlgo_PassKeyShape &aPKey, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const GEOMAlgo_PassKeyShape &aPKey1, const GEOMAlgo_PassKeyShape &aPKey2);
+
+};
+%extend GEOMAlgo_PassKeyShapeMapHasher {
+	~GEOMAlgo_PassKeyShapeMapHasher() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_PassKeyShapeMapHasher\n");}
 	}
 };
 
@@ -781,6 +800,47 @@ class GEOMAlgo_FinderShapeOn : public GEOMAlgo_ShapeAlgo {
 };
 
 
+%nodefaultctor GEOMAlgo_DataMapNodeOfDataMapOfShapeReal;
+class GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
+	Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal GetHandle() {
+	return *(Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal*) &$self;
+	}
+};
+%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
+	~GEOMAlgo_DataMapNodeOfDataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapNodeOfDataMapOfShapeReal\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_BuilderShape;
 class GEOMAlgo_BuilderShape : public GEOMAlgo_Algo {
 	public:
@@ -843,6 +903,91 @@ class GEOMAlgo_Builder : public GEOMAlgo_BuilderShape {
 };
 
 
+%nodefaultctor GEOMAlgo_ShapeInfo;
+class GEOMAlgo_ShapeInfo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ShapeInfo();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void SetType(const TopAbs_ShapeEnum aType);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum Type() const;
+		%feature("autodoc", "1");
+		void SetNbSubShapes(const TopAbs_ShapeEnum aType, const Standard_Integer aNb);
+		%feature("autodoc", "1");
+		Standard_Integer NbSubShapes(const TopAbs_ShapeEnum aType) const;
+		%feature("autodoc", "1");
+		void SetKindOfShape(const GEOMAlgo_KindOfShape aT);
+		%feature("autodoc", "1");
+		GEOMAlgo_KindOfShape KindOfShape() const;
+		%feature("autodoc", "1");
+		void SetKindOfName(const GEOMAlgo_KindOfName aT);
+		%feature("autodoc", "1");
+		GEOMAlgo_KindOfName KindOfName() const;
+		%feature("autodoc", "1");
+		void SetKindOfBounds(const GEOMAlgo_KindOfBounds aT);
+		%feature("autodoc", "1");
+		GEOMAlgo_KindOfBounds KindOfBounds() const;
+		%feature("autodoc", "1");
+		void SetKindOfClosed(const GEOMAlgo_KindOfClosed aT);
+		%feature("autodoc", "1");
+		GEOMAlgo_KindOfClosed KindOfClosed() const;
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		const gp_Pnt & Location() const;
+		%feature("autodoc", "1");
+		void SetDirection(const gp_Dir &aD);
+		%feature("autodoc", "1");
+		const gp_Dir & Direction() const;
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax2 &aAx2);
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax3 &aAx3);
+		%feature("autodoc", "1");
+		const gp_Ax3 & Position() const;
+		%feature("autodoc", "1");
+		void SetPnt1(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		const gp_Pnt & Pnt1() const;
+		%feature("autodoc", "1");
+		void SetPnt2(const gp_Pnt &aP);
+		%feature("autodoc", "1");
+		const gp_Pnt & Pnt2() const;
+		%feature("autodoc", "1");
+		void SetRadius1(const Standard_Real aR);
+		%feature("autodoc", "1");
+		Standard_Real Radius1() const;
+		%feature("autodoc", "1");
+		void SetRadius2(const Standard_Real aR);
+		%feature("autodoc", "1");
+		Standard_Real Radius2() const;
+		%feature("autodoc", "1");
+		void SetLength(const Standard_Real aL);
+		%feature("autodoc", "1");
+		Standard_Real Length() const;
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Real aW);
+		%feature("autodoc", "1");
+		Standard_Real Width() const;
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Real aH);
+		%feature("autodoc", "1");
+		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%extend GEOMAlgo_ShapeInfo {
+	~GEOMAlgo_ShapeInfo() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeInfo\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_FinderShapeOn1;
 class GEOMAlgo_FinderShapeOn1 : public GEOMAlgo_ShapeAlgo {
 	public:
@@ -884,6 +1029,140 @@ class GEOMAlgo_FinderShapeOn1 : public GEOMAlgo_ShapeAlgo {
 };
 
 
+%nodefaultctor GEOMAlgo_IndexedDataMapOfShapeBox;
+class GEOMAlgo_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfShapeBox(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfShapeBox & Assign(const GEOMAlgo_IndexedDataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfShapeBox & operator=(const GEOMAlgo_IndexedDataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Bnd_Box &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Bnd_Box & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & FindFromKey(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
+
+};
+%extend GEOMAlgo_IndexedDataMapOfShapeBox {
+	~GEOMAlgo_IndexedDataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfShapeBox\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_ShapeSolid;
+class GEOMAlgo_ShapeSolid : public GEOMAlgo_Algo {
+	public:
+		%feature("autodoc", "1");
+		void SetFiller(const BOPTools_DSFiller &aDSF);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Shapes(const TopAbs_State aState) const;
+
+};
+%extend GEOMAlgo_ShapeSolid {
+	~GEOMAlgo_ShapeSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeSolid\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_ShellSolid;
+class GEOMAlgo_ShellSolid : public GEOMAlgo_ShapeSolid {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ShellSolid();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+
+};
+%extend GEOMAlgo_ShellSolid {
+	~GEOMAlgo_ShellSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShellSolid\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_ListOfPnt;
+class GEOMAlgo_ListOfPnt {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ListOfPnt();
+		%feature("autodoc", "1");
+		void Assign(const GEOMAlgo_ListOfPnt &Other);
+		%feature("autodoc", "1");
+		void operator=(const GEOMAlgo_ListOfPnt &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const gp_Pnt &I);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
+		%feature("autodoc", "1");
+		void Prepend(GEOMAlgo_ListOfPnt & Other);
+		%feature("autodoc", "1");
+		void Append(const gp_Pnt &I);
+		%feature("autodoc", "1");
+		void Append(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
+		%feature("autodoc", "1");
+		void Append(GEOMAlgo_ListOfPnt & Other);
+		%feature("autodoc", "1");
+		gp_Pnt & First() const;
+		%feature("autodoc", "1");
+		gp_Pnt & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(GEOMAlgo_ListIteratorOfListOfPnt & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
+		%feature("autodoc", "1");
+		void InsertBefore(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
+		%feature("autodoc", "1");
+		void InsertAfter(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
+
+};
+%extend GEOMAlgo_ListOfPnt {
+	~GEOMAlgo_ListOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ListOfPnt\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState;
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public TCollection_MapNode {
 	public:
@@ -891,8 +1170,18 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public TCollecti
 		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState(const TopoDS_Shape &K1, const Standard_Integer K2, const TopAbs_State &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -919,85 +1208,6 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public TCollecti
 };
 
 
-%nodefaultctor GEOMAlgo_DataMapOfPassKeyInteger;
-class GEOMAlgo_DataMapOfPassKeyInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfPassKeyInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfPassKeyInteger & Assign(const GEOMAlgo_DataMapOfPassKeyInteger &Other);
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfPassKeyInteger & operator=(const GEOMAlgo_DataMapOfPassKeyInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const GEOMAlgo_PassKey &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const GEOMAlgo_PassKey &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const GEOMAlgo_PassKey &K);
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const GEOMAlgo_PassKey &K);
-
-};
-%extend GEOMAlgo_DataMapOfPassKeyInteger {
-	~GEOMAlgo_DataMapOfPassKeyInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapOfPassKeyInteger\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_PassKeyShapeMapHasher;
-class GEOMAlgo_PassKeyShapeMapHasher {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_PassKeyShapeMapHasher();
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const GEOMAlgo_PassKeyShape &aPKey, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const GEOMAlgo_PassKeyShape &aPKey1, const GEOMAlgo_PassKeyShape &aPKey2);
-
-};
-%extend GEOMAlgo_PassKeyShapeMapHasher {
-	~GEOMAlgo_PassKeyShapeMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_PassKeyShapeMapHasher\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape;
-class GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape();
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape(const GEOMAlgo_DataMapOfRealListOfShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const GEOMAlgo_DataMapOfRealListOfShape &aMap);
-		%feature("autodoc", "1");
-		const Standard_Real & Key() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Value() const;
-
-};
-%extend GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape {
-	~GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape\n");}
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet;
 class GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet : public TCollection_BasicMapIterator {
 	public:
@@ -1017,6 +1227,66 @@ class GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet : public TCollection_Basi
 	~GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_Gluer;
+class GEOMAlgo_Gluer : public GEOMAlgo_ShapeAlgo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Gluer();
+		%feature("autodoc", "1");
+		void SetCheckGeometry(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean CheckGeometry() const;
+		%feature("autodoc", "1");
+		void SetKeepNonSolids(const Standard_Boolean aFlag);
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer AloneShapes() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeListOfShape & Images() const;
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeShape & Origins() const;
+
+};
+%extend GEOMAlgo_Gluer {
+	~GEOMAlgo_Gluer() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Gluer\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_Gluer1;
+class GEOMAlgo_Gluer1 : public GEOMAlgo_Gluer {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Gluer1();
+		%feature("autodoc", "1");
+		void SetFacesToUnglue(const GEOMAlgo_ListOfCoupleOfShapes &aLCS);
+		%feature("autodoc", "1");
+		const GEOMAlgo_ListOfCoupleOfShapes & FacesToUnglue() const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_ListOfCoupleOfShapes & GluedFaces() const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_ListOfCoupleOfShapes & RejectedFaces() const;
+		%feature("autodoc", "1");
+		void UnglueFaces();
+
+};
+%extend GEOMAlgo_Gluer1 {
+	~GEOMAlgo_Gluer1() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Gluer1\n");}
 	}
 };
 
@@ -1161,33 +1431,6 @@ class GEOMAlgo_ClsfBox : public GEOMAlgo_Clsf {
 };
 
 
-%nodefaultctor GEOMAlgo_CoupleOfShapes;
-class GEOMAlgo_CoupleOfShapes {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_CoupleOfShapes();
-		%feature("autodoc", "1");
-		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
-		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape &aS1);
-		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &aS2);
-		%feature("autodoc", "1");
-		void Shapes(TopoDS_Shape & aS1, TopoDS_Shape & aS2) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape1() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
-
-};
-%extend GEOMAlgo_CoupleOfShapes {
-	~GEOMAlgo_CoupleOfShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_CoupleOfShapes\n");}
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_BuilderFace;
 class GEOMAlgo_BuilderFace : public GEOMAlgo_BuilderArea {
 	public:
@@ -1246,292 +1489,47 @@ class GEOMAlgo_DataMapOfPassKeyShapeShape : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor GEOMAlgo_DataMapNodeOfDataMapOfShapeReal;
-class GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
+%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
+class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const GEOMAlgo_ShapeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape & Key() const;
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		GEOMAlgo_ShapeInfo & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
-	Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal*) &$self;
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
+	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo GetHandle() {
+	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo*) &$self;
 	}
 };
-%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
 	Standard_Integer __hash__() {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOMAlgo_DataMapNodeOfDataMapOfShapeReal {
-	~GEOMAlgo_DataMapNodeOfDataMapOfShapeReal() {
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
+	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapNodeOfDataMapOfShapeReal\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_Tools3D;
-class GEOMAlgo_Tools3D {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Tools3D();
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Shape &theSplit, const TopoDS_Shape &theShape, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Face &theSplit, const TopoDS_Face &theShape, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &theEdge, const TopoDS_Edge &theSplit, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		Standard_Integer Sense(const TopoDS_Face &theF1, const TopoDS_Face &theF2);
-		%feature("autodoc", "1");
-		void CopyFace(const TopoDS_Face &theF1, TopoDS_Face & theF2);
-		%feature("autodoc", "1");
-		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
-		%feature("autodoc", "1");
-		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
-		%feature("autodoc", "1");
-		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape &theShape, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const gp_Pnt &thePoint, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Vertex &theVertex, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Edge &theEdge, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF);
-		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
-		%feature("autodoc", "1");
-		void GetFaceOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
-		%feature("autodoc", "1");
-		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOnF);
-		%feature("autodoc", "1");
-		Standard_Boolean GetEdgeOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOff);
-
-};
-%extend GEOMAlgo_Tools3D {
-	~GEOMAlgo_Tools3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Tools3D\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_Gluer;
-class GEOMAlgo_Gluer : public GEOMAlgo_ShapeAlgo {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Gluer();
-		%feature("autodoc", "1");
-		void SetCheckGeometry(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		Standard_Boolean CheckGeometry() const;
-		%feature("autodoc", "1");
-		void SetKeepNonSolids(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer AloneShapes() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeListOfShape & Images() const;
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeShape & Origins() const;
-
-};
-%extend GEOMAlgo_Gluer {
-	~GEOMAlgo_Gluer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Gluer\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_Gluer1;
-class GEOMAlgo_Gluer1 : public GEOMAlgo_Gluer {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_Gluer1();
-		%feature("autodoc", "1");
-		void SetFacesToUnglue(const GEOMAlgo_ListOfCoupleOfShapes &aLCS);
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & FacesToUnglue() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & GluedFaces() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & RejectedFaces() const;
-		%feature("autodoc", "1");
-		void UnglueFaces();
-
-};
-%extend GEOMAlgo_Gluer1 {
-	~GEOMAlgo_Gluer1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Gluer1\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger;
-class GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger();
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger(const GEOMAlgo_DataMapOfPassKeyInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const GEOMAlgo_DataMapOfPassKeyInteger &aMap);
-		%feature("autodoc", "1");
-		const GEOMAlgo_PassKey & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%extend GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger {
-	~GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_IndexedDataMapOfIntegerShape;
-class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfIntegerShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfIntegerShape & Assign(const GEOMAlgo_IndexedDataMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfIntegerShape & operator=(const GEOMAlgo_IndexedDataMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TopoDS_Shape & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & ChangeFromKey(const Standard_Integer &K);
-
-};
-%extend GEOMAlgo_IndexedDataMapOfIntegerShape {
-	~GEOMAlgo_IndexedDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfIntegerShape\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_GlueAnalyser;
-class GEOMAlgo_GlueAnalyser : public GEOMAlgo_Gluer {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_GlueAnalyser();
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean HasSolidsToGlue() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ListOfCoupleOfShapes & SolidsToGlue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasSolidsAlone() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & SolidsAlone() const;
-
-};
-%extend GEOMAlgo_GlueAnalyser {
-	~GEOMAlgo_GlueAnalyser() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_GlueAnalyser\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_ShapeSolid;
-class GEOMAlgo_ShapeSolid : public GEOMAlgo_Algo {
-	public:
-		%feature("autodoc", "1");
-		void SetFiller(const BOPTools_DSFiller &aDSF);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Shapes(const TopAbs_State aState) const;
-
-};
-%extend GEOMAlgo_ShapeSolid {
-	~GEOMAlgo_ShapeSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeSolid\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_ShellSolid;
-class GEOMAlgo_ShellSolid : public GEOMAlgo_ShapeSolid {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_ShellSolid();
-		%feature("autodoc", "1");
-		virtual		void Perform();
-
-};
-%extend GEOMAlgo_ShellSolid {
-	~GEOMAlgo_ShellSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShellSolid\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_SolidSolid;
-class GEOMAlgo_SolidSolid : public GEOMAlgo_ShellSolid {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_SolidSolid();
-		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape2() const;
-
-};
-%extend GEOMAlgo_SolidSolid {
-	~GEOMAlgo_SolidSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_SolidSolid\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo\n");}
 	}
 };
 
@@ -1563,56 +1561,6 @@ class GEOMAlgo_Splitter : public GEOMAlgo_Builder {
 	~GEOMAlgo_Splitter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Splitter\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
-class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
-	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape GetHandle() {
-	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape*) &$self;
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
-	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_FinderShapeOnQuad;
-class GEOMAlgo_FinderShapeOnQuad : public GEOMAlgo_FinderShapeOn1 {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_FinderShapeOnQuad(const gp_Pnt &theTopLeftPoint, const gp_Pnt &theTopRigthPoint, const gp_Pnt &theBottomLeftPoint, const gp_Pnt &theBottomRigthPoint);
-
-};
-%extend GEOMAlgo_FinderShapeOnQuad {
-	~GEOMAlgo_FinderShapeOnQuad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_FinderShapeOnQuad\n");}
 	}
 };
 
@@ -1670,6 +1618,235 @@ class GEOMAlgo_ListOfCoupleOfShapes {
 };
 
 
+%nodefaultctor GEOMAlgo_IndexedDataMapOfIntegerShape;
+class GEOMAlgo_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfIntegerShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfIntegerShape & Assign(const GEOMAlgo_IndexedDataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfIntegerShape & operator=(const GEOMAlgo_IndexedDataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopoDS_Shape & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & ChangeFromKey(const Standard_Integer &K);
+
+};
+%extend GEOMAlgo_IndexedDataMapOfIntegerShape {
+	~GEOMAlgo_IndexedDataMapOfIntegerShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfIntegerShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_Tools3D;
+class GEOMAlgo_Tools3D {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_Tools3D();
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplitToReverse(const TopoDS_Shape &theSplit, const TopoDS_Shape &theShape, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplitToReverse(const TopoDS_Face &theSplit, const TopoDS_Face &theShape, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplitToReverse(const TopoDS_Edge &theEdge, const TopoDS_Edge &theSplit, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		Standard_Integer Sense(const TopoDS_Face &theF1, const TopoDS_Face &theF2);
+		%feature("autodoc", "1");
+		void CopyFace(const TopoDS_Face &theF1, TopoDS_Face & theF2);
+		%feature("autodoc", "1");
+		void MakeContainer(const TopAbs_ShapeEnum theType, TopoDS_Shape & theShape);
+		%feature("autodoc", "1");
+		void MakeConnexityBlock(const TopTools_ListOfShape &theLS, const TopTools_IndexedMapOfShape &theMapAvoid, TopTools_ListOfShape & theLSCB);
+		%feature("autodoc", "1");
+		TopAbs_State ComputeStateByOnePoint(const TopoDS_Shape &theShape, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		TopAbs_State ComputeState(const gp_Pnt &thePoint, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		TopAbs_State ComputeState(const TopoDS_Vertex &theVertex, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		TopAbs_State ComputeState(const TopoDS_Edge &theEdge, const TopoDS_Solid &theSolid, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF);
+		%feature("autodoc", "1");
+		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
+		%feature("autodoc", "1");
+		void GetFaceOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, const NMTTools_ListOfCoupleOfShape &theLCEF, TopoDS_Face & theFaceOff);
+		%feature("autodoc", "1");
+		Standard_Boolean GetEdgeOnFace(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOnF);
+		%feature("autodoc", "1");
+		Standard_Boolean GetEdgeOff(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace, TopoDS_Edge & theEdgeOff);
+
+};
+%extend GEOMAlgo_Tools3D {
+	~GEOMAlgo_Tools3D() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_Tools3D\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_VertexSolid;
+class GEOMAlgo_VertexSolid : public GEOMAlgo_ShapeSolid {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_VertexSolid();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+
+};
+%extend GEOMAlgo_VertexSolid {
+	~GEOMAlgo_VertexSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_VertexSolid\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_GlueAnalyser;
+class GEOMAlgo_GlueAnalyser : public GEOMAlgo_Gluer {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_GlueAnalyser();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean HasSolidsToGlue() const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_ListOfCoupleOfShapes & SolidsToGlue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasSolidsAlone() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & SolidsAlone() const;
+
+};
+%extend GEOMAlgo_GlueAnalyser {
+	~GEOMAlgo_GlueAnalyser() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_GlueAnalyser\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_StateCollector;
+class GEOMAlgo_StateCollector {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_StateCollector();
+		%feature("autodoc", "1");
+		Standard_Boolean AppendState(const TopAbs_State aSt);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+
+};
+%extend GEOMAlgo_StateCollector {
+	~GEOMAlgo_StateCollector() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_StateCollector\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
+class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape GetHandle() {
+	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape*) &$self;
+	}
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_FinderShapeOnQuad;
+class GEOMAlgo_FinderShapeOnQuad : public GEOMAlgo_FinderShapeOn1 {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_FinderShapeOnQuad(const gp_Pnt &theTopLeftPoint, const gp_Pnt &theTopRigthPoint, const gp_Pnt &theBottomLeftPoint, const gp_Pnt &theBottomRigthPoint);
+
+};
+%extend GEOMAlgo_FinderShapeOnQuad {
+	~GEOMAlgo_FinderShapeOnQuad() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_FinderShapeOnQuad\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_ShapeSet;
 class GEOMAlgo_ShapeSet {
 	public:
@@ -1699,29 +1876,29 @@ class GEOMAlgo_ShapeSet {
 };
 
 
-%nodefaultctor GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape;
-class GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape : public TCollection_BasicMap {
+%nodefaultctor GEOMAlgo_IndexedDataMapOfPassKeyListOfShape;
+class GEOMAlgo_IndexedDataMapOfPassKeyListOfShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape(const Standard_Integer NbBuckets=1);
+		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & Assign(const GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape &Other);
+		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape & Assign(const GEOMAlgo_IndexedDataMapOfPassKeyListOfShape &Other);
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & operator=(const GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape &Other);
+		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape & operator=(const GEOMAlgo_IndexedDataMapOfPassKeyListOfShape &Other);
 		%feature("autodoc", "1");
 		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Add(const GEOMAlgo_PassKeyShape &K, const TopTools_ListOfShape &I);
+		Standard_Integer Add(const GEOMAlgo_PassKey &K, const TopTools_ListOfShape &I);
 		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const GEOMAlgo_PassKeyShape &K, const TopTools_ListOfShape &T);
+		void Substitute(const Standard_Integer I, const GEOMAlgo_PassKey &K, const TopTools_ListOfShape &T);
 		%feature("autodoc", "1");
 		void RemoveLast();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const GEOMAlgo_PassKeyShape &K) const;
+		Standard_Boolean Contains(const GEOMAlgo_PassKey &K) const;
 		%feature("autodoc", "1");
-		const GEOMAlgo_PassKeyShape & FindKey(const Standard_Integer I) const;
+		const GEOMAlgo_PassKey & FindKey(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
@@ -1731,17 +1908,69 @@ class GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape : public TCollection_Basi
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const GEOMAlgo_PassKeyShape &K) const;
+		Standard_Integer FindIndex(const GEOMAlgo_PassKey &K) const;
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKeyShape &K) const;
+		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKey &K) const;
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKeyShape &K);
+		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKey &K);
 
 };
-%extend GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape {
-	~GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape() {
+%extend GEOMAlgo_IndexedDataMapOfPassKeyListOfShape {
+	~GEOMAlgo_IndexedDataMapOfPassKeyListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfPassKeyListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape;
+class GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape();
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape(const GEOMAlgo_DataMapOfRealListOfShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const GEOMAlgo_DataMapOfRealListOfShape &aMap);
+		%feature("autodoc", "1");
+		const Standard_Real & Key() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Value() const;
+
+};
+%extend GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape {
+	~GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_ShapeInfoFiller;
+class GEOMAlgo_ShapeInfoFiller : public GEOMAlgo_Algo {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ShapeInfoFiller();
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real aT);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_ShapeInfo & Info() const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_ShapeInfo & Info(const TopoDS_Shape &aS) const;
+		%feature("autodoc", "1");
+		virtual		void Perform();
+
+};
+%extend GEOMAlgo_ShapeInfoFiller {
+	~GEOMAlgo_ShapeInfoFiller() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeInfoFiller\n");}
 	}
 };
 
@@ -1776,8 +2005,18 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape : pub
 		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape(const GEOMAlgo_PassKeyShape &K1, const Standard_Integer K2, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKeyShape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1851,66 +2090,46 @@ class GEOMAlgo_IndexedDataMapOfShapeShapeInfo : public TCollection_BasicMap {
 };
 
 
-%nodefaultctor GEOMAlgo_IndexedDataMapOfPassKeyListOfShape;
-class GEOMAlgo_IndexedDataMapOfPassKeyListOfShape : public TCollection_BasicMap {
+%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger;
+class GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape(const Standard_Integer NbBuckets=1);
+		GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger();
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape & Assign(const GEOMAlgo_IndexedDataMapOfPassKeyListOfShape &Other);
+		GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger(const GEOMAlgo_DataMapOfPassKeyInteger &aMap);
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfPassKeyListOfShape & operator=(const GEOMAlgo_IndexedDataMapOfPassKeyListOfShape &Other);
+		void Initialize(const GEOMAlgo_DataMapOfPassKeyInteger &aMap);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		const GEOMAlgo_PassKey & Key() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const GEOMAlgo_PassKey &K, const TopTools_ListOfShape &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const GEOMAlgo_PassKey &K, const TopTools_ListOfShape &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_PassKey & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKey &K) const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKey &K);
+		const Standard_Integer & Value() const;
 
 };
-%extend GEOMAlgo_IndexedDataMapOfPassKeyListOfShape {
-	~GEOMAlgo_IndexedDataMapOfPassKeyListOfShape() {
+%extend GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger {
+	~GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfPassKeyListOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger\n");}
 	}
 };
 
 
-%nodefaultctor GEOMAlgo_WireSolid;
-class GEOMAlgo_WireSolid : public GEOMAlgo_ShapeSolid {
+%nodefaultctor GEOMAlgo_SolidSolid;
+class GEOMAlgo_SolidSolid : public GEOMAlgo_ShellSolid {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_WireSolid();
+		GEOMAlgo_SolidSolid();
 		%feature("autodoc", "1");
 		virtual		void Perform();
+		%feature("autodoc", "1");
+		void SetShape2(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape2() const;
 
 };
-%extend GEOMAlgo_WireSolid {
-	~GEOMAlgo_WireSolid() {
+%extend GEOMAlgo_SolidSolid {
+	~GEOMAlgo_SolidSolid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_WireSolid\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_SolidSolid\n");}
 	}
 };
 
@@ -1934,6 +2153,29 @@ class GEOMAlgo_WESCorrector : public GEOMAlgo_Algo {
 	~GEOMAlgo_WESCorrector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_WESCorrector\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal;
+class GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal(const GEOMAlgo_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const GEOMAlgo_DataMapOfShapeReal &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Real & Value() const;
+
+};
+%extend GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal {
+	~GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -2057,6 +2299,41 @@ class GEOMAlgo_ClsfSurf : public GEOMAlgo_Clsf {
 };
 
 
+%nodefaultctor GEOMAlgo_ClsfSolid;
+class GEOMAlgo_ClsfSolid : public GEOMAlgo_Clsf {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ClsfSolid();
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape &aS);
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape() const;
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		virtual		void CheckData();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GEOMAlgo_ClsfSolid {
+	Handle_GEOMAlgo_ClsfSolid GetHandle() {
+	return *(Handle_GEOMAlgo_ClsfSolid*) &$self;
+	}
+};
+%extend GEOMAlgo_ClsfSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMAlgo_ClsfSolid {
+	~GEOMAlgo_ClsfSolid() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ClsfSolid\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_IndexedDataMapOfShapeState;
 class GEOMAlgo_IndexedDataMapOfShapeState : public TCollection_BasicMap {
 	public:
@@ -2123,6 +2400,51 @@ class GEOMAlgo_PassKeyMapHasher {
 };
 
 
+%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
+class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Bnd_Box & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox GetHandle() {
+	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*) &$self;
+	}
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_PassKeyShape;
 class GEOMAlgo_PassKeyShape {
 	public:
@@ -2169,48 +2491,23 @@ class GEOMAlgo_PassKeyShape {
 };
 
 
-%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
-class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo(const TopoDS_Shape &K1, const Standard_Integer K2, const GEOMAlgo_ShapeInfo &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		GEOMAlgo_ShapeInfo & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
-	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo GetHandle() {
-	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo*) &$self;
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo {
-	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo\n");}
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape;
 class GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape(const Standard_Real &K, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Real & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetKey() {
+				return (Standard_Real) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Real value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
@@ -2231,6 +2528,53 @@ class GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public TCollection_MapNod
 	~GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_DataMapOfShapeReal;
+class GEOMAlgo_DataMapOfShapeReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapOfShapeReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapOfShapeReal & Assign(const GEOMAlgo_DataMapOfShapeReal &Other);
+		%feature("autodoc", "1");
+		GEOMAlgo_DataMapOfShapeReal & operator=(const GEOMAlgo_DataMapOfShapeReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape &K);
+		%feature("autodoc", "1");
+		const Standard_Real & Find(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const TopoDS_Shape &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const TopoDS_Shape &K);
+
+};
+%extend GEOMAlgo_DataMapOfShapeReal {
+	~GEOMAlgo_DataMapOfShapeReal() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapOfShapeReal\n");}
 	}
 };
 
@@ -2260,133 +2604,19 @@ class GEOMAlgo_ListIteratorOfListOfPnt {
 };
 
 
-%nodefaultctor GEOMAlgo_ShapeInfoFiller;
-class GEOMAlgo_ShapeInfoFiller : public GEOMAlgo_Algo {
+%nodefaultctor GEOMAlgo_WireSolid;
+class GEOMAlgo_WireSolid : public GEOMAlgo_ShapeSolid {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_ShapeInfoFiller();
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real aT);
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeInfo & Info() const;
-		%feature("autodoc", "1");
-		const GEOMAlgo_ShapeInfo & Info(const TopoDS_Shape &aS) const;
+		GEOMAlgo_WireSolid();
 		%feature("autodoc", "1");
 		virtual		void Perform();
 
 };
-%extend GEOMAlgo_ShapeInfoFiller {
-	~GEOMAlgo_ShapeInfoFiller() {
+%extend GEOMAlgo_WireSolid {
+	~GEOMAlgo_WireSolid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeInfoFiller\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_ShapeInfo;
-class GEOMAlgo_ShapeInfo {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_ShapeInfo();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void SetType(const TopAbs_ShapeEnum aType);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum Type() const;
-		%feature("autodoc", "1");
-		void SetNbSubShapes(const TopAbs_ShapeEnum aType, const Standard_Integer aNb);
-		%feature("autodoc", "1");
-		Standard_Integer NbSubShapes(const TopAbs_ShapeEnum aType) const;
-		%feature("autodoc", "1");
-		void SetKindOfShape(const GEOMAlgo_KindOfShape aT);
-		%feature("autodoc", "1");
-		GEOMAlgo_KindOfShape KindOfShape() const;
-		%feature("autodoc", "1");
-		void SetKindOfName(const GEOMAlgo_KindOfName aT);
-		%feature("autodoc", "1");
-		GEOMAlgo_KindOfName KindOfName() const;
-		%feature("autodoc", "1");
-		void SetKindOfBounds(const GEOMAlgo_KindOfBounds aT);
-		%feature("autodoc", "1");
-		GEOMAlgo_KindOfBounds KindOfBounds() const;
-		%feature("autodoc", "1");
-		void SetKindOfClosed(const GEOMAlgo_KindOfClosed aT);
-		%feature("autodoc", "1");
-		GEOMAlgo_KindOfClosed KindOfClosed() const;
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		const gp_Pnt & Location() const;
-		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir &aD);
-		%feature("autodoc", "1");
-		const gp_Dir & Direction() const;
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2 &aAx2);
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax3 &aAx3);
-		%feature("autodoc", "1");
-		const gp_Ax3 & Position() const;
-		%feature("autodoc", "1");
-		void SetPnt1(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		const gp_Pnt & Pnt1() const;
-		%feature("autodoc", "1");
-		void SetPnt2(const gp_Pnt &aP);
-		%feature("autodoc", "1");
-		const gp_Pnt & Pnt2() const;
-		%feature("autodoc", "1");
-		void SetRadius1(const Standard_Real aR);
-		%feature("autodoc", "1");
-		Standard_Real Radius1() const;
-		%feature("autodoc", "1");
-		void SetRadius2(const Standard_Real aR);
-		%feature("autodoc", "1");
-		Standard_Real Radius2() const;
-		%feature("autodoc", "1");
-		void SetLength(const Standard_Real aL);
-		%feature("autodoc", "1");
-		Standard_Real Length() const;
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aW);
-		%feature("autodoc", "1");
-		Standard_Real Width() const;
-		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aH);
-		%feature("autodoc", "1");
-		Standard_Real Height() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%extend GEOMAlgo_ShapeInfo {
-	~GEOMAlgo_ShapeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ShapeInfo\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_VertexSolid;
-class GEOMAlgo_VertexSolid : public GEOMAlgo_ShapeSolid {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_VertexSolid();
-		%feature("autodoc", "1");
-		virtual		void Perform();
-
-};
-%extend GEOMAlgo_VertexSolid {
-	~GEOMAlgo_VertexSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_VertexSolid\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_WireSolid\n");}
 	}
 };
 
@@ -2398,8 +2628,18 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public TCollection_MapNode
 		GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger(const GEOMAlgo_PassKey &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKey & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2422,139 +2662,21 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public TCollection_MapNode
 };
 
 
-%nodefaultctor GEOMAlgo_IndexedDataMapOfShapeBox;
-class GEOMAlgo_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
+%nodefaultctor GEOMAlgo_BuilderTools;
+class GEOMAlgo_BuilderTools {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfShapeBox(const Standard_Integer NbBuckets=1);
+		GEOMAlgo_BuilderTools();
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfShapeBox & Assign(const GEOMAlgo_IndexedDataMapOfShapeBox &Other);
+		Standard_Boolean IsHole(const TopoDS_Shape &aW, const TopoDS_Shape &aF);
 		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapOfShapeBox & operator=(const GEOMAlgo_IndexedDataMapOfShapeBox &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Bnd_Box & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & FindFromKey(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
+		Standard_Boolean IsHole(const TopoDS_Shape &aShell);
 
 };
-%extend GEOMAlgo_IndexedDataMapOfShapeBox {
-	~GEOMAlgo_IndexedDataMapOfShapeBox() {
+%extend GEOMAlgo_BuilderTools {
+	~GEOMAlgo_BuilderTools() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfShapeBox\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_ListOfPnt;
-class GEOMAlgo_ListOfPnt {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_ListOfPnt();
-		%feature("autodoc", "1");
-		void Assign(const GEOMAlgo_ListOfPnt &Other);
-		%feature("autodoc", "1");
-		void operator=(const GEOMAlgo_ListOfPnt &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &I);
-		%feature("autodoc", "1");
-		void Prepend(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
-		%feature("autodoc", "1");
-		void Prepend(GEOMAlgo_ListOfPnt & Other);
-		%feature("autodoc", "1");
-		void Append(const gp_Pnt &I);
-		%feature("autodoc", "1");
-		void Append(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & theIt);
-		%feature("autodoc", "1");
-		void Append(GEOMAlgo_ListOfPnt & Other);
-		%feature("autodoc", "1");
-		gp_Pnt & First() const;
-		%feature("autodoc", "1");
-		gp_Pnt & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(GEOMAlgo_ListIteratorOfListOfPnt & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
-		%feature("autodoc", "1");
-		void InsertBefore(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const gp_Pnt &I, GEOMAlgo_ListIteratorOfListOfPnt & It);
-		%feature("autodoc", "1");
-		void InsertAfter(GEOMAlgo_ListOfPnt & Other, GEOMAlgo_ListIteratorOfListOfPnt & It);
-
-};
-%extend GEOMAlgo_ListOfPnt {
-	~GEOMAlgo_ListOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ListOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_DataMapOfShapeReal;
-class GEOMAlgo_DataMapOfShapeReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfShapeReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfShapeReal & Assign(const GEOMAlgo_DataMapOfShapeReal &Other);
-		%feature("autodoc", "1");
-		GEOMAlgo_DataMapOfShapeReal & operator=(const GEOMAlgo_DataMapOfShapeReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape &K, const Standard_Real &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		const Standard_Real & Find(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TopoDS_Shape &K);
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const TopoDS_Shape &K);
-
-};
-%extend GEOMAlgo_DataMapOfShapeReal {
-	~GEOMAlgo_DataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapOfShapeReal\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_BuilderTools\n");}
 	}
 };
 
@@ -2588,6 +2710,53 @@ class GEOMAlgo_ListNodeOfListOfCoupleOfShapes : public TCollection_MapNode {
 };
 
 
+%nodefaultctor GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape;
+class GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & Assign(const GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape & operator=(const GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const GEOMAlgo_PassKeyShape &K, const TopTools_ListOfShape &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const GEOMAlgo_PassKeyShape &K, const TopTools_ListOfShape &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const GEOMAlgo_PassKeyShape &K) const;
+		%feature("autodoc", "1");
+		const GEOMAlgo_PassKeyShape & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const GEOMAlgo_PassKeyShape &K) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FindFromKey(const GEOMAlgo_PassKeyShape &K) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeFromKey(const GEOMAlgo_PassKeyShape &K);
+
+};
+%extend GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape {
+	~GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape\n");}
+	}
+};
+
+
 %nodefaultctor GEOMAlgo_WireEdgeSet;
 class GEOMAlgo_WireEdgeSet {
 	public:
@@ -2617,85 +2786,49 @@ class GEOMAlgo_WireEdgeSet {
 };
 
 
-%nodefaultctor GEOMAlgo_ListNodeOfListOfPnt;
-class GEOMAlgo_ListNodeOfListOfPnt : public TCollection_MapNode {
+%nodefaultctor GEOMAlgo_DataMapOfPassKeyInteger;
+class GEOMAlgo_DataMapOfPassKeyInteger : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_ListNodeOfListOfPnt(const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		GEOMAlgo_DataMapOfPassKeyInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		gp_Pnt & Value() const;
+		GEOMAlgo_DataMapOfPassKeyInteger & Assign(const GEOMAlgo_DataMapOfPassKeyInteger &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		GEOMAlgo_DataMapOfPassKeyInteger & operator=(const GEOMAlgo_DataMapOfPassKeyInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const GEOMAlgo_PassKey &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const GEOMAlgo_PassKey &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const GEOMAlgo_PassKey &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const GEOMAlgo_PassKey &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const GEOMAlgo_PassKey &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const GEOMAlgo_PassKey &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const GEOMAlgo_PassKey &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const GEOMAlgo_PassKey &K);
 
 };
-%extend GEOMAlgo_ListNodeOfListOfPnt {
-	Handle_GEOMAlgo_ListNodeOfListOfPnt GetHandle() {
-	return *(Handle_GEOMAlgo_ListNodeOfListOfPnt*) &$self;
-	}
-};
-%extend GEOMAlgo_ListNodeOfListOfPnt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMAlgo_ListNodeOfListOfPnt {
-	~GEOMAlgo_ListNodeOfListOfPnt() {
+%extend GEOMAlgo_DataMapOfPassKeyInteger {
+	~GEOMAlgo_DataMapOfPassKeyInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ListNodeOfListOfPnt\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
-class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Bnd_Box & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox GetHandle() {
-	return *(Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*) &$self;
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
-	}
-};
-
-
-%nodefaultctor GEOMAlgo_StateCollector;
-class GEOMAlgo_StateCollector {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_StateCollector();
-		%feature("autodoc", "1");
-		Standard_Boolean AppendState(const TopAbs_State aSt);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-
-};
-%extend GEOMAlgo_StateCollector {
-	~GEOMAlgo_StateCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_StateCollector\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapOfPassKeyInteger\n");}
 	}
 };
 
@@ -2733,25 +2866,29 @@ class GEOMAlgo_SurfaceTools {
 };
 
 
-%nodefaultctor GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal;
-class GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
+%nodefaultctor GEOMAlgo_CoupleOfShapes;
+class GEOMAlgo_CoupleOfShapes {
 	public:
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal();
+		GEOMAlgo_CoupleOfShapes();
 		%feature("autodoc", "1");
-		GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal(const GEOMAlgo_DataMapOfShapeReal &aMap);
+		void SetShapes(const TopoDS_Shape &aS1, const TopoDS_Shape &aS2);
 		%feature("autodoc", "1");
-		void Initialize(const GEOMAlgo_DataMapOfShapeReal &aMap);
+		void SetShape1(const TopoDS_Shape &aS1);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & Key() const;
+		void SetShape2(const TopoDS_Shape &aS2);
 		%feature("autodoc", "1");
-		const Standard_Real & Value() const;
+		void Shapes(TopoDS_Shape & aS1, TopoDS_Shape & aS2) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & Shape2() const;
 
 };
-%extend GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal {
-	~GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal() {
+%extend GEOMAlgo_CoupleOfShapes {
+	~GEOMAlgo_CoupleOfShapes() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal\n");}
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_CoupleOfShapes\n");}
 	}
 };
 
@@ -2789,6 +2926,35 @@ class GEOMAlgo_DataMapOfRealListOfShape : public TCollection_BasicMap {
 	~GEOMAlgo_DataMapOfRealListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_DataMapOfRealListOfShape\n");}
+	}
+};
+
+
+%nodefaultctor GEOMAlgo_ListNodeOfListOfPnt;
+class GEOMAlgo_ListNodeOfListOfPnt : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GEOMAlgo_ListNodeOfListOfPnt(const gp_Pnt &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		gp_Pnt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GEOMAlgo_ListNodeOfListOfPnt {
+	Handle_GEOMAlgo_ListNodeOfListOfPnt GetHandle() {
+	return *(Handle_GEOMAlgo_ListNodeOfListOfPnt*) &$self;
+	}
+};
+%extend GEOMAlgo_ListNodeOfListOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOMAlgo_ListNodeOfListOfPnt {
+	~GEOMAlgo_ListNodeOfListOfPnt() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ListNodeOfListOfPnt\n");}
 	}
 };
 
@@ -2872,41 +3038,6 @@ class GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public TCollection_MapN
 };
 
 
-%nodefaultctor GEOMAlgo_ClsfSolid;
-class GEOMAlgo_ClsfSolid : public GEOMAlgo_Clsf {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_ClsfSolid();
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape &aS);
-		%feature("autodoc", "1");
-		const TopoDS_Shape & Shape() const;
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		virtual		void CheckData();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GEOMAlgo_ClsfSolid {
-	Handle_GEOMAlgo_ClsfSolid GetHandle() {
-	return *(Handle_GEOMAlgo_ClsfSolid*) &$self;
-	}
-};
-%extend GEOMAlgo_ClsfSolid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOMAlgo_ClsfSolid {
-	~GEOMAlgo_ClsfSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_ClsfSolid\n");}
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_ListIteratorOfListOfCoupleOfShapes;
 class GEOMAlgo_ListIteratorOfListOfCoupleOfShapes {
 	public:
@@ -2961,25 +3092,6 @@ class GEOMAlgo_WireSplitter : public GEOMAlgo_Algo {
 };
 
 
-%nodefaultctor GEOMAlgo_BuilderTools;
-class GEOMAlgo_BuilderTools {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_BuilderTools();
-		%feature("autodoc", "1");
-		Standard_Boolean IsHole(const TopoDS_Shape &aW, const TopoDS_Shape &aF);
-		%feature("autodoc", "1");
-		Standard_Boolean IsHole(const TopoDS_Shape &aShell);
-
-};
-%extend GEOMAlgo_BuilderTools {
-	~GEOMAlgo_BuilderTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMAlgo_BuilderTools\n");}
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape;
 class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public TCollection_MapNode {
 	public:
@@ -2987,8 +3099,18 @@ class GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public T
 		GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape(const GEOMAlgo_PassKey &K1, const Standard_Integer K2, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		GEOMAlgo_PassKey & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");

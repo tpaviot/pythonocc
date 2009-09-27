@@ -114,11 +114,11 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
-		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge) -> [Standard_IntegerStandard_Integer]");
 		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnBound(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
@@ -227,7 +227,7 @@ class IntCurveSurface_IntersectionPoint {
 		IntCurveSurface_IntersectionPoint(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
 		%feature("autodoc", "1");
 		void SetValues(const gp_Pnt &P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Pnt() const;
@@ -320,7 +320,7 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 		Standard_Real Root(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc","Intervals(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intervals(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -446,7 +446,7 @@ class IntCurveSurface_TheExactHInter {
 		const gp_Pnt & Point() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnCurve() const;
-		%feature("autodoc","ParameterOnSurface()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParameterOnSurface() -> [Standard_Real, Standard_Real]");
 		void ParameterOnSurface(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		IntCurveSurface_TheCSFunctionOfHInter & Function();
@@ -465,11 +465,11 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 	public:
 		%feature("autodoc", "1");
 		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

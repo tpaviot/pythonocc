@@ -1639,13 +1639,13 @@ class Transfer_Finder : public MMgt_TShared {
 		Interface_ParamType AttributeType(const char * name) const;
 		%feature("autodoc", "1");
 		void SetIntegerAttribute(const char * name, const Standard_Integer val);
-		%feature("autodoc","GetIntegerAttribute(Standard_CString name)->Standard_Integer");
+		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
 		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerAttribute(const char * name) const;
 		%feature("autodoc", "1");
 		void SetRealAttribute(const char * name, const Standard_Real val);
-		%feature("autodoc","GetRealAttribute(Standard_CString name)->Standard_Real");
+		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
 		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real RealAttribute(const char * name) const;

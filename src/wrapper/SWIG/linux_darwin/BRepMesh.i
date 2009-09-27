@@ -1711,7 +1711,7 @@ class BRepMesh_ShapeTool {
 		TopoDS_Vertex LastVertex(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		void Vertices(const TopoDS_Edge &E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
-		%feature("autodoc","Range(const E, const F)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Range(const E, const F) -> [Standard_RealStandard_Real]");
 		void Range(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void UVPoints(const TopoDS_Edge &E, const TopoDS_Face &F, gp_Pnt2d & uvFirst, gp_Pnt2d & uvLast);
@@ -1723,7 +1723,7 @@ class BRepMesh_ShapeTool {
 		Standard_Real Parameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void Parameters(const TopoDS_Edge &E, const TopoDS_Face &F, const Standard_Real W, gp_Pnt2d & UV);
-		%feature("autodoc","Locate(const C, Standard_Real W, const p3d)->Standard_Real");
+		%feature("autodoc","Locate(const C, Standard_Real W, const p3d) -> Standard_Real");
 		void Locate(const BRepAdaptor_Curve &C, const Standard_Real W, Standard_Real &OutValue, const gp_Pnt &p3d, gp_Pnt2d & UV);
 		%feature("autodoc", "1");
 		gp_Pnt Pnt(const TopoDS_Vertex &V);
@@ -2103,9 +2103,9 @@ class BRepMesh_GeomTool {
 		BRepMesh_GeomTool(const Handle_BRepAdaptor_HSurface &S, const Standard_Real ParamIso, const GeomAbs_IsoType Type, const Standard_Real Ufirst, const Standard_Real Ulast, const Standard_Real AngDefl, const Standard_Real Deflection, const Standard_Integer nbpointsmin=2);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
-		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index) -> Standard_Real");
 		void Value(const Standard_Real IsoParam, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
-		%feature("autodoc","Value(const C, const S, Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","Value(const C, const S, Standard_Integer Index) -> Standard_Real");
 		void Value(const BRepAdaptor_Curve &C, const Handle_BRepAdaptor_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
 		%feature("autodoc", "1");
 		void D0(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
@@ -2355,7 +2355,7 @@ class BRepMesh_SurfaceGrid : public MMgt_TShared {
 		Handle_BRepAdaptor_HSurface Surface() const;
 		%feature("autodoc", "1");
 		TopoDS_Face Face() const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2977,7 +2977,7 @@ class BRepMesh_Delaun {
 		void ReCompute(TColStd_Array1OfInteger & VertexIndices);
 		%feature("autodoc", "1");
 		void SuperMesh(const Bnd_Box2d &theBox);
-		%feature("autodoc","Contains(Standard_Integer TrianIndex, const theVertex)->Standard_Integer");
+		%feature("autodoc","Contains(Standard_Integer TrianIndex, const theVertex) -> Standard_Integer");
 		Standard_Boolean Contains(const Standard_Integer TrianIndex, const BRepMesh_Vertex &theVertex, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer TriangleContaining(const BRepMesh_Vertex &theVertex);
@@ -3152,7 +3152,7 @@ class BRepMesh_Triangle {
 		BRepMesh_Triangle(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const MeshDS_DegreeOfFreedom canMove, const Standard_Integer domain=0);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const MeshDS_DegreeOfFreedom canMove, const Standard_Integer domain=0);
-		%feature("autodoc","Edges()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Edges() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Edges(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & o1, Standard_Boolean & o2, Standard_Boolean & o3) const;
 		%feature("autodoc", "1");
 		MeshDS_DegreeOfFreedom Movability() const;

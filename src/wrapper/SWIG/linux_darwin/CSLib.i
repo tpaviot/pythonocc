@@ -62,11 +62,11 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		CSLib_NormalPolyDef(const Standard_Integer k0, const TColStd_Array1OfReal &li);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -118,7 +118,7 @@ class CSLib {
 		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const gp_Vec &D2U, const gp_Vec &D2V, const gp_Vec &D2UV, const Standard_Real SinTol, Standard_Boolean & Done, CSLib_NormalStatus & Status, gp_Dir & Normal);
 		%feature("autodoc", "1");
 		void Normal(const gp_Vec &D1U, const gp_Vec &D1V, const Standard_Real MagTol, CSLib_NormalStatus & Status, gp_Dir & Normal);
-		%feature("autodoc","Normal(Standard_Integer MaxOrder, const DerNUV, Standard_Real MagTol, Standard_Real U, Standard_Real V, Standard_Real Umin, Standard_Real Umax, Standard_Real Vmin, Standard_Real Vmax)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Normal(Standard_Integer MaxOrder, const DerNUV, Standard_Real MagTol, Standard_Real U, Standard_Real V, Standard_Real Umin, Standard_Real Umax, Standard_Real Vmin, Standard_Real Vmax) -> [Standard_IntegerStandard_Integer]");
 		void Normal(const Standard_Integer MaxOrder, const TColgp_Array2OfVec &DerNUV, const Standard_Real MagTol, const Standard_Real U, const Standard_Real V, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax, CSLib_NormalStatus & Status, gp_Dir & Normal, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec DNNUV(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerSurf);

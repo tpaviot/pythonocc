@@ -99,15 +99,15 @@ class Voxel_DS {
 		Standard_Integer GetNbY() const;
 		%feature("autodoc", "1");
 		Standard_Integer GetNbZ() const;
-		%feature("autodoc","GetCenter(Standard_Integer ix, Standard_Integer iy, Standard_Integer iz)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetCenter(Standard_Integer ix, Standard_Integer iy, Standard_Integer iz) -> [Standard_RealStandard_RealStandard_Real]");
 		void GetCenter(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetVoxel(Standard_Real x, Standard_Real y, Standard_Real z)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","GetVoxel(Standard_Real x, Standard_Real y, Standard_Real z) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		Standard_Boolean GetVoxel(const Standard_Real x, const Standard_Real y, const Standard_Real z, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetVoxelX(Standard_Real x)->Standard_Integer");
+		%feature("autodoc","GetVoxelX(Standard_Real x) -> Standard_Integer");
 		Standard_Boolean GetVoxelX(const Standard_Real x, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetVoxelY(Standard_Real y)->Standard_Integer");
+		%feature("autodoc","GetVoxelY(Standard_Real y) -> Standard_Integer");
 		Standard_Boolean GetVoxelY(const Standard_Real y, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetVoxelZ(Standard_Real z)->Standard_Integer");
+		%feature("autodoc","GetVoxelZ(Standard_Real z) -> Standard_Integer");
 		Standard_Boolean GetVoxelZ(const Standard_Real z, Standard_Integer &OutValue) const;
 
 };
@@ -278,7 +278,7 @@ class Voxel_FastConverter {
 		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
 		Voxel_FastConverter(const TopoDS_Shape &shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
-		%feature("autodoc","Convert(Standard_Integer ithread=1)->Standard_Integer");
+		%feature("autodoc","Convert(Standard_Integer ithread=1) -> Standard_Integer");
 		Standard_Boolean Convert(Standard_Integer &OutValue, const Standard_Integer ithread=1);
 		%feature("autodoc", "1");
 		Standard_Boolean FillInVolume(const Standard_Byte inner, const Standard_Integer ithread=1);
@@ -361,7 +361,7 @@ class Voxel_Selector {
 		void SetVoxels(const Voxel_BoolDS &voxels);
 		%feature("autodoc", "1");
 		void SetVoxels(const Voxel_ColorDS &voxels);
-		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","Detect(Standard_Integer winx, Standard_Integer winy) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };

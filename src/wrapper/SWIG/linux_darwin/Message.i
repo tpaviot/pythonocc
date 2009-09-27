@@ -441,7 +441,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 		void SetScale(const char * name, const Standard_Real min, const Standard_Real max, const Standard_Real step, const Standard_Boolean isInf=0);
 		%feature("autodoc", "1");
 		void SetScale(const Standard_Real min, const Standard_Real max, const Standard_Real step, const Standard_Boolean isInf=0);
-		%feature("autodoc","GetScale()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetScale() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void GetScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & isInf) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Real val);

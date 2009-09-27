@@ -202,7 +202,7 @@ class Plate_Plate {
 		void SetPolynomialPartOnly(const Standard_Boolean PPOnly=1);
 		%feature("autodoc", "1");
 		Standard_Integer Continuity() const;
-		%feature("autodoc","UVBox()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","UVBox() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void UVBox(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void UVConstraints(TColgp_SequenceOfXY & Seq) const;

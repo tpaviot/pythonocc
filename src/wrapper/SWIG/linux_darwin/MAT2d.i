@@ -810,7 +810,7 @@ class MAT2d_Tool2d {
 		Standard_Integer NumberOfItems() const;
 		%feature("autodoc", "1");
 		Standard_Real ToleranceOfConfusion() const;
-		%feature("autodoc","FirstPoint(Standard_Integer anitem)->Standard_Real");
+		%feature("autodoc","FirstPoint(Standard_Integer anitem) -> Standard_Real");
 		Standard_Integer FirstPoint(const Standard_Integer anitem, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer TangentBefore(const Standard_Integer anitem);
@@ -824,7 +824,7 @@ class MAT2d_Tool2d {
 		Standard_Boolean TrimBisector(const Handle_MAT_Bisector &abisector);
 		%feature("autodoc", "1");
 		Standard_Boolean TrimBisector(const Handle_MAT_Bisector &abisector, const Standard_Integer apoint);
-		%feature("autodoc","IntersectBisector(const bisectorone, const bisectortwo)->Standard_Integer");
+		%feature("autodoc","IntersectBisector(const bisectorone, const bisectortwo) -> Standard_Integer");
 		Standard_Real IntersectBisector(const Handle_MAT_Bisector &bisectorone, const Handle_MAT_Bisector &bisectortwo, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Distance(const Handle_MAT_Bisector &abisector, const Standard_Real param1, const Standard_Real param2) const;

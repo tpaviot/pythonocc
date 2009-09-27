@@ -192,7 +192,7 @@ class BRepExtrema_Poly {
 	public:
 		%feature("autodoc", "1");
 		BRepExtrema_Poly();
-		%feature("autodoc","Distance(const S1, const S2)->Standard_Real");
+		%feature("autodoc","Distance(const S1, const S2) -> Standard_Real");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 
 };
@@ -221,7 +221,7 @@ class BRepExtrema_ExtPF {
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc","Parameter(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameter(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
@@ -262,7 +262,7 @@ class BRepExtrema_ExtCC {
 		Standard_Real ParameterOnE2(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnE2(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
@@ -322,7 +322,7 @@ class BRepExtrema_ExtPC {
 		Standard_Real Parameter(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
 
 };
@@ -355,7 +355,7 @@ class BRepExtrema_ExtCF {
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnEdge(const Standard_Integer N) const;
-		%feature("autodoc","ParameterOnFace(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnEdge(const Standard_Integer N) const;
@@ -390,9 +390,9 @@ class BRepExtrema_ExtFF {
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc","ParameterOnFace1(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace1(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace1(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParameterOnFace2(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace2(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnFace1(const Standard_Integer N) const;
@@ -445,13 +445,13 @@ class BRepExtrema_DistShapeShape {
 		TopoDS_Shape SupportOnShape1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape SupportOnShape2(const Standard_Integer N) const;
-		%feature("autodoc","ParOnEdgeS1(Standard_Integer N)->Standard_Real");
+		%feature("autodoc","ParOnEdgeS1(Standard_Integer N) -> Standard_Real");
 		void ParOnEdgeS1(const Standard_Integer N, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnEdgeS2(Standard_Integer N)->Standard_Real");
+		%feature("autodoc","ParOnEdgeS2(Standard_Integer N) -> Standard_Real");
 		void ParOnEdgeS2(const Standard_Integer N, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnFaceS1(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParOnFaceS1(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParOnFaceS1(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnFaceS2(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParOnFaceS2(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParOnFaceS2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
@@ -529,9 +529,9 @@ class BRepExtrema_SolutionElem {
 		TopoDS_Edge Edge() const;
 		%feature("autodoc", "1");
 		TopoDS_Face Face() const;
-		%feature("autodoc","EdgeParameter()->Standard_Real");
+		%feature("autodoc","EdgeParameter() -> Standard_Real");
 		void EdgeParameter(Standard_Real &OutValue) const;
-		%feature("autodoc","FaceParameter()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","FaceParameter() -> [Standard_Real, Standard_Real]");
 		void FaceParameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

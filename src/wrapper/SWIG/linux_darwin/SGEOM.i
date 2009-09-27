@@ -125,36 +125,6 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 };
 
 
-%nodefaultctor Handle_GEOM_Function;
-class Handle_GEOM_Function : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOM_Function();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function(const Handle_GEOM_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOM_Function(const GEOM_Function *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOM_Function & operator=(const Handle_GEOM_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOM_Function & operator=(const GEOM_Function *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOM_Function {
-	GEOM_Function* GetObject() {
-	return (GEOM_Function*)$self->Access();
-	}
-};
-%extend Handle_GEOM_Function {
-	~Handle_GEOM_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Function\n");}
-	}
-};
-
-
 %nodefaultctor Handle_GEOM_SubShapeDriver;
 class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 	public:
@@ -185,6 +155,71 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 };
 
 
+%nodefaultctor Handle_GEOM_Function;
+class Handle_GEOM_Function : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOM_Function();
+		%feature("autodoc", "1");
+		Handle_GEOM_Function(const Handle_GEOM_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function(const GEOM_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const Handle_GEOM_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function & operator=(const GEOM_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_Function const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOM_Function {
+	GEOM_Function* GetObject() {
+	return (GEOM_Function*)$self->Access();
+	}
+};
+%extend Handle_GEOM_Function {
+	~Handle_GEOM_Function() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Function\n");}
+	}
+};
+
+
+%nodefaultctor GEOM_SubShapeDriver;
+class GEOM_SubShapeDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOM_SubShapeDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOM_SubShapeDriver {
+	Handle_GEOM_SubShapeDriver GetHandle() {
+	return *(Handle_GEOM_SubShapeDriver*) &$self;
+	}
+};
+%extend GEOM_SubShapeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend GEOM_SubShapeDriver {
+	~GEOM_SubShapeDriver() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOM_SubShapeDriver\n");}
+	}
+};
+
+
 %nodefaultctor GEOM_Solver;
 class GEOM_Solver {
 	public:
@@ -204,6 +239,37 @@ class GEOM_Solver {
 	~GEOM_Solver() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOM_Solver\n");}
+	}
+};
+
+
+%nodefaultctor GEOM_Parameter;
+class GEOM_Parameter {
+	public:
+		%feature("autodoc", "1");
+		GEOM_Parameter();
+		%feature("autodoc", "1");
+		GEOM_Parameter(TCollection_AsciiString );
+		%feature("autodoc", "1");
+		GEOM_Parameter(Standard_Real );
+		%feature("autodoc", "1");
+		Standard_Boolean IsString() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDouble() const;
+		%feature("autodoc", "1");
+		Standard_Real GetDouble() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString GetString() const;
+		%feature("autodoc", "1");
+		void operator=(Standard_Real );
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &anAsciiString);
+
+};
+%extend GEOM_Parameter {
+	~GEOM_Parameter() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
 	}
 };
 
@@ -264,37 +330,6 @@ class GEOM_ISubShape {
 	~GEOM_ISubShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOM_ISubShape\n");}
-	}
-};
-
-
-%nodefaultctor GEOM_Parameter;
-class GEOM_Parameter {
-	public:
-		%feature("autodoc", "1");
-		GEOM_Parameter();
-		%feature("autodoc", "1");
-		GEOM_Parameter(TCollection_AsciiString );
-		%feature("autodoc", "1");
-		GEOM_Parameter(Standard_Real );
-		%feature("autodoc", "1");
-		Standard_Boolean IsString() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDouble() const;
-		%feature("autodoc", "1");
-		Standard_Real GetDouble() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetString() const;
-		%feature("autodoc", "1");
-		void operator=(Standard_Real );
-		%feature("autodoc", "1");
-		void operator=(const TCollection_AsciiString &anAsciiString);
-
-};
-%extend GEOM_Parameter {
-	~GEOM_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
 	}
 };
 
@@ -368,7 +403,7 @@ class GEOM_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResourcesName();
+		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -533,41 +568,6 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 	~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapNodeOfDataMapOfAsciiStringTransient\n");}
-	}
-};
-
-
-%nodefaultctor GEOM_SubShapeDriver;
-class GEOM_SubShapeDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOM_SubShapeDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOM_SubShapeDriver {
-	Handle_GEOM_SubShapeDriver GetHandle() {
-	return *(Handle_GEOM_SubShapeDriver*) &$self;
-	}
-};
-%extend GEOM_SubShapeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend GEOM_SubShapeDriver {
-	~GEOM_SubShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_SubShapeDriver\n");}
 	}
 };
 

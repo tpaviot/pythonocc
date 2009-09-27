@@ -999,11 +999,11 @@ class TopOpeBRepDS_TOOL {
 		Standard_Integer EShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Edge &E, TopTools_ListOfShape & lEsd);
 		%feature("autodoc", "1");
 		Standard_Boolean ShareG(const Handle_TopOpeBRepDS_HDataStructure &HDS, const Standard_Integer is1, const Standard_Integer is2);
-		%feature("autodoc","GetEsd(const HDS, const S, Standard_Integer ie)->Standard_Integer");
+		%feature("autodoc","GetEsd(const HDS, const S, Standard_Integer ie) -> Standard_Integer");
 		Standard_Boolean GetEsd(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopoDS_Shape &S, const Standard_Integer ie, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean ShareSplitON(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MspON, const Standard_Integer i1, const Standard_Integer i2, TopoDS_Shape & spON);
-		%feature("autodoc","GetConfig(const HDS, const MEspON, Standard_Integer ie, Standard_Integer iesd)->Standard_Integer");
+		%feature("autodoc","GetConfig(const HDS, const MEspON, Standard_Integer ie, Standard_Integer iesd) -> Standard_Integer");
 		Standard_Boolean GetConfig(const Handle_TopOpeBRepDS_HDataStructure &HDS, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State &MEspON, const Standard_Integer ie, const Standard_Integer iesd, Standard_Integer &OutValue);
 
 };
@@ -1096,7 +1096,7 @@ class TopOpeBRepDS_GapTool : public MMgt_TShared {
 		Standard_Boolean EdgeSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & E) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FacesSupport(const Handle_TopOpeBRepDS_Interference &I, TopoDS_Shape & F1, TopoDS_Shape & F2) const;
-		%feature("autodoc","ParameterOnEdge(const I, const E)->Standard_Real");
+		%feature("autodoc","ParameterOnEdge(const I, const E) -> Standard_Real");
 		Standard_Boolean ParameterOnEdge(const Handle_TopOpeBRepDS_Interference &I, const TopoDS_Shape &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPoint(const Handle_TopOpeBRepDS_Interference &I, const Standard_Integer IndexPoint);
@@ -1555,7 +1555,7 @@ class TopOpeBRepDS_Interference : public MMgt_TShared {
 		TopOpeBRepDS_Transition & ChangeTransition();
 		%feature("autodoc", "1");
 		void Transition(const TopOpeBRepDS_Transition &T);
-		%feature("autodoc","GKGSKS()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GKGSKS() -> [Standard_Integer, Standard_Integer]");
 		void GKGSKS(TopOpeBRepDS_Kind & GK, Standard_Integer &OutValue, TopOpeBRepDS_Kind & SK, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopOpeBRepDS_Kind SupportType() const;
@@ -2227,17 +2227,17 @@ class TopOpeBRepDS_BuildTool {
 		void MakeSolid(TopoDS_Shape & S) const;
 		%feature("autodoc", "1");
 		void CopyEdge(const TopoDS_Shape &Ein, TopoDS_Shape & Eou) const;
-		%feature("autodoc","GetOrientedEdgeVertices()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetOrientedEdgeVertices() -> [Standard_Real, Standard_Real]");
 		void GetOrientedEdgeVertices(TopoDS_Edge & E, TopoDS_Vertex & Vmin, TopoDS_Vertex & Vmax, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","UpdateEdgeCurveTol(const F1, const F2, const C3Dnew, Standard_Real tol3d, Standard_Real tol2d1, Standard_Real tol2d2)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","UpdateEdgeCurveTol(const F1, const F2, const C3Dnew, Standard_Real tol3d, Standard_Real tol2d1, Standard_Real tol2d2) -> [Standard_RealStandard_RealStandard_Real]");
 		void UpdateEdgeCurveTol(const TopoDS_Face &F1, const TopoDS_Face &F2, TopoDS_Edge & E, const Handle_Geom_Curve &C3Dnew, const Standard_Real tol3d, const Standard_Real tol2d1, const Standard_Real tol2d2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ApproxCurves(const C, const HDS)->Standard_Integer");
+		%feature("autodoc","ApproxCurves(const C, const HDS) -> Standard_Integer");
 		void ApproxCurves(const TopOpeBRepDS_Curve &C, TopoDS_Edge & E, Standard_Integer &OutValue, const Handle_TopOpeBRepDS_HDataStructure &HDS) const;
 		%feature("autodoc", "1");
 		void ComputePCurves(const TopOpeBRepDS_Curve &C, TopoDS_Edge & E, TopOpeBRepDS_Curve & newC, const Standard_Boolean CompPC1, const Standard_Boolean CompPC2, const Standard_Boolean CompC3D) const;
 		%feature("autodoc", "1");
 		void PutPCurves(const TopOpeBRepDS_Curve &newC, TopoDS_Edge & E, const Standard_Boolean CompPC1, const Standard_Boolean CompPC2) const;
-		%feature("autodoc","RecomputeCurves(const C, const oldE, const HDS)->Standard_Integer");
+		%feature("autodoc","RecomputeCurves(const C, const oldE, const HDS) -> Standard_Integer");
 		void RecomputeCurves(const TopOpeBRepDS_Curve &C, const TopoDS_Edge &oldE, TopoDS_Edge & E, Standard_Integer &OutValue, const Handle_TopOpeBRepDS_HDataStructure &HDS) const;
 		%feature("autodoc", "1");
 		void CopyFace(const TopoDS_Shape &Fin, TopoDS_Shape & Fou) const;
@@ -2801,7 +2801,7 @@ class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 		TopOpeBRepDS_PointData(const TopOpeBRepDS_Point &P, const Standard_Integer I1, const Standard_Integer I2);
 		%feature("autodoc", "1");
 		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
-		%feature("autodoc","GetShapes()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GetShapes() -> [Standard_Integer, Standard_Integer]");
 		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
@@ -3778,7 +3778,7 @@ class TopOpeBRepDS_Curve {
 		const Handle_Geom_Curve & Curve() const;
 		%feature("autodoc", "1");
 		void SetRange(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","Range()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Range() -> [Standard_Real, Standard_Real]");
 		Standard_Boolean Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Tolerance() const;
@@ -4164,9 +4164,9 @@ class TopOpeBRepDS_TKI {
 		Standard_Boolean More() const;
 		%feature("autodoc", "1");
 		void Next();
-		%feature("autodoc","Value()->Standard_Integer");
+		%feature("autodoc","Value() -> Standard_Integer");
 		const TopOpeBRepDS_ListOfInterference & Value(TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
-		%feature("autodoc","ChangeValue()->Standard_Integer");
+		%feature("autodoc","ChangeValue() -> Standard_Integer");
 		TopOpeBRepDS_ListOfInterference & ChangeValue(TopOpeBRepDS_Kind & K, Standard_Integer &OutValue);
 
 };
@@ -4214,7 +4214,7 @@ class TopOpeBRepDS_FaceInterferenceTool {
 		void Add(const TopoDS_Shape &E, const TopOpeBRepDS_Curve &C, const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
 		void SetEdgePntPar(const gp_Pnt &P, const Standard_Real par);
-		%feature("autodoc","GetEdgePntPar()->Standard_Real");
+		%feature("autodoc","GetEdgePntPar() -> Standard_Real");
 		void GetEdgePntPar(gp_Pnt & P, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEdgePntParDef() const;

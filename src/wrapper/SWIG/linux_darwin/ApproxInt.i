@@ -40,7 +40,7 @@ class ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc","Compute()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);

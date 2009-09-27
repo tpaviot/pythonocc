@@ -588,11 +588,11 @@ class TopOpeBRepBuild_Builder {
 		Standard_Integer KPisfafash(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
 		Standard_Integer KPissososh(const TopoDS_Shape &S) const;
-		%feature("autodoc","KPiskoleanalyse(TopAbs_State FT1, TopAbs_State FT2, TopAbs_State ST1, TopAbs_State ST2)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","KPiskoleanalyse(TopAbs_State FT1, TopAbs_State FT2, TopAbs_State ST1, TopAbs_State ST2) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		void KPiskoleanalyse(const TopAbs_State FT1, const TopAbs_State FT2, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","KPiskoletgeanalyse(TopOpeBRepDS_Config Conf, TopAbs_State ST1, TopAbs_State ST2)->Standard_Integer");
+		%feature("autodoc","KPiskoletgeanalyse(TopOpeBRepDS_Config Conf, TopAbs_State ST1, TopAbs_State ST2) -> Standard_Integer");
 		void KPiskoletgeanalyse(const TopOpeBRepDS_Config Conf, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue) const;
-		%feature("autodoc","KPisdisjanalyse(TopAbs_State ST1, TopAbs_State ST2)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","KPisdisjanalyse(TopAbs_State ST1, TopAbs_State ST2) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		void KPisdisjanalyse(const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_ListOfShape & L);
@@ -674,7 +674,7 @@ class TopOpeBRepBuild_Builder {
 		void GFillPointTopologyPVS(const TopoDS_Shape &E, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_PaveSet & PVS);
 		%feature("autodoc", "1");
 		void GFillPointTopologyPVS(const TopoDS_Shape &E, const TopOpeBRepDS_PointIterator &IT, const TopOpeBRepBuild_GTopo &G, TopOpeBRepBuild_PaveSet & PVS) const;
-		%feature("autodoc","GParamOnReference(const V, const E)->Standard_Real");
+		%feature("autodoc","GParamOnReference(const V, const E) -> Standard_Real");
 		Standard_Boolean GParamOnReference(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GKeepShape(const TopoDS_Shape &S, const TopTools_ListOfShape &Lref, const TopAbs_State T);
@@ -772,7 +772,7 @@ class TopOpeBRepBuild_Builder {
 		Standard_Boolean GtraceSPS(const Standard_Integer iS, const Standard_Integer jS) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GtraceSPS(const TopoDS_Shape &S) const;
-		%feature("autodoc","GtraceSPS(const S)->Standard_Integer");
+		%feature("autodoc","GtraceSPS(const S) -> Standard_Integer");
 		Standard_Boolean GtraceSPS(const TopoDS_Shape &S, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void GdumpSHASETreset();
@@ -1691,7 +1691,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 		Standard_Integer GetDSFaceFromDSCurve(const Standard_Integer indexCur, const Standard_Integer rank);
 		%feature("autodoc", "1");
 		Standard_Integer GetDSPointFromNewVertex(const TopoDS_Shape &NewVert);
-		%feature("autodoc","EdgeCurveAncestors(const E)->Standard_Integer");
+		%feature("autodoc","EdgeCurveAncestors(const E) -> Standard_Integer");
 		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean EdgeSectionAncestors(const TopoDS_Shape &E, TopTools_ListOfShape & LF1, TopTools_ListOfShape & LF2, TopTools_ListOfShape & LE1, TopTools_ListOfShape & LE2);
@@ -2258,7 +2258,7 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		void SetFirstParameter(const Standard_Real P);
 		%feature("autodoc", "1");
 		void ClosedVertices(const Standard_Boolean B);
-		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol)->Standard_Integer");
+		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol) -> Standard_Integer");
 		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
 
 };
@@ -2383,7 +2383,7 @@ class TopOpeBRepBuild_GTopo {
 		Standard_Integer GIndex(const TopAbs_State S) const;
 		%feature("autodoc", "1");
 		TopAbs_State GState(const Standard_Integer I) const;
-		%feature("autodoc","Index(Standard_Integer II)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Index(Standard_Integer II) -> [Standard_IntegerStandard_Integer]");
 		void Index(const Standard_Integer II, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2) const;

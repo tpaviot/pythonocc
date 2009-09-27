@@ -155,6 +155,36 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollect
 };
 
 
+%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
+class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
+	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
+	}
+};
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");}
+	}
+};
+
+
 %nodefaultctor Handle_TopTools_HArray1OfListOfShape;
 class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	public:
@@ -391,36 +421,6 @@ class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle
 	~Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
-class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
-	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
-	}
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");}
 	}
 };
 

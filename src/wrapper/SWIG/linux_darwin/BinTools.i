@@ -88,9 +88,9 @@ class BinTools {
 		Standard_OStream & PutBool(Standard_OStream & OS, const Standard_Boolean theValue);
 		%feature("autodoc", "1");
 		Standard_OStream & PutExtChar(Standard_OStream & OS, const Standard_ExtCharacter theValue);
-		%feature("autodoc","GetReal()->Standard_Real");
+		%feature("autodoc","GetReal() -> Standard_Real");
 		std::istream & GetReal(std::istream & IS, Standard_Real &OutValue);
-		%feature("autodoc","GetInteger()->Standard_Integer");
+		%feature("autodoc","GetInteger() -> Standard_Integer");
 		std::istream & GetInteger(std::istream & IS, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		std::istream & GetBool(std::istream & IS, Standard_Boolean & theValue);

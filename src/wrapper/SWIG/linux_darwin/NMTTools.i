@@ -66,36 +66,6 @@ class Handle_NMTTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 };
 
 
-%nodefaultctor Handle_NMTTools_StdMapNodeOfMapOfPaveBlock;
-class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock();
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock(const Handle_NMTTools_StdMapNodeOfMapOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const Handle_NMTTools_StdMapNodeOfMapOfPaveBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
-	NMTTools_StdMapNodeOfMapOfPaveBlock* GetObject() {
-	return (NMTTools_StdMapNodeOfMapOfPaveBlock*)$self->Access();
-	}
-};
-%extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
-	~Handle_NMTTools_StdMapNodeOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
-	}
-};
-
-
 %nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
 class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
@@ -156,36 +126,6 @@ class Handle_NMTTools_ListNodeOfListOfCoupleOfShape : public Handle_TCollection_
 };
 
 
-%nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
-class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape();
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape* GetObject() {
-	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*)$self->Access();
-	}
-};
-%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
-	}
-};
-
-
 %nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock;
 class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +152,36 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : publi
 	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock\n");}
+	}
+};
+
+
+%nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
+class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape();
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape* GetObject() {
+	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*)$self->Access();
+	}
+};
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
 	}
 };
 
@@ -246,6 +216,36 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : 
 };
 
 
+%nodefaultctor Handle_NMTTools_StdMapNodeOfMapOfPaveBlock;
+class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock();
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock(const Handle_NMTTools_StdMapNodeOfMapOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const Handle_NMTTools_StdMapNodeOfMapOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock & operator=(const NMTTools_StdMapNodeOfMapOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_StdMapNodeOfMapOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
+	NMTTools_StdMapNodeOfMapOfPaveBlock* GetObject() {
+	return (NMTTools_StdMapNodeOfMapOfPaveBlock*)$self->Access();
+	}
+};
+%extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
+	~Handle_NMTTools_StdMapNodeOfMapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
+	}
+};
+
+
 %nodefaultctor NMTTools_DEProcessor;
 class NMTTools_DEProcessor {
 	public:
@@ -261,342 +261,6 @@ class NMTTools_DEProcessor {
 	~NMTTools_DEProcessor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NMTTools_DEProcessor\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapOfShapeIndexedMapOfShape;
-class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & Assign(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape &K);
-
-};
-%extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
-	~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapOfShapeIndexedMapOfShape\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_MapOfPaveBlock;
-class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock & Assign(const NMTTools_MapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock & operator=(const NMTTools_MapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const BOPTools_PaveBlock &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const BOPTools_PaveBlock &aKey);
-
-};
-%extend NMTTools_MapOfPaveBlock {
-	~NMTTools_MapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_MapOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_ListNodeOfListOfCommonBlock;
-class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListNodeOfListOfCommonBlock(const NMTTools_CommonBlock &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	Handle_NMTTools_ListNodeOfListOfCommonBlock GetHandle() {
-	return *(Handle_NMTTools_ListNodeOfListOfCommonBlock*) &$self;
-	}
-};
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	~NMTTools_ListNodeOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListNodeOfListOfCommonBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
-class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger GetHandle() {
-	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger*) &$self;
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
-class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_StdMapNodeOfMapOfPaveBlock(const BOPTools_PaveBlock &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	Handle_NMTTools_StdMapNodeOfMapOfPaveBlock GetHandle() {
-	return *(Handle_NMTTools_StdMapNodeOfMapOfPaveBlock*) &$self;
-	}
-};
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	~NMTTools_StdMapNodeOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_IteratorOfCoupleOfShape;
-class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IteratorOfCoupleOfShape();
-		%feature("autodoc", "1");
-		void SetDS(const NMTDS_PShapesDataStructure &pDS);
-		%feature("autodoc", "1");
-		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc","Current()->[Standard_Integer, Standard_Integer]");
-		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean More() const;
-
-};
-%extend NMTTools_IteratorOfCoupleOfShape {
-	~NMTTools_IteratorOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IteratorOfCoupleOfShape\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_CommonBlock;
-class NMTTools_CommonBlock {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock();
-		%feature("autodoc", "1");
-		void AddPaveBlock(const BOPTools_PaveBlock &aPB);
-		%feature("autodoc", "1");
-		void AddFace(const Standard_Integer aF);
-		%feature("autodoc", "1");
-		void AddFaces(const TColStd_ListOfInteger &aLF);
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & PaveBlocks() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Faces() const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & PaveBlock1() const;
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & PaveBlock1(const Standard_Integer anIx);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & PaveBlockOnEdge(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPaveBlockOnFace(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPaveBlockOnEdge(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const NMTTools_CommonBlock &aCB) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &aPB) const;
-
-};
-%extend NMTTools_CommonBlock {
-	~NMTTools_CommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_ListOfCommonBlock;
-class NMTTools_ListOfCommonBlock {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListOfCommonBlock();
-		%feature("autodoc", "1");
-		void Assign(const NMTTools_ListOfCommonBlock &Other);
-		%feature("autodoc", "1");
-		void operator=(const NMTTools_ListOfCommonBlock &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CommonBlock &I);
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
-		%feature("autodoc", "1");
-		void Prepend(NMTTools_ListOfCommonBlock & Other);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CommonBlock &I);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
-		%feature("autodoc", "1");
-		void Append(NMTTools_ListOfCommonBlock & Other);
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & First() const;
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertBefore(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertAfter(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
-
-};
-%extend NMTTools_ListOfCommonBlock {
-	~NMTTools_ListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListOfCommonBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
-class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock GetHandle() {
-	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*) &$self;
-	}
-};
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_MapIteratorOfMapOfPaveBlock;
-class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_MapIteratorOfMapOfPaveBlock();
-		%feature("autodoc", "1");
-		NMTTools_MapIteratorOfMapOfPaveBlock(const NMTTools_MapOfPaveBlock &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const NMTTools_MapOfPaveBlock &aMap);
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & Key() const;
-
-};
-%extend NMTTools_MapIteratorOfMapOfPaveBlock {
-	~NMTTools_MapIteratorOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_MapIteratorOfMapOfPaveBlock\n");}
 	}
 };
 
@@ -670,7 +334,7 @@ class NMTTools_PaveFiller {
 		void PrepareFace(const Standard_Integer nF, TopoDS_Face & aF);
 		%feature("autodoc", "1");
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB);
-		%feature("autodoc","RealPaveBlock(const aPB)->Standard_Integer");
+		%feature("autodoc","RealPaveBlock(const aPB) -> Standard_Integer");
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB, TColStd_ListOfInteger & aLB, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void RealSplitsFace(const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
@@ -724,6 +388,137 @@ class NMTTools_PaveFiller {
 };
 
 
+%nodefaultctor NMTTools_IndexedDataMapOfShapeIndexedMapOfShape;
+class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & Assign(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape &K, const TopTools_IndexedMapOfShape &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape &K) const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape &K);
+
+};
+%extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
+	~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapOfShapeIndexedMapOfShape\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
+class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger GetHandle() {
+	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger*) &$self;
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_MapOfPaveBlock;
+class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & Assign(const NMTTools_MapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & operator=(const NMTTools_MapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const BOPTools_PaveBlock &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_PaveBlock &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const BOPTools_PaveBlock &aKey);
+
+};
+%extend NMTTools_MapOfPaveBlock {
+	~NMTTools_MapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_MapOfPaveBlock\n");}
+	}
+};
+
+
 %nodefaultctor NMTTools_ListIteratorOfListOfCommonBlock;
 class NMTTools_ListIteratorOfListOfCommonBlock {
 	public:
@@ -745,6 +540,260 @@ class NMTTools_ListIteratorOfListOfCommonBlock {
 	~NMTTools_ListIteratorOfListOfCommonBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NMTTools_ListIteratorOfListOfCommonBlock\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_Tools;
+class NMTTools_Tools {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_Tools();
+		%feature("autodoc", "1");
+		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
+		%feature("autodoc", "1");
+		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, IntTools_Context & aCtx);
+		%feature("autodoc", "1");
+		Standard_Boolean AreFacesSameDomain(const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aCtx);
+		%feature("autodoc", "1");
+		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
+		%feature("autodoc", "1");
+		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
+		%feature("autodoc", "1");
+		void MakePCurve(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Handle_Geom2d_Curve &aC2D);
+		%feature("autodoc", "1");
+		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
+
+};
+%extend NMTTools_Tools {
+	~NMTTools_Tools() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_Tools\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
+class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_StdMapNodeOfMapOfPaveBlock(const BOPTools_PaveBlock &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	Handle_NMTTools_StdMapNodeOfMapOfPaveBlock GetHandle() {
+	return *(Handle_NMTTools_StdMapNodeOfMapOfPaveBlock*) &$self;
+	}
+};
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	~NMTTools_StdMapNodeOfMapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_IteratorOfCoupleOfShape;
+class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IteratorOfCoupleOfShape();
+		%feature("autodoc", "1");
+		void SetDS(const NMTDS_PShapesDataStructure &pDS);
+		%feature("autodoc", "1");
+		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean More() const;
+
+};
+%extend NMTTools_IteratorOfCoupleOfShape {
+	~NMTTools_IteratorOfCoupleOfShape() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_IteratorOfCoupleOfShape\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_ListOfCommonBlock;
+class NMTTools_ListOfCommonBlock {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListOfCommonBlock();
+		%feature("autodoc", "1");
+		void Assign(const NMTTools_ListOfCommonBlock &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTTools_ListOfCommonBlock &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CommonBlock &I);
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTTools_ListOfCommonBlock & Other);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CommonBlock &I);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTTools_ListOfCommonBlock & Other);
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & First() const;
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
+
+};
+%extend NMTTools_ListOfCommonBlock {
+	~NMTTools_ListOfCommonBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_ListOfCommonBlock\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_CommonBlockAPI;
+class NMTTools_CommonBlockAPI {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_CommonBlockAPI(const NMTTools_ListOfCommonBlock &aList);
+		%feature("autodoc", "1");
+		const NMTTools_ListOfCommonBlock & List() const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & CommonPaveBlocks(const Standard_Integer anE) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCommonBlock(const BOPTools_PaveBlock &aPB) const;
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & CommonBlock(const BOPTools_PaveBlock &aPB) const;
+
+};
+%extend NMTTools_CommonBlockAPI {
+	~NMTTools_CommonBlockAPI() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlockAPI\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_MapIteratorOfMapOfPaveBlock;
+class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_MapIteratorOfMapOfPaveBlock();
+		%feature("autodoc", "1");
+		NMTTools_MapIteratorOfMapOfPaveBlock(const NMTTools_MapOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_MapOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & Key() const;
+
+};
+%extend NMTTools_MapIteratorOfMapOfPaveBlock {
+	~NMTTools_MapIteratorOfMapOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_MapIteratorOfMapOfPaveBlock\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
+class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock GetHandle() {
+	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*) &$self;
+	}
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_ListNodeOfListOfCommonBlock;
+class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListNodeOfListOfCommonBlock(const NMTTools_CommonBlock &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	Handle_NMTTools_ListNodeOfListOfCommonBlock GetHandle() {
+	return *(Handle_NMTTools_ListNodeOfListOfCommonBlock*) &$self;
+	}
+};
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	~NMTTools_ListNodeOfListOfCommonBlock() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_ListNodeOfListOfCommonBlock\n");}
 	}
 };
 
@@ -790,60 +839,41 @@ class NMTTools_CommonBlockPool {
 };
 
 
-%nodefaultctor NMTTools_CommonBlockAPI;
-class NMTTools_CommonBlockAPI {
+%nodefaultctor NMTTools_CommonBlock;
+class NMTTools_CommonBlock {
 	public:
 		%feature("autodoc", "1");
-		NMTTools_CommonBlockAPI(const NMTTools_ListOfCommonBlock &aList);
+		NMTTools_CommonBlock();
 		%feature("autodoc", "1");
-		const NMTTools_ListOfCommonBlock & List() const;
+		void AddPaveBlock(const BOPTools_PaveBlock &aPB);
 		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & CommonPaveBlocks(const Standard_Integer anE) const;
+		void AddFace(const Standard_Integer aF);
 		%feature("autodoc", "1");
-		Standard_Boolean IsCommonBlock(const BOPTools_PaveBlock &aPB) const;
+		void AddFaces(const TColStd_ListOfInteger &aLF);
 		%feature("autodoc", "1");
-		NMTTools_CommonBlock & CommonBlock(const BOPTools_PaveBlock &aPB) const;
+		const BOPTools_ListOfPaveBlock & PaveBlocks() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Faces() const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & PaveBlock1() const;
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & PaveBlock1(const Standard_Integer anIx);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & PaveBlockOnEdge(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPaveBlockOnFace(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPaveBlockOnEdge(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const NMTTools_CommonBlock &aCB) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_PaveBlock &aPB) const;
 
 };
-%extend NMTTools_CommonBlockAPI {
-	~NMTTools_CommonBlockAPI() {
+%extend NMTTools_CommonBlock {
+	~NMTTools_CommonBlock() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlockAPI\n");}
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
-class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape &K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape GetHandle() {
-	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*) &$self;
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
+	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlock\n");}
 	}
 };
 
@@ -920,25 +950,6 @@ class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap
 };
 
 
-%nodefaultctor NMTTools_CheckerSI;
-class NMTTools_CheckerSI : public NMTTools_PaveFiller {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CheckerSI();
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer StopStatus() const;
-
-};
-%extend NMTTools_CheckerSI {
-	~NMTTools_CheckerSI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CheckerSI\n");}
-	}
-};
-
-
 %nodefaultctor NMTTools_ListNodeOfListOfCoupleOfShape;
 class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 	public:
@@ -975,8 +986,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock(const TopoDS_Shape &K1, const Standard_Integer K2, const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1073,37 +1094,47 @@ class NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock : public TCollec
 };
 
 
-%nodefaultctor NMTTools_Tools;
-class NMTTools_Tools {
+%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
+class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		NMTTools_Tools();
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape &K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
+		TopoDS_Shape & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
-		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		TopTools_IndexedMapOfShape & Value() const;
 		%feature("autodoc", "1");
-		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge &aE, const TopoDS_Face &aF, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		Standard_Boolean AreFacesSameDomain(const TopoDS_Face &aF1, const TopoDS_Face &aF2, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
-		%feature("autodoc", "1");
-		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
-		%feature("autodoc", "1");
-		void MakePCurve(const TopoDS_Edge &aE, const TopoDS_Face &aF, const Handle_Geom2d_Curve &aC2D);
-		%feature("autodoc", "1");
-		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend NMTTools_Tools {
-	~NMTTools_Tools() {
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape GetHandle() {
+	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*) &$self;
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_Tools\n");}
+	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
 	}
 };
 
@@ -1217,5 +1248,24 @@ class NMTTools_CoupleOfShape {
 	~NMTTools_CoupleOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of NMTTools_CoupleOfShape\n");}
+	}
+};
+
+
+%nodefaultctor NMTTools_CheckerSI;
+class NMTTools_CheckerSI : public NMTTools_PaveFiller {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_CheckerSI();
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer StopStatus() const;
+
+};
+%extend NMTTools_CheckerSI {
+	~NMTTools_CheckerSI() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NMTTools_CheckerSI\n");}
 	}
 };

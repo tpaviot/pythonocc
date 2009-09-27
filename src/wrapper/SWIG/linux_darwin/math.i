@@ -176,7 +176,7 @@ class math_MultipleVarFunction {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -197,7 +197,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 
 };
@@ -212,7 +212,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
 	public:
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 
 };
@@ -349,7 +349,7 @@ class math_IntegerRandom {
 %nodefaultctor math_Function;
 class math_Function {
 	public:
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -551,9 +551,9 @@ class math_FunctionAllRoots {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc","GetInterval(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetInterval(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void GetInterval(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetIntervalState(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetIntervalState(Standard_Integer Index) -> [Standard_IntegerStandard_Integer]");
 		void GetIntervalState(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -1496,11 +1496,11 @@ class math_FunctionWithDerivative : public math_Function {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1609,9 +1609,9 @@ class math_BracketMinimum {
 		math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA, const Standard_Real FB);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","FunctionValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","FunctionValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void FunctionValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
@@ -1745,7 +1745,7 @@ class math_KronrodSingleIntegration {
 		Standard_Integer OrderReached() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterReached() const;
-		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW) -> [Standard_RealStandard_Real]");
 		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -1861,7 +1861,7 @@ class math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
 		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;

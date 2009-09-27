@@ -46,7 +46,7 @@ class IntImpParGen {
 		Standard_Boolean DetermineTransition(const IntRes2d_Position Pos1, gp_Vec2d & Tan1, IntRes2d_Transition & Trans1, const IntRes2d_Position Pos2, gp_Vec2d & Tan2, IntRes2d_Transition & Trans2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void DeterminePosition(IntRes2d_Position & Pos1, const IntRes2d_Domain &Dom1, const gp_Pnt2d &P1, const Standard_Real Tol);
-		%feature("autodoc","NormalizeOnDomain(const Dom1)->Standard_Real");
+		%feature("autodoc","NormalizeOnDomain(const Dom1) -> Standard_Real");
 		Standard_Real NormalizeOnDomain(Standard_Real &OutValue, const IntRes2d_Domain &Dom1);
 
 };

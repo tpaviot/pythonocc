@@ -101,9 +101,9 @@ class GccAna_Lin2dTanObl {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
@@ -126,9 +126,9 @@ class GccAna_Lin2dBisec {
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc","Intersection1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
@@ -184,9 +184,9 @@ class GccAna_Circ2dTanOnRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -217,7 +217,7 @@ class GccAna_Circ2dTanCen {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -250,9 +250,9 @@ class GccAna_Lin2dTanPer {
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
 		%feature("autodoc", "1");
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
@@ -295,11 +295,11 @@ class GccAna_Circ2d3Tan {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency3(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency3(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency3(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -394,9 +394,9 @@ class GccAna_Circ2d2TanRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -429,9 +429,9 @@ class GccAna_Lin2d2Tan {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
@@ -458,7 +458,7 @@ class GccAna_Lin2dTanPar {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
 
 };
@@ -547,11 +547,11 @@ class GccAna_Circ2d2TanOn {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntArg) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;

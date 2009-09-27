@@ -766,7 +766,7 @@ class GeomPlate_BuildAveragePlane {
 		Standard_Boolean IsPlane() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsLine() const;
-		%feature("autodoc","MinMaxBox()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","MinMaxBox() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxBox(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
@@ -822,11 +822,11 @@ class GeomPlate_Surface : public Geom_Surface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc","TransformParameters(const T)->[Standard_RealStandard_Real]");
+		%feature("autodoc","TransformParameters(const T) -> [Standard_RealStandard_Real]");
 		virtual		void TransformParameters(Standard_Real &OutValue, Standard_Real &OutValue, const gp_Trsf &T) const;
 		%feature("autodoc", "1");
 		virtual		gp_GTrsf2d ParametricTransformation(const gp_Trsf &T) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
@@ -868,7 +868,7 @@ class GeomPlate_Surface : public Geom_Surface {
 		Handle_Geom_Surface CallSurfinit() const;
 		%feature("autodoc", "1");
 		void SetBounds(const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
-		%feature("autodoc","RealBounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RealBounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void RealBounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Constraints(TColgp_SequenceOfXY & Seq) const;

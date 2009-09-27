@@ -612,7 +612,7 @@ class PPoly_Triangle {
 		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc","Get()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		PPoly_Triangle();

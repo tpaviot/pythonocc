@@ -185,7 +185,7 @@ class StepToTopoDS_GeometricTool {
 		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
 		%feature("autodoc", "1");
 		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
-		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci)->[Standard_RealStandard_Real]");
+		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci) -> [Standard_RealStandard_Real]");
 		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
 
 };

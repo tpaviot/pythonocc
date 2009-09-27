@@ -300,7 +300,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 		Select2D_SensitiveCircle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Circ2d &TheCirc, const Select2D_TypeOfSelection TheType=Select2D_TOS_BOUNDARY);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -347,7 +347,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 		const gp_Pnt2d & EndPoint() const;
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aSeq);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -382,7 +382,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 		Select2D_SensitiveArc(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Ax2d &OriginAxis, const Standard_Real Angle, const Standard_Real Radius, const Standard_Integer MaxPoints=9);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -417,7 +417,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 		Select2D_SensitiveBox(const Handle_SelectBasics_EntityOwner &OwnerId, const Standard_Real Xmin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Select2D_TypeOfSelection Type=Select2D_TOS_INTERIOR);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -481,7 +481,7 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
 		%feature("autodoc", "1");
 		const gp_Pnt2d & Location() const;
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);

@@ -287,9 +287,9 @@ class Poly_Connect {
 		Handle_Poly_Triangulation Triangulation() const;
 		%feature("autodoc", "1");
 		Standard_Integer Triangle(const Standard_Integer N) const;
-		%feature("autodoc","Triangles(Standard_Integer T)->[Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Triangles(Standard_Integer T) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
 		void Triangles(const Standard_Integer T, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Nodes(Standard_Integer T)->[Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Nodes(Standard_Integer T) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
 		void Nodes(const Standard_Integer T, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer N);
@@ -492,7 +492,7 @@ class Poly_Triangle {
 		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Index, const Standard_Integer Node);
-		%feature("autodoc","Get()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Value(const Standard_Integer Index) const;

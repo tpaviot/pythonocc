@@ -280,7 +280,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 		virtual		Standard_Integer NbCurves() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Curve & Curve(const Standard_Integer index) const;
-		%feature("autodoc","LocateParameter(Standard_Real U)->Standard_Real");
+		%feature("autodoc","LocateParameter(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Integer LocateParameter(const Standard_Real U, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LocalToGlobal(const Standard_Integer index, const Standard_Real Ulocal) const;
@@ -731,7 +731,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Integer LocateUParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		Standard_Integer LocateVParameter(const Standard_Real V) const;
-		%feature("autodoc","LocateUVPoint(const pnt)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocateUVPoint(const pnt) -> [Standard_IntegerStandard_Integer]");
 		void LocateUVPoint(const gp_Pnt2d &pnt, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		const Handle_Geom_Surface & Patch(const Standard_Real U, const Standard_Real V) const;
@@ -749,7 +749,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		Standard_Real VGlobalToLocal(const Standard_Integer i, const Standard_Integer j, const Standard_Real V) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d GlobalToLocal(const Standard_Integer i, const Standard_Integer j, const gp_Pnt2d &UV) const;
-		%feature("autodoc","GlobalToLocalTransformation(Standard_Integer i, Standard_Integer j)->Standard_Real");
+		%feature("autodoc","GlobalToLocalTransformation(Standard_Integer i, Standard_Integer j) -> Standard_Real");
 		Standard_Boolean GlobalToLocalTransformation(const Standard_Integer i, const Standard_Integer j, Standard_Real &OutValue, gp_Trsf2d & Trsf) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(const gp_Trsf &T);
@@ -763,7 +763,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 		virtual		void VReverse();
 		%feature("autodoc", "1");
 		virtual		Standard_Real VReversedParameter(const Standard_Real V) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;

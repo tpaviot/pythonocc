@@ -125,9 +125,9 @@ class Convert_ConicToBSplineCurve {
 		Standard_Real Knot(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
-		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation)->Standard_Integer");
+		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation) -> Standard_Integer");
 		void BuildCosAndSin(const Convert_ParameterisationType Parametrisation, Handle_TColStd_HArray1OfReal & CosNumerator, Handle_TColStd_HArray1OfReal & SinNumerator, Handle_TColStd_HArray1OfReal & Denominator, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & Knots, Handle_TColStd_HArray1OfInteger & Mults) const;
-		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation, Standard_Real UFirst, Standard_Real ULast)->Standard_Integer");
+		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation, Standard_Real UFirst, Standard_Real ULast) -> Standard_Integer");
 		void BuildCosAndSin(const Convert_ParameterisationType Parametrisation, const Standard_Real UFirst, const Standard_Real ULast, Handle_TColStd_HArray1OfReal & CosNumerator, Handle_TColStd_HArray1OfReal & SinNumerator, Handle_TColStd_HArray1OfReal & Denominator, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & Knots, Handle_TColStd_HArray1OfInteger & Mults) const;
 
 };

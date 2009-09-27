@@ -582,7 +582,7 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		TopoDS_Shape TransferPlane(const Handle_IGESGeom_Plane &start);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferPerforate(const Handle_IGESBasic_SingleParent &start);
-		%feature("autodoc","ParamSurface(const start)->Standard_Real");
+		%feature("autodoc","ParamSurface(const start) -> Standard_Real");
 		TopoDS_Shape ParamSurface(const Handle_IGESData_IGESEntity &start, gp_Trsf2d & trans, Standard_Real &OutValue);
 
 };

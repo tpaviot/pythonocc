@@ -344,9 +344,9 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 		virtual		void Parameter(const char * aparameter, const Handle_Standard_Transient &anobject);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Boolean & avalue) const;
-		%feature("autodoc","Value(Standard_CString aparameter)->Standard_Integer");
+		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Integer");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Integer &OutValue) const;
-		%feature("autodoc","Value(Standard_CString aparameter)->Standard_Real");
+		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Real");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, TCollection_AsciiString & avalue) const;
@@ -488,9 +488,9 @@ class Materials_Color : public Standard_Transient {
 		void Color(const Quantity_Color &acolor);
 		%feature("autodoc", "1");
 		Quantity_Color Color() const;
-		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);

@@ -137,7 +137,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <TopAbs_State.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import TopAbs.i

@@ -203,13 +203,13 @@ class Intf_SectionPoint {
 		Intf_PIType TypeOnFirst() const;
 		%feature("autodoc", "1");
 		Intf_PIType TypeOnSecond() const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Integer, Standard_Real]");
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real]");
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Integer, Standard_Real]");
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real]");
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Incidence() const;
@@ -600,7 +600,7 @@ class Intf {
 	public:
 		%feature("autodoc", "1");
 		Intf();
-		%feature("autodoc","PlaneEquation(const P1, const P2, const P3)->Standard_Real");
+		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
 		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
@@ -627,13 +627,13 @@ class Intf_TangentZone {
 		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc","ParamOnFirst()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParamOnFirst() -> [Standard_Real, Standard_Real]");
 		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParamOnSecond()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParamOnSecond() -> [Standard_Real, Standard_Real]");
 		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
 		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
 		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;

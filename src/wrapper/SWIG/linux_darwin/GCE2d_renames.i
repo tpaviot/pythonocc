@@ -1,5 +1,5 @@
 %rename(GCE2d_MakeCircle) GCE2d_MakeCircle;
-%rename(GCE2d_MakeArcOfEllipse) GCE2d_MakeArcOfEllipse;
+%rename(GCE2d_MakeMirror) GCE2d_MakeMirror;
 %rename(GCE2d_MakeArcOfCircle) GCE2d_MakeArcOfCircle;
 %rename(GCE2d_MakeEllipse) GCE2d_MakeEllipse;
 %rename(GCE2d_Root) GCE2d_Root;
@@ -10,6 +10,6 @@
 %rename(GCE2d_MakeLine) GCE2d_MakeLine;
 %rename(GCE2d_MakeRotation) GCE2d_MakeRotation;
 %rename(GCE2d_MakeHyperbola) GCE2d_MakeHyperbola;
-%rename(GCE2d_MakeMirror) GCE2d_MakeMirror;
+%rename(GCE2d_MakeArcOfEllipse) GCE2d_MakeArcOfEllipse;
 %rename(GCE2d_MakeArcOfHyperbola) GCE2d_MakeArcOfHyperbola;
 %rename(GCE2d_MakeTranslation) GCE2d_MakeTranslation;

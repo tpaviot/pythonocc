@@ -70,11 +70,11 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
-		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -157,13 +157,13 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
-		%feature("autodoc","Perform(const Poly1, const Poly2)->[Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
+		%feature("autodoc","Perform(const Poly1, const Poly2) -> [Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
 		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 		%feature("autodoc", "1");
 		Standard_Integer NbRoots() const;
-		%feature("autodoc","Roots()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Roots() -> [Standard_Real, Standard_Real]");
 		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean AnErrorOccurred() const;
@@ -188,11 +188,11 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -386,7 +386,7 @@ class Geom2dInt_Geom2dCurveTool {
 		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & Tab);
-		%feature("autodoc","GetInterval(const arg0, Standard_Integer i, const Tab)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetInterval(const arg0, Standard_Integer i, const Tab) -> [Standard_RealStandard_Real]");
 		void GetInterval(const Adaptor2d_Curve2d &arg0, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -617,7 +617,7 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Adaptor2d_Curve2d &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
-		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul)->Standard_Integer");
+		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul) -> Standard_Integer");
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };

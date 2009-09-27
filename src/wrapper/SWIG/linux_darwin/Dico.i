@@ -168,9 +168,9 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 		const Standard_Integer & Item(const char * name, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & Item(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
-		%feature("autodoc","GetItem(Standard_CString name, Standard_Boolean exact=1)->Standard_Integer");
+		%feature("autodoc","GetItem(Standard_CString name, Standard_Boolean exact=1) -> Standard_Integer");
 		Standard_Boolean GetItem(const char * name, Standard_Integer &OutValue, const Standard_Boolean exact=1) const;
-		%feature("autodoc","GetItem(const name, Standard_Boolean exact=1)->Standard_Integer");
+		%feature("autodoc","GetItem(const name, Standard_Boolean exact=1) -> Standard_Integer");
 		Standard_Boolean GetItem(const TCollection_AsciiString &name, Standard_Integer &OutValue, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
 		void SetItem(const char * name, const Standard_Integer &anitem, const Standard_Boolean exact=1);

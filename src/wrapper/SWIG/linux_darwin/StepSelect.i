@@ -354,7 +354,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 		void SetFormat(const char * format="%E");
 		%feature("autodoc", "1");
 		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real Rmax=1.0e+3);
-		%feature("autodoc","Format()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Format() -> [Standard_Real, Standard_Real]");
 		void Format(Standard_Boolean & zerosup, TCollection_AsciiString & mainform, Standard_Boolean & hasrange, TCollection_AsciiString & forminrange, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;

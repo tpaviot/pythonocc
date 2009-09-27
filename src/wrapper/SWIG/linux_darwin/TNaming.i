@@ -464,7 +464,7 @@ class TNaming_Tool {
 		void Collect(const Handle_TNaming_NamedShape &NS, TNaming_MapOfNamedShape & Labels, const Standard_Boolean OnlyModif=1);
 		%feature("autodoc", "1");
 		Standard_Boolean HasLabel(const TDF_Label &access, const TopoDS_Shape &aShape);
-		%feature("autodoc","Label(const access, const aShape)->Standard_Integer");
+		%feature("autodoc","Label(const access, const aShape) -> Standard_Integer");
 		TDF_Label Label(const TDF_Label &access, const TopoDS_Shape &aShape, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		TopoDS_Shape InitialShape(const TopoDS_Shape &aShape, const TDF_Label &anAcces, TDF_LabelList & Labels);

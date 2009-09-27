@@ -101,7 +101,7 @@ class AppBlend_Approx {
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -123,7 +123,7 @@ class AppBlend_Approx {
 		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -135,7 +135,7 @@ class AppBlend_Approx {
 		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TolReached() -> [Standard_Real, Standard_Real]");
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;

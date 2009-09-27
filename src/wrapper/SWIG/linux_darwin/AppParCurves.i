@@ -580,15 +580,15 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 				$self->EstLength()=value;
 				}
 		};
-		%feature("autodoc","GetEstimation()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetEstimation() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void GetEstimation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_FEmTool_HAssemblyTable AssemblyTable() const;
 		%feature("autodoc", "1");
 		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
-		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min) -> [Standard_RealStandard_RealStandard_Real]");
 		virtual		Standard_Integer QualityValues(const Standard_Real J1min, const Standard_Real J2min, const Standard_Real J3min, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","ErrorValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void ErrorValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Hessian(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
@@ -598,7 +598,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 		virtual		void InputVector(const math_Vector &X, const Handle_FEmTool_HAssemblyTable &AssTable);
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const Standard_Real QuadraticWeight, const Standard_Real QualityWeight, const Standard_Real percentJ1, const Standard_Real percentJ2, const Standard_Real percentJ3);
-		%feature("autodoc","GetWeight()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetWeight() -> [Standard_Real, Standard_Real]");
 		virtual		void GetWeight(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);

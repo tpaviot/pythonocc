@@ -67,7 +67,7 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 		BRepClass_Intersector();
 		%feature("autodoc", "1");
 		void Perform(const gp_Lin2d &L, const Standard_Real P, const Standard_Real Tol, const BRepClass_Edge &E);
-		%feature("autodoc","LocalGeometry(const E, Standard_Real U)->Standard_Real");
+		%feature("autodoc","LocalGeometry(const E, Standard_Real U) -> Standard_Real");
 		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
 
 };
@@ -163,9 +163,9 @@ class BRepClass_FaceExplorer {
 		BRepClass_FaceExplorer(const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		Standard_Boolean Reject(const gp_Pnt2d &P) const;
-		%feature("autodoc","Segment(const P)->Standard_Real");
+		%feature("autodoc","Segment(const P) -> Standard_Real");
 		Standard_Boolean Segment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
-		%feature("autodoc","OtherSegment(const P)->Standard_Real");
+		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 		Standard_Boolean OtherSegment(const gp_Pnt2d &P, gp_Lin2d & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void InitWires();

@@ -204,7 +204,7 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 		void SetValueType(const GProp_ValueType theType);
 		%feature("autodoc", "1");
 		void SetVParam(const Standard_Real theVParam);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
@@ -281,7 +281,7 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 		Standard_Real ErrorReached() const;
 		%feature("autodoc", "1");
 		Standard_Real AbsolutError() const;
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -328,7 +328,7 @@ class BRepGProp_Face {
 		void LKnots(TColStd_Array1OfReal & Knots) const;
 		%feature("autodoc", "1");
 		Standard_Integer UIntegrationOrder() const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Normal(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & VNor) const;
