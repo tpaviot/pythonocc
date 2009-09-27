@@ -35,7 +35,7 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
   Standard_EXPORT GEOMImpl_ICurvesOperations(GEOM_Engine* theEngine, int theDocID);
   Standard_EXPORT ~GEOMImpl_ICurvesOperations();
 
-  Standard_EXPORT Handle(GEOM_Object) MakePolyline (std::list<Handle(GEOM_Object)> thePoints);
+  Standard_EXPORT Handle(GEOM_Object) MakePolyline (std::list<Handle(GEOM_Object)> thePoints, bool isClosed = false);
 
   Standard_EXPORT Handle(GEOM_Object) MakeCircleThreePnt (Handle(GEOM_Object) thePnt1,
                                                           Handle(GEOM_Object) thePnt2,
