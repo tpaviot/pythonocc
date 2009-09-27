@@ -111,7 +111,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
         for shape in shapes:
             if material:#careful: != operator segfaults
                 #print 'material', material
-                self.View.SetSurfaceDetail(OCC._TEX_ALL)
+                self.View.SetSurfaceDetail(OCC.V3d_TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                 shape_to_display.SetMaterial(material)
                 if texture:
