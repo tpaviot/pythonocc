@@ -25,8 +25,6 @@ except:
     print "python-xlib must be installed. Check http://sf.net/projects/python-xlib"
     sys.exit(0)
 import OCCViewer
-
-
     
 class XViewer3d(object):
     def __init__(self, *kargs):
@@ -60,31 +58,19 @@ class XOCCWindow:
                 self.screen.root_depth,
                 X.InputOutput,
                 X.CopyFromParent,
-    
-                # special attribute values
-                #background_pixel = self.screen.white_pixel,
                 event_mask = (X.ExposureMask |
                               X.StructureNotifyMask |
                               X.ButtonPressMask |
                               X.KeyPressMask|
                               X.ButtonReleaseMask |
-                              X.Button1MotionMask))
-                #colormap = X.CopyFromParent,
-                #)
-    
-            #self.gc = self.window.create_gc(
-            #    foreground = self.screen.black_pixel,
-            #    background = self.screen.white_pixel,
-            #    )
-    
-            # Set some WM info
-    
+                              X.Button1MotionMask)
+                )
             self.WM_DELETE_WINDOW = self.d.intern_atom('WM_DELETE_WINDOW')
             self.WM_PROTOCOLS = self.d.intern_atom('WM_PROTOCOLS')
     
             self.window.set_wm_name('pythonOCC Xlib')
             self.window.set_wm_icon_name('pythonOCC')
-            self.window.set_wm_class('draw', 'XlibExample')
+            #self.window.set_wm_class('draw', 'XlibExample')
     
             self.window.set_wm_protocols([self.WM_DELETE_WINDOW])
             self.window.set_wm_hints(flags = Xutil.StateHint,
@@ -106,9 +92,9 @@ class XOCCWindow:
             self.occviewer.SetModeShaded()
             self.occviewer.Test()
             self._driver_inited = True
-        # Main loop, handling events
+        # Main MainLoop, handling events
         
-        def loop(self):
+        def MainLoop(self):
             current = None
             while True:
                 e = self.d.next_event()
@@ -173,7 +159,7 @@ class MoveEvent:
            
 def Test3d():
     w = XOCCWindow(display.Display())
-    w.loop()           
+    w.MainLoop()           
 
 if __name__=="__main__":
     Test3d()
