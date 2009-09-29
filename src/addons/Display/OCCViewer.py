@@ -106,8 +106,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
             shapes = [shapes]
             SOLO = True
         else:
-            SOLO = False
-            
+            SOLO = False            
         for shape in shapes:
             if material:#careful: != operator segfaults
                 #print 'material', material
@@ -305,7 +304,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display.GetHandle())
+                ais_shapes.append(shape_to_display.GetHandle())
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 ais_shapes.append(shape_to_display.GetHandle())
