@@ -20,32 +20,11 @@
 import os
 import sys
 try:
-    from Xlib import display, X, Xutil
+    from Xlib import display, X
 except:
     print "python-xlib must be installed. Check http://sf.net/projects/python-xlib"
     sys.exit(0)
 import OCCViewer
-    
-class XViewer3d(object):
-    def __init__(self, *kargs):
-        self._drawbox = False
-        self._zoom_area = False
-        self._select_area = False
-        self._inited = False
-        self._leftisdown = False
-        self._middleisdown = False
-        self._rightisdown = False
-        self._selection = None
-
-    def InitDriver(self):
-        try:
-            os.environ["CSF_GraphicShr"]
-        except KeyError:
-            raise "Please set the CSF_GraphicShr environment variable."
-        self._display = OCCViewer.NISViewer3d(self.GetHandle())
-        self._display.Create()
-        self._display.DisplayTriedron()
-        self._display.SetModeShaded() 
 
 class XOCCWindow:
         def __init__(self, display):
@@ -63,34 +42,26 @@ class XOCCWindow:
                               X.ButtonPressMask |
                               X.KeyPressMask|
                               X.ButtonReleaseMask |
-                              X.Button1MotionMask)
+                              X.Button1MotionMask |
+                              X.ResizeRedirectMask)
                 )
             self.WM_DELETE_WINDOW = self.d.intern_atom('WM_DELETE_WINDOW')
             self.WM_PROTOCOLS = self.d.intern_atom('WM_PROTOCOLS')
     
             self.window.set_wm_name('pythonOCC Xlib')
-            self.window.set_wm_icon_name('pythonOCC')
-            #self.window.set_wm_class('draw', 'XlibExample')
-    
-            self.window.set_wm_protocols([self.WM_DELETE_WINDOW])
-            self.window.set_wm_hints(flags = Xutil.StateHint,
-                                     initial_state = Xutil.NormalState)
-    
-            self.window.set_wm_normal_hints(flags = (Xutil.PPosition | Xutil.PSize
-                                                     | Xutil.PMinSize),
-                                            min_width = 20,
-                                            min_height = 20)
-    
-            # Map the window, making it visible
-            self.window.map()
+            self.window.set_wm_icon_name('pythonOCC Xlib')
             self.InitDriver()
+            self.window.map()
+        
+        def AddMenu(self):
+            self.menu = 
         
         def InitDriver(self):
             self.occviewer = OCCViewer.Viewer3d(self.window.id)
             self.occviewer.Create()
             self.occviewer.DisplayTriedron()
             self.occviewer.SetModeShaded()
-            self.occviewer.Test()
+            #self.occviewer.Test()
             self._driver_inited = True
         # Main MainLoop, handling events
         
@@ -103,39 +74,45 @@ class XOCCWindow:
                     sys.exit(0)    
                 # Some part of the window has been exposed,
                 # redraw all the objects.
-                if e.type == X.Expose:
+                elif e.type == X.Expose:
                   print "Expose event"
                   self.occviewer.OnResize()#Repaint()#for o in self.objects:
                    #   o.expose(e)
                 # Left button pressed, start to draw
-                if e.type == X.ButtonPress and e.detail == 1:
+                elif e.type == X.ButtonPress and e.detail == 1:
                     print "Left click"
                     current = MoveEvent(self, e)
-                    self.objects.append(current)
+                    #self.objects.append(current)
                 # Middle button pressed, start to draw
-                if e.type == X.ButtonPress and e.detail == 2:
+                elif e.type == X.ButtonPress and e.detail == 2:
                     print "Middle click"
                     current = MoveEvent(self, e)
-                    self.objects.append(current)
-                if e.type == X.ButtonPress and e.detail == 3:
+                    #self.objects.append(current)
+                elif e.type == X.ButtonPress and e.detail == 3:
                     print "Right click"
                     current = MoveEvent(self, e)
-                    self.objects.append(current)
+                    #self.objects.append(current)
                 # Left button released
-                if e.type == X.ButtonRelease and e.detail == 1 and current:
+                elif e.type == X.ButtonRelease and e.detail == 1 and current:
                    current.finish(e)
                    current = None
-                if e.type == X.KeyPress:
+                elif e.type == X.KeyPress:
                     print "Key pressed"
                     #print e
                # Mouse movement with button pressed
-                if e.type == X.MotionNotify and current:
+                elif e.type == X.MotionNotify and current:
                    current.motion(e)
-                if e.type == X.ClientMessage:
+                elif e.type == X.ClientMessage:
                    if e.client_type == self.WM_PROTOCOLS:
                        fmt, data = e.data
                        if fmt == 32 and data[0] == self.WM_DELETE_WINDOW:
                            sys.exit(0)
+                elif e.type == X.ResizeRequest:
+                    print "Resize!!"
+                    self.window.map()
+                    self.occviewer.OnResize()
+                    self.occviewer.Repaint()
+                    
 
 class MoveEvent:
        def __init__(self, win, ev):
