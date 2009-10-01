@@ -20,7 +20,7 @@
 import os
 import sys
 try:
-    from Xlib import display, X
+    from Xlib import display, X, XK
 except:
     print "python-xlib must be installed. Check http://sf.net/projects/python-xlib"
     sys.exit(0)
@@ -53,8 +53,8 @@ class XOCCWindow:
             self.InitDriver()
             self.window.map()
         
-        def AddMenu(self):
-            self.menu = 
+        #def AddMenu(self):
+       #     self.menu = 
         
         def InitDriver(self):
             self.occviewer = OCCViewer.Viewer3d(self.window.id)
@@ -98,6 +98,9 @@ class XOCCWindow:
                    current = None
                 elif e.type == X.KeyPress:
                     print "Key pressed"
+                    #print dir(e)
+                    k = KeyEvent(self,e)
+                    #print e.detail
                     #print e
                # Mouse movement with button pressed
                 elif e.type == X.MotionNotify and current:
@@ -113,7 +116,36 @@ class XOCCWindow:
                     self.occviewer.OnResize()
                     self.occviewer.Repaint()
                     
-
+class KeyEvent:
+    def __init__(self,win,ev):
+        self.occviewer = win.occviewer
+        self.key_code = win.d.keycode_to_keysym(ev.detail, 0)
+        self._setup_keymap()
+        self._process_key_event()
+        
+    def _setup_keymap(self):    
+        def set_shade_mode():
+            self.occviewer.DisableAntiAliasing()
+            self.occviewer.SetModeShaded()
+        self._key_map = {
+        ord('w'): self.occviewer.SetModeWireFrame,
+        ord('s'): set_shade_mode,
+        ord('a'): self.occviewer.EnableAntiAliasing,
+        ord('b'): self.occviewer.DisableAntiAliasing,
+        ord('q'): self.occviewer.SetModeQuickHLR,
+        ord('e'): self.occviewer.SetModeExactHLR,
+        ord('f'): self.occviewer.FitAll,
+        #ord('F'): self._display.ExportToImage("essai.BMP"),
+        #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
+        ord('g'): self.occviewer.SetSelectionModeFace
+        }                 
+        
+    def _process_key_event(self):
+        try:
+            self._key_map[self.key_code]()
+        except:
+            print 'unrecognized key', self.key_code
+        
 class MoveEvent:
        def __init__(self, win, ev):
            self.win = win
@@ -135,7 +167,8 @@ class MoveEvent:
            print "Release mouse button"
            
 def Test3d():
-    w = XOCCWindow(display.Display())
+    d = display.Display()
+    w = XOCCWindow(d)
     w.MainLoop()           
 
 if __name__=="__main__":
