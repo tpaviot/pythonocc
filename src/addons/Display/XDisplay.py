@@ -19,6 +19,7 @@
 
 import os
 import sys
+import thread
 try:
     from Xlib import display, X, XK
 except:
@@ -37,19 +38,19 @@ class XOCCWindow:
                 self.screen.root_depth,
                 X.InputOutput,
                 X.CopyFromParent,
-                event_mask = (X.ExposureMask |
+                event_mask = (#X.ExposureMask |
                               X.StructureNotifyMask |
                               X.ButtonPressMask |
                               X.KeyPressMask|
                               X.ButtonReleaseMask |
-                              X.Button1MotionMask |
+                              X.PointerMotionMask |
                               X.ResizeRedirectMask)
                 )
             self.WM_DELETE_WINDOW = self.d.intern_atom('WM_DELETE_WINDOW')
             self.WM_PROTOCOLS = self.d.intern_atom('WM_PROTOCOLS')
     
             self.window.set_wm_name('pythonOCC Xlib')
-            self.window.set_wm_icon_name('pythonOCC Xlib')
+            #self.window.set_wm_icon_name('pythonOCC Xlib')
             self.InitDriver()
             self.window.map()
         
@@ -61,10 +62,8 @@ class XOCCWindow:
             self.occviewer.Create()
             self.occviewer.DisplayTriedron()
             self.occviewer.SetModeShaded()
-            #self.occviewer.Test()
-            self._driver_inited = True
+    
         # Main MainLoop, handling events
-        
         def MainLoop(self):
             current = None
             while True:
@@ -93,9 +92,10 @@ class XOCCWindow:
                     current = MoveEvent(self, e)
                     #self.objects.append(current)
                 # Left button released
-                elif e.type == X.ButtonRelease and e.detail == 1 and current:
-                   current.finish(e)
-                   current = None
+                elif e.type == X.ButtonRelease and current:# and e.detail == 1 and current:
+                    print "Button release"
+                    current.finish(e)
+                    current = None
                 elif e.type == X.KeyPress:
                     print "Key pressed"
                     #print dir(e)
@@ -105,6 +105,9 @@ class XOCCWindow:
                # Mouse movement with button pressed
                 elif e.type == X.MotionNotify and current:
                    current.motion(e)
+                elif e.type == X.MotionNotify:
+                    # Motion without any button pressed: selection mode
+                    self.occviewer.MoveTo(e.event_x,e.event_y)
                 elif e.type == X.ClientMessage:
                    if e.client_type == self.WM_PROTOCOLS:
                        fmt, data = e.data
@@ -112,9 +115,14 @@ class XOCCWindow:
                            sys.exit(0)
                 elif e.type == X.ResizeRequest:
                     print "Resize!!"
-                    self.window.map()
                     self.occviewer.OnResize()
-                    self.occviewer.Repaint()
+                    self.window.map()
+                elif e.type == X.ButtonRelease:
+                    print "Button Release!!"
+                    if self.occviewer.Select(e.event_x,e.event_y):
+                        selected_shape = self.occviewer.GetSelectedShape()
+                        print selected_shape,selected_shape.ShapeType()
+                    #self.occviewer.Repaint()
                     
 class KeyEvent:
     def __init__(self,win,ev):
@@ -137,7 +145,7 @@ class KeyEvent:
         ord('f'): self.occviewer.FitAll,
         #ord('F'): self._display.ExportToImage("essai.BMP"),
         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-        ord('g'): self.occviewer.SetSelectionModeFace
+        ord('v'): self.occviewer.SetSelectionModeVertex
         }                 
         
     def _process_key_event(self):
@@ -153,6 +161,9 @@ class MoveEvent:
            self.lasty = ev.event_y
            self.time = ev.time
            self.last = None
+           self.event_time = ev.time
+           print self.event_time
+           print "Mouse event with motion"
    
        def motion(self, ev):
            events = self.win.window.get_motion_events(self.time, ev.time)
@@ -163,13 +174,22 @@ class MoveEvent:
            self.lasty = ev.event_y
            self.win.occviewer.Rotation(ev.event_x,ev.event_y)
            
-       def finish(self,evt):
+       def finish(self,ev):
+           self.end_time = ev.time
+           if self.end_time-self.event_time<200:#ms
+               print "It's a click"
+               if self.win.occviewer.Select(ev.event_x,ev.event_y):
+                   selected_shape = self.win.occviewer.GetSelectedShape()
+                   print selected_shape,selected_shape.ShapeType()
+           print self.end_time
            print "Release mouse button"
            
 def Test3d():
     d = display.Display()
     w = XOCCWindow(d)
-    w.MainLoop()           
+    w.occviewer.Test()
+    w.MainLoop()
 
+    
 if __name__=="__main__":
     Test3d()
