@@ -25,6 +25,8 @@ import commands
 import SCons
 import SCons.Util
 import platform
+# add the ./src directory to the sys.path list
+sys.path.append(os.path.join(os.getcwd(),'wrapper'))
 from Modules import MODULES
 import environment
 
@@ -351,14 +353,16 @@ if BUILD:
 		SHARED_Library_pathname = os.path.join(BUILD_DIR,'%s'%module_name)
 		env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Visualization
-	SWIG_source_file = os.path.join(environment.VISUALIZATION_PATH,'Visualization.i')
-	CC1 = os.path.join(environment.VISUALIZATION_PATH,'Display2d.cpp')
-	CC2 = os.path.join(environment.VISUALIZATION_PATH,'Display3d.cpp')
-	CC3 = os.path.join(environment.VISUALIZATION_PATH,'NISDisplay3d.cpp')
+	VISUALIZATION_PATH = os.path.join(os.getcwd(),'wrapper','Visualization')
+	SWIG_source_file = os.path.join(VISUALIZATION_PATH,'Visualization.i')
+	CC1 = os.path.join(VISUALIZATION_PATH,'Display2d.cpp')
+	CC2 = os.path.join(VISUALIZATION_PATH,'Display3d.cpp')
+	CC3 = os.path.join(VISUALIZATION_PATH,'NISDisplay3d.cpp')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Visualization')
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file, CC1, CC2, CC3],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	# Build Misc
-	SWIG_source_file = os.path.join(environment.MISC_PATH,'Misc.i')
+	MISC_PATH = os.path.join(os.getcwd(),'wrapper','Misc')
+	SWIG_source_file = os.path.join(MISC_PATH,'Misc.i')
 	SHARED_Library_pathname = os.path.join(BUILD_DIR,'Misc')
 	env.SharedLibrary(SHARED_Library_pathname, [SWIG_source_file],SHLIBPREFIX = '_', SHLIBSUFFIX = sysconfig.get_config_vars()['SO'])
 	#
