@@ -20,7 +20,10 @@ from OCC.SGEOM import *
 from OCC.TDF import *
 from OCC.TPrsStd import *
 from OCC.TNaming import *
-from wx import SafeYield
+try:
+    from wx import SafeYield
+except:
+    pass
 
 from OCC.PAF.Parametric import Relation, Rule, Parameters
 from OCC.TCollection import TCollection_AsciiString
@@ -225,7 +228,8 @@ class ParametricModelingContext(object):
                 self._old_ops_news_ops[klass_instance] = old_operation
     
     def init_display(self):
-        from OCC.Display.wxSamplesGui import start_display, display
+        #from OCC.Display.wxSamplesGui import start_display, display
+        from OCC.Display.SimpleGui import start_display, display
         self.display = display
         self._start_display = start_display
         
@@ -339,7 +343,7 @@ class ParametricModelingContext(object):
                 prs.Update()
                 self.viewer.Update()
                 #self.display.FitAll()
-                SafeYield() #to prevent window freeze 
+                #SafeYield() #to prevent window freeze 
 
 if __name__=='__main__':
     import doctest, sys
