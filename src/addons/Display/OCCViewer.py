@@ -292,7 +292,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         for shape in shapes:
             if material:#careful: != operator segfaults
-                #print 'material', material
                 self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                 shape_to_display.SetMaterial(material)
@@ -308,7 +307,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 ais_shapes.append(shape_to_display.GetHandle())
-                #self._objects_displayed.append(shape_to_display)
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()
         if SOLO:
