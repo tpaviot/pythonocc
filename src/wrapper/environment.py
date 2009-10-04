@@ -170,7 +170,7 @@ elif sys.platform=='linux2':
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     #bits = get_32_or_64_bits_platform()
-    SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-python','-small','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     if bits==64:
@@ -194,6 +194,7 @@ elif sys.platform=='darwin':
         DEFINE_MACROS.append(('_OCC64',None))
         ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
     ELA = []
+    EXTRA_LIBS = ['-framework Python']
 
 else:
     raise "Unsupported platform\nCurrently win32 / linux / osx are supported"
