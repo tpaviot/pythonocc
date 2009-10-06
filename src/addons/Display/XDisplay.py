@@ -31,6 +31,7 @@ class XOCCWindow:
         def __init__(self, display):
             self.d = display
             self.objects = []
+            self.viewer_inited = False
             # Find which screen to open the window on
             self.screen = self.d.screen()
             self._function_list = []
@@ -57,14 +58,12 @@ class XOCCWindow:
             self.window.map()
             self._setup_keymap()
         
-        #def AddMenu(self):
-       #     self.menu = 
-        
         def InitDriver(self):
             self.occviewer = OCCViewer.Viewer3d(self.window.id)
             self.occviewer.Create()
             self.occviewer.DisplayTriedron()
             self.occviewer.SetModeShaded()
+            #self.viewer_inited = True
         
         def register_function(self,function):
             ''' Enable to call a function when the key "n" is hit
@@ -72,7 +71,7 @@ class XOCCWindow:
             self._function_list.append(function)
             self._function_iterator = iter(self._function_list)
             self._setup_keymap()
-            print function,"registered"
+            print "Fuction %s registered"%function.__name__
             
         def _setup_keymap(self):    
             def set_shade_mode():
@@ -87,53 +86,50 @@ class XOCCWindow:
             ord('e'): self.occviewer.SetModeExactHLR,
             ord('f'): self.occviewer.FitAll,
             #ord('F'): self._display.ExportToImage("essai.BMP"),
-            #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
             ord('v'): self.occviewer.SetSelectionModeVertex,
-            ord('n'): self._function_iterator
+            ord('n'): self._function_iterator,
+            65307:sys.exit#'ESC' hit
             }                
         # Main MainLoop, handling events
         def MainLoop(self):
             current = None
             while True:
                 e = self.d.next_event()
+                if not self.viewer_inited:
+                    self.occviewer.OnResize() #need to be resized in ordre tohave a proper display
+                    self.viewer_inited = True
                 # Window has been destroyed, quit
                 if e.type == X.DestroyNotify:
                     sys.exit(0)    
                 # Some part of the window has been exposed,
                 # redraw all the objects.
                 elif e.type == X.Expose:
-                  print "Expose event"
-                  self.occviewer.OnResize()#Repaint()#for o in self.objects:
+                  self.occviewer.OnResize()
                    #   o.expose(e)
                 # Left button pressed, start to draw
                 elif e.type == X.ButtonPress and e.detail == 1:
-                    print "Left click"
                     current = MoveEvent(self, e)
                     #self.objects.append(current)
                 # Middle button pressed, start to draw
                 elif e.type == X.ButtonPress and e.detail == 2:
-                    print "Middle click"
                     current = MoveEvent(self, e)
                     #self.objects.append(current)
                 elif e.type == X.ButtonPress and e.detail == 3:
-                    print "Right click"
                     current = MoveEvent(self, e)
                     #self.objects.append(current)
                 # Left button released
                 elif e.type == X.ButtonRelease and current:# and e.detail == 1 and current:
-                    print "Button release"
                     current.finish(e)
                     current = None
                 elif e.type == X.KeyPress:
-                    print "Key pressed"
                     key_code = self.d.keycode_to_keysym(e.detail, 0)
-                    #try:
-                    if isinstance(self._key_map[key_code],type(iter([]))):#iterator type
-                        self._key_map[key_code].next()()
-                    else:
-                        self._key_map[key_code]()
-                    #except:
-                    #    print 'unrecognized key', key_code
+                    try:
+                        if isinstance(self._key_map[key_code],type(iter([]))):#iterator type
+                            self._key_map[key_code].next()()
+                        else:
+                            self._key_map[key_code]()
+                    except:
+                        print 'unrecognized key', key_code
                # Mouse movement with button pressed
                 elif e.type == X.MotionNotify and current:
                    current.motion(e)
@@ -146,46 +142,13 @@ class XOCCWindow:
                        if fmt == 32 and data[0] == self.WM_DELETE_WINDOW:
                            sys.exit(0)
                 elif e.type == X.ResizeRequest:
-                    print "Resize!!"
-                    self.occviewer.OnResize()
-                    #self.d.send_event(self.d,X.Expose)
                     self.window.map()
+                    self.occviewer.OnResize()
                 elif e.type == X.ButtonRelease:
                     print "Button Release!!"
                     if self.occviewer.Select(e.event_x,e.event_y):
                         selected_shape = self.occviewer.GetSelectedShape()
                         print selected_shape,selected_shape.ShapeType()
-                    #self.occviewer.Repaint()
-                    
-#class KeyEvent:
-#    def __init__(self,win,ev):
-#        self.occviewer = win.occviewer
-#        self.key_code = win.d.keycode_to_keysym(ev.detail, 0)
-#        self._setup_keymap()
-#        self._process_key_event()
-#        
-#    def _setup_keymap(self):    
-#        def set_shade_mode():
-#            self.occviewer.DisableAntiAliasing()
-#            self.occviewer.SetModeShaded()
-#        self._key_map = {
-#        ord('w'): self.occviewer.SetModeWireFrame,
-#        ord('s'): set_shade_mode,
-#        ord('a'): self.occviewer.EnableAntiAliasing,
-#        ord('b'): self.occviewer.DisableAntiAliasing,
-#        ord('q'): self.occviewer.SetModeQuickHLR,
-#        ord('e'): self.occviewer.SetModeExactHLR,
-#        ord('f'): self.occviewer.FitAll,
-#        #ord('F'): self._display.ExportToImage("essai.BMP"),
-#        #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-#        ord('v'): self.occviewer.SetSelectionModeVertex
-#        }                 
-#        
-#    def _process_key_event(self):
-#        try:
-#            self._key_map[self.key_code]()
-#        except:
-#            print 'unrecognized key', self.key_code
         
 class MoveEvent:
        def __init__(self, win, ev):
@@ -195,8 +158,6 @@ class MoveEvent:
            self.time = ev.time
            self.last = None
            self.event_time = ev.time
-           print self.event_time
-           print "Mouse event with motion"
    
        def motion(self, ev):
            events = self.win.window.get_motion_events(self.time, ev.time)
@@ -210,12 +171,9 @@ class MoveEvent:
        def finish(self,ev):
            self.end_time = ev.time
            if self.end_time-self.event_time<200:#ms
-               print "It's a click"
                if self.win.occviewer.Select(ev.event_x,ev.event_y):
                    selected_shape = self.win.occviewer.GetSelectedShape()
                    print selected_shape,selected_shape.ShapeType()
-           print self.end_time
-           print "Release mouse button"
            
 def Test3d():
     d = display.Display()
