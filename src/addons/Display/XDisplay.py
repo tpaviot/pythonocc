@@ -33,12 +33,14 @@ class XOCCWindow:
             self.objects = []
             # Find which screen to open the window on
             self.screen = self.d.screen()
+            self._function_list = []
+            self._function_iterator = iter(self._function_list)
             self.window = self.screen.root.create_window(
                 50, 50, 640, 480, 2,
                 self.screen.root_depth,
                 X.InputOutput,
                 X.CopyFromParent,
-                event_mask = (#X.ExposureMask |
+                event_mask = (X.ExposureMask |
                               X.StructureNotifyMask |
                               X.ButtonPressMask |
                               X.KeyPressMask|
@@ -53,6 +55,7 @@ class XOCCWindow:
             #self.window.set_wm_icon_name('pythonOCC Xlib')
             self.InitDriver()
             self.window.map()
+            self._setup_keymap()
         
         #def AddMenu(self):
        #     self.menu = 
@@ -62,7 +65,32 @@ class XOCCWindow:
             self.occviewer.Create()
             self.occviewer.DisplayTriedron()
             self.occviewer.SetModeShaded()
-    
+        
+        def register_function(self,function):
+            ''' Enable to call a function when the key "n" is hit
+            '''
+            self._function_list.append(function)
+            self._function_iterator = iter(self._function_list)
+            self._setup_keymap()
+            print function,"registered"
+            
+        def _setup_keymap(self):    
+            def set_shade_mode():
+                self.occviewer.DisableAntiAliasing()
+                self.occviewer.SetModeShaded()
+            self._key_map = {
+            ord('w'): self.occviewer.SetModeWireFrame,
+            ord('s'): set_shade_mode,
+            ord('a'): self.occviewer.EnableAntiAliasing,
+            ord('b'): self.occviewer.DisableAntiAliasing,
+            ord('q'): self.occviewer.SetModeQuickHLR,
+            ord('e'): self.occviewer.SetModeExactHLR,
+            ord('f'): self.occviewer.FitAll,
+            #ord('F'): self._display.ExportToImage("essai.BMP"),
+            #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
+            ord('v'): self.occviewer.SetSelectionModeVertex,
+            ord('n'): self._function_iterator
+            }                
         # Main MainLoop, handling events
         def MainLoop(self):
             current = None
@@ -98,10 +126,14 @@ class XOCCWindow:
                     current = None
                 elif e.type == X.KeyPress:
                     print "Key pressed"
-                    #print dir(e)
-                    k = KeyEvent(self,e)
-                    #print e.detail
-                    #print e
+                    key_code = self.d.keycode_to_keysym(e.detail, 0)
+                    #try:
+                    if isinstance(self._key_map[key_code],type(iter([]))):#iterator type
+                        self._key_map[key_code].next()()
+                    else:
+                        self._key_map[key_code]()
+                    #except:
+                    #    print 'unrecognized key', key_code
                # Mouse movement with button pressed
                 elif e.type == X.MotionNotify and current:
                    current.motion(e)
@@ -116,6 +148,7 @@ class XOCCWindow:
                 elif e.type == X.ResizeRequest:
                     print "Resize!!"
                     self.occviewer.OnResize()
+                    #self.d.send_event(self.d,X.Expose)
                     self.window.map()
                 elif e.type == X.ButtonRelease:
                     print "Button Release!!"
@@ -124,35 +157,35 @@ class XOCCWindow:
                         print selected_shape,selected_shape.ShapeType()
                     #self.occviewer.Repaint()
                     
-class KeyEvent:
-    def __init__(self,win,ev):
-        self.occviewer = win.occviewer
-        self.key_code = win.d.keycode_to_keysym(ev.detail, 0)
-        self._setup_keymap()
-        self._process_key_event()
-        
-    def _setup_keymap(self):    
-        def set_shade_mode():
-            self.occviewer.DisableAntiAliasing()
-            self.occviewer.SetModeShaded()
-        self._key_map = {
-        ord('w'): self.occviewer.SetModeWireFrame,
-        ord('s'): set_shade_mode,
-        ord('a'): self.occviewer.EnableAntiAliasing,
-        ord('b'): self.occviewer.DisableAntiAliasing,
-        ord('q'): self.occviewer.SetModeQuickHLR,
-        ord('e'): self.occviewer.SetModeExactHLR,
-        ord('f'): self.occviewer.FitAll,
-        #ord('F'): self._display.ExportToImage("essai.BMP"),
-        #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-        ord('v'): self.occviewer.SetSelectionModeVertex
-        }                 
-        
-    def _process_key_event(self):
-        try:
-            self._key_map[self.key_code]()
-        except:
-            print 'unrecognized key', self.key_code
+#class KeyEvent:
+#    def __init__(self,win,ev):
+#        self.occviewer = win.occviewer
+#        self.key_code = win.d.keycode_to_keysym(ev.detail, 0)
+#        self._setup_keymap()
+#        self._process_key_event()
+#        
+#    def _setup_keymap(self):    
+#        def set_shade_mode():
+#            self.occviewer.DisableAntiAliasing()
+#            self.occviewer.SetModeShaded()
+#        self._key_map = {
+#        ord('w'): self.occviewer.SetModeWireFrame,
+#        ord('s'): set_shade_mode,
+#        ord('a'): self.occviewer.EnableAntiAliasing,
+#        ord('b'): self.occviewer.DisableAntiAliasing,
+#        ord('q'): self.occviewer.SetModeQuickHLR,
+#        ord('e'): self.occviewer.SetModeExactHLR,
+#        ord('f'): self.occviewer.FitAll,
+#        #ord('F'): self._display.ExportToImage("essai.BMP"),
+#        #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
+#        ord('v'): self.occviewer.SetSelectionModeVertex
+#        }                 
+#        
+#    def _process_key_event(self):
+#        try:
+#            self._key_map[self.key_code]()
+#        except:
+#            print 'unrecognized key', self.key_code
         
 class MoveEvent:
        def __init__(self, win, ev):
