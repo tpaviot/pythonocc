@@ -93,7 +93,8 @@ elif HAVE_XLIB:
     from XDisplay import XOCCWindow
     w = XOCCWindow(display_xlib.Display())
     display = w.occviewer
-    #functions = []
+    # set background image
+    display.SetBackgroundImage("carrelage1.gif")
     def add_menu(*args, **kwargs):
         print args#pass#frame.add_menu(*args, **kwargs)
     def add_function_to_menu(menu_title, function):
