@@ -18,20 +18,18 @@
 from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.BRepAlgoAPI import *
-
 from OCC.TopOpeBRepTool import *
 from OCC.BRepBuilderAPI import *
 from OCC.BRepFilletAPI import *
 from OCC.Geom import *
 from OCC.TopoDS import *
-
 from OCC.TopExp import *
 from OCC.TopAbs import *
 from OCC.TColgp import *
 
-from OCC.Display.wxSamplesGui import display
 import time, math, sys
-
+from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
+    
 def common(event=None):
     # Create Box
     axe = gp_Ax2(gp_Pnt(10,10,10),gp_Dir(1,2,1))
@@ -219,7 +217,6 @@ def exit(event=None):
     sys.exit()
 
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('topology operations')
     add_function_to_menu('topology operations', common)
     add_function_to_menu('topology operations', cut)

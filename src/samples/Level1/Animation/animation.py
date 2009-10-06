@@ -18,10 +18,11 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.BRepPrimAPI import *
-from OCC.Display.wxSamplesGui import display
 from OCC.gp import *
 from OCC.TopLoc import *
 from OCC.AIS import *
+
+from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
 
 ais_boxshp=None
 
@@ -61,7 +62,6 @@ def rotating_cube_2_axis(event=None):
         angle += 0.001
     
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('animation')
     add_function_to_menu('animation', rotating_cube_1_axis)
     add_function_to_menu('animation', rotating_cube_2_axis)

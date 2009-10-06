@@ -31,10 +31,11 @@ from OCC.BRepPrimAPI import *
 from OCC.Utils.Topology import Topo
 from OCC.BRep import *
 from OCC.Precision import *
-
-from OCC.Display.wxSamplesGui import display
 from OCC.BRepLib import *
+
 import math, sys
+from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
+
 
 def edge(event=None):
     # The blud edge
@@ -325,8 +326,6 @@ def exit(event=None):
     sys.exit()
     
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
-#    raise NotImplementedError, 'uses too archaic OCC calls... should be redone...'
     add_menu('topology building')
     add_function_to_menu('topology building', edge)
     add_function_to_menu('topology building', wire)

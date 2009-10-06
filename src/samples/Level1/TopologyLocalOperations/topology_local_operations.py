@@ -24,9 +24,9 @@ from OCC.BRepAlgoAPI import *
 from OCC.LocOpe import *
 from OCC.TColgp import *
 
-from OCC.Display.wxSamplesGui import display
 import sys, time
-
+from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
+    
 def extrusion(event=None):
     #
     # Make a box
@@ -120,7 +120,6 @@ def brepfeat_prism(event=None):
     mkf.Init(srf, False)
     mkf.Add(wire.Wire())
     mkf.Build()
-    import ipdb; ipdb.set_trace()
     
     # bit obscure why this is nessecary...
     # segfaults without...
@@ -128,7 +127,6 @@ def brepfeat_prism(event=None):
     BRepLib().BuildCurves3d(new_face)
     
     display.DisplayShape(new_face)
-    import ipdb; ipdb.set_trace()
     
     prism = BRepFeat_MakeDPrism(box,
                                 mkf.Face(),
@@ -470,7 +468,6 @@ def exit(event=None):
 	sys.exit()
     
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('topology local operations')
     add_function_to_menu('topology local operations', brepfeat_prism)
     add_function_to_menu('topology local operations', extrusion)
