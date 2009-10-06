@@ -39,6 +39,7 @@ try:
 except:
     HAVE_XLIB = False
 import sys
+
 from OCC import VERSION
 
 # wxPython based simple GUI
@@ -92,11 +93,12 @@ elif HAVE_XLIB:
     from XDisplay import XOCCWindow
     w = XOCCWindow(display_xlib.Display())
     display = w.occviewer
-    functions = []
+    #functions = []
     def add_menu(*args, **kwargs):
         print args#pass#frame.add_menu(*args, **kwargs)
-    def add_function_to_menu(*args, **kwargs):
-        functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
+    def add_function_to_menu(menu_title, function):
+        #print args
+        w.register_function(function)#functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
     def start_display():        
         w.MainLoop()
 else:
