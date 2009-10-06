@@ -415,9 +415,13 @@ if WRAP_SALOME_SMESH:
         extension.append(module_extension)
 
 install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
-data = (install_dir,\
+bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
+data = [(install_dir,\
         [os.path.join(os.getcwd(),'..','AUTHORS'),
-         os.path.join(os.getcwd(),'..','LICENSE')])
+         os.path.join(os.getcwd(),'..','LICENSE')]),
+        (bg_image_install_dir,\
+        [os.path.join(os.getcwd(),'addons','Display','default_background.bmp')]),
+        ]
     
 KARGS = {"ext_modules":extension}
 #
@@ -430,11 +434,11 @@ else:
 
 setup(cmdclass={'build_ext': build_ext},
       name = package_name,
-      license = "GPL V3",
+      license = "GNU General Public License v3",
       url = "http://www.pythonocc.org",
       author = "Thomas Paviot",
       author_email = "tpaviot@gmail.com",
-      description = "A framework for agile CAD development",
+      description = "A CAD/PLM development library for the python programming language",
       version=VERSION,
       long_description = """PythonOCC is a Python wrapper module for the
 OpenCascade library. It contains python functions and classes
@@ -452,7 +456,7 @@ This version is built against OpenCascade 6.3.0""",
                   'OCC.KBE',\
                   'OCC.Toolkits.FoundationClasses',\
                   'OCC.Toolkits.ModelingData'],
-      data_files = [data],
+      data_files = data,
       **KARGS
       )
 #
