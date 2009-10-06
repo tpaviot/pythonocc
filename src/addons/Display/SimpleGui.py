@@ -39,8 +39,20 @@ try:
 except:
     HAVE_XLIB = False
 import sys
+import os, os.path
 
 from OCC import VERSION
+
+def get_bg_abs_filename():
+    ''' Returns the absolute file name for the file default_background.bmp
+    '''
+    this_module = sys.modules['OCC.Display.SimpleGui']
+    this_module_abs_path = os.path.split(this_module.__file__)[0]
+    bg_abs_filename = os.path.join(this_module_abs_path,'default_background.bmp')
+    if not os.path.isfile(bg_abs_filename):
+        return ""
+    else:
+        return bg_abs_filename
 
 # wxPython based simple GUI
 if HAVE_WX:
@@ -76,7 +88,7 @@ if HAVE_WX:
     frame.canva.InitDriver()
     app.SetTopWindow(frame)
     display = frame.canva._display
-    display.SetBackgroundImage("./bg.bmp")
+    display.SetBackgroundImage(get_bg_abs_filename())
     def add_menu(*args, **kwargs):
         frame.add_menu(*args, **kwargs)
     def add_function_to_menu(*args, **kwargs):
@@ -94,7 +106,7 @@ elif HAVE_XLIB:
     w = XOCCWindow(display_xlib.Display())
     display = w.occviewer
     # set background image
-    display.SetBackgroundImage("carrelage1.gif")
+    display.SetBackgroundImage(get_bg_abs_filename())
     def add_menu(*args, **kwargs):
         print args#pass#frame.add_menu(*args, **kwargs)
     def add_function_to_menu(menu_title, function):
