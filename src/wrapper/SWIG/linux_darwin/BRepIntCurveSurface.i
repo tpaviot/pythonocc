@@ -72,3 +72,11 @@ class BRepIntCurveSurface_Inter {
 	if (__env){printf("## Call custom destructor for instance of BRepIntCurveSurface_Inter\n");}
 	}
 };
+
+%extend BRepIntCurveSurface_Inter {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};

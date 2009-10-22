@@ -94,6 +94,14 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 	}
 };
 
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepOffset_ListNodeOfListOfInterval;
 class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_MapNode {
@@ -121,6 +129,14 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 	~Handle_BRepOffset_ListNodeOfListOfInterval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");}
+	}
+};
+
+%extend Handle_BRepOffset_ListNodeOfListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -154,6 +170,14 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 	}
 };
 
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
@@ -184,6 +208,14 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 	}
 };
 
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TCollection_MapNode {
@@ -211,6 +243,14 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
+	}
+};
+
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -251,6 +291,14 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepOffset_DataMapOfShapeMapOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
@@ -271,6 +319,14 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicM
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeReal\n");}
+	}
+};
+
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -317,6 +373,14 @@ class BRepOffset_Analyse {
 	}
 };
 
+%extend BRepOffset_Analyse {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_ListIteratorOfListOfInterval;
 class BRepOffset_ListIteratorOfListOfInterval {
@@ -339,6 +403,14 @@ class BRepOffset_ListIteratorOfListOfInterval {
 	~BRepOffset_ListIteratorOfListOfInterval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_ListIteratorOfListOfInterval\n");}
+	}
+};
+
+%extend BRepOffset_ListIteratorOfListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -382,6 +454,14 @@ class BRepOffset_MakeOffset {
 	~BRepOffset_MakeOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeOffset\n");}
+	}
+};
+
+%extend BRepOffset_MakeOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -438,6 +518,14 @@ class BRepOffset_ListOfInterval {
 	}
 };
 
+%extend BRepOffset_ListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset;
 class BRepOffset {
@@ -452,6 +540,14 @@ class BRepOffset {
 	~BRepOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset\n");}
+	}
+};
+
+%extend BRepOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -492,6 +588,14 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepOffset_DataMapOfShapeListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_Inter2d;
 class BRepOffset_Inter2d {
@@ -508,6 +612,14 @@ class BRepOffset_Inter2d {
 	~BRepOffset_Inter2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter2d\n");}
+	}
+};
+
+%extend BRepOffset_Inter2d {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -548,6 +660,14 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepOffset_DataMapOfShapeOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_MapNode {
@@ -579,6 +699,14 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 	}
 };
 
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollection_BasicMapIterator {
@@ -599,6 +727,14 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval\n");}
+	}
+};
+
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -631,6 +767,14 @@ class BRepOffset_Interval {
 	}
 };
 
+%extend BRepOffset_Interval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_ListNodeOfListOfInterval;
 class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
@@ -660,6 +804,14 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 	}
 };
 
+%extend BRepOffset_ListNodeOfListOfInterval {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_MakeLoops;
 class BRepOffset_MakeLoops {
@@ -678,6 +830,14 @@ class BRepOffset_MakeLoops {
 	~BRepOffset_MakeLoops() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeLoops\n");}
+	}
+};
+
+%extend BRepOffset_MakeLoops {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -722,6 +882,14 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	}
 };
 
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_BasicMapIterator {
@@ -745,6 +913,14 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 	}
 };
 
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_BasicMapIterator {
@@ -765,6 +941,14 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");}
+	}
+};
+
+%extend BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -796,6 +980,14 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
+	}
+};
+
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -848,6 +1040,14 @@ class BRepOffset_Tool {
 	}
 };
 
+%extend BRepOffset_Tool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapOfShapeReal;
 class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -892,6 +1092,14 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 	~BRepOffset_DataMapOfShapeReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeReal\n");}
+	}
+};
+
+%extend BRepOffset_DataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -940,6 +1148,14 @@ class BRepOffset_Offset {
 	}
 };
 
+%extend BRepOffset_Offset {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
@@ -968,6 +1184,14 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
+	}
+};
+
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1007,5 +1231,13 @@ class BRepOffset_Inter3d {
 	~BRepOffset_Inter3d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter3d\n");}
+	}
+};
+
+%extend BRepOffset_Inter3d {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

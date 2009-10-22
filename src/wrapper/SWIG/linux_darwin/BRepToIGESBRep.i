@@ -80,3 +80,11 @@ class BRepToIGESBRep_Entity : public BRepToIGES_BREntity {
 	if (__env){printf("## Call custom destructor for instance of BRepToIGESBRep_Entity\n");}
 	}
 };
+
+%extend BRepToIGESBRep_Entity {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};

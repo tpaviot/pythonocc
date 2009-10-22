@@ -70,6 +70,14 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 	}
 };
 
+%extend Handle_BRepExtrema_UnCompatibleShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
 class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection_SeqNode {
@@ -97,6 +105,14 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
+	}
+};
+
+%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -157,6 +173,14 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepExtrema_SeqOfSolution {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepExtrema_SequenceNodeOfSeqOfSolution;
 class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
@@ -186,6 +210,14 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 	}
 };
 
+%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepExtrema_Poly;
 class BRepExtrema_Poly {
@@ -200,6 +232,14 @@ class BRepExtrema_Poly {
 	~BRepExtrema_Poly() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_Poly\n");}
+	}
+};
+
+%extend BRepExtrema_Poly {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -231,6 +271,14 @@ class BRepExtrema_ExtPF {
 	~BRepExtrema_ExtPF() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPF\n");}
+	}
+};
+
+%extend BRepExtrema_ExtPF {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -273,6 +321,14 @@ class BRepExtrema_ExtCC {
 	}
 };
 
+%extend BRepExtrema_ExtCC {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepExtrema_DistanceSS;
 class BRepExtrema_DistanceSS {
@@ -295,6 +351,14 @@ class BRepExtrema_DistanceSS {
 	~BRepExtrema_DistanceSS() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
+	}
+};
+
+%extend BRepExtrema_DistanceSS {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -330,6 +394,14 @@ class BRepExtrema_ExtPC {
 	~BRepExtrema_ExtPC() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPC\n");}
+	}
+};
+
+%extend BRepExtrema_ExtPC {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -370,6 +442,14 @@ class BRepExtrema_ExtCF {
 	}
 };
 
+%extend BRepExtrema_ExtCF {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepExtrema_ExtFF;
 class BRepExtrema_ExtFF {
@@ -404,6 +484,14 @@ class BRepExtrema_ExtFF {
 	~BRepExtrema_ExtFF() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtFF\n");}
+	}
+};
+
+%extend BRepExtrema_ExtFF {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -470,6 +558,14 @@ class BRepExtrema_DistShapeShape {
 	}
 };
 
+%extend BRepExtrema_DistShapeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepExtrema_UnCompatibleShape;
 class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
@@ -502,6 +598,14 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 	~BRepExtrema_UnCompatibleShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");}
+	}
+};
+
+%extend BRepExtrema_UnCompatibleShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -539,5 +643,13 @@ class BRepExtrema_SolutionElem {
 	~BRepExtrema_SolutionElem() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SolutionElem\n");}
+	}
+};
+
+%extend BRepExtrema_SolutionElem {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

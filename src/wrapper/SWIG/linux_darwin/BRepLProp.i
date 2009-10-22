@@ -61,6 +61,14 @@ class BRepLProp_SurfaceTool {
 	}
 };
 
+%extend BRepLProp_SurfaceTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
@@ -122,6 +130,14 @@ class BRepLProp_SLProps {
 	}
 };
 
+%extend BRepLProp_SLProps {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLProp_CurveTool;
 class BRepLProp_CurveTool {
@@ -148,6 +164,14 @@ class BRepLProp_CurveTool {
 	~BRepLProp_CurveTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLProp_CurveTool\n");}
+	}
+};
+
+%extend BRepLProp_CurveTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -192,6 +216,14 @@ class BRepLProp_CLProps {
 	}
 };
 
+%extend BRepLProp_CLProps {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLProp;
 class BRepLProp {
@@ -208,5 +240,13 @@ class BRepLProp {
 	~BRepLProp() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLProp\n");}
+	}
+};
+
+%extend BRepLProp {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -64,6 +64,14 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 	}
 };
 
+%extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Tool;
 class BRepSweep_Tool {
@@ -88,6 +96,14 @@ class BRepSweep_Tool {
 	~BRepSweep_Tool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Tool\n");}
+	}
+};
+
+%extend BRepSweep_Tool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -156,6 +172,14 @@ class BRepSweep_NumLinearRegularSweep {
 	}
 };
 
+%extend BRepSweep_NumLinearRegularSweep {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Trsf;
 class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
@@ -207,6 +231,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 	}
 };
 
+%extend BRepSweep_Trsf {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Translation;
 class BRepSweep_Translation : public BRepSweep_Trsf {
@@ -223,6 +255,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 	~BRepSweep_Translation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Translation\n");}
+	}
+};
+
+%extend BRepSweep_Translation {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -283,6 +323,14 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 	}
 };
 
+%extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
 class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
@@ -330,6 +378,14 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 	}
 };
 
+%extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Revol;
 class BRepSweep_Revol {
@@ -360,6 +416,14 @@ class BRepSweep_Revol {
 	~BRepSweep_Revol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Revol\n");}
+	}
+};
+
+%extend BRepSweep_Revol {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -394,6 +458,14 @@ class BRepSweep_Builder {
 	}
 };
 
+%extend BRepSweep_Builder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_Iterator;
 class BRepSweep_Iterator {
@@ -416,6 +488,14 @@ class BRepSweep_Iterator {
 	~BRepSweep_Iterator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Iterator\n");}
+	}
+};
+
+%extend BRepSweep_Iterator {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -472,6 +552,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 	}
 };
 
+%extend BRepSweep_Rotation {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
 class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public TCollection_SeqNode {
@@ -498,6 +586,14 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 	~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
+	}
+};
+
+%extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -529,5 +625,13 @@ class BRepSweep_Prism {
 	~BRepSweep_Prism() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
+	}
+};
+
+%extend BRepSweep_Prism {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

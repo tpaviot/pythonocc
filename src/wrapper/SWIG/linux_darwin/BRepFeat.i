@@ -98,6 +98,14 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepFeat_Builder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
 class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
@@ -135,6 +143,14 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 	}
 };
 
+%extend BRepFeat_MakeCylindricalHole {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat;
 class BRepFeat {
@@ -163,6 +179,14 @@ class BRepFeat {
 	~BRepFeat() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
+	}
+};
+
+%extend BRepFeat {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -213,6 +237,14 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepFeat_Form {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_MakePipe;
 class BRepFeat_MakePipe : public BRepFeat_Form {
@@ -237,6 +269,14 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 	~BRepFeat_MakePipe() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePipe\n");}
+	}
+};
+
+%extend BRepFeat_MakePipe {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -279,6 +319,14 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 	}
 };
 
+%extend BRepFeat_MakePrism {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_LocalOperation;
 class BRepFeat_LocalOperation : public BRepFeat_Builder {
@@ -309,6 +357,14 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 	~BRepFeat_LocalOperation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_LocalOperation\n");}
+	}
+};
+
+%extend BRepFeat_LocalOperation {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -347,6 +403,14 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepFeat_SplitShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_RibSlot;
 class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
@@ -382,6 +446,14 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepFeat_RibSlot {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_MakeLinearForm;
 class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
@@ -407,6 +479,14 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 	}
 };
 
+%extend BRepFeat_MakeLinearForm {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_MakeRevolutionForm;
 class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
@@ -429,6 +509,14 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 	~BRepFeat_MakeRevolutionForm() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");}
+	}
+};
+
+%extend BRepFeat_MakeRevolutionForm {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -477,6 +565,14 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 	}
 };
 
+%extend BRepFeat_MakeDPrism {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_Gluer;
 class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
@@ -512,6 +608,14 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepFeat_Gluer {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFeat_MakeRevol;
 class BRepFeat_MakeRevol : public BRepFeat_Form {
@@ -544,5 +648,13 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 	~BRepFeat_MakeRevol() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevol\n");}
+	}
+};
+
+%extend BRepFeat_MakeRevol {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

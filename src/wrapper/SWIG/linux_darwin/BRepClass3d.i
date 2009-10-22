@@ -64,6 +64,14 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 	}
 };
 
+%extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass3d_SClassifier;
 class BRepClass3d_SClassifier {
@@ -90,6 +98,14 @@ class BRepClass3d_SClassifier {
 	~BRepClass3d_SClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SClassifier\n");}
+	}
+};
+
+%extend BRepClass3d_SClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -166,6 +182,14 @@ class BRepClass3d_SolidExplorer {
 	}
 };
 
+%extend BRepClass3d_SolidExplorer {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
 class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
@@ -186,6 +210,14 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 	~BRepClass3d_DataMapIteratorOfMapOfInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
+	}
+};
+
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -224,6 +256,14 @@ class BRepClass3d_Intersector3d {
 	}
 };
 
+%extend BRepClass3d_Intersector3d {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass3d_SolidClassifier;
 class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
@@ -248,6 +288,14 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 	~BRepClass3d_SolidClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidClassifier\n");}
+	}
+};
+
+%extend BRepClass3d_SolidClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -279,6 +327,14 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 	~BRepClass3d_DataMapNodeOfMapOfInter() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapNodeOfMapOfInter\n");}
+	}
+};
+
+%extend BRepClass3d_DataMapNodeOfMapOfInter {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -319,6 +375,14 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepClass3d_MapOfInter {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass3d_SolidPassiveClassifier;
 class BRepClass3d_SolidPassiveClassifier {
@@ -343,5 +407,13 @@ class BRepClass3d_SolidPassiveClassifier {
 	~BRepClass3d_SolidPassiveClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
+	}
+};
+
+%extend BRepClass3d_SolidPassiveClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -69,6 +69,14 @@ class BRepGProp_Sinert : public GProp_GProps {
 	}
 };
 
+%extend BRepGProp_Sinert {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepGProp;
 class BRepGProp {
@@ -98,6 +106,14 @@ class BRepGProp {
 	}
 };
 
+%extend BRepGProp {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepGProp_EdgeTool;
 class BRepGProp_EdgeTool {
@@ -124,6 +140,14 @@ class BRepGProp_EdgeTool {
 	~BRepGProp_EdgeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_EdgeTool\n");}
+	}
+};
+
+%extend BRepGProp_EdgeTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -194,6 +218,14 @@ class BRepGProp_Vinert : public GProp_GProps {
 	}
 };
 
+%extend BRepGProp_Vinert {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepGProp_UFunctionOfVinertGK;
 class BRepGProp_UFunctionOfVinertGK : public math_Function {
@@ -215,6 +247,14 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 	}
 };
 
+%extend BRepGProp_UFunctionOfVinertGK {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepGProp_Cinert;
 class BRepGProp_Cinert : public GProp_GProps {
@@ -233,6 +273,14 @@ class BRepGProp_Cinert : public GProp_GProps {
 	~BRepGProp_Cinert() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_Cinert\n");}
+	}
+};
+
+%extend BRepGProp_Cinert {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -260,6 +308,14 @@ class BRepGProp_Domain {
 	~BRepGProp_Domain() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_Domain\n");}
+	}
+};
+
+%extend BRepGProp_Domain {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -291,6 +347,14 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 	~BRepGProp_TFunctionOfVinertGK() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_TFunctionOfVinertGK\n");}
+	}
+};
+
+%extend BRepGProp_TFunctionOfVinertGK {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -354,5 +418,13 @@ class BRepGProp_Face {
 	~BRepGProp_Face() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_Face\n");}
+	}
+};
+
+%extend BRepGProp_Face {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -936,13 +936,26 @@ class ModularBuilder(object):
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
-        # Customize destructor
         self.fp.write('\n%')
-        self.fp.write('extend %s {\n'%class_name)
-        self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");\n\tif (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
-        if class_name == 'BRepAlgoAPI_BooleanOperation':
-            self.fp.write('\n\t$self->Destroy();\n')
-        self.fp.write('\n\t}\n};\n')
+        self.fp.write('feature("shadow") %s::~%s '%(class_name,class_name))
+        self.fp.write('%{\n')
+        self.fp.write('def __del__(self):\n')
+        self.fp.write('\tglobal occ_gc\n')
+        self.fp.write('\tocc_gc.append(self)\n')
+        self.fp.write('%}\n')
+        # Customize destructor
+        #self.fp.write('\n%')
+        #self.fp.write('extend %s {\n'%class_name)
+        #self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");\n\tif (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
+        #if class_name == 'BRepAlgoAPI_BooleanOperation':
+        #    self.fp.write('\n\t$self->Destroy();\n')
+        #self.fp.write('\n\t}\n};\n')
+        # Customize destructor
+        #self.fp.write('\n%')
+        #self.fp.write('extend %s {\n'%class_name)
+        #self.fp.write('\tvoid KillPointed() {\n\t')
+        #self.fp.write('\tdelete $self;')
+        #self.fp.write('\n\t}\n};\n')
         #
         # Special method for XCAFApp_Application
         #
@@ -1071,6 +1084,7 @@ class ModularBuilder(object):
         self.occ_fp.write("\n%%include %s_dependencies.i\n\n"%self.MODULE_NAME)
         # Add headers
         self.occ_fp.write("\n%%include %s_headers.i\n\n"%self.MODULE_NAME)
+        
         
     def FindClasseToExclude(self):
         """

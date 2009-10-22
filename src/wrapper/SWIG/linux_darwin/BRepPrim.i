@@ -105,6 +105,14 @@ class BRepPrim_GWedge {
 	}
 };
 
+%extend BRepPrim_GWedge {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepPrim_Wedge;
 class BRepPrim_Wedge : public BRepPrim_GWedge {
@@ -121,6 +129,14 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 	~BRepPrim_Wedge() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Wedge\n");}
+	}
+};
+
+%extend BRepPrim_Wedge {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -150,6 +166,14 @@ class BRepPrim_FaceBuilder {
 	~BRepPrim_FaceBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_FaceBuilder\n");}
+	}
+};
+
+%extend BRepPrim_FaceBuilder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -211,6 +235,14 @@ class BRepPrim_Builder {
 	~BRepPrim_Builder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Builder\n");}
+	}
+};
+
+%extend BRepPrim_Builder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -329,6 +361,14 @@ class BRepPrim_OneAxis {
 	}
 };
 
+%extend BRepPrim_OneAxis {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepPrim_Revolution;
 class BRepPrim_Revolution : public BRepPrim_OneAxis {
@@ -352,6 +392,14 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 	}
 };
 
+%extend BRepPrim_Revolution {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepPrim_Sphere;
 class BRepPrim_Sphere : public BRepPrim_Revolution {
@@ -368,6 +416,14 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 	~BRepPrim_Sphere() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Sphere\n");}
+	}
+};
+
+%extend BRepPrim_Sphere {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -400,6 +456,14 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 	}
 };
 
+%extend BRepPrim_Cone {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepPrim_Cylinder;
 class BRepPrim_Cylinder : public BRepPrim_Revolution {
@@ -427,6 +491,14 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 	}
 };
 
+%extend BRepPrim_Cylinder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepPrim_Torus;
 class BRepPrim_Torus : public BRepPrim_Revolution {
@@ -445,5 +517,13 @@ class BRepPrim_Torus : public BRepPrim_Revolution {
 	~BRepPrim_Torus() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Torus\n");}
+	}
+};
+
+%extend BRepPrim_Torus {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

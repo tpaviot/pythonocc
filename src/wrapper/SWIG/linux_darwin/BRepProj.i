@@ -62,3 +62,11 @@ class BRepProj_Projection {
 	if (__env){printf("## Call custom destructor for instance of BRepProj_Projection\n");}
 	}
 };
+
+%extend BRepProj_Projection {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};

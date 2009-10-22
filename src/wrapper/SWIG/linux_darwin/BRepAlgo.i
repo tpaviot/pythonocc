@@ -69,6 +69,14 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepAlgo_AsDes {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollection_MapNode {
@@ -96,6 +104,14 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 	~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean\n");}
+	}
+};
+
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -129,6 +145,14 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepAlgo_EdgeConnector {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
 class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_TCollection_SeqNode {
@@ -156,6 +180,14 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 	~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger\n");}
+	}
+};
+
+%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -189,6 +221,14 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 	}
 };
 
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TCollection_MapNode {
@@ -219,6 +259,14 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 	}
 };
 
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_Tool;
 class BRepAlgo_Tool {
@@ -233,6 +281,14 @@ class BRepAlgo_Tool {
 	~BRepAlgo_Tool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Tool\n");}
+	}
+};
+
+%extend BRepAlgo_Tool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -267,6 +323,14 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 	}
 };
 
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo;
 class BRepAlgo {
@@ -287,6 +351,14 @@ class BRepAlgo {
 	~BRepAlgo() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo\n");}
+	}
+};
+
+%extend BRepAlgo {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -319,6 +391,14 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepAlgo_BooleanOperation {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_Common;
 class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
@@ -331,6 +411,14 @@ class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 	~BRepAlgo_Common() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Common\n");}
+	}
+};
+
+%extend BRepAlgo_Common {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -370,6 +458,14 @@ class BRepAlgo_Loop {
 	~BRepAlgo_Loop() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Loop\n");}
+	}
+};
+
+%extend BRepAlgo_Loop {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -418,6 +514,14 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 	}
 };
 
+%extend BRepAlgo_EdgeConnector {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_BasicMapIterator {
@@ -438,6 +542,14 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_
 	~BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -469,6 +581,14 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 	~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeInterference\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -506,6 +626,14 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 	~BRepAlgo_DataMapOfShapeBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapOfShapeBoolean\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapOfShapeBoolean {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -553,6 +681,14 @@ class BRepAlgo_NormalProjection {
 	~BRepAlgo_NormalProjection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_NormalProjection\n");}
+	}
+};
+
+%extend BRepAlgo_NormalProjection {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -605,6 +741,14 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 	}
 };
 
+%extend BRepAlgo_AsDes {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
 class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
@@ -633,6 +777,14 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 	~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -678,6 +830,14 @@ class BRepAlgo_TopOpe {
 	~BRepAlgo_TopOpe() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_TopOpe\n");}
+	}
+};
+
+%extend BRepAlgo_TopOpe {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -744,6 +904,14 @@ class BRepAlgo_DSAccess {
 	}
 };
 
+%extend BRepAlgo_DSAccess {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_Fuse;
 class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
@@ -756,6 +924,14 @@ class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 	~BRepAlgo_Fuse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Fuse\n");}
+	}
+};
+
+%extend BRepAlgo_Fuse {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -806,6 +982,14 @@ class BRepAlgo_Image {
 	}
 };
 
+%extend BRepAlgo_Image {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_BooleanOperations;
 class BRepAlgo_BooleanOperations {
@@ -852,6 +1036,14 @@ class BRepAlgo_BooleanOperations {
 	~BRepAlgo_BooleanOperations() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_BooleanOperations\n");}
+	}
+};
+
+%extend BRepAlgo_BooleanOperations {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -906,6 +1098,14 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	}
 };
 
+%extend BRepAlgo_Section {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_FaceRestrictor;
 class BRepAlgo_FaceRestrictor {
@@ -934,6 +1134,14 @@ class BRepAlgo_FaceRestrictor {
 	~BRepAlgo_FaceRestrictor() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_FaceRestrictor\n");}
+	}
+};
+
+%extend BRepAlgo_FaceRestrictor {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -974,6 +1182,14 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepAlgo_DataMapOfShapeInterference {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
@@ -1008,6 +1224,14 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 	~BRepAlgo_DataMapOfShapeListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapOfShapeListOfInteger\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapOfShapeListOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1068,6 +1292,14 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepAlgo_SequenceOfSequenceOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_BasicMapIterator {
@@ -1091,6 +1323,14 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 	}
 };
 
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgo_Cut;
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
@@ -1103,6 +1343,14 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	~BRepAlgo_Cut() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Cut\n");}
+	}
+};
+
+%extend BRepAlgo_Cut {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1126,6 +1374,14 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 	~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger\n");}
+	}
+};
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1155,5 +1411,13 @@ class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_Se
 	~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger\n");}
+	}
+};
+
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -64,6 +64,14 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepTools_Modification {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepTools_GTrsfModification;
 class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
@@ -91,6 +99,14 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 	~Handle_BRepTools_GTrsfModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");}
+	}
+};
+
+%extend Handle_BRepTools_GTrsfModification {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -124,6 +140,14 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	}
 };
 
+%extend Handle_BRepTools_TrsfModification {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepTools_ReShape;
 class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
@@ -151,6 +175,14 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	~Handle_BRepTools_ReShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_ReShape\n");}
+	}
+};
+
+%extend Handle_BRepTools_ReShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -184,6 +216,14 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 	}
 };
 
+%extend Handle_BRepTools_NurbsConvertModification {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d;
 class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection_MapNode {
@@ -214,6 +254,14 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 	}
 };
 
+%extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_Modifier;
 class BRepTools_Modifier {
@@ -238,6 +286,14 @@ class BRepTools_Modifier {
 	~BRepTools_Modifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Modifier\n");}
+	}
+};
+
+%extend BRepTools_Modifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -285,6 +341,14 @@ class BRepTools_ReShape : public MMgt_TShared {
 	~BRepTools_ReShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_ReShape\n");}
+	}
+};
+
+%extend BRepTools_ReShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -393,6 +457,14 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 	}
 };
 
+%extend BRepTools_ShapeSet {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_MapOfVertexPnt2d;
 class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
@@ -427,6 +499,14 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 	~BRepTools_MapOfVertexPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
+	}
+};
+
+%extend BRepTools_MapOfVertexPnt2d {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -467,6 +547,14 @@ class BRepTools_Modification : public MMgt_TShared {
 	}
 };
 
+%extend BRepTools_Modification {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_TrsfModification;
 class BRepTools_TrsfModification : public BRepTools_Modification {
@@ -491,6 +579,14 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 	~BRepTools_TrsfModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_TrsfModification\n");}
+	}
+};
+
+%extend BRepTools_TrsfModification {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -567,6 +663,14 @@ class BRepTools {
 	}
 };
 
+%extend BRepTools {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_GTrsfModification;
 class BRepTools_GTrsfModification : public BRepTools_Modification {
@@ -608,6 +712,14 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 	}
 };
 
+%extend BRepTools_GTrsfModification {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_Quilt;
 class BRepTools_Quilt {
@@ -632,6 +744,14 @@ class BRepTools_Quilt {
 	~BRepTools_Quilt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Quilt\n");}
+	}
+};
+
+%extend BRepTools_Quilt {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -670,6 +790,14 @@ class BRepTools_WireExplorer {
 	}
 };
 
+%extend BRepTools_WireExplorer {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
 class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapIterator {
@@ -690,6 +818,14 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 	~BRepTools_DataMapIteratorOfMapOfVertexPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");}
+	}
+};
+
+%extend BRepTools_DataMapIteratorOfMapOfVertexPnt2d {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -715,6 +851,14 @@ class BRepTools_Substitution {
 	~BRepTools_Substitution() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Substitution\n");}
+	}
+};
+
+%extend BRepTools_Substitution {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -746,6 +890,14 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 	~BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
+	}
+};
+
+%extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -785,5 +937,13 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 	~BRepTools_NurbsConvertModification() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepTools_NurbsConvertModification\n");}
+	}
+};
+
+%extend BRepTools_NurbsConvertModification {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

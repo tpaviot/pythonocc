@@ -64,6 +64,14 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 	}
 };
 
+%extend Handle_BRepBlend_AppFuncRoot {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepBlend_AppFuncRstRst;
 class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
@@ -91,6 +99,14 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	~Handle_BRepBlend_AppFuncRstRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFuncRstRst\n");}
+	}
+};
+
+%extend Handle_BRepBlend_AppFuncRstRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -124,6 +140,14 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_
 	}
 };
 
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfLine {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
 class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TCollection_SeqNode {
@@ -151,6 +175,14 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TColle
 	~Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");}
+	}
+};
+
+%extend Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -184,6 +216,14 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepBlend_Line {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepBlend_AppFunc;
 class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
@@ -211,6 +251,14 @@ class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	~Handle_BRepBlend_AppFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFunc\n");}
+	}
+};
+
+%extend Handle_BRepBlend_AppFunc {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -244,6 +292,14 @@ class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 	}
 };
 
+%extend Handle_BRepBlend_AppFuncRst {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_ChamfInv;
 class BRepBlend_ChamfInv : public Blend_FuncInv {
@@ -274,6 +330,14 @@ class BRepBlend_ChamfInv : public Blend_FuncInv {
 	~BRepBlend_ChamfInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChamfInv\n");}
+	}
+};
+
+%extend BRepBlend_ChamfInv {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -366,6 +430,14 @@ class BRepBlend_ConstRad : public Blend_Function {
 	}
 };
 
+%extend BRepBlend_ConstRad {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_Line;
 class BRepBlend_Line : public MMgt_TShared {
@@ -429,6 +501,14 @@ class BRepBlend_Line : public MMgt_TShared {
 	}
 };
 
+%extend BRepBlend_Line {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SurfCurvEvolRadInv;
 class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
@@ -459,6 +539,14 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 	~BRepBlend_SurfCurvEvolRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvEvolRadInv\n");}
+	}
+};
+
+%extend BRepBlend_SurfCurvEvolRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -549,6 +637,14 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 	}
 };
 
+%extend BRepBlend_CSCircular {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_AppSurf;
 class BRepBlend_AppSurf : public AppBlend_Approx {
@@ -609,6 +705,14 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 	~BRepBlend_AppSurf() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurf\n");}
+	}
+};
+
+%extend BRepBlend_AppSurf {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -675,6 +779,14 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 	}
 };
 
+%extend BRepBlend_AppFuncRoot {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_AppFuncRst;
 class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
@@ -697,6 +809,14 @@ class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 	~BRepBlend_AppFuncRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFuncRst\n");}
+	}
+};
+
+%extend BRepBlend_AppFuncRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -733,6 +853,14 @@ class BRepBlend_ConstRadInv : public Blend_FuncInv {
 	}
 };
 
+%extend BRepBlend_ConstRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
 class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode {
@@ -759,6 +887,14 @@ class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode 
 	~BRepBlend_SequenceNodeOfSequenceOfPointOnRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");}
+	}
+};
+
+%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -852,6 +988,14 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 	~BRepBlend_SurfRstConstRad() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfRstConstRad\n");}
+	}
+};
+
+%extend BRepBlend_SurfRstConstRad {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -952,6 +1096,14 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 	}
 };
 
+%extend BRepBlend_RstRstEvolRad {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_EvolRadInv;
 class BRepBlend_EvolRadInv : public Blend_FuncInv {
@@ -982,6 +1134,14 @@ class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	~BRepBlend_EvolRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_EvolRadInv\n");}
+	}
+};
+
+%extend BRepBlend_EvolRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1072,6 +1232,14 @@ class BRepBlend_ChAsym : public Blend_Function {
 	}
 };
 
+%extend BRepBlend_ChAsym {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_CSWalking;
 class BRepBlend_CSWalking {
@@ -1092,6 +1260,14 @@ class BRepBlend_CSWalking {
 	~BRepBlend_CSWalking() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSWalking\n");}
+	}
+};
+
+%extend BRepBlend_CSWalking {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1162,6 +1338,14 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 	}
 };
 
+%extend BRepBlend_AppSurface {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_Extremity;
 class BRepBlend_Extremity {
@@ -1214,6 +1398,14 @@ class BRepBlend_Extremity {
 	~BRepBlend_Extremity() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Extremity\n");}
+	}
+};
+
+%extend BRepBlend_Extremity {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1298,6 +1490,14 @@ class BRepBlend_Chamfer : public Blend_Function {
 	}
 };
 
+%extend BRepBlend_Chamfer {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SurfPointConstRadInv;
 class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
@@ -1331,6 +1531,14 @@ class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 	}
 };
 
+%extend BRepBlend_SurfPointConstRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SurfPointEvolRadInv;
 class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
@@ -1361,6 +1569,14 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 	~BRepBlend_SurfPointEvolRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfPointEvolRadInv\n");}
+	}
+};
+
+%extend BRepBlend_SurfPointEvolRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1400,6 +1616,14 @@ class BRepBlend_Corde {
 	~BRepBlend_Corde() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Corde\n");}
+	}
+};
+
+%extend BRepBlend_Corde {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1466,6 +1690,14 @@ class BRepBlend_HCurve2dTool {
 	}
 };
 
+%extend BRepBlend_HCurve2dTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_CurvPointRadInv;
 class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
@@ -1496,6 +1728,14 @@ class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 	~BRepBlend_CurvPointRadInv() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_CurvPointRadInv\n");}
+	}
+};
+
+%extend BRepBlend_CurvPointRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1584,6 +1824,14 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 	}
 };
 
+%extend BRepBlend_CSConstRad {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_RuledInv;
 class BRepBlend_RuledInv : public Blend_FuncInv {
@@ -1615,6 +1863,14 @@ class BRepBlend_RuledInv : public Blend_FuncInv {
 	}
 };
 
+%extend BRepBlend_RuledInv {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_AppFunc;
 class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
@@ -1643,6 +1899,14 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 	~BRepBlend_AppFunc() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFunc\n");}
+	}
+};
+
+%extend BRepBlend_AppFunc {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1709,6 +1973,14 @@ class BRepBlend_HCurveTool {
 	}
 };
 
+%extend BRepBlend_HCurveTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_ChAsymInv;
 class BRepBlend_ChAsymInv : public Blend_FuncInv {
@@ -1744,6 +2016,14 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 	}
 };
 
+%extend BRepBlend_ChAsymInv {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SurfRstLineBuilder;
 class BRepBlend_SurfRstLineBuilder {
@@ -1775,6 +2055,14 @@ class BRepBlend_SurfRstLineBuilder {
 	}
 };
 
+%extend BRepBlend_SurfRstLineBuilder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_AppFuncRstRst;
 class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
@@ -1803,6 +2091,14 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 	~BRepBlend_AppFuncRstRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFuncRstRst\n");}
+	}
+};
+
+%extend BRepBlend_AppFuncRstRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1899,6 +2195,14 @@ class BRepBlend_HSurfaceTool {
 	}
 };
 
+%extend BRepBlend_HSurfaceTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SequenceOfPointOnRst;
 class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
@@ -1953,6 +2257,14 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 	~BRepBlend_SequenceOfPointOnRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceOfPointOnRst\n");}
+	}
+};
+
+%extend BRepBlend_SequenceOfPointOnRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2037,6 +2349,14 @@ class BRepBlend_Ruled : public Blend_Function {
 	}
 };
 
+%extend BRepBlend_Ruled {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfLine;
 class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
@@ -2063,6 +2383,14 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	~BRepBlend_SequenceNodeOfSequenceOfLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfLine\n");}
+	}
+};
+
+%extend BRepBlend_SequenceNodeOfSequenceOfLine {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2099,6 +2427,14 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 	}
 };
 
+%extend BRepBlend_SurfCurvConstRadInv {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_PointOnRst;
 class BRepBlend_PointOnRst {
@@ -2123,6 +2459,14 @@ class BRepBlend_PointOnRst {
 	~BRepBlend_PointOnRst() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_PointOnRst\n");}
+	}
+};
+
+%extend BRepBlend_PointOnRst {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2170,6 +2514,14 @@ class BRepBlend_Walking {
 	~BRepBlend_Walking() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Walking\n");}
+	}
+};
+
+%extend BRepBlend_Walking {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2230,6 +2582,14 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepBlend_SequenceOfLine {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_BlendTool;
 class BRepBlend_BlendTool {
@@ -2258,6 +2618,14 @@ class BRepBlend_BlendTool {
 	~BRepBlend_BlendTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_BlendTool\n");}
+	}
+};
+
+%extend BRepBlend_BlendTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2291,6 +2659,14 @@ class BRepBlend_RstRstLineBuilder {
 	~BRepBlend_RstRstLineBuilder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_RstRstLineBuilder\n");}
+	}
+};
+
+%extend BRepBlend_RstRstLineBuilder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2391,6 +2767,14 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 	}
 };
 
+%extend BRepBlend_RstRstConstRad {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBlend_EvolRad;
 class BRepBlend_EvolRad : public Blend_Function {
@@ -2475,6 +2859,14 @@ class BRepBlend_EvolRad : public Blend_Function {
 	~BRepBlend_EvolRad() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_EvolRad\n");}
+	}
+};
+
+%extend BRepBlend_EvolRad {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2568,5 +2960,13 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 	~BRepBlend_SurfRstEvolRad() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfRstEvolRad\n");}
+	}
+};
+
+%extend BRepBlend_SurfRstEvolRad {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -118,6 +118,14 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepBuilderAPI_Sewing {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_Command;
 class BRepBuilderAPI_Command {
@@ -134,6 +142,14 @@ class BRepBuilderAPI_Command {
 	~BRepBuilderAPI_Command() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Command\n");}
+	}
+};
+
+%extend BRepBuilderAPI_Command {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -160,6 +176,14 @@ class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
 	}
 };
 
+%extend BRepBuilderAPI_MakeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_ModifyShape;
 class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
@@ -172,6 +196,14 @@ class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 	~BRepBuilderAPI_ModifyShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_ModifyShape\n");}
+	}
+};
+
+%extend BRepBuilderAPI_ModifyShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -191,6 +223,14 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 	~BRepBuilderAPI_Copy() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Copy\n");}
+	}
+};
+
+%extend BRepBuilderAPI_Copy {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -303,6 +343,14 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 	}
 };
 
+%extend BRepBuilderAPI_Sewing {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_MakeWire;
 class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
@@ -343,6 +391,14 @@ class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 	~BRepBuilderAPI_MakeWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeWire\n");}
+	}
+};
+
+%extend BRepBuilderAPI_MakeWire {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -463,6 +519,14 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepBuilderAPI_MakeEdge {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_FindPlane;
 class BRepBuilderAPI_FindPlane {
@@ -483,6 +547,14 @@ class BRepBuilderAPI_FindPlane {
 	~BRepBuilderAPI_FindPlane() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_FindPlane\n");}
+	}
+};
+
+%extend BRepBuilderAPI_FindPlane {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -577,6 +649,14 @@ class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepBuilderAPI_MakeEdge2d {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_NurbsConvert;
 class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
@@ -596,6 +676,14 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 	}
 };
 
+%extend BRepBuilderAPI_NurbsConvert {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_MakeVertex;
 class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
@@ -610,6 +698,14 @@ class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 	~BRepBuilderAPI_MakeVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeVertex\n");}
+	}
+};
+
+%extend BRepBuilderAPI_MakeVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -633,6 +729,14 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 	~BRepBuilderAPI_Transform() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Transform\n");}
+	}
+};
+
+%extend BRepBuilderAPI_Transform {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -663,6 +767,14 @@ class BRepBuilderAPI_Collect {
 	}
 };
 
+%extend BRepBuilderAPI_Collect {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_GTransform;
 class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
@@ -683,6 +795,14 @@ class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 	~BRepBuilderAPI_GTransform() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_GTransform\n");}
+	}
+};
+
+%extend BRepBuilderAPI_GTransform {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -731,6 +851,14 @@ class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepBuilderAPI_MakePolygon {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_MakeSolid;
 class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
@@ -763,6 +891,14 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 	~BRepBuilderAPI_MakeSolid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeSolid\n");}
+	}
+};
+
+%extend BRepBuilderAPI_MakeSolid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -837,6 +973,14 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepBuilderAPI_MakeFace {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI_MakeShell;
 class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
@@ -864,6 +1008,14 @@ class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepBuilderAPI_MakeShell {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepBuilderAPI;
 class BRepBuilderAPI {
@@ -884,5 +1036,13 @@ class BRepBuilderAPI {
 	~BRepBuilderAPI() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI\n");}
+	}
+};
+
+%extend BRepBuilderAPI {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

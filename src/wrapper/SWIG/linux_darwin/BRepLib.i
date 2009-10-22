@@ -94,6 +94,14 @@ class BRepLib_Command {
 	}
 };
 
+%extend BRepLib_Command {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_MakeShape;
 class BRepLib_MakeShape : public BRepLib_Command {
@@ -123,6 +131,14 @@ class BRepLib_MakeShape : public BRepLib_Command {
 	}
 };
 
+%extend BRepLib_MakeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_MakeVertex;
 class BRepLib_MakeVertex : public BRepLib_MakeShape {
@@ -137,6 +153,14 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 	~BRepLib_MakeVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeVertex\n");}
+	}
+};
+
+%extend BRepLib_MakeVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -255,6 +279,14 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 	}
 };
 
+%extend BRepLib_MakeEdge {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_MakeEdge2d;
 class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
@@ -344,6 +376,14 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 	}
 };
 
+%extend BRepLib_MakeEdge2d {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_MakeShell;
 class BRepLib_MakeShell : public BRepLib_MakeShape {
@@ -366,6 +406,14 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 	~BRepLib_MakeShell() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShell\n");}
+	}
+};
+
+%extend BRepLib_MakeShell {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -397,6 +445,14 @@ class BRepLib_FuseEdges {
 	~BRepLib_FuseEdges() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_FuseEdges\n");}
+	}
+};
+
+%extend BRepLib_FuseEdges {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -453,6 +509,14 @@ class BRepLib {
 	}
 };
 
+%extend BRepLib {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_FindSurface;
 class BRepLib_FindSurface {
@@ -481,6 +545,14 @@ class BRepLib_FindSurface {
 	~BRepLib_FindSurface() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_FindSurface\n");}
+	}
+};
+
+%extend BRepLib_FindSurface {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -524,6 +596,14 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	~BRepLib_MakePolygon() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakePolygon\n");}
+	}
+};
+
+%extend BRepLib_MakePolygon {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -596,6 +676,14 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 	}
 };
 
+%extend BRepLib_MakeFace {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepLib_MakeSolid;
 class BRepLib_MakeSolid : public BRepLib_MakeShape {
@@ -626,6 +714,14 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 	~BRepLib_MakeSolid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
+	}
+};
+
+%extend BRepLib_MakeSolid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -667,5 +763,13 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 	~BRepLib_MakeWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeWire\n");}
+	}
+};
+
+%extend BRepLib_MakeWire {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

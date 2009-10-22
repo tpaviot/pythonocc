@@ -70,6 +70,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Ha
 	}
 };
 
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_ListNodeOfListOfOffsetWire;
 class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_MapNode {
@@ -97,6 +105,14 @@ class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_Map
 	~Handle_BRepFill_ListNodeOfListOfOffsetWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ListNodeOfListOfOffsetWire\n");}
+	}
+};
+
+%extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -130,6 +146,14 @@ class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepFill_SectionLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_NSections;
 class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
@@ -157,6 +181,14 @@ class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 	~Handle_BRepFill_NSections() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_NSections\n");}
+	}
+};
+
+%extend Handle_BRepFill_NSections {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -190,6 +222,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : pub
 	}
 };
 
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfSection;
 class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollection_SeqNode {
@@ -217,6 +257,14 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollectio
 	~Handle_BRepFill_SequenceNodeOfSequenceOfSection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfSection\n");}
+	}
+};
+
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -250,6 +298,14 @@ class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepFill_LocationLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_TCollection_MapNode {
@@ -277,6 +333,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_
 	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");}
+	}
+};
+
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -310,6 +374,14 @@ class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint 
 	}
 };
 
+%extend Handle_BRepFill_CurveConstraint {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Handle_TCollection_MapNode {
@@ -337,6 +409,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Han
 	~Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");}
+	}
+};
+
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -370,6 +450,14 @@ class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepFill_PipeShell {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_TCollection_MapNode {
@@ -397,6 +485,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_T
 	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt\n");}
+	}
+};
+
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -430,6 +526,14 @@ class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 	}
 };
 
+%extend Handle_BRepFill_ACRLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_ShapeLaw;
 class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
@@ -457,6 +561,14 @@ class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	~Handle_BRepFill_ShapeLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ShapeLaw\n");}
+	}
+};
+
+%extend Handle_BRepFill_ShapeLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -490,6 +602,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle
 	}
 };
 
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_Edge3DLaw;
 class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
@@ -517,6 +637,14 @@ class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	~Handle_BRepFill_Edge3DLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_Edge3DLaw\n");}
+	}
+};
+
+%extend Handle_BRepFill_Edge3DLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -550,6 +678,14 @@ class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 	}
 };
 
+%extend Handle_BRepFill_DraftLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_TCollection_SeqNode {
@@ -577,6 +713,14 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_T
 	~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");}
+	}
+};
+
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -610,6 +754,14 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollectio
 	}
 };
 
+%extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepFill_EdgeOnSurfLaw;
 class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
@@ -637,6 +789,14 @@ class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	~Handle_BRepFill_EdgeOnSurfLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_EdgeOnSurfLaw\n");}
+	}
+};
+
+%extend Handle_BRepFill_EdgeOnSurfLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -670,6 +830,14 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TColl
 	}
 };
 
+%extend Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public TCollection_BasicMapIterator {
@@ -690,6 +858,14 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public
 	~BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -719,6 +895,14 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 	~BRepFill_CurveConstraint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_CurveConstraint\n");}
+	}
+};
+
+%extend BRepFill_CurveConstraint {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -759,6 +943,14 @@ class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfNodeDataMapOfShapeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollection_BasicMapIterator {
@@ -782,6 +974,14 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollectio
 	}
 };
 
+%extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
@@ -802,6 +1002,14 @@ class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TColl
 	~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -842,6 +1050,14 @@ class BRepFill_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfShapeSequenceOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_TrimEdgeTool;
 class BRepFill_TrimEdgeTool {
@@ -862,6 +1078,14 @@ class BRepFill_TrimEdgeTool {
 	~BRepFill_TrimEdgeTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimEdgeTool\n");}
+	}
+};
+
+%extend BRepFill_TrimEdgeTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -895,6 +1119,14 @@ class BRepFill_OffsetWire {
 	~BRepFill_OffsetWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_OffsetWire\n");}
+	}
+};
+
+%extend BRepFill_OffsetWire {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -949,6 +1181,14 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 	}
 };
 
+%extend BRepFill_SectionLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_NSections;
 class BRepFill_NSections : public BRepFill_SectionLaw {
@@ -975,6 +1215,14 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 	~BRepFill_NSections() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_NSections\n");}
+	}
+};
+
+%extend BRepFill_NSections {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1029,6 +1277,14 @@ class BRepFill_Filling {
 	}
 };
 
+%extend BRepFill_Filling {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_Section;
 class BRepFill_Section {
@@ -1055,6 +1311,14 @@ class BRepFill_Section {
 	~BRepFill_Section() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Section\n");}
+	}
+};
+
+%extend BRepFill_Section {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1093,6 +1357,14 @@ class BRepFill_MultiLineTool {
 	}
 };
 
+%extend BRepFill_MultiLineTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfFaceAndOrder;
 class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode {
@@ -1122,6 +1394,14 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 	}
 };
 
+%extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeShape;
 class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMapIterator {
@@ -1142,6 +1422,14 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMap
 	~BRepFill_DataMapIteratorOfDataMapOfNodeShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapIteratorOfDataMapOfNodeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1176,6 +1464,14 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 	}
 };
 
+%extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_OffsetAncestors;
 class BRepFill_OffsetAncestors {
@@ -1198,6 +1494,14 @@ class BRepFill_OffsetAncestors {
 	~BRepFill_OffsetAncestors() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_OffsetAncestors\n");}
+	}
+};
+
+%extend BRepFill_OffsetAncestors {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1238,6 +1542,14 @@ class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_Basi
 	}
 };
 
+%extend BRepFill_DataMapOfShapeDataMapOfShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_TrimShellCorner;
 class BRepFill_TrimShellCorner {
@@ -1269,6 +1581,14 @@ class BRepFill_TrimShellCorner {
 	}
 };
 
+%extend BRepFill_TrimShellCorner {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_TrimSurfaceTool;
 class BRepFill_TrimSurfaceTool {
@@ -1289,6 +1609,14 @@ class BRepFill_TrimSurfaceTool {
 	~BRepFill_TrimSurfaceTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimSurfaceTool\n");}
+	}
+};
+
+%extend BRepFill_TrimSurfaceTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1329,6 +1657,14 @@ class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfShapeSequenceOfReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_CompatibleWires;
 class BRepFill_CompatibleWires {
@@ -1357,6 +1693,14 @@ class BRepFill_CompatibleWires {
 	~BRepFill_CompatibleWires() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_CompatibleWires\n");}
+	}
+};
+
+%extend BRepFill_CompatibleWires {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1423,6 +1767,14 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 	}
 };
 
+%extend BRepFill_LocationLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_Edge3DLaw;
 class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
@@ -1445,6 +1797,14 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 	~BRepFill_Edge3DLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Edge3DLaw\n");}
+	}
+};
+
+%extend BRepFill_Edge3DLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1472,6 +1832,14 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 	~BRepFill_DraftLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DraftLaw\n");}
+	}
+};
+
+%extend BRepFill_DraftLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1532,6 +1900,14 @@ class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepFill_SequenceOfFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_SequenceOfSection;
 class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
@@ -1589,6 +1965,14 @@ class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepFill_SequenceOfSection {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_Pipe;
 class BRepFill_Pipe {
@@ -1626,6 +2010,14 @@ class BRepFill_Pipe {
 	}
 };
 
+%extend BRepFill_Pipe {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
 class BRepFill_ListIteratorOfListOfOffsetWire {
@@ -1648,6 +2040,14 @@ class BRepFill_ListIteratorOfListOfOffsetWire {
 	~BRepFill_ListIteratorOfListOfOffsetWire() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_ListIteratorOfListOfOffsetWire\n");}
+	}
+};
+
+%extend BRepFill_ListIteratorOfListOfOffsetWire {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1680,6 +2080,14 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 	}
 };
 
+%extend BRepFill_ListNodeOfListOfOffsetWire {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection_BasicMapIterator {
@@ -1703,6 +2111,14 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection
 	}
 };
 
+%extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_EdgeFaceAndOrder;
 class BRepFill_EdgeFaceAndOrder {
@@ -1717,6 +2133,14 @@ class BRepFill_EdgeFaceAndOrder {
 	~BRepFill_EdgeFaceAndOrder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeFaceAndOrder\n");}
+	}
+};
+
+%extend BRepFill_EdgeFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1747,6 +2171,14 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 	}
 };
 
+%extend BRepFill_ACRLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_EdgeOnSurfLaw;
 class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
@@ -1773,6 +2205,14 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 	~BRepFill_EdgeOnSurfLaw() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeOnSurfLaw\n");}
+	}
+};
+
+%extend BRepFill_EdgeOnSurfLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1807,6 +2247,14 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 	}
 };
 
+%extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill;
 class BRepFill {
@@ -1829,6 +2277,14 @@ class BRepFill {
 	~BRepFill() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill\n");}
+	}
+};
+
+%extend BRepFill {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1901,6 +2357,14 @@ class BRepFill_PipeShell : public MMgt_TShared {
 	}
 };
 
+%extend BRepFill_PipeShell {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_Generator;
 class BRepFill_Generator {
@@ -1923,6 +2387,14 @@ class BRepFill_Generator {
 	~BRepFill_Generator() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Generator\n");}
+	}
+};
+
+%extend BRepFill_Generator {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1973,6 +2445,14 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 	}
 };
 
+%extend BRepFill_ShapeLaw {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapOfNodeShape;
 class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
@@ -2010,6 +2490,14 @@ class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfNodeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_SectionPlacement;
 class BRepFill_SectionPlacement {
@@ -2028,6 +2516,14 @@ class BRepFill_SectionPlacement {
 	~BRepFill_SectionPlacement() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_SectionPlacement\n");}
+	}
+};
+
+%extend BRepFill_SectionPlacement {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2064,6 +2560,14 @@ class BRepFill_Draft {
 	}
 };
 
+%extend BRepFill_Draft {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCollection_MapNode {
@@ -2092,6 +2596,14 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 	~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2130,6 +2642,14 @@ class BRepFill_Evolved {
 	}
 };
 
+%extend BRepFill_Evolved {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_Sweep;
 class BRepFill_Sweep {
@@ -2165,6 +2685,14 @@ class BRepFill_Sweep {
 	}
 };
 
+%extend BRepFill_Sweep {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_MultiLine;
 class BRepFill_MultiLine {
@@ -2197,6 +2725,14 @@ class BRepFill_MultiLine {
 	~BRepFill_MultiLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_MultiLine\n");}
+	}
+};
+
+%extend BRepFill_MultiLine {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2237,6 +2773,14 @@ class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfOrientedShapeListOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeShape;
 class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
@@ -2265,6 +2809,14 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	~BRepFill_DataMapNodeOfDataMapOfNodeShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2325,6 +2877,14 @@ class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
 	}
 };
 
+%extend BRepFill_SequenceOfEdgeFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_MyLeastSquareOfComputeCLine;
 class BRepFill_MyLeastSquareOfComputeCLine {
@@ -2343,6 +2903,14 @@ class BRepFill_MyLeastSquareOfComputeCLine {
 	~BRepFill_MyLeastSquareOfComputeCLine() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_MyLeastSquareOfComputeCLine\n");}
+	}
+};
+
+%extend BRepFill_MyLeastSquareOfComputeCLine {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2377,6 +2945,14 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_M
 	}
 };
 
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_MapNode {
@@ -2408,6 +2984,14 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 	}
 };
 
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_FaceAndOrder;
 class BRepFill_FaceAndOrder {
@@ -2422,6 +3006,14 @@ class BRepFill_FaceAndOrder {
 	~BRepFill_FaceAndOrder() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_FaceAndOrder\n");}
+	}
+};
+
+%extend BRepFill_FaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2452,6 +3044,14 @@ class BRepFill_ApproxSeewing {
 	}
 };
 
+%extend BRepFill_ApproxSeewing {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfSection;
 class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
@@ -2478,6 +3078,14 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 	~BRepFill_SequenceNodeOfSequenceOfSection() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfSection\n");}
+	}
+};
+
+%extend BRepFill_SequenceNodeOfSequenceOfSection {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2534,6 +3142,14 @@ class BRepFill_ListOfOffsetWire {
 	}
 };
 
+%extend BRepFill_ListOfOffsetWire {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_MapNode {
@@ -2565,6 +3181,14 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 	}
 };
 
+%extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
@@ -2585,6 +3209,14 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TColle
 	~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2625,6 +3257,14 @@ class BRepFill_ComputeCLine {
 	}
 };
 
+%extend BRepFill_ComputeCLine {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
@@ -2662,6 +3302,14 @@ class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepFill_DataMapOfShapeSequenceOfPnt {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_SeqNode {
@@ -2691,6 +3339,14 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 	}
 };
 
+%extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollection_BasicMapIterator {
@@ -2711,5 +3367,13 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollecti
 	~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");}
+	}
+};
+
+%extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

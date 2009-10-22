@@ -52,3 +52,11 @@ class BRepBndLib {
 	if (__env){printf("## Call custom destructor for instance of BRepBndLib\n");}
 	}
 };
+
+%extend BRepBndLib {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};

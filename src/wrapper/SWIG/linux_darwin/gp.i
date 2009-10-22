@@ -26,6 +26,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../ExceptionCatcher.i
 %include ../FunctionTransformers.i
 %include ../Operators.i
+%include ../GarbageCollector.i
 
 %include gp_dependencies.i
 
@@ -69,12 +70,11 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 	return (gp_VectorWithNullMagnitude*)$self->Access();
 	}
 };
-%extend Handle_gp_VectorWithNullMagnitude {
-	~Handle_gp_VectorWithNullMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_gp_VectorWithNullMagnitude\n");}
-	}
-};
+%feature("shadow") Handle_gp_VectorWithNullMagnitude::~Handle_gp_VectorWithNullMagnitude %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Cone;
@@ -162,12 +162,11 @@ class gp_Cone {
 		void _CSFDB_Setgp_ConesemiAngle(const Standard_Real p);
 
 };
-%extend gp_Cone {
-	~gp_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Cone\n");}
-	}
-};
+%feature("shadow") gp_Cone::~gp_Cone %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Hypr2d;
@@ -275,12 +274,11 @@ class gp_Hypr2d {
 		void _CSFDB_Setgp_Hypr2dminorRadius(const Standard_Real p);
 
 };
-%extend gp_Hypr2d {
-	~gp_Hypr2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Hypr2d\n");}
-	}
-};
+%feature("shadow") gp_Hypr2d::~gp_Hypr2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Dir2d;
@@ -358,12 +356,11 @@ class gp_Dir2d {
 		const gp_XY & _CSFDB_Getgp_Dir2dcoord() const;
 
 };
-%extend gp_Dir2d {
-	~gp_Dir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Dir2d\n");}
-	}
-};
+%feature("shadow") gp_Dir2d::~gp_Dir2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Parab2d;
@@ -445,12 +442,11 @@ class gp_Parab2d {
 		void _CSFDB_Setgp_Parab2dfocalLength(const Standard_Real p);
 
 };
-%extend gp_Parab2d {
-	~gp_Parab2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Parab2d\n");}
-	}
-};
+%feature("shadow") gp_Parab2d::~gp_Parab2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Mat2d;
@@ -572,12 +568,11 @@ class gp_Mat2d {
 		};
 
 };
-%extend gp_Mat2d {
-	~gp_Mat2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Mat2d\n");}
-	}
-};
+%feature("shadow") gp_Mat2d::~gp_Mat2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_VectorWithNullMagnitude;
@@ -607,12 +602,11 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend gp_VectorWithNullMagnitude {
-	~gp_VectorWithNullMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_VectorWithNullMagnitude\n");}
-	}
-};
+%feature("shadow") gp_VectorWithNullMagnitude::~gp_VectorWithNullMagnitude %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Ax22d;
@@ -684,12 +678,11 @@ class gp_Ax22d {
 		const gp_Dir2d & _CSFDB_Getgp_Ax22dvxdir() const;
 
 };
-%extend gp_Ax22d {
-	~gp_Ax22d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax22d\n");}
-	}
-};
+%feature("shadow") gp_Ax22d::~gp_Ax22d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Parab;
@@ -767,12 +760,11 @@ class gp_Parab {
 		void _CSFDB_Setgp_ParabfocalLength(const Standard_Real p);
 
 };
-%extend gp_Parab {
-	~gp_Parab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Parab\n");}
-	}
-};
+%feature("shadow") gp_Parab::~gp_Parab %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_XYZ;
@@ -910,12 +902,11 @@ class gp_XYZ {
 		void _CSFDB_Setgp_XYZz(const Standard_Real p);
 
 };
-%extend gp_XYZ {
-	~gp_XYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_XYZ\n");}
-	}
-};
+%feature("shadow") gp_XYZ::~gp_XYZ %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp;
@@ -957,12 +948,11 @@ class gp {
 		const gp_Ax2d & OY2d();
 
 };
-%extend gp {
-	~gp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp\n");}
-	}
-};
+%feature("shadow") gp::~gp %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Vec2d;
@@ -1098,12 +1088,11 @@ class gp_Vec2d {
 		const gp_XY & _CSFDB_Getgp_Vec2dcoord() const;
 
 };
-%extend gp_Vec2d {
-	~gp_Vec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Vec2d\n");}
-	}
-};
+%feature("shadow") gp_Vec2d::~gp_Vec2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Elips;
@@ -1197,12 +1186,11 @@ class gp_Elips {
 		void _CSFDB_Setgp_ElipsminorRadius(const Standard_Real p);
 
 };
-%extend gp_Elips {
-	~gp_Elips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Elips\n");}
-	}
-};
+%feature("shadow") gp_Elips::~gp_Elips %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Vec;
@@ -1362,12 +1350,11 @@ class gp_Vec {
 		const gp_XYZ & _CSFDB_Getgp_Veccoord() const;
 
 };
-%extend gp_Vec {
-	~gp_Vec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Vec\n");}
-	}
-};
+%feature("shadow") gp_Vec::~gp_Vec %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Ax2;
@@ -1445,12 +1432,11 @@ class gp_Ax2 {
 		const gp_Dir & _CSFDB_Getgp_Ax2vxdir() const;
 
 };
-%extend gp_Ax2 {
-	~gp_Ax2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax2\n");}
-	}
-};
+%feature("shadow") gp_Ax2::~gp_Ax2 %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Torus;
@@ -1540,12 +1526,11 @@ class gp_Torus {
 		void _CSFDB_Setgp_TorusminorRadius(const Standard_Real p);
 
 };
-%extend gp_Torus {
-	~gp_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Torus\n");}
-	}
-};
+%feature("shadow") gp_Torus::~gp_Torus %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Circ2d;
@@ -1633,12 +1618,11 @@ class gp_Circ2d {
 		void _CSFDB_Setgp_Circ2dradius(const Standard_Real p);
 
 };
-%extend gp_Circ2d {
-	~gp_Circ2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Circ2d\n");}
-	}
-};
+%feature("shadow") gp_Circ2d::~gp_Circ2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Lin;
@@ -1716,12 +1700,11 @@ class gp_Lin {
 		const gp_Ax1 & _CSFDB_Getgp_Linpos() const;
 
 };
-%extend gp_Lin {
-	~gp_Lin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Lin\n");}
-	}
-};
+%feature("shadow") gp_Lin::~gp_Lin %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_XY;
@@ -1839,12 +1822,11 @@ class gp_XY {
 		void _CSFDB_Setgp_XYy(const Standard_Real p);
 
 };
-%extend gp_XY {
-	~gp_XY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_XY\n");}
-	}
-};
+%feature("shadow") gp_XY::~gp_XY %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Lin2d;
@@ -1922,12 +1904,11 @@ class gp_Lin2d {
 		const gp_Ax2d & _CSFDB_Getgp_Lin2dpos() const;
 
 };
-%extend gp_Lin2d {
-	~gp_Lin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Lin2d\n");}
-	}
-};
+%feature("shadow") gp_Lin2d::~gp_Lin2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Elips2d;
@@ -2027,12 +2008,11 @@ class gp_Elips2d {
 		void _CSFDB_Setgp_Elips2dminorRadius(const Standard_Real p);
 
 };
-%extend gp_Elips2d {
-	~gp_Elips2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Elips2d\n");}
-	}
-};
+%feature("shadow") gp_Elips2d::~gp_Elips2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Trsf2d;
@@ -2114,12 +2094,11 @@ class gp_Trsf2d {
 		const gp_XY & _CSFDB_Getgp_Trsf2dloc() const;
 
 };
-%extend gp_Trsf2d {
-	~gp_Trsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Trsf2d\n");}
-	}
-};
+%feature("shadow") gp_Trsf2d::~gp_Trsf2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Cylinder;
@@ -2197,12 +2176,11 @@ class gp_Cylinder {
 		void _CSFDB_Setgp_Cylinderradius(const Standard_Real p);
 
 };
-%extend gp_Cylinder {
-	~gp_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Cylinder\n");}
-	}
-};
+%feature("shadow") gp_Cylinder::~gp_Cylinder %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Ax1;
@@ -2272,12 +2250,11 @@ class gp_Ax1 {
 		const gp_Dir & _CSFDB_Getgp_Ax1vdir() const;
 
 };
-%extend gp_Ax1 {
-	~gp_Ax1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax1\n");}
-	}
-};
+%feature("shadow") gp_Ax1::~gp_Ax1 %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Sphere;
@@ -2355,12 +2332,11 @@ class gp_Sphere {
 		void _CSFDB_Setgp_Sphereradius(const Standard_Real p);
 
 };
-%extend gp_Sphere {
-	~gp_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Sphere\n");}
-	}
-};
+%feature("shadow") gp_Sphere::~gp_Sphere %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_GTrsf;
@@ -2434,12 +2410,11 @@ class gp_GTrsf {
 		void _CSFDB_Setgp_GTrsfscale(const Standard_Real p);
 
 };
-%extend gp_GTrsf {
-	~gp_GTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_GTrsf\n");}
-	}
-};
+%feature("shadow") gp_GTrsf::~gp_GTrsf %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Pln;
@@ -2529,12 +2504,11 @@ class gp_Pln {
 		const gp_Ax3 & _CSFDB_Getgp_Plnpos() const;
 
 };
-%extend gp_Pln {
-	~gp_Pln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pln\n");}
-	}
-};
+%feature("shadow") gp_Pln::~gp_Pln %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Ax3;
@@ -2624,12 +2598,11 @@ class gp_Ax3 {
 		const gp_Dir & _CSFDB_Getgp_Ax3vxdir() const;
 
 };
-%extend gp_Ax3 {
-	~gp_Ax3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax3\n");}
-	}
-};
+%feature("shadow") gp_Ax3::~gp_Ax3 %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Pnt;
@@ -2713,12 +2686,11 @@ class gp_Pnt {
 		const gp_XYZ & _CSFDB_Getgp_Pntcoord() const;
 
 };
-%extend gp_Pnt {
-	~gp_Pnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pnt\n");}
-	}
-};
+%feature("shadow") gp_Pnt::~gp_Pnt %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Pnt2d;
@@ -2792,12 +2764,11 @@ class gp_Pnt2d {
 		const gp_XY & _CSFDB_Getgp_Pnt2dcoord() const;
 
 };
-%extend gp_Pnt2d {
-	~gp_Pnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pnt2d\n");}
-	}
-};
+%feature("shadow") gp_Pnt2d::~gp_Pnt2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Dir;
@@ -2895,12 +2866,11 @@ class gp_Dir {
 		const gp_XYZ & _CSFDB_Getgp_Dircoord() const;
 
 };
-%extend gp_Dir {
-	~gp_Dir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Dir\n");}
-	}
-};
+%feature("shadow") gp_Dir::~gp_Dir %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Circ;
@@ -2980,12 +2950,11 @@ class gp_Circ {
 		void _CSFDB_Setgp_Circradius(const Standard_Real p);
 
 };
-%extend gp_Circ {
-	~gp_Circ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Circ\n");}
-	}
-};
+%feature("shadow") gp_Circ::~gp_Circ %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Mat;
@@ -3115,12 +3084,11 @@ class gp_Mat {
 		};
 
 };
-%extend gp_Mat {
-	~gp_Mat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Mat\n");}
-	}
-};
+%feature("shadow") gp_Mat::~gp_Mat %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Ax2d;
@@ -3186,12 +3154,11 @@ class gp_Ax2d {
 		const gp_Dir2d & _CSFDB_Getgp_Ax2dvdir() const;
 
 };
-%extend gp_Ax2d {
-	~gp_Ax2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax2d\n");}
-	}
-};
+%feature("shadow") gp_Ax2d::~gp_Ax2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Hypr;
@@ -3293,12 +3260,11 @@ class gp_Hypr {
 		void _CSFDB_Setgp_HyprminorRadius(const Standard_Real p);
 
 };
-%extend gp_Hypr {
-	~gp_Hypr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Hypr\n");}
-	}
-};
+%feature("shadow") gp_Hypr::~gp_Hypr %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_Trsf;
@@ -3386,12 +3352,11 @@ class gp_Trsf {
 		const gp_XYZ & _CSFDB_Getgp_Trsfloc() const;
 
 };
-%extend gp_Trsf {
-	~gp_Trsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Trsf\n");}
-	}
-};
+%feature("shadow") gp_Trsf::~gp_Trsf %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}
 
 
 %nodefaultctor gp_GTrsf2d;
@@ -3467,9 +3432,8 @@ class gp_GTrsf2d {
 		void _CSFDB_Setgp_GTrsf2dscale(const Standard_Real p);
 
 };
-%extend gp_GTrsf2d {
-	~gp_GTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_GTrsf2d\n");}
-	}
-};
+%feature("shadow") gp_GTrsf2d::~gp_GTrsf2d %{
+def __del__(self):
+	global occ_gc
+	occ_gc.append(self)
+%}

@@ -80,6 +80,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public Handle_TCol
 	}
 };
 
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
@@ -107,6 +115,14 @@ class Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : pub
 	~Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend Handle_BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -140,6 +156,14 @@ class Handle_BRepMesh_HArray1OfVertexOfDelaun : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepMesh_HArray1OfVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TCollection_MapNode {
@@ -167,6 +191,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public Handle_TC
 	~Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");}
+	}
+};
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -200,6 +232,14 @@ class Handle_BRepMesh_EdgeDiscret : public Handle_MMgt_TShared {
 	}
 };
 
+%extend Handle_BRepMesh_EdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_FastDiscret;
 class Handle_BRepMesh_FastDiscret : public Handle_MMgt_TShared {
@@ -227,6 +267,14 @@ class Handle_BRepMesh_FastDiscret : public Handle_MMgt_TShared {
 	~Handle_BRepMesh_FastDiscret() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_FastDiscret\n");}
+	}
+};
+
+%extend Handle_BRepMesh_FastDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -260,6 +308,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public Handle_TColle
 	}
 };
 
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_DataStructureOfDelaun;
 class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
@@ -287,6 +343,14 @@ class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 	~Handle_BRepMesh_DataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataStructureOfDelaun\n");}
+	}
+};
+
+%extend Handle_BRepMesh_DataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -320,6 +384,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public Handle_TCo
 	}
 };
 
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_StdMapNodeOfMapOfAsciiString;
 class Handle_BRepMesh_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_MapNode {
@@ -347,6 +419,14 @@ class Handle_BRepMesh_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_M
 	~Handle_BRepMesh_StdMapNodeOfMapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_StdMapNodeOfMapOfAsciiString\n");}
+	}
+};
+
+%extend Handle_BRepMesh_StdMapNodeOfMapOfAsciiString {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -380,6 +460,14 @@ class Handle_BRepMesh_ListNodeOfListOfSurfaceGrid : public Handle_TCollection_Ma
 	}
 };
 
+%extend Handle_BRepMesh_ListNodeOfListOfSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollection_MapNode {
@@ -407,6 +495,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public Handle_TCollectio
 	~Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt\n");}
+	}
+};
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -440,6 +536,14 @@ class Handle_BRepMesh_ListNodeOfListOfVertex : public Handle_TCollection_MapNode
 	}
 };
 
+%extend Handle_BRepMesh_ListNodeOfListOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollection_MapNode {
@@ -467,6 +571,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public Handle_TCollect
 	~Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");}
+	}
+};
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -500,6 +612,14 @@ class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : p
 	}
 };
 
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex;
 class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollection_MapNode {
@@ -527,6 +647,14 @@ class Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public Handle_TCollec
 	~Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex\n");}
+	}
+};
+
+%extend Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -560,6 +688,14 @@ class Handle_BRepMesh_ListNodeOfListOfXY : public Handle_TCollection_MapNode {
 	}
 };
 
+%extend Handle_BRepMesh_ListNodeOfListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_SurfaceGrid;
 class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
@@ -587,6 +723,14 @@ class Handle_BRepMesh_SurfaceGrid : public Handle_MMgt_TShared {
 	~Handle_BRepMesh_SurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_SurfaceGrid\n");}
+	}
+};
+
+%extend Handle_BRepMesh_SurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -620,6 +764,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public Handle_TCo
 	}
 };
 
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun;
 class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public Handle_TCollection_MapNode {
@@ -650,6 +802,14 @@ class Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : p
 	}
 };
 
+%extend Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal;
 class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
@@ -677,6 +837,14 @@ class Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollectio
 	~Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal\n");}
+	}
+};
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -779,6 +947,14 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 	}
 };
 
+%extend BRepMesh_DataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ListOfSurfaceGrid;
 class BRepMesh_ListOfSurfaceGrid {
@@ -832,6 +1008,14 @@ class BRepMesh_ListOfSurfaceGrid {
 	}
 };
 
+%extend BRepMesh_ListOfSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_IndexedMapOfVertex;
 class BRepMesh_IndexedMapOfVertex : public TCollection_BasicMap {
@@ -869,6 +1053,14 @@ class BRepMesh_IndexedMapOfVertex : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_IndexedMapOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid;
 class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_BasicMapIterator {
@@ -889,6 +1081,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid : public TCollection_B
 	~BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid\n");}
+	}
+};
+
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -915,6 +1115,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfVertexInteger : public TCollection_Basi
 	}
 };
 
+%extend BRepMesh_DataMapIteratorOfDataMapOfVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY;
 class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_BasicMapIterator {
@@ -938,6 +1146,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY : public TCollection_Ba
 	}
 };
 
+%extend BRepMesh_DataMapIteratorOfDataMapOfIntegerListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_HeapSortIndexedVertexOfDelaun;
 class BRepMesh_HeapSortIndexedVertexOfDelaun {
@@ -952,6 +1168,14 @@ class BRepMesh_HeapSortIndexedVertexOfDelaun {
 	~BRepMesh_HeapSortIndexedVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_HeapSortIndexedVertexOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_HeapSortIndexedVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -973,6 +1197,14 @@ class BRepMesh_BiPoint {
 	~BRepMesh_BiPoint() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_BiPoint\n");}
+	}
+};
+
+%extend BRepMesh_BiPoint {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1020,6 +1252,14 @@ class BRepMesh_HArray1OfVertexOfDelaun : public MMgt_TShared {
 	~BRepMesh_HArray1OfVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_HArray1OfVertexOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_HArray1OfVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1076,6 +1316,14 @@ class BRepMesh_ListOfXY {
 	}
 };
 
+%extend BRepMesh_ListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh;
 class BRepMesh {
@@ -1090,6 +1338,14 @@ class BRepMesh {
 	~BRepMesh() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh\n");}
+	}
+};
+
+%extend BRepMesh {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1127,6 +1383,14 @@ class BRepMesh_IMapOfElementOfDataStructureOfDelaun : public TCollection_BasicMa
 	~BRepMesh_IMapOfElementOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_IMapOfElementOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_IMapOfElementOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1173,6 +1437,14 @@ class BRepMesh_Array1OfBiPoint {
 	}
 };
 
+%extend BRepMesh_Array1OfBiPoint {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_EdgeDiscret;
 class BRepMesh_EdgeDiscret : public MMgt_TShared {
@@ -1201,6 +1473,14 @@ class BRepMesh_EdgeDiscret : public MMgt_TShared {
 	~BRepMesh_EdgeDiscret() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_EdgeDiscret\n");}
+	}
+};
+
+%extend BRepMesh_EdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1245,6 +1525,14 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNod
 	}
 };
 
+%extend BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_StdMapNodeOfMapOfAsciiString;
 class BRepMesh_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
@@ -1271,6 +1559,14 @@ class BRepMesh_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 	~BRepMesh_StdMapNodeOfMapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_StdMapNodeOfMapOfAsciiString\n");}
+	}
+};
+
+%extend BRepMesh_StdMapNodeOfMapOfAsciiString {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1302,6 +1598,14 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public TCollection_MapNo
 	~BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid\n");}
+	}
+};
+
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1342,6 +1646,14 @@ class BRepMesh_DataMapOfShapeEdgeDiscret : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_DataMapOfShapeEdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapOfIntegerFace;
 class BRepMesh_DataMapOfIntegerFace : public TCollection_BasicMap {
@@ -1379,6 +1691,14 @@ class BRepMesh_DataMapOfIntegerFace : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_DataMapOfIntegerFace {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ListNodeOfListOfVertex;
 class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
@@ -1405,6 +1725,14 @@ class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
 	~BRepMesh_ListNodeOfListOfVertex() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ListNodeOfListOfVertex\n");}
+	}
+};
+
+%extend BRepMesh_ListNodeOfListOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1449,6 +1777,14 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	}
 };
 
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeReal;
 class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
@@ -1469,6 +1805,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMap
 	~BRepMesh_DataMapIteratorOfDataMapOfShapeReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeReal\n");}
+	}
+};
+
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1515,6 +1859,14 @@ class BRepMesh_Array1OfVertexOfDelaun {
 	}
 };
 
+%extend BRepMesh_Array1OfVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DiscretRoot;
 class BRepMesh_DiscretRoot {
@@ -1541,6 +1893,14 @@ class BRepMesh_DiscretRoot {
 	~BRepMesh_DiscretRoot() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DiscretRoot\n");}
+	}
+};
+
+%extend BRepMesh_DiscretRoot {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1586,6 +1946,14 @@ class BRepMesh_Vertex {
 	}
 };
 
+%extend BRepMesh_Vertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_IncrementalMesh;
 class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
@@ -1613,6 +1981,14 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 	}
 };
 
+%extend BRepMesh_IncrementalMesh {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ListIteratorOfListOfXY;
 class BRepMesh_ListIteratorOfListOfXY {
@@ -1635,6 +2011,14 @@ class BRepMesh_ListIteratorOfListOfXY {
 	~BRepMesh_ListIteratorOfListOfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ListIteratorOfListOfXY\n");}
+	}
+};
+
+%extend BRepMesh_ListIteratorOfListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1664,6 +2048,14 @@ class BRepMesh_ListNodeOfListOfSurfaceGrid : public TCollection_MapNode {
 	~BRepMesh_ListNodeOfListOfSurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ListNodeOfListOfSurfaceGrid\n");}
+	}
+};
+
+%extend BRepMesh_ListNodeOfListOfSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1738,6 +2130,14 @@ class BRepMesh_ShapeTool {
 	}
 };
 
+%extend BRepMesh_ShapeTool {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ListNodeOfListOfXY;
 class BRepMesh_ListNodeOfListOfXY : public TCollection_MapNode {
@@ -1764,6 +2164,14 @@ class BRepMesh_ListNodeOfListOfXY : public TCollection_MapNode {
 	~BRepMesh_ListNodeOfListOfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ListNodeOfListOfXY\n");}
+	}
+};
+
+%extend BRepMesh_ListNodeOfListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1810,6 +2218,14 @@ class BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public TCollection_MapNode {
 	}
 };
 
+%extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfCouplePnt;
 class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
@@ -1841,6 +2257,14 @@ class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
 	}
 };
 
+%extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfCouplePnt;
 class BRepMesh_DataMapIteratorOfDataMapOfCouplePnt : public TCollection_BasicMapIterator {
@@ -1861,6 +2285,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfCouplePnt : public TCollection_BasicMap
 	~BRepMesh_DataMapIteratorOfDataMapOfCouplePnt() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfCouplePnt\n");}
+	}
+};
+
+%extend BRepMesh_DataMapIteratorOfDataMapOfCouplePnt {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1906,6 +2338,14 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public T
 	~BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -1962,6 +2402,14 @@ class BRepMesh_ListOfVertex {
 	}
 };
 
+%extend BRepMesh_ListOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_Classifier;
 class BRepMesh_Classifier {
@@ -1987,6 +2435,14 @@ class BRepMesh_Classifier {
 	}
 };
 
+%extend BRepMesh_Classifier {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ComparatorOfVertexOfDelaun;
 class BRepMesh_ComparatorOfVertexOfDelaun {
@@ -2005,6 +2461,14 @@ class BRepMesh_ComparatorOfVertexOfDelaun {
 	~BRepMesh_ComparatorOfVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ComparatorOfVertexOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_ComparatorOfVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2093,6 +2557,14 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 	}
 };
 
+%extend BRepMesh_FastDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_GeomTool;
 class BRepMesh_GeomTool {
@@ -2119,6 +2591,14 @@ class BRepMesh_GeomTool {
 	~BRepMesh_GeomTool() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_GeomTool\n");}
+	}
+};
+
+%extend BRepMesh_GeomTool {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2160,6 +2640,14 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 	~BRepMesh_DataMapNodeOfDataMapOfIntegerFace() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfIntegerFace\n");}
+	}
+};
+
+%extend BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2210,6 +2698,14 @@ class BRepMesh_DataMapOfVertexInteger : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_DataMapOfVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret;
 class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_BasicMapIterator {
@@ -2230,6 +2726,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret : public TCollection_B
 	~BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret\n");}
+	}
+};
+
+%extend BRepMesh_DataMapIteratorOfDataMapOfShapeEdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2278,6 +2782,14 @@ class BRepMesh_SelectorOfDataStructureOfDelaun {
 	}
 };
 
+%extend BRepMesh_SelectorOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapOfShapeReal;
 class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -2322,6 +2834,14 @@ class BRepMesh_DataMapOfShapeReal : public TCollection_BasicMap {
 	~BRepMesh_DataMapOfShapeReal() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapOfShapeReal\n");}
+	}
+};
+
+%extend BRepMesh_DataMapOfShapeReal {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2378,6 +2898,14 @@ class BRepMesh_SurfaceGrid : public MMgt_TShared {
 	}
 };
 
+%extend BRepMesh_SurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun;
 class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCollection_MapNode {
@@ -2421,6 +2949,14 @@ class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCo
 	}
 };
 
+%extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapOfShapeSurfaceGrid;
 class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
@@ -2455,6 +2991,14 @@ class BRepMesh_DataMapOfShapeSurfaceGrid : public TCollection_BasicMap {
 	~BRepMesh_DataMapOfShapeSurfaceGrid() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapOfShapeSurfaceGrid\n");}
+	}
+};
+
+%extend BRepMesh_DataMapOfShapeSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2505,6 +3049,14 @@ class BRepMesh_DataMapOfMeshVertexInteger : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_DataMapOfMeshVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_HeapSortVertexOfDelaun;
 class BRepMesh_HeapSortVertexOfDelaun {
@@ -2519,6 +3071,14 @@ class BRepMesh_HeapSortVertexOfDelaun {
 	~BRepMesh_HeapSortVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_HeapSortVertexOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_HeapSortVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2547,6 +3107,14 @@ class BRepMesh_ListIteratorOfListOfSurfaceGrid {
 	}
 };
 
+%extend BRepMesh_ListIteratorOfListOfSurfaceGrid {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger;
 class BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger : public TCollection_BasicMapIterator {
@@ -2567,6 +3135,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger : public TCollection_
 	~BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger\n");}
+	}
+};
+
+%extend BRepMesh_DataMapIteratorOfDataMapOfMeshVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2612,6 +3188,14 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 	~BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2662,6 +3246,14 @@ class BRepMesh_IDMapOfLinkOfDataStructureOfDelaun : public TCollection_BasicMap 
 	}
 };
 
+%extend BRepMesh_IDMapOfLinkOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapOfIntegerListOfXY;
 class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
@@ -2696,6 +3288,14 @@ class BRepMesh_DataMapOfIntegerListOfXY : public TCollection_BasicMap {
 	~BRepMesh_DataMapOfIntegerListOfXY() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapOfIntegerListOfXY\n");}
+	}
+};
+
+%extend BRepMesh_DataMapOfIntegerListOfXY {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2746,6 +3346,14 @@ class BRepMesh_IDMapOfNodeOfDataStructureOfDelaun : public TCollection_BasicMap 
 	}
 };
 
+%extend BRepMesh_IDMapOfNodeOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_VertexHasher;
 class BRepMesh_VertexHasher {
@@ -2762,6 +3370,14 @@ class BRepMesh_VertexHasher {
 	~BRepMesh_VertexHasher() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_VertexHasher\n");}
+	}
+};
+
+%extend BRepMesh_VertexHasher {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2784,6 +3400,14 @@ class BRepMesh_LinkHasherOfDataStructureOfDelaun {
 	}
 };
 
+%extend BRepMesh_LinkHasherOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_NodeHasherOfDataStructureOfDelaun;
 class BRepMesh_NodeHasherOfDataStructureOfDelaun {
@@ -2800,6 +3424,14 @@ class BRepMesh_NodeHasherOfDataStructureOfDelaun {
 	~BRepMesh_NodeHasherOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_NodeHasherOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_NodeHasherOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2840,6 +3472,14 @@ class BRepMesh_DataMapOfCouplePnt : public TCollection_BasicMap {
 	}
 };
 
+%extend BRepMesh_DataMapOfCouplePnt {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret;
 class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNode {
@@ -2871,6 +3511,14 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNo
 	}
 };
 
+%extend BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_MapIteratorOfMapOfAsciiString;
 class BRepMesh_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
@@ -2889,6 +3537,14 @@ class BRepMesh_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterat
 	~BRepMesh_MapIteratorOfMapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_MapIteratorOfMapOfAsciiString\n");}
+	}
+};
+
+%extend BRepMesh_MapIteratorOfMapOfAsciiString {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2930,6 +3586,14 @@ class BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public TCollection_MapN
 	~BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger\n");}
+	}
+};
+
+%extend BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -2990,6 +3654,14 @@ class BRepMesh_Delaun {
 	}
 };
 
+%extend BRepMesh_Delaun {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_DataMapIteratorOfDataMapOfIntegerFace;
 class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicMapIterator {
@@ -3013,6 +3685,14 @@ class BRepMesh_DataMapIteratorOfDataMapOfIntegerFace : public TCollection_BasicM
 	}
 };
 
+%extend BRepMesh_DataMapIteratorOfDataMapOfIntegerFace {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ComparatorOfIndexedVertexOfDelaun;
 class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
@@ -3031,6 +3711,14 @@ class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 	~BRepMesh_ComparatorOfIndexedVertexOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ComparatorOfIndexedVertexOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_ComparatorOfIndexedVertexOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -3075,6 +3763,14 @@ class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode 
 	}
 };
 
+%extend BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_Edge;
 class BRepMesh_Edge {
@@ -3113,6 +3809,14 @@ class BRepMesh_Edge {
 	}
 };
 
+%extend BRepMesh_Edge {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_MapOfAsciiString;
 class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
@@ -3139,6 +3843,14 @@ class BRepMesh_MapOfAsciiString : public TCollection_BasicMap {
 	~BRepMesh_MapOfAsciiString() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_MapOfAsciiString\n");}
+	}
+};
+
+%extend BRepMesh_MapOfAsciiString {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -3180,6 +3892,14 @@ class BRepMesh_Triangle {
 	}
 };
 
+%extend BRepMesh_Triangle {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ListIteratorOfListOfVertex;
 class BRepMesh_ListIteratorOfListOfVertex {
@@ -3205,6 +3925,14 @@ class BRepMesh_ListIteratorOfListOfVertex {
 	}
 };
 
+%extend BRepMesh_ListIteratorOfListOfVertex {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
 class BRepMesh_ElemHasherOfDataStructureOfDelaun {
@@ -3221,5 +3949,13 @@ class BRepMesh_ElemHasherOfDataStructureOfDelaun {
 	~BRepMesh_ElemHasherOfDataStructureOfDelaun() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepMesh_ElemHasherOfDataStructureOfDelaun\n");}
+	}
+};
+
+%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

@@ -85,6 +85,14 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+%extend BRepAlgoAPI_BooleanOperation {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgoAPI_Fuse;
 class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
@@ -99,6 +107,14 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 	~BRepAlgoAPI_Fuse() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Fuse\n");}
+	}
+};
+
+%extend BRepAlgoAPI_Fuse {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -155,6 +171,14 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 	}
 };
 
+%extend BRepAlgoAPI_Section {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgoAPI_Cut;
 class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
@@ -172,6 +196,14 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 	}
 };
 
+%extend BRepAlgoAPI_Cut {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepAlgoAPI_Common;
 class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
@@ -186,5 +218,13 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 	~BRepAlgoAPI_Common() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Common\n");}
+	}
+};
+
+%extend BRepAlgoAPI_Common {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

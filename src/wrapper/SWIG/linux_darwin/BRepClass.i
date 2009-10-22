@@ -59,6 +59,14 @@ class BRepClass_Edge {
 	}
 };
 
+%extend BRepClass_Edge {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass_Intersector;
 class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
@@ -75,6 +83,14 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 	~BRepClass_Intersector() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
+	}
+};
+
+%extend BRepClass_Intersector {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -109,6 +125,14 @@ class BRepClass_FClassifier {
 	}
 };
 
+%extend BRepClass_FClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass_FaceClassifier;
 class BRepClass_FaceClassifier : public BRepClass_FClassifier {
@@ -123,6 +147,14 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 	~BRepClass_FaceClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FaceClassifier\n");}
+	}
+};
+
+%extend BRepClass_FaceClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -152,6 +184,14 @@ class BRepClass_FClass2dOfFClassifier {
 	~BRepClass_FClass2dOfFClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");}
+	}
+};
+
+%extend BRepClass_FClass2dOfFClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };
 
@@ -194,6 +234,14 @@ class BRepClass_FaceExplorer {
 	}
 };
 
+%extend BRepClass_FaceExplorer {
+	KillPointed() {
+	
+	delete $self->this;
+
+	}
+};
+
 
 %nodefaultctor BRepClass_FacePassiveClassifier;
 class BRepClass_FacePassiveClassifier {
@@ -220,5 +268,13 @@ class BRepClass_FacePassiveClassifier {
 	~BRepClass_FacePassiveClassifier() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FacePassiveClassifier\n");}
+	}
+};
+
+%extend BRepClass_FacePassiveClassifier {
+	KillPointed() {
+	
+	delete $self->this;
+
 	}
 };

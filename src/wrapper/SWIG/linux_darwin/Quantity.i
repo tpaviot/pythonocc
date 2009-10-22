@@ -714,6 +714,8 @@ enum Quantity_NameOfColor {
 class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
+		~Handle_Quantity_ColorDefinitionError();
+		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Handle_Quantity_ColorDefinitionError &aHandle);
@@ -732,17 +734,12 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	return (Quantity_ColorDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Quantity_ColorDefinitionError {
-	~Handle_Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
 class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError {
 	public:
+		%feature("autodoc", "1");
+		~Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
@@ -762,17 +759,12 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	return (Quantity_PeriodDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Quantity_PeriodDefinitionError {
-	~Handle_Quantity_PeriodDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
 class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
+		%feature("autodoc", "1");
+		~Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
@@ -792,17 +784,12 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	return (Quantity_HArray1OfColor*)$self->Access();
 	}
 };
-%extend Handle_Quantity_HArray1OfColor {
-	~Handle_Quantity_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");}
-	}
-};
-
 
 %nodefaultctor Handle_Quantity_DateDefinitionError;
 class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	public:
+		%feature("autodoc", "1");
+		~Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
@@ -822,13 +809,6 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	return (Quantity_DateDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Quantity_DateDefinitionError {
-	~Handle_Quantity_DateDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
@@ -841,6 +821,8 @@ class Quantity_Array2OfColor {
 		void Init(const Quantity_Color &V);
 		%feature("autodoc", "1");
 		void Destroy();
+		%feature("autodoc", "1");
+		~Quantity_Array2OfColor();
 		%feature("autodoc", "1");
 		const Quantity_Array2OfColor & Assign(const Quantity_Array2OfColor &Other);
 		%feature("autodoc", "1");
@@ -869,13 +851,6 @@ class Quantity_Array2OfColor {
 		Quantity_Color & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Quantity_Array2OfColor {
-	~Quantity_Array2OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array2OfColor\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Array1OfCoefficient;
 class Quantity_Array1OfCoefficient {
@@ -888,6 +863,8 @@ class Quantity_Array1OfCoefficient {
 		void Init(const Quantity_Coefficient &V);
 		%feature("autodoc", "1");
 		void Destroy();
+		%feature("autodoc", "1");
+		~Quantity_Array1OfCoefficient();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -912,17 +889,12 @@ class Quantity_Array1OfCoefficient {
 		Quantity_Coefficient & operator()(const Standard_Integer Index);
 
 };
-%extend Quantity_Array1OfCoefficient {
-	~Quantity_Array1OfCoefficient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfCoefficient\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
 	public:
+		%feature("autodoc", "1");
+		~Quantity_Period();
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -971,13 +943,6 @@ class Quantity_Period {
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
 
 };
-%extend Quantity_Period {
-	~Quantity_Period() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Period\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_ColorDefinitionError;
 class Quantity_ColorDefinitionError : public Standard_DomainError {
@@ -994,6 +959,8 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Quantity_ColorDefinitionError();
 
 };
 %extend Quantity_ColorDefinitionError {
@@ -1006,13 +973,6 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Quantity_ColorDefinitionError {
-	~Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_PeriodDefinitionError;
 class Quantity_PeriodDefinitionError : public Standard_DomainError {
@@ -1029,6 +989,8 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Quantity_PeriodDefinitionError();
 
 };
 %extend Quantity_PeriodDefinitionError {
@@ -1041,13 +1003,6 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Quantity_PeriodDefinitionError {
-	~Quantity_PeriodDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Array1OfColor;
 class Quantity_Array1OfColor {
@@ -1060,6 +1015,8 @@ class Quantity_Array1OfColor {
 		void Init(const Quantity_Color &V);
 		%feature("autodoc", "1");
 		void Destroy();
+		%feature("autodoc", "1");
+		~Quantity_Array1OfColor();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1084,17 +1041,12 @@ class Quantity_Array1OfColor {
 		Quantity_Color & operator()(const Standard_Integer Index);
 
 };
-%extend Quantity_Array1OfColor {
-	~Quantity_Array1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
 	public:
+		%feature("autodoc", "1");
+		~Quantity_Color();
 		%feature("autodoc", "1");
 		Quantity_Color();
 		%feature("autodoc", "1");
@@ -1171,13 +1123,6 @@ class Quantity_Color {
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
 
 };
-%extend Quantity_Color {
-	~Quantity_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_HArray1OfColor;
 class Quantity_HArray1OfColor : public MMgt_TShared {
@@ -1206,6 +1151,8 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 		Quantity_Array1OfColor & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Quantity_HArray1OfColor();
 
 };
 %extend Quantity_HArray1OfColor {
@@ -1218,17 +1165,12 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Quantity_HArray1OfColor {
-	~Quantity_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
 	public:
+		%feature("autodoc", "1");
+		~Quantity_Date();
 		%feature("autodoc", "1");
 		Quantity_Date();
 		%feature("autodoc", "1");
@@ -1289,13 +1231,6 @@ class Quantity_Date {
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
 
 };
-%extend Quantity_Date {
-	~Quantity_Date() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Date\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_DateDefinitionError;
 class Quantity_DateDefinitionError : public Standard_DomainError {
@@ -1312,6 +1247,8 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		virtual		~Quantity_DateDefinitionError();
 
 };
 %extend Quantity_DateDefinitionError {
@@ -1324,17 +1261,12 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Quantity_DateDefinitionError {
-	~Quantity_DateDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
-	}
-};
-
 
 %nodefaultctor Quantity_Convert;
 class Quantity_Convert {
 	public:
+		%feature("autodoc", "1");
+		~Quantity_Convert();
 		%feature("autodoc", "1");
 		Quantity_Convert();
 		%feature("autodoc", "1");
@@ -1346,10 +1278,4 @@ class Quantity_Convert {
 		%feature("autodoc", "1");
 		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
-};
-%extend Quantity_Convert {
-	~Quantity_Convert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Convert\n");}
-	}
 };
